@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "status": "MANDATORY",
+  "purpose": "Generate high-end restaurant design cases for Xiaohongshu client acquisition",
+  "default_output": {
+    "type": "single_poster",
+    "platform": "xiaohongshu",
+    "orientation": "portrait",
+    "aspect_ratio": "9:16",
+    "target_width_px": 2160,
+    "target_height_px": 3840,
+    "preferred_format": "png",
+    "require_actual_pixel_verification": true
+  },
+  "batch_rules": {
+    "minimum_style_families_for_10_images": 4,
+    "maximum_single_style_ratio": 0.4,
+    "maximum_eastern_style_ratio": 0.3,
+    "maximum_dark_black_style_ratio": 0.2,
+    "template_color_swap_forbidden": true
+  },
+  "style_families": [
+    "international_minimal",
+    "young_editorial",
+    "premium_commercial",
+    "restrained_eastern",
+    "young_bright",
+    "dark_premium",
+    "modern_geometric",
+    "product_photography_led"
+  ],
+  "visual_priorities": [
+    "product_realism",
+    "clear_design_concept",
+    "clean_hierarchy",
+    "commercial_landability",
+    "style_diversity",
+    "personal_aesthetic_fit"
+  ],
+  "product_integration": {
+    "required": true,
+    "must_derive_from": [
+      "product_outline",
+      "product_structure",
+      "container_ratio",
+      "cut_pattern",
+      "ingredient_rhythm",
+      "sauce_flow",
+      "grilled_texture",
+      "heat_and_steam_motion"
+    ],
+    "forbidden_shortcuts": [
+      "force_full_brand_name_into_fish_shape",
+      "add_random_fish_tail_to_type",
+      "add_random_fish_eye_to_type",
+      "wrap_product_with_fishbone_frame",
+      "add_decorative_water_rings_without_logic",
+      "use_ink_fish_outline_as_container"
+    ]
+  },
+  "typography": {
+    "brand_name_must_be_legible": true,
+    "ai_generated_chinese_is_concept_only": true,
+    "final_chinese_requires_real_font_or_vector_path": true,
+    "forbid_gibberish": true,
+    "forbid_fake_seals": true,
+    "forbid_excessive_english_decoration": true
+  },
+  "food_realism": {
+    "required": true,
+    "single_anatomically_valid_fish": true,
+    "correct_head_eye_mouth_gill_fin_tail": true,
+    "natural_scoring_and_grilled_skin": true,
+    "controlled_oil_gloss": true,
+    "natural_ingredient_distribution": true,
+    "correct_pan_perspective_and_contact_shadow": true,
+    "hard_rejects": [
+      "multiple_heads",
+      "duplicate_eyes",
+      "duplicate_or_fused_fins",
+      "plastic_or_waxy_skin",
+      "metallic_fish_texture",
+      "copied_ingredients",
+      "red_glue_sauce",
+      "floating_product",
+      "incorrect_pan_perspective",
+      "steam_unrelated_to_heat_source",
+      "detail_failure_at_100_percent_zoom"
+    ]
+  },
+  "water": {
+    "allowed": [
+      "subtle_ripples",
+      "thin_flow_lines",
+      "small_reflection_areas",
+      "subtle_baseline_motion"
+    ],
+    "forbidden": [
+      "giant_splash_around_cooked_fish",
+      "cooked_fish_floating_in_water",
+      "detergent_advertising_aesthetic",
+      "water_dominates_product",
+      "physically_impossible_splash"
+    ]
+  },
+  "smoke": {
+    "must_originate_from_heat_zone": true,
+    "must_preserve_product_and_title_visibility": true,
+    "must_have_natural_transparency_and_depth": true,
+    "forbidden": [
+      "white_ribbon_smoke",
+      "full_frame_smoke",
+      "smoke_used_to_hide_product_defects"
+    ]
+  },
+  "layout": {
+    "reading_order": [
+      "brand_name",
+      "product_hero",
+      "core_claim",
+      "minimal_supporting_information"
+    ],
+    "one_primary_focal_point": true,
+    "require_composition_variation_within_batch": true,
+    "forbid_default_three_icon_template": true,
+    "forbid_information_overload": true
+  },
+  "anti_ai": {
+    "forbidden": [
+      "unjustified_perfect_symmetry",
+      "uniformly_smooth_materials",
+      "food_and_background_look_like_separate_layers",
+      "repeated_same_fish_pan_angle",
+      "default_generated_ink_landscape",
+      "fake_chinese_text",
+      "excessive_hdr",
+      "plastic_highlights",
+      "decorations_used_to_mask_structural_errors"
+    ]
+  },
+  "workflow": [
+    "allocate_style_quota",
+    "generate_single_poster_concepts",
+    "generate_or_select_realistic_product_hero",
+    "reject_invalid_food_structure",
+    "apply_approved_wordmark_and_real_typography",
+    "integrate_water_smoke_and_product_logic_restrainedly",
+    "render_or_upscale_to_target_4k",
+    "verify_actual_pixels",
+    "inspect_at_100_percent_zoom",
+    "assign_delivery_status",
+    "record_user_feedback"
+  ],
+  "delivery_status": {
+    "READY_TO_POST": "All visual, textual, realism and 4K checks pass",
+    "CONCEPT": "Direction exploration only",
+    "DRAFT": "Typography, validation or 4K verification incomplete",
+    "REJECTED": "Product realism, anatomy or design logic failed"
+  },
+  "ready_to_post_requirements": [
+    "valid_food_structure",
+    "no_obvious_ai_deformation",
+    "clear_style_direction",
+    "product_drives_design",
+    "no_chinese_typography_errors",
+    "clear_reading_hierarchy",
+    "physically_plausible_water_and_smoke",
+    "not_a_repeated_template",
+    "actual_target_4k_dimensions",
+    "passed_100_percent_zoom_inspection"
+  ]
+}
