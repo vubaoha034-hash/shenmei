@@ -1,0 +1,133 @@
+{
+  "penalty_version": "1.0.0",
+  "rules": {
+    "identity_changed": {
+      "applies_to": ["portrait_editorial"],
+      "min_points": 12,
+      "default_points": 18,
+      "max_points": 25,
+      "score_cap": 49,
+      "condition": "任务明确要求保留人物身份，但脸型、五官、年龄感或可识别特征被明显改写"
+    },
+    "severe_anatomy_error": {
+      "applies_to": ["portrait_editorial", "cinematic_photo", "poster_design"],
+      "min_points": 10,
+      "default_points": 16,
+      "max_points": 25,
+      "score_cap": 49,
+      "condition": "手指、肢体、关节、身体比例或遮挡关系出现明显错误"
+    },
+    "major_reference_mismatch": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 6,
+      "default_points": 10,
+      "max_points": 16,
+      "score_cap": 64,
+      "condition": "任务要求参考指定风格、结构或色彩，但关键视觉特征明显未执行"
+    },
+    "brief_violation": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 5,
+      "default_points": 8,
+      "max_points": 15,
+      "score_cap": 69,
+      "condition": "明确硬要求被违反，例如擅自增加物体、改变服装、菜品结构、价格或固定文案"
+    },
+    "primary_text_error": {
+      "applies_to": ["poster_design"],
+      "min_points": 8,
+      "default_points": 12,
+      "max_points": 20,
+      "score_cap": 59,
+      "condition": "标题、品牌名、价格、日期、电话或核心行动信息错误、缺失或不可辨认"
+    },
+    "secondary_text_error": {
+      "applies_to": ["poster_design"],
+      "min_points": 2,
+      "default_points": 4,
+      "max_points": 8,
+      "score_cap": null,
+      "condition": "非核心文字存在错字、标点、大小写、字距或局部可读性问题"
+    },
+    "plastic_skin_or_waxy_texture": {
+      "applies_to": ["portrait_editorial", "cinematic_photo", "poster_design"],
+      "min_points": 4,
+      "default_points": 8,
+      "max_points": 15,
+      "score_cap": 74,
+      "condition": "皮肤纹理被抹平、蜡化、板块化，或面部局部呈现明显生成式质感"
+    },
+    "obvious_ai_artifacts": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 5,
+      "default_points": 10,
+      "max_points": 20,
+      "score_cap": 69,
+      "condition": "边缘融化、重复纹理、错误反射、伪文字、结构粘连等明显 AI 痕迹"
+    },
+    "contradictory_lighting": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 3,
+      "default_points": 6,
+      "max_points": 12,
+      "score_cap": 79,
+      "condition": "主体与背景或不同物体的光向、阴影、色温、反射明显矛盾"
+    },
+    "background_composite_failure": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 4,
+      "default_points": 8,
+      "max_points": 15,
+      "score_cap": 74,
+      "condition": "抠图边缘、透视、景深、比例、接触阴影或环境色导致明显贴图感"
+    },
+    "oversharpen_halo": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 2,
+      "default_points": 4,
+      "max_points": 9,
+      "score_cap": null,
+      "condition": "轮廓白边、局部脆化、噪点放大或锐化掩盖细节不足"
+    },
+    "crushed_or_clipped_tones": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 2,
+      "default_points": 4,
+      "max_points": 8,
+      "score_cap": null,
+      "condition": "高光大面积无细节、暗部死黑或关键材质因动态范围处理而丢失"
+    },
+    "food_dirty_or_unappetizing": {
+      "applies_to": ["food_photography", "poster_design"],
+      "min_points": 5,
+      "default_points": 9,
+      "max_points": 16,
+      "score_cap": 69,
+      "condition": "饭菜发灰、油污杂乱、食材干瘪、边缘脏乱或整体明显降低食欲"
+    },
+    "unintended_visual_clutter": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 2,
+      "default_points": 5,
+      "max_points": 10,
+      "score_cap": null,
+      "condition": "无功能物体、装饰、文字或背景元素争夺主体注意力"
+    },
+    "series_inconsistency": {
+      "applies_to": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"],
+      "min_points": 4,
+      "default_points": 8,
+      "max_points": 15,
+      "score_cap": 74,
+      "condition": "组图任务中曝光、肤色、背景色、锐度、人物身份、字体或版式明显不统一"
+    }
+  },
+  "no_score_conditions": {
+    "image_not_available": "无法访问或看清待评图片",
+    "critical_regions_hidden": "关键主体被遮挡或裁切，无法判断任务核心",
+    "resolution_too_low": "长边低于 640 像素且压缩已影响关键细节判断",
+    "reference_required_but_missing": "用户要求评价参考图吻合度，但参考图缺失",
+    "category_undetermined": "无法确定主要交付类别"
+  },
+  "deduplication_rule": "同一根因不得重复扣分。每个 penalty 必须写明它与维度低分反映的内容有何不同；无法说明时删除额外扣分。"
+}
