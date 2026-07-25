@@ -1,0 +1,91 @@
+{
+  "status": "OFFICIAL",
+  "rubric_version": "1.0.0",
+  "penalty_version": "1.0.0",
+  "input": {
+    "input_id": "example-cinematic-001",
+    "file_sha256": null,
+    "width_px": 2400,
+    "height_px": 1600,
+    "brief_present": true,
+    "reference_required": false,
+    "reference_present": false,
+    "critical_occlusion": false,
+    "text_check_required": false,
+    "text_readable": true,
+    "strong_compression": false
+  },
+  "category": "cinematic_photo",
+  "evidence_inventory": {
+    "composition": ["主体位于左侧三分区域，右侧负空间保留环境信息"],
+    "light": ["主光来自画面左上方，面部和地面阴影方向一致"],
+    "color": ["综合色彩低饱和，肤色与环境绿色没有明显互相污染"],
+    "texture": ["皮肤、衣服和背景纹理清楚，未出现蜡化或锐化白边"],
+    "story": ["人物视线离开镜头，环境动作形成轻微叙事悬念"]
+  },
+  "anchors_used": [],
+  "passes": {
+    "A": {
+      "dimensions": {
+        "composition_space": {"score": 80, "evidence": ["主体与右侧负空间形成稳定的不对称平衡", "裁切保留了人物动作需要的空间"], "reasoning": "构图具有明确观看路径，但空间层次仍可继续加强", "uncertainty": "low"},
+        "light_atmosphere": {"score": 80, "evidence": ["面部主光与地面阴影方向一致", "高光和暗部均保留主要细节"], "reasoning": "光线自然且有氛围，但并未达到强烈的戏剧塑形", "uncertainty": "low"},
+        "color_grade": {"score": 80, "evidence": ["综合色温统一且肤色未偏绿", "低饱和环境色没有压制人物"], "reasoning": "调色克制统一，但色彩关系仍偏安全", "uncertainty": "low"},
+        "story_emotion": {"score": 80, "evidence": ["人物视线与动作没有面向镜头表演", "环境信息支持生活化叙事"], "reasoning": "情绪真实成立，但缺少更强的决定性瞬间", "uncertainty": "medium"},
+        "depth_visual_path": {"score": 80, "evidence": ["人物和背景之间存在清楚景深分离", "视线由人物面部进入右侧环境"], "reasoning": "空间层次清楚，前景组织仍有提升余地", "uncertainty": "low"},
+        "texture_realism": {"score": 80, "evidence": ["皮肤保留细微纹理和自然明暗", "衣物边缘没有明显锐化光晕"], "reasoning": "材质真实且处理克制，没有明显生成式痕迹", "uncertainty": "low"},
+        "restraint": {"score": 80, "evidence": ["没有依赖黑边、重颗粒或强青橙制造电影感"], "reasoning": "视觉处理克制，但仍可进一步减少局部对比痕迹", "uncertainty": "low"},
+        "cinematic_coherence": {"score": 80, "evidence": ["构图、自然光和低饱和调色指向同一生活化语气", "人物状态与环境氛围没有冲突"], "reasoning": "整体语言统一，但辨识度尚未达到参考级", "uncertainty": "medium"},
+        "personal_fit": {"score": null, "evidence": [], "reasoning": "当前没有足够同类别私人审美锚点", "uncertainty": "high"}
+      }
+    },
+    "B": {
+      "dimensions": {
+        "composition_space": {"score": 80, "evidence": ["环境被保留以支持生活短片关键帧用途", "主体比例适合后续横版裁切"], "reasoning": "构图满足叙事和交付用途，没有牺牲主体识别", "uncertainty": "low"},
+        "light_atmosphere": {"score": 80, "evidence": ["自然光逻辑符合夏日生活化方向", "亮暗层次适合连续镜头衔接"], "reasoning": "光线与任务方向一致，但氛围峰值仍不突出", "uncertainty": "low"},
+        "color_grade": {"score": 80, "evidence": ["低饱和色彩符合克制而非网红滤镜的要求", "肤色保持可接受的真实范围"], "reasoning": "调色有效执行任务，但尚未形成非常独特的综合色彩签名", "uncertainty": "low"},
+        "story_emotion": {"score": 80, "evidence": ["人物状态自然，没有明显摆拍感", "环境动作可与前后镜头建立联系"], "reasoning": "任务所需的舒服和真实成立，但情节信息仍较轻", "uncertainty": "medium"},
+        "depth_visual_path": {"score": 80, "evidence": ["主体与环境关系清楚且适合短片观看", "视觉焦点不会被背景高对比物体抢走"], "reasoning": "观看顺序符合使用场景，空间设计仍可更精确", "uncertainty": "low"},
+        "texture_realism": {"score": 80, "evidence": ["人物身份和皮肤质感保持自然", "环境材质没有明显AI重复纹理"], "reasoning": "真实性符合交付要求，没有因风格化破坏人物", "uncertainty": "low"},
+        "restraint": {"score": 80, "evidence": ["没有增加无意义光斑、黑边和过量颗粒"], "reasoning": "处理方式符合用户对克制电影感的要求", "uncertainty": "low"},
+        "cinematic_coherence": {"score": 80, "evidence": ["镜头语气、光色和人物状态统一", "画面能够进入同系列夏日短片"], "reasoning": "系列兼容性良好，但还不是决定整套风格的主锚点", "uncertainty": "medium"},
+        "personal_fit": {"score": null, "evidence": [], "reasoning": "当前没有足够同类别私人审美锚点", "uncertainty": "high"}
+      }
+    }
+  },
+  "adjudication": {
+    "required": false,
+    "performed": false,
+    "reason": "两轮加权总分一致，且所有维度分差均未触发仲裁",
+    "disputed_dimensions": []
+  },
+  "final_dimensions": {
+    "composition_space": {"score": 80, "evidence": ["不对称平衡稳定且观看路径清楚", "构图符合横版叙事用途"], "reasoning": "两轮证据共同支持专业但仍有提升空间的八十分档", "uncertainty": "low"},
+    "light_atmosphere": {"score": 80, "evidence": ["光向、阴影和综合色温保持一致", "动态范围保留了主体主要细节"], "reasoning": "自然氛围有效，但戏剧塑形和决定性光线仍不足", "uncertainty": "low"},
+    "color_grade": {"score": 80, "evidence": ["低饱和调色统一且肤色自然", "环境色没有形成廉价滤镜感"], "reasoning": "调色克制成熟，但综合色彩辨识度仍可加强", "uncertainty": "low"},
+    "story_emotion": {"score": 80, "evidence": ["人物状态自然且不面向镜头表演", "环境信息能够支持生活化叙事"], "reasoning": "情绪成立但尚未达到决定性瞬间的强度", "uncertainty": "medium"},
+    "depth_visual_path": {"score": 80, "evidence": ["主体与背景分离清楚", "视觉由人物自然进入环境"], "reasoning": "空间关系专业可用，但前景和层次组织仍偏安全", "uncertainty": "low"},
+    "texture_realism": {"score": 80, "evidence": ["皮肤与衣物纹理保持真实", "未见明显AI粘连或锐化白边"], "reasoning": "材质处理达到可靠交付水平", "uncertainty": "low"},
+    "restraint": {"score": 80, "evidence": ["没有通过黑边、强青橙和过度颗粒伪造电影感"], "reasoning": "处理克制，仍可减少局部过强对比", "uncertainty": "low"},
+    "cinematic_coherence": {"score": 80, "evidence": ["构图、光色和人物状态属于同一视觉语言", "可稳定进入同系列生活短片"], "reasoning": "整体一致但尚未达到顶级参考锚点", "uncertainty": "medium"},
+    "personal_fit": {"score": null, "evidence": [], "reasoning": "当前没有足够同类别私人审美锚点", "uncertainty": "high"}
+  },
+  "penalties": [],
+  "scores": {
+    "pass_a_weighted": 80.0,
+    "pass_b_weighted": 80.0,
+    "weighted_before_penalties": 80.0,
+    "penalty_total": 0.0,
+    "active_cap": null,
+    "final_score": 80.0,
+    "band": "B+"
+  },
+  "confidence": 0.87,
+  "summary": {
+    "strengths": ["构图与负空间关系稳定", "自然光逻辑和动态范围可靠", "皮肤与环境材质保持真实"],
+    "limiters": ["决定性瞬间和叙事强度仍不足", "综合色彩辨识度偏安全", "尚未建立私人电影感锚点库"],
+    "edit_order": ["优先增强人物动作或环境事件的叙事联系", "局部优化光线层次而不是整体增加对比", "建立同类别喜欢、一般、不喜欢的私人锚点"],
+    "technical_assessment": "技术和材质处理达到稳定专业水平，没有明显生成式缺陷。",
+    "task_compliance": "克制、生活化、非网红滤镜式电影感基本执行到位。",
+    "personal_fit_assessment": "私人锚点不足，本次不计算个人审美吻合度。"
+  }
+}
