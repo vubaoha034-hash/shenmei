@@ -1,0 +1,87 @@
+{
+  "rubric_version": "1.0.0",
+  "score_increment": 5,
+  "official_repeatability_tolerance": 3.0,
+  "adjudication": {
+    "total_score_difference_trigger": 4.0,
+    "dimension_score_difference_trigger": 10
+  },
+  "bands": [
+    {"min": 95, "max": 100, "label": "S", "meaning": "极少数顶级完成度；几乎没有实质短板，可作为该任务的锚点参考"},
+    {"min": 90, "max": 94.9, "label": "A+", "meaning": "专业且鲜明；只有轻微问题，不依赖解释也成立"},
+    {"min": 85, "max": 89.9, "label": "A", "meaning": "高质量成片；主要目标完成，仍有可见优化空间"},
+    {"min": 78, "max": 84.9, "label": "B+", "meaning": "明显好于普通作品；存在一至两个限制上限的问题"},
+    {"min": 70, "max": 77.9, "label": "B", "meaning": "合格且可用；优点成立，但完成度或统一性不足"},
+    {"min": 60, "max": 69.9, "label": "C", "meaning": "基础可辨认；问题明显，尚未达到正式商业交付"},
+    {"min": 45, "max": 59.9, "label": "D", "meaning": "核心目标部分失败，需要较大修改"},
+    {"min": 0, "max": 44.9, "label": "F", "meaning": "严重技术、审美或任务违背，不应作为成片"}
+  ],
+  "dimension_anchor_scale": {
+    "0": "该维度完全失败或不可评估却强行交付",
+    "20": "存在严重、持续且直接破坏目标的问题",
+    "40": "基本意图可见，但缺陷主导观看体验",
+    "60": "达到普通可用水平，优缺点都明显",
+    "70": "稳健合格，主要问题不致命但限制高级感",
+    "80": "专业完成度，问题局部且可修正",
+    "90": "非常成熟，具有明确控制力和辨识度",
+    "95": "可作为同类参考锚点；几乎每个关键决定都有效",
+    "100": "仅用于有明确证据证明该维度接近不可改进的特殊作品，不作为常规最高分"
+  },
+  "categories": {
+    "portrait_editorial": {
+      "description": "潮童、人像、时尚编辑、商业人物摄影及保持人物身份的修图任务",
+      "dimensions": {
+        "composition_order": {"weight": 14, "min_evidence": 2, "description": "构图、重心、空间、裁切、观看路径"},
+        "subject_state_story": {"weight": 16, "min_evidence": 2, "description": "表情、动作、人物状态、真实感和叙事张力"},
+        "light_modeling": {"weight": 15, "min_evidence": 2, "description": "主光方向、塑形、层次、动态范围和光源一致性"},
+        "color_tone": {"weight": 14, "min_evidence": 2, "description": "肤色、色温、饱和度、综合色彩关系和影调统一"},
+        "skin_material_realism": {"weight": 14, "min_evidence": 2, "description": "皮肤、头发、服装、鞋子和材质纹理的真实程度"},
+        "background_integration": {"weight": 8, "min_evidence": 1, "description": "主体与背景的透视、景深、光色和边缘融合"},
+        "commercial_completion": {"weight": 10, "min_evidence": 2, "description": "广告级精修、细节清理、系列适配和交付完成度"},
+        "originality_restraint": {"weight": 5, "min_evidence": 1, "description": "是否有明确视觉选择，同时避免俗套、过度处理和炫技"},
+        "personal_fit": {"weight": 4, "min_evidence": 1, "requires_anchors": true, "description": "与用户已确认私人审美锚点的吻合度"}
+      }
+    },
+    "food_photography": {
+      "description": "纯菜品照片、餐盒照片、菜单菜品图及食品商业摄影",
+      "dimensions": {
+        "appetite_appeal": {"weight": 20, "min_evidence": 2, "description": "是否让人产生食欲，油润、热度、鲜活感是否自然"},
+        "freshness_cleanliness": {"weight": 15, "min_evidence": 2, "description": "食材新鲜度、饭粒洁白、边缘整洁、污渍和杂乱控制"},
+        "light_texture": {"weight": 15, "min_evidence": 2, "description": "光泽、体积、质感、湿润度和高光控制"},
+        "color_realism": {"weight": 10, "min_evidence": 2, "description": "食物颜色是否真实、干净且不过饱和或发灰"},
+        "composition_focus": {"weight": 14, "min_evidence": 2, "description": "主体突出、摆放、裁切、层次和视觉动线"},
+        "styling_background": {"weight": 10, "min_evidence": 1, "description": "餐具、包装、桌面、背景与道具是否整洁并服务菜品"},
+        "commercial_completion": {"weight": 10, "min_evidence": 2, "description": "作为菜单、外卖、海报素材的清晰度和可用性"},
+        "personal_fit": {"weight": 6, "min_evidence": 1, "requires_anchors": true, "description": "与用户已确认菜品审美锚点的吻合度"}
+      }
+    },
+    "poster_design": {
+      "description": "带文字的商业海报、餐饮促销、品牌视觉、封面和菜单版式",
+      "dimensions": {
+        "information_hierarchy": {"weight": 18, "min_evidence": 2, "description": "第一眼焦点、信息顺序、重点与次要信息区分"},
+        "typography": {"weight": 15, "min_evidence": 2, "description": "字体选择、字重、字距、行距、可读性和文字准确性"},
+        "layout_grid": {"weight": 15, "min_evidence": 2, "description": "网格、对齐、比例、留白、密度和视觉平衡"},
+        "color_system": {"weight": 10, "min_evidence": 2, "description": "品牌色、对比、综合色彩控制和功能性"},
+        "imagery_quality": {"weight": 10, "min_evidence": 2, "description": "主图质量、抠图、光影、清晰度和文字图像关系"},
+        "brand_consistency": {"weight": 10, "min_evidence": 1, "description": "Logo、品牌语气、系列统一和识别度"},
+        "communication_conversion": {"weight": 12, "min_evidence": 2, "description": "是否快速传达卖点、价格、行动信息并适配使用场景"},
+        "originality_restraint": {"weight": 5, "min_evidence": 1, "description": "是否避免模板感、廉价装饰、无意义特效和视觉噪声"},
+        "personal_fit": {"weight": 5, "min_evidence": 1, "requires_anchors": true, "description": "与用户已确认海报审美锚点的吻合度"}
+      }
+    },
+    "cinematic_photo": {
+      "description": "电影感生活照片、夏日短片关键帧、环境人像、街头和叙事摄影",
+      "dimensions": {
+        "composition_space": {"weight": 15, "min_evidence": 2, "description": "构图、景别、空间关系、负空间和镜头意识"},
+        "light_atmosphere": {"weight": 15, "min_evidence": 2, "description": "自然光逻辑、氛围、时间感、层次和明暗节奏"},
+        "color_grade": {"weight": 15, "min_evidence": 2, "description": "综合色彩设计、肤色、环境色、胶片感和一致性"},
+        "story_emotion": {"weight": 16, "min_evidence": 2, "description": "瞬间、人物关系、孤独感、夏日感或其他叙事是否真实成立"},
+        "depth_visual_path": {"weight": 10, "min_evidence": 2, "description": "前中后景、焦点、透视、视觉路径和空间呼吸"},
+        "texture_realism": {"weight": 10, "min_evidence": 2, "description": "皮肤、环境、颗粒、锐度和材质是否自然"},
+        "restraint": {"weight": 7, "min_evidence": 1, "description": "是否克制，避免假电影感、青橙滥用、黑边和过度颗粒"},
+        "cinematic_coherence": {"weight": 8, "min_evidence": 2, "description": "镜头、光色、叙事与预期电影语言是否统一"},
+        "personal_fit": {"weight": 4, "min_evidence": 1, "requires_anchors": true, "description": "与用户已确认电影感审美锚点的吻合度"}
+      }
+    }
+  }
+}
