@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/shenmei/evaluation.schema.json",
+  "title": "Shenmei Aesthetic Evaluation",
+  "type": "object",
+  "required": [
+    "status",
+    "rubric_version",
+    "penalty_version",
+    "input",
+    "category",
+    "evidence_inventory",
+    "anchors_used",
+    "passes",
+    "adjudication",
+    "final_dimensions",
+    "penalties",
+    "scores",
+    "confidence",
+    "summary"
+  ],
+  "properties": {
+    "status": {"enum": ["OFFICIAL", "DRAFT", "NO_SCORE"]},
+    "rubric_version": {"type": "string"},
+    "penalty_version": {"type": "string"},
+    "input": {
+      "type": "object",
+      "required": [
+        "input_id",
+        "width_px",
+        "height_px",
+        "brief_present",
+        "reference_required",
+        "reference_present",
+        "critical_occlusion",
+        "text_check_required",
+        "text_readable",
+        "strong_compression"
+      ],
+      "properties": {
+        "input_id": {"type": "string", "minLength": 1},
+        "file_sha256": {"type": ["string", "null"]},
+        "width_px": {"type": ["integer", "null"], "minimum": 1},
+        "height_px": {"type": ["integer", "null"], "minimum": 1},
+        "brief_present": {"type": "boolean"},
+        "reference_required": {"type": "boolean"},
+        "reference_present": {"type": "boolean"},
+        "critical_occlusion": {"type": "boolean"},
+        "text_check_required": {"type": "boolean"},
+        "text_readable": {"type": "boolean"},
+        "strong_compression": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "category": {
+      "enum": ["portrait_editorial", "food_photography", "poster_design", "cinematic_photo"]
+    },
+    "evidence_inventory": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string", "minLength": 8}
+      }
+    },
+    "anchors_used": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "passes": {
+      "type": "object",
+      "required": ["A", "B"],
+      "properties": {
+        "A": {"$ref": "#/$defs/pass"},
+        "B": {"$ref": "#/$defs/pass"}
+      },
+      "additionalProperties": false
+    },
+    "adjudication": {
+      "type": "object",
+      "required": ["required", "performed", "reason", "disputed_dimensions"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "performed": {"type": "boolean"},
+        "reason": {"type": "string"},
+        "disputed_dimensions": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "final_dimensions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/dimension_result"}
+    },
+    "penalties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "points", "evidence", "non_duplicate_reason"],
+        "properties": {
+          "id": {"type": "string"},
+          "points": {"type": "number", "minimum": 0},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 8}},
+          "non_duplicate_reason": {"type": "string", "minLength": 8}
+        },
+        "additionalProperties": false
+      }
+    },
+    "scores": {
+      "type": "object",
+      "required": ["pass_a_weighted", "pass_b_weighted", "weighted_before_penalties", "penalty_total", "active_cap", "final_score", "band"],
+      "properties": {
+        "pass_a_weighted": {"type": "number", "minimum": 0, "maximum": 100},
+        "pass_b_weighted": {"type": "number", "minimum": 0, "maximum": 100},
+        "weighted_before_penalties": {"type": "number", "minimum": 0, "maximum": 100},
+        "penalty_total": {"type": "number", "minimum": 0},
+        "active_cap": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "final_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "band": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "confidence": {"type": "number", "minimum": 0.35, "maximum": 0.95},
+    "summary": {
+      "type": "object",
+      "required": ["strengths", "limiters", "edit_order", "technical_assessment", "task_compliance", "personal_fit_assessment"],
+      "properties": {
+        "strengths": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string"}},
+        "limiters": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string"}},
+        "edit_order": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "technical_assessment": {"type": "string"},
+        "task_compliance": {"type": "string"},
+        "personal_fit_assessment": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "pass": {
+      "type": "object",
+      "required": ["dimensions"],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/dimension_result"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "dimension_result": {
+      "type": "object",
+      "required": ["score", "evidence", "reasoning", "uncertainty"],
+      "properties": {
+        "score": {"type": ["integer", "null"], "minimum": 0, "maximum": 100, "multipleOf": 5},
+        "evidence": {"type": "array", "items": {"type": "string", "minLength": 8}},
+        "reasoning": {"type": "string", "minLength": 8},
+        "uncertainty": {"enum": ["low", "medium", "high"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
