@@ -12,49 +12,56 @@
 
 # A. 国内餐饮品牌案例系统
 
-凡用户提出“设计一个新方案”“每天生成一套餐饮设计”“做一个全新国内餐饮品牌”“输出整套 10 张图”等任务，必须按以下顺序读取：
+凡用户提出“设计一个新方案”“每天生成一套餐饮设计”“做一个全新国内餐饮品牌”“输出整套 10 张图”等任务，必须先读取：
 
 1. `restaurant_design_system/START_HERE.md`
-2. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
-3. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
-4. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V1.md`
-5. `restaurant_design_system/DAILY_WORKFLOW_V1.md`
-6. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
-7. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
-8. `calibration/anchors.json`
+2. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`
+3. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
+4. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
+5. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
+6. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
+7. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
+8. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
+9. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
+10. `calibration/anchors.json`
 
 ## 新方案硬门槛
 
 以下任一项缺失，不得开始批量生成：
 
-- 未选择国内餐饮品类；
-- 未选择品牌人格；
-- 未选择主视觉风格；
-- 未定义目标客群、价格带和消费场景；
-- 未定义产品驱动的设计母题；
-- 未说明与最近项目的差异；
+- 未完成品牌策略卡；
+- 未完成视觉 DNA 卡；
+- 未验证店名字标、品牌主视觉和门头或墙面主视觉三个关键触点；
+- 未读取最近五至七个项目和全局反馈；
+- 未说明与最近项目至少四项明确差异；
+- 品牌主张只有“新鲜、现炒、锅气、家常、用心、好吃不贵”等行业空话；
 - 因“不要中式”直接改成国外餐饮品牌；
-- 因效果稳定继续重复轻东方、米白底、黑字、红章或黑金模板；
-- 计划输出不是固定 10 张独立任务图；
-- 产品、文字、空间或应用仍有明显 AI 结构错误。
+- 继续重复米白轻东方、橄榄绿木色社区、黑红金属霓虹或其他近期模板；
+- 计划输出不是固定十张独立任务图；
+- 产品、文字、空间、包装或应用仍有明显 AI 结构错误。
 
-## 国内餐饮语境
+## 核心原则
 
-允许使用国际化、现代、潮流、编辑、工业、复古和生活方式设计语言，但品牌品类、中文识别、菜单、门店、消费习惯和运营逻辑必须适合中国市场，除非用户明确要求国外餐饮项目。
+- 任务是设计一个品牌，而不是生成十张好看图片；
+- 十张图必须成为同一品牌的十个证据；
+- 每张图都必须记录除 Logo 外的 `brand_evidence`；
+- 参考图只学习策略、视觉语法、材料和空间统一方法，不复制表面风格；
+- 同一母风格只能低频间隔使用，不能连续或习惯性延续；
+- 执行者必须主动提供方向、判断、审计与改进建议，不得只等用户纠错。
 
 ## 固定输出
 
-每套固定 10 张：
+每套固定十张：
 
-1. 品牌主视觉；
-2. Logo / 字标；
-3. 招牌产品；
-4. 第二产品或品牌故事；
-5. 门头；
-6. 菜单；
-7. 包装；
-8. 导视；
-9. 运营触点；
+1. 品牌主视觉海报；
+2. 店名海报 / Logo / 字标；
+3. 品牌主题海报；
+4. 招牌产品海报；
+5. 墙面海报系列；
+6. 门头 / 店名空间应用；
+7. 快餐打包盒；
+8. 纸袋与餐具包装系统；
+9. 菜单 / 桌面运营触点；
 10. 品牌视觉总览。
 
 ---
