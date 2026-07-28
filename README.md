@@ -1,55 +1,44 @@
-# shenmei — 私人审美评分系统
+# shenmei｜餐饮品牌、海报、经营与私人审美系统
 
-这是一个面向照片、潮童人像、菜品摄影、电影感画面和海报设计的 **可校准、可复核、可审计** AI 评分系统。
+本仓库现包含四个独立但可组合的系统：
 
-它不允许 AI 只凭“感觉”随意给分。每一次评分必须完成：
+1. 国内餐饮品牌案例与十图概念；
+2. 餐饮海报生成和发布级审核；
+3. 私人审美评分和校准；
+4. **Restaurant Operations Master**：单店经济、菜单、产能、供应/食安、门店试点和多店复制。
 
-1. 先做客观画面证据清单，再评分；
-2. 自动识别作品类别，使用对应权重；
-3. 两轮独立评分，分差过大必须仲裁；
-4. 使用固定的 5 分刻度和等级锚点；
-5. 对塑料皮肤、AI 变形、错误文字、光源冲突等问题执行固定扣分或封顶；
-6. 有个人参考图库时进行成对比较，没有参考图库时不得猜测“个人审美吻合度”；
-7. 评分结果必须通过本仓库的 Python 校验器，否则不得作为正式结果。
-
-## 快速开始
-
-Codex 或其他代理必须先读取：
+## 唯一入口
 
 ```text
 START_HERE.md
 ```
 
-标准执行方式：
-
-```bash
-python scripts/validate_evaluation.py path/to/evaluation.json
-```
-
-只有校验结果为 `PASS` 的记录，才是正式评分。
-
-## 目录
+## 经营系统
 
 ```text
-START_HERE.md                         强制入口
-skills/personal-aesthetic-critic/     Codex Skill
-config/rubric.v1.json                 分类权重与评分锚点
-config/penalties.v1.json              固定扣分和分数封顶
-schemas/evaluation.schema.json        输出数据结构
-scripts/validate_evaluation.py        确定性校验器
-calibration/                          私人审美参考图库与锚点
-examples/                             示例记录
+restaurant_operations_system/START_HERE.md
+skills/restaurant-operations-master/SKILL.md
+skills/restaurant-operations-master/workflows/RESTAURANT_OPERATIONS_PIPELINE_V1.md
+skills/restaurant-operations-master/config/restaurant-operations-gates.v1.json
 ```
 
-## 隐私说明
+完整闭环：
 
-评分框架本身不包含私人照片。个人照片、参考图和校准记录只应在仓库改为 Private 后上传。不要把原图、人物信息或私人审美样本放进公开仓库。
+```text
+经营契约
+→ 真实基线
+→ 单店经济和菜单工程
+→ 厨房/前厅/人员产能
+→ 顾客价值和品牌承诺
+→ 供应商/食品安全
+→ 六个独立面板
+→ 小规模试点
+→ 分批推广和例外管理
+→ 因果复盘与标准化
+```
 
-## 核心原则
+餐饮经营与餐饮设计分开审查。活动既要经济和执行成立，也要视觉、文字和发布质量通过。
 
-- **分数必须由证据支持**，不能用空泛形容词替代证据。
-- **技术质量、任务完成度、个人偏好必须分开**。
-- **90 分以上代表极少数真正完成度很高的作品**，不是“看起来不错”。
-- **同一张图重复评估的正式分数差应不超过 3 分**；超过则进入仲裁。
-- **参考图匹配任务先评价是否忠实，再评价是否漂亮**。
-- **不强行制造正态分布，也不为了鼓励而抬分**。
+## 隐私
+
+仓库公开时只保存框架、脱敏模板和聚合证据，不上传真实流水、员工、合同、供应价格、账号或私人校准照片。

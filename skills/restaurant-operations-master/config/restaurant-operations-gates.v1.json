@@ -1,0 +1,16 @@
+{
+  "schema_version":"restaurant_operations_gates_v1",
+  "principles":{"baseline_before_solution":true,"contribution_before_revenue":true,"food_safety_blocker":true,"independent_store_panels":true,"pilot_before_rollout":true,"single_store_success_not_standard":true},
+  "gates":[
+    {"id":"G0","name":"decision_contract","checks":["problem","scope","customer","time","objectives","guardrails","max_loss"],"on_fail":"DATA_INCOMPLETE"},
+    {"id":"G1","name":"baseline","checks":["pos","cost","labor","waste","channel","service","data_quality"],"on_fail":"DIAGNOSIS_ONLY"},
+    {"id":"G2","name":"unit_economics","checks":["net_revenue","contribution","cannibalization","break_even","worst_case"],"on_fail":"PILOT_FORBIDDEN"},
+    {"id":"G3","name":"menu_capacity_service","checks":["menu_role","bottleneck","peak_stress","labor","quality"],"on_fail":"REVISE_DESIGN"},
+    {"id":"G4","name":"customer_brand","checks":["customer_job","value_clear","behavior_change","repeat","brand_guardrail"],"on_fail":"HYPOTHESIS_ONLY"},
+    {"id":"G5","name":"supplier_food_safety","checks":["qualification","traceability","temperature","process","records","emergency"],"on_fail":"STOP"},
+    {"id":"G6","name":"independent_panel","checks":["customer","front","kitchen","finance","brand","safety","locked"],"on_fail":"REVIEW_REQUIRED"},
+    {"id":"G7","name":"pilot","checks":["representative_stores","baseline","hypothesis","primary_metric","guardrails","max_loss","stop_rule"],"on_fail":"NOT_PILOT_READY"},
+    {"id":"G8","name":"rollout","checks":["pilot_pass","sop","training","systems","exceptions","staged_rollout"],"on_fail":"ROLLOUT_FORBIDDEN"},
+    {"id":"G9","name":"postmortem","checks":["frozen_plan","execution","layered_results","external_factors","replication"],"on_fail":"STANDARD_NOT_VALIDATED"}
+  ]
+}
