@@ -1,0 +1,26 @@
+name: Validate Restaurant Operations Master
+
+on:
+  pull_request:
+    paths:
+      - "skills/restaurant-operations-master/**"
+      - "restaurant_operations_system/**"
+      - "START_HERE.md"
+  push:
+    branches-ignore: [main]
+    paths:
+      - "skills/restaurant-operations-master/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m py_compile skills/restaurant-operations-master/scripts/validate_master_record.py
+      - run: python skills/restaurant-operations-master/scripts/validate_master_record.py skills/restaurant-operations-master/examples/diagnosis_only_record.json
