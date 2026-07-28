@@ -1,6 +1,6 @@
 # 国内餐饮品牌案例系统 — 强制入口
 
-版本：`2.0.0`
+版本：`2.1.0`
 状态：`MANDATORY`
 
 本项目用于持续生产面向中国餐饮市场的小红书品牌设计案例。目标不是长期生成单一中式审美，也不是默认改造成国外餐饮品牌，更不是批量制造十张相似图片；目标是在真实国内餐饮语境中设计具有品牌策略、视觉 DNA、真实应用逻辑和低 AI 痕迹的完整品牌系统。
@@ -10,14 +10,25 @@
 任何 AI、Codex 或人工执行者在生成新的国内餐饮品牌方案前，必须依次读取：
 
 1. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`
-2. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
-3. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
-4. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
-5. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
-6. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
-7. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
-8. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
-9. `calibration/anchors.json`
+2. `restaurant_design_system/PHASED_DELIVERY_RULES_V1.md`
+3. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
+4. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
+5. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
+6. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
+7. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
+8. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
+9. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
+10. `calibration/anchors.json`
+
+## 阶段路由
+
+开始前必须先判断当前任务属于哪个阶段：
+
+- `CONCEPT_SET`：默认阶段。用于每日自动方案、作品集方向探索和没有真实项目资料的任务；
+- `DESIGN_DEVELOPMENT`：用户选中某套概念后进入，完成真实字体排版、矢量化、4K 正式输出和应用精修；
+- `PRODUCTION_READY`：只有取得真实门店尺寸、包装刀版、菜单数据、材料工艺和实际菜品资料后才能进入。
+
+不得把真实矢量字标、1:20 施工图、包装生产刀版或真实菜品摄影错误地设为每日概念方案的前置硬门槛。也不得把概念图冒充生产终稿。
 
 ## 每个新项目必须先完成
 
@@ -42,17 +53,25 @@
 6. 材料规则；
 7. 品牌口吻。
 
-缺少任一部分，不得开始批量生成。
+缺少任一部分，不得开始十图概念生成。
 
 ## 三个关键触点先行
 
-完整十图前必须先验证：
+完整十图前必须先完成概念级验证：
 
-1. 店名字标 / Logo；
-2. 品牌主视觉海报；
-3. 门头或墙面主视觉。
+1. 店名字标 / Logo 方向；
+2. 品牌主视觉海报方向；
+3. 门头或墙面主视觉方向。
 
-三者必须明显属于同一品牌，并且品牌主张、字体、色彩和图形母题稳定。任一失败，项目只能保持 `PLANNED` 或 `CONCEPT`。
+概念级验证可以由以下内容构成：
+
+- 可进一步矢量化的字标方向；
+- 明确的字体骨架、字面比例和图形融合逻辑；
+- 品牌主海报的画布比例、安全边距、标题与产品占比、阅读顺序和对齐原则；
+- 无实测尺寸的门头立面概念，包括远距离识别、发光方式、材料和入口关系；
+- 通过结构与材质审计的 AI 产品概念视觉。
+
+概念阶段不要求真实 SVG、真实 1:20 施工图、包装刀版或真实摄影。三项只需证明品牌策略和视觉 DNA 可以稳定延展；若不成立，项目保持 `PLANNED`，不得继续十图。
 
 ## 四条最高优先级硬规则
 
@@ -83,13 +102,13 @@
 
 - 产品结构、材质、空间、包装和文字必须真实；
 - 禁止伪中文、假价格、重复食材、塑料食物、错误透视和统一模板感；
-- AI 生成图只可作为素材或概念探索；
-- 正式 Logo、中文标题、菜单价格、包装刀版、门头和导视应使用真实字体、Figma、Adobe 或矢量路径；
+- AI 图在 `CONCEPT_SET` 阶段可以作为产品、空间和氛围概念素材，但必须诚实标注；
+- 正式 Logo、中文排版、菜单价格、包装刀版、门头和导视在 `DESIGN_DEVELOPMENT` 或 `PRODUCTION_READY` 阶段使用真实字体、Figma、Adobe 或矢量路径；
 - 未达到实际 4K 像素与 100% 放大检查要求，不得标记 `READY_TO_POST`。
 
 ## 标准输出
 
-每个品牌固定输出十张独立图片：
+每个品牌固定输出十张独立概念图片：
 
 1. 品牌主视觉海报；
 2. 店名海报 / Logo / 字标；
@@ -113,17 +132,21 @@
 - 近期必须避开的模板；
 - 品牌策略卡；
 - 视觉 DNA 卡；
-- 三个关键触点验证结论；
+- 三个关键触点的概念级验证结论；
 - 十张图的品牌证据；
-- 风险和改进建议。
+- 当前交付阶段；
+- 风险、依赖和下一阶段改进建议。
 
-不得长期等待用户逐项指出问题。若品牌策略或视觉 DNA 不成立，应主动停止批量生成。
+不得长期等待用户逐项指出问题。若品牌策略或视觉 DNA 不成立，应主动停止十图生成。
 
 ## 项目状态
 
 - `PLANNED`：策略卡与视觉 DNA 已定义；
-- `CONCEPT`：方向探索，关键触点或文字仍未验证；
-- `DRAFT`：已成套，但存在排版、真实感、品牌证据或 4K 问题；
+- `CONCEPT`：单项方向探索；
+- `CONCEPT_SET`：十张品牌概念图与概念审计完成；
+- `DESIGN_DEVELOPMENT`：选中方案已进入真实字体、矢量、网格、4K 和应用精修；
+- `DRAFT`：深化稿尚未通过发布审计；
 - `READY_TO_POST`：单图通过真实感、文字、设计与实际 4K；
-- `READY_TO_POST_SET`：十张全部通过；
+- `READY_TO_POST_SET`：十张全部达到发布级标准；
+- `PRODUCTION_READY`：真实尺寸、刀版、菜单数据、材料和供应商要求全部满足；
 - `REJECTED`：产品、品牌逻辑、反重复、AI 痕迹或应用逻辑不合格。
