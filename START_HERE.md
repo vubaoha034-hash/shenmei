@@ -12,26 +12,35 @@
 
 # A. 国内餐饮品牌案例系统
 
-凡用户提出“设计一个新方案”“每天生成一套餐饮设计”“做一个全新国内餐饮品牌”“输出整套 10 张图”等任务，必须先读取：
+凡用户提出“设计一个新方案”“每天生成一套餐饮设计”“做一个全新国内餐饮品牌”“输出整套十张图”等任务，必须先读取：
 
 1. `restaurant_design_system/START_HERE.md`
 2. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`
-3. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
-4. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
-5. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
-6. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
-7. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
-8. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
-9. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
-10. `calibration/anchors.json`
+3. `restaurant_design_system/PHASED_DELIVERY_RULES_V1.md`
+4. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
+5. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
+6. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
+7. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
+8. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
+9. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
+10. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
+11. `calibration/anchors.json`
 
-## 新方案硬门槛
+## 阶段路由
 
-以下任一项缺失，不得开始批量生成：
+- 默认每日任务与无真实客户资料的任务：`CONCEPT_SET`；
+- 用户选中方案并要求精修：`DESIGN_DEVELOPMENT`；
+- 获得真实门店尺寸、包装刀版、菜单数据、材料工艺和实际菜品资料：`PRODUCTION_READY`。
+
+不得把真实矢量字标、1:20 施工图、包装厂刀版或真实菜品摄影设为每日概念方案的前置硬门槛。不得把概念效果图描述为施工图、印刷稿或生产终稿。
+
+## 新方案概念阶段硬门槛
+
+以下任一项缺失，不得开始十图概念生成：
 
 - 未完成品牌策略卡；
 - 未完成视觉 DNA 卡；
-- 未验证店名字标、品牌主视觉和门头或墙面主视觉三个关键触点；
+- 未完成店名字标方向、品牌主视觉方向、门头或墙面方向的概念级验证；
 - 未读取最近五至七个项目和全局反馈；
 - 未说明与最近项目至少四项明确差异；
 - 品牌主张只有“新鲜、现炒、锅气、家常、用心、好吃不贵”等行业空话；
@@ -39,6 +48,14 @@
 - 继续重复米白轻东方、橄榄绿木色社区、黑红金属霓虹或其他近期模板；
 - 计划输出不是固定十张独立任务图；
 - 产品、文字、空间、包装或应用仍有明显 AI 结构错误。
+
+概念阶段允许：
+
+- 可进一步矢量化的字标方向；
+- 明确但尚未建立正式 Figma 文件的版式网格；
+- 无实测尺寸的门头立面概念；
+- 尚未取得真实刀版的合理包装概念；
+- 通过结构和材质审计的 AI 产品概念视觉。
 
 ## 核心原则
 
@@ -64,11 +81,13 @@
 9. 菜单 / 桌面运营触点；
 10. 品牌视觉总览。
 
+每日完成十张概念图并通过审计后，状态为 `CONCEPT_SET`。低于 4K 的概念预览必须披露实际尺寸，但不因未达到正式 4K 而阻止概念阶段完成。
+
 ---
 
 # B. 餐饮海报图片生成强制入口
 
-凡涉及生成、设计、修改、批量生产、放大、排版、交付或发布餐饮海报，必须按以下顺序读取：
+凡涉及生成、设计、修改、批量生产、放大、排版、交付或发布餐饮海报，必须读取：
 
 1. `skills/restaurant-poster-art-director/SKILL.md`
 2. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
@@ -76,46 +95,33 @@
 4. `calibration/README.md`
 5. `calibration/anchors.json`
 
-## 图片生成硬门槛
+## 图片状态边界
+
+- `CONCEPT` / `CONCEPT_SET`：方向和概念探索，允许未完成正式字体、矢量和 4K；
+- `DRAFT`：已进入深化但尚未通过正式审计；
+- `READY_TO_POST`：单图产品、设计、文字、实际 4K 和 100% 放大检查全部通过；
+- `READY_TO_POST_SET`：十张全部达到发布级标准；
+- `PRODUCTION_READY`：真实尺寸、刀版、菜单数据、材料和供应商要求全部满足；
+- `REJECTED`：产品真实感、结构、品牌逻辑或设计逻辑失败。
+
+## READY_TO_POST 硬门槛
 
 以下任一条件不满足，不得标记为 `READY_TO_POST`：
 
-- 没有明确风格方向；
-- 批量生成时没有提前分配风格配额；
 - 产品没有参与设计逻辑，只是贴进模板；
-- 鱼体、肉类、配料、器皿、烟雾或水存在明显 AI 结构错误；
+- 产品、配料、器皿、烟雾或水存在明显 AI 结构错误；
 - 中文标题、Logo、价格或关键信息仍是 AI 伪文字；
 - 水、烟、火或产品状态缺乏物理逻辑；
 - 使用重复模板，仅更换颜色或角度；
 - 实际文件未达到目标 4K 像素；
 - 未完成 100% 放大检查；
-- 仍存在塑料感、蜡质感、过度 HDR、假油光或复制配料。
-
-## 图片生成状态
-
-- `READY_TO_POST`：产品、设计、文字、4K 和放大检查全部通过；
-- `CONCEPT`：仅用于方向探索；
-- `DRAFT`：排版、4K 或验证尚未完成；
-- `REJECTED`：产品真实感、结构或设计逻辑失败。
-
-## 标准图片生成流程
-
-1. 明确品牌、品类、平台、数量和目标尺寸；
-2. 预先分配不同风格方向，禁止默认全部中式；
-3. 为每张图写出产品驱动的设计来源；
-4. 先生成或选择真实可信的菜品主视觉；
-5. 淘汰产品结构、配料、器皿或烟雾不合格的主视觉；
-6. 使用通过的字标和真实字体完成正式排版；
-7. 克制融入水、烟、火、产品形态或产品结构；
-8. 输出并验证实际 4K 文件；
-9. 100% 放大检查产品、文字和边缘；
-10. 记录用户反馈并更新私人审美锚点与失败清单。
+- 存在塑料感、蜡质感、过度 HDR、假油光或复制配料。
 
 ---
 
 # C. 私人审美评分强制入口
 
-任何 AI、Codex 或人工评审者在正式评分前，必须按以下顺序读取并执行：
+正式评分前必须读取：
 
 1. `skills/personal-aesthetic-critic/SKILL.md`
 2. `config/rubric.v1.json`
@@ -125,111 +131,23 @@
 
 ## 正式评分硬门槛
 
-以下任一条件不满足，结果只能标记为 `DRAFT`，不得称为正式评分：
+以下任一条件不满足，只能标记 `DRAFT` 或 `NO_SCORE`：
 
 - 没有明确作品类别；
 - 没有逐项画面证据；
 - 没有两轮独立评分；
 - 两轮总分差大于 4 分但没有仲裁；
 - 任一维度分差大于 10 分但没有仲裁；
-- 使用了未登记的扣分项；
-- `personal_fit` 在没有私人锚点时被擅自打分；
+- 使用未登记扣分项；
+- 没有有效同类别锚点却评分 `personal_fit`；
 - 最终 JSON 未通过 `scripts/validate_evaluation.py`；
-- 图片过小、严重压缩或关键区域不可见，却仍输出精确分数；
-- 参考风格任务没有参考图，却评价“参考吻合度”。
+- 图片质量不足却输出精确分数；
+- 没有参考图却评价参考吻合度。
 
-## 标准评分流程
-
-### 1. 输入检查
-
-记录：
-
-- 文件名或输入 ID；
-- 图片尺寸；
-- 是否有原图；
-- 是否有任务说明；
-- 是否有参考图；
-- 是否为单图、组图或修图前后对比；
-- 是否要求保持人物身份、菜品结构、文字内容或版式结构。
-
-如果关键输入不足，先输出 `NO_SCORE` 和缺失项，不得硬猜。
-
-### 2. 盲观察
-
-在看评分标准前，先写客观证据清单：
-
-- 主体和位置；
-- 光源方向、软硬、动态范围；
-- 色温、饱和度、主色关系；
-- 构图、留白、视觉重心和观看顺序；
-- 皮肤、头发、衣服、食物、材质和背景纹理；
-- 明显技术问题、AI 痕迹和任务违背。
-
-这一阶段不能出现“高级、舒服、漂亮、难看”等纯结论词，除非后面紧跟可见证据。
-
-### 3. 分类
-
-只能从以下类别中选择一个主类别：
-
-- `portrait_editorial`
-- `food_photography`
-- `poster_design`
-- `cinematic_photo`
-
-混合任务选择最终交付物的主要用途。例如：带文字的商业菜品海报使用 `poster_design`，纯菜品照片使用 `food_photography`。
-
-### 4. 两轮独立评分
-
-- **Pass A：技术与形式盲评**。不参考用户喜好，只看画面证据和通用专业标准。
-- **Pass B：任务与意图评估**。结合 brief、参考图、品牌目标和使用场景。
-
-两轮都必须独立填写全部适用维度，分数只能使用 0、5、10……100。
-
-### 5. 仲裁
-
-出现以下任一情况必须做 Pass C：
-
-- 两轮加权总分差大于 4；
-- 任一维度差大于 10；
-- 一轮认为存在致命问题，另一轮没有；
-- 评分与锚点排序冲突。
-
-仲裁不能简单取平均，必须指出分歧原因，并为每个冲突维度选择有证据的一方或重新给出 5 分刻度分数。
-
-### 6. 扣分与封顶
-
-先计算维度加权分，再根据 `config/penalties.v1.json` 扣分，最后应用最严格的分数封顶。
-
-同一视觉缺陷不得以不同名称重复扣分。若一个问题已经通过维度低分充分反映，只在它属于明确的致命错误时额外扣分。
-
-### 7. 私人审美校准
-
-只有 `calibration/anchors.json` 中存在同类别有效锚点时，才能评 `personal_fit`。
-
-- 少于 3 个锚点：`personal_fit = null`；
-- 3–7 个锚点：低置信度；
-- 8 个以上且含喜欢、一般、不喜欢三个区间：可正式计分；
-- 每次必须列出实际使用的锚点 ID。
-
-没有锚点时，校验器会移除 `personal_fit` 权重，并对其余维度重新归一化，禁止用 50 分代替。
-
-### 8. 校验
-
-保存结果为 JSON，然后运行：
+保存评分 JSON 后运行：
 
 ```bash
 python scripts/validate_evaluation.py evaluation.json
 ```
 
-只有输出 `PASS` 才能交付正式分数。
-
-## 评分输出要求
-
-最终对用户展示：
-
-1. 最终分数、等级、置信度；
-2. 最影响分数的 3 个证据；
-3. 最严重的 3 个问题；
-4. 具体可执行的修改顺序；
-5. 技术质量、任务完成度、个人偏好分别说明；
-6. 若是多张图，先给排序，再给分数。
+只有输出 `PASS` 才能交付 `OFFICIAL` 评分。
