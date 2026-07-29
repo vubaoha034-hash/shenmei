@@ -1,5 +1,28 @@
 {
-  "version": "1.0.0",
-  "updated_at": null,
+  "version": "2.0.0",
+  "updated_at": "2026-07-29",
+  "status": "PERSONAL_CALIBRATION_PENDING",
+  "stable_source_types": [
+    "github_path",
+    "figma_node",
+    "stable_url"
+  ],
+  "minimums": {
+    "personal_fit_enabled_at": 3,
+    "formal_calibration_recommended_at": 8,
+    "recommended_first_set": 12,
+    "required_labels_for_formal_calibration": {
+      "approved": 2,
+      "neutral": 2,
+      "rejected": 2
+    }
+  },
+  "rules": {
+    "temporary_urls_are_invalid": true,
+    "text_only_records_are_not_visual_anchors": true,
+    "reference_is_not_automatically_approved": true,
+    "personal_fit_must_be_null_when_insufficient": true,
+    "pairwise_reference_vs_rejected_comparison_required": true
+  },
   "anchors": []
 }
