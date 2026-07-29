@@ -1,9 +1,9 @@
 # 国内餐饮品牌案例系统 — 强制入口
 
-版本：`2.1.0`
+版本：`2.2.0`
 状态：`MANDATORY`
 
-本项目用于持续生产面向中国餐饮市场的小红书品牌设计案例。目标不是长期生成单一中式审美，也不是默认改造成国外餐饮品牌，更不是批量制造十张相似图片；目标是在真实国内餐饮语境中设计具有品牌策略、视觉 DNA、真实应用逻辑和低 AI 痕迹的完整品牌系统。
+本项目用于持续生产面向中国餐饮市场的小红书品牌设计案例。目标不是长期生成单一中式审美，也不是默认改造成国外餐饮品牌，更不是批量制造十张相似图片；目标是在真实国内餐饮语境中设计具有品牌策略、视觉 DNA、真实应用逻辑、低 AI 痕迹和专业作品集呈现的完整品牌系统。
 
 ## 强制读取顺序
 
@@ -11,14 +11,17 @@
 
 1. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`
 2. `restaurant_design_system/PHASED_DELIVERY_RULES_V1.md`
-3. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
-4. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
-5. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
-6. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
-7. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
-8. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
-9. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
-10. `calibration/anchors.json`
+3. `restaurant_design_system/PORTFOLIO_PRESENTATION_RULES_V1.md`
+4. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
+5. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
+6. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
+7. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
+8. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
+9. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
+10. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
+11. `calibration/anchors.json`
+
+任何每日自动任务、手动新方案任务或十图任务若未读取 `PORTFOLIO_PRESENTATION_RULES_V1.md`，不得开始生成。
 
 ## 阶段路由
 
@@ -53,7 +56,19 @@
 6. 材料规则；
 7. 品牌口吻。
 
-缺少任一部分，不得开始十图概念生成。
+### C. 十页作品集故事板
+
+每页必须预先写明：
+
+- `chapter`；
+- `page_goal`；
+- `hero_visual`；
+- `supporting_details`；
+- `application_proof`；
+- `brand_evidence`；
+- `layout_archetype`。
+
+缺少品牌策略卡、视觉 DNA 卡或十页故事板中的任一部分，不得开始十图概念生成。
 
 ## 三个关键触点先行
 
@@ -73,7 +88,7 @@
 
 概念阶段不要求真实 SVG、真实 1:20 施工图、包装刀版或真实摄影。三项只需证明品牌策略和视觉 DNA 可以稳定延展；若不成立，项目保持 `PLANNED`，不得继续十图。
 
-## 四条最高优先级硬规则
+## 五条最高优先级硬规则
 
 ### 1. 国内餐饮语境
 
@@ -98,30 +113,39 @@
 - 若除 Logo 外无法证明属于该品牌，该图直接 `REJECTED`；
 - 参考图只学习品牌策略、视觉语法、材料和空间统一方法，不复制表面风格。
 
-### 4. 去除 AI 味
+### 4. 作品集式呈现
+
+- 十张必须是十张独立的品牌提案页面，而不是十张孤立广告海报；
+- 每页只讲一个章节，但允许在该章节内呈现主图、细节和相关应用；
+- 十页必须共享原创页码、页眉或页脚、安全边距、字体层级和图像处理规则；
+- 一套至少使用四种版式原型，不能十页全部套同一模板；
+- 禁止一张总拼贴板替代十页，也禁止复制参考案例的水印、设计公司署名、二维码、电话和页面壳。
+
+### 5. 去除 AI 味
 
 - 产品结构、材质、空间、包装和文字必须真实；
 - 禁止伪中文、假价格、重复食材、塑料食物、错误透视和统一模板感；
 - AI 图在 `CONCEPT_SET` 阶段可以作为产品、空间和氛围概念素材，但必须诚实标注；
+- 展示页中的页码、章节名、项目名、主文案和状态必须使用真实字体排版；
 - 正式 Logo、中文排版、菜单价格、包装刀版、门头和导视在 `DESIGN_DEVELOPMENT` 或 `PRODUCTION_READY` 阶段使用真实字体、Figma、Adobe 或矢量路径；
 - 未达到实际 4K 像素与 100% 放大检查要求，不得标记 `READY_TO_POST`。
 
-## 标准输出
+## 标准十页章节
 
-每个品牌固定输出十张独立概念图片：
+每个品牌固定输出十张独立作品集页面：
 
-1. 品牌主视觉海报；
-2. 店名海报 / Logo / 字标；
-3. 品牌主题海报；
-4. 招牌产品海报；
-5. 墙面海报系列；
-6. 门头 / 店名空间应用；
-7. 快餐打包盒；
-8. 纸袋与餐具包装系统；
-9. 菜单 / 桌面运营触点；
-10. 品牌视觉总览。
+1. 品牌概念与主视觉；
+2. 店名海报 / Logo / 字标 / 超级符号；
+3. 视觉 DNA：色彩、材质、图形与插画；
+4. 招牌产品与产品视觉系统；
+5. 快餐打包盒与包装系统；
+6. 品牌主题海报与墙面海报系列；
+7. 食材来源 / 工艺 / 地域 / 品牌故事；
+8. 门头与空间应用；
+9. 菜单、员工服与运营触点；
+10. 品牌视觉总览与收尾。
 
-不得用一张拼贴图替代十张独立设计。
+十页必须是十个独立文件。每页可以展示多个同章节物料，但不得混合无关章节，不得用一张拼贴图替代十页。
 
 ## 主动创意总监义务
 
@@ -132,21 +156,23 @@
 - 近期必须避开的模板；
 - 品牌策略卡；
 - 视觉 DNA 卡；
+- 十页作品集故事板；
 - 三个关键触点的概念级验证结论；
 - 十张图的品牌证据；
+- 单页与整套作品集审计；
 - 当前交付阶段；
 - 风险、依赖和下一阶段改进建议。
 
-不得长期等待用户逐项指出问题。若品牌策略或视觉 DNA 不成立，应主动停止十图生成。
+不得长期等待用户逐项指出问题。若品牌策略、视觉 DNA、触点一致性或十页故事板不成立，应主动停止十图生成。
 
 ## 项目状态
 
-- `PLANNED`：策略卡与视觉 DNA 已定义；
+- `PLANNED`：策略卡、视觉 DNA 和十页故事板已定义；
 - `CONCEPT`：单项方向探索；
-- `CONCEPT_SET`：十张品牌概念图与概念审计完成；
+- `CONCEPT_SET`：十张品牌作品集概念页面与相关审计完成；
 - `DESIGN_DEVELOPMENT`：选中方案已进入真实字体、矢量、网格、4K 和应用精修；
 - `DRAFT`：深化稿尚未通过发布审计；
 - `READY_TO_POST`：单图通过真实感、文字、设计与实际 4K；
 - `READY_TO_POST_SET`：十张全部达到发布级标准；
 - `PRODUCTION_READY`：真实尺寸、刀版、菜单数据、材料和供应商要求全部满足；
-- `REJECTED`：产品、品牌逻辑、反重复、AI 痕迹或应用逻辑不合格。
+- `REJECTED`：产品、品牌逻辑、反重复、作品集呈现、AI 痕迹或应用逻辑不合格。
