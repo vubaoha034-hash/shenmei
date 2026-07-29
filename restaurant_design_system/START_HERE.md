@@ -1,138 +1,141 @@
 # 国内餐饮品牌案例系统 — 强制入口
 
-版本：`2.2.0`
+版本：`3.0.0`
 状态：`MANDATORY`
 
-本项目用于持续生产面向中国餐饮市场的小红书品牌设计案例。目标不是长期生成单一中式审美，也不是默认改造成国外餐饮品牌，更不是批量制造十张相似图片；目标是在真实国内餐饮语境中设计具有品牌策略、视觉 DNA、真实应用逻辑、低 AI 痕迹和专业作品集呈现的完整品牌系统。
+本系统用于生产面向中国餐饮市场的高质量品牌案例。核心目标不是生成十张好看的 AI 图片，而是建立一个有商业逻辑、专属品牌发动机、真实视觉素材、可编辑 Figma 排版、审美闸门和连续作品集叙事的品牌系统。
 
-## 强制读取顺序
+## 1. 最高优先级流程
 
-任何 AI、Codex 或人工执行者在生成新的国内餐饮品牌方案前，必须依次读取：
+任何新品牌、每日方案、三页验证或十页项目，必须首先读取：
 
-1. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`
-2. `restaurant_design_system/PHASED_DELIVERY_RULES_V1.md`
-3. `restaurant_design_system/PORTFOLIO_PRESENTATION_RULES_V1.md`
-4. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`
-5. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`
-6. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`
-7. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`
-8. `restaurant_design_system/DAILY_WORKFLOW_V2.md`
-9. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`
-10. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`
-11. `calibration/anchors.json`
+1. `restaurant_design_system/FIGMA_FIRST_NO_ADOBE_PIPELINE_V1.md`；
+2. `restaurant_design_system/GLOBAL_FEEDBACK_RULES_V1.md`；
+3. `restaurant_design_system/PHASED_DELIVERY_RULES_V1.md`；
+4. `restaurant_design_system/PORTFOLIO_PRESENTATION_RULES_V1.md`；
+5. `restaurant_design_system/BRAND_CREATIVE_DIRECTOR_RULES_V2.md`；
+6. `restaurant_design_system/DOMESTIC_RESTAURANT_DIRECTION_LIBRARY_V1.md`；
+7. `restaurant_design_system/STYLE_PERSONA_MATRIX_V1.md`；
+8. `restaurant_design_system/OUTPUT_STRUCTURE_10_IMAGES_V2.md`；
+9. `restaurant_design_system/DAILY_WORKFLOW_V2.md`；
+10. `restaurant_design_system/config/domestic-restaurant-directions.v1.json`；
+11. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`，仅用于产品真实感与单张海报规则；
+12. `calibration/README.md` 与 `calibration/anchors.json`。
 
-任何每日自动任务、手动新方案任务或十图任务若未读取 `PORTFOLIO_PRESENTATION_RULES_V1.md`，不得开始生成。
+并按顺序执行以下 Skill：
 
-## 阶段路由
+1. `skills/restaurant-brand-concept-director/SKILL.md`；
+2. `skills/restaurant-image-material-director/SKILL.md`；
+3. `skills/restaurant-brand-portfolio-layout/SKILL.md`；
+4. `skills/restaurant-brand-aesthetic-gate/SKILL.md`；
+5. `skills/personal-aesthetic-critic/SKILL.md`。
 
-开始前必须先判断当前任务属于哪个阶段：
+未读取 Figma-First 总控文件，禁止生成任何品牌页面。
 
-- `CONCEPT_SET`：默认阶段。用于每日自动方案、作品集方向探索和没有真实项目资料的任务；
-- `DESIGN_DEVELOPMENT`：用户选中某套概念后进入，完成真实字体排版、矢量化、4K 正式输出和应用精修；
-- `PRODUCTION_READY`：只有取得真实门店尺寸、包装刀版、菜单数据、材料工艺和实际菜品资料后才能进入。
+## 2. 工具分工
 
-不得把真实矢量字标、1:20 施工图、包装生产刀版或真实菜品摄影错误地设为每日概念方案的前置硬门槛。也不得把概念图冒充生产终稿。
+### 品牌概念
 
-## 每个新项目必须先完成
+由品牌概念 Skill 完成：近期审计、候选方向、品牌设计发动机、策略卡、视觉 DNA 和三页验证 brief。
 
-### A. 品牌策略卡
+### 图像生成
 
-1. 国内餐饮品类；
-2. 核心客群；
-3. 价格带；
-4. 消费时段与场景；
-5. 一句具体品牌主张；
-6. 一个专属品牌故事；
-7. 与同类品牌的真实差异；
-8. 最近项目中必须避开的模板。
+`image_gen` 只允许生成无文字素材：
 
-### B. 视觉 DNA 卡
+- 菜品；
+- 食材；
+- 工艺；
+- 材料；
+- 空白包装概念；
+- 空间氛围概念；
+- 插画或图形草案。
 
-1. Logo 逻辑；
-2. 字形规则；
-3. 色彩系统；
-4. 核心图形母题；
-5. 摄影规则；
-6. 材料规则；
-7. 品牌口吻。
+禁止直接生成完整品牌页面、中文 Logo、十页作品集、菜单、价格和大段文字。
 
-### C. 十页作品集故事板
+### Figma
 
-每页必须预先写明：
+Figma 必须负责：
 
-- `chapter`；
-- `page_goal`；
-- `hero_visual`；
-- `supporting_details`；
-- `application_proof`；
-- `brand_evidence`；
-- `layout_archetype`。
+- 真实中文排版；
+- Logo/字标方向；
+- 变量与组件；
+- 三页概念验证；
+- 十页作品集；
+- 节点 ID 与导出尺寸记录。
 
-缺少品牌策略卡、视觉 DNA 卡或十页故事板中的任一部分，不得开始十图概念生成。
+无 Figma 文件 URL 和页面节点 ID，不得标记 `CONCEPT_SET`。
 
-## 三个关键触点先行
+### Adobe
 
-完整十图前必须先完成概念级验证：
+Adobe 不是依赖，也不是前置条件。Adobe 授权或服务失败不得阻塞本流程。
 
-1. 店名字标 / Logo 方向；
-2. 品牌主视觉海报方向；
-3. 门头或墙面主视觉方向。
+## 3. 强制阶段
 
-概念级验证可以由以下内容构成：
+### A. 近期审计
 
-- 可进一步矢量化的字标方向；
-- 明确的字体骨架、字面比例和图形融合逻辑；
-- 品牌主海报的画布比例、安全边距、标题与产品占比、阅读顺序和对齐原则；
-- 无实测尺寸的门头立面概念，包括远距离识别、发光方式、材料和入口关系；
-- 通过结构与材质审计的 AI 产品概念视觉。
+读取最近 7 个项目，至少比较：
 
-概念阶段不要求真实 SVG、真实 1:20 施工图、包装刀版或真实摄影。三项只需证明品牌策略和视觉 DNA 可以稳定延展；若不成立，项目保持 `PLANNED`，不得继续十图。
+- 品类；
+- 品牌人格；
+- 主风格；
+- 主色；
+- 字体气质；
+- 图形母题；
+- 摄影；
+- 包装；
+- 门头与空间；
+- 作品集页面骨架。
 
-## 五条最高优先级硬规则
+新方案至少更换 4 项，且主风格、主色或人格至少更换 2 项。
 
-### 1. 国内餐饮语境
+### B. 品牌设计发动机
 
-- 品类、消费场景、菜单结构、门店运营和顾客认知必须适合中国市场；
-- 可以使用国际化、现代、编辑、潮流、工业、地域或生活方式设计语言；
-- 不得因为“不要中式”就直接变成国外餐饮品牌；
-- 除非用户明确要求，中文品牌名必须是主要识别名称。
+推荐方向必须形成：
 
-### 2. 反重复样式
+`产品事实 + 经营规则 + 品牌观点 + 视觉机制`
 
-- 同一个样式只能偶尔出现，绝不能连续、频繁或习惯性延续；
-- 新方案必须像新方案，不得只换品牌名、菜品或颜色；
-- 必须读取最近五套，至少在品类、人格、主色、字体、版式、母题、摄影、门头、包装和空间中明显更换四项；
-- 主风格、主色或品牌人格至少更换两项；
-- 必须执行 `GLOBAL_FEEDBACK_RULES_V1.md` 中的禁止与低频方向。
+只有名称、口号、产品轮廓和统一颜色的方案不合格。
 
-### 3. 品牌系统优先
+### C. 无文字素材
 
-- 任务是设计一个品牌，而不是生成十张好看图片；
-- 十张图必须成为同一品牌的十个证据；
-- 每张图必须记录 `brand_evidence`；
-- 若除 Logo 外无法证明属于该品牌，该图直接 `REJECTED`；
-- 参考图只学习品牌策略、视觉语法、材料和空间统一方法，不复制表面风格。
+先建立 `ASSET_PLAN.md`，再逐张生成和审计。含伪文字、错误产品结构、塑料食物、假蒸汽、错误包装或空间透视的素材直接淘汰。
 
-### 4. 作品集式呈现
+### D. 三页 Figma 验证
 
-- 十张必须是十张独立的品牌提案页面，而不是十张孤立广告海报；
-- 每页只讲一个章节，但允许在该章节内呈现主图、细节和相关应用；
-- 十页必须共享原创页码、页眉或页脚、安全边距、字体层级和图像处理规则；
-- 一套至少使用四种版式原型，不能十页全部套同一模板；
-- 禁止一张总拼贴板替代十页，也禁止复制参考案例的水印、设计公司署名、二维码、电话和页面壳。
+完整十页前只做：
 
-### 5. 去除 AI 味
+1. 品牌概念与主视觉；
+2. 店名字标与超级符号；
+3. 最强应用触点。
 
-- 产品结构、材质、空间、包装和文字必须真实；
-- 禁止伪中文、假价格、重复食材、塑料食物、错误透视和统一模板感；
-- AI 图在 `CONCEPT_SET` 阶段可以作为产品、空间和氛围概念素材，但必须诚实标注；
-- 展示页中的页码、章节名、项目名、主文案和状态必须使用真实字体排版；
-- 正式 Logo、中文排版、菜单价格、包装刀版、门头和导视在 `DESIGN_DEVELOPMENT` 或 `PRODUCTION_READY` 阶段使用真实字体、Figma、Adobe 或矢量路径；
-- 未达到实际 4K 像素与 100% 放大检查要求，不得标记 `READY_TO_POST`。
+必须使用真实文字和至少两种版式原型。
 
-## 标准十页章节
+### E. 三页审美闸门
 
-每个品牌固定输出十张独立作品集页面：
+三页必须通过：
+
+- `poster_design` 技术总分不低于 78；
+- 信息层级、字体、网格、图像质量和品牌一致性均不低于 70；
+- 与正向参考更接近，而不是与失败锚点更接近；
+- 无致命 AI 或品牌逻辑问题；
+- Figma 节点记录完整。
+
+失败时停止，不得扩展十页。
+
+### F. 十页 Figma 扩展
+
+只有状态为 `THREE_PAGE_PROOF_PASS` 才能建立十页故事板并扩展。
+
+十页必须：
+
+- 十个独立 Figma Frame；
+- 十个独立导出文件；
+- 至少四种版式原型；
+- 每页一个章节和一个核心结论；
+- 共享真实字体、颜色、间距和组件；
+- 每页存在有效 `brand_evidence`。
+
+## 4. 标准十页
 
 1. 品牌概念与主视觉；
 2. 店名海报 / Logo / 字标 / 超级符号；
@@ -145,34 +148,56 @@
 9. 菜单、员工服与运营触点；
 10. 品牌视觉总览与收尾。
 
-十页必须是十个独立文件。每页可以展示多个同章节物料，但不得混合无关章节，不得用一张拼贴图替代十页。
+## 5. 强制禁止
 
-## 主动创意总监义务
+- image_gen 直接生成完整品牌页面；
+- image_gen 一次生成三联页、九宫格或十页总拼贴；
+- 三页失败后为了数量继续十页；
+- 用伪中文或 AI Logo 代替真实排版；
+- 把生成完成等同于质量通过；
+- 要求用户自己完成 Figma 排版；
+- 使用虚构日期、二维码、电话、地址和无意义英文伪造专业感；
+- 复制参考品牌的名称、Logo、字体、页面壳、署名、水印和商业外观；
+- 用同一个版式连续复制十页；
+- 将 `CONCEPT TEST`、`THREE_PAGE_PROOF` 或 AI 整页冒充 `CONCEPT_SET`。
 
-执行者必须主动给出：
+## 6. 项目文件
 
-- 至少三个可行方向及优劣；
-- 推荐方向和理由；
-- 近期必须避开的模板；
-- 品牌策略卡；
-- 视觉 DNA 卡；
-- 十页作品集故事板；
-- 三个关键触点的概念级验证结论；
-- 十张图的品牌证据；
-- 单页与整套作品集审计；
-- 当前交付阶段；
-- 风险、依赖和下一阶段改进建议。
+每个项目至少保存：
 
-不得长期等待用户逐项指出问题。若品牌策略、视觉 DNA、触点一致性或十页故事板不成立，应主动停止十图生成。
+```text
+BRIEF.md
+RECENT_AUDIT.md
+DIRECTION_OPTIONS.md
+CONCEPT_ENGINE.md
+BRAND_STRATEGY.md
+VISUAL_DNA.md
+ASSET_PLAN.md
+ASSET_MANIFEST.json
+THREE_PAGE_PROOF.md
+FIGMA_MANIFEST.json
+TEN_PAGE_STORYBOARD.md
+AESTHETIC_EVALUATION.json
+PROJECT_RECORD.json
+delivery_manifest.json
+feedback.md
+```
 
-## 项目状态
+## 7. 状态
 
-- `PLANNED`：策略卡、视觉 DNA 和十页故事板已定义；
-- `CONCEPT`：单项方向探索；
-- `CONCEPT_SET`：十张品牌作品集概念页面与相关审计完成；
-- `DESIGN_DEVELOPMENT`：选中方案已进入真实字体、矢量、网格、4K 和应用精修；
-- `DRAFT`：深化稿尚未通过发布审计；
-- `READY_TO_POST`：单图通过真实感、文字、设计与实际 4K；
-- `READY_TO_POST_SET`：十张全部达到发布级标准；
-- `PRODUCTION_READY`：真实尺寸、刀版、菜单数据、材料和供应商要求全部满足；
-- `REJECTED`：产品、品牌逻辑、反重复、作品集呈现、AI 痕迹或应用逻辑不合格。
+- `PLANNED`；
+- `CONCEPT_ENGINE_PASS`；
+- `ASSET_READY`；
+- `THREE_PAGE_PROOF`；
+- `THREE_PAGE_PROOF_PASS`；
+- `THREE_PAGE_PROOF_REJECTED`；
+- `TEN_PAGE_LAYOUT`；
+- `CONCEPT_SET`；
+- `DESIGN_DEVELOPMENT`；
+- `READY_TO_POST_SET`；
+- `PRODUCTION_READY`；
+- `BLOCKED_FIGMA_ACCESS`；
+- `REJECTED_AI_FULL_PAGE`；
+- `REJECTED_WEAK_ENGINE`。
+
+`CONCEPT_SET` 仅在十页 Figma 页面、十页导出和全部审计通过后使用。
