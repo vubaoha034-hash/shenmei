@@ -1,6 +1,6 @@
 # Repository instructions for Codex
 
-版本：`3.0.0`
+版本：`3.0.1`
 状态：`MANDATORY`
 
 本仓库有四套路由：餐饮品牌设计、单张餐饮海报与视觉素材、私人审美评分、餐饮经营总控。先读根 `START_HERE.md`。
@@ -33,7 +33,7 @@
 9. 记录 Figma URL、file_key、node_id、字体、变量、组件和实际尺寸；
 10. 每页记录 `brand_evidence`；
 11. 完成反重复、AI、品牌证据、作品集、Figma和审美审计；
-12. 只有全部通过才使用 `CONCEPT_SET`。
+12. 只有验证脚本 PASS 才可使用 `CONCEPT_SET`。
 
 绝对禁止：
 
@@ -72,4 +72,13 @@
 
 ## Checks
 
-现有 validator 和审美评分命令继续有效。品牌项目还必须检查项目文件是否包含 `CONCEPT_ENGINE.md`、`ASSET_MANIFEST.json`、`FIGMA_MANIFEST.json` 和 `AESTHETIC_EVALUATION.json`。
+餐饮品牌项目在声称 `CONCEPT_SET` 前必须运行：
+
+```text
+python -m py_compile restaurant_design_system/scripts/validate_figma_first_project.py
+python restaurant_design_system/scripts/validate_figma_first_project.py restaurant_design_system/projects/<project-slug>
+```
+
+只有输出 `"result": "PASS"` 才允许提交或交付 `CONCEPT_SET`。
+
+现有经营 validator 和审美评分命令继续有效。
