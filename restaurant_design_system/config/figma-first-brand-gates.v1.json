@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "status": "mandatory",
+  "required_project_files": [
+    "BRIEF.md",
+    "RECENT_AUDIT.md",
+    "DIRECTION_OPTIONS.md",
+    "CONCEPT_ENGINE.md",
+    "BRAND_STRATEGY.md",
+    "VISUAL_DNA.md",
+    "ASSET_PLAN.md",
+    "ASSET_MANIFEST.json",
+    "THREE_PAGE_PROOF.md",
+    "FIGMA_MANIFEST.json",
+    "TEN_PAGE_STORYBOARD.md",
+    "AESTHETIC_EVALUATION.json",
+    "PROJECT_RECORD.json",
+    "delivery_manifest.json",
+    "feedback.md"
+  ],
+  "statuses": {
+    "allowed": [
+      "PLANNED",
+      "CONCEPT_ENGINE_PASS",
+      "ASSET_READY",
+      "THREE_PAGE_PROOF",
+      "THREE_PAGE_PROOF_PASS",
+      "THREE_PAGE_PROOF_REJECTED",
+      "TEN_PAGE_LAYOUT",
+      "CONCEPT_SET",
+      "DESIGN_DEVELOPMENT",
+      "READY_TO_POST_SET",
+      "PRODUCTION_READY",
+      "BLOCKED_FIGMA_ACCESS",
+      "REJECTED_AI_FULL_PAGE",
+      "REJECTED_WEAK_ENGINE"
+    ],
+    "concept_set_requires": "CONCEPT_SET"
+  },
+  "three_page_gate": {
+    "required_page_count": 3,
+    "minimum_total_score": 78,
+    "minimum_dimension_scores": {
+      "information_hierarchy": 70,
+      "typography": 70,
+      "layout_grid": 70,
+      "imagery_quality": 70,
+      "brand_consistency": 70
+    },
+    "requires_figma_file_url": true,
+    "requires_figma_file_key": true,
+    "requires_node_ids": true,
+    "allows_full_page_image_generation": false
+  },
+  "ten_page_gate": {
+    "required_page_count": 10,
+    "minimum_average_score": 80,
+    "minimum_key_page_score": 75,
+    "key_pages": [1, 2, 4, 5, 8, 10],
+    "minimum_layout_archetypes": 4,
+    "maximum_consecutive_same_layout": 2,
+    "requires_node_ids": true,
+    "requires_exports": true,
+    "requires_brand_evidence_each_page": true,
+    "allows_rejected_pages": false,
+    "allows_full_page_image_generation": false
+  },
+  "asset_gate": {
+    "forbid_text_in_generated_assets": true,
+    "forbid_logos_in_generated_assets": true,
+    "forbid_qr_prices_phone_address": true,
+    "reject_fake_text": true,
+    "reject_invalid_product_structure": true,
+    "reject_impossible_packaging": true,
+    "reject_impossible_space": true
+  },
+  "figma_gate": {
+    "editor_type": "design",
+    "required_sections": [
+      "00_TOKENS_COMPONENTS",
+      "01_THREE_PAGE_PROOF",
+      "02_TEN_PAGE_PORTFOLIO",
+      "03_EXPORT_CHECK",
+      "99_REJECTED_ARCHIVE"
+    ],
+    "requires_real_editable_text": true,
+    "requires_variables": true,
+    "requires_components": true,
+    "requires_actual_dimensions": true
+  }
+}
