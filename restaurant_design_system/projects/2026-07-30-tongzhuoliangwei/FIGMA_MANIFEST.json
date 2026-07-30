@@ -1,12 +1,14 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "file_url": "https://www.figma.com/design/KNpuQRCCfQr2z3p8ajYCem",
   "file_key": "KNpuQRCCfQr2z3p8ajYCem",
   "editor_type": "design",
+  "status": "BLOCKED_FIGMA_ACCESS",
   "plan_constraint": {
     "tier": "starter",
     "maximum_pages": 3,
-    "resolution": "Required five-part structure implemented as three pages plus named sections."
+    "resolution": "Required five-part structure implemented as three pages plus named sections.",
+    "mcp_tool_call_limit_reached": true
   },
   "structure": {
     "pages": [
@@ -93,8 +95,18 @@
     }
   ],
   "ten_page_portfolio": [],
-  "export_status": "THREE_PAGE_EXPORT_VERIFIED",
+  "ten_page_storyboard_complete": true,
+  "ten_page_creation_attempt": {
+    "operation": "Create portfolio frames 01-05",
+    "result": "FAILED_AT_TOOL_BOUNDARY",
+    "atomic_failure": true,
+    "partial_frames_created": false,
+    "error": "Figma MCP tool-call limit reached on Starter plan."
+  },
+  "export_status": "THREE_PAGE_EXPORT_VERIFIED_TEN_PAGE_BLOCKED",
   "actual_export_dimensions": {
-    "three_page_proof": "1080x1440 PNG each"
-  }
+    "three_page_proof": "1080x1440 PNG each",
+    "ten_page_portfolio": null
+  },
+  "next_action": "Resume ten-page creation when Figma MCP quota is available; do not use image-generated full pages as a substitute."
 }
