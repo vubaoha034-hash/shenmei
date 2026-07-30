@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "project": "2026-07-30-tongzhuoliangwei",
+  "delivery_status": "BLOCKED_FIGMA_ACCESS",
+  "completed": {
+    "rules_read": true,
+    "recent_project_audit": true,
+    "six_internal_candidates": true,
+    "three_user_facing_directions": true,
+    "concept_engine": "CONCEPT_ENGINE_PASS",
+    "brand_strategy": true,
+    "visual_dna": true,
+    "asset_plan": true,
+    "asset_audit": "ASSET_READY_WITH_FIGMA_NATIVE_VECTORS",
+    "figma_tokens_variables_styles_components": true,
+    "three_page_proof": "THREE_PAGE_PROOF_PASS",
+    "three_page_exports_verified": true,
+    "ten_page_storyboard": true
+  },
+  "figma": {
+    "file_url": "https://www.figma.com/design/KNpuQRCCfQr2z3p8ajYCem",
+    "file_key": "KNpuQRCCfQr2z3p8ajYCem",
+    "editor_type": "design",
+    "proof_nodes": [
+      {
+        "index": 1,
+        "name": "01_BRAND_CONCEPT",
+        "node_id": "4:2",
+        "node_url": "https://www.figma.com/design/KNpuQRCCfQr2z3p8ajYCem?node-id=4-2",
+        "dimensions": "1080x1440",
+        "format": "PNG",
+        "export_verified": true
+      },
+      {
+        "index": 2,
+        "name": "02_WORDMARK_SYMBOL",
+        "node_id": "4:50",
+        "node_url": "https://www.figma.com/design/KNpuQRCCfQr2z3p8ajYCem?node-id=4-50",
+        "dimensions": "1080x1440",
+        "format": "PNG",
+        "export_verified": true
+      },
+      {
+        "index": 3,
+        "name": "03_HERO_APPLICATION",
+        "node_id": "4:95",
+        "node_url": "https://www.figma.com/design/KNpuQRCCfQr2z3p8ajYCem?node-id=4-95",
+        "dimensions": "1080x1440",
+        "format": "PNG",
+        "export_verified": true
+      }
+    ],
+    "required_structure": {
+      "pages": ["00_TOKENS_COMPONENTS", "01_THREE_PAGE_PROOF", "02_TEN_PAGE_PORTFOLIO"],
+      "sections": ["02_TEN_PAGE_PORTFOLIO", "03_EXPORT_CHECK", "99_REJECTED_ARCHIVE"]
+    },
+    "blocker": {
+      "type": "STARTER_MCP_TOOL_CALL_LIMIT",
+      "message": "Figma MCP tool-call limit reached on Starter plan.",
+      "failed_operation": "Create portfolio frames 01-05",
+      "atomic_failure": true,
+      "partial_ten_page_frames_created": false
+    }
+  },
+  "aesthetic": {
+    "three_page_average": 83.47,
+    "band": "B+",
+    "confidence": 0.87,
+    "personal_fit": null,
+    "calibration_status": "PERSONAL_CALIBRATION_PENDING",
+    "ten_page_expansion_allowed_by_quality": true,
+    "ten_page_expansion_blocked_by_tool": true
+  },
+  "not_completed": {
+    "ten_figma_frames": true,
+    "ten_independent_exports": true,
+    "ten_page_final_audit": true,
+    "validator_execution": true,
+    "concept_set_status": true,
+    "ready_to_post_4k": true,
+    "production_ready": true
+  },
+  "truth_disclosure": {
+    "selected_ai_generated_food_images": false,
+    "rejected_ai_full_pages": 3,
+    "all_visible_chinese_in_proof_is_editable_figma_text": true,
+    "wordmark_is_final_vector_logo": false,
+    "storefront_based_on_real_measurements": false,
+    "packaging_based_on_real_dieline": false,
+    "menu_prices_confirmed": false
+  },
+  "next_actions_in_order": [
+    "Resume use_figma when quota is available and create ten independent 1080x1440 frames from TEN_PAGE_STORYBOARD.md.",
+    "Export and inspect all ten pages; record node IDs and export dimensions.",
+    "Run ten-page aesthetic, brand-evidence, AI-artifact and continuity audits.",
+    "Run python restaurant_design_system/scripts/validate_figma_first_project.py restaurant_design_system/projects/2026-07-30-tongzhuoliangwei.",
+    "Only if validator result is PASS, change status to CONCEPT_SET."
+  ]
+}
