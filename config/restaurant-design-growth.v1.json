@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "status": "MANDATORY",
+  "canonical_skill": "skills/restaurant-design-growth-director/SKILL.md",
+  "required_rules": [
+    "rules/CONCEPT_FIRST_DESIGN_AND_AI_GENERATION_V1.md",
+    "rules/XIAOHONGSHU_DESIGN_CONTENT_SYSTEM_V1.md",
+    "rules/DESIGN_GROWTH_QUALITY_GATE_V1.md"
+  ],
+  "precedence": {
+    "v4_3_overrides_older_final_ai_page_permissions": true,
+    "preserve_non_conflicting_v4_2_brand_case_rules": true
+  },
+  "concept_brief_required_fields": [
+    "product_fact",
+    "consumer_scene",
+    "business_problem",
+    "brand_point_of_view",
+    "core_concept",
+    "visual_mechanism",
+    "why_this_mechanism_belongs_to_this_brand"
+  ],
+  "reference_visual_dna_required_fields": [
+    "composition",
+    "color_system",
+    "lighting",
+    "camera_and_lens_feel",
+    "material_language",
+    "graphic_mechanism",
+    "typography_behavior",
+    "negative_space",
+    "information_density",
+    "brand_specific_assets",
+    "presentation_only_mechanisms",
+    "non_copyable_content"
+  ],
+  "creative_direction_gate": {
+    "minimum_directions": 3,
+    "minimum_distinct_dimensions_between_any_two": 4,
+    "distinct_dimensions": [
+      "brand_concept",
+      "visual_mechanism",
+      "composition_system",
+      "photography_logic",
+      "typography_behavior",
+      "material_language",
+      "color_personality",
+      "touchpoint_behavior",
+      "emotional_tempo"
+    ],
+    "color_only_variants_are_distinct": false,
+    "typeface_only_variants_are_distinct": false,
+    "mockup_only_variants_are_distinct": false
+  },
+  "ai_generation_boundary": {
+    "allowed": [
+      "text_free_product_key_visual",
+      "text_free_background",
+      "environment",
+      "illustration",
+      "texture",
+      "lighting_study",
+      "atmosphere_study",
+      "composition_study",
+      "isolated_asset"
+    ],
+    "human_control_required": [
+      "logo",
+      "wordmark",
+      "chinese_text",
+      "english_and_pinyin",
+      "price",
+      "menu_hierarchy",
+      "address_and_telephone",
+      "qr_code",
+      "legal_copy",
+      "final_layout",
+      "production_dimensions",
+      "cross_page_brand_consistency"
+    ],
+    "ai_full_page_can_be_final": false,
+    "ai_text_can_be_final": false
+  },
+  "real_product_policy": {
+    "prefer_real_photography_for_real_shop": true,
+    "ai_may_extend_scene_and_atmosphere": true,
+    "ai_may_invent_unavailable_dishes": false,
+    "ai_may_change_portion_or_ingredients": false,
+    "verify": [
+      "product_structure",
+      "portion",
+      "ingredients",
+      "vessel",
+      "cooking_state",
+      "steam_and_heat",
+      "sauce_and_oil",
+      "lighting_and_reflection",
+      "perspective_and_contact_shadow",
+      "business_claims"
+    ]
+  },
+  "extension_gate": {
+    "minimum_touchpoints": 5,
+    "required_touchpoints": [
+      "storefront_or_signage",
+      "menu_or_ordering_interface",
+      "packaging",
+      "poster_or_campaign_visual",
+      "mobile_cover_or_xiaohongshu_first_image"
+    ],
+    "full_brand_case_additional_touchpoints": [
+      "space",
+      "operating_application"
+    ]
+  },
+  "xiaohongshu": {
+    "primary_objectives": [
+      "COLLECTION",
+      "DISCUSSION",
+      "CONVERSION",
+      "NOT_FOR_PUBLICATION"
+    ],
+    "recommended_editorial_mix": {
+      "COLLECTION": 0.5,
+      "DISCUSSION": 0.3,
+      "CONVERSION": 0.2
+    },
+    "mix_is_official_algorithm_weight": false,
+    "collection_required": [
+      "clear_object",
+      "portable_takeaway",
+      "accurate_search_phrase",
+      "recognizable_first_image_category",
+      "promise_delivered_in_content"
+    ],
+    "discussion_required": [
+      "specific_judgment",
+      "two_visible_evidence_items",
+      "narrow_choice_question",
+      "defined_operating_context"
+    ],
+    "conversion_required": [
+      "real_operating_problem",
+      "design_tradeoff",
+      "verified_result_or_consequence",
+      "evidence_level_A_or_B"
+    ],
+    "high_risk_generic_hooks": [
+      "老板必看",
+      "三大避坑",
+      "顾客只看三秒",
+      "谁说××只能土味",
+      "设计师不会告诉你",
+      "做餐饮一定要知道"
+    ]
+  },
+  "evidence_levels": {
+    "A": "real_commercial_implementation_and_result",
+    "B": "complete_original_brand_case",
+    "C": "method_and_breakdown",
+    "D": "inspiration_collection"
+  },
+  "hard_reject_codes": [
+    "REJECTED_UNDECLARED_ROUTE_OR_OBJECTIVE",
+    "REJECTED_WEAK_OR_GENERIC_CONCEPT",
+    "REJECTED_MISSING_VISUAL_DNA",
+    "REJECTED_FALSE_CREATIVE_VARIETY",
+    "REJECTED_AI_FULL_PAGE_AS_FINAL",
+    "REJECTED_PRODUCT_OR_BUSINESS_FALSEHOOD",
+    "REJECTED_ISOLATED_PRETTY_IMAGE",
+    "REJECTED_NO_SAVE_VALUE",
+    "REJECTED_BROAD_OR_EMPTY_DISCUSSION",
+    "REJECTED_NO_COMMERCIAL_PROOF",
+    "REJECTED_GENERIC_HOOK",
+    "REJECTED_EVIDENCE_MISREPRESENTATION"
+  ],
+  "ready_statuses": [
+    "READY_TO_POST",
+    "READY_BRAND_CASE"
+  ]
+}
