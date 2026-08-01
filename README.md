@@ -1,37 +1,24 @@
-# shenmei｜餐饮品牌案例、海报、经营与私人审美系统
+# shenmei｜餐饮品牌设计、AI 图片生成与小红书内容系统
 
-当前主版本：`4.0.0`
+当前主版本：`4.3.0`
 
-## 当前主流程
+## 核心变化
 
-本仓库的默认视觉路线已经调整为：
+V4.3 不再把“生成一张看似高级的 AI 图”当成设计完成。
 
-> 每天北京时间 09:00，自主确定 1 个餐饮品牌，直接生成 10 张独立的完整品牌案例展示图。
+默认流程改为：
 
-每张图是一页多模块整版案例，不是单素材，也不是等待用户去 Figma 拼版的半成品。
-
-十张固定覆盖：
-
-1. 品牌总览；
-2. 门头与空间；
-3. 定制字标、超级符号与色彩；
-4. 品牌故事；
-5. 产品与食材；
-6. 海报系统；
-7. 包装系统；
-8. 运营触点；
-9. 系统组合；
-10. 总结收尾。
-
-## 最重要的硬规则
-
-- 必须交付 10 张独立图片；
-- 禁止以一张十页总览合板、十宫格或长图代替；
-- 品牌 Logo 必须进行定制字形设计，不能直接套用现成字体；
-- 每张图可以包含 2—6 个有秩序的展示模块；
-- 不要求用户自行拼版；
-- Figma 不再是每日品牌案例的依赖、前置条件或验收条件；
-- 只有用户明确要求可编辑 Figma 源文件时，才进入旧 Figma 专项路线。
+```text
+产品与经营问题
+→ 品牌概念
+→ 参考图视觉 DNA
+→ 三个真正不同的创意方向
+→ 五触点延展预演
+→ AI 生成无文字素材
+→ 人工完成字标、中文、价格和版式
+→ 设计质量闸门
+→ 小红书收藏 / 评论 / 转化发布闸门
+```
 
 ## 唯一入口
 
@@ -39,9 +26,27 @@
 START_HERE.md
 ```
 
-## V4 核心规则
+## 设计总控 Skill
 
 ```text
+skills/restaurant-design-growth-director/SKILL.md
+```
+
+任何餐饮品牌设计、海报、AI 图片生成或小红书设计内容任务，先读取该 Skill。
+
+## V4.3 强制规则
+
+```text
+rules/CONCEPT_FIRST_DESIGN_AND_AI_GENERATION_V1.md
+rules/XIAOHONGSHU_DESIGN_CONTENT_SYSTEM_V1.md
+rules/DESIGN_GROWTH_QUALITY_GATE_V1.md
+config/restaurant-design-growth.v1.json
+```
+
+## 完整品牌案例
+
+```text
+DAILY_AUTOBRAND_SYSTEM_V4_3.md
 DAILY_AUTOBRAND_SYSTEM_V4.md
 rules/DAILY_CASE_10_IMAGE_STRUCTURE_V4.md
 rules/BOARD_LAYOUT_PRESENTATION_RULES_V4.md
@@ -50,25 +55,64 @@ rules/DAILY_CASE_QUALITY_GATE_V4.md
 schedules/DAILY_0900_BRAND_CASE_V4.md
 ```
 
-## 默认尺寸
+旧 V4 文件继续提供十张结构、色彩人格、反默认暖色、字标、食品、空间、包装和物料去重规则；V4.3 覆盖旧文件中允许 AI 直接承担最终中文和完整最终页面的部分。
+
+默认完整案例交付：
 
 ```text
-2160 × 2700 px
-4:5
+1 个完整餐饮品牌
+10 张独立图片
+3:2 横版
+推荐 2400 × 1600 px
 PNG
-10个独立文件
 ```
 
-参考图比例不同时可以调整，但同一套十张必须统一。用户指定尺寸时，以用户要求为准。
+用户指定尺寸时，以用户要求为准。
 
-## 其他路线
-
-### 单张餐饮海报与视觉素材
+## 单张餐饮海报与视觉素材
 
 ```text
 skills/restaurant-poster-art-director/SKILL.md
 generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md
+config/restaurant-poster-generation.v1.json
 ```
+
+单张海报也必须先做概念、视觉 DNA、三方向、AI 边界、真实产品和延展测试。
+
+## 小红书内容目标
+
+每篇内容必须声明一个主目标：
+
+```text
+COLLECTION  收藏型
+DISCUSSION  评论型
+CONVERSION  转化型
+NOT_FOR_PUBLICATION  不发布
+```
+
+推荐账号结构：
+
+```text
+收藏型 50%
+评论型 30%
+转化型 20%
+```
+
+这是运营分配，不是平台官方算法权重。
+
+- 收藏型：靠可带走的设计证据与搜索价值；
+- 评论型：靠具体判断、两份证据和窄问题；
+- 转化型：靠真实经营问题、设计取舍和商业结果。
+
+冲突标题不是必选项。标准样机和抽象品牌故事不得长期作为主力。
+
+## AI 边界
+
+AI 可以生成无文字主视觉、背景、场景、插画、纹理和探索素材。
+
+最终 Logo、中文、英文、拼音、价格、菜单、二维码、尺寸和版式必须人工控制。AI 全页成图只能是 `ASSET_DRAFT`，不能直接标记为最终设计。
+
+## 其他路线
 
 ### 可编辑 Figma 正式品牌系统
 
@@ -79,16 +123,21 @@ restaurant_design_system/START_HERE.md
 restaurant_design_system/FIGMA_FIRST_NO_ADOBE_PIPELINE_V1.md
 ```
 
+### 私人审美评分
+
+```text
+skills/personal-aesthetic-critic/SKILL.md
+skills/restaurant-brand-aesthetic-gate/SKILL.md
+```
+
 ### 餐饮经营系统
 
 ```text
 restaurant_operations_system/START_HERE.md
 skills/restaurant-operations-master/SKILL.md
-skills/restaurant-operations-master/workflows/RESTAURANT_OPERATIONS_PIPELINE_V1.md
-skills/restaurant-operations-master/config/restaurant-operations-gates.v1.json
 ```
 
-餐饮经营与视觉交付分开审查。漂亮设计不能覆盖亏损、食品安全或执行问题；经营逻辑也不能覆盖错字、产品错误、空间错误或弱品牌逻辑。
+餐饮经营与视觉交付分开审查。漂亮设计不能覆盖亏损、食品安全或执行问题；经营逻辑也不能覆盖错字、产品错误、空间错误和弱品牌逻辑。
 
 ## 隐私
 
