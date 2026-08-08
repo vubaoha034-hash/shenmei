@@ -15,7 +15,24 @@ description: Thin travel/photo wrapper around the upstream gc-minimal-zine-poste
 UPSTREAM_SKILL.md
 ```
 
+同时必须遵守：
+
+```text
+../../rules/DIRECT_SKILL_INVOCATION_RULE.md
+```
+
 `UPSTREAM_SKILL.md` 是上游 `LiamGvchi/gc-minimal-zine-poster` 的原版 Skill 镜像。除下面列出的少量适配外，**上游 Standard Mode Prompt Compiler、Variation Engine、Color Engine、Negative Constraints、Workflow 和 Quality Gate 全部保持原样，不得二次解释、扩写、分类或重写。**
+
+## 直接调用纪律
+
+当用户明确说“使用撕纸效果”“直接用 Skill”“使用 `$tear-paper`”或点名本 Skill 时：
+
+- 直接执行本 Skill + `UPSTREAM_SKILL.md`；
+- 不得把任务改成“助手自由写一套审美 Prompt”；
+- 不得为了“更高级”补写新的视觉风格说明；
+- 不得未经用户要求擅自修改本 Skill；
+- 输出不满意时，先检查本 Skill 是否真的控制了最终生成链路，再讨论是否需要修改；
+- 若最终 Prompt 不是由上游 Standard Mode Prompt Compiler 产生，则本次执行视为绕过 Skill。
 
 ## 唯一允许的适配
 
