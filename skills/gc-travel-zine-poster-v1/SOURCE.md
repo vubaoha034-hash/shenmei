@@ -1,29 +1,30 @@
-# Upstream and locking notes
+# Upstream source
 
-Canonical local Skill: `gc-travel-zine-poster-v1`
+Canonical local wrapper: `gc-travel-zine-poster-v1`
 
-Derived from:
+Upstream:
 
 - Project: `LiamGvchi/gc-minimal-zine-poster`
-- Upstream Skill: `gc-minimal-zine-poster-v0-1`
+- Skill: `gc-minimal-zine-poster-v0-1`
+- Upstream `SKILL.md` blob SHA: `7b6cbbdfcd660e979ea8db6fed57816584170103`
 - License: MIT
-- Upstream author: LiamGvchi
+- Author: LiamGvchi
 
-## Why this locked derivative exists
+## Vendored mirror
 
-The upstream Skill establishes the core minimal-zine grammar: large negative space, restrained type, a small or controlled image anchor, one high-chroma color family, scanned paper, old-print defects, and rejection of commercial poster / dense scrapbook behavior.
+`UPSTREAM_SKILL.md` is a verbatim local mirror of the upstream `SKILL.md` at the blob SHA above.
 
-This local derivative adds strict behavior required for transforming real travel and life-memory photos:
+The purpose of the mirror is to prevent future local rewrites from silently replacing the upstream prompt compiler and visual grammar.
 
-1. reference-first decomposition;
-2. explicit source-image fidelity;
-3. one source image per output;
-4. user/reference/source aspect-ratio priority;
-5. only one dominant transformation family per image;
-6. source-derived accent color;
-7. no invented in-image headlines or factual metadata;
-8. prompt serialization so the image generator receives concrete rules rather than only a Skill name;
-9. a hard anti-template / anti-scrapbook / anti-tourism-ad quality gate;
-10. compatibility redirects from older local travel-zine Skill names.
+## Local delta
 
-The intent is to transfer visual mechanisms, not copy creator watermarks, account identifiers, exact microtext, or complete proprietary artwork.
+The wrapper is intentionally thin. It may only adapt:
+
+1. output aspect ratio when the user, reference artwork, or real source image requires a different canvas;
+2. recognizable source-photo content as the upstream Image Anchor material;
+3. factual place text explicitly supplied by the user;
+4. one-source-one-output delivery for batches when requested.
+
+It does **not** define a replacement art direction, visual-family taxonomy, percentage thresholds, structural-translation framework, or aesthetic validator.
+
+If a future change needs to alter upstream composition, color, typography, texture, variation, prompt shape, or quality gate, it should be treated as a new experimental Skill rather than silently added to this wrapper.
