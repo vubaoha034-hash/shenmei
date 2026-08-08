@@ -1,6 +1,6 @@
 ---
 name: gc-minimal-zine-travel-poster-v1
-description: Turn a travel photo, landscape, architecture scene, person-in-place photo, or location brief into a 16:9 minimal zine / archival editorial poster. Derived from LiamGvchi/gc-minimal-zine-poster. Use for cinematic travel-to-zine transformations with aged paper, restrained print texture, randomized collage/block/imagery treatments, and accurate English place labels in negative space.
+description: Turn a travel photo, landscape, architecture scene, person-in-place photo, or location brief into a 16:9 minimal zine / archival editorial poster. Derived from LiamGvchi/gc-minimal-zine-poster. Use for travel-to-zine transformations with aged paper, restrained print texture, randomized collage/block/imagery treatments, and accurate English place labels in negative space.
 ---
 
 # GC Minimal Zine Travel Poster v1
@@ -161,7 +161,6 @@ Default emotional direction:
 
 - quiet;
 - solitary;
-- cinematic without cinematic lighting tricks;
 - memory-like;
 - distant;
 - field-recording / travel-journal / archival;
@@ -236,7 +235,7 @@ Before finalizing, confirm:
 
 ## Output format
 
-```markdown
+````markdown
 **生成图**
 
 [rendered 16:9 image]
@@ -257,7 +256,7 @@ Before finalizing, confirm:
 **说明**
 
 [one concise sentence]
-```
+````
 
 ## Upstream attribution
 
