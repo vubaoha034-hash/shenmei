@@ -237,3 +237,26 @@ color_exception_reason: null
 ```
 
 任何一项未通过，不得声称任务完成。
+
+## 8. 持续学习自动触发｜仓库级
+
+所有任务在接近结束时执行一次**轻量证据检查**，并遵守：
+
+`rules/CONTINUAL_LEARNING_TRIGGER_RULE.md`
+
+仅当本次任务出现用户可复用纠正、重复失败、已验证 regression / defect、可复用成功 tactic、稳定 tool/repo invariant、旧规则被证伪、或可复用 Agent 路由/委派经验时，读取并调用：
+
+`skills/skill-refiner/SKILL.md`
+
+强制边界：
+
+1. 每个用户任务最多触发一次；
+2. 普通成功任务不触发；
+3. 单次差评默认只 `observe`，不得直接修改正式 Skill / Agent rule / production code；
+4. 必须先区分 `skill`、`repo`、`agent` 学习层，局部经验不得自动升格为全局规则；
+5. 正式晋升必须通过 Promotion Gate、baseline-vs-candidate 验证和 Git branch / diff / PR；
+6. 审美任务继续优先服从 `AESTHETIC_SKILL_DESIGN_CHARTER.md`，不得把主观 taste 自动变成硬 blocker；
+7. 能通过测试、脚本、CI 或 validator 固化的 coding/repo lesson，优先变成可执行检查，而不是继续增加 prose rule；
+8. 若当前环境无法把 `.skill-evolution/<target>/state.json` 持久化，不得声称已经完成长期学习。
+
+目标是：**长期提升 Skill、Agent 和 Coding 能力，同时控制规则数量、上下文成本与错误经验固化。**
