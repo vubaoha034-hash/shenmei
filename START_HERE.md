@@ -1,7 +1,32 @@
 # START HERE — 强制执行入口
 
-版本：`4.2.0`
+版本：`4.2.1`
 状态：`MANDATORY`
+
+## 0. 审美 Skill 设计治理｜全仓强制前置
+
+凡涉及以下任一任务，**在读取具体视觉 Skill 之前，必须先读取**：
+
+`AESTHETIC_SKILL_DESIGN_CHARTER.md`
+
+适用范围：
+
+- 新建视觉 / 审美 / 海报 / 品牌 / 图片生成 Skill；
+- 修改现有视觉 Skill；
+- 从成熟视觉 Skill 派生新 Skill；
+- 修改 Prompt Compiler、Variation Engine、Color Engine、Typography、Texture、Quality Gate；
+- 因“结果不好看”准备继续增加视觉规则、阈值、分类、validator 或失败码。
+
+核心治理要求：
+
+1. 审美 Skill 优先设计成**紧凑 Prompt Compiler**，不是规则百科；
+2. 先找 5—8 个高杠杆视觉变量，再停止加规则；
+3. 必须区分 `correctness problem` 与 `taste problem`；工程验证可以防错，不能证明好看；
+4. 已经优秀且成熟的上游视觉 Skill，默认采用 **upstream 100% + thin wrapper**，不得轻易重写；
+5. 如果出现“规则越来越多，结果越来越僵 / 越来越模板化”，默认动作是删规则或回退，而不是继续补规则；
+6. 若必须大幅改变成熟 Skill 的构图、色彩、字体、纹理、variation 或质量门槛，应新建实验 Skill，而不是污染稳定 Skill。
+
+本节优先于各视觉路线内部的“为了更高级而加规则”类做法，但不覆盖事实正确性、安全、品牌名、人物身份、用户明确尺寸等 correctness 硬约束。
 
 ## 1. 最高优先级路由
 
