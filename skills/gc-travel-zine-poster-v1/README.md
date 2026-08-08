@@ -1,12 +1,32 @@
 # gc-travel-zine-poster-v1
 
-本仓库旅行 / 生活记忆照片转 Zine 的**唯一正式入口**。
+本仓库旅行 / 生活记忆照片转 Zine 的**锁死版权威实现**。
 
-调用名：
+## 用户现在怎么写
+
+直接写：
+
+```text
+使用撕纸效果
+```
+
+或显式调用短 Skill：
+
+```text
+$tear-paper
+```
+
+`$tear-paper` 会强制读取并完整执行本目录的 `SKILL.md`。
+
+旧长调用名仍兼容：
 
 ```text
 $gc-travel-zine-poster-v1
+$gc-minimal-zine-travel-16x9
+$gc-minimal-zine-travel-poster-v1
 ```
+
+但日常不再需要记这些名字。
 
 核心规则：
 
@@ -19,14 +39,5 @@ $gc-travel-zine-poster-v1
 - 强调色必须来自源图或参考机制；
 - 图像生成 prompt 必须显式写入完整视觉规则，不能只写 Skill 名称；
 - 任何 Canva / scrapbook / 旅游广告 / 通用杂志模板感直接判失败。
-
-旧调用：
-
-```text
-$gc-minimal-zine-travel-16x9
-$gc-minimal-zine-travel-poster-v1
-```
-
-仅作为兼容入口，必须跳转到本 Skill，不得继续独立执行。
 
 详细规则见 `SKILL.md`。
