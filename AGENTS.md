@@ -1,9 +1,30 @@
 # Repository instructions for Codex
 
-版本：`4.2.0`
+版本：`4.2.1`
 状态：`MANDATORY`
 
 先读取根 `START_HERE.md`，再按任务类型选择路线。不得因为旧文件仍存在，就让旧 Figma-first 规则覆盖 V4.2 每日品牌案例。
+
+## 0. 审美 Skill 设计治理｜强制前置
+
+任何涉及**新建、修改、派生视觉 / 审美 / 海报 / 品牌 / 图片生成 Skill** 的任务，在读取具体 Skill 之前必须先读取：
+
+`AESTHETIC_SKILL_DESIGN_CHARTER.md`
+
+特别是出现以下行为时必须触发：
+
+- 修改 Prompt Compiler / Variation Engine / Color Engine / Typography / Texture / Quality Gate；
+- 因“结果不好看”准备新增视觉规则、阈值、分类、validator、failure code；
+- 从一个已经成熟、已有优秀结果的视觉 Skill 派生本地版本。
+
+强制原则：
+
+1. 审美 Skill 优先是紧凑 Prompt Compiler；
+2. 先找 5—8 个高杠杆视觉变量，再停止；
+3. `correctness` 可以硬锁，`taste` 不得伪装成 correctness blocker；
+4. 成熟上游视觉 Skill 默认 `upstream 100% + thin wrapper`；
+5. 规则越多、结果越僵时，优先删规则或回退；
+6. 大幅改变成熟 Skill 的视觉机制时，应新建实验 Skill，不得继续污染稳定版本。
 
 ## 1. 每日或单次完整品牌案例｜默认主路线
 
@@ -146,7 +167,7 @@ color_exception_reason: null
 
 ## 3. 单张餐饮海报与视觉素材
 
-读取 `skills/restaurant-poster-art-director/SKILL.md`、`generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md` 和相关配置。
+读取 `AESTHETIC_SKILL_DESIGN_CHARTER.md` 后，再读取 `skills/restaurant-poster-art-director/SKILL.md`、`generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md` 和相关配置。
 
 独立海报多风格配额只适用于独立备选，不得强加到同一品牌十张案例中。
 
@@ -170,52 +191,23 @@ color_exception_reason: null
 - 没有预注册试点不得全店推广；
 - public 仓库不得提交敏感经营信息。
 
-## 6. 旅行视频 / 照片参考图优先极简 Zine
+## 6. 旅行视频 / 照片极简 Zine
 
-凡涉及以下任一需求，读取并执行：
+凡涉及旅行视频帧、旅行照片、`gc-minimal-zine-poster` 旅行适配、`撕纸效果` 或 `$tear-paper`，先读取：
 
-`skills/gc-minimal-zine-travel-16x9/SKILL.md`
+1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
+2. `skills/gc-travel-zine-poster-v1/SKILL.md`；
+3. 该 Skill 要求读取的 `UPSTREAM_SKILL.md`。
 
-触发条件：
+核心原则：
 
-- 旅行视频帧或旅行照片转视觉；
-- 用户提供参考图并要求按参考图的比例、方向、留白、主体尺度、纸张、印刷和排版机制处理；
-- 用户点名 `gc-minimal-zine-poster` 并要求旅行影像适配；
-- 要求随机选择贴纸、色块、景观版画、等高线、建筑解构或意象形式；
-- 要求留白处加入英文地名；
-- 一组旅行视频帧需要形成统一但不模板化的 Zine 序列；
-- 用户明确要求 16:9 或其他输出比例。
+- 本地路线是上游 `gc-minimal-zine-poster-v0-1` 的 **thin wrapper**；
+- 不得再恢复本地视觉家族、55% 照片阈值、结构转译最低要求、`REJECTED_*` 审美失败码或 cheapness detector；
+- 只允许在必要时适配画幅、真实照片素材保真、用户明确提供的地点文字和多图独立交付；
+- 上游 Prompt Compiler、Variation Engine、Color Engine、Negative Constraints、Workflow、Quality Gate 保持原样；
+- `撕纸效果` / `$tear-paper` 只是路由别名，不是最终图像 Prompt 的视觉词。
 
-### 画幅优先级
-
-1. 用户明确指定的比例或像素尺寸；
-2. 参考图中真正的设计画面比例与方向；
-3. 没有可用参考比例时，保持源照片 / 视频帧比例。
-
-**16:9 不是默认值。**只有用户明确要求主动转换成 16:9 时，才改变为 16:9；如果源图或参考图本身已经是 16:9，则可以自然保持。
-
-强制行为：
-
-1. 先拆解参考图：比例、方向、留白水平、主体尺度、主体位置、纸张、图像处理、字体行为、强调色逻辑和印刷纹理；
-2. 手机截图外框、黑边、抖音 UI、账号名、点赞评论、播放器控件和上下对比区域不得参与画幅判断；
-3. 不得因为本 Skill 名称含 `16x9` 就强制输出 16:9，也不得因为上游 Skill 是 `3:5` 就回退为 3:5；
-4. 必须保留原图关键场景证据，例如地形、岸线、建筑体块、人物姿态、地平线或标志性物件；
-5. 每张只选择一个主要视觉语法；批量时不得连续机械重复同一语法和同一贴纸位置；
-6. 强调色优先从原图提取，并服从参考图的色彩机制，不得固定套蓝色；
-7. 已知地点且参考构图允许时，在留白区加入英文地名；
-8. 地点未知时不得编造；不得虚构坐标、天气、日期、档案号或其他精确信息；
-9. 结果必须是重新组织视觉语法后的 Zine 画面，不得只是原照片叠纸纹理；
-10. 批量输出保持纸张和字体系统一致，同时让构图、意象与强调色随源画面变化；
-11. 学习参考图的视觉机制，不直接复制创作者水印、署名、精确装饰文字或完整作品；
-12. 上游许可与本地改动说明见 `skills/gc-minimal-zine-travel-16x9/SOURCE.md` 和 `LICENSE`。
-
-调用名继续保留兼容：
-
-```text
-$gc-minimal-zine-travel-16x9
-```
-
-名称中的 `16x9` 仅为兼容第一次安装后的调用方式，不代表默认输出比例。
+旧调用名存在时只作为兼容入口，不得覆盖 canonical thin wrapper。
 
 ## 7. V4.2 最终检查
 

@@ -1,7 +1,32 @@
 # START HERE — 强制执行入口
 
-版本：`4.2.0`
+版本：`4.2.1`
 状态：`MANDATORY`
+
+## 0. 审美 Skill 设计治理｜全仓强制前置
+
+凡涉及以下任一任务，**在读取具体视觉 Skill 之前，必须先读取**：
+
+`AESTHETIC_SKILL_DESIGN_CHARTER.md`
+
+适用范围：
+
+- 新建视觉 / 审美 / 海报 / 品牌 / 图片生成 Skill；
+- 修改现有视觉 Skill；
+- 从成熟视觉 Skill 派生新 Skill；
+- 修改 Prompt Compiler、Variation Engine、Color Engine、Typography、Texture、Quality Gate；
+- 因“结果不好看”准备继续增加视觉规则、阈值、分类、validator 或失败码。
+
+核心治理要求：
+
+1. 审美 Skill 优先设计成**紧凑 Prompt Compiler**，不是规则百科；
+2. 先找 5—8 个高杠杆视觉变量，再停止加规则；
+3. 必须区分 `correctness problem` 与 `taste problem`；工程验证可以防错，不能证明好看；
+4. 已经优秀且成熟的上游视觉 Skill，默认采用 **upstream 100% + thin wrapper**，不得轻易重写；
+5. 如果出现“规则越来越多，结果越来越僵 / 越来越模板化”，默认动作是删规则或回退，而不是继续补规则；
+6. 若必须大幅改变成熟 Skill 的构图、色彩、字体、纹理、variation 或质量门槛，应新建实验 Skill，而不是污染稳定 Skill。
+
+本节优先于各视觉路线内部的“为了更高级而加规则”类做法，但不覆盖事实正确性、安全、品牌名、人物身份、用户明确尺寸等 correctness 硬约束。
 
 ## 1. 最高优先级路由
 
@@ -12,7 +37,7 @@
 3. 明确要求可编辑 Figma 源文件的正式品牌系统；
 4. 私人审美评分与校准；
 5. 餐饮经营总控；
-6. 旅行视频 / 照片的参考图优先极简 Zine 转换。
+6. 旅行视频 / 照片的极简 Zine 转换。
 
 同一任务涉及多条路线时分别通过相关硬门槛。根入口优先于旧子目录入口。
 
@@ -102,10 +127,11 @@ color_exception_reason: null
 
 读取：
 
-1. `skills/restaurant-poster-art-director/SKILL.md`；
-2. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`；
-3. `config/restaurant-poster-generation.v1.json`；
-4. calibration 文件。
+1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
+2. `skills/restaurant-poster-art-director/SKILL.md`；
+3. `generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md`；
+4. `config/restaurant-poster-generation.v1.json`；
+5. calibration 文件。
 
 独立海报的多风格配额不得套用到 V4.2 十张品牌案例内部。`READY_TO_POST` 必须通过产品、文字、实际尺寸与 100% 检查。
 
@@ -120,9 +146,10 @@ color_exception_reason: null
 
 读取：
 
-1. `restaurant_design_system/START_HERE.md`；
-2. `restaurant_design_system/FIGMA_FIRST_NO_ADOBE_PIPELINE_V1.md`；
-3. 该路线要求的 Skill、配置与 validator。
+1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
+2. `restaurant_design_system/START_HERE.md`；
+3. `restaurant_design_system/FIGMA_FIRST_NO_ADOBE_PIPELINE_V1.md`；
+4. 该路线要求的 Skill、配置与 validator。
 
 不得把该路线强加给每日品牌案例、直接整版生成或用户明确说“不用 Figma”的任务。
 
@@ -130,6 +157,7 @@ color_exception_reason: null
 
 读取：
 
+- `AESTHETIC_SKILL_DESIGN_CHARTER.md`（仅当任务涉及修改/新建审美 Skill 时强制；普通评分不必重复读取）；
 - `skills/personal-aesthetic-critic/SKILL.md`；
 - 品牌项目需要正式量化时读取 `skills/restaurant-brand-aesthetic-gate/SKILL.md`；
 - rubric、penalties、schema 与 calibration。
@@ -146,58 +174,30 @@ color_exception_reason: null
 
 没有真实基线只能诊断；食品安全、负贡献或高峰不可执行是 `BLOCKER`；没有试点 PASS 不得 `ROLLOUT_READY`。
 
-## F. 旅行视频 / 照片参考图优先极简 Zine
+## F. 旅行视频 / 照片极简 Zine
 
 适用：
 
-- 旅行视频帧转视觉；
-- 风景、人物旅行照转 Zine；
-- 用户提供参考图并要求按参考图的画幅、留白、主体尺度、纸张、印刷、文字和色彩机制处理；
+- 旅行视频帧或旅行照片转视觉；
 - 用户点名 `gc-minimal-zine-poster` 并要求旅行影像适配；
-- 用户要求在贴纸、色块、景观版画、等高线、建筑解构或意象形式之间变化；
-- 用户要求在留白处加入英文地名；
-- 同一旅行视频的一组画面需要统一纸张与字体系统，但构图不能机械重复；
+- 用户说“撕纸效果”或 `$tear-paper`；
+- 同一批照片要求每张独立生成；
 - 用户明确指定 `16:9` 或其他比例。
 
 必须读取：
 
-1. `skills/gc-minimal-zine-travel-16x9/SKILL.md`；
-2. 如需确认上游来源或许可，读取 `skills/gc-minimal-zine-travel-16x9/SOURCE.md` 与 `LICENSE`。
+1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
+2. `skills/gc-travel-zine-poster-v1/SKILL.md`；
+3. 该 Skill 要求读取的 `skills/gc-travel-zine-poster-v1/UPSTREAM_SKILL.md`。
 
-### 画幅硬规则
+### 最高优先级原则
 
-按以下优先级确定画幅：
-
-1. 用户明确指定的比例或像素尺寸；
-2. 参考图中真正的设计画面比例和方向；
-3. 没有可用参考比例时，保持原照片 / 视频帧比例。
-
-**不得默认强制 `16:9`。**
-
-- 只有用户明确要求转换到 `16:9` 时，才主动改成 `16:9`；
-- 如果源图或参考图本身就是 `16:9`，可以自然保持 `16:9`；
-- 社交平台截图的手机外框、黑边、抖音 UI、播放器和上下对比区域不得参与画幅判断；
-- 不得因为上游 Skill 是 `3:5` 就回退到 `3:5`。
-
-### 强制行为
-
-- 先拆解参考图的比例、方向、留白、主体尺度、主体位置、纸张、图像处理、字体位置、强调色和印刷纹理；
-- 保留原画面的地形、岸线、建筑、人姿态或标志性物件等关键证据；
-- 每张只选择一个主视觉语法，批量时做受控轮换，避免连续重复；
-- 主强调色优先从原图提取，并服从参考图的色彩机制；
-- 已知地点且参考构图允许时，在留白中加入英文地名；
-- 不得虚构坐标、天气、日期、档案编号或其他精确信息；
-- 排除抖音 UI、播放器控件、手机框、账号信息和上下对比界面；
-- 输出必须是重新设计后的 Zine 画面，而不是原图加纸张滤镜；
-- 学习参考图的视觉机制，不直接复制创作者水印、署名、精确装饰文字或完整作品。
-
-调用名继续保留兼容：
-
-```text
-$gc-minimal-zine-travel-16x9
-```
-
-> 名称里的 `16x9` 只为兼容已安装调用，不代表默认输出比例。
+- 本地实现是上游 `gc-minimal-zine-poster-v0-1` 的 **thin wrapper**；
+- 不得再恢复本地旅行视觉家族、55% 照片阈值、结构转译最低要求、`REJECTED_*` 审美失败码、cheapness detector 或大型 reference-conditioning 规则；
+- 只允许必要适配：画幅、真实照片作为上游 Image Anchor 的素材来源、用户明确提供的事实地名、多图独立交付；
+- 上游 Prompt Compiler、Variation Engine、Color Engine、Typography、Texture、Negative Constraints、Workflow、Quality Gate 保持原样；
+- `撕纸效果` / `$tear-paper` 只是方便调用的路由别名，不是最终图像 Prompt 的视觉词；
+- 若未来需要大幅改变上游审美机制，新建实验 Skill，不得继续修改 canonical wrapper。
 
 ## 混合任务
 
