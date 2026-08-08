@@ -25,7 +25,7 @@ UPSTREAM_SKILL.md
 
 ## 直接调用纪律
 
-当用户明确说“使用撕纸效果”“直接用 Skill”“使用 `$tear-paper`”或点名本 Skill 时：
+当用户明确说“直接用 Skill”“使用 `$zine`”或点名本 Skill 时：
 
 - 直接执行本 Skill + `UPSTREAM_SKILL.md`；
 - 不得把任务改成“助手自由写一套审美 Prompt”；
@@ -86,7 +86,7 @@ UPSTREAM_SKILL.md
 - `REJECTED_*` 审美失败码；
 - reference conditioning 大型字段表；
 - 为“更高级”而扩充长 Prompt；
-- 把“撕纸效果 / tear-paper / travel zine”等路由词当成最终视觉 Prompt。
+- 把入口名、Skill 名或风格昵称当成最终视觉 Prompt。
 
 这些规则会改变上游的生成自由度，因此全部废弃。
 
@@ -105,23 +105,25 @@ UPSTREAM_SKILL.md
 - source photo 的具体 anchor 内容；
 - 用户明确提供的地点文字。
 
-**不要把本文件全文、检查表或解释性规则塞进最终 Prompt。**
+**不要把本文件全文、检查表、调用名或解释性规则塞进最终 Prompt。**
 
 ## 用户调用
 
-用户可写：
+推荐唯一日常入口：
 
 ```text
-使用撕纸效果
+$zine
 ```
 
 或：
 
 ```text
-$tear-paper
+使用 zine 处理这张图
 ```
 
-这只是调用别名。视觉执行仍然是上游 `gc-minimal-zine-poster-v0-1`。
+`$zine` 只是中性路由标识，视觉执行仍然是上游 `gc-minimal-zine-poster-v0-1`。
+
+旧入口 `$tear-paper` / “撕纸效果”已废弃，因为名称本身可能污染下游图像模型，使其错误偏向 literal ripped-paper / scrapbook。旧入口不得直接触发生成，只能提示切换到 `$zine`。
 
 ## Upstream
 
