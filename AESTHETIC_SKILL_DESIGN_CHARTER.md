@@ -1,6 +1,6 @@
 # AESTHETIC SKILL DESIGN CHARTER
 
-版本：`1.0.0`
+版本：`1.1.0`
 状态：`MANDATORY`
 
 ## 0. 适用范围
@@ -11,9 +11,14 @@
 - 修改现有视觉 Skill；
 - 从一个成熟视觉 Skill 派生新 Skill；
 - 为图像生成增加 Prompt Compiler、Variation Engine、Color Engine、Quality Gate 或审美规则；
-- 因“结果不好看”准备继续增加视觉规则、阈值、分类或失败码。
+- 因“结果不好看”准备继续增加视觉规则、阈值、分类或失败码；
+- 用户明确点名某个 Skill 并要求直接使用 / 生成。
 
-本文件约束的是**如何设计审美 Skill**，不是某一种具体视觉风格。
+本文件约束的是**如何设计和执行审美 Skill**，不是某一种具体视觉风格。
+
+用户明确点名 Skill 时，同时必须读取：
+
+`rules/DIRECT_SKILL_INVOCATION_RULE.md`
 
 ---
 
@@ -376,3 +381,26 @@
 > **成熟优秀 Skill，默认 thin wrapper，不要重写。**
 >
 > **规则越多结果越僵时，先删规则。**
+
+---
+
+## 15. 用户点名 Skill 时：执行优先于再设计
+
+当用户明确说“直接用 Skill”“使用这个 Skill”“按 `$skill-name` 生成”时，执行纪律高于助手的自由发挥。
+
+必须：
+
+1. 读取并执行用户点名的 Skill；
+2. 若 Skill 有 Prompt Compiler，最终 Prompt 必须由该 Compiler 产生；
+3. 只填写 Skill 允许的变量 / 适配，不得另写一套艺术指导取代它；
+4. 用户没有要求改 Skill 时，不得擅自改 Skill；
+5. 输出不满意时，先查执行链，不先改审美规则；
+6. 不得自动退回“我重新给你写一个 Prompt”的模式。
+
+完整执行规则见：
+
+`rules/DIRECT_SKILL_INVOCATION_RULE.md`
+
+核心原则：
+
+> **用户点名 Skill = 执行 Skill，不是借 Skill 名义自由发挥。**
