@@ -2,591 +2,441 @@
 name: gc-travel-zine-poster-v1
 description: >
   LOCKED reference-first travel/life-memory zine transformation skill derived from
-  LiamGvchi/gc-minimal-zine-poster. Use when a real photo or video frame must be rebuilt
-  into a restrained archival zine image with large intentional negative space, one dominant
-  transformation mechanism, source-derived color logic, sparse typography, flat scanned-paper
-  materiality, and strict rejection of generic scrapbook/template/travel-ad aesthetics.
+  LiamGvchi/gc-minimal-zine-poster. Rebuild real photos or video frames into restrained
+  archival zine artwork through structural image translation, not literal torn-paper framing.
 ---
 
-# GC Travel Zine Poster v1 — LOCKED
+# GC Travel Zine Poster v1 — LOCKED / REFERENCE-CONDITIONED
 
-状态：`LOCKED / CANONICAL`
+状态：`LOCKED / CANONICAL / V1.2`
 
-这是本仓库旅行 / 生活记忆照片转 Zine 的**唯一正式入口**。
+这是本仓库旅行 / 生活记忆照片转 Zine 的唯一权威实现。
 
-本 Skill 派生自 `LiamGvchi/gc-minimal-zine-poster` / `gc-minimal-zine-poster-v0-1`，但针对真实照片、视频帧、人物、室内、风景、建筑、食物与旅行片段增加了严格的 source-fidelity、reference-first 和 anti-template 约束。
+核心目标不是“撕纸”，而是：
 
-核心原则只有一句：
+> **把真实照片的视觉证据重新翻译成独立出版物 / 田野档案 / 版画式图像语言。**
 
-> **先拆参考图的视觉机制，再拆原图的关键证据，然后做减法重构；禁止把“复古、杂志、胶带、邮戳、米色纸”当作风格本身。**
+用户说“撕纸效果”只是调用别名，不代表成品必须出现撕纸边框。
 
 ---
 
 ## 0. 最高优先级
 
-按以下顺序执行：
+执行优先级：
 
 1. 用户明确指令；
-2. 用户提供的参考图视觉机制；
-3. 用户源照片 / 视频帧的真实身份与几何；
-4. 本 Skill 的默认回退规则。
+2. 用户提供的参考图真实视觉机制；
+3. 用户源照片 / 视频帧的真实身份、几何和关键色彩；
+4. 本 Skill 的回退规则。
 
-如果输出和用户提供的参考图机制明显冲突，即使“看起来也不错”，仍然判错。
-
-**严禁把 Skill 名称本身当作 prompt。**
-
-以下做法属于执行失败：
-
-```text
-similar to gc-travel-zine-poster-v1
-in gc-travel-zine-poster-v1 style
-clean travel editorial zine poster
-retro travel magazine look
-```
-
-调用图像生成器前，必须把本 Skill 的具体视觉约束**序列化进最终生成 Prompt**。不能假设图像模型知道本 Skill。
+如果结果只是“看起来复古”但参考图机制没有被执行，判错。
 
 ---
 
-## 1. 参考图锁｜REFERENCE-FIRST LOCK
+## 1. 路由名隔离锁｜ROUTING TOKEN IS NOT A STYLE TOKEN
 
-当用户提供参考图、社交平台截图、上下对比图或示例作品时，生成前必须解析：
+以下词只用于路由，不得原样传给图像生成器：
+
+- `tear-paper`
+- `撕纸效果`
+- `gc-travel-zine-poster-v1`
+- `gc-minimal-zine-poster`
+
+最终生成 Prompt 中默认禁止出现：
 
 ```text
-reference_ratio:
-reference_orientation:
+tear paper style
+scrapbook
+vintage postcard
+retro magazine
+photo pasted on beige paper
+similar to gc-travel-zine-poster-v1
+```
+
+除非参考图本身明确以“小型撕纸照片碎片”为核心，否则不得主动要求 literal torn-paper frame。
+
+---
+
+## 2. 参考图必须真实参与生成｜REFERENCE CONDITIONING LOCK
+
+只要用户在当前会话、当前任务或紧邻上下文中提供过目标参考图，就必须把它们视为真实 style reference，而不是靠文字记忆概括。
+
+生成前必须区分：
+
+```text
+STYLE_REFERENCE_IMAGES = 用户用来说明审美 / 转换机制的图
+SOURCE_IMAGE = 当前这一张要被处理的原图
+```
+
+硬规则：
+
+- 参考图存在时，不得声称“没有明确参考图”；
+- 不得只把 SOURCE_IMAGE 交给图像模型，再用一句“zine style”代替参考图；
+- 如果工具支持同时提供参考图和源图，必须同时提供，并在 Prompt 中明确角色；
+- 如果工具无法可靠地区分多张参考图与源图，则先独立解析参考图，形成 `REFERENCE_STYLE_SPEC`，再逐张生成；
+- 批量任务中，每次生成仍然只能有 1 张 primary source；参考图只能承担审美机制，不得混入场景内容；
+- 参考截图中的手机 UI、黑边、账号、点赞评论、播放器、上方原图区域都不是最终成品内容。
+
+### 参考图解析字段
+
+生成前必须解析：
+
+```text
 reference_artwork_bounds:
+reference_ratio:
 negative_space_level:
+photo_preservation_ratio:
+abstraction_strength:
 main_visual_scale:
 main_visual_position:
-main_visual_type:
-paper_family:
-image_treatment:
-typography_scale:
-typography_position:
-accent_color_logic:
-texture_family:
 composition_family:
-realism_vs_abstraction:
-forbidden_reference_assets:
+print_process:
+paper_family:
+typography_scale:
+accent_color_logic:
+structural_translation:
 ```
 
-### 截图解析规则
-
-如果参考是抖音 / 小红书 / 手机截图：
-
-- 手机黑边不是画面；
-- 顶部状态栏不是画面；
-- 账号、点赞、评论、播放器不是画面；
-- “原图 + 转换后图”的上下对比中，只把**真正的设计成品区域**作为风格参考；
-- 不得把整个手机截图比例当作设计比例；
-- 不得复制创作者账号、水印、UI、互动数字。
-
-### 必须学习的机制
-
-优先学习：
-
-- 留白到底有多少；
-- 原照片保留多少、抽象多少；
-- 主视觉是大场景印刷化、窄切片、撕纸照片、地形轮廓、色块、建筑体、还是人物小锚点；
-- 纸张是扫描纸、未涂布纸、旧档案纸还是近中性纤维纸；
-- 图像是否半调、丝网、复印、干刷、套色、版画或低对比扫描；
-- 文字是否只是角落微型档案字；
-- 强调色来自湖水、沙地、衣服、果汁、墙面、建筑、天空还是其他源图证据；
-- 视觉重心在哪个区域；
-- 画面如何利用“空”而不是靠装饰填满。
-
-### 不能复制的内容
-
-- 创作者署名与账号；
-- 水印；
-- 精确装饰文案；
-- 精确档案号；
-- 未提供的坐标、日期、年份、天气、海拔、机构名；
-- 可识别的完整商业外观；
-- 社交平台 UI。
+没有完成上述解析，不得生成。
 
 ---
 
-## 2. 画幅锁｜ASPECT-RATIO LOCK
+## 3. 参考样例真正的视觉机制｜TARGET GRAMMAR
 
-确定比例的唯一优先级：
+当前目标参考体系的重点不是“撕纸边缘”，而是以下机制：
 
-1. 用户明确指定比例 / 像素；
-2. 否则跟随参考作品真实设计区域的比例与方向；
-3. 没有可用参考比例时，保持源照片 / 视频帧比例。
+### A. Memory Fragment / 记忆碎片
 
-规则：
+- 大面积纸张留白；
+- 原照片只保留成一个很小的不规则碎片；
+- 照片一般不超过画布约 10%–25%；
+- 可有一个很小的色块 / 墨迹支持；
+- 绝不允许把 70%–90% 的原照片包一圈撕纸边当成此模式。
 
-- `16:9` 不是默认；
-- 上游 `3:5` 也不是默认；
-- 不得为了模板强裁；
-- 不得因为目录或旧 Skill 名含 `16x9` 就强制 16:9；
-- 用户说 9:16 就必须 9:16；
-- 用户说“按参考图”就优先按参考成品比例。
+### B. Terrain / Scene Print / 地形版画
 
----
+- 把山脊、峡谷、田野、道路、云层等主几何重新制版；
+- 用半调、丝网、复印、干刷、木刻感、粗网点把场景变成印刷图像；
+- 原照片不是“被贴上去”，而是被重新画成版画系统。
 
-## 3. 单图来源锁｜ONE SOURCE = ONE OUTPUT
+### C. Layered Terrain Bands / 分层地貌
 
-批量任务中，每张输出必须对应一个明确源图。
+- 将峡谷、山体、沙丘、田野等拆成 2–5 层地形带；
+- 保留原场景轮廓关系；
+- 大量纸张露出；
+- 人物可以成为极小色彩锚点。
 
-- 每张生成图只能有 **1 张 primary source image**；
-- 其他照片最多用于同一人物 / 同一系列一致性辅助，不得混合重构成新场景；
-- 不得把多张源图拼成一张，除非用户明确要求拼贴；
-- 用户说“每张单独生成”，就必须一源图一成品文件；
-- 不得把同一张源图重复当成多张成品的主要内容。
+### D. Architectural Specimen / 建筑或物件标本
 
-有人物时：
+- 从原图提取 1 个最强结构：建筑、塔、树、路灯、锅、窗、桥等；
+- 将其孤立、缩小或几何化；
+- 周围用纸张、印刷云层、地形带承接；
+- 像档案研究图，而不是旅游海报。
 
-- 保留人物年龄感、脸型、发型、服装与姿态；
-- 不做无请求的美化、换脸、增龄、减龄；
-- 人物可以被缩小、网点化、丝网化、剪影化，但身份特征不能漂移。
+### E. Vertical Slice / 窄幅记忆切片
 
----
+- 只保留一条窄照片切片；
+- 切片里保留人物 / 树 / 建筑等真实证据；
+- 其余画面用抽象场域、版画天空、地形带重新组织；
+- 切片是“证据”，不是整张照片主体。
 
-## 4. 源图证据锁｜SOURCE FIDELITY LOCK
+### F. Contour / Field Map / 轮廓场域
 
-成品必须仍然能看出来自这张原图，而不是“同主题新生成”。
+- 把湖泊、道路、田埂、桥、山谷等真实形状转为简化轮廓 / 等高线 / 色块场；
+- 只保留必要线条；
+- 一种饱和源色承担主要视觉锚点；
+- 禁止假技术地图和复杂伪数据。
 
-每张至少保留 3 项重要证据（如果存在）：
+### G. Full-field Screenprint / 全场丝网转译
 
-- 地形 / 岸线 / 山脊 / 河湖轮廓；
-- 建筑体块、窗、墙、门、塔、镜面；
-- 人物姿态、人物在画面中的尺度关系；
-- 地平线高度；
-- 主运动方向；
-- 一个标志物：树、砂锅、玻璃杯、筷筒、桌面、岩石、道路等；
-- 一个强源色：湖蓝、沙黄、红衣、西瓜红、雪碧绿、墙面红纸等。
+- 可以让最终图像占较大面积，但必须明显被重新制版；
+- 人、岩石、天空、地形整体进入半调 / 丝网 / 粗网点系统；
+- 不允许保留“高保真原照片 + 纸张边框”的状态。
 
-室内 / 餐饮生活照同样适用：
+### H. Brush / Ink Silhouette / 粗笔剪影
 
-- 不需要强行“变成风景”；
-- 可以把砂锅、桌面曲线、窗格、报纸墙、人物、红色饮料等重构成版画 / 色块 / 轮廓 / 切片；
-- 核心是**重新组织视觉语法**，不是给照片加一个米白边框。
-
----
-
-## 5. 构图锁｜COMPOSITION LOCK
-
-目标：克制、稀疏、像独立出版物 / 田野档案 / 艺术画册，而不是社交媒体模板。
-
-必须：
-
-- 一个第一视觉中心；
-- 一个主视觉机制；
-- 大面积有意义的纸张 / 空域；
-- 主体尺度受控；
-- 装饰极少；
-- 留白承担构图功能。
-
-回退范围（仅在参考图不明确时使用）：
-
-- sticker / specimen：约 65%–85% 空纸；
-- contour / collage / architecture：约 45%–70% 空纸；
-- scenic print：约 35%–60% 空纸。
-
-### 直接失败
-
-如果成品的逻辑可以概括为：
-
-```text
-原照片
-+ 米白背景
-+ 大标题
-+ 胶带
-+ 邮戳
-+ 撕纸边
-```
-
-则判定为 `REJECTED_GENERIC_TEMPLATE`。
+- 将沙丘、山脊、人物、树等压缩成一个强轮廓；
+- 用干刷、墨迹、粗糙边缘和单一色场重构；
+- 保留姿态或地形证据。
 
 ---
 
-## 6. 主视觉家族锁｜ONE PRIMARY FAMILY ONLY
+## 4. 源图证据锁｜SOURCE FIDELITY
 
-每张只选一个主家族。最多允许一个弱辅助机制。
+每张最终图必须仍然能证明来自 SOURCE_IMAGE。
 
-### A. Scenic Print / 场景版画
+至少保留 3 项重要证据（存在时）：
 
-适合：山、湖、海、沙漠、草原、峡谷、室内大空间、桌面大关系。
+- 山脊 / 岸线 / 云层 / 田野 / 道路 / 河湖的主几何；
+- 建筑体块、塔、窗、桥、路灯、树等标志物；
+- 人物姿态、位置和尺度关系；
+- 地平线高度或透视方向；
+- 一个关键源色；
+- 一种最有识别度的结构关系。
 
-- 保留大几何；
-- 转为半调 / 丝网 / 复印 / 干刷 / 版画；
-- 人物若重要，作为小比例锚点保留。
-
-### B. Contour / Field Map / 轮廓场域
-
-适合：湖面、道路、桌面曲线、器皿轮廓、空间路径。
-
-- 把一条真实几何关系变成主图；
-- 只用一类源色；
-- 不做假技术地图。
-
-### C. Architectural Deconstruction / 建筑解构
-
-适合：建筑、窗、墙、塔、门、室内框架、砂锅等强结构物。
-
-- 提取 1–3 个体块；
-- 用几何、印刷平面、阴影块组织；
-- 不生成 3D 概念建筑。
-
-### D. Vertical Slice Memory / 窄幅记忆切片
-
-适合：人物、树、塔、门、窗、桌边局部。
-
-- 保留一条窄照片 / 印刷切片；
-- 其余区域用纸张与抽象场域承接；
-- 切片必须来自源图真实主体。
-
-### E. Torn Photo Fragment / 撕纸照片碎片
-
-适合：照片本身有强瞬间。
-
-- 照片只占较小区域；
-- 撕纸只是照片边缘处理，不是装饰主题；
-- 最多一个小胶带 / 色块支持。
-
-### F. Color-Block Field / 色块场域
-
-适合：原图有明确单色锚点。
-
-- 西瓜红 → 红色印刷场；
-- 湖水蓝 → 钴蓝场；
-- 沙漠黄 → 赭黄场；
-- 红衣 → 朱红人物锚点；
-- 绿色瓶体 → 只有确有意义时才保留绿色。
-
-### G. Symbolic Silhouette / 象征剪影
-
-适合：简单、标志性主体。
-
-- 人、树、器皿、山脊、岸线可以变成粗糙墨色或单色剪影；
-- 必须仍能对应原图姿态 / 形状。
-
-### H. Archival Specimen / 档案标本
-
-适合：单个强物件，如砂锅、树、建筑、岩石、杯子、器皿。
-
-- 作为“标本”被孤立；
-- 大量留白；
-- 文字极少。
-
-### 禁止混搭
-
-不得同一张同时出现：撕纸 + 多胶带 + 邮戳 + 多色块 + 地图 + 大标题 + 植物贴纸。
-
-出现 3 个以上同等强度的“设计技巧”，直接失败。
+禁止为了风格把真实场景换成“同主题的新景色”。
 
 ---
 
-## 7. 文字锁｜TYPOGRAPHY LOCK
+## 5. 结构转译最低要求｜STRUCTURAL TRANSLATION MINIMUM
 
-默认：**如果用户没有给文字，就不要主动发明大标题。**
+每张必须至少完成：
+
+1. **一种结构转译**：
+   - 地形分层；
+   - 轮廓地图；
+   - 建筑解构；
+   - 窄切片；
+   - 剪影；
+   - 场景版画；
+   - 标本孤立；
+   - 小型记忆碎片。
+
+2. **一种材料转译**：
+   - halftone；
+   - risograph；
+   - xerox；
+   - faded offset；
+   - dry brush；
+   - coarse screenprint；
+   - ink bleed / misregistration。
+
+只有“旧纸 + 撕边 + 降饱和”不满足最低要求。
+
+---
+
+## 6. 原照片占比硬锁｜PHOTO DOMINANCE CAP
+
+这是防止再次生成廉价模板的关键规则。
+
+### 默认禁止
+
+如果画面中出现一个占画布 **55% 以上**、基本保持原摄影结构和原色彩的完整照片区域，并且只是被撕纸边框围住，则直接判：
+
+`REJECTED_PHOTO_IN_FRAME`
+
+### 各模式约束
+
+- Memory Fragment：原照片区域默认 ≤ 25%；
+- Vertical Slice：原照片切片宽度默认 ≤ 25%；
+- Terrain / Contour / Specimen / Brush / Screenprint：最终主体区域可以大，但必须经过明显结构 / 印刷转译，不再读作原照片；
+- Full-field Screenprint：允许 60%–90% 画面占比，但不得读作普通照片。
+
+### 撕纸边缘占比
+
+除非参考图明确如此：
+
+- 不得用一个巨大完整撕纸矩形包住整张照片；
+- 撕纸只允许成为局部材料语法；
+- “纸边框”不能成为第一视觉中心。
+
+---
+
+## 7. 留白锁｜NEGATIVE SPACE
+
+参考图优先。
+
+参考不明确时：
+
+- Memory Fragment / Specimen：60%–85% 留白；
+- Contour / Architecture / Vertical Slice：40%–70% 留白；
+- Terrain Bands：35%–65% 留白；
+- Full-field Screenprint：可降低留白，但必须有平面印刷感。
+
+留白必须是真正的构图空间，不是给完整照片加一圈米色边。
+
+---
+
+## 8. 色彩锁｜SOURCE-DERIVED COLOR
+
+使用：纸张 + 黑 / 灰 + 1 个主要源色。
+
+例如：
+
+- 湖水 / 天空 → 钴蓝、矿物蓝、青蓝；
+- 稻田 / 草地 → 稻绿、苔绿、田野绿；
+- 红衣人物 → 番茄红 / 朱红；
+- 沙漠 / 土地 → 赭黄 / 烧橙；
+- 建筑白 → 中性白作为主体，蓝 / 黄作支持。
+
+禁止自动固定成“米黄纸 + 复古棕 + 蓝点”。
+
+---
+
+## 9. 文字锁｜TYPOGRAPHY
+
+默认少字甚至无字。
 
 允许：
 
-- 用户明确指定的地名；
-- 用户明确指定的单词，例如 `WANZAI`；
-- 极小 serif / monospaced / typewriter 式标签；
-- 用户明确要求时的一句短语。
+- 用户明确给出的地名；
+- 用户明确给出的单词；
+- 极小 serif / monospaced / typewriter 标签；
+- 参考图明确存在的小型 field-note 行为。
 
-默认禁止主动发明：
+禁止主动发明：
 
-- `CLAYPOT`
-- `TABLESIDE`
-- `WATERMELON`
-- `PLAYFUL`
-- `SUMMER SIP`
-- `GOOD DAYS`
-- `LOCAL FLAVOR`
-- `TRAVEL MEMORIES`
-- `FOOD JOURNAL`
-- `GOOD FOOD GOOD MOOD`
-- 任何类似“为了像杂志”而添加的英文。
+- 大标题；
+- 文艺英文；
+- `CLAYPOT` / `SUMMER SIP` / `TABLESIDE` 等自动标题；
+- 坐标、日期、档案号、天气、海拔、机构、年份；
+- 无意义英文。
 
-### 文字强度
-
-- 文字必须明显弱于主视觉；
-- 禁止巨型居中标题；
-- 禁止商业海报标题层级；
-- 禁止大段正文；
-- 禁止无意义英文作为装饰；
-- 禁止用数字、编号、伪档案信息填留白。
-
-### 事实锁
-
-未经用户提供或可靠上下文确认，不得生成：
-
-- 地点；
-- 坐标；
-- 日期 / 年份；
-- 天气；
-- 海拔；
-- 档案号；
-- 机构；
-- 电话 / 地址；
-- 任何精确元数据。
-
-未知就省略。
+文字永远不能比主视觉更响。
 
 ---
 
-## 8. 颜色锁｜COLOR LOCK
+## 10. Prompt 编译硬锁｜PROMPT SERIALIZATION
 
-默认系统：
+调用图像生成器前，最终 Prompt 必须显式写入：
 
 ```text
-paper tone
-+ gray / black
-+ one source-derived accent family
+SOURCE_IMAGE role
+STYLE_REFERENCE_IMAGES role or REFERENCE_STYLE_SPEC
+resolved aspect ratio
+reference-derived composition mechanism
+source evidence to preserve
+selected ONE primary transformation family
+structural translation action
+material / print translation
+negative-space geometry
+source-derived accent color
+text policy
+hard avoids
 ```
 
-强调色优先从原图证据提取：
-
-- 湖 / 天空 → cobalt / mineral blue；
-- 红衣 / 红纸 / 西瓜 / 红饮料 → tomato / vermilion；
-- 沙 / 土 / 木 → ochre / burnt orange；
-- 草地 → moss / field green；
-- 其他高饱和物件 → 只有它确实是原图视觉锚点时使用。
-
-规则：
-
-- 每张一个主高色相；
-- 不允许彩虹式 scrapbook；
-- 不允许为了“复古”自动变黄；
-- 不允许整图统一暖黄滤镜；
-- 不允许把原图高价值强色洗成脏灰；
-- 强调色必须成为结构的一部分，而不是贴上去的小装饰。
-
----
-
-## 9. 纸张与印刷锁｜MATERIAL LOCK
-
-目标是**平面的扫描印刷物**。
-
-允许：
-
-- uncoated paper；
-- fibrous paper；
-- aged archival paper（只在参考图确实偏旧时）；
-- xerox softness；
-- halftone；
-- risograph grain；
-- faded offset；
-- letterpress bleed；
-- dry brush；
-- scan noise；
-- slight misregistration。
-
-禁止：
-
-- 3D 纸张 mockup；
-- 桌面摆拍式纸张阴影；
-- glossy travel brochure；
-- 强烈电影调色；
-- HDR；
-- 大面积黄棕脏污；
-- “为了复古而脏”。
-
-纸张是**构图场域**，不是一层滤镜。
-
----
-
-## 10. 廉价感侦测器｜CHEAPNESS DETECTOR
-
-出现任一项必须判失败：
-
-- 像 Canva / 模板网站的旅行海报；
-- “照片 + 边框 + 胶带 + 标题”；
-- 大标题比图像更强；
-- 贴纸、胶带、邮戳数量过多；
-- 米黄色背景承担全部所谓“高级感”；
-- 假档案号、假日期、假地名；
-- 随机英文；
-- 图像几乎没重构，只加纸纹；
-- 强调色和原图无因果关系；
-- 为了“设计感”加入植物叶子、咖啡邮戳、飞机、地球、棕榈树等无关图标；
-- dense scrapbook；
-- tourism advertisement；
-- lifestyle ad；
-- generic magazine cover；
-- 视觉技巧多于视觉思想。
-
-失败状态：
+### 严禁出现的偷懒 Prompt
 
 ```text
-REJECTED_GENERIC_TEMPLATE
-REJECTED_DECORATIVE_SCRAPBOOK
-REJECTED_FAKE_METADATA
-REJECTED_SOURCE_IDENTITY_LOSS
-REJECTED_REFERENCE_DRIFT
+make it artistic
+minimal travel editorial
+retro zine
+tear-paper style
+scrapbook style
+similar to gc-travel-zine-poster-v1
+```
+
+这些只能算风格词，不算执行。
+
+---
+
+## 11. 生成前闸门｜PRE-GENERATION GATE
+
+必须全部通过：
+
+```text
+[ ] 已识别 SOURCE_IMAGE
+[ ] 已识别 STYLE_REFERENCE_IMAGES 或明确无参考图
+[ ] 若参考图存在，已真实参与解析 / 条件输入
+[ ] 已剥离 UI / 手机黑边 / 上下对比壳
+[ ] 已选 1 个主视觉家族
+[ ] 已定义结构转译，不是装饰叠加
+[ ] 已定义材料转译
+[ ] 已定义原照片占比上限
+[ ] 已定义留白
+[ ] 已定义一个源色锚点
+[ ] 没有虚构文字 / 元数据
+[ ] 路由词“撕纸效果 / tear-paper”不会进入图像 Prompt
+```
+
+任一失败：不得生成。
+
+---
+
+## 12. 出图后廉价感侦测｜POST-GENERATION CHEAPNESS GATE
+
+生成后必须用视觉检查回答：
+
+- 是否像“照片套撕纸边框”？
+- 是否像 scrapbook / vintage postcard / Canva 模板？
+- 是否只是降低饱和度并加纸张纹理？
+- 是否仍然有一个大面积、几乎未转译的完整照片？
+- 是否装饰比结构更突出？
+- 是否参考图最关键的重构机制没有出现？
+- 是否所有批量图片都变成同一种撕纸矩形？
+
+如果任一为“是”，标记 `REJECTED_CHEAP_TEMPLATE`，必须重做，不能交付。
+
+### 特别失败码
+
+```text
+REJECTED_PHOTO_IN_FRAME
+REJECTED_SCRAPBOOK
+REJECTED_GENERIC_POSTCARD
+REJECTED_DECORATION_OVER_STRUCTURE
+REJECTED_REFERENCE_NOT_USED
+REJECTED_TEMPLATE_REPETITION
 ```
 
 ---
 
-## 11. Prompt 序列化锁｜CRITICAL
+## 13. 批量序列锁｜BATCH MODE
 
-**这是本 Skill 最关键的执行锁。**
+用户说“每张单独生成”时：
 
-在调用任何图像生成器之前，最终 prompt 必须明确写入以下九项，不得只写 Skill 名：
-
-1. target ratio / orientation；
-2. paper field + negative-space level；
-3. primary source image identity；
-4. 至少 3 个必须保留的源图证据；
-5. 唯一 primary visual family；
-6. 主视觉尺度与位置；
-7. typography rule（包括“no invented headline”）；
-8. source-derived accent color + physical form；
-9. print texture + hard avoid list。
-
-### 最终 Prompt 结构
-
-必须使用四块：
-
-```text
-BLOCK 1 — canvas / paper / negative space / subject scale and placement
-BLOCK 2 — source evidence / one transformation family / reference mechanism
-BLOCK 3 — exact allowed text or no text / accent color / print defects
-BLOCK 4 — archival flat-scan mood / explicit hard avoids
-```
-
-### 参考图传递
-
-如果图像工具支持 reference images：
-
-- 必须把用户提供的参考图实际传入；
-- 不得只用“像参考图”几个字替代；
-- 批量时 primary source 和 style reference 要明确区分。
+- 1 张源图 = 1 张最终图；
+- 不得混合多张源图场景；
+- 参考图可以共享；
+- 保持纸张 / 字体 / 印刷系统一致；
+- 连续输出不得重复同一个构图骨架；
+- 在参考图允许的机制内轮换：Terrain Print / Memory Fragment / Contour / Specimen / Vertical Slice / Screenprint / Brush Silhouette；
+- 不得通过“每张换一个撕纸边形状”冒充变化。
 
 ---
 
-## 12. 生成前检查｜PRE-GENERATION GATE
+## 14. 参考截图使用方式
 
-调用图像工具前必须确认：
+如果用户给的是“上面原图 + 下面转换图”的截图：
 
-```text
-[ ] 我是在重构，不是在装饰原照片
-[ ] 我已经解析了参考成品区域，而不是手机截图 UI
-[ ] 我只选了一个主视觉家族
-[ ] 我知道这张图必须保留哪 3 个源图证据
-[ ] 我没有发明标题、地点、日期、档案号
-[ ] 文字不会压过视觉
-[ ] 颜色来自源图或参考机制
-[ ] Prompt 已写入完整视觉规则，而不是只写 Skill 名
-```
-
-任一项为否：禁止调用生成器。
+- 上半部分只帮助理解源图与转换后的对应关系；
+- 真正的 STYLE_REFERENCE 是下半部分成品；
+- 最终输出不要自动生成上下 before/after 对比；
+- 学习的是：怎么把原图几何压缩、抽象、版画化、切片化、地图化；
+- 不复制创作者账号、水印、原始装饰文案或完整专有布局。
 
 ---
 
-## 13. 生成后质量门｜POST-GENERATION GATE
+## 15. 最终审美目标
 
-生成后检查：
+应该像：
 
-```text
-[ ] reference grammar recognizable
-[ ] source scene / person recognizable
-[ ] one dominant visual mechanism
-[ ] meaningful negative space
-[ ] typography tiny / restrained or absent
-[ ] no fake metadata
-[ ] no large commercial headline
-[ ] no decorative scrapbook clutter
-[ ] no irrelevant icons
-[ ] paper/print materiality visible but not dirty
-[ ] source-derived accent structurally integrated
-[ ] not merely original photo plus beige frame / texture
-```
-
-如果关键项失败：
-
-- 不得标记 `READY`；
-- 必须调整 prompt 再生成；
-- 最多重试 2 次；
-- 两次仍失败则明确返回 `DRAFT / REJECTED`，不得把廉价结果当完成品交付。
-
----
-
-## 14. 批量锁｜BATCH CONSISTENCY
-
-同一组照片：
-
-保持一致：
-
-- paper family；
-- typography family；
-- print texture family；
-- 总体克制程度。
-
-必须变化：
-
-- primary visual family；
-- 主视觉位置；
-- 源图强调色；
-- 抽象方式；
-- 空间密度。
-
-规则：
-
-- 不得连续两张都是“照片框 + 撕纸边”；
-- 不得连续重复同一胶带位置；
-- 不得每张都有标题；
-- 不得每张都用同一种蓝色；
-- 每一张必须单独成立。
-
----
-
-## 15. 默认审美目标
-
-最终成品应该像：
-
-- independent travel zine；
-- archival field note；
-- art-book insert；
-- restrained editorial print；
-- quiet screenprint / xerox / risograph artifact；
-- 经过设计者减法后的记忆图像。
+- 独立旅行 Zine；
+- 艺术家书 / field notes；
+- 小批量丝网 / Risograph 印刷；
+- 建筑 / 地貌档案图；
+- 克制、有余味、有明确图像编辑观点。
 
 绝不能像：
 
-- 旅游局广告；
-- 模板网站海报；
-- 复古贴纸 App；
-- 生活方式广告；
-- 大标题杂志封面；
-- “AI 做了点艺术效果”。
+- 相册模板；
+- 旅游明信片；
+- 复古 scrapbook；
+- 米白底贴照片；
+- Canva 模板；
+- AI 自动“文艺化”。
 
 ---
 
-## 16. 输出格式
+## 16. Workflow
 
-```markdown
-**生成图**
-[one standalone image for one source]
-
-**执行记录**
-- Ratio: [resolved ratio + reason]
-- Primary source: [which source image]
-- Reference mechanism: [short description]
-- Family: [A–H]
-- Accent: [source-derived hue / form]
-- Text: [exact user-supplied text or NONE]
-- Source evidence preserved: [3+ items]
-- Status: READY | DRAFT | REJECTED
-```
-
-除非用户明确要求，不需要把长 Prompt 全部展示给用户；但内部生成调用必须完整序列化本 Skill 约束。
+1. 识别参考图和源图角色；
+2. 解析参考图真正成品区域；
+3. 提取参考机制；
+4. 提取源图 3–5 个关键证据；
+5. 选择 1 个主视觉家族；
+6. 定义结构转译；
+7. 定义材料转译；
+8. 定义留白与原照片占比；
+9. 定义一个源色锚点；
+10. 编译完整生成 Prompt，剥离所有路由名；
+11. 一源图一生成；
+12. 运行廉价感闸门；
+13. 失败则换结构机制重做，不得只调滤镜；
+14. 通过后才能交付。
 
 ---
 
-## 17. 上游来源
+## Upstream attribution
 
-Derived from:
-
-- Project: `LiamGvchi/gc-minimal-zine-poster`
-- Upstream Skill: `gc-minimal-zine-poster-v0-1`
-- License: MIT
-
-详见同目录 `SOURCE.md` 与 `LICENSE`。
+Derived from `LiamGvchi/gc-minimal-zine-poster` (`gc-minimal-zine-poster-v0-1`), MIT License.
+See `SOURCE.md` and `LICENSE` in this directory.
