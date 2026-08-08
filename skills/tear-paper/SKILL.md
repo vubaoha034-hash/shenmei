@@ -1,14 +1,14 @@
 ---
 name: tear-paper
 description: >
-  中文别名“撕纸效果”。当用户说“撕纸效果”“使用撕纸效果”“撕纸”“旅行撕纸”“zine撕纸”，或显式调用 $tear-paper 时使用。这个 Skill 是旅行/生活记忆 Zine 锁死版的短调用入口；激活后必须读取并完整执行 ../gc-travel-zine-poster-v1/SKILL.md，不得简化成照片加米白底、胶带、邮戳、大标题或通用杂志模板。
+  中文别名“撕纸效果”。当用户说“撕纸效果”“使用撕纸效果”“撕纸”“旅行撕纸”“zine撕纸”，或显式调用 $tear-paper 时使用。该名称只负责路由，不是视觉风格词；激活后必须完整执行 ../gc-travel-zine-poster-v1/SKILL.md。
 ---
 
 # 撕纸效果｜短调用入口
 
-状态：`USER-FACING ALIAS / LOCKED`
+状态：`USER-FACING ALIAS / ROUTING ONLY / LOCKED`
 
-这是 `$gc-travel-zine-poster-v1` 的**短调用入口**，方便用户直接写：
+用户可以直接写：
 
 ```text
 使用撕纸效果，把这些照片每张单独生成。
@@ -20,41 +20,56 @@ description: >
 $tear-paper
 ```
 
-## 强制跳转
+## 最重要的规则
 
-一旦本 Skill 被激活，必须立即读取并完整执行：
+`撕纸效果` / `tear-paper` **只是调用名字，不是生成风格描述。**
+
+激活后必须读取：
 
 ```text
 ../gc-travel-zine-poster-v1/SKILL.md
 ```
 
-该文件是唯一权威实现。不得把本文件当作缩略版视觉提示词，也不得自行总结后省略其中任何以下硬锁：
+并完整执行。
 
-- reference-first；
-- one source = one output；
-- source fidelity；
-- 画幅优先级；
-- 单一主视觉家族；
-- 文字与事实锁；
-- prompt 序列化；
-- 廉价模板 / scrapbook / 旅游广告一票否决；
-- 出图前、出图后的质量闸门。
+### 严禁
 
-## 中文别名行为
+最终图像生成 Prompt 中不得出现以下路由词：
 
-以下表达全部等价于显式调用 `$tear-paper`：
+```text
+tear-paper
+撕纸效果
+gc-travel-zine-poster-v1
+gc-minimal-zine-poster
+```
+
+不得因为用户说“撕纸效果”，就自动生成：
+
+- 巨大的撕纸矩形照片；
+- 米白纸背景；
+- 胶带；
+- 邮戳；
+- vintage postcard；
+- scrapbook；
+- 相册模板。
+
+只有当参考图明确使用“小型撕纸照片碎片”时，撕纸边缘才可以作为该张图的局部材料机制。
+
+## 参考图优先
+
+只要当前会话中存在用户用于说明目标审美的参考图，就必须把它们交给 canonical Skill 作为 `STYLE_REFERENCE_IMAGES` / `REFERENCE_STYLE_SPEC` 处理。
+
+不得只传源照片给图像模型，再用“撕纸效果”四个字代替参考图。
+
+## 中文触发
+
+以下表达全部等价于 `$tear-paper`：
 
 - `撕纸效果`
 - `使用撕纸效果`
 - `按撕纸效果处理`
 - `用撕纸效果每张单独生成`
 
-用户无需记住旧的长调用名。
+用户无需记住长名称。
 
-## 禁止降级
-
-不得因为用户只写了“撕纸效果”四个字，就把任务解释为普通 Photoshop 撕纸边缘、相册拼贴、胶带贴纸或复古滤镜。
-
-这里的“撕纸效果”专指本仓库已经锁死的旅行 / 生活记忆 Zine 转换系统。
-
-如果无法读取权威实现文件，则停止生成并明确报告，禁止自行补写一套替代风格。
+如果 canonical Skill 无法读取，停止生成并报告，禁止自行写一套“复古拼贴”替代方案。
