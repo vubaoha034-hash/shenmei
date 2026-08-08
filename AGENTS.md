@@ -1,6 +1,6 @@
 # Repository instructions for Codex
 
-版本：`4.2.1`
+版本：`4.2.2`
 状态：`MANDATORY`
 
 先读取根 `START_HERE.md`，再按任务类型选择路线。不得因为旧文件仍存在，就让旧 Figma-first 规则覆盖 V4.2 每日品牌案例。
@@ -193,11 +193,12 @@ color_exception_reason: null
 
 ## 6. 旅行视频 / 照片极简 Zine
 
-凡涉及旅行视频帧、旅行照片、`gc-minimal-zine-poster` 旅行适配、`撕纸效果` 或 `$tear-paper`，先读取：
+凡涉及旅行视频帧、旅行照片、`gc-minimal-zine-poster` 旅行适配或中性入口 `$zine`，先读取：
 
 1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
-2. `skills/gc-travel-zine-poster-v1/SKILL.md`；
-3. 该 Skill 要求读取的 `UPSTREAM_SKILL.md`。
+2. `skills/zine/SKILL.md`；
+3. `skills/gc-travel-zine-poster-v1/SKILL.md`；
+4. 该 Skill 要求读取的 `UPSTREAM_SKILL.md`。
 
 核心原则：
 
@@ -205,9 +206,10 @@ color_exception_reason: null
 - 不得再恢复本地视觉家族、55% 照片阈值、结构转译最低要求、`REJECTED_*` 审美失败码或 cheapness detector；
 - 只允许在必要时适配画幅、真实照片素材保真、用户明确提供的地点文字和多图独立交付；
 - 上游 Prompt Compiler、Variation Engine、Color Engine、Negative Constraints、Workflow、Quality Gate 保持原样；
-- `撕纸效果` / `$tear-paper` 只是路由别名，不是最终图像 Prompt 的视觉词。
+- `$zine` 只是中性路由标识，不得作为视觉风格词进入最终图像 Prompt；
+- `$tear-paper` / “撕纸效果”已废弃。收到旧调用时不得直接生成，只能提示切换到 `$zine`。
 
-旧调用名存在时只作为兼容入口，不得覆盖 canonical thin wrapper。
+旧长调用名存在时只作为兼容入口，不得覆盖 canonical thin wrapper。
 
 ## 7. V4.2 最终检查
 
