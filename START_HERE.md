@@ -1,6 +1,6 @@
 # START HERE — 强制执行入口
 
-版本：`4.2.1`
+版本：`4.2.2`
 状态：`MANDATORY`
 
 ## 0. 审美 Skill 设计治理｜全仓强制前置
@@ -180,23 +180,25 @@ color_exception_reason: null
 
 - 旅行视频帧或旅行照片转视觉；
 - 用户点名 `gc-minimal-zine-poster` 并要求旅行影像适配；
-- 用户说“撕纸效果”或 `$tear-paper`；
+- 用户使用中性入口 `$zine`；
 - 同一批照片要求每张独立生成；
 - 用户明确指定 `16:9` 或其他比例。
 
 必须读取：
 
 1. `AESTHETIC_SKILL_DESIGN_CHARTER.md`；
-2. `skills/gc-travel-zine-poster-v1/SKILL.md`；
-3. 该 Skill 要求读取的 `skills/gc-travel-zine-poster-v1/UPSTREAM_SKILL.md`。
+2. `skills/zine/SKILL.md`；
+3. `skills/gc-travel-zine-poster-v1/SKILL.md`；
+4. 该 Skill 要求读取的 `skills/gc-travel-zine-poster-v1/UPSTREAM_SKILL.md`。
 
 ### 最高优先级原则
 
 - 本地实现是上游 `gc-minimal-zine-poster-v0-1` 的 **thin wrapper**；
-- 不得再恢复本地旅行视觉家族、55% 照片阈值、结构转译最低要求、`REJECTED_*` 审美失败码、cheapness detector 或大型 reference-conditioning 规则；
+- 不得再恢复本地旅行视觉家族、55% 照片占比阈值、结构转译最低要求、`REJECTED_*` 审美失败码、cheapness detector 或大型 reference-conditioning 规则；
 - 只允许必要适配：画幅、真实照片作为上游 Image Anchor 的素材来源、用户明确提供的事实地名、多图独立交付；
 - 上游 Prompt Compiler、Variation Engine、Color Engine、Typography、Texture、Negative Constraints、Workflow、Quality Gate 保持原样；
-- `撕纸效果` / `$tear-paper` 只是方便调用的路由别名，不是最终图像 Prompt 的视觉词；
+- `$zine` 只负责中性路由，不得作为视觉风格词进入最终图像 Prompt；
+- `$tear-paper` / “撕纸效果”已废弃为生产入口。收到旧调用时不得直接生成，只能提示切换到 `$zine`；
 - 若未来需要大幅改变上游审美机制，新建实验 Skill，不得继续修改 canonical wrapper。
 
 ## 混合任务
