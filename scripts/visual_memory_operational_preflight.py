@@ -23,7 +23,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from visual_memory.backup import create_backup, restore_backup
 from visual_memory.operational import OperationalConfig, WriterLease, initialize_operational_root, operational_status
-from visual_memory.purge import purge_tombstoned
+from visual_memory.purge import PurgeError, purge_tombstoned
 from visual_memory.store import SCHEMA_VERSION, VisualMemoryStore, new_id, sha256_bytes, utc_now
 
 
@@ -37,10 +37,11 @@ def _arg_or_env(value: str | None, env_name: str) -> str | None:
     return value if value else os.environ.get(env_name)
 
 
-def _make_synthetic(store: VisualMemoryStore) -> tuple[str, str, str]:
+def _make_synthetic(store: VisualMemoryStore) -> dict[str, object]:
     sample_id = new_id("sample")
     asset_id = new_id("asset")
     event_id = new_id("event")
+    generation_id = new_id("generation")
     data = b"PHASE8-SYNTHETIC-NON-SENSITIVE-ASSET"
     vault = store.write_vault_bytes(asset_id, data, ".bin")
     asset = {
@@ -62,8 +63,27 @@ def _make_synthetic(store: VisualMemoryStore) -> tuple[str, str, str]:
         "sample_kind": "reference",
         "primary_asset_id": asset_id,
         "dataset_role": "discovery",
-        "provenance": {"source_type": "unknown", "source_ref": None, "creator": None, "license": None},
-        "user_tags": [],
+        "provenance": {
+            "source_type": "web",
+            "source_ref": "synthetic://phase8-private-locator",
+            "creator": "synthetic-creator",
+            "license": "synthetic-only",
+        },
+        "user_tags": ["synthetic-private-tag"],
+    }
+    generation = {
+        "schema_version": SCHEMA_VERSION,
+        "generation_id": generation_id,
+        "created_at": utc_now(),
+        "renderer": "phase8-synthetic-renderer",
+        "model": "phase8-synthetic-model",
+        "model_version": "1",
+        "task_ref": "synthetic-private-task",
+        "reference_sample_ids": [sample_id],
+        "parent_generation_id": None,
+        "output_sample_ids": [],
+        "prompt_text": "synthetic private prompt",
+        "parameters": {"synthetic_private_parameter": True},
     }
     event = {
         "schema_version": SCHEMA_VERSION,
@@ -75,11 +95,12 @@ def _make_synthetic(store: VisualMemoryStore) -> tuple[str, str, str]:
         "scope": {"level": "task", "domain": None},
         "raw_text": "PHASE 8 synthetic explicit approval.",
         "target_sample_ids": [sample_id],
-        "target_generation_ids": [],
+        "target_generation_ids": [generation_id],
         "payload": {"explicit_verdict": "approved"},
     }
     store.write_sample(sample)
     store.write_asset(asset)
+    store.write_generation(generation)
     store.append_evidence(event)
     store.write_derived_artifact(
         artifact_id="phase8-synthetic-profile",
@@ -88,7 +109,52 @@ def _make_synthetic(store: VisualMemoryStore) -> tuple[str, str, str]:
         source_record_ids=[event_id],
         content={"synthetic": True},
     )
-    return sample_id, asset_id, event_id
+    return {
+        "sample": sample,
+        "asset": asset,
+        "event": event,
+        "generation": generation,
+        "asset_bytes": data,
+        "vault_path": vault,
+    }
+
+
+def _make_external_synthetic_asset(store: VisualMemoryStore, external_path: Path) -> tuple[str, str]:
+    sample_id = new_id("sample")
+    asset_id = new_id("asset")
+    data = b"PHASE8-SYNTHETIC-EXTERNAL-SENTINEL"
+    external_path.parent.mkdir(parents=True, exist_ok=True)
+    external_path.write_bytes(data)
+    sample = {
+        "schema_version": SCHEMA_VERSION,
+        "sample_id": sample_id,
+        "created_at": utc_now(),
+        "sample_kind": "reference",
+        "primary_asset_id": asset_id,
+        "dataset_role": "discovery",
+        "provenance": {
+            "source_type": "web",
+            "source_ref": "synthetic://external-private-locator",
+            "creator": None,
+            "license": None,
+        },
+        "user_tags": ["synthetic-external"],
+    }
+    asset = {
+        "schema_version": SCHEMA_VERSION,
+        "asset_id": asset_id,
+        "sample_id": sample_id,
+        "created_at": utc_now(),
+        "sha256": sha256_bytes(data),
+        "locator_kind": "local_file",
+        "locator": str(external_path.resolve()),
+        "asset_relation": "primary",
+        "derived_from_asset_id": None,
+        "media_type": "application/octet-stream",
+    }
+    store.write_sample(sample)
+    store.write_asset(asset)
+    return sample_id, asset_id
 
 
 def _run_phase7_suite(repo_root: Path) -> None:
@@ -113,6 +179,8 @@ def run_preflight(config: OperationalConfig, repo_root: Path) -> dict[str, objec
     report: dict[str, object] = {
         "phase": "8",
         "status": "RUNNING",
+        "data_root": str(config.data_root),
+        "backup_dir": str(config.backup_dir),
         "writer_id": config.writer_id,
         "real_personal_data_imported": False,
         "formal_personal_fit_authorized": False,
@@ -122,14 +190,38 @@ def run_preflight(config: OperationalConfig, repo_root: Path) -> dict[str, objec
     synthetic_root = config.data_root / f".phase8-synthetic-{uuid.uuid4().hex}"
     restore_root = config.data_root / f".phase8-restore-{uuid.uuid4().hex}"
     backup_zip = config.backup_dir / f"phase8-preflight-{uuid.uuid4().hex}.zip"
+    external_sentinel = config.backup_dir / f".phase8-external-sentinel-{uuid.uuid4().hex}.bin"
+    keep_backup = False
     try:
         with WriterLease(config.data_root, config.writer_id):
             report["writer_lock"] = "PASS"
+            contender = WriterLease(config.data_root, config.writer_id)
+            try:
+                contender.acquire()
+            except RuntimeError:
+                report["writer_lease_exclusivity"] = "PASS"
+            else:
+                contender.release()
+                raise RuntimeError("WriterLease allowed a second concurrent writer")
+
             _run_phase7_suite(repo_root)
             report["phase7_synthetic_suite"] = "PASS"
 
             synthetic = VisualMemoryStore(synthetic_root)
-            sample_id, asset_id, event_id = _make_synthetic(synthetic)
+            records = _make_synthetic(synthetic)
+            sample = records["sample"]
+            asset = records["asset"]
+            event = records["event"]
+            generation = records["generation"]
+            if not all(isinstance(x, dict) for x in (sample, asset, event, generation)):
+                raise RuntimeError("synthetic record construction failed")
+            sample_id = str(sample["sample_id"])
+            asset_id = str(asset["asset_id"])
+            event_id = str(event["event_id"])
+            generation_id = str(generation["generation_id"])
+            expected_sha256 = str(asset["sha256"])
+            expected_bytes = records["asset_bytes"]
+            controlled_vault_path = Path(records["vault_path"])
             if synthetic.doctor():
                 raise RuntimeError(f"synthetic store failed doctor before backup: {synthetic.doctor()}")
 
@@ -138,9 +230,52 @@ def run_preflight(config: OperationalConfig, repo_root: Path) -> dict[str, objec
             restored = VisualMemoryStore(restore_root)
             if restored.doctor():
                 raise RuntimeError(f"restored store failed doctor: {restored.doctor()}")
-            if restored.read_sample(sample_id) is None or restored.resolve_asset(asset_id) is None:
-                raise RuntimeError("backup/restore did not preserve synthetic ids/assets")
+            restored_sample = restored.read_sample(sample_id)
+            restored_asset = restored.read_asset(asset_id)
+            restored_generation = restored.read_generation(generation_id)
+            restored_events = {str(x["event_id"]): x for x in restored.read_evidence()}
+            restored_path = restored.resolve_asset(asset_id)
+            if restored_sample is None or restored_asset is None or restored_generation is None:
+                raise RuntimeError("backup/restore did not preserve stable record IDs")
+            if event_id not in restored_events:
+                raise RuntimeError("backup/restore did not preserve evidence event_id")
+            if restored_asset["sha256"] != expected_sha256:
+                raise RuntimeError("backup/restore changed the exact-blob SHA-256")
+            if restored_path is None or restored_path.read_bytes() != expected_bytes:
+                raise RuntimeError("backup/restore did not preserve resolvable Asset Vault bytes")
+            if restored_sample["primary_asset_id"] != asset_id or restored_asset["sample_id"] != sample_id:
+                raise RuntimeError("backup/restore broke Sample/Asset cross-record links")
+            if sample_id not in restored_generation["reference_sample_ids"]:
+                raise RuntimeError("backup/restore broke Generation/Sample cross-record links")
+            if (
+                sample_id not in restored_events[event_id]["target_sample_ids"]
+                or generation_id not in restored_events[event_id]["target_generation_ids"]
+            ):
+                raise RuntimeError("backup/restore broke Evidence cross-record links")
             report["backup_restore"] = "PASS"
+            report["backup_restore_details"] = {
+                "status": "PASS",
+                "backup_archive": str(backup_zip),
+                "backup_archive_sha256": _file_sha256(backup_zip),
+                "restore_root": str(restore_root),
+                "doctor": "PASS",
+                "stable_ids": "PASS",
+                "exact_blob_sha256": "PASS",
+                "evidence_event_id": "PASS",
+                "cross_record_links": "PASS",
+                "asset_resolvability": "PASS",
+            }
+            shutil.rmtree(restore_root)
+            report["backup_restore_details"]["restore_root_removed_after_verification"] = not restore_root.exists()
+
+            try:
+                purge_tombstoned(synthetic, [sample_id])
+            except PurgeError:
+                no_tombstone_rejected = True
+            else:
+                raise RuntimeError("physical purge did not reject a record without a Tombstone")
+
+            external_sample_id, external_asset_id = _make_external_synthetic_asset(synthetic, external_sentinel)
 
             tombstone = {
                 "schema_version": SCHEMA_VERSION,
@@ -152,41 +287,113 @@ def run_preflight(config: OperationalConfig, repo_root: Path) -> dict[str, objec
                 "scope": {"level": "task", "domain": None},
                 "raw_text": "",
                 "target_sample_ids": [sample_id],
-                "target_generation_ids": [],
+                "target_generation_ids": [generation_id],
                 "payload": {
-                    "target_record_ids": [sample_id, asset_id, event_id],
+                    "target_record_ids": [sample_id, asset_id, event_id, generation_id],
                     "reason": "PHASE 8 synthetic purge verification",
                 },
             }
             synthetic.append_evidence(tombstone)
-            purge_tombstoned(synthetic, [sample_id, asset_id, event_id])
+            external_tombstone = {
+                "schema_version": SCHEMA_VERSION,
+                "event_id": new_id("event"),
+                "occurred_at": utc_now(),
+                "event_type": "tombstone",
+                "source_kind": "user",
+                "source_ref": None,
+                "scope": {"level": "task", "domain": None},
+                "raw_text": "",
+                "target_sample_ids": [external_sample_id],
+                "target_generation_ids": [],
+                "payload": {
+                    "target_record_ids": [external_sample_id, external_asset_id],
+                    "reason": "PHASE 8 synthetic external-file protection verification",
+                },
+            }
+            synthetic.append_evidence(external_tombstone)
+            purge_tombstoned(
+                synthetic,
+                [sample_id, asset_id, event_id, generation_id, external_sample_id, external_asset_id],
+            )
             if synthetic.resolve_asset(asset_id) is not None:
                 raise RuntimeError("purge did not make synthetic asset unavailable")
+            if controlled_vault_path.exists():
+                raise RuntimeError("purge did not physically delete controlled Asset Vault bytes")
+            if not external_sentinel.is_file() or external_sentinel.read_bytes() != b"PHASE8-SYNTHETIC-EXTERNAL-SENTINEL":
+                raise RuntimeError("purge deleted or changed an arbitrary external source file")
             if any(x.get("event_id") == event_id for x in synthetic.read_evidence()):
                 raise RuntimeError("purge did not physically remove targeted synthetic evidence")
-            if synthetic.read_sample(sample_id)["provenance"].get("source_ref") is not None:
+            purged_sample = synthetic.read_sample(sample_id)
+            purged_asset = synthetic.read_asset(asset_id)
+            purged_generation = synthetic.read_generation(generation_id)
+            if purged_sample is None or purged_asset is None or purged_generation is None:
+                raise RuntimeError("purge removed the stable identity skeleton")
+            if purged_sample["provenance"].get("source_ref") is not None or purged_sample["user_tags"]:
                 raise RuntimeError("purge did not scrub synthetic sample provenance")
+            if purged_asset["locator_kind"] != "opaque" or not str(purged_asset["locator"]).startswith("purged:"):
+                raise RuntimeError("purge did not scrub the private Asset locator")
+            if (
+                purged_generation.get("task_ref") is not None
+                or purged_generation.get("prompt_text") is not None
+                or purged_generation.get("parameters") != {}
+            ):
+                raise RuntimeError("purge did not scrub private Generation metadata")
             if any(synthetic.derived_dir.iterdir()):
                 raise RuntimeError("purge did not clear derived cache")
+            if synthetic.doctor():
+                raise RuntimeError(f"purged store failed doctor: {synthetic.doctor()}")
             report["physical_purge"] = "PASS"
+            report["physical_purge_details"] = {
+                "status": "PASS",
+                "without_tombstone_rejected": no_tombstone_rejected,
+                "tombstone_required": True,
+                "controlled_asset_bytes_deleted": True,
+                "external_arbitrary_file_preserved": True,
+                "private_metadata_scrubbed": True,
+                "derived_cache_cleared": True,
+                "stable_identity_skeleton_preserved": True,
+                "doctor_after_purge": "PASS",
+            }
+            report["synthetic_verification"] = {
+                "status": "PASS",
+                "sample_id": sample_id,
+                "asset_id": asset_id,
+                "event_id": event_id,
+                "generation_id": generation_id,
+                "asset_sha256": expected_sha256,
+                "sample_asset_evidence_generation_written": True,
+                "real_personal_data_imported": False,
+            }
+
+            shutil.rmtree(synthetic_root)
+            external_sentinel.unlink()
+
+            calibration_after = _file_sha256(public_calibration)
+            if calibration_before != calibration_after:
+                raise RuntimeError("public calibration/anchors.json changed during private preflight")
+            report["public_calibration_sha256_before"] = calibration_before
+            report["public_calibration_sha256_after"] = calibration_after
+            report["public_calibration_unchanged"] = True
+            report["private_root_outside_public_git"] = True
+            report["backup_dir_outside_public_git"] = True
+            report["pilot_authorized_on_this_writer_host"] = True
+            report["status"] = "PASS"
+
+            operations_dir = config.data_root / "operations"
+            operations_dir.mkdir(parents=True, exist_ok=True)
+            report_path = operations_dir / "phase8_preflight.json"
+            report["receipt_path"] = str(report_path)
+            report_path.write_text(
+                json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
+            keep_backup = True
     finally:
         shutil.rmtree(synthetic_root, ignore_errors=True)
         shutil.rmtree(restore_root, ignore_errors=True)
-        backup_zip.unlink(missing_ok=True)
-
-    calibration_after = _file_sha256(public_calibration)
-    if calibration_before != calibration_after:
-        raise RuntimeError("public calibration/anchors.json changed during private preflight")
-    report["public_calibration_unchanged"] = True
-    report["private_root_outside_public_git"] = True
-    report["backup_dir_outside_public_git"] = True
-    report["pilot_authorized_on_this_writer_host"] = True
-    report["status"] = "PASS"
-
-    operations_dir = config.data_root / "operations"
-    operations_dir.mkdir(parents=True, exist_ok=True)
-    report_path = operations_dir / "phase8_preflight.json"
-    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        external_sentinel.unlink(missing_ok=True)
+        if not keep_backup:
+            backup_zip.unlink(missing_ok=True)
     return report
 
 

@@ -137,7 +137,7 @@ class WriterLease:
             self._held = False
             return
         if current.get("token") != self.token:
-            raise RuntimeError(bwriter lock token changed; refusing to remove another writer's lock")
+            raise RuntimeError("writer lock token changed; refusing to remove another writer's lock")
         self.path.unlink()
         self._held = False
 

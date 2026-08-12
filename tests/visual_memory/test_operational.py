@@ -4,7 +4,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
+from scripts.visual_memory_operational_preflight import run_preflight
 from visual_memory.backup import create_backup
 from visual_memory.operational import (
     OperationalConfig,
@@ -23,6 +25,8 @@ class OperationalTests(unittest.TestCase):
         self.base = Path(self.tmp.name)
         self.repo = self.base / "public-repo"
         self.repo.mkdir()
+        (self.repo / "calibration").mkdir()
+        (self.repo / "calibration" / "anchors.json").write_text("{}\n", encoding="utf-8")
         self.data = self.base / "private-data"
         self.backup = self.base / "private-backup"
 
@@ -100,6 +104,18 @@ class OperationalTests(unittest.TestCase):
             self.assertTrue((self.data / ".liu_visual_writer.lock").exists())
         self.assertFalse((self.data / ".liu_visual_writer.lock").exists())
 
+    def test_writer_lease_token_mismatch_fails_closed(self):
+        lease = WriterLease(self.data, "writer-a").acquire()
+        payload = json.loads(lease.path.read_text(encoding="utf-8"))
+        payload["token"] = "another-writer-token"
+        lease.path.write_text(json.dumps(payload) + "\n", encoding="utf-8")
+        try:
+            with self.assertRaisesRegex(RuntimeError, "token changed"):
+                lease.release()
+            self.assertTrue(lease.path.exists())
+        finally:
+            lease.path.unlink(missing_ok=True)
+
     def test_private_root_marker_prevents_silent_writer_change(self):
         initialize_operational_root(self._config("writer-a"), repo_root=self.repo, store_factory=VisualMemoryStore)
         with self.assertRaises(OperationalConfigError):
@@ -172,6 +188,60 @@ class OperationalTests(unittest.TestCase):
         self.assertNotIn(event["event_id"], {e["event_id"] for e in store.read_evidence()})
         self.assertFalse(any(store.derived_dir.iterdir()))
         self.assertEqual(store.doctor(), [])
+
+    def test_actual_host_preflight_receipt_proves_required_operations(self):
+        with mock.patch("scripts.visual_memory_operational_preflight._run_phase7_suite") as phase7_suite:
+            report = run_preflight(self._config(), self.repo)
+        phase7_suite.assert_called_once_with(self.repo.resolve())
+
+        receipt_path = self.data / "operations" / "phase8_preflight.json"
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        self.assertEqual(receipt, report)
+        self.assertEqual(receipt["status"], "PASS")
+        self.assertTrue(receipt["pilot_authorized_on_this_writer_host"])
+        self.assertFalse(receipt["real_personal_data_imported"])
+        self.assertEqual(receipt["writer_id"], "writer-a")
+        self.assertEqual(Path(receipt["data_root"]), self.data.resolve())
+        self.assertEqual(Path(receipt["backup_dir"]), self.backup.resolve())
+        self.assertEqual(receipt["writer_lease_exclusivity"], "PASS")
+        self.assertEqual(receipt["phase7_synthetic_suite"], "PASS")
+
+        synthetic = receipt["synthetic_verification"]
+        self.assertTrue(synthetic["sample_asset_evidence_generation_written"])
+        for key, prefix in (
+            ("sample_id", "smp_"),
+            ("asset_id", "ast_"),
+            ("event_id", "ev_"),
+            ("generation_id", "gen_"),
+        ):
+            self.assertTrue(synthetic[key].startswith(prefix))
+        self.assertTrue(synthetic["asset_sha256"].startswith("sha256:"))
+
+        backup = receipt["backup_restore_details"]
+        self.assertEqual(backup["status"], "PASS")
+        self.assertTrue(Path(backup["backup_archive"]).is_file())
+        self.assertTrue(backup["backup_archive_sha256"])
+        self.assertTrue(backup["restore_root_removed_after_verification"])
+        self.assertFalse(Path(backup["restore_root"]).exists())
+        for key in (
+            "doctor",
+            "stable_ids",
+            "exact_blob_sha256",
+            "evidence_event_id",
+            "cross_record_links",
+            "asset_resolvability",
+        ):
+            self.assertEqual(backup[key], "PASS")
+
+        purge = receipt["physical_purge_details"]
+        self.assertEqual(purge["status"], "PASS")
+        self.assertTrue(purge["without_tombstone_rejected"])
+        self.assertTrue(purge["controlled_asset_bytes_deleted"])
+        self.assertTrue(purge["external_arbitrary_file_preserved"])
+        self.assertTrue(purge["private_metadata_scrubbed"])
+        self.assertTrue(purge["derived_cache_cleared"])
+        self.assertTrue(purge["stable_identity_skeleton_preserved"])
+        self.assertEqual(purge["doctor_after_purge"], "PASS")
 
 
 if __name__ == "__main__":

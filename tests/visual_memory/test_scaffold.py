@@ -12,7 +12,9 @@ from visual_memory.validation import RecordValidationError, validate_record
 class VisualMemoryScaffoldTests(unittest.TestCase):
     def setUp(self) -> None:
         self.tmp = tempfile.TemporaryDirectory()
-        self.root = Path(self.tmp.name) / "private-memory"
+        # Windows may expose %TEMP% through an 8.3 alias while Path.resolve()
+        # canonicalizes the store root to the long path. Keep both sides canonical.
+        self.root = Path(self.tmp.name).resolve() / "private-memory"
         self.store = VisualMemoryStore(self.root)
 
     def tearDown(self) -> None:
