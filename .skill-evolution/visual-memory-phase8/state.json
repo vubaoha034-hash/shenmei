@@ -1,0 +1,24 @@
+{
+  "candidates": [],
+  "created_at": "2026-08-12T09:13:52+00:00",
+  "evaluations": [],
+  "evidence": [
+    {
+      "case_id": "phase8-real-host-windows-20260812",
+      "confidence": "verified",
+      "contradicts": [],
+      "created_at": "2026-08-12T09:13:52+00:00",
+      "detail": "Required PHASE 8 HEAD had a WriterLease.release syntax error; Windows 8.3 TEMP aliases also broke PHASE 7 tests. Focused fixes now have executable regression coverage, and the actual-host preflight records generation, backup/restore, purge, path, writer, and calibration evidence.",
+      "fingerprint": "fp_5b00a53d64c8",
+      "id": "ev_262c40d55a33",
+      "kind": "regression",
+      "layer": "repo",
+      "severity": "high",
+      "source": "test",
+      "summary": "PHASE 8 real-host preflight must compile and prove its receipt fields on Windows"
+    }
+  ],
+  "schema": 1,
+  "target": "visual-memory-phase8",
+  "updated_at": "2026-08-12T09:13:52+00:00"
+}
