@@ -23,12 +23,22 @@ def ingest_visual_file(
     dataset_role: str = "discovery",
     user_tags: Iterable[str] = (),
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    """Copy one visual file into the private vault without assuming preference."""
+    """Copy one visual file into the private vault without assuming preference.
+
+    Exact byte duplicates are rejected so repeated files cannot silently
+    overweight preference evidence. Failed metadata writes roll back the copied
+    vault bytes and any record created by this call.
+    """
     source = Path(source_path).expanduser().resolve()
     if not source.is_file():
         raise FileNotFoundError(source)
     if dataset_role not in _ALLOWED_ROLES:
         raise ValueError(f"dataset_role must be one of {sorted(_ALLOWED_ROLES)}")
+
+    source_digest = sha256_file(source)
+    for existing in store.read_assets():
+        if existing.get("sha256") == source_digest:
+            raise ValueError(f"exact duplicate asset already exists: {existing['asset_id']}")
 
     sample_id = new_id("sample")
     asset_id = new_id("asset")
@@ -43,7 +53,7 @@ def ingest_visual_file(
         "asset_id": asset_id,
         "sample_id": sample_id,
         "created_at": utc_now(),
-        "sha256": sha256_file(vault_path),
+        "sha256": source_digest,
         "locator_kind": "local_file",
         "locator": str(vault_path.relative_to(store.root)),
         "asset_relation": "primary",
@@ -65,8 +75,20 @@ def ingest_visual_file(
         },
         "user_tags": list(user_tags),
     }
-    store.write_sample(sample)
-    store.write_asset(asset)
+
+    sample_path: Path | None = None
+    asset_path: Path | None = None
+    try:
+        sample_path = store.write_sample(sample)
+        asset_path = store.write_asset(asset)
+    except Exception:
+        if asset_path is not None and asset_path.exists():
+            asset_path.unlink()
+        if sample_path is not None and sample_path.exists():
+            sample_path.unlink()
+        if vault_path.exists():
+            vault_path.unlink()
+        raise
     return sample, asset
 
 
