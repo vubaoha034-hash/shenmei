@@ -72,11 +72,11 @@ def _id_list(value: Any, kind: str, field: str) -> list[str]:
     return out
 
 
+
 def _no_extra(record: dict[str, Any], allowed: set[str], label: str) -> None:
     extra = sorted(set(record) - allowed)
     if extra:
         raise RecordValidationError(f"{label} has unknown fields: {', '.join(extra)}")
-
 
 def _schema_version(record: dict[str, Any]) -> None:
     if record.get("schema_version") != SCHEMA_VERSION:

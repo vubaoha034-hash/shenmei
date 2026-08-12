@@ -179,12 +179,12 @@ class VisualMemoryScaffoldTests(unittest.TestCase):
         )
         revision = self._event(
             event_type="revision",
-            raw_text="把恫少卲号一前，保留黑盄异层",
+            raw_text="把灰尘感去掉，保留黑色层次。",
             sample_ids=[before["sample_id"], after["sample_id"]],
             payload={
                 "before_sample_id": before["sample_id"],
                 "after_sample_id": after["sample_id"],
-                "requested_change_text": "把離感出自意下一み軪舒可到术解更还轮廓吆。",
+                "requested_change_text": "把灰尘感去掉，保留黑色层次。",
                 "result_feedback_event_id": None,
                 "causal_attribution": "unknown",
             },
@@ -192,7 +192,7 @@ class VisualMemoryScaffoldTests(unittest.TestCase):
         feedback = self._event(event_type="feedback", raw_text="这个好多了。", sample_ids=[after["sample_id"]], payload={"explicit_verdict": "approved"})
         correction = self._event(
             event_type="correction",
-            raw_text="刚才 A/B 那句话说错了。",
+            raw_text="刚才 A/B 那句说错了。",
             payload={"target_event_ids": [pair["event_id"]], "effect": "retract"},
         )
 
