@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/liu-visual-system/v0.1/asset.schema.json",
+  "title": "LIU Visual System V0.1 AssetRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "asset_id", "sample_id", "created_at", "sha256", "locator_kind", "locator", "asset_relation"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "asset_id": {"type": "string", "pattern": "^ast_[0-9a-f-]{32,36}$"},
+    "sample_id": {"type": "string", "pattern": "^smp_[0-9a-f-]{32,36}$"},
+    "created_at": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "locator_kind": {"enum": ["repo_relative", "local_file", "remote_url", "opaque"]},
+    "locator": {"type": "string", "minLength": 1},
+    "asset_relation": {"enum": ["primary", "alternate", "derivative"]},
+    "derived_from_asset_id": {"type": ["string", "null"]},
+    "media_type": {"type": ["string", "null"]}
+  }
+}

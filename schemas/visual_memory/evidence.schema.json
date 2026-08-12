@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/liu-visual-system/v0.1/evidence.schema.json",
+  "title": "LIU Visual System V0.1 EvidenceEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "occurred_at", "event_type", "source_kind", "scope", "raw_text", "target_sample_ids", "target_generation_ids", "payload"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "event_id": {"type": "string", "pattern": "^ev_[0-9a-f-]{32,36}$"},
+    "occurred_at": {"type": "string", "minLength": 1},
+    "event_type": {"enum": ["feedback", "comparison", "revision", "correction", "tombstone"]},
+    "source_kind": {"enum": ["user", "imported_user_evidence"]},
+    "source_ref": {"type": ["string", "null"]},
+    "scope": {
+      "type": "object",
+      "required": ["level"],
+      "properties": {
+        "level": {"enum": ["task", "domain", "global_explicit", "unspecified"]},
+        "domain": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "raw_text": {"type": "string"},
+    "target_sample_ids": {"type": "array", "items": {"type": "string", "pattern": "^smp_[0-9a-f-]{32,36}$"}, "uniqueItems": true},
+    "target_generation_ids": {"type": "array", "items": {"type": "string", "pattern": "^gen_[0-9a-f-]{32,36}$"}, "uniqueItems": true},
+    "payload": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"source_kind": {"const": "imported_user_evidence"}}},
+      "then": {"required": ["source_ref"], "properties": {"source_ref": {"type": "string", "minLength": 1}}}
+    },
+    {
+      "if": {"properties": {"scope": {"properties": {"level": {"const": "domain"}}}}},
+      "then": {"properties": {"scope": {"required": ["domain"], "properties": {"domain": {"type": "string", "minLength": 1}}}}}
+    }
+  ]
+}

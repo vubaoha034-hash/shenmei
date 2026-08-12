@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/liu-visual-system/v0.1/sample.schema.json",
+  "title": "LIU Visual System V0.1 SampleRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "created_at", "sample_kind", "primary_asset_id", "dataset_role", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "sample_id": {"type": "string", "pattern": "^smp_[0-9a-f-]{32,36}$"},
+    "created_at": {"type": "string", "minLength": 1},
+    "sample_kind": {"enum": ["reference", "generated", "imported"]},
+    "primary_asset_id": {"type": "string", "pattern": "^ast_[0-9a-f-]{32,36}$"},
+    "dataset_role": {"enum": ["discovery", "blind_eval_reserved", "production", "unassigned"]},
+    "provenance": {
+      "type": "object",
+      "required": ["source_type"],
+      "properties": {
+        "source_type": {"enum": ["user_upload", "web", "repo", "generated", "unknown"]},
+        "source_ref": {"type": ["string", "null"]},
+        "creator": {"type": ["string", "null"]},
+        "license": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "user_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/liu-visual-system/v0.1/generation.schema.json",
+  "title": "LIU Visual System V0.1 GenerationRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generation_id", "created_at", "renderer", "model", "reference_sample_ids", "output_sample_ids", "parameters"],
+  "properties": {
+    "schema_version": {"const": "1"},
+    "generation_id": {"type": "string", "pattern": "^gen_[0-9a-f-]{32,36}$"},
+    "created_at": {"type": "string", "minLength": 1},
+    "renderer": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "model_version": {"type": ["string", "null"]},
+    "task_ref": {"type": ["string", "null"]},
+    "reference_sample_ids": {"type": "array", "items": {"type": "string", "pattern": "^smp_[0-9a-f-]{32,36}$"}, "uniqueItems": true},
+    "parent_generation_id": {"type": ["string", "null"]},
+    "output_sample_ids": {"type": "array", "items": {"type": "string", "pattern": "^smp_[0-9a-f-]{32,36}$"}, "uniqueItems": true},
+    "prompt_text": {"type": ["string", "null"]},
+    "parameters": {"type": "object"}
+  }
+}
