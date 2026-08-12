@@ -5,11 +5,25 @@ import shutil
 from pathlib import Path
 
 
+def _within(path: Path, parent: Path) -> bool:
+    path = path.resolve()
+    parent = parent.resolve()
+    try:
+        path.relative_to(parent)
+        return True
+    except ValueError:
+        return False
+
+
 def create_backup(root: Path, destination_zip: Path) -> Path:
     root = root.resolve()
     destination_zip = destination_zip.resolve()
     if not root.is_dir():
         raise FileNotFoundError(root)
+    if _within(destination_zip, root):
+        raise ValueError("backup destination must be outside the data root")
+    if destination_zip.exists():
+        raise FileExistsError(destination_zip)
     destination_zip.parent.mkdir(parents=True, exist_ok=True)
     base = destination_zip.with_suffix("")
     archive = shutil.make_archive(str(base), "zip", root_dir=str(root))
