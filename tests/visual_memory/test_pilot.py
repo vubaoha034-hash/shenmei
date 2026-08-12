@@ -3,6 +3,7 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from visual_memory.pilot import (
     blind_pair_result,
@@ -33,6 +34,22 @@ class Phase9PilotTests(unittest.TestCase):
         self.assertEqual(self.store.read_evidence(), [])
         self.assertEqual(sample["dataset_role"], "discovery")
         self.assertIsNotNone(self.store.resolve_asset(asset["asset_id"]))
+
+    def test_exact_duplicate_ingest_is_rejected(self):
+        ingest_visual_file(self.store, self._source("a.jpg", b"same-bytes"))
+        with self.assertRaises(ValueError):
+            ingest_visual_file(self.store, self._source("b.jpg", b"same-bytes"))
+        self.assertEqual(len(self.store.read_samples()), 1)
+        self.assertEqual(len(self.store.read_assets()), 1)
+
+    def test_ingest_rolls_back_if_asset_metadata_write_fails(self):
+        source = self._source("a.jpg", b"rollback")
+        with patch.object(self.store, "write_asset", side_effect=RuntimeError("synthetic failure")):
+            with self.assertRaises(RuntimeError):
+                ingest_visual_file(self.store, source)
+        self.assertEqual(self.store.read_samples(), [])
+        self.assertEqual(self.store.read_assets(), [])
+        self.assertEqual(list(self.store.vault_dir.iterdir()), [])
 
     def test_batch_feedback_requires_explicit_text(self):
         sample, _ = ingest_visual_file(self.store, self._source("a.jpg", b"a"))
