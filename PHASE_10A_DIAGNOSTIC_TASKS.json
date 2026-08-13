@@ -1,0 +1,40 @@
+{
+  "phase": "10A",
+  "status": "PRE_REGISTERED_BEFORE_DIAGNOSTIC_GENERATION",
+  "task_count": 3,
+  "conditions_per_task": 3,
+  "conditions": ["baseline", "personalized", "expert_direct"],
+  "rules": {
+    "same_task_text_across_conditions": true,
+    "same_renderer_model_ratio_parameters": true,
+    "personalized_only_extra_input": "current bounded restaurant Personal Context",
+    "expert_direct_bypasses_current_restaurant_prompt_compiler": true,
+    "expert_direct_uses_personal_context": false,
+    "one_generation_per_condition": true,
+    "no_selective_regeneration": true,
+    "absolute_quality_required": true
+  },
+  "tasks": [
+    {
+      "task_id": "P10A-D01",
+      "diagnostic_axis": "food_product_realism",
+      "route_expected": "single poster / product visual",
+      "ratio": "4:5",
+      "brief": "为一道江西风味「农家小炒肉」制作餐饮品牌菜品主视觉。用途是门店公众号与小红书。不要价格，不要现成品牌资产。重点是肉片、辣椒、油脂、锅气和器皿的真实可信，以及画面是否具备成熟餐饮品牌传播价值。"
+    },
+    {
+      "task_id": "P10A-D02",
+      "diagnostic_axis": "brand_key_visual_design",
+      "route_expected": "single restaurant poster / key visual",
+      "ratio": "4:5",
+      "brief": "为虚构江西家常菜馆「禾下饭香」设计一张品牌首发主视觉。核心信息只有品牌名、江西家常菜、当天现炒。目标是建立独特、现代、可长期延展的餐饮品牌气质，避免通用中式餐饮模板。不要使用现成品牌资产。"
+    },
+    {
+      "task_id": "P10A-D03",
+      "diagnostic_axis": "packaging_design",
+      "route_expected": "restaurant brand / packaging visual route selected by START_HERE",
+      "ratio": "4:5",
+      "brief": "为虚构社区中餐品牌「好好一餐」设计外带纸袋正面视觉提案。只需要品牌名和一句「认真吃顿饭」。要求实际可印刷、长期使用、有品牌识别度，禁止复杂装饰堆叠和一次性促销海报感。"
+    }
+  ]
+}
