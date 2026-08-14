@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-program.v1.schema.json",
+  "title": "VisualProgram V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program_id",
+    "version",
+    "status",
+    "domain",
+    "source_evidence",
+    "visual_anchors",
+    "design_grammar",
+    "fixed_invariants",
+    "degrees_of_freedom",
+    "transform_operators",
+    "failure_boundaries",
+    "generator_contract",
+    "provenance"
+  ],
+  "properties": {
+    "program_id": {"type": "string", "minLength": 1},
+    "version": {"const": "1.0.0"},
+    "status": {
+      "enum": ["DRAFT", "RECONSTRUCTION_PASS", "FAMILY_PASS", "TRANSFER_PASS", "PROMOTED", "REJECTED"]
+    },
+    "domain": {"type": "string", "minLength": 1},
+    "source_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_asset_ids", "absolute_quality_status"],
+      "properties": {
+        "reference_asset_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {"type": "string"}
+        },
+        "absolute_quality_status": {
+          "enum": ["USABLE", "RELATIVE_ONLY", "UNKNOWN"]
+        },
+        "user_feedback_ids": {
+          "type": "array",
+          "items": {"type": "string"},
+          "default": []
+        }
+      }
+    },
+    "visual_anchors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anchor_id", "asset_id", "role", "sha256"],
+        "properties": {
+          "anchor_id": {"type": "string"},
+          "asset_id": {"type": "string"},
+          "role": {
+            "enum": ["FULL_REFERENCE", "COMPOSITION", "TYPOGRAPHY", "COLOR", "MATERIAL", "TEXTURE", "MOTIF"]
+          },
+          "crop_box_normalized": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "design_grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hierarchy", "geometry", "color_logic", "material_light", "typography_behavior", "motif_logic"],
+      "properties": {
+        "hierarchy": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "geometry": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "color_logic": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "material_light": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "typography_behavior": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "motif_logic": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+        "texture_printing": {"type": "array", "maxItems": 8, "items": {"type": "string"}}
+      }
+    },
+    "fixed_invariants": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {"type": "string"}
+    },
+    "degrees_of_freedom": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dimension", "allowed_change"],
+        "properties": {
+          "dimension": {"type": "string"},
+          "allowed_change": {"type": "string"},
+          "guardrail": {"type": "string"}
+        }
+      }
+    },
+    "transform_operators": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["operator", "instruction"],
+        "properties": {
+          "operator": {
+            "enum": ["CONTENT_SWAP", "ASPECT_ADAPT", "PALETTE_SHIFT", "DENSITY_SHIFT", "MOTIF_REBIND", "TYPOGRAPHY_REBIND", "MATERIAL_SHIFT"]
+          },
+          "instruction": {"type": "string"},
+          "break_condition": {"type": "string"}
+        }
+      }
+    },
+    "failure_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["failure_code", "description"],
+        "properties": {
+          "failure_code": {"type": "string"},
+          "description": {"type": "string"},
+          "rejected_anchor_ids": {"type": "array", "items": {"type": "string"}, "default": []}
+        }
+      }
+    },
+    "cross_style_priors_applied": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "generator_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer_role", "prompt_budget", "reference_binding", "supported_modes"],
+      "properties": {
+        "renderer_role": {"const": "CREATIVE_VISUAL_SYNTHESIS"},
+        "prompt_budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["high_leverage_variables_max", "hard_avoids_max"],
+          "properties": {
+            "high_leverage_variables_max": {"type": "integer", "minimum": 3, "maximum": 8},
+            "hard_avoids_max": {"type": "integer", "minimum": 1, "maximum": 6}
+          }
+        },
+        "reference_binding": {
+          "enum": ["RAW_PIXELS_REQUIRED", "RAW_PIXELS_PREFERRED", "CAPSULE_ONLY_ALLOWED"]
+        },
+        "supported_modes": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {"enum": ["RECONSTRUCT", "FAMILY", "TRANSFER"]}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "compiler_version", "source_hashes"],
+      "properties": {
+        "created_at": {"type": "string"},
+        "compiler_version": {"type": "string"},
+        "source_hashes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}
