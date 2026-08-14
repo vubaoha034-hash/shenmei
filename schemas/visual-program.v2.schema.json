@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-program.v2.schema.json",
+  "title": "VisualProgram V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program_id",
+    "version",
+    "status",
+    "domain",
+    "source_evidence",
+    "photography_engine",
+    "graphic_design_engine",
+    "integration_engine",
+    "causal_priority_map",
+    "transfer_model",
+    "renderer_contract",
+    "quality_gates",
+    "provenance"
+  ],
+  "properties": {
+    "program_id": {"type": "string", "minLength": 1},
+    "version": {"const": "2.0.0"},
+    "status": {"enum": ["DRAFT", "DISTILLED", "BENCHMARKING", "PROMOTED", "REJECTED"]},
+    "domain": {"type": "string", "minLength": 1},
+    "source_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_assets", "absolute_quality_status"],
+      "properties": {
+        "reference_assets": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["asset_id", "sha256", "role"],
+            "properties": {
+              "asset_id": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "role": {"enum": ["PRIMARY_REFERENCE", "SUPPORTING_REFERENCE", "DIAGNOSTIC_CROP"]}
+            }
+          }
+        },
+        "absolute_quality_status": {"enum": ["USABLE", "UNKNOWN"]},
+        "user_feedback_ids": {"type": "array", "items": {"type": "string"}, "default": []}
+      }
+    },
+    "photography_engine": {"$ref": "#/$defs/photographyEngine"},
+    "graphic_design_engine": {"$ref": "#/$defs/graphicDesignEngine"},
+    "integration_engine": {"$ref": "#/$defs/integrationEngine"},
+    "causal_priority_map": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["variable", "priority", "classification", "confidence"],
+        "properties": {
+          "variable": {"type": "string"},
+          "priority": {"enum": ["CRITICAL", "IMPORTANT", "SECONDARY", "FREE"]},
+          "classification": {"enum": ["STYLE_SIGNATURE", "CONTENT_BOUND", "BRAND_BOUND", "PRODUCTION_BOUND", "OPTIONAL_VARIATION"]},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "interaction_with": {"type": "array", "items": {"type": "string"}, "default": []},
+          "tolerance": {"type": "string"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}, "default": []}
+        }
+      }
+    },
+    "transfer_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_invariants", "degrees_of_freedom", "operators", "do_not_copy"],
+      "properties": {
+        "fixed_invariants": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "degrees_of_freedom": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["dimension", "allowed_change"],
+            "properties": {
+              "dimension": {"type": "string"},
+              "allowed_change": {"type": "string"},
+              "guardrail": {"type": "string"}
+            }
+          }
+        },
+        "operators": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["operator", "instruction", "break_condition"],
+            "properties": {
+              "operator": {"enum": ["CONTENT_SWAP", "COMPOSITION_VARIATION", "ASPECT_ADAPT", "PALETTE_SHIFT", "LIGHTING_REBIND", "OPTICS_REBIND", "TYPOGRAPHY_REBIND", "MOTIF_REBIND", "MATERIAL_SHIFT", "DENSITY_SHIFT"]},
+              "instruction": {"type": "string"},
+              "break_condition": {"type": "string"}
+            }
+          }
+        },
+        "do_not_copy": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "renderer_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer_role", "reference_binding", "prompt_budget", "supported_modes"],
+      "properties": {
+        "renderer_role": {"const": "CREATIVE_VISUAL_SYNTHESIS"},
+        "reference_binding": {"enum": ["RAW_PIXELS_REQUIRED", "RAW_PIXELS_PREFERRED"]},
+        "prompt_budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["high_impact_controls_max", "hard_avoids_max"],
+          "properties": {
+            "high_impact_controls_max": {"type": "integer", "minimum": 4, "maximum": 10},
+            "hard_avoids_max": {"type": "integer", "minimum": 1, "maximum": 6}
+          }
+        },
+        "supported_modes": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {"enum": ["RECONSTRUCT", "VARIATE", "TRANSFER"]}
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["photography", "graphic_design", "integration", "multi_scale", "human_absolute_quality_required"],
+      "properties": {
+        "photography": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "graphic_design": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "integration": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "multi_scale": {"type": "array", "minItems": 3, "items": {"enum": ["THUMBNAIL", "NORMAL_VIEW", "DETAIL_VIEW", "TEXT_LEGIBILITY", "MATERIAL_REALISM"]}},
+        "human_absolute_quality_required": {"const": true}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "compiler_version", "source_hashes"],
+      "properties": {
+        "created_at": {"type": "string"},
+        "compiler_version": {"const": "visual-distillation-compiler-v2"},
+        "source_hashes": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    }
+  },
+  "$defs": {
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "value", "evidence_type", "confidence"],
+      "properties": {
+        "field": {"type": "string"},
+        "value": {},
+        "evidence_type": {"enum": ["DIRECT_VISIBLE", "METADATA", "INFERENCE"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "source_region": {"type": "string"},
+        "uncertainty_note": {"type": "string"}
+      }
+    },
+    "evidenceList": {"type": "array", "items": {"$ref": "#/$defs/evidenceItem"}},
+    "photographyEngine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capture_geometry", "focus_optics", "lighting", "exposure_tonality", "color_grade", "texture_sharpness", "subject_styling", "post_processing"],
+      "properties": {
+        "capture_geometry": {"$ref": "#/$defs/evidenceList"},
+        "focus_optics": {"$ref": "#/$defs/evidenceList"},
+        "lighting": {"$ref": "#/$defs/evidenceList"},
+        "exposure_tonality": {"$ref": "#/$defs/evidenceList"},
+        "color_grade": {"$ref": "#/$defs/evidenceList"},
+        "texture_sharpness": {"$ref": "#/$defs/evidenceList"},
+        "subject_styling": {"$ref": "#/$defs/evidenceList"},
+        "post_processing": {"$ref": "#/$defs/evidenceList"}
+      }
+    },
+    "graphicDesignEngine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_intent", "attention_hierarchy", "grid_geometry", "typography_lettering", "copy_meaning", "whitespace_density", "color_system", "graphic_language", "layer_crop_edge", "material_print", "sequence_system"],
+      "properties": {
+        "semantic_intent": {"$ref": "#/$defs/evidenceList"},
+        "attention_hierarchy": {"$ref": "#/$defs/evidenceList"},
+        "grid_geometry": {"$ref": "#/$defs/evidenceList"},
+        "typography_lettering": {"$ref": "#/$defs/evidenceList"},
+        "copy_meaning": {"$ref": "#/$defs/evidenceList"},
+        "whitespace_density": {"$ref": "#/$defs/evidenceList"},
+        "color_system": {"$ref": "#/$defs/evidenceList"},
+        "graphic_language": {"$ref": "#/$defs/evidenceList"},
+        "layer_crop_edge": {"$ref": "#/$defs/evidenceList"},
+        "material_print": {"$ref": "#/$defs/evidenceList"},
+        "sequence_system": {"$ref": "#/$defs/evidenceList"}
+      }
+    },
+    "integrationEngine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["photo_type_dominance", "shared_color_logic", "negative_space_for_type", "crop_copy_interaction", "light_hierarchy_interaction", "semantic_motif_binding", "realism_protection", "thumbnail_second_read"],
+      "properties": {
+        "photo_type_dominance": {"$ref": "#/$defs/evidenceList"},
+        "shared_color_logic": {"$ref": "#/$defs/evidenceList"},
+        "negative_space_for_type": {"$ref": "#/$defs/evidenceList"},
+        "crop_copy_interaction": {"$ref": "#/$defs/evidenceList"},
+        "light_hierarchy_interaction": {"$ref": "#/$defs/evidenceList"},
+        "semantic_motif_binding": {"$ref": "#/$defs/evidenceList"},
+        "realism_protection": {"$ref": "#/$defs/evidenceList"},
+        "thumbnail_second_read": {"$ref": "#/$defs/evidenceList"}
+      }
+    }
+  }
+}
