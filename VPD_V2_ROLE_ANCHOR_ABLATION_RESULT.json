@@ -1,0 +1,98 @@
+{
+  "experiment": "ROLE_SPECIFIC_VISUAL_ANCHOR_ABLATION",
+  "status": "PARTIAL_SUPPORT_ABSOLUTE_FAIL",
+  "mapping_integrity": "PASS",
+  "mapping": {
+    "A_CONTROL_FULL_REFERENCE_ONLY": "VPD2-RA-2F55A7",
+    "A_TREATMENT_FULL_PLUS_ROLE_ANCHORS": "VPD2-RA-4435C4",
+    "B_CONTROL_FULL_REFERENCE_ONLY": "VPD2-RA-8AAB9A",
+    "B_TREATMENT_FULL_PLUS_ROLE_ANCHORS": "VPD2-RA-971CB0"
+  },
+  "frozen_blind_review": {
+    "VPD2-RA-2F55A7": {
+      "family": "REFERENCE_05",
+      "technical_correctness": 8.8,
+      "photography_art_direction": 5.3,
+      "graphic_design_authorship": 3.2,
+      "typography_lettering": 4.6,
+      "photo_design_integration": 4.2,
+      "semantic_hierarchy": 2.8,
+      "reference_family_structural_fidelity": 2.6,
+      "generic_template_collapse": 8.8,
+      "reference_distance": 8.7,
+      "absolute_quality": "UNUSABLE",
+      "top_tier": false
+    },
+    "VPD2-RA-4435C4": {
+      "family": "REFERENCE_05",
+      "technical_correctness": 9.0,
+      "photography_art_direction": 6.0,
+      "graphic_design_authorship": 3.8,
+      "typography_lettering": 5.0,
+      "photo_design_integration": 5.0,
+      "semantic_hierarchy": 3.3,
+      "reference_family_structural_fidelity": 3.0,
+      "generic_template_collapse": 8.3,
+      "reference_distance": 8.3,
+      "absolute_quality": "UNUSABLE",
+      "top_tier": false
+    },
+    "VPD2-RA-8AAB9A": {
+      "family": "REFERENCE_13",
+      "technical_correctness": 8.9,
+      "photography_art_direction": 5.8,
+      "graphic_design_authorship": 3.6,
+      "typography_lettering": 4.8,
+      "photo_design_integration": 4.6,
+      "semantic_hierarchy": 3.1,
+      "reference_family_structural_fidelity": 3.4,
+      "generic_template_collapse": 8.0,
+      "reference_distance": 8.1,
+      "absolute_quality": "UNUSABLE",
+      "top_tier": false
+    },
+    "VPD2-RA-971CB0": {
+      "family": "REFERENCE_13",
+      "technical_correctness": 9.1,
+      "photography_art_direction": 5.5,
+      "graphic_design_authorship": 2.7,
+      "typography_lettering": 4.4,
+      "photo_design_integration": 3.9,
+      "semantic_hierarchy": 2.4,
+      "reference_family_structural_fidelity": 2.8,
+      "generic_template_collapse": 9.0,
+      "reference_distance": 8.8,
+      "absolute_quality": "UNUSABLE",
+      "top_tier": false
+    }
+  },
+  "pairwise_effects": {
+    "reference_05": {
+      "photography_art_direction_delta": 0.7,
+      "graphic_design_authorship_delta": 0.6,
+      "typography_lettering_delta": 0.4,
+      "photo_design_integration_delta": 0.8,
+      "semantic_hierarchy_delta": 0.5,
+      "reference_family_structural_fidelity_delta": 0.4,
+      "generic_template_collapse_delta": -0.5,
+      "reference_distance_delta": -0.4,
+      "interpretation": "SMALL_CONSISTENT_GAIN_BUT_STILL_ABSOLUTE_FAIL"
+    },
+    "reference_13": {
+      "photography_art_direction_delta": -0.3,
+      "graphic_design_authorship_delta": -0.9,
+      "typography_lettering_delta": -0.4,
+      "photo_design_integration_delta": -0.7,
+      "semantic_hierarchy_delta": -0.7,
+      "reference_family_structural_fidelity_delta": -0.6,
+      "generic_template_collapse_delta": 1.0,
+      "reference_distance_delta": 0.7,
+      "interpretation": "TREATMENT_REGRESSION"
+    }
+  },
+  "causal_verdict": "PARTIAL_SUPPORT",
+  "absolute_verdict": "ABSOLUTE_AESTHETIC_FAIL",
+  "reason": "Adding role-specific raw-pixel anchors modestly improved Reference 05 family but worsened Reference 13 family; all four outputs remained unusable and far from their references. More visual anchors are not a universal fix and can amplify or distract from generic priors.",
+  "scale_gate_allowed": false,
+  "next_hypothesis": "DISCRIMINATIVE_FEATURE_SELECTION_FAILURE"
+}
