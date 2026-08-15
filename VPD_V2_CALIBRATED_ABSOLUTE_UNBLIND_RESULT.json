@@ -1,0 +1,38 @@
+{
+  "benchmark_id": "VPD_V2_CONTROLLED_BENCHMARK",
+  "status": "CALIBRATED_UNBLIND_COMPLETE_ABSOLUTE_FAIL",
+  "evaluation_basis": {
+    "identity_binding": "canonical VPD2-R01..R08 filenames verified against replacement blind package",
+    "condition_mapping_source": "original frozen benchmark mapping ledger / verified receipts",
+    "aesthetic_calibration": "user absolute-quality calibration after replacement blind review",
+    "technical_correctness_is_not_aesthetic_quality": true
+  },
+  "condition_mapping": [
+    {"blind_id":"VPD2-R01","condition":"A0_DIRECT","style":"A"},
+    {"blind_id":"VPD2-R02","condition":"B0_DIRECT","style":"B"},
+    {"blind_id":"VPD2-R03","condition":"B1_V2_RECONSTRUCT","style":"B"},
+    {"blind_id":"VPD2-R04","condition":"B3_V2_COMPOSITION_OR_ASPECT_VARIATION","style":"B"},
+    {"blind_id":"VPD2-R05","condition":"B2_V2_CONTENT_SWAP","style":"B"},
+    {"blind_id":"VPD2-R06","condition":"A2_V2_CONTENT_SWAP","style":"A"},
+    {"blind_id":"VPD2-R07","condition":"A3_V2_COMPOSITION_OR_ASPECT_VARIATION","style":"A"},
+    {"blind_id":"VPD2-R08","condition":"A1_V2_RECONSTRUCT","style":"A"}
+  ],
+  "user_absolute_calibration": {
+    "per_image_exact_scores_provided": false,
+    "material_realism_set_estimate": "approximately 6/10",
+    "other_aesthetic_dimensions_set_estimate": "approximately 1-2/10",
+    "overall_statement": "the images are very ugly and the user does not accept the external reviewer scores",
+    "absolute_usable_count": 0,
+    "top_tier_count": 0
+  },
+  "assistant_calibrated_judgment": {
+    "all_outputs": "ABSOLUTE_FAIL",
+    "technical_correctness": "some outputs are structurally legible and materially plausible",
+    "aesthetic_quality": "far below approved references; generic template collapse dominates",
+    "reference_distance": "large for both style families"
+  },
+  "relative_method_conclusion": "UNRESOLVED_AS_SUCCESS_METRIC",
+  "note": "Even if some V2 conditions are relatively better than DIRECT, relative gain does not convert an absolute aesthetic failure into success.",
+  "scale_gate_status": "BLOCKED",
+  "allow_library_scale_gate": false
+}
