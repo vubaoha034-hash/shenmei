@@ -1,0 +1,110 @@
+{
+  "benchmark_id": "VPD_V2_CONTROLLED_BENCHMARK",
+  "diagnosis_status": "UNBLIND_DIAGNOSIS_COMPLETE_NOT_READY_FOR_SCALE",
+  "required_branch": "visual-program-distillation-v2-photography-design-20260814",
+  "task_commit": "909b8d113ede4a661def32ed3d4327b39afa14bf",
+  "freeze_commit": "e875553581994e2519ba806a025192ede72ac63d",
+  "human_review_frozen_before_unblind": true,
+  "frozen_review_sha256": "36ee9c1dfc24a2d0a9745f0d59ff5bcf0c538c0392c9e86040859f58d8922ff1",
+  "frozen_review_unchanged": true,
+  "human_scores_changed": false,
+  "blind_to_condition_mapping": [
+    {
+      "blind_id": "VPD2-R01",
+      "condition": "A0_DIRECT",
+      "style": "A",
+      "content_asset_role": "RECONSTRUCTION_SOURCE",
+      "human_judgment": {"photography": 6, "graphic_design": 4, "integration": 4, "material_realism": 7, "typography": 3, "absolute": "UNUSABLE"}
+    },
+    {
+      "blind_id": "VPD2-R02",
+      "condition": "B0_DIRECT",
+      "style": "B",
+      "content_asset_role": "RECONSTRUCTION_SOURCE",
+      "human_judgment": {"photography": 5, "graphic_design": 4, "integration": 3, "material_realism": 7, "typography": 3, "absolute": "UNUSABLE"}
+    },
+    {
+      "blind_id": "VPD2-R03",
+      "condition": "B1_V2_RECONSTRUCT",
+      "style": "B",
+      "content_asset_role": "RECONSTRUCTION_SOURCE",
+      "human_judgment": {"photography": 8, "graphic_design": 7, "integration": 7, "material_realism": 8, "typography": 6, "absolute": "USABLE"}
+    },
+    {
+      "blind_id": "VPD2-R04",
+      "condition": "B3_V2_COMPOSITION_OR_ASPECT_VARIATION",
+      "style": "B",
+      "content_asset_role": "COMPOSITION_AND_ASPECT_VARIATION_SOURCE",
+      "human_judgment": {"photography": 7, "graphic_design": 5, "integration": 5, "material_realism": 8, "typography": 4, "absolute": "UNUSABLE"}
+    },
+    {
+      "blind_id": "VPD2-R05",
+      "condition": "B2_V2_CONTENT_SWAP",
+      "style": "B",
+      "content_asset_role": "GENUINELY_DIFFERENT_CONTENT_SWAP_SOURCE",
+      "human_judgment": {"photography": 8, "graphic_design": 7, "integration": 8, "material_realism": 8, "typography": 6, "absolute": "USABLE"}
+    },
+    {
+      "blind_id": "VPD2-R06",
+      "condition": "A2_V2_CONTENT_SWAP",
+      "style": "A",
+      "content_asset_role": "GENUINELY_DIFFERENT_CONTENT_SWAP_SOURCE",
+      "human_judgment": {"photography": 7, "graphic_design": 4, "integration": 4, "material_realism": 8, "typography": 4, "absolute": "UNUSABLE"}
+    },
+    {
+      "blind_id": "VPD2-R07",
+      "condition": "A3_V2_COMPOSITION_OR_ASPECT_VARIATION",
+      "style": "A",
+      "content_asset_role": "COMPOSITION_AND_ASPECT_VARIATION_SOURCE",
+      "human_judgment": {"photography": 8, "graphic_design": 7, "integration": 7, "material_realism": 8, "typography": 6, "absolute": "USABLE"}
+    },
+    {
+      "blind_id": "VPD2-R08",
+      "condition": "A1_V2_RECONSTRUCT",
+      "style": "A",
+      "content_asset_role": "RECONSTRUCTION_SOURCE",
+      "human_judgment": {"photography": 7, "graphic_design": 7, "integration": 7, "material_realism": 7, "typography": 6, "absolute": "USABLE"}
+    }
+  ],
+  "frozen_counts": {
+    "top_tier": 0,
+    "usable": 4,
+    "unusable": 4
+  },
+  "per_style_outcomes": {
+    "style_a": {
+      "direct": {"condition": "A0_DIRECT", "quality": "UNUSABLE"},
+      "reconstruct": {
+        "condition": "A1_V2_RECONSTRUCT",
+        "value_vs_direct": "CLEAR_GAIN",
+        "score_delta_vs_direct": {"photography": 1, "graphic_design": 3, "integration": 3, "material_realism": 0, "typography": 3}
+      },
+      "content_swap": {"condition": "A2_V2_CONTENT_SWAP", "family_quality_retained": false, "absolute": "UNUSABLE"},
+      "composition_or_aspect_variation": {"condition": "A3_V2_COMPOSITION_OR_ASPECT_VARIATION", "true_recomposition": true, "style_logic_retained": true, "absolute": "USABLE"}
+    },
+    "style_b": {
+      "direct": {"condition": "B0_DIRECT", "quality": "UNUSABLE"},
+      "reconstruct": {
+        "condition": "B1_V2_RECONSTRUCT",
+        "value_vs_direct": "CLEAR_GAIN",
+        "score_delta_vs_direct": {"photography": 3, "graphic_design": 3, "integration": 4, "material_realism": 1, "typography": 3}
+      },
+      "content_swap": {"condition": "B2_V2_CONTENT_SWAP", "family_quality_retained": true, "absolute": "USABLE"},
+      "composition_or_aspect_variation": {"condition": "B3_V2_COMPOSITION_OR_ASPECT_VARIATION", "true_recomposition": true, "style_logic_retained": false, "absolute": "UNUSABLE"}
+    }
+  },
+  "benchmark_evidence_integrity": {
+    "mapping_locked_before_render": true,
+    "reference_and_content_bindings_verified_by_hash": true,
+    "prompt_hashes_match_mapping_ledger": true,
+    "output_hashes_match_mapping_ledger_and_machine_report": true,
+    "valid_primary_outputs": 8,
+    "technical_retries": 0,
+    "hidden_extra_outputs": 0,
+    "best_of_n": false
+  },
+  "overall_verdict": "V2_PARTIAL_ADVANTAGE",
+  "scale_gate_status": "NOT_READY_FOR_SCALE",
+  "allow_library_scale_gate": false,
+  "next_experiment": "A2_FORCED_RED_CONTROL_ABLATION"
+}
