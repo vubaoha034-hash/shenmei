@@ -89,6 +89,23 @@ FIGMA_REQUIRED_FAIL_CLOSED = {
     "component asset unresolved", "layout contract cannot map to target aspect ratio",
     "export or readback failed",
 }
+DISPLAY_LETTERING_ROUTES = {
+    "APPROVED_FONT_PLUS_CONTROLLED_DEFORMATION",
+    "SPECIALIZED_VISUAL_SYNTHESIS_TO_APPROVED_ASSET",
+    "HUMAN_OR_EXISTING_VECTOR_ASSET",
+}
+COMPONENT_EVIDENCE_STATES = {
+    "WHOLE_IMAGE_APPROVED",
+    "TYPOGRAPHY_DISTILLATION_REQUESTED",
+    "TYPOGRAPHY_APPROVED",
+    "TYPOGRAPHY_REJECTED",
+    "DISPLAY_TITLE_APPROVED",
+    "FUNCTIONAL_TYPE_APPROVED",
+    "LAYOUT_APPROVED",
+    "BILINGUAL_SYSTEM_APPROVED",
+    "BADGE_OR_MARK_APPROVED",
+    "COMPONENT_UNCONFIRMED",
+}
 
 
 def _object(value: Any, label: str) -> dict[str, Any]:
@@ -391,6 +408,11 @@ def validate_mechanism(record: Any) -> dict[str, Any]:
         _list(data["anti_collapse_notes"], "anti_collapse_notes", nonempty=True)
         if not set(data["observed_in_families"]).issubset(set(data["family_scope"])):
             raise DistillationValidationError("observed typography families must be included in family_scope")
+        if data.get("grammar_role") not in {
+            None, "STABLE_HYPOTHESIS", "OPTIONAL_VARIATION / SUPPORTING_MECHANISM",
+            "OPTIONAL_OR_EQUIVALENT_COUNTERWEIGHT", "TYPOGRAPHY_ONLY_CANDIDATE",
+        }:
+            raise DistillationValidationError("invalid typography grammar_role")
     return data
 
 
@@ -436,6 +458,10 @@ def validate_typography_evidence(record: Any) -> dict[str, Any]:
         raise DistillationValidationError("typography evidence must remain DEEP_EVIDENCE")
     if data["component_approval_status"] != "UNCONFIRMED":
         raise DistillationValidationError("whole-image evidence cannot approve typography components")
+    if "distillation_scope" in data and data["distillation_scope"] not in {
+        "FAMILY_TYPOGRAPHY_COMPONENT", "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE"
+    }:
+        raise DistillationValidationError("invalid typography distillation_scope")
     subject = _object(data["subject"], "typography subject")
     _required(subject, ("canonical_asset_id", "canonical_sample_id", "canonical_sha256", "canonical_dimensions", "pixel_binding"), "typography subject")
     _sha(subject["canonical_sha256"], "typography subject canonical_sha256")
@@ -497,6 +523,10 @@ def validate_typography_hypothesis(record: Any) -> dict[str, Any]:
         raise DistillationValidationError("provisional typography component requires human review")
     if data["component_approval_status"] != "UNCONFIRMED" or data["promotion_status"] != "UNPROMOTED":
         raise DistillationValidationError("typography hypothesis cannot self-approve or promote")
+    if "distillation_scope" in data and data["distillation_scope"] not in {
+        "FAMILY_TYPOGRAPHY_COMPONENT", "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE"
+    }:
+        raise DistillationValidationError("invalid typography hypothesis distillation_scope")
     philosophy = _object(data["typography_visual_philosophy"], "typography_visual_philosophy")
     _required(philosophy, ("statement", "confidence", "evidence_ids"), "typography_visual_philosophy")
     _confidence(philosophy["confidence"], "typography philosophy confidence")
@@ -515,6 +545,84 @@ def validate_typography_hypothesis(record: Any) -> dict[str, Any]:
         raise DistillationValidationError("Figma may not be assigned zero-to-one lettering art direction")
     _list(data["transfer_risks"], "typography transfer_risks", nonempty=True)
     _list(data["evidence_lineage"], "typography hypothesis evidence_lineage", nonempty=True)
+    return data
+
+
+def validate_display_lettering_source_pipeline(record: Any) -> dict[str, Any]:
+    """Validate the auditable source-to-approved-asset boundary for display lettering."""
+    data = _object(record, "display lettering source pipeline")
+    _required(
+        data,
+        (
+            "schema_version", "pipeline_id", "status", "routes", "required_common_record",
+            "approval_boundary", "figma_boundary", "promotion_status",
+        ),
+        "display lettering source pipeline",
+    )
+    if data["schema_version"] != "3.0.0" or data["status"] != "CONTRACT_READY":
+        raise DistillationValidationError("invalid display lettering pipeline version/status")
+    routes = _list(data["routes"], "display lettering routes", nonempty=True)
+    route_names = {row.get("route") for row in routes if isinstance(row, dict)}
+    if route_names != DISPLAY_LETTERING_ROUTES or len(routes) != len(DISPLAY_LETTERING_ROUTES):
+        raise DistillationValidationError("display lettering pipeline must define every route exactly once")
+    required_fields = {
+        "exact_copy", "source_identity", "provenance", "family_behavior_target", "source_material",
+        "transform_record", "correctness_verification", "human_review", "approved_asset_identity",
+        "figma_placement_contract", "promotion_status",
+    }
+    common = set(_list(data["required_common_record"], "required_common_record", nonempty=True))
+    if not required_fields.issubset(common):
+        raise DistillationValidationError("display lettering common record is incomplete")
+    for route in routes:
+        row = _object(route, "display lettering route")
+        _required(row, ("route", "source_requirements", "allowed_transformations", "fail_closed_conditions"), "display lettering route")
+        _list(row["source_requirements"], "source_requirements", nonempty=True)
+        _list(row["fail_closed_conditions"], "fail_closed_conditions", nonempty=True)
+    if data["approval_boundary"] != "HUMAN_REVIEW_REQUIRED_BEFORE_APPROVED_ASSET":
+        raise DistillationValidationError("display lettering output requires human review")
+    if data["figma_boundary"] != "PLACE_OR_CONTROLLED_TRANSFORM_APPROVED_SOURCE_NOT_ZERO_TO_ONE":
+        raise DistillationValidationError("Figma display-lettering boundary is invalid")
+    if data["promotion_status"] != "UNPROMOTED":
+        raise DistillationValidationError("display lettering pipeline cannot auto-promote")
+    return data
+
+
+def validate_typography_component_evidence_contract(record: Any) -> dict[str, Any]:
+    data = _object(record, "typography component evidence contract")
+    _required(data, ("schema_version", "contract_id", "allowed_states", "separation_rules", "default_state"), "typography component evidence contract")
+    if data["schema_version"] != "3.0.0":
+        raise DistillationValidationError("invalid component evidence contract version")
+    if set(_list(data["allowed_states"], "allowed_states", nonempty=True)) != COMPONENT_EVIDENCE_STATES:
+        raise DistillationValidationError("component evidence state vocabulary is incomplete")
+    if data["default_state"] != "COMPONENT_UNCONFIRMED":
+        raise DistillationValidationError("component evidence must default to unconfirmed")
+    rules = _object(data["separation_rules"], "separation_rules")
+    if rules.get("whole_image_approval_populates_component_approval") is not False:
+        raise DistillationValidationError("whole-image approval cannot populate typography components")
+    if rules.get("distillation_request_implies_approval") is not False:
+        raise DistillationValidationError("a distillation request cannot imply component approval")
+    return data
+
+
+def validate_shanyeji_figma_producibility_map(record: Any) -> dict[str, Any]:
+    data = _object(record, "Shan Ye Ji Figma producibility map")
+    _required(data, ("schema_version", "map_id", "family_id", "status", "review_status", "role_map", "central_title_claim", "runtime_status"), "Shan Ye Ji Figma producibility map")
+    if data["schema_version"] != "3.0.0" or data["status"] != "PROVISIONAL_FIGMA_PRODUCIBILITY_MAP":
+        raise DistillationValidationError("invalid Shan Ye Ji Figma map status")
+    if data["review_status"] != "HUMAN_REVIEW_PENDING":
+        raise DistillationValidationError("Shan Ye Ji Figma map must remain pending human review")
+    roles = {row.get("role"): row.get("production_mode") for row in _list(data["role_map"], "role_map", nonempty=True)}
+    required = {
+        "functional_chinese": "LIVE_TEXT_REQUIRED",
+        "functional_english": "LIVE_TEXT_REQUIRED",
+        "top_english_claims": "LIVE_TEXT_REQUIRED",
+        "orange_semantic_line": "FIGMA_VECTOR_PATH",
+        "central_display_title": "DISPLAY_LETTERING_SOURCE_PIPELINE_REQUIRED",
+    }
+    if any(roles.get(role) != mode for role, mode in required.items()):
+        raise DistillationValidationError("Shan Ye Ji Figma role policy is incomplete")
+    if data["central_title_claim"] != "NOT_AUTOMATICALLY_REPRODUCIBLE_IN_FIGMA":
+        raise DistillationValidationError("central display title capability must remain unresolved")
     return data
 
 

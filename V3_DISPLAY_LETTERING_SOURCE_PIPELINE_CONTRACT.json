@@ -1,0 +1,33 @@
+{
+  "schema_version": "3.0.0",
+  "pipeline_id": "display_lettering_source_pipeline_v3",
+  "status": "CONTRACT_READY",
+  "routes": [
+    {
+      "route": "APPROVED_FONT_PLUS_CONTROLLED_DEFORMATION",
+      "source_requirements": ["Evidence-supported installed font identity", "Locked exact copy", "Recorded font license and version when available"],
+      "allowed_transformations": ["Bounded width/height adjustment", "Auditable terminal or cut changes", "Optical counter and spacing correction"],
+      "fail_closed_conditions": ["Font identity unresolved", "Deformation becomes generic or loses family behavior", "Exact characters cannot be verified", "Human review missing"]
+    },
+    {
+      "route": "SPECIALIZED_VISUAL_SYNTHESIS_TO_APPROVED_ASSET",
+      "source_requirements": ["Locked exact requested characters", "Family behavior target", "Candidate-generation receipt and source identity"],
+      "allowed_transformations": ["Human-selected candidate cleanup", "Verified vectorization", "Retention as an approved pixel-lettering asset"],
+      "fail_closed_conditions": ["Candidate is used as production copy before review", "Character correctness is uncertain", "Selection provenance is missing", "Approved asset hash is absent"]
+    },
+    {
+      "route": "HUMAN_OR_EXISTING_VECTOR_ASSET",
+      "source_requirements": ["User/designer-supplied SVG, outline, or lettering asset", "Source provenance", "Locked exact copy"],
+      "allowed_transformations": ["Placement", "Uniform or contract-approved scaling", "Non-destructive color-token application"],
+      "fail_closed_conditions": ["Source identity or rights unresolved", "Exact copy verification fails", "Figma would silently redraw the asset", "Human review missing"]
+    }
+  ],
+  "required_common_record": [
+    "exact_copy", "source_identity", "provenance", "family_behavior_target", "source_material",
+    "transform_record", "correctness_verification", "human_review", "approved_asset_identity",
+    "figma_placement_contract", "promotion_status"
+  ],
+  "approval_boundary": "HUMAN_REVIEW_REQUIRED_BEFORE_APPROVED_ASSET",
+  "figma_boundary": "PLACE_OR_CONTROLLED_TRANSFORM_APPROVED_SOURCE_NOT_ZERO_TO_ONE",
+  "promotion_status": "UNPROMOTED"
+}

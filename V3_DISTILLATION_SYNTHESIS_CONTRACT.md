@@ -71,6 +71,16 @@ canonical source. Missing canonical pixels returns
 `TYPOGRAPHY_REFERENCE_SOURCE_NOT_CANONICALIZED` and blocks the candidate rather
 than fabricating a distillation.
 
+Component-scoped user authority uses the closed vocabulary defined by
+`V3_TYPOGRAPHY_COMPONENT_SCOPED_EVIDENCE_CONTRACT.json`: `WHOLE_IMAGE_APPROVED`,
+`TYPOGRAPHY_DISTILLATION_REQUESTED`, `TYPOGRAPHY_APPROVED`,
+`TYPOGRAPHY_REJECTED`, `DISPLAY_TITLE_APPROVED`,
+`FUNCTIONAL_TYPE_APPROVED`, `LAYOUT_APPROVED`,
+`BILINGUAL_SYSTEM_APPROVED`, `BADGE_OR_MARK_APPROVED`, and
+`COMPONENT_UNCONFIRMED`. The default is `COMPONENT_UNCONFIRMED`.
+`TYPOGRAPHY_DISTILLATION_REQUESTED` is authority to analyze the typography;
+it is not approval of the typography or any component.
+
 Typography follows the same review chain as other V3 modules:
 
 ```text
@@ -88,6 +98,15 @@ It is not the default zero-to-one art director for expert Chinese display
 lettering. The renderer/Figma responsibility split and every unresolved font,
 copy or asset dependency must be carried into the bounded runtime package and
 fail closed at production time.
+
+New display lettering must pass the auditable
+`DISPLAY_LETTERING_SOURCE_PIPELINE`. Its only routes are an evidence-supported
+font plus controlled deformation, specialized visual synthesis to a
+human-approved asset, or a human/existing vector asset. Every route locks exact
+copy and records provenance, source identity, transformations, correctness,
+human review, approved asset ID/hash, Figma placement, and unpromoted status.
+Figma may place or perform bounded transforms on an approved source; the
+pipeline does not restore Figma zero-to-one lettering authorship.
 
 ## Anchor dependence
 

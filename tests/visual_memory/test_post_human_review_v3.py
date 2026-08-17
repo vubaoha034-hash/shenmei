@@ -113,7 +113,11 @@ class PostHumanReviewV3Tests(unittest.TestCase):
             validate_mechanism(mechanism)
             self.assertEqual(mechanism["component_approval_status"], "UNCONFIRMED")
             self.assertEqual(mechanism["promotion_status"], "UNPROMOTED")
-            self.assertEqual({row["kind"] for row in mechanism["support_basis"]}, {"WHOLE_IMAGE_APPROVAL"})
+            support_kinds = {row["kind"] for row in mechanism["support_basis"]}
+            if mechanism["mechanism_id"].startswith("mech_shanyeji_"):
+                self.assertEqual(support_kinds, set())
+            else:
+                self.assertEqual(support_kinds, {"WHOLE_IMAGE_APPROVAL"})
 
     def test_each_program_has_exactly_three_unexecuted_transfer_plans(self):
         expected = {"RECONSTRUCT", "CONTENT_SWAP", "COMPOSITION_OR_ASPECT_TRANSFER"}

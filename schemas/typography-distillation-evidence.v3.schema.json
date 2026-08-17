@@ -15,6 +15,7 @@
     "evidence_id": {"type": "string", "minLength": 1},
     "family_id": {"type": "string", "minLength": 1},
     "status": {"const": "DEEP_EVIDENCE"},
+    "distillation_scope": {"enum": ["FAMILY_TYPOGRAPHY_COMPONENT", "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE"]},
     "subject": {
       "type": "object",
       "additionalProperties": false,

@@ -1,0 +1,71 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "TYPOGRAPHY_DEEP_EVIDENCE",
+  "evidence_id": "typo_de_v3_shanyeji",
+  "family_id": "family_shanyeji_typography_candidate",
+  "status": "DEEP_EVIDENCE",
+  "distillation_scope": "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE",
+  "subject": {
+    "canonical_asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed",
+    "canonical_sample_id": "smp_eb42c037-5cab-414b-b09a-6444e6ce9071",
+    "canonical_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "canonical_dimensions": {"width": 960, "height": 1280},
+    "pixel_binding": "CANONICAL_PIXELS_DIRECTLY_INSPECTED"
+  },
+  "text_role_inventory": [
+    {"role": "display_title", "present": true, "observed_content": "山野集", "visual_job": "Central oversized white lettering is the primary visual object and first read.", "evidence_refs": ["syj_title_architecture", "syj_glyph_mountain_mass"]},
+    {"role": "subtitle", "present": true, "observed_content": "Mountain market", "visual_job": "Small English secondary title anchors the left edge of the main display mass.", "evidence_refs": ["syj_hierarchy_three_reads"]},
+    {"role": "claim", "present": true, "observed_content": "WOK HEI / ORIGINAL TASTE / WILD AROMA / OLD FARM RECIPES", "visual_job": "Four compact English claim groups establish a repeated top rhythm.", "evidence_refs": ["syj_hierarchy_three_reads"]},
+    {"role": "caption", "present": true, "observed_content": "常德饮食文化代表名片", "visual_job": "Restrained Chinese support line bridges the display title and handwritten slogan.", "evidence_refs": ["syj_hierarchy_three_reads"]},
+    {"role": "body", "present": false, "observed_content": null, "visual_job": "No paragraph body role is visible.", "evidence_refs": []},
+    {"role": "tag", "present": false, "observed_content": null, "visual_job": "No independent tag system is visible.", "evidence_refs": []},
+    {"role": "seal_badge", "present": true, "observed_content": "李家班", "visual_job": "Orange vertical badge identifies a compact secondary identity next to the title.", "evidence_refs": ["syj_orange_semantic_system"]},
+    {"role": "side_rail", "present": false, "observed_content": null, "visual_job": "No editorial side rail is visible.", "evidence_refs": []},
+    {"role": "english_support", "present": true, "observed_content": "WOK HEI / ORIGINAL TASTE / WILD AROMA / OLD FARM RECIPES / Mountain market", "visual_job": "Upper claims and the secondary title form live functional Latin layers.", "evidence_refs": ["syj_hierarchy_three_reads"]},
+    {"role": "handwritten_slogan", "present": true, "observed_content": "寻味山野集 待客李家沱", "visual_job": "Orange handwritten line supplies a warmer third-read voice below the formal support text.", "evidence_refs": ["syj_orange_semantic_system"]},
+    {"role": "module_label", "present": false, "observed_content": null, "visual_job": "No multi-module chapter-label system is visible.", "evidence_refs": []},
+    {"role": "footer_brand_lockup", "present": true, "observed_content": "万策 WANCE / 专注餐饮品牌健康成长", "visual_job": "Bottom-center lockup stabilizes authorship and footer balance.", "evidence_refs": ["syj_footer_lockup"]},
+    {"role": "data_chip", "present": false, "observed_content": null, "visual_job": "No data-chip role is visible.", "evidence_refs": []},
+    {"role": "other", "present": true, "observed_content": "WANCE / DESIGN", "visual_job": "Very small footer edge words extend the bottom alignment field.", "evidence_refs": ["syj_footer_lockup"]}
+  ],
+  "script_system": {
+    "scripts": ["Chinese", "Latin", "mixed"],
+    "script_relationship": "Chinese owns the central identity, formal support and handwritten voice; Latin creates top claim cadence and secondary naming without replacing the Chinese first read.",
+    "type_family_behavior": "A custom block-like white display mass is contrasted with clean geometric Latin, restrained functional Chinese, and an orange handwritten slogan.",
+    "language_hierarchy": "Chinese central title first; top claims, badge, support line and slogan form secondary/tertiary reads; footer lockup closes the page.",
+    "evidence_refs": ["syj_title_architecture", "syj_hierarchy_three_reads", "syj_footer_lockup"]
+  },
+  "evidence_sections": {
+    "title_architecture": [
+      {"observation_id": "syj_title_architecture", "statement": "The central white 山野集 title spans most of the middle width as an irregular silhouette; it is not a conventional line of uniform glyphs and it occupies the photographic foliage rather than a separate text panel.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.99, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "central 35-56% vertical band"}, "uncertainty": "The exact source lettering construction method and font ancestry are unknown.", "binding_classification": "STYLE_SIGNATURE"}
+    ],
+    "glyph_mechanisms": [
+      {"observation_id": "syj_glyph_mountain_mass", "statement": "The title uses mountain/stone-like block masses, uneven character scale, carved negative-space cuts, eroded white surfaces and selective missing-stroke geometry to turn the four glyphs into one landscape-like object.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.98, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "central white display title"}, "uncertainty": "Exact glyph outlines are brand-bound and must not be traced or treated as a reusable font.", "binding_classification": "BRAND_BOUND"}
+    ],
+    "hierarchy_mechanisms": [
+      {"observation_id": "syj_hierarchy_three_reads", "statement": "The first read is the central white title; the second read combines the four top English claim groups, orange badge and restrained Chinese support; the third read is the handwritten slogan and bottom WANCE lockup.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.98, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "full frame"}, "uncertainty": "Exact claim count and copy are content/production bound.", "binding_classification": "STYLE_SIGNATURE"}
+    ],
+    "layout_coupling": [
+      {"observation_id": "syj_orange_semantic_system", "statement": "A thin orange thread loops through and around the title, visually connects the badge and display mass, and is echoed by the handwritten slogan; it behaves as a semantic path rather than an unrelated border.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.97, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "central title, left badge, and lower slogan"}, "uncertainty": "The intended semantic narrative of the path is not stated in metadata.", "binding_classification": "STYLE_SIGNATURE"}
+    ],
+    "color_material_binding": [
+      {"observation_id": "syj_photo_type_contrast", "statement": "High-mass white title, limited orange accents and quieter beige support text remain legible against a deep green, spatially complex photographic forest background; contrast roles—not exact color values—organize the type layers.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.99, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "full frame"}, "uncertainty": "Exact green, white, orange, and beige values are production bound.", "binding_classification": "STYLE_SIGNATURE"}
+    ],
+    "failure_modes": [
+      {"observation_id": "syj_failure_generic_font", "statement": "Replacing the central lettering with a stock bold CJK font, using orange as a generic underline, or removing the claim/footer hierarchy would preserve copy but lose the evidence-backed visual system.", "evidence_class": "INFERENCE", "confidence": 0.97, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "full typography system"}, "uncertainty": "Transfer behavior remains untested and pending human distillation review.", "binding_classification": "STYLE_SIGNATURE"},
+      {"observation_id": "syj_footer_lockup", "statement": "The bottom WANCE lockup and edge labels are production/brand-bound alignment evidence, not permission to reuse the brand identity.", "evidence_class": "DIRECT_VISIBLE", "confidence": 0.99, "evidence_pointer": {"asset_id": "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "region": "bottom 10%"}, "uncertainty": null, "binding_classification": "BRAND_BOUND"}
+    ]
+  },
+  "figma_producibility": [
+    {"role": "display_title", "mode": "VECTOR_LETTERING_REQUIRED", "rationale": "The central title needs the approved display-lettering source pipeline; Figma may not invent it zero-to-one.", "dependencies": ["DISPLAY_LETTERING_SOURCE_PIPELINE_REQUIRED", "HUMAN_REVIEW_REQUIRED"]},
+    {"role": "subtitle", "mode": "LIVE_TEXT_REQUIRED", "rationale": "Mountain market remains editable exact functional Latin text.", "dependencies": ["LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING"]},
+    {"role": "claim", "mode": "LIVE_TEXT_REQUIRED", "rationale": "Top English claims require exact spelling and repeatable spacing.", "dependencies": ["LOCKED_COPY", "HUMAN_APPROVED_TRANSLATION"]},
+    {"role": "caption", "mode": "LIVE_TEXT_REQUIRED", "rationale": "Chinese support text must be exact and editable.", "dependencies": ["LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING"]},
+    {"role": "seal_badge", "mode": "APPROVED_SVG_ASSET_ALLOWED", "rationale": "Use live text in a vector container or an approved vector lettering asset.", "dependencies": ["LOCKED_COPY", "APPROVED_VECTOR_ASSET_OR_LIVE_TEXT"]},
+    {"role": "english_support", "mode": "LIVE_TEXT_REQUIRED", "rationale": "Latin claims and secondary title must remain deterministic.", "dependencies": ["LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING"]},
+    {"role": "handwritten_slogan", "mode": "HUMAN_REVIEW_REQUIRED", "rationale": "Use a credible live-font candidate or an approved lettering asset only after review.", "dependencies": ["LOCKED_COPY", "LIVE_FONT_OR_APPROVED_LETTERING_PENDING"]},
+    {"role": "footer_brand_lockup", "mode": "LIVE_TEXT_PREFERRED", "rationale": "Use deterministic live text or a supplied approved brand asset.", "dependencies": ["LOCKED_BRAND_COPY_OR_ASSET"]}
+  ],
+  "component_approval_status": "UNCONFIRMED",
+  "evidence_lineage": ["smp_eb42c037-5cab-414b-b09a-6444e6ce9071", "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "ev_6704fee4-118b-49e0-80a5-6abc3d731a3d", "USER_EXPLICIT_TYPOGRAPHY_DISTILLATION_REQUEST"]
+}

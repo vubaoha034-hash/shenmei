@@ -3,8 +3,9 @@
   "artifact_type": "TYPOGRAPHY_DISTILLATION_HYPOTHESIS",
   "hypothesis_id": "typo_dh_v3_reference_05",
   "family_id": "family_reference_05_process_campaign_brand_world",
-  "status": "DISTILLATION_HYPOTHESIS",
-  "review_status": "HUMAN_REVIEW_PENDING",
+  "status": "PROVISIONAL_PROGRAM_COMPONENT",
+  "review_status": "HUMAN_REVIEWED",
+  "distillation_scope": "FAMILY_TYPOGRAPHY_COMPONENT",
   "source_evidence_ids": ["typo_de_v3_reference_05"],
   "typography_visual_philosophy": {
     "statement": "Typography behaves as a brand-world information engine: an authored display identity anchors live process imagery while restrained claims, module labels, bilingual support and microcopy assign semantic roles across the campaign system.",
@@ -35,18 +36,13 @@
       "statement": "Module labels identify process, ingredient, place or world roles; label geometry follows semantic zones rather than decoration-only placement.",
       "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95,
       "evidence_ids": ["typo05_role_module_label", "typo05_text_image_coupling"]
-    },
-    {
-      "mechanism_id": "mech_05_dual_script_support_system",
-      "statement": "Chinese remains the identity and narrative authority while compact Latin support contributes cadence without competing for first read.",
-      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.88,
-      "evidence_ids": ["typo05_role_english_support", "e05_design_information_tiers"]
     }
   ],
   "variation_axes_typography": [
     {"statement": "Display-title content and approved glyph asset may change with brand identity while retaining high-mass irregular authored behavior.", "confidence": 0.86, "evidence_ids": ["typo05_glyph_energy"]},
     {"statement": "Module count, label wording and support-copy density may adapt to available semantic roles; exact three-module geometry is not required.", "confidence": 0.96, "evidence_ids": ["typo05_hierarchy_tiers", "typo05_text_image_coupling"]},
-    {"statement": "Exact dark/hot/light color values may change while preserving contrast roles and functional readability.", "confidence": 0.93, "evidence_ids": ["typo05_color_material"]}
+    {"statement": "Exact dark/hot/light color values may change while preserving contrast roles and functional readability.", "confidence": 0.93, "evidence_ids": ["typo05_color_material"]},
+    {"statement": "Bilingual support is OPTIONAL_VARIATION / SUPPORTING_MECHANISM: Chinese identity and narrative authority is evidenced, but Latin presence, claim count and bilingual structure are not mandatory family invariants.", "confidence": 0.98, "evidence_ids": ["typo05_role_english_support", "V3_TYPOGRAPHY_DISTILLATION_HUMAN_REVIEW_RESULT.md#2"]}
   ],
   "content_bound_typography": [
     {"features": ["dish names", "ingredient labels", "process statements", "location/world captions"], "transfer_behavior": "REPLACE_WITH_VERBATIM_CURRENT_CONTENT", "evidence_ids": ["typo05_role_caption", "typo05_role_module_label"]}
@@ -55,7 +51,7 @@
     {"features": ["brand name 辣灶记", "exact custom glyph outlines", "existing slogan and claims"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS; REQUIRE_NEW_APPROVED_COPY_OR_DISPLAY_ASSET", "evidence_ids": ["typo05_role_display_title", "typo05_glyph_energy"]}
   ],
   "production_bound_typography": [
-    {"features": ["exact title coordinates", "exact three-band copy placement", "exact module count", "exact font files and distress instance"], "transfer_behavior": "RECOMPOSE_UNDER_FIGMA_CONTRACT; DO_NOT_TREAT_AS_FAMILY_INVARIANT", "evidence_ids": ["typo05_title_architecture", "typo05_text_image_coupling"]}
+    {"features": ["exact title coordinates", "exact three-band copy placement", "exact module count", "exact font files and distress instance", "exact Latin presence", "exact claim count", "exact bilingual structure"], "transfer_behavior": "RECOMPOSE_UNDER_FIGMA_CONTRACT; DO_NOT_TREAT_AS_FAMILY_INVARIANT", "evidence_ids": ["typo05_title_architecture", "typo05_text_image_coupling", "typo05_role_english_support"]}
   ],
   "typography_content_compatibility": [
     {"statement": "A full-family execution needs enough truthful semantic content to support at least display identity, process/product narrative and a world/context information tier.", "confidence": 0.94, "evidence_ids": ["typo05_hierarchy_tiers", "e05_design_information_tiers"]},

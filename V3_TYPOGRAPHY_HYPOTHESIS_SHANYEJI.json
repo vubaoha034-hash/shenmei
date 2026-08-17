@@ -1,0 +1,61 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "TYPOGRAPHY_DISTILLATION_HYPOTHESIS",
+  "hypothesis_id": "typo_dh_v3_shanyeji",
+  "family_id": "family_shanyeji_typography_candidate",
+  "status": "DISTILLATION_HYPOTHESIS",
+  "review_status": "HUMAN_REVIEW_PENDING",
+  "distillation_scope": "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE",
+  "source_evidence_ids": ["typo_de_v3_shanyeji"],
+  "typography_visual_philosophy": {
+    "statement": "Typography behaves as a layered identity landscape: a custom white mountain/stone-like title object occupies the photographic field while orange path, badge, handwritten voice, repeated claim rhythm, quiet functional copy, and footer lockup establish ordered reads.",
+    "confidence": 0.94,
+    "evidence_ids": ["syj_title_architecture", "syj_glyph_mountain_mass", "syj_hierarchy_three_reads", "syj_orange_semantic_system"]
+  },
+  "stable_typography_grammar": [
+    {"mechanism_id": "mech_shanyeji_display_landscape_mass", "statement": "A newly approved display-lettering asset forms an irregular landscape-like central silhouette through unequal glyph mass, carved negative space and controlled erosion without copying source glyphs.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.96, "evidence_ids": ["syj_title_architecture", "syj_glyph_mountain_mass"]},
+    {"mechanism_id": "mech_shanyeji_hierarchical_claim_field", "statement": "Repeated compact claims, restrained support copy, handwritten voice and footer identity establish distinct first/second/third reads around the display mass.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95, "evidence_ids": ["syj_hierarchy_three_reads", "syj_footer_lockup"]},
+    {"mechanism_id": "mech_shanyeji_semantic_accent_thread", "statement": "A restrained accent path links title and badge while a related accent voice appears in the handwritten slogan; it is semantic connection, not generic decoration.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.92, "evidence_ids": ["syj_orange_semantic_system"]},
+    {"mechanism_id": "mech_shanyeji_photo_type_contrast", "statement": "High-contrast display and quieter support layers remain spatially legible against a deep photographic environment without isolating typography in a separate panel.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.96, "evidence_ids": ["syj_photo_type_contrast", "syj_title_architecture"]}
+  ],
+  "variation_axes_typography": [
+    {"statement": "Claim count and exact claim wording may change if repeated upper cadence and hierarchy remain truthful.", "confidence": 0.9, "evidence_ids": ["syj_hierarchy_three_reads"]},
+    {"statement": "Accent hue and path shape may adapt when the accent remains limited, semantically connected, and secondary to the display title.", "confidence": 0.86, "evidence_ids": ["syj_orange_semantic_system"]},
+    {"statement": "Photographic subject may change if it provides complex dark spatial texture and preserves display/support contrast roles.", "confidence": 0.82, "evidence_ids": ["syj_photo_type_contrast"]}
+  ],
+  "content_bound_typography": [
+    {"features": ["exact top claims", "Mountain market", "常德饮食文化代表名片", "handwritten slogan"], "transfer_behavior": "REPLACE_ONLY_WITH_LOCKED_CURRENT_COPY_AND_HUMAN_APPROVED_TRANSLATION", "evidence_ids": ["syj_hierarchy_three_reads", "syj_orange_semantic_system"]}
+  ],
+  "brand_bound_typography": [
+    {"features": ["山野集 title wording", "exact 山野集 glyph outlines", "李家班 badge", "万策 WANCE lockup"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS; REQUIRE_NEW_APPROVED_ASSETS_OR_EXACT LIVE COPY", "evidence_ids": ["syj_glyph_mountain_mass", "syj_footer_lockup"]}
+  ],
+  "production_bound_typography": [
+    {"features": ["exact four-claim count", "exact central coordinates", "exact orange path", "exact forest crop", "exact footer placement"], "transfer_behavior": "RECOMPOSE; DO_NOT TREAT AS FAMILY INVARIANTS", "evidence_ids": ["syj_title_architecture", "syj_hierarchy_three_reads", "syj_orange_semantic_system"]}
+  ],
+  "typography_content_compatibility": [
+    {"statement": "A transfer needs a short locked display name that can sustain a newly authored silhouette plus enough truthful support copy for at least two subordinate reads.", "confidence": 0.9, "evidence_ids": ["syj_title_architecture", "syj_hierarchy_three_reads"]},
+    {"statement": "A high-complexity photographic field must leave a legible central occupancy zone and sufficient top/bottom separation for functional text.", "confidence": 0.88, "evidence_ids": ["syj_photo_type_contrast"]}
+  ],
+  "figma_execution_hypothesis": {
+    "renderer_responsibility": ["photographic background and complex pixel art", "display-lettering exploration only through an authorized source-pipeline route"],
+    "figma_responsibility": ["exact functional Chinese and English live text", "top claim rhythm", "orange vector path", "badge container", "placement of approved display-title or handwritten assets", "footer lockup and deterministic export"],
+    "not_figma_zero_to_one": true,
+    "required_dependencies": ["DISPLAY_LETTERING_SOURCE_PIPELINE_REQUIRED", "LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING", "TYPOGRAPHY_HUMAN_REVIEW"],
+    "evidence_ids": ["syj_glyph_mountain_mass", "syj_hierarchy_three_reads", "syj_orange_semantic_system"]
+  },
+  "transfer_risks": [
+    "stock-font substitution would remove the central landscape silhouette",
+    "literal copying of source glyphs or WANCE identity would leak brand-bound content",
+    "decorative English filler would corrupt the claim hierarchy",
+    "an orange underline or generic seal would collapse the semantic accent system",
+    "a bright or flat background could destroy the evidence-backed text-image contrast"
+  ],
+  "unresolved_uncertainties": [
+    "No component-specific approval has been provided; the user requested typography distillation only.",
+    "No display-lettering source route, font, or approved title asset has been selected.",
+    "No typography transfer has tested whether the proposed mechanisms survive new copy, content, or aspect ratio."
+  ],
+  "component_approval_status": "UNCONFIRMED",
+  "promotion_status": "UNPROMOTED",
+  "evidence_lineage": ["typo_de_v3_shanyeji", "smp_eb42c037-5cab-414b-b09a-6444e6ce9071", "ast_d9e80019-544f-4c0c-9b8d-cc04541ff0ed", "USER_EXPLICIT_TYPOGRAPHY_DISTILLATION_REQUEST"]
+}

@@ -18,6 +18,7 @@
     "family_id": {"type": "string"},
     "status": {"enum": ["DISTILLATION_HYPOTHESIS", "PROVISIONAL_PROGRAM_COMPONENT"]},
     "review_status": {"enum": ["HUMAN_REVIEW_PENDING", "HUMAN_REVIEWED"]},
+    "distillation_scope": {"enum": ["FAMILY_TYPOGRAPHY_COMPONENT", "TYPOGRAPHY_ONLY_FAMILY_CANDIDATE"]},
     "source_evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
     "typography_visual_philosophy": {"$ref": "#/$defs/claim"},
     "stable_typography_grammar": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/grammar"}},

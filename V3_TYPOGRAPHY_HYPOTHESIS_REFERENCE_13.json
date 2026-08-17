@@ -3,8 +3,9 @@
   "artifact_type": "TYPOGRAPHY_DISTILLATION_HYPOTHESIS",
   "hypothesis_id": "typo_dh_v3_reference_13",
   "family_id": "family_reference_13_editorial_titlefield_stilllife",
-  "status": "DISTILLATION_HYPOTHESIS",
-  "review_status": "HUMAN_REVIEW_PENDING",
+  "status": "PROVISIONAL_PROGRAM_COMPONENT",
+  "review_status": "HUMAN_REVIEWED",
+  "distillation_scope": "FAMILY_TYPOGRAPHY_COMPONENT",
   "source_evidence_ids": ["typo_de_v3_reference_13"],
   "typography_visual_philosophy": {
     "statement": "Typography forms a quiet editorial spatial system: an approved asymmetric display-title object, active whitespace, a narrow side rail and restrained bilingual metadata share one optical geometry with the tactile still life.",
@@ -31,28 +32,18 @@
       "evidence_ids": ["typo13_title_architecture", "e13_design_active_whitespace"]
     },
     {
-      "mechanism_id": "mech_13_editorial_side_rail",
-      "statement": "A narrow vertical Chinese/Latin rail counterbalances the title field and participates in the shared optical axes.",
-      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.9,
-      "evidence_ids": ["typo13_role_side_rail", "typo13_text_object_geometry"]
-    },
-    {
       "mechanism_id": "mech_13_restrained_supporting_copy",
       "statement": "Small labels and body copy remain low-volume, accurately set and rhythmically spaced so they add editorial depth without promotional noise.",
       "state": "INVARIANT_HYPOTHESIS", "confidence": 0.96,
       "evidence_ids": ["typo13_role_module_label", "typo13_role_body", "typo13_hierarchy_tiers"]
-    },
-    {
-      "mechanism_id": "mech_13_dual_script_editorial_support",
-      "statement": "Latin support remains narrow and subordinate to Chinese while sharing alignment and spacing logic with the editorial label system.",
-      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.89,
-      "evidence_ids": ["typo13_role_english_support", "typo13_role_module_label"]
     }
   ],
   "variation_axes_typography": [
     {"statement": "Title wording and new approved glyph forms may change while preserving asymmetric mass and controlled handmade stroke behavior.", "confidence": 0.93, "evidence_ids": ["typo13_title_architecture", "typo13_glyph_energy"]},
     {"statement": "Side-rail content, metadata count and lower label rhythm may adapt, but functional tiers and active whitespace must remain legible.", "confidence": 0.96, "evidence_ids": ["typo13_hierarchy_tiers", "typo13_text_object_geometry"]},
-    {"statement": "Exact olive, charcoal and mineral-paper values may change while retaining muted matte contrast and quiet optical authority.", "confidence": 0.92, "evidence_ids": ["typo13_color_material"]}
+    {"statement": "Exact olive, charcoal and mineral-paper values may change while retaining muted matte contrast and quiet optical authority.", "confidence": 0.92, "evidence_ids": ["typo13_color_material"]},
+    {"statement": "A literal editorial side rail is OPTIONAL_OR_EQUIVALENT_COUNTERWEIGHT; the reusable behavior is a restrained secondary counterweight participating in shared optical geometry.", "confidence": 0.98, "evidence_ids": ["typo13_role_side_rail", "typo13_text_object_geometry", "V3_TYPOGRAPHY_DISTILLATION_HUMAN_REVIEW_RESULT.md#3"]},
+    {"statement": "Bilingual support is OPTIONAL_VARIATION / SUPPORTING_MECHANISM; English presence is not mandatory when equivalent restrained information rhythm is preserved.", "confidence": 0.98, "evidence_ids": ["typo13_role_english_support", "V3_TYPOGRAPHY_DISTILLATION_HUMAN_REVIEW_RESULT.md#3"]}
   ],
   "content_bound_typography": [
     {"features": ["ingredient/content tags", "editorial paragraph", "side-rail wording and translations"], "transfer_behavior": "REPLACE_WITH_VERBATIM_CURRENT_CONTENT", "evidence_ids": ["typo13_role_module_label", "typo13_role_body", "typo13_role_side_rail"]}

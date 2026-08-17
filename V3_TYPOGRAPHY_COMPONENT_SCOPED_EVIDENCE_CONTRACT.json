@@ -1,0 +1,23 @@
+{
+  "schema_version": "3.0.0",
+  "contract_id": "typography_component_scoped_evidence_v3",
+  "allowed_states": [
+    "WHOLE_IMAGE_APPROVED",
+    "TYPOGRAPHY_DISTILLATION_REQUESTED",
+    "TYPOGRAPHY_APPROVED",
+    "TYPOGRAPHY_REJECTED",
+    "DISPLAY_TITLE_APPROVED",
+    "FUNCTIONAL_TYPE_APPROVED",
+    "LAYOUT_APPROVED",
+    "BILINGUAL_SYSTEM_APPROVED",
+    "BADGE_OR_MARK_APPROVED",
+    "COMPONENT_UNCONFIRMED"
+  ],
+  "separation_rules": {
+    "whole_image_approval_populates_component_approval": false,
+    "distillation_request_implies_approval": false,
+    "component_target_required": true,
+    "raw_user_authority_preserved": true
+  },
+  "default_state": "COMPONENT_UNCONFIRMED"
+}

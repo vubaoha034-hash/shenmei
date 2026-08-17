@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "typography-component-evidence.v3.schema.json",
+  "title": "Typography Component-Scoped Evidence Contract V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_id", "allowed_states", "separation_rules", "default_state"],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "contract_id": {"type": "string"},
+    "allowed_states": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"enum": ["WHOLE_IMAGE_APPROVED", "TYPOGRAPHY_DISTILLATION_REQUESTED", "TYPOGRAPHY_APPROVED", "TYPOGRAPHY_REJECTED", "DISPLAY_TITLE_APPROVED", "FUNCTIONAL_TYPE_APPROVED", "LAYOUT_APPROVED", "BILINGUAL_SYSTEM_APPROVED", "BADGE_OR_MARK_APPROVED", "COMPONENT_UNCONFIRMED"]}},
+    "separation_rules": {
+      "type": "object", "additionalProperties": false,
+      "required": ["whole_image_approval_populates_component_approval", "distillation_request_implies_approval", "component_target_required", "raw_user_authority_preserved"],
+      "properties": {
+        "whole_image_approval_populates_component_approval": {"const": false},
+        "distillation_request_implies_approval": {"const": false},
+        "component_target_required": {"const": true},
+        "raw_user_authority_preserved": {"const": true}
+      }
+    },
+    "default_state": {"const": "COMPONENT_UNCONFIRMED"}
+  }
+}

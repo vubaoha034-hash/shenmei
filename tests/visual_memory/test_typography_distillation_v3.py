@@ -48,8 +48,8 @@ class TypographyDistillationV3Tests(unittest.TestCase):
         self.assertIn("typography_visual_philosophy", schema["required"])
         for hypothesis in (self.hypothesis05, self.hypothesis13):
             self.assertIs(validate_typography_hypothesis(hypothesis), hypothesis)
-            self.assertEqual(hypothesis["status"], "DISTILLATION_HYPOTHESIS")
-            self.assertEqual(hypothesis["review_status"], "HUMAN_REVIEW_PENDING")
+            self.assertEqual(hypothesis["status"], "PROVISIONAL_PROGRAM_COMPONENT")
+            self.assertEqual(hypothesis["review_status"], "HUMAN_REVIEWED")
 
     def test_figma_contract_schema_and_instances_validate(self):
         schema = load("schemas/figma-production-contract.v3.schema.json")
@@ -149,7 +149,7 @@ class TypographyDistillationV3Tests(unittest.TestCase):
         self.assertNotIn("record_feedback(", module)
         self.assertNotIn("ingest_visual_file(", module)
 
-    def test_human_review_package_exposes_noncanonicalized_reference_blocker(self):
+    def test_historical_human_review_package_preserves_then_valid_blocker(self):
         review = load("V3_TYPOGRAPHY_DISTILLATION_HUMAN_REVIEW_PACKAGE.json")
         self.assertFalse(review["whole_image_approval_implies_component_approval"])
         self.assertEqual(

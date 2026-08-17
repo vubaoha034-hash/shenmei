@@ -12,11 +12,14 @@ if str(ROOT) not in sys.path:
 
 from visual_memory.distillation_v3 import (
     build_typography_runtime_package,
+    validate_display_lettering_source_pipeline,
     validate_figma_dry_run_receipt,
     validate_figma_production_contract,
     validate_mechanism,
     validate_typography_evidence,
     validate_typography_hypothesis,
+    validate_typography_component_evidence_contract,
+    validate_shanyeji_figma_producibility_map,
     validate_visual_program,
 )
 
@@ -60,6 +63,14 @@ def main() -> None:
     for mechanism in mechanism_library["mechanisms"]:
         validate_mechanism(mechanism)
 
+    validate_display_lettering_source_pipeline(load("V3_DISPLAY_LETTERING_SOURCE_PIPELINE_CONTRACT.json"))
+    validate_typography_component_evidence_contract(load("V3_TYPOGRAPHY_COMPONENT_SCOPED_EVIDENCE_CONTRACT.json"))
+    shanyeji_evidence = load("V3_TYPOGRAPHY_EVIDENCE_SHANYEJI.json")
+    shanyeji_hypothesis = load("V3_TYPOGRAPHY_HYPOTHESIS_SHANYEJI.json")
+    validate_typography_evidence(shanyeji_evidence)
+    validate_typography_hypothesis(shanyeji_hypothesis)
+    validate_shanyeji_figma_producibility_map(load("V3_TYPOGRAPHY_FIGMA_PRODUCIBILITY_SHANYEJI.json"))
+
     receipt_path = ROOT / "V3_FIGMA_TECHNICAL_DRY_RUN_RECEIPT.json"
     receipt_status = "NOT_EXECUTED"
     if receipt_path.exists():
@@ -88,6 +99,9 @@ def main() -> None:
             }
         ),
         "figma_dry_run_receipt": receipt_status,
+        "display_lettering_pipeline": "VALID",
+        "component_scoped_evidence": "VALID",
+        "shanyeji_typography_candidate": "VALID / HUMAN_REVIEW_PENDING",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
