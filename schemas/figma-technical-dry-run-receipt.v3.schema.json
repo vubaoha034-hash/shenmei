@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "figma-technical-dry-run-receipt.v3.schema.json",
+  "title": "Figma Technical Dry Run Receipt V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "receipt_id", "status", "figma_file_key", "figma_account_email",
+    "page_id", "frame_id", "component_id", "variable_collection_id", "variable_ids",
+    "text_style_id", "text_nodes", "vector_nodes", "export", "readback_verified",
+    "aesthetic_approval", "golden_exemplar", "durable_promotion"
+  ],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "receipt_id": {"type": "string"},
+    "status": {"const": "FIGMA_RUNTIME_VERIFIED"},
+    "figma_file_key": {"type": "string"},
+    "figma_account_email": {"type": "string"},
+    "page_id": {"type": "string"},
+    "frame_id": {"type": "string"},
+    "component_id": {"type": "string"},
+    "variable_collection_id": {"type": "string"},
+    "variable_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "text_style_id": {"type": "string"},
+    "text_nodes": {
+      "type": "array", "minItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["node_id", "characters", "font_family", "font_style", "font_size", "tracking", "line_height", "live_text"],
+        "properties": {
+          "node_id": {"type": "string"}, "characters": {"type": "string"}, "font_family": {"type": "string"}, "font_style": {"type": "string"},
+          "font_size": {"type": "number"}, "tracking": {"type": "object"}, "line_height": {"type": "object"}, "live_text": {"const": true}
+        }
+      }
+    },
+    "vector_nodes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "export": {
+      "type": "object", "additionalProperties": false, "required": ["format", "readable", "width", "height", "sha256"],
+      "properties": {
+        "format": {"const": "PNG"}, "readable": {"const": true}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "readback_verified": {"const": true},
+    "aesthetic_approval": {"const": false},
+    "golden_exemplar": {"const": false},
+    "durable_promotion": {"const": false}
+  }
+}

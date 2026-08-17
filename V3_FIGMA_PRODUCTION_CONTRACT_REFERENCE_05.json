@@ -1,0 +1,72 @@
+{
+  "schema_version": "3.0.0",
+  "contract_id": "figma_contract_v3_reference_05",
+  "program_id": "vp_v3_reference_05_provisional",
+  "family_id": "family_reference_05_process_campaign_brand_world",
+  "typography_hypothesis_id": "typo_dh_v3_reference_05",
+  "contract_status": "FIGMA_CONTRACT_READY",
+  "runtime_status": "FIGMA_RUNTIME_VERIFIED",
+  "runtime_receipt": "V3_FIGMA_TECHNICAL_DRY_RUN_RECEIPT.json",
+  "production_layer_scope": {
+    "figma_owns": ["exact live Chinese text", "exact live English support", "subtitle and campaign claim", "module labels and captions", "seal/badge geometry with exact live content", "semantic vector lines/marks", "footer lockup when supplied", "grid, alignment, spacing, variables, styles and deterministic export"],
+    "figma_may_place": ["human-approved display-lettering SVG/outline asset", "approved pixel-art lettering asset when vector is unavailable", "renderer-produced photography and scene layers"],
+    "figma_must_not_own": ["zero-to-one high-end Chinese display-lettering invention", "photography or food generation", "unreviewed copywriting, brand naming or translation", "aesthetic promotion"]
+  },
+  "live_text_vs_vector_policy": [
+    {"role": "display_title", "policy": "APPROVED_DISPLAY_ASSET", "dependency": "APPROVED_DISPLAY_LETTERING_ASSET", "reason": "The display identity is brand-bound expressive lettering; prior Figma zero-to-one construction failed hard."},
+    {"role": "display_title", "policy": "NOT_FIGMA_ZERO_TO_ONE", "dependency": "HUMAN_PIXEL_REVIEW", "reason": "Figma places and scales approved art but does not author expert Chinese lettering from scratch."},
+    {"role": "subtitle", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Brand proposition must remain exact and editable."},
+    {"role": "claim", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Campaign claim must remain exact and editable."},
+    {"role": "caption", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Narrative copy is content-bound and must reflow safely."},
+    {"role": "body", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Small explanatory copy requires correct glyphs and line wrapping."},
+    {"role": "tag", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Ingredient and content labels change with current content."},
+    {"role": "seal_badge", "policy": "LIVE_TEXT_PREFERRED", "dependency": "SEMANTIC_BADGE_ROLE", "reason": "Badge geometry may be vector, but characters stay live unless approved as lettering art."},
+    {"role": "english_support", "policy": "LIVE_TEXT_REQUIRED", "dependency": "HUMAN_APPROVED_TRANSLATION", "reason": "Spelling and translation must be deterministic."},
+    {"role": "module_label", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Semantic labels remain replaceable and verifiable."},
+    {"role": "footer_brand_lockup", "policy": "LIVE_TEXT_PREFERRED", "dependency": "LOCKED_BRAND_COPY", "reason": "If present, the lockup must be reusable and exact rather than raster filler."}
+  ],
+  "typography_tokens": [
+    {"role": "display_title", "font_family": "APPROVED_DISPLAY_ASSET_REQUIRED", "fallback": [], "weight": "N/A_VECTOR_ASSET", "size_range": {"min": 14, "max": 28, "unit": "percent_of_short_edge"}, "tracking": "AS_AUTHORED_IN_APPROVED_ASSET", "line_height": "AS_AUTHORED_IN_APPROVED_ASSET", "text_color_token": "family05/type/display-contrast", "opacity": 1.0, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Optically anchors the process/title zone; no ordinary baseline substitution."},
+    {"role": "subtitle_claim", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_CJK_SERIF_OR_HUMANIST"], "weight": "REGULAR_TO_MEDIUM", "size_range": {"min": 2.0, "max": 4.5, "unit": "percent_of_short_edge"}, "tracking": "0_TO_CONTROLLED_OPEN", "line_height": "1.2_TO_1.45", "text_color_token": "family05/type/functional-contrast", "opacity": 1.0, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Shares title-zone axis but remains subordinate."},
+    {"role": "module_label", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_CJK_SERIF_OR_HUMANIST"], "weight": "MEDIUM_TO_BOLD", "size_range": {"min": 2.5, "max": 8.0, "unit": "percent_of_short_edge"}, "tracking": "ROLE_DEPENDENT", "line_height": "1.0_TO_1.25", "text_color_token": "family05/type/module-contrast", "opacity": 1.0, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Aligned to each semantic module, not a fixed card count."},
+    {"role": "body_caption", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_CJK_TEXT_FACE"], "weight": "REGULAR", "size_range": {"min": 1.2, "max": 2.8, "unit": "percent_of_short_edge"}, "tracking": "0_TO_SLIGHTLY_OPEN", "line_height": "1.35_TO_1.6", "text_color_token": "family05/type/micro-contrast", "opacity": 0.9, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Bound to local narrative zone; never used to fill empty space."},
+    {"role": "english_support", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_LATIN_SANS_OR_SERIF"], "weight": "REGULAR_TO_MEDIUM", "size_range": {"min": 0.9, "max": 2.4, "unit": "percent_of_short_edge"}, "tracking": "SLIGHTLY_OPEN", "line_height": "1.1_TO_1.4", "text_color_token": "family05/type/latin-support", "opacity": 0.85, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Tracks Chinese labels and never outranks them."}
+  ],
+  "layout_contract": {
+    "safe_margins": {"minimum_percent_of_short_edge": 4, "exception": "Approved display art may optically overshoot while live copy remains inside safe area."},
+    "alignment_axes": ["process/title anchor axis", "semantic module local axes", "world/context information axis"],
+    "title_zone": "A compact high-contrast zone coupled to live process or equivalent making evidence; never a full-canvas generic brush headline.",
+    "support_copy_zone": "Claims and captions attach to semantic image zones with clear first/second/third-read separation.",
+    "side_rail": "Optional; no family requirement. If used, it must carry semantic information rather than decoration.",
+    "footer_lockup": "Optional but deterministic when provided; preserve brand name and approved identity asset.",
+    "aspect_ratio_adaptation": ["Preserve semantic role order, not exact coordinates.", "Recompose modules rather than uniformly scale the entire page.", "Keep display identity and process hero mutually legible at thumbnail scale."],
+    "thumbnail_priority": ["process/action or equivalent live-making evidence", "approved display identity", "controlled hot-accent information rhythm"],
+    "overlap_avoidance_constraints": ["Do not cover product/process identity cues with live text.", "Do not let support copy intersect flames, hands, faces or essential semantic graphics.", "Do not allow badges or labels to become a stock icon rail."]
+  },
+  "copy_fidelity_rules": {
+    "VERBATIM_REQUIRED": ["brand name", "dish name", "price", "date", "address", "user-locked slogan", "locked English name", "all core functional text"],
+    "PLACEHOLDER_ALLOWED": ["non-formal neutral copy used only in a technical layout test that is explicitly marked non-production"],
+    "HUMAN_APPROVAL_REQUIRED": ["new slogan", "new brand naming", "new English translation", "new display-lettering content"]
+  },
+  "componentization_plan": [
+    {"element": "functional text roles", "implementation": "STYLE", "reusable": true, "variants_or_variables": ["claim", "caption", "module-label", "body", "english-support"], "dependencies": ["FONT_SELECTION_HUMAN_PENDING"]},
+    {"element": "color and spacing tokens", "implementation": "VARIABLES", "reusable": true, "variants_or_variables": ["display-contrast", "functional-contrast", "micro-contrast", "module-gap", "safe-margin"], "dependencies": []},
+    {"element": "semantic module label", "implementation": "FIGMA_COMPONENT", "reusable": true, "variants_or_variables": ["compact", "narrative", "ingredient/world"], "dependencies": ["LOCKED_COPY"]},
+    {"element": "seal/badge geometry", "implementation": "VARIANTS", "reusable": true, "variants_or_variables": ["text-only", "semantic-mark-plus-text"], "dependencies": ["SEMANTIC_BADGE_ROLE"]},
+    {"element": "display-lettering identity", "implementation": "ONE_OFF_ART_ASSET", "reusable": false, "variants_or_variables": [], "dependencies": ["APPROVED_DISPLAY_LETTERING_ASSET", "HUMAN_PIXEL_REVIEW"]},
+    {"element": "semantic vector line or mark", "implementation": "REUSABLE_VECTOR_ASSET", "reusable": true, "variants_or_variables": ["process", "ingredient", "world-context"], "dependencies": ["SEMANTIC_DERIVATION_EVIDENCE"]}
+  ],
+  "quality_gate_for_figma_output": [
+    "no wrong characters", "no fake glyphs", "no English misspelling", "no spacing collapse", "no line-height failure",
+    "no unintended overflow", "no lost footer lockup", "no wrong hierarchy",
+    "no generic font substitution when family behavior requires approved lettering",
+    "no pixel-art layer unintentionally covered", "export matches target dimensions"
+  ],
+  "fail_closed_conditions": [
+    "locked copy missing", "required font or lettering asset not bound", "exact glyph correctness cannot be guaranteed",
+    "Figma runtime/tool unavailable", "component asset unresolved", "layout contract cannot map to target aspect ratio",
+    "export or readback failed"
+  ],
+  "unresolved_dependencies": ["FONT_SELECTION_HUMAN_PENDING", "APPROVED_DISPLAY_LETTERING_ASSET", "TYPOGRAPHY_COMPONENT_HUMAN_REVIEW", "TYPOGRAPHY_TRANSFER_VALIDATION"],
+  "evidence_lineage": ["typo_de_v3_reference_05", "typo_dh_v3_reference_05", "vp_v3_reference_05_provisional", "R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md"]
+}

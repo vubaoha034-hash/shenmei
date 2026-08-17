@@ -1,0 +1,85 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "TYPOGRAPHY_DISTILLATION_HYPOTHESIS",
+  "hypothesis_id": "typo_dh_v3_reference_05",
+  "family_id": "family_reference_05_process_campaign_brand_world",
+  "status": "DISTILLATION_HYPOTHESIS",
+  "review_status": "HUMAN_REVIEW_PENDING",
+  "source_evidence_ids": ["typo_de_v3_reference_05"],
+  "typography_visual_philosophy": {
+    "statement": "Typography behaves as a brand-world information engine: an authored display identity anchors live process imagery while restrained claims, module labels, bilingual support and microcopy assign semantic roles across the campaign system.",
+    "confidence": 0.94,
+    "evidence_ids": ["typo05_title_architecture", "typo05_hierarchy_tiers", "typo05_text_image_coupling"]
+  },
+  "stable_typography_grammar": [
+    {
+      "mechanism_id": "mech_05_display_lettering_structural_mass",
+      "statement": "An approved expressive display-lettering asset provides identity mass without becoming a generic oversized brush headline.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.94,
+      "evidence_ids": ["typo05_glyph_energy", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#7"]
+    },
+    {
+      "mechanism_id": "mech_05_multi_tier_information",
+      "statement": "Display, claim, narrative, label and microcopy roles use sharp scale and density separation so one headline does not carry the whole system.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.98,
+      "evidence_ids": ["typo05_hierarchy_tiers", "e05_design_information_tiers"]
+    },
+    {
+      "mechanism_id": "mech_05_campaign_claim_header_rhythm",
+      "statement": "A compact proposition/claim layer bridges identity and process imagery while remaining visibly subordinate to the display identity and hero action.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.91,
+      "evidence_ids": ["typo05_role_subtitle", "typo05_role_claim", "typo05_title_architecture"]
+    },
+    {
+      "mechanism_id": "mech_05_semantic_module_labelling",
+      "statement": "Module labels identify process, ingredient, place or world roles; label geometry follows semantic zones rather than decoration-only placement.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95,
+      "evidence_ids": ["typo05_role_module_label", "typo05_text_image_coupling"]
+    },
+    {
+      "mechanism_id": "mech_05_dual_script_support_system",
+      "statement": "Chinese remains the identity and narrative authority while compact Latin support contributes cadence without competing for first read.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.88,
+      "evidence_ids": ["typo05_role_english_support", "e05_design_information_tiers"]
+    }
+  ],
+  "variation_axes_typography": [
+    {"statement": "Display-title content and approved glyph asset may change with brand identity while retaining high-mass irregular authored behavior.", "confidence": 0.86, "evidence_ids": ["typo05_glyph_energy"]},
+    {"statement": "Module count, label wording and support-copy density may adapt to available semantic roles; exact three-module geometry is not required.", "confidence": 0.96, "evidence_ids": ["typo05_hierarchy_tiers", "typo05_text_image_coupling"]},
+    {"statement": "Exact dark/hot/light color values may change while preserving contrast roles and functional readability.", "confidence": 0.93, "evidence_ids": ["typo05_color_material"]}
+  ],
+  "content_bound_typography": [
+    {"features": ["dish names", "ingredient labels", "process statements", "location/world captions"], "transfer_behavior": "REPLACE_WITH_VERBATIM_CURRENT_CONTENT", "evidence_ids": ["typo05_role_caption", "typo05_role_module_label"]}
+  ],
+  "brand_bound_typography": [
+    {"features": ["brand name 辣灶记", "exact custom glyph outlines", "existing slogan and claims"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS; REQUIRE_NEW_APPROVED_COPY_OR_DISPLAY_ASSET", "evidence_ids": ["typo05_role_display_title", "typo05_glyph_energy"]}
+  ],
+  "production_bound_typography": [
+    {"features": ["exact title coordinates", "exact three-band copy placement", "exact module count", "exact font files and distress instance"], "transfer_behavior": "RECOMPOSE_UNDER_FIGMA_CONTRACT; DO_NOT_TREAT_AS_FAMILY_INVARIANT", "evidence_ids": ["typo05_title_architecture", "typo05_text_image_coupling"]}
+  ],
+  "typography_content_compatibility": [
+    {"statement": "A full-family execution needs enough truthful semantic content to support at least display identity, process/product narrative and a world/context information tier.", "confidence": 0.94, "evidence_ids": ["typo05_hierarchy_tiers", "e05_design_information_tiers"]},
+    {"statement": "When only one isolated product image and one short title are available, the typography package must fail closed rather than simulate brand-world depth with filler copy.", "confidence": 0.97, "evidence_ids": ["typo05_text_image_coupling", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#Compatibility hypothesis"]}
+  ],
+  "figma_execution_hypothesis": {
+    "renderer_responsibility": ["photography and scene pixels", "exploratory display-lettering direction only when a specialized visual-synthesis route is authorized"],
+    "figma_responsibility": ["exact live Chinese and Latin copy", "hierarchy, grid, spacing and alignment", "module labels and restrained vector marks", "placement of an approved display-lettering asset", "deterministic export"],
+    "not_figma_zero_to_one": true,
+    "required_dependencies": ["APPROVED_DISPLAY_LETTERING_ASSET", "LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING"],
+    "evidence_ids": ["R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md", "typo05_glyph_energy", "typo05_hierarchy_tiers"]
+  },
+  "transfer_risks": [
+    "generic brush collapse if the display asset is replaced by an unreviewed calligraphy font",
+    "brand-world collapse if support tiers are removed or filled with meaningless copy",
+    "cheap bilingual texture if Latin is used as decorative filler",
+    "wrong characters or brand leakage if source copy is reused across brands"
+  ],
+  "unresolved_uncertainties": [
+    "No typography-only transfer validation has established which display-lettering behavior survives new content.",
+    "No specific production font family is approved for functional Chinese or Latin roles.",
+    "Whole-image approval does not establish component approval for any typography mechanism."
+  ],
+  "component_approval_status": "UNCONFIRMED",
+  "promotion_status": "UNPROMOTED",
+  "evidence_lineage": ["typo_de_v3_reference_05", "de_v3_reference_05", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md", "R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md"]
+}

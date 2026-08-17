@@ -12,6 +12,13 @@
     "mechanism_id": {"type": "string"},
     "domain": {"enum": ["lighting", "color_grade", "capture_geometry", "focus_depth_blur", "material_treatment", "composition", "whitespace", "typography_lettering", "grid_layout", "graphic_language", "photo_type_integration", "retouch_finish"]},
     "description": {"type": "string"},
+    "human_name_zh": {"type": "string"},
+    "definition": {"type": "string"},
+    "visual_role": {"type": "string"},
+    "observed_in_families": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "figma_execution_mode": {"enum": ["LIVE_TEXT_SYSTEM", "APPROVED_VECTOR_ASSET", "MIXED_LIVE_TEXT_AND_APPROVED_ASSET", "LAYOUT_AND_ALIGNMENT_ONLY", "NOT_APPLICABLE"]},
+    "anti_collapse_notes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
     "evidence_pointers": {"type": "array", "minItems": 1, "items": {"type": "string"}},
     "family_scope": {"type": "array", "items": {"type": "string"}},
     "transfer_scope": {"type": "array", "items": {"type": "string"}},
@@ -32,5 +39,11 @@
     "transfer_validation_support": {"type": "array", "items": {"type": "string"}},
     "contradiction_evidence": {"type": "array", "items": {"type": "string"}},
     "promotion_status": {"enum": ["UNPROMOTED", "HOLD", "READY_FOR_SKILL_REFINER_REVIEW", "PROMOTED"]}
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"domain": {"const": "typography_lettering"}}, "required": ["domain"]},
+      "then": {"required": ["human_name_zh", "definition", "visual_role", "observed_in_families", "evidence_refs", "figma_execution_mode", "anti_collapse_notes"]}
+    }
+  ]
 }

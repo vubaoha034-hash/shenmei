@@ -61,6 +61,34 @@ WHOLE_WORK_ACTIONS = {
 }
 COMPONENT_SUPPORT_KINDS = {"DIRECT_COMPONENT_FEEDBACK", "REPEATED_EVIDENCE", "TRANSFER_VALIDATION"}
 PROGRAM_STATUSES = {"PROVISIONAL_VISUAL_PROGRAM", "VALIDATED_VISUAL_PROGRAM", "DEPRECATED"}
+TYPOGRAPHY_ROLES = {
+    "display_title", "subtitle", "claim", "caption", "body", "tag", "seal_badge", "side_rail",
+    "english_support", "handwritten_slogan", "module_label", "footer_brand_lockup", "data_chip", "other",
+}
+FIGMA_PRODUCIBILITY_MODES = {
+    "LIVE_TEXT_REQUIRED", "LIVE_TEXT_PREFERRED", "VECTOR_LETTERING_REQUIRED",
+    "APPROVED_SVG_ASSET_ALLOWED", "IMAGE_ONLY_ART_ASSET", "HUMAN_REVIEW_REQUIRED",
+}
+FIGMA_TEXT_POLICIES = {
+    "LIVE_TEXT_REQUIRED", "LIVE_TEXT_PREFERRED", "VECTOR_ASSET_REQUIRED",
+    "APPROVED_DISPLAY_ASSET", "NOT_FIGMA_ZERO_TO_ONE",
+}
+TYPOGRAPHY_OBSERVATION_SECTIONS = {
+    "title_architecture", "glyph_mechanisms", "hierarchy_mechanisms",
+    "layout_coupling", "color_material_binding", "failure_modes",
+}
+FIGMA_REQUIRED_QUALITY_GATES = {
+    "no wrong characters", "no fake glyphs", "no English misspelling", "no spacing collapse",
+    "no line-height failure", "no unintended overflow", "no lost footer lockup", "no wrong hierarchy",
+    "no generic font substitution when family behavior requires approved lettering",
+    "no pixel-art layer unintentionally covered", "export matches target dimensions",
+}
+FIGMA_REQUIRED_FAIL_CLOSED = {
+    "locked copy missing", "required font or lettering asset not bound",
+    "exact glyph correctness cannot be guaranteed", "Figma runtime/tool unavailable",
+    "component asset unresolved", "layout contract cannot map to target aspect ratio",
+    "export or readback failed",
+}
 
 
 def _object(value: Any, label: str) -> dict[str, Any]:
@@ -307,6 +335,26 @@ def validate_visual_program(record: Any) -> dict[str, Any]:
         raise DistillationValidationError("invalid anchor_dependence")
     if "deep_evidence" in data or "analysis" in data:
         raise DistillationValidationError("deep evidence may not be dumped into a runtime program")
+    typography = data.get("typography_program")
+    if typography is not None:
+        link = _object(typography, "typography_program")
+        _required(
+            link,
+            (
+                "evidence_id", "evidence_path", "hypothesis_id", "hypothesis_path", "hypothesis_status",
+                "mechanism_ids", "figma_contract_id", "figma_contract_path", "copy_fidelity_policy",
+                "transfer_risks", "runtime_builder", "component_approval_status", "promotion_status",
+            ),
+            "typography_program",
+        )
+        if link["hypothesis_status"] not in {
+            "DISTILLATION_HYPOTHESIS / HUMAN_REVIEW_PENDING", "PROVISIONAL_PROGRAM_COMPONENT",
+        }:
+            raise DistillationValidationError("invalid typography hypothesis linkage state")
+        if len(_list(link["mechanism_ids"], "typography mechanism_ids", nonempty=True)) > 8:
+            raise DistillationValidationError("typography linkage exceeds bounded mechanism count")
+        if link["component_approval_status"] != "UNCONFIRMED" or link["promotion_status"] != "UNPROMOTED":
+            raise DistillationValidationError("Visual Program cannot self-approve or promote typography")
     return data
 
 
@@ -329,7 +377,286 @@ def validate_mechanism(record: Any) -> dict[str, Any]:
         raise DistillationValidationError("whole-image approval cannot establish component approval")
     if data["promotion_status"] == "PROMOTED" and data["component_approval_status"] != "HUMAN_APPROVED":
         raise DistillationValidationError("promoted mechanisms require human component approval")
+    if data["domain"] == "typography_lettering":
+        _required(
+            data,
+            (
+                "human_name_zh", "definition", "visual_role", "observed_in_families", "evidence_refs",
+                "figma_execution_mode", "anti_collapse_notes",
+            ),
+            "typography mechanism",
+        )
+        _list(data["observed_in_families"], "observed_in_families", nonempty=True)
+        _list(data["evidence_refs"], "evidence_refs", nonempty=True)
+        _list(data["anti_collapse_notes"], "anti_collapse_notes", nonempty=True)
+        if not set(data["observed_in_families"]).issubset(set(data["family_scope"])):
+            raise DistillationValidationError("observed typography families must be included in family_scope")
     return data
+
+
+def _validate_typography_observation(record: Any) -> dict[str, Any]:
+    row = _object(record, "typography observation")
+    _required(
+        row,
+        ("observation_id", "statement", "evidence_class", "confidence", "evidence_pointer", "uncertainty", "binding_classification"),
+        "typography observation",
+    )
+    _text(row["observation_id"], "observation_id")
+    _text(row["statement"], "statement")
+    if row["evidence_class"] not in EVIDENCE_CLASSES:
+        raise DistillationValidationError("invalid typography evidence_class")
+    _confidence(row["confidence"], "typography confidence")
+    pointer = _object(row["evidence_pointer"], "typography evidence_pointer")
+    _required(pointer, ("asset_id", "sha256", "region"), "typography evidence_pointer")
+    _text(pointer["asset_id"], "typography evidence_pointer.asset_id")
+    _sha(pointer["sha256"], "typography evidence_pointer.sha256")
+    _text(pointer["region"], "typography evidence_pointer.region")
+    if row["binding_classification"] not in BINDING_CLASSIFICATIONS:
+        raise DistillationValidationError("invalid typography binding_classification")
+    if not isinstance(row["uncertainty"], (str, type(None))):
+        raise DistillationValidationError("typography uncertainty must be string or null")
+    return row
+
+
+def validate_typography_evidence(record: Any) -> dict[str, Any]:
+    """Validate component-separated typography evidence against canonical pixels."""
+    data = _object(record, "typography evidence")
+    _required(
+        data,
+        (
+            "schema_version", "artifact_type", "evidence_id", "family_id", "status", "subject",
+            "text_role_inventory", "script_system", "evidence_sections", "figma_producibility",
+            "component_approval_status", "evidence_lineage",
+        ),
+        "typography evidence",
+    )
+    if data["schema_version"] != "3.0.0" or data["artifact_type"] != "TYPOGRAPHY_DEEP_EVIDENCE":
+        raise DistillationValidationError("typography evidence type/version is invalid")
+    if data["status"] != "DEEP_EVIDENCE":
+        raise DistillationValidationError("typography evidence must remain DEEP_EVIDENCE")
+    if data["component_approval_status"] != "UNCONFIRMED":
+        raise DistillationValidationError("whole-image evidence cannot approve typography components")
+    subject = _object(data["subject"], "typography subject")
+    _required(subject, ("canonical_asset_id", "canonical_sample_id", "canonical_sha256", "canonical_dimensions", "pixel_binding"), "typography subject")
+    _sha(subject["canonical_sha256"], "typography subject canonical_sha256")
+    if subject["pixel_binding"] != "CANONICAL_PIXELS_DIRECTLY_INSPECTED":
+        raise DistillationValidationError("typography evidence requires direct canonical-pixel inspection")
+    roles = _list(data["text_role_inventory"], "text_role_inventory", nonempty=True)
+    role_names = []
+    for row in roles:
+        item = _object(row, "text role")
+        _required(item, ("role", "present", "observed_content", "visual_job", "evidence_refs"), "text role")
+        if item["role"] not in TYPOGRAPHY_ROLES or not isinstance(item["present"], bool):
+            raise DistillationValidationError("invalid typography role inventory")
+        role_names.append(item["role"])
+    if set(role_names) != TYPOGRAPHY_ROLES or len(role_names) != len(TYPOGRAPHY_ROLES):
+        raise DistillationValidationError("text role inventory must cover each V3 role exactly once")
+    script = _object(data["script_system"], "script_system")
+    _required(script, ("scripts", "script_relationship", "type_family_behavior", "language_hierarchy", "evidence_refs"), "script_system")
+    sections = _object(data["evidence_sections"], "evidence_sections")
+    if set(sections) != TYPOGRAPHY_OBSERVATION_SECTIONS:
+        raise DistillationValidationError("typography evidence sections are incomplete")
+    for name, rows in sections.items():
+        for row in _list(rows, name, nonempty=True):
+            _validate_typography_observation(row)
+    production = _list(data["figma_producibility"], "figma_producibility", nonempty=True)
+    covered_roles = set()
+    for row in production:
+        item = _object(row, "figma producibility row")
+        _required(item, ("role", "mode", "rationale", "dependencies"), "figma producibility row")
+        if item["role"] not in TYPOGRAPHY_ROLES or item["mode"] not in FIGMA_PRODUCIBILITY_MODES:
+            raise DistillationValidationError("invalid Figma producibility row")
+        covered_roles.add(item["role"])
+    required_roles = {row["role"] for row in roles if row["present"] and row["role"] != "other"}
+    if not required_roles.issubset(covered_roles):
+        raise DistillationValidationError("every present typography role needs a Figma producibility policy")
+    _list(data["evidence_lineage"], "typography evidence_lineage", nonempty=True)
+    return data
+
+
+def validate_typography_hypothesis(record: Any) -> dict[str, Any]:
+    data = _object(record, "typography hypothesis")
+    _required(
+        data,
+        (
+            "schema_version", "artifact_type", "hypothesis_id", "family_id", "status", "review_status",
+            "source_evidence_ids", "typography_visual_philosophy", "stable_typography_grammar",
+            "variation_axes_typography", "content_bound_typography", "brand_bound_typography",
+            "production_bound_typography", "typography_content_compatibility", "figma_execution_hypothesis",
+            "transfer_risks", "unresolved_uncertainties", "component_approval_status", "promotion_status", "evidence_lineage",
+        ),
+        "typography hypothesis",
+    )
+    if data["schema_version"] != "3.0.0" or data["artifact_type"] != "TYPOGRAPHY_DISTILLATION_HYPOTHESIS":
+        raise DistillationValidationError("typography hypothesis type/version is invalid")
+    if data["status"] not in {"DISTILLATION_HYPOTHESIS", "PROVISIONAL_PROGRAM_COMPONENT"}:
+        raise DistillationValidationError("invalid typography hypothesis status")
+    if data["status"] == "DISTILLATION_HYPOTHESIS" and data["review_status"] != "HUMAN_REVIEW_PENDING":
+        raise DistillationValidationError("distillation hypothesis must remain pending human review")
+    if data["status"] == "PROVISIONAL_PROGRAM_COMPONENT" and data["review_status"] != "HUMAN_REVIEWED":
+        raise DistillationValidationError("provisional typography component requires human review")
+    if data["component_approval_status"] != "UNCONFIRMED" or data["promotion_status"] != "UNPROMOTED":
+        raise DistillationValidationError("typography hypothesis cannot self-approve or promote")
+    philosophy = _object(data["typography_visual_philosophy"], "typography_visual_philosophy")
+    _required(philosophy, ("statement", "confidence", "evidence_ids"), "typography_visual_philosophy")
+    _confidence(philosophy["confidence"], "typography philosophy confidence")
+    grammar = _list(data["stable_typography_grammar"], "stable_typography_grammar", nonempty=True)
+    if len(grammar) > 8:
+        raise DistillationValidationError("typography grammar exceeds bounded default")
+    for row in grammar:
+        item = _object(row, "typography grammar")
+        _required(item, ("mechanism_id", "statement", "state", "confidence", "evidence_ids"), "typography grammar")
+        if item["state"] != "INVARIANT_HYPOTHESIS":
+            raise DistillationValidationError("typography grammar remains hypothesis before transfer validation")
+        _confidence(item["confidence"], "typography grammar confidence")
+        _list(item["evidence_ids"], "typography grammar evidence_ids", nonempty=True)
+    execution = _object(data["figma_execution_hypothesis"], "figma_execution_hypothesis")
+    if execution.get("not_figma_zero_to_one") is not True:
+        raise DistillationValidationError("Figma may not be assigned zero-to-one lettering art direction")
+    _list(data["transfer_risks"], "typography transfer_risks", nonempty=True)
+    _list(data["evidence_lineage"], "typography hypothesis evidence_lineage", nonempty=True)
+    return data
+
+
+def validate_figma_production_contract(record: Any) -> dict[str, Any]:
+    data = _object(record, "Figma production contract")
+    _required(
+        data,
+        (
+            "schema_version", "contract_id", "program_id", "family_id", "typography_hypothesis_id",
+            "contract_status", "runtime_status", "production_layer_scope", "live_text_vs_vector_policy",
+            "typography_tokens", "layout_contract", "copy_fidelity_rules", "componentization_plan",
+            "quality_gate_for_figma_output", "fail_closed_conditions", "unresolved_dependencies", "evidence_lineage",
+        ),
+        "Figma production contract",
+    )
+    if data["schema_version"] != "3.0.0" or data["contract_status"] != "FIGMA_CONTRACT_READY":
+        raise DistillationValidationError("invalid Figma contract version/status")
+    if data["runtime_status"] not in {"FIGMA_RUNTIME_UNVERIFIED", "FIGMA_RUNTIME_VERIFIED", "FIGMA_RUNTIME_UNAVAILABLE_IN_CURRENT_CONTEXT"}:
+        raise DistillationValidationError("invalid Figma runtime status")
+    if data["runtime_status"] == "FIGMA_RUNTIME_VERIFIED" and not data.get("runtime_receipt"):
+        raise DistillationValidationError("verified Figma runtime requires a receipt")
+    scope = _object(data["production_layer_scope"], "production_layer_scope")
+    _required(scope, ("figma_owns", "figma_may_place", "figma_must_not_own"), "production_layer_scope")
+    must_not = " ".join(scope["figma_must_not_own"]).casefold()
+    if "zero-to-one" not in must_not:
+        raise DistillationValidationError("Figma scope must reject zero-to-one lettering authorship")
+    policies = _list(data["live_text_vs_vector_policy"], "live_text_vs_vector_policy", nonempty=True)
+    if not any(row.get("policy") == "NOT_FIGMA_ZERO_TO_ONE" for row in policies if isinstance(row, dict)):
+        raise DistillationValidationError("Figma policy must expose NOT_FIGMA_ZERO_TO_ONE")
+    for row in policies:
+        item = _object(row, "live-text/vector policy")
+        if item.get("policy") not in FIGMA_TEXT_POLICIES:
+            raise DistillationValidationError("invalid live-text/vector policy")
+    copy = _object(data["copy_fidelity_rules"], "copy_fidelity_rules")
+    _required(copy, ("VERBATIM_REQUIRED", "PLACEHOLDER_ALLOWED", "HUMAN_APPROVAL_REQUIRED"), "copy_fidelity_rules")
+    verbatim = {item.casefold() for item in copy["VERBATIM_REQUIRED"]}
+    for required in ("brand name", "dish name", "price", "date", "address"):
+        if required not in verbatim and required.replace("dish", "product") not in verbatim:
+            raise DistillationValidationError(f"copy fidelity missing {required}")
+    gates = set(_list(data["quality_gate_for_figma_output"], "quality_gate_for_figma_output", nonempty=True))
+    if not FIGMA_REQUIRED_QUALITY_GATES.issubset(gates):
+        raise DistillationValidationError("Figma quality gate is incomplete")
+    blockers = set(_list(data["fail_closed_conditions"], "fail_closed_conditions", nonempty=True))
+    if not FIGMA_REQUIRED_FAIL_CLOSED.issubset(blockers):
+        raise DistillationValidationError("Figma fail-closed contract is incomplete")
+    tokens = _list(data["typography_tokens"], "typography_tokens", nonempty=True)
+    if any("FONT_SELECTION_HUMAN_PENDING" in str(row.get("font_family")) for row in tokens):
+        if "FONT_SELECTION_HUMAN_PENDING" not in data["unresolved_dependencies"]:
+            raise DistillationValidationError("unresolved font token must remain an explicit dependency")
+    return data
+
+
+def validate_figma_dry_run_receipt(record: Any) -> dict[str, Any]:
+    data = _object(record, "Figma dry-run receipt")
+    _required(
+        data,
+        (
+            "schema_version", "receipt_id", "status", "figma_file_key", "figma_account_email", "page_id",
+            "frame_id", "component_id", "variable_collection_id", "variable_ids", "text_style_id", "text_nodes",
+            "vector_nodes", "export", "readback_verified", "aesthetic_approval", "golden_exemplar", "durable_promotion",
+        ),
+        "Figma dry-run receipt",
+    )
+    if data["schema_version"] != "3.0.0" or data["status"] != "FIGMA_RUNTIME_VERIFIED":
+        raise DistillationValidationError("invalid Figma dry-run status")
+    if not data["readback_verified"] or data["aesthetic_approval"] or data["golden_exemplar"] or data["durable_promotion"]:
+        raise DistillationValidationError("technical dry run may not imply aesthetic approval or promotion")
+    text_nodes = _list(data["text_nodes"], "Figma dry-run text_nodes", nonempty=True)
+    expected = {"山野集", "常德饮食文化代表名片", "MOUNTAIN MARKET", "WILD AROMA"}
+    if {row.get("characters") for row in text_nodes} != expected or any(row.get("live_text") is not True for row in text_nodes):
+        raise DistillationValidationError("Figma dry run must read back the exact live neutral test copy")
+    export = _object(data["export"], "Figma dry-run export")
+    if export.get("format") != "PNG" or export.get("readable") is not True:
+        raise DistillationValidationError("Figma dry-run export must be a readable PNG")
+    _sha(export.get("sha256"), "Figma dry-run export SHA")
+    return data
+
+
+def build_typography_runtime_package(
+    program: dict[str, Any],
+    hypothesis: dict[str, Any],
+    figma_contract: dict[str, Any],
+    *,
+    exact_copy: dict[str, str],
+    approved_typography_mechanisms: list[dict[str, Any]],
+    purpose: str = "HUMAN_REVIEW",
+) -> dict[str, Any]:
+    """Build a bounded typography package without turning hypotheses into production truth."""
+    validate_visual_program(program)
+    validate_typography_hypothesis(hypothesis)
+    validate_figma_production_contract(figma_contract)
+    if purpose not in {"HUMAN_REVIEW", "PRODUCTION"}:
+        raise DistillationValidationError("invalid typography runtime purpose")
+    if not (program["family_id"] == hypothesis["family_id"] == figma_contract["family_id"]):
+        raise DistillationValidationError("typography runtime family mismatch")
+    if len(exact_copy) > 12:
+        raise DistillationValidationError("exact typography copy hard max is 12 roles")
+    if len(approved_typography_mechanisms) > 4:
+        raise DistillationValidationError("active typography mechanisms hard max is 4")
+    for mechanism in approved_typography_mechanisms:
+        validate_mechanism(mechanism)
+        if mechanism["component_approval_status"] not in {"SUPPORTED", "HUMAN_APPROVED"}:
+            raise DistillationValidationError("unconfirmed typography mechanism cannot enter active runtime")
+    production_authorized = (
+        purpose == "PRODUCTION"
+        and hypothesis["status"] == "PROVISIONAL_PROGRAM_COMPONENT"
+        and hypothesis["review_status"] == "HUMAN_REVIEWED"
+        and not figma_contract["unresolved_dependencies"]
+    )
+    if purpose == "PRODUCTION" and not production_authorized:
+        raise DistillationValidationError("typography production is blocked pending review/dependency resolution")
+    package = {
+        "package_version": "3.0.0",
+        "purpose": purpose,
+        "program_id": program["program_id"],
+        "family_id": program["family_id"],
+        "family_typography_program": {
+            "hypothesis_id": hypothesis["hypothesis_id"],
+            "status": hypothesis["status"],
+            "review_status": hypothesis["review_status"],
+            "visual_philosophy": hypothesis["typography_visual_philosophy"],
+            "stable_grammar": hypothesis["stable_typography_grammar"][:6],
+            "variation_axes": hypothesis["variation_axes_typography"][:4],
+        },
+        "exact_copy": dict(exact_copy),
+        "figma_production_contract": {
+            "contract_id": figma_contract["contract_id"],
+            "contract_status": figma_contract["contract_status"],
+            "runtime_status": figma_contract["runtime_status"],
+            "live_text_vs_vector_policy": figma_contract["live_text_vs_vector_policy"][:12],
+            "copy_fidelity_rules": figma_contract["copy_fidelity_rules"],
+            "fail_closed_conditions": figma_contract["fail_closed_conditions"][:8],
+        },
+        "approved_typography_mechanisms": list(approved_typography_mechanisms),
+        "unresolved_typography_dependencies": figma_contract["unresolved_dependencies"][:8],
+        "renderer_vs_figma_responsibility_split": hypothesis["figma_execution_hypothesis"],
+        "production_authorized": production_authorized,
+        "deep_evidence_embedded": False,
+    }
+    if "evidence_sections" in json.dumps(package, ensure_ascii=False):
+        raise AssertionError("typography runtime leaked deep evidence")
+    return package
 
 
 def classify_liked_work(

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "typography-distillation-evidence.v3.schema.json",
+  "title": "Typography Deep Evidence V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "artifact_type", "evidence_id", "family_id", "status", "subject",
+    "text_role_inventory", "script_system", "evidence_sections", "figma_producibility",
+    "component_approval_status", "evidence_lineage"
+  ],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "artifact_type": {"const": "TYPOGRAPHY_DEEP_EVIDENCE"},
+    "evidence_id": {"type": "string", "minLength": 1},
+    "family_id": {"type": "string", "minLength": 1},
+    "status": {"const": "DEEP_EVIDENCE"},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_asset_id", "canonical_sample_id", "canonical_sha256", "canonical_dimensions", "pixel_binding"],
+      "properties": {
+        "canonical_asset_id": {"type": "string"},
+        "canonical_sample_id": {"type": "string"},
+        "canonical_sha256": {"type": "string", "pattern": "^(sha256:)?[0-9a-f]{64}$"},
+        "canonical_dimensions": {
+          "type": "object", "additionalProperties": false, "required": ["width", "height"],
+          "properties": {"width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}}
+        },
+        "pixel_binding": {"const": "CANONICAL_PIXELS_DIRECTLY_INSPECTED"}
+      }
+    },
+    "text_role_inventory": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/textRole"}
+    },
+    "script_system": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scripts", "script_relationship", "type_family_behavior", "language_hierarchy", "evidence_refs"],
+      "properties": {
+        "scripts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["Chinese", "Latin", "mixed"]}},
+        "script_relationship": {"type": "string"},
+        "type_family_behavior": {"type": "string"},
+        "language_hierarchy": {"type": "string"},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "evidence_sections": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title_architecture", "glyph_mechanisms", "hierarchy_mechanisms", "layout_coupling", "color_material_binding", "failure_modes"],
+      "properties": {
+        "title_architecture": {"$ref": "#/$defs/observationList"},
+        "glyph_mechanisms": {"$ref": "#/$defs/observationList"},
+        "hierarchy_mechanisms": {"$ref": "#/$defs/observationList"},
+        "layout_coupling": {"$ref": "#/$defs/observationList"},
+        "color_material_binding": {"$ref": "#/$defs/observationList"},
+        "failure_modes": {"$ref": "#/$defs/observationList"}
+      }
+    },
+    "figma_producibility": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["role", "mode", "rationale", "dependencies"],
+        "properties": {
+          "role": {"$ref": "#/$defs/roleName"},
+          "mode": {"enum": ["LIVE_TEXT_REQUIRED", "LIVE_TEXT_PREFERRED", "VECTOR_LETTERING_REQUIRED", "APPROVED_SVG_ASSET_ALLOWED", "IMAGE_ONLY_ART_ASSET", "HUMAN_REVIEW_REQUIRED"]},
+          "rationale": {"type": "string"},
+          "dependencies": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "component_approval_status": {"const": "UNCONFIRMED"},
+    "evidence_lineage": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "roleName": {"enum": ["display_title", "subtitle", "claim", "caption", "body", "tag", "seal_badge", "side_rail", "english_support", "handwritten_slogan", "module_label", "footer_brand_lockup", "data_chip", "other"]},
+    "textRole": {
+      "type": "object", "additionalProperties": false,
+      "required": ["role", "present", "observed_content", "visual_job", "evidence_refs"],
+      "properties": {
+        "role": {"$ref": "#/$defs/roleName"},
+        "present": {"type": "boolean"},
+        "observed_content": {"type": ["string", "null"]},
+        "visual_job": {"type": "string"},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "observationList": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/observation"}},
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observation_id", "statement", "evidence_class", "confidence", "evidence_pointer", "uncertainty", "binding_classification"],
+      "properties": {
+        "observation_id": {"type": "string"},
+        "statement": {"type": "string"},
+        "evidence_class": {"enum": ["DIRECT_VISIBLE", "METADATA", "INFERENCE"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_pointer": {
+          "type": "object", "additionalProperties": false, "required": ["asset_id", "sha256", "region"],
+          "properties": {
+            "asset_id": {"type": "string"},
+            "sha256": {"type": "string", "pattern": "^(sha256:)?[0-9a-f]{64}$"},
+            "region": {"type": "string"}
+          }
+        },
+        "uncertainty": {"type": ["string", "null"]},
+        "binding_classification": {"enum": ["STYLE_SIGNATURE", "CONTENT_BOUND", "BRAND_BOUND", "PRODUCTION_BOUND", "OPTIONAL_VARIATION"]}
+      }
+    }
+  }
+}

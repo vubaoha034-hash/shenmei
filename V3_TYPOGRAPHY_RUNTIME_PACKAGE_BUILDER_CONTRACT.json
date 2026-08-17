@@ -1,0 +1,49 @@
+{
+  "schema_version": "3.0.0",
+  "contract_id": "typography_runtime_package_builder_v3",
+  "builder": "visual_memory.distillation_v3.build_typography_runtime_package",
+  "status": "CONTRACT_READY",
+  "accepted_program_statuses": ["PROVISIONAL_VISUAL_PROGRAM", "VALIDATED_VISUAL_PROGRAM"],
+  "accepted_hypothesis_modes": {
+    "HUMAN_REVIEW": ["DISTILLATION_HYPOTHESIS", "PROVISIONAL_PROGRAM_COMPONENT"],
+    "PRODUCTION": ["PROVISIONAL_PROGRAM_COMPONENT"]
+  },
+  "required_inputs": [
+    "family Visual Program with typography linkage",
+    "family typography hypothesis/component",
+    "matching Figma production contract",
+    "exact current copy keyed by semantic role",
+    "only component-supported typography mechanisms"
+  ],
+  "hard_bounds": {
+    "exact_copy_roles_max": 12,
+    "active_typography_mechanisms_max": 4,
+    "stable_typography_grammar_max": 6,
+    "variation_axes_max": 4,
+    "live_text_vector_policy_rows_max": 12,
+    "unresolved_dependencies_max": 8,
+    "fail_closed_conditions_max": 8,
+    "deep_evidence_embedded": false
+  },
+  "required_output_fields": [
+    "family_typography_program", "exact_copy", "figma_production_contract",
+    "approved_typography_mechanisms", "unresolved_typography_dependencies",
+    "renderer_vs_figma_responsibility_split", "production_authorized"
+  ],
+  "production_authorization": {
+    "requires": [
+      "typography status = PROVISIONAL_PROGRAM_COMPONENT",
+      "review_status = HUMAN_REVIEWED",
+      "Figma unresolved_dependencies is empty",
+      "each active mechanism has direct/repeated/transfer component support"
+    ],
+    "otherwise": "FAIL_CLOSED"
+  },
+  "separation_rules": [
+    "Do not embed Typography Deep Evidence in runtime.",
+    "Do not infer component approval from whole-image approval.",
+    "Do not merge Reference 05 and Reference 13 typography families.",
+    "Do not authorize Figma zero-to-one expert Chinese lettering.",
+    "Do not promote; skill-refiner remains the only durable promotion authority."
+  ]
+}

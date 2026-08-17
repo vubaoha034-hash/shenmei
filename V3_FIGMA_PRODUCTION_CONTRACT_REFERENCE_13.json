@@ -1,0 +1,68 @@
+{
+  "schema_version": "3.0.0",
+  "contract_id": "figma_contract_v3_reference_13",
+  "program_id": "vp_v3_reference_13_provisional",
+  "family_id": "family_reference_13_editorial_titlefield_stilllife",
+  "typography_hypothesis_id": "typo_dh_v3_reference_13",
+  "contract_status": "FIGMA_CONTRACT_READY",
+  "runtime_status": "FIGMA_RUNTIME_VERIFIED",
+  "runtime_receipt": "V3_FIGMA_TECHNICAL_DRY_RUN_RECEIPT.json",
+  "production_layer_scope": {
+    "figma_owns": ["exact live Chinese metadata", "exact live English support", "side rail", "module labels and editorial paragraph", "active-whitespace grid", "alignment and optical spacing", "deterministic vector rules/marks", "approved display-lettering asset placement", "deterministic export"],
+    "figma_may_place": ["human-approved asymmetric display-lettering SVG/outline asset", "approved pixel-art lettering asset when vector is unavailable", "renderer-produced tactile still-life pixels"],
+    "figma_must_not_own": ["zero-to-one expert Chinese display-lettering invention", "still-life or material generation", "unreviewed copywriting, naming or translation", "aesthetic promotion"]
+  },
+  "live_text_vs_vector_policy": [
+    {"role": "display_title", "policy": "APPROVED_DISPLAY_ASSET", "dependency": "APPROVED_DISPLAY_LETTERING_ASSET", "reason": "The title-object requires approved expressive glyph art; ordinary font substitution breaks the family."},
+    {"role": "display_title", "policy": "NOT_FIGMA_ZERO_TO_ONE", "dependency": "HUMAN_PIXEL_REVIEW", "reason": "Figma places approved art but does not invent source-level Chinese lettering from scratch."},
+    {"role": "side_rail", "policy": "LIVE_TEXT_PREFERRED", "dependency": "LOCKED_COPY", "reason": "Functional rail text remains editable; an expressive submark needs separate approval."},
+    {"role": "tag", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Editorial tags change with content and require correct characters."},
+    {"role": "module_label", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "The label rhythm is reusable only with deterministic copy."},
+    {"role": "body", "policy": "LIVE_TEXT_REQUIRED", "dependency": "LOCKED_COPY", "reason": "Paragraph reflow and spelling must remain editable."},
+    {"role": "english_support", "policy": "LIVE_TEXT_REQUIRED", "dependency": "HUMAN_APPROVED_TRANSLATION", "reason": "English spelling and bilingual hierarchy must be deterministic."},
+    {"role": "footer_brand_lockup", "policy": "LIVE_TEXT_PREFERRED", "dependency": "LOCKED_BRAND_COPY", "reason": "If introduced, the lockup must remain exact and subordinate."}
+  ],
+  "typography_tokens": [
+    {"role": "display_title", "font_family": "APPROVED_DISPLAY_ASSET_REQUIRED", "fallback": [], "weight": "N/A_VECTOR_ASSET", "size_range": {"min": 35, "max": 62, "unit": "percent_of_short_edge"}, "tracking": "AS_AUTHORED_IN_APPROVED_ASSET", "line_height": "AS_AUTHORED_IN_APPROVED_ASSET", "text_color_token": "family13/type/display-muted-ink", "opacity": 1.0, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "No uniform baseline; glyphs form an asymmetric optical field."},
+    {"role": "side_rail", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_CJK_SERIF_OR_HUMANIST", "REAL_INSTALLED_LATIN_SERIF"], "weight": "REGULAR_TO_MEDIUM", "size_range": {"min": 1.4, "max": 4.0, "unit": "percent_of_short_edge"}, "tracking": "CONTROLLED_OPEN", "line_height": "1.15_TO_1.45", "text_color_token": "family13/type/side-rail", "opacity": 0.9, "alignment": "VERTICAL", "min_width": null, "max_width": null, "baseline_grid_relation": "Counterbalances title and follows the same vertical optical axis."},
+    {"role": "module_label", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_CJK_SERIF_OR_HUMANIST"], "weight": "REGULAR_TO_MEDIUM", "size_range": {"min": 1.8, "max": 3.5, "unit": "percent_of_short_edge"}, "tracking": "SLIGHTLY_OPEN", "line_height": "1.2_TO_1.45", "text_color_token": "family13/type/metadata-primary", "opacity": 0.92, "alignment": "CENTER", "min_width": null, "max_width": null, "baseline_grid_relation": "Forms an editorial sequence with variable count, not a fixed four-column invariant."},
+    {"role": "body", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_LATIN_OR_CJK_TEXT_SERIF"], "weight": "REGULAR", "size_range": {"min": 1.3, "max": 2.5, "unit": "percent_of_short_edge"}, "tracking": "0_TO_SLIGHTLY_OPEN", "line_height": "1.35_TO_1.65", "text_color_token": "family13/type/body-muted-ink", "opacity": 0.82, "alignment": "LEFT", "min_width": null, "max_width": null, "baseline_grid_relation": "Quiet lower editorial field with deliberate line length."},
+    {"role": "english_support", "font_family": "FONT_SELECTION_HUMAN_PENDING", "fallback": ["REAL_INSTALLED_LATIN_SERIF"], "weight": "REGULAR", "size_range": {"min": 0.9, "max": 2.1, "unit": "percent_of_short_edge"}, "tracking": "OPEN", "line_height": "1.15_TO_1.45", "text_color_token": "family13/type/latin-support", "opacity": 0.75, "alignment": "CENTER", "min_width": null, "max_width": null, "baseline_grid_relation": "Sits beneath or beside Chinese metadata and never becomes first read."}
+  ],
+  "layout_contract": {
+    "safe_margins": {"minimum_percent_of_short_edge": 5, "exception": "Approved display glyph art may optically approach the edge while live metadata remains inside safe area."},
+    "alignment_axes": ["asymmetric title mass axes", "still-life silhouette and ingredient uprights", "right-side rail axis", "lower metadata rhythm"],
+    "title_zone": "An active upper field of unequal glyph mass; never a centered uniform text box.",
+    "support_copy_zone": "Low-volume metadata and paragraph occupy secondary/tertiary fields with deliberate line length and whitespace.",
+    "side_rail": "A narrow optional-but-evidenced counterweight; when absent, an equivalent restrained vertical information role must be reviewed.",
+    "footer_lockup": "Optional and quiet; cannot replace the lower editorial rhythm with a generic brand bar.",
+    "aspect_ratio_adaptation": ["Preserve asymmetric title/still-life/metadata tension, not original coordinates.", "Redistribute whitespace before scaling text mechanically.", "Keep secondary copy readable and low-volume across aspect ratios."],
+    "thumbnail_priority": ["asymmetric approved title object", "tactile still-life anchor", "quiet editorial metadata rhythm"],
+    "overlap_avoidance_constraints": ["Do not cover tactile-object identity cues with live text.", "Do not center the title or still life by default.", "Do not fill active whitespace with extra copy, seals or decorative symbols."]
+  },
+  "copy_fidelity_rules": {
+    "VERBATIM_REQUIRED": ["brand name", "dish name", "product name", "price", "date", "address", "user-locked slogan", "locked English name", "all core functional text"],
+    "PLACEHOLDER_ALLOWED": ["non-formal neutral copy used only in a technical layout test that is explicitly marked non-production"],
+    "HUMAN_APPROVAL_REQUIRED": ["new slogan", "new brand naming", "new English translation", "new display-lettering content"]
+  },
+  "componentization_plan": [
+    {"element": "editorial text roles", "implementation": "STYLE", "reusable": true, "variants_or_variables": ["side-rail", "tag", "body", "english-support"], "dependencies": ["FONT_SELECTION_HUMAN_PENDING"]},
+    {"element": "muted ink, spacing and whitespace tokens", "implementation": "VARIABLES", "reusable": true, "variants_or_variables": ["display-ink", "metadata-ink", "body-ink", "safe-margin", "editorial-gap"], "dependencies": []},
+    {"element": "editorial metadata group", "implementation": "FIGMA_COMPONENT", "reusable": true, "variants_or_variables": ["tag-pair", "side-rail", "paragraph-block"], "dependencies": ["LOCKED_COPY"]},
+    {"element": "display-title object", "implementation": "ONE_OFF_ART_ASSET", "reusable": false, "variants_or_variables": [], "dependencies": ["APPROVED_DISPLAY_LETTERING_ASSET", "HUMAN_PIXEL_REVIEW"]},
+    {"element": "quiet alignment rule or thread", "implementation": "REUSABLE_VECTOR_ASSET", "reusable": true, "variants_or_variables": ["vertical", "horizontal", "diagonal-optical"], "dependencies": ["SHARED_OPTICAL_GEOMETRY_EVIDENCE"]}
+  ],
+  "quality_gate_for_figma_output": [
+    "no wrong characters", "no fake glyphs", "no English misspelling", "no spacing collapse", "no line-height failure",
+    "no unintended overflow", "no lost footer lockup", "no wrong hierarchy",
+    "no generic font substitution when family behavior requires approved lettering",
+    "no pixel-art layer unintentionally covered", "export matches target dimensions"
+  ],
+  "fail_closed_conditions": [
+    "locked copy missing", "required font or lettering asset not bound", "exact glyph correctness cannot be guaranteed",
+    "Figma runtime/tool unavailable", "component asset unresolved", "layout contract cannot map to target aspect ratio",
+    "export or readback failed"
+  ],
+  "unresolved_dependencies": ["FONT_SELECTION_HUMAN_PENDING", "APPROVED_DISPLAY_LETTERING_ASSET", "TYPOGRAPHY_COMPONENT_HUMAN_REVIEW", "TYPOGRAPHY_TRANSFER_VALIDATION"],
+  "evidence_lineage": ["typo_de_v3_reference_13", "typo_dh_v3_reference_13", "vp_v3_reference_13_provisional", "R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md"]
+}

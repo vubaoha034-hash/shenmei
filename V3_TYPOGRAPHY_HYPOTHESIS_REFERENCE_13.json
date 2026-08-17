@@ -1,0 +1,91 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "TYPOGRAPHY_DISTILLATION_HYPOTHESIS",
+  "hypothesis_id": "typo_dh_v3_reference_13",
+  "family_id": "family_reference_13_editorial_titlefield_stilllife",
+  "status": "DISTILLATION_HYPOTHESIS",
+  "review_status": "HUMAN_REVIEW_PENDING",
+  "source_evidence_ids": ["typo_de_v3_reference_13"],
+  "typography_visual_philosophy": {
+    "statement": "Typography forms a quiet editorial spatial system: an approved asymmetric display-title object, active whitespace, a narrow side rail and restrained bilingual metadata share one optical geometry with the tactile still life.",
+    "confidence": 0.97,
+    "evidence_ids": ["typo13_title_architecture", "typo13_text_object_geometry", "typo13_hierarchy_tiers"]
+  },
+  "stable_typography_grammar": [
+    {
+      "mechanism_id": "mech_13_asymmetric_title_field",
+      "statement": "The display title is an asymmetric object of unequal glyph scale, position and spacing rather than a centered line or uniform text box.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.99,
+      "evidence_ids": ["typo13_title_architecture", "e13_design_asymmetric_title"]
+    },
+    {
+      "mechanism_id": "mech_13_organic_display_lettering_behavior",
+      "statement": "Approved display lettering uses controlled stroke contrast, irregular mass, custom terminals and optical counter adjustment without copying source glyphs.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.96,
+      "evidence_ids": ["typo13_glyph_energy", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#6"]
+    },
+    {
+      "mechanism_id": "mech_13_active_whitespace_title_balance",
+      "statement": "Whitespace actively separates and tensions the display title, still life and metadata; minimalism may not become empty centering.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.98,
+      "evidence_ids": ["typo13_title_architecture", "e13_design_active_whitespace"]
+    },
+    {
+      "mechanism_id": "mech_13_editorial_side_rail",
+      "statement": "A narrow vertical Chinese/Latin rail counterbalances the title field and participates in the shared optical axes.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.9,
+      "evidence_ids": ["typo13_role_side_rail", "typo13_text_object_geometry"]
+    },
+    {
+      "mechanism_id": "mech_13_restrained_supporting_copy",
+      "statement": "Small labels and body copy remain low-volume, accurately set and rhythmically spaced so they add editorial depth without promotional noise.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.96,
+      "evidence_ids": ["typo13_role_module_label", "typo13_role_body", "typo13_hierarchy_tiers"]
+    },
+    {
+      "mechanism_id": "mech_13_dual_script_editorial_support",
+      "statement": "Latin support remains narrow and subordinate to Chinese while sharing alignment and spacing logic with the editorial label system.",
+      "state": "INVARIANT_HYPOTHESIS", "confidence": 0.89,
+      "evidence_ids": ["typo13_role_english_support", "typo13_role_module_label"]
+    }
+  ],
+  "variation_axes_typography": [
+    {"statement": "Title wording and new approved glyph forms may change while preserving asymmetric mass and controlled handmade stroke behavior.", "confidence": 0.93, "evidence_ids": ["typo13_title_architecture", "typo13_glyph_energy"]},
+    {"statement": "Side-rail content, metadata count and lower label rhythm may adapt, but functional tiers and active whitespace must remain legible.", "confidence": 0.96, "evidence_ids": ["typo13_hierarchy_tiers", "typo13_text_object_geometry"]},
+    {"statement": "Exact olive, charcoal and mineral-paper values may change while retaining muted matte contrast and quiet optical authority.", "confidence": 0.92, "evidence_ids": ["typo13_color_material"]}
+  ],
+  "content_bound_typography": [
+    {"features": ["ingredient/content tags", "editorial paragraph", "side-rail wording and translations"], "transfer_behavior": "REPLACE_WITH_VERBATIM_CURRENT_CONTENT", "evidence_ids": ["typo13_role_module_label", "typo13_role_body", "typo13_role_side_rail"]}
+  ],
+  "brand_bound_typography": [
+    {"features": ["烟火知鲜 wording", "exact source glyph outlines", "香雲 identity text", "existing English phrase"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS; REQUIRE_NEW_APPROVED_COPY_OR_DISPLAY_ASSET", "evidence_ids": ["typo13_role_display_title", "typo13_role_side_rail", "typo13_glyph_energy"]}
+  ],
+  "production_bound_typography": [
+    {"features": ["exact glyph coordinates", "exact four-tag count", "exact side-rail position", "exact font files and paper/ink treatment"], "transfer_behavior": "RECOMPOSE_UNDER_FIGMA_CONTRACT; DO_NOT_TREAT_AS FAMILY INVARIANT", "evidence_ids": ["typo13_title_architecture", "typo13_hierarchy_tiers", "typo13_color_material"]}
+  ],
+  "typography_content_compatibility": [
+    {"statement": "The family needs short identity copy capable of becoming an asymmetric title object plus enough truthful support copy to establish a secondary editorial rhythm.", "confidence": 0.96, "evidence_ids": ["typo13_title_architecture", "typo13_hierarchy_tiers"]},
+    {"statement": "If target content cannot leave active whitespace or lacks an approved display-lettering asset, production must fail closed rather than substitute a centered generic font.", "confidence": 0.98, "evidence_ids": ["typo13_failure_minimal_empty", "R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md"]}
+  ],
+  "figma_execution_hypothesis": {
+    "renderer_responsibility": ["tactile still-life and material pixels", "exploratory display-lettering direction only through an authorized specialized synthesis route"],
+    "figma_responsibility": ["exact live side-rail, Chinese labels, English support and paragraph copy", "active-whitespace grid and optical alignment", "placement of approved display-lettering assets", "deterministic export"],
+    "not_figma_zero_to_one": true,
+    "required_dependencies": ["APPROVED_DISPLAY_LETTERING_ASSET", "LOCKED_COPY", "FONT_SELECTION_HUMAN_PENDING"],
+    "evidence_ids": ["R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md", "typo13_title_architecture", "typo13_text_object_geometry"]
+  },
+  "transfer_risks": [
+    "generic beige-plus-brush-title collapse if title geometry is reduced to a font choice",
+    "editorial emptiness if support tiers are deleted rather than restrained",
+    "visual noise if metadata is enlarged or multiplied",
+    "brand leakage if exact source glyphs or side-rail copy are reused"
+  ],
+  "unresolved_uncertainties": [
+    "No typography-only transfer validation has proven a new asymmetric glyph system under changed content.",
+    "No specific production font family is approved for functional Chinese or Latin roles.",
+    "Whole-image approval does not establish component approval for any typography mechanism."
+  ],
+  "component_approval_status": "UNCONFIRMED",
+  "promotion_status": "UNPROMOTED",
+  "evidence_lineage": ["typo_de_v3_reference_13", "de_v3_reference_13", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md", "R1E2_FAILURE_AND_TYPOGRAPHY_CAPABILITY_BOUNDARY.md"]
+}
