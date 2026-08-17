@@ -1,0 +1,68 @@
+{
+  "status": "V3_FOOD_SEMANTIC_IDENTITY_NEEDS_HUMAN_INPUT",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "base_head_verified": "5490b241d8609f6ea700acae6fb08244da9ca1b0",
+  "asset_id": "ast_63aa377b-5287-400d-b0a3-a6282313b38c",
+  "asset_filename": "ast_63aa377b-5287-400d-b0a3-a6282313b38c.jpg",
+  "classification": "UNKNOWN",
+  "authoritative_metadata_found": false,
+  "evidence_scope": "Only evidence directly tied to the exact Route A asset UUID was consulted. No public web search, unrelated food-asset browsing, broad Drive scan, visual dish-name inference, image generation, production edit, library mutation, or Scale Gate execution was performed.",
+  "evidence_sources_consulted": [
+    {
+      "source": "V3_A_FOOD_APPETITE_CORRECTION_R1_TASK.md",
+      "blob_sha": "399dad42b2010de673531dbb92479ee73fccc075",
+      "finding": "The Route A correction task identifies the prior real main-dish source by the abbreviated identity ast_63aa…b38c.jpg and requires exact provenance resolution, but supplies no canonical dish name, protein identity, or cooking method."
+    },
+    {
+      "source": "V3_A_FOOD_APPETITE_HUMAN_VALIDATION_RESULT.md",
+      "blob_sha": "8d066a184b698caf50b6639feccebba61473976f",
+      "finding": "Human validation verifies ast_63aa377b-5287-400d-b0a3-a6282313b38c.jpg as the real food source but records only visual appetite properties, not authoritative semantic identity."
+    },
+    {
+      "source": "V3_A_PRODUCT_LEGIBILITY_HUMAN_VALIDATION_RESULT.md",
+      "blob_sha": "1e7a87784f328e4dfbeda159f3465d420d7120b6",
+      "finding": "The exact real source is explicitly recorded as ast_63aa377b-5287-400d-b0a3-a6282313b38c.jpg; the record states that exact dish identity and primary ingredient are not reliably recoverable from pixels alone and require semantic metadata."
+    },
+    {
+      "source": "Google Drive exact metadata/content search",
+      "queries": [
+        "ast_63aa377b-5287-400d-b0a3-a6282313b38c",
+        "63aa377b-5287-400d-b0a3-a6282313b38c",
+        "ast_63aa377b-5287-400d-b0a3-a6282313b38c.jpg",
+        "V3_A_FOOD_APPETITE_CORRECTION_R1_MANIFEST"
+      ],
+      "finding": "No exact matching private provenance, metadata sidecar, import receipt, source filename mapping, or manifest was returned by the connected Drive search."
+    },
+    {
+      "source": "GitHub exact-index searches",
+      "queries": [
+        "ast_63aa377b-5287-400d-b0a3-a6282313b38c",
+        "63aa377b-5287-400d-b0a3-a6282313b38c"
+      ],
+      "finding": "No additional indexed provenance or semantic metadata for the exact UUID was found beyond the directly inspected Route A records."
+    }
+  ],
+  "known_facts": [
+    "This exact UUID is the verified real main-dish source used for Route A grounding.",
+    "Existing human validation determined that the source pixels are not self-identifying enough to support a specific named hero-product claim.",
+    "No authoritative semantic metadata available through the connected evidence sources resolves the exact dish name, primary ingredient/protein, or cooking method."
+  ],
+  "missing_fields": [
+    "canonical_dish_name",
+    "primary_ingredient_or_protein",
+    "cooking_method"
+  ],
+  "prohibited_claims_until_resolved": [
+    "any specific dish name",
+    "any specific animal species or protein",
+    "any specific cut",
+    "any recipe or cooking-method claim not supplied by authoritative metadata or the user"
+  ],
+  "food_semantic_identity_contract_safe_to_create": false,
+  "hero_eligibility_can_be_reconsidered": false,
+  "production_layer_remains_frozen": true,
+  "route_b_status": "SOURCE_MISMATCH_FOR_ROUTE_B",
+  "scale_gate_remains_frozen": true,
+  "image_generated": false,
+  "next_required_input": "Human-supplied canonical dish name, primary ingredient/protein, and cooking method for this exact asset."
+}
