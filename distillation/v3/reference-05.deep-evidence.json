@@ -1,0 +1,101 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_object_id": "de_v3_reference_05",
+  "status": "DEEP_EVIDENCE",
+  "subject": {
+    "family_id": "family_reference_05_black_red_brand_world",
+    "canonical_asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf",
+    "canonical_sample_id": "smp_c8e1c9c1-1c3a-414a-b54e-ee2a5069f733",
+    "canonical_sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38",
+    "canonical_dimensions": {"width": 1080, "height": 1440}
+  },
+  "analysis": {
+    "photography": [
+      {
+        "evidence_id": "e05_photo_process_action",
+        "dimension": "lighting",
+        "claim": "A low-key live-wok process scene uses localized flame, steam and food highlights to make cooking action the first read while preserving detail in hands, pan and ingredients.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.97,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "upper process-scene band"},
+        "uncertainty": null,
+        "measurements": {"observation": "localized warm fire against near-black field"},
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e05_photo_world_context",
+        "dimension": "capture_geometry",
+        "claim": "The lower dining-room photograph is a wide contextual scene rather than another product close-up, expanding the work from product advertising into a restaurant world.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.96,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "lower dining-world band"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      }
+    ],
+    "graphic_design": [
+      {
+        "evidence_id": "e05_design_semantic_zones",
+        "dimension": "grid_layout",
+        "claim": "Three vertically sequenced semantic zones assign different jobs to process hero, campaign modules and dining-world information while maintaining one reading path.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.99,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "full composition"},
+        "uncertainty": "The exact three-band geometry is reference-specific and must not be treated as the only valid family layout.",
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e05_design_information_tiers",
+        "dimension": "typography_lettering",
+        "claim": "Display lettering, medium narrative statements, bilingual labels and small explanatory copy form multiple information tiers instead of relying on one oversized headline.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "upper-left title, module labels, lower information layer"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e05_design_semantic_graphics",
+        "dimension": "graphic_language",
+        "claim": "Pepper, stove, ingredient and food-source illustrations label narrative roles; they are semantic marks rather than unrelated decoration.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.96,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "upper-right mark, center modules, lower ingredient system"},
+        "uncertainty": "The particular pepper and ingredient drawings are brand/content bound; the semantic derivation mechanism is the candidate signature.",
+        "binding_classification": "BRAND_BOUND"
+      }
+    ],
+    "integration": [
+      {
+        "evidence_id": "e05_integration_shared_cadence",
+        "dimension": "photo_type_integration",
+        "claim": "Photography, lettering, illustrations and supporting copy repeat a shared black/red/ivory cadence and align to semantic modules, making one campaign system rather than a photo with pasted text.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "full composition"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e05_integration_color_surface",
+        "dimension": "color_grade",
+        "claim": "Black, deep red and chalk-white are visible family signals, but color alone does not account for the authored hierarchy.",
+        "evidence_class": "INFERENCE",
+        "confidence": 0.88,
+        "evidence_pointer": {"asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38", "region": "full composition"},
+        "uncertainty": "Requires transfer validation with a changed macro composition and possibly a shifted palette.",
+        "binding_classification": "OPTIONAL_VARIATION"
+      }
+    ]
+  },
+  "evidence_lineage": [
+    "smp_c8e1c9c1-1c3a-414a-b54e-ee2a5069f733",
+    "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf",
+    "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21"
+  ],
+  "v2_migration": [
+    {"v2_field": "photography_engine.*", "v3_field": "analysis.photography", "semantic_change": "No rename for novelty; V3 adds a canonical evidence pointer and binding classification per claim."},
+    {"v2_field": "graphic_design_engine.*", "v3_field": "analysis.graphic_design", "semantic_change": "Preserves professional dimensions while separating evidence from a runnable program."},
+    {"v2_field": "integration_engine.*", "v3_field": "analysis.integration", "semantic_change": "Preserves integration evidence but removes deterministic compilation authority."}
+  ]
+}

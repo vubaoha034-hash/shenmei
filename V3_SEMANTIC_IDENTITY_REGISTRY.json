@@ -1,0 +1,42 @@
+{
+  "schema_version": "3.0.0",
+  "registry_id": "semantic_identity_registry_v3",
+  "core_domain_neutral": true,
+  "records": [
+    {
+      "schema_version": "3.0.0",
+      "semantic_identity_id": "sem_restaurant_ast_63aa377b",
+      "domain": "restaurant",
+      "canonical_name": "柠檬叶怪味里脊",
+      "aliases": ["柠檬怪味里脊"],
+      "primary_entity": "猪里脊肉",
+      "process": [
+        "里脊切条",
+        "初炸定型",
+        "提高油温复炸约30秒形成酥脆外层",
+        "蒜末与辣椒碎炒香",
+        "怪味汁熬至浓稠粘亮",
+        "炸好的里脊大火快速翻匀挂汁"
+      ],
+      "required_visible_identity_cues": [
+        "猪里脊条的清晰条状几何",
+        "可见的酥炸外层",
+        "每条里脊仍可独立辨认",
+        "深色酱汁包裹但不抹除食材形状",
+        "不得成为无形状的黑色肉堆"
+      ],
+      "forbidden_substitutions": ["牛肉", "鸡肉", "排骨或其他带骨肉", "抹除条状身份的不规则肉块"],
+      "hero_suitability": "FAIL_FOR_HERO_SOURCE",
+      "authority": "USER_EXPLICIT",
+      "confidence": 1.0,
+      "evidence_sources": ["V3_DISTILLATION_FIRST_CODEX_MASTER_TASK_R2.md#8", "ast_63aa377b-5287-400d-b0a3-a6282313b38c"],
+      "adapter": {
+        "adapter_type": "restaurant_semantic_adapter_v1",
+        "asset_id": "ast_63aa377b-5287-400d-b0a3-a6282313b38c",
+        "primary_ingredient_or_protein": "猪里脊肉",
+        "cooking_method": "切条、初炸定型、高温复炸、炒香料、熬怪味汁、大火挂汁",
+        "source_suitability_applies_to_asset_not_dish": true
+      }
+    }
+  ]
+}

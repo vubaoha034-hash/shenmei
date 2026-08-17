@@ -1,0 +1,38 @@
+{
+  "schema_version": "3.0.0",
+  "operators": [
+    {
+      "operator": "RECONSTRUCT",
+      "preconditions": ["human-reviewed provisional or validated program", "canonical reference identity verified", "renderer provenance capture available"],
+      "stable_grammar_to_preserve": "selected reviewed mechanisms",
+      "allowed_variation": "content details consistent with semantic identity",
+      "semantic_identity_requirements": "required when the subject has an identity contract",
+      "content_compatibility": "must satisfy the program compatibility declaration",
+      "reference_attachments": "declared and hash-traceable",
+      "expected_anchor_dependence_test": "compare reference-conditioned reconstruction with later reduced-anchor transfer",
+      "failure_criteria": ["family identity collapse", "semantic substitution", "missing renderer provenance"]
+    },
+    {
+      "operator": "CONTENT_SWAP",
+      "preconditions": ["human-reviewed provisional or validated program", "new content identity contract", "compatibility gate passes"],
+      "stable_grammar_to_preserve": "reviewed family mechanisms, not original content-bound features",
+      "allowed_variation": "subject, copy and scene details",
+      "semantic_identity_requirements": "new subject identity cues and forbidden substitutions",
+      "content_compatibility": "must not force an incompatible photographed role",
+      "reference_attachments": "bounded canonical reference/exemplars plus real content",
+      "expected_anchor_dependence_test": "measure whether family survives changed content without copying content-bound features",
+      "failure_criteria": ["old content leaks into new subject", "component roles collapse", "absolute quality below floor"]
+    },
+    {
+      "operator": "COMPOSITION_OR_ASPECT_TRANSFER",
+      "preconditions": ["human-reviewed provisional or validated program", "target aspect declared", "macro-layout copy prohibition declared"],
+      "stable_grammar_to_preserve": "semantic hierarchy and integration mechanisms",
+      "allowed_variation": "macro composition, crop, module placement and reading path",
+      "semantic_identity_requirements": "subject cues survive reframing",
+      "content_compatibility": "asset resolution supports target geometry",
+      "reference_attachments": "bounded and provenance-complete",
+      "expected_anchor_dependence_test": "family remains recognizable after macro composition and aspect change",
+      "failure_criteria": ["reference macro layout copied", "family survives only through palette", "subject becomes illegible"]
+    }
+  ]
+}

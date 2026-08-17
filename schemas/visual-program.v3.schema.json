@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-program.v3.schema.json",
+  "title": "Visual Program V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program_id", "family_id", "status", "visual_philosophy", "mother_reference", "golden_exemplars",
+    "stable_grammar", "variation_axes", "content_compatibility", "content_bound_features", "brand_bound_features",
+    "typography_role", "color_light_material_signature", "integration_rules", "generic_shortcut_blockers",
+    "freedoms", "transfer_operators", "validation_evidence", "renderer_provenance_requirements",
+    "anchor_dependence", "promotion_history", "evidence_lineage"
+  ],
+  "properties": {
+    "program_id": {"type": "string"},
+    "family_id": {"type": "string"},
+    "status": {"enum": ["PROVISIONAL_VISUAL_PROGRAM", "VALIDATED_VISUAL_PROGRAM", "DEPRECATED"]},
+    "visual_philosophy": {"type": "string"},
+    "mother_reference": {"type": ["object", "null"]},
+    "golden_exemplars": {"type": "array", "items": {"type": "object"}},
+    "stable_grammar": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/grammar"}},
+    "grammar_count_exception": {"type": "string"},
+    "variation_axes": {"type": "array", "items": {"type": "object"}},
+    "content_compatibility": {"type": "array", "items": {"type": "object"}},
+    "content_bound_features": {"type": "array", "items": {"type": "object"}},
+    "brand_bound_features": {"type": "array", "items": {"type": "object"}},
+    "typography_role": {"type": "object"},
+    "color_light_material_signature": {"type": "object"},
+    "integration_rules": {"type": "array", "items": {"type": "object"}},
+    "generic_shortcut_blockers": {"type": "array", "maxItems": 3, "items": {"type": "string"}},
+    "freedoms": {"type": "array", "items": {"type": "string"}},
+    "transfer_operators": {"type": "array", "minItems": 3, "items": {"enum": ["RECONSTRUCT", "CONTENT_SWAP", "COMPOSITION_OR_ASPECT_TRANSFER"]}},
+    "validation_evidence": {"type": "array", "items": {"type": "object"}},
+    "renderer_provenance_requirements": {"$ref": "#/$defs/provenance"},
+    "anchor_dependence": {"enum": ["HIGH_REFERENCE_CONDITIONED", "MODERATE_REFERENCE_ASSISTED", "LOW_PROGRAM_DRIVEN", "UNKNOWN"]},
+    "promotion_history": {"type": "array", "items": {"type": "object"}},
+    "evidence_lineage": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism_id", "statement", "state", "evidence_ids"],
+      "properties": {
+        "mechanism_id": {"type": "string"},
+        "statement": {"type": "string"},
+        "state": {"enum": ["INVARIANT_HYPOTHESIS", "VALIDATED_INVARIANT"]},
+        "evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer", "model", "model_version", "parameters", "actual_attachments", "final_invocation_evidence"],
+      "properties": {
+        "renderer": {"type": "string"},
+        "model": {"type": "string"},
+        "model_version": {"type": ["string", "null"]},
+        "parameters": {"type": "object"},
+        "actual_attachments": {"type": "array", "items": {"type": "object"}},
+        "final_invocation_evidence": {"type": "object"}
+      }
+    }
+  }
+}

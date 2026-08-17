@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-mechanism.v3.schema.json",
+  "title": "Visual Mechanism V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mechanism_id", "domain", "description", "evidence_pointers", "family_scope", "transfer_scope", "status",
+    "support_basis", "component_approval_status", "transfer_validation_support", "contradiction_evidence", "promotion_status"
+  ],
+  "properties": {
+    "mechanism_id": {"type": "string"},
+    "domain": {"enum": ["lighting", "color_grade", "capture_geometry", "focus_depth_blur", "material_treatment", "composition", "whitespace", "typography_lettering", "grid_layout", "graphic_language", "photo_type_integration", "retouch_finish"]},
+    "description": {"type": "string"},
+    "evidence_pointers": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "family_scope": {"type": "array", "items": {"type": "string"}},
+    "transfer_scope": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["FAMILY_LOCAL", "CROSS_FAMILY_CANDIDATE", "CONTENT_BOUND", "BRAND_BOUND", "UNVERIFIED"]},
+    "support_basis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "evidence_ids"],
+        "properties": {
+          "kind": {"enum": ["WHOLE_IMAGE_APPROVAL", "DIRECT_COMPONENT_FEEDBACK", "REPEATED_EVIDENCE", "TRANSFER_VALIDATION"]},
+          "evidence_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "component_approval_status": {"enum": ["UNCONFIRMED", "SUPPORTED", "HUMAN_APPROVED"]},
+    "transfer_validation_support": {"type": "array", "items": {"type": "string"}},
+    "contradiction_evidence": {"type": "array", "items": {"type": "string"}},
+    "promotion_status": {"enum": ["UNPROMOTED", "HOLD", "READY_FOR_SKILL_REFINER_REVIEW", "PROMOTED"]}
+  }
+}

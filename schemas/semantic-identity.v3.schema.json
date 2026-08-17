@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "semantic-identity.v3.schema.json",
+  "title": "Domain-neutral Semantic Identity V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "semantic_identity_id", "domain", "canonical_name", "aliases", "primary_entity", "process", "required_visible_identity_cues", "forbidden_substitutions", "hero_suitability", "authority", "confidence", "evidence_sources"],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "semantic_identity_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "canonical_name": {"type": "string"},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "primary_entity": {"type": "string"},
+    "process": {"type": "array", "items": {"type": "string"}},
+    "required_visible_identity_cues": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "forbidden_substitutions": {"type": "array", "items": {"type": "string"}},
+    "hero_suitability": {"enum": ["PASS", "CONDITIONAL", "FAIL_FOR_HERO_SOURCE", "UNKNOWN"]},
+    "authority": {"enum": ["USER_EXPLICIT", "AUTHORITATIVE_METADATA", "HUMAN_CONFIRMED", "UNKNOWN"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence_sources": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "adapter": {"type": "object"}
+  }
+}

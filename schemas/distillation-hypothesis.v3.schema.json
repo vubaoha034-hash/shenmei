@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "distillation-hypothesis.v3.schema.json",
+  "title": "Evidence-backed Distillation Hypothesis V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "artifact_type", "hypothesis_id", "family_id", "status",
+    "source_evidence_object_ids", "candidate_visual_philosophy", "candidate_stable_grammar",
+    "candidate_variation_axes", "candidate_compatibility_constraints", "unresolved_contradictions",
+    "expected_anchor_dependence", "evidence_lineage", "synthesizer"
+  ],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "artifact_type": {"const": "DISTILLATION_HYPOTHESIS"},
+    "hypothesis_id": {"type": "string"},
+    "family_id": {"type": "string"},
+    "status": {"const": "HUMAN_DISTILLATION_REVIEW_PENDING"},
+    "source_evidence_object_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "candidate_visual_philosophy": {"$ref": "#/$defs/claim"},
+    "candidate_stable_grammar": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/grammar"}},
+    "candidate_variation_axes": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "candidate_compatibility_constraints": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "unresolved_contradictions": {"type": "array", "items": {"type": "object"}},
+    "expected_anchor_dependence": {"$ref": "#/$defs/anchor"},
+    "evidence_lineage": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "synthesizer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identity", "aesthetic_authority"],
+      "properties": {
+        "kind": {"const": "HYPOTHESIS_PRODUCING"},
+        "identity": {"type": "string"},
+        "aesthetic_authority": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "anchor": {"enum": ["HIGH_REFERENCE_CONDITIONED", "MODERATE_REFERENCE_ASSISTED", "LOW_PROGRAM_DRIVEN", "UNKNOWN"]},
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "confidence", "evidence_ids"],
+      "properties": {
+        "statement": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism_id", "statement", "state", "confidence", "evidence_ids"],
+      "properties": {
+        "mechanism_id": {"type": "string"},
+        "statement": {"type": "string"},
+        "state": {"const": "INVARIANT_HYPOTHESIS"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_object_id": "de_v3_reference_13",
+  "status": "DEEP_EVIDENCE",
+  "subject": {
+    "family_id": "family_reference_13_warm_editorial_still_life",
+    "canonical_asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532",
+    "canonical_sample_id": "smp_07d29426-97f3-4d2f-9233-d0b196b6e6e7",
+    "canonical_sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7",
+    "canonical_dimensions": {"width": 1080, "height": 1440}
+  },
+  "analysis": {
+    "photography": [
+      {
+        "evidence_id": "e13_photo_still_life",
+        "dimension": "capture_geometry",
+        "claim": "A tactile vessel-and-ingredient still life sits low in frame, photographed frontally with material detail and restrained depth rather than as a finished plated-dish hero.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "lower-middle vessel and ingredients"},
+        "uncertainty": null,
+        "binding_classification": "CONTENT_BOUND"
+      },
+      {
+        "evidence_id": "e13_photo_soft_material_light",
+        "dimension": "lighting",
+        "claim": "Soft directional light reveals ceramic texture, ingredient surfaces and grounded shadows without high-gloss advertising contrast.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.95,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "vessel, lid, ingredients and ground plane"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      }
+    ],
+    "graphic_design": [
+      {
+        "evidence_id": "e13_design_asymmetric_title",
+        "dimension": "typography_lettering",
+        "claim": "The large calligraphic title is an asymmetric spatial field of unequal glyph size and position; a vertical side label and restrained bilingual type counterbalance it.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.99,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "upper title field and right-side rail"},
+        "uncertainty": "Calligraphic appearance may be surface-bound; asymmetric title-field behavior is the stronger candidate mechanism.",
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e13_design_active_whitespace",
+        "dimension": "whitespace",
+        "claim": "Warm off-white negative space separates the title field, still life and lower information rhythm while maintaining optical tension rather than behaving as unused background.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "full composition between title, vessel and metadata"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e13_design_information_rhythm",
+        "dimension": "grid_layout",
+        "claim": "A four-part lower label rhythm plus a quiet paragraph creates secondary and tertiary editorial reads beneath the main image/title relationship.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "lower label row and paragraph"},
+        "uncertainty": "The exact count of four is reference-specific; a multi-tier quiet information rhythm is the candidate signature.",
+        "binding_classification": "STYLE_SIGNATURE"
+      }
+    ],
+    "integration": [
+      {
+        "evidence_id": "e13_integration_shared_geometry",
+        "dimension": "photo_type_integration",
+        "claim": "Title strokes, vessel silhouette, ingredient uprights, side rail and lower metadata share a balanced vertical-horizontal geometry, so text and still life jointly construct the page.",
+        "evidence_class": "DIRECT_VISIBLE",
+        "confidence": 0.98,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "full composition"},
+        "uncertainty": null,
+        "binding_classification": "STYLE_SIGNATURE"
+      },
+      {
+        "evidence_id": "e13_integration_surface_labels",
+        "dimension": "color_grade",
+        "claim": "Warm paper and olive-black lettering are visible signals but are insufficient without the asymmetric editorial geometry and still-life/information roles.",
+        "evidence_class": "INFERENCE",
+        "confidence": 0.89,
+        "evidence_pointer": {"asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7", "region": "full composition"},
+        "uncertainty": "Requires palette and content transfer tests to distinguish structure from surface styling.",
+        "binding_classification": "OPTIONAL_VARIATION"
+      }
+    ]
+  },
+  "evidence_lineage": [
+    "smp_07d29426-97f3-4d2f-9233-d0b196b6e6e7",
+    "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532",
+    "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21"
+  ],
+  "v2_migration": [
+    {"v2_field": "photography_engine.*", "v3_field": "analysis.photography", "semantic_change": "V3 adds exact evidence pointers and keeps photographed subject role explicitly content-bound where appropriate."},
+    {"v2_field": "graphic_design_engine.*", "v3_field": "analysis.graphic_design", "semantic_change": "Evidence remains analysis, not an automatically executable style grammar."},
+    {"v2_field": "integration_engine.*", "v3_field": "analysis.integration", "semantic_change": "Integration claims remain hypotheses until human and transfer review."}
+  ]
+}

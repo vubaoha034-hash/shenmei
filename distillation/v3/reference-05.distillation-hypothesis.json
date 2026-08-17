@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "DISTILLATION_HYPOTHESIS",
+  "hypothesis_id": "dh_v3_reference_05",
+  "family_id": "family_reference_05_black_red_brand_world",
+  "status": "HUMAN_DISTILLATION_REVIEW_PENDING",
+  "source_evidence_object_ids": ["de_v3_reference_05"],
+  "candidate_visual_philosophy": {
+    "statement": "Build a complete brand world by assigning process, product, origin and dining context distinct semantic roles, then bind them through a forceful but disciplined information cadence.",
+    "confidence": 0.9,
+    "evidence_ids": ["e05_photo_process_action", "e05_photo_world_context", "e05_design_semantic_zones", "e05_design_information_tiers", "e05_integration_shared_cadence"]
+  },
+  "candidate_stable_grammar": [
+    {"mechanism_id": "mech_05_process_scene_hierarchy", "statement": "A real process/action image owns the first read while retaining product and operator legibility.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.94, "evidence_ids": ["e05_photo_process_action"]},
+    {"mechanism_id": "mech_05_multi_tier_information", "statement": "At least three visibly distinct information roles prevent the work from collapsing into one headline and one product image.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95, "evidence_ids": ["e05_design_information_tiers"]},
+    {"mechanism_id": "mech_05_campaign_module_logic", "statement": "Supporting modules each carry an origin, process, product or place meaning and form a directed campaign sequence.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.93, "evidence_ids": ["e05_design_semantic_zones", "e05_design_semantic_graphics"]},
+    {"mechanism_id": "mech_05_semantic_graphic_derivation", "statement": "Graphic marks are derived from ingredients, tools or place rather than selected as generic decoration.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.9, "evidence_ids": ["e05_design_semantic_graphics"]},
+    {"mechanism_id": "mech_05_dining_world_context", "statement": "A context layer shows the social or spatial world around the product, broadening the identity beyond a dish advertisement.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.92, "evidence_ids": ["e05_photo_world_context", "e05_integration_shared_cadence"]}
+  ],
+  "candidate_variation_axes": [
+    {"statement": "The macro composition may move away from the reference's exact top/middle/bottom bands if semantic roles and reading order remain distinct.", "confidence": 0.86, "evidence_ids": ["e05_design_semantic_zones"]},
+    {"statement": "Black/red/ivory intensity may shift while process heat, hierarchy and one coherent campaign identity survive.", "confidence": 0.76, "evidence_ids": ["e05_integration_color_surface"]}
+  ],
+  "candidate_compatibility_constraints": [
+    {"statement": "Best suited to content with credible process, ingredient/origin and dining-context assets; a single isolated product image is insufficient.", "confidence": 0.93, "evidence_ids": ["e05_photo_process_action", "e05_photo_world_context", "e05_design_semantic_zones"]}
+  ],
+  "unresolved_contradictions": [
+    {"question": "Can the family remain recognizable without black/red/ivory and rough display lettering?", "required_test": "palette-shift transfer"},
+    {"question": "Can campaign module logic survive a substantially different aspect ratio and macro composition?", "required_test": "composition-or-aspect transfer"}
+  ],
+  "expected_anchor_dependence": "HIGH_REFERENCE_CONDITIONED",
+  "evidence_lineage": ["de_v3_reference_05", "smp_c8e1c9c1-1c3a-414a-b54e-ee2a5069f733", "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21"],
+  "synthesizer": {"kind": "HYPOTHESIS_PRODUCING", "identity": "codex-evidence-synthesis-r2", "aesthetic_authority": false}
+}

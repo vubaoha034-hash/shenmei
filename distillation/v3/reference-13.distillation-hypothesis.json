@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "DISTILLATION_HYPOTHESIS",
+  "hypothesis_id": "dh_v3_reference_13",
+  "family_id": "family_reference_13_warm_editorial_still_life",
+  "status": "HUMAN_DISTILLATION_REVIEW_PENDING",
+  "source_evidence_object_ids": ["de_v3_reference_13"],
+  "candidate_visual_philosophy": {
+    "statement": "Create a quiet editorial field in which title, vessel, ingredients, whitespace and secondary information share optical responsibility instead of placing a headline over a product photograph.",
+    "confidence": 0.92,
+    "evidence_ids": ["e13_photo_still_life", "e13_design_asymmetric_title", "e13_design_active_whitespace", "e13_design_information_rhythm", "e13_integration_shared_geometry"]
+  },
+  "candidate_stable_grammar": [
+    {"mechanism_id": "mech_13_asymmetric_title_field", "statement": "Unequal title scale and placement form a spatial field balanced by a quieter side label, not a centered text box.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95, "evidence_ids": ["e13_design_asymmetric_title"]},
+    {"mechanism_id": "mech_13_active_whitespace", "statement": "Whitespace separates roles and creates tension among title, still life and metadata; it is structural rather than empty.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95, "evidence_ids": ["e13_design_active_whitespace"]},
+    {"mechanism_id": "mech_13_vessel_ingredient_anchor", "statement": "A low tactile vessel-and-ingredient still life provides the optical anchor without becoming a centered finished-dish hero.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.94, "evidence_ids": ["e13_photo_still_life"]},
+    {"mechanism_id": "mech_13_editorial_information_rhythm", "statement": "Secondary labels and tertiary prose create a quiet editorial cadence below and beside the primary field.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.95, "evidence_ids": ["e13_design_information_rhythm"]},
+    {"mechanism_id": "mech_13_shared_optical_geometry", "statement": "Type strokes, vessel silhouette, ingredient uprights and metadata axes share one optical geometry.", "state": "INVARIANT_HYPOTHESIS", "confidence": 0.93, "evidence_ids": ["e13_integration_shared_geometry"]}
+  ],
+  "candidate_variation_axes": [
+    {"statement": "The vessel, ingredients and title wording may change if their optical roles and calm material hierarchy remain intact.", "confidence": 0.86, "evidence_ids": ["e13_photo_still_life", "e13_integration_shared_geometry"]},
+    {"statement": "Warm off-white and olive-black may shift within a restrained material palette without becoming promotional color blocking.", "confidence": 0.77, "evidence_ids": ["e13_integration_surface_labels"]}
+  ],
+  "candidate_compatibility_constraints": [
+    {"statement": "Requires a content set that supports vessel/ingredient still-life roles and enough copy hierarchy to form a true editorial page.", "confidence": 0.93, "evidence_ids": ["e13_photo_still_life", "e13_design_information_rhythm"]}
+  ],
+  "unresolved_contradictions": [
+    {"question": "How much calligraphic energy can be removed before the family identity weakens?", "required_test": "typography-role transfer"},
+    {"question": "Can a non-food still life preserve the same editorial geometry without becoming a generic lifestyle layout?", "required_test": "cross-domain content swap"}
+  ],
+  "expected_anchor_dependence": "HIGH_REFERENCE_CONDITIONED",
+  "evidence_lineage": ["de_v3_reference_13", "smp_07d29426-97f3-4d2f-9233-d0b196b6e6e7", "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21"],
+  "synthesizer": {"kind": "HYPOTHESIS_PRODUCING", "identity": "codex-evidence-synthesis-r2", "aesthetic_authority": false}
+}
