@@ -5,8 +5,8 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "program_id", "family_id", "status", "visual_philosophy", "mother_reference", "golden_exemplars",
-    "stable_grammar", "variation_axes", "content_compatibility", "content_bound_features", "brand_bound_features",
+    "program_id", "family_id", "status", "validation_status", "visual_philosophy", "mother_reference", "golden_exemplars",
+    "stable_grammar", "variation_axes", "content_compatibility", "content_bound_features", "brand_bound_features", "production_bound_features",
     "typography_role", "color_light_material_signature", "integration_rules", "generic_shortcut_blockers",
     "freedoms", "transfer_operators", "validation_evidence", "renderer_provenance_requirements",
     "anchor_dependence", "promotion_history", "evidence_lineage"
@@ -15,6 +15,7 @@
     "program_id": {"type": "string"},
     "family_id": {"type": "string"},
     "status": {"enum": ["PROVISIONAL_VISUAL_PROGRAM", "VALIDATED_VISUAL_PROGRAM", "DEPRECATED"]},
+    "validation_status": {"enum": ["TRANSFER_VALIDATION_PENDING", "TRANSFER_VALIDATION_IN_PROGRESS", "TRANSFER_VALIDATED", "TRANSFER_VALIDATION_FAILED", "NOT_APPLICABLE"]},
     "visual_philosophy": {"type": "string"},
     "mother_reference": {"type": ["object", "null"]},
     "golden_exemplars": {"type": "array", "items": {"type": "object"}},
@@ -24,6 +25,7 @@
     "content_compatibility": {"type": "array", "items": {"type": "object"}},
     "content_bound_features": {"type": "array", "items": {"type": "object"}},
     "brand_bound_features": {"type": "array", "items": {"type": "object"}},
+    "production_bound_features": {"type": "array", "items": {"type": "object"}},
     "typography_role": {"type": "object"},
     "color_light_material_signature": {"type": "object"},
     "integration_rules": {"type": "array", "items": {"type": "object"}},

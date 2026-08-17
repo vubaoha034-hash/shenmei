@@ -1,0 +1,83 @@
+{
+  "program_id": "vp_v3_reference_13_provisional",
+  "family_id": "family_reference_13_editorial_titlefield_stilllife",
+  "status": "PROVISIONAL_VISUAL_PROGRAM",
+  "validation_status": "TRANSFER_VALIDATION_PENDING",
+  "visual_philosophy": "Create a quiet tactile editorial field where expressive handmade title geometry, a restrained object/raw-material still life, active whitespace and low-volume metadata share one optical rhythm. Soft materiality, muted tonal relationships and carefully controlled density create calm authorship rather than promotional loudness.",
+  "mother_reference": {
+    "sample_id": "smp_07d29426-97f3-4d2f-9233-d0b196b6e6e7",
+    "asset_id": "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532",
+    "sha256": "3f8cd4b9bf99be512c7b543a931c8c505877e4692b777751fd30a3ad6f3b29d7",
+    "dimensions": {"width": 1080, "height": 1440},
+    "binding": "CANONICAL_PIXELS"
+  },
+  "golden_exemplars": [],
+  "stable_grammar": [
+    {"mechanism_id": "mech_13_asymmetric_title_field", "statement": "Non-uniform character scale and placement form an asymmetric expressive title field balanced by quieter side information; the title behaves as a spatial object rather than a horizontal text line.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_design_asymmetric_title", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#1"]},
+    {"mechanism_id": "mech_13_active_whitespace", "statement": "Active whitespace carries separation, tension, reading order and density control among title, still life and metadata.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_design_active_whitespace", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#2"]},
+    {"mechanism_id": "mech_13_vessel_ingredient_anchor", "statement": "A low tactile object/raw-material still-life anchor carries physical presence without becoming a conventional centered finished-product hero.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_photo_still_life", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#3"]},
+    {"mechanism_id": "mech_13_editorial_information_rhythm", "statement": "Secondary labels and tertiary prose establish a quiet editorial cadence around the primary title-object field.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_design_information_rhythm", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#4"]},
+    {"mechanism_id": "mech_13_shared_optical_geometry", "statement": "Echoed verticals and diagonals, silhouette counterbalance, title-stroke direction, object axes and metadata alignment form one cross-element optical geometry.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_integration_shared_geometry", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#5"]},
+    {"mechanism_id": "mech_13_organic_display_lettering_behavior", "statement": "Handmade ink/brush-like display behavior uses stroke variation, irregular character mass, controlled imperfect edges and non-uniform spacing/scale compositionally without copying exact glyphs.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_design_asymmetric_title", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#6"]},
+    {"mechanism_id": "mech_13_matte_mineral_soft_light_materiality", "statement": "Warm mineral matte fields, muted earthy tonal relations, soft diffuse light, restrained speculars and gentle shadow separation create tactile calm rather than glossy promotion.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e13_photo_soft_material_light", "e13_integration_surface_labels", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md#7"]}
+  ],
+  "variation_axes": [
+    {"dimension": "still_life_subject", "allowed_change": "Use semantically grounded vessels, raw materials, tools, packaging, craft objects or restrained finished products.", "guardrail": "Maintain low tactile anchoring and avoid a conventional centered product hero."},
+    {"dimension": "title_content", "allowed_change": "Use original wording and original glyph forms.", "guardrail": "Preserve behavior-level handmade irregularity, asymmetric mass and spatial integration; do not copy source glyphs."},
+    {"dimension": "material_palette", "allowed_change": "Exact off-white, olive, ink and charcoal values may change.", "guardrail": "Preserve matte-mineral, muted, low-saturation and soft-light role relationships."},
+    {"dimension": "editorial_grid", "allowed_change": "Metadata count, axes and placement may change.", "guardrail": "Retain meaningful secondary/tertiary cadence and active whitespace."}
+  ],
+  "content_compatibility": [
+    {"requirement": "A quiet, semantically grounded tactile object/raw-material anchor is available; a literal vessel is not required.", "status": "HUMAN_REVIEWED_HYPOTHESIS"},
+    {"requirement": "Meaningful copy hierarchy can create editorial cadence and active whitespace remains structurally available.", "status": "HUMAN_REVIEWED_HYPOTHESIS"},
+    {"risk": "A conventional centered finished-product hero is high-risk, but a finished product may work when treated as a restrained still-life object.", "status": "HUMAN_REVIEWED_HYPOTHESIS"}
+  ],
+  "content_bound_features": [
+    {"features": ["exact vessel and lid", "pumpkin", "mushrooms", "scallions", "exact ingredient arrangement"], "transfer_behavior": "REPLACE_WITH_SEMANTICALLY_GROUNDED_OBJECTS"}
+  ],
+  "brand_bound_features": [
+    {"features": ["original title and copy", "exact glyph designs", "exact side-label wording and identity elements"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS"}
+  ],
+  "production_bound_features": [
+    {"features": ["exact four-label count", "exact crop", "exact photographed arrangement", "exact spacing implementation", "exact paper texture/grain instance"], "transfer_behavior": "DO_NOT_TREAT_AS_FAMILY_INVARIANT"}
+  ],
+  "typography_role": {
+    "display": "Expressive organic handmade behavior with variable stroke, mass, edge, spacing and scale; the title is a spatial object.",
+    "functional": "Low-volume labels and prose provide quiet editorial cadence and align with the same geometry.",
+    "exact_glyphs": "BRAND_BOUND",
+    "behavior_level": "FAMILY_LOCAL_INVARIANT_HYPOTHESIS"
+  },
+  "color_light_material_signature": {
+    "state": "INVARIANT_HYPOTHESIS",
+    "roles": ["warm mineral/off-white matte field", "muted earthy olive/ink/charcoal relationship", "low saturation", "soft diffuse light", "restrained speculars", "gentle shadow separation", "tactile non-glossy objects"],
+    "production_bound": ["exact paper texture/grain instance", "exact beige value"],
+    "freedom": "Broader matte-mineral material relationship may transfer without copying the original paper."
+  },
+  "integration_rules": [
+    {"rule": "Title-stroke direction, object axes, silhouette counterbalance and metadata alignment must form one cross-element geometry."},
+    {"rule": "Whitespace remains active structure around the title, tactile anchor and editorial information."},
+    {"rule": "Photography/materiality remains quiet and tactile; it cannot become a glossy promotional product layer under pasted typography."}
+  ],
+  "generic_shortcut_blockers": [
+    "Do not collapse to beige background plus giant brush title plus centered plated dish.",
+    "Do not copy exact source glyphs, object inventory, four-label count or paper grain.",
+    "Do not replace active whitespace and editorial cadence with generic minimalist emptiness."
+  ],
+  "freedoms": ["new object/raw-material constellation", "new metadata count and placement", "new aspect and macro composition", "new exact muted palette values", "original expressive glyph construction"],
+  "transfer_operators": ["RECONSTRUCT", "CONTENT_SWAP", "COMPOSITION_OR_ASPECT_TRANSFER"],
+  "validation_evidence": [
+    {"kind": "HUMAN_DISTILLATION_REVIEW", "source": "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md", "decision": "PASS_WITH_REQUIRED_REVISIONS", "revisions_applied": true},
+    {"kind": "TRANSFER_VALIDATION", "status": "PENDING", "outputs": []}
+  ],
+  "renderer_provenance_requirements": {
+    "renderer": "REQUIRED_AT_EXECUTION",
+    "model": "REQUIRED_AT_EXECUTION",
+    "model_version": null,
+    "parameters": {"capture": "REQUIRED_AT_EXECUTION"},
+    "actual_attachments": [],
+    "final_invocation_evidence": {"capture": "REQUIRED_AT_EXECUTION"}
+  },
+  "anchor_dependence": "HIGH_REFERENCE_CONDITIONED",
+  "promotion_history": [],
+  "evidence_lineage": ["de_v3_reference_13", "dh_v3_reference_13", "smp_07d29426-97f3-4d2f-9233-d0b196b6e6e7", "ast_147f0ca3-83dd-47ed-9d74-ebbd19001532", "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21", "V3_REFERENCE_13_HUMAN_DISTILLATION_REVIEW_RESULT.md"]
+}

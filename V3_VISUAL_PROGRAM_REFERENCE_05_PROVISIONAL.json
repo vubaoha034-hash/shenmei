@@ -1,0 +1,80 @@
+{
+  "program_id": "vp_v3_reference_05_provisional",
+  "family_id": "family_reference_05_process_campaign_brand_world",
+  "status": "PROVISIONAL_VISUAL_PROGRAM",
+  "validation_status": "TRANSFER_VALIDATION_PENDING",
+  "visual_philosophy": "Build a layered brand world in which live process and heat, product proof, contextual world-building and information systems reinforce one kinetic commercial identity. Photography, display lettering, semantic graphics and tonal contrast operate as one hierarchy rather than independent decorative modules.",
+  "mother_reference": {
+    "sample_id": "smp_c8e1c9c1-1c3a-414a-b54e-ee2a5069f733",
+    "asset_id": "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf",
+    "sha256": "eedd32a428f7483fefc53b1f5107dc9a790b76db2e408b29917607c3fb030e38",
+    "dimensions": {"width": 1080, "height": 1440},
+    "binding": "CANONICAL_PIXELS"
+  },
+  "golden_exemplars": [],
+  "stable_grammar": [
+    {"mechanism_id": "mech_05_process_scene_hierarchy", "statement": "A process/action narrative engine combines visible action, heat/fire/steam/tool interaction and operator credibility while product detail remains legible.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_photo_process_action", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#1"]},
+    {"mechanism_id": "mech_05_multi_tier_information", "statement": "Multiple information tiers carry distinct display, narrative, label and explanatory roles so one headline cannot carry the work alone.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_design_information_tiers", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#2"]},
+    {"mechanism_id": "mech_05_campaign_module_logic", "statement": "Semantic roles form a directed campaign sequence without requiring equal cards, a fixed module count or fixed module geometry.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_design_semantic_zones", "e05_design_semantic_graphics", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#3"]},
+    {"mechanism_id": "mech_05_semantic_graphic_derivation", "statement": "Graphic marks are derived from real ingredients, tools, process, place or equivalent brand evidence; the principle is transferable while exact mark assets are not.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_design_semantic_graphics", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#4"]},
+    {"mechanism_id": "mech_05_dining_world_context", "statement": "A world/context layer uses people, place, origin, service, kitchen or other credible context to expand identity beyond a product advertisement.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_photo_world_context", "e05_integration_shared_cadence", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#5"]},
+    {"mechanism_id": "mech_05_low_key_heat_tonal_orchestration", "statement": "Deep low-key fields, warm process highlights, a controlled hot accent and warm light information contrast create high local energy while retaining process and product detail.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_photo_process_action", "e05_integration_shared_cadence", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#6"]},
+    {"mechanism_id": "mech_05_display_lettering_structural_mass", "statement": "Expressive handmade display lettering acts as structural visual mass and interacts with imagery and graphics while functional typography remains subordinate.", "state": "INVARIANT_HYPOTHESIS", "evidence_ids": ["e05_design_information_tiers", "e05_integration_shared_cadence", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md#7"]}
+  ],
+  "variation_axes": [
+    {"dimension": "macro_composition", "allowed_change": "Recompose semantic layers freely across the target format.", "guardrail": "Do not copy the reference's exact three-band layout or fixed card geometry."},
+    {"dimension": "tonal_palette", "allowed_change": "Exact hues and accent color may change.", "guardrail": "Preserve low-key depth, warm process highlights, controlled hot accent and light information contrast as perceptual roles."},
+    {"dimension": "context_role", "allowed_change": "People, place, origin, service, kitchen or other credible world evidence may substitute.", "guardrail": "Context must carry brand-world meaning rather than decorative atmosphere."}
+  ],
+  "content_compatibility": [
+    {"requirement": "At least three credible semantic roles: process/action or equivalent live-making evidence; product/ingredient/proof/detail evidence; and world/context evidence.", "status": "HUMAN_REVIEWED_HYPOTHESIS"},
+    {"requirement": "Equivalent brand-relevant roles may substitute for literal restaurant asset categories.", "status": "HUMAN_REVIEWED_HYPOTHESIS"},
+    {"risk": "A single isolated product image usually supports only a reduced subset and must not be labeled as the full family.", "status": "HUMAN_REVIEWED_HYPOTHESIS"}
+  ],
+  "content_bound_features": [
+    {"features": ["exact dish", "exact wok/process subject", "exact places", "exact ingredient subjects"], "transfer_behavior": "REPLACE_WITH_SEMANTICALLY_VALID_NEW_CONTENT"}
+  ],
+  "brand_bound_features": [
+    {"features": ["original brand/name", "exact custom glyph artwork", "exact pepper/stove drawings and emblems", "existing copy"], "transfer_behavior": "DO_NOT_COPY_ACROSS_BRANDS"}
+  ],
+  "production_bound_features": [
+    {"features": ["exact three-band macro layout", "exact module count", "exact crops", "exact spacing and layout implementation"], "transfer_behavior": "DO_NOT_TREAT_AS_FAMILY_INVARIANT"}
+  ],
+  "typography_role": {
+    "display": "Expressive handmade lettering is high visual mass integrated with imagery and semantic graphics; it must not collapse into generic oversized brush text.",
+    "functional": "Supporting typography remains subordinate, legible and information-bearing.",
+    "exact_glyphs": "BRAND_BOUND"
+  },
+  "color_light_material_signature": {
+    "state": "INVARIANT_HYPOTHESIS",
+    "roles": ["deep low-key neutral/dark field", "warm process/fire highlights", "controlled hot accent", "warm off-white/cream information contrast", "high local contrast with retained detail"],
+    "freedom": "Exact black, red and ivory values are not invariants."
+  },
+  "integration_rules": [
+    {"rule": "Process imagery, display lettering, semantic graphics and tonal hierarchy must form one directed first/second/third read."},
+    {"rule": "Every support layer carries a semantic role; decorative filler does not count as campaign depth."},
+    {"rule": "Product/process detail remains legible despite low-key contrast and kinetic heat cues."}
+  ],
+  "generic_shortcut_blockers": [
+    "Do not collapse to giant generic brush lettering plus one food plate.",
+    "Do not copy the exact three-band layout, equal-card geometry or module count.",
+    "Do not substitute black/red styling, flames or legacy marks for semantic brand-world structure."
+  ],
+  "freedoms": ["new macro composition", "new semantic module geometry", "new context archetype", "new exact palette values within reviewed tonal roles", "original lettering shapes consistent with reviewed behavior"],
+  "transfer_operators": ["RECONSTRUCT", "CONTENT_SWAP", "COMPOSITION_OR_ASPECT_TRANSFER"],
+  "validation_evidence": [
+    {"kind": "HUMAN_DISTILLATION_REVIEW", "source": "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md", "decision": "PASS_WITH_REQUIRED_REVISIONS", "revisions_applied": true},
+    {"kind": "TRANSFER_VALIDATION", "status": "PENDING", "outputs": []}
+  ],
+  "renderer_provenance_requirements": {
+    "renderer": "REQUIRED_AT_EXECUTION",
+    "model": "REQUIRED_AT_EXECUTION",
+    "model_version": null,
+    "parameters": {"capture": "REQUIRED_AT_EXECUTION"},
+    "actual_attachments": [],
+    "final_invocation_evidence": {"capture": "REQUIRED_AT_EXECUTION"}
+  },
+  "anchor_dependence": "HIGH_REFERENCE_CONDITIONED",
+  "promotion_history": [],
+  "evidence_lineage": ["de_v3_reference_05", "dh_v3_reference_05", "smp_c8e1c9c1-1c3a-414a-b54e-ee2a5069f733", "ast_415897bc-faae-4f55-bfeb-a9fde4acdddf", "ev_f2bcd9ac-2888-4cb7-a563-0d457797cc21", "V3_REFERENCE_05_HUMAN_DISTILLATION_REVIEW_RESULT.md"]
+}

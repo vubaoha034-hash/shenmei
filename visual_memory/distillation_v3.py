@@ -270,15 +270,29 @@ def package_distillation_hypothesis(
 def validate_visual_program(record: Any) -> dict[str, Any]:
     data = _object(record, "visual program")
     required = (
-        "program_id", "family_id", "status", "visual_philosophy", "mother_reference", "golden_exemplars",
+        "program_id", "family_id", "status", "validation_status", "visual_philosophy", "mother_reference", "golden_exemplars",
         "stable_grammar", "variation_axes", "content_compatibility", "content_bound_features",
-        "brand_bound_features", "typography_role", "color_light_material_signature", "integration_rules",
+        "brand_bound_features", "production_bound_features", "typography_role", "color_light_material_signature", "integration_rules",
         "generic_shortcut_blockers", "freedoms", "transfer_operators", "validation_evidence",
         "renderer_provenance_requirements", "anchor_dependence", "promotion_history", "evidence_lineage",
     )
     _required(data, required, "visual program")
     if data["status"] not in PROGRAM_STATUSES:
         raise DistillationValidationError("invalid visual program status")
+    validation_statuses = {
+        "TRANSFER_VALIDATION_PENDING",
+        "TRANSFER_VALIDATION_IN_PROGRESS",
+        "TRANSFER_VALIDATED",
+        "TRANSFER_VALIDATION_FAILED",
+        "NOT_APPLICABLE",
+    }
+    if data["validation_status"] not in validation_statuses:
+        raise DistillationValidationError("invalid visual program validation_status")
+    if data["status"] == "PROVISIONAL_VISUAL_PROGRAM" and data["validation_status"] not in {
+        "TRANSFER_VALIDATION_PENDING",
+        "TRANSFER_VALIDATION_IN_PROGRESS",
+    }:
+        raise DistillationValidationError("provisional programs must remain pending or in transfer validation")
     grammar = _list(data["stable_grammar"], "stable_grammar", nonempty=True)
     for row in grammar:
         item = _object(row, "stable grammar item")
@@ -366,20 +380,30 @@ def validate_transfer_plan(record: Any) -> dict[str, Any]:
     _required(
         data,
         (
-            "transfer_id", "operator", "program_id", "preconditions", "stable_grammar_to_preserve",
+            "transfer_id", "operator", "program_id", "execution_status", "preconditions", "stable_grammar_to_preserve",
             "allowed_variation", "semantic_identity_requirements", "content_compatibility",
             "reference_attachments", "expected_anchor_dependence_test", "failure_criteria",
-            "renderer_provenance_requirements",
+            "technical_correctness_gates", "human_aesthetic_review_axes", "absolute_quality_floor",
+            "renderer_provenance_requirements", "output_artifacts",
         ),
         "transfer plan",
     )
     if data["operator"] not in TRANSFER_OPERATORS:
         raise DistillationValidationError("invalid transfer operator")
+    if data["execution_status"] != "PLANNED_NOT_EXECUTED" or data["output_artifacts"]:
+        raise DistillationValidationError("prepared transfer plans may not contain executed outputs")
     _list(data["preconditions"], "preconditions", nonempty=True)
     _list(data["stable_grammar_to_preserve"], "stable_grammar_to_preserve", nonempty=True)
     _object(data["expected_anchor_dependence_test"], "expected_anchor_dependence_test")
+    _list(data["technical_correctness_gates"], "technical_correctness_gates", nonempty=True)
+    _list(data["human_aesthetic_review_axes"], "human_aesthetic_review_axes", nonempty=True)
+    _object(data["absolute_quality_floor"], "absolute_quality_floor")
     provenance = _object(data["renderer_provenance_requirements"], "renderer_provenance_requirements")
-    _required(provenance, ("renderer", "model", "model_version", "parameters", "actual_attachments"), "renderer provenance")
+    _required(
+        provenance,
+        ("renderer", "model", "model_version", "parameters", "actual_attachments", "final_invocation_evidence"),
+        "renderer provenance",
+    )
     return data
 
 

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transfer-plan.v3.schema.json",
+  "title": "Visual Program Transfer Plan V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "transfer_id", "operator", "program_id", "execution_status", "preconditions",
+    "stable_grammar_to_preserve", "allowed_variation", "semantic_identity_requirements",
+    "content_compatibility", "reference_attachments", "expected_anchor_dependence_test",
+    "technical_correctness_gates", "human_aesthetic_review_axes", "absolute_quality_floor",
+    "failure_criteria", "renderer_provenance_requirements", "output_artifacts"
+  ],
+  "properties": {
+    "transfer_id": {"type": "string"},
+    "operator": {"enum": ["RECONSTRUCT", "CONTENT_SWAP", "COMPOSITION_OR_ASPECT_TRANSFER"]},
+    "program_id": {"type": "string"},
+    "execution_status": {"const": "PLANNED_NOT_EXECUTED"},
+    "preconditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "stable_grammar_to_preserve": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "allowed_variation": {"type": "array", "items": {"type": "string"}},
+    "semantic_identity_requirements": {"type": "object"},
+    "content_compatibility": {"type": "object"},
+    "reference_attachments": {"type": "object"},
+    "expected_anchor_dependence_test": {"type": "object"},
+    "technical_correctness_gates": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "human_aesthetic_review_axes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "absolute_quality_floor": {"type": "object"},
+    "failure_criteria": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "renderer_provenance_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer", "model", "model_version", "parameters", "actual_attachments", "final_invocation_evidence"],
+      "properties": {
+        "renderer": {"type": "string"},
+        "model": {"type": "string"},
+        "model_version": {"type": "string"},
+        "parameters": {"type": "string"},
+        "actual_attachments": {"type": "string"},
+        "final_invocation_evidence": {"type": "string"}
+      }
+    },
+    "output_artifacts": {"type": "array", "maxItems": 0}
+  }
+}

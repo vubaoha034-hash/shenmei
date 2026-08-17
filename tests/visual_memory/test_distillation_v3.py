@@ -32,6 +32,7 @@ def sample_program(*, status: str = "PROVISIONAL_VISUAL_PROGRAM"):
         "program_id": "program_test",
         "family_id": "family_test",
         "status": status,
+        "validation_status": "TRANSFER_VALIDATION_PENDING" if status == "PROVISIONAL_VISUAL_PROGRAM" else "NOT_APPLICABLE",
         "visual_philosophy": "A reviewed concise philosophy.",
         "mother_reference": None,
         "golden_exemplars": [{"asset_id": "ast_one"}, {"asset_id": "ast_two"}],
@@ -43,6 +44,7 @@ def sample_program(*, status: str = "PROVISIONAL_VISUAL_PROGRAM"):
         "content_compatibility": [],
         "content_bound_features": [],
         "brand_bound_features": [],
+        "production_bound_features": [],
         "typography_role": {},
         "color_light_material_signature": {},
         "integration_rules": [],
@@ -72,6 +74,7 @@ class DistillationV3Tests(unittest.TestCase):
             "schemas/visual-program.v3.schema.json",
             "schemas/visual-mechanism.v3.schema.json",
             "schemas/semantic-identity.v3.schema.json",
+            "schemas/transfer-plan.v3.schema.json",
         ]
         for path in paths:
             schema = load_json(path)
@@ -187,7 +190,9 @@ class DistillationV3Tests(unittest.TestCase):
         self.assertEqual(len(families), 2)
         self.assertNotEqual(families[0]["family_id"], families[1]["family_id"])
         self.assertTrue(all(row["merge_prohibited_without_human_approval"] for row in families))
-        self.assertTrue(all(row["program_version"] is None for row in families))
+        self.assertTrue(all(row["program_version"] for row in families))
+        self.assertTrue(all(row["status"] == "PROVISIONAL_VISUAL_PROGRAM" for row in families))
+        self.assertTrue(all(row["validation_status"] == "TRANSFER_VALIDATION_PENDING" for row in families))
 
     def test_anchor_dependence_is_explicit(self):
         for ref in ("05", "13"):
@@ -209,6 +214,7 @@ class DistillationV3Tests(unittest.TestCase):
             "transfer_id": "transfer_one",
             "operator": "CONTENT_SWAP",
             "program_id": "program_one",
+            "execution_status": "PLANNED_NOT_EXECUTED",
             "preconditions": ["human-reviewed program"],
             "stable_grammar_to_preserve": ["m1"],
             "allowed_variation": ["content"],
@@ -217,7 +223,11 @@ class DistillationV3Tests(unittest.TestCase):
             "reference_attachments": [],
             "expected_anchor_dependence_test": {"expected": "MODERATE_REFERENCE_ASSISTED"},
             "failure_criteria": ["family collapse"],
-            "renderer_provenance_requirements": {"renderer": True, "model": True, "model_version": True, "parameters": True, "actual_attachments": True},
+            "technical_correctness_gates": ["integrity"],
+            "human_aesthetic_review_axes": ["family fidelity"],
+            "absolute_quality_floor": {"required": "USABLE"},
+            "renderer_provenance_requirements": {"renderer": True, "model": True, "model_version": True, "parameters": True, "actual_attachments": True, "final_invocation_evidence": True},
+            "output_artifacts": [],
         }
         self.assertIs(validate_transfer_plan(plan), plan)
         bad = dict(plan)
