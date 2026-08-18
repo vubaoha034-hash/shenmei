@@ -1,0 +1,46 @@
+{
+  "schema_version": "upcp-project-adapter/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "repository": "vubaoha034-hash/shenmei",
+  "canonical_branch": "visual-program-distillation-v2-photography-design-20260814",
+  "governance_source": {
+    "repository": "vubaoha034-hash/skills",
+    "skill_path": "universal-project-control-plane/SKILL.md",
+    "compatibility_contract": "upcp-governance/v1",
+    "last_verified_commit": "72ad9d53d27ba7260a7a5694079b4acdf8154c6f"
+  },
+  "business_entrypoints": [
+    "AGENTS.md",
+    "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md"
+  ],
+  "state_authorities": [
+    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 1, "purpose": "latest V3-A active route state and R4.1 next-stage authority"},
+    {"path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md", "priority": 2, "purpose": "human macro rejection and R3A/R4 route-reset authority"}
+  ],
+  "task_model": "TASK_REGISTRY",
+  "task_authorities": [
+    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 1, "purpose": "R4.1-A/B/C task definitions and current gate"}
+  ],
+  "acceptance_authorities": [
+    {"path": "AESTHETIC_SKILL_DESIGN_CHARTER.md", "priority": 1, "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"},
+    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 2, "purpose": "R4.1 selection/promotion sequence and human gate"}
+  ],
+  "change_authorities": [],
+  "continuity": {
+    "checkpoint_path": "continuity/vpd/LATEST_CHECKPOINT.json",
+    "ledger_mode": "PER_STREAM_FILES",
+    "ledger_path": null,
+    "ledger_root": "continuity/vpd/state_ledger",
+    "hash_chain_required": true,
+    "write_through_required": true
+  },
+  "rules": {
+    "no_silent_mutation": true,
+    "anti_rollback": true,
+    "missing_state_is_unknown": true,
+    "continue_means_next_incomplete_gate": true,
+    "governance_never_overrides_business_rules": true,
+    "state_conflict_fails_closed": true
+  }
+}
