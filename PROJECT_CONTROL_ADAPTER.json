@@ -12,25 +12,28 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
+    "VPD_OPENAI_WIF_SETUP_20260819.md",
     "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
     "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
     "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
     "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md"
   ],
   "state_authorities": [
-    {"path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md", "priority": 1, "purpose": "latest state: strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider execution remains blocked by current-host credential availability"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md", "priority": 2, "purpose": "historical evidence that the prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"},
-    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "priority": 3, "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"},
-    {"path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md", "priority": 4, "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"},
-    {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "priority": 5, "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"}
+    {"path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md", "priority": 1, "purpose": "latest state: secure GitHub Actions WIF is the preferred provider-auth route; the non-generative probe proved all three required WIF configuration variables are currently missing, with zero OpenAI requests and zero formal images"},
+    {"path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md", "priority": 2, "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md", "priority": 3, "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"},
+    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "priority": 4, "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"},
+    {"path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md", "priority": 5, "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"},
+    {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "priority": 6, "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"}
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 1, "purpose": "active diagnostic task; zero-reference three-task distillation-only transfer test, now requiring the strict explicit renderer adapter rather than native ChatGPT image_gen"}
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 1, "purpose": "active diagnostic task; zero-reference three-task distillation-only transfer test, requiring the strict explicit renderer adapter rather than native ChatGPT image_gen; live execution remains gated on WIF probe PASS and a protected formal-output transport"}
   ],
   "acceptance_authorities": [
     {"path": "AESTHETIC_SKILL_DESIGN_CHARTER.md", "priority": 1, "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 2, "purpose": "runtime integrity, diversity and diagnostic aesthetic acceptance for the next experiment"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 2, "purpose": "runtime integrity, diversity and diagnostic aesthetic acceptance for the experiment"},
     {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "priority": 3, "purpose": "preserved family-transfer evidence baseline"}
   ],
   "change_authorities": [],
