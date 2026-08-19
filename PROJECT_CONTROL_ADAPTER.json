@@ -12,57 +12,75 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
-    "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
-    "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
-    "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
     "VPD_CODEX_HANDOFF_20260819.md",
     "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
     "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
-    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md"
+    "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
+    "VPD_OPENAI_WIF_SETUP_20260819.md",
+    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
+    "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
+    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+    "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
+    "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md"
   ],
   "state_authorities": [
     {
-      "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
-      "priority": 1,
-      "purpose": "latest user-authorized state: R4.1 Drive-grounded commercial recomposition is active and the Codex formal-V1 runtime route is paused"
-    },
-    {
-      "path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
-      "priority": 2,
-      "purpose": "R4.1 controlling diagnosis and three-candidate Drive-grounded recomposition definition; initial R4-A/B/C remain DO_NOT_SELECT"
-    },
-    {
-      "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
-      "priority": 3,
-      "purpose": "human macro rejection of R2/R3A and authorization to recompose rather than refine the rejected commercial skeleton"
-    },
-    {
       "path": "VPD_CODEX_HANDOFF_20260819.md",
-      "priority": 4,
-      "purpose": "historical paused route only; not the current next-action authority unless explicitly resumed by the user"
+      "priority": 1,
+      "purpose": "current real route restored after Anti-Rollback test clarification: ChatGPT runtime-infrastructure expansion is paused; Codex is the next execution actor and must continue from the existing strict adapter/frozen payloads without reopening Actions/WIF as mandatory gates"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
+      "priority": 2,
+      "purpose": "GitHub Actions and WIF are optional infrastructure, not VPD gates; strict exact-payload adapter is preserved and execution runtime remains neutral"
+    },
+    {
+      "path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
+      "priority": 3,
+      "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"
+    },
+    {
+      "path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
+      "priority": 4,
+      "purpose": "historical/optional infrastructure evidence: the GitHub Actions WIF probe found its configuration missing; this does not block another valid private execution runtime"
+    },
+    {
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
       "priority": 5,
-      "purpose": "historical formal-V1 execution-route neutrality authority; Actions/WIF optional"
+      "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"
+    },
+    {
+      "path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
+      "priority": 6,
+      "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"
+    },
+    {
+      "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
+      "priority": 7,
+      "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 6,
-      "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change while absolute final quality remained not ready"
+      "priority": 8,
+      "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"
+    },
+    {
+      "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
+      "priority": 9,
+      "purpose": "preserved Anti-Rollback test-incident artifact only: its apparent R4.1 route authorization was later explicitly clarified by the user as test input, not a real durable project authorization"
+    },
+    {
+      "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
+      "priority": 10,
+      "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
     }
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
     {
-      "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
       "priority": 1,
-      "purpose": "active R4.1 task and user authorization"
-    },
-    {
-      "path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
-      "priority": 2,
-      "purpose": "candidate-family definitions, Drive-grounding requirements and R4.1 acceptance boundary"
+      "purpose": "active diagnostic task; zero-reference three-task distillation-only transfer test requiring exact frozen payload binding and captured renderer/output receipts; execution environment is not prescribed"
     }
   ],
   "acceptance_authorities": [
@@ -72,9 +90,9 @@
       "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"
     },
     {
-      "path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
       "priority": 2,
-      "purpose": "R4.1 taste calibration and candidate differentiation requirements"
+      "purpose": "runtime integrity, diversity and diagnostic aesthetic acceptance for the experiment"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
