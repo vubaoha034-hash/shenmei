@@ -29,13 +29,36 @@
       "aesthetic_retry": false,
       "retry_authorized_by_protocol": true,
       "retry_reason": "Deterministic host payload-binding/transport failure before a valid T1 render; V1 permits at most one technical retry per task."
+    },
+    {
+      "attempt_id": "T1-ATTEMPT-1",
+      "task_id": "T1",
+      "attempt_class": "TECHNICAL_INVALID",
+      "technical_retry": 1,
+      "renderer_tool": "image_gen.text2im",
+      "renderer_generation_id_if_exposed": "68cf9f7d-a51c-4794-89c0-03ccc325fc3c",
+      "expected_payload_sha256": "dbd9fc6a3aa61f005b83764de74e4804b81380a2ae0bae8bed4dd44fb9008ea4",
+      "observed_failure": "REPEATED_PAYLOAD_BINDING_FAILURE_AND_GEOMETRY_MISMATCH",
+      "observed_content": "Even after the exact frozen T1 payload was restated immediately before invocation, the renderer again produced a wide VPD preflight/portrait dashboard instead of the restaurant key visual.",
+      "output_local_runtime_path": "/mnt/data/a_wide_ui_like_report_and_image_panel_graphic_wit.png",
+      "output_sha256": "aff0e11fa70038c08d8fdfe25a448c40992ca5e42557c92a8acded46e57a8f9d",
+      "dimensions": "1536x1024",
+      "reference_images_attached": 0,
+      "technical_validity": "FAIL",
+      "formal_output": false,
+      "hidden_variant": false,
+      "aesthetic_retry": false,
+      "retry_authorized_by_protocol": true,
+      "retry_budget_after_attempt": 0
     }
   ],
   "formal_valid_outputs": 0,
   "hidden_variants": 0,
-  "t1_technical_retries_used": 0,
-  "t1_technical_retries_remaining": 1,
-  "t2_technical_retries_used": 0,
-  "t3_technical_retries_used": 0,
-  "status": "T1_TECHNICAL_RETRY_REQUIRED"
+  "t1_technical_retries_used": 1,
+  "t1_technical_retries_remaining": 0,
+  "t2_renderer_attempted": false,
+  "t3_renderer_attempted": false,
+  "stop_reason": "T1 technical retry budget exhausted and the host renderer repeatedly failed to bind the frozen controller payload. Continuing to T2/T3 would not provide repository-verifiable runtime integrity.",
+  "primary_test_verdict": "DISTILLATION_ONLY_RUNTIME_TECHNICAL_BLOCKED",
+  "status": "STOPPED_FAIL_CLOSED"
 }
