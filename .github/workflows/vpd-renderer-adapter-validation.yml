@@ -8,6 +8,7 @@ on:
       - "visual_memory/**"
       - "tests/visual_memory/**"
       - "scripts/validate_vpd_renderer_adapter.py"
+      - "scripts/run_vpd_distillation_only_runtime_v1.py"
       - "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json"
       - ".github/workflows/vpd-renderer-adapter-validation.yml"
   workflow_dispatch:
@@ -32,3 +33,6 @@ jobs:
 
       - name: Verify frozen VPD renderer requests
         run: python scripts/validate_vpd_renderer_adapter.py
+
+      - name: Verify serial V1 orchestrator dry-run
+        run: python scripts/run_vpd_distillation_only_runtime_v1.py --output-dir "$RUNNER_TEMP/vpd-dor-v1-dry-run"
