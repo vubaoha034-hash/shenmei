@@ -1,30 +1,33 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 2,
-  "recorded_at": "2026-08-19T08:42:00+08:00",
+  "sequence": 3,
+  "recorded_at": "2026-08-19T08:42:30+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_DISTILLATION_ONLY_PREFLIGHT_NEXT",
+  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_CURRENT_CONTEXT_PREFLIGHT_BLOCKED_FRESH_CONTEXT_NEXT",
   "active_task_ids": [
-    "VPD-DISTILLATION-ONLY-RUNTIME-TEST-V1-PREFLIGHT"
+    "VPD-DISTILLATION-ONLY-RUNTIME-TEST-V1-FRESH-CONTEXT"
   ],
-  "current_focus": "Prove a clean, no-reference renderer runtime and exact compiled VPD payload before generating any further diagnostic image.",
+  "current_focus": "Resume the frozen distillation-only diagnostic in a fresh project conversation with no approved-reference pixels or prior VPD output images loaded before generation.",
   "completed": [
     "deep VPD causal distillation architecture confirmed to already exist; do not re-distill the same 18 approved references",
     "V3-A Family Transfer remains PASS and is preserved as transferable-family evidence",
     "human macro rejection permanently stopped selective R3A refinement of the rejected commercial composition",
     "initial R4-A/B/C remain DO_NOT_SELECT",
-    "recent R4.2 images classified AD_HOC_HOST_GENERATION / NOT_FORMAL_VPD_EVIDENCE because runtime execution and context isolation were not proven",
+    "recent R4.2 images classified AD_HOC_HOST_GENERATION / NOT_FORMAL_VPD_EVIDENCE",
     "runtime audit identified NO_MANDATORY_CANONICAL_VPD_RUNTIME_ENTRYPOINT / HOST_EXECUTION_GOVERNANCE_BYPASS as the current root cause",
     "Drive-grounded R4.1 generation canceled as the next route",
-    "strict VPD Distillation-Only Runtime Test V1 frozen"
+    "strict VPD Distillation-Only Runtime Test V1 frozen",
+    "V1 preflight executed in the current conversation and failed closed as DISTILLATION_ONLY_RUNTIME_UNPROVEN_CONTEXT_CONTAMINATION",
+    "zero new formal images generated after the preflight block"
   ],
   "incomplete": [
-    "establish a fresh/isolated renderer context with zero approved-reference pixels loaded",
-    "prove reference_runtime_policy = NONE before rendering",
-    "compile and persist exact pre-render receipts for T1 Brand Key Visual, T2 Ingredient/Origin Narrative, and T3 Minimal Editorial Campaign",
-    "prove each payload contains causal/discriminative family mechanisms rather than surface style tokens",
-    "only after all preflights pass, generate exactly three formal diagnostic outputs with zero hidden variants",
+    "open a fresh project conversation/context for V1",
+    "read only the frozen GitHub text authorities before generation; do not open Drive approved-reference images",
+    "freeze exact controller-compiled payload receipts for T1 Brand Key Visual, T2 Ingredient/Origin Narrative, and T3 Minimal Editorial Campaign",
+    "prove reference_runtime_policy = NONE and explicit runtime reference image count = 0",
+    "record provider-internal prompt as UNAVAILABLE_BY_PROVIDER rather than guessing if the native host does not expose it",
+    "only after the fresh-context preflight passes, generate exactly three formal diagnostic outputs with zero hidden variants",
     "human review runtime-diversity and absolute aesthetic quality",
     "if a candidate later enters production, separate ImageGen art direction from Figma/live typography and production layout",
     "Commercial Quality Gate",
@@ -32,18 +35,19 @@
     "Scale Gate"
   ],
   "blocked": [
-    "new formal VPD image generation is BLOCKED until clean-context and exact-payload preflight passes",
+    "formal V1 rendering is BLOCKED in the current conversation because approved-reference pixels and recent generated images are already present",
     "Commercial Quality Gate is NOT YET",
     "Golden Exemplar is NO",
     "Scale Gate is BLOCKED until a commercial-quality artifact exists"
   ],
   "unknowns": [
-    "whether the current host/native image-generation runtime can prove fresh-context isolation and exact textual/program payload transmission strongly enough for the strict no-reference test"
+    "provider-internal transformed prompt is not exposed by the current native image-generation interface; controller-compiled payload can be frozen but provider-internal transformation must remain UNAVAILABLE_BY_PROVIDER"
   ],
   "do_not_reopen": [
     "re-distilling the same 18 approved references from scratch",
     "Drive-grounded R4.1 reference-image generation as the next step",
     "recent R4.2 images as formal distillation-purity evidence",
+    "running the V1 purity test inside the current contaminated conversation",
     "ad-hoc direct image generation from conversational style summaries as a formal VPD route",
     "rejected R2/R3A macro composition as the production target",
     "selective R3A realism hardening as the next route",
@@ -53,16 +57,17 @@
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001"
   ],
-  "next_required_action": "Execute VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1 preflight only. Establish a clean renderer context with zero reference images and persist the exact compiler/payload receipts for T1/T2/T3. If isolation or exact payload transmission cannot be proven, stop with DISTILLATION_ONLY_RUNTIME_UNPROVEN_CONTEXT_CONTAMINATION and do not generate images.",
+  "next_required_action": "In a fresh chat inside this project, resume from PROJECT_CONTROL_ADAPTER.json and continuity/vpd/LATEST_CHECKPOINT.json, then execute VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md. Do not fetch/open Drive approved-reference images or prior output images before generation. Freeze T1/T2/T3 controller payload receipts first; only render if fresh-context isolation passes.",
   "ledger_tails": {
     "global": {
-      "event_id": "EVT-VISUAL-VPD-RUNTIME-EXECUTION-CORRECTION-20260819-002",
-      "event_hash": "0254555eca18069e97a716ccd46b2fe8e16da389dbee8f6d5f044386d549e8c8"
+      "event_id": "EVT-VISUAL-VPD-DISTILLATION-PREFLIGHT-BLOCK-20260819-003",
+      "event_hash": "bba34d8aacffade97dec7f6f5f90dd487865880220420b70fc4488ef3b548f2a"
     }
   },
   "source_state_refs": [
-    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "role": "latest runtime diagnosis and state-correction authority", "git_blob": "4dca0611ee207432a91489df0f05f435b3d6a53a"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "role": "next diagnostic task and preflight authority", "git_blob": "98bd85b124a382ac563a7a442ec6aa8959b66d01"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md", "role": "latest preflight result and fresh-context requirement", "git_blob": "ce7ba286356230de4884e265c15a3594a5408078"},
+    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "role": "runtime diagnosis and no-redistillation authority", "git_blob": "4dca0611ee207432a91489df0f05f435b3d6a53a"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "role": "diagnostic protocol authority", "git_blob": "98bd85b124a382ac563a7a442ec6aa8959b66d01"},
     {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "role": "preserved transferable-family evidence", "git_blob": "54dccb937e7786545ba5f5767d5cb4b091f29b94"}
   ],
   "status": "ACTIVE"
