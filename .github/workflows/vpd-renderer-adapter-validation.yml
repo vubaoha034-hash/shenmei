@@ -1,0 +1,34 @@
+name: VPD Renderer Adapter Validation
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "visual_memory/**"
+      - "tests/visual_memory/**"
+      - "scripts/validate_vpd_renderer_adapter.py"
+      - "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json"
+      - ".github/workflows/vpd-renderer-adapter-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run visual-memory regression suite
+        run: python scripts/verify_visual_memory.py
+
+      - name: Verify frozen VPD renderer requests
+        run: python scripts/validate_vpd_renderer_adapter.py
