@@ -12,19 +12,22 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
-    "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md"
+    "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
+    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md"
   ],
   "state_authorities": [
-    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 1, "purpose": "latest V3-A active route state and R4.1 next-stage authority"},
-    {"path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md", "priority": 2, "purpose": "human macro rejection and R3A/R4 route-reset authority"}
+    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "priority": 1, "purpose": "latest VPD runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"},
+    {"path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md", "priority": 2, "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"},
+    {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "priority": 3, "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"}
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
-    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 1, "purpose": "R4.1-A/B/C task definitions and current gate"}
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 1, "purpose": "next diagnostic task; no-reference runtime preflight and three-task distillation-only transfer test"}
   ],
   "acceptance_authorities": [
     {"path": "AESTHETIC_SKILL_DESIGN_CHARTER.md", "priority": 1, "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"},
-    {"path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md", "priority": 2, "purpose": "R4.1 selection/promotion sequence and human gate"}
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "priority": 2, "purpose": "runtime integrity, diversity and diagnostic aesthetic acceptance for the next experiment"},
+    {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "priority": 3, "purpose": "preserved family-transfer evidence baseline"}
   ],
   "change_authorities": [],
   "continuity": {
