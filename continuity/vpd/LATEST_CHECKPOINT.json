@@ -1,29 +1,30 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 10,
-  "recorded_at": "2026-08-19T14:55:00+08:00",
+  "sequence": 11,
+  "recorded_at": "2026-08-19T15:05:00+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_INITIAL_R4_REFERENCE_CALIBRATION_FAIL_DO_NOT_SELECT_R4_1_DRIVE_GROUNDED_COMMERCIAL_RECOMPOSE_ACTIVE",
+  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_INITIAL_R4_REFERENCE_CALIBRATION_FAIL_DO_NOT_SELECT_R4_1_ACTIVE_CURRENT_CHAT_RENDER_BINDING_TECHNICAL_INVALID_FRESH_IMAGE_CONTEXT_NEXT",
   "active_task_ids": [
     "V3-A-R4.1-DRIVE-GROUNDED-COMMERCIAL-RECOMPOSE"
   ],
-  "current_focus": "R4.1 Drive-grounded commercial recomposition is active by explicit user redirection. Generate exactly three new full-frame candidates from coherent subsets of the actual approved Drive R1C reference pixels. Do not reuse the initial R4-A/B/C candidates and do not continue the paused Codex formal-V1 runtime route unless explicitly reauthorized later.",
+  "current_focus": "R4.1 Drive-grounded commercial recomposition remains active. The current ChatGPT image-generation binding repeatedly rendered project dashboards/infographics instead of restaurant commercial visuals, so all such outputs are TECHNICAL_INVALID and count as 0 valid R4.1 candidates. The next valid render must occur in a fresh image-only context containing only the coherent Drive reference subset, compact art-direction brief, required copy '现烧', and portrait geometry.",
   "completed": [
     "deep VPD and V3 family-transfer evidence remain preserved",
     "V3-A Family Transfer remains PASS",
     "human macro rejection of the R2/R3A commercial composition remains accepted",
     "initial R4-A/B/C remain DO_NOT_SELECT because they were not grounded in actual approved Drive reference pixels",
-    "all approved references were previously calibrated into coherent Nature/Regional, Rustic Heat and Graphic/Editorial families",
-    "R4.1 A/B/C candidate definitions are preserved in V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
-    "user explicitly redirected the project from the paused Codex formal-V1 route back to R4.1",
-    "approved Drive reference pixels are authorized and required for R4.1 generation",
+    "R4.1 Drive-grounded commercial recomposition is active by explicit user redirection",
+    "approved Drive R1C reference images were re-located and selected into coherent A/B/C grounding subsets",
+    "GitHub state authority and checkpoint were redirected away from the paused Codex formal-V1 route and back to R4.1",
+    "current-chat dashboard/infographic image generations were technically invalidated and excluded from candidate accounting",
     "Commercial Quality remains NOT YET; Golden remains NO; Scale remains BLOCKED"
   ],
   "incomplete": [
-    "retrieve coherent approved Drive reference subsets for R4.1-A/B/C",
-    "generate exactly three new Drive-grounded full-frame candidates",
-    "human pixel review and selection/rejection of the three candidates",
+    "generate one technically valid R4.1-A Rustic Heat Brand System candidate in a fresh image-only context",
+    "generate one technically valid R4.1-B Nature / Regional Freshness candidate in a fresh image-only context",
+    "generate one technically valid R4.1-C Minimal Editorial Brand Campaign candidate in a fresh image-only context",
+    "human pixel review and selection/rejection of the three actual candidates",
     "selected-artifact refinement if and only if a candidate is selected",
     "production typography after selection",
     "Commercial Quality Gate",
@@ -31,9 +32,12 @@
     "Scale Gate"
   ],
   "blocked": [
-    "Commercial Quality, Golden and Scale cannot advance before a human-selected R4.1 artifact exists"
+    "the current long project-control conversation is not a valid R4.1 render context because image generation is semantically binding to checkpoint/dashboard prose rather than the intended commercial art-direction subject",
+    "Commercial Quality, Golden and Scale cannot advance before three technically valid R4.1 candidates and human pixel review"
   ],
   "do_not_reopen": [
+    "counting any project-dashboard or infographic image as an R4.1 candidate",
+    "refining the technically invalid dashboard outputs",
     "initial R4-A/B/C as refinement targets; all remain DO_NOT_SELECT",
     "rejected R2/R3A macro composition as the production target",
     "selective R3A realism hardening as the next route",
@@ -44,23 +48,28 @@
     "continuing the Codex formal-V1 runtime route without a later explicit user redirection"
   ],
   "active_change_ids": [
-    "CHG-VPD-R4-1-RESUME-20260819-001"
+    "CHG-VPD-R4-1-RESUME-20260819-001",
+    "CHG-VPD-R4-1-RENDER-BINDING-20260819-001"
   ],
-  "next_required_action": "Use actual approved Google Drive R1C reference pixels as visible grounding and generate three independent full-frame candidates: R4.1-A Rustic Heat Brand System from a coherent subset of 03/04/05/06/08; R4.1-B Nature / Regional Freshness from a coherent subset of 01/07/09/13/14/15/16/17/18; R4.1-C Minimal Editorial Brand Campaign from a coherent subset of 10/11/12/13/15. Then stop for human pixel review.",
+  "next_required_action": "Run R4.1 in a genuinely fresh image-only generation context. For R4.1-A expose only a coherent subset of approved Drive references 03/04/05/06/08 plus the compact Rustic Heat art-direction brief and exact copy '现烧'; for R4.1-B use a coherent subset of 01/07/09/13/14/15/16/17/18 plus the Nature/Regional brief; for R4.1-C use a coherent subset of 10/11/12/13/15 plus the Minimal Editorial brief. No GitHub/checkpoint/status/workflow prose may be visible to the image renderer. Produce exactly one valid portrait candidate per family, then stop for human review.",
   "ledger_tails": {
     "global": {
       "event_id": "EVT-VISUAL-VPD-OPENAI-WIF-PROBE-20260819-007",
       "event_hash": "4b6b077951c09493a49ed1ece0f792371deab38f84ebea2decb891f7b90a7e65"
     },
     "execution_route": {
-      "event_id": "EVT-VISUAL-VPD-R4-1-RESUME-20260819-003",
-      "event_hash": "f75debb58ddda1caf8de81975b50f51bb3be32742086807cfca1c0bb1ae7d334"
+      "event_id": "EVT-VISUAL-VPD-R4-1-RENDER-BINDING-FAILURE-20260819-004",
+      "event_hash": "4c88b21ab2dc6d14ddbd4fa2b8edc93cc3e6fd889a1313c5f5ca921f8a59f619"
     }
   },
   "source_state_refs": [
     {
       "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
       "role": "latest user-authorized route and active R4.1 task authority"
+    },
+    {
+      "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
+      "role": "current technical invalidation and fresh-image-context recovery authority"
     },
     {
       "path": "V3_A_R4_DRIVE_REFERENCE_CALIBRATION_RESULT_20260819.md",
@@ -74,8 +83,8 @@
     },
     {
       "path": "continuity/vpd/state_ledger/execution_route.jsonl",
-      "role": "execution-route history including R4.1 user redirection"
+      "role": "execution-route history including R4.1 redirection and render-binding technical invalidation"
     }
   ],
-  "status": "R4_1_DRIVE_GROUNDED_RECOMPOSE_ACTIVE"
+  "status": "R4_1_ACTIVE_FRESH_IMAGE_CONTEXT_REQUIRED"
 }
