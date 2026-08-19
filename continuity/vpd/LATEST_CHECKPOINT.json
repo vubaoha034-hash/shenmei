@@ -1,14 +1,14 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 4,
-  "recorded_at": "2026-08-19T08:57:00+08:00",
+  "sequence": 5,
+  "recorded_at": "2026-08-19T08:59:00+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FRESH_CONTEXT_PREFLIGHT_PASS_T1_T2_T3_PAYLOADS_FROZEN_RENDER_NEXT",
+  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FRESH_CONTEXT_PREFLIGHT_PASS_T1_T2_T3_PAYLOADS_FROZEN_RUNTIME_TECHNICAL_BLOCKED",
   "active_task_ids": [
     "VPD-DISTILLATION-ONLY-RUNTIME-TEST-V1-FRESH-CONTEXT"
   ],
-  "current_focus": "Generate exactly three formal V1 diagnostic outputs from the frozen T1/T2/T3 controller payloads with reference_runtime_policy=NONE, zero explicit runtime reference images, zero hidden variants and zero aesthetic retries.",
+  "current_focus": "V1 is technically blocked at the native host renderer boundary: T1 payload binding failed twice, exhausting the only allowed T1 technical retry. Do not render T2/T3 or retry T1 in this now-contaminated context.",
   "completed": [
     "deep VPD causal distillation architecture confirmed to already exist; do not re-distill the same 18 approved references",
     "V3-A Family Transfer remains PASS and is preserved as transferable-family evidence",
@@ -18,22 +18,24 @@
     "runtime audit identified NO_MANDATORY_CANONICAL_VPD_RUNTIME_ENTRYPOINT / HOST_EXECUTION_GOVERNANCE_BYPASS as the current root cause",
     "Drive-grounded R4.1 generation canceled as the next route",
     "strict VPD Distillation-Only Runtime Test V1 frozen",
-    "old contaminated context failed closed with zero new formal images",
-    "fresh project context established without approved-reference pixels, Mother Reference, Golden Exemplar, contact sheet, Drive preview or prior VPD output images",
-    "required GitHub text authorities read in fresh context without opening Drive reference images",
+    "fresh project context established without approved-reference pixels or prior VPD output images before the V1 render attempt",
+    "required GitHub text authorities read without opening Drive reference images",
     "fresh-context preflight passed",
-    "T1 Brand Key Visual controller payload frozen",
-    "T2 Ingredient / Origin Narrative controller payload frozen",
-    "T3 Minimal Editorial Campaign controller payload frozen",
-    "reference_runtime_policy frozen to NONE and explicit runtime reference image count frozen to 0 for all three tasks",
-    "provider-internal prompt observability frozen as UNAVAILABLE_BY_PROVIDER rather than guessed",
-    "formal output budget frozen to exactly three with zero hidden variants, no best-of-N and zero aesthetic retries"
+    "T1/T2/T3 exact controller payload receipts frozen before rendering",
+    "reference_runtime_policy frozen to NONE and explicit runtime reference image count frozen to 0",
+    "provider-internal prompt recorded as UNAVAILABLE_BY_PROVIDER rather than guessed",
+    "T1 first renderer invocation recorded as TECHNICAL_INVALID due payload-binding failure and 1536x1024 geometry mismatch",
+    "T1 single protocol-authorized technical retry executed and again recorded TECHNICAL_INVALID due repeated payload-binding failure and 1536x1024 geometry mismatch",
+    "both invalid renderer outputs recorded with generation IDs, SHA-256 values and dimensions",
+    "V1 primary test verdict set to DISTILLATION_ONLY_RUNTIME_TECHNICAL_BLOCKED",
+    "T2 and T3 renderer invocations were not executed after runtime integrity failed"
   ],
   "incomplete": [
-    "generate exactly one formal T1 Brand Key Visual output from the frozen payload",
-    "generate exactly one formal T2 Ingredient / Origin Narrative output from the frozen payload",
-    "generate exactly one formal T3 Minimal Editorial Campaign output from the frozen payload",
-    "capture post-render output receipts to provider limits",
+    "repair or replace the host renderer invocation path so the exact frozen controller payload can be demonstrably bound to the image generator",
+    "open another genuinely fresh context after the renderer binding defect is repaired; do not load the two invalid dashboard images there",
+    "rerun V1 from the already-frozen T1/T2/T3 payload receipts without re-distilling references",
+    "obtain exactly three valid formal diagnostic outputs",
+    "capture post-render receipts for those valid outputs",
     "human review runtime-diversity and absolute aesthetic quality",
     "if a candidate later enters production, separate ImageGen art direction from Figma/live typography and production layout",
     "Commercial Quality Gate",
@@ -41,18 +43,23 @@
     "Scale Gate"
   ],
   "blocked": [
+    "current conversation is no longer suitable for a clean V1 rerun because two invalid generated images are now present in renderer context",
+    "formal V1 completion is BLOCKED by repeated native host payload-binding failure",
     "Commercial Quality Gate is NOT YET",
     "Golden Exemplar is NO",
     "Scale Gate is BLOCKED until a commercial-quality artifact exists"
   ],
   "unknowns": [
-    "provider-internal transformed prompt is not exposed by the current native image-generation interface; controller-compiled payload is frozen but provider-internal transformation remains UNAVAILABLE_BY_PROVIDER"
+    "provider-internal transformed prompt is not exposed by the current native image-generation interface",
+    "the host image-generation tool did not reveal why it repeatedly substituted an unrelated preflight/portrait dashboard prompt for the frozen T1 payload"
   ],
   "do_not_reopen": [
     "re-distilling the same 18 approved references from scratch",
     "Drive-grounded R4.1 reference-image generation as the next step",
     "recent R4.2 images as formal distillation-purity evidence",
-    "running the V1 purity test inside the old contaminated conversation",
+    "treating either invalid dashboard image as a formal V1 output",
+    "retrying T1 again in the current context after the one allowed technical retry is exhausted",
+    "rendering T2/T3 in the current context after runtime payload binding has failed closed",
     "ad-hoc direct image generation from conversational style summaries as a formal VPD route",
     "rejected R2/R3A macro composition as the production target",
     "selective R3A realism hardening as the next route",
@@ -62,19 +69,19 @@
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001"
   ],
-  "next_required_action": "Invoke image_gen exactly three times, once per frozen T1/T2/T3 payload in VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json, with n=1, portrait 1024x1536, referenced_image_ids=null, no Drive/reference-image reads before completion, zero hidden variants and zero aesthetic retries.",
+  "next_required_action": "Repair or replace the native host renderer payload-binding path. Then, in a new fresh project chat, resume from this checkpoint and reuse VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json; do not open Drive approved-reference images, prior VPD outputs, or the two invalid dashboard images before rerunning exactly T1/T2/T3.",
   "ledger_tails": {
     "global": {
-      "event_id": "EVT-VISUAL-VPD-DISTILLATION-FRESH-PREFLIGHT-FREEZE-20260819-004",
-      "event_hash": "c08cd9173f7cd25a9d196925cf6ef112e502baf788f16401857b16964aa87155"
+      "event_id": "EVT-VISUAL-VPD-DISTILLATION-RUNTIME-TECHNICAL-BLOCK-20260819-005",
+      "event_hash": "4cc7c573f9f8b02a795833ef65bb4f86940894413fe46a16f92681603fedaae4"
     }
   },
   "source_state_refs": [
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md", "role": "prior contaminated-context block and fresh-context requirement", "git_blob": "ce7ba286356230de4884e265c15a3594a5408078"},
     {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "role": "runtime diagnosis and no-redistillation authority", "git_blob": "4dca0611ee207432a91489df0f05f435b3d6a53a"},
     {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "role": "diagnostic protocol authority", "git_blob": "98bd85b124a382ac563a7a442ec6aa8959b66d01"},
     {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json", "role": "fresh-context preflight proof and exact frozen T1/T2/T3 controller payload receipts", "git_blob": "d62b507207019526c8e9de6036f9198508513ca6"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_RUNTIME_RECEIPTS.json", "role": "two invalid T1 renderer attempts, technical retry exhaustion and primary technical-block verdict", "git_blob": "40194767ea17eec6f94a831e271e8f4a02415db8"},
     {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "role": "preserved transferable-family evidence", "git_blob": "54dccb937e7786545ba5f5767d5cb4b091f29b94"}
   ],
-  "status": "ACTIVE"
+  "status": "BLOCKED"
 }
