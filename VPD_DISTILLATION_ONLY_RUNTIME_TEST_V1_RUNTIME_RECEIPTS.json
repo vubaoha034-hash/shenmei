@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-distillation-only-runtime-test-v1-runtime-receipts/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "protocol": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+  "controller_payload_freeze": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json",
+  "runtime_reference_policy": "NONE",
+  "reference_images_attached": 0,
+  "provider_internal_prompt": "UNAVAILABLE_BY_PROVIDER",
+  "attempts": [
+    {
+      "attempt_id": "T1-ATTEMPT-0",
+      "task_id": "T1",
+      "attempt_class": "TECHNICAL_INVALID",
+      "technical_retry": 0,
+      "renderer_tool": "image_gen.text2im",
+      "renderer_generation_id_if_exposed": "759326f0-adec-4d03-a2d6-d9a7e7756b1e",
+      "expected_payload_sha256": "dbd9fc6a3aa61f005b83764de74e4804b81380a2ae0bae8bed4dd44fb9008ea4",
+      "observed_failure": "PAYLOAD_BINDING_FAILURE_AND_GEOMETRY_MISMATCH",
+      "observed_content": "Renderer produced a wide preflight/dashboard portrait-comparison infographic instead of the frozen T1 restaurant brand key visual.",
+      "output_local_runtime_path": "/mnt/data/a_wide_landscape_infographic_like_test_report_ima.png",
+      "output_sha256": "8fbd4b705c0f9fc259f47310b0ca576f10e6765d7ac52187a4b0956cab2ab711",
+      "dimensions": "1536x1024",
+      "reference_images_attached": 0,
+      "technical_validity": "FAIL",
+      "formal_output": false,
+      "hidden_variant": false,
+      "aesthetic_retry": false,
+      "retry_authorized_by_protocol": true,
+      "retry_reason": "Deterministic host payload-binding/transport failure before a valid T1 render; V1 permits at most one technical retry per task."
+    }
+  ],
+  "formal_valid_outputs": 0,
+  "hidden_variants": 0,
+  "t1_technical_retries_used": 0,
+  "t1_technical_retries_remaining": 1,
+  "t2_technical_retries_used": 0,
+  "t3_technical_retries_used": 0,
+  "status": "T1_TECHNICAL_RETRY_REQUIRED"
+}
