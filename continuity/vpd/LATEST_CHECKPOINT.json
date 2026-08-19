@@ -1,14 +1,14 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 5,
-  "recorded_at": "2026-08-19T08:59:00+08:00",
+  "sequence": 6,
+  "recorded_at": "2026-08-19T10:34:00+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FRESH_CONTEXT_PREFLIGHT_PASS_T1_T2_T3_PAYLOADS_FROZEN_RUNTIME_TECHNICAL_BLOCKED",
+  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FROZEN_PAYLOADS_PRESERVED_RENDERER_BINDING_REPAIR_IMPLEMENTED_LIVE_API_CREDENTIAL_BLOCKED",
   "active_task_ids": [
     "VPD-DISTILLATION-ONLY-RUNTIME-TEST-V1-FRESH-CONTEXT"
   ],
-  "current_focus": "V1 is technically blocked at the native host renderer boundary: T1 payload binding failed twice, exhausting the only allowed T1 technical retry. Do not render T2/T3 or retry T1 in this now-contaminated context.",
+  "current_focus": "The V1 native-host binding defect has been repaired with a strict zero-reference explicit API adapter and serial T1/T2/T3 runner. The next gate is live provider execution in a credentialed external runtime; do not use native ChatGPT image_gen for formal V1.",
   "completed": [
     "deep VPD causal distillation architecture confirmed to already exist; do not re-distill the same 18 approved references",
     "V3-A Family Transfer remains PASS and is preserved as transferable-family evidence",
@@ -18,48 +18,59 @@
     "runtime audit identified NO_MANDATORY_CANONICAL_VPD_RUNTIME_ENTRYPOINT / HOST_EXECUTION_GOVERNANCE_BYPASS as the current root cause",
     "Drive-grounded R4.1 generation canceled as the next route",
     "strict VPD Distillation-Only Runtime Test V1 frozen",
-    "fresh project context established without approved-reference pixels or prior VPD output images before the V1 render attempt",
-    "required GitHub text authorities read without opening Drive reference images",
-    "fresh-context preflight passed",
+    "fresh-context preflight passed before the original V1 native-host render attempt",
     "T1/T2/T3 exact controller payload receipts frozen before rendering",
     "reference_runtime_policy frozen to NONE and explicit runtime reference image count frozen to 0",
     "provider-internal prompt recorded as UNAVAILABLE_BY_PROVIDER rather than guessed",
-    "T1 first renderer invocation recorded as TECHNICAL_INVALID due payload-binding failure and 1536x1024 geometry mismatch",
-    "T1 single protocol-authorized technical retry executed and again recorded TECHNICAL_INVALID due repeated payload-binding failure and 1536x1024 geometry mismatch",
-    "both invalid renderer outputs recorded with generation IDs, SHA-256 values and dimensions",
-    "V1 primary test verdict set to DISTILLATION_ONLY_RUNTIME_TECHNICAL_BLOCKED",
-    "T2 and T3 renderer invocations were not executed after runtime integrity failed"
+    "two native ChatGPT T1 attempts recorded TECHNICAL_INVALID; the only allowed T1 native-host technical retry was exhausted",
+    "native ChatGPT image_gen route prohibited for formal V1 after repeated payload-binding failure",
+    "strict zero-reference renderer adapter implemented in visual_memory/vpd_renderer_adapter.py",
+    "adapter recomputes and verifies the exact existing T1/T2/T3 prompt SHA-256 values before network I/O",
+    "adapter constructs an explicit provider request from the frozen prompt, n=1, 1024x1536, PNG, zero reference images",
+    "adapter writes a pre-request receipt before network I/O and does not persist Authorization headers",
+    "adapter validates returned PNG geometry and writes post-render or technical-failure receipts",
+    "frozen T1/T2/T3 payload file preserved unchanged and all three prompt hashes independently reverified",
+    "adapter regression tests added",
+    "real-freeze dry-run validator added",
+    "serial T1 -> T2 -> T3 runner added with fail-closed stop on first technical failure",
+    "serial runner requires formal outputs/receipts to be written outside the Git repository",
+    "CI workflow added for visual-memory regression, frozen-request validation and serial V1 dry-run",
+    "renderer binding repair result promoted to state authority priority 1",
+    "no Drive approved-reference image was opened during renderer repair",
+    "formal valid V1 outputs remain 0"
   ],
   "incomplete": [
-    "repair or replace the host renderer invocation path so the exact frozen controller payload can be demonstrably bound to the image generator",
-    "open another genuinely fresh context after the renderer binding defect is repaired; do not load the two invalid dashboard images there",
-    "rerun V1 from the already-frozen T1/T2/T3 payload receipts without re-distilling references",
-    "obtain exactly three valid formal diagnostic outputs",
-    "capture post-render receipts for those valid outputs",
-    "human review runtime-diversity and absolute aesthetic quality",
+    "observe a passing GitHub Actions validation run; current connector status is PENDING/UNVERIFIED",
+    "provide OPENAI_API_KEY to a credentialed external runtime without exposing the secret in chat or Git",
+    "execute the serial V1 runner live through the strict adapter",
+    "obtain exactly one technically valid T1 output, one T2 output and one T3 output with zero reference images",
+    "capture live provider request/post-render receipts for all three valid outputs",
+    "human review distillation-transfer diversity and absolute aesthetic quality",
     "if a candidate later enters production, separate ImageGen art direction from Figma/live typography and production layout",
     "Commercial Quality Gate",
     "Golden Exemplar decision",
     "Scale Gate"
   ],
   "blocked": [
-    "current conversation is no longer suitable for a clean V1 rerun because two invalid generated images are now present in renderer context",
-    "formal V1 completion is BLOCKED by repeated native host payload-binding failure",
+    "live V1 provider execution is BLOCKED in the current ChatGPT execution host because OPENAI_API_KEY is not available here",
+    "GitHub Actions secret availability is UNKNOWN because the connected GitHub tool does not expose a secret inventory/read action",
+    "native ChatGPT image_gen is not an allowed fallback for formal V1 after its repeated exact-payload binding failure",
     "Commercial Quality Gate is NOT YET",
     "Golden Exemplar is NO",
     "Scale Gate is BLOCKED until a commercial-quality artifact exists"
   ],
   "unknowns": [
-    "provider-internal transformed prompt is not exposed by the current native image-generation interface",
-    "the host image-generation tool did not reveal why it repeatedly substituted an unrelated preflight/portrait dashboard prompt for the frozen T1 payload"
+    "GitHub Actions OPENAI_API_KEY secret availability is UNKNOWN",
+    "GitHub Actions validation run result is PENDING/UNVERIFIED in the current connector context",
+    "live provider behavior remains unvalidated until an authenticated request is executed"
   ],
   "do_not_reopen": [
     "re-distilling the same 18 approved references from scratch",
     "Drive-grounded R4.1 reference-image generation as the next step",
     "recent R4.2 images as formal distillation-purity evidence",
     "treating either invalid dashboard image as a formal V1 output",
-    "retrying T1 again in the current context after the one allowed technical retry is exhausted",
-    "rendering T2/T3 in the current context after runtime payload binding has failed closed",
+    "retrying formal V1 with native ChatGPT image_gen",
+    "rewriting the already-hash-verified T1/T2/T3 frozen payloads merely to work around host orchestration",
     "ad-hoc direct image generation from conversational style summaries as a formal VPD route",
     "rejected R2/R3A macro composition as the production target",
     "selective R3A realism hardening as the next route",
@@ -69,19 +80,22 @@
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001"
   ],
-  "next_required_action": "Repair or replace the native host renderer payload-binding path. Then, in a new fresh project chat, resume from this checkpoint and reuse VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json; do not open Drive approved-reference images, prior VPD outputs, or the two invalid dashboard images before rerunning exactly T1/T2/T3.",
+  "next_required_action": "Execute scripts/run_vpd_distillation_only_runtime_v1.py --execute in a credentialed external runtime with OPENAI_API_KEY and an output directory outside Git. Reuse VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json exactly; do not open Drive approved-reference images and do not use native ChatGPT image_gen. Stop on the first technical failure; otherwise collect exactly T1/T2/T3 plus their provider receipts for human review.",
   "ledger_tails": {
     "global": {
-      "event_id": "EVT-VISUAL-VPD-DISTILLATION-RUNTIME-TECHNICAL-BLOCK-20260819-005",
-      "event_hash": "4cc7c573f9f8b02a795833ef65bb4f86940894413fe46a16f92681603fedaae4"
+      "event_id": "EVT-VISUAL-VPD-RENDERER-BINDING-REPAIR-20260819-006",
+      "event_hash": "a77cb2a5016dac2b3806eb35f20540d8551789e8547883fa7875ed65f134f9e7"
     }
   },
   "source_state_refs": [
-    {"path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md", "role": "runtime diagnosis and no-redistillation authority", "git_blob": "4dca0611ee207432a91489df0f05f435b3d6a53a"},
+    {"path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md", "role": "latest renderer-binding repair result and live-execution blocker authority", "git_blob": "3ba477b4524207fcadb233e89a165895ba6a6d4f"},
     {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "role": "diagnostic protocol authority", "git_blob": "98bd85b124a382ac563a7a442ec6aa8959b66d01"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json", "role": "fresh-context preflight proof and exact frozen T1/T2/T3 controller payload receipts", "git_blob": "d62b507207019526c8e9de6036f9198508513ca6"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_RUNTIME_RECEIPTS.json", "role": "two invalid T1 renderer attempts, technical retry exhaustion and primary technical-block verdict", "git_blob": "40194767ea17eec6f94a831e271e8f4a02415db8"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json", "role": "preserved exact T1/T2/T3 controller payload receipts", "git_blob": "d62b507207019526c8e9de6036f9198508513ca6"},
+    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_RUNTIME_RECEIPTS.json", "role": "historical native-host binding failure receipts", "git_blob": "40194767ea17eec6f94a831e271e8f4a02415db8"},
+    {"path": "visual_memory/vpd_renderer_adapter.py", "role": "strict zero-reference exact-payload provider adapter", "git_blob": "d6693fbdce1dd9bb4613579b6770bd6bc8ad8a66"},
+    {"path": "scripts/run_vpd_distillation_only_runtime_v1.py", "role": "serial fail-closed T1/T2/T3 runner", "git_blob": "781ca2125d8d7f61a245f48ec57088834cdb560f"},
+    {"path": ".github/workflows/vpd-renderer-adapter-validation.yml", "role": "CI regression and dry-run gate; run status not yet observed", "git_blob": "b724b4db1966f9e6c7dbf5d9f9be065e2a6d9022"},
     {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "role": "preserved transferable-family evidence", "git_blob": "54dccb937e7786545ba5f5767d5cb4b091f29b94"}
   ],
-  "status": "BLOCKED"
+  "status": "BLOCKED_EXTERNAL_CREDENTIAL"
 }
