@@ -1,14 +1,14 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 6,
-  "recorded_at": "2026-08-19T10:34:00+08:00",
+  "sequence": 7,
+  "recorded_at": "2026-08-19T10:48:00+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FROZEN_PAYLOADS_PRESERVED_RENDERER_BINDING_REPAIR_IMPLEMENTED_LIVE_API_CREDENTIAL_BLOCKED",
+  "highest_accepted_checkpoint": "V3_A_FAMILY_TRANSFER_PASS_RUNTIME_EXECUTION_AUDIT_PASS_FROZEN_PAYLOADS_PRESERVED_RENDERER_BINDING_REPAIR_IMPLEMENTED_WIF_PROBE_CONFIG_MISSING",
   "active_task_ids": [
     "VPD-DISTILLATION-ONLY-RUNTIME-TEST-V1-FRESH-CONTEXT"
   ],
-  "current_focus": "The V1 native-host binding defect has been repaired with a strict zero-reference explicit API adapter and serial T1/T2/T3 runner. The next gate is live provider execution in a credentialed external runtime; do not use native ChatGPT image_gen for formal V1.",
+  "current_focus": "The renderer binding defect is repaired. Secure live provider execution is now blocked by one-time OpenAI GitHub Actions Workload Identity Federation configuration: the non-generative probe proved that OPENAI_WIF_AUDIENCE, OPENAI_IDENTITY_PROVIDER_ID and OPENAI_SERVICE_ACCOUNT_ID are all missing. Configure WIF, rerun the probe to PASS, and select a protected formal-output transport before T1/T2/T3 live generation.",
   "completed": [
     "deep VPD causal distillation architecture confirmed to already exist; do not re-distill the same 18 approved references",
     "V3-A Family Transfer remains PASS and is preserved as transferable-family evidence",
@@ -22,27 +22,33 @@
     "T1/T2/T3 exact controller payload receipts frozen before rendering",
     "reference_runtime_policy frozen to NONE and explicit runtime reference image count frozen to 0",
     "provider-internal prompt recorded as UNAVAILABLE_BY_PROVIDER rather than guessed",
-    "two native ChatGPT T1 attempts recorded TECHNICAL_INVALID; the only allowed T1 native-host technical retry was exhausted",
-    "native ChatGPT image_gen route prohibited for formal V1 after repeated payload-binding failure",
-    "strict zero-reference renderer adapter implemented in visual_memory/vpd_renderer_adapter.py",
-    "adapter recomputes and verifies the exact existing T1/T2/T3 prompt SHA-256 values before network I/O",
-    "adapter constructs an explicit provider request from the frozen prompt, n=1, 1024x1536, PNG, zero reference images",
-    "adapter writes a pre-request receipt before network I/O and does not persist Authorization headers",
-    "adapter validates returned PNG geometry and writes post-render or technical-failure receipts",
+    "two native ChatGPT T1 attempts recorded TECHNICAL_INVALID and native ChatGPT image_gen prohibited for formal V1",
+    "strict zero-reference renderer adapter implemented and exact frozen payload binding dry-run passed",
+    "adapter constructs explicit OpenAI Images API requests with n=1, 1024x1536, PNG and zero reference images",
+    "adapter writes pre-request and post-render/technical-failure receipts and validates output PNG geometry",
     "frozen T1/T2/T3 payload file preserved unchanged and all three prompt hashes independently reverified",
-    "adapter regression tests added",
-    "real-freeze dry-run validator added",
-    "serial T1 -> T2 -> T3 runner added with fail-closed stop on first technical failure",
-    "serial runner requires formal outputs/receipts to be written outside the Git repository",
-    "CI workflow added for visual-memory regression, frozen-request validation and serial V1 dry-run",
-    "renderer binding repair result promoted to state authority priority 1",
-    "no Drive approved-reference image was opened during renderer repair",
+    "serial fail-closed T1 -> T2 -> T3 runner implemented with formal outputs required outside the Git repository",
+    "renderer adapter validation workflow added; run status remains PENDING/UNVERIFIED in the connector context",
+    "repository visibility verified PUBLIC",
+    "official OpenAI GitHub Actions Workload Identity Federation route selected as the preferred authentication method; long-lived API key is fallback only",
+    "non-generative WIF probe script and GitHub Actions workflow added",
+    "WIF probe executed and persisted continuity/vpd/OPENAI_AUTH_PROBE.json",
+    "WIF probe result is WIF_CONFIG_MISSING for OPENAI_WIF_AUDIENCE, OPENAI_IDENTITY_PROVIDER_ID and OPENAI_SERVICE_ACCOUNT_ID",
+    "WIF probe sent zero requests to OpenAI, invoked zero image generations, attached zero reference images and created zero formal V1 outputs",
+    "WIF setup instructions frozen in VPD_OPENAI_WIF_SETUP_20260819.md",
+    "WIF auth probe result promoted to state authority priority 1",
+    "no Drive approved-reference image was opened during renderer repair or authentication probing",
     "formal valid V1 outputs remain 0"
   ],
   "incomplete": [
-    "observe a passing GitHub Actions validation run; current connector status is PENDING/UNVERIFIED",
-    "provide OPENAI_API_KEY to a credentialed external runtime without exposing the secret in chat or Git",
-    "execute the serial V1 runner live through the strict adapter",
+    "an OpenAI organization/project administrator must create a GitHub Actions Workload Identity Provider",
+    "create or select a dedicated OpenAI service account for the VPD runtime",
+    "create a narrow service-account mapping restricted to repository vubaoha034-hash/shenmei, the VPD branch and ultimately the live VPD workflow",
+    "set GitHub Actions repository variables OPENAI_WIF_AUDIENCE, OPENAI_IDENTITY_PROVIDER_ID and OPENAI_SERVICE_ACCOUNT_ID",
+    "rerun the non-generative WIF probe and obtain WIF_AUTH_AND_PINNED_MODEL_METADATA_PASS",
+    "select a protected output transport for the formal PNGs because the source repository is public",
+    "observe a passing renderer-adapter CI validation run; current connector status remains PENDING/UNVERIFIED",
+    "execute the serial V1 runner live through the strict adapter only after authentication and output-privacy gates pass",
     "obtain exactly one technically valid T1 output, one T2 output and one T3 output with zero reference images",
     "capture live provider request/post-render receipts for all three valid outputs",
     "human review distillation-transfer diversity and absolute aesthetic quality",
@@ -52,25 +58,30 @@
     "Scale Gate"
   ],
   "blocked": [
-    "live V1 provider execution is BLOCKED in the current ChatGPT execution host because OPENAI_API_KEY is not available here",
-    "GitHub Actions secret availability is UNKNOWN because the connected GitHub tool does not expose a secret inventory/read action",
-    "native ChatGPT image_gen is not an allowed fallback for formal V1 after its repeated exact-payload binding failure",
+    "formal live V1 provider execution is BLOCKED because OpenAI WIF configuration is missing",
+    "the three required GitHub Actions WIF variables are currently absent according to the executed probe",
+    "formal output transport is not yet selected; the repository is public and formal PNGs must not be committed there as the default transport",
+    "native ChatGPT image_gen is not an allowed fallback for formal V1 after repeated exact-payload binding failure",
     "Commercial Quality Gate is NOT YET",
     "Golden Exemplar is NO",
     "Scale Gate is BLOCKED until a commercial-quality artifact exists"
   ],
   "unknowns": [
-    "GitHub Actions OPENAI_API_KEY secret availability is UNKNOWN",
-    "GitHub Actions validation run result is PENDING/UNVERIFIED in the current connector context",
-    "live provider behavior remains unvalidated until an authenticated request is executed"
+    "whether the user account has OpenAI organization/project administrator permission required to create WIF provider/service-account mappings",
+    "which protected destination will hold the three formal V1 PNGs and live receipts",
+    "GitHub Actions renderer-adapter validation run result remains PENDING/UNVERIFIED in the current connector context",
+    "live provider image behavior remains unvalidated until the WIF probe passes and a formal authenticated generation request is executed"
   ],
   "do_not_reopen": [
+    "treating a long-lived OPENAI_API_KEY as mandatory; it is fallback only because WIF is the preferred GitHub Actions authentication route",
     "re-distilling the same 18 approved references from scratch",
     "Drive-grounded R4.1 reference-image generation as the next step",
     "recent R4.2 images as formal distillation-purity evidence",
     "treating either invalid dashboard image as a formal V1 output",
     "retrying formal V1 with native ChatGPT image_gen",
     "rewriting the already-hash-verified T1/T2/T3 frozen payloads merely to work around host orchestration",
+    "generating T1/T2/T3 before WIF probe PASS and protected output transport selection",
+    "committing formal V1 PNG outputs to the public source repository as the default transport",
     "ad-hoc direct image generation from conversational style summaries as a formal VPD route",
     "rejected R2/R3A macro composition as the production target",
     "selective R3A realism hardening as the next route",
@@ -80,22 +91,24 @@
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001"
   ],
-  "next_required_action": "Execute scripts/run_vpd_distillation_only_runtime_v1.py --execute in a credentialed external runtime with OPENAI_API_KEY and an output directory outside Git. Reuse VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json exactly; do not open Drive approved-reference images and do not use native ChatGPT image_gen. Stop on the first technical failure; otherwise collect exactly T1/T2/T3 plus their provider receipts for human review.",
+  "next_required_action": "Perform the one-time OpenAI platform WIF setup documented in VPD_OPENAI_WIF_SETUP_20260819.md: create the GitHub Actions identity provider, dedicated VPD service account and narrow service-account mapping; then set OPENAI_WIF_AUDIENCE, OPENAI_IDENTITY_PROVIDER_ID and OPENAI_SERVICE_ACCOUNT_ID as GitHub Actions repository variables. Rerun .github/workflows/vpd-openai-wif-probe.yml and require WIF_AUTH_AND_PINNED_MODEL_METADATA_PASS. Do not generate T1/T2/T3 until that authentication gate passes and a protected output transport is selected.",
   "ledger_tails": {
     "global": {
-      "event_id": "EVT-VISUAL-VPD-RENDERER-BINDING-REPAIR-20260819-006",
-      "event_hash": "a77cb2a5016dac2b3806eb35f20540d8551789e8547883fa7875ed65f134f9e7"
+      "event_id": "EVT-VISUAL-VPD-OPENAI-WIF-PROBE-20260819-007",
+      "event_hash": "4b6b077951c09493a49ed1ece0f792371deab38f84ebea2decb891f7b90a7e65"
     }
   },
   "source_state_refs": [
-    {"path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md", "role": "latest renderer-binding repair result and live-execution blocker authority", "git_blob": "3ba477b4524207fcadb233e89a165895ba6a6d4f"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md", "role": "diagnostic protocol authority", "git_blob": "98bd85b124a382ac563a7a442ec6aa8959b66d01"},
+    {"path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md", "role": "latest authentication probe result and current external blocker authority", "git_blob": "bd5758926a75f751517d2d5d3c60367b3ac2f63d"},
+    {"path": "continuity/vpd/OPENAI_AUTH_PROBE.json", "role": "machine-readable executed WIF probe receipt proving all three required variables are missing and zero OpenAI/image-generation activity", "git_blob": "3f51d656cf89fb42a8e0f551375210fd2a9519b5"},
+    {"path": "VPD_OPENAI_WIF_SETUP_20260819.md", "role": "one-time secure OpenAI WIF and GitHub Actions configuration instructions", "git_blob": "2eb6d57f9c9ec6c5fe70cfa4a3069f5848d27911"},
+    {"path": "scripts/probe_vpd_openai_wif.py", "role": "non-generative WIF authentication and pinned-model metadata probe", "git_blob": "a94d4372e35a0cab2da5da76286b3961f4b49447"},
+    {"path": ".github/workflows/vpd-openai-wif-probe.yml", "role": "GitHub OIDC WIF probe workflow", "git_blob": "f5b8732f2b08954b07768a5984d5e58140367463"},
+    {"path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md", "role": "renderer-binding repair result preserved below the newer authentication state", "git_blob": "3ba477b4524207fcadb233e89a165895ba6a6d4f"},
     {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json", "role": "preserved exact T1/T2/T3 controller payload receipts", "git_blob": "d62b507207019526c8e9de6036f9198508513ca6"},
-    {"path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_RUNTIME_RECEIPTS.json", "role": "historical native-host binding failure receipts", "git_blob": "40194767ea17eec6f94a831e271e8f4a02415db8"},
     {"path": "visual_memory/vpd_renderer_adapter.py", "role": "strict zero-reference exact-payload provider adapter", "git_blob": "d6693fbdce1dd9bb4613579b6770bd6bc8ad8a66"},
     {"path": "scripts/run_vpd_distillation_only_runtime_v1.py", "role": "serial fail-closed T1/T2/T3 runner", "git_blob": "781ca2125d8d7f61a245f48ec57088834cdb560f"},
-    {"path": ".github/workflows/vpd-renderer-adapter-validation.yml", "role": "CI regression and dry-run gate; run status not yet observed", "git_blob": "b724b4db1966f9e6c7dbf5d9f9be065e2a6d9022"},
     {"path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md", "role": "preserved transferable-family evidence", "git_blob": "54dccb937e7786545ba5f5767d5cb4b091f29b94"}
   ],
-  "status": "BLOCKED_EXTERNAL_CREDENTIAL"
+  "status": "BLOCKED_EXTERNAL_CONFIGURATION"
 }
