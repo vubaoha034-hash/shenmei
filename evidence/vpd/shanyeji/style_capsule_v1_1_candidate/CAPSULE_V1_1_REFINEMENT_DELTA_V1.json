@@ -1,0 +1,181 @@
+{
+  "schema_version": "vpd-style-capsule-refinement-delta/v1",
+  "artifact_type": "CAPSULE_V1_1_REFINEMENT_DELTA",
+  "delta_id": "SHANYEJI_STYLE_CAPSULE_V1_1_CANDIDATE_REFINEMENT_DELTA_V1",
+  "created_at": "2026-08-21T20:55:25+08:00",
+  "baseline": {
+    "capsule_id": "style_capsule_shanyeji_brand_editorial_v1",
+    "semantic_version": "1.0.0",
+    "path": "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_V1.json",
+    "sha256": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1",
+    "immutable": true
+  },
+  "candidate": {
+    "capsule_id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
+    "semantic_version": "1.1.0-candidate",
+    "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+    "maturity": "CANDIDATE_CONTROLLED_VALIDATION_REQUIRED"
+  },
+  "source_requirements": {
+    "requirements_id": "SHANYEJI_STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1",
+    "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+    "sha256": "6ae57ac7cb13074d2e99205f69055850e2bc686ee89ab8050f5ebc3223f6709f"
+  },
+  "changes": [
+    {
+      "requirement_id": "R1_FREEZE_V1_AS_BASELINE",
+      "field_or_mechanism_affected": "candidate identity and provenance lineage",
+      "old_v1_behavior": "V1 is the formal schema-valid Capsule used by Attempt 1 and carries unvalidated family hypotheses.",
+      "attempt1_failure_evidence": [
+        "Attempt 1 is permanently settled against the exact V1 SHA and must not be rewritten as if the failure never occurred."
+      ],
+      "candidate_change": "Create a separate V1.1 Candidate with a new program ID and semantic version while binding the exact immutable V1 SHA as its baseline.",
+      "why_capsule_local": "Version lineage belongs to the Shanyeji capsule family and changes no compiler or schema behavior.",
+      "future_retest_criterion": "Candidate validation must retain V1 and Attempt-1 evidence byte-identically and compare the new candidate against that fixed baseline."
+    },
+    {
+      "requirement_id": "R2_ANTI_SURFACE_TOKEN_COLLAPSE",
+      "field_or_mechanism_affected": "transfer_model.fixed_invariants, degrees_of_freedom, do_not_copy and local anti-shortcut policy",
+      "old_v1_behavior": "V1 excluded literal copying but still allowed an apparent family resemblance to be carried by a giant light title, brush surface, dark kitchen, wok, mountain and accent bundle.",
+      "attempt1_failure_evidence": [
+        "SURFACE_TOKEN_COLLAPSE",
+        "F1/F2/F3 resemblance relied disproportionately on repeated surface styling."
+      ],
+      "candidate_change": "Classify the repeated bundle only as surface observation, degree of freedom or anti-shortcut exclusion and forbid it from satisfying a FAMILY pass.",
+      "why_capsule_local": "The failure is proven only for Shanyeji V1 plus Attempt 1; no cross-capsule global taste claim is made.",
+      "future_retest_criterion": "Several predeclared surface fields change while preserved family relationships remain explainable without citing the bundle as primary evidence."
+    },
+    {
+      "requirement_id": "R3_REDEFINE_AUTHORED_DISPLAY_MASS",
+      "field_or_mechanism_affected": "graphic_design_engine.typography_lettering, causal priority and TYPOGRAPHY_REBIND",
+      "old_v1_behavior": "V1 described an authored irregular display object but bounded erosion and surface behavior remained easy to interpret as a large brush-calligraphy recipe.",
+      "attempt1_failure_evidence": [
+        "SURFACE_TOKEN_COLLAPSE",
+        "F2 showed that photographic realism could coexist with a generic brush-title shortcut."
+      ],
+      "candidate_change": "Define structural display mass through optical mass, internal negative-space topology, glyph-group balance, photo counter-mass relation and first-read authority; move brush, ink, erosion, roughness and distress into optional surface treatment.",
+      "why_capsule_local": "This is a refinement of one capsule mechanism hypothesis, not a global prohibition on brush or calligraphic lettering.",
+      "future_retest_criterion": "A non-brush implementation can pass when the structural mechanism is preserved; GENERIC_BRUSH_CALLIGRAPHY_SHORTCUT fails when surface treatment substitutes for structure."
+    },
+    {
+      "requirement_id": "R4_OPERATOR_ISOLATION_CONTRACT",
+      "field_or_mechanism_affected": "capsule-local controlled validation policy operator_isolation_contract",
+      "old_v1_behavior": "V1 operators stated what changes and what breaks the family but did not encode held constants, changed variables and prohibited leakage per progressive experiment tier.",
+      "attempt1_failure_evidence": [
+        "OPERATOR_ISOLATION_FAILURE",
+        "F1 leaked active cooking/wok content intended for F2 and F1/F2 could not support clean attribution."
+      ],
+      "candidate_change": "Provide machine-readable F1/F2/F3 design constraints with HELD_CONSTANTS, CHANGED_VARIABLES and PROHIBITED_LEAKAGE plus an automatic leakage failure rule.",
+      "why_capsule_local": "The contract is specific to the next Shanyeji controlled experiment and remains outside the global VisualProgram schema.",
+      "future_retest_criterion": "Every future tier satisfies its declared records and no later-tier defining variable appears early."
+    },
+    {
+      "requirement_id": "R5_COMPOSITION_TOPOLOGY_NOT_FIXED_POSITION",
+      "field_or_mechanism_affected": "grid geometry, attention hierarchy, integration topology and COMPOSITION_VARIATION",
+      "old_v1_behavior": "V1 allowed movement but its reference-derived phrasing and Attempt-1 outputs did not sufficiently prevent repeated positional formulas.",
+      "attempt1_failure_evidence": [
+        "GENERIC_CHINESE_RESTAURANT_POSTER_FALLBACK",
+        "F1 and F2 showed insufficient positional and topological differentiation."
+      ],
+      "candidate_change": "Encode title/photo counter-mass, support/quiet-pocket, photo-detail/graphic-density and reading-order relationships as a graph while explicitly excluding fixed title, wok, mountain and quiet-zone coordinates.",
+      "why_capsule_local": "The relation graph refines Shanyeji's local composition mechanism without altering global composition behavior.",
+      "future_retest_criterion": "Major masses move while the required relation graph and locally safe information placement remain reviewable."
+    },
+    {
+      "requirement_id": "R6_ASPECT_ADAPT_STRUCTURAL_REFLOW",
+      "field_or_mechanism_affected": "ASPECT_ADAPT operator and capsule-local aspect_reflow_contract",
+      "old_v1_behavior": "V1 required recomposition rather than scaling but did not machine-encode zone reallocation, reading-order preservation or the observed generic vertical fallbacks.",
+      "attempt1_failure_evidence": [
+        "ASPECT_ADAPTATION_FAILURE",
+        "F3 achieved a tall bitmap but did not prove native structural reflow."
+      ],
+      "candidate_change": "Require native target-aspect allocation of title, photographic action, support and closure zones with relation reflow; add explicit vertical-template, filler-token and stretch/stack failure conditions.",
+      "why_capsule_local": "The controls are a Shanyeji candidate operator policy and do not redefine the global ASPECT_ADAPT enum or schema.",
+      "future_retest_criterion": "With F2 subject/process and copy held constant, F3 shows native zone reallocation without new filler copy or motif."
+    },
+    {
+      "requirement_id": "R7_EVIDENCE_BASED_SEMANTIC_MOTIF_REBINDING",
+      "field_or_mechanism_affected": "graphic_language, integration semantic_motif_binding and MOTIF_REBIND",
+      "old_v1_behavior": "V1 allowed rebinding or omission but motif presence remained easy to treat as expected visual completion.",
+      "attempt1_failure_evidence": [
+        "ASPECT_ADAPTATION_FAILURE",
+        "F3 introduced an unnecessary mountain-line token."
+      ],
+      "candidate_change": "Set motif default to OMIT and require any inclusion to bind a new semantic source plus a named reviewable function; preserve the F3 mountain line only as negative evidence.",
+      "why_capsule_local": "This corrects one capsule's motif hypothesis and does not establish a global aesthetic ban on mountains, seals or scribbles.",
+      "future_retest_criterion": "Every future motif is absent or has explicit subject/process/identity derivation and an observable hierarchy, counterweight or semantic function."
+    },
+    {
+      "requirement_id": "R8_PHOTO_DESIGN_INTEGRATION_NOT_TEMPLATE",
+      "field_or_mechanism_affected": "negative_space_for_type, crop_copy_interaction and type_safe_space_policy",
+      "old_v1_behavior": "V1 required local photo/type calibration and said quiet zones could move, but the controlled experiment did not preclude repeated overlay-template solutions explicitly enough.",
+      "attempt1_failure_evidence": [
+        "GENERIC_CHINESE_RESTAURANT_POSTER_FALLBACK",
+        "Repeated composition increased the risk that a fixed dark information zone would be mistaken for integration."
+      ],
+      "candidate_change": "Require type-safe space to arise from crop, staging, luminance/frequency, depth, occlusion and counter-mass planning; forbid generic gradients, heavy shadows, fixed dark-left columns and copied empty zones.",
+      "why_capsule_local": "The integration policy is tied to the Shanyeji photo-design mechanism and its next controlled validation.",
+      "future_retest_criterion": "The safe region changes location across outputs and remains attributable to the photograph rather than a repeated overlay."
+    },
+    {
+      "requirement_id": "R9_SURFACE_DIVERSITY_VALIDATION",
+      "field_or_mechanism_affected": "degrees_of_freedom and surface_divergence_predeclaration",
+      "old_v1_behavior": "V1 listed many freedoms but Attempt 1 did not bind a pre-generation divergence matrix across the progressive tiers.",
+      "attempt1_failure_evidence": [
+        "SURFACE_TOKEN_COLLAPSE",
+        "OPERATOR_ISOLATION_FAILURE",
+        "F1/F2/F3 could be explained by one obvious restaurant-poster template."
+      ],
+      "candidate_change": "Track and predeclare title geometry/location, photo-mass location, subject class, accent, motif, color family, depth staging and layout topology; require meaningful multi-field divergence including topology or major-mass movement.",
+      "why_capsule_local": "The divergence matrix is an experiment design control rather than a global aesthetic threshold.",
+      "future_retest_criterion": "A predeclared matrix exists before generation and human review confirms the intended fields actually diverged."
+    },
+    {
+      "requirement_id": "R10_MECHANISM_EXPLANATION_SUFFICIENCY",
+      "field_or_mechanism_affected": "quality_gates.integration and local mechanism_explanation_sufficiency",
+      "old_v1_behavior": "V1 named relational mechanisms but formal FAMILY pass criteria did not require a structured explanation that excludes palette, brush, mountain, wok or repeated composition as primary evidence.",
+      "attempt1_failure_evidence": [
+        "GENERIC_CHINESE_RESTAURANT_POSTER_FALLBACK",
+        "Family resemblance was visible but causal mechanism transfer was not proven."
+      ],
+      "candidate_change": "Require hierarchy and counter-mass plus tonal/density and depth/semantic relationship evidence; surface matches are explicitly insufficient primary explanations.",
+      "why_capsule_local": "The criterion evaluates this candidate's proposed family mechanisms without asserting a universal visual-style rubric.",
+      "future_retest_criterion": "A reviewer can explain the family through the required relationship groups without relying primarily on surface-token matches."
+    },
+    {
+      "requirement_id": "R11_REALISM_NECESSARY_NOT_SUFFICIENT",
+      "field_or_mechanism_affected": "photography and integration quality gates plus independent score channels",
+      "old_v1_behavior": "V1 protected realism but did not encode a non-compensating separation between technical photographic quality and formal family mechanism validation.",
+      "attempt1_failure_evidence": [
+        "F2 had the strongest photographic realism while formal FAMILY validation still failed."
+      ],
+      "candidate_change": "Score TECHNICAL_PHOTOGRAPHIC_REALISM independently from FAMILY_MECHANISM_VALIDATION and prohibit either channel from compensating for the other's hard failure.",
+      "why_capsule_local": "This is a validation design for the Shanyeji candidate and does not change the global human-aesthetic authority boundary.",
+      "future_retest_criterion": "Future review reports both scores separately and a realism PASS cannot override isolation, topology, motif, surface or aspect failure."
+    },
+    {
+      "requirement_id": "R12_NO_GLOBAL_COMPILER_MODIFICATION_YET",
+      "field_or_mechanism_affected": "artifact scope and compiler/schema boundary",
+      "old_v1_behavior": "V1 was produced by the frozen global compiler and schema; Attempt 1 does not prove a global defect.",
+      "attempt1_failure_evidence": [
+        "The failure registry explicitly records GLOBAL_COMPILER_HYPOTHESIS_ONLY and no proven global compiler defect."
+      ],
+      "candidate_change": "Keep the candidate schema-valid and place extra machine-readable validation controls in a capsule-local companion policy bound through identity and receipt.",
+      "why_capsule_local": "No independent cross-capsule evidence authorizes a global compiler or schema change.",
+      "future_retest_criterion": "Global compiler and schema hashes remain unchanged while the local policy is consumed by Attempt-2 design."
+    }
+  ],
+  "change_boundary": {
+    "style_capsule_v1_modified": false,
+    "attempt1_payloads_modified": false,
+    "attempt1_images_regenerated_or_edited": false,
+    "attempt2_payloads_created": false,
+    "global_compiler_modified": false,
+    "global_schema_modified": false,
+    "candidate_family_validated": false,
+    "commercial_quality": "NOT_YET",
+    "golden": "NO",
+    "scale": "BLOCKED_NOT_EXECUTED"
+  },
+  "next_allowed_action": "DESIGN_AND_FREEZE_ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_FROM_SHANYEJI_STYLE_CAPSULE_V1_1_CANDIDATE"
+}

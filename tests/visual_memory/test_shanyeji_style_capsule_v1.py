@@ -243,11 +243,11 @@ def test_checkpoint_and_append_only_ledger_are_consistent():
     assert checkpoint["sequence"] >= 14
     tail = checkpoint["ledger_tails"]["distillation_evidence"]
     lines = LEDGER_PATH.read_text(encoding="utf-8").splitlines()
-    assert len(lines) == 2
-    previous = json.loads(lines[-2])
-    event = json.loads(lines[-1])
-    assert event["event_id"] == tail["event_id"]
-    assert event["event_hash"] == tail["event_hash"]
+    assert len(lines) >= 2
+    events = [json.loads(line) for line in lines]
+    by_id = {event["event_id"]: event for event in events}
+    previous = by_id["EVT-VISUAL-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001"]
+    event = by_id["EVT-VISUAL-VPD-SHANYEJI-FORMAL-STYLE-CAPSULE-20260821-002"]
     assert event["previous_event_id"] == previous["event_id"]
     assert event["previous_event_hash"] == previous["event_hash"]
     asserted = dict(event)
@@ -256,6 +256,8 @@ def test_checkpoint_and_append_only_ledger_are_consistent():
         asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode("utf-8")
     assert hashlib.sha256(canonical).hexdigest() == asserted_hash
+    assert events[-1]["event_id"] == tail["event_id"]
+    assert events[-1]["event_hash"] == tail["event_hash"]
 
 
 def main():

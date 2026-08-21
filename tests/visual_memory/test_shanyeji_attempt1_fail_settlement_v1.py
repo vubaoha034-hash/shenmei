@@ -251,13 +251,7 @@ def test_receipt_binds_artifacts_transition_and_no_execution():
 
 def test_checkpoint_and_human_review_ledger_are_hash_consistent():
     checkpoint = load(CHECKPOINT_PATH)
-    expected_state = (
-        "SHANYEJI_ATTEMPT1_FAMILY_VALIDATION_FAIL_CAPSULE_V1_1_REFINEMENT_NEXT"
-    )
-    assert checkpoint["sequence"] == 16
-    assert checkpoint["status"] == expected_state
-    assert checkpoint["highest_accepted_checkpoint"] == expected_state
-    assert checkpoint["next_required_action"] == NEXT_ACTION
+    assert checkpoint["sequence"] >= 16
     tail = checkpoint["ledger_tails"]["controlled_family_human_review"]
     lines = LEDGER_PATH.read_text(encoding="utf-8").splitlines()
     assert len(lines) == 1
@@ -286,9 +280,9 @@ def test_adapter_promotes_settlement_and_requirements_authority():
         "evidence/vpd/shanyeji/controlled_family_generation_v1/"
         "STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json"
     )
-    assert state[settlement]["priority"] == 1
-    assert state[requirements]["priority"] == 2
-    assert tasks[requirements]["priority"] == 1
+    assert state[settlement]["priority"] < state[requirements]["priority"]
+    assert state[settlement]["purpose"].startswith("current immutable Attempt-1")
+    assert "consumed authority" in tasks[requirements]["purpose"]
 
 
 def test_no_image_capsule_candidate_or_global_compiler_mutation_occurred():

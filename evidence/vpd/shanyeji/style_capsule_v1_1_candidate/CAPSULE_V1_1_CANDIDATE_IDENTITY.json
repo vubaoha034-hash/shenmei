@@ -1,0 +1,142 @@
+{
+  "schema_version": "vpd-style-capsule-candidate-identity/v1",
+  "artifact_type": "CAPSULE_V1_1_CANDIDATE_IDENTITY",
+  "candidate_id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
+  "candidate_semantic_version": "1.1.0-candidate",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "maturity_status": "CANDIDATE_CONTROLLED_VALIDATION_REQUIRED_NOT_DURABLE_NOT_GOLDEN_NOT_SCALE_READY",
+  "candidate_artifact": {
+    "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+    "sha256": "54bbc4a1eccd5e76d17dcb13b889c501ed93a4457dbbc1f8dc157572967a0cd9",
+    "program_id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
+    "visual_program_version": "2.0.0",
+    "program_status": "BENCHMARKING"
+  },
+  "semantic_version_boundary": {
+    "capsule_semantic_version": "1.1.0-candidate",
+    "visual_program_schema_version": "2.0.0",
+    "versions_are_independent": true
+  },
+  "lineage": {
+    "formula": "STYLE_CAPSULE_V1 + ATTEMPT1_FAILURE_EVIDENCE + V1_1_REFINEMENT_REQUIREMENTS -> STYLE_CAPSULE_V1_1_CANDIDATE",
+    "immutable_baseline_v1": {
+      "id": "style_capsule_shanyeji_brand_editorial_v1",
+      "semantic_version": "1.0.0",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_V1.json",
+      "sha256": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1",
+      "immutable": true,
+      "modified": false,
+      "role": "IMMUTABLE_HISTORICAL_FORMAL_CAPSULE_AND_ATTEMPT1_BASELINE_NOT_DURABLE_FAMILY_SIGNATURE"
+    },
+    "attempt1_human_settlement": {
+      "id": "SHANYEJI_CONTROLLED_FAMILY_ATTEMPT1_HUMAN_SETTLEMENT_V1_20260821_001",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "sha256": "70549b7e0bc307c16d0c228fac6d36ec25bc4b4cddeafeea173090e89f8709e9",
+      "settled_verdict": "TECHNICAL_PASS_FORMAL_FAMILY_FAIL_CAPSULE_REFINEMENT_REQUIRED"
+    },
+    "attempt1_failure_registry": {
+      "id": "SHANYEJI_CONTROLLED_FAMILY_ATTEMPT1_FAILURE_REGISTRY_V1",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
+      "sha256": "283fc7f3337d19caeeed652a80aebe79af746b55ed50adbd027461d9216e48c0",
+      "role": "IMMUTABLE_BOUNDED_NEGATIVE_VALIDATION_EVIDENCE"
+    },
+    "refinement_requirements": {
+      "id": "SHANYEJI_STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+      "sha256": "6ae57ac7cb13074d2e99205f69055850e2bc686ee89ab8050f5ebc3223f6709f",
+      "verified_requirement_count": 12
+    },
+    "attempt1_settlement_receipt": {
+      "id": "SHANYEJI_CONTROLLED_FAMILY_ATTEMPT1_SETTLEMENT_RECEIPT_V1_20260821_001",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
+      "sha256": "4e899123162c24a859dacad4a744997027dd45e43d866e95b35f2393df5bd6dd"
+    }
+  },
+  "candidate_companion_artifacts": {
+    "refinement_delta": {
+      "id": "SHANYEJI_STYLE_CAPSULE_V1_1_CANDIDATE_REFINEMENT_DELTA_V1",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+      "sha256": "2f9e90d81eabf5fd5cfa97711dfa248baef7d12c88164b988a6a3252338b7763"
+    },
+    "capsule_local_validation_policy": {
+      "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate_controlled_validation_policy_v1",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+      "sha256": "fa46184715da92630d79bb556ed10c89b5543a36fec5d12eb1c7656f5f17eb8f",
+      "scope": "SHANYEJI_CAPSULE_LOCAL",
+      "global_rule": false
+    }
+  },
+  "compiler_schema": {
+    "compiler_id": "visual-distillation-compiler-v2",
+    "compiler_contract_path": "VISUAL_DISTILLATION_COMPILER_CONTRACT_V2.md",
+    "compiler_contract_sha256": "d53a8485ebf3b449f261695d1602543303611bae899497d1bc401f8c23da79b4",
+    "schema_path": "schemas/visual-program.v2.schema.json",
+    "schema_id": "visual-program.v2.schema.json",
+    "schema_version": "2.0.0",
+    "schema_sha256": "573314cd63d9f799107788e348d81a9ad8f1735976babeb6b0f9e7bde2f9f348",
+    "candidate_schema_valid": true,
+    "global_compiler_modified": false,
+    "global_schema_modified": false,
+    "local_policy_required": true,
+    "local_policy_reason": "Tier isolation, divergence predeclaration, mechanism-explanation sufficiency and independent score channels are capsule-local controls not cleanly represented by the strict VisualProgram V2 object."
+  },
+  "required_refinements_realized": {
+    "surface_bundle_is_family_pass_evidence": false,
+    "structural_display_mass_separated_from_surface_treatment": true,
+    "generic_brush_calligraphy_shortcut_failure_encoded": true,
+    "operator_isolation_machine_readable": true,
+    "composition_topology_location_free": true,
+    "aspect_adapt_is_structural_zone_reflow": true,
+    "motif_default": "OMIT",
+    "type_safe_space_location_variable": true,
+    "surface_divergence_predeclared_by_policy": true,
+    "mechanism_explanation_sufficiency_required": true,
+    "photographic_realism_scored_separately_from_family_mechanism": true
+  },
+  "validation_state": {
+    "candidate_created": true,
+    "controlled_validation_required": true,
+    "attempt2_designed": false,
+    "attempt2_payloads_frozen": false,
+    "attempt2_generation_executed": false,
+    "family_validated": false,
+    "durable_family_signature": false,
+    "commercial_quality": "NOT_YET",
+    "golden": "NO",
+    "scale": "BLOCKED_NOT_EXECUTED",
+    "human_pixel_review_required_for_future_generation": true
+  },
+  "provenance_assertions": {
+    "current_adhoc_poster": "CURRENT_灶边味_POSTER_IS_NOT_CAPSULE_PROVENANCE",
+    "current_adhoc_poster_role": "NON_PROVENANCE_DIAGNOSTIC_ONLY",
+    "current_adhoc_poster_used_as_candidate_source": false,
+    "attempt1_outputs_used_as_positive_visual_anchors": false,
+    "attempt1_outputs_role": "IMMUTABLE_NEGATIVE_VALIDATION_EVIDENCE_ONLY",
+    "source_reference_redistilled": false
+  },
+  "execution_boundary": {
+    "chatgpt_only": true,
+    "image_generation_executed": false,
+    "image_editing_executed": false,
+    "attempt1_rerun": false,
+    "attempt2_payloads_created": false,
+    "attempt2_generation_executed": false,
+    "api_key_used": false,
+    "openai_api_used": false,
+    "wif_used": false,
+    "oidc_used": false,
+    "private_or_external_renderer_used": false,
+    "renderer_infrastructure_work": false,
+    "commercial_executed": false,
+    "golden_executed": false,
+    "scale_executed": false,
+    "next_allowed_action": "DESIGN_AND_FREEZE_ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_FROM_SHANYEJI_STYLE_CAPSULE_V1_1_CANDIDATE"
+  },
+  "creation_linkage": {
+    "input_remote_head": "f9c94db0251c654a19129f8aaa1c2c1128a21a97",
+    "change_id": "CHG-VPD-SHANYEJI-STYLE-CAPSULE-V1-1-CANDIDATE-20260821-001",
+    "ledger_event_id": "EVT-VISUAL-VPD-SHANYEJI-STYLE-CAPSULE-V1-1-CANDIDATE-20260821-003",
+    "receipt_path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+    "commit_resolution": "The focused Git commit that first introduces this identity, candidate, delta, local policy and receipt is the candidate creation commit."
+  }
+}

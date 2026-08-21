@@ -12,6 +12,11 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
     "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
     "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
     "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
@@ -32,143 +37,203 @@
   ],
   "state_authorities": [
     {
-      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
       "priority": 1,
+      "purpose": "current candidate identity, immutable V1 lineage, Capsule-local policy binding and non-promotion boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+      "priority": 2,
+      "purpose": "current schema-valid Shanyeji Style Capsule V1.1 Candidate; CONTROLLED_VALIDATION_REQUIRED and not durable, Golden or Scale-ready"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+      "priority": 3,
+      "purpose": "Capsule-local Attempt-2 design controls for operator isolation, anti-shortcut exclusions, divergence, aspect reflow, motif omission, mechanism sufficiency and separate realism scoring"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+      "priority": 4,
+      "purpose": "exact remote-input, immutable-baseline, Attempt-1 evidence, candidate artifact and no-global-change binding"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+      "priority": 5,
+      "purpose": "auditable R1-R12 field-level delta from immutable V1 to the new candidate with future retest criteria"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "priority": 6,
       "purpose": "current immutable Attempt-1 human-authorized settlement: technical generation PASS, formal FAMILY validation FAIL, Capsule refinement required"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
-      "priority": 2,
+      "priority": 7,
       "purpose": "current Capsule-local requirements authority for a future V1.1 candidate; requirements only, not a Capsule or generation payload"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
-      "priority": 3,
+      "priority": 8,
       "purpose": "exact V1/payload/output/artifact/ledger/checkpoint binding for the Attempt-1 FAIL settlement"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 4,
+      "priority": 9,
       "purpose": "preserved Attempt-1 controlled FAMILY plan and operator intent; no longer the current next-action authority"
     },
     {
       "path": "VPD_CODEX_HANDOFF_20260819.md",
-      "priority": 5,
+      "priority": 10,
       "purpose": "current real route restored after Anti-Rollback test clarification: ChatGPT runtime-infrastructure expansion is paused; Codex is the next execution actor and must continue from the existing strict adapter/frozen payloads without reopening Actions/WIF as mandatory gates"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
-      "priority": 6,
+      "priority": 11,
       "purpose": "GitHub Actions and WIF are optional infrastructure, not VPD gates; strict exact-payload adapter is preserved and execution runtime remains neutral"
     },
     {
       "path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
-      "priority": 7,
+      "priority": 12,
       "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"
     },
     {
       "path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
-      "priority": 8,
+      "priority": 13,
       "purpose": "historical/optional infrastructure evidence: the GitHub Actions WIF probe found its configuration missing; this does not block another valid private execution runtime"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
-      "priority": 9,
+      "priority": 14,
       "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
-      "priority": 10,
+      "priority": 15,
       "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"
     },
     {
       "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
-      "priority": 11,
+      "priority": 16,
       "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 12,
+      "priority": 17,
       "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"
     },
     {
       "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
-      "priority": 13,
+      "priority": 18,
       "purpose": "preserved Anti-Rollback test-incident artifact only: its apparent R4.1 route authorization was later explicitly clarified by the user as test input, not a real durable project authorization"
     },
     {
       "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
-      "priority": 14,
+      "priority": 19,
       "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
     }
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
     {
-      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
       "priority": 1,
-      "purpose": "next-task authority for creating a new Capsule-local V1.1 candidate from immutable V1 plus Attempt-1 failure evidence without global compiler change"
+      "purpose": "only next-task design authority for an Attempt-2 controlled validation; it is not a frozen payload and authorizes no generation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+      "priority": 2,
+      "purpose": "candidate identity, maturity and execution boundary for designing and freezing a separate future Attempt-2 experiment"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+      "priority": 3,
+      "purpose": "schema-valid candidate grammar input for future Attempt-2 design only; no payload exists yet"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+      "priority": 4,
+      "purpose": "candidate creation completion and immutable input binding"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+      "priority": 5,
+      "purpose": "field-level rationale and future retest criteria; not a renderer prompt or payload"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+      "priority": 6,
+      "purpose": "consumed authority that produced the V1.1 Candidate; retained for audit and must not be mistaken for the candidate or a payload"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
-      "priority": 2,
+      "priority": 7,
       "purpose": "settlement completion and immutable evidence binding; prohibits retry or in-place mutation"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
-      "priority": 3,
+      "priority": 8,
       "purpose": "formal settled verdict and user authority chain"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 4,
+      "priority": 9,
       "purpose": "preserved Attempt-1 plan used to interpret operator-isolation failures"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
-      "priority": 5,
+      "priority": 10,
       "purpose": "consumed Attempt-1 render handoff retained for provenance; must not be executed again"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
-      "priority": 6,
+      "priority": 11,
       "purpose": "preserved separate historical Formal V1 diagnostic authority; its frozen T1/T2/T3 payloads are untouched and are not reusable as the current controlled FAMILY experiment"
     }
   ],
   "acceptance_authorities": [
     {
-      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
       "priority": 1,
+      "purpose": "future Attempt-2 formal FAMILY evaluation contract; separates technical realism from family mechanisms and requires operator isolation, divergence and mechanism explanation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+      "priority": 2,
+      "purpose": "candidate non-promotion boundary: controlled validation required, not durable, Commercial, Golden or Scale-ready"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "priority": 3,
       "purpose": "final Attempt-1 technical/family/promotion settlement under human authority"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
-      "priority": 2,
+      "priority": 4,
       "purpose": "bounded negative evidence and inference limits for Capsule-local refinement"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
-      "priority": 3,
+      "priority": 5,
       "purpose": "mandatory external human pixel review separating technical validity, family-transfer quality and absolute commercial aesthetic quality"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 4,
+      "priority": 6,
       "purpose": "controlled constants, progressive operator challenges, tentative attribution limits and non-promotion boundary"
     },
     {
       "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
-      "priority": 5,
+      "priority": 7,
       "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
-      "priority": 6,
+      "priority": 8,
       "purpose": "preserved acceptance authority for the separate old Formal V1 experiment only"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 7,
+      "priority": 9,
       "purpose": "preserved family-transfer evidence baseline"
     }
   ],
