@@ -1,12 +1,12 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 13,
-  "recorded_at": "2026-08-21T12:22:23+08:00",
+  "sequence": 14,
+  "recorded_at": "2026-08-21T12:53:42+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "SHANYEJI_FULL_IMAGE_DISTILLATION_COMPLETE_FOR_CAPSULE_CREATION",
+  "highest_accepted_checkpoint": "SHANYEJI_FORMAL_STYLE_CAPSULE_V1_CREATED_CONTROLLED_GENERATION_NEXT",
   "active_task_ids": [],
-  "current_focus": "The user supplied new forward-only authority for formal full-image distillation of the verified Shanyeji mother reference. The canonical evidence bundle is complete on the canonical branch. The only next action is formal Shanyeji Style Capsule V1 creation from this evidence using the unchanged global compiler; no generation, Golden or Scale action is authorized yet.",
+  "current_focus": "The remotely synchronized Shanyeji full-image evidence has been compiled into formal Style Capsule V1 as a schema-valid VisualProgram V2 with CONTROLLED_VALIDATION_REQUIRED maturity. The only next action is the first controlled FAMILY generation with ChatGPT only and human pixel review; no Commercial, Golden or Scale promotion is authorized.",
   "completed": [
     "deep VPD distillation remains preserved; do not re-distill the approved references",
     "V3-A Family Transfer remains PASS as preserved transferable-family evidence",
@@ -29,7 +29,11 @@
     "Photography, Graphic Design, Typography Component and Photo-Design Integration grammars were completed for SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
     "mechanism candidates, invariant hypotheses, degrees of freedom, transformation-operator hypotheses and explicit failure boundaries were persisted",
     "historical Shanyeji branch evidence was reconciled by exact branch/commit/blob provenance without branch merge or unrelated cherry-pick",
-    "formal Style Capsule and Visual Program remain uncreated; no image generation or editing occurred"
+    "the full-image distillation commit 8bc1c265994a5b4f0d6a1b329bc76956355e8df4 was synchronized to remote canonical authority through a normal one-commit fast-forward push",
+    "formal Shanyeji Style Capsule V1 was created as schema-valid VisualProgram V2 with exact upstream artifact hashes and a linked creation receipt",
+    "capsule maturity remains FORMAL_CAPSULE_CREATED_CONTROLLED_VALIDATION_REQUIRED; invariants, operators, changed-content boundaries and cross-layout behavior remain unvalidated",
+    "exact 山野集/李家班/WANCE identity and the current 灶边味 ad-hoc poster are excluded from transferable capsule provenance",
+    "no image generation, image editing, RECONSTRUCT, FAMILY, TRANSFER, Commercial, Golden or Scale execution occurred"
   ],
   "incomplete": [
     "Codex validation of the existing adapter/runner in its execution environment",
@@ -39,8 +43,8 @@
     "Commercial Quality Gate",
     "Golden Exemplar decision",
     "Scale Gate",
-    "formal Shanyeji Style Capsule V1 creation from the approved full-image distillation evidence",
-    "Shanyeji RECONSTRUCT/FAMILY/TRANSFER validation and human pixel review"
+    "first controlled Shanyeji FAMILY generation from the formal Style Capsule V1 and human pixel review",
+    "Shanyeji RECONSTRUCT/TRANSFER validation and further controlled family evidence"
   ],
   "blocked": [
     "current ChatGPT execution path cannot complete formal V1 through native image_gen because exact frozen-payload binding already failed twice",
@@ -66,9 +70,10 @@
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001",
     "CHG-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-001",
-    "CHG-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001"
+    "CHG-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001",
+    "CHG-VPD-SHANYEJI-FORMAL-STYLE-CAPSULE-V1-20260821-001"
   ],
-  "next_required_action": "CREATE_FORMAL_SHANYEJI_STYLE_CAPSULE_V1_FROM_APPROVED_DISTILLATION_EVIDENCE_WITHOUT_CHANGING_GLOBAL_COMPILER_RULES",
+  "next_required_action": "DESIGN_AND_RUN_FIRST_CONTROLLED_FAMILY_GENERATION_FROM_FORMAL_SHANYEJI_STYLE_CAPSULE_V1_WITH_CHATGPT_ONLY_AND_HUMAN_PIXEL_REVIEW",
   "ledger_tails": {
     "execution_route": {
       "event_id": "EVT-VISUAL-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-005",
@@ -79,8 +84,8 @@
       "event_hash": "4b6b077951c09493a49ed1ece0f792371deab38f84ebea2decb891f7b90a7e65"
     },
     "distillation_evidence": {
-      "event_id": "EVT-VISUAL-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001",
-      "event_hash": "5b8b930cdb927888029990895f1acd3eec9e3338349a513161350927c90aafde"
+      "event_id": "EVT-VISUAL-VPD-SHANYEJI-FORMAL-STYLE-CAPSULE-20260821-002",
+      "event_hash": "29e914375bd4f87eede578d256255829d67cab6222df4790fb7ed15848c64154"
     }
   },
   "source_state_refs": [
@@ -138,6 +143,21 @@
       "path": "evidence/vpd/shanyeji/full_image_distillation_v1/DISTILLATION_RECEIPT_V1.json",
       "role": "non-generative full-image distillation completion receipt",
       "sha256": "f23b07d690eb55da7c2b7bd5c4728552ffb073e304b408eb64171197ca1ecd9c"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_V1.json",
+      "role": "formal schema-valid Shanyeji Style Capsule V1 represented as VisualProgram V2",
+      "sha256": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1/CAPSULE_IDENTITY_V1.json",
+      "role": "stable capsule identity, maturity, evidence linkage and non-provenance assertion",
+      "sha256": "cb104b249fac17faef1ab77373d0b2e5c803cd23a987083e7bb19155837040cc"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_CREATION_RECEIPT_V1.json",
+      "role": "formal capsule compile and creation receipt",
+      "sha256": "a3295fac765d212b00f37870a619e5697c59e678ff9e599d5967d54710d4a0a7"
     }
   ],
   "incident_records": [
@@ -166,5 +186,5 @@
       "preserve": true
     }
   ],
-  "status": "SHANYEJI_FULL_IMAGE_DISTILLATION_COMPLETE_CAPSULE_CREATION_NEXT"
+  "status": "SHANYEJI_FORMAL_STYLE_CAPSULE_V1_CREATED_CONTROLLED_GENERATION_NEXT"
 }

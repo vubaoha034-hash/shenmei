@@ -154,15 +154,19 @@ def test_no_capsule_or_visual_program_was_created_in_bundle():
 
 def test_checkpoint_and_global_ledger_record_durable_distillation_state():
     checkpoint = json.loads((ROOT / "continuity" / "vpd" / "LATEST_CHECKPOINT.json").read_text(encoding="utf-8"))
-    assert checkpoint["sequence"] == 13
-    assert checkpoint["status"] == "SHANYEJI_FULL_IMAGE_DISTILLATION_COMPLETE_CAPSULE_CREATION_NEXT"
-    tail = checkpoint["ledger_tails"]["distillation_evidence"]
-    assert tail["event_id"] == "EVT-VISUAL-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001"
+    assert checkpoint["sequence"] >= 13
 
     lines = (ROOT / "continuity" / "vpd" / "state_ledger" / "distillation_evidence.jsonl").read_text(encoding="utf-8").splitlines()
-    event = json.loads(lines[-1])
-    assert event["event_id"] == tail["event_id"]
-    assert event["event_hash"] == tail["event_hash"]
+    events = [json.loads(line) for line in lines]
+    event = next(
+        item
+        for item in events
+        if item["event_id"]
+        == "EVT-VISUAL-VPD-SHANYEJI-FULL-IMAGE-DISTILLATION-20260821-001"
+    )
+    assert event["event_hash"] == (
+        "5b8b930cdb927888029990895f1acd3eec9e3338349a513161350927c90aafde"
+    )
     asserted = dict(event)
     asserted_hash = asserted.pop("event_hash")
     canonical = json.dumps(asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
