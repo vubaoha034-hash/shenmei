@@ -12,6 +12,9 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
     "VPD_CODEX_HANDOFF_20260819.md",
     "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
     "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
@@ -25,78 +28,103 @@
   ],
   "state_authorities": [
     {
-      "path": "VPD_CODEX_HANDOFF_20260819.md",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
       "priority": 1,
+      "purpose": "current Shanyeji controlled FAMILY validation plan: three new serial ChatGPT UI payloads, zero runtime references, preparation only until external generation and human pixel review"
+    },
+    {
+      "path": "VPD_CODEX_HANDOFF_20260819.md",
+      "priority": 2,
       "purpose": "current real route restored after Anti-Rollback test clarification: ChatGPT runtime-infrastructure expansion is paused; Codex is the next execution actor and must continue from the existing strict adapter/frozen payloads without reopening Actions/WIF as mandatory gates"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
-      "priority": 2,
+      "priority": 3,
       "purpose": "GitHub Actions and WIF are optional infrastructure, not VPD gates; strict exact-payload adapter is preserved and execution runtime remains neutral"
     },
     {
       "path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
-      "priority": 3,
+      "priority": 4,
       "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"
     },
     {
       "path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
-      "priority": 4,
+      "priority": 5,
       "purpose": "historical/optional infrastructure evidence: the GitHub Actions WIF probe found its configuration missing; this does not block another valid private execution runtime"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
-      "priority": 5,
+      "priority": 6,
       "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
-      "priority": 6,
+      "priority": 7,
       "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"
     },
     {
       "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
-      "priority": 7,
+      "priority": 8,
       "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 8,
+      "priority": 9,
       "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"
     },
     {
       "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
-      "priority": 9,
+      "priority": 10,
       "purpose": "preserved Anti-Rollback test-incident artifact only: its apparent R4.1 route authorization was later explicitly clarified by the user as test input, not a real durable project authorization"
     },
     {
       "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
-      "priority": 10,
+      "priority": 11,
       "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
     }
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
     {
-      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
       "priority": 1,
-      "purpose": "active diagnostic task; zero-reference three-task distillation-only transfer test requiring exact frozen payload binding and captured renderer/output receipts; execution environment is not prescribed"
+      "purpose": "active preparation authority for SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "priority": 2,
+      "purpose": "frozen human-readable handoff for exactly one serial ChatGPT UI generation of F1, F2 and F3 with no runtime references"
+    },
+    {
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+      "priority": 3,
+      "purpose": "preserved separate historical Formal V1 diagnostic authority; its frozen T1/T2/T3 payloads are untouched and are not reusable as the current controlled FAMILY experiment"
     }
   ],
   "acceptance_authorities": [
     {
-      "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
       "priority": 1,
+      "purpose": "mandatory external human pixel review separating technical validity, family-transfer quality and absolute commercial aesthetic quality"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+      "priority": 2,
+      "purpose": "controlled constants, progressive operator challenges, tentative attribution limits and non-promotion boundary"
+    },
+    {
+      "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+      "priority": 3,
       "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
-      "priority": 2,
-      "purpose": "runtime integrity, diversity and diagnostic aesthetic acceptance for the experiment"
+      "priority": 4,
+      "purpose": "preserved acceptance authority for the separate old Formal V1 experiment only"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 3,
+      "priority": 5,
       "purpose": "preserved family-transfer evidence baseline"
     }
   ],

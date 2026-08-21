@@ -1,0 +1,133 @@
+{
+  "schema_version": "vpd-controlled-family-generation-plan/v1",
+  "artifact_type": "CONTROLLED_FAMILY_GENERATION_PLAN",
+  "plan_id": "SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1",
+  "created_at": "2026-08-21T15:06:41+08:00",
+  "input_remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "remote_head": "a3d4d8ee350edf21498e86913f380c37fe315fc9"
+  },
+  "style_capsule": {
+    "id": "style_capsule_shanyeji_brand_editorial_v1",
+    "version": "1.0.0",
+    "sha256": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1",
+    "maturity": "CONTROLLED_VALIDATION_REQUIRED"
+  },
+  "experiment": {
+    "name": "SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1",
+    "mode": "FAMILY",
+    "route": "CHATGPT_UI_CONTROLLED_FAMILY_VALIDATION",
+    "output_count": 3,
+    "generation_order": [
+      "SHY-FAM-V1-F1",
+      "SHY-FAM-V1-F2",
+      "SHY-FAM-V1-F3"
+    ],
+    "generation_actor": "CHATGPT_PRODUCT_UI",
+    "codex_image_generation_authorized": false,
+    "human_pixel_review_required": true
+  },
+  "runtime_reference_policy": {
+    "reference_runtime_policy": "NONE",
+    "reference_image_count": 0,
+    "source_reference_pixels_provided_to_renderer": false,
+    "diagnostic_crop_pixels_provided_to_renderer": false,
+    "current_adhoc_poster_pixels_provided_to_renderer": false,
+    "historical_lettering_pixels_provided_to_renderer": false,
+    "purpose": "Test whether distilled mechanisms transfer without runtime reference pixels."
+  },
+  "controlled_constants": [
+    "Style Capsule ID, version and exact SHA-256",
+    "mode FAMILY and route CHATGPT_UI_CONTROLLED_FAMILY_VALIDATION",
+    "literal communication copy: 灶边味 / WOK HEI / MOUNTAIN KITCHEN / 山野风味 · 现炒现做",
+    "dominant-title, quieter-support and sparse-closure hierarchy hypotheses",
+    "image/title counter-mass and local type-safe tonal-space hypotheses",
+    "photographic realism protection",
+    "zero runtime reference images",
+    "exactly one visible output per payload with no hidden variants, best-of-N or pre-review retries",
+    "source-brand and current ad-hoc poster exclusions",
+    "human pixel review as final aesthetic authority"
+  ],
+  "progressive_challenge_tiers": [
+    {
+      "tier": "F1_CONSERVATIVE_FAMILY_TRANSFER",
+      "experiment_id": "SHY-FAM-V1-F1",
+      "payload_path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F1_CONTROLLER_PAYLOAD.json",
+      "payload_sha256": "b63148048b536534fdc23da4865d976d644b072c2233b2ad9bb24ed67f79d2a7",
+      "aspect_intent": "3:4 portrait",
+      "operator_focus": [
+        "TYPOGRAPHY_REBIND",
+        "COPY_REBIND"
+      ],
+      "new_challenge": "Baseline conservative transfer to new literal copy and a truthful mountain-kitchen environmental field.",
+      "held_from_prior_tier": [],
+      "test_question": "Can hierarchy, environmental depth, photo/type relationship and authored display-mass logic transfer without source-brand mimicry?"
+    },
+    {
+      "tier": "F2_SUBJECT_PROCESS_TRANSFER",
+      "experiment_id": "SHY-FAM-V1-F2",
+      "payload_path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F2_CONTROLLER_PAYLOAD.json",
+      "payload_sha256": "79353ff30b38aa66910806ea54afec5df91397d311abe769867770704065d2fd",
+      "aspect_intent": "3:4 portrait",
+      "operator_focus": [
+        "CONTENT_SWAP",
+        "MOTIF_REBIND",
+        "MATERIAL_SHIFT"
+      ],
+      "new_challenge": "Replace the environmental dining field with a high-detail real wok-cooking process and require subject-derived motif semantics.",
+      "held_from_prior_tier": [
+        "literal communication copy",
+        "3:4 aspect intent",
+        "hierarchy and realism hypotheses",
+        "zero-reference runtime policy"
+      ],
+      "test_question": "Can family identity persist when the photographic world moves to an active, high-detail cooking process?"
+    },
+    {
+      "tier": "F3_ASPECT_DENSITY_ADAPTATION",
+      "experiment_id": "SHY-FAM-V1-F3",
+      "payload_path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F3_CONTROLLER_PAYLOAD.json",
+      "payload_sha256": "af690bdb927d9987d2a3b267fd55bbac543856e795890cc16e075c04a4ae8169",
+      "aspect_intent": "9:16 portrait",
+      "operator_focus": [
+        "ASPECT_ADAPT",
+        "DENSITY_SHIFT"
+      ],
+      "new_challenge": "Recompose the same communication job and general cooking world for a substantially taller frame without crop/stretch or filler.",
+      "held_from_prior_tier": [
+        "literal communication copy",
+        "general wok-cooking semantic world",
+        "hierarchy and realism hypotheses",
+        "zero-reference runtime policy"
+      ],
+      "test_question": "Can the capsule adapt to 9:16 without collapsing into a generic vertical poster template?"
+    }
+  ],
+  "tentative_attribution_rules": [
+    "A single F1 observation may inform whether conservative copy and typography rebinding is plausible, but cannot establish a durable family invariant.",
+    "The F1-to-F2 contrast may tentatively implicate subject/process, motif and material operators, but those operators change together and causal attribution remains confounded.",
+    "The F2-to-F3 contrast may tentatively implicate aspect and density adaptation, but stochastic generation and composition choices prevent proof from one output each.",
+    "A failure may be technical, mechanism-level or absolute commercial-quality failure; these classes must not be collapsed.",
+    "A pass is evidence for continued controlled validation only and does not authorize source redistillation, durable-rule promotion, Golden or Scale."
+  ],
+  "validation_limit": {
+    "classification": "CONTROLLED_VALIDATION_NOT_DURABLE_PROOF",
+    "reason": "One zero-reference output per progressive tier is insufficient to separate all coupled variables, estimate generator variance or prove invariants across subjects and formats.",
+    "durable_invariants_claimed": false,
+    "transformation_operators_validated": false,
+    "commercial_quality": "NOT_YET",
+    "golden": "NO",
+    "scale": "BLOCKED_NOT_EXECUTED"
+  },
+  "serialization_and_freeze_policy": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "indent_spaces": 2,
+    "byte_order_mark": false,
+    "sha256_scope": "EXACT_FROZEN_FILE_BYTES",
+    "post_hash_silent_edit_permitted": false
+  },
+  "next_handoff": "VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+  "post_generation_gate": "HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json"
+}

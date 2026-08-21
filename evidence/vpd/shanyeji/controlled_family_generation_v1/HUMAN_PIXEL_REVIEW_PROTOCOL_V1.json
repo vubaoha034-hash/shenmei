@@ -1,0 +1,127 @@
+{
+  "schema_version": "vpd-human-pixel-review-protocol/v1",
+  "artifact_type": "HUMAN_PIXEL_REVIEW_PROTOCOL",
+  "protocol_id": "SHANYEJI_CONTROLLED_FAMILY_HUMAN_PIXEL_REVIEW_V1",
+  "experiment_name": "SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1",
+  "applies_to": [
+    "SHY-FAM-V1-F1",
+    "SHY-FAM-V1-F2",
+    "SHY-FAM-V1-F3"
+  ],
+  "authority": {
+    "final_aesthetic_authority": "HUMAN",
+    "codex_final_aesthetic_score_authorized": false,
+    "review_required_per_image": true,
+    "cross_image_diversity_review_required": true,
+    "review_before_retry_required": true
+  },
+  "required_inputs": [
+    "the three returned output files",
+    "their post-generation provenance manifest",
+    "the three frozen payload paths and SHA-256 values",
+    "this protocol"
+  ],
+  "review_dimensions": {
+    "A_TECHNICAL_VALIDITY": {
+      "gate": true,
+      "checks": [
+        "Image file decodes and is not empty or visibly truncated.",
+        "Main Chinese title is exactly 灶边味 and remains readable enough to judge.",
+        "English support contains WOK HEI and MOUNTAIN KITCHEN without meaning-changing corruption.",
+        "Chinese support contains 山野风味 · 现炒现做 without severe corruption that invalidates judgment.",
+        "Output substantially follows the expected 3:4, 3:4 or 9:16 aspect intent for F1, F2 or F3 respectively.",
+        "Provenance manifest confirms the matching frozen payload SHA and generation attempt number 1.",
+        "No source reference, diagnostic crop, historical lettering image or current ad-hoc poster was supplied at runtime.",
+        "Exactly one visible output exists for the payload and no hidden variants, best-of-N or retry occurred before review."
+      ],
+      "failure_outcome": "TECHNICAL_INVALID"
+    },
+    "B_FAMILY_TRANSFER_QUALITY": {
+      "gate": false,
+      "checks": [
+        "First-read hierarchy: 灶边味 is unmistakably dominant, support copy is quieter and closure is sparse.",
+        "Image/title counter-mass: both the photographic world and authored title mass remain active and coordinated.",
+        "Type-safe tonal space: small copy occupies locally quiet, contrast-safe regions without generic panels or blanket shadows.",
+        "Environmental/process depth: near/mid/far structure, natural occlusion and information plane are coherent.",
+        "Semantic motif rebinding: any accent is sparse, subject-derived and not a copied mountain, badge, path, seal or scribble token.",
+        "Realism protection: food, hand, wok, materials, light, steam/flame and texture remain credible rather than plastic, HDR or CGI-like.",
+        "Information density coordination: dense and quiet regions are deliberately distributed rather than uniformly busy.",
+        "Authored family relation is visible through relationships and mechanism behavior without literal source-brand copying."
+      ]
+    },
+    "C_ABSOLUTE_COMMERCIAL_AESTHETIC_QUALITY": {
+      "gate": false,
+      "separate_from_family_similarity": true,
+      "checks": [
+        "Would the image be acceptable as a real, polished restaurant brand-editorial asset without mechanism context?",
+        "Does typography feel intentional, legible and commercially resolved rather than merely novel?",
+        "Does photography remain appetizing, credible and materially coherent at full pixel inspection?",
+        "Does the complete composition avoid template-like, amateur, uncanny or synthetic advertising cues?"
+      ]
+    }
+  },
+  "permitted_outcomes": [
+    {
+      "code": "FAMILY_MECHANISM_PASS_COMMERCIAL_QUALITY_FAIL",
+      "display": "FAMILY_MECHANISM_PASS but COMMERCIAL_QUALITY_FAIL",
+      "meaning": "The capsule-derived family relationships are credibly present, but absolute commercial finish is not acceptable."
+    },
+    {
+      "code": "FAMILY_MECHANISM_FAIL",
+      "display": "FAMILY_MECHANISM_FAIL",
+      "meaning": "Technical inspection is possible, but the required family-transfer relationships are not credibly preserved."
+    },
+    {
+      "code": "TECHNICAL_INVALID",
+      "display": "TECHNICAL_INVALID",
+      "meaning": "A technical, copy, provenance, reference-policy or generation-count violation prevents valid mechanism judgment."
+    },
+    {
+      "code": "STRONG_CONTROLLED_FAMILY_PASS",
+      "display": "STRONG_CONTROLLED_FAMILY_PASS",
+      "meaning": "This controlled sample passes technical, family-transfer and absolute commercial-quality review; it remains controlled evidence, not durable proof."
+    }
+  ],
+  "per_image_review_record_required_fields": [
+    "experiment_name",
+    "experiment_id",
+    "output_filename",
+    "output_sha256",
+    "payload_path",
+    "payload_sha256",
+    "reviewer_identity",
+    "reviewed_at",
+    "technical_validity_findings",
+    "family_transfer_findings",
+    "commercial_quality_findings",
+    "outcome_code",
+    "evidence_notes"
+  ],
+  "cross_image_diversity_review": {
+    "required_after_per_image_reviews": true,
+    "checks": [
+      "F1, F2 and F3 are genuinely distinct compositions rather than hidden near-duplicates.",
+      "F2 materially changes subject/process from F1 while retaining family relationships.",
+      "F3 is natively recomposed for 9:16 rather than cropped, stretched or padded from F2.",
+      "No copied source-brand token becomes the only common family signal.",
+      "Shared hierarchy, counter-mass, tonal-space and realism logic is visible without forcing identical layout coordinates."
+    ],
+    "required_fields": [
+      "reviewer_identity",
+      "reviewed_at",
+      "diversity_findings",
+      "coupled_variable_caveats",
+      "family_evidence_summary",
+      "next_validation_recommendation"
+    ]
+  },
+  "promotion_boundary": {
+    "human_review_can_mark_this_experiment_complete": true,
+    "human_review_alone_can_promote_durable_invariants": false,
+    "human_review_alone_can_authorize_golden": false,
+    "human_review_alone_can_authorize_scale": false,
+    "commercial_quality_before_review": "NOT_YET",
+    "golden_before_review": "NO",
+    "scale_before_review": "BLOCKED_NOT_EXECUTED"
+  }
+}

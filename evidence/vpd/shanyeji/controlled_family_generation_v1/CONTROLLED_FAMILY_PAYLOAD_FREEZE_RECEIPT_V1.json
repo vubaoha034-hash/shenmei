@@ -1,0 +1,131 @@
+{
+  "schema_version": "vpd-controlled-family-payload-freeze-receipt/v1",
+  "artifact_type": "CONTROLLED_FAMILY_PAYLOAD_FREEZE_RECEIPT",
+  "receipt_id": "SHANYEJI_CONTROLLED_FAMILY_PAYLOAD_FREEZE_V1_20260821_001",
+  "frozen_at": "2026-08-21T15:06:41+08:00",
+  "experiment": {
+    "name": "SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1",
+    "mode": "FAMILY",
+    "route": "CHATGPT_UI_CONTROLLED_FAMILY_VALIDATION",
+    "preparation_only": true,
+    "generation_completed": false
+  },
+  "style_capsule": {
+    "id": "style_capsule_shanyeji_brand_editorial_v1",
+    "version": "1.0.0",
+    "path": "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_V1.json",
+    "sha256": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1",
+    "verified": true,
+    "maturity": "CONTROLLED_VALIDATION_REQUIRED"
+  },
+  "input_remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "remote_head": "a3d4d8ee350edf21498e86913f380c37fe315fc9",
+    "working_tree_at_preflight": "CLEAN",
+    "status": "PASS"
+  },
+  "runtime_reference_policy": {
+    "reference_runtime_policy": "NONE",
+    "reference_image_count": 0,
+    "source_reference_pixels_provided_to_renderer": false,
+    "diagnostic_crop_pixels_provided_to_renderer": false,
+    "current_adhoc_poster_pixels_provided_to_renderer": false,
+    "historical_lettering_pixels_provided_to_renderer": false
+  },
+  "frozen_payloads": [
+    {
+      "experiment_id": "SHY-FAM-V1-F1",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F1_CONTROLLER_PAYLOAD.json",
+      "sha256": "b63148048b536534fdc23da4865d976d644b072c2233b2ad9bb24ed67f79d2a7",
+      "byte_length": 9084,
+      "expected_output_filename": "SHY-FAM-V1-F1.png",
+      "output_count": 1
+    },
+    {
+      "experiment_id": "SHY-FAM-V1-F2",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F2_CONTROLLER_PAYLOAD.json",
+      "sha256": "79353ff30b38aa66910806ea54afec5df91397d311abe769867770704065d2fd",
+      "byte_length": 9369,
+      "expected_output_filename": "SHY-FAM-V1-F2.png",
+      "output_count": 1
+    },
+    {
+      "experiment_id": "SHY-FAM-V1-F3",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/F3_CONTROLLER_PAYLOAD.json",
+      "sha256": "af690bdb927d9987d2a3b267fd55bbac543856e795890cc16e075c04a4ae8169",
+      "byte_length": 9542,
+      "expected_output_filename": "SHY-FAM-V1-F3.png",
+      "output_count": 1
+    }
+  ],
+  "supporting_artifacts": {
+    "plan": {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+      "sha256": "99c517a2c7c604465b558b53ef932fd740b6449986e8f9d6e1b02a8456180322"
+    },
+    "human_pixel_review_protocol": {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+      "sha256": "9cf50c4deea269f1f444a55a9947db6fecc72f0464b8d7639b51c78bcd6a32a6"
+    },
+    "render_handoff": {
+      "identity": "VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1",
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "sha256": "f849341cffce390519412c50298c3d4647023c46d2bc9c0aa10b5bf5d949b801",
+      "drive_upload_required_before_preparation_pass": true,
+      "drive_readback_required_before_preparation_pass": true
+    }
+  },
+  "old_formal_v1_preservation": {
+    "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json",
+    "sha256_before": "1fac472395678deef72f69c70cc862dc4e1b94c3603024eaa7cdb4c826e101b9",
+    "git_blob_before": "d62b507207019526c8e9de6036f9198508513ca6",
+    "modified": false,
+    "payload_content_read_or_reused": false,
+    "relationship": "PRESERVED_SEPARATE_HISTORICAL_EXPERIMENT_NOT_CURRENT_ROUTE_AUTHORITY"
+  },
+  "execution_assertions": {
+    "payload_count": 3,
+    "exactly_one_output_per_payload": true,
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "no_aesthetic_retry_before_human_review": true,
+    "codex_image_generation_executed": false,
+    "image_editing_executed": false,
+    "canonical_reference_pixels_opened_for_renderer": false,
+    "current_adhoc_poster_opened_or_provided_to_renderer": false,
+    "openai_api_used": false,
+    "api_key_used": false,
+    "wif_used": false,
+    "oidc_used": false,
+    "private_renderer_used": false,
+    "external_renderer_used": false,
+    "renderer_infrastructure_built": false,
+    "global_compiler_modified": false,
+    "golden_entered": false,
+    "scale_entered": false
+  },
+  "freeze_policy": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "indent_spaces": 2,
+    "byte_order_mark": false,
+    "hash_algorithm": "SHA-256",
+    "hash_scope": "EXACT_FROZEN_FILE_BYTES",
+    "silent_post_freeze_payload_edit_permitted": false
+  },
+  "validation_state": {
+    "payload_json_parse": "PASS",
+    "payload_hash_binding": "PASS",
+    "payloads_frozen": true,
+    "human_pixel_review": "PENDING_GENERATION",
+    "family_level_invariants": "UNVALIDATED_HYPOTHESES",
+    "transformation_operators": "UNVALIDATED_HYPOTHESES",
+    "commercial_quality": "NOT_YET",
+    "golden": "NO",
+    "scale": "BLOCKED_NOT_EXECUTED"
+  },
+  "next_handoff_identity": "VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1",
+  "next_required_action": "RETURN_CHATGPT_RENDER_HANDOFF_TO_CHATGPT_AND_GENERATE_EXACTLY_F1_F2_F3_ONCE_EACH_THEN_RUN_HUMAN_PIXEL_REVIEW",
+  "primary_preparation_verdict_when_external_gates_pass": "CONTROLLED_FAMILY_PAYLOADS_FROZEN_READY_FOR_CHATGPT_RENDER"
+}
