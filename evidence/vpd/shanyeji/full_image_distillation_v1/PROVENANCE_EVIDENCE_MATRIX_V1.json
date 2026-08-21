@@ -1,0 +1,134 @@
+{
+  "schema_version": "vpd-provenance-evidence-matrix/v1",
+  "artifact_type": "PROVENANCE_EVIDENCE_MATRIX_V1",
+  "matrix_id": "provenance_evidence_matrix_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "canonical_branch": "visual-program-distillation-v2-photography-design-20260814",
+  "starting_head": "a305562b179c37c9c4fcf017b046dbb8ca2a5140",
+  "evidence_rows": [
+    {
+      "evidence_id": "ev_sy_current_full_image_authority",
+      "evidence_class": "HUMAN_AUTHORITY",
+      "identity": "Google Drive instruction 1ULsgrEIL0BOmio_YIONG1XxEmohdYN5h",
+      "title": "VPD SHANYEJI FORMAL FULL-IMAGE DISTILLATION V1",
+      "scope": "Forward-only approval for full-image VPD distillation",
+      "confidence": 1.0,
+      "status": "AUTHORITATIVE_FOR_THIS_RUN",
+      "restrictions": ["no literal brand copying", "no final capsule in this task", "no generation"]
+    },
+    {
+      "evidence_id": "ev_sy_canonical_raw_pixels",
+      "evidence_class": "METADATA",
+      "identity": "Drive file 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+      "title": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+      "scope": "Canonical full-frame visual anchor",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "dimensions": [960, 1280],
+      "byte_size": 142983,
+      "confidence": 1.0,
+      "status": "RAW_BYTES_VERIFIED_CURRENT_TASK",
+      "restrictions": ["private raw pixels not committed to Git"]
+    },
+    {
+      "evidence_id": "ev_sy_historical_ingestion_receipt",
+      "evidence_class": "METADATA",
+      "identity": "V3_TYPOGRAPHY_SHANYEJI_CANONICAL_INGESTION_RECEIPT.json",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "207450b8f7a3d7550879e583e0751ed10f7e747c",
+      "source_blob": "39a6bef7d7f23b4a5c5f4f0833fb6a049868e2b6",
+      "scope": "Historical typography-only ingestion and private asset lineage",
+      "confidence": 1.0,
+      "status": "PRESERVED_HISTORICAL_TRUTH",
+      "restrictions": ["whole_image_approved=false is not rewritten", "new approval is forward-only"]
+    },
+    {
+      "evidence_id": "ev_sy_historical_typography_pixels",
+      "evidence_class": "DIRECT_VISIBLE",
+      "identity": "V3_TYPOGRAPHY_EVIDENCE_SHANYEJI.json",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "207450b8f7a3d7550879e583e0751ed10f7e747c",
+      "source_blob": "99b936b14644110c9f1601913dd05bbdfe69a5d6",
+      "scope": "Typography-only direct-visible evidence",
+      "confidence": 0.99,
+      "status": "RECONCILED_AS_COMPONENT_EVIDENCE",
+      "restrictions": ["not a whole-image capsule", "historical 'four glyphs' phrase not propagated"]
+    },
+    {
+      "evidence_id": "ev_sy_historical_typography_hypothesis",
+      "evidence_class": "INFERENCE",
+      "identity": "V3_TYPOGRAPHY_HYPOTHESIS_SHANYEJI.json",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "207450b8f7a3d7550879e583e0751ed10f7e747c",
+      "source_blob": "ba70722696ec2e5dd5ec1e648add650c9630cdaf",
+      "scope": "Historical provisional typography hypotheses",
+      "confidence": 0.94,
+      "status": "REFINED_NOT_COPIED_WHOLESALE",
+      "restrictions": ["semantic accent thread downgraded by later review", "no durable promotion"]
+    },
+    {
+      "evidence_id": "ev_sy_typography_human_review",
+      "evidence_class": "HUMAN_AUTHORITY",
+      "identity": "V3_TYPOGRAPHY_SHANYEJI_HUMAN_REVIEW_RESULT.md",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "d588f92f79bca590f4b5f1f081d50526f4210dcc",
+      "source_blob": "806e1e1cf3cbbf43429afee75a070cf89e44107f",
+      "scope": "Provisional typography mechanism adjudication",
+      "confidence": 1.0,
+      "status": "PASS_WITH_REQUIRED_REVISIONS",
+      "restrictions": ["transfer validation required", "not full-image approval", "not Golden"]
+    },
+    {
+      "evidence_id": "ev_sy_display_source_task",
+      "evidence_class": "METADATA",
+      "identity": "V3_SHANYEJI_DISPLAY_LETTERING_SOURCE_VALIDATION_R1_TASK.md",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "59df4a8530fdcc1a390e47d96dda193038c300a4",
+      "source_blob": "a28d59f36d8885407b1e0cb0c560b66027bd09d1",
+      "scope": "Controlled display-lettering validation contract for 灶边味",
+      "confidence": 1.0,
+      "status": "HISTORICAL_CONTROLLED_VALIDATION_ONLY",
+      "restrictions": ["灶边味 is a validation string", "not full poster evidence", "no source contour copying"]
+    },
+    {
+      "evidence_id": "ev_sy_figma_proof_human_review",
+      "evidence_class": "HUMAN_AUTHORITY",
+      "identity": "V3_TYPOGRAPHY_SHANYEJI_FIGMA_PROOF_HUMAN_REVIEW_RESULT.md",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "97dfb2d036d12b6538e0e1d85ec6ddb468e0d9b1",
+      "source_blob": "6bb625564dbcbefb4666186a217fd94e17f4b11b",
+      "scope": "Production-path and typography component review",
+      "confidence": 1.0,
+      "status": "PRODUCTION_PATH_PASS / AESTHETIC_PROOF_NOT_APPROVED_AS_EXEMPLAR",
+      "restrictions": ["display asset only controlled validation", "accent path not stable", "photo-type contrast not validated by flat proof"]
+    },
+    {
+      "evidence_id": "ev_sy_aspect_transfer_plan",
+      "evidence_class": "METADATA",
+      "identity": "V3_SHANYEJI_TYPOGRAPHY_ASPECT_TRANSFER_R1_TASK.md",
+      "source_branch": "v3-distillation-first-long-term-system-20260817",
+      "source_commit": "241b2ba0594a01d5828c217408587e570c93a139",
+      "source_blob": "0137a12d359a75e265583dfffc64d4063fd12f45",
+      "scope": "Planned typography-only aspect transfer",
+      "confidence": 1.0,
+      "status": "TASK_DEFINED / EXECUTION_NOT_EVIDENCED",
+      "restrictions": ["not full-image transfer evidence", "no transfer PASS"]
+    },
+    {
+      "evidence_id": "ev_sy_current_ad_hoc_poster",
+      "evidence_class": "METADATA",
+      "identity": "current 灶边味 full-poster specimen",
+      "scope": "Downstream diagnostic and human preference evidence only",
+      "confidence": 1.0,
+      "status": "EXCLUDED_FROM_DISTILLATION_INPUT",
+      "restrictions": ["AD_HOC_GENERATION", "formal VPD provenance unproven", "cannot define invariants"]
+    }
+  ],
+  "lineage_reconciliation": {
+    "historical_branch_merged": false,
+    "historical_commits_cherry_picked": false,
+    "historical_files_rewritten": false,
+    "reconciliation_method": "Minimal canonical evidence bundle cites exact source branch, commit, path and blob identities.",
+    "new_full_image_approval_is_append_only": true
+  },
+  "evidence_class_vocabulary": ["DIRECT_VISIBLE", "METADATA", "HUMAN_AUTHORITY", "INFERENCE", "UNKNOWN"]
+}

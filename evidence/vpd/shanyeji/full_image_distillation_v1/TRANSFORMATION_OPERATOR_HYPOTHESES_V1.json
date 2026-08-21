@@ -1,0 +1,93 @@
+{
+  "schema_version": "vpd-transformation-operator-hypotheses/v1",
+  "artifact_type": "TRANSFORMATION_OPERATOR_HYPOTHESES_V1",
+  "registry_id": "transformation_operators_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "validation_status": "NO_OPERATOR_VALIDATED_IN_THIS_TASK",
+  "operators": [
+    {
+      "operator": "CONTENT_SWAP",
+      "classification": "READY_AS_TESTABLE_HYPOTHESIS",
+      "definition": "Replace the literal environment/content while rebuilding a truthful layered photographic field and subject-derived information zones.",
+      "preserved_invariants": ["inv_sy_environmental_depth", "inv_sy_local_photo_type_calibration", "inv_sy_mass_density_counterbalance", "inv_sy_photographic_realism_protected"],
+      "allowed_freedoms": ["dof_sy_subject_content", "dof_sy_crop", "dof_sy_foreground_occluder"],
+      "reference_evidence": ["PHOTOGRAPHY_GRAMMAR_V1", "PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.86,
+      "failure_boundary": "Generic stock backdrop, flat depth, no local type-safe field or arbitrary source-surface reuse.",
+      "minimum_future_validation_experiment": "One different truthful environment or process image, same information roles, one formal output, local contrast/depth audit and human pixel review."
+    },
+    {
+      "operator": "ASPECT_ADAPT",
+      "classification": "READY_AS_TESTABLE_HYPOTHESIS",
+      "definition": "Recompose—not scale—the depth frame, information registers, title mass and quiet zones for a materially different aspect ratio.",
+      "preserved_invariants": ["inv_sy_three_authority_levels", "inv_sy_local_photo_type_calibration", "inv_sy_mass_density_counterbalance"],
+      "allowed_freedoms": ["dof_sy_aspect_ratio", "dof_sy_title_position", "dof_sy_crop", "dof_sy_secondary_copy"],
+      "reference_evidence": ["GRAPHIC_DESIGN_GRAMMAR_V1", "mech_sy_peripheral_microcopy_stabilization"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.8,
+      "failure_boundary": "Proportional scaling, empty extension, duplicated title, lost peripheral balance or unprotected microcopy.",
+      "minimum_future_validation_experiment": "One 16:9 or 9:16 full-image recomposition from the same capsule evidence; no new style rules; thumbnail and normal-view hierarchy review."
+    },
+    {
+      "operator": "PALETTE_SHIFT",
+      "classification": "PARTIAL",
+      "definition": "Change subject and accent hues while preserving luminance authority, saturation scarcity and role separation between environment, primary type, support and optional accent.",
+      "preserved_invariants": ["inv_sy_local_photo_type_calibration", "inv_sy_photographic_realism_protected"],
+      "allowed_freedoms": ["dof_sy_accent_hue_presence", "dof_sy_subject_content"],
+      "reference_evidence": ["PHOTOGRAPHY_GRAMMAR_V1#photo_color_roles", "GRAPHIC_DESIGN_GRAMMAR_V1#design_color_roles"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.76,
+      "failure_boundary": "Literal green/orange recolor recipe, accent overexpansion, reduced text contrast or implausible environmental color.",
+      "minimum_future_validation_experiment": "One role-preserving alternate palette plus an accent-omission control; verify local contrast and material plausibility."
+    },
+    {
+      "operator": "DENSITY_SHIFT",
+      "classification": "READY_AS_TESTABLE_HYPOTHESIS",
+      "definition": "Produce a quieter or denser family member by changing photographic and graphic density regionally and inversely rather than changing all regions together.",
+      "preserved_invariants": ["inv_sy_three_authority_levels", "inv_sy_local_photo_type_calibration", "inv_sy_mass_density_counterbalance"],
+      "allowed_freedoms": ["dof_sy_image_density", "dof_sy_secondary_copy", "dof_sy_title_position"],
+      "reference_evidence": ["GRAPHIC_DESIGN_GRAMMAR_V1#design_density_rhythm", "PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1#integration_density_coordination"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.9,
+      "failure_boundary": "Every zone becomes busy, title shrinks without photo simplification, or quiet version becomes passive empty space.",
+      "minimum_future_validation_experiment": "One lower-density and one higher-density planned composition, each preserving three reads and local information safety."
+    },
+    {
+      "operator": "MOTIF_REBIND",
+      "classification": "PARTIAL",
+      "definition": "Replace or omit path, badge and semantic graphic devices using forms derived from the new subject/process/identity rather than source tokens.",
+      "preserved_invariants": ["inv_sy_three_authority_levels", "inv_sy_photographic_realism_protected"],
+      "allowed_freedoms": ["dof_sy_motif_source", "dof_sy_accent_hue_presence"],
+      "reference_evidence": ["mech_sy_semantic_accent_continuity", "PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1#integration_motif_subject"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.68,
+      "failure_boundary": "Copied mountain/seal/scribble, arbitrary sticker language or decorative path without semantic work.",
+      "minimum_future_validation_experiment": "One subject-derived motif execution compared with an omission control; human review determines whether the motif earns its presence."
+    },
+    {
+      "operator": "TYPOGRAPHY_REBIND",
+      "classification": "READY_AS_TESTABLE_HYPOTHESIS",
+      "definition": "Replace the literal title with newly authored, exact and legible display lettering that preserves combined-mass behavior without copying source contours; rebuild functional copy and hierarchy truthfully.",
+      "preserved_invariants": ["inv_sy_authored_display_object", "inv_sy_three_authority_levels", "inv_sy_local_photo_type_calibration"],
+      "allowed_freedoms": ["dof_sy_literal_title", "dof_sy_secondary_copy", "dof_sy_title_position"],
+      "reference_evidence": ["TYPOGRAPHY_COMPONENT_GRAMMAR_V1", "historical DISPLAY_TITLE_APPROVED_FOR_CONTROLLED_VALIDATION"],
+      "evidence_class": "HUMAN_AUTHORITY",
+      "confidence": 0.94,
+      "failure_boundary": "Stock-font collapse, copied 山野集 contours, wrong characters, unreadable erosion, fake calligraphy or title detached from the photograph.",
+      "minimum_future_validation_experiment": "One full-image new-copy test using an approved source asset, exact-copy gate, no hidden variants and human pixel review."
+    },
+    {
+      "operator": "MATERIAL_SHIFT",
+      "classification": "PARTIAL",
+      "definition": "Transfer the hierarchy and photo-design relationships into another photographic or print/material treatment without copying the source's eroded title surface as a generic texture.",
+      "preserved_invariants": ["inv_sy_authored_display_object", "inv_sy_local_photo_type_calibration", "inv_sy_photographic_realism_protected"],
+      "allowed_freedoms": ["dof_sy_subject_content", "dof_sy_accent_hue_presence"],
+      "reference_evidence": ["PHOTOGRAPHY_GRAMMAR_V1#photo_material_realism", "GRAPHIC_DESIGN_GRAMMAR_V1#design_material_behavior"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.61,
+      "failure_boundary": "Global grunge, faux-rustic texture, loss of material credibility or treating speckle as the family itself.",
+      "minimum_future_validation_experiment": "One restrained alternate photographic/print treatment with unchanged hierarchy, followed by detail-scale realism and non-copy review."
+    }
+  ]
+}

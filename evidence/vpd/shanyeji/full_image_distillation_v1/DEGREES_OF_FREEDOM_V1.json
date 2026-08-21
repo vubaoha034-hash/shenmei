@@ -1,0 +1,118 @@
+{
+  "schema_version": "vpd-degrees-of-freedom/v1",
+  "artifact_type": "DEGREES_OF_FREEDOM_V1",
+  "registry_id": "degrees_of_freedom_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "freedoms": [
+    {
+      "freedom_id": "dof_sy_subject_content",
+      "variable": "photographic subject/content",
+      "allowed_change": "Replace forest foliage with another truthful environmental, ingredient, material or process field that supports layered depth and contrast-safe information zones.",
+      "preserved_logic": ["environmental depth", "local photo-type calibration", "photographic realism"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.72,
+      "boundary": "A generic stock backdrop or flat texture is not sufficient.",
+      "validation_test": "CONTENT_SWAP"
+    },
+    {
+      "freedom_id": "dof_sy_literal_title",
+      "variable": "literal title wording",
+      "allowed_change": "Use a new short locked name with newly authored, legible contours that form one combined display mass.",
+      "preserved_logic": ["authored display object", "dominant first read"],
+      "evidence_class": "HUMAN_AUTHORITY",
+      "confidence": 0.95,
+      "boundary": "Do not copy 山野集 contours or replace the mechanism with a stock font.",
+      "validation_test": "TYPOGRAPHY_REBIND"
+    },
+    {
+      "freedom_id": "dof_sy_product_category",
+      "variable": "brand/product category",
+      "allowed_change": "Move to another category only when a real environment/process/material can carry the identity and support subject-derived graphic relationships.",
+      "preserved_logic": ["environmental world", "motif-source truthfulness", "three-level hierarchy"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.58,
+      "boundary": "A category with no credible environmental or process field requires a different capsule.",
+      "validation_test": "TRANSFER"
+    },
+    {
+      "freedom_id": "dof_sy_crop",
+      "variable": "crop and mass placement",
+      "allowed_change": "Reframe the environment and move major masses while retaining depth staging, an active image field and usable information pockets.",
+      "preserved_logic": ["environmental depth", "quiet-field placement", "mass counterbalance"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.82,
+      "boundary": "Do not mechanically scale or preserve exact source coordinates.",
+      "validation_test": "COMPOSITION_VARIATION"
+    },
+    {
+      "freedom_id": "dof_sy_aspect_ratio",
+      "variable": "aspect ratio",
+      "allowed_change": "Recompose hierarchy, depth framing and quiet zones for a new canvas; vertical 3:4 is not mandatory.",
+      "preserved_logic": ["three authority levels", "local contrast calibration", "dense/quiet rhythm"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.78,
+      "boundary": "Proportional stretching or simply extending empty space fails.",
+      "validation_test": "ASPECT_ADAPT"
+    },
+    {
+      "freedom_id": "dof_sy_accent_hue_presence",
+      "variable": "accent hue and presence",
+      "allowed_change": "Change hue, derive the accent from new content, reduce it or omit it; if retained, keep it limited and semantically assigned.",
+      "preserved_logic": ["role-based color hierarchy"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.84,
+      "boundary": "A decorative page-wide accent or generic scribble is outside the family logic.",
+      "validation_test": "PALETTE_SHIFT and MOTIF_REBIND omission control"
+    },
+    {
+      "freedom_id": "dof_sy_image_density",
+      "variable": "photographic texture density",
+      "allowed_change": "Increase or reduce local detail when graphic density and type authority change inversely by region.",
+      "preserved_logic": ["density coordination", "title-photo counterbalance"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.85,
+      "boundary": "Uniform high detail or uniform blankness breaks the regional rhythm.",
+      "validation_test": "DENSITY_SHIFT"
+    },
+    {
+      "freedom_id": "dof_sy_title_position",
+      "variable": "title position",
+      "allowed_change": "Move the display object within a privileged contrast-safe region and rebalance peripheral elements optically.",
+      "preserved_logic": ["dominant first read", "local calibration", "mass counterbalance"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.8,
+      "boundary": "Mechanical centering without optical balance or placement over competing highlights fails.",
+      "validation_test": "COMPOSITION_VARIATION and ASPECT_ADAPT"
+    },
+    {
+      "freedom_id": "dof_sy_motif_source",
+      "variable": "graphic motif source",
+      "allowed_change": "Replace mountain/path/badge devices with structural motifs derived from the new subject, process or identity; omission is allowed.",
+      "preserved_logic": ["semantic derivation", "optional counterweight"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.69,
+      "boundary": "Do not copy mountain, seal or scribble tokens without causal relevance.",
+      "validation_test": "MOTIF_REBIND"
+    },
+    {
+      "freedom_id": "dof_sy_secondary_copy",
+      "variable": "secondary-copy quantity and language",
+      "allowed_change": "Change count, language, wording or omit optional English/handwritten roles while preserving truthful copy and hierarchy gaps.",
+      "preserved_logic": ["three authority levels", "peripheral stabilization when needed"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.9,
+      "boundary": "Decorative filler, fake translation or support text competing with the title fails.",
+      "validation_test": "DENSITY_SHIFT and ASPECT_ADAPT"
+    },
+    {
+      "freedom_id": "dof_sy_foreground_occluder",
+      "variable": "foreground framing element",
+      "allowed_change": "Change or omit the lower/near occluder if an equivalent depth and framing function remains.",
+      "preserved_logic": ["environmental depth"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.64,
+      "boundary": "A pasted blur overlay or obstruction of key copy is not equivalent.",
+      "validation_test": "CONTENT_SWAP and COMPOSITION_VARIATION"
+    }
+  ]
+}

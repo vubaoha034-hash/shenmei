@@ -1,0 +1,108 @@
+{
+  "schema_version": "vpd-photo-design-integration-grammar/v1",
+  "artifact_type": "PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1",
+  "grammar_id": "photo_design_integration_grammar_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "status": "COMPLETE_FOR_CAPSULE_HYPOTHESIS_CREATION",
+  "relationships": [
+    {
+      "id": "integration_type_safe_tonal_space",
+      "dimension": "TYPE_SAFE_TONAL_SPACE",
+      "relationship": "The photograph does not provide blank space; it provides dark or lower-frequency pockets. Small top claims and footer text sit in the quietest pockets, while the dominant title uses greater light mass to tolerate a more textured central field.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "top claim pockets, central title backing field, bottom footer field",
+      "causal_hypothesis": "Local frequency and luminance are matched to text scale and weight, preventing one global overlay treatment.",
+      "counterfactual": "Small text placed over the sharp right foliage or bright patches would lose hierarchy and legibility.",
+      "validation_requirement": "Measure local contrast/frequency after CONTENT_SWAP and ASPECT_ADAPT."
+    },
+    {
+      "id": "integration_image_title_mass",
+      "dimension": "IMAGE_MASS_TITLE_MASS",
+      "relationship": "A broad, high-authority title mass counterbalances an edge-to-edge complex environmental photograph. The title is large enough to behave as an object, while the photograph remains active around and through it rather than becoming a passive backdrop.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99,
+      "source_region": "central 0.30-0.55 and surrounding foliage",
+      "causal_hypothesis": "The display mass needs sufficient area and irregular silhouette to remain distinct from high-frequency organic detail.",
+      "counterfactual": "A small conventional wordmark would be swallowed by foliage; a near-full-frame title would erase environmental depth.",
+      "validation_requirement": "Vary title scale and photo complexity in a controlled composition test."
+    },
+    {
+      "id": "integration_depth_information",
+      "dimension": "DEPTH_INFORMATION",
+      "relationship": "Soft foreground and receding background frame a sharper middle information plane. Text remains visually on the designed surface while the photographic layers continue to read behind it, producing depth without cutting the image into panels.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "source_region": "lower-left foreground through central/right midground",
+      "causal_hypothesis": "Depth staging gives the page an authored environmental world and lets information occupy a coherent middle plane.",
+      "counterfactual": "Uniform sharpness would make all foliage compete equally with text; a flat image would remove spatial framing.",
+      "validation_requirement": "CONTENT_SWAP with preserved near/mid/far separation."
+    },
+    {
+      "id": "integration_lighting_hierarchy",
+      "dimension": "LIGHTING_HIERARCHY",
+      "relationship": "Photographic highlights are controlled below the brightest type; broad dark regions around top and bottom information protect small copy. Light variation supplies texture but does not steal the highlight ceiling from the identity system.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.94,
+      "source_region": "full frame",
+      "causal_hypothesis": "A bounded photographic luminance range lets typographic roles remain legible without artificial panels or heavy shadows.",
+      "counterfactual": "Specular or sunlit hotspots behind every text tier would destroy the reading order.",
+      "validation_requirement": "LIGHTING_REBIND or CONTENT_SWAP under a different natural light field."
+    },
+    {
+      "id": "integration_color_semantics",
+      "dimension": "COLOR_SEMANTICS",
+      "relationship": "The environmental field owns most chromatic area; light text owns authority; a small warm role links badge, path and handwritten voice; quieter beige text bridges those extremes. The warm role is limited and relational, not a page-wide grade.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97,
+      "source_region": "full frame",
+      "causal_hypothesis": "Repeated limited accent color can bind separate semantic voices while preserving the photographic field as dominant.",
+      "counterfactual": "Expanding the accent across large areas or using it as an arbitrary underline would turn semantic continuity into decoration.",
+      "validation_requirement": "PALETTE_SHIFT and accent-omission comparison; later human evidence requires treating the path as optional."
+    },
+    {
+      "id": "integration_motif_subject",
+      "dimension": "MOTIF_SUBJECT",
+      "relationship": "The mountain-like title construction has a visible semantic relationship to the literal 山 character and environmental setting. The accent path visually connects identity roles, but its specific narrative meaning is not proven.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.86,
+      "source_region": "central title and accent path",
+      "causal_hypothesis": "Subject-derived form can make the display object feel authored rather than generically decorated.",
+      "counterfactual": "Importing mountain shapes, seals or scribbles when the new subject does not support them would become literal surface copying.",
+      "validation_requirement": "MOTIF_REBIND using a new subject-derived structural metaphor."
+    },
+    {
+      "id": "integration_realism_protection",
+      "dimension": "REALISM_PROTECTION",
+      "relationship": "The photograph remains continuous and unmasked across nearly the whole frame. Graphics occupy limited areas, retain clean edges, and do not repaint foliage or impose a synthetic texture over it. Selective focus and natural edge variation remain visible beneath the design.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "causal_hypothesis": "Restrained graphic intervention allows the environmental field to remain credible rather than reading as AI-poster texture.",
+      "counterfactual": "Global distress, excessive glow, full-frame color effects or over-sharpening would collapse realism.",
+      "validation_requirement": "Detail-scale review in every future generated output."
+    },
+    {
+      "id": "integration_density_coordination",
+      "dimension": "DENSITY_COORDINATION",
+      "relationship": "Graphic density and photographic density are regionally coordinated rather than uniformly low: small text uses quiet photo zones; the central graphic mass can cross denser foliage because its scale and contrast increase; the lower photographic field is left mostly free before the footer closes the page.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "causal_hypothesis": "The system avoids simultaneous high texture and high information density everywhere.",
+      "counterfactual": "Adding equal amounts of copy and motifs across all foliage regions would create undifferentiated promotional clutter.",
+      "validation_requirement": "DENSITY_SHIFT with explicit local density map and human thumbnail review."
+    }
+  ],
+  "integration_priority": [
+    "IMAGE_MASS_TITLE_MASS",
+    "TYPE_SAFE_TONAL_SPACE",
+    "DENSITY_COORDINATION",
+    "REALISM_PROTECTION",
+    "DEPTH_INFORMATION",
+    "LIGHTING_HIERARCHY",
+    "COLOR_SEMANTICS",
+    "MOTIF_SUBJECT"
+  ]
+}

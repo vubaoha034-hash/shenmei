@@ -1,0 +1,81 @@
+{
+  "schema_version": "vpd-invariant-hypotheses/v1",
+  "artifact_type": "INVARIANT_HYPOTHESES_V1",
+  "registry_id": "invariant_hypotheses_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "single_reference_warning": "No item is a VALIDATED_STYLE_SIGNATURE. Every item requires controlled output validation.",
+  "hypotheses": [
+    {
+      "invariant_id": "inv_sy_authored_display_object",
+      "statement": "The primary display name behaves as one authored graphic object with legible character identity, not as a conventional stock-font line.",
+      "evidence": ["mech_sy_display_landscape_mass"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99,
+      "causal_reason": "This object supplies the first read and enough mass to coexist with the active photograph.",
+      "falsifier": "New copy becomes a stock line, copied source outline, three disconnected blocks or unreadable texture.",
+      "transfer_test_needed": "TYPOGRAPHY_REBIND plus human correctness/non-copy review."
+    },
+    {
+      "invariant_id": "inv_sy_three_authority_levels",
+      "statement": "The page maintains distinct dominant, supporting and tertiary/ownership readings through scale, contrast and spatial separation.",
+      "evidence": ["mech_sy_hierarchical_three_read_field"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "causal_reason": "Multiple information types remain usable without flattening into one promotional block.",
+      "falsifier": "Support copy competes with the title or tertiary elements disappear into noise.",
+      "transfer_test_needed": "COMPOSITION_VARIATION and ASPECT_ADAPT at thumbnail/normal view."
+    },
+    {
+      "invariant_id": "inv_sy_local_photo_type_calibration",
+      "statement": "Type scale/weight/contrast are locally calibrated to image luminance and frequency; small copy uses quiet pockets while dominant type may cross richer texture.",
+      "evidence": ["mech_sy_photo_type_contrast_relationship", "mech_sy_quiet_field_information_placement"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99,
+      "causal_reason": "This makes photograph and information one system without blank panels.",
+      "falsifier": "One global overlay treatment, low local legibility or universal dark boxes.",
+      "transfer_test_needed": "CONTENT_SWAP with local contrast/frequency audit."
+    },
+    {
+      "invariant_id": "inv_sy_environmental_depth",
+      "statement": "The photographic field retains meaningful near/mid/far staging or an equivalent spatial-depth mechanism around the information plane.",
+      "evidence": ["mech_sy_environmental_depth_frame"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "causal_reason": "Depth supplies environmental authorship and avoids a flat stock-background effect.",
+      "falsifier": "Uniform sharpness, generic flat nature image or artificial blur unrelated to scene geometry.",
+      "transfer_test_needed": "CONTENT_SWAP with a different truthful environment."
+    },
+    {
+      "invariant_id": "inv_sy_mass_density_counterbalance",
+      "statement": "Display-title mass and photographic texture density are mutually calibrated; both cannot be weak or maximized everywhere.",
+      "evidence": ["mech_sy_dominant_title_complex_photo_counterbalance"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "causal_reason": "The title stays authoritative while the environment remains an active identity-bearing field.",
+      "falsifier": "Title is swallowed, photograph is erased, or both layers compete everywhere.",
+      "transfer_test_needed": "Controlled DENSITY_SHIFT and title-scale variation."
+    },
+    {
+      "invariant_id": "inv_sy_photographic_realism_protected",
+      "statement": "Graphic intervention preserves continuous photographic texture, natural edges and selective depth instead of converting the image into synthetic poster texture.",
+      "evidence": ["PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1#integration_realism_protection"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "causal_reason": "The source's environmental credibility depends on visible natural detail and restrained compositing.",
+      "falsifier": "Global distress, plastic microtexture, over-sharpening, excessive glow or collage seams dominate the photograph.",
+      "transfer_test_needed": "Detail-scale review after every future operator test."
+    }
+  ],
+  "explicit_non_invariants": [
+    "forest subject",
+    "green palette",
+    "white title",
+    "orange path",
+    "mountain iconography",
+    "vertical 3:4 canvas",
+    "four English claim groups",
+    "badge",
+    "handwritten slogan",
+    "footer brand lockup"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "vpd-full-image-distillation-receipt/v1",
+  "artifact_type": "DISTILLATION_RECEIPT_V1",
+  "receipt_id": "vpd_shanyeji_full_image_distillation_v1_20260821",
+  "recorded_at": "2026-08-21T12:22:23+08:00",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "starting_head": "a305562b179c37c9c4fcf017b046dbb8ca2a5140",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "dimensions": [960, 1280],
+    "byte_size": 142983,
+    "raw_pixels_verified": true
+  },
+  "approval_recorded": true,
+  "historical_receipts_rewritten": false,
+  "historical_branch_evidence_reconciled": true,
+  "artifacts_complete": true,
+  "artifact_sha256": {
+    "CANONICAL_VISUAL_ANCHOR_MANIFEST.json": "cc76df02629fde950a1f698e67446b315ab0fddded6e3e96a5a053346fb8b43f",
+    "DEGREES_OF_FREEDOM_V1.json": "42c269f4fd246898001d62182acd882803bdd23c9a56feb201ff11c58ba8d8b7",
+    "FAILURE_BOUNDARY_REGISTRY_V1.json": "0779342cda08488ac6091dc3ffdd2c0e74c27105fb4e9d987e623e55ea8ca2db",
+    "FULL_IMAGE_DISTILLATION_REPORT_V1.md": "d6fe39a84fee0f710dcadc0ef50602c1df8237d4c86265f6e14eac89d36e7a22",
+    "FULL_IMAGE_HUMAN_APPROVAL_RECORD.json": "04deba096c467f5bd409dd7c4189d075914b3244d6e406a4e2b1ed23fe45aaac",
+    "GRAPHIC_DESIGN_GRAMMAR_V1.json": "d93108d9ec22def0a430857a312d12da33e1d2464d886ec50ebdc97646668ea5",
+    "INVARIANT_HYPOTHESES_V1.json": "784aa4b9dd6883cdbcb5edca1e43e71a79625b562197a243e36de5b0afbd91b7",
+    "MECHANISM_CANDIDATE_REGISTRY_V1.json": "126eb9a0f6c09e828299710e83a839564a59d81c3c7fc48d41d3451dc723ba3f",
+    "PHOTO_DESIGN_INTEGRATION_GRAMMAR_V1.json": "afcbb6d172410ce7ee9635845a4bee58620d5a6c5208d6b02d8040fa98462fe0",
+    "PHOTOGRAPHY_GRAMMAR_V1.json": "66206a5aa296c3366854a04fbaa90757e567987e2b00c482d4b4af7012410bb9",
+    "PROVENANCE_EVIDENCE_MATRIX_V1.json": "b46c48edaab98b9df9158fc0f3aee18ada52f500c62eb56161aebb9025b69674",
+    "TRANSFORMATION_OPERATOR_HYPOTHESES_V1.json": "6771dec535a30f7e55f28c79767970687ee59164c452f095cd3ecfb43a3a3d8f",
+    "TYPOGRAPHY_COMPONENT_GRAMMAR_V1.json": "82e0be52548c3ddd494d7346647814efd178c8da429439262050b8739ce7e2d5"
+  },
+  "image_generation_executed": false,
+  "image_editing_executed": false,
+  "commercial_hardening_executed": false,
+  "style_capsule_created": false,
+  "visual_program_created": false,
+  "reconstruct_executed": false,
+  "family_executed": false,
+  "transfer_executed": false,
+  "golden_executed": false,
+  "scale_executed": false,
+  "api_wif_oidc_private_renderer_used": false,
+  "primary_verdict": "FULL_IMAGE_DISTILLATION_COMPLETE_FOR_CAPSULE_CREATION",
+  "critical_blockers": [],
+  "validators": [
+    {
+      "command": "python tests/visual_memory/test_shanyeji_full_image_distillation_v1.py",
+      "status": "PASS / 10 TESTS"
+    },
+    {
+      "command": "python -m json.tool for every bundle JSON artifact",
+      "status": "PASS / 13 JSON ARTIFACTS"
+    }
+  ]
+}

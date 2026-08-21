@@ -1,0 +1,160 @@
+{
+  "schema_version": "vpd-failure-boundary-registry/v1",
+  "artifact_type": "FAILURE_BOUNDARY_REGISTRY_V1",
+  "registry_id": "failure_boundaries_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "boundaries": [
+    {
+      "failure_id": "fail_sy_typography_stock_font",
+      "category": "TYPOGRAPHY",
+      "boundary": "STOCK_FONT_COLLAPSE",
+      "observable_signatures": ["uniform stock CJK glyph proportions", "no combined silhouette", "title reads only as text, not an authored object"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.98
+    },
+    {
+      "failure_id": "fail_sy_typography_brand_copy",
+      "category": "TYPOGRAPHY",
+      "boundary": "EXACT_BRAND_COPY_COLLAPSE",
+      "observable_signatures": ["山野集 contours reused", "same missing-stroke locations", "李家班/WANCE identity leakage", "near-identical title silhouette"],
+      "evidence_class": "HUMAN_AUTHORITY",
+      "confidence": 1.0
+    },
+    {
+      "failure_id": "fail_sy_typography_text_only",
+      "category": "TYPOGRAPHY",
+      "boundary": "TITLE_MASS_BECOMES_TEXT_ONLY",
+      "observable_signatures": ["small conventional title line", "title has insufficient area to counterbalance photo", "support copy competes with title"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97
+    },
+    {
+      "failure_id": "fail_sy_typography_uncontrolled_distress",
+      "category": "TYPOGRAPHY",
+      "boundary": "UNCONTROLLED_DISTRESS_NOISE",
+      "observable_signatures": ["character identity damaged", "random speckle pasted over all type", "erosion unrelated to counters or silhouette", "fake graffiti/cartoon/brush language"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.96
+    },
+    {
+      "failure_id": "fail_sy_photo_generic_nature",
+      "category": "PHOTOGRAPHY",
+      "boundary": "GENERIC_STOCK_NATURE_BACKGROUND",
+      "observable_signatures": ["environment has no information-support role", "flat scenic wallpaper", "no deliberate quiet fields", "subject choice only repeats forest/green token"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.94
+    },
+    {
+      "failure_id": "fail_sy_photo_flat_depth",
+      "category": "PHOTOGRAPHY",
+      "boundary": "INSUFFICIENT_DEPTH_STAGING",
+      "observable_signatures": ["uniform sharpness", "no near/mid/far separation", "pasted blur mask", "information plane not spatially framed"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96
+    },
+    {
+      "failure_id": "fail_sy_photo_contrast_competition",
+      "category": "PHOTOGRAPHY",
+      "boundary": "TYPE_IMAGE_COMPETE_EVERYWHERE",
+      "observable_signatures": ["photographic hotspots behind all text tiers", "small copy lost in branch detail", "highlight ceiling shared equally by image and type"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97
+    },
+    {
+      "failure_id": "fail_sy_photo_synthetic_texture",
+      "category": "PHOTOGRAPHY",
+      "boundary": "SYNTHETIC_OVERPROCESSING",
+      "observable_signatures": ["global oversharpening halos", "plastic or repeated foliage detail", "uniform AI microtexture", "excessive bloom/clarity"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.94
+    },
+    {
+      "failure_id": "fail_sy_photo_cinematic_adjective",
+      "category": "PHOTOGRAPHY",
+      "boundary": "GENERIC_CINEMATIC_GRADE_SUBSTITUTION",
+      "observable_signatures": ["teal/orange or crushed-black grade without information logic", "light direction unrelated to hierarchy", "mood replaces observable depth and tone structure"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.92
+    },
+    {
+      "failure_id": "fail_sy_graphic_uniform_density",
+      "category": "GRAPHIC_DESIGN",
+      "boundary": "EVERY_AREA_DENSE",
+      "observable_signatures": ["copy and motifs fill every photographic gap", "no long quiet field", "top/center/bottom carry similar information weight"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98
+    },
+    {
+      "failure_id": "fail_sy_graphic_microcopy_flattened",
+      "category": "GRAPHIC_DESIGN",
+      "boundary": "MICROCOPY_HIERARCHY_LOSS",
+      "observable_signatures": ["English filler larger than meaningful Chinese", "all small copy uses same scale/contrast", "peripheral labels become unreadable decoration"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.95
+    },
+    {
+      "failure_id": "fail_sy_graphic_accent_clutter",
+      "category": "GRAPHIC_DESIGN",
+      "boundary": "DECORATIVE_ACCENT_CLUTTER",
+      "observable_signatures": ["floating orange scribbles", "unrelated repeated lines", "accent occupies large area", "path has no semantic endpoints"],
+      "evidence_class": "HUMAN_AUTHORITY",
+      "confidence": 0.98
+    },
+    {
+      "failure_id": "fail_sy_graphic_sticker_badge",
+      "category": "GRAPHIC_DESIGN",
+      "boundary": "ARBITRARY_STICKER_LANGUAGE",
+      "observable_signatures": ["seal/badge added only to look traditional", "untruthful mark copy", "badge competes with title", "source badge form copied literally"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.94
+    },
+    {
+      "failure_id": "fail_sy_graphic_mechanical_center",
+      "category": "GRAPHIC_DESIGN",
+      "boundary": "MECHANICAL_CENTERING",
+      "observable_signatures": ["title mathematically centered despite asymmetric photo mass", "peripheral counterweights ignored", "optical imbalance at thumbnail scale"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.91
+    },
+    {
+      "failure_id": "fail_sy_integration_stacked_layers",
+      "category": "INTEGRATION",
+      "boundary": "PHOTO_AND_TYPE_UNRELATED",
+      "observable_signatures": ["same layout works on any random background", "type ignores local luminance/frequency", "photograph functions only as wallpaper"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99
+    },
+    {
+      "failure_id": "fail_sy_integration_overlay_only",
+      "category": "INTEGRATION",
+      "boundary": "TEXT_SIMPLY_OVERLAID",
+      "observable_signatures": ["blank boxes or drop shadows added after the fact", "crop does not anticipate information", "small text crosses high-frequency foliage without compensation"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.96
+    },
+    {
+      "failure_id": "fail_sy_integration_color_unbound",
+      "category": "INTEGRATION",
+      "boundary": "ACCENT_SEMANTICS_UNBOUND",
+      "observable_signatures": ["accent appears randomly", "every layer uses the accent", "accent hue copied while role relationships are lost"],
+      "evidence_class": "INFERENCE",
+      "confidence": 0.93
+    },
+    {
+      "failure_id": "fail_sy_integration_realism_destroyed",
+      "category": "INTEGRATION",
+      "boundary": "GRAPHIC_TREATMENT_DESTROYS_REALISM",
+      "observable_signatures": ["global distress over photograph", "collage seams dominate", "synthetic edge glow", "natural depth and texture become poster effects"],
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97
+    },
+    {
+      "failure_id": "fail_sy_integration_surface_imitation",
+      "category": "INTEGRATION",
+      "boundary": "LITERAL_SURFACE_IMITATION",
+      "observable_signatures": ["forest + green + white rough title + orange line copied as recipe", "source brand identity leaks", "new content lacks the causal depth/hierarchy relationships"],
+      "evidence_class": "HUMAN_AUTHORITY",
+      "confidence": 1.0
+    }
+  ]
+}

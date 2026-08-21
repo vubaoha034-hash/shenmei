@@ -1,0 +1,151 @@
+{
+  "schema_version": "vpd-photography-grammar/v1",
+  "artifact_type": "PHOTOGRAPHY_GRAMMAR_V1",
+  "grammar_id": "photography_grammar_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "status": "COMPLETE_FOR_CAPSULE_HYPOTHESIS_CREATION",
+  "observations": [
+    {
+      "id": "photo_view_geometry",
+      "dimension": "CAMERA_VIEW_GEOMETRY",
+      "value": "Close, immersive environmental view with no visible horizon; depth is read through foliage scale, overlap and blur rather than architectural perspective. The frame is layered instead of flattened.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "source_region": "full frame",
+      "uncertainty": "Exact camera elevation, focal length, camera body and subject distance are unknown."
+    },
+    {
+      "id": "photo_foreground_midground_background",
+      "dimension": "CAMERA_VIEW_GEOMETRY",
+      "value": "A large soft olive-brown foreground mass enters from the lower-left; sharper evergreen branches occupy the middle and right; a dark, softer background recedes behind them. Occlusion creates at least three depth stages.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99,
+      "source_region": "lower-left foreground, central/right foliage, dark upper background",
+      "measured_estimates": {
+        "foreground_box_normalized": [0.0, 0.54, 0.48, 0.46],
+        "right_midground_box_normalized": [0.42, 0.24, 0.58, 0.76]
+      },
+      "uncertainty": "The physical identity of the lower-left foreground object is not certain from pixels alone."
+    },
+    {
+      "id": "photo_subject_mass_crop",
+      "dimension": "SUBJECT_MASS_CROP",
+      "value": "Vegetation fills the canvas and exits every edge. The crop avoids a centered object portrait; asymmetrical branch masses frame a darker central corridor while a large blurred foreground form presses into the lower-left.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "measured_estimates": {
+        "environmental_field_occupancy": 1.0,
+        "major_visual_clusters": 4,
+        "dominant_photo_mass_centroid_normalized": [0.56, 0.55]
+      },
+      "uncertainty": "The exact original uncropped capture is unavailable."
+    },
+    {
+      "id": "photo_focus_depth",
+      "dimension": "FOCUS_DEPTH",
+      "value": "Focus is strongest on middle-distance foliage around and behind the title and on the right-hand evergreen branches. The lower-left foreground is strongly soft; the upper background is moderately soft, producing a near-to-mid-to-far sharpness gradient.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97,
+      "source_region": "lower-left to central/right depth path",
+      "measured_estimates": {
+        "foreground_blur": "STRONG",
+        "midground_blur": "LOW",
+        "background_blur": "MODERATE",
+        "edge_character": "NATURAL"
+      },
+      "uncertainty": "Aperture and optical design are unknown."
+    },
+    {
+      "id": "photo_lighting_visible",
+      "dimension": "LIGHTING_ARCHITECTURE",
+      "value": "The photographic field is lit by broad, low-specularity environmental light. Small foliage highlights are dispersed rather than forming one hard directional key; no hard cast-shadow system is visible. The brightest photographic greens remain below the light typography in luminance authority.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.9,
+      "source_region": "full photographic field",
+      "uncertainty": "Exact light direction and source configuration are not recoverable."
+    },
+    {
+      "id": "photo_lighting_hypothesis",
+      "dimension": "LIGHTING_ARCHITECTURE",
+      "value": "Canopy-filtered ambient illumination likely supplies the soft regional variation and restrained highlights.",
+      "evidence_class": "INFERENCE",
+      "confidence": 0.58,
+      "source_region": "full photographic field",
+      "uncertainty": "Natural versus artificial augmentation is unknown."
+    },
+    {
+      "id": "photo_tonal_structure",
+      "dimension": "TONAL_STRUCTURE",
+      "value": "Deep green-black and near-black zones dominate; middle greens carry foliage readability; bright photographic highlights are scarce. Local contrast is concentrated around selected branch edges while broad dark pockets protect information. The image itself does not compete with the white title for the highlight ceiling.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame, especially top and lower footer field",
+      "measured_estimates": {
+        "deep_shadow_tendency": "HIGH",
+        "midtone_tendency": "MODERATE",
+        "photographic_highlight_tendency": "LOW",
+        "global_contrast": "MODERATE_HIGH",
+        "local_contrast_hotspots": ["central title backing foliage", "right midground branch", "top claim backing pockets"]
+      },
+      "uncertainty": "Exact colorimetry and luminance values are not claimed."
+    },
+    {
+      "id": "photo_color_roles",
+      "dimension": "COLOR_ROLES",
+      "value": "Cool-to-neutral deep greens form the environmental base; warmer olive-brown appears in the soft foreground; photographic saturation remains bounded so the graphic light and accent roles can lead. The palette behaves as a luminance and saturation hierarchy, not a mandatory green token.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "source_region": "full photographic field",
+      "measured_estimates": {
+        "dominant_environmental_field_proportion": 0.78,
+        "warm_foreground_field_proportion": 0.17,
+        "other_photographic_highlights_proportion": 0.05
+      },
+      "uncertainty": "Area proportions are normalized visual estimates, not instrument measurements."
+    },
+    {
+      "id": "photo_material_realism",
+      "dimension": "MATERIAL_REALISM",
+      "value": "Foliage retains irregular needles, overlapping stems, natural edge variation and uneven detail density. Sharpness is selective rather than globally clinical; the foreground softness and background depth remain photographic rather than illustrated.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "right evergreen branch, central foliage, lower-left foreground",
+      "uncertainty": "Minor JPEG compression is present as delivery metadata, not treated as a style mechanism."
+    },
+    {
+      "id": "photo_post_processing",
+      "dimension": "POST_PROCESSING",
+      "value": "The delivered image shows restrained global suppression of bright environmental values and likely local tonal shaping around information zones; texture remains present and there is no visible synthetic bloom, halation or aggressive oversharpening.",
+      "evidence_class": "INFERENCE",
+      "confidence": 0.68,
+      "source_region": "central and top information fields",
+      "uncertainty": "Exact retouch operations, software and workflow are unknown."
+    },
+    {
+      "id": "photo_atmosphere",
+      "dimension": "ATMOSPHERE",
+      "value": "Observable depth behavior comes from occlusion, selective focus and low-luminance layering: soft near mass, readable midground foliage and receding dark background. No fog, smoke or artificial volumetric effect is required to create separation.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "source_region": "full frame",
+      "uncertainty": null
+    }
+  ],
+  "unknowns": [
+    "camera model",
+    "exact lens or focal length",
+    "aperture",
+    "shutter and ISO",
+    "lighting fixture identity or size",
+    "exact retouch software",
+    "color-management profile"
+  ],
+  "causal_summary": [
+    "Layered focus and occlusion create environmental depth without requiring a literal scenic horizon.",
+    "Photographic highlights are intentionally subordinate to information highlights.",
+    "Regional texture variation creates usable information zones inside a fully photographic field.",
+    "Natural edge variation and selective sharpness protect realism from poster-like overprocessing."
+  ]
+}

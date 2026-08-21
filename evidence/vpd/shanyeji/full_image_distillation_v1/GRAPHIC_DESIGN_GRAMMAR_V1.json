@@ -1,0 +1,152 @@
+{
+  "schema_version": "vpd-graphic-design-grammar/v1",
+  "artifact_type": "GRAPHIC_DESIGN_GRAMMAR_V1",
+  "grammar_id": "graphic_design_grammar_shanyeji_v1",
+  "family_scope": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "status": "COMPLETE_FOR_CAPSULE_HYPOTHESIS_CREATION",
+  "observations": [
+    {
+      "id": "design_semantic_intent",
+      "dimension": "SEMANTIC_INTENT",
+      "value": "The visible system frames a named food/restaurant identity as an authored environmental world: the display name becomes a landscape-like object, while claim fragments, badge, slogan and ownership marks add origin/process/identity readings.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.91,
+      "source_region": "full frame",
+      "uncertainty": "No broader business strategy is inferred beyond readable copy and visible relationships."
+    },
+    {
+      "id": "design_reading_order",
+      "dimension": "READING_ORDER",
+      "value": "First read: the high-mass light 山野集 display object. Second read: the four top claim clusters, orange badge, Mountain market subtitle and restrained Chinese support. Third read: the orange handwritten slogan and bottom ownership lockup/microcopy.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "causal_rationale": "Scale, luminance contrast, cluster isolation and vertical separation drive the eye through three distinct authority levels.",
+      "uncertainty": "Exact individual viewer scan order inside the second tier may vary."
+    },
+    {
+      "id": "design_hierarchy_geometry",
+      "dimension": "HIERARCHY_GEOMETRY",
+      "value": "A broad central title cluster dominates the middle; small top claims establish a peripheral cadence; the slogan occupies a separated lower-middle band; the centered footer closes the vertical axis. Large scale gaps prevent the support system from matching the title's authority.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "measured_estimates": {
+        "title_box_normalized": [0.22, 0.34, 0.62, 0.15],
+        "top_claims_union_box_normalized": [0.06, 0.03, 0.86, 0.06],
+        "support_line_box_normalized": [0.3, 0.5, 0.43, 0.04],
+        "slogan_box_normalized": [0.25, 0.62, 0.54, 0.07],
+        "footer_lockup_box_normalized": [0.34, 0.91, 0.34, 0.07]
+      },
+      "uncertainty": "Boxes are visual estimates from the canonical 960x1280 pixels."
+    },
+    {
+      "id": "design_grid_axes",
+      "dimension": "ALIGNMENT_OPTICAL_OFFSETS",
+      "value": "The composition combines a four-column top cadence, a broad central optical axis and edge-stabilizing footer microcopy. The title is not mathematically isolated at center: the left badge/subtitle and the right-heavy glyph mass/branch field create an optically balanced asymmetric cluster.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.94,
+      "source_region": "top, central title field and footer",
+      "uncertainty": "No source layout grid or production file is available."
+    },
+    {
+      "id": "design_negative_space",
+      "dimension": "NEGATIVE_SPACE_DENSITY",
+      "value": "Negative space is manufactured inside the photograph through darker, lower-frequency pockets rather than blank panels. The top claims occupy isolated dark pockets; the title uses high luminance to cross a more complex central field; the long zone between slogan and footer lets the photograph breathe before ownership closure.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97,
+      "source_region": "top 0-0.30, central 0.34-0.55, lower 0.69-0.90",
+      "uncertainty": null
+    },
+    {
+      "id": "design_edge_crop_overlap",
+      "dimension": "EDGE_CROP_OVERLAP",
+      "value": "Photographic foliage bleeds through all edges. Graphic elements remain inset except tiny footer edge labels. The orange path crosses the title silhouette and the title itself overlays midground foliage, creating depth without cutting the photograph into modules.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.97,
+      "source_region": "full frame and central title cluster",
+      "uncertainty": null
+    },
+    {
+      "id": "design_density_rhythm",
+      "dimension": "INFORMATION_DENSITY_RHYTHM",
+      "value": "Density alternates vertically: sparse claim cadence, photograph-only interval, dense identity cluster, restrained support, expressive slogan, long quiet photographic field, compact footer. This dense/quiet alternation prevents all regions from demanding equal attention.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "uncertainty": null
+    },
+    {
+      "id": "design_color_roles",
+      "dimension": "COLOR_SYSTEM",
+      "value": "Light display and claim text own maximum information contrast; beige support copy forms a lower-authority bridge; a small warm accent role recurs in badge, path and handwritten voice; the photograph provides the dominant low-luminance field. Role hierarchy, not exact colors, carries the structure.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.98,
+      "source_region": "full frame",
+      "measured_estimates": {
+        "photographic_field_proportion": 0.87,
+        "light_information_proportion": 0.08,
+        "warm_accent_proportion": 0.025,
+        "quiet_support_proportion": 0.025
+      },
+      "uncertainty": "Proportions are approximate visual coverage."
+    },
+    {
+      "id": "design_display_title",
+      "dimension": "TYPOGRAPHY_LETTERING",
+      "value": "The three-character 山野集 title is treated as one irregular landscape-like display mass with unequal glyph scale, carved counters, missing-stroke geometry and controlled surface erosion. It functions as both language and primary graphic object.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.99,
+      "source_region": "central title box",
+      "uncertainty": "Exact font ancestry and construction workflow are unknown; exact contours are brand-bound."
+    },
+    {
+      "id": "design_semantic_devices",
+      "dimension": "SEMANTIC_GRAPHIC_ELEMENTS",
+      "value": "The vertical badge supplies a compact identity counterweight; the orange path visually links badge/title and is echoed by the handwritten slogan; top claim clusters establish editorial cadence; footer marks stabilize ownership. Only the relationship roles are candidates for transfer.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.96,
+      "source_region": "central and peripheral graphic elements",
+      "uncertainty": "The narrative meaning of the path is not stated; later human review downgraded it to optional/omit."
+    },
+    {
+      "id": "design_material_behavior",
+      "dimension": "MATERIAL_PRINT",
+      "value": "The title's speckled erosion suggests a printed or weathered surface while the remaining functional text stays comparatively clean. No paper substrate, foil, embossing or physical print process is directly proven.",
+      "evidence_class": "DIRECT_VISIBLE",
+      "confidence": 0.87,
+      "source_region": "central display title",
+      "uncertainty": "Whether the erosion came from vector texture, raster mask or physical print is unknown."
+    }
+  ],
+  "binding_classification": {
+    "style_signature_hypotheses": [
+      "dominant display object versus subordinate information tiers",
+      "dense/quiet vertical rhythm",
+      "optically asymmetric central identity cluster",
+      "role-based light/support/accent hierarchy"
+    ],
+    "content_bound": [
+      "literal claims",
+      "literal slogan",
+      "literal support copy"
+    ],
+    "brand_bound": [
+      "exact 山野集 glyph contours",
+      "李家班 badge identity",
+      "WANCE naming and lockup"
+    ],
+    "production_bound": [
+      "exact four-claim count",
+      "exact coordinates",
+      "exact footer implementation"
+    ],
+    "optional_variation": [
+      "English support presence",
+      "accent path presence",
+      "badge presence",
+      "handwritten voice presence"
+    ]
+  }
+}
