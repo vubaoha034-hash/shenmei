@@ -240,18 +240,23 @@ def test_checkpoint_and_controlled_family_ledger_are_hash_consistent():
     assert checkpoint["sequence"] >= 15
     tail = checkpoint["ledger_tails"]["controlled_family_validation"]
     lines = LEDGER_PATH.read_text(encoding="utf-8").splitlines()
-    assert len(lines) == 1
-    event = json.loads(lines[0])
-    assert event["event_id"] == tail["event_id"]
-    assert event["event_hash"] == tail["event_hash"]
+    assert len(lines) >= 1
+    events = [json.loads(line) for line in lines]
+    event = events[0]
     assert event["previous_event_id"] is None
     assert event["previous_event_hash"] is None
-    asserted = dict(event)
-    asserted_hash = asserted.pop("event_hash")
-    canonical = json.dumps(
-        asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")
-    ).encode("utf-8")
-    assert hashlib.sha256(canonical).hexdigest() == asserted_hash
+    for index, item in enumerate(events):
+        asserted = dict(item)
+        asserted_hash = asserted.pop("event_hash")
+        canonical = json.dumps(
+            asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        ).encode("utf-8")
+        assert hashlib.sha256(canonical).hexdigest() == asserted_hash
+        if index:
+            assert item["previous_event_id"] == events[index - 1]["event_id"]
+            assert item["previous_event_hash"] == events[index - 1]["event_hash"]
+    assert events[-1]["event_id"] == tail["event_id"]
+    assert events[-1]["event_hash"] == tail["event_hash"]
     assert event["after"]["generated_outputs"] == 0
     assert event["after"]["human_pixel_review"] == "PENDING_GENERATION"
 

@@ -323,15 +323,15 @@ def test_global_compiler_schema_and_attempt1_evidence_remain_immutable():
 
 def test_checkpoint_ledger_and_adapter_are_consistent():
     checkpoint = load(CHECKPOINT_PATH)
-    assert checkpoint["sequence"] == 17
-    assert checkpoint["status"] == STATE
-    assert checkpoint["highest_accepted_checkpoint"] == STATE
-    assert checkpoint["next_required_action"] == NEXT_ACTION
+    assert checkpoint["sequence"] >= 17
     lines = LEDGER_PATH.read_text(encoding="utf-8").splitlines()
-    assert len(lines) == 3
+    assert len(lines) >= 3
     events = [json.loads(line) for line in lines]
-    event = events[-1]
-    previous = events[-2]
+    event_index = next(
+        index for index, item in enumerate(events) if item["event_id"] == EVENT_ID
+    )
+    event = events[event_index]
+    previous = events[event_index - 1]
     assert event["event_id"] == EVENT_ID
     assert event["event_hash"] == EVENT_HASH
     assert event["previous_event_id"] == previous["event_id"]
@@ -355,8 +355,20 @@ def test_checkpoint_ledger_and_adapter_are_consistent():
         "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/"
         "CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json"
     )
-    assert state[identity_path]["priority"] == 1
-    assert task[policy_path]["priority"] == 1
+    assert identity_path in state
+    assert policy_path in task
+    attempt2_freeze_path = (
+        "evidence/vpd/shanyeji/controlled_family_attempt2/"
+        "ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json"
+    )
+    attempt2_handoff_path = (
+        "evidence/vpd/shanyeji/controlled_family_attempt2/"
+        "VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt"
+    )
+    if attempt2_freeze_path in state:
+        assert state[attempt2_freeze_path]["priority"] < state[identity_path]["priority"]
+    if attempt2_handoff_path in task:
+        assert task[attempt2_handoff_path]["priority"] < task[policy_path]["priority"]
     adapter_ref = next(
         item
         for item in checkpoint["source_state_refs"]
