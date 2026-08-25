@@ -1,0 +1,67 @@
+{
+  "schema_version": "vpd-human-final-settlement/v1",
+  "artifact_type": "ATTEMPT2_HUMAN_FINAL_SETTLEMENT",
+  "experiment_name": "SHANYEJI_CONTROLLED_FAMILY_VALIDATION_ATTEMPT2",
+  "attempt_number": 2,
+  "settled_at": "2026-08-25T22:48:00+08:00",
+  "authority": "HUMAN_FINAL_AESTHETIC_AUTHORITY",
+  "evidence_channels": {
+    "fresh_blind_pixel": {
+      "verdict": "BLIND_PIXEL_SET_PASS",
+      "scores": {"F1": 7.4, "F2": 7.2, "F3": 6.8},
+      "commercial_campaign_readiness_reported_by_evaluator": true
+    },
+    "fresh_reference_aware_family": {
+      "verdict": "REFERENCE_AWARE_FAMILY_TRANSFER_PASS",
+      "family_kinship_scores": {"F1": 8.2, "F2": 7.6, "F3": 5.6}
+    },
+    "fresh_mechanism_contract": {
+      "verdict": "ATTEMPT2_MECHANISM_VALIDATION_FAIL",
+      "technical_photographic_realism_score": 8.4,
+      "passes": [
+        "STRUCTURAL_DISPLAY_MASS",
+        "SURFACE_DIVERGENCE",
+        "ASPECT_REFLOW",
+        "MOTIF_POLICY",
+        "MECHANISM_EXPLANATION_SUFFICIENCY",
+        "TECHNICAL_PHOTOGRAPHIC_REALISM"
+      ],
+      "failures": [
+        "F1_GRAPHIC_ACCENT_ABSENT_VIOLATION",
+        "F1_RELATION_TOPOLOGY_VIOLATION",
+        "F2_RELATION_TOPOLOGY_VIOLATION",
+        "F3_GRAPHIC_ACCENT_ABSENT_VIOLATION",
+        "F3_OPERATOR_ISOLATION_FAILURE",
+        "F3_LOCATION_VARIABLE_TYPE_SAFE_SPACE_VIOLATION"
+      ]
+    }
+  },
+  "human_exact_feedback": "三张只能说都一般，都属于有设计但是并不很好看。特别是文字，但是我也在想是不是figma没有使用的原因。二，菜品很假，但是这个是不是以前因为用的就是ai自己生成的，所以现在一直有这个问题。",
+  "human_interpretation": {
+    "overall_aesthetic": "GENERAL_NOT_GOOD_ENOUGH",
+    "typography": "PRIMARY_VISIBLE_WEAKNESS",
+    "food_realism": "PRIMARY_VISIBLE_WEAKNESS_FOR_COOKING_OUTPUTS",
+    "formal_commercial_acceptance": false
+  },
+  "formal_verdict": "ATTEMPT2_FAMILY_VALIDATION_FAIL",
+  "qualification": "FAIL_WITH_STRONG_POSITIVE_MECHANISM_EVIDENCE",
+  "important_non_conclusions": [
+    "Do not conclude that Figma omission proves the typography mechanism failed.",
+    "Do not conclude that historical AI food pixels contaminated Attempt 2; Attempt 2 used zero runtime references.",
+    "Do not conclude that the global VPD compiler failed.",
+    "Do not promote Commercial, Golden or Scale from evaluator PASS scores.",
+    "Do not rewrite Style Capsule V1.1 Candidate before isolating production-layer and art-layer causes."
+  ],
+  "next_route": {
+    "architecture": "RESTORE_EXISTING_ART_LAYER_TO_PRODUCTION_LAYER_PIPELINE",
+    "phase_1": "F1_PRODUCTION_FIGMA_TYPOGRAPHY_PILOT",
+    "phase_2": "F2_ART_LAYER_FOOD_REALISM_PILOT",
+    "phase_3": "INTEGRATED_FUSION_REVIEW_AFTER_BOTH_CAUSES_ARE_ISOLATED",
+    "codex_required_by_default": false
+  },
+  "promotion_boundary": {
+    "commercial_quality": "NOT_YET",
+    "golden": "NO",
+    "scale": "BLOCKED_NOT_EXECUTED"
+  }
+}
