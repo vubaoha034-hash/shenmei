@@ -1,0 +1,85 @@
+{
+  "schema_version": "vpd-photo-only-render-contract/v1",
+  "artifact_type": "PHOTO_ONLY_RENDER_CONTRACT",
+  "contract_id": "PHOTO_ONLY_RENDER_CONTRACT_V1",
+  "contract_version": "1.0.0",
+  "status": "ACTIVE_FORWARD_ONLY",
+  "scope": {
+    "project_id": "visual-aesthetic-vpd",
+    "applies_to": "FUTURE_VPD_CONTROLLED_OR_FORMAL_COMMERCIAL_PHOTO_DESIGN_RUNS_USING_THE_OPT_IN_STAGED_ROUTE",
+    "historical_attempts_reclassified": false,
+    "global_visual_program_schema_modified": false,
+    "global_compiler_modified": false
+  },
+  "execution_route": {
+    "image_generation_policy": "CHATGPT_ONLY",
+    "allowed_render_route": "CHATGPT_PRODUCT_UI",
+    "codex_renderer_authorized": false,
+    "api_wif_oidc_private_external_or_browser_automation_renderer_authorized": false
+  },
+  "payload_contract": {
+    "required_top_level_fields": [
+      "contract_id",
+      "contract_version",
+      "stage",
+      "render_route",
+      "chatgpt_only",
+      "controller_payload_identity",
+      "controller_payload_sha256",
+      "photography_required",
+      "type_safe_space_requirements",
+      "graphic_text_prohibited_in_render",
+      "prohibited_composition_shortcuts",
+      "final_typography_in_render"
+    ],
+    "stage_value": "PHOTO_ONLY_RENDER",
+    "photography_required_fields": [
+      "subject_scene",
+      "camera_view_geometry_hypotheses",
+      "crop_and_mass",
+      "depth_staging",
+      "material_realism",
+      "lighting_architecture",
+      "tonal_field",
+      "color_roles",
+      "atmosphere",
+      "retouch_restraint"
+    ],
+    "type_safe_space_is_photographic_space": true,
+    "graphic_text_prohibited_fields": [
+      "final_chinese_title",
+      "final_english_title",
+      "support_copy",
+      "badges",
+      "footer_text",
+      "fake_labels",
+      "rasterized_logo_lockup",
+      "decorative_pseudo_copy",
+      "placeholder_gibberish"
+    ],
+    "final_typography_in_render_required_value": false
+  },
+  "prohibited_composition_shortcuts": [
+    "BLACK_GRADIENT_PANEL",
+    "DETACHED_BEIGE_OR_CREAM_TEXT_BOARD",
+    "GENERIC_LOWER_THIRD_PANEL",
+    "ARTIFICIAL_EMPTY_BANNER",
+    "HEAVY_TEXT_SHADOW",
+    "FAKE_SIGNBOARD_UNLESS_PHYSICAL_SIGNBOARD_IS_ACTUAL_SUBJECT"
+  ],
+  "allowed_quiet_region_instruction": "Preserve scene-derived quiet regions for later editable design without filling them with final typography or pseudo-copy.",
+  "receipt_requirements": {
+    "render_route": true,
+    "controller_payload_identity_and_hash": true,
+    "contract_version_and_hash": true,
+    "source_photo_identity_hash_and_dimensions": true,
+    "final_typography_in_render_false": true
+  },
+  "validation_failures": {
+    "final_typography_present": "PHOTO_ONLY_RENDER_CONTAINS_FINAL_TYPOGRAPHY",
+    "prohibited_graphic_text_field_present": "PHOTO_ONLY_RENDER_CONTAINS_GRAPHIC_TEXT_FIELD",
+    "missing_photography_field": "PHOTO_ONLY_RENDER_PHOTOGRAPHY_CONTRACT_INCOMPLETE",
+    "prohibited_shortcut_not_excluded": "PHOTO_ONLY_RENDER_SHORTCUT_EXCLUSION_INCOMPLETE",
+    "wrong_execution_route": "PHOTO_ONLY_RENDER_ROUTE_VIOLATION"
+  }
+}

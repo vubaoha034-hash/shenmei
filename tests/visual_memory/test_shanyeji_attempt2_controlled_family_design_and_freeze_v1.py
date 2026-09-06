@@ -336,10 +336,10 @@ def test_freeze_and_drive_receipts_bind_exact_artifacts():
 
 def test_checkpoint_ledger_and_adapter_promote_attempt2_without_rollback():
     checkpoint = load(CHECKPOINT_PATH)
-    assert checkpoint["sequence"] == 18
-    assert checkpoint["status"] == STATE
-    assert checkpoint["highest_accepted_checkpoint"] == STATE
-    assert checkpoint["next_required_action"] == NEXT_ACTION
+    # Sequence 18 is historical Attempt-2 freeze evidence. Forward-only
+    # project contracts may advance the current checkpoint without rewriting
+    # this event or making its consumed handoff current again.
+    assert checkpoint["sequence"] >= 18
     tail = checkpoint["ledger_tails"]["controlled_family_validation"]
     assert tail == {"event_id": EVENT_ID, "event_hash": EVENT_HASH}
 
@@ -375,7 +375,8 @@ def test_checkpoint_ledger_and_adapter_promote_attempt2_without_rollback():
         "evidence/vpd/shanyeji/controlled_family_attempt2/"
         "VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt"
     )
-    assert tasks[handoff_path]["priority"] == 1
+    assert handoff_path in tasks
+    assert "historical consumed" in tasks[handoff_path]["purpose"]
     adapter_ref = next(
         item
         for item in checkpoint["source_state_refs"]

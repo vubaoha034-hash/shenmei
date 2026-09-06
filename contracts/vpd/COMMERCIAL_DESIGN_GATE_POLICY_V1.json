@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-commercial-design-gate-policy/v1",
+  "artifact_type": "COMMERCIAL_DESIGN_GATE_POLICY",
+  "policy_id": "COMMERCIAL_DESIGN_GATE_POLICY_V1",
+  "policy_version": "1.0.0",
+  "status": "ACTIVE_FORWARD_ONLY",
+  "scope": {
+    "project_id": "visual-aesthetic-vpd",
+    "route": "PHOTO_ONLY_RENDER_TO_FIGMA_COMPOSITION_TO_FINAL_EXPORT",
+    "historical_attempts_reclassified": false,
+    "global_aesthetic_rule": false
+  },
+  "gates": {
+    "PHOTO_QUALITY_GATE": {
+      "authority": "HUMAN_WITH_MACHINE_EVIDENCE",
+      "evaluates": "Photographic subject, light, material, depth, realism and source-pixel integrity.",
+      "taste_proven_by_machine": false
+    },
+    "TYPOGRAPHY_DESIGN_GATE": {
+      "authority": "HUMAN_WITH_EDITABLE_NODE_EVIDENCE",
+      "evaluates": "Primary title and supporting type quality, hierarchy, spacing, exact copy and authored behavior.",
+      "taste_proven_by_machine": false
+    },
+    "PHOTO_TYPE_INTEGRATION_GATE": {
+      "authority": "HUMAN_WITH_RELATIONSHIP_EVIDENCE",
+      "evaluates": "Counter-mass, scene-derived type-safe space, grid, density and integration without generic detached panels.",
+      "taste_proven_by_machine": false
+    },
+    "BRAND_DISTINCTIVENESS_GATE": {
+      "authority": "HUMAN_WITH_MECHANISM_EXPLANATION",
+      "evaluates": "Transferable brand-specific relationships rather than interchangeable restaurant tokens.",
+      "taste_proven_by_machine": false
+    },
+    "EDITABLE_DESIGN_PROVENANCE_GATE": {
+      "authority": "MACHINE_AUDITABLE",
+      "evaluates": "Exact trace from source photo through editable Figma nodes and frame to final export.",
+      "taste_proven_by_machine": false
+    },
+    "FINAL_PIXEL_QUALITY_GATE": {
+      "authority": "HUMAN_WITH_MACHINE_FILE_CHECKS",
+      "evaluates": "Final exported pixels at thumbnail, normal and detail scales after composition.",
+      "taste_proven_by_machine": false
+    }
+  },
+  "formal_commercial_output_rule": {
+    "all_six_gates_must_pass": true,
+    "renderer_generated_final_typography_allowed": false,
+    "editable_figma_typography_and_composition_evidence_required": true,
+    "photo_render_receipt_required": true,
+    "figma_composition_receipt_required": true,
+    "final_export_receipt_required": true,
+    "photo_to_figma_to_export_hash_chain_required": true,
+    "unknown_metadata_can_support_formal_pass": false
+  },
+  "historical_compatibility": {
+    "policy_is_forward_only": true,
+    "attempt1_and_attempt2_remain_under_historical_rules": true,
+    "historical_receipts_rewritten": false,
+    "historical_raster_typography_retroactively_called_editable": false
+  }
+}

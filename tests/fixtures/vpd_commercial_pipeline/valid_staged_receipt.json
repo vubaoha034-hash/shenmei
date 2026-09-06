@@ -1,0 +1,125 @@
+{
+  "schema_version": "vpd-commercial-design-provenance-receipt/v1",
+  "receipt_id": "VPD-FORWARD-PIPELINE-FIXTURE-001",
+  "classification": "FORMAL_COMMERCIAL_OUTPUT",
+  "photo_render_receipt": {
+    "receipt_id": "PHOTO-RENDER-FIXTURE-001",
+    "render_route": "CHATGPT_PRODUCT_UI",
+    "controller_payload_identity": "PHOTO-ONLY-FIXTURE-PAYLOAD-001",
+    "controller_payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "photo_only_contract": {
+      "contract_id": "PHOTO_ONLY_RENDER_CONTRACT_V1",
+      "contract_version": "1.0.0",
+      "contract_sha256": "e9fb29a2d91acd1312787dca67daf602d4fbd8a81492ec9d20bc435be4586a66"
+    },
+    "source_photo": {
+      "file_identity": "PHOTO-SOURCE-FIXTURE-001.png",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 1600
+      }
+    },
+    "final_typography_in_render": false
+  },
+  "figma_composition_receipt": {
+    "receipt_id": "FIGMA-COMPOSITION-FIXTURE-001",
+    "receipt_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "figma_file_key": "FIGMA_FILE_FIXTURE_001",
+    "frame_node_id": "100:200",
+    "composition_contract": {
+      "contract_id": "FIGMA_COMPOSITION_CONTRACT_V1",
+      "contract_version": "1.0.0",
+      "contract_sha256": "a2d59629041ae9b43a357025efaf7fca34e33691b8f11b30eee4ae99a9c0a309"
+    },
+    "exact_copy": {
+      "primary_title": "灶边味",
+      "english_support": [
+        "WOK HEI",
+        "MOUNTAIN KITCHEN"
+      ],
+      "chinese_support": [
+        "山野风味 · 现炒现做"
+      ]
+    },
+    "editable_primary_title_nodes": [
+      {
+        "node_id": "101:1",
+        "node_type": "VECTOR",
+        "role": "PRIMARY_DISPLAY_TITLE",
+        "exact_copy": "灶边味",
+        "editable": true,
+        "x": 720,
+        "y": 420,
+        "width": 360,
+        "height": 210,
+        "optical_mass_relationship": "Counterbalances the left photographic mass without a detached panel."
+      }
+    ],
+    "editable_support_copy_nodes": [
+      {
+        "node_id": "101:2",
+        "node_type": "TEXT",
+        "role": "ENGLISH_SUPPORT",
+        "exact_copy": "WOK HEI / MOUNTAIN KITCHEN",
+        "editable": true,
+        "x": 760,
+        "y": 660,
+        "width": 280,
+        "height": 42,
+        "optical_mass_relationship": "Secondary to the primary title in a scene-derived quiet pocket.",
+        "line_height": 24,
+        "tracking": 1.5
+      },
+      {
+        "node_id": "101:3",
+        "node_type": "TEXT",
+        "role": "CHINESE_SUPPORT",
+        "exact_copy": "山野风味 · 现炒现做",
+        "editable": true,
+        "x": 760,
+        "y": 718,
+        "width": 300,
+        "height": 36,
+        "optical_mass_relationship": "Third-read closure aligned with the English support.",
+        "line_height": 22,
+        "tracking": 0
+      }
+    ],
+    "source_photo_identity": "PHOTO-SOURCE-FIXTURE-001.png",
+    "source_photo_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "composition_timestamp": "2026-09-06T18:00:00+08:00",
+    "designer_or_agent_route": "FIGMA_EDITABLE_COMPOSITION",
+    "grid_spatial_system": "1200x1600 frame, measured margins, two primary axes and asymmetric density rhythm.",
+    "photo_type_relationship": "Title and source-photo masses share one field; support copy occupies scene-derived quiet space.",
+    "brand_distinctiveness_explanation": "The hierarchy and counter-mass remain tied to the photographic world rather than a generic restaurant template."
+  },
+  "final_export_receipt": {
+    "receipt_id": "FINAL-EXPORT-FIXTURE-001",
+    "final_export_file_identity": "FINAL-FIXTURE-001.png",
+    "final_export_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "pixel_dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "source_figma_file_key": "FIGMA_FILE_FIXTURE_001",
+    "source_figma_frame_node_id": "100:200",
+    "source_photo_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "composition_receipt_id": "FIGMA-COMPOSITION-FIXTURE-001",
+    "composition_receipt_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "gates": {
+    "PHOTO_QUALITY_GATE": "PASS",
+    "TYPOGRAPHY_DESIGN_GATE": "PASS",
+    "PHOTO_TYPE_INTEGRATION_GATE": "PASS",
+    "BRAND_DISTINCTIVENESS_GATE": "PASS",
+    "EDITABLE_DESIGN_PROVENANCE_GATE": "PASS",
+    "FINAL_PIXEL_QUALITY_GATE": "PASS"
+  },
+  "formal_commercial_output_eligible": true,
+  "forward_only_policy": {
+    "policy_id": "COMMERCIAL_DESIGN_GATE_POLICY_V1",
+    "historical_artifact": false,
+    "historical_artifact_reclassified": false
+  }
+}

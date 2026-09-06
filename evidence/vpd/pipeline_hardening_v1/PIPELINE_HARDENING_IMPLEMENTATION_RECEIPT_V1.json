@@ -1,0 +1,127 @@
+{
+  "schema_version": "vpd-pipeline-hardening-implementation-receipt/v1",
+  "artifact_type": "PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT",
+  "receipt_id": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_20260906_001",
+  "recorded_at": "2026-09-06T17:31:28+08:00",
+  "repository_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "starting_remote_head": "ad13550d377457b2df1afe07e74755789ca7ef82",
+    "working_tree_before_writes": "CLEAN",
+    "preflight": "PASS_AFTER_CLEAN_FAST_FORWARD",
+    "force_push_used": false,
+    "reset_used": false,
+    "rebase_used": false
+  },
+  "source_instruction": {
+    "drive_file_id": "1SKmCHFgOxOXfdx7U7wtxFeenN8c6zLf9",
+    "title": "VPD_CODEX_PHOTO_FIGMA_PIPELINE_HARDENING_V1.txt",
+    "mime_type": "text/plain",
+    "reported_byte_length": 13701,
+    "full_text_read": true,
+    "duplicate_do_not_use_files_executed": false
+  },
+  "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
+  "artifacts": {
+    "photo_only_render_contract": {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "sha256": "e9fb29a2d91acd1312787dca67daf602d4fbd8a81492ec9d20bc435be4586a66",
+      "status": "CREATED"
+    },
+    "figma_composition_contract": {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "sha256": "a2d59629041ae9b43a357025efaf7fca34e33691b8f11b30eee4ae99a9c0a309",
+      "status": "CREATED"
+    },
+    "commercial_design_gate_policy": {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "sha256": "6eadc9a5ea1c82ae7904d79d3c7b33b272d6d10887b9650267ac41f5f672641f",
+      "status": "CREATED"
+    },
+    "commercial_design_provenance_schema": {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "sha256": "2b9b057029f1e6c1856d0f7ca6fde2e04f6dd5c9e6022c1181cd27a048b4668a",
+      "status": "CREATED"
+    },
+    "validation_adapter": {
+      "path": "visual_memory/vpd_commercial_pipeline.py",
+      "sha256": "50ec31d08221cdbdefa14a85879120617c667675172bddb12977421d79d4870d",
+      "status": "CREATED",
+      "renderer_capability": false,
+      "network_capability": false
+    },
+    "focused_tests": {
+      "path": "tests/visual_memory/test_vpd_photo_figma_pipeline_hardening_v1.py",
+      "sha256": "4ce13c9b27a901696b95c607197e4a24acecb744766e45b0eedcd23b91e1946e",
+      "fixture_path": "tests/fixtures/vpd_commercial_pipeline/valid_staged_receipt.json",
+      "fixture_sha256": "8a797bc3c9f56c7b21415e983da77770e5a18bf917ad7c70a5dbb8a4c8689755"
+    },
+    "implementation_migration_note": {
+      "path": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
+      "sha256": "d6a0138040a16d371d9ffcde8e78645c10db5e6bcdf65a77054996bdad6544f7"
+    }
+  },
+  "gates_added": [
+    "PHOTO_QUALITY_GATE",
+    "TYPOGRAPHY_DESIGN_GATE",
+    "PHOTO_TYPE_INTEGRATION_GATE",
+    "BRAND_DISTINCTIVENESS_GATE",
+    "EDITABLE_DESIGN_PROVENANCE_GATE",
+    "FINAL_PIXEL_QUALITY_GATE"
+  ],
+  "backward_compatibility": {
+    "status": "PASS",
+    "forward_only": true,
+    "historical_attempt2_evidence_modified": false,
+    "historical_receipts_rewritten": false,
+    "historical_raster_typography_reclassified_as_editable": false,
+    "global_compiler_modified": false,
+    "global_visual_program_schema_modified": false,
+    "v4_2_daily_brand_route_overridden": false
+  },
+  "historical_hash_bindings": {
+    "VISUAL_DISTILLATION_COMPILER_CONTRACT_V2.md": "d53a8485ebf3b449f261695d1602543303611bae899497d1bc401f8c23da79b4",
+    "schemas/visual-program.v2.schema.json": "573314cd63d9f799107788e348d81a9ad8f1735976babeb6b0f9e7bde2f9f348",
+    "evidence/vpd/shanyeji/style_capsule_v1/STYLE_CAPSULE_V1.json": "f47023656ad0b5d2b0fe374bd90533f65987ef11175cded20ba37fdf82f3f8f1",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json": "54bbc4a1eccd5e76d17dcb13b889c501ed93a4457dbbc1f8dc157572967a0cd9",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F1_CONTROLLER_PAYLOAD.json": "edeb914f9febf2073cdda67da3ff282d27933f23f9c8d4a577ebc6ff5938df61",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F2_CONTROLLER_PAYLOAD.json": "7bba27202e8ba79a646fa17b74551dcc636e9eeb0c3d0b8d9c1545451a6e502e",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F3_CONTROLLER_PAYLOAD.json": "b48c6f31d56038d71522c6b6fc918f887750aff795f92e26c74cfac608822c05",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json": "683c0d9991c54a960de7eff4ebceccefbf95d18f35a683d3af85e088501210a1",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_POST_SETTLEMENT_ISOLATION_PLAN_20260825.md": "1a337ef51434d1d72cc4746bb093960894ff23fdc5275fc5e2e57012ba5bab74"
+  },
+  "attempt2_status_preserved": {
+    "formal_verdict": "ATTEMPT2_FAMILY_VALIDATION_FAIL",
+    "qualification": "FAIL_WITH_STRONG_POSITIVE_MECHANISM_EVIDENCE",
+    "style_capsule_v1_1_promoted": false,
+    "final_attempt2_settlement_performed_by_this_task": false
+  },
+  "figma_status": {
+    "known_file_name": "VPD Attempt2 Typography Rebuild",
+    "formal_vpd_artifact": false,
+    "file_key": "UNKNOWN",
+    "node_ids": "UNKNOWN",
+    "fabricated_metadata": false
+  },
+  "execution_assertions": {
+    "image_generated_or_edited": false,
+    "aesthetic_typography_rebuild_performed": false,
+    "codex_used_as_renderer": false,
+    "renderer_infrastructure_added": false,
+    "openai_api_or_key_used": false,
+    "wif_or_oidc_used": false,
+    "private_external_or_browser_automation_renderer_used": false,
+    "commercial_golden_or_scale_executed": false
+  },
+  "validation": {
+    "focused_pipeline_tests": "PASS / 9 TESTS",
+    "relevant_shanyeji_and_vpd_regression": "PASS / 82 TESTS / 50 DESELECTED",
+    "full_visual_memory_suite": "PASS / 133 TESTS",
+    "legacy_visual_memory_verifier": "PASS / 55 TESTS",
+    "existing_renderer_adapter_dry_run_validator": "PASS / 3 TASKS / ZERO REFERENCES / NO NETWORK",
+    "json_syntax": "PASS / 110 JSON FILES / 6 JSONL FILES",
+    "git_diff_check": "PASS"
+  },
+  "next_required_action": "RUN_FIRST_FORWARD_PHOTO_ONLY_PLUS_FIGMA_COMPOSITION_VALIDATION",
+  "next_action_executed": false
+}

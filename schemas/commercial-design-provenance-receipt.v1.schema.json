@@ -1,0 +1,494 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "commercial-design-provenance-receipt.v1.schema.json",
+  "title": "VPD Commercial Design Provenance Receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "classification",
+    "photo_render_receipt",
+    "figma_composition_receipt",
+    "final_export_receipt",
+    "gates",
+    "formal_commercial_output_eligible",
+    "forward_only_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "vpd-commercial-design-provenance-receipt/v1"
+    },
+    "receipt_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "classification": {
+      "enum": [
+        "DRAFT_VALIDATION_ONLY",
+        "FORMAL_COMMERCIAL_OUTPUT"
+      ]
+    },
+    "photo_render_receipt": {
+      "$ref": "#/$defs/photoRenderReceipt"
+    },
+    "figma_composition_receipt": {
+      "$ref": "#/$defs/figmaCompositionReceipt"
+    },
+    "final_export_receipt": {
+      "$ref": "#/$defs/finalExportReceipt"
+    },
+    "gates": {
+      "$ref": "#/$defs/gates"
+    },
+    "formal_commercial_output_eligible": {
+      "type": "boolean"
+    },
+    "forward_only_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "historical_artifact",
+        "historical_artifact_reclassified"
+      ],
+      "properties": {
+        "policy_id": {
+          "const": "COMMERCIAL_DESIGN_GATE_POLICY_V1"
+        },
+        "historical_artifact": {
+          "type": "boolean"
+        },
+        "historical_artifact_reclassified": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "knownOrUnknownString": {
+      "oneOf": [
+        {
+          "const": "UNKNOWN"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "not": {
+            "const": "UNKNOWN"
+          }
+        }
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pixelDimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "contractBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id",
+        "contract_version",
+        "contract_sha256"
+      ],
+      "properties": {
+        "contract_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "contract_version": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "photoRenderReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "render_route",
+        "controller_payload_identity",
+        "controller_payload_sha256",
+        "photo_only_contract",
+        "source_photo",
+        "final_typography_in_render"
+      ],
+      "properties": {
+        "receipt_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "render_route": {
+          "const": "CHATGPT_PRODUCT_UI"
+        },
+        "controller_payload_identity": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "controller_payload_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "photo_only_contract": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/contractBinding"
+            },
+            {
+              "properties": {
+                "contract_id": {
+                  "const": "PHOTO_ONLY_RENDER_CONTRACT_V1"
+                }
+              }
+            }
+          ]
+        },
+        "source_photo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "file_identity",
+            "sha256",
+            "pixel_dimensions"
+          ],
+          "properties": {
+            "file_identity": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "pixel_dimensions": {
+              "$ref": "#/$defs/pixelDimensions"
+            }
+          }
+        },
+        "final_typography_in_render": {
+          "const": false
+        }
+      }
+    },
+    "editableNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node_id",
+        "node_type",
+        "role",
+        "exact_copy",
+        "editable",
+        "x",
+        "y",
+        "width",
+        "height",
+        "optical_mass_relationship"
+      ],
+      "properties": {
+        "node_id": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "node_type": {
+          "enum": [
+            "TEXT",
+            "VECTOR"
+          ]
+        },
+        "role": {
+          "enum": [
+            "PRIMARY_DISPLAY_TITLE",
+            "ENGLISH_SUPPORT",
+            "CHINESE_SUPPORT"
+          ]
+        },
+        "exact_copy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "editable": {
+          "const": true
+        },
+        "x": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        },
+        "y": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        },
+        "width": {
+          "oneOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        },
+        "height": {
+          "oneOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        },
+        "optical_mass_relationship": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "line_height": {
+          "oneOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        },
+        "tracking": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "UNKNOWN"
+            }
+          ]
+        }
+      }
+    },
+    "figmaCompositionReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "receipt_sha256",
+        "figma_file_key",
+        "frame_node_id",
+        "composition_contract",
+        "exact_copy",
+        "editable_primary_title_nodes",
+        "editable_support_copy_nodes",
+        "source_photo_identity",
+        "source_photo_sha256",
+        "composition_timestamp",
+        "designer_or_agent_route",
+        "grid_spatial_system",
+        "photo_type_relationship",
+        "brand_distinctiveness_explanation"
+      ],
+      "properties": {
+        "receipt_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "receipt_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "figma_file_key": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "frame_node_id": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "composition_contract": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/contractBinding"
+            },
+            {
+              "properties": {
+                "contract_id": {
+                  "const": "FIGMA_COMPOSITION_CONTRACT_V1"
+                }
+              }
+            }
+          ]
+        },
+        "exact_copy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_title",
+            "english_support",
+            "chinese_support"
+          ],
+          "properties": {
+            "primary_title": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "english_support": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
+            },
+            "chinese_support": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
+            }
+          }
+        },
+        "editable_primary_title_nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/editableNode"
+          }
+        },
+        "editable_support_copy_nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/editableNode"
+          }
+        },
+        "source_photo_identity": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_photo_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "composition_timestamp": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "designer_or_agent_route": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "grid_spatial_system": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "photo_type_relationship": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "brand_distinctiveness_explanation": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "finalExportReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "final_export_file_identity",
+        "final_export_sha256",
+        "pixel_dimensions",
+        "source_figma_file_key",
+        "source_figma_frame_node_id",
+        "source_photo_sha256",
+        "composition_receipt_id",
+        "composition_receipt_sha256"
+      ],
+      "properties": {
+        "receipt_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "final_export_file_identity": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "final_export_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "pixel_dimensions": {
+          "$ref": "#/$defs/pixelDimensions"
+        },
+        "source_figma_file_key": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "source_figma_frame_node_id": {
+          "$ref": "#/$defs/knownOrUnknownString"
+        },
+        "source_photo_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "composition_receipt_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "composition_receipt_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "gateResult": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NOT_REVIEWED"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PHOTO_QUALITY_GATE",
+        "TYPOGRAPHY_DESIGN_GATE",
+        "PHOTO_TYPE_INTEGRATION_GATE",
+        "BRAND_DISTINCTIVENESS_GATE",
+        "EDITABLE_DESIGN_PROVENANCE_GATE",
+        "FINAL_PIXEL_QUALITY_GATE"
+      ],
+      "properties": {
+        "PHOTO_QUALITY_GATE": {
+          "$ref": "#/$defs/gateResult"
+        },
+        "TYPOGRAPHY_DESIGN_GATE": {
+          "$ref": "#/$defs/gateResult"
+        },
+        "PHOTO_TYPE_INTEGRATION_GATE": {
+          "$ref": "#/$defs/gateResult"
+        },
+        "BRAND_DISTINCTIVENESS_GATE": {
+          "$ref": "#/$defs/gateResult"
+        },
+        "EDITABLE_DESIGN_PROVENANCE_GATE": {
+          "$ref": "#/$defs/gateResult"
+        },
+        "FINAL_PIXEL_QUALITY_GATE": {
+          "$ref": "#/$defs/gateResult"
+        }
+      }
+    }
+  }
+}

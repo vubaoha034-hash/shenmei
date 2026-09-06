@@ -1,0 +1,108 @@
+{
+  "schema_version": "vpd-figma-composition-contract/v1",
+  "artifact_type": "FIGMA_COMPOSITION_CONTRACT",
+  "contract_id": "FIGMA_COMPOSITION_CONTRACT_V1",
+  "contract_version": "1.0.0",
+  "status": "ACTIVE_FORWARD_ONLY",
+  "scope": {
+    "project_id": "visual-aesthetic-vpd",
+    "approved_design_surface": "FIGMA",
+    "applies_to": "FUTURE_VPD_FORMAL_COMMERCIAL_OUTPUTS_ON_THE_OPT_IN_STAGED_ROUTE",
+    "historical_attempts_reclassified": false,
+    "known_unregistered_figma_file_name": "VPD Attempt2 Typography Rebuild",
+    "known_unregistered_figma_file_is_formal_artifact": false,
+    "known_unregistered_figma_file_key": "UNKNOWN",
+    "known_unregistered_figma_node_ids": "UNKNOWN"
+  },
+  "editable_evidence_requirements": {
+    "PRIMARY_DISPLAY_TITLE": {
+      "allowed_node_types": [
+        "TEXT",
+        "VECTOR"
+      ],
+      "required_fields": [
+        "exact_copy",
+        "node_id",
+        "node_type",
+        "editable",
+        "x",
+        "y",
+        "width",
+        "height",
+        "optical_mass_relationship"
+      ],
+      "raster_generated_fake_typography_allowed": false
+    },
+    "SUPPORTING_TYPE": {
+      "required_roles": [
+        "ENGLISH_SUPPORT",
+        "CHINESE_SUPPORT"
+      ],
+      "required_properties": [
+        "hierarchy",
+        "spacing",
+        "alignment",
+        "optical_offsets",
+        "line_height_when_available",
+        "tracking_when_available"
+      ]
+    },
+    "PHOTO_TYPE_RELATIONSHIP": {
+      "required_relationships": [
+        "TITLE_PHOTO_COUNTER_MASS",
+        "SCENE_DERIVED_TYPE_SAFE_TONAL_SPACE",
+        "TITLE_INTEGRATION_WITH_PHOTOGRAPHIC_FIELD"
+      ],
+      "detached_generic_text_panel_allowed": false,
+      "exception_requires_explicit_grammar_justification": true
+    },
+    "GRID_SPATIAL_SYSTEM": {
+      "required_fields": [
+        "frame_width",
+        "frame_height",
+        "aspect_ratio",
+        "margins",
+        "primary_axes",
+        "alignment_logic",
+        "negative_space_regions",
+        "density_rhythm"
+      ]
+    },
+    "BRAND_DISTINCTIVENESS": {
+      "transferable_relationship_explanation_required": true,
+      "generic_restaurant_token_explanation_sufficient": false,
+      "brand_name_swap_must_not_leave_fully_interchangeable_template": true
+    },
+    "EDITABILITY": {
+      "editable_text_or_vector_design_layers_required": true,
+      "final_export_alone_sufficient": false,
+      "figma_file_key_required": true,
+      "frame_node_id_required": true
+    }
+  },
+  "receipt_requirements": {
+    "figma_file_key": true,
+    "frame_node_id": true,
+    "contract_version_and_hash": true,
+    "exact_copy": true,
+    "editable_primary_title_nodes": true,
+    "editable_support_copy_nodes": true,
+    "source_photo_identity_and_hash": true,
+    "composition_timestamp_when_available": true,
+    "designer_or_agent_route_when_available": true,
+    "unknown_for_unavailable_metadata": true,
+    "fabricated_metadata_allowed": false
+  },
+  "hard_failures": {
+    "raster_only_typography": "EDITABLE_DESIGN_PROVENANCE_GATE_FAIL",
+    "missing_figma_file_or_frame_identity": "EDITABLE_DESIGN_PROVENANCE_GATE_FAIL",
+    "missing_editable_title_nodes": "TYPOGRAPHY_DESIGN_GATE_FAIL",
+    "detached_unjustified_generic_text_panel": "PHOTO_TYPE_INTEGRATION_GATE_FAIL",
+    "generic_interchangeable_brand_template": "BRAND_DISTINCTIVENESS_GATE_FAIL"
+  },
+  "human_authority_boundary": {
+    "machine_contract_can_verify_editability_and_traceability": true,
+    "machine_contract_can_prove_aesthetic_quality": false,
+    "typography_design_and_final_pixel_quality_require_human_review": true
+  }
+}
