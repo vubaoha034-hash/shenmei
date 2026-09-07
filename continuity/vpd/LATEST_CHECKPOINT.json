@@ -1,14 +1,14 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 20,
-  "recorded_at": "2026-09-07T08:37:40+08:00",
+  "sequence": 21,
+  "recorded_at": "2026-09-07T09:45:00+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY",
+  "highest_accepted_checkpoint": "VPD_SYSTEM_LEVEL_HOLDOUT_PAYLOADS_FROZEN_READY_FOR_FORMAL_RENDER",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The original VPD system objective is restored: reference pixels and a distilled Style Capsule must drive a strong visual model to produce multiple new family/transfer works, followed by fresh evaluations and human pixel review. PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT remains preserved only as downstream production after visual-direction acceptance. H1-H4 are designed, but payload freeze is blocked until the user explicitly authorizes the exact canonical Shanyeji pixels for runtime visual-anchor conditioning.",
+  "current_focus": "The original VPD system objective is restored: the exact user-authorized canonical Shanyeji pixels are bound as the sole runtime visual anchor for four new system-level H1-H4 holdout payloads. H1-H4 are frozen for the declared ChatGPT product-UI strong-visual-model route with formal outputs still 0/4. The handoff upload/readback is pending connector usage-limit recovery; no rendering or evaluation has occurred. PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT remains downstream only after visual-direction acceptance.",
   "completed": [
     "deep VPD distillation remains preserved; do not re-distill the approved references",
     "V3-A Family Transfer remains PASS as preserved transferable-family evidence",
@@ -36,6 +36,12 @@
     "capsule maturity remains FORMAL_CAPSULE_CREATED_CONTROLLED_VALIDATION_REQUIRED; invariants, operators, changed-content boundaries and cross-layout behavior remain unvalidated",
     "exact 山野集/李家班/WANCE identity and the current 灶边味 ad-hoc poster are excluded from transferable capsule provenance",
     "no image generation, image editing, RECONSTRUCT, FAMILY, TRANSFER, Commercial, Golden or Scale execution occurred",
+    "the user runtime-anchor authorization was persisted as a new forward-only receipt; the historical missing-authority reconciliation remains unchanged",
+    "the sole canonical runtime visual-anchor binding manifest was frozen for H1/H2/H3/H4 with exactly one anchor and no additional references",
+    "four brand-new H1/H2/H3/H4 system-level payloads were compiled, hash-frozen and bound to the V1.1 Candidate without reusing Attempt-1 or Attempt-2 payload bytes",
+    "the system-level payload freeze receipt and ChatGPT render handoff were created with formal outputs 0/4 and no Codex rendering or evaluation",
+    "the four pre-freeze unbound diagnostic images remain UNBOUND_DIAGNOSTIC_INVALID_FOR_FORMAL_HOLDOUT and are excluded from formal evidence",
+    "the authorized Drive handoff upload was attempted but blocked by the connector usage limit; no alternate upload route or workaround was used",
     "three new controller payloads SHY-FAM-V1-F1/F2/F3 were compiled and frozen for SHANYEJI_CONTROLLED_FAMILY_GENERATION_V1 with exact SHA-256 bindings",
     "the new route is CHATGPT_UI_CONTROLLED_FAMILY_VALIDATION with reference_runtime_policy NONE and reference image count 0",
     "the old Formal V1 T1/T2/T3 freeze remains byte-identical at SHA-256 1fac472395678deef72f69c70cc862dc4e1b94c3603024eaa7cdb4c826e101b9 and was not read or reused as payload content",
@@ -85,6 +91,8 @@
     "fresh reference-aware family/newness evaluation using only the canonical reference and anonymous holdout outputs",
     "fresh mechanism/contract evaluation using allowlisted capsule, contracts, future frozen payloads and actual pixels",
     "human pixel review and formal system-level holdout set verdict",
+    "Google Drive upload and readback of the formal ChatGPT render handoff (blocked by connector usage limit in this turn)",
+    "strong-visual-model generation of exactly four new holdout outputs after Drive handoff delivery",
     "downstream Photo/Figma/final-export production only for a visual direction accepted after the holdout evaluation",
     "Style Capsule V1.1 Candidate promotion, which remains separately gated by system-level holdout evidence",
     "Golden Exemplar decision",
@@ -93,7 +101,7 @@
   "blocked": [
     "the old Formal V1 exact T1/T2/T3 route remains prohibited through native image_gen because exact frozen-payload binding already failed twice",
     "API/WIF/OIDC/private/external renderer and browser-automation renderer infrastructure are not authorized for the new forward photo-only route",
-    "H1-H4 renderer payload freeze and generation are blocked because runtime visual-anchor authority for the exact canonical pixels is missing",
+    "formal H1-H4 rendering remains blocked until the handoff is uploaded/read back; the current Drive connector is at its usage limit",
     "formal commercial classification remains downstream and blocked unless a visual direction is first accepted and all six production gates later PASS",
     "Golden and Scale remain blocked; Style Capsule V1.1 Candidate was not promoted by this goal-correction task"
   ],
@@ -144,7 +152,10 @@
     "freezing H1-H4 renderer payloads before exact runtime visual-anchor authority is granted",
     "assuming Attempt-2 zero-reference ablation is the permanent full-system visual-anchor architecture",
     "adding arbitrary reference images or fabricating Figma metadata",
-    "executing RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION inside this task"
+    "executing RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION inside this task",
+    "treating pre-freeze UNBOUND_DIAGNOSTIC_* outputs as formal H1-H4 evidence",
+    "adding a second runtime visual anchor or using 灶边味/Figma/Attempt-1/Attempt-2 pixels",
+    "executing formal H1-H4 rendering before the Drive handoff is delivered and readback verified"
   ],
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001",
@@ -156,9 +167,10 @@
     "CHG-VPD-SHANYEJI-STYLE-CAPSULE-V1-1-CANDIDATE-20260821-001",
     "CHG-VPD-SHANYEJI-ATTEMPT2-CONTROLLED-FAMILY-FREEZE-20260824-001",
     "CHG-VPD-PHOTO-FIGMA-PIPELINE-HARDENING-20260906-001",
-    "CHG-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-V1-20260907-001"
+    "CHG-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-V1-20260907-001",
+    "CHG-VPD-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001"
   ],
-  "next_required_action": "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION",
+  "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
   "ledger_tails": {
     "execution_route": {
       "event_id": "EVT-VISUAL-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-005",
@@ -185,8 +197,8 @@
       "event_hash": "a084ae0e8571361c810fc0a2d54c96bb087f4ffb1860d744f4fb06e69d4edd26"
     },
     "system_validation": {
-      "event_id": "EVT-VISUAL-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-20260907-001",
-      "event_hash": "30e17399af34ace062fb32da02594863833efda20cda202b50e118e771519928"
+      "event_id": "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001",
+      "event_hash": "9d2d9d88ffabdf2c17b50389fb6d8fa8445ecd55619a2cbab1c228f658cd6ea5"
     }
   },
   "source_state_refs": [
@@ -208,7 +220,7 @@
     {
       "path": "PROJECT_CONTROL_ADAPTER.json",
       "role": "current authority map restoring system-level holdout transfer validation and preserving Photo/Figma as downstream production only",
-      "sha256": "e328e3ac80f969d7cebd2d99bebabe21b9382cee29919e2f558736d799bfd0cc"
+      "sha256": "ac7e1b87b06d4a6f820348912307bd61dd0966fb7a030b553f628daf4b5936ca"
     },
     {
       "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
@@ -278,7 +290,12 @@
     {
       "path": "tests/visual_memory/test_vpd_system_goal_drift_correction_and_holdout_validation_v1.py",
       "role": "focused original-goal restoration, holdout design, runtime-authority and immutable-history regression suite",
-      "sha256": "8ce2b4aae68a0c2f474ca3390319934d591ef01693fce15641b48883bb44992d"
+      "sha256": "1be68b2a500676679a972d7ef641b72267d10b2051fa766b1466a1894d0ea8c0"
+    },
+    {
+      "path": "tests/visual_memory/test_vpd_system_level_holdout_payload_freeze_v1.py",
+      "role": "focused authorization, exactly-one-anchor, H1-H4 freeze, no-output and upload-boundary regression suite",
+      "sha256": "6f825f4c1caec550055144e5ee7cbe658135ef0df6031d1af1ad7e071ae60630"
     },
     {
       "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
@@ -498,6 +515,56 @@
       "filename": "SHY-FAM-V1-F3.png",
       "role": "immutable Attempt-1 F3 negative validation output",
       "sha256": "b80ee77ca1ac2d3fd613b6231b19f246a820f23510befd4c73760d1c6a2810e6"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_AUTHORIZATION_RECEIPT_V1.json",
+      "role": "current user-authorized sole canonical runtime visual-anchor authorization",
+      "sha256": "ae974abae7655eb1a0adff7bd53d4cf1f6b4d077b4f736a4cbfa1bc855bbdf45"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUNTIME_VISUAL_ANCHOR_BINDING_MANIFEST_V1.json",
+      "role": "exactly-one-anchor binding manifest for H1-H4",
+      "sha256": "d8880a328524c26eee16df2cddf8914e4338b04ea193736a76c480ec3602825c"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H1_CONTROLLER_PAYLOAD.json",
+      "role": "frozen system-level H1 payload",
+      "sha256": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H2_CONTROLLER_PAYLOAD.json",
+      "role": "frozen system-level H2 payload",
+      "sha256": "18f899b6fa78d3bce78997fbba325a0f237fc9482eb99eb3f65614753e6c25bc"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H3_CONTROLLER_PAYLOAD.json",
+      "role": "frozen system-level H3 payload",
+      "sha256": "97deab9813c792e3de97571c545f3ccd70ec522cacc226ade36d72e43a5be99f"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H4_CONTROLLER_PAYLOAD.json",
+      "role": "frozen system-level H4 payload with native structural reflow",
+      "sha256": "f1e695e7dd3499138cef8ee40d4b8be7bf4c1b62ccd4c3cea35bdaf8a238b28d"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_PAYLOAD_FREEZE_RECEIPT_V1.json",
+      "role": "H1-H4 payload freeze and zero-output receipt",
+      "sha256": "32255718f315deb3a4dbebee9d3aa5eb6a14b0469b9cdce73363b6f433786867"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "role": "formal ChatGPT render handoff awaiting Drive upload/readback",
+      "sha256": "7d12ee2ae6dbab9b29a5d467acda0fa5a0ca63be0741b990151d65b7937bda73"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PRE_FREEZE_UNBOUND_DIAGNOSTIC_OUTPUTS_RECORD_V1.json",
+      "role": "pre-freeze diagnostic invalidation record",
+      "sha256": "874b9b3bc78428a8828fa043f320daa2bdef7b72d30f6d73894ac4f9bce91796"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_DRIVE_HANDOFF_UPLOAD_BLOCKED_RECEIPT_V1.json",
+      "role": "Drive upload/readback blocked by connector usage limit; no workaround",
+      "sha256": "329b21b07071b74849054c3375a23ec5c33804e2f096590079eb520041590146"
     }
   ],
   "incident_records": [
@@ -526,5 +593,5 @@
       "preserve": true
     }
   ],
-  "status": "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY"
+  "status": "VPD_SYSTEM_LEVEL_HOLDOUT_PAYLOADS_FROZEN_READY_FOR_FORMAL_RENDER"
 }

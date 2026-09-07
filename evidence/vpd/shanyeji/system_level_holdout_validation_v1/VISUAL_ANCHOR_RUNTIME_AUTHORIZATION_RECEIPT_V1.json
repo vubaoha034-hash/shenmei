@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-visual-anchor-runtime-authorization-receipt/v1",
+  "artifact_type": "VISUAL_ANCHOR_RUNTIME_AUTHORIZATION_RECEIPT",
+  "receipt_id": "SHANYEJI_HOLDOUT_RUNTIME_ANCHOR_AUTHORIZATION_20260907_001",
+  "recorded_at": "2026-09-07T09:35:02+08:00",
+  "authorization_state": "AUTHORIZED_FOR_THIS_HOLDOUT_RUN",
+  "source_authority": {
+    "drive_task_file_id": "1mlpl6fWHPMC11nUUeXsu-34GkAI1iZzo",
+    "drive_task_title": "VPD_CODEX_HOLDOUT_RUNTIME_AUTHORIZATION_AND_PAYLOAD_FREEZE_V1.txt",
+    "full_text_read": true,
+    "user_explicit_authorization_text": "我明确授权：在 H1/H2/H3/H4 system-level Holdout Transfer Validation 中，将 `R1C-APPROVED-SHANYEJI-CANONICAL.jpg`（Drive File ID: `1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ`，SHA-256: `9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414`）作为强视觉模型唯一的正向 runtime visual anchor。继续遵守 anti-copy、品牌身份排除、禁止使用当前灶边味/Figma 作为 anchor、人工最终审美评审等既有规则。"
+  },
+  "scope": {
+    "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "challenge_ids": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "scope_description": "H1/H2/H3/H4 system-level Holdout Transfer Validation only",
+    "forward_only": true,
+    "authorizes_runtime_conditioning": true,
+    "authorizes_payload_freeze": true,
+    "authorizes_image_generation_in_this_codex_task": false
+  },
+  "canonical_anchor": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "role": "SOLE_POSITIVE_RUNTIME_VISUAL_ANCHOR",
+    "sole_positive_runtime_visual_anchor": true,
+    "runtime_reference_count": 1
+  },
+  "preserved_constraints": {
+    "visual_anchor_purpose": "MECHANISM_AND_RELATIONSHIP_CONDITIONING_NOT_LITERAL_SURFACE_COPYING",
+    "anti_copy_constraints_preserved": true,
+    "exact_shanyeji_glyph_contours_prohibited": true,
+    "exact_lijiaban_identity_copying_prohibited": true,
+    "exact_wance_identity_copying_prohibited": true,
+    "current_zaobianwei_outputs_as_anchors_prohibited": true,
+    "figma_v3_v6_as_anchors_prohibited": true,
+    "attempt1_or_attempt2_outputs_as_anchors_prohibited": true,
+    "arbitrary_additional_references_prohibited": true,
+    "human_final_aesthetic_authority_preserved": true
+  },
+  "promotion_boundary": {
+    "style_capsule_v1_1_candidate_promoted": false,
+    "commercial_authorized": false,
+    "golden_authorized": false,
+    "scale_authorized": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "vpd-runtime-visual-anchor-binding-manifest/v1",
+  "artifact_type": "RUNTIME_VISUAL_ANCHOR_BINDING_MANIFEST",
+  "manifest_id": "SHANYEJI_SYSTEM_HOLDOUT_RUNTIME_ANCHOR_BINDING_V1",
+  "created_at": "2026-09-07T09:35:02+08:00",
+  "binding_state": "FROZEN_AUTHORIZED_BINDING_REQUIRED_AT_RENDER",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "authorization_receipt": {
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_AUTHORIZATION_RECEIPT_V1.json",
+    "sha256": "ae974abae7655eb1a0adff7bd53d4cf1f6b4d077b4f736a4cbfa1bc855bbdf45",
+    "authorization_state": "AUTHORIZED_FOR_THIS_HOLDOUT_RUN"
+  },
+  "reference_runtime_policy": "EXACTLY_ONE_AUTHORIZED_CANONICAL_VISUAL_ANCHOR",
+  "reference_image_count": 1,
+  "positive_runtime_anchors": [
+    {
+      "ordinal": 1,
+      "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+      "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "role": "SOLE_POSITIVE_RUNTIME_VISUAL_ANCHOR",
+      "binding_required": true,
+      "actual_pixels_must_be_loaded_and_inspected_before_render": true,
+      "runtime_bytes_must_match_sha256": true,
+      "purpose": "MECHANISM_AND_RELATIONSHIP_CONDITIONING_NOT_LITERAL_SURFACE_COPYING"
+    }
+  ],
+  "applicable_payload_ids": [
+    "SHY-SYS-HOLDOUT-V1-H1",
+    "SHY-SYS-HOLDOUT-V1-H2",
+    "SHY-SYS-HOLDOUT-V1-H3",
+    "SHY-SYS-HOLDOUT-V1-H4"
+  ],
+  "binding_invariants": {
+    "same_single_anchor_for_all_four_payloads": true,
+    "additional_positive_or_negative_image_references_allowed": false,
+    "current_zaobianwei_or_figma_pixels_allowed": false,
+    "attempt1_or_attempt2_output_pixels_allowed": false,
+    "pre_freeze_unbound_diagnostic_pixels_allowed": false,
+    "diagnostic_crops_required": false,
+    "text_only_substitution_for_anchor_pixels_allowed": false,
+    "unverified_visual_attachment_allowed": false
+  },
+  "anti_copy_contract": {
+    "copy_exact_shanyeji_glyph_contours": false,
+    "copy_exact_lijiaban_identity": false,
+    "copy_exact_wance_identity": false,
+    "copy_source_brand_or_footer_lockup": false,
+    "copy_source_literal_copy_or_layout_coordinates": false,
+    "surface_token_similarity_is_family_proof": false,
+    "materially_new_composition_and_surface_language_required": true
+  },
+  "render_fail_closed_conditions": [
+    "CANONICAL_PIXELS_CANNOT_BE_LOADED",
+    "CANONICAL_BYTES_SHA256_MISMATCH",
+    "RUNTIME_ATTACHMENT_NOT_PROVABLY_BOUND",
+    "REFERENCE_IMAGE_COUNT_NOT_EXACTLY_ONE",
+    "UNAUTHORIZED_ADDITIONAL_IMAGE_REFERENCE_PRESENT",
+    "PAYLOAD_HASH_MISMATCH"
+  ],
+  "execution_boundary": {
+    "pixels_loaded_or_inspected_by_this_freeze_task": false,
+    "images_generated_by_this_freeze_task": false,
+    "figma_executed": false,
+    "evaluation_executed": false,
+    "human_aesthetic_review_executed": false
+  }
+}

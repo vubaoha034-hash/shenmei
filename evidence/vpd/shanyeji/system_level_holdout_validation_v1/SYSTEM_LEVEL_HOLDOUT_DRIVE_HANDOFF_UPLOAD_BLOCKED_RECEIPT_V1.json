@@ -1,0 +1,28 @@
+{
+  "schema_version": "vpd-system-level-holdout-drive-handoff-upload-blocked-receipt/v1",
+  "artifact_type": "SYSTEM_LEVEL_HOLDOUT_DRIVE_HANDOFF_UPLOAD_BLOCKED_RECEIPT",
+  "recorded_at": "2026-09-07T09:45:00+08:00",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "handoff": {
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_V1.txt",
+    "sha256": "7d12ee2ae6dbab9b29a5d467acda0fa5a0ca63be0741b990151d65b7937bda73"
+  },
+  "drive_upload": {
+    "required": true,
+    "attempted": true,
+    "status": "BLOCKED_USAGE_LIMIT",
+    "drive_file_id": null,
+    "drive_url": null,
+    "readback_verified": false,
+    "tool_result": "Automatic approval review failed: usage limit reached; Drive upload unavailable until the account usage limit resets.",
+    "workaround_attempted": false
+  },
+  "safety_boundary": {
+    "no_alternate_upload_route_used": true,
+    "no_image_generated": true,
+    "no_image_edited": true,
+    "no_figma_executed": true,
+    "no_evaluation_executed": true
+  },
+  "required_follow_up": "Retry the same authorized Google Drive upload and readback when the connector usage limit permits; do not execute formal H1-H4 rendering until the handoff is delivered and readback verified."
+}

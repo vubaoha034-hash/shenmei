@@ -22,8 +22,9 @@ ADAPTER_PATH = ROOT / "PROJECT_CONTROL_ADAPTER.json"
 CHECKPOINT_PATH = ROOT / "continuity" / "vpd" / "LATEST_CHECKPOINT.json"
 LEDGER_PATH = ROOT / "continuity" / "vpd" / "state_ledger" / "system_validation.jsonl"
 
-NEXT_ACTION = "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION"
-STATE = "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY"
+NEXT_ACTION = "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
+HISTORICAL_NEXT_ACTION = "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION"
+STATE = "VPD_SYSTEM_LEVEL_HOLDOUT_PAYLOADS_FROZEN_READY_FOR_FORMAL_RENDER"
 EVENT_ID = "EVT-VISUAL-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-20260907-001"
 EVENT_HASH = "30e17399af34ace062fb32da02594863833efda20cda202b50e118e771519928"
 CANONICAL_SHA = "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
@@ -69,7 +70,7 @@ def test_holdout_plan_is_system_level_and_not_an_attempt3_polish_loop():
     )
     assert plan["payload_freeze_gate"]["payloads_created"] is False
     assert plan["future_run_requirements"]["figma_is_zero_to_one_art_director"] is False
-    assert plan["next_action_if_authority_missing"] == NEXT_ACTION
+    assert plan["next_action_if_authority_missing"] == HISTORICAL_NEXT_ACTION
 
 
 def test_exact_four_holdouts_and_h3_h4_isolation_are_predeclared():
@@ -137,7 +138,7 @@ def test_visual_anchor_policy_fails_closed_on_distillation_only_authority():
     assert minimum["attempt1_or_attempt2_outputs_allowed"] is False
     assert minimum["current_zaobianwei_or_figma_variants_allowed"] is False
     assert policy["current_boundary"]["renderer_payloads_created"] is False
-    assert policy["current_boundary"]["next_action"] == NEXT_ACTION
+    assert policy["current_boundary"]["next_action"] == HISTORICAL_NEXT_ACTION
 
 
 def test_adapter_checkpoint_and_ledger_restore_system_goal():
@@ -146,6 +147,14 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
     assert system["active_task_id"] == "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
     assert system["checkpoint"] == STATE
     assert system["challenge_ids"] == ["H1", "H2", "H3", "H4"]
+    assert system["visual_anchor_runtime_policy"] == "AUTHORIZED_FOR_THIS_HOLDOUT_RUN"
+    assert system["formal_outputs_generated"] == "0/4"
+    assert system["payload_ids_frozen"] == [
+        "SHY-SYS-HOLDOUT-V1-H1",
+        "SHY-SYS-HOLDOUT-V1-H2",
+        "SHY-SYS-HOLDOUT-V1-H3",
+        "SHY-SYS-HOLDOUT-V1-H4",
+    ]
     assert system["next_required_action"] == NEXT_ACTION
     pipeline = adapter["forward_commercial_pipeline"]
     assert pipeline["role"] == (
@@ -157,7 +166,7 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
         assert priorities == list(range(1, len(priorities) + 1))
 
     checkpoint = load(CHECKPOINT_PATH)
-    assert checkpoint["sequence"] == 20
+    assert checkpoint["sequence"] == 21
     assert checkpoint["status"] == STATE
     assert checkpoint["highest_accepted_checkpoint"] == STATE
     assert checkpoint["active_task_ids"] == [
@@ -165,21 +174,21 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
     ]
     assert checkpoint["next_required_action"] == NEXT_ACTION
     assert checkpoint["ledger_tails"]["system_validation"] == {
-        "event_id": EVENT_ID,
-        "event_hash": EVENT_HASH,
+        "event_id": "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001",
+        "event_hash": "9d2d9d88ffabdf2c17b50389fb6d8fa8445ecd55619a2cbab1c228f658cd6ea5",
     }
 
     events = [json.loads(line) for line in LEDGER_PATH.read_text(encoding="utf-8").splitlines()]
-    assert len(events) == 1
-    event = events[0]
+    assert len(events) == 2
+    event = events[1]
     asserted = dict(event)
     asserted_hash = asserted.pop("event_hash")
     canonical = json.dumps(
         asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode("utf-8")
-    assert event["event_id"] == EVENT_ID
-    assert asserted_hash == EVENT_HASH
-    assert hashlib.sha256(canonical).hexdigest() == EVENT_HASH
+    assert event["event_id"] == "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001"
+    assert asserted_hash == "9d2d9d88ffabdf2c17b50389fb6d8fa8445ecd55619a2cbab1c228f658cd6ea5"
+    assert hashlib.sha256(canonical).hexdigest() == asserted_hash
 
 
 def test_historical_authorities_and_downstream_pipeline_are_immutable():
@@ -203,6 +212,11 @@ def test_historical_authorities_and_downstream_pipeline_are_immutable():
 def test_current_task_created_no_pixels_figma_or_renderer_payloads():
     forbidden_suffixes = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".fig"}
     assert [path for path in DIR.rglob("*") if path.suffix.lower() in forbidden_suffixes] == []
-    assert [path for path in DIR.rglob("*") if "PAYLOAD" in path.name] == []
+    assert sorted(path.name for path in DIR.glob("H[1-4]_CONTROLLER_PAYLOAD.json")) == [
+        "H1_CONTROLLER_PAYLOAD.json",
+        "H2_CONTROLLER_PAYLOAD.json",
+        "H3_CONTROLLER_PAYLOAD.json",
+        "H4_CONTROLLER_PAYLOAD.json",
+    ]
     for path in (DRIFT_PATH, PLAN_PATH, MATRIX_PATH, PROTOCOL_PATH, ANCHOR_PATH):
         assert load(path)["artifact_type"]
