@@ -22,9 +22,9 @@ ADAPTER_PATH = ROOT / "PROJECT_CONTROL_ADAPTER.json"
 CHECKPOINT_PATH = ROOT / "continuity" / "vpd" / "LATEST_CHECKPOINT.json"
 LEDGER_PATH = ROOT / "continuity" / "vpd" / "state_ledger" / "system_validation.jsonl"
 
-NEXT_ACTION = "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
+NEXT_ACTION = "RETURN_TO_CHATGPT_FOR_FORMAL_RENDER_ATTEMPT2_H1_H2_H3_H4"
 HISTORICAL_NEXT_ACTION = "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION"
-STATE = "VPD_SYSTEM_LEVEL_HOLDOUT_PAYLOADS_FROZEN_READY_FOR_FORMAL_RENDER"
+STATE = "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER"
 EVENT_ID = "EVT-VISUAL-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-20260907-001"
 EVENT_HASH = "30e17399af34ace062fb32da02594863833efda20cda202b50e118e771519928"
 CANONICAL_SHA = "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
@@ -166,7 +166,7 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
         assert priorities == list(range(1, len(priorities) + 1))
 
     checkpoint = load(CHECKPOINT_PATH)
-    assert checkpoint["sequence"] == 21
+    assert checkpoint["sequence"] == 22
     assert checkpoint["status"] == STATE
     assert checkpoint["highest_accepted_checkpoint"] == STATE
     assert checkpoint["active_task_ids"] == [
@@ -174,20 +174,20 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
     ]
     assert checkpoint["next_required_action"] == NEXT_ACTION
     assert checkpoint["ledger_tails"]["system_validation"] == {
-        "event_id": "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001",
-        "event_hash": "9d2d9d88ffabdf2c17b50389fb6d8fa8445ecd55619a2cbab1c228f658cd6ea5",
+        "event_id": "EVT-VISUAL-VPD-FORMAL-RENDER-ATTEMPT1-INVALID-ATTEMPT2-READY-20260907-001",
+        "event_hash": "2aac3fe5ba3cfe5813538edf25ff96feac722e2204749c70b389fc4b1570146c",
     }
 
     events = [json.loads(line) for line in LEDGER_PATH.read_text(encoding="utf-8").splitlines()]
-    assert len(events) == 2
-    event = events[1]
+    assert len(events) == 3
+    event = events[2]
     asserted = dict(event)
     asserted_hash = asserted.pop("event_hash")
     canonical = json.dumps(
         asserted, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode("utf-8")
-    assert event["event_id"] == "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001"
-    assert asserted_hash == "9d2d9d88ffabdf2c17b50389fb6d8fa8445ecd55619a2cbab1c228f658cd6ea5"
+    assert event["event_id"] == "EVT-VISUAL-VPD-FORMAL-RENDER-ATTEMPT1-INVALID-ATTEMPT2-READY-20260907-001"
+    assert asserted_hash == "2aac3fe5ba3cfe5813538edf25ff96feac722e2204749c70b389fc4b1570146c"
     assert hashlib.sha256(canonical).hexdigest() == asserted_hash
 
 

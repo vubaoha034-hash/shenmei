@@ -28,6 +28,11 @@
     "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_V1.txt",
     "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_DRIVE_HANDOFF_UPLOAD_BLOCKED_RECEIPT_V1.json",
     "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PRE_FREEZE_UNBOUND_DIAGNOSTIC_OUTPUTS_RECORD_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT1_PROTOCOL_INVALID_SETTLEMENT_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_IDENTITY_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_PREFLIGHT_CHECKLIST_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_CREATION_RECEIPT_V1.json",
     "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
     "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
     "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
@@ -542,6 +547,13 @@
       "title": "VPD_CODEX_HOLDOUT_RUNTIME_AUTHORIZATION_AND_PAYLOAD_FREEZE_V1.txt",
       "scope": "HOLDOUT_RUNTIME_AUTHORIZATION_PAYLOAD_FREEZE_AND_HANDOFF",
       "status": "CURRENT_CHANGE_AUTHORITY"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1o4cyCBq8iXLmaV3qNBOKvFDmvj6DJ1vW",
+      "title": "VPD_CODEX_FORMAL_RENDER_ATTEMPT2_RECOVERY_SHORT_V1.txt",
+      "scope": "FORMAL_RENDER_ATTEMPT1_INVALID_SETTLEMENT_AND_ATTEMPT2_HANDOFF_ONLY",
+      "status": "CURRENT_CHANGE_AUTHORITY"
     }
   ],
   "continuity": {
@@ -574,7 +586,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_SYSTEM_LEVEL_HOLDOUT_PAYLOADS_FROZEN_READY_FOR_FORMAL_RENDER",
+    "checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
     "challenge_ids": [
       "H1",
       "H2",
@@ -602,6 +614,16 @@
     ],
     "formal_outputs_generated": "0/4",
     "style_capsule_v1_1_candidate_promoted": false,
-    "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
+    "formal_render_attempt2_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2",
+    "formal_render_attempt1_classification": "PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE",
+    "formal_render_attempt2_preflight": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_PREFLIGHT_CHECKLIST_V1.json",
+      "sha256": "311a644859b761d00cb0b9c41152203d0aba48226c97e8b883ee7efa419172d2"
+    },
+    "formal_render_attempt2_handoff": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
+      "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
+    },
+    "next_required_action": "RETURN_TO_CHATGPT_FOR_FORMAL_RENDER_ATTEMPT2_H1_H2_H3_H4"
   }
 }
