@@ -1,0 +1,68 @@
+{
+  "schema_version": "vpd-visual-anchor-runtime-policy-reconciliation/v1",
+  "artifact_type": "VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION",
+  "reconciliation_id": "SHANYEJI_HOLDOUT_VISUAL_ANCHOR_RUNTIME_POLICY_20260907_001",
+  "recorded_at": "2026-09-07T08:37:40+08:00",
+  "result": "VISUAL_ANCHOR_RUNTIME_AUTHORITY_MISSING",
+  "audit": [
+    {
+      "authority": "VISUAL_PROGRAM_DISTILLATION_V1.md",
+      "finding": "Visual anchors are first-class multimodal conditioning assets and the strong visual model receives Style Capsule visual anchors.",
+      "effect": "SYSTEM_ARCHITECTURE_REQUIRES_RUNTIME_ANCHOR_POLICY"
+    },
+    {
+      "authority": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+      "finding": "renderer_contract.reference_binding is RAW_PIXELS_REQUIRED and the canonical asset is the PRIMARY_REFERENCE.",
+      "effect": "CANDIDATE_EXPECTS_RAW_PIXEL_BINDING"
+    },
+    {
+      "authority": "evidence/vpd/shanyeji/full_image_distillation_v1/FULL_IMAGE_HUMAN_APPROVAL_RECORD.json",
+      "finding": "Approval is APPROVED_FOR_FULL_IMAGE_VPD_DISTILLATION_AS_SHANYEJI_BRAND_EDITORIAL_REFERENCE and promotion_status is DISTILLATION_AUTHORIZED_ONLY.",
+      "effect": "RUNTIME_RENDERER_ATTACHMENT_NOT_EXPLICITLY_AUTHORIZED"
+    },
+    {
+      "authority": "evidence/vpd/shanyeji/full_image_distillation_v1/CANONICAL_VISUAL_ANCHOR_MANIFEST.json",
+      "finding": "allowed_role is MOTHER_REFERENCE_FOR_DISTILLATION; runtime conditioning is not an enumerated allowed role.",
+      "effect": "CANNOT_EXPAND_ROLE_BY_INFERENCE"
+    },
+    {
+      "authority": "SHANYEJI_CONTROLLED_FAMILY_VALIDATION_ATTEMPT2",
+      "finding": "Attempt 2 used reference_runtime_policy NONE and reference_image_count 0 as an ablation and anti-shortcut condition.",
+      "effect": "ZERO_REFERENCE_IS_NOT_PROVEN_TO_BE_PERMANENT_SYSTEM_ARCHITECTURE"
+    }
+  ],
+  "missing_authorization": {
+    "exact_required_user_authorization": "Explicitly authorize attaching R1C-APPROVED-SHANYEJI-CANONICAL.jpg (Drive File ID 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ; SHA-256 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414) to the strong visual model as the sole positive runtime visual anchor for the H1/H2/H3/H4 system-level holdout validation, subject to the existing anti-copy, brand-identity exclusion, no-current-灶边味/Figma-anchor, and human-review rules.",
+    "permission_must_be_forward_only": true,
+    "permission_must_name_runtime_conditioning": true,
+    "permission_must_bind_exact_file_id_and_sha256": true
+  },
+  "minimum_lawful_runtime_anchor_set_if_future_authorized": {
+    "count": 1,
+    "anchors": [
+      {
+        "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+        "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+        "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+        "role_if_authorized": "SOLE_POSITIVE_RUNTIME_VISUAL_ANCHOR"
+      }
+    ],
+    "diagnostic_crops_required": false,
+    "arbitrary_new_reference_images_allowed": false,
+    "attempt1_or_attempt2_outputs_allowed": false,
+    "current_zaobianwei_or_figma_variants_allowed": false
+  },
+  "anti_copy_rules": [
+    "Do not copy exact 山野集 glyph contours, brand identity, footer lockups, source copy, layout coordinates or proprietary marks.",
+    "Do not use palette, mountain/forest, wok/flame, calligraphy, accent, badge/seal/scribble or dark-rustic template tokens as primary family proof.",
+    "Judge newness and literal-copy risk in a fresh reference-aware evaluation.",
+    "Use only the minimum authorized canonical anchor set."
+  ],
+  "current_boundary": {
+    "canonical_pixels_opened_or_attached_by_this_task": false,
+    "renderer_payloads_created": false,
+    "renderer_payloads_frozen": false,
+    "images_generated": false,
+    "next_action": "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION"
+  }
+}

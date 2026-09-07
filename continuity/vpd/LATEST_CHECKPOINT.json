@@ -1,14 +1,14 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 19,
-  "recorded_at": "2026-09-06T17:31:28+08:00",
+  "sequence": 20,
+  "recorded_at": "2026-09-07T08:37:40+08:00",
   "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "VPD_PHOTO_FIGMA_PIPELINE_HARDENED_FIRST_FORWARD_VALIDATION_NEXT",
+  "highest_accepted_checkpoint": "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY",
   "active_task_ids": [
-    "VPD-FIRST-FORWARD-PHOTO-ONLY-FIGMA-COMPOSITION-VALIDATION"
+    "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The forward VPD commercial pipeline is hardened as PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT. Image generation remains CHATGPT_ONLY; final typography and support copy require editable Figma evidence, and all six commercial gates are non-compensating. Attempt-2 evidence remains historical and unchanged. This task created no image, performed no typography rebuild, and did not execute the first forward validation.",
+  "current_focus": "The original VPD system objective is restored: reference pixels and a distilled Style Capsule must drive a strong visual model to produce multiple new family/transfer works, followed by fresh evaluations and human pixel review. PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT remains preserved only as downstream production after visual-direction acceptance. H1-H4 are designed, but payload freeze is blocked until the user explicitly authorizes the exact canonical Shanyeji pixels for runtime visual-anchor conditioning.",
   "completed": [
     "deep VPD distillation remains preserved; do not re-distill the approved references",
     "V3-A Family Transfer remains PASS as preserved transferable-family evidence",
@@ -68,23 +68,34 @@
     "COMMERCIAL_DESIGN_GATE_POLICY_V1 and commercial-design-provenance-receipt.v1.schema.json were created with six non-compensating gates and complete photo-to-Figma-to-export hash binding",
     "the implementation is forward-only: historical Attempt-2 evidence, frozen payload hashes, Style Capsule V1, V1.1 Candidate, global compiler and global VisualProgram schema remain unchanged",
     "the known Figma file name VPD Attempt2 Typography Rebuild is recorded only as informal evidence; its file key and node IDs remain UNKNOWN and were not fabricated",
-    "Codex added deterministic validators and regression tests only; it generated no image, edited no image, performed no aesthetic typography rebuild, added no renderer infrastructure and did not enter Commercial, Golden or Scale"
+    "Codex added deterministic validators and regression tests only; it generated no image, edited no image, performed no aesthetic typography rebuild, added no renderer infrastructure and did not enter Commercial, Golden or Scale",
+    "the original VPD objective is restored as reference pixels -> compiler -> Style Capsule/Visual Program -> strong visual model -> multiple new FAMILY/TRANSFER works -> fresh evaluations -> human pixel review -> downstream production only after visual-direction acceptance",
+    "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT remains valid and unchanged as downstream production capability, but is no longer the highest active project objective",
+    "single-poster 灶边味 Figma optimization is stopped as the current VPD goal; any external V3-V6 iterations are classified as DIAGNOSTIC_PRODUCTION_PIPELINE_EVIDENCE only",
+    "the system-level H1 晨席, H2 山菌, H3 豆坊 and H4 豆坊 9:16 holdout challenges were predeclared as four new forward experiments without reusing Attempt-1/2 payloads or outputs",
+    "fresh blind pixel, fresh reference-aware family, fresh mechanism/contract and human pixel evaluation channels were predeclared with separate quality, mechanism, newness/copy, template-collapse and H4 reflow judgments",
+    "visual-anchor reconciliation returned VISUAL_ANCHOR_RUNTIME_AUTHORITY_MISSING because the canonical human approval is explicitly DISTILLATION_AUTHORIZED_ONLY and the anchor manifest permits MOTHER_REFERENCE_FOR_DISTILLATION but does not authorize renderer conditioning",
+    "no holdout renderer payload was created or frozen; no canonical pixels were opened or attached; no image generation, image editing, Figma optimization, candidate promotion, Commercial, Golden or Scale action occurred"
   ],
   "incomplete": [
-    "first forward photo-only payload and receipt satisfying PHOTO_ONLY_RENDER_CONTRACT_V1",
-    "actual photo-only generation through the ChatGPT product UI",
-    "formal Figma file key, editable node IDs, node geometry, exact copy and composition evidence satisfying FIGMA_COMPOSITION_CONTRACT_V1",
-    "final export receipt binding the photo render, Figma composition and exported pixels",
-    "human review of photo quality, typography design, photo-type integration, brand distinctiveness and final pixel quality",
-    "Style Capsule V1.1 Candidate promotion, which remains separately gated by controlled validation evidence",
+    "explicit user authorization to attach the exact canonical Shanyeji reference pixels as runtime visual-anchor conditioning for H1-H4",
+    "preparation and freeze of four new H1/H2/H3/H4 renderer payloads after runtime-anchor authority becomes valid",
+    "strong-visual-model generation of exactly four new holdout outputs",
+    "fresh blind pixel evaluation without mother reference, capsule or labels",
+    "fresh reference-aware family/newness evaluation using only the canonical reference and anonymous holdout outputs",
+    "fresh mechanism/contract evaluation using allowlisted capsule, contracts, future frozen payloads and actual pixels",
+    "human pixel review and formal system-level holdout set verdict",
+    "downstream Photo/Figma/final-export production only for a visual direction accepted after the holdout evaluation",
+    "Style Capsule V1.1 Candidate promotion, which remains separately gated by system-level holdout evidence",
     "Golden Exemplar decision",
     "Scale Gate"
   ],
   "blocked": [
     "the old Formal V1 exact T1/T2/T3 route remains prohibited through native image_gen because exact frozen-payload binding already failed twice",
     "API/WIF/OIDC/private/external renderer and browser-automation renderer infrastructure are not authorized for the new forward photo-only route",
-    "formal commercial classification is blocked unless all six project-level gates PASS with an editable Figma provenance chain",
-    "Golden and Scale remain blocked; Style Capsule V1.1 Candidate was not promoted by this hardening task"
+    "H1-H4 renderer payload freeze and generation are blocked because runtime visual-anchor authority for the exact canonical pixels is missing",
+    "formal commercial classification remains downstream and blocked unless a visual direction is first accepted and all six production gates later PASS",
+    "Golden and Scale remain blocked; Style Capsule V1.1 Candidate was not promoted by this goal-correction task"
   ],
   "unknowns": [
     "formal VPD file key and editable node IDs for the known Figma file named VPD Attempt2 Typography Rebuild are unavailable",
@@ -125,7 +136,15 @@
     "using Codex as the renderer or opening API, API-key, WIF, OIDC, private, external or browser-automation renderer infrastructure",
     "fabricating a Figma file key, editable node ID, node geometry, render identity or export hash when the evidence is unavailable",
     "applying the new commercial gate policy retroactively to alter historical verdicts",
-    "executing RUN_FIRST_FORWARD_PHOTO_ONLY_PLUS_FIGMA_COMPOSITION_VALIDATION inside this hardening task"
+    "executing RUN_FIRST_FORWARD_PHOTO_ONLY_PLUS_FIGMA_COMPOSITION_VALIDATION inside this hardening task",
+    "treating endless single-poster 灶边味 Figma optimization as system-level VPD validation",
+    "using manual typography refinement as the primary mechanism by which the Style Capsule learns",
+    "using current 灶边味 outputs or any Figma V2-V7 variant as a positive visual anchor",
+    "reusing Attempt-1 or Attempt-2 payloads or outputs for H1-H4",
+    "freezing H1-H4 renderer payloads before exact runtime visual-anchor authority is granted",
+    "assuming Attempt-2 zero-reference ablation is the permanent full-system visual-anchor architecture",
+    "adding arbitrary reference images or fabricating Figma metadata",
+    "executing RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION inside this task"
   ],
   "active_change_ids": [
     "CHG-VPD-RUNTIME-EXECUTION-20260819-001",
@@ -136,9 +155,10 @@
     "CHG-VPD-SHANYEJI-ATTEMPT1-FAIL-SETTLEMENT-V1-20260821-001",
     "CHG-VPD-SHANYEJI-STYLE-CAPSULE-V1-1-CANDIDATE-20260821-001",
     "CHG-VPD-SHANYEJI-ATTEMPT2-CONTROLLED-FAMILY-FREEZE-20260824-001",
-    "CHG-VPD-PHOTO-FIGMA-PIPELINE-HARDENING-20260906-001"
+    "CHG-VPD-PHOTO-FIGMA-PIPELINE-HARDENING-20260906-001",
+    "CHG-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-V1-20260907-001"
   ],
-  "next_required_action": "RUN_FIRST_FORWARD_PHOTO_ONLY_PLUS_FIGMA_COMPOSITION_VALIDATION",
+  "next_required_action": "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION",
   "ledger_tails": {
     "execution_route": {
       "event_id": "EVT-VISUAL-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-005",
@@ -163,6 +183,10 @@
     "commercial_design_pipeline": {
       "event_id": "EVT-VISUAL-VPD-PHOTO-FIGMA-PIPELINE-HARDENING-20260906-001",
       "event_hash": "a084ae0e8571361c810fc0a2d54c96bb087f4ffb1860d744f4fb06e69d4edd26"
+    },
+    "system_validation": {
+      "event_id": "EVT-VISUAL-VPD-SYSTEM-GOAL-DRIFT-CORRECTION-HOLDOUT-20260907-001",
+      "event_hash": "30e17399af34ace062fb32da02594863833efda20cda202b50e118e771519928"
     }
   },
   "source_state_refs": [
@@ -183,8 +207,43 @@
     },
     {
       "path": "PROJECT_CONTROL_ADAPTER.json",
-      "role": "current authority map for the forward-only photo render, editable Figma composition, final export and six-gate commercial pipeline while preserving Attempt-2 as historical evidence",
-      "sha256": "014ea6924a372d313f518209e7d53905fd7049cd856b2af07f925f96f7ef08eb"
+      "role": "current authority map restoring system-level holdout transfer validation and preserving Photo/Figma as downstream production only",
+      "sha256": "e328e3ac80f969d7cebd2d99bebabe21b9382cee29919e2f558736d799bfd0cc"
+    },
+    {
+      "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
+      "role": "core VPD system architecture and strong-visual-model/visual-anchor/production-tool boundary",
+      "sha256": "dceeb642f4e2f33fd75d7a4987eab0b01a80543818feb159cccb89895ed5bbfd"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+      "role": "project-goal drift correction and downstream-production reclassification record",
+      "sha256": "2d73271a1e56f0ff59054e7be157a48b0f5d7c665349826ff8886e2231b45502"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+      "role": "system-level H1-H4 holdout transfer validation plan",
+      "sha256": "b2852febd09136e6e8fd92dfe9b6a33ec3343f84bcebe5335fc9cd2f6af5da7e"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+      "role": "machine-readable four-challenge content, process, material and aspect-reflow matrix",
+      "sha256": "deb352be85f5f15bddba3b607f9989c9c2e0aea4bcb2e31e8e416b391b31e270"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+      "role": "predeclared fresh blind, reference-aware, mechanism-contract and human evaluation protocol",
+      "sha256": "2443517b59aad71f30940cc591c1b963fa1bbea26b8d20ff226f51920e98129d"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
+      "role": "runtime visual-anchor authority audit, exact missing authorization and minimum future anchor set",
+      "sha256": "40cc6c48016f23164fde2fd3b8cbfe78e6a3e59a43a55ffe713c22dfd3804fc6"
+    },
+    {
+      "path": "continuity/vpd/state_ledger/system_validation.jsonl",
+      "role": "append-only system-goal correction and holdout design event stream",
+      "sha256": "82932d5f397820bfc86dd2c76571b6a4fe3e66f0cf77813745040d9b95cb649f"
     },
     {
       "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
@@ -213,8 +272,13 @@
     },
     {
       "path": "tests/visual_memory/test_vpd_photo_figma_pipeline_hardening_v1.py",
-      "role": "focused forward-pipeline, non-regression, hash and no-renderer test suite",
-      "sha256": "4ce13c9b27a901696b95c607197e4a24acecb744766e45b0eedcd23b91e1946e"
+      "role": "preserved downstream forward-pipeline, non-regression, hash and no-renderer test suite",
+      "sha256": "5edb0e7b6ed58c6d3d55f9c1d15f30cb1e4b425fc31bfabb219453a6e2259335"
+    },
+    {
+      "path": "tests/visual_memory/test_vpd_system_goal_drift_correction_and_holdout_validation_v1.py",
+      "role": "focused original-goal restoration, holdout design, runtime-authority and immutable-history regression suite",
+      "sha256": "8ce2b4aae68a0c2f474ca3390319934d591ef01693fce15641b48883bb44992d"
     },
     {
       "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
@@ -462,5 +526,5 @@
       "preserve": true
     }
   ],
-  "status": "VPD_PHOTO_FIGMA_PIPELINE_HARDENED_FIRST_FORWARD_VALIDATION_NEXT"
+  "status": "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY"
 }

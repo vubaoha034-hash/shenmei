@@ -1,0 +1,124 @@
+{
+  "schema_version": "vpd-holdout-evaluation-protocol/v1",
+  "artifact_type": "HOLDOUT_EVALUATION_PROTOCOL",
+  "protocol_id": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_EVALUATION_PROTOCOL_V1",
+  "created_at": "2026-09-07T08:37:40+08:00",
+  "protocol_state": "PREDECLARED_BEFORE_PAYLOAD_FREEZE_AND_GENERATION",
+  "evaluation_channels": {
+    "A_FRESH_BLIND_PIXEL_EVALUATION": {
+      "allowed_inputs": [
+        "ANONYMOUS_HOLDOUT_OUTPUT_PIXELS"
+      ],
+      "prohibited_inputs": [
+        "MOTHER_REFERENCE",
+        "STYLE_CAPSULE",
+        "EXPERIMENT_LABELS",
+        "PAYLOADS"
+      ],
+      "judges": [
+        "ABSOLUTE_PROFESSIONAL_VISUAL_QUALITY",
+        "PHOTOGRAPHIC_REALISM",
+        "TYPOGRAPHY_AND_HIERARCHY",
+        "COMPOSITION_AND_INTEGRATION"
+      ],
+      "one_attractive_image_sufficient_for_set_pass": false
+    },
+    "B_FRESH_REFERENCE_AWARE_FAMILY_EVALUATION": {
+      "allowed_inputs": [
+        "CANONICAL_REFERENCE_PIXELS",
+        "ANONYMOUS_HOLDOUT_OUTPUT_PIXELS"
+      ],
+      "prohibited_inputs": [
+        "STYLE_CAPSULE_TEXT",
+        "EXPERIMENT_LABELS",
+        "CURRENT_ZAOBIANWEI_OUTPUTS",
+        "FIGMA_VARIANTS"
+      ],
+      "judges": [
+        "FAMILY_KINSHIP",
+        "MATERIAL_NEWNESS",
+        "LITERAL_COPY_RISK",
+        "SURFACE_TOKEN_DEPENDENCE"
+      ],
+      "mother_reference_resemblance_sufficient_for_set_pass": false
+    },
+    "C_FRESH_MECHANISM_CONTRACT_EVALUATION": {
+      "allowed_inputs": [
+        "STYLE_CAPSULE_V1_1_CANDIDATE",
+        "CAPSULE_LOCAL_VALIDATION_POLICY",
+        "HOLDOUT_CHALLENGE_MATRIX",
+        "FUTURE_FROZEN_HOLDOUT_PAYLOADS",
+        "ACTUAL_HOLDOUT_OUTPUT_PIXELS"
+      ],
+      "judges": [
+        "OPERATOR_ISOLATION",
+        "MECHANISM_EXPLANATION_SUFFICIENCY",
+        "STRUCTURAL_DISPLAY_MASS",
+        "RELATION_GRAPH",
+        "TITLE_PHOTO_COUNTER_MASS",
+        "MOVABLE_TYPE_SAFE_TONAL_SPACE",
+        "REGIONAL_DENSITY_COORDINATION",
+        "TRUTHFUL_DEPTH_STAGING",
+        "ROLE_BASED_COLOR_BEHAVIOR",
+        "SEMANTIC_ROLE_BINDING",
+        "TEMPLATE_COLLAPSE_RISK",
+        "H4_ASPECT_REFLOW"
+      ],
+      "surface_tokens_sufficient": false
+    },
+    "D_HUMAN_PIXEL_REVIEW": {
+      "authority": "HUMAN_FINAL_AESTHETIC_AUTHORITY",
+      "required": true,
+      "machine_correctness_can_substitute_for_taste": false,
+      "reviews_all_actual_pixels": true
+    }
+  },
+  "separate_required_score_channels": {
+    "ABSOLUTE_COMMERCIAL_PIXEL_QUALITY": {
+      "cannot_compensate_for_mechanism_failure": true,
+      "cannot_be_inferred_from_schema_or_hash_pass": true
+    },
+    "VPD_FAMILY_MECHANISM_TRANSFER": {
+      "cannot_be_compensated_by_attractiveness": true,
+      "mechanism_explanation_required": true
+    },
+    "NEWNESS_LITERAL_COPY_RISK": {
+      "material_newness_required": true,
+      "literal_copy_or_brand_identity_copy_is_fail": true
+    },
+    "TEMPLATE_COLLAPSE_RISK": {
+      "repeated_surface_bundle_is_fail": true,
+      "same_layout_with_copy_swap_is_not_transfer_proof": true
+    },
+    "H4_ASPECT_REFLOW": {
+      "applies_to": "H4_RELATIVE_TO_H3",
+      "structural_zone_and_relation_reflow_required": true,
+      "crop_stretch_stack_or_centered_vertical_fallback_is_fail": true
+    }
+  },
+  "set_level_verdict_rules": {
+    "challenges_required": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "actual_output_count_required": 4,
+    "one_image_pass_cannot_pass_set": true,
+    "similarity_only_cannot_pass_set": true,
+    "all_challenges_require_fresh_pixel_and_mechanism_review": true,
+    "h4_must_preserve_h3_subject_process_and_copy": true,
+    "human_final_set_verdict_required": true,
+    "allowed_future_verdicts": [
+      "SYSTEM_LEVEL_HOLDOUT_TRANSFER_PASS",
+      "SYSTEM_LEVEL_HOLDOUT_TRANSFER_PASS_WITH_REVISIONS",
+      "SYSTEM_LEVEL_HOLDOUT_TRANSFER_FAIL"
+    ],
+    "commercial_golden_scale_promotion_authorized": false
+  },
+  "current_execution": {
+    "evaluations_run": false,
+    "outputs_available": false,
+    "human_verdict_recorded": false
+  }
+}

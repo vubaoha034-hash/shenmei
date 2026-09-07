@@ -12,6 +12,12 @@
   "business_entrypoints": [
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "VISUAL_PROGRAM_DISTILLATION_V1.md",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
     "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
     "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
     "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
@@ -55,29 +61,29 @@
   ],
   "state_authorities": [
     {
-      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
       "priority": 1,
-      "purpose": "current forward-only PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT implementation authority and non-execution boundary"
+      "purpose": "current project-goal authority restoring system-level VPD validation and classifying Photo/Figma as downstream production after visual-direction acceptance"
     },
     {
-      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
       "priority": 2,
-      "purpose": "project-level photo-only payload and CHATGPT_ONLY render contract prohibiting final raster typography and generic text-panel shortcuts"
+      "purpose": "current system-level H1/H2/H3/H4 holdout transfer plan; designed but not payload-frozen or executed"
     },
     {
-      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
       "priority": 3,
-      "purpose": "project-level editable Figma typography, grid, photo-type integration, distinctiveness and node-evidence contract"
+      "purpose": "fail-closed runtime-anchor authority result and exact user authorization required before holdout payload freeze"
     },
     {
-      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
       "priority": 4,
-      "purpose": "forward-only six-gate policy for formal commercial output classification"
+      "purpose": "machine-readable H1-H4 communication jobs, operators, exclusions, held constants and changed variables"
     },
     {
-      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
       "priority": 5,
-      "purpose": "machine-readable photo render, Figma composition and final export provenance receipt schema"
+      "purpose": "fresh blind, reference-aware, mechanism-contract and human-pixel evaluation authority"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
@@ -218,39 +224,64 @@
       "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
       "priority": 33,
       "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
+    },
+    {
+      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "priority": 34,
+      "purpose": "preserved forward-only Photo/Figma pipeline hardening receipt; downstream production capability, not the highest current VPD objective"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 35,
+      "purpose": "preserved downstream photo-only payload and CHATGPT_ONLY render contract"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 36,
+      "purpose": "preserved downstream editable typography and composition contract activated after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 37,
+      "purpose": "preserved downstream six-gate policy for future formal commercial output classification"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 38,
+      "purpose": "preserved downstream photo render, Figma composition and final export provenance receipt schema"
     }
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
     {
-      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
       "priority": 1,
-      "purpose": "current completed hardening task receipt; next action is only the first forward photo-only plus Figma validation"
+      "purpose": "current system-level holdout task authority for exactly H1/H2/H3/H4"
     },
     {
-      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
       "priority": 2,
-      "purpose": "next-run input-stage contract for a photo-only ChatGPT product-UI payload"
+      "purpose": "current machine-readable holdout challenge and operator-isolation design"
     },
     {
-      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
       "priority": 3,
-      "purpose": "next-run editable Figma composition evidence contract"
+      "purpose": "current blocking runtime-anchor authorization result and exact next action"
     },
     {
-      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
       "priority": 4,
-      "purpose": "next-run non-compensating gate and formal classification authority"
+      "purpose": "future holdout evaluation-channel and set-level verdict contract"
     },
     {
-      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
       "priority": 5,
-      "purpose": "next-run receipt shape and photo-to-Figma-to-export binding authority"
+      "purpose": "active goal correction and prohibited single-poster optimization boundary"
     },
     {
-      "path": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
+      "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
       "priority": 6,
-      "purpose": "forward migration guide and explicit no-next-run-execution boundary"
+      "purpose": "core system architecture: compiler and visual anchors feed the strong visual model; production tools follow accepted direction"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
@@ -336,33 +367,63 @@
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
       "priority": 23,
       "purpose": "preserved separate historical Formal V1 diagnostic authority; its frozen T1/T2/T3 payloads are untouched and are not reusable as the current controlled FAMILY experiment"
+    },
+    {
+      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "priority": 24,
+      "purpose": "completed downstream-production pipeline hardening receipt; not the current system-validation task"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 25,
+      "purpose": "downstream production photo-only input contract after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 26,
+      "purpose": "downstream production editable composition contract after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 27,
+      "purpose": "downstream future formal-commercial gate contract"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 28,
+      "purpose": "downstream production provenance receipt shape"
+    },
+    {
+      "path": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
+      "priority": 29,
+      "purpose": "preserved downstream migration note; its formerly stated next action is superseded by the system-goal correction"
     }
   ],
   "acceptance_authorities": [
     {
-      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
       "priority": 1,
-      "purpose": "current six-gate acceptance authority for future staged formal commercial outputs"
+      "purpose": "current system-level acceptance authority across blind pixels, reference-aware family, mechanism contract and human review"
     },
     {
-      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
       "priority": 2,
-      "purpose": "editable typography and composition evidence acceptance authority"
+      "purpose": "exact H1-H4 held/change/exclusion and H4 reflow acceptance design"
     },
     {
-      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
       "priority": 3,
-      "purpose": "photo-only source generation and no-final-raster-typography acceptance authority"
+      "purpose": "runtime visual-anchor authorization gate; missing authority prevents payload freeze"
     },
     {
-      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
       "priority": 4,
-      "purpose": "machine receipt syntax and stage-binding acceptance authority"
+      "purpose": "system-level family-transfer and non-copy set-pass boundary"
     },
     {
-      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
+      "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
       "priority": 5,
-      "purpose": "historical Attempt-2 final human verdict retained under historical rules without retroactive Figma requirements"
+      "purpose": "core VPD architecture and human-final-aesthetic-authority boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
@@ -423,6 +484,31 @@
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
       "priority": 17,
       "purpose": "preserved family-transfer evidence baseline"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 18,
+      "purpose": "downstream formal-commercial six-gate acceptance authority after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 19,
+      "purpose": "downstream editable typography and composition evidence authority"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 20,
+      "purpose": "downstream photo-only source-generation acceptance authority"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 21,
+      "purpose": "downstream production receipt syntax and stage-binding authority"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
+      "priority": 22,
+      "purpose": "historical Attempt-2 final human verdict retained without reclassification or promotion"
     }
   ],
   "change_authorities": [
@@ -432,6 +518,13 @@
       "title": "VPD_CODEX_PHOTO_FIGMA_PIPELINE_HARDENING_V1.txt",
       "scope": "SYSTEM_CONTRACT_HARDENING_ONLY",
       "status": "CONSUMED_FOR_CURRENT_CHANGE"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1HRjbFI9_8yWbtEPjPQ0ebKvlRPXjlklc",
+      "title": "VPD_CODEX_SYSTEM_GOAL_DRIFT_CORRECTION_AND_HOLDOUT_VALIDATION_V1.txt",
+      "scope": "SYSTEM_GOAL_DRIFT_CORRECTION_AND_HOLDOUT_VALIDATION_DESIGN_ONLY",
+      "status": "CURRENT_CHANGE_AUTHORITY"
     }
   ],
   "continuity": {
@@ -452,10 +545,27 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "HARDENED_READY_FOR_FIRST_FORWARD_VALIDATION",
+    "status": "PRESERVED_DOWNSTREAM_PRODUCTION_CAPABILITY",
+    "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
+    "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
-    "next_required_action": "RUN_FIRST_FORWARD_PHOTO_ONLY_PLUS_FIGMA_COMPOSITION_VALIDATION"
+    "highest_active_project_objective": false,
+    "next_required_action": "NOT_CURRENT_ACTIVATE_ONLY_AFTER_VISUAL_DIRECTION_ACCEPTANCE"
+  },
+  "vpd_system_goal_authority": {
+    "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
+    "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "checkpoint": "VPD_SYSTEM_GOAL_RESTORED_HOLDOUT_TRANSFER_VALIDATION_READY",
+    "challenge_ids": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "visual_anchor_runtime_policy": "VISUAL_ANCHOR_RUNTIME_AUTHORITY_MISSING",
+    "style_capsule_v1_1_candidate_promoted": false,
+    "next_required_action": "RETURN_TO_CHATGPT_FOR_EXACT_VISUAL_ANCHOR_RUNTIME_AUTHORIZATION"
   }
 }
