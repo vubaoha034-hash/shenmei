@@ -71,6 +71,7 @@ def test_attempt2_handoff_preserves_each_frozen_renderer_instruction():
 
 
 def test_creation_receipt_and_checkpoint_ledger_are_consistent():
+    # Historical sequence 22, preserved byte-for-byte; current state has a separate guard.
     receipt = load("FORMAL_RENDER_ATTEMPT2_CREATION_RECEIPT_V1.json")
     assert receipt["attempt1_settlement"]["classification"] == "PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE"
     assert receipt["attempt2_identity"]["identity"] == "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2"
@@ -79,7 +80,7 @@ def test_creation_receipt_and_checkpoint_ledger_are_consistent():
     assert receipt["execution_boundary"]["evaluation_executed"] is False
     assert receipt["frozen_payload_integrity"]["H4"] == EXPECTED["H4_CONTROLLER_PAYLOAD.json"]
 
-    checkpoint = json.loads((ROOT / "continuity" / "vpd" / "LATEST_CHECKPOINT.json").read_text(encoding="utf-8"))
+    checkpoint = json.loads((ROOT / "continuity" / "vpd" / "history" / "sequence_22" / "LATEST_CHECKPOINT.json").read_text(encoding="utf-8"))
     assert checkpoint["sequence"] == 22
     assert checkpoint["status"] == "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER"
     assert checkpoint["next_required_action"] == "RETURN_TO_CHATGPT_FOR_FORMAL_RENDER_ATTEMPT2_H1_H2_H3_H4"
@@ -87,7 +88,7 @@ def test_creation_receipt_and_checkpoint_ledger_are_consistent():
         "event_id": "EVT-VISUAL-VPD-FORMAL-RENDER-ATTEMPT1-INVALID-ATTEMPT2-READY-20260907-001",
         "event_hash": "2aac3fe5ba3cfe5813538edf25ff96feac722e2204749c70b389fc4b1570146c",
     }
-    events = [json.loads(line) for line in (ROOT / "continuity" / "vpd" / "state_ledger" / "system_validation.jsonl").read_text(encoding="utf-8").splitlines()]
+    events = [json.loads(line) for line in (ROOT / "continuity" / "vpd" / "history" / "sequence_22" / "system_validation.jsonl").read_text(encoding="utf-8").splitlines()]
     assert len(events) == 3
     event = events[-1]
     asserted = dict(event)

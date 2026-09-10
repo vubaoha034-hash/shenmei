@@ -76,468 +76,453 @@
   ],
   "state_authorities": [
     {
-      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-      "priority": 1,
-      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
-    },
-    {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
-      "priority": 2,
+      "priority": 1,
       "purpose": "current project-goal authority restoring system-level VPD validation and classifying Photo/Figma as downstream production after visual-direction acceptance"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
-      "priority": 3,
+      "priority": 2,
       "purpose": "current system-level H1/H2/H3/H4 holdout transfer plan; designed but not payload-frozen or executed"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
-      "priority": 4,
+      "priority": 3,
       "purpose": "fail-closed runtime-anchor authority result and exact user authorization required before holdout payload freeze"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
-      "priority": 5,
+      "priority": 4,
       "purpose": "machine-readable H1-H4 communication jobs, operators, exclusions, held constants and changed variables"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
-      "priority": 6,
+      "priority": 5,
       "purpose": "fresh blind, reference-aware, mechanism-contract and human-pixel evaluation authority"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
-      "priority": 7,
+      "priority": 6,
       "purpose": "current immutable Attempt-2 human final settlement: FAMILY validation FAIL with strong positive mechanism evidence and no Commercial/Golden/Scale promotion"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_POST_SETTLEMENT_ISOLATION_PLAN_20260825.md",
-      "priority": 8,
+      "priority": 7,
       "purpose": "preserved post-settlement isolation rationale superseded only in execution architecture by the current forward-only pipeline hardening contract"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json",
-      "priority": 9,
+      "priority": 8,
       "purpose": "current Attempt-2 freeze authority binding V1.1 Candidate, local policy, predeclared matrices, three new payload hashes, zero-reference route and non-execution boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_DRIVE_HANDOFF_UPLOAD_RECEIPT_V1.json",
-      "priority": 10,
+      "priority": 9,
       "purpose": "Drive upload and readback proof for the current Attempt-2 ChatGPT render handoff"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
-      "priority": 11,
+      "priority": 10,
       "purpose": "current exactly-once F1 -> F2 -> F3 ChatGPT product-UI render handoff; no runtime references, hidden variants or pre-review retries"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_PLAN_V1.json",
-      "priority": 12,
+      "priority": 11,
       "purpose": "current Attempt-2 controlled FAMILY experiment design and causal-attribution boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
-      "priority": 13,
+      "priority": 12,
       "purpose": "machine-readable held constants, changed variables, prohibited leakage, surface stressors and attribution limits for Attempt 2"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
-      "priority": 14,
+      "priority": 13,
       "purpose": "pre-render frozen surface-divergence values and causal interpretation for F1/F2/F3"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
-      "priority": 15,
+      "priority": 14,
       "purpose": "mandatory future human pixel review with independent realism and FAMILY mechanism score channels"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
-      "priority": 16,
+      "priority": 15,
       "purpose": "current candidate identity, immutable V1 lineage, Capsule-local policy binding and non-promotion boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
-      "priority": 17,
+      "priority": 16,
       "purpose": "current schema-valid Shanyeji Style Capsule V1.1 Candidate; CONTROLLED_VALIDATION_REQUIRED and not durable, Golden or Scale-ready"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
-      "priority": 18,
+      "priority": 17,
       "purpose": "Capsule-local Attempt-2 design controls for operator isolation, anti-shortcut exclusions, divergence, aspect reflow, motif omission, mechanism sufficiency and separate realism scoring"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
-      "priority": 19,
+      "priority": 18,
       "purpose": "exact remote-input, immutable-baseline, Attempt-1 evidence, candidate artifact and no-global-change binding"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
-      "priority": 20,
+      "priority": 19,
       "purpose": "auditable R1-R12 field-level delta from immutable V1 to the new candidate with future retest criteria"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
-      "priority": 21,
+      "priority": 20,
       "purpose": "current immutable Attempt-1 human-authorized settlement: technical generation PASS, formal FAMILY validation FAIL, Capsule refinement required"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
-      "priority": 22,
+      "priority": 21,
       "purpose": "current Capsule-local requirements authority for a future V1.1 candidate; requirements only, not a Capsule or generation payload"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
-      "priority": 23,
+      "priority": 22,
       "purpose": "exact V1/payload/output/artifact/ledger/checkpoint binding for the Attempt-1 FAIL settlement"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 24,
+      "priority": 23,
       "purpose": "preserved Attempt-1 controlled FAMILY plan and operator intent; no longer the current next-action authority"
     },
     {
       "path": "VPD_CODEX_HANDOFF_20260819.md",
-      "priority": 25,
+      "priority": 24,
       "purpose": "current real route restored after Anti-Rollback test clarification: ChatGPT runtime-infrastructure expansion is paused; Codex is the next execution actor and must continue from the existing strict adapter/frozen payloads without reopening Actions/WIF as mandatory gates"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
-      "priority": 26,
+      "priority": 25,
       "purpose": "GitHub Actions and WIF are optional infrastructure, not VPD gates; strict exact-payload adapter is preserved and execution runtime remains neutral"
     },
     {
       "path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
-      "priority": 27,
+      "priority": 26,
       "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"
     },
     {
       "path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
-      "priority": 28,
+      "priority": 27,
       "purpose": "historical/optional infrastructure evidence: the GitHub Actions WIF probe found its configuration missing; this does not block another valid private execution runtime"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
-      "priority": 29,
+      "priority": 28,
       "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"
     },
     {
       "path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
-      "priority": 30,
+      "priority": 29,
       "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"
     },
     {
       "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
-      "priority": 31,
+      "priority": 30,
       "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 32,
+      "priority": 31,
       "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"
     },
     {
       "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
-      "priority": 33,
+      "priority": 32,
       "purpose": "preserved Anti-Rollback test-incident artifact only: its apparent R4.1 route authorization was later explicitly clarified by the user as test input, not a real durable project authorization"
     },
     {
       "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
-      "priority": 34,
+      "priority": 33,
       "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
     },
     {
       "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
-      "priority": 35,
+      "priority": 34,
       "purpose": "preserved forward-only Photo/Figma pipeline hardening receipt; downstream production capability, not the highest current VPD objective"
     },
     {
       "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
-      "priority": 36,
+      "priority": 35,
       "purpose": "preserved downstream photo-only payload and CHATGPT_ONLY render contract"
     },
     {
       "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
-      "priority": 37,
+      "priority": 36,
       "purpose": "preserved downstream editable typography and composition contract activated after visual-direction acceptance"
     },
     {
       "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
-      "priority": 38,
+      "priority": 37,
       "purpose": "preserved downstream six-gate policy for future formal commercial output classification"
     },
     {
       "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
-      "priority": 39,
+      "priority": 38,
       "purpose": "preserved downstream photo render, Figma composition and final export provenance receipt schema"
     }
   ],
   "task_model": "TASK_REGISTRY",
   "task_authorities": [
     {
-      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-      "priority": 1,
-      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
-    },
-    {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
-      "priority": 2,
+      "priority": 1,
       "purpose": "current system-level holdout task authority for exactly H1/H2/H3/H4"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
-      "priority": 3,
+      "priority": 2,
       "purpose": "current machine-readable holdout challenge and operator-isolation design"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
-      "priority": 4,
+      "priority": 3,
       "purpose": "current blocking runtime-anchor authorization result and exact next action"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
-      "priority": 5,
+      "priority": 4,
       "purpose": "future holdout evaluation-channel and set-level verdict contract"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
-      "priority": 6,
+      "priority": 5,
       "purpose": "active goal correction and prohibited single-poster optimization boundary"
     },
     {
       "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
-      "priority": 7,
+      "priority": 6,
       "purpose": "core system architecture: compiler and visual anchors feed the strong visual model; production tools follow accepted direction"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
-      "priority": 8,
+      "priority": 7,
       "purpose": "historical consumed Attempt-2 render handoff; retained for provenance and must not be executed as the current route"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json",
-      "priority": 9,
+      "priority": 8,
       "purpose": "exact payload and experiment freeze binding for the current Attempt-2 route"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
-      "priority": 10,
+      "priority": 9,
       "purpose": "mandatory review authority after exactly-once Attempt-2 generation"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_PLAN_V1.json",
-      "priority": 11,
+      "priority": 10,
       "purpose": "Attempt-2 tier intent, constants, causal variables and validation boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
-      "priority": 12,
+      "priority": 11,
       "purpose": "machine-readable operator-isolation contract for F1/F2/F3"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
-      "priority": 13,
+      "priority": 12,
       "purpose": "predeclared surface-divergence contract to compare against future actual pixels"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
-      "priority": 14,
+      "priority": 13,
       "purpose": "only next-task design authority for an Attempt-2 controlled validation; it is not a frozen payload and authorizes no generation"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
-      "priority": 15,
+      "priority": 14,
       "purpose": "candidate identity, maturity and execution boundary for designing and freezing a separate future Attempt-2 experiment"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
-      "priority": 16,
+      "priority": 15,
       "purpose": "schema-valid candidate grammar input for future Attempt-2 design only; no payload exists yet"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
-      "priority": 17,
+      "priority": 16,
       "purpose": "candidate creation completion and immutable input binding"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
-      "priority": 18,
+      "priority": 17,
       "purpose": "field-level rationale and future retest criteria; not a renderer prompt or payload"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
-      "priority": 19,
+      "priority": 18,
       "purpose": "consumed authority that produced the V1.1 Candidate; retained for audit and must not be mistaken for the candidate or a payload"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
-      "priority": 20,
+      "priority": 19,
       "purpose": "settlement completion and immutable evidence binding; prohibits retry or in-place mutation"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
-      "priority": 21,
+      "priority": 20,
       "purpose": "formal settled verdict and user authority chain"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 22,
+      "priority": 21,
       "purpose": "preserved Attempt-1 plan used to interpret operator-isolation failures"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
-      "priority": 23,
+      "priority": 22,
       "purpose": "consumed Attempt-1 render handoff retained for provenance; must not be executed again"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
-      "priority": 24,
+      "priority": 23,
       "purpose": "preserved separate historical Formal V1 diagnostic authority; its frozen T1/T2/T3 payloads are untouched and are not reusable as the current controlled FAMILY experiment"
     },
     {
       "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
-      "priority": 25,
+      "priority": 24,
       "purpose": "completed downstream-production pipeline hardening receipt; not the current system-validation task"
     },
     {
       "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
-      "priority": 26,
+      "priority": 25,
       "purpose": "downstream production photo-only input contract after visual-direction acceptance"
     },
     {
       "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
-      "priority": 27,
+      "priority": 26,
       "purpose": "downstream production editable composition contract after visual-direction acceptance"
     },
     {
       "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
-      "priority": 28,
+      "priority": 27,
       "purpose": "downstream future formal-commercial gate contract"
     },
     {
       "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
-      "priority": 29,
+      "priority": 28,
       "purpose": "downstream production provenance receipt shape"
     },
     {
       "path": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
-      "priority": 30,
+      "priority": 29,
       "purpose": "preserved downstream migration note; its formerly stated next action is superseded by the system-goal correction"
     }
   ],
   "acceptance_authorities": [
     {
-      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-      "priority": 1,
-      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
-    },
-    {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
-      "priority": 2,
+      "priority": 1,
       "purpose": "current system-level acceptance authority across blind pixels, reference-aware family, mechanism contract and human review"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
-      "priority": 3,
+      "priority": 2,
       "purpose": "exact H1-H4 held/change/exclusion and H4 reflow acceptance design"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
-      "priority": 4,
+      "priority": 3,
       "purpose": "runtime visual-anchor authorization gate; missing authority prevents payload freeze"
     },
     {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
-      "priority": 5,
+      "priority": 4,
       "purpose": "system-level family-transfer and non-copy set-pass boundary"
     },
     {
       "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
-      "priority": 6,
+      "priority": 5,
       "purpose": "core VPD architecture and human-final-aesthetic-authority boundary"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
-      "priority": 7,
+      "priority": 6,
       "purpose": "future Attempt-2 human verdict authority with no compensation between technical realism and FAMILY mechanisms"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
-      "priority": 8,
+      "priority": 7,
       "purpose": "hard held/change/leakage contract for causal validation"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
-      "priority": 9,
+      "priority": 8,
       "purpose": "predeclared actual-vs-intended surface divergence review authority"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
-      "priority": 10,
+      "priority": 9,
       "purpose": "future Attempt-2 formal FAMILY evaluation contract; separates technical realism from family mechanisms and requires operator isolation, divergence and mechanism explanation"
     },
     {
       "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
-      "priority": 11,
+      "priority": 10,
       "purpose": "candidate non-promotion boundary: controlled validation required, not durable, Commercial, Golden or Scale-ready"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
-      "priority": 12,
+      "priority": 11,
       "purpose": "final Attempt-1 technical/family/promotion settlement under human authority"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
-      "priority": 13,
+      "priority": 12,
       "purpose": "bounded negative evidence and inference limits for Capsule-local refinement"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
-      "priority": 14,
+      "priority": 13,
       "purpose": "mandatory external human pixel review separating technical validity, family-transfer quality and absolute commercial aesthetic quality"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
-      "priority": 15,
+      "priority": 14,
       "purpose": "controlled constants, progressive operator challenges, tentative attribution limits and non-promotion boundary"
     },
     {
       "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
-      "priority": 16,
+      "priority": 15,
       "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"
     },
     {
       "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
-      "priority": 17,
+      "priority": 16,
       "purpose": "preserved acceptance authority for the separate old Formal V1 experiment only"
     },
     {
       "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
-      "priority": 18,
+      "priority": 17,
       "purpose": "preserved family-transfer evidence baseline"
     },
     {
       "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
-      "priority": 19,
+      "priority": 18,
       "purpose": "downstream formal-commercial six-gate acceptance authority after visual-direction acceptance"
     },
     {
       "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
-      "priority": 20,
+      "priority": 19,
       "purpose": "downstream editable typography and composition evidence authority"
     },
     {
       "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
-      "priority": 21,
+      "priority": 20,
       "purpose": "downstream photo-only source-generation acceptance authority"
     },
     {
       "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
-      "priority": 22,
+      "priority": 21,
       "purpose": "downstream production receipt syntax and stage-binding authority"
     },
     {
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
-      "priority": 23,
+      "priority": 22,
       "purpose": "historical Attempt-2 final human verdict retained without reclassification or promotion"
     }
   ],
@@ -601,7 +586,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_TASK_LOCK_REPAIRED_EXTERNAL_EXECUTION_RECONCILIATION_REQUIRED",
+    "checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
     "challenge_ids": [
       "H1",
       "H2",
@@ -627,7 +612,7 @@
       "SHY-SYS-HOLDOUT-V1-H3",
       "SHY-SYS-HOLDOUT-V1-H4"
     ],
-    "formal_outputs_generated": "UNKNOWN_EXTERNAL_EXECUTION_REPORTED_4",
+    "formal_outputs_generated": "0/4",
     "style_capsule_v1_1_candidate_promoted": false,
     "formal_render_attempt2_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2",
     "formal_render_attempt1_classification": "PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE",
@@ -639,17 +624,6 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK",
-    "formal_outputs_verified": null,
-    "render_allowed": false,
-    "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json"
-  },
-  "task_lock": {
-    "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 1,
-    "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427",
-    "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
-    "historical_documents_are_not_current_instructions": true
-  },
-  "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json"
+    "next_required_action": "RETURN_TO_CHATGPT_FOR_FORMAL_RENDER_ATTEMPT2_H1_H2_H3_H4"
+  }
 }

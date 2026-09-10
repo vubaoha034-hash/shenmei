@@ -1,0 +1,30 @@
+{
+  "task_id": "VPD-TASK-LOCK-REPAIR-20260907-001",
+  "scope": "CONTROL_REPAIR_ONLY",
+  "new_tests": {
+    "passed": 28,
+    "failed": 0,
+    "required_negative_categories": 12
+  },
+  "baseline_regression": {
+    "passed": 143,
+    "failed": 7
+  },
+  "after_regression": {
+    "passed": 171,
+    "failed": 7
+  },
+  "new_regressions": 0,
+  "remaining_failures": "Same 7 historical assertions: four legacy CRLF worktree hashes versus verified LF Git blob bytes. Not fixed or normalized in this task.",
+  "old_assertions_unchanged": {
+    "tests/visual_memory/test_vpd_formal_render_attempt2_recovery_v1.py": true,
+    "tests/visual_memory/test_vpd_system_goal_drift_correction_and_holdout_validation_v1.py": true
+  },
+  "historical_test_routing": "Two preparation tests now read exact sequence-22 snapshot files; all assertions and gold hashes preserved. Current sequence and guard have separate tests.",
+  "frozen_files_unchanged": 75,
+  "provider_binding_enforced": false,
+  "fresh_independent_visual_review_executed": false,
+  "images_generated": false,
+  "candidate_promoted": false,
+  "remote_readback": "PENDING_EXTERNAL_TOOL_VERIFICATION_NOT_INFERRED_FROM_LOCAL_TESTS"
+}

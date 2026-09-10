@@ -142,7 +142,8 @@ def test_visual_anchor_policy_fails_closed_on_distillation_only_authority():
 
 
 def test_adapter_checkpoint_and_ledger_restore_system_goal():
-    adapter = load(ADAPTER_PATH)
+    historical = ROOT / "continuity" / "vpd" / "history" / "sequence_22"
+    adapter = load(historical / "PROJECT_CONTROL_ADAPTER.json")
     system = adapter["vpd_system_goal_authority"]
     assert system["active_task_id"] == "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
     assert system["checkpoint"] == STATE
@@ -165,7 +166,7 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
         priorities = [item["priority"] for item in adapter[authority_name]]
         assert priorities == list(range(1, len(priorities) + 1))
 
-    checkpoint = load(CHECKPOINT_PATH)
+    checkpoint = load(historical / "LATEST_CHECKPOINT.json")
     assert checkpoint["sequence"] == 22
     assert checkpoint["status"] == STATE
     assert checkpoint["highest_accepted_checkpoint"] == STATE
@@ -178,7 +179,7 @@ def test_adapter_checkpoint_and_ledger_restore_system_goal():
         "event_hash": "2aac3fe5ba3cfe5813538edf25ff96feac722e2204749c70b389fc4b1570146c",
     }
 
-    events = [json.loads(line) for line in LEDGER_PATH.read_text(encoding="utf-8").splitlines()]
+    events = [json.loads(line) for line in (historical / "system_validation.jsonl").read_text(encoding="utf-8").splitlines()]
     assert len(events) == 3
     event = events[2]
     asserted = dict(event)
