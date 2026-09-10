@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 2,
+  "revision": 1,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "maintenance_task_id": "VPD-TASK-LOCK-REPAIR-20260907-001",
@@ -346,22 +346,6 @@
     "human_set_verdict": {
       "scope": "H1-H4",
       "status": "PENDING"
-    },
-    "task_lock_state_readback_review": {
-      "scope": "TASK_LOCK_REPAIR_V1",
-      "status": "DONE",
-      "evidence": {
-        "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-        "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
-      }
-    },
-    "project_workflow_outline": {
-      "scope": "FULL_PROJECT_WORKFLOW_V1",
-      "status": "DONE",
-      "evidence": {
-        "path": "VPD_PROJECT_ROADMAP.md",
-        "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-      }
     }
   },
   "execution": {
@@ -375,23 +359,23 @@
     "human_acceptance": "NOT_ACCEPTED",
     "capsule_verdict": "NOT_ESTABLISHED"
   },
-  "current_stage": "完整流程已登记，任务锁复核已结案；P2有限次数对账旧出图证据，暂停渲染",
-  "status": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
+  "current_stage": "任务身份与状态修复完成，外部出图异常待对账；暂停继续渲染",
+  "status": "VPD_TASK_LOCK_REPAIRED_EXTERNAL_EXECUTION_RECONCILIATION_REQUIRED",
   "render_allowed": false,
-  "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
+  "next_required_action": "CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK",
   "blockers": [
     "第二次正式渲染的实际调用、附件绑定及输出文件身份尚未完成对账",
     "候选的稳定迁移与用户接受尚未证实"
   ],
   "completed_this_revision": [
-    "完成任务锁修复及远端状态复核",
-    "登记从源库到第二风格、商业交付和封版的完整流程",
-    "把新聊天入口接到大纲与唯一任务锁",
-    "将下一步推进为有限次数核对旧出图证据"
+    "接入唯一任务身份锁与可执行检查",
+    "原参考库与反馈例图角色分开",
+    "当前与历史状态分开，保留原始字节",
+    "登记外部执行异常并禁止旧指令自动重放"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-    "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
+    "path": "evidence/vpd/task_lock_repair_v1/AUTHORITY.json",
+    "sha256": "0d75c7807fc3abad756b072cf6b406acffa7bc214656b8173f1587070be0a2d9"
   },
   "immutable_baseline": {
     "path": "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json",
@@ -421,21 +405,7 @@
       "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
       "sha256": "d4d741832856ac765c4f64bb3a64799c91395d1a9c7e5ac718892bdf847ac543"
     },
-    "accepted_work_preserved": "Legitimate distillation and prior scoped transfer evidence retained; no promotion.",
-    "previous_current_state": {
-      "continuity/vpd/CURRENT_TASK_LOCK.json": {
-        "path": "continuity/vpd/history/sequence_23/CURRENT_TASK_LOCK.json",
-        "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427"
-      },
-      "continuity/vpd/LATEST_CHECKPOINT.json": {
-        "path": "continuity/vpd/history/sequence_23/LATEST_CHECKPOINT.json",
-        "sha256": "991e6c1984729877d579fb72e6569b58599ebe7fed16e264897f7b15a8141f71"
-      },
-      "PROJECT_CONTROL_ADAPTER.json": {
-        "path": "continuity/vpd/history/sequence_23/PROJECT_CONTROL_ADAPTER.json",
-        "sha256": "b96e3aa769a4538143a036004f2f331f91ee28ac6ff22a8036c1eb86c71ace5b"
-      }
-    }
+    "accepted_work_preserved": "Legitimate distillation and prior scoped transfer evidence retained; no promotion."
   },
   "evidence_limits": {
     "local_guard_controls_provider": false,
@@ -444,146 +414,5 @@
     "feedback_changes_source_role": false,
     "current_chat_is_fresh_blind_evaluator": false
   },
-  "updated_at": "2026-09-10T10:03:50.018165+00:00",
-  "workflow_task_id": "VPD-PROJECT-ROADMAP-20260910-001",
-  "workflow": {
-    "version": "1.0",
-    "document": {
-      "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-    },
-    "focus_stage": "P2",
-    "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "stages": [
-      {
-        "id": "P0",
-        "title": "目标、进度与完整流程",
-        "status": "DONE",
-        "evidence": [
-          {
-            "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-            "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
-          },
-          {
-            "path": "VPD_PROJECT_ROADMAP.md",
-            "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-          }
-        ]
-      },
-      {
-        "id": "P1",
-        "title": "首个家族候选",
-        "status": "CANDIDATE_READY_NOT_ACCEPTED",
-        "evidence": [
-          {
-            "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
-            "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
-            "sha256": "54bbc4a1eccd5e76d17dcb13b889c501ed93a4457dbbc1f8dc157572967a0cd9",
-            "maturity": "CONTROLLED_VALIDATION_REQUIRED",
-            "promoted": false
-          }
-        ]
-      },
-      {
-        "id": "P2",
-        "title": "旧出图证据对账",
-        "status": "OPEN",
-        "next_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
-        "evidence": [
-          {
-            "path": "evidence/vpd/task_lock_repair_v1/EXTERNAL_EXECUTION_ANOMALY.json",
-            "sha256": "c8e1969e939a2f9c8058ac47637ff531d9444fbdccc04a3d7e97f0467dbff8e1"
-          }
-        ]
-      },
-      {
-        "id": "P3",
-        "title": "直接参考与蒸馏的实际收益比较",
-        "status": "PLANNED",
-        "depends_on": [
-          "P2"
-        ],
-        "new_experiment_registration_required": true
-      },
-      {
-        "id": "P4",
-        "title": "首个家族完整迁移及人工验收",
-        "status": "PENDING_VALID_OUTPUTS",
-        "depends_on": [
-          "P2"
-        ],
-        "evidence": [
-          {
-            "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_PAYLOAD_FREEZE_RECEIPT_V1.json",
-            "sha256": "32255718f315deb3a4dbebee9d3aa5eb6a14b0469b9cdce73363b6f433786867"
-          }
-        ],
-        "pilot_is_not_formal_evidence": true
-      },
-      {
-        "id": "P5",
-        "title": "第二未见风格，同一蒸馏器",
-        "status": "DEFERRED_UNTIL_FIRST_FAMILY_ACCEPTED",
-        "depends_on": [
-          "P3",
-          "P4"
-        ]
-      },
-      {
-        "id": "P6",
-        "title": "正式商业制作与真实导出",
-        "status": "CONDITIONAL_PENDING",
-        "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
-        "authority": "PROJECT_CONTROL_ADAPTER.json#forward_commercial_pipeline"
-      },
-      {
-        "id": "P7",
-        "title": "封版、按政策晋升与可重复交付",
-        "status": "DEFERRED_UNTIL_VALIDATED",
-        "depends_on": [
-          "P3",
-          "P4",
-          "P5"
-        ],
-        "commercial_delivery_requires": [
-          "P6"
-        ]
-      }
-    ],
-    "preserved_followups": [
-      {
-        "id": "candidate_promotion",
-        "status": "DEFERRED_GATED",
-        "stage": "P7"
-      },
-      {
-        "id": "golden",
-        "status": "DEFERRED_GATED",
-        "automatic_promotion": false
-      },
-      {
-        "id": "scale",
-        "status": "DEFERRED_GATED",
-        "automatic_expansion": false
-      },
-      {
-        "id": "downstream_production_after_acceptance",
-        "status": "CONDITIONAL_PENDING",
-        "stage": "P6"
-      },
-      {
-        "id": "legacy_line_ending_hash_failures",
-        "status": "DEFERRED_TECHNICAL_DEBT",
-        "count": 7,
-        "blocks_current_evidence_reconciliation": false
-      }
-    ],
-    "work_limits": {
-      "old_anomaly_targeted_search_passes_max": 2,
-      "new_comparison_default_initial_images": 4,
-      "new_comparison_default_rounds_max": 2,
-      "no_automatic_old_handoff_replay": true
-    },
-    "completion_scope": "Core validated system, formal commercial delivery, Golden and Scale are separately accepted scopes."
-  }
+  "updated_at": "2026-09-10T08:57:42.754572+00:00"
 }

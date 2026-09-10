@@ -44,7 +44,9 @@ def request(root):
 
 def test_correct_state_and_real_entrypoint_pass(isolated):
     lock, cp = validate_state(isolated)
-    assert cp['sequence'] == 23
+    assert cp['sequence'] > 22
+    assert lock['requirements']['task_lock_state_readback_review']['status'] == 'DONE'
+    assert lock['next_required_action'] == 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
     assert lock['parent_active_task_id'] == 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
     assert validate_request(isolated, request(isolated)) == lock
     result = subprocess.run([sys.executable, str(isolated/'scripts/verify_visual_memory.py'), '--vpd-state', '--status-card'], capture_output=True, text=True)
@@ -119,3 +121,16 @@ def test_readback_receipt_shape_positive_synthetic_only(isolated):
     lock,_=validate_state(isolated);r=request(isolated)
     r.update(remote_verified=True,remote_readback={'kind':'GITHUB_CONNECTOR_INDEPENDENT_READBACK','repository':lock['repository'],'branch':lock['branch'],'commit':'a'*40,'live_ref_commit':'a'*40,'observed_at':'SYNTHETIC_TEST_NOT_RUNTIME_EVIDENCE','file_sha256':{p:digest(isolated/p) for p in [LOCK_PATH,CHECKPOINT_PATH,'PROJECT_CONTROL_ADAPTER.json']}})
     assert validate_request(isolated,r)==lock
+
+def test_reconciliation_requires_completed_review(isolated):
+    lock=load(isolated,LOCK_PATH)
+    del lock['requirements']['task_lock_state_readback_review']
+    reseal(isolated,lock)
+    with pytest.raises(TaskLockError,match='REVIEW_REQUIRED_BEFORE_RECONCILIATION'):
+        validate_state(isolated)
+
+def test_new_chat_entry_requires_workflow(isolated):
+    p=isolated/'START_HERE.md'
+    p.write_text(p.read_text().replace('VPD_PROJECT_ROADMAP.md','WRONG_ROADMAP.md'))
+    with pytest.raises(TaskLockError,match='ENTRYPOINT_WORKFLOW_MISSING'):
+        validate_state(isolated)

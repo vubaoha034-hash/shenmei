@@ -1,0 +1,69 @@
+{
+  "schema_version": "vpd-workflow-decision/v1",
+  "task_id": "VPD-PROJECT-ROADMAP-20260910-001",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-10T10:03:50.018165+00:00",
+  "input_remote_head": "fcdac3243739f7d33b7e5706b2deb8a5e74422db",
+  "authority": {
+    "kind": "CURRENT_USER_REQUEST",
+    "request": "现在应该如何做。我需要你把整个流程步骤写好。完成一个大纲，并且以后读取流程，新聊天都知道。完整整个任务",
+    "scope": [
+      "full_project_workflow",
+      "entrypoint_and_progress_persistence",
+      "complete_current_task_lock_readback_review"
+    ],
+    "render_authorized": false,
+    "source_capsule_payload_or_acceptance_change_authorized": false
+  },
+  "completed_action": "CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK",
+  "review_result": "PASS",
+  "review_evidence": {
+    "current_remote_head": "fcdac3243739f7d33b7e5706b2deb8a5e74422db",
+    "readback_method": "GITHUB_CONNECTOR_INDEPENDENT_READBACK",
+    "actual_readback_file_sha256": {
+      "PROJECT_CONTROL_ADAPTER.json": "b96e3aa769a4538143a036004f2f331f91ee28ac6ff22a8036c1eb86c71ace5b",
+      "continuity/vpd/CURRENT_TASK_LOCK.json": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427",
+      "continuity/vpd/LATEST_CHECKPOINT.json": "991e6c1984729877d579fb72e6569b58599ebe7fed16e264897f7b15a8141f71",
+      "evidence/vpd/task_lock_repair_v1/REMOTE_READBACK.json": "7b8efe24ca10ae3c095ad5f597e94071157fde96128eb8af9df978fb90df47f7"
+    },
+    "local_contents_match_remote": true,
+    "current_state_guard": "PASS",
+    "frozen_baseline_files_verified_unchanged": 75,
+    "historical_remote_receipt": {
+      "path": "evidence/vpd/task_lock_repair_v1/REMOTE_READBACK.json",
+      "sha256": "7b8efe24ca10ae3c095ad5f597e94071157fde96128eb8af9df978fb90df47f7"
+    },
+    "historical_receipt_request_validation": "PASS",
+    "reviewed_state_snapshots": {
+      "continuity/vpd/CURRENT_TASK_LOCK.json": {
+        "path": "continuity/vpd/history/sequence_23/CURRENT_TASK_LOCK.json",
+        "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427"
+      },
+      "continuity/vpd/LATEST_CHECKPOINT.json": {
+        "path": "continuity/vpd/history/sequence_23/LATEST_CHECKPOINT.json",
+        "sha256": "991e6c1984729877d579fb72e6569b58599ebe7fed16e264897f7b15a8141f71"
+      },
+      "PROJECT_CONTROL_ADAPTER.json": {
+        "path": "continuity/vpd/history/sequence_23/PROJECT_CONTROL_ADAPTER.json",
+        "sha256": "b96e3aa769a4538143a036004f2f331f91ee28ac6ff22a8036c1eb86c71ace5b"
+      }
+    }
+  },
+  "workflow": {
+    "path": "VPD_PROJECT_ROADMAP.md",
+    "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
+  },
+  "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
+  "conclusions": [
+    "任务锁修复与远端状态复核结案",
+    "完整步骤及后续工作登记到唯一现有任务锁",
+    "外部出图仍未对账，未断言绑定或质量通过"
+  ],
+  "limits": {
+    "pixel_review_performed": false,
+    "new_render_performed": false,
+    "fresh_chat_runtime_test_performed": false,
+    "aesthetic_acceptance_established": false
+  },
+  "publication_status": "This decision records the completed input-state review; persistence of this new workflow requires a later independent remote readback."
+}

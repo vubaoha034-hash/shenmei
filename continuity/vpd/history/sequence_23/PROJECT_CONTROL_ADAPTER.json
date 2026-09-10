@@ -10,11 +10,6 @@
     "last_verified_commit": "72ad9d53d27ba7260a7a5694079b4acdf8154c6f"
   },
   "business_entrypoints": [
-    {
-      "path": "VPD_PROJECT_ROADMAP.md",
-      "priority": 0,
-      "purpose": "VPD-only full task workflow; read with current task lock, not as a competing current-state authority"
-    },
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
     "VISUAL_PROGRAM_DISTILLATION_V1.md",
@@ -548,11 +543,6 @@
   ],
   "change_authorities": [
     {
-      "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-      "priority": 0,
-      "purpose": "Current user-authorized full workflow and completion of task-lock state-readback review; no rendering or visual acceptance"
-    },
-    {
       "authority_class": "USER_PROVIDED_DRIVE_TASK",
       "drive_file_id": "1SKmCHFgOxOXfdx7U7wtxFeenN8c6zLf9",
       "title": "VPD_CODEX_PHOTO_FIGMA_PIPELINE_HARDENING_V1.txt",
@@ -611,7 +601,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
+    "checkpoint": "VPD_TASK_LOCK_REPAIRED_EXTERNAL_EXECUTION_RECONCILIATION_REQUIRED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -649,25 +639,17 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
+    "next_required_action": "CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json"
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 2,
-    "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd",
+    "revision": 1,
+    "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
-  "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-  "workflow": {
-    "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34",
-    "version": "1.0",
-    "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "read_after": "task_lock",
-    "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock."
-  }
+  "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json"
 }

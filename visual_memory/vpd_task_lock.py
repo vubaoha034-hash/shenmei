@@ -6,7 +6,7 @@ from pathlib import Path
 
 LOCK_PATH = 'continuity/vpd/CURRENT_TASK_LOCK.json'
 CHECKPOINT_PATH = 'continuity/vpd/LATEST_CHECKPOINT.json'
-NEXT_ACTION = 'CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK'
+NEXT_ACTION = 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
 PROJECT = 'visual-aesthetic-vpd'
 PARENT = 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
 
@@ -72,11 +72,23 @@ def validate_state(root):
     require(cp['status'] == lock['status'] == adapter['vpd_system_goal_authority']['checkpoint'], 'STATE_STATUS_CONFLICT')
     require(cp['next_required_action'] == lock['next_required_action'] == adapter['vpd_system_goal_authority']['next_required_action'] == NEXT_ACTION, 'NEXT_ACTION_DRIFT')
     require(not lock['render_allowed'] and not adapter['vpd_system_goal_authority']['render_allowed'], 'RENDER_NOT_AUTHORIZED')
+    workflow = lock['workflow']['document']
+    check_ref(root, workflow)
+    require(cp['workflow'] == workflow and {k: adapter['workflow'][k] for k in ['path', 'sha256']} == workflow, 'WORKFLOW_REFERENCE_CONFLICT')
+    require(adapter['workflow']['current_progress_path'] == LOCK_PATH and lock['workflow']['status_authority'] == LOCK_PATH, 'COMPETING_TASK_INDEX')
+    review = lock['requirements'].get('task_lock_state_readback_review', {})
+    require(review.get('status') == 'DONE', 'REVIEW_REQUIRED_BEFORE_RECONCILIATION')
+    check_ref(root, review['evidence'])
+    decision = read(root, review['evidence']['path'])
+    require(decision['completed_action'] == 'CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK' and decision['review_result'] == 'PASS' and decision['next_required_action'] == NEXT_ACTION, 'REVIEW_DECISION_CONFLICT')
+    for ref in lock['history']['previous_current_state'].values():
+        check_ref(root, ref)
     for name in ['START_HERE.md', 'AGENTS.md']:
         text = path(root, name).read_text(encoding='utf-8')
         require(text.count('<!-- VPD_TASK_LOCK_ENTRY_V1 -->') == 1, 'ENTRYPOINT_NOT_UNIQUE')
         entry = text.split('<!-- VPD_TASK_LOCK_ENTRY_V1 -->')[1].split('<!-- END_VPD_TASK_LOCK_ENTRY_V1 -->')[0]
         require(LOCK_PATH in entry and 'python scripts/verify_visual_memory.py --vpd-state --status-card' in entry, 'ENTRYPOINT_LOCK_OR_VALIDATOR_MISSING')
+        require(workflow['path'] in entry, 'ENTRYPOINT_WORKFLOW_MISSING')
     for ref in [lock['changes_authority'], lock['immutable_baseline'], lock['anomaly_evidence'], lock['objective']['authority'], lock['source_library']['locator_receipt']]:
         check_ref(root, ref)
     baseline = read(root, lock['immutable_baseline']['path'])
@@ -142,7 +154,7 @@ def validate_request(root, request):
     lock, cp = validate_state(root)
     require(request.get('lock_sha256') == digest(path(root, LOCK_PATH)), 'REQUEST_STALE_LOCK')
     action = request.get('action')
-    # This maintenance scope grants no goal/reference/route/payload/acceptance mutations.
+    # This evidence-reconciliation scope grants no rendering or domain mutations.
     require(not request.get('changes'), 'SCOPED_CHANGE_AUTHORITY_REQUIRED')
     require(action == NEXT_ACTION, 'ACTION_NOT_AUTHORIZED_OR_REPLAY')
     if request.get('source_role_change'):
@@ -175,4 +187,4 @@ def validate_request(root, request):
     return lock
 
 def status_card(lock, cp):
-    return {'主目标':lock['objective']['text'], '当前母参考/源库':'原 approved_refs 18 条登记及独立批准的山野集；山野集仅为当前家族', '当前阶段':lock['current_stage'], '本轮实际完成':lock['completed_this_revision'], '未完成/阻塞':lock['blockers'], '唯一下一动作':lock['next_required_action'], '证据/远端版本':{'起始远端提交':lock['input_commit'],'当前锁修订':lock['revision'],'当前检查点':cp['sequence'],'远端发布回读':'须单独提供真实工具回读，不从本地文件推定'}}
+    return {'主目标':lock['objective']['text'], '完整流程':lock['workflow']['document']['path'], '当前母参考/源库':'原 approved_refs 18 条登记及独立批准的山野集；山野集仅为当前家族', '当前阶段':lock['current_stage'], '本轮实际完成':lock['completed_this_revision'], '未完成/阻塞':lock['blockers'], '唯一下一动作':lock['next_required_action'], '证据/远端版本':{'起始远端提交':lock['input_commit'],'当前锁修订':lock['revision'],'当前检查点':cp['sequence'],'远端发布回读':'须单独提供真实工具回读，不从本地文件推定'}}

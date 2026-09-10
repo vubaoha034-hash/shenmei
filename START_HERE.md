@@ -6,20 +6,24 @@
 <!-- VPD_TASK_LOCK_ENTRY_V1 -->
 ## VPD 视觉蒸馏任务专用入口
 
-仅适用于视觉蒸馏系统的接管、继续和修复；不改变其他品牌、旅行或经营路线。
-先读 `PROJECT_CONTROL_ADAPTER.json` 的 `task_lock`，其唯一当前身份为
-`continuity/vpd/CURRENT_TASK_LOCK.json`，再读当前检查点；先执行：
+本段适用于视觉蒸馏系统的接管、继续、完整流程和状态修复；其他路线照其范围执行。
+权威仓库为 `vubaoha034-hash/shenmei`，工作分支为
+`visual-program-distillation-v2-photography-design-20260814`，新聊天先核对该分支最新提交。
+先读 `PROJECT_CONTROL_ADAPTER.json` 的 `task_lock` 与 `workflow`，再读：
+
+1. `VPD_PROJECT_ROADMAP.md`：完整步骤、交付物、通过条件、提速预算和新聊天接续方式；
+2. `continuity/vpd/CURRENT_TASK_LOCK.json`：唯一当前任务、进展与下一动作；
+3. `continuity/vpd/LATEST_CHECKPOINT.json`：最新检查点和本步骤所需证据。
 
 ```bash
 python scripts/verify_visual_memory.py --vpd-state --status-card
 ```
 
-检查失败即停止写入或出图。每次先实际读取远端分支并核对 lock revision/哈希，
-写入前再次读取远端；并发前进时停止覆盖。发布后独立回读文件与提交，
-未回读不得声称同步。历史文件的下一动作不覆盖当前锁。
-本阶段唯一下一动作是 `CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK`；
-暂停渲染，先对账外部执行异常。反馈图片不自动成为母参考。
-当前状态卡由上述命令派生；本地检查不等于控制模型服务端，也不证明审美通过。
+检查失败即停止写入或出图。当前下一动作只从任务锁读取，不执行历史文件的旧下一步。
+同一提交已核验信息复用，历史正文按当前任务需要读取；不要每轮重做全量接管。
+写入前再次读取远端；并发前进先协调，禁止覆盖。发布后独立回读，未回读不声称同步。
+完成一项就更新同一任务锁、检查点和既有账本；汇报已完成、未完成、下一步和保存版本。
+反馈图不自动成为母参考，未知旧执行不自动重放；本地检查不证明模型绑定或审美通过。
 <!-- END_VPD_TASK_LOCK_ENTRY_V1 -->
 
 ## 0. 审美 Skill 设计治理｜全仓强制前置

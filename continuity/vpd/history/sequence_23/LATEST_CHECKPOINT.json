@@ -1,20 +1,18 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 24,
-  "recorded_at": "2026-09-10T10:03:50.018165+00:00",
+  "sequence": 23,
+  "recorded_at": "2026-09-10T08:57:42.754572+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "完整流程已登记，任务锁复核已结案；P2有限次数对账旧出图证据，暂停渲染",
+  "current_focus": "任务身份与状态修复完成，外部出图异常待对账；暂停继续渲染",
   "completed": [
     "runtime_authorization",
     "payload_freeze",
-    "task_identity_state_repair",
-    "task_lock_state_readback_review",
-    "project_workflow_outline"
+    "task_identity_state_repair"
   ],
   "incomplete": [
     "external_execution_reconciliation",
@@ -42,10 +40,9 @@
     "Historical zero-reference route as current H1-H4 policy"
   ],
   "active_change_ids": [
-    "VPD-TASK-LOCK-REPAIR-20260907-001",
-    "VPD-PROJECT-ROADMAP-20260910-001"
+    "VPD-TASK-LOCK-REPAIR-20260907-001"
   ],
-  "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
+  "next_required_action": "CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK",
   "ledger_tails": {
     "execution_route": {
       "event_id": "EVT-VISUAL-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-005",
@@ -72,18 +69,18 @@
       "event_hash": "a084ae0e8571361c810fc0a2d54c96bb087f4ffb1860d744f4fb06e69d4edd26"
     },
     "system_validation": {
-      "event_id": "EVT-VPD-PROJECT-ROADMAP-20260910-001",
-      "event_hash": "23f4b1e974df52a47f9444be0f85b025292e34312c67e1dcaace88789dbfbcf0"
+      "event_id": "EVT-VPD-TASK-LOCK-REPAIR-20260910-001",
+      "event_hash": "4a7dd14dafe7649d207ebe869c44d87c41f0197f2df309a62703e9c34660ca61"
     }
   },
   "source_state_refs": [
     {
       "path": "PROJECT_CONTROL_ADAPTER.json",
-      "sha256": "8dffc9ea113661c79100240290a7edcdd2ed46597ed08e580652b2495881694b"
+      "sha256": "b96e3aa769a4538143a036004f2f331f91ee28ac6ff22a8036c1eb86c71ace5b"
     },
     {
       "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-      "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
+      "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427"
     },
     {
       "path": "evidence/vpd/task_lock_repair_v1/AUTHORITY.json",
@@ -92,14 +89,6 @@
     {
       "path": "evidence/vpd/task_lock_repair_v1/EXTERNAL_EXECUTION_ANOMALY.json",
       "sha256": "c8e1969e939a2f9c8058ac47637ff531d9444fbdccc04a3d7e97f0467dbff8e1"
-    },
-    {
-      "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-    },
-    {
-      "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-      "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
     }
   ],
   "incident_records": [
@@ -128,11 +117,11 @@
       "preserve": true
     }
   ],
-  "status": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
+  "status": "VPD_TASK_LOCK_REPAIRED_EXTERNAL_EXECUTION_RECONCILIATION_REQUIRED",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; not human aesthetic acceptance",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
+    "sha256": "43cfed547b09b2c03ea311b36258aa3379680f2f36af126726d3002ad40b5427"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/sequence_22/LATEST_CHECKPOINT.json",
@@ -170,22 +159,6 @@
     "human_set_verdict": {
       "scope": "H1-H4",
       "status": "PENDING"
-    },
-    "task_lock_state_readback_review": {
-      "scope": "TASK_LOCK_REPAIR_V1",
-      "status": "DONE",
-      "evidence": {
-        "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
-        "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
-      }
-    },
-    "project_workflow_outline": {
-      "scope": "FULL_PROJECT_WORKFLOW_V1",
-      "status": "DONE",
-      "evidence": {
-        "path": "VPD_PROJECT_ROADMAP.md",
-        "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-      }
     }
   },
   "execution": {
@@ -198,9 +171,5 @@
     "independent_review": "NOT_RUN",
     "human_acceptance": "NOT_ACCEPTED",
     "capsule_verdict": "NOT_ESTABLISHED"
-  },
-  "workflow": {
-    "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
   }
 }
