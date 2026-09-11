@@ -1,21 +1,20 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 25,
-  "recorded_at": "2026-09-11T00:57:58.450188+00:00",
+  "sequence": 24,
+  "recorded_at": "2026-09-10T10:03:50.018165+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "流程1.1已纠正文字设计与Figma介入时机；P2旧出图待对账，真实文字制作与整图验收未完成",
+  "current_focus": "完整流程已登记，任务锁复核已结案；P2有限次数对账旧出图证据，暂停渲染",
   "completed": [
     "runtime_authorization",
     "payload_freeze",
     "task_identity_state_repair",
     "task_lock_state_readback_review",
-    "project_workflow_outline",
-    "typography_workflow_correction"
+    "project_workflow_outline"
   ],
   "incomplete": [
     "external_execution_reconciliation",
@@ -44,8 +43,7 @@
   ],
   "active_change_ids": [
     "VPD-TASK-LOCK-REPAIR-20260907-001",
-    "VPD-PROJECT-ROADMAP-20260910-001",
-    "VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001"
+    "VPD-PROJECT-ROADMAP-20260910-001"
   ],
   "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
   "ledger_tails": {
@@ -74,18 +72,18 @@
       "event_hash": "a084ae0e8571361c810fc0a2d54c96bb087f4ffb1860d744f4fb06e69d4edd26"
     },
     "system_validation": {
-      "event_id": "EVT-VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001",
-      "event_hash": "8818dc9a5083fe40a81fc76b0f520ccde8602654dc2aa0296980637fe7ecb83c"
+      "event_id": "EVT-VPD-PROJECT-ROADMAP-20260910-001",
+      "event_hash": "23f4b1e974df52a47f9444be0f85b025292e34312c67e1dcaace88789dbfbcf0"
     }
   },
   "source_state_refs": [
     {
       "path": "PROJECT_CONTROL_ADAPTER.json",
-      "sha256": "4a9b07cf3c67b03829461eef2b578465fcaa5c136629754f137b84fbafe52d53"
+      "sha256": "8dffc9ea113661c79100240290a7edcdd2ed46597ed08e580652b2495881694b"
     },
     {
       "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-      "sha256": "28fc9ae68a8be1377d79c828a15f991bd96f9cbc03615465b5538b971ad9ea53"
+      "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
     },
     {
       "path": "evidence/vpd/task_lock_repair_v1/AUTHORITY.json",
@@ -97,15 +95,11 @@
     },
     {
       "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+      "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
     },
     {
       "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
       "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
-    },
-    {
-      "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-      "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
     }
   ],
   "incident_records": [
@@ -138,7 +132,7 @@
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; not human aesthetic acceptance",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "28fc9ae68a8be1377d79c828a15f991bd96f9cbc03615465b5538b971ad9ea53"
+    "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/sequence_22/LATEST_CHECKPOINT.json",
@@ -189,16 +183,8 @@
       "scope": "FULL_PROJECT_WORKFLOW_V1",
       "status": "DONE",
       "evidence": {
-        "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
+        "path": "VPD_PROJECT_ROADMAP.md",
         "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-      }
-    },
-    "typography_workflow_correction": {
-      "scope": "WORKFLOW_V1_1_ONLY_NOT_VISUAL_ACCEPTANCE",
-      "status": "DONE",
-      "evidence": {
-        "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-        "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
       }
     }
   },
@@ -215,6 +201,6 @@
   },
   "workflow": {
     "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+    "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
   }
 }

@@ -548,11 +548,6 @@
   ],
   "change_authorities": [
     {
-      "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-      "priority": 0,
-      "purpose": "Current user correction restores early typography planning, before-final-acceptance Figma design and symmetric comparisons; no old experiment mutation"
-    },
-    {
       "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
       "priority": 0,
       "purpose": "Current user-authorized full workflow and completion of task-lock state-readback review; no rendering or visual acceptance"
@@ -611,19 +606,7 @@
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "NOT_CURRENT_ACTIVATE_ONLY_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
-    "timing_clarification": {
-      "authority": {
-        "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-        "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
-      },
-      "typography_planning": "DURING_DISTILLATION_AND_BEFORE_STAGED_PHOTO_RENDER",
-      "figma_composition": "AFTER_SOURCE_VISUAL_DIRECTION_SELECTION_BEFORE_FINAL_POSTER_ACCEPTANCE",
-      "final_poster_acceptance_requires_integrated_figma_output": true,
-      "source_visual_direction_selection_is_final_poster_acceptance": false,
-      "wait_for_second_family": false,
-      "historical_generation_only_H1_H4_modified": false
-    }
+    "next_required_action": "NOT_CURRENT_ACTIVATE_ONLY_AFTER_VISUAL_DIRECTION_ACCEPTANCE"
   },
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
@@ -673,16 +656,16 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 3,
-    "sha256": "28fc9ae68a8be1377d79c828a15f991bd96f9cbc03615465b5538b971ad9ea53",
+    "revision": 2,
+    "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
   "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
   "workflow": {
     "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83",
-    "version": "1.1",
+    "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34",
+    "version": "1.0",
     "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "read_after": "task_lock",
     "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock."

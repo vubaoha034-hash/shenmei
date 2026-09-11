@@ -1,0 +1,73 @@
+{
+  "schema_version": "vpd-workflow-correction/v1",
+  "task_id": "VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001",
+  "recorded_at": "2026-09-11T00:57:58.450188+00:00",
+  "input_remote_head": "84f6a1b991145680304be65f79273c4368bf0d18",
+  "authority": {
+    "kind": "CURRENT_USER_CORRECTION",
+    "text": "蒸馏没错，但是文字设计不应该用figma介入吗？你检查下还有其他的遗漏了吗",
+    "scope": "Clarify typography planning, Figma composition timing, integrated design acceptance and omissions in the saved roadmap"
+  },
+  "findings": [
+    "旧大纲把主视觉初步接受与完整海报接受写得含混，Figma阶段排序误导",
+    "文字设计应从蒸馏/图文方案开始，Figma整图设计须先于正式成品验收",
+    "特殊中文字形需要可用设计资产，Figma执行编排不等于自动创造字形",
+    "主视觉生成须预留场景内排版空间，避免割裂底栏",
+    "原始输出与Figma成品须分存，两组比较须具有对等制作资源",
+    "具体字体、旧Figma文件节点、新文案标题资产仍未核实"
+  ],
+  "sources": [
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "sha256": "e9fb29a2d91acd1312787dca67daf602d4fbd8a81492ec9d20bc435be4586a66"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "sha256": "a2d59629041ae9b43a357025efaf7fca34e33691b8f11b30eee4ae99a9c0a309"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "sha256": "6eadc9a5ea1c82ae7904d79d3c7b33b272d6d10887b9650267ac41f5f672641f"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/full_image_distillation_v1/TYPOGRAPHY_COMPONENT_GRAMMAR_V1.json",
+      "sha256": "82e0be52548c3ddd494d7346647814efd178c8da429439262050b8739ce7e2d5"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+      "sha256": "2d73271a1e56f0ff59054e7be157a48b0f5d7c665349826ff8886e2231b45502"
+    }
+  ],
+  "prior_state": {
+    "continuity/vpd/CURRENT_TASK_LOCK.json": {
+      "path": "continuity/vpd/history/sequence_24/CURRENT_TASK_LOCK.json",
+      "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
+    },
+    "continuity/vpd/LATEST_CHECKPOINT.json": {
+      "path": "continuity/vpd/history/sequence_24/LATEST_CHECKPOINT.json",
+      "sha256": "4b020c0a2b969aa333628cad9770f0fb0cadc158cca2f6670e5651105ca89964"
+    },
+    "PROJECT_CONTROL_ADAPTER.json": {
+      "path": "continuity/vpd/history/sequence_24/PROJECT_CONTROL_ADAPTER.json",
+      "sha256": "8dffc9ea113661c79100240290a7edcdd2ed46597ed08e580652b2495881694b"
+    },
+    "VPD_PROJECT_ROADMAP.md": {
+      "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
+      "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
+    }
+  },
+  "current_workflow": {
+    "path": "VPD_PROJECT_ROADMAP.md",
+    "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+  },
+  "coverage": "Current native project sources and targeted personal-history retrieval; not an exhaustive original-chat or pixel audit",
+  "preservation": {
+    "source_library_and_capsule": true,
+    "frozen_H1_H4_and_original_evaluation": true,
+    "old_figma_diagnostics_not_promoted": true,
+    "new_images_generated": false,
+    "figma_file_opened_or_edited": false,
+    "human_aesthetic_acceptance": false
+  },
+  "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE"
+}

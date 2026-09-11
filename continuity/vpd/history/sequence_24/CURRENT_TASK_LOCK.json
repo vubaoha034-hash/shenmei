@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 3,
+  "revision": 2,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "maintenance_task_id": "VPD-TASK-LOCK-REPAIR-20260907-001",
@@ -359,16 +359,8 @@
       "scope": "FULL_PROJECT_WORKFLOW_V1",
       "status": "DONE",
       "evidence": {
-        "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
+        "path": "VPD_PROJECT_ROADMAP.md",
         "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-      }
-    },
-    "typography_workflow_correction": {
-      "scope": "WORKFLOW_V1_1_ONLY_NOT_VISUAL_ACCEPTANCE",
-      "status": "DONE",
-      "evidence": {
-        "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-        "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
       }
     }
   },
@@ -383,7 +375,7 @@
     "human_acceptance": "NOT_ACCEPTED",
     "capsule_verdict": "NOT_ESTABLISHED"
   },
-  "current_stage": "流程1.1已纠正文字设计与Figma介入时机；P2旧出图待对账，真实文字制作与整图验收未完成",
+  "current_stage": "完整流程已登记，任务锁复核已结案；P2有限次数对账旧出图证据，暂停渲染",
   "status": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
   "render_allowed": false,
   "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
@@ -392,14 +384,14 @@
     "候选的稳定迁移与用户接受尚未证实"
   ],
   "completed_this_revision": [
-    "核对原文字语法、摄影/Figma合同及六项成品门槛",
-    "纠正Figma整图设计须先于成品最终验收",
-    "补齐字形资产、图文联合构图、对等制作比较和资源未知项",
-    "保留旧实验、候选、源库及未完成任务"
+    "完成任务锁修复及远端状态复核",
+    "登记从源库到第二风格、商业交付和封版的完整流程",
+    "把新聊天入口接到大纲与唯一任务锁",
+    "将下一步推进为有限次数核对旧出图证据"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-    "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
+    "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
+    "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
   },
   "immutable_baseline": {
     "path": "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json",
@@ -443,24 +435,6 @@
         "path": "continuity/vpd/history/sequence_23/PROJECT_CONTROL_ADAPTER.json",
         "sha256": "b96e3aa769a4538143a036004f2f331f91ee28ac6ff22a8036c1eb86c71ace5b"
       }
-    },
-    "workflow_sequence_24": {
-      "continuity/vpd/CURRENT_TASK_LOCK.json": {
-        "path": "continuity/vpd/history/sequence_24/CURRENT_TASK_LOCK.json",
-        "sha256": "d79765eca456f56eb03254f0d59635d130321947430ff31362f8074edfaec1bd"
-      },
-      "continuity/vpd/LATEST_CHECKPOINT.json": {
-        "path": "continuity/vpd/history/sequence_24/LATEST_CHECKPOINT.json",
-        "sha256": "4b020c0a2b969aa333628cad9770f0fb0cadc158cca2f6670e5651105ca89964"
-      },
-      "PROJECT_CONTROL_ADAPTER.json": {
-        "path": "continuity/vpd/history/sequence_24/PROJECT_CONTROL_ADAPTER.json",
-        "sha256": "8dffc9ea113661c79100240290a7edcdd2ed46597ed08e580652b2495881694b"
-      },
-      "VPD_PROJECT_ROADMAP.md": {
-        "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
-        "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
-      }
     }
   },
   "evidence_limits": {
@@ -470,13 +444,13 @@
     "feedback_changes_source_role": false,
     "current_chat_is_fresh_blind_evaluator": false
   },
-  "updated_at": "2026-09-11T00:57:58.450188+00:00",
+  "updated_at": "2026-09-10T10:03:50.018165+00:00",
   "workflow_task_id": "VPD-PROJECT-ROADMAP-20260910-001",
   "workflow": {
-    "version": "1.1",
+    "version": "1.0",
     "document": {
       "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+      "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
     },
     "focus_stage": "P2",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -491,14 +465,14 @@
             "sha256": "f59f3a901174809b36a27c06360b66c508cf6053932c33015c66e3cbb608f13e"
           },
           {
-            "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
+            "path": "VPD_PROJECT_ROADMAP.md",
             "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
           }
         ]
       },
       {
         "id": "P1",
-        "title": "首家族候选与图文联合方案",
+        "title": "首个家族候选",
         "status": "CANDIDATE_READY_NOT_ACCEPTED",
         "evidence": [
           {
@@ -508,8 +482,7 @@
             "maturity": "CONTROLLED_VALIDATION_REQUIRED",
             "promoted": false
           }
-        ],
-        "typography_execution_input": "PENDING_VERIFICATION"
+        ]
       },
       {
         "id": "P2",
@@ -530,12 +503,7 @@
         "depends_on": [
           "P2"
         ],
-        "new_experiment_registration_required": true,
-        "comparison_layers": [
-          "RAW_OUTPUT_MECHANISM",
-          "EQUAL_BUDGET_FIGMA_FINAL_DESIGN"
-        ],
-        "manual_changes_recorded_separately": true
+        "new_experiment_registration_required": true
       },
       {
         "id": "P4",
@@ -559,18 +527,14 @@
         "depends_on": [
           "P3",
           "P4"
-        ],
-        "full_design_entry_gate": "FIRST_FAMILY_MECHANISM_ACCEPTED_AND_INTEGRATED_DESIGN_EXAMPLE_ACCEPTED"
+        ]
       },
       {
         "id": "P6",
-        "title": "字形落实、Figma整图设计与真实导出",
+        "title": "正式商业制作与真实导出",
         "status": "CONDITIONAL_PENDING",
         "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
-        "authority": "PROJECT_CONTROL_ADAPTER.json#forward_commercial_pipeline",
-        "timing": "AFTER_SOURCE_VISUAL_DIRECTION_SELECTION_BEFORE_FINAL_POSTER_ACCEPTANCE",
-        "typography_planning_starts": "P1",
-        "wait_for_second_family": false
+        "authority": "PROJECT_CONTROL_ADAPTER.json#forward_commercial_pipeline"
       },
       {
         "id": "P7",
@@ -620,31 +584,6 @@
       "new_comparison_default_rounds_max": 2,
       "no_automatic_old_handoff_replay": true
     },
-    "completion_scope": "Core validated system, formal commercial delivery, Golden and Scale are separately accepted scopes.",
-    "revision_evidence": {
-      "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
-      "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
-    },
-    "typography_resources": {
-      "component_grammar": {
-        "path": "evidence/vpd/shanyeji/full_image_distillation_v1/TYPOGRAPHY_COMPONENT_GRAMMAR_V1.json",
-        "sha256": "82e0be52548c3ddd494d7346647814efd178c8da429439262050b8739ce7e2d5"
-      },
-      "component_grammar_status": "AVAILABLE_UNPROMOTED_TRANSFER_UNVALIDATED",
-      "font_identity": "UNKNOWN",
-      "prior_figma_file_key": "UNKNOWN",
-      "prior_figma_node_ids": "UNKNOWN",
-      "new_copy_display_lettering_asset": "UNVERIFIED",
-      "figma_design_executed_this_task": false
-    },
-    "formal_design_sequence": [
-      "P1_JOINT_TYPE_PHOTO_PLAN",
-      "P3_PHOTO_DIRECTION_SELECTION",
-      "P6_EDITABLE_INTEGRATED_DESIGN_AND_EXPORT",
-      "P4_MECHANISM_REVIEW_AND_P6_DESIGN_REVIEW_SEPARATE",
-      "P5_REPEAT_FULL_WORKFLOW",
-      "P7_DELIVERY"
-    ]
-  },
-  "workflow_correction_task_id": "VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001"
+    "completion_scope": "Core validated system, formal commercial delivery, Golden and Scale are separately accepted scopes."
+  }
 }
