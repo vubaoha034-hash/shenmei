@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 4,
+  "revision": 3,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "maintenance_task_id": "VPD-TASK-LOCK-REPAIR-20260907-001",
@@ -302,7 +302,7 @@
     "handoff": {
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198",
-      "consumption": "RECONCILIATION_CLOSED_PARTIAL_EVIDENCE",
+      "consumption": "EXTERNAL_EXECUTION_REPORTED_UNRECONCILED",
       "automatic_replay": false
     }
   },
@@ -332,12 +332,11 @@
       }
     },
     "external_execution_reconciliation": {
-      "scope": "FORMAL_RENDER_ATTEMPT2_EVIDENCE_SEARCH_AND_DISPOSITION_NOT_VISUAL_ACCEPTANCE",
-      "status": "DONE",
-      "outcome": "CLOSED_PARTIAL_EVIDENCE",
+      "scope": "FORMAL_RENDER_ATTEMPT2",
+      "status": "BLOCKED",
       "evidence": {
-        "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-        "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
+        "path": "evidence/vpd/task_lock_repair_v1/EXTERNAL_EXECUTION_ANOMALY.json",
+        "sha256": "c8e1969e939a2f9c8058ac47637ff531d9444fbdccc04a3d7e97f0467dbff8e1"
       }
     },
     "independent_pixel_reviews": {
@@ -376,40 +375,31 @@
   "execution": {
     "plan": "FROZEN",
     "calls": "UNKNOWN",
-    "outputs_returned": "FOUR_RETURN_ASSET_RECORDS_RECOVERED_PIXELS_UNVERIFIED",
+    "outputs_returned": "REPORTED_4_UNVERIFIED",
     "verified_outputs": null,
     "bound_payloads": "UNKNOWN",
     "bound_anchor": "UNKNOWN",
     "independent_review": "NOT_RUN",
     "human_acceptance": "NOT_ACCEPTED",
-    "capsule_verdict": "NOT_ESTABLISHED",
-    "call_records_status": "FOUR_SHARED_CALL_RECORDS_RECOVERED_BACKEND_PAYLOAD_UNKNOWN",
-    "recovered_call_records": 4,
-    "formal_set_disposition": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
-    "reconciliation_status": "CLOSED_PARTIAL_EVIDENCE",
-    "reconciliation_evidence": {
-      "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-      "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
-    }
+    "capsule_verdict": "NOT_ESTABLISHED"
   },
-  "current_stage": "P2旧出图对账已结案：恢复4次调用/返回及历史尺寸记录，H4比例不符；下一步准备P3图文联合对照",
-  "status": "VPD_ATTEMPT2_RECONCILIATION_CLOSED_P3_PREPARATION_NEXT",
+  "current_stage": "流程1.1已纠正文字设计与Figma介入时机；P2旧出图待对账，真实文字制作与整图验收未完成",
+  "status": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
   "render_allowed": false,
-  "next_required_action": "PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON",
+  "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
   "blockers": [
-    "旧整组不能用于正式验收，完整输入、原图字节与参考绑定仍缺失；已有明确处置，不阻塞独立比较准备",
-    "新比较的摄影/文字输入及字形资产、同等Figma制作预算尚待具体登记",
+    "第二次正式渲染的实际调用、附件绑定及输出文件身份尚未完成对账",
     "候选的稳定迁移与用户接受尚未证实"
   ],
   "completed_this_revision": [
-    "完成两轮定向检索并关闭重复查找",
-    "恢复4次可见生成调用和4个返回资产编号",
-    "恢复H1–H4历史尺寸检查，确认H4记录的画幅不符",
-    "保存逐项证据及未知项；旧整组不用于迁移结论，转入P3准备"
+    "核对原文字语法、摄影/Figma合同及六项成品门槛",
+    "纠正Figma整图设计须先于成品最终验收",
+    "补齐字形资产、图文联合构图、对等制作比较和资源未知项",
+    "保留旧实验、候选、源库及未完成任务"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-    "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
+    "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
+    "sha256": "7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"
   },
   "immutable_baseline": {
     "path": "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json",
@@ -471,20 +461,6 @@
         "path": "continuity/vpd/history/sequence_24/VPD_PROJECT_ROADMAP.md",
         "sha256": "c1061718e7381c59cfc1f61a3a4d228a88cb0a45abe5c409671fd6cfa2acee34"
       }
-    },
-    "reconciliation_sequence_25": {
-      "continuity/vpd/CURRENT_TASK_LOCK.json": {
-        "path": "continuity/vpd/history/sequence_25/CURRENT_TASK_LOCK.json",
-        "sha256": "28fc9ae68a8be1377d79c828a15f991bd96f9cbc03615465b5538b971ad9ea53"
-      },
-      "continuity/vpd/LATEST_CHECKPOINT.json": {
-        "path": "continuity/vpd/history/sequence_25/LATEST_CHECKPOINT.json",
-        "sha256": "fb9bf267cf66907409ebfb4fbd9aaa476d9ca8cd2530b0f6ae2af0da158cf0c9"
-      },
-      "PROJECT_CONTROL_ADAPTER.json": {
-        "path": "continuity/vpd/history/sequence_25/PROJECT_CONTROL_ADAPTER.json",
-        "sha256": "4a9b07cf3c67b03829461eef2b578465fcaa5c136629754f137b84fbafe52d53"
-      }
     }
   },
   "evidence_limits": {
@@ -494,7 +470,7 @@
     "feedback_changes_source_role": false,
     "current_chat_is_fresh_blind_evaluator": false
   },
-  "updated_at": "2026-09-11T08:35:24.268432+00:00",
+  "updated_at": "2026-09-11T00:57:58.450188+00:00",
   "workflow_task_id": "VPD-PROJECT-ROADMAP-20260910-001",
   "workflow": {
     "version": "1.1",
@@ -502,7 +478,7 @@
       "path": "VPD_PROJECT_ROADMAP.md",
       "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
     },
-    "focus_stage": "P3",
+    "focus_stage": "P2",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "stages": [
       {
@@ -538,20 +514,19 @@
       {
         "id": "P2",
         "title": "旧出图证据对账",
-        "status": "DONE_PARTIAL_EVIDENCE",
+        "status": "OPEN",
+        "next_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
         "evidence": [
           {
-            "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-            "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
+            "path": "evidence/vpd/task_lock_repair_v1/EXTERNAL_EXECUTION_ANOMALY.json",
+            "sha256": "c8e1969e939a2f9c8058ac47637ff531d9444fbdccc04a3d7e97f0467dbff8e1"
           }
-        ],
-        "outcome": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
-        "search_closed": true
+        ]
       },
       {
         "id": "P3",
         "title": "直接参考与蒸馏的实际收益比较",
-        "status": "PREPARATION_NEXT",
+        "status": "PLANNED",
         "depends_on": [
           "P2"
         ],
@@ -560,8 +535,7 @@
           "RAW_OUTPUT_MECHANISM",
           "EQUAL_BUDGET_FIGMA_FINAL_DESIGN"
         ],
-        "manual_changes_recorded_separately": true,
-        "next_action": "PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON"
+        "manual_changes_recorded_separately": true
       },
       {
         "id": "P4",
@@ -644,9 +618,7 @@
       "old_anomaly_targeted_search_passes_max": 2,
       "new_comparison_default_initial_images": 4,
       "new_comparison_default_rounds_max": 2,
-      "no_automatic_old_handoff_replay": true,
-      "old_anomaly_targeted_search_passes_used": 2,
-      "old_anomaly_repeat_search_requires_new_evidence": true
+      "no_automatic_old_handoff_replay": true
     },
     "completion_scope": "Core validated system, formal commercial delivery, Golden and Scale are separately accepted scopes.",
     "revision_evidence": {
@@ -674,10 +646,5 @@
       "P7_DELIVERY"
     ]
   },
-  "workflow_correction_task_id": "VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001",
-  "reconciliation_task_id": "VPD-ATTEMPT2-EVIDENCE-RECONCILIATION-20260911-001",
-  "reconciliation": {
-    "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-    "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
-  }
+  "workflow_correction_task_id": "VPD-TYPOGRAPHY-WORKFLOW-CORRECTION-20260911-001"
 }

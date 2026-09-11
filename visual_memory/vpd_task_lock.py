@@ -6,7 +6,8 @@ from pathlib import Path
 
 LOCK_PATH = 'continuity/vpd/CURRENT_TASK_LOCK.json'
 CHECKPOINT_PATH = 'continuity/vpd/LATEST_CHECKPOINT.json'
-NEXT_ACTION = 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
+RECONCILE_ACTION = 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
+NEXT_ACTION = 'PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON'
 PROJECT = 'visual-aesthetic-vpd'
 PARENT = 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
 
@@ -55,6 +56,53 @@ def validate_ledger(root, checkpoint):
             previous = {'event_id': event['event_id'], 'event_hash': claimed}
         require(previous == tail, 'LEDGER_TAIL_MISMATCH')
 
+def validate_reconciliation(root, lock, cp):
+    """Accept a bounded search closeout, never infer pixel or backend validity."""
+    requirement = lock['requirements'].get('external_execution_reconciliation', {})
+    require(requirement.get('status') == 'DONE' and lock.get('reconciliation'), 'RECONCILIATION_CLOSEOUT_REQUIRED')
+    check_ref(root, lock['reconciliation'])
+    require(requirement.get('evidence') == lock['reconciliation'], 'RECONCILIATION_REFERENCE_CONFLICT')
+    close = read(root, lock['reconciliation']['path'])
+    require(close['completed_action'] == RECONCILE_ACTION and close['next_required_action'] == NEXT_ACTION, 'RECONCILIATION_ACTION_CONFLICT')
+    require(close['attempt_id'] == lock['experiment']['renderer_attempt'], 'RECONCILIATION_ATTEMPT_CHANGED')
+    require(close['search_status'] == 'CLOSED_PARTIAL_EVIDENCE' and not close['render_allowed'], 'RECONCILIATION_SCOPE_CHANGED')
+    require(close['capsule_inference'] == 'NOT_ALLOWED' and close['backend_root_cause'] == 'UNKNOWN', 'UNSUPPORTED_RECONCILIATION_INFERENCE')
+    for name in ['trace', 'evidence_table', 'search_receipt']:
+        check_ref(root, close[name])
+    search = read(root, close['search_receipt']['path'])
+    require(search['passes_completed'] == search['maximum_passes'] == 2, 'RECONCILIATION_SEARCH_BUDGET')
+    table = read(root, close['evidence_table']['path'])
+    require(table['trace'] == close['trace'] and table['attempt_id'] == close['attempt_id'], 'TRACE_REFERENCE_CONFLICT')
+    rows = table['rows']
+    require([r['challenge_id'] for r in rows] == ['H1','H2','H3','H4'], 'RECONCILIATION_CHALLENGE_SET')
+    trace = read(root, close['trace']['path'])
+    records = {r['message_id']: r for r in trace['records']}
+    require(len({r['asset_pointer'] for r in rows}) == 4, 'RECONCILIATION_DUPLICATE_OUTPUT')
+    for row in rows:
+        require(row['frozen_payload'] == lock['experiment']['payloads'][row['challenge_id']], 'RECONCILIATION_PAYLOAD_REFERENCE')
+        payload = read(root, row['frozen_payload']['path'])
+        require(row['expected_aspect'] == payload['aspect_intent'] and row['expected_copy'] == payload['communication_job'], 'RECONCILIATION_EXPECTATION_DRIFT')
+        call = records[row['call_message_id']]
+        result = records[row['return_message_id']]
+        part = result['content']['parts'][0]
+        require(json.loads(call['content']['text']) == row['visible_call_arguments'] and result['parent_id'] == call['message_id'], 'RECONCILIATION_CALL_RETURN_MISMATCH')
+        require(part['asset_pointer'] == row['asset_pointer'] and [part['width'],part['height']] == row['returned_metadata_dimensions'], 'RECONCILIATION_OUTPUT_METADATA_MISMATCH')
+        require(not row['raw_bytes_available_this_turn'] and not row['pixels_reviewed_this_turn'] and row['actual_output_sha256'] is None, 'UNSUPPORTED_PIXEL_VERIFICATION')
+        require(row['full_backend_payload'] == row['canonical_anchor_byte_binding'] == 'UNKNOWN', 'UNSUPPORTED_RECONCILIATION_BINDING')
+    h4 = rows[-1]
+    sizes = records[h4['historical_python_message_id']]['content']['text']
+    require('/mnt/data/SHY-SYS-HOLDOUT-V1-H4.png (1086, 1448)' in sizes and h4['returned_metadata_dimensions'] == [1086,1448], 'H4_INVALIDITY_EVIDENCE_MISSING')
+    require(close['formal_set_disposition'] == lock['execution']['formal_set_disposition'] == 'INVALID_FOR_FORMAL_HOLDOUT_VERDICT', 'RECONCILIATION_VERDICT_CONFLICT')
+    require(lock['execution']['reconciliation_evidence'] == lock['reconciliation'] and lock['execution']['recovered_call_records'] == 4, 'RECONCILIATION_EXECUTION_MIRROR')
+    require(lock['workflow']['focus_stage'] == 'P3', 'RECONCILIATION_FOCUS_CONFLICT')
+    p2 = next(s for s in lock['workflow']['stages'] if s['id']=='P2')
+    require(p2['status'] == 'DONE_PARTIAL_EVIDENCE' and p2['search_closed'], 'CLOSED_SEARCH_REOPENED')
+    for ref in lock['history']['reconciliation_sequence_25'].values():
+        check_ref(root, ref)
+    old = read(root, lock['history']['reconciliation_sequence_25'][LOCK_PATH]['path'])
+    require(old['next_required_action'] == RECONCILE_ACTION, 'RECONCILIATION_START_STATE_CONFLICT')
+    require(cp['sequence'] > 25, 'RECONCILIATION_STALE_CHECKPOINT')
+
 def validate_state(root):
     adapter = read(root, 'PROJECT_CONTROL_ADAPTER.json')
     dispatch = adapter['task_lock']
@@ -70,7 +118,10 @@ def validate_state(root):
     require(cp['task_lock'] == {'path': LOCK_PATH, 'sha256': digest(path(root, LOCK_PATH))}, 'STALE_CHECKPOINT_LOCK')
     require(cp['sequence'] > 22, 'STALE_CURRENT_CHECKPOINT')
     require(cp['status'] == lock['status'] == adapter['vpd_system_goal_authority']['checkpoint'], 'STATE_STATUS_CONFLICT')
-    require(cp['next_required_action'] == lock['next_required_action'] == adapter['vpd_system_goal_authority']['next_required_action'] == NEXT_ACTION, 'NEXT_ACTION_DRIFT')
+    action = lock['next_required_action']
+    require(cp['next_required_action'] == action == adapter['vpd_system_goal_authority']['next_required_action'] and action in [RECONCILE_ACTION, NEXT_ACTION], 'NEXT_ACTION_DRIFT')
+    closed = lock['requirements'].get('external_execution_reconciliation', {}).get('status') == 'DONE'
+    require(action == (NEXT_ACTION if closed else RECONCILE_ACTION), 'CLOSED_SEARCH_REOPENED_OR_CLOSEOUT_MISSING')
     require(not lock['render_allowed'] and not adapter['vpd_system_goal_authority']['render_allowed'], 'RENDER_NOT_AUTHORIZED')
     workflow = lock['workflow']['document']
     check_ref(root, workflow)
@@ -80,7 +131,7 @@ def validate_state(root):
     require(review.get('status') == 'DONE', 'REVIEW_REQUIRED_BEFORE_RECONCILIATION')
     check_ref(root, review['evidence'])
     decision = read(root, review['evidence']['path'])
-    require(decision['completed_action'] == 'CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK' and decision['review_result'] == 'PASS' and decision['next_required_action'] == NEXT_ACTION, 'REVIEW_DECISION_CONFLICT')
+    require(decision['completed_action'] == 'CHATGPT_REVIEW_TASK_LOCK_AND_STATE_READBACK' and decision['review_result'] == 'PASS' and decision['next_required_action'] == RECONCILE_ACTION, 'REVIEW_DECISION_CONFLICT')
     for ref in lock['history']['previous_current_state'].values():
         check_ref(root, ref)
     for name in ['START_HERE.md', 'AGENTS.md']:
@@ -138,12 +189,15 @@ def validate_state(root):
         require(payload['challenge_id'] == challenge, 'PAYLOAD_IDENTITY_CROSSOVER')
         require(payload['runtime_visual_anchor']['sha256'] == anchor['sha256'], 'PAYLOAD_ANCHOR_CONFLICT')
     check_ref(root, experiment['freeze_receipt']); check_ref(root, experiment['handoff']); check_ref(root, lock['capsule'])
-    require(experiment['handoff']['consumption'] == 'EXTERNAL_EXECUTION_REPORTED_UNRECONCILED' and experiment['handoff']['automatic_replay'] is False, 'HANDOFF_REPLAY_NOT_AUTHORIZED')
+    consumption = 'RECONCILIATION_CLOSED_PARTIAL_EVIDENCE' if closed else 'EXTERNAL_EXECUTION_REPORTED_UNRECONCILED'
+    require(experiment['handoff']['consumption'] == consumption and experiment['handoff']['automatic_replay'] is False, 'HANDOFF_REPLAY_NOT_AUTHORIZED')
     require(cp['execution'] == lock['execution'], 'EXECUTION_MIRROR_CONFLICT')
     execution = lock['execution']
     require(execution['bound_anchor'] == execution['bound_payloads'] == execution['calls'] == 'UNKNOWN', 'SELF_ASSERTED_BINDING_OR_CALL_PASS')
     require(execution['verified_outputs'] is None, 'OUTPUT_VERIFICATION_WITHOUT_EVIDENCE')
     require(not lock['capsule']['promoted'] and execution['human_acceptance'] == 'NOT_ACCEPTED', 'MISSING_HUMAN_ACCEPTANCE')
+    if closed:
+        validate_reconciliation(root, lock, cp)
     for ref in cp['source_state_refs']:
         check_ref(root, ref)
     validate_ledger(root, cp)
@@ -156,7 +210,7 @@ def validate_request(root, request):
     action = request.get('action')
     # This evidence-reconciliation scope grants no rendering or domain mutations.
     require(not request.get('changes'), 'SCOPED_CHANGE_AUTHORITY_REQUIRED')
-    require(action == NEXT_ACTION, 'ACTION_NOT_AUTHORIZED_OR_REPLAY')
+    require(action == lock['next_required_action'], 'ACTION_NOT_AUTHORIZED_OR_REPLAY')
     if request.get('source_role_change'):
         raise TaskLockError('SOURCE_ROLE_CHANGE_NOT_AUTHORIZED')
     if request.get('binding_pass'):

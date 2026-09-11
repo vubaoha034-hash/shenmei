@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-bounded-search-receipt/v1",
+  "passes_completed": 2,
+  "maximum_passes": 2,
+  "recorded_at": "2026-09-11T08:35:24.268432+00:00",
+  "pass_1": {
+    "sources": [
+      "Current remote Git tree (512 entries, not truncated); local snapshot files matched to Git blobs",
+      "Exact shared chat serialized execution messages",
+      "Personal Context exact attempt search",
+      "Drive exact attempt and SHY-SYS-HOLDOUT image names"
+    ],
+    "results": [
+      "Recovered four visible call/return pairs and historical Python dimension output",
+      "No matching formal output images returned by Drive",
+      "Drive found recovery instruction 1o4cyCBq8iXLmaV3qNBOKvFDmvj6DJ1vW; actual read confirms instructions only, not execution results",
+      "Personal Context returned later summaries and old handoff requirements, not complete original evidence"
+    ],
+    "technical_correction": "First Drive q used invalid contains(name,...) syntax and was rejected. Corrected to name contains ...; the error is not evidence of absence."
+  },
+  "pass_2": {
+    "sources": [
+      "Drive exact four original filenames plus 晨席",
+      "Personal Context four exact asset IDs and reference asset ID",
+      "Targeted inspection of the same shared page for asset URLs and anchor mapping"
+    ],
+    "results": [
+      "Only Drive image hit: UNBOUND_DIAGNOSTIC_H1_晨席_3x4_DO_NOT_EVALUATE.png, ID 11EJ6zYJibP2PtVYotX2ExJU8nUVl8LWb, created before formal attempt; excluded without pixel inspection",
+      "No downloadable raw image URLs or raw-image hashes recovered for the four exact output assets",
+      "Reference asset ID recovered but no independent canonical byte binding",
+      "Shared serialized prompt is null; this may be serialization/redaction and does not establish backend prompt omission"
+    ]
+  },
+  "coverage_limits": [
+    "Not a scan of all account chats or all Drive files",
+    "No current pixel inspection or raw-image rehash",
+    "Some shared plugin outputs are redacted",
+    "Personal Context is a locator only and not an execution authority"
+  ],
+  "new_evidence_trigger": "Reopen only if raw files/URLs, original full renderer trace or independently verifiable canonical-anchor byte mapping becomes available; do not repeat the same searches on continue."
+}

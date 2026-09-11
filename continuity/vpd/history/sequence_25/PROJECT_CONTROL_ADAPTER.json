@@ -584,11 +584,6 @@
       "title": "VPD_CODEX_FORMAL_RENDER_ATTEMPT2_RECOVERY_SHORT_V1.txt",
       "scope": "FORMAL_RENDER_ATTEMPT1_INVALID_SETTLEMENT_AND_ATTEMPT2_HANDOFF_ONLY",
       "status": "CURRENT_CHANGE_AUTHORITY"
-    },
-    {
-      "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-      "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca",
-      "purpose": "User-authorized P2 bounded reconciliation closeout and non-rendering P3 preparation; no visual acceptance or replay"
     }
   ],
   "continuity": {
@@ -633,7 +628,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_ATTEMPT2_RECONCILIATION_CLOSED_P3_PREPARATION_NEXT",
+    "checkpoint": "VPD_WORKFLOW_REGISTERED_ATTEMPT2_EVIDENCE_RECONCILIATION_NEXT",
     "challenge_ids": [
       "H1",
       "H2",
@@ -659,7 +654,7 @@
       "SHY-SYS-HOLDOUT-V1-H3",
       "SHY-SYS-HOLDOUT-V1-H4"
     ],
-    "formal_outputs_generated": "FOUR_SHARED_RETURN_RECORDS_RECOVERED_PIXELS_UNVERIFIED",
+    "formal_outputs_generated": "UNKNOWN_EXTERNAL_EXECUTION_REPORTED_4",
     "style_capsule_v1_1_candidate_promoted": false,
     "formal_render_attempt2_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2",
     "formal_render_attempt1_classification": "PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE",
@@ -671,20 +666,15 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON",
+    "next_required_action": "RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE",
     "formal_outputs_verified": null,
     "render_allowed": false,
-    "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "formal_render_attempt2_classification": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
-    "reconciliation": {
-      "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
-      "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
-    }
+    "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json"
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 4,
-    "sha256": "251a7e2e1e9ba7c8377a53140214e5c2bc4293125721116a1f847d445982f229",
+    "revision": 3,
+    "sha256": "28fc9ae68a8be1377d79c828a15f991bd96f9cbc03615465b5538b971ad9ea53",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

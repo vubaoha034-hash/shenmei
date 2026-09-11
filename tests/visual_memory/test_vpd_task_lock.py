@@ -46,7 +46,7 @@ def test_correct_state_and_real_entrypoint_pass(isolated):
     lock, cp = validate_state(isolated)
     assert cp['sequence'] > 22
     assert lock['requirements']['task_lock_state_readback_review']['status'] == 'DONE'
-    assert lock['next_required_action'] == 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
+    assert lock['next_required_action'] == 'PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON'
     assert lock['parent_active_task_id'] == 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
     assert validate_request(isolated, request(isolated)) == lock
     result = subprocess.run([sys.executable, str(isolated/'scripts/verify_visual_memory.py'), '--vpd-state', '--status-card'], capture_output=True, text=True)
@@ -134,3 +134,32 @@ def test_new_chat_entry_requires_workflow(isolated):
     p.write_text(p.read_text().replace('VPD_PROJECT_ROADMAP.md','WRONG_ROADMAP.md'))
     with pytest.raises(TaskLockError,match='ENTRYPOINT_WORKFLOW_MISSING'):
         validate_state(isolated)
+
+def test_preparation_cannot_skip_reconciliation(isolated):
+    lock=load(isolated,LOCK_PATH)
+    lock['requirements']['external_execution_reconciliation']['status']='BLOCKED'
+    reseal(isolated,lock)
+    with pytest.raises(TaskLockError,match='CLOSED_SEARCH_REOPENED_OR_CLOSEOUT_MISSING'):
+        validate_state(isolated)
+
+def test_closeout_requires_readable_evidence(isolated):
+    lock=load(isolated,LOCK_PATH)
+    del lock['reconciliation']
+    reseal(isolated,lock)
+    with pytest.raises(TaskLockError,match='RECONCILIATION_CLOSEOUT_REQUIRED'):
+        validate_state(isolated)
+
+def test_recovered_trace_cannot_be_silently_changed(isolated):
+    lock=load(isolated,LOCK_PATH)
+    close=load(isolated,lock['reconciliation']['path'])
+    trace=load(isolated,close['trace']['path'])
+    trace['records'][2]['content']['parts'][0]['width']=999
+    save(isolated,close['trace']['path'],trace)
+    with pytest.raises(TaskLockError,match='EVIDENCE_HASH_MISMATCH'):
+        validate_state(isolated)
+
+def test_closed_search_does_not_authorize_replay_or_render(isolated):
+    for action in ['RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE','RENDER_H1_H2_H3_H4','FORMAL_RENDER_ATTEMPT3']:
+        r=request(isolated);r['action']=action
+        with pytest.raises(TaskLockError,match='ACTION_NOT_AUTHORIZED_OR_REPLAY'):
+            validate_request(isolated,r)
