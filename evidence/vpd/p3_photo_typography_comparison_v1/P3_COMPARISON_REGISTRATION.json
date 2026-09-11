@@ -1,0 +1,104 @@
+{
+  "schema_version": "vpd-p3-photo-typography-comparison/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "project_id": "visual-aesthetic-vpd",
+  "registered_from_commit": "8ad84db5728dac35e278bb19441ce3bcd93e47ba",
+  "status": "PREPARED_NOT_RENDERED",
+  "purpose": "Compare direct-reference design against Style Capsule V1.1 under the same content, approved reference, photo-only render route and equal-budget Figma production, without modifying or replaying historical H1-H4.",
+  "historical_boundary": {
+    "old_H1_H4_modified": false,
+    "attempt2_replayed": false,
+    "attempt3_created": false,
+    "formal_holdout_claim_allowed": false
+  },
+  "reference_anchor": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "role": "SAME_APPROVED_REFERENCE_FOR_BOTH_ARMS",
+    "literal_copying_prohibited": true
+  },
+  "candidate_capsule": {
+    "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
+    "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+    "sha256": "54bbc4a1eccd5e76d17dcb13b889c501ed93a4457dbbc1f8dc157572967a0cd9",
+    "maturity": "CONTROLLED_VALIDATION_REQUIRED_NOT_PROMOTED"
+  },
+  "contracts": {
+    "photo_only": {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "version": "1.0.0"
+    },
+    "figma_composition": {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "version": "1.0.0"
+    }
+  },
+  "comparison_arms": {
+    "A_DIRECT_REFERENCE": {
+      "reference_pixels": "SAME_APPROVED_REFERENCE",
+      "capsule_allowed": false,
+      "instruction_class": "SHORT_NATURAL_LANGUAGE_DIRECT_REFERENCE_BRIEF",
+      "photo_only": true,
+      "final_typography_in_render": false
+    },
+    "B_DISTILLED": {
+      "reference_pixels": "SAME_APPROVED_REFERENCE",
+      "capsule_allowed": true,
+      "capsule": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
+      "instruction_class": "PREDECLARED_CAPSULE_COMPILED_DIRECTION",
+      "photo_only": true,
+      "final_typography_in_render": false
+    }
+  },
+  "content_tasks": [
+    {
+      "content_id": "P3-SHANJUN-3X4",
+      "input_path": "evidence/vpd/p3_photo_typography_comparison_v1/SHANJUN_JOINT_INPUT.json",
+      "aspect_ratio": "3:4",
+      "raw_outputs": ["A_DIRECT_REFERENCE", "B_DISTILLED"]
+    },
+    {
+      "content_id": "P3-DOUFANG-3X4",
+      "input_path": "evidence/vpd/p3_photo_typography_comparison_v1/DOUFANG_JOINT_INPUT.json",
+      "aspect_ratio": "3:4",
+      "raw_outputs": ["A_DIRECT_REFERENCE", "B_DISTILLED"]
+    }
+  ],
+  "raw_generation_budget": {
+    "first_round_total": 4,
+    "per_content_per_arm": 1,
+    "hidden_variants": false,
+    "best_of_n": false,
+    "unreported_retries": false,
+    "generation_authorized_by_this_registration": false
+  },
+  "figma_equal_budget": {
+    "activation_gate": "SOURCE_VISUAL_DIRECTION_SELECTED_AFTER_RAW_COMPARISON",
+    "same_design_surface": "FIGMA",
+    "same_target_frame": "2400x3200_3X4",
+    "same_support_font_sources": true,
+    "same_base_display_font_source": true,
+    "composition_passes_per_poster": 1,
+    "correction_passes_per_poster_max": 1,
+    "extra_hidden_polish_passes": false,
+    "external_asset_additions_after_arm_assignment": false,
+    "manual_changes_must_be_logged": true
+  },
+  "typography_policy": {
+    "planning_stage": "P1_BEFORE_RAW_RENDER",
+    "execution_stage": "P6_AFTER_SOURCE_VISUAL_DIRECTION_SELECTION",
+    "raw_render_contains_final_copy": false,
+    "display_lettering_is_editable_vector": true,
+    "support_copy_is_editable_text": true,
+    "old_unregistered_figma_file_reuse": false,
+    "handwritten_accent_round1": "OMIT",
+    "badge_round1": "OMIT",
+    "motif_round1": "OMIT"
+  },
+  "evaluation_layers": [
+    "RAW_OUTPUT_MECHANISM",
+    "EQUAL_BUDGET_FIGMA_FINAL_DESIGN"
+  ],
+  "next_required_action_after_preparation": "GENERATE_P3_FOUR_PHOTO_ONLY_MAIN_VISUALS_ON_EXPLICIT_RENDER_AUTHORIZATION"
+}
