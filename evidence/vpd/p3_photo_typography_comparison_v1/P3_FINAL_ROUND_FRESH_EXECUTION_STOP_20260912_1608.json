@@ -1,0 +1,57 @@
+{
+  "schema_version": "vpd-p3-final-round-fresh-execution-stop/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T16:08:00+08:00",
+  "input_remote_head": "e34958984d32c22bccd37c02ea0534230a1fdef7",
+  "execution_context": "FRESH_ISOLATED_CHAT",
+  "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_HANDOFF_20260912.txt",
+  "canonical_reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "actual_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "sha256_verified": true,
+    "actual_dimensions": "960x1280",
+    "role": "VISUAL_REFERENCE_ONLY_NOT_EDIT_TARGET"
+  },
+  "call": {
+    "ordinal": 1,
+    "requested_output_id": "SHANJUN_A_FINAL",
+    "requested_subject": "seasonal wild mushroom ingredient/material field",
+    "requested_arm": "A_DIRECT_REFERENCE",
+    "requested_aspect_ratio": "3:4",
+    "requested_artifact_type": "ONE_STANDALONE_PHOTO_ONLY",
+    "generated_asset_file_id": "file_00000000f9fc81f5894c38ae6380725e",
+    "generation_id": "c7015ff4-8cf8-4138-b4e2-2f59c80b1661",
+    "generated_filename": "a_minimalist_warm_sunlit_interior_still_life_sce.png",
+    "actual_dimensions": "1086x1448",
+    "actual_sha256": "7f988e70c3976348c3e03672f58865dc16b2937f83d14b77fe5d6bfc3e43b605",
+    "actual_subject": "warm sunlit interior still life with vase, flowers, cup, book, table and chair; no mushroom ingredient/material field",
+    "single_image": true,
+    "collage_or_multi_panel": false,
+    "classification": "TECHNICAL_INVALID_WRONG_SUBJECT",
+    "valid_p3_sample": false
+  },
+  "stop_rule": {
+    "triggered": true,
+    "reason": "Handoff requires immediate stop when any call returns a wrong subject, collage, text, multiple panels, or other contract violation.",
+    "silent_retry_performed": false,
+    "additional_calls_performed": 0,
+    "unexecuted_outputs": [
+      "SHANJUN_B_FINAL_POSITION_FREE",
+      "DOUFANG_A_FINAL",
+      "DOUFANG_B_FINAL_POSITION_FREE"
+    ]
+  },
+  "state_effect": {
+    "valid_final_round_raw_outputs": 0,
+    "figma_entry_allowed": false,
+    "aesthetic_inference_from_invalid_call": "PROHIBITED",
+    "independent_blind_review_claimed": false,
+    "commercial_acceptance_claimed": false,
+    "candidate_promotion_claimed": false,
+    "golden_claimed": false,
+    "scale_claimed": false,
+    "next_required_action": "START_NEW_FRESH_ISOLATED_CONTEXT_AND_REENTER_FROM_FROZEN_HANDOFF; DO_NOT RETRY IN THIS CHAT"
+  }
+}
