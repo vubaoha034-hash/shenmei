@@ -1,0 +1,70 @@
+{
+  "schema_version": "vpd-p3-final-round-simplification-plan/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T07:45:00+00:00",
+  "input_remote_head": "d636eefcfb792eb178a163192535b349a42c6b4e",
+  "round1_decision": {
+    "raw_A_B_scores_nonblind": {
+      "SHANJUN_A": 6.9,
+      "SHANJUN_B": 7.2,
+      "DOUFANG_A": 7.0,
+      "DOUFANG_B": 7.4
+    },
+    "figma_layout_review": "B shows modestly stronger structural title/counter-mass behavior, but neither content pair establishes a decisive integrated-design advantage and absolute commercial quality remains below target.",
+    "classification": "LIMITED_VISIBLE_STRUCTURAL_GAIN_WITH_SERIOUS_TEMPLATE_AND_COMMERCIAL_QUALITY_ISSUES",
+    "advance_to_P4": false,
+    "candidate_promotion": false,
+    "reason": "Roadmap requires visible gain without serious quality problems for P4. Current outputs remain generic and template-like; proxy Figma review cannot establish final pixel quality."
+  },
+  "single_primary_hypothesis": {
+    "id": "P3-HYP-FIXED_POSITION_REINTRODUCTION",
+    "statement": "The P3 B-arm compiler reintroduced fixed or quasi-fixed positional topology even though V1.1 defines title/photo masses and type-safe space as location-variable. This likely caused left-title/right-photo template collapse and suppressed the intended transfer freedom.",
+    "evidence": [
+      "STYLE_CAPSULE_V1_1_CANDIDATE: location-variable type-safe space and movable mass relations",
+      "SHANJUN_JOINT_INPUT B: upper/right photo mass plus lower-left/lower-offset type zone with normalized target coordinates",
+      "DOUFANG_JOINT_INPUT B: lower-right/central process mass plus upper-left/transverse type zone with normalized target coordinates",
+      "Figma proxy review: both pairs converge on a familiar large-left-title plus right/central-photographic-mass topology"
+    ]
+  },
+  "final_round_change": {
+    "change_class": "SIMPLIFICATION_BY_DELETION_ONLY",
+    "B_remove": [
+      "all normalized x/y target coordinates for type-safe regions",
+      "mandatory upper/right, lower/right, upper-left or lower-left mass locations",
+      "placement language that preselects a screen quadrant"
+    ],
+    "B_keep": [
+      "first-read title authority",
+      "title-photo counter-mass relationship",
+      "scene-derived quiet tonal/frequency pocket",
+      "regional density separation",
+      "truthful depth and material realism",
+      "no detached panel or gradient patch",
+      "no copied source identity or glyph contours"
+    ],
+    "A_change": "NONE; keep the same direct-reference brief and equal production conditions",
+    "shared_content_truth_change": "NONE_IN_THIS_ROUND_FOR_CAUSAL_ISOLATION",
+    "global_capsule_mutation": false,
+    "new_rules_added": false
+  },
+  "final_round_budget": {
+    "status": "FROZEN",
+    "this_is_last_default_P3_round": true,
+    "photo_only_outputs": 4,
+    "per_content_per_arm": 1,
+    "contents": ["山菌","豆坊"],
+    "arms": ["A_DIRECT_REFERENCE","B_DISTILLED_SIMPLIFIED_POSITION_FREE"],
+    "aspect_ratio": "3:4",
+    "final_typography_in_raw_render": false,
+    "hidden_variants": false,
+    "best_of_n": false,
+    "unreported_retries": false,
+    "figma_budget_if_raw_direction_is_usable": {
+      "composition_passes_per_poster": 1,
+      "correction_passes_per_poster_max": 1,
+      "same_fonts_and_design_surface": true
+    }
+  },
+  "stop_rule": "If the final round still shows only marginal or inconsistent B gain, close P3 as incremental benefit not sufficient for commercial validation; do not add more visual rules or repeat rounds to chase a win.",
+  "next_required_action": "GENERATE_P3_FINAL_ROUND_FOUR_PHOTO_ONLY_OUTPUTS_POSITION_FREE_B"
+}
