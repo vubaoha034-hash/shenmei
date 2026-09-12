@@ -1,12 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 27,
-  "recorded_at": "2026-09-12T01:30:00+00:00",
+  "sequence": 28,
+  "recorded_at": "2026-09-12T09:14:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
-  "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P3图文联合对照准备完成；山菌/豆坊A直接参考与B蒸馏两路已登记，四张3:4 PHOTO_ONLY主视觉已获本轮继续授权，尚未生成",
+  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
+  "active_task_ids": [
+    "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
+  ],
+  "current_focus": "P3最后默认轮 fresh isolated execution 第1张 SHANJUN_A_FINAL 返回 wrong subject，STOP RULE 已触发；最终轮有效输出0/4；当前聊天禁止重试，下一步只能在新的 fresh isolated context 从冻结 handoff 重新进入。",
   "completed": [
     "runtime_authorization",
     "payload_freeze",
@@ -15,13 +18,17 @@
     "project_workflow_outline",
     "typography_workflow_correction",
     "external_execution_reconciliation",
-    "p3_photo_typography_comparison_preparation"
+    "p3_photo_typography_comparison_preparation",
+    "p3_round1_four_raw_outputs",
+    "p3_round1_equal_budget_figma_proxy_layout_review",
+    "p3_final_round_simplification_freeze",
+    "p3_final_round_fresh_execution_stop_recorded"
   ],
   "incomplete": [
-    "p3_four_photo_only_raw_outputs",
-    "p3_raw_output_direction_selection",
-    "p6_equal_budget_figma_design",
-    "p3_integrated_design_comparison",
+    "p3_final_round_four_valid_photo_only_outputs",
+    "p3_final_round_raw_output_direction_selection",
+    "p6_final_round_equal_budget_figma_design",
+    "p3_final_round_integrated_design_comparison",
     "independent_pixel_reviews",
     "human_set_verdict",
     "downstream_production_after_acceptance",
@@ -30,24 +37,24 @@
     "scale"
   ],
   "blocked": [
-    "支持字体及基础中文字形来源须在P6实际进入Figma前验证可用，禁止静默替换",
-    "候选的稳定迁移与用户接受尚未证实"
+    "当前 fresh isolated chat 已因 SHANJUN_A_FINAL wrong subject 触发 STOP；不得在同一聊天重试或继续第2–4张",
+    "最终默认P3轮有效输出仍为0/4，因此不得进入该轮Figma或宣告P3收益结论",
+    "上一轮Figma为72x96代理图布局审查，原始像素未绑定，不能作为最终商业像素验收"
   ],
   "unknowns": [
-    "Full backend renderer payloads of historical Attempt2",
-    "Canonical reference byte identity for the observed historical Attempt2 reference asset ID",
-    "Historical raw output files and their SHA-256",
-    "Fresh P3 pixel-based content and quality verdicts"
+    "Whether a new fresh isolated context will produce protocol-valid SHANJUN_A_FINAL",
+    "Final-round A/B raw-image benefit after fixed-position constraints are removed",
+    "Final-round integrated Figma benefit if four valid raw outputs are obtained",
+    "Historical Attempt2 backend payload details remain unknown and closed unless new evidence appears"
   ],
   "do_not_reopen": [
     "Approved-reference redistillation",
-    "Withdrawn Zaobianwei S1 and R0-R4 restart",
-    "Automatic replay of consumed or unknown handoffs",
-    "New renderer Attempt 3 without scoped authorization",
-    "Historical zero-reference route as current H1-H4 policy",
-    "Repeat Attempt2 search without new raw files or execution evidence; two targeted passes exhausted",
-    "Put final typography inside P3 PHOTO_ONLY raw renders",
-    "Reuse historical unregistered Figma nodes as formal P3 evidence"
+    "Repeat Attempt2 search without new raw files or execution evidence",
+    "Current-chat retry of SHANJUN_A_FINAL after STOP",
+    "Current-chat execution of SHANJUN_B_FINAL_POSITION_FREE / DOUFANG_A_FINAL / DOUFANG_B_FINAL_POSITION_FREE",
+    "Figma entry for final round before all four valid raw outputs are identity-checked",
+    "Aesthetic inference from the wrong-subject invalid output",
+    "Candidate promotion, Golden or Scale without formal evidence and human acceptance"
   ],
   "active_change_ids": [
     "VPD-TASK-LOCK-REPAIR-20260907-001",
@@ -56,66 +63,75 @@
     "VPD-ATTEMPT2-EVIDENCE-RECONCILIATION-20260911-001",
     "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001"
   ],
-  "next_required_action": "GENERATE_P3_FOUR_PHOTO_ONLY_MAIN_VISUALS",
+  "next_required_action": "START_NEW_FRESH_ISOLATED_CONTEXT_AND_REENTER_FROM_FROZEN_HANDOFF",
   "render_authorization": {
-    "status": "AUTHORIZED_BY_CURRENT_USER_CONTINUE",
-    "scope": "P3_ONLY_EXACTLY_4_PHOTO_ONLY_OUTPUTS_NO_FINAL_TYPOGRAPHY",
-    "output_count": 4,
-    "content_ids": ["P3-SHANJUN-3X4","P3-DOUFANG-3X4"],
-    "arms": ["A_DIRECT_REFERENCE","B_DISTILLED"],
+    "status": "STOPPED_IN_CURRENT_CHAT",
+    "scope": "NEW_FRESH_ISOLATED_CONTEXT_ONLY_PER_P3_FINAL_ROUND_HANDOFF",
+    "final_round_output_count_required": 4,
+    "valid_outputs_so_far": 0,
+    "fixed_order": [
+      "SHANJUN_A_FINAL",
+      "SHANJUN_B_FINAL_POSITION_FREE",
+      "DOUFANG_A_FINAL",
+      "DOUFANG_B_FINAL_POSITION_FREE"
+    ],
     "hidden_variants": false,
     "best_of_n": false,
-    "unreported_retries": false
+    "unreported_retries": false,
+    "same_chat_retry_allowed": false
+  },
+  "p3_round1": {
+    "raw_outputs_valid": 4,
+    "nonblind_scores": {
+      "SHANJUN_A": 6.9,
+      "SHANJUN_B": 7.2,
+      "DOUFANG_A": 7.0,
+      "DOUFANG_B": 7.4
+    },
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "figma_review_scope": "PROXY_LAYOUT_ONLY_NOT_FINAL_PIXEL_ACCEPTANCE",
+    "finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
+    "advance_to_P4": false
+  },
+  "p3_final_round": {
+    "simplification": "REMOVE_FIXED_OR_QUASI_FIXED_POSITION_CONSTRAINTS_FROM_B_ONLY",
+    "last_default_round": true,
+    "first_call_status": "TECHNICAL_INVALID_WRONG_SUBJECT",
+    "first_call_dimensions": [1086,1448],
+    "first_call_sha256": "7f988e70c3976348c3e03672f58865dc16b2937f83d14b77fe5d6bfc3e43b605",
+    "valid_outputs": 0,
+    "figma_entry_allowed": false
   },
   "ledger_tails": {
-    "execution_route": {"event_id":"EVT-VISUAL-VPD-ANTI-ROLLBACK-TEST-CORRECTION-20260819-005","event_hash":"61713349debd4c3772cf8d39b9cb3c23ea5fb922b220f4b16a3684db5ff86dfa"},
-    "global": {"event_id":"EVT-VISUAL-VPD-OPENAI-WIF-PROBE-20260819-007","event_hash":"4b6b077951c09493a49ed1ece0f792371deab38f84ebea2decb891f7b90a7e65"},
-    "distillation_evidence": {"event_id":"EVT-VISUAL-VPD-SHANYEJI-STYLE-CAPSULE-V1-1-CANDIDATE-20260821-003","event_hash":"ec09bf7fe4a133d8d74dce48a18d045824784dc7eb6e6d9ec2208b2a1efdb418"},
-    "controlled_family_validation": {"event_id":"EVT-VISUAL-VPD-SHANYEJI-ATTEMPT2-PAYLOAD-FREEZE-20260824-002","event_hash":"2f799ec0cd3d82a0ab3ebf1b8f482cc7c636c705547f04b43592fb8c781f28f1"},
-    "controlled_family_human_review": {"event_id":"EVT-VISUAL-VPD-SHANYEJI-ATTEMPT1-FAIL-SETTLEMENT-20260821-001","event_hash":"b351202df4d0a08efc5131a32363ec937ed8073071eec0009b142d215e1e45d4"},
-    "commercial_design_pipeline": {"event_id":"EVT-VISUAL-VPD-PHOTO-FIGMA-PIPELINE-HARDENING-20260906-001","event_hash":"a084ae0e8571361c810fc0a2d54c96bb087f4ffb1860d744f4fb06e69d4edd26"},
-    "system_validation": {"event_id":"EVT-VPD-P3-PHOTO-TYPOGRAPHY-PREPARATION-20260912-001","event_hash":"9cf0941e46b56b18fe3e0e3099075f5aeb1cf179930e2e02b82b786d011c2301"}
+    "system_validation": {
+      "event_id": "EVT-VPD-P3-FINAL-ROUND-FRESH-STOP-20260912-001",
+      "event_hash": "c517efcb634f957dff7adb672bab3f8708ed2b7e9fcc058f395251df2518e9c8"
+    }
   },
   "source_state_refs": [
-    {"path":"PROJECT_CONTROL_ADAPTER.json","sha256":"b4c4028fea4b70648ebeda3dfcb51ac3fa9e0f8e330db9c3194248df7c590e11"},
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"4587c1345fde09cd82806b1a74f8760b9f65c0b7"},
-    {"path":"evidence/vpd/task_lock_repair_v1/AUTHORITY.json","sha256":"0d75c7807fc3abad756b072cf6b406acffa7bc214656b8173f1587070be0a2d9"},
-    {"path":"evidence/vpd/task_lock_repair_v1/EXTERNAL_EXECUTION_ANOMALY.json","sha256":"c8e1969e939a2f9c8058ac47637ff531d9444fbdccc04a3d7e97f0467dbff8e1"},
-    {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"},
-    {"path":"evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json","sha256":"7176a4de5e13ea9ffd2ee2e34780ea0b2d689fd5712bda1c1c704eef72ad835e"},
-    {"path":"evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json","sha256":"38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_COMPARISON_REGISTRATION.json","git_blob_sha":"ec978a2f08e71dc602a2a91875040211ad978045"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/SHANJUN_JOINT_INPUT.json","git_blob_sha":"31a87ba542e631bdd351d73a8cc96cb66ae356f0"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/DOUFANG_JOINT_INPUT.json"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_PREPARATION_REPORT.md"}
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"ec122815b4ebd88eb1bfc64e7c140efa898bb627","revision":6},
+    {"path":"continuity/vpd/state_ledger/system_validation.jsonl","git_blob_sha":"86a58601ca53cfcf3e2c8b19f6facd006a37e666"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/FIGMA_PROXY_INTEGRATED_REVIEW_20260912.json","commit":"d636eefcfb792eb178a163192535b349a42c6b4e"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_SIMPLIFICATION_PLAN_20260912.json","git_blob_sha":"916d0eac8d3f9d5b678b6ba9843ddddcfb137c18"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_HANDOFF_20260912.txt","git_blob_sha":"a4f07e3ba7b0fdd49be4c28eb829c5b1e4f45575"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json","git_blob_sha":"01058a28e265caeddf8cd91947e179c0e72846db"}
   ],
   "incident_records": [
-    {"sequence":10,"commit":"75dcd9c9b91795a4425083864cf23b6157c916ea","classification":"ANTI_ROLLBACK_TEST_INCIDENT","authoritative_for_current_route":false,"preserve":true},
-    {"sequence":11,"commit":"ef41b7eee0763980e575eea6b98193ffb1b4aa5f","classification":"ANTI_ROLLBACK_TEST_INCIDENT","authoritative_for_current_route":false,"preserve":true},
-    {"ledger_event":"EVT-VISUAL-VPD-R4-1-RESUME-20260819-003","classification":"ANTI_ROLLBACK_TEST_INCIDENT","preserve":true},
-    {"ledger_event":"EVT-VISUAL-VPD-R4-1-RENDER-BINDING-FAILURE-20260819-004","classification":"ANTI_ROLLBACK_TEST_INCIDENT_TECHNICAL_CONSEQUENCE","preserve":true}
+    {"commit":"4858195a6574a26b4c85ede3b772c7c92f872c17","classification":"P3_FINAL_ROUND_FRESH_EXECUTION_STOP_WRONG_SUBJECT","preserve":true}
   ],
-  "status": "VPD_P3_PHOTO_TYPOGRAPHY_PREPARED_FOUR_RAW_RENDERS_NEXT",
-  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; P3 preparation is not human aesthetic acceptance",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"4587c1345fde09cd82806b1a74f8760b9f65c0b7"},
-  "history_snapshot": {"path":"continuity/vpd/history/sequence_22/LATEST_CHECKPOINT.json","sha256":"3d57ad278429ebdbcc6fd6ec82e3e3d8031d8649ecf67d4e8690cd2e130e36d4"},
+  "status": "VPD_P3_FINAL_ROUND_STOP_WRONG_SUBJECT_FRESH_CONTEXT_REQUIRED",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"ec122815b4ebd88eb1bfc64e7c140efa898bb627"},
+  "history_snapshot": {"path":"continuity/vpd/LATEST_CHECKPOINT.json","previous_sequence":27,"previous_git_blob_sha":"cd8f23da025acf6b3a932ee52f98d60399280e8b"},
   "requirements": {
-    "runtime_authorization": {"scope":"H1-H4","status":"DONE"},
-    "payload_freeze": {"scope":"H1-H4","status":"DONE"},
-    "external_execution_reconciliation": {"scope":"FORMAL_RENDER_ATTEMPT2_EVIDENCE_SEARCH_AND_DISPOSITION_NOT_VISUAL_ACCEPTANCE","status":"DONE","outcome":"CLOSED_PARTIAL_EVIDENCE"},
-    "p3_photo_typography_preparation": {"scope":"NEW_P3_COMPARISON","status":"DONE","images_generated":false,"figma_written":false},
-    "independent_pixel_reviews": {"scope":"H1-H4","status":"PENDING"},
-    "human_set_verdict": {"scope":"H1-H4","status":"PENDING"},
-    "task_lock_state_readback_review": {"scope":"TASK_LOCK_REPAIR_V1","status":"DONE"},
-    "project_workflow_outline": {"scope":"FULL_PROJECT_WORKFLOW_V1","status":"DONE"},
-    "typography_workflow_correction": {"scope":"WORKFLOW_V1_1_ONLY_NOT_VISUAL_ACCEPTANCE","status":"DONE"}
+    "p3_round1": {"status":"DONE_LIMITED_EVIDENCE"},
+    "p3_final_round": {"status":"STOPPED_TECHNICAL_INVALID_WRONG_SUBJECT","valid_outputs":0,"same_chat_retry_allowed":false}
   },
   "execution": {
-    "historical_formal_set_disposition": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
-    "p3_plan": "PREPARED",
-    "p3_render_authorized": true,
-    "p3_raw_outputs_generated": 0,
-    "p3_figma_outputs_generated": 0,
+    "p3_round1_valid_raw_outputs": 4,
+    "p3_round1_figma_proxy_frames": 4,
+    "p3_final_round_valid_outputs": 0,
+    "p3_final_round_invalid_calls": 1,
+    "p3_final_round_stop_rule_triggered": true,
     "independent_review": "NOT_RUN",
     "human_acceptance": "NOT_ACCEPTED",
     "capsule_verdict": "NOT_ESTABLISHED"
