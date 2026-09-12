@@ -1,0 +1,66 @@
+{
+  "schema_version": "vpd-p3-final-round-render-pipeline-block/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T10:24:00+00:00",
+  "input_remote_head": "8f7ad0561e72356af146db711848bd63fedcba33",
+  "classification": "REPEATED_FRESH_CONTEXT_TECHNICAL_RENDER_FAILURE_EXECUTION_PIPELINE_BLOCKED",
+  "canonical_reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "verified_in_both_fresh_executions": true
+  },
+  "fresh_execution_stops": [
+    {
+      "ordinal": 1,
+      "evidence_path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
+      "commit": "4858195a6574a26b4c85ede3b772c7c92f872c17",
+      "requested_output": "SHANJUN_A_FINAL",
+      "classification": "TECHNICAL_INVALID_WRONG_SUBJECT",
+      "actual_dimensions": [1086, 1448],
+      "actual_sha256": "7f988e70c3976348c3e03672f58865dc16b2937f83d14b77fe5d6bfc3e43b605",
+      "valid_output": false
+    },
+    {
+      "ordinal": 2,
+      "evidence_path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1808.json",
+      "commit": "8f7ad0561e72356af146db711848bd63fedcba33",
+      "requested_output": "SHANJUN_A_FINAL",
+      "classification": "TECHNICAL_INVALID_WRONG_SUBJECT_AND_ASPECT_RATIO",
+      "actual_dimensions": [1536, 1024],
+      "actual_sha256": "46dbfa6d96e3f6b79601cd0fc971f2097554305897021429f6e234c59185d420",
+      "valid_output": false
+    }
+  ],
+  "combined_finding": {
+    "valid_final_round_outputs": 0,
+    "same_frozen_handoff_used": true,
+    "same_reference_identity_verified": true,
+    "same_first_requested_output": "SHANJUN_A_FINAL",
+    "fresh_context_alone_resolved_failure": false,
+    "evidence_supports_aesthetic_or_capsule_inference": false,
+    "evidence_supports_execution_pipeline_failure": true,
+    "reason": "Two independent fresh isolated contexts both failed on the first frozen output while the canonical reference identity verified. The second failure also lost the required 3:4 geometry. Repeating the same fresh-chat loop is no longer a justified next action without an execution-binding diagnosis."
+  },
+  "dispatch_change": {
+    "render_allowed": false,
+    "figma_entry_allowed": false,
+    "do_not_repeat": [
+      "OPEN_ANOTHER_FRESH_CHAT_AND_RETRY_SAME_HANDOFF_WITHOUT_DIAGNOSIS",
+      "RUN_SHANJUN_B_OR_DOUFANG_OUTPUTS_AFTER_STOP",
+      "COUNT_TECHNICAL_INVALID_CALLS_AS_AESTHETIC_SAMPLES",
+      "INFER_CAPSULE_GAIN_OR_FAILURE_FROM_INVALID_OUTPUTS"
+    ],
+    "next_required_action": "DIAGNOSE_P3_CHATGPT_IMAGE_GENERATION_SUBJECT_AND_ASPECT_BINDING_BEFORE_ANY_FURTHER_RENDER"
+  },
+  "p3_state": {
+    "round1_valid_raw_outputs": 4,
+    "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
+    "final_round_valid_outputs": 0,
+    "final_round_technical_invalid_fresh_contexts": 2,
+    "p3_aesthetic_verdict": "NOT_ESTABLISHED_FOR_FINAL_ROUND",
+    "candidate_promoted": false,
+    "golden": false,
+    "scale": false
+  }
+}
