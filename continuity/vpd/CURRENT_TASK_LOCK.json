@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 12,
+  "revision": 13,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 11,
-    "git_blob_sha": "06db3d31dc9038d29840e9cb4c012dc750ba7c24",
-    "note": "Revision 11 preserves Probe 1/2 PASS and all earlier P3 evidence; revision 12 records bridge PASS and authorizes only the one-output-per-minimal-chat formal micro-handoff route."
+    "revision": 12,
+    "git_blob_sha": "3428ae070c59995d6c1ae216aba3f8d677ab2248",
+    "note": "Revision 12 preserves bridge PASS, formal micro-handoff architecture and inference boundaries; revision 13 records the first two formal raw outputs as valid."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -22,46 +22,23 @@
   },
   "p3": {
     "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
-    "final_round_valid_outputs": 0,
+    "final_round_valid_outputs": 2,
     "technical_invalid_fresh_contexts": 2,
     "binding_diagnosis": {
       "status": "COMPLETE",
       "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
       "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json"
     },
-    "minimal_binding_probe": {
-      "status": "COMPLETE",
-      "probe1_verdict": "PASS",
-      "probe1_dimensions": [1152,1536],
-      "probe1_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
-      "probe2_verdict": "PASS",
-      "probe2_dimensions": [1152,1536],
-      "probe2_sha256": "dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
+    "technical_probes": {
+      "probe1": "PASS",
+      "probe2": "PASS",
+      "bridge_probe": "PASS",
       "formal_p3_budget_effect": "NONE",
       "aesthetic_inference_allowed": false
     },
-    "bridge_probe": {
-      "status": "PASS",
-      "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt",
-      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json",
-      "result_commit": "d47f1b08aea8f86f51bfcf210963db4bbbb92a9e",
-      "actual_dimensions": [1152,1536],
-      "actual_sha256": "c70cf51b86916475c203312fac7fff60caf7be99f592e73b913e7031f885c352",
-      "counts_as_formal_p3_sample": false,
-      "aesthetic_inference_allowed": false
-    },
-    "causal_status": {
-      "base_subject_aspect_binding": "PASS",
-      "minimal_reference_present_path": "PASS",
-      "isolated_A_arm_formal_content_envelope": "PASS",
-      "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
-      "isolated_A_brief_as_sufficient_failure_cause": "NOT_SUPPORTED",
-      "full_project_handoff_orchestration_as_primary_suspect": "STRONGLY_ELEVATED_NOT_PROVIDER_ROOT_CAUSE_PROVEN"
-    },
     "formal_micro_handoff": {
-      "status": "FROZEN_READY",
+      "status": "IN_PROGRESS_2_OF_4_VALID",
       "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
-      "architecture_commit": "92f2ac94644e74afa4ff9c8c549143df422dae95",
       "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
       "fixed_order": [
         "SHANJUN_A_FINAL",
@@ -70,7 +47,25 @@
         "DOUFANG_B_FINAL_POSITION_FREE"
       ],
       "valid_outputs_required": 4,
-      "valid_outputs_so_far": 0,
+      "valid_outputs_so_far": 2,
+      "formal_results": {
+        "SHANJUN_A_FINAL": {
+          "status": "PASS",
+          "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json",
+          "commit": "ad01ee1396f542fab1046f660f9c4bdc3517838e",
+          "chat_file_id": "file_0000000020148207ae85be6c19abae81",
+          "dimensions": [1152,1536],
+          "sha256": "322191789ca7e21e6050263028e47976db9cb8fdf79d8dc28e871d092078c344"
+        },
+        "SHANJUN_B_FINAL_POSITION_FREE": {
+          "status": "PASS",
+          "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json",
+          "commit": "36c8cc028b02d76471a074975d516f7a63de5906",
+          "chat_file_id": "file_000000008cb08207bdf246c2af109088",
+          "dimensions": [1152,1536],
+          "sha256": "e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3"
+        }
+      },
       "no_hidden_variants": true,
       "no_best_of_n": true,
       "no_silent_retry": true,
@@ -78,19 +73,17 @@
     },
     "inference_boundary": {
       "P3_question": "Does the distilled program add incremental benefit when A and B share the same approved reference?",
-      "B_route": "APPROVED_REFERENCE_PLUS_DISTILLED_TRANSFERABLE_RELATIONSHIPS",
-      "A_route": "APPROVED_REFERENCE_PLUS_DIRECT_REFERENCE_BRIEF",
       "P3_can_support": "INCREMENTAL_DISTILLED_PROGRAM_BENEFIT_UNDER_SHARED_REFERENCE_IF_EVIDENCE_IS_MEANINGFUL",
       "P3_cannot_support": "DISTILLATION_ONLY_INDEPENDENCE_FROM_SOURCE_REFERENCE",
       "required_follow_on_if_B_meaningfully_wins": "NO_REFERENCE_B_ONLY_DISTILLATION_ONLY_VALIDATION_BEFORE_ANY_INDEPENDENT_DISTILLATION_CLAIM"
     }
   },
-  "current_stage": "Probe 1、Probe 2与最小正式包络桥接探针均PASS。前两次正式失败现最合理地定位到完整项目handoff/上下文编排行为。正式P3最后一轮已改为每张一个全新standalone最小聊天的微型handoff架构；当前只执行第1张SHANJUN_A_FINAL，回传核验通过后才进入第2张。",
-  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_READY_SHANJUN_A_NEXT",
+  "current_stage": "正式P3最后一轮已获得2/4有效原始图：SHANJUN_A_FINAL与SHANJUN_B_FINAL_POSITION_FREE均通过身份、主体和3:4合同核验。下一步只执行DOUFANG_A_FINAL；豆坊B和Figma仍锁定。",
+  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_NEXT",
   "formal_p3_render_allowed": true,
   "formal_p3_render_scope": "MICRO_HANDOFF_ONLY_ONE_OUTPUT_PER_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "technical_probe_allowed": false,
-  "next_required_action": "RUN_FORMAL_P3_SHANJUN_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "next_required_action": "RUN_FORMAL_P3_DOUFANG_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "formal_execution_boundary": {
     "must_use_brand_new_standalone_chat_per_output": true,
     "must_not_bootstrap_full_project_before_image_call": true,
@@ -104,27 +97,21 @@
     "figma_entry_before_four_valid_outputs": false
   },
   "do_not_reopen": [
+    "rerender SHANJUN_A or SHANJUN_B for taste",
     "full-project formal render handoff in one chat",
-    "technical Probe 1, Probe 2 or bridge probe",
-    "run SHANJUN_B before SHANJUN_A formal output is validated",
-    "reuse probe pixels as formal samples",
+    "technical probes",
+    "run DOUFANG_B before DOUFANG_A is validated",
     "Figma final-round work before four formal raw outputs are valid",
     "claim distillation-only independence from shared-reference P3",
     "candidate promotion, Golden or Scale without formal evidence and human acceptance"
   ],
   "completed_this_revision": [
-    "读取并核验桥接探针像素",
-    "确认桥接探针1152x1536精确3:4、菌菇主体正确、无文字/Logo/拼版/火焰",
-    "确认桥接探针PASS且不计入正式P3样本",
-    "将完整项目handoff/上下文编排升级为前两次正式失败的主要嫌疑但不宣称供应侧根因已证明",
-    "冻结正式四张每张一独立最小聊天的micro-handoff架构",
-    "明确P3只测试共享参考条件下的蒸馏增量收益，不证明脱离母参考的独立蒸馏能力",
-    "若B有实质收益，后续必须追加no-reference B-only验证"
+    "补登记SHANJUN_A_FINAL正式原始图为PASS",
+    "登记SHANJUN_B_FINAL_POSITION_FREE正式原始图为PASS",
+    "两张均为1152x1536精确3:4、无文字Logo拼版、主体内容合同通过",
+    "正式最后一轮有效输出推进到2/4",
+    "下一动作推进到DOUFANG_A_FINAL"
   ],
-  "changes_authority": {
-    "bridge_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json","commit":"d47f1b08aea8f86f51bfcf210963db4bbbb92a9e"},
-    "formal_micro_handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt","commit":"92f2ac94644e74afa4ff9c8c549143df422dae95"}
-  },
-  "updated_at": "2026-09-12T21:50:00+00:00",
+  "updated_at": "2026-09-12T21:42:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
