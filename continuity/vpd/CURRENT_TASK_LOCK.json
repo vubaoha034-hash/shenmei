@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 11,
+  "revision": 12,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 10,
-    "git_blob_sha": "77fc23f2fe511b2f4602bd5e9ad25f639edeb62b",
-    "note": "Revision 10 preserves Probe 1 PASS and all prior P3 state; revision 11 records Probe 2 PASS and prepares one final technical bridge probe."
+    "revision": 11,
+    "git_blob_sha": "06db3d31dc9038d29840e9cb4c012dc750ba7c24",
+    "note": "Revision 11 preserves Probe 1/2 PASS and all earlier P3 evidence; revision 12 records bridge PASS and authorizes only the one-output-per-minimal-chat formal micro-handoff route."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -30,44 +30,69 @@
       "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json"
     },
     "minimal_binding_probe": {
-      "status": "PROBE1_PASS_PROBE2_PASS_BRIDGE_PROBE_NEXT",
-      "probe_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
-      "probe1_result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json",
+      "status": "COMPLETE",
       "probe1_verdict": "PASS",
       "probe1_dimensions": [1152,1536],
       "probe1_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
-      "probe2_result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE2_RESULT_20260913.json",
       "probe2_verdict": "PASS",
       "probe2_dimensions": [1152,1536],
       "probe2_sha256": "dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
-      "probe2_subject_binding": "PASS_MUSHROOMS",
-      "probe2_reference_present_path": "PASS_NO_VISIBLE_SUBJECT_OR_ASPECT_CORRUPTION",
-      "provider_reference_semantic_consumption_receipt": "UNAVAILABLE",
       "formal_p3_budget_effect": "NONE",
       "aesthetic_inference_allowed": false
     },
     "bridge_probe": {
-      "status": "HANDOFF_PREPARED_NOT_RUN",
+      "status": "PASS",
       "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt",
-      "purpose": "Test isolated SHANJUN_A_FINAL direct-reference content envelope without full project/A-B/Capsule/Figma bootstrap",
-      "max_calls": 1,
+      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json",
+      "result_commit": "d47f1b08aea8f86f51bfcf210963db4bbbb92a9e",
+      "actual_dimensions": [1152,1536],
+      "actual_sha256": "c70cf51b86916475c203312fac7fff60caf7be99f592e73b913e7031f885c352",
       "counts_as_formal_p3_sample": false,
       "aesthetic_inference_allowed": false
     },
     "causal_status": {
       "base_subject_aspect_binding": "PASS",
       "minimal_reference_present_path": "PASS",
+      "isolated_A_arm_formal_content_envelope": "PASS",
       "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
-      "full_project_handoff_orchestration_as_primary_suspect": "ELEVATED_NOT_PROVEN"
+      "isolated_A_brief_as_sufficient_failure_cause": "NOT_SUPPORTED",
+      "full_project_handoff_orchestration_as_primary_suspect": "STRONGLY_ELEVATED_NOT_PROVIDER_ROOT_CAUSE_PROVEN"
+    },
+    "formal_micro_handoff": {
+      "status": "FROZEN_READY",
+      "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
+      "architecture_commit": "92f2ac94644e74afa4ff9c8c549143df422dae95",
+      "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
+      "fixed_order": [
+        "SHANJUN_A_FINAL",
+        "SHANJUN_B_FINAL_POSITION_FREE",
+        "DOUFANG_A_FINAL",
+        "DOUFANG_B_FINAL_POSITION_FREE"
+      ],
+      "valid_outputs_required": 4,
+      "valid_outputs_so_far": 0,
+      "no_hidden_variants": true,
+      "no_best_of_n": true,
+      "no_silent_retry": true,
+      "figma_entry_allowed_after_four_valid_outputs_only": true
+    },
+    "inference_boundary": {
+      "P3_question": "Does the distilled program add incremental benefit when A and B share the same approved reference?",
+      "B_route": "APPROVED_REFERENCE_PLUS_DISTILLED_TRANSFERABLE_RELATIONSHIPS",
+      "A_route": "APPROVED_REFERENCE_PLUS_DIRECT_REFERENCE_BRIEF",
+      "P3_can_support": "INCREMENTAL_DISTILLED_PROGRAM_BENEFIT_UNDER_SHARED_REFERENCE_IF_EVIDENCE_IS_MEANINGFUL",
+      "P3_cannot_support": "DISTILLATION_ONLY_INDEPENDENCE_FROM_SOURCE_REFERENCE",
+      "required_follow_on_if_B_meaningfully_wins": "NO_REFERENCE_B_ONLY_DISTILLATION_ONLY_VALIDATION_BEFORE_ANY_INDEPENDENT_DISTILLATION_CLAIM"
     }
   },
-  "current_stage": "Probe 1与Probe 2均已通过：无参考和最小参考路径都能稳定生成正确菌菇主体与精确3:4竖图。正式P3仍冻结。下一步只运行一次最小正式包络桥接探针：精确批准参考 + SHANJUN_A_FINAL必要内容约束，但不加载完整项目、A/B、Capsule或Figma上下文。",
-  "status": "VPD_P3_PROBE1_PASS_PROBE2_PASS_MINIMAL_FORMAL_ENVELOPE_BRIDGE_NEXT",
-  "formal_p3_render_allowed": false,
-  "technical_probe_allowed": true,
-  "next_required_action": "RUN_P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
-  "probe_execution_boundary": {
-    "must_use_brand_new_standalone_chat": true,
+  "current_stage": "Probe 1、Probe 2与最小正式包络桥接探针均PASS。前两次正式失败现最合理地定位到完整项目handoff/上下文编排行为。正式P3最后一轮已改为每张一个全新standalone最小聊天的微型handoff架构；当前只执行第1张SHANJUN_A_FINAL，回传核验通过后才进入第2张。",
+  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_READY_SHANJUN_A_NEXT",
+  "formal_p3_render_allowed": true,
+  "formal_p3_render_scope": "MICRO_HANDOFF_ONLY_ONE_OUTPUT_PER_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "technical_probe_allowed": false,
+  "next_required_action": "RUN_FORMAL_P3_SHANJUN_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "formal_execution_boundary": {
+    "must_use_brand_new_standalone_chat_per_output": true,
     "must_not_bootstrap_full_project_before_image_call": true,
     "exact_reference_required": true,
     "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
@@ -75,28 +100,31 @@
     "n": 1,
     "exact_3_4_portrait_required": true,
     "same_chat_retry_on_failure": false,
-    "probe_pixels_are_formal_evidence": false
+    "stop_on_any_contract_violation": true,
+    "figma_entry_before_four_valid_outputs": false
   },
   "do_not_reopen": [
-    "formal P3 final-round rerun before bridge probe settles the isolated A-arm formal envelope",
-    "B or tofu final outputs while execution architecture remains unresolved",
-    "project/Capsule/Figma bootstrap inside bridge-probe chat",
-    "aesthetic inference from Probe 1, Probe 2 or bridge-probe pixels",
-    "candidate promotion, Golden or Scale"
+    "full-project formal render handoff in one chat",
+    "technical Probe 1, Probe 2 or bridge probe",
+    "run SHANJUN_B before SHANJUN_A formal output is validated",
+    "reuse probe pixels as formal samples",
+    "Figma final-round work before four formal raw outputs are valid",
+    "claim distillation-only independence from shared-reference P3",
+    "candidate promotion, Golden or Scale without formal evidence and human acceptance"
   ],
   "completed_this_revision": [
-    "读取用户回传Probe 2像素",
-    "核验实际尺寸1152x1536，为精确3:4竖版",
-    "核验SHA-256为dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
-    "核验主体为新鲜食用菌菇，无禁用对象、文字、Logo或拼版",
-    "将Probe 2判定为PASS；不计入正式P3样本、不作审美或Capsule推断",
-    "将参考图存在本身作为充分失败原因降级为不支持",
-    "冻结最小正式包络桥接探针handoff"
+    "读取并核验桥接探针像素",
+    "确认桥接探针1152x1536精确3:4、菌菇主体正确、无文字/Logo/拼版/火焰",
+    "确认桥接探针PASS且不计入正式P3样本",
+    "将完整项目handoff/上下文编排升级为前两次正式失败的主要嫌疑但不宣称供应侧根因已证明",
+    "冻结正式四张每张一独立最小聊天的micro-handoff架构",
+    "明确P3只测试共享参考条件下的蒸馏增量收益，不证明脱离母参考的独立蒸馏能力",
+    "若B有实质收益，后续必须追加no-reference B-only验证"
   ],
   "changes_authority": {
-    "probe2_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE2_RESULT_20260913.json","commit":"130619142a3e781079659753e7f9cfaac7ef551d"},
-    "bridge_handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt","commit":"6e01fc9ead53b83e20b74f14d987022d82d2b9e0"}
+    "bridge_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json","commit":"d47f1b08aea8f86f51bfcf210963db4bbbb92a9e"},
+    "formal_micro_handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt","commit":"92f2ac94644e74afa4ff9c8c549143df422dae95"}
   },
-  "updated_at": "2026-09-12T19:05:00+00:00",
+  "updated_at": "2026-09-12T21:50:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
