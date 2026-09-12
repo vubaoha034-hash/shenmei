@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 8,
+  "revision": 9,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,91 +10,66 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 7,
-    "git_blob_sha": "c252ebe2f1d39886940dfdac88fe6109f0732d0c",
-    "note": "Revision 7 preserves the two fresh-context technical-invalid STOPs and full prior state."
+    "revision": 8,
+    "git_blob_sha": "174e85b44831d726e4262a654f3e36bfd45adbb6",
+    "note": "Revision 8 contains the completed no-render binding diagnosis; revision 9 adds the isolated minimal probe handoff only."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
     "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
-    "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
-    "sha256": "54bbc4a1eccd5e76d17dcb13b889c501ed93a4457dbbc1f8dc157572967a0cd9",
     "maturity": "CONTROLLED_VALIDATION_REQUIRED",
     "promoted": false
   },
   "p3": {
-    "comparison_task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
-    "round1": {
-      "valid_raw_outputs": 4,
-      "figma_proxy_frames": 4,
-      "finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
-      "commercial_final_pixel_acceptance": false
-    },
-    "final_round": {
-      "last_default_round": true,
-      "valid_outputs": 0,
-      "technical_invalid_fresh_contexts": 2,
-      "first_stop": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
-      "second_stop": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1808.json",
-      "pipeline_block": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_RENDER_PIPELINE_BLOCK_AFTER_TWO_FRESH_STOPS_20260912.json",
-      "figma_entry_allowed": false
-    },
+    "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
+    "final_round_valid_outputs": 0,
+    "technical_invalid_fresh_contexts": 2,
     "binding_diagnosis": {
       "status": "COMPLETE",
       "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json",
-      "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
-      "ruled_out": [
-        "long-chat context as sole cause",
-        "B-arm fixed-position compilation as cause of the two A-arm failures",
-        "wrong canonical reference bytes",
-        "Figma/typography execution"
-      ],
-      "unproven_bindings": [
-        "effective subject instruction consumed by image model",
-        "hard size/aspect parameter sent to image generation",
-        "exact reference image conditioned into image generation"
-      ]
+      "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE"
+    },
+    "minimal_binding_probe": {
+      "status": "HANDOFF_PREPARED_NOT_RUN",
+      "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+      "max_calls": 2,
+      "formal_p3_budget_effect": "NONE",
+      "probe_1": "BASE_SUBJECT_ASPECT_NO_REFERENCE",
+      "probe_2": "ONLY_IF_PROBE_1_PASS_REFERENCE_BINDING",
+      "aesthetic_inference_allowed": false
     }
   },
-  "current_stage": "P3正式最后一轮仍为0/4；两个独立fresh context均在SHANJUN_A_FINAL技术失败。无出图绑定诊断已完成，下一步只允许最多2次、完全不计入P3样本的最小主体/画幅绑定技术探针，以区分基础图像调用绑定故障与参考条件绑定故障。",
-  "status": "VPD_P3_BINDING_DIAGNOSIS_COMPLETE_MINIMAL_TECHNICAL_PROBE_NEXT",
-  "render_allowed": false,
+  "current_stage": "P3正式出图保持冻结。绑定诊断和最小技术探针handoff均已完成。下一步只运行Probe 1：全新独立最小聊天、无参考图、唯一主体为时令野生菌菇、显式1086x1448、n=1。Probe 1失败即停止；通过后才允许在另一个全新最小聊天运行Probe 2。",
+  "status": "VPD_P3_MINIMAL_BINDING_PROBE_HANDOFF_READY_PROBE1_NEXT",
   "formal_p3_render_allowed": false,
-  "technical_probe_authorization_required": true,
-  "next_required_action": "PREPARE_AND_RUN_P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_AS_TECHNICAL_DIAGNOSTIC_ONLY",
-  "technical_probe": {
-    "classification": "NOT_P3_SAMPLE",
-    "max_calls": 2,
-    "probe_1": "NO_REFERENCE_MINIMAL_MUSHROOM_SUBJECT_PLUS_EXPLICIT_3X4_SIZE",
-    "probe_2": "ONLY_IF_PROBE_1_PASS_ADD_EXACT_APPROVED_REFERENCE_WITH_SAME_MINIMAL_SUBJECT_AND_SIZE",
-    "formal_budget_effect": "NONE",
-    "capsule_inference_allowed": false,
-    "figma_entry_allowed": false
+  "technical_probe_allowed": true,
+  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_1_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "probe_execution_boundary": {
+    "must_be_brand_new_standalone_minimal_chat": true,
+    "must_not_bootstrap_full_project_before_image_call": true,
+    "probe_1_reference": "NONE",
+    "probe_1_size": "1086x1448",
+    "probe_1_n": 1,
+    "probe_pixels_are_formal_evidence": false,
+    "same_chat_retry_on_failure": false
   },
   "do_not_reopen": [
-    "Approved-reference redistillation",
-    "Repeat Attempt2 evidence search without new evidence",
-    "Another formal/fresh P3 rerun before the technical binding probe resolves the execution boundary",
-    "SHANJUN_B or DOUFANG final-round outputs while SHANJUN_A binding is unresolved",
-    "Figma entry for final round before four valid raw outputs are identity-checked",
-    "Aesthetic inference from technical-invalid outputs or technical probes",
-    "Candidate promotion, Golden or Scale without formal evidence and human acceptance"
+    "formal P3 final-round rerun before minimal probe settles binding",
+    "B or tofu final outputs while SHANJUN_A binding is unresolved",
+    "project/Capsule/Figma bootstrap inside Probe 1 image-generation chat",
+    "aesthetic inference from technical probe pixels",
+    "candidate promotion, Golden or Scale"
   ],
   "completed_this_revision": [
-    "分析两次独立fresh STOP并完成无出图绑定诊断",
-    "确认两个失败均发生在A路第1张，排除B路固定位置规则作为这两次失败的直接原因",
-    "确认参考文件SHA正确只能证明取到正确字节，不能证明provider实际参考绑定",
-    "确认现有STOP回执没有记录effective prompt、hard size参数或provider-side reference binding",
-    "设计最多2次的最小技术探针，不计入P3样本且不得用于审美推断"
+    "冻结最小主体/画幅绑定技术探针协议",
+    "固定Probe 1为无参考、单主体、单张、显式1086x1448，不计入P3样本",
+    "固定Probe 2只在Probe 1通过后执行，且必须使用另一个全新最小聊天",
+    "禁止在探针聊天中先加载完整项目上下文"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json",
-    "commit": "ac692e63ae9f18fd0504a8c51ba2097ccafe7865"
+    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+    "commit": "56d90fcc6ebf66585fab5f4fd2fa46e8c8b653b2"
   },
-  "updated_at": "2026-09-12T10:40:00+00:00",
-  "workflow": {
-    "version": "1.1",
-    "focus_stage": "P3",
-    "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"
-  }
+  "updated_at": "2026-09-12T10:48:00+00:00",
+  "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
