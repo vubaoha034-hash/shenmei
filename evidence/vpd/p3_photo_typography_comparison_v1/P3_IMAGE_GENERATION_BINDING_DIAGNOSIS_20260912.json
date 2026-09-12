@@ -1,0 +1,84 @@
+{
+  "schema_version": "vpd-p3-image-generation-binding-diagnosis/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T10:40:00+00:00",
+  "input_remote_head": "d3b6627fcbd6654c934a3c9e5890eb4114116ed0",
+  "diagnosis_scope": "NO_RENDER_TECHNICAL_DIAGNOSIS_ONLY",
+  "observed_failures": [
+    {
+      "context": 1,
+      "requested": "SHANJUN_A_FINAL / seasonal wild mushroom ingredient-material field / 3:4 / one PHOTO_ONLY image",
+      "actual_classification": "TECHNICAL_INVALID_WRONG_SUBJECT",
+      "actual_dimensions": [1086, 1448],
+      "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json"
+    },
+    {
+      "context": 2,
+      "requested": "SHANJUN_A_FINAL / seasonal wild mushroom ingredient-material field / 3:4 / one PHOTO_ONLY image",
+      "actual_classification": "TECHNICAL_INVALID_WRONG_SUBJECT_AND_ASPECT_RATIO",
+      "actual_dimensions": [1536, 1024],
+      "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1808.json"
+    }
+  ],
+  "facts_established": [
+    "Both failures occurred on the first A-arm output before any B-arm Capsule instruction could be executed.",
+    "The canonical Drive reference bytes were verified against SHA-256 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414 in both fresh executions.",
+    "Both executions stopped immediately with zero valid final-round outputs and no silent retry.",
+    "The second failure proves that prose-level 3:4 intent was not sufficient to guarantee the returned geometry in that execution.",
+    "Repeated opening of a fresh chat did not resolve the failure mode."
+  ],
+  "ruled_out_as_primary_causes": [
+    "Long-chat history contamination as the sole cause, because two independent fresh contexts still failed on call 1.",
+    "B-arm fixed-position compilation as the cause of these two failures, because both failures occurred in SHANJUN_A_FINAL before B execution.",
+    "Wrong canonical reference bytes, because the approved reference SHA-256 verified correctly.",
+    "Figma or typography execution, because neither fresh failure reached Figma and final typography was not involved."
+  ],
+  "runtime_interface_observations": {
+    "source": "current ChatGPT image-generation tool contract visible to this execution context; not a repository artifact",
+    "prompt_binding": "The image tool's explicit prompt argument is deprecated; generation instructions are inferred from conversation context rather than guaranteed to be an exact repository payload string.",
+    "size_control": "The image tool exposes a separate size field, but the two saved STOP receipts do not record whether an explicit hard size value was supplied to the image call. Therefore hard aspect binding in those attempts is UNKNOWN.",
+    "reference_binding": "Drive byte verification proves the correct file was fetched, but the existing STOP receipts do not contain a machine-readable receipt proving that the exact reference image was actually conditioned into the image-generation call. Provider-side visual-reference binding is therefore NOT PROVEN by SHA verification alone."
+  },
+  "primary_diagnosis": {
+    "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
+    "statement": "The formal P3 final round is blocked at the ChatGPT image-generation execution boundary. The repository can verify requested subject, aspect, and reference bytes, but it currently lacks provider-side receipts for effective subject instruction binding, explicit geometry binding, and reference-conditioning binding. The two fresh-context failures therefore cannot be attributed to Capsule quality.",
+    "confidence": "HIGH_FOR_EXECUTION_BLOCK / NOT_ENOUGH_EVIDENCE_TO_NAME_ONE_PROVIDER_ROOT_CAUSE"
+  },
+  "missing_receipts": [
+    "effective image-generation instruction actually consumed by the image model",
+    "actual size/aspect parameter sent to the image-generation call",
+    "actual reference-image identity bound into the generation call",
+    "provider-side controller payload or equivalent binding receipt"
+  ],
+  "next_diagnostic_design": {
+    "name": "P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE",
+    "classification": "TECHNICAL_DIAGNOSTIC_NOT_P3_SAMPLE",
+    "maximum_calls": 2,
+    "formal_p3_budget_effect": "NONE",
+    "probe_1": {
+      "purpose": "test subject + aspect binding without reference-conditioning complexity",
+      "reference": "NONE",
+      "instruction_context": "single short request only: one realistic seasonal-wild-mushroom ingredient photograph; no poster, no text, no tofu, no vase, no flowers; 3:4 portrait",
+      "geometry": "use an explicit image-tool size value corresponding to 3:4 rather than prose-only aspect intent",
+      "pass": "one standalone portrait image, correct mushroom subject, no text/collage",
+      "fail_action": "STOP_DIAGNOSIS_AND_CLASSIFY_BASE_IMAGE_CALL_BINDING_BROKEN"
+    },
+    "probe_2": {
+      "precondition": "probe_1 PASS only",
+      "purpose": "test whether adding the exact approved reference breaks subject/reference binding",
+      "reference": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg exact verified bytes",
+      "instruction_context": "same minimal mushroom request as probe_1; reference used only for editorial ambition, not as edit target",
+      "geometry": "same explicit 3:4 image-tool size value as probe_1",
+      "pass": "one standalone portrait mushroom image; reference does not replace subject",
+      "fail_action": "STOP_DIAGNOSIS_AND_CLASSIFY_REFERENCE_CONDITIONING_OR_ORCHESTRATION_BINDING_FAILURE"
+    },
+    "prohibitions": [
+      "Do not read the full P3 A/B handoff into the image-generation context before probe_1.",
+      "Do not call B or tofu outputs during diagnosis.",
+      "Do not count either probe as aesthetic evidence or as one of the four final-round samples.",
+      "Do not infer Capsule success/failure from either diagnostic probe."
+    ]
+  },
+  "diagnosis_status": "COMPLETE",
+  "next_required_action": "PREPARE_AND_RUN_P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_AS_TECHNICAL_DIAGNOSTIC_ONLY"
+}
