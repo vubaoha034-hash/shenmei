@@ -1,83 +1,75 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 30,
-  "recorded_at": "2026-09-12T10:40:00+00:00",
+  "sequence": 31,
+  "recorded_at": "2026-09-12T10:48:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P3最后默认轮正式出图仍为0/4。两个独立fresh context均在SHANJUN_A_FINAL技术失败。主体/画幅/参考绑定诊断已完成：现有证据只能证明请求内容和参考字节正确，不能证明image generation实际消费的主体指令、硬size参数和参考条件绑定。下一步转为最多2次、完全不计入P3样本的最小技术绑定探针。",
+  "current_focus": "P3正式最后一轮仍冻结为0/4。无出图绑定诊断已完成，最小技术探针handoff已冻结。下一步只运行Probe 1：在全新standalone最小聊天中，不加载项目/Capsule/Figma上下文，不带参考图，只测试时令野生菌菇主体 + 显式1086x1448 3:4画幅 + n=1。",
   "completed": [
-    "p3_round1_four_raw_outputs",
-    "p3_round1_equal_budget_figma_proxy_layout_review",
-    "p3_final_round_simplification_freeze",
-    "p3_final_round_two_fresh_context_stop_records",
-    "p3_render_pipeline_block_after_two_fresh_stops",
-    "p3_image_generation_binding_diagnosis"
+    "p3_round1_limited_evidence",
+    "p3_two_fresh_context_technical_stops",
+    "p3_render_pipeline_block",
+    "p3_image_generation_binding_diagnosis",
+    "p3_minimal_binding_probe_handoff_prepared"
   ],
   "incomplete": [
-    "p3_minimal_subject_aspect_binding_probe",
+    "p3_minimal_binding_probe_1",
+    "p3_minimal_binding_probe_2_if_probe1_pass",
     "p3_final_round_four_valid_photo_only_outputs",
     "p3_final_round_equal_budget_figma_design",
     "p3_final_round_integrated_comparison",
-    "independent_pixel_reviews",
     "human_set_verdict",
     "candidate_promotion",
     "golden",
     "scale"
   ],
   "blocked": [
-    "Formal P3 image generation remains disabled until the technical binding probe determines whether base subject/aspect binding works.",
-    "Technical-invalid outputs and diagnostic probes cannot be used for Capsule aesthetic inference.",
-    "Final-round Figma remains prohibited until four valid final-round raw outputs exist."
+    "formal P3 render remains blocked until Probe 1/2 resolves subject/aspect/reference binding",
+    "Probe 1 must not inherit project/A-B/Figma context before the image call",
+    "technical probe pixels are prohibited from aesthetic or Capsule inference"
   ],
-  "diagnosis": {
-    "status": "COMPLETE",
-    "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json",
-    "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
-    "key_points": [
-      "two A-arm failures occurred before B-arm execution",
-      "canonical reference SHA verified",
-      "fresh chat alone did not solve the failure",
-      "provider-side effective subject instruction binding is unproven",
-      "provider-side hard size/aspect binding is unproven",
-      "provider-side visual-reference conditioning binding is unproven"
-    ]
-  },
-  "next_required_action": "PREPARE_AND_RUN_P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_AS_TECHNICAL_DIAGNOSTIC_ONLY",
+  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_1_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "technical_probe": {
-    "max_calls": 2,
+    "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+    "probe_1": {
+      "reference": "NONE",
+      "subject": "seasonal edible wild mushrooms only",
+      "size": "1086x1448",
+      "n": 1,
+      "same_chat_retry_on_failure": false
+    },
+    "probe_2": {
+      "allowed_only_if_probe_1_pass": true,
+      "must_use_another_brand_new_standalone_chat": true,
+      "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+      "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "size": "1086x1448",
+      "n": 1
+    },
     "formal_p3_budget_effect": "NONE",
-    "probe_1": "NO_REFERENCE_MINIMAL_MUSHROOM_SUBJECT_PLUS_EXPLICIT_3X4_SIZE",
-    "probe_2": "ONLY_IF_PROBE_1_PASS_ADD_EXACT_APPROVED_REFERENCE_WITH_SAME_MINIMAL_SUBJECT_AND_SIZE",
-    "aesthetic_inference_allowed": false,
-    "figma_entry_allowed": false
+    "aesthetic_inference_allowed": false
   },
-  "do_not_reopen": [
-    "another formal P3 rerun before binding probe",
-    "B or tofu final-round outputs before SHANJUN_A binding is resolved",
-    "aesthetic inference from invalid outputs or technical probes",
-    "candidate promotion, Golden or Scale"
-  ],
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"174e85b44831d726e4262a654f3e36bfd45adbb6","revision":8},
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"0d4e5c35146fae1b4fc25c6af7b2900de1cd93e0","revision":9},
     {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json","commit":"ac692e63ae9f18fd0504a8c51ba2097ccafe7865"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_RENDER_PIPELINE_BLOCK_AFTER_TWO_FRESH_STOPS_20260912.json","commit":"9af86620ae5361484873072d74bc996b38176806"}
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt","commit":"56d90fcc6ebf66585fab5f4fd2fa46e8c8b653b2"}
   ],
-  "status": "VPD_P3_BINDING_DIAGNOSIS_COMPLETE_MINIMAL_TECHNICAL_PROBE_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"174e85b44831d726e4262a654f3e36bfd45adbb6"},
+  "status": "VPD_P3_MINIMAL_BINDING_PROBE_HANDOFF_READY_PROBE1_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"0d4e5c35146fae1b4fc25c6af7b2900de1cd93e0"},
   "requirements": {
-    "p3_final_round": {"status":"FORMAL_RENDER_BLOCKED","valid_outputs":0},
     "binding_diagnosis": {"status":"DONE"},
-    "minimal_binding_probe": {"status":"NEXT"}
+    "probe_handoff": {"status":"DONE"},
+    "probe_1": {"status":"NEXT"},
+    "formal_p3_final_round": {"status":"BLOCKED","valid_outputs":0}
   },
   "execution": {
     "p3_round1_valid_raw_outputs": 4,
     "p3_final_round_valid_outputs": 0,
     "p3_final_round_invalid_fresh_contexts": 2,
-    "independent_review": "NOT_RUN",
-    "human_acceptance": "NOT_ACCEPTED",
+    "technical_probe_calls_used": 0,
     "capsule_verdict": "NOT_ESTABLISHED"
   },
   "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
