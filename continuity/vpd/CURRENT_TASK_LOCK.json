@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 6,
+  "revision": 7,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "maintenance_task_id": "VPD-TASK-LOCK-REPAIR-20260907-001",
@@ -15,24 +15,19 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 5,
-    "commit": "4858195a6574a26b4c85ede3b772c7c92f872c17",
-    "git_blob_sha": "4587c1345fde09cd82806b1a74f8760b9f65c0b7",
-    "note": "Full prior lock remains durable in Git history; revision 6 normalizes current dispatch state without deleting historical evidence."
+    "revision": 6,
+    "commit": "f1012965d77c01dc865f3a066fee2a05e4573306",
+    "git_blob_sha": "ec122815b4ebd88eb1bfc64e7c140efa898bb627",
+    "note": "Revision 6 and all earlier detailed state remain durable in Git history; revision 7 records the second independent fresh-context STOP and changes dispatch from repeated rendering to execution-binding diagnosis."
   },
   "source_library": {
     "folder_id": "1v6olA2FccZnkWEHxW0OFug9K0qWU5OM4",
     "registered_entries_count": 18,
-    "locator_receipt": {
-      "path": "evidence/vpd/task_lock_repair_v1/SOURCE_LOCATOR_READBACK.json",
-      "sha256": "7b2da93cef6e0147c7424da8933f6a908f4cecffe378a711c962da405b9ef048"
-    },
     "canonical_reference": {
       "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
       "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
       "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
-    },
-    "coverage": "18 folder entries plus separately approved Shanyeji canonical; full entry list preserved in prior revision."
+    }
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -43,136 +38,117 @@
     "promoted": false
   },
   "requirements": {
-    "runtime_authorization": {"status": "DONE"},
-    "payload_freeze": {"status": "DONE"},
-    "external_execution_reconciliation": {
-      "status": "DONE",
-      "outcome": "CLOSED_PARTIAL_EVIDENCE",
-      "evidence": {"path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json", "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"}
-    },
-    "p3_photo_typography_preparation": {"status": "DONE", "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_COMPARISON_REGISTRATION.json"},
+    "external_execution_reconciliation": {"status": "DONE", "outcome": "CLOSED_PARTIAL_EVIDENCE"},
+    "p3_photo_typography_preparation": {"status": "DONE"},
     "p3_round1_raw_and_figma_proxy_review": {
       "status": "DONE_LIMITED_EVIDENCE",
-      "evidence": {"path": "evidence/vpd/p3_photo_typography_comparison_v1/FIGMA_PROXY_INTEGRATED_REVIEW_20260912.json", "commit": "d636eefcfb792eb178a163192535b349a42c6b4e"},
       "raw_outputs_valid": 4,
       "figma_proxy_frames": 4,
       "finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
-      "commercial_final_pixel_acceptance": false
+      "commercial_final_pixel_acceptance": false,
+      "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/FIGMA_PROXY_INTEGRATED_REVIEW_20260912.json"
     },
     "p3_final_round_simplification": {
       "status": "FROZEN",
-      "evidence": {"path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_SIMPLIFICATION_PLAN_20260912.json", "git_blob_sha": "916d0eac8d3f9d5b678b6ba9843ddddcfb137c18"},
       "change_class": "SIMPLIFICATION_BY_DELETION_ONLY",
-      "new_rules_added": false,
-      "last_default_p3_round": true
+      "last_default_p3_round": true,
+      "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_SIMPLIFICATION_PLAN_20260912.json"
     },
-    "p3_final_round_fresh_execution": {
-      "status": "STOPPED_TECHNICAL_INVALID_WRONG_SUBJECT",
+    "p3_final_round_render_execution": {
+      "status": "BLOCKED_AFTER_TWO_INDEPENDENT_FRESH_CONTEXT_TECHNICAL_INVALID_STOPS",
       "valid_outputs": 0,
+      "technical_invalid_fresh_contexts": 2,
       "figma_entry_allowed": false,
-      "evidence": {
-        "handoff_path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_HANDOFF_20260912.txt",
-        "stop_path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
-        "stop_git_blob_sha": "01058a28e265caeddf8cd91947e179c0e72846db",
-        "stop_commit": "4858195a6574a26b4c85ede3b772c7c92f872c17"
-      },
-      "invalid_call": {
-        "requested_output": "SHANJUN_A_FINAL",
+      "first_stop": {
+        "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
+        "commit": "4858195a6574a26b4c85ede3b772c7c92f872c17",
         "classification": "TECHNICAL_INVALID_WRONG_SUBJECT",
         "dimensions": [1086, 1448],
         "sha256": "7f988e70c3976348c3e03672f58865dc16b2937f83d14b77fe5d6bfc3e43b605"
       },
-      "silent_retry_performed": false,
-      "additional_calls_performed": 0,
-      "retry_in_same_chat": false
+      "second_stop": {
+        "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1808.json",
+        "commit": "8f7ad0561e72356af146db711848bd63fedcba33",
+        "classification": "TECHNICAL_INVALID_WRONG_SUBJECT_AND_ASPECT_RATIO",
+        "dimensions": [1536, 1024],
+        "sha256": "46dbfa6d96e3f6b79601cd0fc971f2097554305897021429f6e234c59185d420"
+      },
+      "combined_evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_RENDER_PIPELINE_BLOCK_AFTER_TWO_FRESH_STOPS_20260912.json",
+      "aesthetic_or_capsule_inference": "PROHIBITED_FROM_TECHNICAL_INVALID_OUTPUTS"
     }
   },
   "execution": {
-    "historical_formal_set_disposition": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
-    "p3_comparison_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
     "p3_round1_valid_raw_outputs": 4,
     "p3_round1_figma_proxy_frames": 4,
     "p3_round1_original_pixels_bound_to_figma": false,
     "p3_round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
     "p3_final_round_valid_outputs": 0,
-    "p3_final_round_invalid_calls": 1,
-    "p3_final_round_stop_reason": "TECHNICAL_INVALID_WRONG_SUBJECT",
-    "p3_final_round_retry_in_current_chat": false,
+    "p3_final_round_invalid_fresh_contexts": 2,
+    "p3_final_round_first_requested_output": "SHANJUN_A_FINAL",
+    "p3_final_round_first_output_succeeded_in_any_fresh_context": false,
     "independent_review": "NOT_RUN",
     "human_acceptance": "NOT_ACCEPTED",
     "capsule_verdict": "NOT_ESTABLISHED"
   },
-  "current_stage": "P3最后默认轮 fresh isolated execution 在第1张 SHANJUN_A_FINAL 因 wrong subject 触发 STOP；有效最终轮输出0/4；本聊天禁止重试，需新的 fresh isolated context 从冻结 handoff 重新进入",
-  "status": "VPD_P3_FINAL_ROUND_STOP_WRONG_SUBJECT_FRESH_CONTEXT_REQUIRED",
+  "current_stage": "P3最后默认轮在两个相互独立的 fresh isolated context 中均于第1张 SHANJUN_A_FINAL 触发技术 STOP；第二次同时出现 wrong subject 与 wrong aspect ratio。批准参考身份两次均校验通过，最终轮有效输出仍为0/4。重复开启同样 fresh chat 已不再是合理下一步，先诊断 ChatGPT 图像生成的主体/画幅绑定链路。",
+  "status": "VPD_P3_FINAL_ROUND_RENDER_PIPELINE_BLOCKED_AFTER_TWO_FRESH_TECHNICAL_INVALID_STOPS",
   "render_allowed": false,
-  "render_scope": "CURRENT_CHAT_STOPPED_BY_P3_FINAL_ROUND_HANDOFF; NEW_FRESH_ISOLATED_CONTEXT_ONLY",
-  "next_required_action": "START_NEW_FRESH_ISOLATED_CONTEXT_AND_REENTER_FROM_FROZEN_HANDOFF",
+  "render_scope": "NO_FURTHER_P3_IMAGE_CALL_UNTIL_EXECUTION_BINDING_DIAGNOSIS_COMPLETES",
+  "next_required_action": "DIAGNOSE_P3_CHATGPT_IMAGE_GENERATION_SUBJECT_AND_ASPECT_BINDING_BEFORE_ANY_FURTHER_RENDER",
   "blockers": [
-    "当前 fresh isolated chat 的第1次 SHANJUN_A_FINAL 调用返回错误主体，STOP RULE 已触发；本聊天不得重试或继续第2–4张",
-    "最后默认P3轮当前有效输出为0/4，因此不得进入该轮Figma，也不得做最终P3收益结论",
-    "上一轮Figma仅完成72x96代理图布局审查，原始1086x1448像素绑定仍受传输通道阻塞；不得据此声称最终商业像素通过",
-    "候选的稳定迁移与用户接受尚未证实"
+    "两个独立 fresh isolated context 均在 SHANJUN_A_FINAL 第1次调用失败；fresh context 本身未解决执行问题",
+    "第二次返回1536x1024横版且主体为花瓶花枝，同时违反主体与3:4合同",
+    "最终默认P3轮有效输出0/4，不得进入该轮Figma或形成最终P3审美收益结论",
+    "技术无效输出不得用于推断 Capsule 成败",
+    "上一轮Figma仍仅为代理图布局证据，不能替代最终像素验收"
+  ],
+  "do_not_reopen": [
+    "Approved-reference redistillation",
+    "Repeat Attempt2 evidence search without new evidence",
+    "Open another fresh chat and rerun the same frozen handoff before execution-binding diagnosis",
+    "Run SHANJUN_B or DOUFANG final-round outputs while SHANJUN_A binding is unresolved",
+    "Figma entry for final round before four valid raw outputs are identity-checked",
+    "Aesthetic inference from either technical-invalid fresh output",
+    "Candidate promotion, Golden or Scale without formal evidence and human acceptance"
   ],
   "completed_this_revision": [
-    "保留上一轮4张有效3:4 PHOTO_ONLY原始输出及同预算Figma代理布局审查证据；未将其升级为商业通过",
-    "冻结最后默认P3轮：仅删除B路固定/半固定位置约束，不新增规则",
-    "建立并冻结 fresh isolated execution handoff",
-    "fresh isolated execution 第1张 SHANJUN_A_FINAL 返回室内花瓶/杯子/书本静物，分类 TECHNICAL_INVALID_WRONG_SUBJECT",
-    "按 handoff STOP RULE 立即停止：无 silent retry、未执行第2–4张、有效最终轮输出0/4",
-    "STOP证据已保存并在远端提交 4858195a6574a26b4c85ede3b772c7c92f872c17 回读"
+    "回读第二个 fresh execution STOP：SHANJUN_A_FINAL 实际为花瓶花枝静物、1536x1024横版",
+    "确认第二次批准参考 SHA-256 仍与冻结值一致",
+    "确认第二个 fresh execution 无重试、未执行第2–4张、有效输出0/4",
+    "将两次独立 fresh STOP 合并为渲染执行链路技术阻塞证据",
+    "停止把再次打开 fresh chat 作为无条件下一动作"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
-    "git_blob_sha": "01058a28e265caeddf8cd91947e179c0e72846db",
-    "commit": "4858195a6574a26b4c85ede3b772c7c92f872c17"
+    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_RENDER_PIPELINE_BLOCK_AFTER_TWO_FRESH_STOPS_20260912.json",
+    "commit": "9af86620ae5361484873072d74bc996b38176806"
   },
-  "immutable_baseline": {"path": "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json", "sha256": "f6b58770cd309aba8f510aa2f7fc78521647d442929bc086f4da4a22ca2a092c"},
-  "evidence_limits": {
-    "local_guard_controls_provider": false,
-    "readback_claim_requires_external_evidence": true,
-    "binding_self_assertion_sufficient": false,
-    "feedback_changes_source_role": false,
-    "current_chat_is_fresh_blind_evaluator": false
-  },
-  "updated_at": "2026-09-12T09:14:00+00:00",
-  "workflow_task_id": "VPD-PROJECT-ROADMAP-20260910-001",
+  "updated_at": "2026-09-12T10:24:00+00:00",
   "workflow": {
     "version": "1.1",
     "document": {"path": "VPD_PROJECT_ROADMAP.md", "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"},
     "focus_stage": "P3",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "stages": [
-      {"id": "P0", "title": "目标、进度与完整流程", "status": "DONE"},
-      {"id": "P1", "title": "首家族候选与图文联合方案", "status": "JOINT_INPUTS_PREPARED_NOT_ACCEPTED"},
-      {"id": "P2", "title": "旧出图证据对账", "status": "DONE_PARTIAL_EVIDENCE", "outcome": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT"},
-      {"id": "P3", "title": "直接参考与蒸馏的实际收益比较", "status": "FINAL_ROUND_STOPPED_TECHNICAL_INVALID_FRESH_CONTEXT_REQUIRED", "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN", "final_round_valid_outputs": 0, "next_action": "START_NEW_FRESH_ISOLATED_CONTEXT_AND_REENTER_FROM_FROZEN_HANDOFF"},
-      {"id": "P4", "title": "首个家族完整迁移及人工验收", "status": "PENDING_VALID_OUTPUTS"},
-      {"id": "P5", "title": "第二未见风格，同一蒸馏器", "status": "DEFERRED_UNTIL_FIRST_FAMILY_ACCEPTED"},
-      {"id": "P6", "title": "字形落实、Figma整图设计与真实导出", "status": "CONDITIONAL_PENDING_FINAL_ROUND_VALID_RAW_OUTPUTS"},
-      {"id": "P7", "title": "封版、按政策晋升与可重复交付", "status": "DEFERRED_UNTIL_VALIDATED"}
-    ],
-    "work_limits": {
-      "new_comparison_default_initial_images": 4,
-      "new_comparison_default_rounds_max": 2,
-      "final_round_is_last_default_p3_round": true,
-      "retry_after_stop_requires_new_fresh_context": true
-    },
-    "typography_resources": {
-      "component_grammar": {"path": "evidence/vpd/shanyeji/full_image_distillation_v1/TYPOGRAPHY_COMPONENT_GRAMMAR_V1.json", "sha256": "82e0be52548c3ddd494d7346647814efd178c8da429439262050b8739ce7e2d5"},
-      "font_identity": "Noto Sans SC Black / Medium and Inter Medium verified in P3 Figma file",
-      "p3_figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
-      "round1_design_scope": "PROXY_LAYOUT_ONLY_NOT_FINAL_PIXEL_ACCEPTANCE"
-    }
+      {"id": "P0", "status": "DONE"},
+      {"id": "P1", "status": "JOINT_INPUTS_PREPARED_NOT_ACCEPTED"},
+      {"id": "P2", "status": "DONE_PARTIAL_EVIDENCE"},
+      {"id": "P3", "status": "FINAL_ROUND_RENDER_PIPELINE_BLOCKED_TECHNICAL_DIAGNOSIS_REQUIRED", "final_round_valid_outputs": 0},
+      {"id": "P4", "status": "PENDING_VALID_OUTPUTS"},
+      {"id": "P5", "status": "DEFERRED_UNTIL_FIRST_FAMILY_ACCEPTED"},
+      {"id": "P6", "status": "CONDITIONAL_PENDING_FINAL_ROUND_VALID_RAW_OUTPUTS"},
+      {"id": "P7", "status": "DEFERRED_UNTIL_VALIDATED"}
+    ]
   },
   "p3_comparison_task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
   "p3_comparison": {
-    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_COMPARISON_REGISTRATION.json",
-    "git_blob_sha": "ec978a2f08e71dc602a2a91875040211ad978045",
-    "status": "FINAL_ROUND_STOPPED_WRONG_SUBJECT_FRESH_CONTEXT_REQUIRED",
+    "status": "FINAL_ROUND_RENDER_PIPELINE_BLOCKED_AFTER_TWO_FRESH_TECHNICAL_INVALID_STOPS",
     "round1_raw_outputs": 4,
     "round1_figma_proxy_layout_review": "DONE_LIMITED_EVIDENCE",
     "final_round_valid_outputs": 0,
+    "final_round_invalid_fresh_contexts": 2,
     "fresh_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_HANDOFF_20260912.txt",
-    "stop_evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json"
+    "first_stop": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1608.json",
+    "second_stop": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_STOP_20260912_1808.json",
+    "pipeline_block": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_RENDER_PIPELINE_BLOCK_AFTER_TWO_FRESH_STOPS_20260912.json"
   }
 }
