@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 10,
+  "revision": 11,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 9,
-    "git_blob_sha": "0d4e5c35146fae1b4fc25c6af7b2900de1cd93e0",
-    "note": "Revision 9 preserves the no-render diagnosis and minimal-probe handoff; revision 10 records Probe 1 PASS only."
+    "revision": 10,
+    "git_blob_sha": "77fc23f2fe511b2f4602bd5e9ad25f639edeb62b",
+    "note": "Revision 10 preserves Probe 1 PASS and all prior P3 state; revision 11 records Probe 2 PASS and prepares one final technical bridge probe."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -30,58 +30,73 @@
       "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json"
     },
     "minimal_binding_probe": {
-      "status": "PROBE1_PASS_PROBE2_NEXT",
-      "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+      "status": "PROBE1_PASS_PROBE2_PASS_BRIDGE_PROBE_NEXT",
+      "probe_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
       "probe1_result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json",
       "probe1_verdict": "PASS",
-      "probe1_actual_dimensions": [1152, 1536],
-      "probe1_actual_aspect_ratio": "3:4",
-      "probe1_actual_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
-      "probe1_subject_binding": "PASS_MUSHROOMS",
-      "probe1_reference": "NONE",
-      "probe1_counts_as_formal_p3_sample": false,
-      "probe2_allowed": true,
-      "probe2_must_use_another_brand_new_standalone_chat": true,
-      "probe2_reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
-      "probe2_reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "probe1_dimensions": [1152,1536],
+      "probe1_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
+      "probe2_result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE2_RESULT_20260913.json",
+      "probe2_verdict": "PASS",
+      "probe2_dimensions": [1152,1536],
+      "probe2_sha256": "dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
+      "probe2_subject_binding": "PASS_MUSHROOMS",
+      "probe2_reference_present_path": "PASS_NO_VISIBLE_SUBJECT_OR_ASPECT_CORRUPTION",
+      "provider_reference_semantic_consumption_receipt": "UNAVAILABLE",
+      "formal_p3_budget_effect": "NONE",
       "aesthetic_inference_allowed": false
+    },
+    "bridge_probe": {
+      "status": "HANDOFF_PREPARED_NOT_RUN",
+      "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt",
+      "purpose": "Test isolated SHANJUN_A_FINAL direct-reference content envelope without full project/A-B/Capsule/Figma bootstrap",
+      "max_calls": 1,
+      "counts_as_formal_p3_sample": false,
+      "aesthetic_inference_allowed": false
+    },
+    "causal_status": {
+      "base_subject_aspect_binding": "PASS",
+      "minimal_reference_present_path": "PASS",
+      "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
+      "full_project_handoff_orchestration_as_primary_suspect": "ELEVATED_NOT_PROVEN"
     }
   },
-  "current_stage": "最小绑定Probe 1已通过：无参考情况下，主体正确绑定为食用菌菇，返回单张1152x1536精确3:4竖图。正式P3仍冻结；下一步只允许在另一个全新standalone最小聊天执行Probe 2，测试加入批准参考后是否破坏主体/画幅绑定。",
-  "status": "VPD_P3_MINIMAL_BINDING_PROBE1_PASS_PROBE2_NEXT",
+  "current_stage": "Probe 1与Probe 2均已通过：无参考和最小参考路径都能稳定生成正确菌菇主体与精确3:4竖图。正式P3仍冻结。下一步只运行一次最小正式包络桥接探针：精确批准参考 + SHANJUN_A_FINAL必要内容约束，但不加载完整项目、A/B、Capsule或Figma上下文。",
+  "status": "VPD_P3_PROBE1_PASS_PROBE2_PASS_MINIMAL_FORMAL_ENVELOPE_BRIDGE_NEXT",
   "formal_p3_render_allowed": false,
   "technical_probe_allowed": true,
-  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_2_IN_ANOTHER_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "next_required_action": "RUN_P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "probe_execution_boundary": {
-    "probe2_requires_new_standalone_chat": true,
+    "must_use_brand_new_standalone_chat": true,
     "must_not_bootstrap_full_project_before_image_call": true,
-    "probe2_exact_reference_required": true,
-    "probe2_reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
-    "probe2_reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
-    "probe2_size": "3:4 portrait; explicit 1086x1448 preferred",
-    "probe2_n": 1,
-    "probe_pixels_are_formal_evidence": false,
-    "same_chat_retry_on_failure": false
+    "exact_reference_required": true,
+    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "n": 1,
+    "exact_3_4_portrait_required": true,
+    "same_chat_retry_on_failure": false,
+    "probe_pixels_are_formal_evidence": false
   },
   "do_not_reopen": [
-    "formal P3 final-round rerun before Probe 2 settles reference conditioning",
-    "B or tofu final outputs while reference binding remains unresolved",
-    "project/Capsule/Figma bootstrap inside Probe 2 image-generation chat",
-    "aesthetic inference from Probe 1 pixels",
+    "formal P3 final-round rerun before bridge probe settles the isolated A-arm formal envelope",
+    "B or tofu final outputs while execution architecture remains unresolved",
+    "project/Capsule/Figma bootstrap inside bridge-probe chat",
+    "aesthetic inference from Probe 1, Probe 2 or bridge-probe pixels",
     "candidate promotion, Golden or Scale"
   ],
   "completed_this_revision": [
-    "读取用户回传Probe 1像素",
+    "读取用户回传Probe 2像素",
     "核验实际尺寸1152x1536，为精确3:4竖版",
-    "核验SHA-256为2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
-    "核验主体为新鲜食用菌菇，无文字、Logo、拼版或禁用对象",
-    "将Probe 1判定为PASS；不计入正式P3样本、不作审美或Capsule推断",
-    "解锁Probe 2技术诊断，不解锁正式P3"
+    "核验SHA-256为dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
+    "核验主体为新鲜食用菌菇，无禁用对象、文字、Logo或拼版",
+    "将Probe 2判定为PASS；不计入正式P3样本、不作审美或Capsule推断",
+    "将参考图存在本身作为充分失败原因降级为不支持",
+    "冻结最小正式包络桥接探针handoff"
   ],
   "changes_authority": {
-    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json",
-    "commit": "9bb0acec7b7d4de36e7b83b171151d8f3e5a2c4a"
+    "probe2_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE2_RESULT_20260913.json","commit":"130619142a3e781079659753e7f9cfaac7ef551d"},
+    "bridge_handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt","commit":"6e01fc9ead53b83e20b74f14d987022d82d2b9e0"}
   },
-  "updated_at": "2026-09-12T11:52:00+00:00",
+  "updated_at": "2026-09-12T19:05:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
