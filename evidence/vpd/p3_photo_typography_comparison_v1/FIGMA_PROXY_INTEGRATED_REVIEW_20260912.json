@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-p3-figma-proxy-integrated-review/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T07:25:00+00:00",
+  "input_remote_head": "d273b881f8fe51fbb73e6c8dda7a3f631283aa89",
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "file_name": "VPD P3 A-B Figma Comparison 2026-09-12",
+    "frame_size": "2400x3200",
+    "frames": {
+      "SHANJUN_A": {"frame_id":"1:3","photo_node_id":"1:4","title_group_id":"11:8","support_node_ids":["1:28","1:29"],"proxy_image_hash":"ed0354a0a71b554fc4b5e74cc44c25ad99890ccc"},
+      "SHANJUN_B": {"frame_id":"1:9","photo_node_id":"1:10","title_group_id":"1:36","support_node_ids":["1:37","1:38"],"proxy_image_hash":"a13f2c8a6e91e2ca91cda08f603fb113f6a5f7b0"},
+      "DOUFANG_A": {"frame_id":"1:15","photo_node_id":"1:16","title_group_id":"11:15","support_node_ids":["1:40","1:41"],"proxy_image_hash":"ca9046572cf663dc5009dc146e7dbee91a723635"},
+      "DOUFANG_B": {"frame_id":"1:21","photo_node_id":"1:22","title_group_id":"1:48","support_node_ids":["1:49","1:50"],"proxy_image_hash":"c077e988489c2df7a457578b9376a0f0634fb808"}
+    },
+    "verified_fonts": ["Noto Sans SC Black","Noto Sans SC Medium","Inter Medium"],
+    "equal_budget": {
+      "initial_composition_passes_per_poster": 1,
+      "correction_passes_per_poster_used": 1,
+      "further_polish_authorized": false,
+      "A_titles_converted_to_editable_vectors_in_correction": true,
+      "B_structural_vector_treatment_preserved": true
+    }
+  },
+  "raw_outputs": {
+    "SHANJUN_A": {"chat_file_id":"file_00000000ed648207ba85a94ec12051a2","dimensions":[1086,1448],"sha256":"d20ac6ab6d79f32e6bcab3c3daf3605b63c34d40cb67ed0c3ff5552a596ed8dd","assistant_nonblind_raw_score":6.9},
+    "SHANJUN_B": {"chat_file_id":"file_00000000191882119545c8c4f10f5a53","dimensions":[1086,1448],"sha256":"e88b4f5251e356d113de1668a5dae97c23dfb6bd189e373a4559c2b58a4ea270","assistant_nonblind_raw_score":7.2},
+    "DOUFANG_A": {"chat_file_id":"file_000000009f148207918fd14a4b07c17d","dimensions":[1086,1448],"sha256":"28c6596a288cd3520e343bb52c36b45e3571726f9c6796c8eaee55004ae9d42d","assistant_nonblind_raw_score":7.0},
+    "DOUFANG_B": {"chat_file_id":"file_0000000064c882079c4f9968fff77274","dimensions":[1086,1448],"sha256":"81b0908a88ec68485382bae4371e55bc09be18d637bc6643da3e2b76c8a6180c","assistant_nonblind_raw_score":7.4}
+  },
+  "proxy_policy": {
+    "proxy_dimensions": [72,96],
+    "purpose": "LAYOUT_HIERARCHY_AND_PHOTO_TYPE_RELATIONSHIP_REVIEW_ONLY",
+    "allowed_inference": ["title scale and position","support hierarchy","counter-mass relationship","negative-space use","A/B typography structure"],
+    "prohibited_inference": ["photo sharpness","microtexture","material realism final quality","retouch quality","final export pixel quality","commercial final acceptance"]
+  },
+  "layout_level_findings": {
+    "SHANJUN": "B has modestly stronger authored title structure and counter-mass character than A, but no decisive integrated-design advantage is established.",
+    "DOUFANG": "B is more distinctive structurally, but the stronger deformation also carries a higher risk of looking forced; no decisive integrated-design advantage is established.",
+    "set_level": "Both arms remain within a familiar large-left-title plus right/central-photographic-mass poster topology. Figma improves editability and typography correctness but does not by itself raise the work to the target commercial aesthetic standard.",
+    "capsule_gain": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
+    "human_aesthetic_acceptance": false
+  },
+  "original_image_binding": {
+    "status": "BLOCKED",
+    "figma_standard_upload": "FAILED_DNS_mcp.figma.com_FROM_CURRENT_CONTAINER",
+    "inline_createImage": "WORKS_FOR_SMALL_PROXY_ONLY; NONTRIVIAL_INLINE_PAYLOADS_REJECTED_BY_EXECUTION_LAYER",
+    "adobe_transfer_fallback": "UNAVAILABLE_ACCOUNT_CONNECTION_FAILED",
+    "original_1086x1448_pixels_bound_to_figma": false
+  },
+  "preservation": {
+    "no_new_images_generated_for_figma": true,
+    "raw_outputs_unchanged": true,
+    "no_best_of_n": true,
+    "no_hidden_polish": true,
+    "old_H1_H4_unchanged": true,
+    "candidate_promoted": false
+  },
+  "status": "FIGMA_LAYOUT_REVIEW_COMPLETE_WITH_PROXY_ORIGINAL_PIXEL_BINDING_BLOCKED",
+  "next_required_action": "RESOLVE_ORIGINAL_PIXEL_BINDING_IF_A_NEW_TRANSFER_CHANNEL_BECOMES_AVAILABLE; OTHERWISE_SETTLE_P3_LAYOUT_LEVEL_FINDING_WITHOUT_FINAL_PIXEL_ACCEPTANCE"
+}
