@@ -1,0 +1,46 @@
+{
+  "schema_version": "vpd-p3-minimal-binding-probe1-result/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "probe_id": "P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_1",
+  "classification": "TECHNICAL_DIAGNOSTIC_NOT_P3_SAMPLE",
+  "recorded_at": "2026-09-12T11:52:00+00:00",
+  "input_remote_head": "c3b2d30d9ca9aa7bbdeb39ff855a86333780a9f0",
+  "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+  "request_contract": {
+    "reference": "NONE",
+    "subject": "fresh seasonal edible wild mushrooms only",
+    "required_orientation": "3:4 portrait",
+    "preferred_explicit_size": "1086x1448",
+    "n": 1,
+    "no_text_logo_collage": true,
+    "not_poster": true
+  },
+  "observed_output": {
+    "chat_file_id": "file_00000000cb1c820796c4254502f763a3",
+    "uploaded_filename": "1000030326.png",
+    "actual_dimensions": [1152, 1536],
+    "actual_aspect_ratio": "3:4",
+    "actual_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
+    "actual_bytes": 391336,
+    "subject_description": "single full-bleed realistic close-up photograph of multiple fresh edible mushrooms on a natural preparation/harvest surface",
+    "forbidden_objects_visible": false,
+    "text_or_logo_visible": false,
+    "collage_or_multi_panel": false,
+    "portrait": true
+  },
+  "contract_interpretation": {
+    "exact_preferred_pixel_size_returned": false,
+    "equivalent_exact_3_4_portrait_returned": true,
+    "handoff_allows_equivalent_exact_3_4_portrait_if_recorded": true
+  },
+  "verdict": "PASS",
+  "reason": "Probe 1 establishes that, without any reference image or project/Capsule context, the ChatGPT image path can bind the requested mushroom subject and a valid exact 3:4 portrait geometry in one standalone output. The returned pixel dimensions differ from the preferred 1086x1448 but are exactly 3:4 and satisfy the probe pass rule.",
+  "formal_p3_effect": {
+    "counts_as_p3_sample": false,
+    "aesthetic_inference_allowed": false,
+    "capsule_inference_allowed": false,
+    "formal_p3_render_unblocked": false,
+    "probe_2_allowed": true
+  },
+  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_2_IN_ANOTHER_BRAND_NEW_STANDALONE_MINIMAL_CHAT_WITH_EXACT_APPROVED_REFERENCE"
+}
