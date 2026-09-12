@@ -1,23 +1,23 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 31,
-  "recorded_at": "2026-09-12T10:48:00+00:00",
+  "sequence": 32,
+  "recorded_at": "2026-09-12T11:52:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P3正式最后一轮仍冻结为0/4。无出图绑定诊断已完成，最小技术探针handoff已冻结。下一步只运行Probe 1：在全新standalone最小聊天中，不加载项目/Capsule/Figma上下文，不带参考图，只测试时令野生菌菇主体 + 显式1086x1448 3:4画幅 + n=1。",
+  "current_focus": "最小绑定技术Probe 1已PASS：无参考条件下，ChatGPT图像链路能够生成正确食用菌菇主体和精确3:4竖图。正式P3仍保持0/4冻结。下一步只运行Probe 2，在另一个全新standalone最小聊天加入精确批准参考，测试参考条件是否破坏主体/画幅绑定。",
   "completed": [
     "p3_round1_limited_evidence",
     "p3_two_fresh_context_technical_stops",
     "p3_render_pipeline_block",
     "p3_image_generation_binding_diagnosis",
-    "p3_minimal_binding_probe_handoff_prepared"
+    "p3_minimal_binding_probe_handoff_prepared",
+    "p3_minimal_binding_probe1_pass"
   ],
   "incomplete": [
-    "p3_minimal_binding_probe_1",
-    "p3_minimal_binding_probe_2_if_probe1_pass",
+    "p3_minimal_binding_probe2",
     "p3_final_round_four_valid_photo_only_outputs",
     "p3_final_round_equal_budget_figma_design",
     "p3_final_round_integrated_comparison",
@@ -27,49 +27,56 @@
     "scale"
   ],
   "blocked": [
-    "formal P3 render remains blocked until Probe 1/2 resolves subject/aspect/reference binding",
-    "Probe 1 must not inherit project/A-B/Figma context before the image call",
+    "formal P3 render remains blocked until Probe 2 settles exact-reference conditioning",
+    "Probe 2 must run in another brand-new standalone minimal chat without project/Capsule/Figma bootstrap",
     "technical probe pixels are prohibited from aesthetic or Capsule inference"
   ],
-  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_1_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "next_required_action": "RUN_P3_MINIMAL_BINDING_PROBE_2_IN_ANOTHER_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "technical_probe": {
     "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
     "probe_1": {
+      "status": "PASS",
       "reference": "NONE",
-      "subject": "seasonal edible wild mushrooms only",
-      "size": "1086x1448",
-      "n": 1,
-      "same_chat_retry_on_failure": false
+      "chat_file_id": "file_00000000cb1c820796c4254502f763a3",
+      "actual_dimensions": [1152,1536],
+      "actual_aspect_ratio": "3:4",
+      "actual_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6",
+      "subject": "fresh edible mushrooms",
+      "counts_as_formal_p3_sample": false
     },
     "probe_2": {
-      "allowed_only_if_probe_1_pass": true,
+      "status": "NEXT",
+      "allowed_only_because_probe_1_passed": true,
       "must_use_another_brand_new_standalone_chat": true,
       "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
       "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
-      "size": "1086x1448",
+      "size": "3:4 portrait; explicit 1086x1448 preferred",
       "n": 1
     },
     "formal_p3_budget_effect": "NONE",
     "aesthetic_inference_allowed": false
   },
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"0d4e5c35146fae1b4fc25c6af7b2900de1cd93e0","revision":9},
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"77fc23f2fe511b2f4602bd5e9ad25f639edeb62b","revision":10},
     {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json","commit":"ac692e63ae9f18fd0504a8c51ba2097ccafe7865"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt","commit":"56d90fcc6ebf66585fab5f4fd2fa46e8c8b653b2"}
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt","commit":"56d90fcc6ebf66585fab5f4fd2fa46e8c8b653b2"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json","commit":"9bb0acec7b7d4de36e7b83b171151d8f3e5a2c4a"}
   ],
-  "status": "VPD_P3_MINIMAL_BINDING_PROBE_HANDOFF_READY_PROBE1_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"0d4e5c35146fae1b4fc25c6af7b2900de1cd93e0"},
+  "status": "VPD_P3_MINIMAL_BINDING_PROBE1_PASS_PROBE2_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"77fc23f2fe511b2f4602bd5e9ad25f639edeb62b"},
+  "history_snapshot": {"previous_sequence":31,"previous_git_blob_sha":"2a4ebe193ee7c6333456bc3e70fb49f664ad3f73"},
   "requirements": {
     "binding_diagnosis": {"status":"DONE"},
     "probe_handoff": {"status":"DONE"},
-    "probe_1": {"status":"NEXT"},
+    "probe_1": {"status":"PASS"},
+    "probe_2": {"status":"NEXT"},
     "formal_p3_final_round": {"status":"BLOCKED","valid_outputs":0}
   },
   "execution": {
     "p3_round1_valid_raw_outputs": 4,
     "p3_final_round_valid_outputs": 0,
     "p3_final_round_invalid_fresh_contexts": 2,
-    "technical_probe_calls_used": 0,
+    "technical_probe_calls_used": 1,
     "capsule_verdict": "NOT_ESTABLISHED"
   },
   "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
