@@ -1,0 +1,52 @@
+{
+  "schema_version": "vpd-p3-final-round-fresh-execution-stop/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T10:08:26Z",
+  "input_remote_head": "f1012965d77c01dc865f3a066fee2a05e4573306",
+  "handoff": {
+    "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FRESH_EXECUTION_HANDOFF_20260912.txt",
+    "git_blob_sha": "a4f07e3ba7b0fdd49be4c28eb829c5b1e4f45575"
+  },
+  "canonical_reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "actual_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "bytes": 142983,
+    "dimensions": [960, 1280],
+    "verification": "PASS"
+  },
+  "attempted_calls": 1,
+  "valid_outputs": 0,
+  "invalid_call": {
+    "ordinal": 1,
+    "requested_output": "SHANJUN_A_FINAL",
+    "required_subject": "seasonal wild mushroom ingredient/material field",
+    "required_aspect_ratio": "3:4",
+    "required_mode": "ONE_STANDALONE_FULL_BLEED_PHOTO_ONLY",
+    "actual_subject": "minimalist ceramic vase with flowering branch still life",
+    "actual_dimensions": [1536, 1024],
+    "actual_sha256": "46dbfa6d96e3f6b79601cd0fc971f2097554305897021429f6e234c59185d420",
+    "generated_asset_file_id": "file_00000000850882118ec905d226f2f686",
+    "image_generation_id": "2e8c586d-54fd-4714-b742-a258468860bf",
+    "text_present": false,
+    "collage_or_multiple_panels": false,
+    "classification": "TECHNICAL_INVALID_WRONG_SUBJECT_AND_ASPECT_RATIO",
+    "contract_violations": [
+      "WRONG_SUBJECT",
+      "WRONG_ASPECT_RATIO"
+    ]
+  },
+  "stop_rule_triggered": true,
+  "silent_retry_performed": false,
+  "additional_calls_performed": 0,
+  "executed_outputs": ["SHANJUN_A_FINAL"],
+  "not_executed_outputs": [
+    "SHANJUN_B_FINAL_POSITION_FREE",
+    "DOUFANG_A_FINAL",
+    "DOUFANG_B_FINAL_POSITION_FREE"
+  ],
+  "figma_entry_allowed": false,
+  "aesthetic_or_capsule_inference": "NOT_ALLOWED_FROM_TECHNICAL_INVALID_OUTPUT",
+  "next_required_action": "START_NEW_FRESH_ISOLATED_CONTEXT_AND_REENTER_FROM_FROZEN_HANDOFF"
+}
