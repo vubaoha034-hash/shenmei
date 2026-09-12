@@ -1,97 +1,88 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 33,
-  "recorded_at": "2026-09-12T19:05:00+00:00",
+  "sequence": 34,
+  "recorded_at": "2026-09-12T21:50:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "最小绑定Probe 1与Probe 2均PASS：基础主体/3:4绑定正常，加入批准参考的最小路径也未破坏菌菇主体或3:4画幅。正式P3仍冻结为0/4。下一步仅运行一次最小正式包络桥接探针，测试SHANJUN_A_FINAL必要内容约束在不加载完整项目上下文时是否稳定。",
+  "current_focus": "Probe 1、Probe 2与最小正式包络桥接探针均PASS。正式P3最后一轮仍为0/4，但执行架构已从完整项目handoff改为每张一个全新standalone最小聊天。下一步只执行正式SHANJUN_A_FINAL，回传并验证后才允许进入SHANJUN_B。",
   "completed": [
     "p3_round1_limited_evidence",
     "p3_two_fresh_context_technical_stops",
-    "p3_render_pipeline_block",
-    "p3_image_generation_binding_diagnosis",
-    "p3_minimal_binding_probe_handoff_prepared",
+    "p3_render_pipeline_binding_diagnosis",
     "p3_minimal_binding_probe1_pass",
     "p3_minimal_binding_probe2_pass",
-    "p3_minimal_formal_envelope_bridge_handoff_prepared"
+    "p3_minimal_formal_envelope_bridge_probe_pass",
+    "p3_formal_micro_handoff_architecture_frozen",
+    "p3_shared_reference_inference_boundary_recorded"
   ],
   "incomplete": [
-    "p3_minimal_formal_envelope_bridge_probe",
-    "p3_formal_micro_handoff_execution_architecture_if_bridge_passes",
-    "p3_final_round_four_valid_photo_only_outputs",
+    "p3_final_round_shanjun_a_formal_raw",
+    "p3_final_round_shanjun_b_formal_raw",
+    "p3_final_round_doufang_a_formal_raw",
+    "p3_final_round_doufang_b_formal_raw",
     "p3_final_round_equal_budget_figma_design",
     "p3_final_round_integrated_comparison",
     "human_set_verdict",
+    "distillation_only_no_reference_validation_if_B_meaningfully_wins",
     "candidate_promotion",
     "golden",
     "scale"
   ],
   "blocked": [
-    "formal P3 render remains blocked until the isolated SHANJUN_A formal-content envelope passes the bridge probe",
-    "bridge probe must run in a brand-new standalone minimal chat without full project/A-B/Capsule/Figma bootstrap",
-    "Probe 1, Probe 2 and bridge-probe pixels are prohibited from aesthetic or Capsule inference"
+    "SHANJUN_B cannot run before SHANJUN_A formal raw output is validated",
+    "Figma cannot start before all four formal raw outputs are valid and identity-checked",
+    "shared-reference P3 cannot establish distillation-only independence"
   ],
-  "next_required_action": "RUN_P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
-  "technical_probe": {
-    "probe_1": {
-      "status": "PASS",
-      "reference": "NONE",
-      "chat_file_id": "file_00000000cb1c820796c4254502f763a3",
-      "actual_dimensions": [1152,1536],
-      "actual_aspect_ratio": "3:4",
-      "actual_sha256": "2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6"
-    },
-    "probe_2": {
-      "status": "PASS",
-      "reference_expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
-      "chat_file_id": "file_00000000e3448211af05698dbb63c1dd",
-      "actual_dimensions": [1152,1536],
-      "actual_aspect_ratio": "3:4",
-      "actual_sha256": "dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
-      "subject": "fresh edible chanterelle-type mushrooms",
-      "reference_present_path": "PASS_NO_VISIBLE_SUBJECT_OR_ASPECT_CORRUPTION",
-      "provider_reference_semantic_consumption_receipt": "UNAVAILABLE"
-    },
-    "bridge_probe": {
-      "status": "NEXT",
-      "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt",
-      "max_calls": 1,
-      "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
-      "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
-      "formal_p3_budget_effect": "NONE",
-      "aesthetic_inference_allowed": false
-    }
+  "next_required_action": "RUN_FORMAL_P3_SHANJUN_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "formal_micro_handoff": {
+    "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
+    "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
+    "fixed_order": [
+      "SHANJUN_A_FINAL",
+      "SHANJUN_B_FINAL_POSITION_FREE",
+      "DOUFANG_A_FINAL",
+      "DOUFANG_B_FINAL_POSITION_FREE"
+    ],
+    "valid_outputs_required": 4,
+    "valid_outputs_so_far": 0,
+    "n_per_output": 1,
+    "same_chat_retry_on_failure": false,
+    "stop_on_contract_violation": true,
+    "figma_entry_allowed": false
   },
-  "causal_update": {
-    "base_subject_aspect_binding": "PASS",
-    "minimal_reference_present_path": "PASS",
-    "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
-    "full_project_handoff_orchestration_as_primary_suspect": "ELEVATED_NOT_PROVEN"
+  "technical_diagnosis": {
+    "probe_1": {"status":"PASS","dimensions":[1152,1536],"sha256":"2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6"},
+    "probe_2": {"status":"PASS","dimensions":[1152,1536],"sha256":"dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52"},
+    "bridge_probe": {"status":"PASS","dimensions":[1152,1536],"sha256":"c70cf51b86916475c203312fac7fff60caf7be99f592e73b913e7031f885c352","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json"},
+    "primary_localization": "FULL_PROJECT_HANDOFF_OR_CONTEXT_ORCHESTRATION_STRONGLY_ELEVATED_NOT_PROVIDER_ROOT_CAUSE_PROVEN"
+  },
+  "inference_boundary": {
+    "P3_tests": "incremental distilled-program benefit under the same approved reference",
+    "P3_does_not_test": "distillation-only independence from the source reference",
+    "follow_on_if_B_meaningfully_wins": "run a separate no-reference B-only validation before any independent distillation claim"
   },
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"06db3d31dc9038d29840e9cb4c012dc750ba7c24","revision":11},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json","commit":"9bb0acec7b7d4de36e7b83b171151d8f3e5a2c4a"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE2_RESULT_20260913.json","commit":"130619142a3e781079659753e7f9cfaac7ef551d"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt","commit":"6e01fc9ead53b83e20b74f14d987022d82d2b9e0"}
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"3428ae070c59995d6c1ae216aba3f8d677ab2248","revision":12},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json","commit":"d47f1b08aea8f86f51bfcf210963db4bbbb92a9e"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt","commit":"92f2ac94644e74afa4ff9c8c549143df422dae95"}
   ],
-  "status": "VPD_P3_PROBE1_PASS_PROBE2_PASS_MINIMAL_FORMAL_ENVELOPE_BRIDGE_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"06db3d31dc9038d29840e9cb4c012dc750ba7c24"},
-  "history_snapshot": {"previous_sequence":32,"previous_git_blob_sha":"e6183de6d695f19f9f015942fa0668d724e31b4b"},
+  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_READY_SHANJUN_A_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"3428ae070c59995d6c1ae216aba3f8d677ab2248"},
+  "history_snapshot": {"previous_sequence":33,"previous_git_blob_sha":"217a9d0d4b70fc49b4f5c3b7e274e4042e8d66b6"},
   "requirements": {
     "binding_diagnosis": {"status":"DONE"},
-    "probe_1": {"status":"PASS"},
-    "probe_2": {"status":"PASS"},
-    "bridge_probe": {"status":"NEXT"},
-    "formal_p3_final_round": {"status":"BLOCKED","valid_outputs":0}
+    "bridge_probe": {"status":"PASS"},
+    "formal_micro_handoff": {"status":"READY"},
+    "formal_p3_final_round": {"status":"READY_TO_START_SHANJUN_A","valid_outputs":0}
   },
   "execution": {
     "p3_round1_valid_raw_outputs": 4,
     "p3_final_round_valid_outputs": 0,
     "p3_final_round_invalid_fresh_contexts": 2,
-    "technical_probe_calls_used": 2,
+    "technical_probe_calls_used": 3,
     "capsule_verdict": "NOT_ESTABLISHED"
   },
   "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
