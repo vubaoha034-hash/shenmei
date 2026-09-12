@@ -1,0 +1,67 @@
+P3 MINIMAL SUBJECT / ASPECT BINDING PROBE — TECHNICAL DIAGNOSTIC ONLY
+
+Purpose
+- Diagnose ChatGPT image-generation subject/aspect/reference binding.
+- NOT a P3 sample, NOT aesthetic evidence, NOT Capsule validation.
+- Maximum two image calls total, with Probe 2 allowed only if Probe 1 passes.
+
+CRITICAL ISOLATION
+- Run each probe in a brand-new standalone minimal chat, preferably outside the project chat so the image tool does not inherit the VPD/A-B/Figma context.
+- Do NOT read START_HERE, roadmap, Capsule, A/B handoff, Figma evidence, or any other project file into the image-generation chat before the call.
+- Do NOT mention P3, A/B, 山野集, Figma, poster, typography, brand system, or tofu in the image request.
+- After the image call, return the result to the project chat for recording.
+
+PROBE 1 — BASE SUBJECT + ASPECT, NO REFERENCE
+Exactly one image call.
+No reference image.
+Image request visible to the generator should contain only this intent:
+
+“生成一张独立的写实商业摄影照片。唯一主体是新鲜的时令野生菌菇/食用菌，真实自然地摆放在可信的采收或备料环境中。画面中不要出现花瓶、花枝、书本、杯子、豆腐、人物、文字、Logo、标签、拼版或多面板。必须是3:4竖版、单张、满版摄影，不是海报。”
+
+Tool binding requirement:
+- n = 1
+- explicit size field = 1086x1448
+- no referenced image
+- no style-transfer/edit target
+
+PASS only if ALL are true:
+1. exactly one standalone image;
+2. actual subject is edible/seasonal mushrooms;
+3. no vase/flowers/books/cups/tofu/text/logo/collage;
+4. actual dimensions are 3:4 portrait (1086x1448 preferred; an equivalent exact 3:4 portrait size may be recorded but must be explicit);
+5. no silent retry.
+
+FAIL rule:
+- If any condition fails, STOP. Do not retry in that chat.
+- Classification: BASE_IMAGE_CALL_SUBJECT_OR_ASPECT_BINDING_FAILURE.
+- Do not run Probe 2.
+
+PROBE 2 — ADD EXACT APPROVED REFERENCE
+Only if Probe 1 PASS.
+Run in ANOTHER brand-new standalone minimal chat.
+Fetch exactly:
+- Drive File ID: 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ
+- filename: R1C-APPROVED-SHANYEJI-CANONICAL.jpg
+- expected SHA-256: 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414
+Verify bytes before generation.
+Use it only as a visual-quality/editorial reference, never as the output subject or edit target.
+
+Image request visible to the generator should contain only this intent:
+
+“参考刚刚核验的图片，只学习其成熟的商业摄影/编辑视觉质感，不复制其中的文字、版式、品牌、符号或具体场景。生成一张独立的写实商业摄影照片，唯一主体仍然是新鲜的时令野生菌菇/食用菌，真实自然地处于可信的采收或备料环境。不要出现花瓶、花枝、书本、杯子、豆腐、人物、任何文字、Logo、标签、拼版或多面板。必须是3:4竖版、单张、满版摄影，不是海报。”
+
+Tool binding requirement:
+- n = 1
+- explicit size field = 1086x1448
+- exact approved reference available in the same minimal chat
+- no other prior generated image used as reference
+
+PASS only if Probe 1 conditions still pass and the reference does not replace/corrupt the mushroom subject.
+
+FAIL rule:
+- If Probe 1 passed but Probe 2 fails, STOP and classify REFERENCE_CONDITIONING_OR_ORCHESTRATION_BINDING_FAILURE.
+
+AFTER PROBES
+- Record generated file/asset ID, generation ID if available, actual dimensions, SHA-256, subject description, and pass/fail.
+- Never use probe pixels for aesthetic scoring, Figma, P3 A/B comparison, Capsule inference, Golden, Scale, or promotion.
+- Formal P3 remains blocked until this technical diagnosis is settled.
