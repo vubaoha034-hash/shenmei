@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 34,
-  "recorded_at": "2026-09-12T21:50:00+00:00",
+  "sequence": 35,
+  "recorded_at": "2026-09-12T21:42:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "Probe 1、Probe 2与最小正式包络桥接探针均PASS。正式P3最后一轮仍为0/4，但执行架构已从完整项目handoff改为每张一个全新standalone最小聊天。下一步只执行正式SHANJUN_A_FINAL，回传并验证后才允许进入SHANJUN_B。",
+  "current_focus": "正式P3最后一轮已得到2/4有效原始图：山菌A与山菌B均通过微型handoff合同核验。下一步只执行豆坊A；豆坊B与Figma仍锁定。",
   "completed": [
     "p3_round1_limited_evidence",
     "p3_two_fresh_context_technical_stops",
@@ -16,11 +16,11 @@
     "p3_minimal_binding_probe2_pass",
     "p3_minimal_formal_envelope_bridge_probe_pass",
     "p3_formal_micro_handoff_architecture_frozen",
-    "p3_shared_reference_inference_boundary_recorded"
+    "p3_shared_reference_inference_boundary_recorded",
+    "p3_final_round_shanjun_a_formal_raw_pass",
+    "p3_final_round_shanjun_b_formal_raw_pass"
   ],
   "incomplete": [
-    "p3_final_round_shanjun_a_formal_raw",
-    "p3_final_round_shanjun_b_formal_raw",
     "p3_final_round_doufang_a_formal_raw",
     "p3_final_round_doufang_b_formal_raw",
     "p3_final_round_equal_budget_figma_design",
@@ -32,11 +32,11 @@
     "scale"
   ],
   "blocked": [
-    "SHANJUN_B cannot run before SHANJUN_A formal raw output is validated",
+    "DOUFANG_B cannot run before DOUFANG_A formal raw output is validated",
     "Figma cannot start before all four formal raw outputs are valid and identity-checked",
     "shared-reference P3 cannot establish distillation-only independence"
   ],
-  "next_required_action": "RUN_FORMAL_P3_SHANJUN_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "next_required_action": "RUN_FORMAL_P3_DOUFANG_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
   "formal_micro_handoff": {
     "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
     "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
@@ -47,17 +47,29 @@
       "DOUFANG_B_FINAL_POSITION_FREE"
     ],
     "valid_outputs_required": 4,
-    "valid_outputs_so_far": 0,
+    "valid_outputs_so_far": 2,
+    "validated_outputs": [
+      {
+        "id":"SHANJUN_A_FINAL",
+        "status":"PASS",
+        "result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json",
+        "commit":"ad01ee1396f542fab1046f660f9c4bdc3517838e",
+        "dimensions":[1152,1536],
+        "sha256":"322191789ca7e21e6050263028e47976db9cb8fdf79d8dc28e871d092078c344"
+      },
+      {
+        "id":"SHANJUN_B_FINAL_POSITION_FREE",
+        "status":"PASS",
+        "result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json",
+        "commit":"36c8cc028b02d76471a074975d516f7a63de5906",
+        "dimensions":[1152,1536],
+        "sha256":"e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3"
+      }
+    ],
     "n_per_output": 1,
     "same_chat_retry_on_failure": false,
     "stop_on_contract_violation": true,
     "figma_entry_allowed": false
-  },
-  "technical_diagnosis": {
-    "probe_1": {"status":"PASS","dimensions":[1152,1536],"sha256":"2b11002172c9bbdabcebd4de97b142e785de037b305ab9428f831956f0e03ac6"},
-    "probe_2": {"status":"PASS","dimensions":[1152,1536],"sha256":"dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52"},
-    "bridge_probe": {"status":"PASS","dimensions":[1152,1536],"sha256":"c70cf51b86916475c203312fac7fff60caf7be99f592e73b913e7031f885c352","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json"},
-    "primary_localization": "FULL_PROJECT_HANDOFF_OR_CONTEXT_ORCHESTRATION_STRONGLY_ELEVATED_NOT_PROVIDER_ROOT_CAUSE_PROVEN"
   },
   "inference_boundary": {
     "P3_tests": "incremental distilled-program benefit under the same approved reference",
@@ -65,22 +77,22 @@
     "follow_on_if_B_meaningfully_wins": "run a separate no-reference B-only validation before any independent distillation claim"
   },
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"3428ae070c59995d6c1ae216aba3f8d677ab2248","revision":12},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_RESULT_20260913.json","commit":"d47f1b08aea8f86f51bfcf210963db4bbbb92a9e"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt","commit":"92f2ac94644e74afa4ff9c8c549143df422dae95"}
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"eaee568320089980eb19e12a768e083dc5c2ba4b","revision":13},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json","commit":"ad01ee1396f542fab1046f660f9c4bdc3517838e"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json","commit":"36c8cc028b02d76471a074975d516f7a63de5906"}
   ],
-  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_READY_SHANJUN_A_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"3428ae070c59995d6c1ae216aba3f8d677ab2248"},
-  "history_snapshot": {"previous_sequence":33,"previous_git_blob_sha":"217a9d0d4b70fc49b4f5c3b7e274e4042e8d66b6"},
+  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"eaee568320089980eb19e12a768e083dc5c2ba4b"},
+  "history_snapshot": {"previous_sequence":34,"previous_git_blob_sha":"b36e01cdbf300144526af8fd44a11588bf8fb93f"},
   "requirements": {
     "binding_diagnosis": {"status":"DONE"},
     "bridge_probe": {"status":"PASS"},
-    "formal_micro_handoff": {"status":"READY"},
-    "formal_p3_final_round": {"status":"READY_TO_START_SHANJUN_A","valid_outputs":0}
+    "formal_micro_handoff": {"status":"IN_PROGRESS"},
+    "formal_p3_final_round": {"status":"2_OF_4_VALID","valid_outputs":2}
   },
   "execution": {
     "p3_round1_valid_raw_outputs": 4,
-    "p3_final_round_valid_outputs": 0,
+    "p3_final_round_valid_outputs": 2,
     "p3_final_round_invalid_fresh_contexts": 2,
     "technical_probe_calls_used": 3,
     "capsule_verdict": "NOT_ESTABLISHED"
