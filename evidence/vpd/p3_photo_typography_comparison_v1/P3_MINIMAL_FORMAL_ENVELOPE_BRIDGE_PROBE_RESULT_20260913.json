@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-p3-minimal-formal-envelope-bridge-result/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "probe_id": "P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE",
+  "classification": "TECHNICAL_DIAGNOSTIC_NOT_P3_SAMPLE",
+  "recorded_at": "2026-09-12T21:42:00+00:00",
+  "input_remote_head": "9f0b7d3b5e1365e586fca6c21fb395ea26461832",
+  "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_HANDOFF_20260913.txt",
+  "request_contract": {
+    "reference_required": true,
+    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "reference_expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "reference_role": "VISUAL_QUALITY_EDITORIAL_REFERENCE_ONLY_NOT_EDIT_TARGET",
+    "subject": "fresh seasonal edible wild mushrooms in credible harvest/preparation environment",
+    "required_orientation": "3:4 portrait",
+    "n": 1,
+    "photo_only": true,
+    "no_text_logo_collage": true,
+    "no_wok_flame_spectacle": true,
+    "scene_derived_quiet_region": true,
+    "fixed_quadrant_preselection": false
+  },
+  "observed_output": {
+    "chat_file_id": "file_00000000cfd082078f1e70d96451f829",
+    "uploaded_filename": "1000030334.png",
+    "generation_id": null,
+    "actual_dimensions": [1152, 1536],
+    "actual_aspect_ratio": "3:4",
+    "actual_sha256": "c70cf51b86916475c203312fac7fff60caf7be99f592e73b913e7031f885c352",
+    "actual_bytes": 396222,
+    "subject_description": "single full-bleed realistic photograph of fresh edible chanterelle-type mushrooms on a wooden harvest/preparation surface with basket, moss and stones",
+    "credible_harvest_or_preparation_field": true,
+    "active_wok_or_flame_visible": false,
+    "forbidden_objects_visible": false,
+    "text_or_logo_visible": false,
+    "collage_or_multi_panel": false,
+    "portrait": true,
+    "scene_derived_quiet_region_present": true
+  },
+  "verdict": "PASS",
+  "reason": "The isolated SHANJUN_A formal-content envelope remains stable when executed with the approved reference but without full project/A-B/Capsule/Figma bootstrap. Together with Probe 1 and Probe 2 PASS, the prior two formal fresh-context failures are best localized to full-project handoff/context orchestration behavior rather than base mushroom generation, 3:4 geometry, reference presence, or the isolated A-arm brief.",
+  "causal_update": {
+    "base_subject_aspect_binding": "PASS",
+    "minimal_reference_present_path": "PASS",
+    "isolated_A_arm_formal_content_envelope": "PASS",
+    "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
+    "isolated_A_brief_as_sufficient_failure_cause": "NOT_SUPPORTED",
+    "full_project_handoff_orchestration_as_primary_suspect": "STRONGLY_ELEVATED_NOT_PROVIDER_ROOT_CAUSE_PROVEN"
+  },
+  "formal_p3_effect": {
+    "counts_as_p3_sample": false,
+    "aesthetic_inference_allowed": false,
+    "capsule_inference_allowed": false,
+    "formal_micro_handoff_architecture_allowed": true,
+    "figma_entry_allowed": false
+  },
+  "next_required_action": "PREPARE_FORMAL_P3_MICRO_HANDOFF_ARCHITECTURE_ONE_STANDALONE_CHAT_PER_OUTPUT"
+}
