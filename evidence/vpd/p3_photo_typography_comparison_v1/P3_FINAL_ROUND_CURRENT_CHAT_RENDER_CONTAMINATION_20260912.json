@@ -1,0 +1,40 @@
+{
+  "schema_version": "vpd-p3-current-chat-render-contamination/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-12T08:00:00+00:00",
+  "input_remote_head": "34d04f54f4d4913f22368c2ba3973771371d75bb",
+  "canonical_reference": {
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "actual_sha256_verified_this_chat": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "binding_available": true
+  },
+  "attempted_final_round_calls": 3,
+  "technical_invalid_calls": [
+    {
+      "ordinal": 1,
+      "requested": "one standalone 3:4 SHANJUN A photo-only direct-reference output",
+      "actual": "project-level four-panel A/B mushroom+tofu poster board with text",
+      "classification": "TECHNICAL_INVALID_CONTEXT_AGGREGATION"
+    },
+    {
+      "ordinal": 2,
+      "requested": "one standalone 3:4 SHANJUN A photo-only output; no B/Capsule, no tofu, no text",
+      "actual": "four-panel mushroom+tofu poster series with text/branding",
+      "classification": "TECHNICAL_INVALID_CONTEXT_AGGREGATION"
+    },
+    {
+      "ordinal": 3,
+      "requested": "explicit single-reference-only isolated SHANJUN A photo-only output",
+      "actual": "four-panel A/B comparison poster with both SHANJUN and DOUFANG plus text",
+      "classification": "TECHNICAL_INVALID_CONTEXT_AGGREGATION"
+    }
+  ],
+  "aesthetic_budget_effect": "NONE; invalid technical calls are not counted as valid P3 final-round samples",
+  "diagnosis": "CURRENT_LONG_CHAT_CONTEXT_CONTAMINATION_OR_TASK_AGGREGATION_PREVENTS_SINGLE_OUTPUT_PROTOCOL_COMPLIANCE",
+  "current_chat_render_allowed": false,
+  "retry_policy": "STOP_CURRENT_CHAT_RENDER_RETRIES",
+  "candidate_inference": "NOT_ALLOWED_FROM_INVALID_CALLS",
+  "next_required_action": "RUN_FINAL_ROUND_IN_FRESH_ISOLATED_CONTEXT_USING_FROZEN_HANDOFF"
+}
