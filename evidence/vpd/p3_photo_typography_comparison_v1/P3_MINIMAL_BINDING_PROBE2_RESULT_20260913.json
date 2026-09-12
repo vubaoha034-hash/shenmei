@@ -1,0 +1,63 @@
+{
+  "schema_version": "vpd-p3-minimal-binding-probe2-result/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "probe_id": "P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_2",
+  "classification": "TECHNICAL_DIAGNOSTIC_NOT_P3_SAMPLE",
+  "recorded_at": "2026-09-12T18:58:00+00:00",
+  "input_remote_head": "6fd7f8a15ee597eabdb4d5d7c5204ef3c62ee9b5",
+  "handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_SUBJECT_ASPECT_BINDING_PROBE_HANDOFF_20260912.txt",
+  "precondition": {
+    "probe_1_verdict": "PASS",
+    "probe_1_result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_MINIMAL_BINDING_PROBE1_RESULT_20260912.json"
+  },
+  "request_contract": {
+    "reference_required": true,
+    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "reference_expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "reference_role": "VISUAL_QUALITY_EDITORIAL_REFERENCE_ONLY_NOT_EDIT_TARGET",
+    "subject": "fresh seasonal edible wild mushrooms only",
+    "required_orientation": "3:4 portrait",
+    "preferred_explicit_size": "1086x1448",
+    "n": 1,
+    "no_text_logo_collage": true,
+    "not_poster": true
+  },
+  "observed_output": {
+    "chat_file_id": "file_00000000e3448211af05698dbb63c1dd",
+    "uploaded_filename": "1000030327.png",
+    "generation_id": null,
+    "actual_dimensions": [1152, 1536],
+    "actual_aspect_ratio": "3:4",
+    "actual_sha256": "dc7e6a81b7a1283c34bd994453bf7c4c51a52837f5e3b399c1f7001fb9cffe52",
+    "subject_description": "single full-bleed realistic close-up photograph of fresh edible chanterelle-type mushrooms in a natural harvest/preparation field",
+    "forbidden_objects_visible": false,
+    "text_or_logo_visible": false,
+    "collage_or_multi_panel": false,
+    "portrait": true
+  },
+  "contract_interpretation": {
+    "exact_preferred_pixel_size_returned": false,
+    "equivalent_exact_3_4_portrait_returned": true,
+    "reference_did_not_replace_or_corrupt_mushroom_subject": true,
+    "provider_side_reference_consumption_receipt_available": false,
+    "note": "The returned pixels prove that the minimal reference-present execution path did not visibly corrupt subject or aspect. They do not independently prove the provider's internal semantic use of the reference image."
+  },
+  "verdict": "PASS",
+  "reason": "Probe 2 satisfies the frozen output contract: one standalone exact-3:4 portrait, correct edible-mushroom subject, no forbidden objects, text, logo or collage. Therefore the minimal execution path remains stable when the approved reference is present. Together with Probe 1 PASS, the earlier two formal fresh-context failures are no longer best explained by base subject/aspect generation failure or by mere presence of the approved reference. The primary remaining suspect is the heavier project/handoff orchestration context or its inferred prompt/binding behavior.",
+  "causal_update": {
+    "base_subject_aspect_binding": "PASS",
+    "minimal_reference_present_path": "PASS",
+    "reference_presence_as_sufficient_failure_cause": "NOT_SUPPORTED",
+    "full_project_handoff_orchestration_as_primary_suspect": "ELEVATED_NOT_PROVEN",
+    "capsule_aesthetic_inference": "PROHIBITED"
+  },
+  "formal_p3_effect": {
+    "counts_as_p3_sample": false,
+    "aesthetic_inference_allowed": false,
+    "capsule_inference_allowed": false,
+    "formal_p3_render_unblocked": false,
+    "next_gate": "MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE"
+  },
+  "next_required_action": "PREPARE_AND_RUN_ONE_MINIMAL_FORMAL_ENVELOPE_BRIDGE_PROBE_FOR_SHANJUN_A_WITH_EXACT_REFERENCE_BUT_WITHOUT_FULL_PROJECT_BOOTSTRAP"
+}
