@@ -44,7 +44,7 @@ jobs:
           set -euo pipefail
           test -d "$ASSET_PART_DIR"
           mapfile -t parts < <(find "$ASSET_PART_DIR" -maxdepth 1 -type f -name 'part-*.b64' | sort)
-          test "${#parts[@]}" -eq 26
+          test "${#parts[@]}" -eq 32
           cat "${parts[@]}" > /tmp/vpd-asset-vault.b64
           base64 --decode /tmp/vpd-asset-vault.b64 > /tmp/vpd-asset-vault.cms
           echo "$ASSET_VAULT_SHA256  /tmp/vpd-asset-vault.cms" | sha256sum -c -
