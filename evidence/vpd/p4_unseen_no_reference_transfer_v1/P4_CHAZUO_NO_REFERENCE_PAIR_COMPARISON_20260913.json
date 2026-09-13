@@ -1,0 +1,44 @@
+{
+  "schema_version": "vpd-p4-chazuo-pair-comparison/v1",
+  "challenge_id": "P4-CHAZUO-NO-REFERENCE-TRANSFER-20260913",
+  "comparison_status": "COMPLETE",
+  "shared_conditions": {
+    "reference_image_count": 0,
+    "aspect_ratio": "3:4 portrait",
+    "photo_only": true,
+    "n_per_arm": 1,
+    "same_content_truth": true,
+    "same_model_family": true,
+    "same_chat_retry": false,
+    "hidden_variants": false,
+    "best_of_n": false
+  },
+  "arm_A": {
+    "id": "CHAZUO_A_NO_REFERENCE_BASELINE",
+    "score_10": 6.8,
+    "result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+    "sha256": "c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667"
+  },
+  "arm_B": {
+    "id": "CHAZUO_B_NO_REFERENCE_DISTILLED",
+    "score_10": 7.5,
+    "result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
+    "sha256": "6680becc332649267f5fb92cd0413b7fb8539431ef8f309d74571581c211e6c2"
+  },
+  "delta_B_minus_A": 0.7,
+  "finding": "REPEATED_DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE",
+  "why_B_is_better": [
+    "clearer separation between high-information process mass and low-frequency quiet field",
+    "stronger counter-mass relationship without a fake panel or fixed quadrant",
+    "cleaner near-mid-far staging",
+    "more legible role-based color hierarchy from fresh green to olive and neutral bamboo/wood"
+  ],
+  "limits": [
+    "single output per arm",
+    "assistant evaluation was not blind to arm identity",
+    "commercial master-level quality is not established",
+    "two positive content pairs do not prove universal or style-general independent distillation"
+  ],
+  "decision": "PROCEED_TO_MECHANISM_TRANSFER_VERDICT_AND_DOWNSTREAM_INTEGRATED_DESIGN_VALIDATION",
+  "recorded_at": "2026-09-13T01:50:00+00:00"
+}
