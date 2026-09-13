@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 13,
+  "revision": 14,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 12,
-    "git_blob_sha": "3428ae070c59995d6c1ae216aba3f8d677ab2248",
-    "note": "Revision 12 preserves bridge PASS, formal micro-handoff architecture and inference boundaries; revision 13 records the first two formal raw outputs as valid."
+    "revision": 13,
+    "git_blob_sha": "eaee568320089980eb19e12a768e083dc5c2ba4b",
+    "note": "Revision 13 records formal Shanjun A/B as 2/4 valid; revision 14 records the first Doufang A attempt as transport/binding-invalid and authorizes a corrected retry with direct image attachment."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -23,7 +23,7 @@
   "p3": {
     "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
     "final_round_valid_outputs": 2,
-    "technical_invalid_fresh_contexts": 2,
+    "technical_invalid_fresh_contexts": 3,
     "binding_diagnosis": {
       "status": "COMPLETE",
       "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
@@ -37,7 +37,7 @@
       "aesthetic_inference_allowed": false
     },
     "formal_micro_handoff": {
-      "status": "IN_PROGRESS_2_OF_4_VALID",
+      "status": "IN_PROGRESS_2_OF_4_VALID_DOUFANG_A_RETRY_READY",
       "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
       "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
       "fixed_order": [
@@ -66,10 +66,32 @@
           "sha256": "e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3"
         }
       },
+      "invalid_attempts": [
+        {
+          "id": "DOUFANG_A_FINAL_DRIVE_ONLY_ATTEMPT1",
+          "status": "TECHNICAL_INVALID",
+          "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json",
+          "commit": "e0d4c750cb48f250b61639a0c80eeda970c3c165",
+          "chat_file_id": "file_000000002c088211a4305b2dee650852",
+          "dimensions": [1280,1536],
+          "aspect_ratio": "5:6",
+          "sha256": "cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
+          "violations": ["WRONG_SUBJECT","WRONG_ASPECT_RATIO","VISIBLE_TEXT_PRESENT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"],
+          "counts_as_formal_output": false
+        }
+      ],
       "no_hidden_variants": true,
       "no_best_of_n": true,
       "no_silent_retry": true,
       "figma_entry_allowed_after_four_valid_outputs_only": true
+    },
+    "transport_correction": {
+      "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
+      "reference_drive_copy_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
+      "drive_only_reference_fetch_for_generation": "PROHIBITED_AS_BINDING_MECHANISM",
+      "reference_must_be_directly_attached_to_new_chat_message": true,
+      "prompt_may_be_read_from_drive": true,
+      "retry_is_transport_recovery_not_aesthetic_reroll": true
     },
     "inference_boundary": {
       "P3_question": "Does the distilled program add incremental benefit when A and B share the same approved reference?",
@@ -78,18 +100,19 @@
       "required_follow_on_if_B_meaningfully_wins": "NO_REFERENCE_B_ONLY_DISTILLATION_ONLY_VALIDATION_BEFORE_ANY_INDEPENDENT_DISTILLATION_CLAIM"
     }
   },
-  "current_stage": "正式P3最后一轮已获得2/4有效原始图：SHANJUN_A_FINAL与SHANJUN_B_FINAL_POSITION_FREE均通过身份、主体和3:4合同核验。下一步只执行DOUFANG_A_FINAL；豆坊B和Figma仍锁定。",
-  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_NEXT",
+  "current_stage": "正式P3最后一轮仍为2/4有效。首次DOUFANG_A使用Drive-only参考读取方式返回金毛幼犬、5:6且含可见文字，判定为技术无效，不计正式样本。下一步只允许在全新standalone最小聊天重跑DOUFANG_A：提示词可从Drive文档读取，但批准参考图必须由用户直接作为图片附件附到该聊天消息中。",
+  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_DIRECT_ATTACHMENT_RETRY_NEXT",
   "formal_p3_render_allowed": true,
-  "formal_p3_render_scope": "MICRO_HANDOFF_ONLY_ONE_OUTPUT_PER_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "formal_p3_render_scope": "DOUFANG_A_RETRY_ONLY_WITH_DIRECT_ATTACHED_REFERENCE",
   "technical_probe_allowed": false,
-  "next_required_action": "RUN_FORMAL_P3_DOUFANG_A_FINAL_VIA_MICRO_HANDOFF_IN_BRAND_NEW_STANDALONE_MINIMAL_CHAT",
+  "next_required_action": "RERUN_FORMAL_P3_DOUFANG_A_FINAL_IN_NEW_STANDALONE_CHAT_WITH_PROMPT_FROM_DRIVE_AND_REFERENCE_DIRECTLY_ATTACHED",
   "formal_execution_boundary": {
     "must_use_brand_new_standalone_chat_per_output": true,
     "must_not_bootstrap_full_project_before_image_call": true,
-    "exact_reference_required": true,
-    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
-    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
+    "reference_drive_source_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
+    "reference_must_be_direct_attachment": true,
+    "do_not_use_drive_fetch_as_reference_binding": true,
     "n": 1,
     "exact_3_4_portrait_required": true,
     "same_chat_retry_on_failure": false,
@@ -98,20 +121,24 @@
   },
   "do_not_reopen": [
     "rerender SHANJUN_A or SHANJUN_B for taste",
-    "full-project formal render handoff in one chat",
-    "technical probes",
-    "run DOUFANG_B before DOUFANG_A is validated",
+    "reuse the invalid dog output",
+    "run DOUFANG_B before DOUFANG_A retry is validated",
+    "Drive-only reference fetch as the image-generation binding mechanism",
     "Figma final-round work before four formal raw outputs are valid",
     "claim distillation-only independence from shared-reference P3",
     "candidate promotion, Golden or Scale without formal evidence and human acceptance"
   ],
   "completed_this_revision": [
-    "补登记SHANJUN_A_FINAL正式原始图为PASS",
-    "登记SHANJUN_B_FINAL_POSITION_FREE正式原始图为PASS",
-    "两张均为1152x1536精确3:4、无文字Logo拼版、主体内容合同通过",
-    "正式最后一轮有效输出推进到2/4",
-    "下一动作推进到DOUFANG_A_FINAL"
+    "核验DOUFANG_A首次Drive-only执行返回1280x1536金毛幼犬图",
+    "核验SHA-256为cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
+    "判定WRONG_SUBJECT、WRONG_ASPECT_RATIO、VISIBLE_TEXT_PRESENT、REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT",
+    "正式有效输出保持2/4",
+    "将Drive-only参考读取降级为不可靠绑定方式",
+    "冻结修正后的DOUFANG_A重跑：提示词从Drive读取，参考图必须直接附加到新聊天"
   ],
-  "updated_at": "2026-09-12T21:42:00+00:00",
+  "changes_authority": {
+    "failure_evidence": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json","commit":"e0d4c750cb48f250b61639a0c80eeda970c3c165"}
+  },
+  "updated_at": "2026-09-13T00:18:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
