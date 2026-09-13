@@ -1,0 +1,92 @@
+name: VPD Figma Upload Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_upload_relay/tasks/*.cms"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-figma-upload-relay-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Require relay private key secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${RELAY_PRIVATE_KEY_B64:-}" ]; then
+            echo "Missing required repository secret VPD_FIGMA_RELAY_PRIVATE_KEY_B64" >&2
+            exit 2
+          fi
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-figma-relay-private.pem
+          openssl pkey -in /tmp/vpd-figma-relay-private.pem -check -noout >/dev/null
+
+      - name: Execute pending encrypted upload tasks
+        id: relay
+        shell: bash
+        run: |
+          set -uo pipefail
+          task_dir="evidence/vpd/figma_upload_relay/tasks"
+          receipt_dir="evidence/vpd/figma_upload_relay/receipts"
+          mkdir -p "$task_dir" "$receipt_dir"
+          failures=0
+          found=0
+          shopt -s nullglob
+          for task in "$task_dir"/*.cms; do
+            found=1
+            base="$(basename "$task" .cms)"
+            receipt="$receipt_dir/$base.json"
+            if python scripts/vpd_figma_relay_execute.py \
+              --task "$task" \
+              --cert evidence/vpd/figma_upload_relay/relay-cert.pem \
+              --private-key /tmp/vpd-figma-relay-private.pem \
+              --receipt "$receipt"; then
+              git rm -f "$task"
+            else
+              failures=$((failures + 1))
+            fi
+            git add "$receipt"
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No encrypted relay tasks pending."
+          fi
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+
+      - name: Persist redacted receipts and successful task deletion
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No relay receipt changes to persist."
+          else
+            git commit -m "Record VPD Figma upload relay receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
+
+      - name: Enforce relay success
+        if: steps.relay.outputs.failures != '0'
+        shell: bash
+        run: |
+          echo "One or more encrypted Figma relay tasks failed; task ciphertext was retained for retry." >&2
+          exit 1
