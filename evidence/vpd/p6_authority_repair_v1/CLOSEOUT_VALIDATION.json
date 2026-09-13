@@ -1,0 +1,26 @@
+{
+  "schema_version": "vpd-p6-relay-closeout-validation/v1",
+  "authority_initial_regression": {
+    "passed": 46,
+    "failed": 0
+  },
+  "placement_blocker_regression": {
+    "passed": 13,
+    "failed": 0,
+    "duration_seconds": 28.17
+  },
+  "current_state_validator": "PASS_WITH_EXPLICIT_PLACEMENT_BLOCKER",
+  "workflow_transport": "SUCCESS",
+  "binding": "NOT_VERIFIED_IMAGE_HASH_MISMATCH",
+  "other_nodes_changed": false,
+  "additional_upload_attempts": 0,
+  "unrelated_ci": {
+    "workflow": "VPD Renderer Adapter Validation",
+    "run_id": 34758092099,
+    "status": "FAIL",
+    "observed_cause": "Missing pytest/jsonschema dependencies in existing general regression runner",
+    "fixed_this_scope": false
+  },
+  "historical_ledger": "KNOWN_OLD_DEFECTS_PRESERVED_NOT_RECERTIFIED",
+  "next_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD"
+}

@@ -12,7 +12,8 @@ TARGETS = [('12:3', 'DOUFANG_A_BASELINE', '12:4'),
            ('12:19', 'CHAZUO_A_BASELINE', '12:20'),
            ('12:27', 'CHAZUO_B_DISTILLED', '12:28')]
 ACTIONS = {'RUN_LIVE_DOUFANG_B_RELAY', 'RUN_LIVE_CHAZUO_A_RELAY',
-           'RUN_LIVE_CHAZUO_B_RELAY', 'P6_RELAY_BINDINGS_COMPLETE_STOP'}
+           'RUN_LIVE_CHAZUO_B_RELAY', 'P6_RELAY_BINDINGS_COMPLETE_STOP',
+           'RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD'}
 
 
 def validate_p6_ledger(root, lock, cp, repair):
@@ -94,7 +95,18 @@ def validate_p6_state(root):
     require(count == p6['bound_count'] == cp['p6']['real_images_bound_count'], 'P6_COUNT_CONFLICT')
     require(p6['remaining_bindings'] == [f['photo'] for f in frames if not f['bound']], 'P6_REMAINING_CONFLICT')
     require(cp['p6']['photo_nodes'] == {f['photo']:{'bound':f['bound'],'locked':False} for f in frames}, 'P6_MIRROR_CONFLICT')
-    require(action == ['RUN_LIVE_DOUFANG_B_RELAY','RUN_LIVE_CHAZUO_A_RELAY','RUN_LIVE_CHAZUO_B_RELAY','P6_RELAY_BINDINGS_COMPLETE_STOP'][count-1], 'RELAY_ORDER_VIOLATION')
+    normal_action = ['RUN_LIVE_DOUFANG_B_RELAY','RUN_LIVE_CHAZUO_A_RELAY','RUN_LIVE_CHAZUO_B_RELAY','P6_RELAY_BINDINGS_COMPLETE_STOP'][count-1]
+    if action == 'RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD':
+        check_ref(root, lock['relay_placement_blocker'])
+        blocker = read(root, lock['relay_placement_blocker']['path'])
+        check_ref(root, blocker['receipt'])
+        receipt = read(root, blocker['receipt']['path'])
+        require(count < 4 and blocker['node_id'] == frames[count]['photo'] == receipt['node_id'], 'RELAY_ORDER_VIOLATION')
+        require(receipt['status'] == 'UPLOAD_PASS' and blocker['upload_imageHash'] == receipt['response']['imageHash'], 'RELAY_RECEIPT_REQUIRED')
+        require(blocker['observed_imageHash'] != blocker['upload_imageHash'] and blocker['stop_required'] is True, 'PLACEMENT_BLOCKER_EVIDENCE_REQUIRED')
+        require(p6['status'] == 'UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED', 'PLACEMENT_BLOCKER_STATE_CONFLICT')
+    else:
+        require(action == normal_action and 'relay_placement_blocker' not in lock, 'RELAY_ORDER_VIOLATION')
     relay = lock['figma_upload_relay']
     require(relay['secret_present_verified'] is True and relay['required_secret'] == 'VPD_FIGMA_RELAY_PRIVATE_KEY_B64', 'SECRET_NOT_VERIFIED')
     check_ref(root, relay['secret_metadata_receipt'])

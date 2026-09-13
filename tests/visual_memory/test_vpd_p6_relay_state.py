@@ -92,6 +92,19 @@ def test_stale_adapter_fails(repo):
     with pytest.raises(TaskLockError,match='EVIDENCE_HASH_MISMATCH'):validate_state(repo)
 
 
+def test_placement_blocker_cannot_be_ignored(repo):
+    lock=read(repo,LOCK)
+    if 'relay_placement_blocker' not in lock:
+        pytest.skip('No live placement blocker in this stage fixture')
+    lock['next_required_action']='RUN_LIVE_DOUFANG_B_RELAY'
+    reseal(repo,lock)
+    a=read(repo,'PROJECT_CONTROL_ADAPTER.json');a['vpd_system_goal_authority']['next_required_action']=lock['next_required_action']
+    write(repo,'PROJECT_CONTROL_ADAPTER.json',a)
+    cp=read(repo,'continuity/vpd/LATEST_CHECKPOINT.json');cp['next_required_action']=lock['next_required_action']
+    write(repo,'continuity/vpd/LATEST_CHECKPOINT.json',cp)
+    with pytest.raises(TaskLockError,match='RELAY_ORDER_VIOLATION'):validate_state(repo)
+
+
 def test_git_eol_compatibility_does_not_hide_changes(tmp_path):
     subprocess.run(['git','init','-q',str(tmp_path)],check=True)
     subprocess.run(['git','-C',str(tmp_path),'config','core.autocrlf','true'],check=True)

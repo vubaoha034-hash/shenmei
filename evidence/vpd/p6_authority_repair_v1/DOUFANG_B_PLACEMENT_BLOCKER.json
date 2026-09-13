@@ -1,0 +1,89 @@
+{
+  "schema_version": "vpd-p6-relay-placement-blocker/v1",
+  "node_id": "12:12",
+  "frame_id": "12:11",
+  "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "stop_required": true,
+  "receipt": {
+    "path": "evidence/vpd/figma_upload_relay/receipts/P6-DOUFANG-B-LIVE-20260913-01.json",
+    "sha256": "cfa5497b61c65d135a76e36ef3bf82582603411508477257cce0cdac6c89a3fd"
+  },
+  "workflow_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/34758125307",
+  "task_commit": "cf0ea6c5a42d059da758a7444b866096556dcc6d",
+  "receipt_commit": "f5d1d1e39d7fa913d8a045f8ac38336881f556b1",
+  "original_source_sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+  "upload_imageHash": "23926508e3fc10dd61e9df883e018e721cb7cc1f",
+  "observed_imageHash": "7f57313e7409ff16d76ab867893a1229a5769962",
+  "upload_status": "UPLOAD_PASS",
+  "http_status": 200,
+  "canonical_source_binding_verified": false,
+  "readback_passes": 2,
+  "locked": false,
+  "fills_type": "IMAGE",
+  "scaleMode": "FILL",
+  "second_readback": {
+    "id": "12:12",
+    "parentId": "12:11",
+    "name": "PHOTO_RAW_LOCKED",
+    "locked": false,
+    "width": 2400,
+    "height": 3200,
+    "fills": [
+      {
+        "type": "IMAGE",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "scaleMode": "FILL",
+        "scalingFactor": 0.5,
+        "rotation": 0,
+        "filters": {
+          "exposure": 0,
+          "contrast": 0,
+          "saturation": 0,
+          "temperature": 0,
+          "tint": 0,
+          "highlights": 0,
+          "shadows": 0
+        },
+        "imageTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "imageHash": "7f57313e7409ff16d76ab867893a1229a5769962"
+      }
+    ]
+  },
+  "snapshot_before": "evidence/vpd/p6_authority_repair_v1/FIGMA_BEFORE.json",
+  "all_captured_node_properties_unchanged": true,
+  "screenshot": {
+    "sha256": "4a951e87c1c4ed7d703662308b6c3057a3aac3b20e354b4d169f36492715fdd0",
+    "dimensions": [
+      768,
+      1024
+    ],
+    "existing_image_visible": true,
+    "canonical_uploaded_image_confirmed": false,
+    "plain_pixels_committed": false
+  },
+  "diagnosis_scope": "HTTP transport/storage succeeded. Figma target still refers to the old image. Root cause of missing placement is not established. Receipt executor omits some placement fields, so receipt alone cannot certify binding.",
+  "boundary": {
+    "additional_upload_attempts": 0,
+    "chazuo_A_relay_started": false,
+    "chazuo_B_relay_started": false,
+    "reused_submit_url": false,
+    "relocked": false,
+    "design_changes": false,
+    "regenerated_images": false
+  },
+  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD"
+}
