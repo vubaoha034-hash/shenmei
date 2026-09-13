@@ -1,0 +1,35 @@
+{
+  "schema_version": "vpd-p6-authority-validation/v1",
+  "baseline": "VPD_STATE_BLOCKED: EVIDENCE_HASH_MISMATCH at ede21b036a08de93a6a4bf47604cc642fd8c46c7",
+  "candidate_state": "VPD_STATE_VALID",
+  "suite": "tests/visual_memory/test_vpd_task_lock.py tests/visual_memory/test_vpd_p6_relay_state.py",
+  "pytest_version": "9.0.3",
+  "command": "python -X utf8 -m pytest --disable-plugin-autoload tests/visual_memory/test_vpd_task_lock.py tests/visual_memory/test_vpd_p6_relay_state.py -q",
+  "passed": 46,
+  "failed": 0,
+  "duration_seconds": 130.13,
+  "scope": "Authority compatibility only. Not image binding or aesthetic acceptance.",
+  "frozen_sources": {
+    "doufangB": {
+      "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+      "bytes": 422265
+    },
+    "chazuoA": {
+      "sha256": "c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667",
+      "bytes": 384324
+    },
+    "chazuoB": {
+      "sha256": "6680becc332649267f5fb92cd0413b7fb8539431ef8f309d74571581c211e6c2",
+      "bytes": 375650
+    }
+  },
+  "source_encoding": "JPEG; source bytes preserved, local .jpg aliases only",
+  "plain_image_bytes_committed": false,
+  "plaintext_submit_urls_committed": false,
+  "skill_refiner": {
+    "evidence": "ev_c1fecdc6eaef",
+    "layer": "repo",
+    "mode": "observe only",
+    "visual_rules_modified": false
+  }
+}

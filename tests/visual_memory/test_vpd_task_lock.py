@@ -6,23 +6,32 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import io
+import tarfile
 import pytest
 from visual_memory.vpd_task_lock import (
     LOCK_PATH, CHECKPOINT_PATH, NEXT_ACTION, TaskLockError,
-    validate_state, validate_request, status_card, digest,
+    validate_state, validate_request, status_card, digest, evidence_bytes,
 )
 ROOT = Path(__file__).resolve().parents[2]
 
 def load(root, p):
-    return json.loads((root / p).read_text())
+    return json.loads((root / p).read_text(encoding='utf-8'))
 
 def save(root, p, data):
-    (root / p).write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')
+    (root / p).write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
 
 @pytest.fixture
 def isolated(tmp_path):
-    shutil.copytree(ROOT, tmp_path / 'repo', ignore=shutil.ignore_patterns('.git', '__pycache__', '.pytest_cache'))
-    return tmp_path / 'repo'
+    target = tmp_path / 'repo'
+    # Keep the old stage's accepted fixture and exact Git bytes; test current code.
+    archive = subprocess.check_output(['git','-C',str(ROOT),'-c','core.autocrlf=false','archive',
+                                      'a54593a1956739375a9a9966a2944a3ed5699ba7'])
+    with tarfile.open(fileobj=io.BytesIO(archive)) as tf:
+        tf.extractall(target, filter='data')
+    for name in ['visual_memory/vpd_task_lock.py', 'visual_memory/vpd_p6_relay_state.py']:
+        (target / name).write_bytes((ROOT / name).read_bytes())
+    return target
 
 def reseal(root, lock):
     # Rebind mirrors so semantic tests cannot pass only because a checksum changed.
@@ -49,7 +58,7 @@ def test_correct_state_and_real_entrypoint_pass(isolated):
     assert lock['next_required_action'] == 'PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON'
     assert lock['parent_active_task_id'] == 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
     assert validate_request(isolated, request(isolated)) == lock
-    result = subprocess.run([sys.executable, str(isolated/'scripts/verify_visual_memory.py'), '--vpd-state', '--status-card'], capture_output=True, text=True)
+    result = subprocess.run([sys.executable, '-X', 'utf8', str(isolated/'scripts/verify_visual_memory.py'), '--vpd-state', '--status-card'], capture_output=True, text=True, encoding='utf-8')
     assert result.returncode == 0
     assert json.loads(result.stdout) == status_card(lock, cp)
 
@@ -97,7 +106,7 @@ def test_drift_is_rejected(isolated, case, reason):
     elif case=='accepted':r['accepted']=True
     elif case=='promoted':r['promoted']=True
     elif case=='wrong_entry':
-        p=root/'START_HERE.md';p.write_text(p.read_text().replace(LOCK_PATH,'continuity/vpd/WRONG_LOCK.json'))
+        p=root/'START_HERE.md';p.write_text(p.read_text(encoding='utf-8').replace(LOCK_PATH,'continuity/vpd/WRONG_LOCK.json'),encoding='utf-8')
     elif case=='stale_state':cp['sequence']=22;save(root,CHECKPOINT_PATH,cp)
     elif case=='binding_boolean':lock['execution']['bound_anchor']=True
     elif case=='binding_claim':r['binding_pass']=True
@@ -131,7 +140,7 @@ def test_reconciliation_requires_completed_review(isolated):
 
 def test_new_chat_entry_requires_workflow(isolated):
     p=isolated/'START_HERE.md'
-    p.write_text(p.read_text().replace('VPD_PROJECT_ROADMAP.md','WRONG_ROADMAP.md'))
+    p.write_text(p.read_text(encoding='utf-8').replace('VPD_PROJECT_ROADMAP.md','WRONG_ROADMAP.md'),encoding='utf-8')
     with pytest.raises(TaskLockError,match='ENTRYPOINT_WORKFLOW_MISSING'):
         validate_state(isolated)
 

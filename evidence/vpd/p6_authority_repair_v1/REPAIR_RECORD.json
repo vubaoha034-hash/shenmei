@@ -1,0 +1,102 @@
+{
+  "schema_version": "vpd-p6-authority-repair/v1",
+  "scope": "AUTHORITY_COMPATIBILITY_AND_P6_RELAY_ONLY",
+  "input_remote_head": "ede21b036a08de93a6a4bf47604cc642fd8c46c7",
+  "user_authorization": "Current conversation: explicit authorization to repair authority references and validator compatibility, then execute ordered P6 relay only.",
+  "findings": [
+    "Adapter remained revision 4 while lock was revision 24.",
+    "Legacy validator only understood P2/P3; no P6 profile.",
+    "Checkpoint lock reference was Git blob SHA instead of SHA-256, and next-action mirrors differed.",
+    "Windows autocrlf changes worktree representation, not canonical Git bytes.",
+    "Three existing legacy ledger hashes fail recomputation; preserved and disclosed, never rewritten."
+  ],
+  "preserved_state": {
+    "lock": {
+      "path": "evidence/vpd/p6_authority_repair_v1/LOCK_BEFORE.json",
+      "sha256": "9c60943df5368053271db4c5746241a3116e08f71ab07acf384f9e116fa667e2"
+    },
+    "checkpoint": {
+      "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
+      "sha256": "bef69fc352c2acae809e69e4d0a47399512ffc170ccebbcc614a63462bf8338e"
+    }
+  },
+  "original_git_hashes": {
+    "continuity/vpd/CURRENT_TASK_LOCK.json": {
+      "sha256": "17bf87347a54b595ac022d62f9c6c08b40ee77923b1c55d56ea7efc7074d77c0"
+    },
+    "continuity/vpd/LATEST_CHECKPOINT.json": {
+      "sha256": "7ed27a97a3a96361390c26316f11d85ffcdd3ba194ae75ee7f4515e3f23eb032"
+    },
+    "PROJECT_CONTROL_ADAPTER.json": {
+      "sha256": "b4c4028fea4b70648ebeda3dfcb51ac3fa9e0f8e330db9c3194248df7c590e11"
+    },
+    "continuity/vpd/state_ledger/system_validation.jsonl": {
+      "sha256": "44130717ef80b7f9985dbb0d54dac60508652400a68a3e3f506566c9c39d9075"
+    },
+    "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json": {
+      "sha256": "f6b58770cd309aba8f510aa2f7fc78521647d442929bc086f4da4a22ca2a092c"
+    },
+    "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_FIGMA_VALIDATION_FREEZE_20260913.json": {
+      "sha256": "f92cca1c6cb302dc3733a53dd206a16a65b39aa3a77a8fc54763889ea6de6090"
+    },
+    "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json": {
+      "sha256": "e93b1efd16b10f923d0cdca9c07c7975856adfdff4ffa392feacbcb57478d4de"
+    },
+    "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json": {
+      "sha256": "33b4576a01a8ce12fa5556c5262a547829152a5399c6dbbdbdb817d2a134809a"
+    },
+    "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json": {
+      "sha256": "268636993681e98f54698a047a81df967cf9f9ff3524945e4343b8eca27bb444"
+    }
+  },
+  "legacy_ledger": {
+    "event_count": 14,
+    "sha256": "44130717ef80b7f9985dbb0d54dac60508652400a68a3e3f506566c9c39d9075",
+    "status": "PRESERVED_WITH_PREEXISTING_HASH_DEFECTS_NOT_RECERTIFIED",
+    "known_invalid_event_ids": [
+      "EVT-VISUAL-VPD-SYSTEM-HOLDOUT-RUNTIME-AUTHORIZATION-PAYLOAD-FREEZE-20260907-001",
+      "EVT-VPD-P3-PHOTO-TYPOGRAPHY-PREPARATION-20260912-001",
+      "EVT-VPD-P3-FINAL-ROUND-FRESH-STOP-20260912-001"
+    ]
+  },
+  "immutable_baseline": {
+    "path": "evidence/vpd/task_lock_repair_v1/IMMUTABLE_BASELINE.json",
+    "sha256": "f6b58770cd309aba8f510aa2f7fc78521647d442929bc086f4da4a22ca2a092c"
+  },
+  "p6_input_evidence": {
+    "P6_EQUAL_BUDGET_FIGMA_VALIDATION_FREEZE_20260913.json": {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_FIGMA_VALIDATION_FREEZE_20260913.json",
+      "sha256": "f92cca1c6cb302dc3733a53dd206a16a65b39aa3a77a8fc54763889ea6de6090"
+    },
+    "P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json": {
+      "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
+      "sha256": "e93b1efd16b10f923d0cdca9c07c7975856adfdff4ffa392feacbcb57478d4de"
+    },
+    "P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json": {
+      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+      "sha256": "33b4576a01a8ce12fa5556c5262a547829152a5399c6dbbdbdb817d2a134809a"
+    },
+    "P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json": {
+      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
+      "sha256": "268636993681e98f54698a047a81df967cf9f9ff3524945e4343b8eca27bb444"
+    }
+  },
+  "frozen_source_sha256": {
+    "12:12": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "12:20": "c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667",
+    "12:28": "6680becc332649267f5fb92cd0413b7fb8539431ef8f309d74571581c211e6c2"
+  },
+  "source_drive_ids": {
+    "12:12": "1Q65mBSBdyWyZS71PwOz5RFkP0_tNNfAP",
+    "12:20": "1BWtuDDvwC3a9-15iXaIrtwx0CL79e8TJ",
+    "12:28": "1FW8OLCug8zfWiIi_SDvjbPog__FXUlxX"
+  },
+  "not_authorized": [
+    "image generation",
+    "redesign",
+    "relocking",
+    "capsule promotion",
+    "aesthetic acceptance",
+    "rewriting historical evidence"
+  ]
+}

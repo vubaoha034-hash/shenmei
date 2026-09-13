@@ -2,6 +2,7 @@
 from __future__ import annotations
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 LOCK_PATH = 'continuity/vpd/CURRENT_TASK_LOCK.json'
@@ -25,8 +26,33 @@ def path(root, value):
     require(p.is_relative_to(root), 'PATH_ESCAPE')
     return p
 
+def evidence_bytes(p):
+    """Exact repository bytes when Git proves the worktree matches its index.
+
+    Windows checkout CRLF is not a change to frozen Git bytes. Never read HEAD
+    instead of a dirty/staged artifact: substantive changes must still fail.
+    Untracked files and non-Git test fixtures use their actual bytes.
+    """
+    p = Path(p).resolve()
+    raw = p.read_bytes()
+    if b'\r\n' not in raw:
+        return raw
+    try:
+        def git(*args):
+            return subprocess.check_output(['git', '-C', str(p.parent), *args], stderr=subprocess.DEVNULL)
+        root = Path(git('rev-parse', '--show-toplevel').decode().strip())
+        rel = p.relative_to(root).as_posix()
+        indexed = git('rev-parse', ':' + rel).strip()
+        working = git('hash-object', '--path=' + rel, str(p)).strip()
+        if indexed == working:
+            return git('cat-file', 'blob', indexed.decode())
+    except (OSError, ValueError, subprocess.CalledProcessError):
+        pass
+    return raw
+
+
 def digest(p):
-    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+    return hashlib.sha256(evidence_bytes(p)).hexdigest()
 
 def unique_object(pairs):
     out = {}
@@ -104,6 +130,14 @@ def validate_reconciliation(root, lock, cp):
     require(cp['sequence'] > 25, 'RECONCILIATION_STALE_CHECKPOINT')
 
 def validate_state(root):
+    lock = read(root, LOCK_PATH)
+    if lock.get('state_profile') == 'p6-figma-relay/v1':
+        from visual_memory.vpd_p6_relay_state import validate_p6_state
+        return validate_p6_state(root)
+    return validate_legacy_state(root)
+
+
+def validate_legacy_state(root):
     adapter = read(root, 'PROJECT_CONTROL_ADAPTER.json')
     dispatch = adapter['task_lock']
     require(dispatch['path'] == LOCK_PATH, 'WRONG_TASK_LOCK_PATH')
@@ -241,4 +275,10 @@ def validate_request(root, request):
     return lock
 
 def status_card(lock, cp):
+    if lock.get('state_profile') == 'p6-figma-relay/v1':
+        return {'status':'VPD_STATE_VALID', 'scope':'P6_RELAY_ONLY_NOT_AESTHETIC_ACCEPTANCE',
+                'current_stage':lock['current_stage'], 'revision':lock['revision'],
+                'checkpoint':cp['sequence'], 'next_action':lock['next_required_action'],
+                'bound_count':lock['p6_integrated_design']['bound_count'],
+                'historical_ledger':lock['authority_repair']['historical_ledger_status']}
     return {'主目标':lock['objective']['text'], '完整流程':lock['workflow']['document']['path'], '当前母参考/源库':'原 approved_refs 18 条登记及独立批准的山野集；山野集仅为当前家族', '当前阶段':lock['current_stage'], '本轮实际完成':lock['completed_this_revision'], '未完成/阻塞':lock['blockers'], '唯一下一动作':lock['next_required_action'], '证据/远端版本':{'起始远端提交':lock['input_commit'],'当前锁修订':lock['revision'],'当前检查点':cp['sequence'],'远端发布回读':'须单独提供真实工具回读，不从本地文件推定'}}
