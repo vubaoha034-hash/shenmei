@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 16,
+  "revision": 17,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 15,
-    "git_blob_sha": "d4b9ffebe7323b52022242a22bee8fc6ed137b05",
-    "note": "Revision 15 stopped the shared-reference cross-subject route after two invalid Doufang A attempts. Revision 16 formally registers a no-reference A/B transfer comparison and freezes Drive prompt documents for both arms."
+    "revision": 16,
+    "git_blob_sha": "b91ff70fdb17b98d53dba0bf1bc2b60ec563bb49",
+    "note": "Revision 16 registered the no-reference Doufang A/B transfer comparison. Revision 17 records Arm A as a valid no-reference baseline and advances only to Arm B."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -23,35 +23,39 @@
   "p3": {
     "shared_reference_route": {
       "status": "STOPPED_CROSS_SUBJECT_NOT_VIABLE",
-      "valid_outputs": 2,
-      "valid_same_subject_pair": ["SHANJUN_A_FINAL","SHANJUN_B_FINAL_POSITION_FREE"],
+      "valid_same_subject_pair": ["SHANJUN_A_FINAL", "SHANJUN_B_FINAL_POSITION_FREE"],
       "invalid_doufang_attempts": 2,
       "figma_entry_allowed": false
     },
     "no_reference_doufang_transfer": {
-      "status": "REGISTERED_READY_A_BASELINE_NEXT",
+      "status": "IN_PROGRESS_A_PASS_B_NEXT",
       "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
       "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json",
-      "registration_commit": "801cc401f6224de1473d5616489956cd7b9ec50e",
       "execution_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
-      "handoff_commit": "997d07ee086a32b28e8993d4505761ee60f0b4ff",
       "reference_image_count": 0,
-      "order": ["DOUFANG_A_NO_REFERENCE_BASELINE","DOUFANG_B_NO_REFERENCE_DISTILLED"],
+      "order": ["DOUFANG_A_NO_REFERENCE_BASELINE", "DOUFANG_B_NO_REFERENCE_DISTILLED"],
       "n_per_arm": 1,
       "same_chat_retry": false,
       "hidden_variants": false,
       "best_of_n": false,
+      "execution_prompt_policy": "DIRECT_VISIBLE_PROMPT_REQUIRED; Drive documents are audit/freeze copies only, not the image-generation instruction transport",
       "arm_A": {
         "id": "DOUFANG_A_NO_REFERENCE_BASELINE",
-        "drive_prompt_doc_id": "1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY",
+        "status": "PASS",
         "reference": "NONE",
-        "capsule_rules": "NONE"
+        "capsule_rules": "NONE",
+        "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+        "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
+        "chat_file_id": "file_000000001b34820885a641a193341f6b",
+        "dimensions": [1152, 1536],
+        "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909"
       },
       "arm_B": {
         "id": "DOUFANG_B_NO_REFERENCE_DISTILLED",
-        "drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU",
+        "status": "NEXT",
         "reference": "NONE",
-        "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY"
+        "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY",
+        "audit_drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU"
       },
       "interpretation_boundary": {
         "one_pair_can_support": "directional evidence of distilled-program benefit without source-image conditioning for the tofu task",
@@ -60,16 +64,16 @@
       }
     }
   },
-  "current_stage": "共享参考的豆坊跨主体路线已停止。新的no-reference豆坊A/B迁移对照已登记并冻结，两路都禁止任何参考图：A为同内容自然语言基线，B为同内容加冻结蒸馏关系规则。下一步只运行A；A回传核验通过后才运行B。",
-  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_TRANSFER_READY_A_NEXT",
+  "current_stage": "P3B no-reference豆坊迁移对照中，A基线已通过：1152x1536精确3:4，真实豆腐制作过程证据完整，无文字/Logo/拼版。下一步只运行B蒸馏路；B仍不得使用任何参考图，并必须把完整提示词直接写在新聊天可见用户消息中。",
+  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_A_PASS_B_NEXT",
   "formal_p3_render_allowed": true,
-  "formal_p3_render_scope": "P3B_NO_REFERENCE_DOUFANG_A_ONLY",
-  "next_required_action": "RUN_DOUFANG_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT",
+  "formal_p3_render_scope": "P3B_NO_REFERENCE_DOUFANG_B_ONLY",
+  "next_required_action": "RUN_DOUFANG_B_NO_REFERENCE_DISTILLED_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
   "execution_boundary": {
     "must_use_brand_new_standalone_chat": true,
     "must_not_attach_any_reference_image": true,
     "must_not_fetch_any_drive_or_github_image": true,
-    "prompt_drive_doc_id": "1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY",
+    "must_use_direct_visible_prompt_not_drive_instruction_transport": true,
     "n": 1,
     "exact_3_4_portrait_required": true,
     "photo_only": true,
@@ -79,23 +83,27 @@
   "do_not_reopen": [
     "third shared-reference DOUFANG_A attempt",
     "shared-reference DOUFANG_B",
-    "attach the Shanyeji source reference to either no-reference arm",
-    "run B before A is validated",
+    "rerender no-reference A for taste",
+    "attach the Shanyeji source reference to no-reference B",
+    "use Drive document reading as the image-generation prompt transport for B",
     "Figma comparison before a complete valid revised A/B pair exists",
     "claim stable independent distillation from a single no-reference pair"
   ],
   "completed_this_revision": [
-    "登记P3B no-reference豆坊迁移A/B对照",
-    "冻结A/B共享内容合同与执行顺序",
-    "创建并回读Drive中的A基线提示词文档",
-    "创建并回读Drive中的B蒸馏提示词文档",
-    "明确两路都不得使用任何参考图片",
-    "下一动作推进到DOUFANG_A_NO_REFERENCE_BASELINE"
+    "核验DOUFANG_A_NO_REFERENCE_BASELINE为1152x1536精确3:4",
+    "核验SHA-256为45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
+    "核验黄豆、磨浆/豆浆、凝乳/豆花、纱布、木模压制、成型豆腐、水分均有可信证据",
+    "核验无文字、Logo、标签、拼版、宠物、菌菇和主动火焰烹饪",
+    "A基线正式判PASS，不重抽",
+    "执行入口从Drive读取改为直接可见提示词，Drive文档仅保留审计/冻结用途",
+    "下一动作推进到DOUFANG_B_NO_REFERENCE_DISTILLED"
   ],
   "changes_authority": {
-    "registration": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json","commit":"801cc401f6224de1473d5616489956cd7b9ec50e"},
-    "handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt","commit":"997d07ee086a32b28e8993d4505761ee60f0b4ff"}
+    "arm_A_result": {
+      "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+      "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91"
+    }
   },
-  "updated_at": "2026-09-13T00:36:00+00:00",
-  "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
+  "updated_at": "2026-09-13T00:40:00+00:00",
+  "workflow": {"version": "1.1", "focus_stage": "P3", "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
