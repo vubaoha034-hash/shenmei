@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 15,
+  "revision": 16,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 14,
-    "git_blob_sha": "eba09b6ebf4038f3c0072602e5dc922b39513b74",
-    "note": "Revision 14 preserved 2/4 valid Shanjun outputs and allowed a transport-recovery Doufang A retry with direct reference attachment. Revision 15 records that direct attachment also fails for cross-subject tofu transfer and stops further shared-reference cross-subject rendering."
+    "revision": 15,
+    "git_blob_sha": "d4b9ffebe7323b52022242a22bee8fc6ed137b05",
+    "note": "Revision 15 stopped the shared-reference cross-subject route after two invalid Doufang A attempts. Revision 16 formally registers a no-reference A/B transfer comparison and freezes Drive prompt documents for both arms."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -21,103 +21,81 @@
     "promoted": false
   },
   "p3": {
-    "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
-    "final_round_valid_outputs": 2,
-    "technical_invalid_fresh_contexts": 4,
-    "formal_micro_handoff": {
-      "status": "STOPPED_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE_NOT_VIABLE",
-      "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
-      "valid_outputs_required": 4,
-      "valid_outputs_so_far": 2,
-      "formal_results": {
-        "SHANJUN_A_FINAL": {
-          "status": "PASS",
-          "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json",
-          "commit": "ad01ee1396f542fab1046f660f9c4bdc3517838e",
-          "chat_file_id": "file_0000000020148207ae85be6c19abae81",
-          "dimensions": [1152,1536],
-          "sha256": "322191789ca7e21e6050263028e47976db9cb8fdf79d8dc28e871d092078c344"
-        },
-        "SHANJUN_B_FINAL_POSITION_FREE": {
-          "status": "PASS",
-          "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json",
-          "commit": "36c8cc028b02d76471a074975d516f7a63de5906",
-          "chat_file_id": "file_000000008cb08207bdf246c2af109088",
-          "dimensions": [1152,1536],
-          "sha256": "e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3"
-        }
+    "shared_reference_route": {
+      "status": "STOPPED_CROSS_SUBJECT_NOT_VIABLE",
+      "valid_outputs": 2,
+      "valid_same_subject_pair": ["SHANJUN_A_FINAL","SHANJUN_B_FINAL_POSITION_FREE"],
+      "invalid_doufang_attempts": 2,
+      "figma_entry_allowed": false
+    },
+    "no_reference_doufang_transfer": {
+      "status": "REGISTERED_READY_A_BASELINE_NEXT",
+      "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
+      "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json",
+      "registration_commit": "801cc401f6224de1473d5616489956cd7b9ec50e",
+      "execution_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
+      "handoff_commit": "997d07ee086a32b28e8993d4505761ee60f0b4ff",
+      "reference_image_count": 0,
+      "order": ["DOUFANG_A_NO_REFERENCE_BASELINE","DOUFANG_B_NO_REFERENCE_DISTILLED"],
+      "n_per_arm": 1,
+      "same_chat_retry": false,
+      "hidden_variants": false,
+      "best_of_n": false,
+      "arm_A": {
+        "id": "DOUFANG_A_NO_REFERENCE_BASELINE",
+        "drive_prompt_doc_id": "1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY",
+        "reference": "NONE",
+        "capsule_rules": "NONE"
       },
-      "invalid_attempts": [
-        {
-          "id": "DOUFANG_A_FINAL_DRIVE_ONLY_ATTEMPT1",
-          "status": "TECHNICAL_INVALID",
-          "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json",
-          "commit": "e0d4c750cb48f250b61639a0c80eeda970c3c165",
-          "chat_file_id": "file_000000002c088211a4305b2dee650852",
-          "dimensions": [1280,1536],
-          "sha256": "cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
-          "violations": ["WRONG_SUBJECT","WRONG_ASPECT_RATIO","VISIBLE_TEXT_PRESENT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"]
-        },
-        {
-          "id": "DOUFANG_A_FINAL_DIRECT_ATTACHMENT_ATTEMPT2",
-          "status": "TECHNICAL_INVALID",
-          "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DIRECT_ATTACHMENT_REFERENCE_TAKEOVER_FAILURE_20260913.json",
-          "commit": "cd929f4ecdef4e291847a104367810ff68f0d06b",
-          "chat_file_id": "file_00000000afc0820783bcf0156e0a7f40",
-          "dimensions": [1152,1536],
-          "sha256": "f5348d1804db55b4e5fe97774e09632a0bb4c0f9278e2757c657a8ae39ac69bb",
-          "violations": ["WRONG_SUBJECT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT","FORBIDDEN_MUSHROOM_SUBJECT_PRESENT","VISIBLE_TEXT_PRESENT","LOGO_LABEL_BADGE_PRESENT","POSTER_NOT_PHOTO_ONLY"]
-        }
-      ]
-    },
-    "causal_update": {
-      "base_subject_aspect_binding": "PASS_FROM_PROBE1",
-      "minimal_reference_present_same_subject_path": "PASS_FROM_PROBE2",
-      "isolated_same_subject_A_envelope": "PASS_FROM_BRIDGE",
-      "drive_only_transport_as_sufficient_failure_cause": "NOT_SUPPORTED",
-      "direct_attachment_as_sufficient_cross_subject_fix": "FAILED",
-      "shared_reference_cross_subject_semantic_leakage": "STRONGLY_ELEVATED_AT_OUTPUT_LEVEL",
-      "provider_internal_root_cause_proven": false
-    },
-    "inference_boundary": {
-      "same_subject_shanjun_pair": "VALID_SHARED_REFERENCE_PARTIAL_EVIDENCE_ONLY",
-      "cross_subject_doufang_shared_reference_route": "EXECUTION_ARCHITECTURE_NOT_VIABLE",
-      "P3_cannot_support": "DISTILLATION_ONLY_INDEPENDENCE_FROM_SOURCE_REFERENCE",
-      "next_test_should_remove_source_reference_at_generation_time": true
+      "arm_B": {
+        "id": "DOUFANG_B_NO_REFERENCE_DISTILLED",
+        "drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU",
+        "reference": "NONE",
+        "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY"
+      },
+      "interpretation_boundary": {
+        "one_pair_can_support": "directional evidence of distilled-program benefit without source-image conditioning for the tofu task",
+        "one_pair_cannot_support": "stable general independent-distillation capability",
+        "if_B_meaningfully_wins": "run at least one additional unseen-content no-reference transfer before a stable independent-distillation claim"
+      }
     }
   },
-  "current_stage": "正式P3共享参考最后一轮在山菌A/B取得2/4有效结果，但豆坊A连续两次技术失败：Drive-only时返回金毛幼犬，直接附加批准参考后返回带大量文字的山菌海报。第二次失败说明Drive transport并非充分原因，跨主体时源参考语义接管风险显著。共享参考的跨主体豆坊A/B路线现正式停止，不再重试。",
-  "status": "VPD_P3_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE_STOPPED_REDESIGN_NEXT",
-  "formal_p3_render_allowed": false,
-  "technical_probe_allowed": false,
-  "next_required_action": "DESIGN_NO_REFERENCE_DISTILLATION_TRANSFER_COMPARISON_AND_CLOSE_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE",
+  "current_stage": "共享参考的豆坊跨主体路线已停止。新的no-reference豆坊A/B迁移对照已登记并冻结，两路都禁止任何参考图：A为同内容自然语言基线，B为同内容加冻结蒸馏关系规则。下一步只运行A；A回传核验通过后才运行B。",
+  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_TRANSFER_READY_A_NEXT",
+  "formal_p3_render_allowed": true,
+  "formal_p3_render_scope": "P3B_NO_REFERENCE_DOUFANG_A_ONLY",
+  "next_required_action": "RUN_DOUFANG_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT",
   "execution_boundary": {
-    "no_more_doufang_a_shared_reference_retries": true,
-    "do_not_run_doufang_b_shared_reference": true,
-    "do_not_enter_figma_for_incomplete_four_output_round": true,
-    "preserve_shanjun_a_b_outputs": true,
-    "preserve_both_doufang_a_failures": true
+    "must_use_brand_new_standalone_chat": true,
+    "must_not_attach_any_reference_image": true,
+    "must_not_fetch_any_drive_or_github_image": true,
+    "prompt_drive_doc_id": "1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY",
+    "n": 1,
+    "exact_3_4_portrait_required": true,
+    "photo_only": true,
+    "same_chat_retry_on_failure": false,
+    "stop_on_any_contract_violation": true
   },
   "do_not_reopen": [
-    "rerender SHANJUN_A or SHANJUN_B for taste",
-    "third DOUFANG_A attempt with source reference attached or fetched",
-    "DOUFANG_B under shared-reference architecture",
-    "Figma final-round comparison as if four valid outputs existed",
-    "claim distillation-only independence from shared-reference P3",
-    "candidate promotion, Golden or Scale without new formal evidence and human acceptance"
+    "third shared-reference DOUFANG_A attempt",
+    "shared-reference DOUFANG_B",
+    "attach the Shanyeji source reference to either no-reference arm",
+    "run B before A is validated",
+    "Figma comparison before a complete valid revised A/B pair exists",
+    "claim stable independent distillation from a single no-reference pair"
   ],
   "completed_this_revision": [
-    "核验DOUFANG_A直接附件Attempt2为1152x1536精确3:4",
-    "核验SHA-256为f5348d1804db55b4e5fe97774e09632a0bb4c0f9278e2757c657a8ae39ac69bb",
-    "判定WRONG_SUBJECT、豆腐过程证据缺失、山菌主体出现、大量文字/Logo/标签出现、非PHOTO_ONLY",
-    "证伪Drive-only transport是跨主体失败的充分原因",
-    "正式有效输出保持2/4",
-    "停止共享参考的豆坊跨主体路线",
-    "下一步改为设计生成时不再提供源参考图的蒸馏迁移对照"
+    "登记P3B no-reference豆坊迁移A/B对照",
+    "冻结A/B共享内容合同与执行顺序",
+    "创建并回读Drive中的A基线提示词文档",
+    "创建并回读Drive中的B蒸馏提示词文档",
+    "明确两路都不得使用任何参考图片",
+    "下一动作推进到DOUFANG_A_NO_REFERENCE_BASELINE"
   ],
   "changes_authority": {
-    "second_doufang_failure": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DIRECT_ATTACHMENT_REFERENCE_TAKEOVER_FAILURE_20260913.json","commit":"cd929f4ecdef4e291847a104367810ff68f0d06b"}
+    "registration": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json","commit":"801cc401f6224de1473d5616489956cd7b9ec50e"},
+    "handoff": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt","commit":"997d07ee086a32b28e8993d4505761ee60f0b4ff"}
   },
-  "updated_at": "2026-09-13T00:28:00+00:00",
+  "updated_at": "2026-09-13T00:36:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
