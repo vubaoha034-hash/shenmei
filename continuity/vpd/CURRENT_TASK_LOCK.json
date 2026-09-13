@@ -1,108 +1,66 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 21,
+  "revision": 22,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
   "branch": "visual-program-distillation-v2-photography-design-20260814",
-  "objective": {
-    "text": "从用户原先批准的海报真实像素蒸馏可复用视觉程序，用新作品验证视觉逻辑、迁移能力和质量；不同家族共用同一个蒸馏器。",
-    "single_poster_optimization": false
-  },
-  "preserved_prior_revision": {
-    "revision": 20,
-    "git_blob_sha": "7b9107c214e2176ba2fefce10e8bfaa115b350e7",
-    "note": "Revision 20 recorded tea-craft Arm A baseline PASS. Revision 21 records tea-craft Arm B PASS, closes the second no-reference pair, and records repeated directional mechanism-transfer evidence across tofu and tea without source-reference pixels."
-  },
+  "objective": {"text":"从用户原先批准的海报真实像素蒸馏可复用视觉程序，用新作品验证视觉逻辑、迁移能力和质量；不同家族共用同一个蒸馏器。","single_poster_optimization":false},
+  "preserved_prior_revision": {"revision":21,"git_blob_sha":"62518a85a5aef8b947831c35ac38eeca84b345b9","note":"Revision 21 recorded repeated directional no-reference mechanism evidence across tofu and tea and allowed entry to P6."},
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
-  "capsule": {
-    "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
-    "maturity": "CONTROLLED_VALIDATION_REQUIRED",
-    "promoted": false
-  },
-  "p3_evidence": {
-    "shared_reference_cross_subject_route": "STOPPED_NOT_VIABLE",
-    "valid_same_subject_pair": ["SHANJUN_A_FINAL", "SHANJUN_B_FINAL_POSITION_FREE"],
-    "no_reference_tofu_pair": {
-      "status": "COMPLETE_DIRECTIONAL_BENEFIT",
-      "arm_A_score_10": 6.9,
-      "arm_B_score_10": 7.4,
-      "delta_B_minus_A": 0.5,
-      "source_reference_present": false
-    }
-  },
-  "p4_unseen_transfer": {
-    "status": "PAIR_COMPLETE_REPEATED_DIRECTIONAL_BENEFIT",
-    "challenge_id": "P4-CHAZUO-NO-REFERENCE-TRANSFER-20260913",
-    "subject_class": "HANDCRAFTED_TEA_NON_HEATED_PROCESS_V1",
-    "reference_image_count": 0,
-    "arm_A": {
-      "status": "PASS",
-      "result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
-      "commit": "b55a79056b5f858e4f53d8e1e2929aa57c531937",
-      "chat_file_id": "file_00000000b84c8207aaffd1b99319bab5",
-      "dimensions": [1152, 1536],
-      "sha256": "c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667",
-      "aesthetic_score_10": 6.8
-    },
-    "arm_B": {
-      "status": "PASS",
-      "result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
-      "commit": "8b570922a35c7e01062de31be5def497c6af48b1",
-      "chat_file_id": "file_00000000cd608211b8a172b4817c37b8",
-      "dimensions": [1152, 1536],
-      "sha256": "6680becc332649267f5fb92cd0413b7fb8539431ef8f309d74571581c211e6c2",
-      "aesthetic_score_10": 7.5
-    },
-    "pair_comparison": {
-      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_PAIR_COMPARISON_20260913.json",
-      "commit": "89417a1e3c8deae95dc772106d2d3aface28679f",
-      "delta_B_minus_A": 0.7,
-      "finding": "REPEATED_DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE"
-    }
-  },
+  "capsule": {"id":"style_capsule_shanyeji_brand_editorial_v1_1_candidate","maturity":"CONTROLLED_VALIDATION_REQUIRED","promoted":false},
   "mechanism_transfer_verdict": {
-    "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY",
-    "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_MECHANISM_TRANSFER_VERDICT_20260913.json",
-    "commit": "391a10a2e0330614d22645c0c2f30e2f62e4f0cd",
-    "positive_no_reference_pairs": 2,
-    "mean_directional_delta": 0.6,
-    "stable_independent_distillation_proven": false,
-    "commercial_master_quality_proven": false,
-    "candidate_promotion_allowed": false
+    "status":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY",
+    "positive_no_reference_pairs":2,
+    "tofu_delta_B_minus_A":0.5,
+    "tea_delta_B_minus_A":0.7,
+    "mean_directional_delta":0.6,
+    "stable_independent_distillation_proven":false,
+    "commercial_master_quality_proven":false,
+    "candidate_promotion_allowed":false
   },
-  "current_stage": "P4机制迁移验证得到两组不同内容的无参考方向性重复收益：豆坊6.9→7.4，茶作6.8→7.5。可支持进入完整海报工作流验证，但仍不能声称稳定通用独立蒸馏，也不能晋升Candidate。下一步进入P6同等预算Figma整图设计验证，分开判断文字、图文融合、品牌辨识、可编辑证据与最终像素。",
-  "status": "VPD_P4_REPEATED_DIRECTIONAL_MECHANISM_EVIDENCE_P6_INTEGRATED_VALIDATION_NEXT",
-  "formal_p3_render_allowed": false,
-  "p4_render_allowed": false,
-  "p6_allowed": true,
-  "next_required_action": "PREPARE_P6_EQUAL_BUDGET_FIGMA_INTEGRATED_DESIGN_VALIDATION_FOR_VALID_NO_REFERENCE_PAIRS",
+  "p6_integrated_design": {
+    "status":"PREPARED_TEXT_VECTOR_READY_RASTER_BINDING_BLOCKED",
+    "freeze":{"path":"evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_FIGMA_VALIDATION_FREEZE_20260913.json","commit":"2abb20e7307cf6f926ff19fe1f5334f923f2c44c"},
+    "blocker_evidence":{"path":"evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FIGMA_PREPARATION_AND_IMAGE_BINDING_BLOCKER_20260913.json","commit":"596617057d8c934c2ace4106308ff0f00aef79a4"},
+    "figma_file_key":"uyDxOoN1iNDPpEHTKSUWg1",
+    "page":{"id":"12:2","name":"P6 Equal Budget Integrated Validation"},
+    "frame_size":[2400,3200],
+    "frames": [
+      {"id":"12:3","name":"DOUFANG_A_BASELINE","photo":"12:4","title_vector":"12:7","english_text":"12:8","chinese_text":"12:9"},
+      {"id":"12:11","name":"DOUFANG_B_DISTILLED","photo":"12:12","title_vector":"12:15","english_text":"12:16","chinese_text":"12:17"},
+      {"id":"12:19","name":"CHAZUO_A_BASELINE","photo":"12:20","title_vector":"12:23","english_text":"12:24","chinese_text":"12:25"},
+      {"id":"12:27","name":"CHAZUO_B_DISTILLED","photo":"12:28","title_vector":"12:31","english_text":"12:32","chinese_text":"12:33"}
+    ],
+    "fonts_verified":["Noto Sans SC Black","Noto Sans SC Medium","Inter Medium"],
+    "equal_budget":{"composition_pass_per_poster":1,"correction_pass_max_per_poster":1,"B_extra_manual_budget":false},
+    "raw_images_locked":true,
+    "photo_nodes_bound":false,
+    "image_binding_blocker":{"upload_assets":"submit URLs returned but container DNS cannot resolve mcp.figma.com","inline_createImage":"executor rejects write path despite capability probe","temporary_nodes_cleaned":true},
+    "final_pixel_validation_allowed":false
+  },
+  "current_stage":"P6同等预算Figma整图验证已完成结构准备：四个2400x3200 Frame、矢量中文主标题、可编辑中英文辅助文字和同预算规则均已建立。四张原始图片身份已冻结，但当前运行环境无法把本地位图写入Figma：upload_assets POST在mcp.figma.com DNS层失败，use_figma内createImage写入亦被执行器拒绝。PHOTO节点仍为占位，不能做图文融合或最终像素验收。",
+  "status":"VPD_P6_FIGMA_PREPARED_RASTER_BINDING_BLOCKED",
+  "p6_allowed":true,
+  "next_required_action":"RESTORE_OR_BYPASS_FIGMA_RASTER_IMAGE_BINDING_WITHOUT_CHANGING_EQUAL_BUDGET_LAYOUT",
   "execution_boundary": {
-    "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
-    "do_not_reintroduce_source_reference_for_cross_subject_transfer": true,
-    "do_not_claim_universal_independent_distillation": true,
-    "P6_must_use_equal_Figma_budget_across_A_B": true,
-    "P6_must_preserve_raw_output_identity": true,
-    "P6_cannot_backfill_raw_generation_quality": true,
-    "human_final_acceptance_required": true
+    "do_not_rerender_tofu_or_tea_A_B_for_taste":true,
+    "do_not_change_frozen_equal_budget_layout_to_compensate_for_transfer_blocker":true,
+    "do_not_claim_photo_type_fusion_pass_before_real_images_are_bound":true,
+    "do_not_claim_final_pixel_pass_from_placeholders_or_proxies":true,
+    "do_not_claim_universal_independent_distillation":true,
+    "candidate_promotion_Golden_Scale_blocked":true
   },
-  "do_not_reopen": [
-    "shared-reference Doufang route",
-    "rerender completed tofu A/B",
-    "rerender completed tea A/B",
-    "candidate promotion from raw-image evidence alone",
-    "Golden or Scale"
-  ],
   "completed_this_revision": [
-    "核验CHAZUO_B_NO_REFERENCE_DISTILLED为1152x1536精确3:4",
-    "核验SHA-256为6680becc332649267f5fb92cd0413b7fb8539431ef8f309d74571581c211e6c2",
-    "核验制茶真实性、无参考、PHOTO_ONLY、无文字Logo拼版",
-    "B正式判PASS，不重抽",
-    "完成茶作A/B对照：6.8→7.5，B-A=+0.7",
-    "结合豆坊+0.5记录两组不同内容的重复方向性无参考蒸馏收益",
-    "P4机制迁移结论为PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY",
-    "下一动作推进到P6同等预算Figma整图验证"
+    "冻结P6四张原图、文案、字体和同等Figma预算",
+    "在现有Figma文件新增P6 Equal Budget Integrated Validation页面",
+    "建立四个2400x3200正式Frame和PHOTO_RAW_LOCKED节点",
+    "建立四套矢量中文主标题及可编辑中英文辅助文字",
+    "实际加载Noto Sans SC Black/Medium与Inter Medium",
+    "验证upload_assets返回合法上传URL但容器POST因mcp.figma.com DNS失败",
+    "验证atob/createImage API存在但内嵌createImage写入被执行器拒绝且未写画布",
+    "清理全部临时代理数据节点"
   ],
-  "updated_at": "2026-09-13T01:52:00+00:00",
-  "workflow": {"version": "1.1", "focus_stage": "P6", "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"}
+  "updated_at":"2026-09-13T03:08:00+00:00",
+  "workflow":{"version":"1.1","focus_stage":"P6","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
