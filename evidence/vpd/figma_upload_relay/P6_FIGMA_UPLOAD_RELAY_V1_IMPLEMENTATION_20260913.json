@@ -1,0 +1,42 @@
+{
+  "schema_version": "vpd-figma-upload-relay-implementation/v1",
+  "status": "DEPLOYED_AWAITING_SECRET_ACTIVATION",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "public_repository": true,
+  "purpose": "Provide a durable HTTPS-capable relay for Figma upload_assets submit URLs when the chat runtime cannot POST raster bytes to mcp.figma.com.",
+  "components": {
+    "packer": {"path":"scripts/vpd_figma_relay_pack.py","commit":"eb1421c10e6a3b791dbffdb7ba8649c10b1d0b7e"},
+    "executor": {"path":"scripts/vpd_figma_relay_execute.py","commit":"732b2f8f49a48d57ae5065f03b1c362cdca1272e"},
+    "public_certificate": {"path":"evidence/vpd/figma_upload_relay/relay-cert.pem","commit":"7258dbe38b508a3b1e5bb16b5a98c212c043de45","sha256":"1badba64dd28de633d244ad6978b96e75786deea832b2705a26f9ffe7bd87bbb"},
+    "documentation": {"path":"evidence/vpd/figma_upload_relay/README.md","commit":"8793d2c27ea1e207e0d3b1cfb33e01ac14412e42"},
+    "workflow": {"path":".github/workflows/vpd-figma-upload-relay.yml","commit":"52f81590d913b710a7b074d706ff1b8ce6e6f025","runner":"ubuntu-latest"}
+  },
+  "security": {
+    "plaintext_submit_url_committed": false,
+    "plaintext_image_committed": false,
+    "task_transport": "CMS encrypted payload",
+    "private_key_repository_storage": false,
+    "required_repository_secret": "VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "allowed_submit_host": "mcp.figma.com",
+    "successful_task_ciphertext_deleted_after_receipt": true,
+    "receipt_contains_submit_url": false
+  },
+  "local_self_test": {
+    "status": "PASS",
+    "mode": "ENCRYPT_DECRYPT_VALIDATE_DRY_RUN",
+    "fixture": "DOUFANG_B_NO_REFERENCE_DISTILLED",
+    "source_sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "source_size": 422265,
+    "node_id": "12:12",
+    "result": "DRY_RUN_PASS"
+  },
+  "activation_blocker": {
+    "type": "ONE_TIME_GITHUB_ACTIONS_SECRET_SETUP",
+    "secret_name": "VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "reason": "GitHub connector deliberately does not expose repository Secrets write APIs.",
+    "user_action_required": true
+  },
+  "post_activation_next": "CREATE_ENCRYPTED_LIVE_TASK_FOR_DOUFANG_B_USING_FRESH_UPLOAD_ASSETS_SUBMIT_URL_AND_VERIFY_RECEIPT_PLUS_FIGMA_READBACK",
+  "created_at": "2026-09-13T10:50:00+00:00"
+}
