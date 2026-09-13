@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 14,
+  "revision": 15,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 13,
-    "git_blob_sha": "eaee568320089980eb19e12a768e083dc5c2ba4b",
-    "note": "Revision 13 records formal Shanjun A/B as 2/4 valid; revision 14 records the first Doufang A attempt as transport/binding-invalid and authorizes a corrected retry with direct image attachment."
+    "revision": 14,
+    "git_blob_sha": "eba09b6ebf4038f3c0072602e5dc922b39513b74",
+    "note": "Revision 14 preserved 2/4 valid Shanjun outputs and allowed a transport-recovery Doufang A retry with direct reference attachment. Revision 15 records that direct attachment also fails for cross-subject tofu transfer and stops further shared-reference cross-subject rendering."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -23,29 +23,10 @@
   "p3": {
     "round1_finding": "MODEST_STRUCTURAL_SIGNAL_ONLY_NOT_STRONG_COMMERCIAL_GAIN",
     "final_round_valid_outputs": 2,
-    "technical_invalid_fresh_contexts": 3,
-    "binding_diagnosis": {
-      "status": "COMPLETE",
-      "classification": "EXECUTION_BINDING_NOT_AESTHETIC_FAILURE",
-      "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_IMAGE_GENERATION_BINDING_DIAGNOSIS_20260912.json"
-    },
-    "technical_probes": {
-      "probe1": "PASS",
-      "probe2": "PASS",
-      "bridge_probe": "PASS",
-      "formal_p3_budget_effect": "NONE",
-      "aesthetic_inference_allowed": false
-    },
+    "technical_invalid_fresh_contexts": 4,
     "formal_micro_handoff": {
-      "status": "IN_PROGRESS_2_OF_4_VALID_DOUFANG_A_RETRY_READY",
+      "status": "STOPPED_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE_NOT_VIABLE",
       "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
-      "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
-      "fixed_order": [
-        "SHANJUN_A_FINAL",
-        "SHANJUN_B_FINAL_POSITION_FREE",
-        "DOUFANG_A_FINAL",
-        "DOUFANG_B_FINAL_POSITION_FREE"
-      ],
       "valid_outputs_required": 4,
       "valid_outputs_so_far": 2,
       "formal_results": {
@@ -74,71 +55,69 @@
           "commit": "e0d4c750cb48f250b61639a0c80eeda970c3c165",
           "chat_file_id": "file_000000002c088211a4305b2dee650852",
           "dimensions": [1280,1536],
-          "aspect_ratio": "5:6",
           "sha256": "cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
-          "violations": ["WRONG_SUBJECT","WRONG_ASPECT_RATIO","VISIBLE_TEXT_PRESENT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"],
-          "counts_as_formal_output": false
+          "violations": ["WRONG_SUBJECT","WRONG_ASPECT_RATIO","VISIBLE_TEXT_PRESENT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"]
+        },
+        {
+          "id": "DOUFANG_A_FINAL_DIRECT_ATTACHMENT_ATTEMPT2",
+          "status": "TECHNICAL_INVALID",
+          "evidence": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DIRECT_ATTACHMENT_REFERENCE_TAKEOVER_FAILURE_20260913.json",
+          "commit": "cd929f4ecdef4e291847a104367810ff68f0d06b",
+          "chat_file_id": "file_00000000afc0820783bcf0156e0a7f40",
+          "dimensions": [1152,1536],
+          "sha256": "f5348d1804db55b4e5fe97774e09632a0bb4c0f9278e2757c657a8ae39ac69bb",
+          "violations": ["WRONG_SUBJECT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT","FORBIDDEN_MUSHROOM_SUBJECT_PRESENT","VISIBLE_TEXT_PRESENT","LOGO_LABEL_BADGE_PRESENT","POSTER_NOT_PHOTO_ONLY"]
         }
-      ],
-      "no_hidden_variants": true,
-      "no_best_of_n": true,
-      "no_silent_retry": true,
-      "figma_entry_allowed_after_four_valid_outputs_only": true
+      ]
     },
-    "transport_correction": {
-      "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
-      "reference_drive_copy_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
-      "drive_only_reference_fetch_for_generation": "PROHIBITED_AS_BINDING_MECHANISM",
-      "reference_must_be_directly_attached_to_new_chat_message": true,
-      "prompt_may_be_read_from_drive": true,
-      "retry_is_transport_recovery_not_aesthetic_reroll": true
+    "causal_update": {
+      "base_subject_aspect_binding": "PASS_FROM_PROBE1",
+      "minimal_reference_present_same_subject_path": "PASS_FROM_PROBE2",
+      "isolated_same_subject_A_envelope": "PASS_FROM_BRIDGE",
+      "drive_only_transport_as_sufficient_failure_cause": "NOT_SUPPORTED",
+      "direct_attachment_as_sufficient_cross_subject_fix": "FAILED",
+      "shared_reference_cross_subject_semantic_leakage": "STRONGLY_ELEVATED_AT_OUTPUT_LEVEL",
+      "provider_internal_root_cause_proven": false
     },
     "inference_boundary": {
-      "P3_question": "Does the distilled program add incremental benefit when A and B share the same approved reference?",
-      "P3_can_support": "INCREMENTAL_DISTILLED_PROGRAM_BENEFIT_UNDER_SHARED_REFERENCE_IF_EVIDENCE_IS_MEANINGFUL",
+      "same_subject_shanjun_pair": "VALID_SHARED_REFERENCE_PARTIAL_EVIDENCE_ONLY",
+      "cross_subject_doufang_shared_reference_route": "EXECUTION_ARCHITECTURE_NOT_VIABLE",
       "P3_cannot_support": "DISTILLATION_ONLY_INDEPENDENCE_FROM_SOURCE_REFERENCE",
-      "required_follow_on_if_B_meaningfully_wins": "NO_REFERENCE_B_ONLY_DISTILLATION_ONLY_VALIDATION_BEFORE_ANY_INDEPENDENT_DISTILLATION_CLAIM"
+      "next_test_should_remove_source_reference_at_generation_time": true
     }
   },
-  "current_stage": "正式P3最后一轮仍为2/4有效。首次DOUFANG_A使用Drive-only参考读取方式返回金毛幼犬、5:6且含可见文字，判定为技术无效，不计正式样本。下一步只允许在全新standalone最小聊天重跑DOUFANG_A：提示词可从Drive文档读取，但批准参考图必须由用户直接作为图片附件附到该聊天消息中。",
-  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_DIRECT_ATTACHMENT_RETRY_NEXT",
-  "formal_p3_render_allowed": true,
-  "formal_p3_render_scope": "DOUFANG_A_RETRY_ONLY_WITH_DIRECT_ATTACHED_REFERENCE",
+  "current_stage": "正式P3共享参考最后一轮在山菌A/B取得2/4有效结果，但豆坊A连续两次技术失败：Drive-only时返回金毛幼犬，直接附加批准参考后返回带大量文字的山菌海报。第二次失败说明Drive transport并非充分原因，跨主体时源参考语义接管风险显著。共享参考的跨主体豆坊A/B路线现正式停止，不再重试。",
+  "status": "VPD_P3_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE_STOPPED_REDESIGN_NEXT",
+  "formal_p3_render_allowed": false,
   "technical_probe_allowed": false,
-  "next_required_action": "RERUN_FORMAL_P3_DOUFANG_A_FINAL_IN_NEW_STANDALONE_CHAT_WITH_PROMPT_FROM_DRIVE_AND_REFERENCE_DIRECTLY_ATTACHED",
-  "formal_execution_boundary": {
-    "must_use_brand_new_standalone_chat_per_output": true,
-    "must_not_bootstrap_full_project_before_image_call": true,
-    "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
-    "reference_drive_source_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
-    "reference_must_be_direct_attachment": true,
-    "do_not_use_drive_fetch_as_reference_binding": true,
-    "n": 1,
-    "exact_3_4_portrait_required": true,
-    "same_chat_retry_on_failure": false,
-    "stop_on_any_contract_violation": true,
-    "figma_entry_before_four_valid_outputs": false
+  "next_required_action": "DESIGN_NO_REFERENCE_DISTILLATION_TRANSFER_COMPARISON_AND_CLOSE_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE",
+  "execution_boundary": {
+    "no_more_doufang_a_shared_reference_retries": true,
+    "do_not_run_doufang_b_shared_reference": true,
+    "do_not_enter_figma_for_incomplete_four_output_round": true,
+    "preserve_shanjun_a_b_outputs": true,
+    "preserve_both_doufang_a_failures": true
   },
   "do_not_reopen": [
     "rerender SHANJUN_A or SHANJUN_B for taste",
-    "reuse the invalid dog output",
-    "run DOUFANG_B before DOUFANG_A retry is validated",
-    "Drive-only reference fetch as the image-generation binding mechanism",
-    "Figma final-round work before four formal raw outputs are valid",
+    "third DOUFANG_A attempt with source reference attached or fetched",
+    "DOUFANG_B under shared-reference architecture",
+    "Figma final-round comparison as if four valid outputs existed",
     "claim distillation-only independence from shared-reference P3",
-    "candidate promotion, Golden or Scale without formal evidence and human acceptance"
+    "candidate promotion, Golden or Scale without new formal evidence and human acceptance"
   ],
   "completed_this_revision": [
-    "核验DOUFANG_A首次Drive-only执行返回1280x1536金毛幼犬图",
-    "核验SHA-256为cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
-    "判定WRONG_SUBJECT、WRONG_ASPECT_RATIO、VISIBLE_TEXT_PRESENT、REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT",
+    "核验DOUFANG_A直接附件Attempt2为1152x1536精确3:4",
+    "核验SHA-256为f5348d1804db55b4e5fe97774e09632a0bb4c0f9278e2757c657a8ae39ac69bb",
+    "判定WRONG_SUBJECT、豆腐过程证据缺失、山菌主体出现、大量文字/Logo/标签出现、非PHOTO_ONLY",
+    "证伪Drive-only transport是跨主体失败的充分原因",
     "正式有效输出保持2/4",
-    "将Drive-only参考读取降级为不可靠绑定方式",
-    "冻结修正后的DOUFANG_A重跑：提示词从Drive读取，参考图必须直接附加到新聊天"
+    "停止共享参考的豆坊跨主体路线",
+    "下一步改为设计生成时不再提供源参考图的蒸馏迁移对照"
   ],
   "changes_authority": {
-    "failure_evidence": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json","commit":"e0d4c750cb48f250b61639a0c80eeda970c3c165"}
+    "second_doufang_failure": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DIRECT_ATTACHMENT_REFERENCE_TAKEOVER_FAILURE_20260913.json","commit":"cd929f4ecdef4e291847a104367810ff68f0d06b"}
   },
-  "updated_at": "2026-09-13T00:18:00+00:00",
+  "updated_at": "2026-09-13T00:28:00+00:00",
   "workflow": {"version":"1.1","focus_stage":"P3","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
