@@ -1,0 +1,67 @@
+{
+  "schema_version": "vpd-p6-figma-file-commit-diagnosis/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "input_head": "57c626bed40338fd07bf7da14e8d936d4f5473b8",
+  "status": "FIGMA_FILE_IMAGE_STORE_COMMIT_NOT_OBSERVED",
+  "scope": "READ_ONLY_DIAGNOSIS_NO_REUPLOAD",
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "12:2",
+    "frame_id": "12:11",
+    "photo_node_id": "12:12",
+    "photo_node_name": "PHOTO_RAW_LOCKED",
+    "node_locked": false,
+    "current_fill_type": "IMAGE",
+    "current_scale_mode": "FILL",
+    "current_image_hash": "7f57313e7409ff16d76ab867893a1229a5769962"
+  },
+  "transport": {
+    "receipt_path": "evidence/vpd/figma_upload_relay/receipts/P6-DOUFANG-B-LIVE-20260913-01.json",
+    "workflow_run_id": 34758125307,
+    "http_status": 200,
+    "historical_receipt_status": "UPLOAD_PASS",
+    "returned_image_hash": "23926508e3fc10dd61e9df883e018e721cb7cc1f",
+    "frozen_source_sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9"
+  },
+  "new_live_diagnosis": {
+    "method": "Figma Plugin API read-only inspection through use_figma",
+    "getImageByHash_returned_null_for_transport_hash": true,
+    "transport_hash_present_in_current_file_image_store": false,
+    "target_node_still_points_to_old_hash": true,
+    "unexpected_extra_image_frame_observed_on_p6_page": false,
+    "design_write_performed": false
+  },
+  "protocol_authority": {
+    "figma_mcp_public_docs": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+    "public_docs_rule": "upload_assets to a specific node is expected to upload the image as a fill to that node",
+    "current_connector_contract": "With nodeIds and default non-batch mode, each submit URL is expected to handle storage, BlobStore commit, and canvas placement automatically."
+  },
+  "conclusion": {
+    "established": [
+      "HTTP 200 and a returned imageHash are transport acceptance evidence only for this historical run.",
+      "The returned transport imageHash is not present in the current Figma file image store.",
+      "The target node 12:12 still references the previous imageHash.",
+      "Therefore a Figma-file image-store commit / placement did not become observable for this run."
+    ],
+    "not_established": [
+      "Whether the historical upload_assets mint call lacked effective node placement context.",
+      "Whether Figma accepted the raw blob but failed the automatic file commit/placement transaction.",
+      "Whether a service-side/backend defect occurred after the POST."
+    ],
+    "historical_mint_context_gap": "The exact historical upload_assets mint arguments/response were not durably persisted, so the subcause cannot be assigned without speculation."
+  },
+  "safety_boundary": {
+    "doufang_b_reupload_allowed_now": false,
+    "chazuo_a_upload_allowed_now": false,
+    "chazuo_b_upload_allowed_now": false,
+    "manual_fill_pointer_swap_to_returned_hash_allowed": false,
+    "reason_manual_swap_blocked": "The returned hash is absent from the current Figma file image store.",
+    "title_layout_lock_changes_allowed": false,
+    "secret_reset_required": false
+  },
+  "next_required_action": "ESTABLISH_VERIFIABLE_FIGMA_UPLOAD_ASSETS_PLACEMENT_COMMIT_PROTOCOL_BEFORE_ANY_NEW_RASTER_POST",
+  "recorded_at": "2026-09-13T13:29:00Z"
+}
