@@ -1,23 +1,20 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 38,
-  "recorded_at": "2026-09-13T00:36:00+00:00",
+  "sequence": 39,
+  "recorded_at": "2026-09-13T00:40:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "共享参考的豆坊跨主体路线已停止。新的P3B no-reference豆坊A/B迁移对照已正式登记：A为无参考自然语言基线，B为无参考+冻结蒸馏关系规则。两路都禁止任何参考图片。下一步只执行A基线并回传核验。",
+  "current_focus": "P3B no-reference豆坊A/B迁移对照已取得A基线有效输出。A为1152x1536精确3:4的真实豆腐制作过程，内容真实性与PHOTO_ONLY合同均通过。下一步只执行B蒸馏路；B不得使用任何参考图，且完整提示词必须直接出现在新聊天用户消息中，不再通过Drive读取作为生成入口。",
   "completed": [
     "p3_shared_reference_same_subject_shanjun_pair_preserved",
     "p3_doufang_shared_reference_route_stopped_after_two_invalid_attempts",
     "p3b_no_reference_doufang_transfer_registered",
-    "p3b_arm_a_drive_prompt_created_and_read_back",
-    "p3b_arm_b_drive_prompt_created_and_read_back",
-    "p3b_execution_handoff_frozen"
+    "p3b_doufang_a_no_reference_baseline_pass"
   ],
   "incomplete": [
-    "p3b_doufang_a_no_reference_baseline_output",
     "p3b_doufang_b_no_reference_distilled_output",
     "p3b_pair_comparison",
     "additional_unseen_no_reference_transfer_if_B_meaningfully_wins",
@@ -28,27 +25,34 @@
     "scale"
   ],
   "blocked": [
-    "do not attach or fetch any reference image for P3B A or B",
-    "do not run B before A passes technical validation",
-    "do not use the incomplete shared-reference 2/4 set as a final Figma comparison",
+    "do not attach or fetch any reference image for P3B B",
+    "do not rerender A for taste",
+    "do not use Drive document reading as the generation prompt transport for B",
+    "do not enter final Figma comparison before B is valid",
     "one no-reference tofu pair cannot establish stable general distillation capability"
   ],
-  "next_required_action": "RUN_DOUFANG_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT",
+  "next_required_action": "RUN_DOUFANG_B_NO_REFERENCE_DISTILLED_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
   "p3b_no_reference_transfer": {
     "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
-    "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json",
-    "execution_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
     "reference_image_count": 0,
-    "order": ["DOUFANG_A_NO_REFERENCE_BASELINE","DOUFANG_B_NO_REFERENCE_DISTILLED"],
+    "order": ["DOUFANG_A_NO_REFERENCE_BASELINE", "DOUFANG_B_NO_REFERENCE_DISTILLED"],
     "arm_A": {
-      "status": "NEXT",
-      "drive_prompt_doc_id": "1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY",
-      "reference": "NONE"
+      "status": "PASS",
+      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+      "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
+      "chat_file_id": "file_000000001b34820885a641a193341f6b",
+      "dimensions": [1152, 1536],
+      "aspect_ratio": "3:4",
+      "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
+      "reference": "NONE",
+      "capsule_rules": "NONE"
     },
     "arm_B": {
-      "status": "LOCKED_UNTIL_A_PASS",
-      "drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU",
-      "reference": "NONE"
+      "status": "NEXT",
+      "reference": "NONE",
+      "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY",
+      "audit_drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU",
+      "execution_prompt_transport": "DIRECT_VISIBLE_USER_MESSAGE"
     },
     "n_per_arm": 1,
     "no_retry_for_taste": true,
@@ -60,25 +64,24 @@
     "follow_on_if_B_wins": "at least one additional unseen-content no-reference transfer"
   },
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"b91ff70fdb17b98d53dba0bf1bc2b60ec563bb49","revision":16},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json","commit":"801cc401f6224de1473d5616489956cd7b9ec50e"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt","commit":"997d07ee086a32b28e8993d4505761ee60f0b4ff"}
+    {"path": "continuity/vpd/CURRENT_TASK_LOCK.json", "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789", "revision": 17},
+    {"path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json", "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91"}
   ],
-  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_TRANSFER_A_BASELINE_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"b91ff70fdb17b98d53dba0bf1bc2b60ec563bb49","revision":16},
-  "history_snapshot": {"previous_sequence":37,"previous_git_blob_sha":"5fd486a5631e61339ff0c6fdef61be775174825e"},
+  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_A_PASS_B_NEXT",
+  "task_lock": {"path": "continuity/vpd/CURRENT_TASK_LOCK.json", "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789", "revision": 17},
+  "history_snapshot": {"previous_sequence": 38, "previous_git_blob_sha": "94211f1c938d06a536af7b59228792dfd30d4686"},
   "requirements": {
-    "shared_reference_cross_subject_route": {"status":"STOPPED"},
-    "p3b_no_reference_redesign": {"status":"REGISTERED_READY"},
-    "arm_A": {"status":"NEXT"},
-    "arm_B": {"status":"LOCKED"},
+    "shared_reference_cross_subject_route": {"status": "STOPPED"},
+    "p3b_no_reference_redesign": {"status": "IN_PROGRESS"},
+    "arm_A": {"status": "PASS"},
+    "arm_B": {"status": "NEXT"},
     "capsule_verdict": "NOT_ESTABLISHED"
   },
   "execution": {
     "shared_reference_valid_final_outputs": 2,
     "shared_reference_invalid_doufang_attempts": 2,
-    "p3b_valid_outputs": 0,
+    "p3b_valid_outputs": 1,
     "figma_entry_allowed": false
   },
-  "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
+  "workflow": {"path": "VPD_PROJECT_ROADMAP.md", "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
 }
