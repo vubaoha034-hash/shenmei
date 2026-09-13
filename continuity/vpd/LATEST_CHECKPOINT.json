@@ -1,25 +1,24 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 40,
-  "recorded_at": "2026-09-13T01:28:00+00:00",
+  "sequence": 41,
+  "recorded_at": "2026-09-13T01:45:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable independent-distillation claim.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P3B无参考豆坊A/B迁移对照已完成：A与B均为有效3:4 PHOTO_ONLY豆腐制作图，B在区域密度分离、真实安静区、视觉对重和空间层级上取得方向性提升（6.9→7.4）。单对结果只支持继续验证，不证明稳定性。下一步在任何新渲染前，先登记至少一个新的未见内容、无参考A/B迁移挑战。",
+  "current_focus": "P3B豆坊无参考A/B完成并出现一次有限方向性收益。为验证是否可重复，P4已登记一个新的未见内容无参考迁移挑战：手工制茶非加热阶段。A/B均不使用参考图、各1张、3:4 PHOTO_ONLY；任何新渲染前条件已冻结，下一步只执行茶作A基线。",
   "completed": [
-    "p3_shared_reference_same_subject_shanjun_pair_preserved",
-    "p3_doufang_shared_reference_route_stopped_after_two_invalid_attempts",
-    "p3b_no_reference_doufang_transfer_registered",
-    "p3b_doufang_a_no_reference_baseline_pass",
-    "p3b_doufang_b_no_reference_distilled_pass",
-    "p3b_doufang_no_reference_pair_directional_benefit_recorded"
+    "p3b_doufang_no_reference_pair_complete_directional_benefit",
+    "p4_unseen_transfer_subject_selected",
+    "p4_chazuo_no_reference_transfer_registered",
+    "p4_chazuo_symmetric_A_B_conditions_frozen",
+    "p4_chazuo_direct_visible_execution_handoff_frozen"
   ],
   "incomplete": [
-    "p4_additional_unseen_no_reference_transfer_registration",
-    "p4_additional_unseen_no_reference_transfer_A_output",
-    "p4_additional_unseen_no_reference_transfer_B_output",
+    "p4_chazuo_A_no_reference_baseline_output",
+    "p4_chazuo_B_no_reference_distilled_output",
+    "p4_chazuo_pair_comparison",
     "p4_mechanism_transfer_verdict",
     "p6_equal_budget_figma_integrated_design_for_valid_selected_visuals",
     "human_set_verdict",
@@ -28,63 +27,60 @@
     "scale"
   ],
   "blocked": [
-    "do not claim stable independent distillation from one tofu pair",
-    "do not rerender tofu A or B for taste",
-    "do not reintroduce the source reference for cross-subject transfer",
-    "no new unseen transfer render before formal registration and symmetric A/B freeze",
+    "do not run tea B before tea A passes technical validation",
+    "do not use any reference image for tea A or B",
+    "do not rerender completed tofu A/B for taste",
+    "do not claim stable independent distillation before repeated unseen-content evidence",
     "candidate promotion and Golden/Scale remain blocked"
   ],
-  "next_required_action": "REGISTER_ONE_ADDITIONAL_UNSEEN_CONTENT_NO_REFERENCE_TRANSFER_CHALLENGE_BEFORE_RENDER",
-  "p3b_no_reference_transfer": {
+  "next_required_action": "RUN_CHAZUO_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
+  "prior_directional_evidence": {
     "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
+    "arm_A_score_10": 6.9,
+    "arm_B_score_10": 7.4,
+    "delta_B_minus_A": 0.5,
+    "confidence": "LIMITED_ONE_PAIR_ONLY"
+  },
+  "p4_unseen_transfer": {
+    "challenge_id": "P4-CHAZUO-NO-REFERENCE-TRANSFER-20260913",
+    "registration": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_REGISTRATION_20260913.json",
+    "registration_commit": "be4b02256a669248dd3415e1eb637f195420b465",
+    "execution_handoff": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
+    "handoff_commit": "a2f6029b9bf3380c64fb7ad6a91915dcc19be57e",
+    "subject_class": "HANDCRAFTED_TEA_NON_HEATED_PROCESS_V1",
     "reference_image_count": 0,
-    "arm_A": {
-      "status": "PASS",
-      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
-      "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
-      "dimensions": [1152,1536],
-      "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
-      "aesthetic_score_10": 6.9
-    },
-    "arm_B": {
-      "status": "PASS",
-      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
-      "commit": "652397ebbb83c2d86012828f1e6503a520699bca",
-      "dimensions": [1152,1536],
-      "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
-      "aesthetic_score_10": 7.4
-    },
-    "pair_comparison": {
-      "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json",
-      "commit": "0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce",
-      "finding": "DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE",
-      "delta_B_minus_A": 0.5,
-      "confidence": "LIMITED_ONE_PAIR_ONLY"
-    }
+    "fixed_order": ["CHAZUO_A_NO_REFERENCE_BASELINE", "CHAZUO_B_NO_REFERENCE_DISTILLED"],
+    "arm_A": {"status": "NEXT", "reference": "NONE", "capsule_rules": "NONE"},
+    "arm_B": {"status": "LOCKED_UNTIL_A_PASS", "reference": "NONE", "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY"},
+    "n_per_arm": 1,
+    "same_chat_retry": false,
+    "hidden_variants": false,
+    "best_of_n": false,
+    "execution_prompt_transport": "DIRECT_VISIBLE_USER_MESSAGE"
   },
   "interpretation_boundary": {
-    "supported": "directional incremental benefit of frozen distilled transferable relationships on the tofu task without source-image conditioning",
-    "not_supported": "stable general independent-distillation capability across unseen content/style",
-    "roadmap_decision": "visible benefit with no severe contract failure supports continuing to full transfer validation; sample win alone does not prove stability"
+    "B_meaningful_win_again": "supports repeated cross-content directional evidence and permits mechanism-transfer verdict work",
+    "A_B_close": "repeatability remains limited",
+    "B_loss": "tofu win is not stable enough for a general transfer claim",
+    "stable_independent_distillation_claim": "NOT_YET_ALLOWED"
   },
   "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"890740e5e72934885a18cdb49f48ab722ba0efd1","revision":18},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json","commit":"652397ebbb83c2d86012828f1e6503a520699bca"},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json","commit":"0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce"}
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"82c5699a712153c750f6205cfa63acc23ce752b2","revision":19},
+    {"path":"evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_REGISTRATION_20260913.json","commit":"be4b02256a669248dd3415e1eb637f195420b465"},
+    {"path":"evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_EXECUTION_HANDOFF_20260913.txt","commit":"a2f6029b9bf3380c64fb7ad6a91915dcc19be57e"}
   ],
-  "status": "VPD_P3B_NO_REFERENCE_PAIR_COMPLETE_P4_UNSEEN_TRANSFER_REGISTRATION_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"890740e5e72934885a18cdb49f48ab722ba0efd1","revision":18},
-  "history_snapshot": {"previous_sequence":39,"previous_git_blob_sha":"e22933c824701140ca711b161dd3c8abf0f443c4"},
+  "status": "VPD_P4_UNSEEN_TEA_NO_REFERENCE_REGISTERED_A_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"82c5699a712153c750f6205cfa63acc23ce752b2","revision":19},
+  "history_snapshot": {"previous_sequence":40,"previous_git_blob_sha":"e0ec3e7a295be35d4f57121f9d32b5364a8e9355"},
   "requirements": {
     "p3b_no_reference_pair": {"status":"COMPLETE_DIRECTIONAL_BENEFIT"},
-    "p4_unseen_transfer": {"status":"REGISTRATION_NEXT"},
+    "p4_unseen_transfer": {"status":"REGISTERED_A_NEXT"},
     "capsule_verdict": "NOT_ESTABLISHED",
     "candidate_promotion": "BLOCKED"
   },
   "execution": {
-    "shared_reference_valid_final_outputs": 2,
-    "shared_reference_invalid_doufang_attempts": 2,
-    "p3b_valid_outputs": 2,
+    "p4_valid_outputs": 0,
+    "p4_render_allowed": true,
     "figma_entry_allowed": false
   },
   "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
