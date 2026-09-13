@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "FIGMA_FILE_COMMIT_NOT_OBSERVED_BLOCKED",
+    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -115,17 +115,15 @@
     }
   },
   "current_stage": "P6 Doufang B transport returned HTTP 200 and imageHash 23926508..., but read-only Figma Plugin API inspection shows that hash is absent from the current file image store and node 12:12 still points to the previous hash. The failure is therefore localized to the Figma file commit / placement transaction, not merely stale node readback. Exact historical mint subcause remains unproven because the upload_assets mint arguments/response were not durably persisted. No reupload is authorized yet.",
-  "status": "VPD_P6_FIGMA_FILE_COMMIT_NOT_OBSERVED_BLOCKED",
+  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
   "p6_allowed": true,
-  "next_required_action": "ESTABLISH_VERIFIABLE_FIGMA_UPLOAD_ASSETS_PLACEMENT_COMMIT_PROTOCOL_BEFORE_ANY_NEW_RASTER_POST",
+  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
     "PHOTO_RAW_LOCKED_is_semantic_identity_not_figma_locked_property": true,
     "do_not_commit_private_key_plain_submit_urls_or_plain_image_bytes_to_public_repo": true,
-    "do_not_reupload_doufang_B_until_placement_commit_protocol_is_verified": true,
-    "do_not_start_chazuo_A_or_B_uploads": true,
-    "do_not_manually_assign_missing_transport_hash_to_node_fill": true,
+    "do_not_request_fresh_submit_url_before_secret_is_installed": true,
     "do_not_claim_photo_type_fusion_pass_before_all_real_images_are_bound": true,
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
@@ -174,5 +172,6 @@
   "relay_file_commit_diagnosis": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_FIGMA_FILE_COMMIT_DIAGNOSIS_20260913.json",
     "sha256": "398341464206da2340754b1eecfd952e3a67dab1b37df490b5b88f7a18859767"
-  }
+  },
+  "diagnostic_next_required_action": "ESTABLISH_VERIFIABLE_FIGMA_UPLOAD_ASSETS_PLACEMENT_COMMIT_PROTOCOL_BEFORE_ANY_NEW_RASTER_POST"
 }
