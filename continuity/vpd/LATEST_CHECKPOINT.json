@@ -1,87 +1,91 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 39,
-  "recorded_at": "2026-09-13T00:40:00+00:00",
+  "sequence": 40,
+  "recorded_at": "2026-09-13T01:28:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
-  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
+  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable independent-distillation claim.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P3B no-reference豆坊A/B迁移对照已取得A基线有效输出。A为1152x1536精确3:4的真实豆腐制作过程，内容真实性与PHOTO_ONLY合同均通过。下一步只执行B蒸馏路；B不得使用任何参考图，且完整提示词必须直接出现在新聊天用户消息中，不再通过Drive读取作为生成入口。",
+  "current_focus": "P3B无参考豆坊A/B迁移对照已完成：A与B均为有效3:4 PHOTO_ONLY豆腐制作图，B在区域密度分离、真实安静区、视觉对重和空间层级上取得方向性提升（6.9→7.4）。单对结果只支持继续验证，不证明稳定性。下一步在任何新渲染前，先登记至少一个新的未见内容、无参考A/B迁移挑战。",
   "completed": [
     "p3_shared_reference_same_subject_shanjun_pair_preserved",
     "p3_doufang_shared_reference_route_stopped_after_two_invalid_attempts",
     "p3b_no_reference_doufang_transfer_registered",
-    "p3b_doufang_a_no_reference_baseline_pass"
+    "p3b_doufang_a_no_reference_baseline_pass",
+    "p3b_doufang_b_no_reference_distilled_pass",
+    "p3b_doufang_no_reference_pair_directional_benefit_recorded"
   ],
   "incomplete": [
-    "p3b_doufang_b_no_reference_distilled_output",
-    "p3b_pair_comparison",
-    "additional_unseen_no_reference_transfer_if_B_meaningfully_wins",
-    "figma_integration_only_after_a_complete_valid_comparison_set",
+    "p4_additional_unseen_no_reference_transfer_registration",
+    "p4_additional_unseen_no_reference_transfer_A_output",
+    "p4_additional_unseen_no_reference_transfer_B_output",
+    "p4_mechanism_transfer_verdict",
+    "p6_equal_budget_figma_integrated_design_for_valid_selected_visuals",
     "human_set_verdict",
     "candidate_promotion",
     "golden",
     "scale"
   ],
   "blocked": [
-    "do not attach or fetch any reference image for P3B B",
-    "do not rerender A for taste",
-    "do not use Drive document reading as the generation prompt transport for B",
-    "do not enter final Figma comparison before B is valid",
-    "one no-reference tofu pair cannot establish stable general distillation capability"
+    "do not claim stable independent distillation from one tofu pair",
+    "do not rerender tofu A or B for taste",
+    "do not reintroduce the source reference for cross-subject transfer",
+    "no new unseen transfer render before formal registration and symmetric A/B freeze",
+    "candidate promotion and Golden/Scale remain blocked"
   ],
-  "next_required_action": "RUN_DOUFANG_B_NO_REFERENCE_DISTILLED_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
+  "next_required_action": "REGISTER_ONE_ADDITIONAL_UNSEEN_CONTENT_NO_REFERENCE_TRANSFER_CHALLENGE_BEFORE_RENDER",
   "p3b_no_reference_transfer": {
     "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
     "reference_image_count": 0,
-    "order": ["DOUFANG_A_NO_REFERENCE_BASELINE", "DOUFANG_B_NO_REFERENCE_DISTILLED"],
     "arm_A": {
       "status": "PASS",
       "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
       "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
-      "chat_file_id": "file_000000001b34820885a641a193341f6b",
-      "dimensions": [1152, 1536],
-      "aspect_ratio": "3:4",
+      "dimensions": [1152,1536],
       "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
-      "reference": "NONE",
-      "capsule_rules": "NONE"
+      "aesthetic_score_10": 6.9
     },
     "arm_B": {
-      "status": "NEXT",
-      "reference": "NONE",
-      "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY",
-      "audit_drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU",
-      "execution_prompt_transport": "DIRECT_VISIBLE_USER_MESSAGE"
+      "status": "PASS",
+      "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
+      "commit": "652397ebbb83c2d86012828f1e6503a520699bca",
+      "dimensions": [1152,1536],
+      "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+      "aesthetic_score_10": 7.4
     },
-    "n_per_arm": 1,
-    "no_retry_for_taste": true,
-    "no_hidden_variants": true
+    "pair_comparison": {
+      "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json",
+      "commit": "0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce",
+      "finding": "DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE",
+      "delta_B_minus_A": 0.5,
+      "confidence": "LIMITED_ONE_PAIR_ONLY"
+    }
   },
   "interpretation_boundary": {
-    "tests": "directional incremental benefit of distilled transferable relationships without source-image conditioning for the tofu task",
-    "does_not_yet_prove": "stable general independent-distillation capability across unseen contents/styles",
-    "follow_on_if_B_wins": "at least one additional unseen-content no-reference transfer"
+    "supported": "directional incremental benefit of frozen distilled transferable relationships on the tofu task without source-image conditioning",
+    "not_supported": "stable general independent-distillation capability across unseen content/style",
+    "roadmap_decision": "visible benefit with no severe contract failure supports continuing to full transfer validation; sample win alone does not prove stability"
   },
   "source_state_refs": [
-    {"path": "continuity/vpd/CURRENT_TASK_LOCK.json", "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789", "revision": 17},
-    {"path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json", "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91"}
+    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"890740e5e72934885a18cdb49f48ab722ba0efd1","revision":18},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json","commit":"652397ebbb83c2d86012828f1e6503a520699bca"},
+    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json","commit":"0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce"}
   ],
-  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_A_PASS_B_NEXT",
-  "task_lock": {"path": "continuity/vpd/CURRENT_TASK_LOCK.json", "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789", "revision": 17},
-  "history_snapshot": {"previous_sequence": 38, "previous_git_blob_sha": "94211f1c938d06a536af7b59228792dfd30d4686"},
+  "status": "VPD_P3B_NO_REFERENCE_PAIR_COMPLETE_P4_UNSEEN_TRANSFER_REGISTRATION_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"890740e5e72934885a18cdb49f48ab722ba0efd1","revision":18},
+  "history_snapshot": {"previous_sequence":39,"previous_git_blob_sha":"e22933c824701140ca711b161dd3c8abf0f443c4"},
   "requirements": {
-    "shared_reference_cross_subject_route": {"status": "STOPPED"},
-    "p3b_no_reference_redesign": {"status": "IN_PROGRESS"},
-    "arm_A": {"status": "PASS"},
-    "arm_B": {"status": "NEXT"},
-    "capsule_verdict": "NOT_ESTABLISHED"
+    "p3b_no_reference_pair": {"status":"COMPLETE_DIRECTIONAL_BENEFIT"},
+    "p4_unseen_transfer": {"status":"REGISTRATION_NEXT"},
+    "capsule_verdict": "NOT_ESTABLISHED",
+    "candidate_promotion": "BLOCKED"
   },
   "execution": {
     "shared_reference_valid_final_outputs": 2,
     "shared_reference_invalid_doufang_attempts": 2,
-    "p3b_valid_outputs": 1,
+    "p3b_valid_outputs": 2,
     "figma_entry_allowed": false
   },
-  "workflow": {"path": "VPD_PROJECT_ROADMAP.md", "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
+  "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
 }
