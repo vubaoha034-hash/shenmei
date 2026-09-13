@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 26,
+  "revision": 27,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 23,
-    "git_blob_sha": "7fc89cebf62678663c23a64df424c1928a0209bd",
-    "note": "Revision 23 deployed the encrypted GitHub Actions Figma upload relay and was awaiting initial repository-secret activation."
+    "revision": 26,
+    "git_blob_sha": "75d0558a06a0ec42142cb1afd9ede8f8d5c0af52",
+    "note": "Revision 26 recorded the Doufang B HTTP-200 transport receipt while correctly blocking on unverified Figma placement."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "FIGMA_FILE_COMMIT_NOT_OBSERVED_BLOCKED",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -94,7 +94,7 @@
   },
   "figma_upload_relay": {
     "version": "V1",
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "TRANSPORT_ACCEPTED_FILE_COMMIT_NOT_OBSERVED_BLOCKED",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -114,28 +114,32 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "P6 transport completed for Doufang B (HTTP 200, UPLOAD_PASS), but two Figma readbacks retained the previous imageHash. Canonical source binding is not verified. Stopped before tea A/B; no design changes.",
-  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "current_stage": "P6 Doufang B transport returned HTTP 200 and imageHash 23926508..., but read-only Figma Plugin API inspection shows that hash is absent from the current file image store and node 12:12 still points to the previous hash. The failure is therefore localized to the Figma file commit / placement transaction, not merely stale node readback. Exact historical mint subcause remains unproven because the upload_assets mint arguments/response were not durably persisted. No reupload is authorized yet.",
+  "status": "VPD_P6_FIGMA_FILE_COMMIT_NOT_OBSERVED_BLOCKED",
   "p6_allowed": true,
-  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+  "next_required_action": "ESTABLISH_VERIFIABLE_FIGMA_UPLOAD_ASSETS_PLACEMENT_COMMIT_PROTOCOL_BEFORE_ANY_NEW_RASTER_POST",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
     "PHOTO_RAW_LOCKED_is_semantic_identity_not_figma_locked_property": true,
     "do_not_commit_private_key_plain_submit_urls_or_plain_image_bytes_to_public_repo": true,
-    "do_not_request_fresh_submit_url_before_secret_is_installed": true,
+    "do_not_reupload_doufang_B_until_placement_commit_protocol_is_verified": true,
+    "do_not_start_chazuo_A_or_B_uploads": true,
+    "do_not_manually_assign_missing_transport_hash_to_node_fill": true,
     "do_not_claim_photo_type_fusion_pass_before_all_real_images_are_bound": true,
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "normal push of CMS-only task cf0ea6c5a42d059da758a7444b866096556dcc6d",
-    "GitHub Actions run 34758125307 completed; UPLOAD_PASS receipt read back",
-    "two read-only Figma checks plus screenshot; existing IMAGE/FILL remains unlocked",
-    "all captured frame/title/support/geometry properties unchanged"
+    "read-only Figma inspection confirmed node 12:12 remains unlocked and still points to old imageHash",
+    "figma.getImageByHash on transport-returned imageHash 23926508... returned null, proving the new hash is not observable in the current file image store",
+    "P6 page metadata showed no unexpected extra image frame from the failed placement",
+    "current Figma upload_assets protocol authority rechecked: node-targeted uploads are expected to place as fills and default non-batch submit URLs are expected to commit/place automatically",
+    "historical task commit and relay receipt re-read; historical mint arguments/response are not durably persisted",
+    "formal no-reupload file-commit diagnosis recorded"
   ],
-  "updated_at": "2026-09-13T12:53:00Z",
+  "updated_at": "2026-09-13T13:31:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -147,7 +151,7 @@
   },
   "state_profile": "p6-figma-relay/v1",
   "render_allowed": false,
-  "input_commit": "ede21b036a08de93a6a4bf47604cc642fd8c46c7",
+  "input_commit": "777a347e55acc87ab4829d4da7bfe8a131a7f76a",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -157,12 +161,18 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Uploaded imageHash 23926508e3fc10dd61e9df883e018e721cb7cc1f differs from node 12:12 imageHash 7f57313e7409ff16d76ab867893a1229a5769962.",
-    "Tea A/B not attempted because ordered Doufang B binding gate did not pass.",
+    "Transport-returned imageHash 23926508e3fc10dd61e9df883e018e721cb7cc1f is absent from the current Figma file image store.",
+    "Node 12:12 still references old imageHash 7f57313e7409ff16d76ab867893a1229a5769962.",
+    "Exact historical upload_assets mint context is not durably available, so the subcause of the missing file commit/placement must not be guessed.",
+    "Tea A/B remain untouched until Doufang B placement protocol is verified.",
     "Historical ledger prefix preserved with three known event-hash defects; not recertified."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_PLACEMENT_BLOCKER.json",
     "sha256": "fbdb691148a4c37b49cf7748c5871450a201f5bc203edc9b921fcf5504188dcb"
+  },
+  "relay_file_commit_diagnosis": {
+    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_FIGMA_FILE_COMMIT_DIAGNOSIS_20260913.json",
+    "sha256": "398341464206da2340754b1eecfd952e3a67dab1b37df490b5b88f7a18859767"
   }
 }
