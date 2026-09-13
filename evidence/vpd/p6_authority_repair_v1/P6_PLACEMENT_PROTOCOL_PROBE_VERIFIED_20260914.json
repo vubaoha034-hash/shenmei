@@ -1,0 +1,62 @@
+{
+  "schema_version": "vpd-p6-placement-protocol-probe-verification/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "input_head": "fd2d03cf6e5be4ca856e3d4e102eee7262c5f80e",
+  "status": "PASS_PLACEMENT_PROTOCOL_VERIFIED_SAME_FILE",
+  "scope": "ISOLATED_DIAGNOSTIC_ONLY_NO_FORMAL_P6_BINDING",
+  "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "probe": {
+    "page_id": "40:2",
+    "target_node_id": "40:3",
+    "target_node_name": "PLACEMENT_PROBE_TARGET",
+    "source_sha256": "d333d4fc614379a3b9a3b95661d8b1c76cc38a73f68358234a9699fa94e52829",
+    "source_size": 583,
+    "receipt_path": "evidence/vpd/figma_upload_relay/receipts/P6-PLACEMENT-PROBE-20260913-01.json",
+    "http_status": 200,
+    "receipt_status": "UPLOAD_PASS",
+    "returned_image_hash": "582220b50db8d380597a2c240de216fa9ec24ce4",
+    "live_figma_readback": {
+      "node_locked": false,
+      "fill_type": "IMAGE",
+      "scale_mode": "FILL",
+      "node_image_hash": "582220b50db8d380597a2c240de216fa9ec24ce4",
+      "image_store_present": true,
+      "image_store_width": 96,
+      "image_store_height": 96,
+      "image_store_bytes": 583
+    }
+  },
+  "formal_target_pretransition": {
+    "node_id": "12:12",
+    "name": "PHOTO_RAW_LOCKED",
+    "locked": false,
+    "fill_type": "IMAGE",
+    "scale_mode": "FILL",
+    "image_hash": "7f57313e7409ff16d76ab867893a1229a5769962",
+    "modified_by_probe": false
+  },
+  "established": [
+    "The same Figma file accepts node-targeted upload_assets placement through the encrypted relay.",
+    "The probe image entered the file image store and the target node fill hash matched the relay-returned image hash.",
+    "Relay secret, HTTP POST transport, file write permission, default single-asset commit and node-targeted placement are therefore operational for the verified protocol.",
+    "The historical Doufang B mismatch remains a historical failed placement transaction and is not reclassified as a binding pass."
+  ],
+  "authorization_consequence": {
+    "one_controlled_doufang_b_retry_allowed": true,
+    "required_node_id": "12:12",
+    "required_source_sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "required_upload_assets_mode": "nodeIds:[12:12], count:1, scaleMode:FILL, default non-batch commit",
+    "tea_a_b_still_blocked_until_doufang_b_binding_pass": true,
+    "success_requires": [
+      "relay receipt UPLOAD_PASS / HTTP 200",
+      "returned imageHash exists in current Figma file image store",
+      "node 12:12 IMAGE/FILL imageHash equals returned imageHash",
+      "non-photo nodes unchanged",
+      "screenshot verified"
+    ]
+  },
+  "recorded_at": "2026-09-13T21:41:00Z"
+}

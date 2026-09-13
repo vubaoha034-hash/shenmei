@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 26,
+  "revision": 27,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 23,
-    "git_blob_sha": "7fc89cebf62678663c23a64df424c1928a0209bd",
-    "note": "Revision 23 deployed the encrypted GitHub Actions Figma upload relay and was awaiting initial repository-secret activation."
+    "revision": 26,
+    "git_blob_sha": "75d0558a06a0ec42142cb1afd9ede8f8d5c0af52",
+    "note": "Revision 26 preserved the historical Doufang B HTTP-200 placement mismatch and prohibited blind reupload."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -94,7 +94,7 @@
   },
   "figma_upload_relay": {
     "version": "V1",
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -114,10 +114,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "P6 transport completed for Doufang B (HTTP 200, UPLOAD_PASS), but two Figma readbacks retained the previous imageHash. Canonical source binding is not verified. Stopped before tea A/B; no design changes.",
-  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "current_stage": "An isolated node-targeted placement probe in the same Figma file passed end-to-end: relay HTTP 200, returned imageHash present in the file image store, and target node 40:3 fill hash matched. The formal node 12:12 remains unchanged. One controlled Doufang B retry is now authorized with nodeIds:[12:12]; Tea A/B remain gated until Doufang B binding passes.",
+  "status": "VPD_P6_RELAY_PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
   "p6_allowed": true,
-  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+  "next_required_action": "RUN_LIVE_DOUFANG_B_RELAY",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -130,12 +130,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "normal push of CMS-only task cf0ea6c5a42d059da758a7444b866096556dcc6d",
-    "GitHub Actions run 34758125307 completed; UPLOAD_PASS receipt read back",
-    "two read-only Figma checks plus screenshot; existing IMAGE/FILL remains unlocked",
-    "all captured frame/title/support/geometry properties unchanged"
+    "isolated same-file placement probe transport receipt verified",
+    "live Figma probe node 40:3 readback matched returned imageHash",
+    "live Figma image store contains the probe hash with 96x96 / 583-byte source",
+    "formal node 12:12 revalidated unchanged before retry authorization",
+    "one controlled Doufang B retry authorized without changing any design node"
   ],
-  "updated_at": "2026-09-13T12:53:00Z",
+  "updated_at": "2026-09-13T21:41:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -147,7 +148,7 @@
   },
   "state_profile": "p6-figma-relay/v1",
   "render_allowed": false,
-  "input_commit": "ede21b036a08de93a6a4bf47604cc642fd8c46c7",
+  "input_commit": "fd2d03cf6e5be4ca856e3d4e102eee7262c5f80e",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -157,12 +158,12 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Uploaded imageHash 23926508e3fc10dd61e9df883e018e721cb7cc1f differs from node 12:12 imageHash 7f57313e7409ff16d76ab867893a1229a5769962.",
-    "Tea A/B not attempted because ordered Doufang B binding gate did not pass.",
+    "Doufang B formal binding remains incomplete until the newly authorized controlled retry passes full placement verification.",
+    "Tea A/B remain blocked until ordered Doufang B binding passes.",
     "Historical ledger prefix preserved with three known event-hash defects; not recertified."
   ],
-  "relay_placement_blocker": {
-    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_PLACEMENT_BLOCKER.json",
-    "sha256": "fbdb691148a4c37b49cf7748c5871450a201f5bc203edc9b921fcf5504188dcb"
+  "relay_placement_protocol_probe": {
+    "path": "evidence/vpd/p6_authority_repair_v1/P6_PLACEMENT_PROTOCOL_PROBE_VERIFIED_20260914.json",
+    "sha256": "d49bb22d191289320aa02cdc8b8393e3c3ce64bcaef319c87d9603a3d5d74a22"
   }
 }

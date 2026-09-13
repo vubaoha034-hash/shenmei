@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 48,
-  "recorded_at": "2026-09-13T12:53:00Z",
+  "sequence": 49,
+  "recorded_at": "2026-09-13T21:41:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P6 transport completed for Doufang B (HTTP 200, UPLOAD_PASS), but two Figma readbacks retained the previous imageHash. Canonical source binding is not verified. Stopped before tea A/B; no design changes.",
+  "current_focus": "An isolated node-targeted placement probe in the same Figma file passed end-to-end: relay HTTP 200, returned imageHash present in the file image store, and target node 40:3 fill hash matched. The formal node 12:12 remains unchanged. One controlled Doufang B retry is now authorized with nodeIds:[12:12]; Tea A/B remain gated until Doufang B binding passes.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -30,7 +30,8 @@
     "p6_authority_compatibility_repaired",
     "install_rotated_repository_secret_VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
     "p6_doufang_B_relay_transport_upload_pass",
-    "p6_doufang_B_placement_mismatch_recorded"
+    "p6_doufang_B_placement_mismatch_recorded",
+    "p6_placement_protocol_probe_pass"
   ],
   "incomplete": [
     "live_relay_test_doufang_B_to_node_12_12",
@@ -46,11 +47,11 @@
     "scale"
   ],
   "blocked": [
-    "Uploaded imageHash 23926508e3fc10dd61e9df883e018e721cb7cc1f differs from node 12:12 imageHash 7f57313e7409ff16d76ab867893a1229a5769962.",
-    "Tea A/B not attempted because ordered Doufang B binding gate did not pass.",
+    "Doufang B formal binding remains incomplete until the newly authorized controlled retry passes full placement verification.",
+    "Tea A/B remain blocked until ordered Doufang B binding passes.",
     "Historical ledger prefix preserved with three known event-hash defects; not recertified."
   ],
-  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+  "next_required_action": "RUN_LIVE_DOUFANG_B_RELAY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -88,7 +89,7 @@
   },
   "relay": {
     "version": "V1",
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -108,10 +109,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "status": "VPD_P6_RELAY_PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "0cf20eb6a0824018d4b137e147cca7f4e4fdab98c50f386258a99bd64731dcf6"
+    "sha256": "2891c52acbbe3066232f073d2b3331b44c0e1401a0b90fbf9d61fcb70f61daeb"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -122,7 +123,7 @@
       "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
     },
     "p6_integrated_design": {
-      "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED"
+      "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY"
     },
     "candidate_promotion": "BLOCKED"
   },
@@ -132,8 +133,8 @@
   },
   "ledger_tails": {
     "system_validation": {
-      "event_id": "EVT-VPD-P6-RELAY-PLACEMENT-MISMATCH-20260913-001",
-      "event_hash": "89216f1030eb8a7dddac3af7efc2bbd04757ade89a0b136be7b32868885a943a"
+      "event_id": "EVT-VPD-P6-PLACEMENT-PROTOCOL-PROBE-PASS-20260914-001",
+      "event_hash": "4abdff8049d21afe05a3497962a1536efe4597da13e2077bb1cd71ceb20035de"
     }
   }
 }
