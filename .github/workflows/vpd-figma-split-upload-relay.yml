@@ -1,0 +1,112 @@
+name: VPD Figma Split Upload Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_upload_relay/split_triggers/*.url.cms.b64"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-figma-split-upload-relay-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+      ASSET_PART_DIR: evidence/vpd/figma_upload_relay/split_assets/P6-DOUFANG-B-FROZEN-20260914
+      ASSET_VAULT_SHA256: 657be5a255e5c7c69ffede923dbb41f47115914f1890b3f75967495ef1fc22d2
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Require relay private key secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RELAY_PRIVATE_KEY_B64:-}"
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-figma-relay-private.pem
+          openssl pkey -in /tmp/vpd-figma-relay-private.pem -check -noout >/dev/null
+
+      - name: Reconstruct encrypted frozen asset vault
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d "$ASSET_PART_DIR"
+          mapfile -t parts < <(find "$ASSET_PART_DIR" -maxdepth 1 -type f -name 'part-*.b64' | sort)
+          test "${#parts[@]}" -eq 26
+          cat "${parts[@]}" > /tmp/vpd-asset-vault.b64
+          base64 --decode /tmp/vpd-asset-vault.b64 > /tmp/vpd-asset-vault.cms
+          echo "$ASSET_VAULT_SHA256  /tmp/vpd-asset-vault.cms" | sha256sum -c -
+
+      - name: Execute encrypted URL trigger
+        id: relay
+        shell: bash
+        run: |
+          set -uo pipefail
+          trigger_dir="evidence/vpd/figma_upload_relay/split_triggers"
+          receipt_dir="evidence/vpd/figma_upload_relay/receipts"
+          mkdir -p "$trigger_dir" "$receipt_dir"
+          failures=0
+          found=0
+          shopt -s nullglob
+          for trigger_b64 in "$trigger_dir"/*.url.cms.b64; do
+            found=1
+            base="$(basename "$trigger_b64" .url.cms.b64)"
+            trigger_der="/tmp/$base.url.cms"
+            receipt="$receipt_dir/$base.json"
+            if ! base64 --decode "$trigger_b64" > "$trigger_der"; then
+              echo "Trigger base64 decode failed" >&2
+              failures=$((failures + 1))
+              continue
+            fi
+            if python scripts/vpd_figma_split_relay_execute.py \
+              --asset-vault /tmp/vpd-asset-vault.cms \
+              --url-trigger "$trigger_der" \
+              --cert evidence/vpd/figma_upload_relay/relay-cert.pem \
+              --private-key /tmp/vpd-figma-relay-private.pem \
+              --receipt "$receipt"; then
+              git rm -f "$trigger_b64"
+              git rm -f "$ASSET_PART_DIR"/part-*.b64
+              if [ -f "$ASSET_PART_DIR/meta.json" ]; then git rm -f "$ASSET_PART_DIR/meta.json"; fi
+            else
+              failures=$((failures + 1))
+            fi
+            if [ -f "$receipt" ]; then git add "$receipt"; fi
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No encrypted split relay trigger found." >&2
+            exit 4
+          fi
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+
+      - name: Persist redacted receipt and ciphertext cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No split relay changes to persist."
+          else
+            git commit -m "Record split VPD Figma upload relay receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
+
+      - name: Enforce relay success
+        if: steps.relay.outputs.failures != '0'
+        shell: bash
+        run: |
+          echo "Split Figma relay failed; encrypted trigger and asset parts were retained." >&2
+          exit 1
