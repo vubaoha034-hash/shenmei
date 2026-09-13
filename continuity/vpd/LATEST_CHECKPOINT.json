@@ -1,24 +1,27 @@
 {
-  "schema_version": "upcp-latest-checkpoint/v1",
-  "project_id": "visual-aesthetic-vpd",
-  "sequence": 43,
-  "recorded_at": "2026-09-13T01:52:00+00:00",
-  "task_model": "TASK_REGISTRY",
-  "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
-  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
-  "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "P4茶作无参考A/B完成并形成第二组跨内容方向性收益：A 6.8，B 7.5，B-A=+0.7。结合豆坊A 6.9、B 7.4，已有两组不同内容在无源参考像素条件下B均优于A。机制迁移层允许继续到P6完整海报验证，但稳定通用独立蒸馏、Candidate晋升、Golden/Scale仍未证明。",
-  "completed": [
+  "schema_version":"upcp-latest-checkpoint/v1",
+  "project_id":"visual-aesthetic-vpd",
+  "sequence":44,
+  "recorded_at":"2026-09-13T03:08:00+00:00",
+  "task_model":"TASK_REGISTRY",
+  "highest_accepted_checkpoint":"VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
+  "highest_accepted_checkpoint_scope":"Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
+  "active_task_ids":["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
+  "current_focus":"P6同等预算Figma整图验证已建立四个正式Frame、矢量主标题和可编辑辅助文字，四张原图身份与预算已冻结。当前唯一阻塞是本地位图无法绑定进Figma：upload_assets上传URL可取得，但容器无法解析mcp.figma.com；use_figma内createImage写入亦被执行器拒绝。PHOTO节点仍为占位，因此图文融合与最终像素验收尚未开始。",
+  "completed":[
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
-    "p4_chazuo_no_reference_transfer_registered",
-    "p4_chazuo_A_no_reference_baseline_pass",
-    "p4_chazuo_B_no_reference_distilled_pass",
-    "p4_chazuo_pair_comparison_complete",
-    "p4_repeated_directional_mechanism_transfer_evidence_recorded"
+    "p4_chazuo_pair_complete_repeated_directional_benefit",
+    "p4_mechanism_transfer_verdict_pass_repeated_directional_only",
+    "p6_equal_budget_validation_inputs_frozen",
+    "p6_figma_page_and_four_frames_created",
+    "p6_display_titles_vectorized",
+    "p6_support_text_editable_and_fonts_verified",
+    "p6_raster_binding_failure_diagnosed_and_recorded"
   ],
-  "incomplete": [
-    "p6_equal_budget_figma_integrated_design_preparation",
-    "p6_equal_budget_figma_integrated_design_execution",
+  "incomplete":[
+    "p6_bind_four_real_raw_images_to_photo_nodes",
+    "p6_equal_budget_composition_review_with_real_images",
+    "p6_single_correction_pass_per_poster",
     "p6_final_pixel_and_editability_validation",
     "human_set_verdict",
     "candidate_promotion",
@@ -26,54 +29,30 @@
     "golden",
     "scale"
   ],
-  "blocked": [
-    "do not rerender completed tofu or tea A/B for taste",
-    "do not reintroduce source-reference pixels for cross-subject transfer",
-    "do not claim universal independent distillation from two single-output pairs",
-    "candidate promotion and Golden/Scale remain blocked pending integrated design and human acceptance"
+  "blocked":[
+    "mcp.figma.com DNS failure blocks upload_assets POST from current runtime",
+    "use_figma createImage write path rejected by executor",
+    "do not use placeholder or low-resolution proxy as final pixel evidence",
+    "candidate promotion and Golden/Scale remain blocked"
   ],
-  "next_required_action": "PREPARE_P6_EQUAL_BUDGET_FIGMA_INTEGRATED_DESIGN_VALIDATION_FOR_VALID_NO_REFERENCE_PAIRS",
-  "mechanism_evidence": {
-    "tofu_pair": {
-      "A_score_10": 6.9,
-      "B_score_10": 7.4,
-      "delta_B_minus_A": 0.5,
-      "source_reference_present": false
-    },
-    "tea_pair": {
-      "A_score_10": 6.8,
-      "B_score_10": 7.5,
-      "delta_B_minus_A": 0.7,
-      "source_reference_present": false,
-      "arm_B_result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
-      "pair_comparison": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_PAIR_COMPARISON_20260913.json"
-    },
-    "mean_delta": 0.6,
-    "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY",
-    "verdict_path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_MECHANISM_TRANSFER_VERDICT_20260913.json"
+  "next_required_action":"RESTORE_OR_BYPASS_FIGMA_RASTER_IMAGE_BINDING_WITHOUT_CHANGING_EQUAL_BUDGET_LAYOUT",
+  "p6":{
+    "freeze":"evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_FIGMA_VALIDATION_FREEZE_20260913.json",
+    "blocker_evidence":"evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FIGMA_PREPARATION_AND_IMAGE_BINDING_BLOCKER_20260913.json",
+    "figma_file_key":"uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id":"12:2",
+    "frames":["12:3","12:11","12:19","12:27"],
+    "photo_nodes":["12:4","12:12","12:20","12:28"],
+    "frame_size":[2400,3200],
+    "fonts":["Noto Sans SC Black","Noto Sans SC Medium","Inter Medium"],
+    "real_images_bound":false,
+    "figma_entry_allowed":true,
+    "final_pixel_validation_allowed":false
   },
-  "p6_entry_boundary": {
-    "allowed": true,
-    "equal_budget_A_B_required": true,
-    "raw_output_identity_must_be_preserved": true,
-    "editable_text_vector_evidence_required": true,
-    "final_pixel_review_required": true,
-    "raw_generation_gain_and_post_design_gain_must_remain_separate": true,
-    "human_acceptance_required_before_any_promotion": true
-  },
-  "status": "VPD_P4_REPEATED_DIRECTIONAL_MECHANISM_EVIDENCE_P6_PREPARATION_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"62518a85a5aef8b947831c35ac38eeca84b345b9","revision":21},
-  "history_snapshot": {"previous_sequence":42,"previous_git_blob_sha":"c2fca4c6488a6c35c7ce40d954086293706be054"},
-  "requirements": {
-    "p4_mechanism_transfer": {"status":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},
-    "p6_integrated_design": {"status":"PREPARATION_NEXT"},
-    "capsule_verdict": "MECHANISM_DIRECTIONALLY_SUPPORTED_NOT_PROMOTED",
-    "candidate_promotion": "BLOCKED"
-  },
-  "execution": {
-    "p4_valid_outputs": 2,
-    "p4_render_allowed": false,
-    "figma_entry_allowed": true
-  },
-  "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
+  "mechanism_evidence":{"tofu_delta_B_minus_A":0.5,"tea_delta_B_minus_A":0.7,"mean_delta":0.6,"verdict":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},
+  "status":"VPD_P6_FIGMA_PREPARED_RASTER_BINDING_BLOCKED",
+  "task_lock":{"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"8d9785e39a5bf17f4bc2aa509c60597a2a8c1d8c","revision":22},
+  "history_snapshot":{"previous_sequence":43,"previous_git_blob_sha":"64db49cf9fdac3af9149fa9774873a2876c5b154"},
+  "requirements":{"p4_mechanism_transfer":{"status":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},"p6_integrated_design":{"status":"PREPARED_RASTER_BINDING_BLOCKED"},"candidate_promotion":"BLOCKED"},
+  "workflow":{"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
 }
