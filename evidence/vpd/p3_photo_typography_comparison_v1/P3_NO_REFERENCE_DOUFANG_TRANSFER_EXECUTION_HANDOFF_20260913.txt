@@ -1,0 +1,38 @@
+P3B DOUFANG NO-REFERENCE TRANSFER — EXECUTION HANDOFF
+
+Purpose
+- Replace the failed shared-reference cross-subject route with a cleaner test that removes source-reference pixels from generation time.
+- Test whether the frozen distilled transferable relationship rules add value for a new tofu-process subject without source-image semantic leakage.
+
+REGISTERED COMPARISON
+- Registration: evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json
+- Order is fixed: A baseline first, then B distilled.
+- One brand-new standalone minimal chat per arm.
+- Exactly one image call per arm. n=1. No retry in the same chat.
+- No image reference may be uploaded, attached, fetched from Drive, opened from GitHub, or reused from prior chats.
+- Do not load START_HERE, task lock, checkpoint, Capsule document, Figma evidence, prior outputs, failures, or project history before the image call.
+- 3:4 portrait, one full-bleed PHOTO_ONLY output.
+- STOP on wrong subject, wrong aspect ratio, any visible text/logo/label/badge, collage/multi-panel, mushrooms/pets, or absence of credible tofu-process evidence.
+- Do not rerender for taste.
+
+ARM A — DOUFANG_A_NO_REFERENCE_BASELINE
+Google Drive prompt document:
+- title: P3B_DOUFANG_A_NO_REFERENCE_BASELINE_20260913
+- File ID: 1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY
+- reference image: NONE
+
+New-chat instruction:
+“从 Google Drive 读取 File ID：1vfyVimn94RLrfF_HgJxy8FdKkPDSetjf-5i32SHWCpY 的完整正文，并严格执行。只使用该文档正文，不读取或使用任何参考图片、其他聊天、项目文件、GitHub、历史图片或额外上下文。严格只生成1张图片，不增加要求、不重试、不生成多个方案。完成后直接返回生成的单张图片。”
+
+ARM B — DOUFANG_B_NO_REFERENCE_DISTILLED
+Google Drive prompt document:
+- title: P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_20260913
+- File ID: 1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU
+- reference image: NONE
+
+Do not run B until A has been returned to the project chat and validated.
+
+Interpretation boundary
+- A vs B now tests directional distilled-program benefit without source-image conditioning for this tofu task.
+- A single pair is not sufficient for a stable general claim that distillation works across contents or styles.
+- If B meaningfully wins, at least one additional unseen-content no-reference transfer is required before any stable independent-distillation claim.
