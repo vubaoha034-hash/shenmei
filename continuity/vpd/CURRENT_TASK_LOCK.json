@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 19,
+  "revision": 20,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 18,
-    "git_blob_sha": "890740e5e72934885a18cdb49f48ab722ba0efd1",
-    "note": "Revision 18 completed the first no-reference tofu A/B pair with limited directional distilled-program benefit. Revision 19 pre-registers a materially different unseen no-reference tea-craft A/B challenge before any new render."
+    "revision": 19,
+    "git_blob_sha": "82c5699a712153c750f6205cfa63acc23ce752b2",
+    "note": "Revision 19 pre-registered the unseen no-reference tea-craft A/B challenge. Revision 20 records Arm A as a valid baseline and advances only to Arm B."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -34,7 +34,7 @@
     "stable_independent_distillation_proven": false
   },
   "p4_unseen_transfer": {
-    "status": "REGISTERED_NOT_RENDERED_A_NEXT",
+    "status": "IN_PROGRESS_A_PASS_B_NEXT",
     "challenge_id": "P4-CHAZUO-NO-REFERENCE-TRANSFER-20260913",
     "subject_class": "HANDCRAFTED_TEA_NON_HEATED_PROCESS_V1",
     "future_copy": {
@@ -54,12 +54,18 @@
     "fixed_order": ["CHAZUO_A_NO_REFERENCE_BASELINE", "CHAZUO_B_NO_REFERENCE_DISTILLED"],
     "n_per_arm": 1,
     "arm_A": {
-      "status": "NEXT",
+      "status": "PASS",
       "reference": "NONE",
-      "capsule_rules": "NONE"
+      "capsule_rules": "NONE",
+      "result": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+      "commit": "b55a79056b5f858e4f53d8e1e2929aa57c531937",
+      "chat_file_id": "file_00000000b84c8207aaffd1b99319bab5",
+      "dimensions": [1152, 1536],
+      "sha256": "c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667",
+      "aesthetic_score_10": 6.8
     },
     "arm_B": {
-      "status": "LOCKED_UNTIL_A_PASS",
+      "status": "NEXT",
       "reference": "NONE",
       "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY"
     },
@@ -70,12 +76,12 @@
       "candidate_promotion_from_this_pair_alone": false
     }
   },
-  "current_stage": "P3B豆坊无参考A/B已取得一次方向性蒸馏收益，但单对不足以证明稳定性。P4已预登记一个材质、颜色和过程均不同的未见内容：手工制茶非加热阶段。A/B均无参考、同3:4 PHOTO_ONLY、同模型与同事实约束，各1张；下一步只允许A基线。",
-  "status": "VPD_P4_UNSEEN_TEA_NO_REFERENCE_REGISTERED_A_NEXT",
+  "current_stage": "P4未见内容茶作无参考A/B中，A基线已通过：1152x1536精确3:4，制茶阶段证据与PHOTO_ONLY合同通过，评分6.8。下一步只允许B蒸馏路；B仍不得使用任何参考图。",
+  "status": "VPD_P4_UNSEEN_TEA_A_PASS_B_NEXT",
   "formal_p3_render_allowed": false,
   "p4_render_allowed": true,
-  "p4_render_scope": "CHAZUO_A_NO_REFERENCE_BASELINE_ONLY",
-  "next_required_action": "RUN_CHAZUO_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
+  "p4_render_scope": "CHAZUO_B_NO_REFERENCE_DISTILLED_ONLY",
+  "next_required_action": "RUN_CHAZUO_B_NO_REFERENCE_DISTILLED_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
   "execution_boundary": {
     "must_use_brand_new_standalone_chat": true,
     "must_not_attach_or_fetch_any_reference_image": true,
@@ -85,25 +91,30 @@
     "exact_3_4_portrait_required": true,
     "photo_only": true,
     "same_chat_retry_on_failure": false,
-    "stop_on_contract_violation": true,
-    "B_locked_until_A_pass": true
+    "stop_on_contract_violation": true
   },
   "do_not_reopen": [
     "shared-reference Doufang route",
     "rerender completed tofu A/B for taste",
-    "render tea B before tea A passes",
+    "rerender tea A for taste",
     "use source-reference pixels for P4 tea challenge",
-    "claim stable independent distillation before repeated unseen-content evidence",
+    "claim stable independent distillation before tea B and pair verdict",
     "candidate promotion, Golden or Scale"
   ],
   "completed_this_revision": [
-    "按Roadmap核对P4需要新的未见内容无参考迁移挑战",
-    "核对既有H1-H4已覆盖环境、山菌食材、豆腐工艺和画幅重排",
-    "选择并预登记手工制茶非加热阶段作为材质和颜色明显不同的未见内容",
-    "冻结无参考A/B对称条件、事实约束、顺序和停止规则",
-    "冻结A与B直接可见执行提示词",
-    "下一动作推进到CHAZUO_A_NO_REFERENCE_BASELINE"
+    "核验CHAZUO_A_NO_REFERENCE_BASELINE为1152x1536精确3:4",
+    "核验SHA-256为c36c1a27bd2275626782167126bb4a79baecab9cfa52b271ccb450c7227fb667",
+    "核验鲜叶、部分处理/萎凋叶、卷曲叶、竹匾、布、木质工作面和摊晾架等制茶证据",
+    "核验无加热火焰、茶具主体、文字Logo拼版",
+    "A基线正式判PASS，不重抽",
+    "下一动作推进到CHAZUO_B_NO_REFERENCE_DISTILLED"
   ],
-  "updated_at": "2026-09-13T01:45:00+00:00",
+  "changes_authority": {
+    "arm_A_result": {
+      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
+      "commit": "b55a79056b5f858e4f53d8e1e2929aa57c531937"
+    }
+  },
+  "updated_at": "2026-09-13T01:42:00+00:00",
   "workflow": {"version": "1.1", "focus_stage": "P4", "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
