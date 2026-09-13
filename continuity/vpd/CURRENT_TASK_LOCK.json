@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 18,
+  "revision": 19,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 17,
-    "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789",
-    "note": "Revision 17 recorded no-reference Doufang A baseline PASS. Revision 18 records no-reference Doufang B distilled PASS and closes the first no-reference pair with directional distilled-program benefit."
+    "revision": 18,
+    "git_blob_sha": "890740e5e72934885a18cdb49f48ab722ba0efd1",
+    "note": "Revision 18 completed the first no-reference tofu A/B pair with limited directional distilled-program benefit. Revision 19 pre-registers a materially different unseen no-reference tea-craft A/B challenge before any new render."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -20,90 +20,90 @@
     "maturity": "CONTROLLED_VALIDATION_REQUIRED",
     "promoted": false
   },
-  "p3": {
-    "shared_reference_route": {
-      "status": "STOPPED_CROSS_SUBJECT_NOT_VIABLE",
-      "valid_same_subject_pair": ["SHANJUN_A_FINAL", "SHANJUN_B_FINAL_POSITION_FREE"],
-      "invalid_doufang_attempts": 2,
-      "figma_entry_allowed": false
+  "p3_evidence": {
+    "shared_reference_cross_subject_route": "STOPPED_NOT_VIABLE",
+    "valid_same_subject_pair": ["SHANJUN_A_FINAL", "SHANJUN_B_FINAL_POSITION_FREE"],
+    "no_reference_tofu_pair": {
+      "status": "COMPLETE_DIRECTIONAL_BENEFIT",
+      "arm_A_score_10": 6.9,
+      "arm_B_score_10": 7.4,
+      "delta_B_minus_A": 0.5,
+      "confidence": "LIMITED_ONE_PAIR_ONLY",
+      "finding": "DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE"
     },
-    "no_reference_doufang_transfer": {
-      "status": "PAIR_COMPLETE_DIRECTIONAL_BENEFIT",
-      "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
-      "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json",
-      "execution_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
-      "reference_image_count": 0,
-      "n_per_arm": 1,
-      "execution_prompt_policy": "DIRECT_VISIBLE_PROMPT_REQUIRED",
-      "arm_A": {
-        "id": "DOUFANG_A_NO_REFERENCE_BASELINE",
-        "status": "PASS",
-        "reference": "NONE",
-        "capsule_rules": "NONE",
-        "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
-        "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
-        "chat_file_id": "file_000000001b34820885a641a193341f6b",
-        "dimensions": [1152, 1536],
-        "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
-        "aesthetic_score_10": 6.9
-      },
-      "arm_B": {
-        "id": "DOUFANG_B_NO_REFERENCE_DISTILLED",
-        "status": "PASS",
-        "reference": "NONE",
-        "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY",
-        "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
-        "commit": "652397ebbb83c2d86012828f1e6503a520699bca",
-        "chat_file_id": "file_00000000dce882119709b175aa1978f3",
-        "dimensions": [1152, 1536],
-        "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
-        "aesthetic_score_10": 7.4
-      },
-      "pair_comparison": {
-        "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json",
-        "commit": "0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce",
-        "finding": "DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE",
-        "delta_B_minus_A": 0.5,
-        "confidence": "LIMITED_ONE_PAIR_ONLY"
-      },
-      "interpretation_boundary": {
-        "supported": "directional evidence that distilled transferable relationships add visual-structural value on this tofu task without source-image conditioning",
-        "not_supported": "stable general independent-distillation capability across unseen contents or styles",
-        "required_follow_on": "at least one additional unseen-content no-reference transfer before stable independent-distillation claim"
-      }
+    "stable_independent_distillation_proven": false
+  },
+  "p4_unseen_transfer": {
+    "status": "REGISTERED_NOT_RENDERED_A_NEXT",
+    "challenge_id": "P4-CHAZUO-NO-REFERENCE-TRANSFER-20260913",
+    "subject_class": "HANDCRAFTED_TEA_NON_HEATED_PROCESS_V1",
+    "future_copy": {
+      "main_title": "茶作",
+      "english_support": "HANDCRAFTED TEA",
+      "chinese_support": "鲜叶入作 · 手工成茶"
+    },
+    "registration": {
+      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_REGISTRATION_20260913.json",
+      "commit": "be4b02256a669248dd3415e1eb637f195420b465"
+    },
+    "execution_handoff": {
+      "path": "evidence/vpd/p4_unseen_no_reference_transfer_v1/P4_CHAZUO_NO_REFERENCE_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
+      "commit": "a2f6029b9bf3380c64fb7ad6a91915dcc19be57e"
+    },
+    "reference_image_count": 0,
+    "fixed_order": ["CHAZUO_A_NO_REFERENCE_BASELINE", "CHAZUO_B_NO_REFERENCE_DISTILLED"],
+    "n_per_arm": 1,
+    "arm_A": {
+      "status": "NEXT",
+      "reference": "NONE",
+      "capsule_rules": "NONE"
+    },
+    "arm_B": {
+      "status": "LOCKED_UNTIL_A_PASS",
+      "reference": "NONE",
+      "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY"
+    },
+    "interpretation_boundary": {
+      "B_meaningful_win": "supports repeated cross-content directional evidence and allows mechanism-transfer verdict work",
+      "A_B_close": "repeatability remains limited",
+      "B_loss": "tofu win is not stable enough for a general transfer claim",
+      "candidate_promotion_from_this_pair_alone": false
     }
   },
-  "current_stage": "P3B无参考豆坊A/B对照已完整：A与B均通过内容真实性和3:4 PHOTO_ONLY合同，B在区域密度分离、真实安静区、视觉对重与空间层级上有方向性提升，评分6.9→7.4。单对样本只支持继续，不证明稳定性。根据Roadmap，下一步进入完整迁移验证前置：登记至少一个新的未见内容、无参考A/B迁移挑战。",
-  "status": "VPD_P3B_NO_REFERENCE_PAIR_COMPLETE_P4_UNSEEN_TRANSFER_REGISTRATION_NEXT",
+  "current_stage": "P3B豆坊无参考A/B已取得一次方向性蒸馏收益，但单对不足以证明稳定性。P4已预登记一个材质、颜色和过程均不同的未见内容：手工制茶非加热阶段。A/B均无参考、同3:4 PHOTO_ONLY、同模型与同事实约束，各1张；下一步只允许A基线。",
+  "status": "VPD_P4_UNSEEN_TEA_NO_REFERENCE_REGISTERED_A_NEXT",
   "formal_p3_render_allowed": false,
-  "next_required_action": "REGISTER_ONE_ADDITIONAL_UNSEEN_CONTENT_NO_REFERENCE_TRANSFER_CHALLENGE_BEFORE_RENDER",
+  "p4_render_allowed": true,
+  "p4_render_scope": "CHAZUO_A_NO_REFERENCE_BASELINE_ONLY",
+  "next_required_action": "RUN_CHAZUO_A_NO_REFERENCE_BASELINE_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
   "execution_boundary": {
-    "do_not_rerender_doufang_A_or_B_for_taste": true,
-    "do_not_reintroduce_source_reference_for_cross_subject_transfer": true,
-    "do_not_claim_stable_independent_distillation_from_one_pair": true,
-    "next_unseen_transfer_must_be_pre_registered_before_render": true,
-    "same_model_and_symmetric_A_B_budget_required": true
+    "must_use_brand_new_standalone_chat": true,
+    "must_not_attach_or_fetch_any_reference_image": true,
+    "must_not_read_drive_github_project_history_before_image_call": true,
+    "must_use_direct_visible_prompt": true,
+    "n": 1,
+    "exact_3_4_portrait_required": true,
+    "photo_only": true,
+    "same_chat_retry_on_failure": false,
+    "stop_on_contract_violation": true,
+    "B_locked_until_A_pass": true
   },
   "do_not_reopen": [
-    "shared-reference Doufang A/B route",
-    "rerender completed no-reference tofu pair",
-    "claim candidate promotion from this pair alone",
-    "Golden or Scale",
-    "final integrated commercial verdict before P4/P6 evidence"
+    "shared-reference Doufang route",
+    "rerender completed tofu A/B for taste",
+    "render tea B before tea A passes",
+    "use source-reference pixels for P4 tea challenge",
+    "claim stable independent distillation before repeated unseen-content evidence",
+    "candidate promotion, Golden or Scale"
   ],
   "completed_this_revision": [
-    "核验DOUFANG_B_NO_REFERENCE_DISTILLED为1152x1536精确3:4",
-    "核验SHA-256为78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
-    "核验豆腐制作过程真实性、PHOTO_ONLY、无文字Logo拼版",
-    "B正式判PASS，不重抽",
-    "完成无参考豆坊A/B对照：A 6.9，B 7.4，B-A=+0.5",
-    "记录方向性蒸馏收益，但明确单对不能证明稳定独立蒸馏能力",
-    "下一步推进到至少一个额外未见内容的无参考迁移挑战登记"
+    "按Roadmap核对P4需要新的未见内容无参考迁移挑战",
+    "核对既有H1-H4已覆盖环境、山菌食材、豆腐工艺和画幅重排",
+    "选择并预登记手工制茶非加热阶段作为材质和颜色明显不同的未见内容",
+    "冻结无参考A/B对称条件、事实约束、顺序和停止规则",
+    "冻结A与B直接可见执行提示词",
+    "下一动作推进到CHAZUO_A_NO_REFERENCE_BASELINE"
   ],
-  "changes_authority": {
-    "arm_B_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json","commit":"652397ebbb83c2d86012828f1e6503a520699bca"},
-    "pair_comparison": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json","commit":"0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce"}
-  },
-  "updated_at": "2026-09-13T01:28:00+00:00",
-  "workflow": {"version":"1.1","focus_stage":"P4_PRE_REGISTRATION","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
+  "updated_at": "2026-09-13T01:45:00+00:00",
+  "workflow": {"version": "1.1", "focus_stage": "P4", "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
