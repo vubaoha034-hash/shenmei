@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 17,
+  "revision": 18,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 16,
-    "git_blob_sha": "b91ff70fdb17b98d53dba0bf1bc2b60ec563bb49",
-    "note": "Revision 16 registered the no-reference Doufang A/B transfer comparison. Revision 17 records Arm A as a valid no-reference baseline and advances only to Arm B."
+    "revision": 17,
+    "git_blob_sha": "c2128956079c98ceb1b87955cd46748ed215e789",
+    "note": "Revision 17 recorded no-reference Doufang A baseline PASS. Revision 18 records no-reference Doufang B distilled PASS and closes the first no-reference pair with directional distilled-program benefit."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -28,17 +28,13 @@
       "figma_entry_allowed": false
     },
     "no_reference_doufang_transfer": {
-      "status": "IN_PROGRESS_A_PASS_B_NEXT",
+      "status": "PAIR_COMPLETE_DIRECTIONAL_BENEFIT",
       "comparison_id": "P3B-DOUFANG-NO-REFERENCE-TRANSFER-20260913",
       "registration": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_COMPARISON_REGISTRATION_20260913.json",
       "execution_handoff": "evidence/vpd/p3_photo_typography_comparison_v1/P3_NO_REFERENCE_DOUFANG_TRANSFER_EXECUTION_HANDOFF_20260913.txt",
       "reference_image_count": 0,
-      "order": ["DOUFANG_A_NO_REFERENCE_BASELINE", "DOUFANG_B_NO_REFERENCE_DISTILLED"],
       "n_per_arm": 1,
-      "same_chat_retry": false,
-      "hidden_variants": false,
-      "best_of_n": false,
-      "execution_prompt_policy": "DIRECT_VISIBLE_PROMPT_REQUIRED; Drive documents are audit/freeze copies only, not the image-generation instruction transport",
+      "execution_prompt_policy": "DIRECT_VISIBLE_PROMPT_REQUIRED",
       "arm_A": {
         "id": "DOUFANG_A_NO_REFERENCE_BASELINE",
         "status": "PASS",
@@ -48,62 +44,66 @@
         "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91",
         "chat_file_id": "file_000000001b34820885a641a193341f6b",
         "dimensions": [1152, 1536],
-        "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909"
+        "sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
+        "aesthetic_score_10": 6.9
       },
       "arm_B": {
         "id": "DOUFANG_B_NO_REFERENCE_DISTILLED",
-        "status": "NEXT",
+        "status": "PASS",
         "reference": "NONE",
         "capsule_rules": "FROZEN_TRANSFERABLE_RELATIONSHIPS_ONLY",
-        "audit_drive_prompt_doc_id": "1YOPJAt9ACTDj9_Nw3EBBEao9R1yUGBjt8fy_irWqacU"
+        "result": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json",
+        "commit": "652397ebbb83c2d86012828f1e6503a520699bca",
+        "chat_file_id": "file_00000000dce882119709b175aa1978f3",
+        "dimensions": [1152, 1536],
+        "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+        "aesthetic_score_10": 7.4
+      },
+      "pair_comparison": {
+        "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json",
+        "commit": "0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce",
+        "finding": "DIRECTIONAL_DISTILLED_PROGRAM_BENEFIT_WITHOUT_SOURCE_REFERENCE",
+        "delta_B_minus_A": 0.5,
+        "confidence": "LIMITED_ONE_PAIR_ONLY"
       },
       "interpretation_boundary": {
-        "one_pair_can_support": "directional evidence of distilled-program benefit without source-image conditioning for the tofu task",
-        "one_pair_cannot_support": "stable general independent-distillation capability",
-        "if_B_meaningfully_wins": "run at least one additional unseen-content no-reference transfer before a stable independent-distillation claim"
+        "supported": "directional evidence that distilled transferable relationships add visual-structural value on this tofu task without source-image conditioning",
+        "not_supported": "stable general independent-distillation capability across unseen contents or styles",
+        "required_follow_on": "at least one additional unseen-content no-reference transfer before stable independent-distillation claim"
       }
     }
   },
-  "current_stage": "P3B no-reference豆坊迁移对照中，A基线已通过：1152x1536精确3:4，真实豆腐制作过程证据完整，无文字/Logo/拼版。下一步只运行B蒸馏路；B仍不得使用任何参考图，并必须把完整提示词直接写在新聊天可见用户消息中。",
-  "status": "VPD_P3B_NO_REFERENCE_DOUFANG_A_PASS_B_NEXT",
-  "formal_p3_render_allowed": true,
-  "formal_p3_render_scope": "P3B_NO_REFERENCE_DOUFANG_B_ONLY",
-  "next_required_action": "RUN_DOUFANG_B_NO_REFERENCE_DISTILLED_IN_BRAND_NEW_STANDALONE_CHAT_WITH_DIRECT_VISIBLE_PROMPT",
+  "current_stage": "P3B无参考豆坊A/B对照已完整：A与B均通过内容真实性和3:4 PHOTO_ONLY合同，B在区域密度分离、真实安静区、视觉对重与空间层级上有方向性提升，评分6.9→7.4。单对样本只支持继续，不证明稳定性。根据Roadmap，下一步进入完整迁移验证前置：登记至少一个新的未见内容、无参考A/B迁移挑战。",
+  "status": "VPD_P3B_NO_REFERENCE_PAIR_COMPLETE_P4_UNSEEN_TRANSFER_REGISTRATION_NEXT",
+  "formal_p3_render_allowed": false,
+  "next_required_action": "REGISTER_ONE_ADDITIONAL_UNSEEN_CONTENT_NO_REFERENCE_TRANSFER_CHALLENGE_BEFORE_RENDER",
   "execution_boundary": {
-    "must_use_brand_new_standalone_chat": true,
-    "must_not_attach_any_reference_image": true,
-    "must_not_fetch_any_drive_or_github_image": true,
-    "must_use_direct_visible_prompt_not_drive_instruction_transport": true,
-    "n": 1,
-    "exact_3_4_portrait_required": true,
-    "photo_only": true,
-    "same_chat_retry_on_failure": false,
-    "stop_on_any_contract_violation": true
+    "do_not_rerender_doufang_A_or_B_for_taste": true,
+    "do_not_reintroduce_source_reference_for_cross_subject_transfer": true,
+    "do_not_claim_stable_independent_distillation_from_one_pair": true,
+    "next_unseen_transfer_must_be_pre_registered_before_render": true,
+    "same_model_and_symmetric_A_B_budget_required": true
   },
   "do_not_reopen": [
-    "third shared-reference DOUFANG_A attempt",
-    "shared-reference DOUFANG_B",
-    "rerender no-reference A for taste",
-    "attach the Shanyeji source reference to no-reference B",
-    "use Drive document reading as the image-generation prompt transport for B",
-    "Figma comparison before a complete valid revised A/B pair exists",
-    "claim stable independent distillation from a single no-reference pair"
+    "shared-reference Doufang A/B route",
+    "rerender completed no-reference tofu pair",
+    "claim candidate promotion from this pair alone",
+    "Golden or Scale",
+    "final integrated commercial verdict before P4/P6 evidence"
   ],
   "completed_this_revision": [
-    "核验DOUFANG_A_NO_REFERENCE_BASELINE为1152x1536精确3:4",
-    "核验SHA-256为45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
-    "核验黄豆、磨浆/豆浆、凝乳/豆花、纱布、木模压制、成型豆腐、水分均有可信证据",
-    "核验无文字、Logo、标签、拼版、宠物、菌菇和主动火焰烹饪",
-    "A基线正式判PASS，不重抽",
-    "执行入口从Drive读取改为直接可见提示词，Drive文档仅保留审计/冻结用途",
-    "下一动作推进到DOUFANG_B_NO_REFERENCE_DISTILLED"
+    "核验DOUFANG_B_NO_REFERENCE_DISTILLED为1152x1536精确3:4",
+    "核验SHA-256为78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "核验豆腐制作过程真实性、PHOTO_ONLY、无文字Logo拼版",
+    "B正式判PASS，不重抽",
+    "完成无参考豆坊A/B对照：A 6.9，B 7.4，B-A=+0.5",
+    "记录方向性蒸馏收益，但明确单对不能证明稳定独立蒸馏能力",
+    "下一步推进到至少一个额外未见内容的无参考迁移挑战登记"
   ],
   "changes_authority": {
-    "arm_A_result": {
-      "path": "evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_A_NO_REFERENCE_BASELINE_RESULT_20260913.json",
-      "commit": "6bd9eaa1a55a806cefa4c9bfc3ab2ac8e5bc3f91"
-    }
+    "arm_B_result": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_B_NO_REFERENCE_DISTILLED_RESULT_20260913.json","commit":"652397ebbb83c2d86012828f1e6503a520699bca"},
+    "pair_comparison": {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3B_DOUFANG_NO_REFERENCE_PAIR_COMPARISON_20260913.json","commit":"0e9dcd2c816b293b7b9d70ed46f27830a64bf7ce"}
   },
-  "updated_at": "2026-09-13T00:40:00+00:00",
-  "workflow": {"version": "1.1", "focus_stage": "P3", "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json"}
+  "updated_at": "2026-09-13T01:28:00+00:00",
+  "workflow": {"version":"1.1","focus_stage":"P4_PRE_REGISTRATION","status_authority":"continuity/vpd/CURRENT_TASK_LOCK.json"}
 }
