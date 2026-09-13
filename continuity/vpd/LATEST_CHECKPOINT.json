@@ -1,126 +1,84 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 36,
-  "recorded_at": "2026-09-13T00:18:00+00:00",
+  "sequence": 37,
+  "recorded_at": "2026-09-13T00:28:00+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no P3 commercial aesthetic acceptance or candidate promotion.",
   "active_task_ids": ["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus": "正式P3最后一轮仍为2/4有效。DOUFANG_A首次Drive-only参考读取执行返回金毛幼犬、5:6且含可见文字，已判TECHNICAL_INVALID并保存。下一步只在全新standalone最小聊天重跑DOUFANG_A：提示词从Drive读取，但批准参考图必须直接附加到聊天消息，禁止把Drive fetch当作图像生成参考绑定。",
+  "current_focus": "共享参考P3最后一轮保留山菌A/B两张有效正式样本，但豆坊A在Drive-only与直接附件两种路径下连续技术失败。直接附件Attempt2返回1152x1536山菌海报并含大量文字，说明Drive transport不是充分原因；共享参考的跨主体路线已停止。下一步只设计生成时不提供源参考图的蒸馏迁移对照，不继续豆坊A/B共享参考渲染。",
   "completed": [
     "p3_round1_limited_evidence",
-    "p3_two_fresh_context_technical_stops",
     "p3_render_pipeline_binding_diagnosis",
     "p3_minimal_binding_probe1_pass",
     "p3_minimal_binding_probe2_pass",
     "p3_minimal_formal_envelope_bridge_probe_pass",
     "p3_formal_micro_handoff_architecture_frozen",
-    "p3_shared_reference_inference_boundary_recorded",
     "p3_final_round_shanjun_a_formal_raw_pass",
     "p3_final_round_shanjun_b_formal_raw_pass",
     "p3_doufang_a_drive_only_binding_failure_recorded",
-    "p3_doufang_a_direct_attachment_retry_protocol_frozen"
+    "p3_doufang_a_direct_attachment_reference_takeover_failure_recorded",
+    "p3_shared_reference_cross_subject_route_stopped"
   ],
   "incomplete": [
-    "p3_final_round_doufang_a_formal_raw_valid_retry",
-    "p3_final_round_doufang_b_formal_raw",
-    "p3_final_round_equal_budget_figma_design",
-    "p3_final_round_integrated_comparison",
+    "design_no_reference_distillation_transfer_comparison",
+    "register_no_reference_A_baseline_and_B_distilled_inputs",
+    "run_new_cross_subject_transfer_outputs_under_revised_architecture",
+    "equal_budget_figma_only_after_a_complete_valid_comparison_set",
     "human_set_verdict",
-    "distillation_only_no_reference_validation_if_B_meaningfully_wins",
     "candidate_promotion",
     "golden",
     "scale"
   ],
   "blocked": [
-    "DOUFANG_B cannot run before corrected DOUFANG_A retry is validated",
-    "Figma cannot start before all four formal raw outputs are valid and identity-checked",
-    "Drive-only reference fetch is prohibited as the generation-binding mechanism",
+    "no third DOUFANG_A shared-reference retry",
+    "do not run DOUFANG_B under shared-reference architecture",
+    "do not enter final-round Figma with only 2/4 valid outputs",
     "shared-reference P3 cannot establish distillation-only independence"
   ],
-  "next_required_action": "RERUN_FORMAL_P3_DOUFANG_A_FINAL_IN_NEW_STANDALONE_CHAT_WITH_PROMPT_FROM_DRIVE_AND_REFERENCE_DIRECTLY_ATTACHED",
-  "formal_micro_handoff": {
-    "architecture": "evidence/vpd/p3_photo_typography_comparison_v1/P3_FINAL_ROUND_FORMAL_MICRO_HANDOFF_ARCHITECTURE_20260913.txt",
-    "execution_model": "ONE_BRAND_NEW_STANDALONE_MINIMAL_CHAT_PER_FORMAL_OUTPUT",
-    "fixed_order": [
-      "SHANJUN_A_FINAL",
-      "SHANJUN_B_FINAL_POSITION_FREE",
-      "DOUFANG_A_FINAL",
-      "DOUFANG_B_FINAL_POSITION_FREE"
+  "next_required_action": "DESIGN_NO_REFERENCE_DISTILLATION_TRANSFER_COMPARISON_AND_CLOSE_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE",
+  "formal_results": {
+    "valid_outputs": [
+      {"id":"SHANJUN_A_FINAL","status":"PASS","dimensions":[1152,1536],"sha256":"322191789ca7e21e6050263028e47976db9cb8fdf79d8dc28e871d092078c344","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json"},
+      {"id":"SHANJUN_B_FINAL_POSITION_FREE","status":"PASS","dimensions":[1152,1536],"sha256":"e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json"}
     ],
-    "valid_outputs_required": 4,
-    "valid_outputs_so_far": 2,
-    "validated_outputs": [
-      {
-        "id":"SHANJUN_A_FINAL",
-        "status":"PASS",
-        "result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_A_FINAL_RESULT_20260913.json",
-        "commit":"ad01ee1396f542fab1046f660f9c4bdc3517838e",
-        "dimensions":[1152,1536],
-        "sha256":"322191789ca7e21e6050263028e47976db9cb8fdf79d8dc28e871d092078c344"
-      },
-      {
-        "id":"SHANJUN_B_FINAL_POSITION_FREE",
-        "status":"PASS",
-        "result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_SHANJUN_B_FINAL_POSITION_FREE_RESULT_20260913.json",
-        "commit":"36c8cc028b02d76471a074975d516f7a63de5906",
-        "dimensions":[1152,1536],
-        "sha256":"e6017447997e5deee61a159bd018a3eac7f3704d87ed0acdaef42bc9c92e3ae3"
-      }
-    ],
-    "invalid_attempts": [
-      {
-        "id":"DOUFANG_A_FINAL_DRIVE_ONLY_ATTEMPT1",
-        "status":"TECHNICAL_INVALID",
-        "result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json",
-        "commit":"e0d4c750cb48f250b61639a0c80eeda970c3c165",
-        "dimensions":[1280,1536],
-        "aspect_ratio":"5:6",
-        "sha256":"cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
-        "violations":["WRONG_SUBJECT","WRONG_ASPECT_RATIO","VISIBLE_TEXT_PRESENT","REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"]
-      }
-    ],
-    "n_per_output": 1,
-    "same_chat_retry_on_failure": false,
-    "stop_on_contract_violation": true,
-    "figma_entry_allowed": false
+    "invalid_doufang_attempts": [
+      {"id":"DOUFANG_A_FINAL_DRIVE_ONLY_ATTEMPT1","dimensions":[1280,1536],"sha256":"cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747","classification":"TECHNICAL_INVALID","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json"},
+      {"id":"DOUFANG_A_FINAL_DIRECT_ATTACHMENT_ATTEMPT2","dimensions":[1152,1536],"sha256":"f5348d1804db55b4e5fe97774e09632a0bb4c0f9278e2757c657a8ae39ac69bb","classification":"TECHNICAL_INVALID_REFERENCE_SUBJECT_SEMANTIC_TAKEOVER_PATTERN","result":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DIRECT_ATTACHMENT_REFERENCE_TAKEOVER_FAILURE_20260913.json"}
+    ]
   },
-  "corrected_doufang_a_retry": {
-    "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
-    "reference_drive_source_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
-    "prompt_read_from_drive": true,
-    "reference_direct_attachment_required": true,
-    "drive_only_reference_fetch_allowed": false,
-    "must_use_brand_new_standalone_chat": true,
-    "n": 1,
-    "exact_3_4_required": true,
-    "retry_classification": "TRANSPORT_RECOVERY_NOT_AESTHETIC_REROLL"
+  "causal_update": {
+    "base_subject_aspect_binding": "PASS",
+    "minimal_reference_present_same_subject_path": "PASS",
+    "same_subject_formal_envelope": "PASS",
+    "drive_only_transport_as_sufficient_failure_cause": "NOT_SUPPORTED",
+    "direct_attachment_cross_subject_fix": "FAILED",
+    "shared_reference_cross_subject_semantic_leakage": "STRONGLY_ELEVATED_AT_OUTPUT_LEVEL",
+    "provider_internal_root_cause_proven": false
   },
-  "inference_boundary": {
-    "P3_tests": "incremental distilled-program benefit under the same approved reference",
-    "P3_does_not_test": "distillation-only independence from the source reference",
-    "follow_on_if_B_meaningfully_wins": "run a separate no-reference B-only validation before any independent distillation claim"
+  "revised_experiment_direction": {
+    "source_reference_present_at_generation_time": false,
+    "purpose": "Separate cross-subject transfer from source-pixel semantic leakage and test whether distilled rules carry reusable value without source-image conditioning.",
+    "planned_A": "same new-content truth brief without source reference and without Capsule",
+    "planned_B": "same new-content truth brief plus frozen distilled transferable rules without source reference",
+    "status": "TO_BE_FORMALLY_REGISTERED_BEFORE_RENDER"
   },
-  "source_state_refs": [
-    {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"eba09b6ebf4038f3c0072602e5dc922b39513b74","revision":14},
-    {"path":"evidence/vpd/p3_photo_typography_comparison_v1/P3_FORMAL_DOUFANG_A_DRIVE_ONLY_BINDING_FAILURE_20260913.json","commit":"e0d4c750cb48f250b61639a0c80eeda970c3c165"}
-  ],
-  "status": "VPD_P3_FORMAL_MICRO_HANDOFF_2_OF_4_VALID_DOUFANG_A_DIRECT_ATTACHMENT_RETRY_NEXT",
-  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"eba09b6ebf4038f3c0072602e5dc922b39513b74"},
-  "history_snapshot": {"previous_sequence":35,"previous_git_blob_sha":"c4d6e1bd85531b8e7f5d895590cccd341e0f20f4"},
+  "status": "VPD_P3_SHARED_REFERENCE_CROSS_SUBJECT_ROUTE_STOPPED_NO_REFERENCE_REDESIGN_NEXT",
+  "task_lock": {"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"d4b9ffebe7323b52022242a22bee8fc6ed137b05","revision":15},
+  "history_snapshot": {"previous_sequence":36,"previous_git_blob_sha":"58e574288a447fb25d822fe12327169adc0a8619"},
   "requirements": {
-    "binding_diagnosis": {"status":"DONE"},
-    "bridge_probe": {"status":"PASS"},
-    "formal_micro_handoff": {"status":"IN_PROGRESS"},
-    "formal_p3_final_round": {"status":"2_OF_4_VALID_DOUFANG_A_RETRY_NEXT","valid_outputs":2}
+    "shared_reference_cross_subject_route": {"status":"STOPPED"},
+    "valid_shared_reference_final_outputs": 2,
+    "no_reference_redesign": {"status":"NEXT"},
+    "capsule_verdict": "NOT_ESTABLISHED"
   },
   "execution": {
     "p3_round1_valid_raw_outputs": 4,
     "p3_final_round_valid_outputs": 2,
-    "p3_final_round_invalid_fresh_contexts": 3,
+    "p3_final_round_invalid_fresh_contexts": 4,
     "technical_probe_calls_used": 3,
-    "capsule_verdict": "NOT_ESTABLISHED"
+    "figma_entry_allowed": false
   },
   "workflow": {"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
 }
