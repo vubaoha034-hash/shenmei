@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-p3-formal-doufang-a-drive-only-binding-failure/v1",
+  "task_id": "VPD-P3-PHOTO-TYPOGRAPHY-COMPARISON-20260911-001",
+  "recorded_at": "2026-09-13T00:15:00+00:00",
+  "input_remote_head": "d8950ef34f40a09f12781f0da706e0512a1e1841",
+  "requested_output": "DOUFANG_A_FINAL",
+  "execution_transport": {
+    "prompt_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
+    "reference_drive_copy_id": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
+    "reference_transport_used": "CHAT_READ_FROM_DRIVE_ONLY_NOT_DIRECTLY_ATTACHED_AS_IMAGE_INPUT",
+    "transport_was_prevalidated_for_image_generation_reference_binding": false
+  },
+  "observed_output": {
+    "chat_file_id": "file_000000002c088211a4305b2dee650852",
+    "uploaded_filename": "1000030342.png",
+    "actual_dimensions": [1280,1536],
+    "actual_aspect_ratio": "5:6",
+    "actual_sha256": "cf6e44163844529f3c261b664e73d36067b41de9daffcc0ee293a538fc0bb747",
+    "actual_bytes": 334421,
+    "subject_description": "golden retriever puppy indoors with plush toy, furniture, plant and a mug containing visible English text",
+    "visible_text": "Good Things Ahead",
+    "tofu_process_evidence_present": false
+  },
+  "violations": [
+    "WRONG_SUBJECT",
+    "WRONG_ASPECT_RATIO",
+    "VISIBLE_TEXT_PRESENT",
+    "REQUIRED_TOFU_PROCESS_EVIDENCE_ABSENT"
+  ],
+  "classification": "TECHNICAL_INVALID_DRIVE_ONLY_REFERENCE_BINDING_OR_ORCHESTRATION_FAILURE",
+  "formal_p3_effect": {
+    "counts_as_valid_output": false,
+    "valid_final_round_outputs_remain": 2,
+    "same_chat_retry_allowed": false,
+    "doufang_b_allowed": false,
+    "figma_entry_allowed": false,
+    "aesthetic_inference_allowed": false,
+    "capsule_inference_allowed": false
+  },
+  "diagnosis": {
+    "prompt_document_content_was_verified_correct": true,
+    "failure_is_not_supported_as_prompt-content-error": true,
+    "drive_file_read_proves_reference_file_access": false,
+    "drive_only_read_is_not_equivalent_to_direct_image_attachment_for_generation_binding": true,
+    "primary_correction": "Keep prompt in Drive, but attach the approved reference image directly to the new standalone chat message via the attachment picker; do not ask the chat to fetch the reference image from Drive as the generation binding mechanism."
+  },
+  "corrected_retry_rule": {
+    "retry_authorized": true,
+    "reason": "This attempt is protocol/transport-invalid rather than an aesthetic reroll.",
+    "must_use_brand_new_standalone_chat": true,
+    "prompt_may_be_read_from_drive_doc_id": "1cY3R0Xfc09OK_g6PKn6Ek8_xpqF9aMnyZCwvy-in4bM",
+    "reference_must_be_directly_attached": true,
+    "reference_drive_source_for_user_attachment": "13IDpA2Qnf-BLF8BoucYIRW0AcLHYXXdv",
+    "n": 1,
+    "same_chat_retry_on_failure": false,
+    "stop_on_contract_violation": true
+  },
+  "next_required_action": "RERUN_FORMAL_P3_DOUFANG_A_FINAL_IN_NEW_STANDALONE_CHAT_WITH_PROMPT_READ_FROM_DRIVE_AND_REFERENCE_DIRECTLY_ATTACHED"
+}
