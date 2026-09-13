@@ -1,13 +1,13 @@
 {
   "schema_version":"upcp-latest-checkpoint/v1",
   "project_id":"visual-aesthetic-vpd",
-  "sequence":45,
-  "recorded_at":"2026-09-13T10:51:00+00:00",
+  "sequence":46,
+  "recorded_at":"2026-09-13T12:06:00+00:00",
   "task_model":"TASK_REGISTRY",
   "highest_accepted_checkpoint":"VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope":"Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids":["VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"],
-  "current_focus":"P6 Figma整图验证的图像绑定故障已拆成两个独立问题：目标PHOTO节点被错误设为locked=true，以及普通聊天无法对mcp.figma.com submit URL完成最终POST。三个剩余PHOTO节点已解锁；加密GitHub Actions上传桥V1已部署并完成本地dry-run。当前只差一次性Actions Secret激活，然后用豆坊B做首次真实relay上传。",
+  "current_focus":"P6 Figma整图验证仍处于真实原图绑定阶段。旧relay私钥交付文件在当前可访问环境中不可恢复，因此已安全轮换新的relay密钥；新公开证书已写回仓库并完成OpenSSL CMS加密/解密往返PASS，私钥未提交仓库，仅生成独立本地交付文件。Figma豆坊B目标节点12:12已回读确认存在。当前唯一阻塞是将新私钥内容安装为GitHub Actions repository secret VPD_FIGMA_RELAY_PRIVATE_KEY_B64；安装后再请求fresh upload_assets submit URL并执行豆坊B真实relay。",
   "completed":[
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -20,10 +20,14 @@
     "p6_remaining_photo_nodes_unlocked",
     "p6_normal_chat_submit_post_blocker_confirmed",
     "p6_encrypted_github_actions_figma_upload_relay_v1_deployed",
-    "p6_relay_local_encrypt_decrypt_validate_dry_run_pass"
+    "p6_relay_local_encrypt_decrypt_validate_dry_run_pass",
+    "p6_relay_key_rotated_after_old_private_key_artifact_unrecoverable",
+    "p6_relay_rotated_public_certificate_committed",
+    "p6_relay_rotated_cms_roundtrip_pass",
+    "p6_figma_node_12_12_precheck_pass"
   ],
   "incomplete":[
-    "configure_repository_secret_VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "install_rotated_repository_secret_VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
     "live_relay_test_doufang_B_to_node_12_12",
     "bind_chazuo_A_to_node_12_20",
     "bind_chazuo_B_to_node_12_28",
@@ -37,13 +41,15 @@
     "scale"
   ],
   "blocked":[
-    "live relay cannot decrypt tasks until repository secret VPD_FIGMA_RELAY_PRIVATE_KEY_B64 is configured once",
-    "normal chat runtime still cannot POST directly to mcp.figma.com",
+    "GitHub connector does not expose repository Actions secret write APIs",
+    "live relay cannot decrypt fresh tasks until rotated VPD_FIGMA_RELAY_PRIVATE_KEY_B64 secret is installed once",
+    "normal chat runtime still cannot POST raw raster bytes directly to mcp.figma.com",
+    "do not request a fresh Figma submit URL before secret installation because it is single-use/short-lived",
     "do not relock PHOTO nodes",
     "do not use placeholder or proxy as final pixel evidence",
     "candidate promotion and Golden/Scale remain blocked"
   ],
-  "next_required_action":"USER_ADD_GITHUB_ACTIONS_SECRET_VPD_FIGMA_RELAY_PRIVATE_KEY_B64_THEN_RUN_LIVE_DOUFANG_B_RELAY_TEST",
+  "next_required_action":"USER_INSTALL_ROTATED_VPD_FIGMA_RELAY_PRIVATE_KEY_B64_SECRET_THEN_RUN_LIVE_DOUFANG_B_RELAY_TEST",
   "p6":{
     "figma_file_key":"uyDxOoN1iNDPpEHTKSUWg1",
     "page_id":"12:2",
@@ -56,20 +62,24 @@
   },
   "relay":{
     "version":"V1",
-    "status":"DEPLOYED_AWAITING_SECRET_ACTIVATION",
+    "status":"KEY_ROTATED_AWAITING_SECRET_INSTALL",
     "implementation_record":"evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
+    "key_rotation_record":"evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow":".github/workflows/vpd-figma-upload-relay.yml",
     "required_secret":"VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "public_certificate_sha256":"b90fcddbbed3a966f515297bedfef7c93edf514fa8cc0d590fb6b5706577d667",
+    "public_certificate_rotation_commit":"16e14faf6c6c2a1031b33c9c0f226cc6be962794",
+    "private_key_committed":false,
     "plaintext_submit_url_committed":false,
     "plaintext_image_committed":false,
-    "local_dry_run":"PASS",
+    "local_cms_roundtrip":"PASS",
     "runner":"ubuntu-latest",
     "repository_visibility":"public"
   },
   "mechanism_evidence":{"tofu_delta_B_minus_A":0.5,"tea_delta_B_minus_A":0.7,"mean_delta":0.6,"verdict":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},
-  "status":"VPD_P6_FIGMA_RELAY_DEPLOYED_SECRET_ACTIVATION_REQUIRED",
-  "task_lock":{"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"7fc89cebf62678663c23a64df424c1928a0209bd","revision":23},
-  "history_snapshot":{"previous_sequence":44,"previous_git_blob_sha":"869a2cc7d671ee4d68b90865d35f9e077c7a703e"},
-  "requirements":{"p4_mechanism_transfer":{"status":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},"p6_integrated_design":{"status":"RELAY_DEPLOYED_SECRET_ACTIVATION_REQUIRED"},"candidate_promotion":"BLOCKED"},
+  "status":"VPD_P6_FIGMA_RELAY_KEY_ROTATED_SECRET_INSTALL_REQUIRED",
+  "task_lock":{"path":"continuity/vpd/CURRENT_TASK_LOCK.json","git_blob_sha":"2ec0e6cacfdb8564c6347f3cc78880d901118854","revision":24},
+  "history_snapshot":{"previous_sequence":45,"previous_git_blob_sha":"d6bd1a9de1810801cd46f42f83f9b92769d8ab0c"},
+  "requirements":{"p4_mechanism_transfer":{"status":"PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"},"p6_integrated_design":{"status":"RELAY_KEY_ROTATED_SECRET_INSTALL_REQUIRED"},"candidate_promotion":"BLOCKED"},
   "workflow":{"path":"VPD_PROJECT_ROADMAP.md","sha256":"24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"}
 }
