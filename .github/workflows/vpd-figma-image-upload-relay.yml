@@ -1,0 +1,80 @@
+name: VPD Figma Image Upload Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/p6_equal_budget_integrated_design_v1/relay_jobs/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-figma-image-upload-relay
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 2
+
+      - name: Resolve relay jobs from triggering commit
+        id: jobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          JOB_DIR="evidence/vpd/p6_equal_budget_integrated_design_v1/relay_jobs"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            mapfile -t files < <(find "$JOB_DIR" -maxdepth 1 -type f -name '*.json' -print | sort)
+          else
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.sha }}"
+            if [[ -z "$BEFORE" || "$BEFORE" =~ ^0+$ ]]; then
+              mapfile -t files < <(git show --pretty='' --name-only "$AFTER" -- "$JOB_DIR/*.json" | sed '/^$/d' | sort -u)
+            else
+              mapfile -t files < <(git diff --name-only "$BEFORE" "$AFTER" -- "$JOB_DIR/*.json" | sed '/^$/d' | sort -u)
+            fi
+          fi
+          if (( ${#files[@]} == 0 )); then
+            echo "No relay job files found."
+            exit 0
+          fi
+          printf '%s\n' "${files[@]}" > /tmp/vpd_relay_jobs.txt
+          echo "count=${#files[@]}" >> "$GITHUB_OUTPUT"
+
+      - name: Execute Figma uploads
+        if: steps.jobs.outputs.count != '' && steps.jobs.outputs.count != '0'
+        shell: bash
+        run: |
+          set -euo pipefail
+          RECEIPT_DIR="evidence/vpd/p6_equal_budget_integrated_design_v1/relay_receipts"
+          mkdir -p "$RECEIPT_DIR"
+
+          while IFS= read -r job; do
+            [[ -n "$job" ]] || continue
+            python scripts/vpd_figma_upload_relay.py --job "$job" --receipt-dir "$RECEIPT_DIR"
+          done < /tmp/vpd_relay_jobs.txt
+
+      - name: Persist sanitized receipts
+        if: steps.jobs.outputs.count != '' && steps.jobs.outputs.count != '0'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidence/vpd/p6_equal_budget_integrated_design_v1/relay_receipts/
+          if git diff --cached --quiet; then
+            echo "No new receipts to persist."
+          else
+            git commit -m "Record VPD Figma upload relay receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
