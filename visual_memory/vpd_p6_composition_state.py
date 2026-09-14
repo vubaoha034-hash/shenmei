@@ -39,6 +39,7 @@ ACTIONS = {
     "P1_EXECUTE_STRUCTURAL_WORDMARK_V4",
     "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT",
     "P1_EXECUTE_GENERATIVE_CUSTOM_WORDMARK_EXPLORATION_V5",
+    "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
 }
 
 
@@ -283,6 +284,17 @@ def validate_p6_composition_state(root):
         require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V5_PREMATURE_ADVANCE")
         check_ref(root, tr["wordmark_v4_execution"])
         check_ref(root, tr["wordmark_v4_human_none_and_v5_plan"])
+
+    elif action == "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT", "WORDMARK_V5_WAIT_STATE")
+        require(tr["phase"] == "GENERATIVE_CUSTOM_WORDMARK_V5", "WORDMARK_V5_PHASE")
+        require(tr["wordmark_v5_generation_allowed"] is False, "WORDMARK_V5_SHOULD_BE_FROZEN")
+        require(tr["wordmark_v5_visible_concept_budget"] == {"豆坊":6,"茶作":6}, "WORDMARK_V5_BUDGET")
+        require(tr["wordmark_v5_selected_direction"] == {"豆坊":None,"茶作":None}, "WORDMARK_V5_PREMATURE_SELECTION")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V5_PREMATURE_ADVANCE")
+        check_ref(root, tr["wordmark_v4_human_none_and_v5_plan"])
+        check_ref(root, tr["wordmark_v5_execution"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 44,
+  "revision": 45,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 43,
-    "git_blob_sha": "ee36d6dc254a33256e6a17b2119c3160b86f9435",
-    "note": "Revision 43 executed and froze three V4 Figma-derived structural directions per title pending human selection."
+    "revision": 44,
+    "git_blob_sha": "23fdfaaeb2e5314c248579cf7e96e66157f27c6f",
+    "note": "Revision 44 recorded V4 human NONE and authorized generative custom-wordmark V5."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review rejects all six V4 structural directions. They are somewhat better than early attempts but still lack convincing design authorship. Preserve every image-direction gain and typography learning, stop Figma as the primary glyph ideation medium, and advance typography only to a bounded generative custom-wordmark V5 exploration. Figma is reserved for later vector reconstruction/refinement after a human-selected visual direction.",
-  "status": "VPD_P1_WORDMARK_V4_HUMAN_NONE_GENERATIVE_V5_READY",
+  "current_stage": "Generative custom-wordmark V5 has executed one fully visible exploration board containing six 豆坊 and six 茶作 concepts. The board is stored in Drive and read back. No Figma glyph ideation, photography regeneration or P6 mutation occurred. V5 is frozen pending human direction selection.",
+  "status": "VPD_P1_GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_GENERATIVE_CUSTOM_WORDMARK_EXPLORATION_V5",
+  "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human NONE selection for all V4 豆坊 and 茶作 structures",
-    "preserved the fact that V4 is somewhat better than early attempts without misclassifying it as acceptable design",
-    "preserved photography, P3/P4 directional gains, P6 image state and prior typography progress",
-    "diagnosed the current aesthetic ceiling as Figma-derived geometric modulation of an inherited glyph skeleton",
-    "prepared a bounded generative custom-wordmark V5 exploration before any return to Figma"
+    "executed one visible V5 generative custom-wordmark board with 6 豆坊 and 6 茶作 concepts",
+    "used zero hidden variants and no Figma glyph construction",
+    "stored the generated board in Drive and independently read back its slide thumbnail",
+    "preserved all photography, P3/P4/P6, V3 and V4 evidence unchanged",
+    "froze V5 outputs pending human direction selection"
   ],
-  "updated_at": "2026-09-14T09:50:42Z",
+  "updated_at": "2026-09-14T09:55:03Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,8 +164,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V4 outputs are human-rejected and frozen as negative/diagnostic evidence; do not polish them in place.",
-    "T2 support typography remains blocked until a V5 title direction is selected and subsequently passes.",
+    "V5 concepts are frozen pending human selection; do not polish or vectorize before selection.",
+    "T2 support typography remains blocked until a V5 direction is selected and passes title review.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "WORDMARK_V4_HUMAN_NONE_GENERATIVE_V5_READY",
+    "status": "GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "GENERATIVE_CUSTOM_WORDMARK_V5",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_GENERATIVE_CUSTOM_WORDMARK_EXPLORATION_V5",
+    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -432,7 +432,7 @@
       "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
       "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6"
     },
-    "wordmark_v5_generation_allowed": true,
+    "wordmark_v5_generation_allowed": false,
     "wordmark_v5_visible_concept_budget": {
       "豆坊": 6,
       "茶作": 6
@@ -440,6 +440,17 @@
     "wordmark_v5_selected_direction": {
       "豆坊": null,
       "茶作": null
+    },
+    "wordmark_v5_execution": {
+      "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
+      "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
+    },
+    "wordmark_v5_drive_review": {
+      "presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
+      "title": "T1_V5_生成式定制字标探索_20260914",
+      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+      "url": "https://docs.google.com/presentation/d/1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ/edit",
+      "thumbnail_readback_verified": true
     }
   },
   "t1_final_settlement_evidence": {
@@ -473,5 +484,9 @@
   "wordmark_v4_human_none_and_v5_plan_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
     "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6"
+  },
+  "wordmark_v5_execution_evidence": {
+    "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
+    "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
   }
 }

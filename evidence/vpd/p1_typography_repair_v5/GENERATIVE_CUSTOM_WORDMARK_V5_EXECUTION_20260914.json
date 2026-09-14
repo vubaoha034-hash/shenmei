@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-generative-custom-wordmark-v5-execution/v1",
+  "recorded_at": "2026-09-14T09:55:03Z",
+  "status": "EXECUTED_FROZEN_WAITING_HUMAN_DIRECTION_VERDICT",
+  "authority_plan": {
+    "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
+    "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6"
+  },
+  "generation": {
+    "tool": "OpenAI image generation",
+    "gen_id": "3d604246-83d0-4eff-81ac-dbd0ec362d91",
+    "single_visible_board": true,
+    "visible_concepts": {
+      "豆坊": 6,
+      "茶作": 6
+    },
+    "hidden_variants": 0,
+    "board_dimensions": [
+      2160,
+      728
+    ],
+    "board_sha256": "c230fdbc00c870678fb41a4fea7a26e13fd9bcd4639d185ac97fbc8099a4d3ce",
+    "board_bytes": 1393641,
+    "execution_note": "The model returned one visible board containing six 豆坊 and six 茶作 wordmark explorations in the same call. No Figma glyph construction was used."
+  },
+  "drive_review": {
+    "presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
+    "title": "T1_V5_生成式定制字标探索_20260914",
+    "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+    "url": "https://docs.google.com/presentation/d/1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ/edit",
+    "thumbnail_readback_verified": true
+  },
+  "preservation": {
+    "photography_modified": false,
+    "photo_bases_regenerated": false,
+    "P6_modified": false,
+    "V3_modified": false,
+    "V4_modified": false,
+    "Figma_used_for_glyph_ideation": false
+  },
+  "human_review_gate": {
+    "questions": [
+      "which 豆坊 concept, if any, has convincing authored design sense while remaining immediately readable",
+      "which 茶作 concept, if any, has convincing authored design sense while remaining immediately readable",
+      "is any concept materially closer to the approved Shanyeji maturity level than V4",
+      "if none, return NONE without polishing or reintegration"
+    ],
+    "human_verdict": null
+  },
+  "T2_allowed": false,
+  "P6_reintegration_allowed": false,
+  "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT"
+}
