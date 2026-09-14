@@ -1,0 +1,57 @@
+name: VPD P6 Record Correction Pass
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/p6_correction_record_triggers/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-p6-correction-record-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Record P6 correction pass
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/vpd_record_p6_correction_pass.py
+
+      - name: Validate advanced state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist correction record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            PROJECT_CONTROL_ADAPTER.json \
+            continuity/vpd/CURRENT_TASK_LOCK.json \
+            continuity/vpd/LATEST_CHECKPOINT.json \
+            continuity/vpd/state_ledger/commercial_design_pipeline.jsonl \
+            evidence/vpd/p6_equal_budget_integrated_design_v1/P6_SINGLE_CORRECTION_PASS_EXECUTION_20260914.json
+          if git diff --cached --quiet; then
+            echo "No correction-state changes to persist" >&2
+            exit 2
+          fi
+          git commit -m "Record P6 equal-budget correction pass"
+          git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
