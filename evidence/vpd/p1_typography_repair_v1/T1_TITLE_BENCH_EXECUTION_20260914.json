@@ -1,0 +1,80 @@
+{
+  "schema_version": "vpd-p1-typography-title-bench-execution/v1",
+  "recorded_at": "2026-09-14T03:28:30Z",
+  "status": "EXECUTED_WAITING_HUMAN_BLIND_VERDICT",
+  "scope": "P1_T1_TITLE_ONLY_STRONG_BASELINE_VS_DISTILLED",
+  "bench_plan": {
+    "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
+    "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "53:2",
+    "page_name": "P1 Typography Repair Bench T1",
+    "canvas": [
+      1600,
+      900
+    ],
+    "frames": {
+      "T1_DOUFANG_A_STRONG_BASELINE": "53:3",
+      "T1_CHAZUO_A_STRONG_BASELINE": "53:10",
+      "T1_DOUFANG_B_DISTILLED": "53:17",
+      "T1_CHAZUO_B_DISTILLED": "53:33"
+    }
+  },
+  "execution_budget": {
+    "primary_build_completed": {
+      "豆坊": true,
+      "茶作": true
+    },
+    "distilled_aesthetic_correction_passes_used": {
+      "豆坊": 1,
+      "茶作": 1
+    },
+    "additional_aesthetic_corrections_authorized": false,
+    "technical_invalid_retries": 0
+  },
+  "first_b_readback": {
+    "classification": "AESTHETIC_FAILURE_NOT_TECHNICAL",
+    "doufang": "overbuilt with added beams; still read as modified-font mechanics rather than mature lettering",
+    "chazuo": "mechanically deconstructed and visually congested; did not beat the strong baseline",
+    "action": "consume the single predeclared B correction pass for each title"
+  },
+  "corrected_b_readback": {
+    "completed": true,
+    "note": "Second B pixels are frozen for human blind review. No assistant pass/fail is substituted for the human title gate."
+  },
+  "drive_blind_review": {
+    "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+    "folder_name": "视觉审美操作系统_P1_文字T1盲评_20260914",
+    "presentation_id": "1vdviPhYzHyOP4BDiOZzsMGBMHSLbQfRosHal7PSiYsc",
+    "presentation_name": "T1_豆坊茶作_纯文字盲评_20260914",
+    "slides": [
+      {
+        "slide": 1,
+        "title": "豆坊｜纯文字盲评",
+        "labels": [
+          "Candidate 1",
+          "Candidate 2"
+        ]
+      },
+      {
+        "slide": 2,
+        "title": "茶作｜纯文字盲评",
+        "labels": [
+          "Candidate 1",
+          "Candidate 2"
+        ]
+      }
+    ],
+    "google_import_readback_confirmed": true
+  },
+  "blind_order": {
+    "mapping_revealed": false,
+    "mapping_committed_to_public_repo": false,
+    "pre_verdict_commitment_sha256": "e5fdde8d13c03c8e319b28b7d36cabd4d618abbc8ddc478de717c375a5511ac0",
+    "commitment_note": "The A/B mapping and nonce are intentionally withheld until after the user's blind verdict."
+  },
+  "human_blind_verdict": null,
+  "next_required_action": "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT"
+}
