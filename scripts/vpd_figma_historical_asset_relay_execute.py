@@ -3,7 +3,8 @@
 
 The historical task's stale submit URL is ignored. A fresh URL arrives separately as a
 small CMS-encrypted trigger. Plain image bytes and URLs are only materialized on the
-GitHub runner and never committed.
+GitHub runner and never committed. The historical source node may differ from the fresh
+diagnostic target node; source identity and target identity are validated independently.
 """
 from __future__ import annotations
 import argparse, hashlib, json, os, re, subprocess, tarfile, tempfile
@@ -38,10 +39,13 @@ def main()->int:
     ap=argparse.ArgumentParser()
     ap.add_argument('--legacy-task',required=True); ap.add_argument('--url-trigger',required=True)
     ap.add_argument('--cert',required=True); ap.add_argument('--private-key',required=True); ap.add_argument('--receipt',required=True)
-    ap.add_argument('--expected-node-id',required=True); ap.add_argument('--expected-source-sha256',required=True)
+    ap.add_argument('--expected-node-id',required=True); ap.add_argument('--legacy-source-node-id')
+    ap.add_argument('--expected-source-sha256',required=True)
     a=ap.parse_args(); started=datetime.now(timezone.utc).isoformat()
+    legacy_source_node=a.legacy_source_node_id or a.expected_node_id
+    if not NODE_RE.match(a.expected_node_id) or not NODE_RE.match(legacy_source_node): raise SystemExit('invalid node id')
     legacy=Path(a.legacy_task).resolve(); trig=Path(a.url_trigger).resolve(); cert=Path(a.cert).resolve(); key=Path(a.private_key).resolve(); receipt=Path(a.receipt).resolve()
-    base={'schema_version':'vpd-figma-upload-receipt/v1','transport_version':'historical-asset-fresh-url-v1','started_at':started,'legacy_task_sha256':sha256_file(legacy),'trigger_file':trig.name}
+    base={'schema_version':'vpd-figma-upload-receipt/v1','transport_version':'historical-asset-fresh-url-v2','started_at':started,'legacy_task_sha256':sha256_file(legacy),'legacy_source_node_id':legacy_source_node,'trigger_file':trig.name}
     try:
         with tempfile.TemporaryDirectory(prefix='vpd-figma-historical-') as td_s:
             td=Path(td_s); archive=td/'legacy.tar.gz'; trigger_json=td/'trigger.json'
@@ -50,7 +54,7 @@ def main()->int:
             m=json.loads((td/'manifest.json').read_text(encoding='utf-8'))
             asset=td/m['asset_name']
             if m.get('schema_version')!='vpd-figma-upload-task/v1': raise RuntimeError('legacy schema mismatch')
-            if m.get('node_id')!=a.expected_node_id or not NODE_RE.match(a.expected_node_id): raise RuntimeError('legacy node mismatch')
+            if m.get('node_id')!=legacy_source_node: raise RuntimeError('legacy source node mismatch')
             if m.get('source_sha256')!=a.expected_source_sha256 or sha256_file(asset)!=a.expected_source_sha256: raise RuntimeError('frozen source sha mismatch')
             if asset.stat().st_size!=int(m.get('source_size',-1)): raise RuntimeError('frozen source size mismatch')
             if m.get('content_type') not in {'image/png','image/jpeg','image/gif','image/webp'}: raise RuntimeError('content type rejected')
