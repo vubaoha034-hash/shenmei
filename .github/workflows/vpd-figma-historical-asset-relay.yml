@@ -1,0 +1,97 @@
+name: VPD Figma Historical Asset Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_upload_relay/historical_triggers/*.url.cms.b64"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-figma-historical-asset-relay-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+      LEGACY_COMMIT: cf0ea6c5a42d059da758a7444b866096556dcc6d
+      LEGACY_PATH: evidence/vpd/figma_upload_relay/tasks/P6-DOUFANG-B-LIVE-20260913-01.cms
+      EXPECTED_NODE: "12:12"
+      EXPECTED_SOURCE_SHA256: 78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Require relay key and recover immutable encrypted asset
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RELAY_PRIVATE_KEY_B64:-}"
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-figma-relay-private.pem
+          openssl pkey -in /tmp/vpd-figma-relay-private.pem -check -noout >/dev/null
+          git cat-file -e "$LEGACY_COMMIT:$LEGACY_PATH"
+          git show "$LEGACY_COMMIT:$LEGACY_PATH" > /tmp/vpd-doufang-b-legacy.cms
+          test -s /tmp/vpd-doufang-b-legacy.cms
+
+      - name: Execute fresh URL against historical frozen asset
+        id: relay
+        shell: bash
+        run: |
+          set -uo pipefail
+          trigger_dir="evidence/vpd/figma_upload_relay/historical_triggers"
+          receipt_dir="evidence/vpd/figma_upload_relay/receipts"
+          mkdir -p "$trigger_dir" "$receipt_dir"
+          failures=0
+          found=0
+          shopt -s nullglob
+          for trigger_b64 in "$trigger_dir"/*.url.cms.b64; do
+            found=1
+            base="$(basename "$trigger_b64" .url.cms.b64)"
+            trigger_der="/tmp/$base.url.cms"
+            receipt="$receipt_dir/$base.json"
+            if ! base64 --decode "$trigger_b64" > "$trigger_der"; then
+              failures=$((failures + 1)); continue
+            fi
+            if python scripts/vpd_figma_historical_asset_relay_execute.py \
+              --legacy-task /tmp/vpd-doufang-b-legacy.cms \
+              --url-trigger "$trigger_der" \
+              --cert evidence/vpd/figma_upload_relay/relay-cert.pem \
+              --private-key /tmp/vpd-figma-relay-private.pem \
+              --receipt "$receipt" \
+              --expected-node-id "$EXPECTED_NODE" \
+              --expected-source-sha256 "$EXPECTED_SOURCE_SHA256"; then
+              git rm -f "$trigger_b64"
+            else
+              failures=$((failures + 1))
+            fi
+            if [ -f "$receipt" ]; then git add "$receipt"; fi
+          done
+          test "$found" -eq 1
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+
+      - name: Persist redacted receipt and trigger cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record historical-asset VPD Figma relay receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
+
+      - name: Enforce relay success
+        if: steps.relay.outputs.failures != '0'
+        shell: bash
+        run: exit 1
