@@ -1,0 +1,102 @@
+{
+  "schema_version": "vpd-wordmark-system-repair-v2-plan/v1",
+  "plan_id": "WORDMARK_SYSTEM_REPAIR_V2",
+  "status": "PREPARED_NOT_EXECUTED",
+  "scope": "P1_TYPOGRAPHY_ONLY_WORDMARK_SYSTEM_REPAIR",
+  "purpose": "Repair the failed typography layer without rolling back photographic or visual-direction gains. Generate each Chinese title as one coherent wordmark system before per-glyph detailing.",
+  "preservation_lock": {
+    "photo_bases": "PRESERVE_CURRENT_P6_PHOTO_BASES",
+    "photo_directional_evidence": "PRESERVE_EXISTING_P3_P4_DIRECTIONAL_GAIN_WITH_ORIGINAL_SCOPE",
+    "overall_visual_direction": "PRESERVE_CURRENT_IMPROVEMENT_DO_NOT_RESET_FROM_TYPOGRAPHY_FEEDBACK",
+    "candidate1_strong_baselines": "FREEZE_UNCHANGED",
+    "failed_t1_candidate2_and_retry": "FREEZE_AS_NEGATIVE_EVIDENCE",
+    "p6_failed_posters": "FREEZE_AS_NEGATIVE_EVIDENCE",
+    "mother_reference": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg remains the sole mother reference for this family",
+    "user_feedback_images": "DIAGNOSTIC_EVIDENCE_ONLY_NOT_AUTOMATIC_MOTHER_REFERENCE"
+  },
+  "anti_rollback_rule": "A user criticism applies to the named failing layer by default. Do not invalidate or regenerate already-improved layers unless the user explicitly rejects those layers too.",
+  "problem_statement": {
+    "what_improved": [
+      "Current photography/base imagery is visibly better than earlier stages and must be retained.",
+      "The distilled typography route showed more design intent than the ordinary baseline in the first blind review."
+    ],
+    "what_failed": [
+      "Typography remains far below the approved Shanyeji mother-reference level.",
+      "The first T1 distilled attempt damaged glyph correctness.",
+      "The one technical correctness retry restored readability but broke wordmark coherence: paired characters looked like different design languages assembled together."
+    ],
+    "formal_boundary": "Do not interpret typography failure as total-project failure. Do not rerender photography or restart the entire visual system."
+  },
+  "compiler_change": {
+    "old_method": "PER_GLYPH_DEFORMATION_THEN_ASSEMBLY",
+    "new_method": "WORDMARK_FIRST_THEN_GLYPH_DETAIL",
+    "principle": "Design 豆坊 or 茶作 first as one graphic mass with a shared visual genome; individual glyph personality is introduced only after the whole-word system is coherent."
+  },
+  "five_high_leverage_variables": [
+    {
+      "id": "shared_stroke_dna",
+      "definition": "One shared logic for stroke weight range, terminal shape, curvature/angle family and corner behavior across all characters in the wordmark."
+    },
+    {
+      "id": "whole_word_silhouette",
+      "definition": "The complete two-character title must read as one memorable outer contour at thumbnail scale before internal detail is judged."
+    },
+    {
+      "id": "interglyph_architecture",
+      "definition": "Spacing, overlap, alignment, near-contact and mass distribution are designed at word level; characters may differ but must visibly belong together."
+    },
+    {
+      "id": "negative_space_continuity",
+      "definition": "Counters and gaps form a related rhythm across the whole title instead of independent holes or arbitrary cuts inside each glyph."
+    },
+    {
+      "id": "controlled_individuality",
+      "definition": "Each glyph may carry a distinct semantic/structural move, but that move must stay inside the shared wordmark grammar and cannot introduce a second visual style."
+    }
+  ],
+  "correctness_guard": {
+    "rule": "Key Chinese recognition skeletons, radicals and signature strokes must remain unambiguous. Correctness is a hard constraint, not an aesthetic variable.",
+    "technical_retry_policy": "A wrong/unreadable character is technical invalid. Taste weakness is not technical invalid."
+  },
+  "hard_avoids": [
+    "designing each character independently and combining them afterward",
+    "one glyph organic and the paired glyph industrial unless a shared stroke genome visibly unifies them",
+    "generic cut-corner recipes",
+    "stretching as the primary design move",
+    "decorative beams or blocks that do not belong to the character system",
+    "surface distress used to disguise weak structure",
+    "copying exact Shanyeji contours, missing-stroke locations or brand assets"
+  ],
+  "test_titles": ["豆坊", "茶作"],
+  "test_surface": {
+    "canvas": [1600, 900],
+    "photography": false,
+    "support_copy": false,
+    "texture": false,
+    "mockup": false,
+    "baseline": "Reuse the already-frozen strong Candidate 1 baseline for each title; do not regenerate or weaken it.",
+    "new_candidate": "Create one new V2 wordmark-first Candidate 2 per title."
+  },
+  "bounded_budget": {
+    "primary_builds_per_title": 1,
+    "aesthetic_corrections_per_title_max": 1,
+    "technical_retries": "Only for objective wrong/unreadable glyphs; must not be used to hide taste failure."
+  },
+  "human_gate": {
+    "questions": [
+      "Can the title be read immediately and unambiguously?",
+      "Do both characters visibly belong to one wordmark system rather than two styles assembled together?",
+      "Is the new Candidate 2 materially more designed than the frozen strong Candidate 1 baseline?",
+      "Does the authored quality move meaningfully toward the approved Shanyeji mother-reference level, even without copying its exact forms?"
+    ],
+    "pass": "Both 豆坊 and 茶作 must pass correctness and wordmark coherence, and both must be human-preferred to the frozen strong baseline for authored design quality.",
+    "fail": "If the wordmark-first candidate still lacks coherence or remains only marginally more designed than the baseline after the bounded correction, stop V2 and do not enter T2."
+  },
+  "downstream_boundary": {
+    "T2_support_typography_allowed": false,
+    "P6_reintegration_allowed": false,
+    "photo_regeneration_allowed": false,
+    "candidate_promotion_allowed": false
+  },
+  "next_required_action_after_settlement": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2"
+}
