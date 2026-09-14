@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 42,
+  "revision": 43,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 41,
-    "git_blob_sha": "94041059fd62f226c4d3e794125ea8b23bc56dfb",
-    "note": "Revision 41 executed and froze semantic-anchor V3 pending human review."
+    "revision": 42,
+    "git_blob_sha": "6b2a14780a9c1a8c303a8d0fb00355bd3e284b64",
+    "note": "Revision 42 recorded V3 directional improvement but fail and authorized 3x2 V4 structural exploration."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review says both V3 titles are genuinely better than V2 but still far from the approved Shanyeji maturity level. V3 gains are preserved. Photography/P3/P4/P6 gains remain frozen. Typography alone advances to a bounded V4 structural exploration with three visible whole-word directions per title, all forked from V3 rather than restarted.",
-  "status": "VPD_P1_WORDMARK_V3_DIRECTIONAL_IMPROVEMENT_V4_STRUCTURAL_EXPLORATION_READY",
+  "current_stage": "Structural Wordmark V4 has generated exactly three visible, unpolished whole-word directions for 豆坊 and three for 茶作, all forked from preserved V3. No hidden variants or preselection polishing were used. The six directions are frozen for human structure selection; photography/P3/P4/P6 and prior typography evidence remain unchanged.",
+  "status": "VPD_P1_STRUCTURAL_WORDMARK_V4_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_STRUCTURAL_WORDMARK_V4",
+  "next_required_action": "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user human verdict that both V3 titles improved but still fail against the Shanyeji maturity target",
-    "preserved V2 readability/coherence and V3 connected-wordmark gains",
-    "preserved all photography, P3/P4 directional gains and P6 image state",
-    "isolated the remaining gap to whole-word authored structural maturity",
-    "prepared a V4 three-direction structural exploration per title with zero preselection polish"
+    "generated exactly three visible whole-word V4 structure directions for 豆坊 and three for 茶作",
+    "used zero hidden variants and zero preselection polish passes",
+    "preserved V3 source frames and all photography/P3/P4/P6 state",
+    "created and independently read back a two-slide Drive review deck with V3 plus A/B/C for each title",
+    "froze V4 outputs pending human direction selection"
   ],
-  "updated_at": "2026-09-14T09:23:22Z",
+  "updated_at": "2026-09-14T09:33:03Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,8 +164,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V3 outputs are human-rated as improved but not passed; freeze them as progress evidence.",
-    "T2 support typography remains blocked until a V4 structure is selected and subsequently passes.",
+    "V4 structural prototypes are frozen pending human A/B/C/NONE selection; no polishing is authorized before selection.",
+    "T2 support typography remains blocked until selected V4 structures are subsequently refined and pass.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "WORDMARK_V3_DIRECTIONAL_IMPROVEMENT_V4_READY",
+    "status": "STRUCTURAL_WORDMARK_V4_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "STRUCTURAL_WORDMARK_V4",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_STRUCTURAL_WORDMARK_V4",
+    "next_required_action": "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -392,7 +392,7 @@
       "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
       "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9"
     },
-    "wordmark_v4_render_allowed": true,
+    "wordmark_v4_render_allowed": false,
     "wordmark_v4_direction_budget": {
       "豆坊": 3,
       "茶作": 3
@@ -400,6 +400,28 @@
     "wordmark_v4_selected_direction": {
       "豆坊": null,
       "茶作": null
+    },
+    "wordmark_v4_visible_directions_generated": {
+      "豆坊": 3,
+      "茶作": 3
+    },
+    "wordmark_v4_hidden_variants": 0,
+    "wordmark_v4_preselection_polish_passes": 0,
+    "wordmark_v4_execution": {
+      "path": "evidence/vpd/p1_typography_repair_v4/STRUCTURAL_WORDMARK_V4_EXECUTION_20260914.json",
+      "sha256": "2a23b534045aaec40021131cb504addbe6c9f60086d246af5f2036416bf51b36"
+    },
+    "drive_wordmark_v4_review": {
+      "presentation_id": "1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM",
+      "title": "T1_V4_结构方向复判_20260914",
+      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+      "url": "https://docs.google.com/presentation/d/1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM/edit",
+      "slides": [
+        "豆坊: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT",
+        "茶作: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT"
+      ],
+      "image_elements_readback_verified": 8,
+      "readback_verified": true
     }
   },
   "t1_final_settlement_evidence": {
@@ -425,5 +447,9 @@
   "wordmark_v3_human_fail_and_v4_plan_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
     "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9"
+  },
+  "wordmark_v4_execution_evidence": {
+    "path": "evidence/vpd/p1_typography_repair_v4/STRUCTURAL_WORDMARK_V4_EXECUTION_20260914.json",
+    "sha256": "2a23b534045aaec40021131cb504addbe6c9f60086d246af5f2036416bf51b36"
   }
 }

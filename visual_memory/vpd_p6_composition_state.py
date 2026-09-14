@@ -37,6 +37,7 @@ ACTIONS = {
     "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
     "P1_WAIT_HUMAN_SEMANTIC_ANCHOR_WORDMARK_V3_VERDICT",
     "P1_EXECUTE_STRUCTURAL_WORDMARK_V4",
+    "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT",
 }
 
 
@@ -257,6 +258,20 @@ def validate_p6_composition_state(root):
         require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V4_PREMATURE_ADVANCE")
         check_ref(root, tr["wordmark_v3_execution"])
         check_ref(root, tr["wordmark_v3_human_fail_and_v4_plan"])
+
+    elif action == "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "STRUCTURAL_WORDMARK_V4_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT", "WORDMARK_V4_EXECUTION_STATE")
+        require(tr["phase"] == "STRUCTURAL_WORDMARK_V4", "WORDMARK_V4_PHASE")
+        require(tr["wordmark_v4_render_allowed"] is False, "WORDMARK_V4_SHOULD_BE_FROZEN")
+        require(tr["wordmark_v4_direction_budget"] == {"豆坊":3,"茶作":3}, "WORDMARK_V4_BUDGET")
+        require(tr["wordmark_v4_visible_directions_generated"] == {"豆坊":3,"茶作":3}, "WORDMARK_V4_VISIBLE_COUNT")
+        require(tr["wordmark_v4_hidden_variants"] == 0 and tr["wordmark_v4_preselection_polish_passes"] == 0, "WORDMARK_V4_HIDDEN_WORK")
+        require(tr["wordmark_v4_selected_direction"] == {"豆坊":None,"茶作":None}, "WORDMARK_V4_PREMATURE_SELECTION")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V4_PREMATURE_ADVANCE")
+        require(tr["wordmark_v3_human_verdict"] == {"豆坊":"IMPROVED_NOT_PASS","茶作":"IMPROVED_NOT_PASS","overall":"FAIL_FAR_FROM_SHANYEJI_CONTINUE_TYPOGRAPHY_ONLY"}, "WORDMARK_V3_VERDICT_DRIFT")
+        check_ref(root, tr["wordmark_v3_human_fail_and_v4_plan"])
+        check_ref(root, tr["wordmark_v4_execution"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

@@ -1,0 +1,75 @@
+{
+  "schema_version": "vpd-structural-wordmark-v4-execution/v1",
+  "recorded_at": "2026-09-14T09:33:03Z",
+  "status": "EXECUTED_FROZEN_WAITING_HUMAN_DIRECTION_VERDICT",
+  "strategy": "STRUCTURAL_WORDMARK_RECONSTRUCTION_V4",
+  "authority_plan": {
+    "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
+    "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "69:2",
+    "page_name": "P1 Structural Wordmark V4",
+    "v3_source_frames": {
+      "豆坊": "66:3",
+      "茶作": "66:16"
+    },
+    "directions": {
+      "豆坊": {
+        "A_MASS_BLOCK": "69:3",
+        "B_NEGATIVE_CHANNEL": "69:20",
+        "C_ANCHOR_DOMINANT": "69:38"
+      },
+      "茶作": {
+        "A_MASS_BLOCK": "69:55",
+        "B_NEGATIVE_CHANNEL": "69:71",
+        "C_ANCHOR_DOMINANT": "69:88"
+      }
+    }
+  },
+  "execution": {
+    "visible_directions_generated": {
+      "豆坊": 3,
+      "茶作": 3
+    },
+    "hidden_variants": 0,
+    "preselection_polish_passes": 0,
+    "selection_before_generation": false,
+    "direction_definitions": {
+      "A_MASS_BLOCK": "denser shared silhouette / common mass and baseline logic",
+      "B_NEGATIVE_CHANNEL": "coordinated negative channel crossing both characters",
+      "C_ANCHOR_DOMINANT": "semantic anchor receives dominant mass while secondary glyph nests/supports"
+    }
+  },
+  "preservation": {
+    "photography_modified": false,
+    "photo_bases_regenerated": false,
+    "P6_modified": false,
+    "candidate1_baselines_modified": false,
+    "V2_final_vectors_modified": false,
+    "V3_final_groups_modified": false,
+    "V3_legibility_coherence_and_connected_wordmark_gains_used_as_starting_point": true,
+    "overall_visual_direction_gains_preserved": true
+  },
+  "drive_review": {
+    "presentation_id": "1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM",
+    "title": "T1_V4_结构方向复判_20260914",
+    "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+    "url": "https://docs.google.com/presentation/d/1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM/edit",
+    "slides": [
+      "豆坊: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT",
+      "茶作: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT"
+    ],
+    "image_elements_readback_verified": 8,
+    "readback_verified": true
+  },
+  "human_direction_selection": {
+    "豆坊": null,
+    "茶作": null
+  },
+  "review_instruction": "Select A, B, C or NONE independently for each title. These are structural prototypes, not polished finals.",
+  "T2_allowed": false,
+  "P6_reintegration_allowed": false,
+  "next_required_action": "P1_WAIT_HUMAN_STRUCTURAL_WORDMARK_V4_DIRECTION_VERDICT"
+}
