@@ -1,0 +1,75 @@
+{
+  "schema_version": "vpd-wordmark-v3-human-directional-fail-v4-plan/v1",
+  "recorded_at": "2026-09-14T09:23:22Z",
+  "human_authority": "CURRENT_USER",
+  "human_feedback_exact": "V3 确实 两个确实好一些     但是 离山野集   差很多。",
+  "wordmark_v3_human_verdict": {
+    "豆坊": "IMPROVED_NOT_PASS",
+    "茶作": "IMPROVED_NOT_PASS",
+    "overall": "FAIL_FAR_FROM_SHANYEJI_CONTINUE_TYPOGRAPHY_ONLY"
+  },
+  "v3_assessment": {
+    "improvements_to_preserve": [
+      "both V3 titles are visibly better than V2",
+      "V3 keeps V2 readability and broad wordmark coherence",
+      "V3 begins to read as one connected graphic object rather than two unrelated characters"
+    ],
+    "blocking_failure": "authored maturity remains far below the approved Shanyeji mother reference; the structural identity is still too constructed and not inevitable/natural enough",
+    "formal_verdict": "DIRECTIONAL_IMPROVEMENT_ONLY_NOT_PASS"
+  },
+  "anti_rollback": {
+    "preserve_photography_and_photo_directional_gains": true,
+    "preserve_current_overall_visual_direction_improvements": true,
+    "preserve_V2_legibility_and_coherence": true,
+    "preserve_V3_connected_wordmark_gain": true,
+    "do_not_modify_P6": true,
+    "do_not_regenerate_photo_bases": true,
+    "do_not_restart_from_candidate1_baseline": true,
+    "do_not_treat_local_typography_feedback_as_total_project_rejection": true
+  },
+  "wordmark_v4": {
+    "id": "STRUCTURAL_WORDMARK_RECONSTRUCTION_V4",
+    "strategy": "fork the frozen V3 final wordmarks and explore three whole-word structures per title before any polish; select structure first, polish second",
+    "fork_from": "SEMANTIC_ANCHOR_WORDMARK_V3_FINAL_GROUPS",
+    "five_high_leverage_variables": [
+      "whole-word silhouette before local glyph decoration",
+      "shared stroke DNA inherited from V3",
+      "controlled asymmetric mass between anchor and secondary glyph",
+      "coordinated negative-space topology crossing the word boundary",
+      "one semantic abstraction expressed at word level rather than added as decoration"
+    ],
+    "directions": {
+      "A_MASS_BLOCK": "dense integrated silhouette; shared canopy/baseline mass; strongest single-object reading",
+      "B_NEGATIVE_CHANNEL": "a coordinated negative-space channel cuts across both characters and creates the identity",
+      "C_ANCHOR_DOMINANT": "semantic anchor carries larger mass and secondary glyph nests/interlocks as support"
+    },
+    "title_semantics": {
+      "豆坊": "bean/tofu workshop; compression/mold/block; warm handcraft solidity",
+      "茶作": "tea craft; leaf/tray/layer; lifted vertical rhythm and processing layers"
+    },
+    "budget": {
+      "directions_per_title": 3,
+      "total_visible_directions": 6,
+      "hidden_variants": 0,
+      "preselection_polish_passes": 0
+    },
+    "forbidden": [
+      "photo regeneration",
+      "P6 edits",
+      "restart from Candidate 1",
+      "font swap as primary move",
+      "independent per-glyph style invention",
+      "texture used to hide weak structure",
+      "support typography before structural selection"
+    ],
+    "selection_gate": [
+      "immediately readable",
+      "one coherent authored system",
+      "materially stronger structural identity than V3",
+      "meaningfully closer to Shanyeji maturity without copying literal glyph shapes"
+    ]
+  },
+  "T2_allowed": false,
+  "P6_reintegration_allowed": false,
+  "next_required_action": "P1_EXECUTE_STRUCTURAL_WORDMARK_V4"
+}

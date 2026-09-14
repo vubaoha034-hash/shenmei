@@ -36,6 +36,7 @@ ACTIONS = {
     "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
     "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
     "P1_WAIT_HUMAN_SEMANTIC_ANCHOR_WORDMARK_V3_VERDICT",
+    "P1_EXECUTE_STRUCTURAL_WORDMARK_V4",
 }
 
 
@@ -245,6 +246,17 @@ def validate_p6_composition_state(root):
         require(tr["wordmark_v2_human_verdict"] == {"豆坊":"FAIL","茶作":"FAIL","overall":"FAIL_CONTINUE_TYPOGRAPHY_ONLY"}, "WORDMARK_V2_VERDICT_DRIFT")
         check_ref(root, tr["wordmark_v2_human_fail_and_v3_plan"])
         check_ref(root, tr["wordmark_v3_execution"])
+
+    elif action == "P1_EXECUTE_STRUCTURAL_WORDMARK_V4":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "WORDMARK_V3_DIRECTIONAL_IMPROVEMENT_V4_READY", "WORDMARK_V4_READY_STATE")
+        require(tr["phase"] == "STRUCTURAL_WORDMARK_V4", "WORDMARK_V4_PHASE")
+        require(tr["wordmark_v4_render_allowed"] is True, "WORDMARK_V4_RENDER_NOT_OPEN")
+        require(tr["wordmark_v4_direction_budget"] == {"豆坊":3,"茶作":3}, "WORDMARK_V4_BUDGET")
+        require(tr["wordmark_v3_human_verdict"] == {"豆坊":"IMPROVED_NOT_PASS","茶作":"IMPROVED_NOT_PASS","overall":"FAIL_FAR_FROM_SHANYEJI_CONTINUE_TYPOGRAPHY_ONLY"}, "WORDMARK_V3_HUMAN_VERDICT_DRIFT")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V4_PREMATURE_ADVANCE")
+        check_ref(root, tr["wordmark_v3_execution"])
+        check_ref(root, tr["wordmark_v3_human_fail_and_v4_plan"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)
