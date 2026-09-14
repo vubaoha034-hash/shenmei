@@ -1,0 +1,40 @@
+name: VPD P1 Record Typography Title Bench Execution
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - .github/triggers/vpd_p1_title_bench_execution_record.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+      - name: Record P1 T1 title bench execution
+        run: python scripts/vpd_record_p1_typography_title_bench_execution.py
+      - name: Validate new state
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
+      - name: Persist title bench execution state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add continuity/vpd/CURRENT_TASK_LOCK.json \
+                  continuity/vpd/LATEST_CHECKPOINT.json \
+                  continuity/vpd/state_ledger/commercial_design_pipeline.jsonl \
+                  PROJECT_CONTROL_ADAPTER.json \
+                  evidence/vpd/p1_typography_repair_v1/T1_TITLE_BENCH_EXECUTION_20260914.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "Record P1 typography title bench execution"
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
