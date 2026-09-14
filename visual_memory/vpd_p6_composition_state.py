@@ -1,8 +1,9 @@
 """P6 integrated-composition state guard.
 
 This profile begins only after all four formal photo nodes have real-image readback.
-It preserves the frozen A/B inputs and equal-budget rule, and authorizes only the
-single recorded correction pass and subsequent final pixel/editability review.
+It preserves the frozen A/B inputs and equal-budget rule, records the single
+correction pass and final validation, and can return a human-failed typography
+result to a bounded P1 typography-repair bench without rewriting the P6 evidence.
 It is an evidence/state guard, never an aesthetic oracle.
 """
 from __future__ import annotations
@@ -27,6 +28,7 @@ ACTIONS = {
     "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS",
     "P6_VALIDATE_FINAL_PIXELS_EDITABILITY",
     "P6_WAIT_HUMAN_SET_VERDICT",
+    "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
 }
 
 
@@ -92,7 +94,8 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    require(lock["workflow"]["focus_stage"] == "P6" and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
+    expected_focus = "P1" if action == "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH" else "P6"
+    require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
     review = lock["composition_review_evidence"]
@@ -127,6 +130,14 @@ def validate_p6_composition_state(root):
         require(all(v == 1 for v in used.values()), "CORRECTION_NOT_COMPLETE")
         check_ref(root, lock["correction_pass_evidence"])
         check_ref(root, lock["final_validation_evidence"])
+    elif action == "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH":
+        require(all(v == 1 for v in used.values()), "CORRECTION_NOT_COMPLETE")
+        check_ref(root, lock["correction_pass_evidence"])
+        check_ref(root, lock["final_validation_evidence"])
+        check_ref(root, lock["human_set_verdict_evidence"])
+        require(p6.get("formal_human_set_verdict") == "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED", "HUMAN_VERDICT_MISSING")
+        require(p6.get("status") == "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED", "P6_HUMAN_FAIL_STATE")
+        require(p6.get("final_pixel_validation_completed") is True, "FINAL_VALIDATION_NOT_COMPLETE")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)
