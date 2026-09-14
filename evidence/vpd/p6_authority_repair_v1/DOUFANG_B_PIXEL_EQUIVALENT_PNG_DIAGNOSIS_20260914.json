@@ -1,0 +1,39 @@
+{
+  "schema_version": "vpd-p6-pixel-equivalent-png-diagnosis/v1",
+  "status": "PIXEL_EQUIVALENT_PNG_STILL_FAILS_PLACEMENT",
+  "scope": "DIAGNOSTIC_ONLY_NO_FORMAL_WRITE",
+  "original_source": {
+    "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "content_type": "image/jpeg",
+    "bytes": 422265
+  },
+  "derived_png": {
+    "sha256": "bc6f990defe98e50df86476520562fe36cc5a19352f6c1b624667c8602e16f93",
+    "bytes": 2432306,
+    "dimensions": [
+      1152,
+      1536
+    ],
+    "mode": "RGB",
+    "decoded_pixel_sha256": "2ec0d60841c223f5328a2481a639b84aaa3b545ae310210519bccd8e1811f93d",
+    "pixel_equivalence_verified": true
+  },
+  "receipt": {
+    "path": "evidence/vpd/figma_upload_relay/receipts/P6-DOUFANG-B-PIXEL-PNG-PROBE-20260914-01.json",
+    "sha256": "3bad4467fd90366c60c680642837564950e8475d7aaac0147dd59b07f01d3f99",
+    "http_status": 200,
+    "returned_imageHash": "196f05569f38a30ac41e06b7aff71304f6309856"
+  },
+  "figma_readback": {
+    "node_id": "44:3",
+    "observed_imageHash": "1c9cbf9a9fe1017a3f44eeed563562db8222c889",
+    "returned_hash_present_in_image_store": false
+  },
+  "established": [
+    "Losslessly re-encoding the exact decoded RGB pixel matrix as PNG changes the transport bytes and returned imageHash but still does not create an observable Figma image-store entry or update the known-good scratch target.",
+    "Original JPEG byte encoding, ICC metadata and the single historical imageHash 23926508... are therefore not sufficient explanations.",
+    "The unresolved variable is now the full Doufang B pixel content versus current large-image placement behavior."
+  ],
+  "next_diagnostic": "RUN_EXACT_FROZEN_DOUFANG_A_SOURCE_AS_CURRENT_LARGE_IMAGE_SCRATCH_CONTROL",
+  "recorded_at": "2026-09-14T01:36:00Z"
+}

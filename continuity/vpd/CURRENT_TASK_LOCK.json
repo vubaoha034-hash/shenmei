@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 29,
+  "revision": 30,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 28,
-    "git_blob_sha": "fac9f6cec5a7b861b2962d3d77534108f15f1f69",
-    "note": "Revision 28 closed the consumed formal retry and required exact-source scratch diagnosis."
+    "revision": 29,
+    "git_blob_sha": "1e1308798d6b3da3184a2f23bfbc6f5f72a11c75",
+    "note": "Revision 29 established exact original Doufang B source failure on a known-good scratch target."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -114,7 +114,7 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Exact frozen Doufang B bytes were uploaded to known-good scratch node 44:3 and reproduced the formal failure: HTTP 200 / UPLOAD_PASS returned the same imageHash 23926508..., but that hash remained absent from the Figma file image store and the scratch node retained its previous valid fill. Formal node 12:12 is therefore not the cause. Doufang A and B share the same JPEG/RGB/1152x1536/JFIF1.1/sRGB ICC container characteristics, so the remaining suspect is the original-byte/content-hash path or backend state associated with the Doufang B hash. No formal reupload is authorized.",
+  "current_stage": "A lossless PNG built from the exact decoded Doufang B RGB pixel matrix also returned HTTP 200 / UPLOAD_PASS but did not enter the Figma file image store or replace scratch node 44:3. This rules out the original JPEG byte encoding, ICC metadata and the single 23926508... hash as sufficient causes. Next diagnostic is a current exact-source Doufang A large-image scratch control; formal 12:12 and Tea A/B remain untouched.",
   "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
   "p6_allowed": true,
   "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
@@ -130,13 +130,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "uploaded exact frozen Doufang B source to isolated known-good scratch target only",
-    "reproduced imageHash 23926508... with HTTP 200 / UPLOAD_PASS",
-    "verified returned hash absent from current file image store and scratch target unchanged",
-    "ruled out formal node 12:12 and generic nesting as causes",
-    "compared successful Doufang A and failing Doufang B container metadata and found matching JPEG/RGB/dimensions/JFIF/sRGB ICC characteristics"
+    "decoded frozen Doufang B JPEG to RGB and losslessly re-encoded the identical pixel matrix as PNG on runner",
+    "verified pixel equivalence by decoded-pixel SHA-256",
+    "uploaded only the derived PNG to isolated scratch node 44:3",
+    "verified HTTP 200 / UPLOAD_PASS returned a new hash 196f0556... but the hash is absent from Image Store and scratch remained unchanged",
+    "ruled out original JPEG bytes/ICC/single bad imageHash as sufficient causes"
   ],
-  "updated_at": "2026-09-14T01:33:00Z",
+  "updated_at": "2026-09-14T01:36:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -148,7 +148,7 @@
   },
   "state_profile": "p6-figma-relay/v1",
   "render_allowed": false,
-  "input_commit": "9cdf005a56e957a595f4e34cb26b331e8ff09759",
+  "input_commit": "1fa75972cf98cc50e6c159c869081b70348d6da6",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -167,9 +167,13 @@
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
     "sha256": "b204ff65aeb59bc7fb5f614d368867186231b21d0c73fc7b170732dcb226b4c7"
   },
-  "diagnostic_next_required_action": "RUN_PIXEL_EQUIVALENT_LOSSLESS_PNG_TRANSCODE_OF_FROZEN_DOUFANG_B_TO_SCRATCH_ONLY",
+  "diagnostic_next_required_action": "RUN_EXACT_FROZEN_DOUFANG_A_SOURCE_AS_CURRENT_LARGE_IMAGE_SCRATCH_CONTROL",
   "exact_source_scratch_diagnosis": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_EXACT_SOURCE_SCRATCH_DIAGNOSIS_20260914.json",
     "sha256": "4f259fd7438483268a480ba8aab9354d2aa1b69af3bf3126599136f0bfac455e"
+  },
+  "pixel_equivalent_png_diagnosis": {
+    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_PIXEL_EQUIVALENT_PNG_DIAGNOSIS_20260914.json",
+    "sha256": "fa1c62fbc48dfdb3842ec83c659552a17fc1e6a367c0b953fa1a1c6c524ffd52"
   }
 }
