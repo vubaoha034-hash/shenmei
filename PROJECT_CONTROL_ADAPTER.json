@@ -548,6 +548,18 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_COMPOSITION_REVIEW_ROUND1_20260914.json",
+      "sha256": "3f83c52bfb867832560aec17c2bd87a331435b2b08ca121619a117aa6508b983",
+      "priority": 0,
+      "purpose": "Round-1 equal-budget integrated-frame review authorizing exactly one correction pass per poster."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
+      "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38",
+      "priority": 0,
+      "purpose": "Direct Figma readback resolution closing the stale P6 relay-placement blocker without reupload."
+    },
+    {
       "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
       "priority": 0,
       "purpose": "Current user correction restores early typography planning, before-final-acceptance Figma design and symmetric comparisons; no old experiment mutation"
@@ -609,14 +621,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PRESERVED_DOWNSTREAM_PRODUCTION_CAPABILITY",
+    "status": "ACTIVE_P6_INTEGRATED_COMPOSITION_CORRECTION",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "NOT_CURRENT_ACTIVATE_ONLY_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
+    "next_required_action": "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -633,7 +645,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "checkpoint": "VPD_P6_COMPOSITION_CORRECTION_REQUIRED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -671,7 +683,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+    "next_required_action": "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -683,8 +695,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 30,
-    "sha256": "0e8c8b2f3fcd72f53a8a26dcb50b68865d17ba9cfe111ac58388fb5c3dda8888",
+    "revision": 31,
+    "sha256": "ab71ea896f9be5ac3d50040f67465b4d564383ecc4c70aef9b9e205d74b18072",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

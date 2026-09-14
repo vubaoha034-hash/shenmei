@@ -1,0 +1,114 @@
+{
+  "schema_version": "vpd-p6-formal-photo-bindings-late-readback-resolution/v1",
+  "status": "ALL_FOUR_FORMAL_PHOTO_NODES_READBACK_CONFIRMED",
+  "recorded_at": "2026-09-14T02:10:04Z",
+  "scope": "P6_FIGMA_BINDING_STATE_RESOLUTION_ONLY",
+  "user_authorization": "Current controlling chat: user instructed to continue the next project step.",
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "12:2",
+    "frame_size": [
+      2400,
+      3200
+    ]
+  },
+  "diagnostic_control": {
+    "first_source_url_observation": {
+      "result": "NOT_AN_EXACT_ORIGINAL_LARGE_SOURCE_CONTROL",
+      "downloaded_format": "jpeg",
+      "downloaded_dimensions": [
+        960,
+        1280
+      ],
+      "downloaded_bytes": 161623,
+      "downloaded_sha256": "8c936f551cc8a15dc5f06d8a696f35d6355346314b5bc146b4620e835dd0abf8",
+      "historical_original_sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909"
+    },
+    "bound_node_full_export_control": {
+      "source_node": "12:4",
+      "target_scratch_node": "44:3",
+      "format": "png",
+      "dimensions": [
+        2400,
+        3200
+      ],
+      "bytes": 3269051,
+      "sha256": "546551a7c8b55840f001ed5e3f42d5b6a79b901e263d4a3acb2f260ff81098d3",
+      "http_status": 200,
+      "status": "UPLOAD_PASS",
+      "returned_imageHash": "1dc2da042e6c47aa9852bb4b451bf3bf7a8b7270",
+      "scratch_raw_image_readback_present": true
+    }
+  },
+  "formal_node_readback": [
+    {
+      "frame_id": "12:3",
+      "photo_node_id": "12:4",
+      "role": "DOUFANG_A_BASELINE",
+      "raw_image_present": true,
+      "raw_format": "jpeg",
+      "export_png_bytes": 3269051,
+      "canvas_dimensions": [
+        2400,
+        3200
+      ],
+      "visual_subject": "handmade tofu process",
+      "visual_identity_match_to_registered_arm": true
+    },
+    {
+      "frame_id": "12:11",
+      "photo_node_id": "12:12",
+      "role": "DOUFANG_B_DISTILLED",
+      "raw_image_present": true,
+      "raw_format": "jpeg",
+      "export_png_bytes": 3582791,
+      "canvas_dimensions": [
+        2400,
+        3200
+      ],
+      "visual_subject": "distinct handmade tofu process with mill, curd press, soybeans and formed tofu",
+      "visual_identity_match_to_registered_arm": true
+    },
+    {
+      "frame_id": "12:19",
+      "photo_node_id": "12:20",
+      "role": "CHAZUO_A_BASELINE",
+      "raw_image_present": true,
+      "raw_format": "jpeg",
+      "export_png_bytes": 3583873,
+      "canvas_dimensions": [
+        2400,
+        3200
+      ],
+      "visual_subject": "handmade tea non-heating process with bamboo trays and multiple leaf states",
+      "visual_identity_match_to_registered_arm": true
+    },
+    {
+      "frame_id": "12:27",
+      "photo_node_id": "12:28",
+      "role": "CHAZUO_B_DISTILLED",
+      "raw_image_present": true,
+      "raw_format": "jpeg",
+      "export_png_bytes": 3621414,
+      "canvas_dimensions": [
+        2400,
+        3200
+      ],
+      "visual_subject": "distinct handmade tea non-heating process with trays, cloth and multiple leaf states",
+      "visual_identity_match_to_registered_arm": true
+    }
+  ],
+  "established": [
+    "All four formal P6 photo nodes now expose a real raw image and a 2400x3200 full-frame visual readback.",
+    "The two tofu nodes and the two tea nodes are visually distinct A/B images rather than one repeated placeholder.",
+    "A 2400x3200 PNG from the already-bound Doufang A node successfully traversed the same relay to the known-good scratch target, so generic large-PNG relay failure is not supported.",
+    "The earlier HTTP-200/no-observable-placement state is superseded as a current blocker by later direct Figma readback; exact backend commit timing remains unknown."
+  ],
+  "limitations": [
+    "No claim is made that Figma internal JPEG derivative bytes equal the originally generated source bytes.",
+    "Binding identity is semantic and arm-specific as required by the current P6 lock; final photo-to-Figma-to-export provenance still requires final-stage receipt completion.",
+    "No typography, integrated-design or final-pixel aesthetic pass is implied."
+  ],
+  "reupload_policy": "NO_FURTHER_FORMAL_PHOTO_REUPLOAD_WHILE_CURRENT_REAL_BINDINGS_REMAIN_PRESENT",
+  "next": "REVIEW_EQUAL_BUDGET_INTEGRATED_FRAMES"
+}

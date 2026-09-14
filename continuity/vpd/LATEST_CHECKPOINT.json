@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 52,
-  "recorded_at": "2026-09-14T01:36:00Z",
+  "sequence": 53,
+  "recorded_at": "2026-09-14T02:10:04Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "A lossless PNG built from the exact decoded Doufang B RGB pixel matrix also returned HTTP 200 / UPLOAD_PASS but did not enter the Figma file image store or replace scratch node 44:3. This rules out the original JPEG byte encoding, ICC metadata and the single 23926508... hash as sufficient causes. Next diagnostic is a current exact-source Doufang A large-image scratch control; formal 12:12 and Tea A/B remain untouched.",
+  "current_focus": "All four formal P6 photo nodes now contain distinct real A/B images on direct Figma readback. Round-1 equal-budget integrated composition review failed all four on typography/photo-type integration/brand-distinctiveness grounds. Exactly one symmetric correction pass per poster is now authorized; no further photo reupload or taste rerender is authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -35,13 +35,12 @@
     "p6_doufang_B_controlled_retry_consumed_placement_failed",
     "p6_nested_target_probe_pass",
     "p6_exact_frozen_doufang_B_source_scratch_reproduced_failure",
-    "p6_pixel_equivalent_png_of_doufang_B_still_failed_placement"
+    "p6_pixel_equivalent_png_of_doufang_B_still_failed_placement",
+    "p6_doufang_A_large_bound_node_control_pass",
+    "p6_all_four_formal_photo_nodes_direct_readback_confirmed",
+    "p6_equal_budget_composition_review_round1_completed"
   ],
   "incomplete": [
-    "live_relay_test_doufang_B_to_node_12_12",
-    "bind_chazuo_A_to_node_12_20",
-    "bind_chazuo_B_to_node_12_28",
-    "p6_equal_budget_composition_review_with_real_images",
     "p6_single_correction_pass_per_poster",
     "p6_final_pixel_and_editability_validation",
     "human_set_verdict",
@@ -51,12 +50,11 @@
     "scale"
   ],
   "blocked": [
-    "The single authorized formal Doufang B retry was consumed without observable Figma file commit/placement.",
-    "No further formal 12:12 reupload is authorized until exact-source scratch diagnosis separates source-specific from node-specific failure.",
-    "Tea A/B remain blocked until Doufang B binding passes.",
-    "Historical ledger prefix preserved with three known event-hash defects; not recertified."
+    "Final pixel and editability validation remains blocked until the single correction pass is completed or explicitly waived for every poster.",
+    "Human set verdict, candidate promotion, second-family completion, Golden and Scale remain blocked.",
+    "Historical system-validation ledger prefix retains its disclosed pre-existing hash defects and is not recertified."
   ],
-  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+  "next_required_action": "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -72,15 +70,15 @@
         "locked": false
       },
       "12:12": {
-        "bound": false,
+        "bound": true,
         "locked": false
       },
       "12:20": {
-        "bound": false,
+        "bound": true,
         "locked": false
       },
       "12:28": {
-        "bound": false,
+        "bound": true,
         "locked": false
       }
     },
@@ -88,13 +86,20 @@
       2400,
       3200
     ],
-    "real_images_bound_count": 1,
+    "real_images_bound_count": 4,
     "figma_entry_allowed": true,
-    "final_pixel_validation_allowed": false
+    "final_pixel_validation_allowed": false,
+    "composition_review_completed": true,
+    "correction_passes_used": {
+      "12:3": 0,
+      "12:11": 0,
+      "12:19": 0,
+      "12:27": 0
+    }
   },
   "relay": {
     "version": "V1",
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "FORMAL_BINDINGS_LATE_READBACK_CONFIRMED",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -114,10 +119,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "status": "VPD_P6_COMPOSITION_CORRECTION_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "0e8c8b2f3fcd72f53a8a26dcb50b68865d17ba9cfe111ac58388fb5c3dda8888"
+    "sha256": "ab71ea896f9be5ac3d50040f67465b4d564383ecc4c70aef9b9e205d74b18072"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -128,7 +133,7 @@
       "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
     },
     "p6_integrated_design": {
-      "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED"
+      "status": "COMPOSITION_REVIEW_FAIL_CORRECTION_AUTHORIZED"
     },
     "candidate_promotion": "BLOCKED"
   },
@@ -137,9 +142,9 @@
     "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
   },
   "ledger_tails": {
-    "system_validation": {
-      "event_id": "EVT-VPD-P6-PIXEL-PNG-SCRATCH-FAIL-20260914-001",
-      "event_hash": "2ea5a05b76cd504b03f6aab25b4b7cf1d8a6bab3e280cba0b45f7ca50eefd26e"
+    "commercial_design_pipeline": {
+      "event_id": "EVT-VPD-P6-COMPOSITION-CORRECTION-AUTHORIZED-20260914-001",
+      "event_hash": "d01fbde622950c5726f00c5e340c5c429a98696c71e1fc681f269ce4e28a4bd2"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 30,
+  "revision": 31,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 29,
-    "git_blob_sha": "1e1308798d6b3da3184a2f23bfbc6f5f72a11c75",
-    "note": "Revision 29 established exact original Doufang B source failure on a known-good scratch target."
+    "revision": 30,
+    "git_blob_sha": "b3604bfb2ac8858c2ab277a78bca5c91dc252e1e",
+    "note": "Revision 30 recorded the unresolved relay placement mismatch before later direct Figma readback proved all four formal photo nodes present."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "COMPOSITION_REVIEW_FAIL_CORRECTION_AUTHORIZED",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -53,21 +53,21 @@
         "id": "12:11",
         "name": "DOUFANG_B_DISTILLED",
         "photo": "12:12",
-        "bound": false,
+        "bound": true,
         "locked": false
       },
       {
         "id": "12:19",
         "name": "CHAZUO_A_BASELINE",
         "photo": "12:20",
-        "bound": false,
+        "bound": true,
         "locked": false
       },
       {
         "id": "12:27",
         "name": "CHAZUO_B_DISTILLED",
         "photo": "12:28",
-        "bound": false,
+        "bound": true,
         "locked": false
       }
     ],
@@ -83,18 +83,20 @@
     },
     "semantic_raw_asset_identity_locked": true,
     "figma_photo_node_locked_required": false,
-    "bound_count": 1,
-    "remaining_bindings": [
-      "12:12",
-      "12:20",
-      "12:28"
-    ],
-    "normal_chat_blocker": "mcp.figma.com submit URL POST cannot resolve from current chat runtime",
-    "final_pixel_validation_allowed": false
+    "bound_count": 4,
+    "remaining_bindings": [],
+    "normal_chat_blocker": null,
+    "final_pixel_validation_allowed": false,
+    "correction_passes_used": {
+      "12:3": 0,
+      "12:11": 0,
+      "12:19": 0,
+      "12:27": 0
+    }
   },
   "figma_upload_relay": {
     "version": "V1",
-    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+    "status": "FORMAL_BINDINGS_LATE_READBACK_CONFIRMED",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -114,10 +116,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "A lossless PNG built from the exact decoded Doufang B RGB pixel matrix also returned HTTP 200 / UPLOAD_PASS but did not enter the Figma file image store or replace scratch node 44:3. This rules out the original JPEG byte encoding, ICC metadata and the single 23926508... hash as sufficient causes. Next diagnostic is a current exact-source Doufang A large-image scratch control; formal 12:12 and Tea A/B remain untouched.",
-  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
+  "current_stage": "All four formal P6 photo nodes now contain distinct real A/B images on direct Figma readback. Round-1 equal-budget integrated composition review failed all four on typography/photo-type integration/brand-distinctiveness grounds. Exactly one symmetric correction pass per poster is now authorized; no further photo reupload or taste rerender is authorized.",
+  "status": "VPD_P6_COMPOSITION_CORRECTION_REQUIRED",
   "p6_allowed": true,
-  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
+  "next_required_action": "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -130,13 +132,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "decoded frozen Doufang B JPEG to RGB and losslessly re-encoded the identical pixel matrix as PNG on runner",
-    "verified pixel equivalence by decoded-pixel SHA-256",
-    "uploaded only the derived PNG to isolated scratch node 44:3",
-    "verified HTTP 200 / UPLOAD_PASS returned a new hash 196f0556... but the hash is absent from Image Store and scratch remained unchanged",
-    "ruled out original JPEG bytes/ICC/single bad imageHash as sufficient causes"
+    "identified the first Doufang A source URL as a 960x1280 JPEG derivative rather than an exact original large-source control",
+    "completed a 2400x3200 bound-node PNG scratch control with HTTP 200 and observable raw-image placement",
+    "directly reread formal nodes 12:4, 12:12, 12:20 and 12:28 and confirmed distinct real tofu/tea A/B images",
+    "closed the relay placement mismatch as a current blocker while preserving all prior failure receipts as historical evidence",
+    "reviewed all four complete 2400x3200 Figma frames under the composition contract and commercial-gate policy",
+    "authorized exactly one symmetric correction pass for each of the four posters; none consumed yet"
   ],
-  "updated_at": "2026-09-14T01:36:00Z",
+  "updated_at": "2026-09-14T02:10:04Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -146,7 +149,7 @@
       "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
     }
   },
-  "state_profile": "p6-figma-relay/v1",
+  "state_profile": "p6-composition/v1",
   "render_allowed": false,
   "input_commit": "1fa75972cf98cc50e6c159c869081b70348d6da6",
   "authority_repair": {
@@ -158,16 +161,15 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "The single authorized formal Doufang B retry was consumed without observable Figma file commit/placement.",
-    "No further formal 12:12 reupload is authorized until exact-source scratch diagnosis separates source-specific from node-specific failure.",
-    "Tea A/B remain blocked until Doufang B binding passes.",
-    "Historical ledger prefix preserved with three known event-hash defects; not recertified."
+    "Final pixel and editability validation remains blocked until the single correction pass is completed or explicitly waived for every poster.",
+    "Human set verdict, candidate promotion, second-family completion, Golden and Scale remain blocked.",
+    "Historical system-validation ledger prefix retains its disclosed pre-existing hash defects and is not recertified."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
     "sha256": "b204ff65aeb59bc7fb5f614d368867186231b21d0c73fc7b170732dcb226b4c7"
   },
-  "diagnostic_next_required_action": "RUN_EXACT_FROZEN_DOUFANG_A_SOURCE_AS_CURRENT_LARGE_IMAGE_SCRATCH_CONTROL",
+  "diagnostic_next_required_action": null,
   "exact_source_scratch_diagnosis": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_EXACT_SOURCE_SCRATCH_DIAGNOSIS_20260914.json",
     "sha256": "4f259fd7438483268a480ba8aab9354d2aa1b69af3bf3126599136f0bfac455e"
@@ -175,5 +177,17 @@
   "pixel_equivalent_png_diagnosis": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_PIXEL_EQUIVALENT_PNG_DIAGNOSIS_20260914.json",
     "sha256": "fa1c62fbc48dfdb3842ec83c659552a17fc1e6a367c0b953fa1a1c6c524ffd52"
+  },
+  "composition_transition_evidence": {
+    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
+    "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38"
+  },
+  "composition_review_evidence": {
+    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_COMPOSITION_REVIEW_ROUND1_20260914.json",
+    "sha256": "3f83c52bfb867832560aec17c2bd87a331435b2b08ca121619a117aa6508b983"
+  },
+  "relay_placement_resolution": {
+    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
+    "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38"
   }
 }
