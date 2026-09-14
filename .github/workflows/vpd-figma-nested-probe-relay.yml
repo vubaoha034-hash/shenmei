@@ -1,0 +1,67 @@
+name: VPD Figma Nested Probe Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_upload_relay/nested_probe_triggers/*.url.cms.b64"
+
+permissions:
+  contents: write
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+      EXPECTED_NODE: "44:3"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+      - name: Require relay key
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RELAY_PRIVATE_KEY_B64:-}"
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-figma-relay-private.pem
+          openssl pkey -in /tmp/vpd-figma-relay-private.pem -check -noout >/dev/null
+      - name: Execute nested probe
+        id: relay
+        shell: bash
+        run: |
+          set -uo pipefail
+          failures=0; found=0
+          shopt -s nullglob
+          for t in evidence/vpd/figma_upload_relay/nested_probe_triggers/*.url.cms.b64; do
+            found=1
+            base="$(basename "$t" .url.cms.b64)"
+            der="/tmp/$base.cms"
+            receipt="evidence/vpd/figma_upload_relay/receipts/$base.json"
+            base64 --decode "$t" > "$der" || { failures=$((failures+1)); continue; }
+            if python scripts/vpd_figma_nested_probe_relay_execute.py --trigger "$der" --cert evidence/vpd/figma_upload_relay/relay-cert.pem --private-key /tmp/vpd-figma-relay-private.pem --receipt "$receipt" --expected-node-id "$EXPECTED_NODE"; then
+              git rm -f "$t"
+            else
+              failures=$((failures+1))
+            fi
+            [ ! -f "$receipt" ] || git add "$receipt"
+          done
+          test "$found" -eq 1
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+      - name: Persist receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record nested Figma placement probe receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
+      - name: Enforce success
+        if: steps.relay.outputs.failures != '0'
+        run: exit 1
