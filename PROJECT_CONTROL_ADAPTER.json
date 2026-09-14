@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v6/V5_HUMAN_SELECTION_AND_NONCALLIGRAPHIC_V6_PLAN_20260914.json",
+      "sha256": "8f83e2a12505863c192a9e1861875f781d8d3fa7a3754628a093c4e68d5c7153",
+      "priority": 0,
+      "purpose": "Human V5 B/D seed selection, explicit far-below-Shanyeji non-pass verdict, and V6 non-calligraphic structural reconstruction plan."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
       "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b",
       "priority": 0,
@@ -717,14 +723,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_GENERATIVE_CUSTOM_WORDMARK_V5_HUMAN_REVIEW",
+    "status": "PAUSED_FOR_P1_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
+    "next_required_action": "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -741,7 +747,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
+    "checkpoint": "VPD_P1_GENERATIVE_V5_HUMAN_SELECTION_NONCALLIGRAPHIC_V6_READY",
     "challenge_ids": [
       "H1",
       "H2",
@@ -779,7 +785,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
+    "next_required_action": "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -791,8 +797,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 45,
-    "sha256": "5d1a9c04b6b775c8c8ba01512c64d67074e8d18ef77de38ee580bcd86168ac14",
+    "revision": 46,
+    "sha256": "004561da15d13c28b2207f7aadf9b776538360b7a1bbb518d27bb2dc274cdc17",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

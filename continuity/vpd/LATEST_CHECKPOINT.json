@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 67,
-  "recorded_at": "2026-09-14T09:55:03Z",
+  "sequence": 68,
+  "recorded_at": "2026-09-14T10:20:08Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Generative custom-wordmark V5 has executed one fully visible exploration board containing six 豆坊 and six 茶作 concepts. The board is stored in Drive and read back. No Figma glyph ideation, photography regeneration or P6 mutation occurred. V5 is frozen pending human direction selection.",
+  "current_focus": "Human selects V5 豆坊 B and 茶作 D only as promising seeds, explicitly not as passes and still far below Shanyeji. Preserve all image gains. Typography advances to non-calligraphic semantic wordmark V6; Figma is reserved for later vector reconstruction and composition, not glyph ideation.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -54,10 +54,12 @@
     "p1_semantic_anchor_wordmark_v3_human_verdict",
     "p1_structural_wordmark_v4_execution",
     "p1_structural_wordmark_v4_direction_selection",
-    "p1_generative_custom_wordmark_v5_execution"
+    "p1_generative_custom_wordmark_v5_execution",
+    "p1_generative_custom_wordmark_v5_direction_selection"
   ],
   "incomplete": [
-    "p1_generative_custom_wordmark_v5_direction_selection",
+    "p1_noncalligraphic_semantic_wordmark_v6_execution",
+    "p1_noncalligraphic_semantic_wordmark_v6_direction_selection",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -66,12 +68,12 @@
     "scale"
   ],
   "blocked": [
-    "V5 concepts are frozen pending human selection; do not polish or vectorize before selection.",
-    "T2 support typography remains blocked until a V5 direction is selected and passes title review.",
+    "V5 B/D are selected seeds, not approved wordmarks.",
+    "T2 remains blocked until V6 title review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
+  "next_required_action": "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -139,10 +141,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
+  "status": "VPD_P1_GENERATIVE_V5_HUMAN_SELECTION_NONCALLIGRAPHIC_V6_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5d1a9c04b6b775c8c8ba01512c64d67074e8d18ef77de38ee580bcd86168ac14"
+    "sha256": "004561da15d13c28b2207f7aadf9b776538360b7a1bbb518d27bb2dc274cdc17"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -163,26 +165,28 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-GENERATIVE-CUSTOM-WORDMARK-V5-EXECUTED-20260914-001",
-      "event_hash": "d11c46d1b9f676ece688d5481a1d1e9d099ac16de50b44527ec53ee0f3b215b6"
+      "event_id": "EVT-VPD-P1-V5-HUMAN-SELECTION-V6-READY-20260914-001",
+      "event_hash": "f76d5b2402109feb6ef8bb3aac41c78187ac2be413aaa5f9eca3266abf492492"
     }
   },
   "typography_repair": {
-    "status": "GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTED_WAITING_HUMAN_DIRECTION_VERDICT",
-    "phase": "GENERATIVE_CUSTOM_WORDMARK_V5",
+    "status": "GENERATIVE_V5_HUMAN_SELECTION_NONCALLIGRAPHIC_V6_READY",
+    "phase": "NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "wordmark_v5_execution": {
       "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
       "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
     },
-    "drive_review": {
-      "presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
-      "title": "T1_V5_生成式定制字标探索_20260914",
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "url": "https://docs.google.com/presentation/d/1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ/edit",
-      "thumbnail_readback_verified": true
+    "wordmark_v5_human_selection_and_v6_plan": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V5_HUMAN_SELECTION_AND_NONCALLIGRAPHIC_V6_PLAN_20260914.json",
+      "sha256": "8f83e2a12505863c192a9e1861875f781d8d3fa7a3754628a093c4e68d5c7153"
     },
+    "selected_direction": {
+      "豆坊": "B",
+      "茶作": "D"
+    },
+    "selection_status": "SELECTED_AS_SEEDS_NOT_PASS",
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT"
+    "next_required_action": "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6"
   }
 }
