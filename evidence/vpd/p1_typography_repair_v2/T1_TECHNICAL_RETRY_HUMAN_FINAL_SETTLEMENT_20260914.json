@@ -1,0 +1,51 @@
+{
+  "schema_version": "vpd-t1-technical-retry-human-final-settlement/v1",
+  "recorded_at": "2026-09-14T05:08:20Z",
+  "status": "HUMAN_FINAL_FAIL_CURRENT_TYPOGRAPHY_COMPILER",
+  "scope": "P1_T1_TITLE_ONLY_TECHNICAL_RETRY",
+  "human_authority": "CURRENT_USER",
+  "human_feedback": [
+    "完全两种风格凑一起。这次修复算很失败。",
+    "这个设计感有限，跟山野集的图片差了很多。前面明明做出了还好看的参考设计，现在反倒越来越差。",
+    "图片现在比以前好了一些，这是肯定的，但是远远没有到完成的地步。文字确实不行。",
+    "局部意见不能自动扩大成整套否定；已经变好的部分必须保留，失败层单独修。"
+  ],
+  "formal_verdict": "FAIL_CURRENT_TYPOGRAPHY_COMPILER_WORDMARK_COHERENCE",
+  "diagnosis": {
+    "design_sense_gain_preserved": true,
+    "glyph_correctness_after_retry": "IMPROVED_BUT_NOT_SUFFICIENT_FOR_PASS",
+    "wordmark_system_coherence": "FAIL",
+    "mother_reference_gap": "LARGE",
+    "root_cause": "The current execution method designs or repairs glyphs locally and assembles them afterward. It does not first establish one shared wordmark grammar, so paired characters drift into different visual languages.",
+    "not_a_total_project_reset": true
+  },
+  "preservation_lock": {
+    "photo_bases": true,
+    "photo_directional_evidence": true,
+    "overall_visual_direction": true,
+    "current_image_improvement": true,
+    "candidate1_strong_baselines": true,
+    "failed_t1_outputs_as_negative_evidence": true,
+    "p6_failed_posters_as_negative_evidence": true
+  },
+  "closed_work": {
+    "current_typography_compiler": "STOPPED",
+    "old_T1_additional_retry_allowed": false,
+    "technical_retry_budget_remaining": 0
+  },
+  "next_experiment": {
+    "id": "WORDMARK_SYSTEM_REPAIR_V2",
+    "plan": {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
+      "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
+    },
+    "method": "WORDMARK_FIRST_THEN_GLYPH_DETAIL",
+    "reset_scope": "TYPOGRAPHY_LAYER_ONLY",
+    "photo_regeneration": false,
+    "overall_visual_direction_reset": false
+  },
+  "T2_allowed": false,
+  "P6_reintegration_allowed": false,
+  "candidate_promotion_allowed": false,
+  "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2"
+}

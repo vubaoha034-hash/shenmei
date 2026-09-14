@@ -32,6 +32,7 @@ ACTIONS = {
     "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH",
     "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
     "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
+    "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
 }
 
 
@@ -196,6 +197,19 @@ def validate_p6_composition_state(root):
         require(tb[:2] == ta[:2], "T1_CANDIDATE1_TREE_CHANGED")
         require([{k: v for k, v in n.items() if k != "children"} for n in tb] == [{k: v for k, v in n.items() if k != "children"} for n in ta], "T1_FRAME_CHANGED")
         require(cp["typography_repair"] == tr, "T1_RETRY_CHECKPOINT_DRIFT")
+
+    elif action == "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "T1_FAILED_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY", "WORDMARK_V2_STATE")
+        require(tr["wordmark_v2_render_allowed"] is True, "WORDMARK_V2_RENDER_NOT_OPEN")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V2_BOUNDARY")
+        require(tr["technical_retry_budget_remaining"] == 0, "OLD_T1_RETRY_REOPENED")
+        for name in ("bench_plan", "execution_evidence", "human_verdict_evidence", "technical_retry_receipt", "final_t1_settlement", "wordmark_v2_plan"):
+            check_ref(root, tr[name])
+        settlement = read(root, tr["final_t1_settlement"]["path"])
+        require(settlement["formal_verdict"] == "FAIL_CURRENT_TYPOGRAPHY_COMPILER_WORDMARK_COHERENCE", "WORDMARK_V2_SETTLEMENT")
+        require(settlement["T2_allowed"] is False and settlement["P6_reintegration_allowed"] is False, "WORDMARK_V2_PREMATURE_ADVANCE")
+        require(settlement["preservation_lock"]["photo_bases"] is True and settlement["preservation_lock"]["overall_visual_direction"] is True, "WORDMARK_V2_PRESERVATION_LOST")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)
