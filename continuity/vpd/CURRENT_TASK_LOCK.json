@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 36,
+  "revision": 37,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 35,
-    "git_blob_sha": "3de950918df39ffa5788798d895f8a3617a0daa3",
-    "note": "Revision 35 prepared and froze the T1 typography-only bench before pixel execution."
+    "revision": 36,
+    "git_blob_sha": "22808ba66b4108f43ea0c451df9a0398ef7ff348",
+    "note": "Original T1 execution, correction budgets and blind-review commitment preserved at input HEAD."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "P1 T1 standalone-title A/B execution is complete for 豆坊 and 茶作. Both distilled B titles consumed their single allowed aesthetic correction after the first B readback failed aesthetically. The corrected four candidates are now frozen in a Drive blind-review deck; A/B mapping remains unrevealed. The only next action is the user's blind title verdict.",
-  "status": "VPD_P1_TYPOGRAPHY_TITLE_BENCH_WAITING_HUMAN_BLIND_VERDICT",
-  "p6_allowed": true,
-  "next_required_action": "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
+  "current_stage": "P1 T1 human review: B has a design-sense advantage on both titles but FAILS glyph correctness. One explicitly authorized technical-correctness retry per Candidate 2 is complete and frozen. Candidate 1 is unchanged. Await human re-review; no T2, P6 restart or promotion.",
+  "status": "VPD_P1_T1_TECHNICAL_RETRY_FROZEN_WAITING_HUMAN_REVIEW",
+  "p6_allowed": false,
+  "next_required_action": "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,15 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "created the isolated Figma T1 page and four 1600x900 standalone title frames",
-    "built strong ordinary baselines for 豆坊 and 茶作",
-    "built distilled B wordmarks and classified the first B readback as aesthetic failure rather than technical failure",
-    "consumed exactly one authorized B aesthetic correction pass for 豆坊 and one for 茶作",
-    "froze corrected candidates with no photography, support copy, texture, shadow or poster reintegration",
-    "created and read back a two-slide Google Drive blind-review deck with Candidate 1 / Candidate 2 labels",
-    "committed only a pre-verdict order hash; A/B mapping remains withheld"
+    "recorded both human blind-review outcomes without converting glyph failure into PASS",
+    "executed exactly one technical retry for each Candidate 2",
+    "verified Candidate 1 vectors and exported pixel hashes unchanged",
+    "verified all T1 frame geometry/background unchanged; no P6 modifications",
+    "uploaded four 1600x900 Candidate 1/2 exports and verified Drive identity metadata"
   ],
-  "updated_at": "2026-09-14T03:28:30Z",
+  "updated_at": "2026-09-14T03:53:35Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -156,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "1fa75972cf98cc50e6c159c869081b70348d6da6",
+  "input_commit": "2658121c1840b2c7cf49fd395bd96132e086d0de",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,10 +164,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "T1 pixels are frozen; no further title aesthetic correction is authorized before the human blind verdict.",
-    "Candidate mapping must remain unrevealed until the human blind verdict is recorded.",
-    "T2 support typography and P6 poster reintegration remain blocked until the T1 title gate settles.",
-    "Candidate promotion, second-family completion, Golden and Scale remain blocked."
+    "Human re-review is required; the original glyph failure remains NOT_PASS.",
+    "No further technical or aesthetic retry is authorized. If glyph correctness fails again, STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2.",
+    "T2 and P6 reintegration remain blocked; original photo bases and Candidate 1 are frozen.",
+    "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -209,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "T1_EXECUTED_WAITING_HUMAN_BLIND_VERDICT",
+    "status": "T1_TECHNICAL_RETRY_FROZEN_WAITING_HUMAN_REVIEW",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "T1_TITLE_ONLY",
     "bench_plan": {
@@ -221,13 +219,17 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
     },
-    "human_blind_verdict": null,
-    "blind_order_mapping_revealed": false,
+    "human_blind_verdict": {
+      "design_sense": "B_ROUTE_DESIGN_SENSE_ADVANTAGE",
+      "glyph_correctness": "FAIL",
+      "title_gate": "NOT_PASS"
+    },
+    "blind_order_mapping_revealed": true,
     "blind_order_commitment_sha256": "e5fdde8d13c03c8e319b28b7d36cabd4d618abbc8ddc478de717c375a5511ac0",
     "execution_evidence": {
       "path": "evidence/vpd/p1_typography_repair_v1/T1_TITLE_BENCH_EXECUTION_20260914.json",
@@ -236,6 +238,92 @@
     "drive_blind_review": {
       "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
       "presentation_id": "1vdviPhYzHyOP4BDiOZzsMGBMHSLbQfRosHal7PSiYsc"
-    }
+    },
+    "human_verdict_evidence": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_HUMAN_BLIND_VERDICT_TECHNICAL_RETRY_20260914.json",
+      "sha256": "8e1df7d2cbe8d3c94eaca3e70e78551ed1a7901d22f94b5c5a0aec8fd2dc2a89"
+    },
+    "technical_retry_receipt": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_TECHNICAL_RETRY_RECEIPT_20260914.json",
+      "sha256": "1cfa7cc1509ece5565c74d9e90f27800ad8146af20545e0812b9bbae8bfa2b1e"
+    },
+    "glyphs_before": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_GLYPHS_BEFORE.json",
+      "sha256": "e63eecb23ad956a1a2177ead8a70359737ae68ca027b4928b9df25edcb211668"
+    },
+    "glyphs_after": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_GLYPHS_AFTER.json",
+      "sha256": "1b4a43f0096e53950c0f205259f5a7a9c6e198efcacfcd11b40b1481dff6e1e8"
+    },
+    "tree_before": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_TREE_BEFORE.json",
+      "sha256": "1020a78c96bb6632230cd9ad782a428f168c0ebf0839020a3ec842f67bd8ae37"
+    },
+    "tree_after": {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_TREE_AFTER.json",
+      "sha256": "10d74774334070924471a686b9c34c778c56b19a9935ee70c9f01afd041bfabe"
+    },
+    "technical_retries_used": {
+      "豆坊": 1,
+      "茶作": 1
+    },
+    "technical_retry_budget_remaining": 0,
+    "post_retry_human_verdict": null,
+    "blind_order_commitment_recertified": false,
+    "drive_retry_exports": [
+      {
+        "label": "Doufang_Candidate_1",
+        "title": "T1_技术修复复判_豆坊_Candidate_1.png",
+        "drive_file_id": "1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r",
+        "url": "https://drive.google.com/file/d/1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r/view?usp=drivesdk",
+        "bytes": 18849,
+        "sha256": "650ce21d830e23993f49759f11a2a9ca4935b9099cc4a3ef0c9d1d5cb3841112",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "metadata_readback_verified": true
+      },
+      {
+        "label": "Chazuo_Candidate_1",
+        "title": "T1_技术修复复判_茶作_Candidate_1.png",
+        "drive_file_id": "1nAndwjIS7jv05na42aHjJc1s3yaBCoZf",
+        "url": "https://drive.google.com/file/d/1nAndwjIS7jv05na42aHjJc1s3yaBCoZf/view?usp=drivesdk",
+        "bytes": 31008,
+        "sha256": "9ec1c258da42eb1813efd3deae75ddcd73ff16d9ba282fb30d0edc3e6ba3d745",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "metadata_readback_verified": true
+      },
+      {
+        "label": "Doufang_Candidate_2",
+        "title": "T1_技术修复复判_豆坊_Candidate_2.png",
+        "drive_file_id": "1o8pA6oDmi2sUCzGty030_cxjccp7cm6R",
+        "url": "https://drive.google.com/file/d/1o8pA6oDmi2sUCzGty030_cxjccp7cm6R/view?usp=drivesdk",
+        "bytes": 23538,
+        "sha256": "e1bfd7cf21982a4e6efca639642357f50e152ef3367fd5e7fac3f277cfef854a",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "metadata_readback_verified": true
+      },
+      {
+        "label": "Chazuo_Candidate_2",
+        "title": "T1_技术修复复判_茶作_Candidate_2.png",
+        "drive_file_id": "10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz",
+        "url": "https://drive.google.com/file/d/10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz/view?usp=drivesdk",
+        "bytes": 26231,
+        "sha256": "702f62b83ecc3958c5578cce958d9ae8760fce31dc094501c6149ff874396795",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "metadata_readback_verified": true
+      }
+    ],
+    "repeat_glyph_failure_action": "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2"
   }
 }

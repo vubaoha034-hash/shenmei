@@ -31,7 +31,23 @@ ACTIONS = {
     "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
     "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH",
     "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
+    "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
 }
+
+
+def validate_t1_retry_record(record):
+    """Validate scope/budget only; this never certifies lettering or taste."""
+    require(record["status"] == "FROZEN_WAITING_HUMAN_REVIEW", "T1_RETRY_STATUS")
+    require(record["technical_retries_used"] == {"豆坊": 1, "茶作": 1}, "T1_RETRY_BUDGET")
+    require(record["additional_aesthetic_corrections"] == 0, "T1_EXTRA_AESTHETIC_RETRY")
+    require(record["original_title_gate"] == "NOT_PASS_GLYPH_CORRECTNESS_FAIL", "T1_FAILURE_RECLASSIFIED")
+    require(record["post_retry_human_verdict"] is None, "T1_PREMATURE_HUMAN_VERDICT")
+    require(record["T2_allowed"] is False and record["P6_reintegration_allowed"] is False, "T1_PREMATURE_ADVANCE")
+    require(record["candidate1_frame_ids"] == ["53:3", "53:10"] and record["candidate2_frame_ids"] == ["53:17", "53:33"], "T1_TARGET_DRIFT")
+    require(record["mutated_glyphs"] == ["55:4", "55:7"], "T1_MUTATION_SCOPE")
+    require(len(record["exports"]) == 4 and all(e["metadata_readback_verified"] and e["dimensions"] == [1600, 900] for e in record["exports"]), "T1_EXPORT_READBACK")
+    require(record["on_repeat_glyph_failure"] == "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2", "T1_STOP_RULE")
+    require(record["no_more_retry_authorized"] is True, "T1_RETRY_REOPENED")
 
 
 def _validate_commercial_ledger(root, lock, cp):
@@ -160,6 +176,26 @@ def validate_p6_composition_state(root):
         require(tr.get("blind_order_mapping_revealed") is False, "TYPOGRAPHY_BLIND_MAPPING_LEAK")
         check_ref(root, tr["bench_plan"])
         check_ref(root, tr["execution_evidence"])
+
+    elif action == "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "T1_TECHNICAL_RETRY_FROZEN_WAITING_HUMAN_REVIEW", "T1_RETRY_STATE")
+        require(tr["title_bench_render_allowed"] is False and tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "T1_RETRY_BOUNDARY")
+        require(tr["correction_passes_used"] == {"豆坊": 1, "茶作": 1}, "T1_AESTHETIC_HISTORY_CHANGED")
+        for name in ("bench_plan", "execution_evidence", "human_verdict_evidence", "technical_retry_receipt", "glyphs_before", "glyphs_after", "tree_before", "tree_after"):
+            check_ref(root, tr[name])
+        verdict = read(root, tr["human_verdict_evidence"]["path"])
+        require(verdict["glyph_correctness_verdict"] == "FAIL" and verdict["formal_title_gate"] == "NOT_PASS", "T1_HUMAN_FAIL_MISSING")
+        require(tr["human_blind_verdict"] == {"design_sense": "B_ROUTE_DESIGN_SENSE_ADVANTAGE", "glyph_correctness": "FAIL", "title_gate": "NOT_PASS"}, "T1_HUMAN_VERDICT_DRIFT")
+        validate_t1_retry_record(read(root, tr["technical_retry_receipt"]["path"]))
+        before = read(root, tr["glyphs_before"]["path"])
+        after = read(root, tr["glyphs_after"]["path"])
+        for node_id in ("53:6", "53:9", "53:13", "53:16", "55:18", "55:21"):
+            require(next(n for n in before if n["id"] == node_id) == next(n for n in after if n["id"] == node_id), "T1_FROZEN_VECTOR_CHANGED")
+        tb, ta = (read(root, tr[k]["path"]) for k in ("tree_before", "tree_after"))
+        require(tb[:2] == ta[:2], "T1_CANDIDATE1_TREE_CHANGED")
+        require([{k: v for k, v in n.items() if k != "children"} for n in tb] == [{k: v for k, v in n.items() if k != "children"} for n in ta], "T1_FRAME_CHANGED")
+        require(cp["typography_repair"] == tr, "T1_RETRY_CHECKPOINT_DRIFT")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

@@ -1,0 +1,63 @@
+{
+  "schema_version": "vpd-t1-human-blind-verdict/v1",
+  "source": "Explicit user instruction in current Codex task, 2026-09-14",
+  "starting_head": "2658121c1840b2c7cf49fd395bd96132e086d0de",
+  "feedback": [
+    {
+      "title": "豆坊",
+      "verbatim": "Candidate 2 比 Candidate 1 更有设计感，但字形结构混乱"
+    },
+    {
+      "title": "茶作",
+      "verbatim": "Candidate 2 比 Candidate 1 更有设计感，但字形结构混乱"
+    }
+  ],
+  "design_sense_verdict": "B_ROUTE_DESIGN_SENSE_ADVANTAGE",
+  "glyph_correctness_verdict": "FAIL",
+  "formal_title_gate": "NOT_PASS",
+  "candidate_mapping": {
+    "source": "Current explicit user scope + T1 Figma/bench identity; original blind nonce not available, original commitment is preserved, not recertified",
+    "doufang": {
+      "candidate1": "53:3",
+      "candidate2": "53:17"
+    },
+    "chazuo": {
+      "candidate1": "53:10",
+      "candidate2": "53:33"
+    }
+  },
+  "retry": {
+    "type": "TECHNICAL_CORRECTNESS_RETRY",
+    "maximum_per_title": 1,
+    "additional_aesthetic_budget": 0,
+    "scope": [
+      "豆坊 Candidate 2",
+      "茶作 Candidate 2"
+    ],
+    "status": "AUTHORIZED_NOT_YET_EXECUTED",
+    "reason": "wrong/unreadable characters under frozen bench technical_retry_policy and explicit user instruction"
+  },
+  "repair_intent": {
+    "doufang": "Preserve rounded modular body and unequal glyph mass; remove cross-glyph beams/cuts, restore 豆 lower paired strokes and 坊 土+方 diagonal/hook skeleton.",
+    "chazuo": "Preserve existing two heavy unequal glyph bodies; remove overlaid masks and extra beams that erase or impersonate recognition strokes."
+  },
+  "preserve": [
+    "All Candidate 1 nodes and vector bytes",
+    "All P6 nodes and photographs",
+    "All T1 parent-frame geometry/background",
+    "Previous T1 execution evidence and aesthetic-failure classification",
+    "Style Capsule V1.1 Candidate"
+  ],
+  "forbidden": [
+    "new images",
+    "photo regeneration",
+    "T2",
+    "P6 restart",
+    "extra decorative beams/blocks",
+    "pseudo-symbols",
+    "overcutting",
+    "photography/support copy/texture/shadow/poster elements"
+  ],
+  "after_retry": "Freeze and return Candidate 1 / Candidate 2 files for human re-review; no assistant PASS substitution.",
+  "repeat_glyph_failure_action": "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2"
+}

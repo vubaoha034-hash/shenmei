@@ -548,6 +548,18 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_TECHNICAL_RETRY_RECEIPT_20260914.json",
+      "sha256": "1cfa7cc1509ece5565c74d9e90f27800ad8146af20545e0812b9bbae8bfa2b1e",
+      "priority": 0,
+      "purpose": "User-authorized single Candidate2 technical correctness retry completed; human re-review pending, T2/P6 closed."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_HUMAN_BLIND_VERDICT_TECHNICAL_RETRY_20260914.json",
+      "sha256": "8e1df7d2cbe8d3c94eaca3e70e78551ed1a7901d22f94b5c5a0aec8fd2dc2a89",
+      "priority": 0,
+      "purpose": "B design-sense advantage with glyph correctness FAIL; never a formal PASS."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v1/T1_TITLE_BENCH_EXECUTION_20260914.json",
       "sha256": "78a87b67ecd11cc52d184f6d26c2d2e874c4780b881f4236c3a91ca1c4a57981",
       "priority": 0,
@@ -651,14 +663,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_TYPOGRAPHY_TITLE_BLIND_VERDICT",
+    "status": "PAUSED_FOR_T1_TECHNICAL_RETRY_HUMAN_VERDICT",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -675,7 +687,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_TYPOGRAPHY_TITLE_BENCH_WAITING_HUMAN_BLIND_VERDICT",
+    "checkpoint": "VPD_P1_T1_TECHNICAL_RETRY_FROZEN_WAITING_HUMAN_REVIEW",
     "challenge_ids": [
       "H1",
       "H2",
@@ -713,7 +725,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -725,8 +737,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 36,
-    "sha256": "8710fdb31cae935d7e6364d9e420ee6444a3d08afd80db8473f4755b296d9a79",
+    "revision": 37,
+    "sha256": "a837de4412670d3f37deb5166a67872fd5382218b03a2343a21247a69a884dc0",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

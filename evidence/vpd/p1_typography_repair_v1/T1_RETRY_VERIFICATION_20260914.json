@@ -1,0 +1,79 @@
+{
+  "schema_version": "vpd-t1-retry-verification/v1",
+  "recorded_at": "2026-09-14T03:53:35Z",
+  "scope": "T1 Candidate 2 technical correctness retry only",
+  "candidate1_pixel_sha256": {
+    "doufang": {
+      "before": "650ce21d830e23993f49759f11a2a9ca4935b9099cc4a3ef0c9d1d5cb3841112",
+      "after": "650ce21d830e23993f49759f11a2a9ca4935b9099cc4a3ef0c9d1d5cb3841112"
+    },
+    "chazuo": {
+      "before": "9ec1c258da42eb1813efd3deae75ddcd73ff16d9ba282fb30d0edc3e6ba3d745",
+      "after": "9ec1c258da42eb1813efd3deae75ddcd73ff16d9ba282fb30d0edc3e6ba3d745"
+    }
+  },
+  "candidate1_vectors_exact": true,
+  "all_T1_frames_exact": true,
+  "new_nodes": 0,
+  "other_pages_mutated": 0,
+  "drive_metadata_readback": [
+    {
+      "label": "Doufang_Candidate_1",
+      "id": "1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r",
+      "title": "T1_技术修复复判_豆坊_Candidate_1.png",
+      "mime_type": "image/png",
+      "size": "18849",
+      "parent_ids": [
+        "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9"
+      ],
+      "url": "https://drive.google.com/file/d/1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r/view?usp=drivesdk"
+    },
+    {
+      "label": "Chazuo_Candidate_1",
+      "id": "1nAndwjIS7jv05na42aHjJc1s3yaBCoZf",
+      "title": "T1_技术修复复判_茶作_Candidate_1.png",
+      "mime_type": "image/png",
+      "size": "31008",
+      "parent_ids": [
+        "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9"
+      ],
+      "url": "https://drive.google.com/file/d/1nAndwjIS7jv05na42aHjJc1s3yaBCoZf/view?usp=drivesdk"
+    },
+    {
+      "label": "Doufang_Candidate_2",
+      "id": "1o8pA6oDmi2sUCzGty030_cxjccp7cm6R",
+      "title": "T1_技术修复复判_豆坊_Candidate_2.png",
+      "mime_type": "image/png",
+      "size": "23538",
+      "parent_ids": [
+        "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9"
+      ],
+      "url": "https://drive.google.com/file/d/1o8pA6oDmi2sUCzGty030_cxjccp7cm6R/view?usp=drivesdk"
+    },
+    {
+      "label": "Chazuo_Candidate_2",
+      "id": "10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz",
+      "title": "T1_技术修复复判_茶作_Candidate_2.png",
+      "mime_type": "image/png",
+      "size": "26231",
+      "parent_ids": [
+        "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9"
+      ],
+      "url": "https://drive.google.com/file/d/10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz/view?usp=drivesdk"
+    }
+  ],
+  "tests": {
+    "state_validator": "PASS",
+    "t1_scope_unit_tests": "7 PASS",
+    "combined_regression": "43 PASS / 11 FAIL; not a full-suite pass",
+    "failure_scope": "All 11 failures are in test_vpd_p6_relay_state.py: generic validate_state dispatch falls through to legacy P2/P3 validation for p6-composition/v1 and raises NEXT_ACTION_DRIFT before the intended relay assertions. That dispatcher and test file were not changed by this T1 repair. No historical P6 test or production scope was rewritten to hide this failure.",
+    "legacy_task_lock_tests": "34 PASS",
+    "p6_relay_tests": "2 PASS / 11 FAIL",
+    "elapsed_seconds": 189.37
+  },
+  "checkpoint": 59,
+  "task_lock_revision": 37,
+  "ledger_event": "EVT-VPD-P1-T1-TECHNICAL-RETRY-20260914-001",
+  "human_verdict": "PENDING_NOT_PASS",
+  "repeat_glyph_failure_action": "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2"
+}
