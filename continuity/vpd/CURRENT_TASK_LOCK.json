@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 40,
+  "revision": 41,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 39,
-    "git_blob_sha": "ff24f0d5b23e6b9e985f6558c7e1d362962e9a06",
-    "note": "Revision 39 executed and froze wordmark-first V2 pending human review."
+    "revision": 40,
+    "git_blob_sha": "37e3380ade134474a961524439599998b6bc5a31",
+    "note": "Revision 40 recorded V2 human fail, preserved all prior gains and authorized semantic-anchor V3."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review rejects both wordmark V2 titles. The V2 coherence/legibility improvement is preserved, but authored identity remains too font-like and far below the approved Shanyeji reference. Photography and existing image-direction gains remain frozen. Typography alone advances to semantic-anchor wordmark V3, forked from the V2 final wordmarks rather than restarting from baseline.",
-  "status": "VPD_P1_WORDMARK_V2_HUMAN_FAIL_SEMANTIC_ANCHOR_V3_READY",
+  "current_stage": "Semantic-anchor wordmark V3 has been executed for 豆坊 and 茶作 by forking frozen V2 final wordmarks. Each title used one primary build and exactly one aesthetic correction. V3 outputs are now frozen for human review. Photography, P6, Candidate 1 and V2 final vectors remain unchanged.",
+  "status": "VPD_P1_SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
+  "next_required_action": "P1_WAIT_HUMAN_SEMANTIC_ANCHOR_WORDMARK_V3_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user human verdict that both V2 titles fail",
-    "preserved V2 legibility and wordmark coherence as positive evidence instead of resetting typography to baseline",
-    "preserved all current photography, P3/P4 directional gains and overall visual-direction improvements",
-    "isolated the remaining failure to insufficient authored wordmark identity and semantic graphic transformation",
-    "prepared a semantic-anchor V3 experiment that forks from V2 and changes only typography"
+    "executed semantic-anchor V3 for both 豆坊 and 茶作 by forking V2 final wordmarks",
+    "internally rejected the first V3 primary builds as not integrated enough rather than presenting them as progress",
+    "used exactly one allowed V3 aesthetic correction per title",
+    "froze final V3 outputs with no photography, P6, Candidate 1 or V2 mutation",
+    "created and independently read back a Drive three-stage review deck: baseline -> V2 -> V3"
   ],
-  "updated_at": "2026-09-14T09:07:06Z",
+  "updated_at": "2026-09-14T09:14:55Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,8 +164,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V2 outputs are human-rejected and frozen as intermediate positive/negative evidence; do not polish them in place.",
-    "T2 support typography remains blocked until both semantic-anchor V3 titles pass.",
+    "V3 outputs are frozen pending human review; no additional V3 aesthetic correction is authorized before the verdict.",
+    "T2 support typography remains blocked until both V3 titles pass.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "WORDMARK_V2_HUMAN_FAIL_SEMANTIC_ANCHOR_V3_READY",
+    "status": "SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTED_WAITING_HUMAN_REVIEW",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "SEMANTIC_ANCHOR_WORDMARK_V3",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
+    "next_required_action": "P1_WAIT_HUMAN_SEMANTIC_ANCHOR_WORDMARK_V3_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -363,10 +363,26 @@
       "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
       "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
     },
-    "wordmark_v3_render_allowed": true,
+    "wordmark_v3_render_allowed": false,
     "wordmark_v3_correction_passes_used": {
-      "豆坊": 0,
-      "茶作": 0
+      "豆坊": 1,
+      "茶作": 1
+    },
+    "wordmark_v3_human_verdict": null,
+    "wordmark_v3_execution": {
+      "path": "evidence/vpd/p1_typography_repair_v3/SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTION_20260914.json",
+      "sha256": "9b3af657d85ff2da729b66c3a148988715e8d9afd6fd0689e801a0fc2362ad86"
+    },
+    "drive_v3_review": {
+      "presentation_id": "12BWCYEZD6Oy3ef4ZhS8MuTm7gcgdIuIrYNgYCFdw8SQ",
+      "title": "T1_V3_语义锚点字标复判_20260914",
+      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+      "url": "https://docs.google.com/presentation/d/12BWCYEZD6Oy3ef4ZhS8MuTm7gcgdIuIrYNgYCFdw8SQ/edit",
+      "structure": [
+        "豆坊: frozen strong baseline -> V2 coherence stage -> V3 semantic anchor",
+        "茶作: frozen strong baseline -> V2 coherence stage -> V3 semantic anchor"
+      ],
+      "readback_verified": true
     }
   },
   "t1_final_settlement_evidence": {
@@ -384,5 +400,9 @@
   "wordmark_v2_human_fail_and_v3_plan_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
     "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
+  },
+  "semantic_anchor_wordmark_v3_execution_evidence": {
+    "path": "evidence/vpd/p1_typography_repair_v3/SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTION_20260914.json",
+    "sha256": "9b3af657d85ff2da729b66c3a148988715e8d9afd6fd0689e801a0fc2362ad86"
   }
 }
