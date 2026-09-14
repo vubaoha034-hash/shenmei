@@ -21,6 +21,7 @@ OLD_STATUS='VPD_P6_RELAY_PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY'
 NEW_STATUS='VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED'
 OLD_ACTION='RUN_LIVE_DOUFANG_B_RELAY'
 NEW_ACTION='RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD'
+REV27_BLOB='7bcdafa36ede39914747ade086fb0016a950d916'
 UPLOAD_HASH='23926508e3fc10dd61e9df883e018e721cb7cc1f'
 OBSERVED_HASH='7f57313e7409ff16d76ab867893a1229a5769962'
 NESTED_HASH='1c9cbf9a9fe1017a3f44eeed563562db8222c889'
@@ -56,16 +57,8 @@ def main():
       'image_store_contains_upload_hash':False,
       'stop_required':True,
       'frozen_source_sha256':SOURCE_SHA,
-      'controlled_retry':{
-        'receipt_status':'UPLOAD_PASS','http_status':200,'fresh_mint_targetNodeId':'12:12',
-        'source_identity_verified':True,'formal_node_changed':False
-      },
-      'nested_probe':{
-        'node_id':'44:3','parent_frame_id':'44:2',
-        'receipt':{'path':NESTED_RECEIPT_REL,'sha256':digest(ROOT/NESTED_RECEIPT_REL)},
-        'returned_imageHash':NESTED_HASH,'node_fill_hash':NESTED_HASH,
-        'image_store_present':True,'verdict':'PASS_NESTED_TARGET_PLACEMENT'
-      },
+      'controlled_retry':{'receipt_status':'UPLOAD_PASS','http_status':200,'fresh_mint_targetNodeId':'12:12','source_identity_verified':True,'formal_node_changed':False},
+      'nested_probe':{'node_id':'44:3','parent_frame_id':'44:2','receipt':{'path':NESTED_RECEIPT_REL,'sha256':digest(ROOT/NESTED_RECEIPT_REL)},'returned_imageHash':NESTED_HASH,'node_fill_hash':NESTED_HASH,'image_store_present':True,'verdict':'PASS_NESTED_TARGET_PLACEMENT'},
       'established':[
         'A fresh node-targeted mint explicitly returned targetNodeId 12:12 for the formal controlled retry.',
         'The frozen Doufang B source identity matched the freeze SHA-256 and relay returned HTTP 200 / UPLOAD_PASS.',
@@ -84,26 +77,15 @@ def main():
     write(ROOT/BLOCKER_REL,blocker); blocker_sha=digest(ROOT/BLOCKER_REL)
 
     lock['revision']=28
-    lock['preserved_prior_revision']={'revision':27,'git_blob_sha':None,'note':'Revision 27 authorized exactly one controlled Doufang B retry after same-file placement-protocol verification; that retry has now been consumed.'}
+    lock['preserved_prior_revision']={'revision':27,'git_blob_sha':REV27_BLOB,'note':'Revision 27 authorized exactly one controlled Doufang B retry after same-file placement-protocol verification; that retry has now been consumed.'}
     lock['p6_integrated_design']['status']='UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED'
     lock['figma_upload_relay']['status']='UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED'
     lock['current_stage']='The single authorized Doufang B controlled retry was consumed: fresh upload_assets mint explicitly targeted 12:12 and relay returned HTTP 200 / UPLOAD_PASS for the frozen source, yet the returned imageHash remained absent from the Figma file image store and node 12:12 retained the old hash. A Frame-nested scratch probe 44:3 succeeded end-to-end, ruling out generic nested-node placement failure. Formal reupload is stopped; Tea A/B remain untouched. Next diagnosis must use the exact frozen Doufang B source on an isolated scratch target, never the formal node.'
     lock['status']=NEW_STATUS; lock['next_required_action']=NEW_ACTION
-    lock['completed_this_revision']=[
-      'consumed the one authorized controlled Doufang B retry with fresh targetNodeId 12:12',
-      'verified frozen source SHA-256 and HTTP 200 / UPLOAD_PASS receipt',
-      'verified returned formal imageHash is absent from current file image store and 12:12 retained old hash',
-      'verified Frame-nested scratch target 44:3 placement passes end-to-end',
-      'ruled out generic nested-node placement failure and restored fail-closed authority'
-    ]
+    lock['completed_this_revision']=['consumed the one authorized controlled Doufang B retry with fresh targetNodeId 12:12','verified frozen source SHA-256 and HTTP 200 / UPLOAD_PASS receipt','verified returned formal imageHash is absent from current file image store and 12:12 retained old hash','verified Frame-nested scratch target 44:3 placement passes end-to-end','ruled out generic nested-node placement failure and restored fail-closed authority']
     lock['updated_at']=NOW
     lock['input_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    lock['blockers']=[
-      'The single authorized formal Doufang B retry was consumed without observable Figma file commit/placement.',
-      'No further formal 12:12 reupload is authorized until exact-source scratch diagnosis separates source-specific from node-specific failure.',
-      'Tea A/B remain blocked until Doufang B binding passes.',
-      'Historical ledger prefix preserved with three known event-hash defects; not recertified.'
-    ]
+    lock['blockers']=['The single authorized formal Doufang B retry was consumed without observable Figma file commit/placement.','No further formal 12:12 reupload is authorized until exact-source scratch diagnosis separates source-specific from node-specific failure.','Tea A/B remain blocked until Doufang B binding passes.','Historical ledger prefix preserved with three known event-hash defects; not recertified.']
     lock.pop('relay_placement_protocol_probe',None)
     lock['relay_placement_blocker']={'path':BLOCKER_REL,'sha256':blocker_sha}
     lock['diagnostic_next_required_action']='UPLOAD_EXACT_FROZEN_DOUFANG_B_SOURCE_TO_ISOLATED_SCRATCH_TARGET_NO_FORMAL_NODE_WRITE'
