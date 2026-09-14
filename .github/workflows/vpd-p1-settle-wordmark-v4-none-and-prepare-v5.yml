@@ -1,0 +1,39 @@
+name: VPD P1 Settle Wordmark V4 None And Prepare V5
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - 'evidence/vpd/p1_typography_repair_v5/TRIGGER_SETTLE_WORDMARK_V4_NONE_AND_PREPARE_V5.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Settle V4 NONE human verdict and prepare V5
+        run: python scripts/vpd_settle_wordmark_v4_none_and_prepare_v5.py
+
+      - name: Validate new state
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist V4 settlement and V5 preparation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add continuity/vpd/CURRENT_TASK_LOCK.json continuity/vpd/LATEST_CHECKPOINT.json continuity/vpd/state_ledger/commercial_design_pipeline.jsonl PROJECT_CONTROL_ADAPTER.json visual_memory/vpd_p6_composition_state.py evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit"
+            exit 0
+          fi
+          git commit -m "Record V4 human none and prepare generative Wordmark V5"
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
