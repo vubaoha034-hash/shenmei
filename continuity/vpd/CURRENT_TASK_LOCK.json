@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 33,
+  "revision": 34,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 32,
-    "git_blob_sha": "33d421bddee64dc4effb66dc0e3d472d26ea554d",
-    "note": "Revision 32 completed the one allowed correction pass and opened final pixel/editability validation without claiming commercial acceptance."
+    "revision": 33,
+    "git_blob_sha": "25c5186e943bccffcc009dbc3c65d74e5d928632",
+    "note": "Revision 33 completed P6 final pixel/editability validation and waited for the human set verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
+    "status": "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -95,7 +95,8 @@
     },
     "final_pixel_validation_completed": true,
     "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY",
-    "formal_human_set_verdict": null
+    "formal_human_set_verdict": "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED",
+    "human_feedback_scope": "BOTTOM_IMAGES_ACCEPTABLE_ENOUGH; TYPOGRAPHY_COMPLETELY_FAILS; NO_VISIBLE_DISTILLATION_DESIGN_EFFECT"
   },
   "figma_upload_relay": {
     "version": "V1",
@@ -119,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "P6 final pixel/editability validation is complete. Editable vector/text structure and clean full-resolution rendering are verified, but the formal export hash chain is incomplete and assistant pre-review recommends FAIL/HOLD on typography, photo-type integration, brand distinctiveness and final commercial pixel quality. Human set verdict is now the only next action; no second correction pass is authorized.",
-  "status": "VPD_P6_FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
+  "current_stage": "Human P6 set verdict is FAIL: the base photography is acceptable enough to retain, while the typography is completely unacceptable and does not visibly demonstrate distillation. The failure is returned to P1 typography-distillation mechanism design. Existing P6 frames are frozen as negative evidence; no photo rerender and no second P6 correction pass are authorized.",
+  "status": "VPD_P6_HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED",
   "p6_allowed": true,
-  "next_required_action": "P6_WAIT_HUMAN_SET_VERDICT",
+  "next_required_action": "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -135,17 +136,16 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "verified four 360x480 thumbnail renders, preserved four 1200x1600 normal readbacks, and verified four 2400x3200 detail renders",
-    "verified all four primary titles remain editable two-vector glyph constructions and all support copy remains editable text",
-    "verified exact copy and photo-node identities remain present with no clipping or technical glyph failure",
-    "recorded four formal PNG export identities by frame/dimensions/reported byte size without committing short-lived URLs",
-    "recorded formal export SHA-256 chain as incomplete because this runtime could not materialize short-lived Figma export URLs",
-    "completed non-blind assistant commercial pre-review with FAIL/HOLD recommendation while preserving human final authority"
+    "recorded the user's formal P6 human set FAIL verdict",
+    "isolated the failure to typography distillation/design rather than the retained base photography",
+    "confirmed the implementation violated the saved warning that Figma composition is not itself a special Chinese lettering generator",
+    "froze the four failed P6 compositions as negative evidence and preserved their consumed correction budget",
+    "returned only the typography mechanism to a bounded P1 typography-only repair bench before any future poster reintegration"
   ],
-  "updated_at": "2026-09-14T02:53:51Z",
+  "updated_at": "2026-09-14T03:09:27Z",
   "workflow": {
     "version": "1.1",
-    "focus_stage": "P6",
+    "focus_stage": "P1",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "document": {
       "path": "VPD_PROJECT_ROADMAP.md",
@@ -164,9 +164,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Human set verdict is required before any P6 aesthetic/commercial acceptance or rejection is final.",
-    "No second aesthetic correction pass is authorized under the frozen equal-budget comparison.",
-    "Formal commercial provenance pass is unavailable until a durable final-export SHA-256 chain exists.",
+    "Current P6 typography is formally human-rejected and cannot be promoted or polished further in place.",
+    "No second P6 aesthetic correction pass is authorized.",
+    "Typography-only distilled-vs-ordinary baseline evidence must show visible benefit before poster reintegration.",
     "Candidate promotion, second-family completion, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -201,5 +201,16 @@
   "final_validation_evidence": {
     "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FINAL_PIXEL_EDITABILITY_VALIDATION_20260914.json",
     "sha256": "d0a8f97d1fa2f845c0c4cb2fe37246defecbc20efb6024c7246192c1365d8543"
+  },
+  "human_set_verdict_evidence": {
+    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_HUMAN_SET_VERDICT_TYPOGRAPHY_FAIL_20260914.json",
+    "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
+  },
+  "typography_repair": {
+    "status": "REQUIRED_NOT_STARTED",
+    "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
+    "preserve_photo_bases": true,
+    "failed_p6_frames_are_negative_evidence": true,
+    "next_required_action": "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH"
   }
 }

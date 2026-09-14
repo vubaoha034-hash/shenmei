@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 55,
-  "recorded_at": "2026-09-14T02:53:51Z",
+  "sequence": 56,
+  "recorded_at": "2026-09-14T03:09:27Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P6 final pixel/editability validation is complete. Editable vector/text structure and clean full-resolution rendering are verified, but the formal export hash chain is incomplete and assistant pre-review recommends FAIL/HOLD on typography, photo-type integration, brand distinctiveness and final commercial pixel quality. Human set verdict is now the only next action; no second correction pass is authorized.",
+  "current_focus": "Human P6 set verdict is FAIL: the base photography is acceptable enough to retain, while the typography is completely unacceptable and does not visibly demonstrate distillation. The failure is returned to P1 typography-distillation mechanism design. Existing P6 frames are frozen as negative evidence; no photo rerender and no second P6 correction pass are authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -40,22 +40,24 @@
     "p6_all_four_formal_photo_nodes_direct_readback_confirmed",
     "p6_equal_budget_composition_review_round1_completed",
     "p6_single_correction_pass_per_poster",
-    "p6_final_pixel_and_editability_validation"
+    "p6_final_pixel_and_editability_validation",
+    "human_set_verdict"
   ],
   "incomplete": [
-    "human_set_verdict",
+    "p1_typography_only_distillation_repair_bench",
+    "p6_reintegration_after_typography_repair",
     "candidate_promotion",
     "second_style_family_validation",
     "golden",
     "scale"
   ],
   "blocked": [
-    "Human set verdict is required before any P6 aesthetic/commercial acceptance or rejection is final.",
-    "No second aesthetic correction pass is authorized under the frozen equal-budget comparison.",
-    "Formal commercial provenance pass is unavailable until a durable final-export SHA-256 chain exists.",
+    "Current P6 typography is formally human-rejected and cannot be promoted or polished further in place.",
+    "No second P6 aesthetic correction pass is authorized.",
+    "Typography-only distilled-vs-ordinary baseline evidence must show visible benefit before poster reintegration.",
     "Candidate promotion, second-family completion, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P6_WAIT_HUMAN_SET_VERDICT",
+  "next_required_action": "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -98,7 +100,8 @@
       "12:27": 1
     },
     "final_pixel_validation_completed": true,
-    "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY"
+    "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY",
+    "formal_human_set_verdict": "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED"
   },
   "relay": {
     "version": "V1",
@@ -122,10 +125,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
+  "status": "VPD_P6_HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "a07e77c43fa6c2fc9c36c213e23624dcb5682666376360432cd3e6e4fc925da6"
+    "sha256": "034d2af269a0d0545c635ead64bcc65fe407376f196dd71cbdf4a8513c971819"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -136,7 +139,7 @@
       "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
     },
     "p6_integrated_design": {
-      "status": "FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED"
+      "status": "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED"
     },
     "candidate_promotion": "BLOCKED"
   },
@@ -146,8 +149,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P6-FINAL-VALIDATION-COMPLETE-20260914-001",
-      "event_hash": "9271d641af1c8406302a3f4fa91b9f5132a362ba40c8b6fa003a35ea645da530"
+      "event_id": "EVT-VPD-P6-HUMAN-TYPOGRAPHY-FAIL-20260914-001",
+      "event_hash": "000704c43fb6cb4fac48be7ee54d01b243626a96150bf6641f3124c7a97e8809"
     }
   }
 }
