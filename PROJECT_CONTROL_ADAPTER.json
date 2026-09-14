@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
+      "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f",
+      "priority": 0,
+      "purpose": "Current wordmark-first V2 execution receipt; candidates frozen for human review with prior image improvements preserved."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
       "sha256": "a4dc8c2ede13fd248f3d70ba2e68d78eb4a404950af8cadad9ff44e9c2ef1fcf",
       "priority": 0,
@@ -675,14 +681,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_WORDMARK_SYSTEM_REPAIR_V2",
+    "status": "PAUSED_FOR_P1_WORDMARK_V2_HUMAN_REVIEW",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+    "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -699,7 +705,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_T1_FAIL_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY",
+    "checkpoint": "VPD_P1_WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
     "challenge_ids": [
       "H1",
       "H2",
@@ -737,7 +743,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+    "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -749,8 +755,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 38,
-    "sha256": "0f1978db08d1021e92c006ba8c66674b1825631a86aa19de76718cae41d9dde0",
+    "revision": 39,
+    "sha256": "ece5d50a623716045831d75ed7fbf3f79fe134f2400bdfffe387e865e986e0c2",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

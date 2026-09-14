@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 60,
-  "recorded_at": "2026-09-14T05:08:20Z",
+  "sequence": 61,
+  "recorded_at": "2026-09-14T05:14:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "T1 technical retry is human-rejected: readability improved but wordmark coherence failed and the result remains far below the approved mother reference. The current typography compiler is stopped. Photography, directional photo gains and the improved overall visual direction are explicitly preserved. Only the typography layer moves forward into the prepared wordmark-first V2 experiment; T2 and P6 reintegration remain blocked.",
+  "current_focus": "Wordmark-first V2 has been executed for 豆坊 and 茶作 with frozen Candidate 1 baselines. The first V2 build was rejected internally as too font-like; exactly one aesthetic correction per title was then used. Final V2 Candidate 2 frames are frozen and awaiting human review. Photography/P6 remain untouched.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -47,10 +47,11 @@
     "p1_typography_title_blind_human_verdict",
     "p1_t1_candidate2_technical_correctness_retry",
     "p1_t1_retry_drive_exports_readback",
-    "p1_t1_technical_retry_human_verdict"
+    "p1_t1_technical_retry_human_verdict",
+    "p1_wordmark_system_repair_v2_execution"
   ],
   "incomplete": [
-    "p1_wordmark_system_repair_v2_execution",
+    "p1_wordmark_system_repair_v2_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -59,12 +60,12 @@
     "scale"
   ],
   "blocked": [
-    "The old T1 typography compiler is stopped; no additional technical or aesthetic retry is authorized on the failed Candidate 2 outputs.",
-    "T2 support typography remains blocked until wordmark-first V2 passes both 豆坊 and 茶作.",
-    "P6 reintegration remains blocked; retained photography must not be regenerated merely because typography failed.",
+    "V2 candidates are frozen pending human review; no additional aesthetic correction is authorized before the verdict.",
+    "T2 support typography remains blocked until both V2 titles pass.",
+    "P6 reintegration and photo regeneration remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+  "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -132,10 +133,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_T1_FAIL_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY",
+  "status": "VPD_P1_WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "0f1978db08d1021e92c006ba8c66674b1825631a86aa19de76718cae41d9dde0"
+    "sha256": "ece5d50a623716045831d75ed7fbf3f79fe134f2400bdfffe387e865e986e0c2"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -156,21 +157,28 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-T1-FINAL-FAIL-WORDMARK-V2-20260914-001",
-      "event_hash": "77c9dbc7fed820cf01f6578745485acbb69a52e3bbf5c22b378574a60f36e2e9"
+      "event_id": "EVT-VPD-P1-WORDMARK-V2-EXECUTED-20260914-001",
+      "event_hash": "fa28faa3e304555aa882fdf16d4b068837ece92fef0fa7be9567d292b33a62dd"
     }
   },
   "typography_repair": {
-    "status": "T1_FAILED_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY",
+    "status": "WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
     "phase": "WORDMARK_SYSTEM_REPAIR_V2",
-    "wordmark_v2_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
-      "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
+    "wordmark_v2_execution": {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
+      "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
     },
-    "old_compiler": "STOPPED",
+    "drive_review": {
+      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+      "presentation_id": "1HGpfLCzBad8aqgzBCqJwSiXQo-uOJY5EsUb_dINrojE",
+      "title": "T1_V2_字标复判_20260914",
+      "contains": [
+        "豆坊 frozen Candidate 1 vs V2 Candidate 2",
+        "茶作 frozen Candidate 1 vs V2 Candidate 2"
+      ]
+    },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "preserve_photo_bases": true,
-    "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2"
+    "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT"
   }
 }

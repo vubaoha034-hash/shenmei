@@ -33,6 +33,7 @@ ACTIONS = {
     "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
     "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
     "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+    "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
 }
 
 
@@ -210,6 +211,16 @@ def validate_p6_composition_state(root):
         require(settlement["formal_verdict"] == "FAIL_CURRENT_TYPOGRAPHY_COMPILER_WORDMARK_COHERENCE", "WORDMARK_V2_SETTLEMENT")
         require(settlement["T2_allowed"] is False and settlement["P6_reintegration_allowed"] is False, "WORDMARK_V2_PREMATURE_ADVANCE")
         require(settlement["preservation_lock"]["photo_bases"] is True and settlement["preservation_lock"]["overall_visual_direction"] is True, "WORDMARK_V2_PRESERVATION_LOST")
+
+    elif action == "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW", "WORDMARK_V2_WAIT_STATE")
+        require(tr["wordmark_v2_render_allowed"] is False, "WORDMARK_V2_SHOULD_BE_FROZEN")
+        require(tr["wordmark_v2_correction_passes_used"] == {"豆坊": 1, "茶作": 1}, "WORDMARK_V2_BUDGET")
+        require(tr["wordmark_v2_human_verdict"] is None, "WORDMARK_V2_PREMATURE_VERDICT")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V2_PREMATURE_ADVANCE")
+        for name in ("final_t1_settlement", "wordmark_v2_plan", "wordmark_v2_execution"):
+            check_ref(root, tr[name])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

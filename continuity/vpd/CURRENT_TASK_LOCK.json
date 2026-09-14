@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 38,
+  "revision": 39,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 37,
-    "git_blob_sha": "8d5a4552d33289fb956537420f043fd284f7baa4",
-    "note": "Revision 37 froze the one technical correctness retry and awaited human re-review."
+    "revision": 38,
+    "git_blob_sha": "76207d3584f3b633917e0b323cb5523e4332c080",
+    "note": "Revision 38 stopped the failed T1 compiler, preserved image gains and opened wordmark-first V2."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "T1 technical retry is human-rejected: readability improved but wordmark coherence failed and the result remains far below the approved mother reference. The current typography compiler is stopped. Photography, directional photo gains and the improved overall visual direction are explicitly preserved. Only the typography layer moves forward into the prepared wordmark-first V2 experiment; T2 and P6 reintegration remain blocked.",
-  "status": "VPD_P1_T1_FAIL_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY",
+  "current_stage": "Wordmark-first V2 has been executed for 豆坊 and 茶作 with frozen Candidate 1 baselines. The first V2 build was rejected internally as too font-like; exactly one aesthetic correction per title was then used. Final V2 Candidate 2 frames are frozen and awaiting human review. Photography/P6 remain untouched.",
+  "status": "VPD_P1_WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+  "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's final human rejection of the T1 technical retry",
-    "classified the failure as wordmark-system coherence and insufficient authored quality rather than total-project failure",
-    "stopped the current per-glyph typography compiler with no additional retry budget",
-    "froze and preserved current photography, directional gains and improved overall visual direction",
-    "prepared a wordmark-first V2 typography experiment that changes only the failed typography layer"
+    "executed wordmark-first V2 on a new isolated Figma page",
+    "rejected the first primary build internally instead of presenting a known weak draft as progress",
+    "used exactly one allowed V2 aesthetic correction for 豆坊 and one for 茶作",
+    "froze the corrected V2 candidates with no photography/P6/baseline mutation",
+    "created and moved a two-slide Drive review deck comparing frozen baselines to V2 candidates"
   ],
-  "updated_at": "2026-09-14T05:08:20Z",
+  "updated_at": "2026-09-14T05:14:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,9 +164,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "The old T1 typography compiler is stopped; no additional technical or aesthetic retry is authorized on the failed Candidate 2 outputs.",
-    "T2 support typography remains blocked until wordmark-first V2 passes both 豆坊 and 茶作.",
-    "P6 reintegration remains blocked; retained photography must not be regenerated merely because typography failed.",
+    "V2 candidates are frozen pending human review; no additional aesthetic correction is authorized before the verdict.",
+    "T2 support typography remains blocked until both V2 titles pass.",
+    "P6 reintegration and photo regeneration remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "T1_FAILED_CURRENT_COMPILER_STOPPED_WORDMARK_V2_READY",
+    "status": "WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "WORDMARK_SYSTEM_REPAIR_V2",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
+    "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -328,7 +328,7 @@
       }
     ],
     "repeat_glyph_failure_action": "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2",
-    "wordmark_v2_render_allowed": true,
+    "wordmark_v2_render_allowed": false,
     "final_t1_settlement": {
       "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
       "sha256": "a4dc8c2ede13fd248f3d70ba2e68d78eb4a404950af8cadad9ff44e9c2ef1fcf"
@@ -336,6 +336,24 @@
     "wordmark_v2_plan": {
       "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
       "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
+    },
+    "wordmark_v2_correction_passes_used": {
+      "豆坊": 1,
+      "茶作": 1
+    },
+    "wordmark_v2_human_verdict": null,
+    "wordmark_v2_execution": {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
+      "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
+    },
+    "drive_wordmark_v2_review": {
+      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
+      "presentation_id": "1HGpfLCzBad8aqgzBCqJwSiXQo-uOJY5EsUb_dINrojE",
+      "title": "T1_V2_字标复判_20260914",
+      "contains": [
+        "豆坊 frozen Candidate 1 vs V2 Candidate 2",
+        "茶作 frozen Candidate 1 vs V2 Candidate 2"
+      ]
     }
   },
   "t1_final_settlement_evidence": {
@@ -345,5 +363,9 @@
   "wordmark_v2_plan": {
     "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
     "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
+  },
+  "wordmark_v2_execution_evidence": {
+    "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
+    "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
   }
 }
