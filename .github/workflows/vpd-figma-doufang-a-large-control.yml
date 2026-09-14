@@ -5,7 +5,7 @@ on:
     branches:
       - visual-program-distillation-v2-photography-design-20260814
     paths:
-      - "evidence/vpd/figma_upload_relay/doufang_a_control_triggers/*.cms.b64"
+      - "evidence/vpd/figma_upload_relay/doufang_a_control_triggers/*-02.cms.b64"
 
 permissions:
   contents: write
@@ -16,6 +16,7 @@ jobs:
     env:
       RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
       TARGET_NODE: "44:3"
+      SOURCE_NODE: "12:4"
       EXPECTED_SOURCE_SHA256: 45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909
     steps:
       - uses: actions/checkout@v4
@@ -30,19 +31,31 @@ jobs:
           umask 077
           printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-key.pem
           openssl pkey -in /tmp/vpd-key.pem -check -noout >/dev/null
-      - name: Execute Doufang A large-image scratch control
+      - name: Execute Doufang A bound-node PNG scratch control
         id: relay
         shell: bash
         run: |
           set -uo pipefail
           failures=0; found=0
           shopt -s nullglob
-          for t in evidence/vpd/figma_upload_relay/doufang_a_control_triggers/*.cms.b64; do
+          for t in evidence/vpd/figma_upload_relay/doufang_a_control_triggers/*-02.cms.b64; do
             found=1
             base="$(basename "$t" .cms.b64)"
             der="/tmp/$base.cms"; receipt="evidence/vpd/figma_upload_relay/receipts/$base.json"
             base64 --decode "$t" > "$der" || { failures=$((failures+1)); continue; }
-            if python scripts/vpd_figma_remote_source_control_relay.py --trigger "$der" --cert evidence/vpd/figma_upload_relay/relay-cert.pem --private-key /tmp/vpd-key.pem --receipt "$receipt" --expected-node-id "$TARGET_NODE" --expected-source-sha256 "$EXPECTED_SOURCE_SHA256"; then git rm -f "$t"; else failures=$((failures+1)); fi
+            if python scripts/vpd_figma_remote_source_control_relay.py \
+              --trigger "$der" \
+              --cert evidence/vpd/figma_upload_relay/relay-cert.pem \
+              --private-key /tmp/vpd-key.pem \
+              --receipt "$receipt" \
+              --expected-node-id "$TARGET_NODE" \
+              --expected-source-sha256 "$EXPECTED_SOURCE_SHA256" \
+              --expected-source-node-id "$SOURCE_NODE" \
+              --expected-format png; then
+              git rm -f "$t"
+            else
+              failures=$((failures + 1))
+            fi
             [ ! -f "$receipt" ] || git add "$receipt"
           done
           test "$found" -eq 1
@@ -52,7 +65,11 @@ jobs:
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --cached --quiet; then git commit -m "Record Doufang A large-image scratch control receipt"; git pull --rebase origin visual-program-distillation-v2-photography-design-20260814; git push origin HEAD:visual-program-distillation-v2-photography-design-20260814; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Doufang A bound-node PNG scratch control receipt"
+            git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+            git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
+          fi
       - name: Enforce success
         if: steps.relay.outputs.failures != '0'
         run: exit 1
