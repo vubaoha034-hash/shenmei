@@ -1,0 +1,49 @@
+{
+  "schema_version": "vpd-p6-relay-placement-blocker/v2",
+  "status": "BLOCKED_AFTER_CONTROLLED_RETRY",
+  "scope": "FORMAL_DOUFANG_B_RETRY_CONSUMED_NO_FURTHER_FORMAL_REUPLOAD",
+  "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "node_id": "12:12",
+  "receipt": {
+    "path": "evidence/vpd/figma_upload_relay/receipts/P6-DOUFANG-B-LIVE-20260914-03.json",
+    "sha256": "3ac90c164116784927277df4192cf1967937b3b5d309cf14bc3dac68f1b09c1a"
+  },
+  "upload_imageHash": "23926508e3fc10dd61e9df883e018e721cb7cc1f",
+  "observed_imageHash": "7f57313e7409ff16d76ab867893a1229a5769962",
+  "image_store_contains_upload_hash": false,
+  "stop_required": true,
+  "frozen_source_sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+  "controlled_retry": {
+    "receipt_status": "UPLOAD_PASS",
+    "http_status": 200,
+    "fresh_mint_targetNodeId": "12:12",
+    "source_identity_verified": true,
+    "formal_node_changed": false
+  },
+  "nested_probe": {
+    "node_id": "44:3",
+    "parent_frame_id": "44:2",
+    "receipt": {
+      "path": "evidence/vpd/figma_upload_relay/receipts/P6-NESTED-PLACEMENT-PROBE-20260914-01.json",
+      "sha256": "84acd1d314cdf913465196c9bc70545e8beed760f9b9ac4e281ca01d05e23571"
+    },
+    "returned_imageHash": "1c9cbf9a9fe1017a3f44eeed563562db8222c889",
+    "node_fill_hash": "1c9cbf9a9fe1017a3f44eeed563562db8222c889",
+    "image_store_present": true,
+    "verdict": "PASS_NESTED_TARGET_PLACEMENT"
+  },
+  "established": [
+    "A fresh node-targeted mint explicitly returned targetNodeId 12:12 for the formal controlled retry.",
+    "The frozen Doufang B source identity matched the freeze SHA-256 and relay returned HTTP 200 / UPLOAD_PASS.",
+    "The returned formal imageHash was still absent from the current Figma file image store and node 12:12 retained its previous imageHash.",
+    "A separate Frame-nested diagnostic target 44:3 successfully committed its probe image into the same Figma file image store and updated its IMAGE/FILL hash.",
+    "Therefore generic nested-node placement failure is ruled out; the unresolved cause is specific to the Doufang B source path or formal node 12:12 state/semantics."
+  ],
+  "not_established": [
+    "Whether the failure is caused by properties/history of formal node 12:12.",
+    "Whether the 422265-byte JPEG source triggers a Figma MCP placement defect despite transport acceptance.",
+    "Whether a backend transaction identity/caching defect maps repeated identical source bytes to the same noncommitted imageHash."
+  ],
+  "next_diagnostic": "UPLOAD_EXACT_FROZEN_DOUFANG_B_SOURCE_TO_ISOLATED_SCRATCH_TARGET_NO_FORMAL_NODE_WRITE",
+  "recorded_at": "2026-09-14T01:27:00Z"
+}

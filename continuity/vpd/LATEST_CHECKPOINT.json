@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 49,
-  "recorded_at": "2026-09-13T21:41:00Z",
+  "sequence": 50,
+  "recorded_at": "2026-09-14T01:27:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "An isolated node-targeted placement probe in the same Figma file passed end-to-end: relay HTTP 200, returned imageHash present in the file image store, and target node 40:3 fill hash matched. The formal node 12:12 remains unchanged. One controlled Doufang B retry is now authorized with nodeIds:[12:12]; Tea A/B remain gated until Doufang B binding passes.",
+  "current_focus": "The single authorized Doufang B controlled retry was consumed: fresh upload_assets mint explicitly targeted 12:12 and relay returned HTTP 200 / UPLOAD_PASS for the frozen source, yet the returned imageHash remained absent from the Figma file image store and node 12:12 retained the old hash. A Frame-nested scratch probe 44:3 succeeded end-to-end, ruling out generic nested-node placement failure. Formal reupload is stopped; Tea A/B remain untouched. Next diagnosis must use the exact frozen Doufang B source on an isolated scratch target, never the formal node.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -31,7 +31,9 @@
     "install_rotated_repository_secret_VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
     "p6_doufang_B_relay_transport_upload_pass",
     "p6_doufang_B_placement_mismatch_recorded",
-    "p6_placement_protocol_probe_pass"
+    "p6_placement_protocol_probe_pass",
+    "p6_doufang_B_controlled_retry_consumed_placement_failed",
+    "p6_nested_target_probe_pass"
   ],
   "incomplete": [
     "live_relay_test_doufang_B_to_node_12_12",
@@ -47,11 +49,12 @@
     "scale"
   ],
   "blocked": [
-    "Doufang B formal binding remains incomplete until the newly authorized controlled retry passes full placement verification.",
-    "Tea A/B remain blocked until ordered Doufang B binding passes.",
+    "The single authorized formal Doufang B retry was consumed without observable Figma file commit/placement.",
+    "No further formal 12:12 reupload is authorized until exact-source scratch diagnosis separates source-specific from node-specific failure.",
+    "Tea A/B remain blocked until Doufang B binding passes.",
     "Historical ledger prefix preserved with three known event-hash defects; not recertified."
   ],
-  "next_required_action": "RUN_LIVE_DOUFANG_B_RELAY",
+  "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -89,7 +92,7 @@
   },
   "relay": {
     "version": "V1",
-    "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
+    "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
@@ -109,10 +112,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_RELAY_PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY",
+  "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "2891c52acbbe3066232f073d2b3331b44c0e1401a0b90fbf9d61fcb70f61daeb"
+    "sha256": "7a70d2a2241bca9541cba6e14a3723a85db68e5e1d5735fc770e8e4fa5752ff0"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -123,7 +126,7 @@
       "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
     },
     "p6_integrated_design": {
-      "status": "PLACEMENT_PROTOCOL_VERIFIED_DOUFANG_B_RETRY_READY"
+      "status": "UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED"
     },
     "candidate_promotion": "BLOCKED"
   },
@@ -133,8 +136,8 @@
   },
   "ledger_tails": {
     "system_validation": {
-      "event_id": "EVT-VPD-P6-PLACEMENT-PROTOCOL-PROBE-PASS-20260914-001",
-      "event_hash": "4abdff8049d21afe05a3497962a1536efe4597da13e2077bb1cd71ceb20035de"
+      "event_id": "EVT-VPD-P6-CONTROLLED-RETRY-PLACEMENT-FAILED-20260914-001",
+      "event_hash": "8460c4b87382f950098312f7002cecc53e218b3d375641bbed958d0ec23af63d"
     }
   }
 }
