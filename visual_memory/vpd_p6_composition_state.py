@@ -34,6 +34,7 @@ ACTIONS = {
     "P1_WAIT_HUMAN_TITLE_TECHNICAL_RETRY_VERDICT",
     "P1_EXECUTE_WORDMARK_SYSTEM_REPAIR_V2",
     "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
+    "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
 }
 
 
@@ -221,6 +222,16 @@ def validate_p6_composition_state(root):
         require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V2_PREMATURE_ADVANCE")
         for name in ("final_t1_settlement", "wordmark_v2_plan", "wordmark_v2_execution"):
             check_ref(root, tr[name])
+
+    elif action == "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "WORDMARK_V2_HUMAN_FAIL_SEMANTIC_ANCHOR_V3_READY", "WORDMARK_V3_READY_STATE")
+        require(tr["phase"] == "SEMANTIC_ANCHOR_WORDMARK_V3", "WORDMARK_V3_PHASE")
+        require(tr["wordmark_v3_render_allowed"] is True, "WORDMARK_V3_RENDER_NOT_OPEN")
+        require(tr["support_typography_bench_allowed"] is False and tr["poster_reintegration_allowed"] is False, "WORDMARK_V3_PREMATURE_ADVANCE")
+        require(tr["wordmark_v2_human_verdict"] == {"豆坊":"FAIL","茶作":"FAIL","overall":"FAIL_CONTINUE_TYPOGRAPHY_ONLY"}, "WORDMARK_V2_HUMAN_VERDICT_DRIFT")
+        check_ref(root, tr["wordmark_v2_execution"])
+        check_ref(root, tr["wordmark_v2_human_fail_and_v3_plan"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

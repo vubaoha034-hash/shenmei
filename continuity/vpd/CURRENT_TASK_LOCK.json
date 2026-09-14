@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 39,
+  "revision": 40,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 38,
-    "git_blob_sha": "76207d3584f3b633917e0b323cb5523e4332c080",
-    "note": "Revision 38 stopped the failed T1 compiler, preserved image gains and opened wordmark-first V2."
+    "revision": 39,
+    "git_blob_sha": "ff24f0d5b23e6b9e985f6558c7e1d362962e9a06",
+    "note": "Revision 39 executed and froze wordmark-first V2 pending human review."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Wordmark-first V2 has been executed for 豆坊 and 茶作 with frozen Candidate 1 baselines. The first V2 build was rejected internally as too font-like; exactly one aesthetic correction per title was then used. Final V2 Candidate 2 frames are frozen and awaiting human review. Photography/P6 remain untouched.",
-  "status": "VPD_P1_WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
+  "current_stage": "Human review rejects both wordmark V2 titles. The V2 coherence/legibility improvement is preserved, but authored identity remains too font-like and far below the approved Shanyeji reference. Photography and existing image-direction gains remain frozen. Typography alone advances to semantic-anchor wordmark V3, forked from the V2 final wordmarks rather than restarting from baseline.",
+  "status": "VPD_P1_WORDMARK_V2_HUMAN_FAIL_SEMANTIC_ANCHOR_V3_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
+  "next_required_action": "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "executed wordmark-first V2 on a new isolated Figma page",
-    "rejected the first primary build internally instead of presenting a known weak draft as progress",
-    "used exactly one allowed V2 aesthetic correction for 豆坊 and one for 茶作",
-    "froze the corrected V2 candidates with no photography/P6/baseline mutation",
-    "created and moved a two-slide Drive review deck comparing frozen baselines to V2 candidates"
+    "recorded the user human verdict that both V2 titles fail",
+    "preserved V2 legibility and wordmark coherence as positive evidence instead of resetting typography to baseline",
+    "preserved all current photography, P3/P4 directional gains and overall visual-direction improvements",
+    "isolated the remaining failure to insufficient authored wordmark identity and semantic graphic transformation",
+    "prepared a semantic-anchor V3 experiment that forks from V2 and changes only typography"
   ],
-  "updated_at": "2026-09-14T05:14:00Z",
+  "updated_at": "2026-09-14T09:07:06Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,9 +164,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V2 candidates are frozen pending human review; no additional aesthetic correction is authorized before the verdict.",
-    "T2 support typography remains blocked until both V2 titles pass.",
-    "P6 reintegration and photo regeneration remain blocked.",
+    "V2 outputs are human-rejected and frozen as intermediate positive/negative evidence; do not polish them in place.",
+    "T2 support typography remains blocked until both semantic-anchor V3 titles pass.",
+    "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -207,9 +207,9 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "WORDMARK_V2_EXECUTED_WAITING_HUMAN_REVIEW",
+    "status": "WORDMARK_V2_HUMAN_FAIL_SEMANTIC_ANCHOR_V3_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
-    "phase": "WORDMARK_SYSTEM_REPAIR_V2",
+    "phase": "SEMANTIC_ANCHOR_WORDMARK_V3",
     "bench_plan": {
       "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
       "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_WORDMARK_V2_VERDICT",
+    "next_required_action": "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -341,7 +341,11 @@
       "豆坊": 1,
       "茶作": 1
     },
-    "wordmark_v2_human_verdict": null,
+    "wordmark_v2_human_verdict": {
+      "豆坊": "FAIL",
+      "茶作": "FAIL",
+      "overall": "FAIL_CONTINUE_TYPOGRAPHY_ONLY"
+    },
     "wordmark_v2_execution": {
       "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
       "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
@@ -354,6 +358,15 @@
         "豆坊 frozen Candidate 1 vs V2 Candidate 2",
         "茶作 frozen Candidate 1 vs V2 Candidate 2"
       ]
+    },
+    "wordmark_v2_human_fail_and_v3_plan": {
+      "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
+      "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
+    },
+    "wordmark_v3_render_allowed": true,
+    "wordmark_v3_correction_passes_used": {
+      "豆坊": 0,
+      "茶作": 0
     }
   },
   "t1_final_settlement_evidence": {
@@ -367,5 +380,9 @@
   "wordmark_v2_execution_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
     "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
+  },
+  "wordmark_v2_human_fail_and_v3_plan_evidence": {
+    "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
+    "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
   }
 }

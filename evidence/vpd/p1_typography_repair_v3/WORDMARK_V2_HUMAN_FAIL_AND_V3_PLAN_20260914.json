@@ -1,0 +1,82 @@
+{
+  "schema_version": "vpd-wordmark-v2-human-fail-v3-plan/v1",
+  "recorded_at": "2026-09-14T09:07:06Z",
+  "human_authority": "CURRENT_USER",
+  "human_feedback_exact": "豆坊不通过，茶作不通过，继续。",
+  "wordmark_v2_human_verdict": {
+    "豆坊": "FAIL",
+    "茶作": "FAIL",
+    "overall": "FAIL_CONTINUE_TYPOGRAPHY_ONLY"
+  },
+  "v2_assessment": {
+    "improvements_to_preserve": [
+      "legibility is materially better than the failed T1 technical retry",
+      "both characters now share one broad typographic language instead of looking like two unrelated styles",
+      "word-level spacing and mass are more coherent than the per-glyph compiler"
+    ],
+    "blocking_failures": [
+      "authored quality remains too close to a selected display font plus proportion edits",
+      "semantic graphic transformation is insufficient relative to the approved Shanyeji mother reference",
+      "negative-space topology and wordmark silhouette are not distinctive enough",
+      "the result is improved but still far from completion and cannot open T2"
+    ],
+    "formal_verdict": "FAIL_WORDMARK_V2_AUTHORED_QUALITY_NOT_ENOUGH"
+  },
+  "anti_rollback": {
+    "preserve_photography_and_photo_directional_gains": true,
+    "preserve_current_overall_visual_direction_improvements": true,
+    "preserve_wordmark_v2_legibility_and_coherence_lessons": true,
+    "do_not_modify_P6": true,
+    "do_not_regenerate_photo_bases": true,
+    "do_not_restart_from_candidate1_baseline": true,
+    "feedback_scope_rule": "A local typography failure changes only the typography experiment unless the user explicitly rejects another layer."
+  },
+  "wordmark_v3": {
+    "id": "SEMANTIC_ANCHOR_WORDMARK_V3",
+    "strategy": "fork V2 wordmark coherence, then add authored semantic transformation at the whole-word level",
+    "fork_from": "WORDMARK_V2_FINAL_VECTORS",
+    "titles": {
+      "豆坊": {
+        "semantic_anchor_glyph": "豆",
+        "secondary_glyph": "坊",
+        "semantic_domain": "bean/tofu workshop, press/mold/block process"
+      },
+      "茶作": {
+        "semantic_anchor_glyph": "茶",
+        "secondary_glyph": "作",
+        "semantic_domain": "tea craft, leaf/tray/layered processing"
+      }
+    },
+    "five_high_leverage_variables": [
+      "shared stroke DNA preserved across both characters",
+      "one semantic anchor glyph receives a strong but still readable graphic transformation",
+      "the entire two-character silhouette is composed as one graphic mass",
+      "negative spaces are authored as a coordinated system rather than accidental font counters",
+      "controlled asymmetry and interlock create identity without independently redesigning each character"
+    ],
+    "forbidden": [
+      "photo regeneration",
+      "P6 edits",
+      "starting over from Candidate 1",
+      "independent per-glyph style invention",
+      "font swap as the primary design move",
+      "texture used to hide weak structure",
+      "T2 support typography before both titles pass"
+    ],
+    "budget": {
+      "primary_build_per_title": 1,
+      "aesthetic_correction_max_per_title": 1,
+      "hidden_variants": 0
+    },
+    "pass_gate": [
+      "both words are immediately readable",
+      "both characters clearly belong to one system",
+      "Candidate 2 has materially stronger authored identity than the frozen strong baseline",
+      "the result is meaningfully closer to the approved Shanyeji mother-reference level without copying its literal glyph shapes",
+      "no preserved photography or P6 state is changed"
+    ]
+  },
+  "T2_allowed": false,
+  "P6_reintegration_allowed": false,
+  "next_required_action": "P1_EXECUTE_SEMANTIC_ANCHOR_WORDMARK_V3"
+}
