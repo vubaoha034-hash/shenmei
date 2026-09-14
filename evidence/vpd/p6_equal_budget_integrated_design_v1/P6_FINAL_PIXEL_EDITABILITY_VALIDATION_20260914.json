@@ -1,0 +1,222 @@
+{
+  "schema_version": "vpd-p6-final-pixel-editability-validation/v1",
+  "recorded_at": "2026-09-14T02:53:51Z",
+  "status": "FINAL_VALIDATION_COMPLETE_HUMAN_SET_VERDICT_REQUIRED",
+  "scope": "P6_EQUAL_BUDGET_FOUR_POSTER_FINAL_PIXEL_AND_EDITABILITY_VALIDATION",
+  "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "page_id": "12:2",
+  "frame_size": [
+    2400,
+    3200
+  ],
+  "review_boundary": {
+    "assistant_review_is_not_independent_blind": true,
+    "human_final_aesthetic_authority_preserved": true,
+    "second_correction_pass_authorized": false,
+    "commercial_pass_claimed": false,
+    "candidate_promotion_allowed": false
+  },
+  "pixel_review_scales": {
+    "thumbnail": [
+      360,
+      480
+    ],
+    "normal": [
+      1200,
+      1600
+    ],
+    "detail": [
+      2400,
+      3200
+    ]
+  },
+  "frames": [
+    {
+      "frame_id": "12:3",
+      "role": "DOUFANG_A_BASELINE",
+      "photo_node": "12:4",
+      "title_vectors": [
+        "51:4",
+        "51:7"
+      ],
+      "support_text_nodes": [
+        "12:8",
+        "12:9"
+      ],
+      "hairline_node": "12:10",
+      "copy": [
+        "豆坊",
+        "HANDMADE TOFU",
+        "手作豆腐 · 当日现制"
+      ],
+      "thumbnail_observation": "Primary title remains immediately readable; support copy becomes small and contributes little to thumbnail identity.",
+      "detail_observation": "Pixels are clean and the tofu process is credible, but the title still reads primarily as a heavy sans-derived overlay rather than a distinctive authored brand wordmark.",
+      "editable_structure": "PASS",
+      "export": {
+        "format": "png",
+        "dimensions": [
+          2400,
+          3200
+        ],
+        "reported_size_bytes": 3223603,
+        "sha256": null
+      },
+      "safe_margin_check": "PASS"
+    },
+    {
+      "frame_id": "12:11",
+      "role": "DOUFANG_B_DISTILLED",
+      "photo_node": "12:12",
+      "title_vectors": [
+        "51:10",
+        "51:13"
+      ],
+      "support_text_nodes": [
+        "12:16",
+        "12:17"
+      ],
+      "hairline_node": "12:18",
+      "copy": [
+        "豆坊",
+        "HANDMADE TOFU",
+        "手作豆腐 · 当日现制"
+      ],
+      "thumbnail_observation": "Process mass is stronger than A, but the large title and small support copy still read as a conventional overlay system.",
+      "detail_observation": "The asymmetric title geometry is technically clean, but it competes with the wooden press and does not create a sufficiently unique tofu-specific typographic mechanism.",
+      "editable_structure": "PASS",
+      "export": {
+        "format": "png",
+        "dimensions": [
+          2400,
+          3200
+        ],
+        "reported_size_bytes": 3549415,
+        "sha256": null
+      },
+      "safe_margin_check": "PASS"
+    },
+    {
+      "frame_id": "12:19",
+      "role": "CHAZUO_A_BASELINE",
+      "photo_node": "12:20",
+      "title_vectors": [
+        "51:16",
+        "51:19"
+      ],
+      "support_text_nodes": [
+        "12:24",
+        "12:25"
+      ],
+      "hairline_node": "12:26",
+      "copy": [
+        "茶作",
+        "HANDCRAFTED TEA",
+        "鲜叶入作 · 手工成茶"
+      ],
+      "thumbnail_observation": "Title is readable, but the support layer is near the threshold of useful thumbnail legibility and the whole lockup reads as photo plus title.",
+      "detail_observation": "Tea materials and depth are credible; the title remains generic in construction and the title x=138 is 6 px inside the frozen 6% minimum margin without a logged intentional crop.",
+      "editable_structure": "PASS",
+      "export": {
+        "format": "png",
+        "dimensions": [
+          2400,
+          3200
+        ],
+        "reported_size_bytes": 3566858,
+        "sha256": null
+      },
+      "safe_margin_check": "MINOR_FAIL_X138_LT_144"
+    },
+    {
+      "frame_id": "12:27",
+      "role": "CHAZUO_B_DISTILLED",
+      "photo_node": "12:28",
+      "title_vectors": [
+        "51:22",
+        "51:25"
+      ],
+      "support_text_nodes": [
+        "12:32",
+        "12:33"
+      ],
+      "hairline_node": "12:34",
+      "copy": [
+        "茶作",
+        "HANDCRAFTED TEA",
+        "鲜叶入作 · 手工成茶"
+      ],
+      "thumbnail_observation": "The B photograph gives a stronger quiet upper field, but the typography still dominates as a generic cream headline and the support copy collapses at small scale.",
+      "detail_observation": "The broad-茶/narrow-作 rhythm is clean but not sufficiently brand-specific; the graphic system can still be swapped with the tofu title/copy with little structural consequence.",
+      "editable_structure": "PASS",
+      "export": {
+        "format": "png",
+        "dimensions": [
+          2400,
+          3200
+        ],
+        "reported_size_bytes": 3650285,
+        "sha256": null
+      },
+      "safe_margin_check": "PASS"
+    }
+  ],
+  "machine_checks": {
+    "all_four_full_resolution_renders_returned": true,
+    "all_four_thumbnail_renders_returned": true,
+    "normal_scale_readback_preserved_from_correction_receipt": true,
+    "all_four_photo_nodes_present": true,
+    "all_four_primary_titles_are_editable_vectors": true,
+    "all_eight_support_copy_nodes_are_editable_text": true,
+    "exact_copy_preserved": true,
+    "all_four_framed_exports_report_png_2400x3200": true,
+    "export_urls_not_committed": true,
+    "final_export_sha256_chain": "INCOMPLETE_CURRENT_RUNTIME_COULD_NOT_MATERIALIZE_SHORT_LIVED_FIGMA_URLS"
+  },
+  "six_gate_validation": {
+    "PHOTO_QUALITY_GATE": {
+      "machine_evidence": "PASS_PROCESS_CONTENT_AND_PIXEL_INTEGRITY",
+      "assistant_pre_review": "PASS_WITH_RESERVATIONS",
+      "human_final_required": true,
+      "reason": "Materials, process evidence, depth and lighting are credible enough for evaluation; absolute photography taste remains human authority."
+    },
+    "TYPOGRAPHY_DESIGN_GATE": {
+      "machine_evidence": "EDITABLE_VECTOR_AND_COPY_PASS",
+      "assistant_pre_review": "FAIL_RECOMMENDED",
+      "human_final_required": true,
+      "reason": "The corrected titles remain visibly close to heavy sans skeletons; A/B differences are mainly width, height and placement rather than a mature, category-specific authored wordmark system."
+    },
+    "PHOTO_TYPE_INTEGRATION_GATE": {
+      "machine_evidence": "NO_DETACHED_PANEL_AND_SCENE_SPACE_USED",
+      "assistant_pre_review": "FAIL_RECOMMENDED",
+      "human_final_required": true,
+      "reason": "The relationship is still mostly quiet-zone overlay. In the distilled tofu arm the title competes with press geometry; in both tea arms typography floats above the process field rather than becoming structurally integrated with it."
+    },
+    "BRAND_DISTINCTIVENESS_GATE": {
+      "machine_evidence": "SWAP_TEST_NOT_PROVEN",
+      "assistant_pre_review": "FAIL_RECOMMENDED",
+      "human_final_required": true,
+      "reason": "Both content families retain the same cream headline, stacked English/Chinese support and hairline grammar. Swapping brand names and support copy would leave the template largely interchangeable."
+    },
+    "EDITABLE_DESIGN_PROVENANCE_GATE": {
+      "machine_evidence": "EDITABLE_NODE_STRUCTURE_PASS_FORMAL_EXPORT_HASH_CHAIN_INCOMPLETE",
+      "assistant_pre_review": "FORMAL_PASS_NOT_AVAILABLE",
+      "human_final_required": false,
+      "reason": "Figma frame/photo/vector/text identities are auditable, but the required photo-to-Figma-to-final-export SHA-256 chain is incomplete because final export bytes could not be materialized in this runtime."
+    },
+    "FINAL_PIXEL_QUALITY_GATE": {
+      "machine_evidence": "CLEAN_RENDER_NO_CLIPPING_OR_GLYPH_ERROR",
+      "assistant_pre_review": "FAIL_RECOMMENDED",
+      "human_final_required": true,
+      "reason": "At thumbnail scale support copy loses practical value and the set still reads closer to high-quality photography with large overlay type than to a resolved commercial campaign identity."
+    }
+  },
+  "equal_budget_integrated_comparison": {
+    "doufang": "B has stronger process density and counter-mass in the photograph, but no clear integrated commercial-design win after the same Figma budget.",
+    "chazuo": "B has a stronger quiet field and spatial direction, but no clear integrated commercial-design win because typography and brand distinctiveness remain unresolved.",
+    "set_level": "NO_CLEAR_INTEGRATED_COMMERCIAL_BENEFIT_PROVEN_AFTER_EQUAL_BUDGET_FIGMA",
+    "photo_only_mechanism_evidence_preserved": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY_MEAN_DELTA_0_6"
+  },
+  "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY",
+  "formal_human_set_verdict": null,
+  "next_required_action": "P6_WAIT_HUMAN_SET_VERDICT"
+}

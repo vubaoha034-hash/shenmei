@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 54,
-  "recorded_at": "2026-09-14T02:16:33Z",
+  "sequence": 55,
+  "recorded_at": "2026-09-14T02:53:51Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The single authorized equal-budget correction pass has been consumed for all four P6 posters with no photo edits and exact copy preserved. Four full-frame pixel readbacks completed without technical error. No commercial/aesthetic gate is claimed yet; final pixel and editability validation is now authorized.",
+  "current_focus": "P6 final pixel/editability validation is complete. Editable vector/text structure and clean full-resolution rendering are verified, but the formal export hash chain is incomplete and assistant pre-review recommends FAIL/HOLD on typography, photo-type integration, brand distinctiveness and final commercial pixel quality. Human set verdict is now the only next action; no second correction pass is authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -39,10 +39,10 @@
     "p6_doufang_A_large_bound_node_control_pass",
     "p6_all_four_formal_photo_nodes_direct_readback_confirmed",
     "p6_equal_budget_composition_review_round1_completed",
-    "p6_single_correction_pass_per_poster"
+    "p6_single_correction_pass_per_poster",
+    "p6_final_pixel_and_editability_validation"
   ],
   "incomplete": [
-    "p6_final_pixel_and_editability_validation",
     "human_set_verdict",
     "candidate_promotion",
     "second_style_family_validation",
@@ -50,12 +50,12 @@
     "scale"
   ],
   "blocked": [
-    "Human set verdict remains blocked until final pixel and editability validation is completed.",
+    "Human set verdict is required before any P6 aesthetic/commercial acceptance or rejection is final.",
     "No second aesthetic correction pass is authorized under the frozen equal-budget comparison.",
-    "Candidate promotion, second-family completion, Golden and Scale remain blocked.",
-    "Historical system-validation ledger prefix retains its disclosed pre-existing hash defects and is not recertified."
+    "Formal commercial provenance pass is unavailable until a durable final-export SHA-256 chain exists.",
+    "Candidate promotion, second-family completion, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P6_VALIDATE_FINAL_PIXELS_EDITABILITY",
+  "next_required_action": "P6_WAIT_HUMAN_SET_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -89,14 +89,16 @@
     ],
     "real_images_bound_count": 4,
     "figma_entry_allowed": true,
-    "final_pixel_validation_allowed": true,
+    "final_pixel_validation_allowed": false,
     "composition_review_completed": true,
     "correction_passes_used": {
       "12:3": 1,
       "12:11": 1,
       "12:19": 1,
       "12:27": 1
-    }
+    },
+    "final_pixel_validation_completed": true,
+    "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY"
   },
   "relay": {
     "version": "V1",
@@ -120,10 +122,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_CORRECTION_COMPLETE_FINAL_VALIDATION_READY",
+  "status": "VPD_P6_FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "650369c4fbc8edd2296fff3839677503586bfb518fb0df13c1abaa175bcd9052"
+    "sha256": "a07e77c43fa6c2fc9c36c213e23624dcb5682666376360432cd3e6e4fc925da6"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -134,7 +136,7 @@
       "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
     },
     "p6_integrated_design": {
-      "status": "CORRECTION_PASS_COMPLETE_FINAL_VALIDATION_READY"
+      "status": "FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED"
     },
     "candidate_promotion": "BLOCKED"
   },
@@ -144,8 +146,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P6-SINGLE-CORRECTION-COMPLETE-20260914-001",
-      "event_hash": "6c68feae9024fa25f8bcaecf1954cf008a43a517d846c5e1a26b7e16d0e28ff0"
+      "event_id": "EVT-VPD-P6-FINAL-VALIDATION-COMPLETE-20260914-001",
+      "event_hash": "9271d641af1c8406302a3f4fa91b9f5132a362ba40c8b6fa003a35ea645da530"
     }
   }
 }

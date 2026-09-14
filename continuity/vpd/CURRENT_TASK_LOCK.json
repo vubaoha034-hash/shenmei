@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 32,
+  "revision": 33,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 31,
-    "git_blob_sha": "e0e92f06b4a45eed48e24090c479200b2bbc71ad",
-    "note": "Revision 31 authorized exactly one symmetric correction pass per P6 poster after all four real image bindings were confirmed."
+    "revision": 32,
+    "git_blob_sha": "33d421bddee64dc4effb66dc0e3d472d26ea554d",
+    "note": "Revision 32 completed the one allowed correction pass and opened final pixel/editability validation without claiming commercial acceptance."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -31,7 +31,7 @@
     "candidate_promotion_allowed": false
   },
   "p6_integrated_design": {
-    "status": "CORRECTION_PASS_COMPLETE_FINAL_VALIDATION_READY",
+    "status": "FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page": {
       "id": "12:2",
@@ -86,13 +86,16 @@
     "bound_count": 4,
     "remaining_bindings": [],
     "normal_chat_blocker": null,
-    "final_pixel_validation_allowed": true,
+    "final_pixel_validation_allowed": false,
     "correction_passes_used": {
       "12:3": 1,
       "12:11": 1,
       "12:19": 1,
       "12:27": 1
-    }
+    },
+    "final_pixel_validation_completed": true,
+    "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY",
+    "formal_human_set_verdict": null
   },
   "figma_upload_relay": {
     "version": "V1",
@@ -116,10 +119,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "The single authorized equal-budget correction pass has been consumed for all four P6 posters with no photo edits and exact copy preserved. Four full-frame pixel readbacks completed without technical error. No commercial/aesthetic gate is claimed yet; final pixel and editability validation is now authorized.",
-  "status": "VPD_P6_CORRECTION_COMPLETE_FINAL_VALIDATION_READY",
+  "current_stage": "P6 final pixel/editability validation is complete. Editable vector/text structure and clean full-resolution rendering are verified, but the formal export hash chain is incomplete and assistant pre-review recommends FAIL/HOLD on typography, photo-type integration, brand distinctiveness and final commercial pixel quality. Human set verdict is now the only next action; no second correction pass is authorized.",
+  "status": "VPD_P6_FINAL_VALIDATION_COMPLETE_HUMAN_VERDICT_REQUIRED",
   "p6_allowed": true,
-  "next_required_action": "P6_VALIDATE_FINAL_PIXELS_EDITABILITY",
+  "next_required_action": "P6_WAIT_HUMAN_SET_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -132,14 +135,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "consumed exactly one correction pass for each of frames 12:3, 12:11, 12:19 and 12:27 in one symmetric Figma write",
-    "replaced the four old single-vector titles with arm-specific editable vector glyph pairs",
-    "reduced and repositioned all editable EN/CN support copy and hairlines while preserving exact wording",
-    "left formal photo nodes 12:4, 12:12, 12:20 and 12:28 unchanged in geometry and content",
-    "completed full-frame post-write pixel readback for all four at natural 2400x3200 canvas",
-    "opened final pixel/editability validation without claiming aesthetic or commercial pass"
+    "verified four 360x480 thumbnail renders, preserved four 1200x1600 normal readbacks, and verified four 2400x3200 detail renders",
+    "verified all four primary titles remain editable two-vector glyph constructions and all support copy remains editable text",
+    "verified exact copy and photo-node identities remain present with no clipping or technical glyph failure",
+    "recorded four formal PNG export identities by frame/dimensions/reported byte size without committing short-lived URLs",
+    "recorded formal export SHA-256 chain as incomplete because this runtime could not materialize short-lived Figma export URLs",
+    "completed non-blind assistant commercial pre-review with FAIL/HOLD recommendation while preserving human final authority"
   ],
-  "updated_at": "2026-09-14T02:16:33Z",
+  "updated_at": "2026-09-14T02:53:51Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -161,10 +164,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Human set verdict remains blocked until final pixel and editability validation is completed.",
+    "Human set verdict is required before any P6 aesthetic/commercial acceptance or rejection is final.",
     "No second aesthetic correction pass is authorized under the frozen equal-budget comparison.",
-    "Candidate promotion, second-family completion, Golden and Scale remain blocked.",
-    "Historical system-validation ledger prefix retains its disclosed pre-existing hash defects and is not recertified."
+    "Formal commercial provenance pass is unavailable until a durable final-export SHA-256 chain exists.",
+    "Candidate promotion, second-family completion, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -194,5 +197,9 @@
   "correction_pass_evidence": {
     "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_SINGLE_CORRECTION_PASS_EXECUTION_20260914.json",
     "sha256": "7ca4d5ab22be9348c2e76369b6c120467dcd4decad2834f4cf8077b3a615fff3"
+  },
+  "final_validation_evidence": {
+    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FINAL_PIXEL_EDITABILITY_VALIDATION_20260914.json",
+    "sha256": "d0a8f97d1fa2f845c0c4cb2fe37246defecbc20efb6024c7246192c1365d8543"
   }
 }
