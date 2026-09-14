@@ -1,0 +1,39 @@
+name: VPD P1 Settle T1 And Prepare Wordmark V2
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - 'evidence/vpd/p1_typography_repair_v2/TRIGGER_SETTLE_T1_AND_PREPARE_WORDMARK_V2.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  settle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Settle T1 and prepare wordmark V2
+        run: python scripts/vpd_settle_t1_and_prepare_wordmark_v2.py
+
+      - name: Validate new state
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist T1 settlement and V2 preparation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add continuity/vpd/CURRENT_TASK_LOCK.json continuity/vpd/LATEST_CHECKPOINT.json continuity/vpd/state_ledger/commercial_design_pipeline.jsonl PROJECT_CONTROL_ADAPTER.json visual_memory/vpd_p6_composition_state.py evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit"
+            exit 0
+          fi
+          git commit -m "Settle T1 failure and prepare wordmark-first V2"
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
