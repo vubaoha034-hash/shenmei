@@ -29,6 +29,7 @@ ACTIONS = {
     "P6_VALIDATE_FINAL_PIXELS_EDITABILITY",
     "P6_WAIT_HUMAN_SET_VERDICT",
     "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
+    "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH",
 }
 
 
@@ -94,7 +95,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action == "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH" else "P6"
+    expected_focus = "P1" if action.startswith("P1_") else "P6"
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -138,6 +139,14 @@ def validate_p6_composition_state(root):
         require(p6.get("formal_human_set_verdict") == "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED", "HUMAN_VERDICT_MISSING")
         require(p6.get("status") == "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED", "P6_HUMAN_FAIL_STATE")
         require(p6.get("final_pixel_validation_completed") is True, "FINAL_VALIDATION_NOT_COMPLETE")
+    elif action == "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH":
+        require(all(v == 1 for v in used.values()), "CORRECTION_NOT_COMPLETE")
+        check_ref(root, lock["human_set_verdict_evidence"])
+        tr = lock.get("typography_repair", {})
+        require(tr.get("status") == "PREPARED_TITLE_ONLY_BENCH_READY", "TYPOGRAPHY_BENCH_NOT_READY")
+        require(tr.get("title_bench_render_allowed") is True, "TYPOGRAPHY_BENCH_RENDER_NOT_OPEN")
+        check_ref(root, tr["bench_plan"])
+        require(tr.get("phase") == "T1_TITLE_ONLY", "TYPOGRAPHY_BENCH_PHASE")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 56,
-  "recorded_at": "2026-09-14T03:09:27Z",
+  "sequence": 57,
+  "recorded_at": "2026-09-14T03:16:42Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human P6 set verdict is FAIL: the base photography is acceptable enough to retain, while the typography is completely unacceptable and does not visibly demonstrate distillation. The failure is returned to P1 typography-distillation mechanism design. Existing P6 frames are frozen as negative evidence; no photo rerender and no second P6 correction pass are authorized.",
+  "current_focus": "P1 typography-only repair bench is prepared and frozen from the canonical mother reference and human P6 failure. T1 isolates standalone title structure for 豆坊 and 茶作: strong ordinary typesetting versus distilled authored lettering, no photography/support copy/texture. No pixels have been generated yet.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -41,10 +41,12 @@
     "p6_equal_budget_composition_review_round1_completed",
     "p6_single_correction_pass_per_poster",
     "p6_final_pixel_and_editability_validation",
-    "human_set_verdict"
+    "human_set_verdict",
+    "p1_typography_only_distillation_repair_bench"
   ],
   "incomplete": [
-    "p1_typography_only_distillation_repair_bench",
+    "p1_typography_title_only_ab_execution",
+    "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
     "second_style_family_validation",
@@ -52,12 +54,12 @@
     "scale"
   ],
   "blocked": [
-    "Current P6 typography is formally human-rejected and cannot be promoted or polished further in place.",
-    "No second P6 aesthetic correction pass is authorized.",
-    "Typography-only distilled-vs-ordinary baseline evidence must show visible benefit before poster reintegration.",
+    "Existing P6 compositions remain frozen negative evidence and cannot be polished further in place.",
+    "Only the T1 standalone-title bench is authorized; poster reintegration and support typography remain blocked.",
+    "The distilled title arm must visibly beat a strong ordinary typesetting baseline on both titles before T2 opens.",
     "Candidate promotion, second-family completion, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -125,10 +127,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P6_HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED",
+  "status": "VPD_P1_TYPOGRAPHY_REPAIR_BENCH_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "034d2af269a0d0545c635ead64bcc65fe407376f196dd71cbdf4a8513c971819"
+    "sha256": "9bf4daa01f0d666d8a5c220b849dadfeed7e037cee6929abf6bc1cda6a136851"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -149,8 +151,22 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P6-HUMAN-TYPOGRAPHY-FAIL-20260914-001",
-      "event_hash": "000704c43fb6cb4fac48be7ee54d01b243626a96150bf6641f3124c7a97e8809"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-REPAIR-BENCH-PREPARED-20260914-001",
+      "event_hash": "105641b54445f291f714c57079e65351503a957015be808b8fa70cb6fe4d6a9b"
     }
+  },
+  "typography_repair": {
+    "status": "PREPARED_TITLE_ONLY_BENCH_READY",
+    "phase": "T1_TITLE_ONLY",
+    "bench_plan": {
+      "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
+      "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
+    },
+    "title_tasks": [
+      "豆坊",
+      "茶作"
+    ],
+    "title_bench_render_allowed": true,
+    "poster_reintegration_allowed": false
   }
 }

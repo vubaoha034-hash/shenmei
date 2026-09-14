@@ -1,0 +1,163 @@
+{
+  "schema_version": "vpd-typography-only-distillation-repair-bench/v1",
+  "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
+  "recorded_at": "2026-09-14T03:16:42Z",
+  "status": "PREPARED_NOT_EXECUTED",
+  "scope": "P1_TYPOGRAPHY_REPAIR_TITLE_ONLY_FIRST_GATE",
+  "purpose": "Prove or falsify visible typography-distillation benefit before any poster reintegration. Photography cannot compensate for weak lettering.",
+  "authority": {
+    "human_failure": {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_HUMAN_SET_VERDICT_TYPOGRAPHY_FAIL_20260914.json",
+      "verdict": "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED"
+    },
+    "workflow_correction": {
+      "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
+      "key_rule": "Figma composition is not itself a special Chinese lettering generator."
+    },
+    "aesthetic_charter": {
+      "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+      "policy": "Use a compact set of high-leverage visual variables; taste is human judged and must not be replaced by validators."
+    }
+  },
+  "canonical_mother_reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "manifest_path": "evidence/vpd/shanyeji/full_image_distillation_v1/CANONICAL_VISUAL_ANCHOR_MANIFEST.json",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "dimensions": [
+      960,
+      1280
+    ],
+    "allowed_role": "MOTHER_REFERENCE_FOR_MECHANISM_STUDY_ONLY",
+    "literal_copy_forbidden": true
+  },
+  "visible_reference_mechanisms": {
+    "facts": [
+      "The three-character title behaves as one irregular high-mass graphic object rather than ordinary typeset text.",
+      "Glyphs have unequal optical width, height, weight and center of gravity.",
+      "The first character is substantially re-authored toward a semantic landscape form rather than being a stretched stock glyph.",
+      "Counters, gaps and missing-stroke regions are designed as large negative-space structures, not random decorative cuts.",
+      "Inter-glyph spacing and silhouette are optically asymmetric while remaining one first-read cluster.",
+      "Surface erosion exists, but it is secondary to the structural lettering and is not sufficient evidence of family transfer."
+    ],
+    "brand_bound_do_not_copy": [
+      "exact 山野集 contours",
+      "exact missing-stroke locations",
+      "exact orange thread path",
+      "李家班 badge",
+      "WANCE footer identity"
+    ]
+  },
+  "title_tasks": [
+    {
+      "task_id": "T1_DOUFANG",
+      "exact_copy": "豆坊"
+    },
+    {
+      "task_id": "T1_CHAZUO",
+      "exact_copy": "茶作"
+    }
+  ],
+  "canvas": {
+    "width": 1600,
+    "height": 900,
+    "background": "neutral light or neutral dark, identical within each A/B pair",
+    "title_only": true,
+    "photography": false,
+    "support_copy": false,
+    "logos_badges_motifs": false,
+    "shadows_gradients_mockups": false,
+    "surface_distress": false,
+    "reason": "Isolate structural lettering quality before color, texture, support typography or photography can hide failure."
+  },
+  "high_leverage_variables": [
+    {
+      "id": "semantic_glyph_rebinding",
+      "rule": "Each glyph must contain an authored structural move derived from the new word's meaning/process; do not paste literal ingredient icons or reuse 山野集 contours."
+    },
+    {
+      "id": "unequal_optical_mass",
+      "rule": "Deliberately vary glyph width, height, weight and center of gravity so the wordmark has authored internal hierarchy rather than two equal font boxes."
+    },
+    {
+      "id": "counter_negative_space_topology",
+      "rule": "Design counters, openings, voids and selective omissions as large coherent geometry that improves silhouette and reading; random notches do not count."
+    },
+    {
+      "id": "wordmark_object_silhouette",
+      "rule": "The two characters must resolve as one memorable irregular object with a strong outer contour at thumbnail scale."
+    },
+    {
+      "id": "interglyph_tension",
+      "rule": "Spacing, overlap or near-contact must be optically authored so the pair has tension and unity; default tracking is insufficient."
+    },
+    {
+      "id": "surface_is_subordinate",
+      "rule": "Texture, erosion, brushiness and distress are disabled in T1; structure must work before any surface treatment is allowed."
+    }
+  ],
+  "arm_A_strong_ordinary_baseline": {
+    "objective": "Represent what a competent designer can achieve quickly with mature Chinese display typography, not a deliberately weak control.",
+    "allowed": [
+      "choose a mature available CJK display typeface appropriate to each title",
+      "choose weight",
+      "optical kerning/tracking",
+      "baseline/alignment adjustment",
+      "per-glyph scale adjustment up to 8 percent when needed for optical balance"
+    ],
+    "forbidden": [
+      "editing glyph vector contours",
+      "cutting/removing strokes",
+      "adding distress/erosion",
+      "drawing custom semantic shapes",
+      "using the failed P6 glyph vectors"
+    ],
+    "budget": "one primary build plus at most one aesthetic correction per title"
+  },
+  "arm_B_distilled_authored_lettering": {
+    "objective": "Use the distilled structural mechanism to author new wordmarks whose visual identity cannot be explained as ordinary font selection plus stretching.",
+    "requirements": [
+      "A stock font may be used only as a legibility/proportion scaffold; unedited font outlines cannot be final contours.",
+      "All six high-leverage variables must be visibly addressed, but exact shape decisions remain free.",
+      "豆坊 may derive structural logic from bean/tofu craft and workshop/press relationships without literal bean or tofu icons.",
+      "茶作 may derive structural logic from tea/leaf/process/rack/handwork relationships without literal leaf stickers.",
+      "Do not force the same deformation recipe onto 豆坊 and 茶作."
+    ],
+    "hard_avoids": [
+      "generic chopped bold sans",
+      "same cut corners on every glyph",
+      "simple horizontal/vertical stretching as the main design move",
+      "fake calligraphy shortcut",
+      "texture used to disguise ordinary typography",
+      "mountain/badge/orange-thread token reuse as family proof"
+    ],
+    "budget": "one primary build plus at most one aesthetic correction per title"
+  },
+  "technical_retry_policy": {
+    "wrong_character_or_unreadable_character": "technical invalid; log and retry without counting as aesthetic correction",
+    "taste_failure": "counts; do not relabel as technical"
+  },
+  "blind_human_review": {
+    "presentation": "Within each title pair, hide A/B labels and randomize Candidate 1 / Candidate 2 ordering.",
+    "questions": [
+      "Which candidate is better as a standalone Chinese wordmark?",
+      "Does either candidate look authored rather than like a font with simple deformation?",
+      "Which candidate has stronger silhouette, negative space, character relationship and memorability?"
+    ],
+    "assistant_known_labels_are_not_independent_blind_review": true
+  },
+  "title_gate": {
+    "pass": "Distilled B is human-preferred over the strong ordinary baseline on both 豆坊 and 茶作, with visible structural/authored reasons and no character-correctness failure.",
+    "split_or_tie": "At most one bounded typography-mechanism repair round, then repeat the same two-title test.",
+    "fail": "If B loses either title after the bounded repair round, stop current typography compiler and do not reintegrate into posters.",
+    "after_pass": "Open T2 support-typography hierarchy bench; poster/Figma reintegration remains blocked until T2 passes."
+  },
+  "preservation": {
+    "retain_existing_photo_bases": true,
+    "failed_p6_frames_remain_negative_evidence": true,
+    "no_second_p6_correction_pass": true,
+    "no_candidate_promotion": true,
+    "no_second_family_golden_or_scale": true
+  },
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH"
+}
