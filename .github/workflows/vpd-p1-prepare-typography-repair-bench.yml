@@ -1,0 +1,41 @@
+name: VPD P1 Prepare Typography Repair Bench
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - continuity/vpd/triggers/P1_TYPOGRAPHY_REPAIR_BENCH_PREPARE_20260914.txt
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Prepare typography repair bench
+        run: python scripts/vpd_prepare_typography_repair_bench.py
+
+      - name: Validate new state
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist typography repair bench state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json \
+            continuity/vpd/CURRENT_TASK_LOCK.json \
+            continuity/vpd/LATEST_CHECKPOINT.json \
+            continuity/vpd/state_ledger/commercial_design_pipeline.jsonl \
+            PROJECT_CONTROL_ADAPTER.json \
+            visual_memory/vpd_p6_composition_state.py
+          git commit -m "Prepare P1 typography-only repair bench"
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
