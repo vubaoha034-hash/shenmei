@@ -30,6 +30,7 @@ ACTIONS = {
     "P6_WAIT_HUMAN_SET_VERDICT",
     "P1_PREPARE_TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH",
     "P1_EXECUTE_TYPOGRAPHY_ONLY_TITLE_BENCH",
+    "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT",
 }
 
 
@@ -147,6 +148,18 @@ def validate_p6_composition_state(root):
         require(tr.get("title_bench_render_allowed") is True, "TYPOGRAPHY_BENCH_RENDER_NOT_OPEN")
         check_ref(root, tr["bench_plan"])
         require(tr.get("phase") == "T1_TITLE_ONLY", "TYPOGRAPHY_BENCH_PHASE")
+    elif action == "P1_WAIT_HUMAN_TITLE_BENCH_VERDICT":
+        require(all(v == 1 for v in used.values()), "CORRECTION_NOT_COMPLETE")
+        check_ref(root, lock["human_set_verdict_evidence"])
+        tr = lock.get("typography_repair", {})
+        require(tr.get("status") == "T1_EXECUTED_WAITING_HUMAN_BLIND_VERDICT", "TYPOGRAPHY_BENCH_EXECUTION_STATE")
+        require(tr.get("phase") == "T1_TITLE_ONLY", "TYPOGRAPHY_BENCH_PHASE")
+        require(tr.get("title_bench_render_allowed") is False, "TYPOGRAPHY_BENCH_SHOULD_BE_CLOSED")
+        require(tr.get("human_blind_verdict") is None, "TYPOGRAPHY_BENCH_VERDICT_ALREADY_SET")
+        require(tr.get("correction_passes_used") == {"豆坊": 1, "茶作": 1}, "TYPOGRAPHY_BENCH_CORRECTION_BUDGET")
+        require(tr.get("blind_order_mapping_revealed") is False, "TYPOGRAPHY_BLIND_MAPPING_LEAK")
+        check_ref(root, tr["bench_plan"])
+        check_ref(root, tr["execution_evidence"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)
