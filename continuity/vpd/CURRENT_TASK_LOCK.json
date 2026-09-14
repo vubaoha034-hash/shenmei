@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 28,
+  "revision": 29,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 27,
-    "git_blob_sha": "7bcdafa36ede39914747ade086fb0016a950d916",
-    "note": "Revision 27 authorized exactly one controlled Doufang B retry after same-file placement-protocol verification; that retry has now been consumed."
+    "revision": 28,
+    "git_blob_sha": "fac9f6cec5a7b861b2962d3d77534108f15f1f69",
+    "note": "Revision 28 closed the consumed formal retry and required exact-source scratch diagnosis."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -114,7 +114,7 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "The single authorized Doufang B controlled retry was consumed: fresh upload_assets mint explicitly targeted 12:12 and relay returned HTTP 200 / UPLOAD_PASS for the frozen source, yet the returned imageHash remained absent from the Figma file image store and node 12:12 retained the old hash. A Frame-nested scratch probe 44:3 succeeded end-to-end, ruling out generic nested-node placement failure. Formal reupload is stopped; Tea A/B remain untouched. Next diagnosis must use the exact frozen Doufang B source on an isolated scratch target, never the formal node.",
+  "current_stage": "Exact frozen Doufang B bytes were uploaded to known-good scratch node 44:3 and reproduced the formal failure: HTTP 200 / UPLOAD_PASS returned the same imageHash 23926508..., but that hash remained absent from the Figma file image store and the scratch node retained its previous valid fill. Formal node 12:12 is therefore not the cause. Doufang A and B share the same JPEG/RGB/1152x1536/JFIF1.1/sRGB ICC container characteristics, so the remaining suspect is the original-byte/content-hash path or backend state associated with the Doufang B hash. No formal reupload is authorized.",
   "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
   "p6_allowed": true,
   "next_required_action": "RESOLVE_P6_RELAY_PLACEMENT_MISMATCH_NO_REUPLOAD",
@@ -130,13 +130,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "consumed the one authorized controlled Doufang B retry with fresh targetNodeId 12:12",
-    "verified frozen source SHA-256 and HTTP 200 / UPLOAD_PASS receipt",
-    "verified returned formal imageHash is absent from current file image store and 12:12 retained old hash",
-    "verified Frame-nested scratch target 44:3 placement passes end-to-end",
-    "ruled out generic nested-node placement failure and restored fail-closed authority"
+    "uploaded exact frozen Doufang B source to isolated known-good scratch target only",
+    "reproduced imageHash 23926508... with HTTP 200 / UPLOAD_PASS",
+    "verified returned hash absent from current file image store and scratch target unchanged",
+    "ruled out formal node 12:12 and generic nesting as causes",
+    "compared successful Doufang A and failing Doufang B container metadata and found matching JPEG/RGB/dimensions/JFIF/sRGB ICC characteristics"
   ],
-  "updated_at": "2026-09-14T01:27:00Z",
+  "updated_at": "2026-09-14T01:33:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -148,7 +148,7 @@
   },
   "state_profile": "p6-figma-relay/v1",
   "render_allowed": false,
-  "input_commit": "0511248c36232cdc49634195847f17944c23aeae",
+  "input_commit": "9cdf005a56e957a595f4e34cb26b331e8ff09759",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -167,5 +167,9 @@
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
     "sha256": "b204ff65aeb59bc7fb5f614d368867186231b21d0c73fc7b170732dcb226b4c7"
   },
-  "diagnostic_next_required_action": "UPLOAD_EXACT_FROZEN_DOUFANG_B_SOURCE_TO_ISOLATED_SCRATCH_TARGET_NO_FORMAL_NODE_WRITE"
+  "diagnostic_next_required_action": "RUN_PIXEL_EQUIVALENT_LOSSLESS_PNG_TRANSCODE_OF_FROZEN_DOUFANG_B_TO_SCRATCH_ONLY",
+  "exact_source_scratch_diagnosis": {
+    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_EXACT_SOURCE_SCRATCH_DIAGNOSIS_20260914.json",
+    "sha256": "4f259fd7438483268a480ba8aab9354d2aa1b69af3bf3126599136f0bfac455e"
+  }
 }

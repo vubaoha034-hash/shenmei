@@ -1,0 +1,52 @@
+{
+  "schema_version": "vpd-p6-exact-source-scratch-diagnosis/v1",
+  "status": "EXACT_SOURCE_FAILS_ON_KNOWN_GOOD_SCRATCH_TARGET",
+  "scope": "DIAGNOSTIC_ONLY_NO_FORMAL_NODE_WRITE",
+  "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "source": {
+    "sha256": "78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9",
+    "bytes": 422265,
+    "format": "JPEG",
+    "mode": "RGB",
+    "dimensions": [
+      1152,
+      1536
+    ],
+    "jfif_version": [
+      1,
+      1
+    ],
+    "icc_profile": "sRGB Google Inc. 2016",
+    "icc_profile_bytes": 456
+  },
+  "receipt": {
+    "path": "evidence/vpd/figma_upload_relay/receipts/P6-DOUFANG-B-EXACT-SOURCE-SCRATCH-20260914-01.json",
+    "sha256": "dbd554abc7985c8c972203ef7d9d407d6ffc7d9ba8623416571f26fdf50ef0c1",
+    "status": "UPLOAD_PASS",
+    "http_status": 200,
+    "returned_imageHash": "23926508e3fc10dd61e9df883e018e721cb7cc1f"
+  },
+  "scratch_readback": {
+    "node_id": "44:3",
+    "parent_frame_id": "44:2",
+    "locked": false,
+    "fill_type": "IMAGE",
+    "scale_mode": "FILL",
+    "observed_imageHash": "1c9cbf9a9fe1017a3f44eeed563562db8222c889",
+    "returned_hash_present_in_image_store": false
+  },
+  "control_comparison": {
+    "doufang_A_source_sha256": "45943cf0b0d04e11e19694a6b1e04cf6fcf29a9b97832ee93bdf2f08d0c57909",
+    "doufang_A_container_observed": "JPEG RGB 1152x1536 JFIF1.1 sRGB Google Inc. 2016 ICC 456 bytes",
+    "doufang_B_container_observed": "JPEG RGB 1152x1536 JFIF1.1 sRGB Google Inc. 2016 ICC 456 bytes",
+    "generic_jpeg_dimension_icc_explanation_supported": false
+  },
+  "established": [
+    "The exact frozen Doufang B source fails placement on both formal node 12:12 and known-good nested scratch node 44:3 while transport returns HTTP 200 and the identical imageHash.",
+    "The same scratch node successfully commits a small PNG through the same relay, secret, Figma file and nested-node structure.",
+    "Generic formal-node, page, nesting, relay, secret, JPEG format, dimensions and ICC explanations are not supported by current evidence.",
+    "The failure is narrowed to the Doufang B original-byte/content-hash path or a Figma backend state associated with imageHash 23926508... ."
+  ],
+  "next_diagnostic": "RUN_PIXEL_EQUIVALENT_LOSSLESS_PNG_TRANSCODE_OF_FROZEN_DOUFANG_B_TO_SCRATCH_ONLY",
+  "recorded_at": "2026-09-14T01:33:00Z"
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 50,
-  "recorded_at": "2026-09-14T01:27:00Z",
+  "sequence": 51,
+  "recorded_at": "2026-09-14T01:33:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The single authorized Doufang B controlled retry was consumed: fresh upload_assets mint explicitly targeted 12:12 and relay returned HTTP 200 / UPLOAD_PASS for the frozen source, yet the returned imageHash remained absent from the Figma file image store and node 12:12 retained the old hash. A Frame-nested scratch probe 44:3 succeeded end-to-end, ruling out generic nested-node placement failure. Formal reupload is stopped; Tea A/B remain untouched. Next diagnosis must use the exact frozen Doufang B source on an isolated scratch target, never the formal node.",
+  "current_focus": "Exact frozen Doufang B bytes were uploaded to known-good scratch node 44:3 and reproduced the formal failure: HTTP 200 / UPLOAD_PASS returned the same imageHash 23926508..., but that hash remained absent from the Figma file image store and the scratch node retained its previous valid fill. Formal node 12:12 is therefore not the cause. Doufang A and B share the same JPEG/RGB/1152x1536/JFIF1.1/sRGB ICC container characteristics, so the remaining suspect is the original-byte/content-hash path or backend state associated with the Doufang B hash. No formal reupload is authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -33,7 +33,8 @@
     "p6_doufang_B_placement_mismatch_recorded",
     "p6_placement_protocol_probe_pass",
     "p6_doufang_B_controlled_retry_consumed_placement_failed",
-    "p6_nested_target_probe_pass"
+    "p6_nested_target_probe_pass",
+    "p6_exact_frozen_doufang_B_source_scratch_reproduced_failure"
   ],
   "incomplete": [
     "live_relay_test_doufang_B_to_node_12_12",
@@ -115,7 +116,7 @@
   "status": "VPD_P6_RELAY_UPLOAD_PASS_PLACEMENT_MISMATCH_BLOCKED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "7a70d2a2241bca9541cba6e14a3723a85db68e5e1d5735fc770e8e4fa5752ff0"
+    "sha256": "15da32d0bc8287ae7bdb750cc2ce50fc23032aeb75715900da3716c1eb33d27b"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -136,8 +137,8 @@
   },
   "ledger_tails": {
     "system_validation": {
-      "event_id": "EVT-VPD-P6-CONTROLLED-RETRY-PLACEMENT-FAILED-20260914-001",
-      "event_hash": "8460c4b87382f950098312f7002cecc53e218b3d375641bbed958d0ec23af63d"
+      "event_id": "EVT-VPD-P6-EXACT-SOURCE-SCRATCH-FAIL-20260914-001",
+      "event_hash": "780079334c4126ea44a9639ea88a4d432a4a040fa59c70b1673469a4c98ea726"
     }
   }
 }
