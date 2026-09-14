@@ -20,8 +20,13 @@ def main() -> int:
     parser.add_argument('--request', type=Path)
     args = parser.parse_args()
     if args.vpd_state:
-        from visual_memory.vpd_task_lock import validate_state, validate_request, status_card
         try:
+            raw_lock = json.loads((REPO_ROOT / 'continuity/vpd/CURRENT_TASK_LOCK.json').read_text(encoding='utf-8'))
+            if raw_lock.get('state_profile') == 'p6-composition/v1':
+                from visual_memory.vpd_p6_composition_state import validate_p6_composition_state as validate_state
+                from visual_memory.vpd_task_lock import validate_request, status_card
+            else:
+                from visual_memory.vpd_task_lock import validate_state, validate_request, status_card
             lock, checkpoint = validate_state(REPO_ROOT)
             if args.request:
                 validate_request(REPO_ROOT, json.loads(args.request.read_text(encoding='utf-8')))
