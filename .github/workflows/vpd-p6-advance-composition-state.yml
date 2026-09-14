@@ -1,0 +1,58 @@
+name: VPD P6 Advance Composition State
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/p6_composition_transition_triggers/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-p6-composition-state-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  advance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Advance P6 state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/vpd_advance_p6_composition_state.py
+
+      - name: Validate new state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist state transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            PROJECT_CONTROL_ADAPTER.json \
+            continuity/vpd/CURRENT_TASK_LOCK.json \
+            continuity/vpd/LATEST_CHECKPOINT.json \
+            continuity/vpd/state_ledger/commercial_design_pipeline.jsonl \
+            evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json \
+            evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_COMPOSITION_REVIEW_ROUND1_20260914.json
+          if git diff --cached --quiet; then
+            echo "No transition changes to persist" >&2
+            exit 2
+          fi
+          git commit -m "Advance P6 to equal-budget composition correction"
+          git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
