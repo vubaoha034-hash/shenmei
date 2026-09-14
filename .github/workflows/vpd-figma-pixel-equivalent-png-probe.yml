@@ -1,0 +1,67 @@
+name: VPD Figma Pixel Equivalent PNG Probe
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_upload_relay/pixel_png_probe_triggers/*.url.cms.b64"
+
+permissions:
+  contents: write
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+      LEGACY_COMMIT: cf0ea6c5a42d059da758a7444b866096556dcc6d
+      LEGACY_PATH: evidence/vpd/figma_upload_relay/tasks/P6-DOUFANG-B-LIVE-20260913-01.cms
+      SOURCE_NODE: "12:12"
+      TARGET_NODE: "44:3"
+      EXPECTED_SOURCE_SHA256: 78137a59779a37f08b4df3aef23164d115cc61afb443610b6f6eb066e99671d9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Recover frozen encrypted source and key
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${RELAY_PRIVATE_KEY_B64:-}"
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-key.pem
+          openssl pkey -in /tmp/vpd-key.pem -check -noout >/dev/null
+          git show "$LEGACY_COMMIT:$LEGACY_PATH" > /tmp/vpd-source.cms
+      - name: Execute pixel-equivalent PNG probe
+        id: relay
+        shell: bash
+        run: |
+          set -uo pipefail
+          failures=0; found=0
+          shopt -s nullglob
+          for t in evidence/vpd/figma_upload_relay/pixel_png_probe_triggers/*.url.cms.b64; do
+            found=1
+            base="$(basename "$t" .url.cms.b64)"
+            der="/tmp/$base.url.cms"; receipt="evidence/vpd/figma_upload_relay/receipts/$base.json"
+            base64 --decode "$t" > "$der" || { failures=$((failures+1)); continue; }
+            if python scripts/vpd_figma_pixel_equivalent_png_probe.py --legacy-task /tmp/vpd-source.cms --trigger "$der" --cert evidence/vpd/figma_upload_relay/relay-cert.pem --private-key /tmp/vpd-key.pem --receipt "$receipt" --source-node-id "$SOURCE_NODE" --target-node-id "$TARGET_NODE" --expected-source-sha256 "$EXPECTED_SOURCE_SHA256"; then git rm -f "$t"; else failures=$((failures+1)); fi
+            [ ! -f "$receipt" ] || git add "$receipt"
+          done
+          test "$found" -eq 1
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+      - name: Persist diagnostic receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then git commit -m "Record pixel-equivalent PNG Figma probe receipt"; git pull --rebase origin visual-program-distillation-v2-photography-design-20260814; git push origin HEAD:visual-program-distillation-v2-photography-design-20260814; fi
+      - name: Enforce success
+        if: steps.relay.outputs.failures != '0'
+        run: exit 1
