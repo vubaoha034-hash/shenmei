@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 49,
+  "revision": 50,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 48,
-    "git_blob_sha": "f3c45bb3b57bb07327c5efa32ba6bd8a98001889",
-    "note": "Revision 48 recorded editable V6 Figma reconstruction waiting for human review."
+    "revision": 49,
+    "git_blob_sha": "5443e34d1a3b792bcc6ea8ad0f7548db8172cb22",
+    "note": "Revision 49 recorded the localized Doufang endpoint fix and kept human review open."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,7 +120,7 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human says both V6 Figma wordmarks may continue, but identifies a serious Doufang left/right cropped-terminal defect. Tea remains unchanged. Doufang received only a local endpoint optical correction by directly editing boundary vertices/Bezier tangents; no glyph re-ideation, photography or P6 mutation occurred. Await human re-review before T2 or poster reintegration.",
+  "current_stage": "Both V6 wordmarks remain viable. Formal work stayed in Figma: Doufang bottom hard-cut geometry and high-frequency bitten edges were cleaned; Chazuo white glyph edges were cleaned while the separate green tea-leaf vector layer was preserved. Prior direct-generation cleanup drafts are excluded from formal progress. Await human re-review before T2 or poster reintegration.",
   "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
   "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
@@ -136,13 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human continue verdict for both V6 Figma wordmarks without promoting them to pass",
-    "diagnosed Doufang left/right hard-cut boundary geometry from exact vector vertices",
-    "corrected only Doufang terminal geometry using direct editable-vector endpoint/tangent refinement",
-    "kept Chazuo, photography and P6 unchanged",
-    "updated the stable Drive review first slide with the endpoint-fixed Doufang result"
+    "excluded the prior direct-generation cleanup drafts from formal V6 progress",
+    "confirmed and repaired the remaining 126px Doufang bottom hard-cut segment in Figma",
+    "cleaned high-frequency micro contour jitter on Doufang and Chazuo editable vectors",
+    "preserved the Chazuo green tea-leaf vector layer and semantic color accents",
+    "created hidden pre-cleanup Figma backups for rollback safety",
+    "updated both stable Drive review slides from the current Figma renders"
   ],
-  "updated_at": "2026-09-15T01:38:47Z",
+  "updated_at": "2026-09-15T02:15:55Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,7 +165,7 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V6 endpoint-fixed Doufang and unchanged Chazuo remain waiting for human title re-review and are not approved.",
+    "V6 contour-cleaned Doufang and Chazuo remain waiting for human title re-review and are not approved.",
     "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -492,6 +493,20 @@
       "豆坊": "CONTINUE_WITH_ENDPOINT_FIX_REQUIRED",
       "茶作": "CONTINUE_UNCHANGED",
       "feedback_exact": "两个都可以继续。但是有个很严重的问题，豆坊 明显的感觉左边和右边被截取去除了的感觉。"
+    },
+    "v6_figma_contour_cleanup": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
+      "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581"
+    },
+    "v6_human_review_before_contour_cleanup": {
+      "豆坊": "CONTINUE; endpoint improved but lower edge still reads cut",
+      "茶作": "CONTINUE",
+      "shared_edge_issue": "high-frequency bitten/jagged contour is visually uncomfortable and does not resemble controlled lettering",
+      "feedback_exact": [
+        "豆坊端头：解决了一些，但是还是下面有很明显的切割感。",
+        "两个标题：都可以继续",
+        "很少有文字会这种凹凸不平的边缘。感觉就是很不舒服的感觉。就算是毛笔字，也不会边缘这样像咬了一样的感觉。"
+      ]
     }
   },
   "t1_final_settlement_evidence": {

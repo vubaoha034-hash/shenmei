@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
+      "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581",
+      "priority": 0,
+      "purpose": "Current V6 Figma contour-cleanup evidence; green tea-leaf design is preserved and human title re-review remains mandatory."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4",
       "priority": 0,
@@ -741,7 +747,7 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_V6_ENDPOINT_FIXED_HUMAN_REVIEW",
+    "status": "PAUSED_FOR_P1_V6_CONTOUR_CLEANUP_HUMAN_REVIEW",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
@@ -815,8 +821,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 49,
-    "sha256": "3f4493d4e2dea4a8c9ae6fd18e574c9bcc6ff704853c36678fe54794cbbc162a",
+    "revision": 50,
+    "sha256": "5fff29c588c3574c248192e9f88d4f94e17be53d51e5c03e5bdd16dfee038bb7",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

@@ -1,0 +1,74 @@
+{
+  "schema_version": "vpd-v6-figma-contour-cleanup/v1",
+  "recorded_at": "2026-09-15T02:15:55Z",
+  "status": "FIGMA_CONTOUR_CLEANUP_EXECUTED_WAITING_HUMAN_REVIEW",
+  "human_feedback_before_cleanup": {
+    "豆坊": "CONTINUE; endpoint improved but lower edge still reads cut",
+    "茶作": "CONTINUE",
+    "shared_edge_issue": "high-frequency bitten/jagged contour is visually uncomfortable and does not resemble controlled lettering",
+    "feedback_exact": [
+      "豆坊端头：解决了一些，但是还是下面有很明显的切割感。",
+      "两个标题：都可以继续",
+      "很少有文字会这种凹凸不平的边缘。感觉就是很不舒服的感觉。就算是毛笔字，也不会边缘这样像咬了一样的感觉。"
+    ]
+  },
+  "non_authoritative_generation_correction": {
+    "status": "EXCLUDED_FROM_FORMAL_PROGRESS",
+    "note": "Two directly generated clean-edge draft images from the prior assistant turn were not Figma edits, dropped the green tea-leaf design information, and are explicitly not formal V6 evidence or replacements."
+  },
+  "diagnosis": {
+    "doufang_bottom_hard_cut": {
+      "segment_index": 178,
+      "start_vertex": 178,
+      "end_vertex": 179,
+      "length_px": 126,
+      "both_y": 498,
+      "at_vector_max_y": true
+    },
+    "edge_noise_source": "dense raster-trace-like polygon vertices and short segments; macro silhouette is directionally useful but micro contour is over-jagged",
+    "principle": "preserve macro irregularity and semantic structure; remove only high-frequency micro jitter"
+  },
+  "figma_cleanup": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "review_frames": {
+      "豆坊": "70:3",
+      "茶作": "70:4"
+    },
+    "formal_vectors": {
+      "豆坊": "75:2",
+      "茶作白字": "70:8",
+      "茶作绿色叶片": "70:10"
+    },
+    "hidden_backups_created": [
+      "DOUFANG_PRE_EDGE_CLEANUP_BACKUP",
+      "CHAZUO_GLYPH_PRE_EDGE_CLEANUP_BACKUP",
+      "CHAZUO_LEAF_PRE_EDGE_CLEANUP_BACKUP"
+    ],
+    "doufang_bottom_fix": "replaced the 126px flat bottom cut with a controlled upward Bezier arc on segment 178",
+    "micro_cleanup_method": "local perpendicular projection smoothing on short low-deviation contour vertices; topology and loop structure preserved",
+    "cleanup_operations": {
+      "豆坊": 272,
+      "茶作白字": 297,
+      "茶作绿色叶片": 13
+    },
+    "green_leaf_layer_preserved": true,
+    "green_leaf_position_count_structure_preserved": true,
+    "glyph_reideation_performed": false,
+    "photography_modified": false,
+    "P6_modified": false,
+    "image_generation_used_for_formal_cleanup": false
+  },
+  "drive_review": {
+    "presentation_id": "1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY",
+    "title": "T1_V6_Figma矢量重建复判_20260915",
+    "both_slides_replaced_with_current_figma_renders": true,
+    "url": "https://docs.google.com/presentation/d/1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY/edit"
+  },
+  "gate": {
+    "title_passed": false,
+    "T2_allowed": false,
+    "P6_reintegration_allowed": false,
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW"
+  }
+}
