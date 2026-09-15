@@ -1,7 +1,7 @@
 {
   "schema_version": "vpd-chazuo-d-mother-faithful-vector-test/v1",
   "recorded_at": "2026-09-15T10:29:00Z",
-  "updated_at": "2026-09-15T10:34:00Z",
+  "updated_at": "2026-09-15T13:15:00Z",
   "status": "NON_FORMAL_TEST_WAITING_HUMAN_REVIEW",
   "source": {
     "drive_presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
@@ -21,19 +21,25 @@
     "svg_import_method": "Figma createNodeFromSvg because upload submit URL DNS was unavailable in container",
     "design_change_allowed": false
   },
+  "human_review": {
+    "faithful_white_wordmark": "PASS_PRESERVED_ORIGINAL_D_DESIGN_CHARACTER",
+    "three_leaf_overlay": "FAIL_NOT_INTEGRATED_DIRTY_SPOTS",
+    "human_feedback": "green leaves had no real relationship with the lettering and read like several dirty spots rather than designed parts of the wordmark",
+    "implication": "keep the white D mother vector frozen; green is allowed only as an actual stroke-internal or stroke-replacement structural color event"
+  },
   "figma": {
     "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "70:2",
     "mother_test_frame_id": "100:2",
     "faithful_vector_root_id": "100:3",
     "faithful_vector_root_name": "CHAZUO_D_V5_MOTHER_FAITHFUL_VECTOR",
-    "preserved_green_leaf_composite_id": "101:2",
-    "leaf_components_review_frame_id": "102:5",
-    "leaf_components": ["102:6", "102:7", "102:8", "102:9", "102:10", "102:11"],
-    "refined_leaf_test_frame_id": "103:2",
-    "refined_leaf_test_word_id": "103:3",
-    "refined_leaf_ids": ["103:5", "103:6", "103:7"],
-    "refined_leaf_principle": "three selected leaves only; each physically attaches to a white stroke as semantic color accent; no floating decorative leaves",
+    "rejected_three_leaf_test_frame_id": "103:2",
+    "rejected_three_leaf_ids": ["103:5", "103:6", "103:7"],
+    "failed_boolean_test_frame_id": "106:2 (deleted)",
+    "failed_mask_test_frame_id": "108:2 (deleted)",
+    "internal_green_stroke_test_frame_id": "109:2",
+    "internal_green_stroke_art_id": "109:3",
+    "internal_green_stroke_method": "exact original mother path rendered cream plus the identical original path rendered olive only through one leaf-shaped clip window located inside the real 茶→作 connecting stroke; no glyph geometry change",
     "white_wordmark_modified_after_faithful_vectorization": false,
     "formal_nodes_overwritten": false,
     "doufang_modified": false,
@@ -44,13 +50,16 @@
     "presentation_id": "11c10qQO1f0g3PQLToduOzDjFVOJTK0qL3Lhm40LgrUI",
     "title": "T1_V7_茶作D母稿忠实矢量复判_20260915",
     "url": "https://docs.google.com/presentation/d/11c10qQO1f0g3PQLToduOzDjFVOJTK0qL3Lhm40LgrUI/edit",
-    "contains": ["original V5 Chazuo D mother crop", "current Figma faithful vector with refined three-leaf integration"],
+    "contains": [
+      "original V5 Chazuo D mother crop",
+      "current Figma candidate with one olive leaf-shaped segment constrained entirely inside the real connecting stroke"
+    ],
     "thumbnail_readback_verified": true
   },
   "review_scope": {
     "questions": [
-      "Does the clean vector preserve the original V5 D design character?",
-      "Do the three green leaf accents now read as designed stroke accents rather than pasted decoration?"
+      "Does the clean vector preserve the original V5 D design character? (already human PASS)",
+      "Does the single internal olive segment now read as part of the lettering rather than a dirty decorative spot?"
     ],
     "not_a_pass": true,
     "T2_allowed": false,
