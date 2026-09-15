@@ -1,0 +1,75 @@
+{
+  "schema_version": "vpd-v6-per-contour-bezier-refinement/v1",
+  "recorded_at": "2026-09-15T02:39:51Z",
+  "status": "PER_CONTOUR_BEZIER_REFINEMENT_EXECUTED_WAITING_HUMAN_REVIEW",
+  "human_review_before_refinement": {
+    "doufang_cropping": "PASS_NO_LONGER_READS_AS_CUT",
+    "shared_edge_quality": "FAIL_UNACCEPTABLE",
+    "chazuo_green_leaf": "PASS_PRESERVED",
+    "feedback_exact": [
+      "1 没有被切掉",
+      "2 不可接受",
+      "3 茶叶保留了。"
+    ]
+  },
+  "diagnosis": {
+    "prior_cleanup_limit": "moving existing trace vertices reduced some jitter but left dense trace topology, so bitten/faceted edge quality remained",
+    "formal_node_density_before_refinement": {
+      "豆坊": 321,
+      "茶作白字": 341,
+      "茶作绿色叶片": 118
+    },
+    "decision": "do not globally simplify or regenerate; rebuild edge continuity per closed contour with corner-preserving Bezier tangents"
+  },
+  "rejected_non_destructive_tests": [
+    {
+      "method": "aggressive contour reduction",
+      "result": "REJECTED",
+      "reason": "produced coarse faceted/cut lettering",
+      "formal_nodes_overwritten": false
+    },
+    {
+      "method": "automatic reduced-point curve fit",
+      "result": "REJECTED",
+      "reason": "damaged internal 豆 structure",
+      "formal_nodes_overwritten": false
+    }
+  ],
+  "figma_refinement": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "review_frames": {
+      "豆坊": "70:3",
+      "茶作": "70:4"
+    },
+    "formal_vectors": {
+      "豆坊": "75:2",
+      "茶作白字": "70:8",
+      "茶作绿色叶片": "70:10"
+    },
+    "method": "per closed contour: preserve true corners, apply one low-strength local average only to non-corner micro-jitter points, then assign Catmull-Rom-derived cubic Bezier tangents with handle clamping",
+    "doufang_verified_terminal_segments_preserved": [
+      0,
+      178
+    ],
+    "chazuo_green_leaf_modified": false,
+    "chazuo_green_leaf_preserved": true,
+    "glyph_reideation_performed": false,
+    "photography_modified": false,
+    "P6_modified": false,
+    "image_generation_used_for_formal_refinement": false,
+    "test_frames_removed_after_promotion": true
+  },
+  "drive_review": {
+    "presentation_id": "1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY",
+    "title": "T1_V6_Figma矢量重建复判_20260915",
+    "both_slides_replaced_with_current_figma_renders": true,
+    "url": "https://docs.google.com/presentation/d/1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY/edit"
+  },
+  "gate": {
+    "title_passed": false,
+    "T2_allowed": false,
+    "P6_reintegration_allowed": false,
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW"
+  }
+}

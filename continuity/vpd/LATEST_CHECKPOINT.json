@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 72,
-  "recorded_at": "2026-09-15T02:15:55Z",
+  "sequence": 73,
+  "recorded_at": "2026-09-15T02:39:51Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Both V6 wordmarks remain viable. Formal work stayed in Figma: Doufang bottom hard-cut geometry and high-frequency bitten edges were cleaned; Chazuo white glyph edges were cleaned while the separate green tea-leaf vector layer was preserved. Prior direct-generation cleanup drafts are excluded from formal progress. Await human re-review before T2 or poster reintegration.",
+  "current_focus": "Human confirms Doufang cropping is solved and the Chazuo green leaf layer is preserved, but rejects both wordmarks edge quality. Formal Figma glyph contours were therefore refined per closed contour with corner-preserving cubic Bezier continuity; no image generation, glyph re-ideation, leaf deletion, photography change or P6 mutation occurred. Await human re-review before T2 or poster reintegration.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -59,7 +59,8 @@
     "p1_noncalligraphic_semantic_wordmark_v6_execution",
     "p1_v6_figma_vector_reconstruction",
     "p1_v6_doufang_endpoint_optical_fix",
-    "p1_v6_figma_contour_cleanup"
+    "p1_v6_figma_contour_cleanup",
+    "p1_v6_per_contour_bezier_refinement"
   ],
   "incomplete": [
     "p1_v6_post_vector_human_review",
@@ -71,7 +72,7 @@
     "scale"
   ],
   "blocked": [
-    "V6 contour-cleaned Doufang and Chazuo remain waiting for human title re-review and are not approved.",
+    "V6 per-contour-Bezier-refined Doufang and Chazuo remain waiting for human title re-review and are not approved.",
     "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -147,7 +148,7 @@
   "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5fff29c588c3574c248192e9f88d4f94e17be53d51e5c03e5bdd16dfee038bb7"
+    "sha256": "00301a069be6f474a8438dcbf540e128c799eb6ec883db6222567a9a5b4ade81"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -168,8 +169,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-V6-FIGMA-CONTOUR-CLEANUP-20260915-001",
-      "event_hash": "62937cbcc0648de543028b87b417328fd2991515468383c2c730bf14e38f6624"
+      "event_id": "EVT-VPD-P1-V6-PER-CONTOUR-BEZIER-REFINEMENT-20260915-001",
+      "event_hash": "ed618742fb95a40cf5440f88fef3776632c19520441e62659a60560a9e1522e2"
     }
   },
   "typography_repair": {
@@ -197,6 +198,10 @@
     "v6_figma_contour_cleanup": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
       "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581"
+    },
+    "v6_per_contour_bezier_refinement": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
+      "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce"
     }
   }
 }

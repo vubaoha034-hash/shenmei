@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
+      "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce",
+      "priority": 0,
+      "purpose": "Current V6 per-contour Bezier edge-refinement evidence; human title re-review remains mandatory before T2 or P6."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
       "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581",
       "priority": 0,
@@ -747,7 +753,7 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_V6_CONTOUR_CLEANUP_HUMAN_REVIEW",
+    "status": "PAUSED_FOR_P1_V6_PER_CONTOUR_BEZIER_HUMAN_REVIEW",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
@@ -821,8 +827,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 50,
-    "sha256": "5fff29c588c3574c248192e9f88d4f94e17be53d51e5c03e5bdd16dfee038bb7",
+    "revision": 51,
+    "sha256": "00301a069be6f474a8438dcbf540e128c799eb6ec883db6222567a9a5b4ade81",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
