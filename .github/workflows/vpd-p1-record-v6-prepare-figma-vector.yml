@@ -20,7 +20,7 @@ jobs:
           ref: visual-program-distillation-v2-photography-design-20260814
           fetch-depth: 0
       - name: Record V6 and prepare Figma vector reconstruction
-        run: python scripts/vpd_record_v6_and_prepare_figma_vector_reconstruction.py
+        run: python scripts/vpd_record_v6_and_prepare_figma_vector_reconstruction_fixed.py
       - name: Validate new state
         run: python scripts/verify_visual_memory.py --vpd-state --status-card
       - name: Persist V6 settlement
