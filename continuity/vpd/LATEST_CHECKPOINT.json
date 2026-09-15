@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 69,
-  "recorded_at": "2026-09-15T00:31:52Z",
+  "sequence": 70,
+  "recorded_at": "2026-09-15T00:37:27Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "V6 non-calligraphic semantic wordmark generation is directionally much better but remains explicitly far below Shanyeji and is not passed. Preserve all image gains. Move only the selected V6 wordmarks into Figma for faithful editable vector reconstruction and optical refinement; Figma must not re-ideate the glyph style.",
+  "current_focus": "V6 selected wordmarks have been faithfully reconstructed in Figma as editable vectors, with tea leaf graphics on a separate editable vector layer. No glyph re-ideation, photography change or P6 mutation occurred. Await human review of the Figma vector result before any support typography or poster reintegration.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -56,10 +56,10 @@
     "p1_structural_wordmark_v4_direction_selection",
     "p1_generative_custom_wordmark_v5_execution",
     "p1_generative_custom_wordmark_v5_direction_selection",
-    "p1_noncalligraphic_semantic_wordmark_v6_execution"
+    "p1_noncalligraphic_semantic_wordmark_v6_execution",
+    "p1_v6_figma_vector_reconstruction"
   ],
   "incomplete": [
-    "p1_v6_figma_vector_reconstruction",
     "p1_v6_post_vector_human_review",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
@@ -69,12 +69,12 @@
     "scale"
   ],
   "blocked": [
-    "V6 concept is directionally positive but not an approved final wordmark.",
-    "T2 remains blocked until post-vector human title review passes.",
+    "V6 Figma vector result is waiting for human title review and is not approved.",
+    "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+  "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -142,10 +142,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_V6_DIRECTIONAL_POSITIVE_FIGMA_VECTOR_RECONSTRUCTION_READY",
+  "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "be7a3f635bbbf47955fdb1fcd556829f398fa7843f3d9fb7ee258612f228f9b2"
+    "sha256": "55a5fb902205932cee5fb4cc0b4ebf5b33a052c35c3ad6213b150b390fc5f215"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -166,16 +166,20 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-V6-DIRECTIONAL-POSITIVE-FIGMA-VECTOR-READY-20260915-001",
-      "event_hash": "54ea8029757011eaf84ed9171233cb9a1db3962311b80204524800a06c3c9bed"
+      "event_id": "EVT-VPD-P1-V6-FIGMA-VECTOR-RECONSTRUCTED-20260915-001",
+      "event_hash": "4401dfde767f19a287d683497b3199dbf68fe934d09ca282215c64f8748a2678"
     }
   },
   "typography_repair": {
-    "status": "V6_DIRECTIONAL_POSITIVE_FIGMA_VECTOR_RECONSTRUCTION_READY",
-    "phase": "V6_FIGMA_VECTOR_RECONSTRUCTION",
+    "status": "V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
+    "phase": "V6_FIGMA_VECTOR_REVIEW",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
       "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25"
+    },
+    "v6_vector_reconstruction": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
+      "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22"
     },
     "selected_direction": {
       "豆坊": "B",
@@ -183,6 +187,6 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA"
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW"
   }
 }

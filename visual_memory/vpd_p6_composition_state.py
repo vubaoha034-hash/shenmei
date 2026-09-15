@@ -42,6 +42,7 @@ ACTIONS = {
     "P1_WAIT_HUMAN_GENERATIVE_CUSTOM_WORDMARK_V5_DIRECTION_VERDICT",
     "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+    "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
 }
 
 
@@ -317,6 +318,20 @@ def validate_p6_composition_state(root):
         require(tr["selected_direction"] == {"豆坊":"B","茶作":"D"}, "V6_SEED_SELECTION_DRIFT")
         require(tr["T2_allowed"] is False and tr["P6_reintegration_allowed"] is False, "V6_PREMATURE_ADVANCE")
         check_ref(root, tr["v6_execution"])
+
+    elif action == "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW":
+        tr = lock["typography_repair"]
+        require(tr["status"] == "V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW", "V6_VECTOR_REVIEW_STATE")
+        require(tr["phase"] == "V6_FIGMA_VECTOR_REVIEW", "V6_VECTOR_REVIEW_PHASE")
+        require(tr["figma_vector_reconstruction_allowed"] is False, "V6_VECTOR_RECONSTRUCTION_STILL_OPEN")
+        require(tr["T2_allowed"] is False and tr["P6_reintegration_allowed"] is False, "V6_VECTOR_PREMATURE_ADVANCE")
+        check_ref(root, tr["v6_execution"])
+        check_ref(root, tr["v6_vector_reconstruction"])
+        rec = read(root, tr["v6_vector_reconstruction"]["path"])
+        require(rec["status"] == "EDITABLE_VECTOR_RECONSTRUCTION_COMPLETE_WAITING_HUMAN_REVIEW", "V6_VECTOR_RECORD_STATUS")
+        require(rec["figma"]["page_id"] == "70:2", "V6_VECTOR_PAGE_DRIFT")
+        require(rec["figma"]["editable_nodes"] == {"豆坊":"70:5","茶作字形":"70:7","茶作叶形":"70:9"}, "V6_VECTOR_NODE_DRIFT")
+        require(rec["editability_readback_verified"] is True, "V6_VECTOR_EDITABILITY_UNVERIFIED")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

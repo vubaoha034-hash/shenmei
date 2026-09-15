@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 47,
+  "revision": 48,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 46,
-    "git_blob_sha": "81361f368ae082d212f5b82ef9e7c5251ffe0b9e",
-    "note": "Revision 46 selected V5 B/D as seeds and authorized non-calligraphic V6."
+    "revision": 47,
+    "git_blob_sha": "96a9de8c099f81770b1e6caec184137da0d1fff0",
+    "note": "Revision 47 authorized faithful editable Figma vector reconstruction of V6 only."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "V6 non-calligraphic semantic wordmark generation is directionally much better but remains explicitly far below Shanyeji and is not passed. Preserve all image gains. Move only the selected V6 wordmarks into Figma for faithful editable vector reconstruction and optical refinement; Figma must not re-ideate the glyph style.",
-  "status": "VPD_P1_V6_DIRECTIONAL_POSITIVE_FIGMA_VECTOR_RECONSTRUCTION_READY",
+  "current_stage": "V6 selected wordmarks have been faithfully reconstructed in Figma as editable vectors, with tea leaf graphics on a separate editable vector layer. No glyph re-ideation, photography change or P6 mutation occurred. Await human review of the Figma vector result before any support typography or poster reintegration.",
+  "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+  "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "executed V6 non-calligraphic semantic wordmark concept generation from selected V5 B/D seeds",
-    "recorded human directional-positive but not-pass feedback and the remaining large gap to Shanyeji",
-    "stored V6 concept board in Drive",
-    "preserved photography/P3/P4/P6 and all prior typography evidence",
-    "assigned Figma only the downstream editable vector reconstruction and optical-refinement role"
+    "reconstructed V6 豆坊 as an editable Figma vector tree",
+    "reconstructed V6 茶作 glyph and leaf graphics as separate editable Figma vector layers",
+    "verified vector node structure by Figma metadata readback",
+    "created a stable two-slide Drive review file from Figma renders",
+    "preserved P6 photography and all prior experiment evidence unchanged"
   ],
-  "updated_at": "2026-09-15T00:31:52Z",
+  "updated_at": "2026-09-15T00:37:27Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,8 +164,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V6 concept is directionally positive but not an approved final wordmark.",
-    "T2 remains blocked until post-vector human title review passes.",
+    "V6 Figma vector result is waiting for human title review and is not approved.",
+    "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,9 +207,9 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "V6_DIRECTIONAL_POSITIVE_FIGMA_VECTOR_RECONSTRUCTION_READY",
+    "status": "V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
-    "phase": "V6_FIGMA_VECTOR_RECONSTRUCTION",
+    "phase": "V6_FIGMA_VECTOR_REVIEW",
     "bench_plan": {
       "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
       "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -476,10 +476,14 @@
       "quality_boundary_exact": "这个跟山野集还是差很多。",
       "formal_interpretation": "DIRECTIONAL_POSITIVE_NOT_PASS"
     },
-    "figma_vector_reconstruction_allowed": true,
+    "figma_vector_reconstruction_allowed": false,
     "figma_reideation_allowed": false,
     "T2_allowed": false,
-    "P6_reintegration_allowed": false
+    "P6_reintegration_allowed": false,
+    "v6_vector_reconstruction": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
+      "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22"
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",

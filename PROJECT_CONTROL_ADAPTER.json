@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
+      "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22",
+      "priority": 0,
+      "purpose": "Current V6 editable Figma vector reconstruction evidence; human title review remains mandatory before T2 or P6."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
       "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25",
       "priority": 0,
@@ -729,14 +735,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_V6_FIGMA_VECTOR_RECONSTRUCTION",
+    "status": "PAUSED_FOR_P1_V6_FIGMA_VECTOR_HUMAN_REVIEW",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -753,7 +759,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_V6_DIRECTIONAL_POSITIVE_FIGMA_VECTOR_RECONSTRUCTION_READY",
+    "checkpoint": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
     "challenge_ids": [
       "H1",
       "H2",
@@ -791,7 +797,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -803,8 +809,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 47,
-    "sha256": "be7a3f635bbbf47955fdb1fcd556829f398fa7843f3d9fb7ee258612f228f9b2",
+    "revision": 48,
+    "sha256": "55a5fb902205932cee5fb4cc0b4ebf5b33a052c35c3ad6213b150b390fc5f215",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
