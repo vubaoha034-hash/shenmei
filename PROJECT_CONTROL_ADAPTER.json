@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
+      "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4",
+      "priority": 0,
+      "purpose": "Current V6 Doufang endpoint optical-fix evidence; both titles still require human re-review before T2 or P6."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
       "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22",
       "priority": 0,
@@ -735,7 +741,7 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_V6_FIGMA_VECTOR_HUMAN_REVIEW",
+    "status": "PAUSED_FOR_P1_V6_ENDPOINT_FIXED_HUMAN_REVIEW",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
@@ -809,8 +815,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 48,
-    "sha256": "55a5fb902205932cee5fb4cc0b4ebf5b33a052c35c3ad6213b150b390fc5f215",
+    "revision": 49,
+    "sha256": "3f4493d4e2dea4a8c9ae6fd18e574c9bcc6ff704853c36678fe54794cbbc162a",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

@@ -1,0 +1,65 @@
+{
+  "schema_version": "vpd-v6-doufang-endpoint-optical-fix/v1",
+  "recorded_at": "2026-09-15T01:38:47Z",
+  "status": "FIX_EXECUTED_WAITING_HUMAN_REVIEW",
+  "human_review_before_fix": {
+    "豆坊": "CONTINUE_WITH_ENDPOINT_FIX_REQUIRED",
+    "茶作": "CONTINUE_UNCHANGED",
+    "feedback_exact": "两个都可以继续。但是有个很严重的问题，豆坊 明显的感觉左边和右边被截取去除了的感觉。"
+  },
+  "diagnosis": {
+    "cause": "DOUFANG_VECTOR_BOUNDARY_HARD_CUT",
+    "measured_boundary_vertices": {
+      "left": [
+        {
+          "x": 0,
+          "y": 356
+        },
+        {
+          "x": 0,
+          "y": 498
+        }
+      ],
+      "right": [
+        {
+          "x": 824,
+          "y": 304
+        },
+        {
+          "x": 824,
+          "y": 284
+        }
+      ]
+    },
+    "container_clip_only": false,
+    "visual_issue": "left and right terminals read as cropped/removed rather than intentionally finished"
+  },
+  "figma_fix": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "review_frame_id": "70:3",
+    "wrapper_id": "70:5",
+    "formal_fixed_vector_id": "75:2",
+    "formal_fixed_vector_name": "DOUFANG_V6_EDITABLE_VECTOR_ENDPOINT_FIXED",
+    "method": "direct boundary-vertex and Bezier-tangent optical correction; no external patch nodes retained",
+    "left_terminal": "rounded/tapered natural start, replacing hard vertical cut",
+    "right_terminal": "reduced subtle natural finish, replacing hard vertical cut",
+    "tea_modified": false,
+    "photography_modified": false,
+    "P6_modified": false,
+    "glyph_style_reideated": false
+  },
+  "drive_review": {
+    "presentation_id": "1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY",
+    "title": "T1_V6_Figma矢量重建复判_20260915",
+    "first_slide_replaced_with_endpoint_fixed_doufang": true,
+    "tea_slide_unchanged": true,
+    "url": "https://docs.google.com/presentation/d/1-YtSzv7O5KiXQPncc-GBktPrhb2IJ2t6cZMUd6viLhY/edit"
+  },
+  "gate": {
+    "title_passed": false,
+    "T2_allowed": false,
+    "P6_reintegration_allowed": false,
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW"
+  }
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 70,
-  "recorded_at": "2026-09-15T00:37:27Z",
+  "sequence": 71,
+  "recorded_at": "2026-09-15T01:38:47Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "V6 selected wordmarks have been faithfully reconstructed in Figma as editable vectors, with tea leaf graphics on a separate editable vector layer. No glyph re-ideation, photography change or P6 mutation occurred. Await human review of the Figma vector result before any support typography or poster reintegration.",
+  "current_focus": "Human says both V6 Figma wordmarks may continue, but identifies a serious Doufang left/right cropped-terminal defect. Tea remains unchanged. Doufang received only a local endpoint optical correction by directly editing boundary vertices/Bezier tangents; no glyph re-ideation, photography or P6 mutation occurred. Await human re-review before T2 or poster reintegration.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -57,7 +57,8 @@
     "p1_generative_custom_wordmark_v5_execution",
     "p1_generative_custom_wordmark_v5_direction_selection",
     "p1_noncalligraphic_semantic_wordmark_v6_execution",
-    "p1_v6_figma_vector_reconstruction"
+    "p1_v6_figma_vector_reconstruction",
+    "p1_v6_doufang_endpoint_optical_fix"
   ],
   "incomplete": [
     "p1_v6_post_vector_human_review",
@@ -69,7 +70,7 @@
     "scale"
   ],
   "blocked": [
-    "V6 Figma vector result is waiting for human title review and is not approved.",
+    "V6 endpoint-fixed Doufang and unchanged Chazuo remain waiting for human title re-review and are not approved.",
     "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -145,7 +146,7 @@
   "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "55a5fb902205932cee5fb4cc0b4ebf5b33a052c35c3ad6213b150b390fc5f215"
+    "sha256": "3f4493d4e2dea4a8c9ae6fd18e574c9bcc6ff704853c36678fe54794cbbc162a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -166,8 +167,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-V6-FIGMA-VECTOR-RECONSTRUCTED-20260915-001",
-      "event_hash": "4401dfde767f19a287d683497b3199dbf68fe934d09ca282215c64f8748a2678"
+      "event_id": "EVT-VPD-P1-V6-DOUFANG-ENDPOINT-OPTICAL-FIX-20260915-001",
+      "event_hash": "c3603b2272c67bfd39efd065f307e49114cc627e710a1015ec0cb8a15718f57d"
     }
   },
   "typography_repair": {
@@ -187,6 +188,10 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW"
+    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+    "v6_doufang_endpoint_optical_fix": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
+      "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 48,
+  "revision": 49,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 47,
-    "git_blob_sha": "96a9de8c099f81770b1e6caec184137da0d1fff0",
-    "note": "Revision 47 authorized faithful editable Figma vector reconstruction of V6 only."
+    "revision": 48,
+    "git_blob_sha": "f3c45bb3b57bb07327c5efa32ba6bd8a98001889",
+    "note": "Revision 48 recorded editable V6 Figma reconstruction waiting for human review."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,7 +120,7 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "V6 selected wordmarks have been faithfully reconstructed in Figma as editable vectors, with tea leaf graphics on a separate editable vector layer. No glyph re-ideation, photography change or P6 mutation occurred. Await human review of the Figma vector result before any support typography or poster reintegration.",
+  "current_stage": "Human says both V6 Figma wordmarks may continue, but identifies a serious Doufang left/right cropped-terminal defect. Tea remains unchanged. Doufang received only a local endpoint optical correction by directly editing boundary vertices/Bezier tangents; no glyph re-ideation, photography or P6 mutation occurred. Await human re-review before T2 or poster reintegration.",
   "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
   "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "reconstructed V6 豆坊 as an editable Figma vector tree",
-    "reconstructed V6 茶作 glyph and leaf graphics as separate editable Figma vector layers",
-    "verified vector node structure by Figma metadata readback",
-    "created a stable two-slide Drive review file from Figma renders",
-    "preserved P6 photography and all prior experiment evidence unchanged"
+    "recorded human continue verdict for both V6 Figma wordmarks without promoting them to pass",
+    "diagnosed Doufang left/right hard-cut boundary geometry from exact vector vertices",
+    "corrected only Doufang terminal geometry using direct editable-vector endpoint/tangent refinement",
+    "kept Chazuo, photography and P6 unchanged",
+    "updated the stable Drive review first slide with the endpoint-fixed Doufang result"
   ],
-  "updated_at": "2026-09-15T00:37:27Z",
+  "updated_at": "2026-09-15T01:38:47Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -164,7 +164,7 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "V6 Figma vector result is waiting for human title review and is not approved.",
+    "V6 endpoint-fixed Doufang and unchanged Chazuo remain waiting for human title re-review and are not approved.",
     "T2 remains blocked until this human review passes.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -483,6 +483,15 @@
     "v6_vector_reconstruction": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
       "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22"
+    },
+    "v6_doufang_endpoint_optical_fix": {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
+      "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
+    },
+    "v6_human_review_before_endpoint_fix": {
+      "豆坊": "CONTINUE_WITH_ENDPOINT_FIX_REQUIRED",
+      "茶作": "CONTINUE_UNCHANGED",
+      "feedback_exact": "两个都可以继续。但是有个很严重的问题，豆坊 明显的感觉左边和右边被截取去除了的感觉。"
     }
   },
   "t1_final_settlement_evidence": {
