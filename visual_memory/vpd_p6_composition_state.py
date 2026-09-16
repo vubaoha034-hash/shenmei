@@ -44,6 +44,7 @@ ACTIONS = {
     "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
     "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
     "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+    "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
 }
 
 
@@ -343,6 +344,21 @@ def validate_p6_composition_state(root):
         require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "CHAZUO_HIFI_PREMATURE_ADVANCE")
         check_ref(root, tr["v7_hifi_surface_test"])
         check_ref(root, tr["v7_hifi_surface_human_rejection"])
+
+    if action == "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01":
+        tr = lock["typography_repair"]
+        require(lock["status"] == "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_READY", "TYPOGRAPHY_SANDBOX_NOT_READY")
+        require(tr.get("status") == "TYPOGRAPHY_METHOD_SANDBOX_READY", "TYPOGRAPHY_SANDBOX_TYPOGRAPHY_STATE")
+        require(tr.get("phase") == "TYPOGRAPHY_METHOD_SANDBOX", "TYPOGRAPHY_SANDBOX_PHASE")
+        require(tr.get("sandbox_rule_promotion_allowed") is False, "TYPOGRAPHY_SANDBOX_PREMATURE_RULE_PROMOTION")
+        require(tr.get("sandbox_first_test") == "TYP-M01", "TYPOGRAPHY_SANDBOX_FIRST_TEST_DRIFT")
+        check_ref(root, tr["typography_method_research"])
+        check_ref(root, tr["typography_method_sandbox_plan"])
+        plan = read(root, tr["typography_method_sandbox_plan"]["path"])
+        require(plan["status"] == "FROZEN_SANDBOX_PLAN_NOT_RULE", "TYPOGRAPHY_SANDBOX_PLAN_STATUS")
+        require(plan["first_test"] == "TYP-M01", "TYPOGRAPHY_SANDBOX_PLAN_FIRST_TEST")
+        require(plan["rule_admission"]["automatic_promotion"] is False, "TYPOGRAPHY_SANDBOX_AUTO_PROMOTION")
+        require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "TYPOGRAPHY_SANDBOX_PREMATURE_ADVANCE")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)

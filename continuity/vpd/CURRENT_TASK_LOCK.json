@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 52,
+  "revision": 53,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 51,
-    "git_blob_sha": "405346c4be2fbd6c400e1abd264a784d70e8a3b6",
-    "note": "Revision 51 preserved the formal V6 vector-review gate. A later non-formal Chazuo V6 high-fidelity surface test was recorded without promoting the task lock; this revision settles its human verdict as FAIL and stops that vector-only surface route."
+    "revision": 52,
+    "git_blob_sha": "3c45bb315d276132aa66c78d5781014d74feb4de",
+    "note": "Revision 52 stopped the failed Chazuo V6 Figma-vector-only surface route and proposed a hybrid texture probe. User then required a broader typography-method research sandbox and prohibited untested methods from entering project rules."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review of the Chazuo V6 geometry-frozen high-fidelity Figma surface test is FAIL: leaf visibility improved only slightly, while the right-side result still reads low/flat and is not worth continuing. Stop the current Figma-vector-only surface micro-refinement route. Preserve the exact V6 geometry and six-leaf relationships as research evidence only; T2 and P6 remain blocked. Prepare one bounded hybrid texture-finish probe instead of stacking more Figma vector effects.",
-  "status": "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
+  "current_stage": "Typography creation research has been stored as non-authoritative sandbox evidence. No researched method is a VPD rule. A frozen sandbox plan now opens exactly one first test on 茶作 D: TYP-M01 centerline plus variable-width stroke reconstruction, monochrome skeleton only, with no leaves, texture, gradient or shadow. Formal nodes, Doufang, photography, T2 and P6 remain frozen.",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the human verdict that leaf visibility improved only slightly and remains insufficient",
-    "recorded the human verdict that the right-side Figma result still reads low/flat and does not justify continuing the same route",
-    "stopped further Figma-vector-only surface micro-refinement on Chazuo frame 118:2",
-    "preserved V6 geometry and the original six-leaf placement/scale/overlap as research-only evidence",
-    "kept T2, P6 reintegration, photography and candidate promotion blocked",
-    "set the next step to preparation of one bounded hybrid texture-finish probe rather than more vector-effect stacking"
+    "stored professional typography/lettering/CJK/vector construction research as RESEARCH_ONLY_NOT_RULE",
+    "stored a frozen sandbox plan with an explicit rule-admission firewall",
+    "cancelled the immediate hybrid-texture probe as the next action before execution",
+    "opened only TYP-M01 centerline plus variable-width stroke reconstruction for a bounded 茶-only monochrome test",
+    "kept Doufang, formal Chazuo nodes, photography, T2, P6 reintegration and rule promotion frozen"
   ],
-  "updated_at": "2026-09-16T08:40:44Z",
+  "updated_at": "2026-09-16T09:29:04Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -165,8 +164,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Chazuo V6 high-fidelity Figma surface route is human-rejected; frame 118:2 is not an approved production wordmark.",
-    "T2 remains blocked until a title route achieves human visual acceptance, not merely structural correctness or editability.",
+    "No typography research method is an approved VPD rule until a controlled actual-pixel test passes human review and the user explicitly approves promotion.",
+    "T2 remains blocked until a title route achieves human visual acceptance.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -208,9 +207,9 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
-    "phase": "V6_SURFACE_ROUTE_RESET",
+    "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
       "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
       "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
@@ -220,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -533,7 +532,18 @@
     "current_vector_only_surface_route": "STOPPED_NOT_WORTH_CONTINUING",
     "selected_direction_geometry": {
       "茶作": "V6 full-concept geometry preserved as research-only"
-    }
+    },
+    "typography_method_research": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md",
+      "sha256": "83a7d203aa016270f5a67855644f0795bbd6b3895cb1c962eee332ba8bf7ad27"
+    },
+    "typography_method_sandbox_plan": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_PLAN_V1.json",
+      "sha256": "10e0d7141662cf718451efe23035a48576e0343569ff508f54786345de69d5ab"
+    },
+    "sandbox_rule_promotion_allowed": false,
+    "sandbox_first_test": "TYP-M01",
+    "sandbox_first_test_scope": "茶 only; monochrome centerline plus variable-width construction; no leaves/texture/shadow/gradient; one visible output; zero hidden variants"
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",

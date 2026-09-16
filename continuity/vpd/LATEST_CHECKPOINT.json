@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 74,
-  "recorded_at": "2026-09-16T08:40:44Z",
+  "sequence": 75,
+  "recorded_at": "2026-09-16T09:29:04Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human review of the Chazuo V6 geometry-frozen high-fidelity Figma surface test is FAIL: leaf visibility improved only slightly, while the right-side result still reads low/flat and is not worth continuing. Stop the current Figma-vector-only surface micro-refinement route. Preserve the exact V6 geometry and six-leaf relationships as research evidence only; T2 and P6 remain blocked. Prepare one bounded hybrid texture-finish probe instead of stacking more Figma vector effects.",
+  "current_focus": "Typography creation research has been stored as non-authoritative sandbox evidence. No researched method is a VPD rule. A frozen sandbox plan now opens exactly one first test on 茶作 D: TYP-M01 centerline plus variable-width stroke reconstruction, monochrome skeleton only, with no leaves, texture, gradient or shadow. Formal nodes, Doufang, photography, T2 and P6 remain frozen.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -62,10 +62,12 @@
     "p1_v6_figma_contour_cleanup",
     "p1_v6_per_contour_bezier_refinement",
     "p1_chazuo_v6_hifi_surface_test",
-    "p1_chazuo_v6_hifi_surface_human_fail_route_stop"
+    "p1_chazuo_v6_hifi_surface_human_fail_route_stop",
+    "p1_typography_creation_method_research_sandbox",
+    "p1_typography_method_sandbox_plan"
   ],
   "incomplete": [
-    "p1_hybrid_texture_finish_probe",
+    "p1_typography_method_sandbox_test_01",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -74,12 +76,12 @@
     "scale"
   ],
   "blocked": [
-    "Chazuo V6 high-fidelity Figma surface route is human-rejected; frame 118:2 is not an approved production wordmark.",
-    "T2 remains blocked until a title route achieves human visual acceptance, not merely structural correctness or editability.",
+    "No typography research method is an approved VPD rule until a controlled actual-pixel test passes human review and the user explicitly approves promotion.",
+    "T2 remains blocked until a title route achieves human visual acceptance.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -147,10 +149,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "a77f4fb65322d9d835e5091e9473bfd182f1d484e6b472cf85b52df6865b72e8"
+    "sha256": "34fa7e0205658f126229c7842817a570be58c449d67d5639065a90c08101387c"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -171,13 +173,13 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-CHAZUO-V6-HIFI-HUMAN-FAIL-20260916-001",
-      "event_hash": "fde064a4281da80848b98ec05cfcf7f5e5e686469f7d9aab056540f3508c19c7"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-METHOD-SANDBOX-READY-20260916-001",
+      "event_hash": "104540603e05dfffecf5d48a8c769ec5df7f645ea382dbff2a270102c81e1e47"
     }
   },
   "typography_repair": {
-    "status": "CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
-    "phase": "V6_SURFACE_ROUTE_RESET",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_READY",
+    "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
       "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25"
@@ -192,7 +194,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -212,6 +214,16 @@
     "v7_hifi_surface_human_rejection": {
       "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json",
       "sha256": "f5eaf4cb6d1659771281072bea5f7caf03b9f3ec5563b0038157138f72e5f78a"
-    }
+    },
+    "typography_method_research": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md",
+      "sha256": "83a7d203aa016270f5a67855644f0795bbd6b3895cb1c962eee332ba8bf7ad27"
+    },
+    "typography_method_sandbox_plan": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_PLAN_V1.json",
+      "sha256": "10e0d7141662cf718451efe23035a48576e0343569ff508f54786345de69d5ab"
+    },
+    "sandbox_rule_promotion_allowed": false,
+    "sandbox_first_test": "TYP-M01"
   }
 }
