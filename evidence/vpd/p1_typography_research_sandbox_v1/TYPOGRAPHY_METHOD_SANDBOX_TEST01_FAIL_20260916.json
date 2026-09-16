@@ -1,0 +1,49 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-test/v1",
+  "recorded_at": "2026-09-16T09:35:22Z",
+  "test_id": "TYP-M01",
+  "method": "CENTERLINE_VARIABLE_WIDTH_STROKE_RECONSTRUCTION",
+  "status": "FAIL_ARCHIVED_NEGATIVE_EVIDENCE_NOT_RULE",
+  "scope": {
+    "target": "茶 only",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "leaves": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "sandbox_frame_id": "120:2",
+    "stroke_node_ids": [
+      "120:3",
+      "120:4",
+      "120:5",
+      "120:6",
+      "120:7",
+      "120:8",
+      "120:9",
+      "120:10",
+      "120:11"
+    ],
+    "formal_nodes_overwritten": false,
+    "variable_width_api_readback": "PASS_CUSTOM_PROFILES_ON_ALL_9_STROKES"
+  },
+  "technical_observation": {
+    "glyph_readability": "FAIL",
+    "observed_shape": "first read collapses into a broad umbrella/mushroom-like mass rather than an immediately recognizable 茶 character",
+    "edge_noise_problem": "AVOIDED_BUT_NOT_SUFFICIENT",
+    "method_value_observed": "centerline/variable-width removes dense bitten-edge tracing, but this first construction does not preserve Chinese component structure or mother lettering character"
+  },
+  "verdict": "FAIL_NOT_READABLE_AS_CHA",
+  "human_verdict": null,
+  "why_no_human_pass_needed": "The candidate fails a prior correctness requirement: immediate character recognition. Aesthetics cannot promote an unreadable glyph.",
+  "rule_admission": {
+    "allowed": false,
+    "action": "ARCHIVE_NEGATIVE_EVIDENCE_DO_NOT_ADD_TO_RULES"
+  },
+  "next_test": "TYP-M02_FAITHFUL_LETTERING_VECTORIZATION"
+}

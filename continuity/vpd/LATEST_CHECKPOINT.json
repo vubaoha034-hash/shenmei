@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 75,
-  "recorded_at": "2026-09-16T09:29:04Z",
+  "sequence": 76,
+  "recorded_at": "2026-09-16T09:35:22Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Typography creation research has been stored as non-authoritative sandbox evidence. No researched method is a VPD rule. A frozen sandbox plan now opens exactly one first test on 茶作 D: TYP-M01 centerline plus variable-width stroke reconstruction, monochrome skeleton only, with no leaves, texture, gradient or shadow. Formal nodes, Doufang, photography, T2 and P6 remain frozen.",
+  "current_focus": "Typography sandbox Test 01 (TYP-M01 centerline + variable-width stroke reconstruction) executed exactly once on 茶. The method avoided dense trace-edge noise but failed prior glyph correctness: the result does not immediately read as 茶 and collapses into an umbrella/mushroom-like mass. TYP-M01 is archived as negative evidence and is forbidden from rule promotion. Open TYP-M02 faithful lettering vectorization next; formal nodes, Doufang, photography, T2 and P6 remain frozen.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -64,10 +64,11 @@
     "p1_chazuo_v6_hifi_surface_test",
     "p1_chazuo_v6_hifi_surface_human_fail_route_stop",
     "p1_typography_creation_method_research_sandbox",
-    "p1_typography_method_sandbox_plan"
+    "p1_typography_method_sandbox_plan",
+    "p1_typography_method_sandbox_test01_fail"
   ],
   "incomplete": [
-    "p1_typography_method_sandbox_test_01",
+    "p1_typography_method_sandbox_test_02",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -76,12 +77,13 @@
     "scale"
   ],
   "blocked": [
+    "TYP-M01 failed and is not eligible for rule promotion.",
     "No typography research method is an approved VPD rule until a controlled actual-pixel test passes human review and the user explicitly approves promotion.",
     "T2 remains blocked until a title route achieves human visual acceptance.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -149,10 +151,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_READY",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "34fa7e0205658f126229c7842817a570be58c449d67d5639065a90c08101387c"
+    "sha256": "ea23ca51ddbfcfe165066c213aad46cf9ba17b228f2533698d72878ddb25bd32"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -173,12 +175,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-TYPOGRAPHY-METHOD-SANDBOX-READY-20260916-001",
-      "event_hash": "104540603e05dfffecf5d48a8c769ec5df7f645ea382dbff2a270102c81e1e47"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-METHOD-SANDBOX-TEST01-FAIL-20260916-001",
+      "event_hash": "7fc021842e30d041f48bce4dab613c94a6d0b2252589f5c971e9db57abbce382"
     }
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_READY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -194,7 +196,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
+    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -224,6 +226,12 @@
       "sha256": "10e0d7141662cf718451efe23035a48576e0343569ff508f54786345de69d5ab"
     },
     "sandbox_rule_promotion_allowed": false,
-    "sandbox_first_test": "TYP-M01"
+    "sandbox_first_test": "TYP-M01",
+    "sandbox_test01_evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL_20260916.json",
+      "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
+    },
+    "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
+    "sandbox_next_test": "TYP-M02"
   }
 }

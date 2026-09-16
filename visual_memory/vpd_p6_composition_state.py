@@ -45,6 +45,7 @@ ACTIONS = {
     "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
     "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
     "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
+    "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
 }
 
 
@@ -358,6 +359,17 @@ def validate_p6_composition_state(root):
         require(plan["status"] == "FROZEN_SANDBOX_PLAN_NOT_RULE", "TYPOGRAPHY_SANDBOX_PLAN_STATUS")
         require(plan["first_test"] == "TYP-M01", "TYPOGRAPHY_SANDBOX_PLAN_FIRST_TEST")
         require(plan["rule_admission"]["automatic_promotion"] is False, "TYPOGRAPHY_SANDBOX_AUTO_PROMOTION")
+        require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "TYPOGRAPHY_SANDBOX_PREMATURE_ADVANCE")
+
+    if action == "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02":
+        tr = lock["typography_repair"]
+        require(lock["status"] == "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL", "TYPOGRAPHY_SANDBOX_TEST02_NOT_READY")
+        require(tr.get("status") == "TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL", "TYPOGRAPHY_SANDBOX_TEST01_FAIL_STATE")
+        require(tr.get("sandbox_test01_verdict") == "FAIL_NOT_READABLE_AS_CHA", "TYPOGRAPHY_SANDBOX_TEST01_VERDICT")
+        require(tr.get("sandbox_rule_promotion_allowed") is False, "TYPOGRAPHY_SANDBOX_PREMATURE_RULE_PROMOTION")
+        require(tr.get("sandbox_next_test") == "TYP-M02", "TYPOGRAPHY_SANDBOX_TEST02_DRIFT")
+        check_ref(root, tr["typography_method_sandbox_plan"])
+        check_ref(root, tr["sandbox_test01_evidence"])
         require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "TYPOGRAPHY_SANDBOX_PREMATURE_ADVANCE")
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
