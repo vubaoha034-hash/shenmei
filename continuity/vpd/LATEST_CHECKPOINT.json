@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 73,
-  "recorded_at": "2026-09-15T02:39:51Z",
+  "sequence": 74,
+  "recorded_at": "2026-09-16T08:40:44Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human confirms Doufang cropping is solved and the Chazuo green leaf layer is preserved, but rejects both wordmarks edge quality. Formal Figma glyph contours were therefore refined per closed contour with corner-preserving cubic Bezier continuity; no image generation, glyph re-ideation, leaf deletion, photography change or P6 mutation occurred. Await human re-review before T2 or poster reintegration.",
+  "current_focus": "Human review of the Chazuo V6 geometry-frozen high-fidelity Figma surface test is FAIL: leaf visibility improved only slightly, while the right-side result still reads low/flat and is not worth continuing. Stop the current Figma-vector-only surface micro-refinement route. Preserve the exact V6 geometry and six-leaf relationships as research evidence only; T2 and P6 remain blocked. Prepare one bounded hybrid texture-finish probe instead of stacking more Figma vector effects.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -60,10 +60,12 @@
     "p1_v6_figma_vector_reconstruction",
     "p1_v6_doufang_endpoint_optical_fix",
     "p1_v6_figma_contour_cleanup",
-    "p1_v6_per_contour_bezier_refinement"
+    "p1_v6_per_contour_bezier_refinement",
+    "p1_chazuo_v6_hifi_surface_test",
+    "p1_chazuo_v6_hifi_surface_human_fail_route_stop"
   ],
   "incomplete": [
-    "p1_v6_post_vector_human_review",
+    "p1_hybrid_texture_finish_probe",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -72,12 +74,12 @@
     "scale"
   ],
   "blocked": [
-    "V6 per-contour-Bezier-refined Doufang and Chazuo remain waiting for human title re-review and are not approved.",
-    "T2 remains blocked until this human review passes.",
+    "Chazuo V6 high-fidelity Figma surface route is human-rejected; frame 118:2 is not an approved production wordmark.",
+    "T2 remains blocked until a title route achieves human visual acceptance, not merely structural correctness or editability.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+  "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -145,10 +147,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
+  "status": "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "00301a069be6f474a8438dcbf540e128c799eb6ec883db6222567a9a5b4ade81"
+    "sha256": "a77f4fb65322d9d835e5091e9473bfd182f1d484e6b472cf85b52df6865b72e8"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -169,13 +171,13 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-V6-PER-CONTOUR-BEZIER-REFINEMENT-20260915-001",
-      "event_hash": "ed618742fb95a40cf5440f88fef3776632c19520441e62659a60560a9e1522e2"
+      "event_id": "EVT-VPD-P1-CHAZUO-V6-HIFI-HUMAN-FAIL-20260916-001",
+      "event_hash": "fde064a4281da80848b98ec05cfcf7f5e5e686469f7d9aab056540f3508c19c7"
     }
   },
   "typography_repair": {
-    "status": "V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
-    "phase": "V6_FIGMA_VECTOR_REVIEW",
+    "status": "CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
+    "phase": "V6_SURFACE_ROUTE_RESET",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
       "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25"
@@ -190,7 +192,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -202,6 +204,14 @@
     "v6_per_contour_bezier_refinement": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
       "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce"
+    },
+    "v7_hifi_surface_test": {
+      "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_D_MOTHER_FAITHFUL_VECTOR_TEST_20260915.json",
+      "sha256": "70d27b8dd7f8ae36d2d8279072812a105e10deb0cd7ad6fd1e0a088abdbf005e"
+    },
+    "v7_hifi_surface_human_rejection": {
+      "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json",
+      "sha256": "f5eaf4cb6d1659771281072bea5f7caf03b9f3ec5563b0038157138f72e5f78a"
     }
   }
 }

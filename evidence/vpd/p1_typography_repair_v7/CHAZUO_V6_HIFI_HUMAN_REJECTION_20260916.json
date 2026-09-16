@@ -1,0 +1,47 @@
+{
+  "schema_version": "vpd-chazuo-v6-hifi-human-rejection/v1",
+  "recorded_at": "2026-09-16T08:40:44Z",
+  "status": "HUMAN_FAIL_STOP_CURRENT_VECTOR_ONLY_SURFACE_ROUTE",
+  "source_test": {
+    "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_D_MOTHER_FAITHFUL_VECTOR_TEST_20260915.json",
+    "sha256": "70d27b8dd7f8ae36d2d8279072812a105e10deb0cd7ad6fd1e0a088abdbf005e"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "test_frame_id": "118:2",
+    "geometry_changed_by_test": false,
+    "leaf_positions_changed_by_test": false,
+    "leaf_scale_changed_by_test": false,
+    "leaf_overlap_changed_by_test": false
+  },
+  "human_feedback_exact": [
+    "叶子比以前好了一点点。",
+    "右边的low还是没有。",
+    "没达到不值得。"
+  ],
+  "human_settlement": {
+    "leaf_visibility": "SLIGHT_IMPROVEMENT_ONLY_NOT_ENOUGH",
+    "premium_surface_quality": "FAIL_LOW_FLAT_FEELING_PERSISTS",
+    "worth_continuing_same_route": false,
+    "title_gate": "FAIL",
+    "commercial_readiness": "FAIL",
+    "T2_allowed": false,
+    "P6_reintegration_allowed": false
+  },
+  "route_decision": {
+    "stop": "Figma-vector-only microtexture, outline, shadow, gradient and leaf-strengthening refinements on frame 118:2",
+    "preserve": "V6 geometry and six-leaf placement/scale/overlap as research evidence only; do not treat as approved production wordmark",
+    "do_not_do": [
+      "do not keep stacking more vector effects or aesthetic rules onto the same failed route",
+      "do not move or redesign the six leaves merely to compensate for surface-quality failure",
+      "do not unlock T2 or P6 from a correctness-only or editability-only result"
+    ],
+    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
+    "next_probe_scope": "One bounded alternative route only: preserve the exact editable V6 vector geometry as underlay, create a separate pixel-faithful material/texture finish outside the Figma-vector-only effect stack, then reimport/overlay for final-pixel comparison against the mother. No structural redesign in this probe."
+  },
+  "diagnosis": {
+    "problem_type": "TASTE_PROBLEM_NOT_CORRECTNESS_PROBLEM",
+    "reason": "The vector route now preserves the intended structure and improves leaf visibility slightly, but it still does not reproduce the mother image material richness or premium surface finish. Additional Figma-only effect tuning is therefore low-leverage and risks rule/effect stacking without solving the visible quality gap.",
+    "charter_alignment": "Stop adding aesthetic micro-rules after repeated taste failure; change the rendering route rather than keep engineering the same failed surface treatment."
+  }
+}

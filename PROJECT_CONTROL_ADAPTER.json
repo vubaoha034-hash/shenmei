@@ -548,6 +548,12 @@
   ],
   "change_authorities": [
     {
+      "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json",
+      "sha256": "f5eaf4cb6d1659771281072bea5f7caf03b9f3ec5563b0038157138f72e5f78a",
+      "priority": 0,
+      "purpose": "Current human authority: Chazuo V6 high-fidelity Figma vector-only surface route failed and is stopped; prepare one bounded hybrid texture-finish probe before any T2 or P6."
+    },
+    {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
       "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce",
       "priority": 0,
@@ -753,14 +759,14 @@
   },
   "forward_commercial_pipeline": {
     "architecture": "PHOTO_ONLY_RENDER -> FIGMA_COMPOSITION -> FINAL_EXPORT",
-    "status": "PAUSED_FOR_P1_V6_PER_CONTOUR_BEZIER_HUMAN_REVIEW",
+    "status": "PAUSED_FOR_P1_HYBRID_TEXTURE_FINISH_PROBE_PREPARATION",
     "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
     "image_generation_policy": "CHATGPT_ONLY",
     "figma_design_surface": "REQUIRED_FOR_FUTURE_FORMAL_COMMERCIAL_OUTPUT",
     "historical_attempts_reclassified": false,
     "highest_active_project_objective": false,
-    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
     "timing_clarification": {
       "authority": {
         "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
@@ -777,7 +783,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_V6_FIGMA_VECTOR_RECONSTRUCTED_WAITING_HUMAN_REVIEW",
+    "checkpoint": "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP",
     "challenge_ids": [
       "H1",
       "H2",
@@ -815,7 +821,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+    "next_required_action": "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -827,8 +833,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 51,
-    "sha256": "00301a069be6f474a8438dcbf540e128c799eb6ec883db6222567a9a5b4ade81",
+    "revision": 52,
+    "sha256": "a77f4fb65322d9d835e5091e9473bfd182f1d484e6b472cf85b52df6865b72e8",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },

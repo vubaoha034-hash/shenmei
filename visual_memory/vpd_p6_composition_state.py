@@ -43,6 +43,7 @@ ACTIONS = {
     "P1_EXECUTE_NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6",
     "P1_VECTOR_RECONSTRUCT_V6_IN_FIGMA",
     "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",
+    "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
 }
 
 
@@ -332,6 +333,16 @@ def validate_p6_composition_state(root):
         require(rec["figma"]["page_id"] == "70:2", "V6_VECTOR_PAGE_DRIFT")
         require(rec["figma"]["editable_nodes"] == {"豆坊":"70:5","茶作字形":"70:7","茶作叶形":"70:9"}, "V6_VECTOR_NODE_DRIFT")
         require(rec["editability_readback_verified"] is True, "V6_VECTOR_EDITABILITY_UNVERIFIED")
+
+    if action == "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE":
+        tr = lock["typography_repair"]
+        require(lock["status"] == "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP", "CHAZUO_HIFI_ROUTE_STOP_STATE")
+        require(tr.get("status") == "CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP", "CHAZUO_HIFI_TYPOGRAPHY_STATE")
+        require(tr.get("phase") == "V6_SURFACE_ROUTE_RESET", "CHAZUO_HIFI_ROUTE_RESET_PHASE")
+        require(tr.get("current_vector_only_surface_route") == "STOPPED_NOT_WORTH_CONTINUING", "CHAZUO_HIFI_ROUTE_NOT_STOPPED")
+        require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "CHAZUO_HIFI_PREMATURE_ADVANCE")
+        check_ref(root, tr["v7_hifi_surface_test"])
+        check_ref(root, tr["v7_hifi_surface_human_rejection"])
 
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
     _validate_commercial_ledger(root, lock, cp)
