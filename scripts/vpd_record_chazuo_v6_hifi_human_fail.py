@@ -11,6 +11,8 @@ ADAPTER = ROOT / 'PROJECT_CONTROL_ADAPTER.json'
 LEDGER = ROOT / 'continuity/vpd/state_ledger/commercial_design_pipeline.jsonl'
 SOURCE = ROOT / 'evidence/vpd/p1_typography_repair_v7/CHAZUO_D_MOTHER_FAITHFUL_VECTOR_TEST_20260915.json'
 EVID = ROOT / 'evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json'
+VALIDATOR = ROOT / 'visual_memory/vpd_p6_composition_state.py'
+NEW_ACTION = 'P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE'
 
 
 def load(p): return json.loads(p.read_text(encoding='utf-8'))
@@ -20,6 +22,24 @@ def ref(p): return {'path': p.relative_to(ROOT).as_posix(), 'sha256': sha(p)}
 def now(): return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
 def blob(path): return subprocess.check_output(['git', 'rev-parse', f'HEAD:{path}'], cwd=ROOT, text=True).strip()
 def eh(o): return hashlib.sha256(json.dumps(o, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def patch_validator():
+    text = VALIDATOR.read_text(encoding='utf-8')
+    action_anchor = '    "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",\n}'
+    if f'    "{NEW_ACTION}",' not in text:
+        if action_anchor not in text:
+            raise SystemExit('validator action anchor not found')
+        text = text.replace(action_anchor, f'    "P1_WAIT_HUMAN_V6_FIGMA_VECTOR_REVIEW",\n    "{NEW_ACTION}",\n}}', 1)
+
+    common_marker = '    require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")'
+    if 'CHAZUO_HIFI_ROUTE_STOP_STATE' not in text:
+        if common_marker not in text:
+            raise SystemExit('validator common marker not found')
+        block = '''    if action == "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE":\n        tr = lock["typography_repair"]\n        require(lock["status"] == "VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP", "CHAZUO_HIFI_ROUTE_STOP_STATE")\n        require(tr.get("status") == "CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP", "CHAZUO_HIFI_TYPOGRAPHY_STATE")\n        require(tr.get("phase") == "V6_SURFACE_ROUTE_RESET", "CHAZUO_HIFI_ROUTE_RESET_PHASE")\n        require(tr.get("current_vector_only_surface_route") == "STOPPED_NOT_WORTH_CONTINUING", "CHAZUO_HIFI_ROUTE_NOT_STOPPED")\n        require(tr.get("T2_allowed") is False and tr.get("P6_reintegration_allowed") is False, "CHAZUO_HIFI_PREMATURE_ADVANCE")\n        check_ref(root, tr["v7_hifi_surface_test"])\n        check_ref(root, tr["v7_hifi_surface_human_rejection"])\n\n'''
+        text = text.replace(common_marker, block + common_marker, 1)
+
+    VALIDATOR.write_text(text, encoding='utf-8')
 
 
 def main():
@@ -67,7 +87,7 @@ def main():
           'do not move or redesign the six leaves merely to compensate for surface-quality failure',
           'do not unlock T2 or P6 from a correctness-only or editability-only result'
         ],
-        'next_required_action': 'P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE',
+        'next_required_action': NEW_ACTION,
         'next_probe_scope': 'One bounded alternative route only: preserve the exact editable V6 vector geometry as underlay, create a separate pixel-faithful material/texture finish outside the Figma-vector-only effect stack, then reimport/overlay for final-pixel comparison against the mother. No structural redesign in this probe.'
       },
       'diagnosis': {
@@ -86,7 +106,7 @@ def main():
     }
     lock['current_stage'] = 'Human review of the Chazuo V6 geometry-frozen high-fidelity Figma surface test is FAIL: leaf visibility improved only slightly, while the right-side result still reads low/flat and is not worth continuing. Stop the current Figma-vector-only surface micro-refinement route. Preserve the exact V6 geometry and six-leaf relationships as research evidence only; T2 and P6 remain blocked. Prepare one bounded hybrid texture-finish probe instead of stacking more Figma vector effects.'
     lock['status'] = 'VPD_P1_CHAZUO_V6_HIFI_SURFACE_HUMAN_FAIL_ROUTE_STOP'
-    lock['next_required_action'] = 'P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE'
+    lock['next_required_action'] = NEW_ACTION
     lock['p6_allowed'] = False
     lock['completed_this_revision'] = [
       'recorded the human verdict that leaf visibility improved only slightly and remains insufficient',
@@ -112,7 +132,7 @@ def main():
           'selected_direction_geometry': {'茶作': 'V6 full-concept geometry preserved as research-only'},
           'T2_allowed': False,
           'P6_reintegration_allowed': False,
-          'next_required_action': 'P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE'}
+          'next_required_action': NEW_ACTION}
     lock['typography_repair'] = tr
     lock['updated_at'] = recorded
     dump(LOCK, lock); lock_sha = sha(LOCK)
@@ -185,6 +205,8 @@ def main():
     adapter['forward_commercial_pipeline']['next_required_action'] = lock['next_required_action']
     adapter['change_authorities'].insert(0, {**er, 'priority': 0, 'purpose': 'Current human authority: Chazuo V6 high-fidelity Figma vector-only surface route failed and is stopped; prepare one bounded hybrid texture-finish probe before any T2 or P6.'})
     dump(ADAPTER, adapter)
+
+    patch_validator()
 
     print(json.dumps({'status': lock['status'], 'revision': 52, 'checkpoint_sequence': cp['sequence'], 'next_required_action': lock['next_required_action'], 'evidence': er, 'lock_sha256': lock_sha}, ensure_ascii=False, indent=2))
 
