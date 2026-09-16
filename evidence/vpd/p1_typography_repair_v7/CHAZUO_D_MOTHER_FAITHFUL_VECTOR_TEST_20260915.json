@@ -1,7 +1,7 @@
 {
   "schema_version": "vpd-chazuo-d-mother-faithful-vector-test/v1",
   "recorded_at": "2026-09-15T10:29:00Z",
-  "updated_at": "2026-09-15T13:45:00Z",
+  "updated_at": "2026-09-16T07:20:00Z",
   "status": "NON_FORMAL_TEST_WAITING_HUMAN_REVIEW",
   "source": {
     "drive_presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
@@ -25,8 +25,9 @@
     "faithful_white_wordmark": "PASS_PRESERVED_ORIGINAL_D_DESIGN_CHARACTER",
     "three_leaf_overlay": "FAIL_NOT_INTEGRATED_DIRTY_SPOTS",
     "internal_green_stroke": "FAIL_NOT_INTEGRATED",
-    "human_feedback": "both the three-leaf overlay and the later single green stroke segment still failed to integrate with the lettering; they read as additions rather than one designed system",
-    "implication": "stop post-hoc green additions. Recover the original V6 two-color concept where the glyph and all leaf structures were generated together, then vectorize that complete composition as one mother design."
+    "v6_full_concept_relationship": "DIRECTIONAL_POSITIVE_MORE_LIKE_ONE_DESIGN",
+    "v6_full_concept_feedback": "the recovered full V6 relationship is much closer, but the Figma right-side version still makes the leaves too weak and looks low compared with the mother because the mother has materially richer texture",
+    "implication": "freeze V6 geometry and original six-leaf placement/overlap; continue only with high-fidelity surface treatment and leaf visibility, not with structural redesign or leaf repositioning"
   },
   "v6_full_concept_recovery": {
     "source_drive_presentation_id": "16bPswZ8cSebDuPsf5uRxRMNm55fdFfZ0lxc0KHShuwA",
@@ -45,6 +46,34 @@
     "photography_modified": false,
     "P6_modified": false
   },
+  "hifi_surface_test": {
+    "status": "WAITING_HUMAN_REVIEW_NOT_PASS",
+    "figma_test_frame_id": "118:2",
+    "figma_root_id": "118:3",
+    "figma_ivory_layer_id": "118:5",
+    "figma_green_layer_id": "118:6",
+    "geometry_changed": false,
+    "leaf_positions_changed": false,
+    "leaf_scale_changed": false,
+    "leaf_overlap_changed": false,
+    "final_test_method": [
+      "subtle warm ivory tonal gradient",
+      "very light ivory inner shadow and fine outline",
+      "slightly stronger olive tonal gradient",
+      "fine dark-olive outline and restrained shadow for leaf separation"
+    ],
+    "rejected_intermediate_methods": [
+      "mother texture upload_assets placement because submit URL bytes could not be posted from the container due mcp.figma.com DNS failure",
+      "embedded raster inside createNodeFromSvg because Figma dropped the IMAGE fill during SVG import",
+      "masked vector microtexture because screenshot readback showed faint leaked marks on the black field",
+      "synthetic PCA-derived leaf veins because several veins extended outside the real leaf silhouettes"
+    ],
+    "final_cleanliness_constraint": "no synthetic veins, no holes, no coarse paper-pulp or tofu texture, no geometry modification",
+    "formal_nodes_overwritten": false,
+    "doufang_modified": false,
+    "photography_modified": false,
+    "P6_modified": false
+  },
   "figma": {
     "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "70:2",
@@ -57,6 +86,8 @@
     "failed_mask_test_frame_id": "108:2 (deleted)",
     "rejected_internal_green_stroke_test_frame_id": "109:2",
     "rejected_internal_green_stroke_art_id": "109:3",
+    "v6_full_concept_flat_frame_id": "110:2",
+    "v6_hifi_surface_frame_id": "118:2",
     "white_wordmark_modified_after_faithful_vectorization": false,
     "formal_nodes_overwritten": false,
     "doufang_modified": false,
@@ -69,14 +100,14 @@
     "url": "https://docs.google.com/presentation/d/11c10qQO1f0g3PQLToduOzDjFVOJTK0qL3Lhm40LgrUI/edit",
     "contains": [
       "cleaned original V6 complete two-color Chazuo mother concept",
-      "current Figma V6 full-concept faithful vector with original six-leaf placement and overlap preserved"
+      "current Figma V6 geometry-frozen high-fidelity surface test frame 118:2"
     ],
     "thumbnail_readback_verified": true
   },
   "review_scope": {
     "questions": [
-      "Does the full-concept vector preserve the V6 mother design relationship, especially the scale, placement and overlap of all six green leaves with the glyph?",
-      "Do the green leaf structures now read as part of the same designed wordmark system rather than as dirty spots or later decoration?"
+      "Are the six green leaves now visually strong enough while preserving the exact V6 mother relationship?",
+      "Does the Figma high-fidelity surface test reduce the low/flat feeling enough to justify continuing this production route?"
     ],
     "not_a_pass": true,
     "T2_allowed": false,
