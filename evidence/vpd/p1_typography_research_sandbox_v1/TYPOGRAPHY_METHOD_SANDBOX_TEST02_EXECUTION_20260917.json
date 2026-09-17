@@ -1,0 +1,78 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-test/v1",
+  "recorded_at": "2026-09-17T09:30:43Z",
+  "project_id": "visual-aesthetic-vpd",
+  "test_id": "TYP-M02",
+  "method": "FAITHFUL_LETTERING_VECTORIZATION",
+  "status": "EXECUTED_WAITING_HUMAN_BLACK_WHITE_GATE_NOT_RULE",
+  "input_commit": "70bac3a3dec2fac83da1475285e7317f0e59b0dc",
+  "authority": {
+    "task_lock_next_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
+    "sandbox_plan": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_PLAN_V1.json",
+    "pipeline_scaffold": "evidence/vpd/p1_typography_research_sandbox_v1/VPD_TYPOGRAPHY_CREATION_PIPELINE_V1.md",
+    "prior_faithful_vector_evidence": "evidence/vpd/p1_typography_repair_v7/CHAZUO_D_MOTHER_FAITHFUL_VECTOR_TEST_20260915.json"
+  },
+  "scope": {
+    "target": "茶作 D",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "leaves": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false,
+    "surface_effects": false,
+    "structural_reideation": false
+  },
+  "source_provenance": {
+    "original_visual_authority": "V5 generative exploration board selected 茶作 D / 连笔一体",
+    "previous_vectorization_method": "faithful local raster-to-vector contour extraction with light denoise; no re-ideation",
+    "previous_human_result": "PASS_PRESERVED_ORIGINAL_D_DESIGN_CHARACTER",
+    "reused_verified_faithful_vector_node": "100:3",
+    "reason_for_reuse": "Avoid repeating completed raster-to-vector extraction and avoid derivative-of-derivative drift. TYP-M02 formalizes the already verified faithful geometry as a bounded black/white method test; it does not claim the later leaf/surface route passed."
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "source_node_id": "100:3",
+    "sandbox_frame_id": "121:2",
+    "candidate_root_id": "121:3",
+    "sandbox_frame_name": "SANDBOX_TYPO_M02_FAITHFUL_LETTERING_VECTORIZATION",
+    "candidate_root_name": "TYP_M02_CHAZUO_D_FAITHFUL_VECTOR_NO_REIDEATION",
+    "frame_size": [1200, 800],
+    "geometry_changed": false,
+    "formal_chazuo_nodes_overwritten": false,
+    "doufang_modified": false,
+    "photography_modified": false,
+    "T2_modified": false,
+    "P6_modified": false
+  },
+  "execution": {
+    "route": "Clone the previously faithful editable vector geometry into a new isolated sandbox frame, strip all non-structural effects/strokes, normalize the glyph to a single ivory structural fill on black, and do not redraw or reinterpret the lettering.",
+    "actual_pixel_readback": "PASS_OUTPUT_VISIBLE",
+    "readback_observation": "One connected 茶作 D wordmark skeleton is visible in ivory on black with no leaves, texture, gradient, shadow, or surface rescue.",
+    "aesthetic_pass_claimed": false,
+    "human_gate_required": true
+  },
+  "human_black_white_gate": {
+    "status": "WAITING",
+    "questions": [
+      "Does the result read immediately as 茶作 rather than an ambiguous shape?",
+      "Does the black/ivory skeleton preserve enough of the authored 茶作 D design character to be worth continuing?"
+    ],
+    "correctness_verdict": null,
+    "taste_verdict": null,
+    "explicit_user_acceptance": null
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "No typography method may enter VPD production rules before controlled actual-pixel human acceptance and explicit user approval."
+  },
+  "preservation": {
+    "TYP_M01_negative_evidence_preserved": true,
+    "later_leaf_and_surface_failures_preserved": true,
+    "photo_gains_preserved": true,
+    "formal_P6_fail_preserved": true
+  },
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST_02_VERDICT"
+}
