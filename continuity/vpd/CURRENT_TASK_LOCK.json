@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 57,
+  "revision": 58,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 56,
-    "git_blob_sha": "dbedce8af3849ee4105ae1e02514f1ac9159d1da",
-    "note": "Revision 56 executed TYP-M03 once and waited for human actual-pixel verdict."
+    "revision": 57,
+    "git_blob_sha": "e958fe7fa332b7c9f68c56ef80a4e5c6cb784d21",
+    "note": "Revision 57 recorded the directional-positive M03 verdict and authorized exactly one structural correction."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review says TYP-M03 is better than M02 by a modest amount. This is directional-positive evidence, not a mature-title pass and not rule promotion. Exactly one bounded M03 structural correction is authorized to strengthen the successful optical hypothesis before switching methods; no surface/material effects, hidden variants, photography, T2 or P6 work.",
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_DIRECTIONAL_POSITIVE_CORRECTION01_READY",
+  "current_stage": "The single authorized TYP-M03 structural correction was executed as Figma frame 132:2. It strengthens the successful M03 spacing/optical hypothesis without changing 茶 DNA or adding any surface effects. The M03 correction budget is now exhausted. Await human actual-pixel comparison of 132:2 against 129:2; do not perform another M03 retry.",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION_01",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded exact human verdict that M03 is better than M02 by a modest amount",
-    "classified M03 as directional positive without claiming mature title quality",
-    "authorized exactly one visible structural correction inside M03",
-    "kept texture, gradient, shadow, leaves, hidden variants and pre-review polish disabled",
+    "executed the only authorized TYP-M03 structural correction as one visible Figma output",
+    "strengthened inter-glyph negative space and 作 optical compression while preserving 茶 and the connected sweep identity",
+    "kept all surface effects, leaves, hidden variants and pre-review retries disabled",
+    "exhausted the M03 correction budget at 1 of 1",
     "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
   ],
-  "updated_at": "2026-09-18T02:02:00Z",
+  "updated_at": "2026-09-18T02:08:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "96944c9c4c87e3a8226e916cb4c17f8398bf150a",
+  "input_commit": "808aa144964ca24f379fc7b86103dc427c67a873",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,7 +166,7 @@
   "blockers": [
     "TYP-M01 failed and is not eligible for rule promotion.",
     "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
-    "TYP-M03 is directional-positive but mature title quality is not yet demonstrated; exactly one correction remains.",
+    "The single M03 correction is executed and the M03 correction budget is exhausted; human actual-pixel verdict is mandatory before any further method or surface step.",
     "T2 remains blocked until the title route achieves human visual acceptance at the required quality level.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -209,7 +209,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_DIRECTIONAL_POSITIVE_CORRECTION01_READY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -221,7 +221,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION_01",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -571,8 +571,13 @@
     },
     "sandbox_test03_verdict": "DIRECTIONAL_POSITIVE_IMPROVED_SOME",
     "sandbox_test03_correction_budget": {
-      "used": 0,
+      "used": 1,
       "max": 1
+    },
+    "sandbox_test03_correction_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_EXECUTION_20260918.json",
+      "sha256": "1425cf5ae3e7ca68415e3e4f5bd5bb83e6f5885dce5602b6cdddf9a0ee70f114",
+      "figma_frame_id": "132:2"
     }
   },
   "t1_final_settlement_evidence": {
