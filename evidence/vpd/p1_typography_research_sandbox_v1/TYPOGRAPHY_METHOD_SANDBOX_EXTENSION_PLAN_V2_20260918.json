@@ -1,0 +1,40 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-extension/v1",
+  "created_at": "2026-09-18",
+  "status": "FROZEN_EXTENSION_PLAN_NOT_RULE_NOT_EXECUTED",
+  "project_id": "visual-aesthetic-vpd",
+  "trigger": "M01 correctness fail; M02 faithful local pass but small quality delta; M03 modest positive but diminishing returns; M04 visible change but human-rated much worse as decorated font.",
+  "source_research": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md",
+  "m05_texture_status": "BLOCKED_UNTIL_A_SKELETON_METHOD_PASSES",
+  "candidate": {
+    "id": "TYP-M06",
+    "name": "HISTORICAL_MATERIAL_VERNACULAR_REDRAW",
+    "source_basis": "Research M08 — historical/material/vernacular lettering as source DNA",
+    "scope": "茶作 only; black/ivory skeleton first; derive structural DNA from real sign/print/carving/handwriting/material lettering logic; redraw rather than copy; no texture, no leaf, no shadow, no gradient.",
+    "purpose": "Test a skeleton whose identity is intrinsic to stroke construction rather than inherited from a generic typeface or added as a post-hoc line.",
+    "output_budget": {
+      "visible_outputs": 1,
+      "hidden_variants": 0,
+      "pre_review_polish_retries": 0
+    },
+    "semantic_authorities": [
+      "tea/craft/material behavior",
+      "vernacular sign/print/mark-making logic"
+    ],
+    "pass_requires": [
+      "茶作 reads immediately",
+      "design identity is visibly embedded in stroke/terminal/counter behavior rather than attached decoration",
+      "visible change is substantial enough to matter",
+      "human reviewer says the black/ivory skeleton is materially better and worth continuing"
+    ],
+    "on_fail": "ARCHIVE_NEGATIVE_EVIDENCE_AND_REASSESS_TYPOGRAPHY_STRATEGY_BEFORE_ANY_TEXTURE"
+  },
+  "forbidden": [
+    "reusing M04 generic font-plus-decoration logic",
+    "using texture/material as rescue before skeleton pass",
+    "another M03 coordinate-warp retry",
+    "unlocking T2 or P6",
+    "promoting any tested method to production rules"
+  ],
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06"
+}
