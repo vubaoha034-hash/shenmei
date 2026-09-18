@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 77,
-  "recorded_at": "2026-09-17T23:02:00Z",
+  "sequence": 78,
+  "recorded_at": "2026-09-17T23:12:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "TYP-M02 faithful lettering vectorization is human-accepted as readable and worth continuing, but subsequent direct comparison confirms the visible delta versus the already-existing faithful node is small. Settle M02 only as a local fidelity/design-character preservation pass, not a quality-upgrade claim. Open TYP-M03 CJK component/stroke structural reconstruction on 茶作 D; preserve D design DNA, keep surface effects off, and keep Doufang, photography, T2 and P6 frozen.",
+  "current_focus": "TYP-M03 CJK component/stroke structural reconstruction executed exactly once on the accepted 茶作 D M02 skeleton. The test changes only structural/optical relationships: more inter-glyph negative space, a narrower and slightly optically smaller 作 upper body, while preserving 茶 and the connected lower sweep. No leaves, texture, gradient, shadow, hidden variants or pre-review retries. Await human actual-pixel verdict before any further typography or surface work.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -66,10 +66,11 @@
     "p1_typography_creation_method_research_sandbox",
     "p1_typography_method_sandbox_plan",
     "p1_typography_method_sandbox_test01_fail",
-    "p1_typography_method_sandbox_test02_pass_local_only"
+    "p1_typography_method_sandbox_test02_pass_local_only",
+    "p1_typography_method_sandbox_test03_executed"
   ],
   "incomplete": [
-    "p1_typography_method_sandbox_test_03",
+    "p1_typography_method_sandbox_test03_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -79,13 +80,13 @@
   ],
   "blocked": [
     "TYP-M01 failed and is not eligible for rule promotion.",
-    "TYP-M02 passed the local black/white fidelity gate, but visible quality improvement over the prior faithful vector is not demonstrated and automatic rule promotion remains forbidden.",
-    "TYP-M03 structural test must pass actual-pixel human review before support typography can open.",
+    "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
+    "TYP-M03 is now executed and blocked on human actual-pixel verdict.",
     "T2 remains blocked until a title route achieves human visual acceptance at the required quality level.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_03",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST_03_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -153,10 +154,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST02_PASS_LOCAL_ONLY",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5d2dc98b5e3926100dea04d325bf684975c94abdab1b02a798af560dd0179616"
+    "sha256": "18ba465838b3b47ffec9c8eb1a1b0d73127f6db1530f5ab572010e61d340fb0a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -177,12 +178,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-TYPOGRAPHY-METHOD-SANDBOX-TEST02-HUMAN-PASS-20260918-001",
-      "event_hash": "99ace86ecec1f326f07a2c2ee64a1279b4026a1411dafeb12fb11627277af1e3"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-METHOD-SANDBOX-TEST03-EXECUTION-20260918-001",
+      "event_hash": "c83a3a6099a04c66d1de8cf0025c6aed14ac1b71c8fff7ba35546a4693bce5f4"
     }
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST02_PASS_LOCAL_ONLY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -198,7 +199,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_03",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST_03_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -234,11 +235,16 @@
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
-    "sandbox_next_test": "TYP-M03",
+    "sandbox_next_test": null,
     "sandbox_test02_human_settlement": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_HUMAN_SETTLEMENT_20260918.json",
       "sha256": "9e20ad51a198f043c156ead7909bbec0737b33cebe28c432e8ca2ed711bcb443"
     },
-    "sandbox_test02_verdict": "PASS_LOCAL_FIDELITY_SMALL_VISIBLE_DELTA"
+    "sandbox_test02_verdict": "PASS_LOCAL_FIDELITY_SMALL_VISIBLE_DELTA",
+    "sandbox_test03_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_EXECUTION_20260918.json",
+      "sha256": "71d8078021cd4be7679f717921f0039100fc50182e72a813b30e64d6a7b87bfa",
+      "figma_frame_id": "129:2"
+    }
   }
 }
