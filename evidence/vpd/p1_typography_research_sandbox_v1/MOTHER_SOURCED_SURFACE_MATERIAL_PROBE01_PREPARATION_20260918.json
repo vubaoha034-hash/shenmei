@@ -1,0 +1,94 @@
+{
+  "schema_version": "vpd-mother-sourced-surface-material-probe-preparation/v1",
+  "recorded_at": "2026-09-18T11:57:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "PREPARED_EXECUTION_READY_NO_DESIGN_RENDER",
+  "stage": "G_SURFACE_MATERIAL",
+  "baseline": {
+    "refined_skeleton_frame_id": "149:2",
+    "refined_skeleton_root_id": "149:3",
+    "refined_skeleton_vector_id": "149:4",
+    "geometry_frozen": true,
+    "black_white_gate": "PROVISIONAL_CONTINUE_PASS_NOT_COMMERCIAL"
+  },
+  "mother_source": {
+    "source_kind": "recovered V5 茶作 D mother crop from original generative review board",
+    "dimensions": [
+      345,
+      190
+    ],
+    "source_crop_sha256": "db93ea0c9f38c948c4f90414a7284914a68fe91c631592768671713ef7c3c434",
+    "authority_note": "direct V5 mother pixels remain the only surface authority; V7 synthetic surface effects are negative evidence"
+  },
+  "derived_assets": [
+    {
+      "id": "MOTHER_SURFACE_COLOR_MAP",
+      "dimensions": [
+        345,
+        190
+      ],
+      "bytes": 22931,
+      "sha256": "2bcae91966367ac1f927fcb69db46ded924b6f05601dbdfce3250779fd18c61e",
+      "purpose": "primary execution asset",
+      "derivation": {
+        "glyph_mask_luminance_threshold": 70,
+        "edge_exclusion": "5x5 minimum-filter erosion",
+        "feather_radius_px": 1.2,
+        "outside_fill_rgb": [
+          244,
+          237,
+          225
+        ],
+        "inside_content": "unaltered recovered mother RGB pixels after edge exclusion/feather"
+      },
+      "interpretation": "preserves real mother tonal/material variation while removing dependence on the mother raster silhouette"
+    },
+    {
+      "id": "MOTHER_MICROTEXTURE_DIAGNOSTIC_MAP",
+      "dimensions": [
+        345,
+        190
+      ],
+      "bytes": 9751,
+      "sha256": "47cebc91298dc498b8c8d67c6af723eaee2886de49ccbb0aeea00f05f1f42e02",
+      "purpose": "diagnostic only; not authorized in first visible output",
+      "derivation": {
+        "source": "mother luminance residual",
+        "blur_radius_px": 3,
+        "neutral_outside": 128,
+        "clamp_gray": [
+          88,
+          168
+        ]
+      }
+    }
+  ],
+  "execution_route": {
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "method": "clone 149:2; preserve vector geometry; replace only the ivory vector's flat fill with MOTHER_SURFACE_COLOR_MAP as an image fill aligned to the vector bounds",
+    "overlay_count": 0,
+    "synthetic_noise": false,
+    "gradient": false,
+    "shadow": false,
+    "outline": false,
+    "blur": false,
+    "leaf": false,
+    "geometry_change": false,
+    "microtexture_diagnostic_map_use": false,
+    "fallback_requires_new_authorization": true
+  },
+  "fail_conditions": [
+    "surface reads as dirty, gray, low, or synthetic",
+    "image fill introduces obvious raster-shape ghosts or dark holes",
+    "material reduces readability or weakens the mother-family silhouette",
+    "difference is merely decorative and does not recover the mother's premium surface character"
+  ],
+  "pass_question": "Does real mother-sourced surface information make 149:2 materially richer and less flat without changing its geometry or making it dirty?",
+  "rule_admission": {
+    "allowed": false,
+    "reason": "one Stage G probe cannot promote a surface recipe to production rules"
+  },
+  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01"
+}
