@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 61,
+  "revision": 62,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 60,
-    "git_blob_sha": "f30e0714bbc46d1e73d6d551749483a3a9c9b369",
-    "note": "Revision 60 executed TYP-M04 and waited for human actual-pixel verdict."
+    "revision": 61,
+    "git_blob_sha": "c9b223d5fd766ca10fcf6da6b7a1d495cf05dcf5",
+    "note": "Revision 61 archived M04 failure and opened the research-only TYP-M06 historical/material/vernacular redraw."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review rejects TYP-M04 decisively: the visible change is obvious, but it reads as a mature generic font plus an attached design line and is materially worse than M03. This exactly matches the researched failure risk of a base typeface with the wrong DNA. M04 is archived as negative evidence and cannot be retried or promoted. TYP-M05 texture remains blocked because no skeleton has passed the required quality gate. A new bounded skeleton-method extension is prepared: TYP-M06 historical/material/vernacular redraw, black/ivory only.",
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_M06_READY",
+  "current_stage": "TYP-M06 historical/material/vernacular redraw executed exactly once as Figma frame 139:2. The candidate is redrawn from scratch with no typeface and no old D/M03 topology: square inscription proportions, systematic chisel-cut terminals, trapezoidal stroke bodies, slightly flared horizontals, and blunt falling strokes are embedded directly in 茶 and 作. No external design line, leaf, texture, gradient, shadow, hidden variant or pre-review retry. Await human actual-pixel black/white verdict.",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST06_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST06_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,15 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded exact human rejection of TYP-M04",
-    "classified M04 as a method-level decorated-font failure with lower design quality despite sufficient visible change",
-    "archived M04 as negative evidence and prohibited retries or rule promotion",
-    "kept TYP-M05 texture blocked because the skeleton gate is not passed",
-    "added a frozen research-only extension plan for TYP-M06 historical/material/vernacular redraw",
+    "executed exactly one visible TYP-M06 historical/material/vernacular redraw",
+    "redrew 茶 and 作 from scratch without a typeface or old D/M03 topology",
+    "embedded chisel/stele/woodblock structural grammar directly in stroke terminals, bodies and proportions",
+    "kept glyphs as editable component-level vectors rather than one dense traced compound path",
+    "confirmed actual-pixel Figma readback for frame 139:2",
+    "kept leaves, texture, gradient, shadow, hidden variants and pre-review polish disabled",
     "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
   ],
-  "updated_at": "2026-09-18T02:40:00Z",
+  "updated_at": "2026-09-18T02:55:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -155,7 +156,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "fb6473a352d4de927843b212ec8d4e6445ea8d7e",
+  "input_commit": "8c9e5db761743ae065d0d54573b5a29d60136f2f",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -169,8 +170,8 @@
     "TYP-M02 is only a local fidelity pass with insufficient visible quality gain.",
     "TYP-M03 is closed for diminishing returns after one bounded correction.",
     "TYP-M04 failed human taste review as decorated-font logic and cannot be retried.",
-    "TYP-M05 texture is blocked because no skeleton method has passed the required title-quality gate.",
-    "TYP-M06 is research-only and must pass black/white actual-pixel human review before any material surface or support typography work.",
+    "TYP-M05 texture remains blocked because no skeleton method has passed the required title-quality gate.",
+    "TYP-M06 is executed and blocked on human actual-pixel black/white verdict.",
     "T2 and P6 remain blocked; prior photography gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -212,7 +213,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_M06_READY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST06_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -224,7 +225,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST06_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -554,7 +555,7 @@
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
-    "sandbox_next_test": "TYP-M06",
+    "sandbox_next_test": null,
     "sandbox_test02_execution": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_EXECUTION_20260917.json"
     },
@@ -602,6 +603,13 @@
     "sandbox_extension_plan_v2": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_EXTENSION_PLAN_V2_20260918.json",
       "sha256": "e14bbfa0f0033a4f8148011bc62467319d847a6310867c83dc1b2ccc29f4763c"
+    },
+    "sandbox_test06_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST06_EXECUTION_20260918.json",
+      "sha256": "2e2d278903729ec15c50c6e957a68c28c99adc1df5cd5adec1a1e3195e5778db",
+      "figma_frame_id": "139:2",
+      "typeface_used": false,
+      "old_D_topology_reused": false
     }
   },
   "t1_final_settlement_evidence": {
