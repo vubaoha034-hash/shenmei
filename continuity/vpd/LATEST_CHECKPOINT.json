@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 79,
-  "recorded_at": "2026-09-18T02:02:00Z",
+  "sequence": 80,
+  "recorded_at": "2026-09-18T02:08:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human review says TYP-M03 is better than M02 by a modest amount. This is directional-positive evidence, not a mature-title pass and not rule promotion. Exactly one bounded M03 structural correction is authorized to strengthen the successful optical hypothesis before switching methods; no surface/material effects, hidden variants, photography, T2 or P6 work.",
+  "current_focus": "The single authorized TYP-M03 structural correction was executed as Figma frame 132:2. It strengthens the successful M03 spacing/optical hypothesis without changing 茶 DNA or adding any surface effects. The M03 correction budget is now exhausted. Await human actual-pixel comparison of 132:2 against 129:2; do not perform another M03 retry.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -68,10 +68,11 @@
     "p1_typography_method_sandbox_test01_fail",
     "p1_typography_method_sandbox_test02_pass_local_only",
     "p1_typography_method_sandbox_test03_executed",
-    "p1_typography_method_sandbox_test03_directional_positive"
+    "p1_typography_method_sandbox_test03_directional_positive",
+    "p1_typography_method_sandbox_test03_correction01_executed"
   ],
   "incomplete": [
-    "p1_typography_method_sandbox_test03_correction_01",
+    "p1_typography_method_sandbox_test03_correction01_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -82,12 +83,12 @@
   "blocked": [
     "TYP-M01 failed and is not eligible for rule promotion.",
     "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
-    "TYP-M03 is directional-positive but mature title quality is not yet demonstrated; exactly one correction remains.",
+    "The single M03 correction is executed and the M03 correction budget is exhausted; human actual-pixel verdict is mandatory before any further method or surface step.",
     "T2 remains blocked until the title route achieves human visual acceptance at the required quality level.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION_01",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -155,10 +156,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_DIRECTIONAL_POSITIVE_CORRECTION01_READY",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "c3f7b60837e52b187f467f8b086b6d6a20aca916e168e2c77a787a0d1fb870ed"
+    "sha256": "a41521a8be88e3b660072d37136c355849d0fde71cc0dbdf655da0c30442d446"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -179,12 +180,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-TYPOGRAPHY-M03-DIRECTIONAL-POSITIVE-20260918-001",
-      "event_hash": "a46e1aec478a0f646bf8636c8307ed2f0813f179b5b7285f5c8ec0a38186f721"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-M03-CORRECTION01-EXECUTION-20260918-001",
+      "event_hash": "81dcd5d09b030b64554767515f46e2111e4bfab5f20d9af91c8ea842dd820f50"
     }
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_DIRECTIONAL_POSITIVE_CORRECTION01_READY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -200,7 +201,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION_01",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -253,8 +254,13 @@
     },
     "sandbox_test03_verdict": "DIRECTIONAL_POSITIVE_IMPROVED_SOME",
     "sandbox_test03_correction_budget": {
-      "used": 0,
+      "used": 1,
       "max": 1
+    },
+    "sandbox_test03_correction_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_EXECUTION_20260918.json",
+      "sha256": "1425cf5ae3e7ca68415e3e4f5bd5bb83e6f5885dce5602b6cdddf9a0ee70f114",
+      "figma_frame_id": "132:2"
     }
   }
 }
