@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 81,
-  "recorded_at": "2026-09-18T02:18:00Z",
+  "sequence": 82,
+  "recorded_at": "2026-09-18T02:24:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human review of M03-R1 says the visible change is still too small. M03 is therefore closed for diminishing returns: readability is preserved and the direction was modestly positive, but the design-language delta is insufficient and mature title quality is not demonstrated. No further M03 retries are allowed. Open TYP-M04 typeface-outline surgical customization as the next bounded method; keep texture/material, Doufang, photography, T2 and P6 frozen.",
+  "current_focus": "TYP-M04 typeface-outline surgical customization executed exactly once as Figma frame 137:2. Unlike M03, it does not reuse the old D outline topology: it starts from Noto Sans SC Black mature Chinese skeletons, converts them to editable outlines, applies one bounded terminal surgery to 作, and adds one structural connector sweep. No leaves, texture, gradient, shadow, hidden variants or pre-review retries. Await human actual-pixel verdict.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -70,10 +70,11 @@
     "p1_typography_method_sandbox_test03_executed",
     "p1_typography_method_sandbox_test03_directional_positive",
     "p1_typography_method_sandbox_test03_correction01_executed",
-    "p1_typography_method_sandbox_test03_closed_insufficient_delta"
+    "p1_typography_method_sandbox_test03_closed_insufficient_delta",
+    "p1_typography_method_sandbox_test04_executed"
   ],
   "incomplete": [
-    "p1_typography_method_sandbox_test_04",
+    "p1_typography_method_sandbox_test04_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -84,13 +85,14 @@
   "blocked": [
     "TYP-M01 failed and is not eligible for rule promotion.",
     "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
-    "TYP-M03 is closed: modest directional improvement but insufficient visible delta after its only allowed correction; no further retries.",
-    "TYP-M04 must pass an actual-pixel black/white human gate before any texture/material or support typography work.",
+    "TYP-M03 is closed for insufficient visible delta and cannot be retried.",
+    "TYP-M04 is executed and blocked on human actual-pixel verdict.",
+    "Texture/material remains forbidden as rescue before a skeleton method passes.",
     "T2 remains blocked until the title route achieves human visual acceptance at the required quality level.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_04",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST04_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -158,10 +160,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_STOP_INSUFFICIENT_DELTA_M04_READY",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST04_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "cbb6e661860696c6710eb5edde957f199252040c1c898513facd54037d3a65cf"
+    "sha256": "aa5f09d8b86dfb9862657ef79d9944e542debe476761b21c4f892529f2e0715f"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -182,12 +184,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-TYPOGRAPHY-M03-STOP-M04-READY-20260918-001",
-      "event_hash": "fd214d2c2170b142935d50e07f60e0daccd1a12ae1c8acc69d2eb4407826fece"
+      "event_id": "EVT-VPD-P1-TYPOGRAPHY-M04-EXECUTION-20260918-001",
+      "event_hash": "5299859845b32a321de69f88999d7184f69d2784c55912fbb016364303f4c11b"
     }
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_STOP_INSUFFICIENT_DELTA_M04_READY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST04_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -203,7 +205,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_04",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST04_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -239,7 +241,7 @@
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
-    "sandbox_next_test": "TYP-M04",
+    "sandbox_next_test": null,
     "sandbox_test02_human_settlement": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_HUMAN_SETTLEMENT_20260918.json",
       "sha256": "9e20ad51a198f043c156ead7909bbec0737b33cebe28c432e8ca2ed711bcb443"
@@ -268,6 +270,12 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_HUMAN_SETTLEMENT_20260918.json",
       "sha256": "d6ddefb8e5c725e1a2c5b01e06e2c217c4f6fff81fce29ddddf205cd3999b6af"
     },
-    "sandbox_test03_final_verdict": "STOP_INSUFFICIENT_VISIBLE_DELTA_DIMINISHING_RETURNS"
+    "sandbox_test03_final_verdict": "STOP_INSUFFICIENT_VISIBLE_DELTA_DIMINISHING_RETURNS",
+    "sandbox_test04_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST04_EXECUTION_20260918.json",
+      "sha256": "e1a933a9a01ef343425d7853d7b68d0acaaaf21773f1a88197ec3018933374e6",
+      "figma_frame_id": "137:2",
+      "base_typeface": "Noto Sans SC Black"
+    }
   }
 }
