@@ -1,0 +1,79 @@
+{
+  "schema_version": "vpd-mother-anchored-local-contour-refinement/v1",
+  "recorded_at": "2026-09-18T07:31:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "EXECUTED_WAITING_HUMAN_VERDICT_NOT_RULE",
+  "input_commit": "f9d5f2ea6ecaaaf0f27c9c204f141e26070a9183",
+  "authority": {
+    "audit_execution": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_EXECUTION_20260918.json",
+    "audit_human_confirmation": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_HUMAN_CONFIRMATION_20260918.json"
+  },
+  "baseline": {
+    "source_frame_id": "129:2",
+    "source_root_id": "129:3",
+    "fidelity_reference_frame_id": "121:2",
+    "mother_audit_frame_id": "143:2",
+    "mother_raster_node_id": "143:6"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "refinement_frame_id": "149:2",
+    "candidate_root_id": "149:3",
+    "vector_id": "149:4",
+    "frame_name": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
+    "actual_pixel_readback": "PASS_OUTPUT_VISIBLE",
+    "export_png_url_short_lived": "https://www.figma.com/api/mcp/asset/a6d2a0f3-d902-4738-a873-d14493cb01bb.png",
+    "formal_nodes_overwritten": false
+  },
+  "scope": {
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "global_silhouette_change": false,
+    "character_proportion_change": false,
+    "new_style_DNA": false,
+    "typeface_change": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false,
+    "leaves": false
+  },
+  "refined_regions": [
+    {
+      "region": "茶 upper short-stroke terminals",
+      "intent": "restore slight mother-like asymmetry rather than uniformly cleaned endpoints"
+    },
+    {
+      "region": "茶 left-falling stroke taper",
+      "intent": "recover localized taper without changing the stroke trajectory family"
+    },
+    {
+      "region": "茶→作 central bridge junction",
+      "intent": "make the bridge attachment slightly more lifted and tapered rather than flat"
+    },
+    {
+      "region": "lower sweep weight/lift/terminal",
+      "intent": "recover some mother-like weight and upward release while tapering the far-right terminal"
+    },
+    {
+      "region": "作 upper/central junction",
+      "intent": "restore a small amount of local weight without changing overall 作 proportion"
+    }
+  ],
+  "execution": {
+    "route": "clone M03 vector and apply five bounded local contour warps only",
+    "correctness_pass_claimed": false,
+    "aesthetic_pass_claimed": false,
+    "human_gate_required": true
+  },
+  "human_gate": {
+    "status": "WAITING",
+    "questions": [
+      "Compared with M03 129:2, does 149:2 feel more refined without changing family?",
+      "Do the bridge and lower sweep feel more natural/alive rather than mechanically clean?",
+      "Is the improvement sufficient to keep this as the refined title skeleton?"
+    ]
+  },
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_VERDICT"
+}
