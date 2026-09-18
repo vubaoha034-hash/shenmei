@@ -1,0 +1,75 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-correction/v1",
+  "recorded_at": "2026-09-18T02:08:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "test_id": "TYP-M03",
+  "correction_id": "TYP-M03-R1",
+  "method": "CJK_COMPONENT_STROKE_SYSTEM_RECONSTRUCTION",
+  "status": "EXECUTED_WAITING_HUMAN_BLACK_WHITE_GATE_NOT_RULE",
+  "input_commit": "1810057f30dfda185cb489b6199f95567a63ca6a",
+  "authority": {
+    "human_settlement": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_HUMAN_SETTLEMENT_20260918.json",
+    "correction_budget": {
+      "max": 1,
+      "used_after_this": 1
+    }
+  },
+  "scope": {
+    "target": "茶作 D",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "leaves": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false,
+    "surface_effects": false
+  },
+  "source": {
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "source_frame_id": "129:2",
+    "source_root_id": "129:3",
+    "source_vector_id": "129:4"
+  },
+  "figma": {
+    "page_id": "70:2",
+    "sandbox_frame_id": "132:2",
+    "candidate_root_id": "132:3",
+    "vector_id": "132:4",
+    "frame_name": "SANDBOX_TYPO_M03_CORRECTION01_OPTICAL_STRUCTURE",
+    "frame_size": [
+      1200,
+      800
+    ],
+    "formal_chazuo_nodes_overwritten": false,
+    "doufang_modified": false,
+    "photography_modified": false,
+    "T2_modified": false,
+    "P6_modified": false
+  },
+  "structural_changes": [
+    "strengthened the successful M03 inter-glyph negative-space opening",
+    "further optically compressed and re-centered the 作 upper body",
+    "slightly tightened the far-right lower sweep so the wordmark reads as one controlled unit",
+    "preserved 茶 geometry, connected sweep identity, ivory-on-black evaluation and all formal project nodes"
+  ],
+  "execution": {
+    "route": "single deterministic correction of the existing M03 vector; no redraw, no method switch, no hidden alternatives, no surface rescue",
+    "correctness_pass_claimed": false,
+    "aesthetic_pass_claimed": false,
+    "human_gate_required": true
+  },
+  "human_black_white_gate": {
+    "status": "WAITING",
+    "questions": [
+      "Compared with M03 129:2, is correction 132:2 visibly better?",
+      "Does the stronger negative-space and 作 optical compression improve maturity without making the wordmark less readable?",
+      "Is this structural route now worth keeping as the title skeleton, or should M03 stop and M04 be tested instead?"
+    ]
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "A single corrected local output remains research-only until human acceptance and separate promotion."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_VERDICT"
+}
