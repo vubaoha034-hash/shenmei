@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 63,
+  "revision": 64,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 62,
-    "git_blob_sha": "c64fc96a09d5ee75e415f6ebbc2ae245296e480b",
-    "note": "Revision 62 executed TYP-M06 and waited for human black/white verdict."
+    "revision": 63,
+    "git_blob_sha": "4632c205a91dd704ac6d70b0b24aedba1f70f465",
+    "note": "Revision 63 stopped method roulette and required a mother-reference direction audit before any new render."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review says the typography sequence is getting worse and the direction is increasingly confused. Audit confirms the core failure: after M02/M03, visible change and method novelty became proxies for design quality, causing drift away from the approved 茶作 D mother. M04 and M06 are negative evidence. Stop the method queue entirely. No M07 and no texture. Re-anchor to mother frame 100:2 / faithful root 100:3 and execute a direction audit against M02 121:2 and M03 129:2 before any new render.",
-  "status": "VPD_P1_TYPOGRAPHY_DIRECTION_DRIFT_CONFIRMED_MOTHER_AUDIT_REQUIRED",
+  "current_stage": "Mother-reference direction audit is complete with no new wordmark render. The V5 茶作 D source was recovered from its Google Slides review deck as a direct 2048x690 board copy and a 345x190 D crop, then restored into Figma audit frame 143:2 beside M02 and M03. Audit confirms M03 is the strongest current correction and M02 the fidelity anchor; M04/M06 are negative evidence. The remaining gap is local contour/weight/terminal character, not a need for another style or construction method. Await human confirmation before exactly one mother-anchored local contour refinement.",
+  "status": "VPD_P1_TYPOGRAPHY_DIRECTION_AUDIT_COMPLETE_WAITING_HUMAN_CONFIRMATION",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_DIRECTION_AUDIT_FROM_MOTHER_REFERENCE",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_DIRECTION_AUDIT_CONFIRMATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's overall direction-drift verdict and M06 rejection",
-    "confirmed the process error: visible delta and method novelty replaced mother-reference quality as the optimization target",
-    "archived M06 as negative evidence and stopped all further method-queue progression",
-    "prohibited M07/new method execution and kept M05 texture blocked",
-    "created a no-render mother-reference direction audit plan centered on 100:2/100:3 versus M02 121:2 and M03 129:2",
-    "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
+    "recovered the V5 original generative review board from Google Slides and verified it is a direct downscaled board copy, not a later vector derivative",
+    "isolated the selected 茶作 D mother crop without generating new design pixels",
+    "created Figma audit frame 143:2 containing recovered mother pixels, M02 fidelity reference and M03 structural reference",
+    "verified current Figma MCP has no callable Vectorize property and current Weave is not linked",
+    "completed the mother-reference gap audit and identified five local contour/weight gaps",
+    "selected M03 as best current correction and M02 as fidelity anchor; retained M04/M06 only as negative evidence",
+    "defined one bounded mother-anchored local contour refinement hypothesis but did not execute it"
   ],
   "updated_at": "2026-09-18T04:32:00Z",
   "workflow": {
@@ -155,7 +156,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "bf8bed1f7473669560d1d8237e9a227e3a361428",
+  "input_commit": "27a5eaca455b8865708c822ad746bafd6acf2cc8",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -165,13 +166,11 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "TYP-M01 failed glyph correctness.",
-    "TYP-M02 preserved the mother but did not prove enough quality lift; it remains a useful fidelity baseline.",
-    "TYP-M03 showed only modest local improvement; it remains the strongest tested correction candidate, not a production pass.",
-    "TYP-M04 failed as generic-font-plus-decoration.",
-    "TYP-M06 failed and exposed overall direction drift.",
-    "No M07/new method execution is allowed before the mother-reference direction audit is completed.",
-    "TYP-M05 texture remains blocked because the title skeleton has not passed.",
+    "No new typography method or style-family experiment is allowed.",
+    "Figma MCP does not expose editor Vectorize/Agent as a callable action; Weave is currently not linked.",
+    "The recovered Drive board is a direct 2048x690 downscaled copy, not the exact original 2160x728 bytes.",
+    "Exactly one mother-anchored local contour refinement may open only after human confirmation of the direction audit.",
+    "TYP-M05 texture remains blocked until the skeleton/title direction passes human quality review.",
     "T2 and P6 remain blocked; prior photography gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -213,7 +212,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_DIRECTION_DRIFT_CONFIRMED_MOTHER_AUDIT_REQUIRED",
+    "status": "TYPOGRAPHY_DIRECTION_AUDIT_COMPLETE_WAITING_HUMAN_CONFIRMATION",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -225,7 +224,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_DIRECTION_AUDIT_FROM_MOTHER_REFERENCE",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_DIRECTION_AUDIT_CONFIRMATION",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -619,7 +618,15 @@
     "direction_audit_plan": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_PLAN_V1_20260918.json",
       "sha256": "05f4050f94c826c214f20ead2ed8bb1cfeccdb326123f88413f4ed8880ccdd9e"
-    }
+    },
+    "direction_audit_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_EXECUTION_20260918.json",
+      "sha256": "5a2f1210025abf3351212b2eca440c686760cd8259395916ced708c3df98cf60",
+      "figma_frame_id": "143:2"
+    },
+    "best_current_skeleton": "M03_129_2",
+    "fidelity_anchor": "M02_121_2",
+    "proposed_next_correction": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01"
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
