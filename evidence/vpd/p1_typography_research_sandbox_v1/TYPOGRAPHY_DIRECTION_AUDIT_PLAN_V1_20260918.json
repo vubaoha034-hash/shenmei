@@ -1,0 +1,60 @@
+{
+  "schema_version": "vpd-typography-direction-audit-plan/v1",
+  "created_at": "2026-09-18",
+  "status": "FROZEN_AUDIT_PLAN_NO_RENDER",
+  "project_id": "visual-aesthetic-vpd",
+  "purpose": "Re-anchor typography work to the approved mother visual target before any further construction method is selected.",
+  "hard_stop": {
+    "new_method_execution": false,
+    "M05_texture": false,
+    "M07_or_later": false,
+    "T2": false,
+    "P6": false
+  },
+  "visual_authorities": {
+    "primary_mother": {
+      "figma_frame_id": "100:2",
+      "faithful_vector_root_id": "100:3",
+      "description": "accepted 茶作 D mother-faithful direction"
+    },
+    "local_fidelity_baseline": {
+      "figma_frame_id": "121:2",
+      "description": "M02 faithful black/ivory skeleton; user said readable/worth continuing but small delta"
+    },
+    "modest_positive": {
+      "figma_frame_id": "129:2",
+      "description": "M03; user said slightly better"
+    },
+    "negative_examples": [
+      {
+        "figma_frame_id": "137:2",
+        "label": "M04",
+        "failure": "generic mature font plus attached design line; materially worse"
+      },
+      {
+        "figma_frame_id": "139:2",
+        "label": "M06",
+        "failure": "new historical/chisel DNA not anchored to approved mother; route drift"
+      }
+    ]
+  },
+  "audit_variables": [
+    "overall silhouette and wordmark energy",
+    "stroke rhythm and thickness modulation",
+    "character-level hierarchy and readability",
+    "inter-glyph negative space and connection logic",
+    "asymmetry/tension that gives the mother authored character",
+    "semantic integration that belongs inside the form rather than as attached decoration",
+    "edge/terminal character versus unwanted roughness"
+  ],
+  "required_output": [
+    "mother_reference_strengths",
+    "what_M02_preserved",
+    "what_M03_improved",
+    "what_M04_and_M06_destroyed",
+    "explicit_gap_vector_between_best_current_skeleton_and_mother",
+    "one bounded correction hypothesis derived from that gap vector"
+  ],
+  "selection_rule": "Do not choose another construction method until the gap vector is explicit. The next move must be a correction to the best existing direction or a demonstrably necessary reconstruction, not a method-for-method's-sake experiment.",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_DIRECTION_AUDIT_FROM_MOTHER_REFERENCE"
+}
