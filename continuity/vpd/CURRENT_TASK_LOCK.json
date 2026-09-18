@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 55,
+  "revision": 56,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 54,
-    "git_blob_sha": "9930465ff5b59b606e284be0aea40deaab225630",
-    "note": "Revision 54 ended at TYP-M01 fail; TYP-M02 execution was later recorded at commit 7401ef2 before task-state settlement."
+    "revision": 55,
+    "git_blob_sha": "f2b8e6b6ad9a31de22fd243e0c8dfb3881db17b6",
+    "note": "Revision 55 settled TYP-M02 as a local fidelity pass and opened TYP-M03."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "TYP-M02 faithful lettering vectorization is human-accepted as readable and worth continuing, but subsequent direct comparison confirms the visible delta versus the already-existing faithful node is small. Settle M02 only as a local fidelity/design-character preservation pass, not a quality-upgrade claim. Open TYP-M03 CJK component/stroke structural reconstruction on 茶作 D; preserve D design DNA, keep surface effects off, and keep Doufang, photography, T2 and P6 frozen.",
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST02_PASS_LOCAL_ONLY",
+  "current_stage": "TYP-M03 CJK component/stroke structural reconstruction executed exactly once on the accepted 茶作 D M02 skeleton. The test changes only structural/optical relationships: more inter-glyph negative space, a narrower and slightly optically smaller 作 upper body, while preserving 茶 and the connected lower sweep. No leaves, texture, gradient, shadow, hidden variants or pre-review retries. Await human actual-pixel verdict before any further typography or surface work.",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST03_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_03",
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST_03_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's TYP-M02 black/ivory human acceptance: readable and worth continuing",
-    "reconciled the later user observation that the visual delta is small",
-    "settled TYP-M02 as a local faithful-vectorization viability pass only, with no commercial-quality or visible-upgrade claim",
-    "kept rule promotion blocked because one local fidelity pass is insufficient",
-    "opened only TYP-M03 CJK component/stroke structural reconstruction as the next sandbox test",
+    "executed exactly one visible TYP-M03 structural optical reconstruction on the accepted 茶作 D M02 skeleton",
+    "increased inter-glyph negative space and compressed the 作 upper body without changing 茶 mother geometry",
+    "kept the connected lower sweep and monochrome ivory-on-black evaluation condition",
+    "confirmed Figma node readback for frame 129:2, root 129:3 and vector 129:4",
+    "kept leaves, texture, gradient, shadow, hidden variants and pre-review polish disabled",
     "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
   ],
-  "updated_at": "2026-09-17T23:02:00Z",
+  "updated_at": "2026-09-17T23:12:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -155,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "5cf0bad7390750aca941bc0db3c2c6b74e2023c8",
+  "input_commit": "73f3c96dc98cc20ee2b6edf17b991ae9d7b1be83",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,8 +166,8 @@
   "relay_bindings": {},
   "blockers": [
     "TYP-M01 failed and is not eligible for rule promotion.",
-    "TYP-M02 passed the local black/white fidelity gate, but visible quality improvement over the prior faithful vector is not demonstrated and automatic rule promotion remains forbidden.",
-    "TYP-M03 structural test must pass actual-pixel human review before support typography can open.",
+    "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
+    "TYP-M03 is now executed and blocked on human actual-pixel verdict.",
     "T2 remains blocked until a title route achieves human visual acceptance at the required quality level.",
     "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
@@ -210,7 +210,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST02_PASS_LOCAL_ONLY",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST03_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -222,7 +222,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_03",
+    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST_03_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -552,7 +552,7 @@
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
-    "sandbox_next_test": "TYP-M03",
+    "sandbox_next_test": null,
     "sandbox_test02_execution": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_EXECUTION_20260917.json"
     },
@@ -560,7 +560,12 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_HUMAN_SETTLEMENT_20260918.json",
       "sha256": "9e20ad51a198f043c156ead7909bbec0737b33cebe28c432e8ca2ed711bcb443"
     },
-    "sandbox_test02_verdict": "PASS_LOCAL_FIDELITY_SMALL_VISIBLE_DELTA"
+    "sandbox_test02_verdict": "PASS_LOCAL_FIDELITY_SMALL_VISIBLE_DELTA",
+    "sandbox_test03_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_EXECUTION_20260918.json",
+      "sha256": "71d8078021cd4be7679f717921f0039100fc50182e72a813b30e64d6a7b87bfa",
+      "figma_frame_id": "129:2"
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
