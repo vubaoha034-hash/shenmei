@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 66,
+  "revision": 67,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 65,
-    "git_blob_sha": "a25f4bdbf7979dff0f1b66ccf0d38c87fd3709ec",
-    "note": "Revision 65 repaired the audit mother raster and waited for human confirmation."
+    "revision": 66,
+    "git_blob_sha": "8cab47380492f87ed3b17c39c1c1489c42bc9fdd",
+    "note": "Revision 66 accepted the repaired audit and authorized exactly one mother-anchored local contour refinement."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review accepts the repaired mother/M02/M03 audit for now and explicitly asks to proceed to refinement. Small M02/M03 visible delta is no longer treated as a failure signal. Exactly one mother-anchored local contour refinement is authorized on the M03 skeleton, with no new style family, no global silhouette/proportion change, and no texture rescue.",
-  "status": "VPD_P1_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_READY",
+  "current_stage": "The single authorized mother-anchored local contour refinement has been executed as Figma frame 149:2 from M03 129:2. It preserves the global silhouette, character proportions and D family while refining only five local regions: 茶 terminals, 茶 left-fall taper, central bridge junction, lower sweep weight/terminal, and 作 local junction weight. No second variant or polish retry exists. Await human pixel verdict.",
+  "status": "VPD_P1_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human acceptance of the repaired mother/M02/M03 audit",
-    "recorded that small M02/M03 visible delta is acceptable for now",
-    "authorized exactly one mother-anchored local contour refinement",
-    "kept all new typography methods, texture, T2 and P6 blocked"
+    "executed exactly one visible mother-anchored local contour refinement from M03",
+    "kept overall silhouette and character proportions frozen",
+    "refined five audit-identified local regions only",
+    "kept all new style methods, texture, leaves, gradients, shadows and hidden variants disabled",
+    "confirmed actual-pixel Figma readback for frame 149:2",
+    "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
   ],
-  "updated_at": "2026-09-18T07:23:00Z",
+  "updated_at": "2026-09-18T07:31:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "2ca8f43c58b91302ca617676a4ec50a44bbcdf91",
+  "input_commit": "ffd19d6505602cd6e217dcd747481d0c3a4db679",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,9 +165,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "No new typography method or style-family experiment is allowed.",
-    "Only one mother-anchored local contour refinement is authorized.",
-    "Global silhouette and character proportions are frozen.",
+    "The one authorized mother-anchored refinement is executed and blocked on human pixel verdict.",
+    "No second local refinement or new typography method is allowed before that verdict.",
     "Texture/material, leaves, T2 and P6 remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,7 +208,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_READY",
+    "status": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -219,7 +220,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
+    "next_required_action": "P1_WAIT_HUMAN_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -631,6 +632,11 @@
     "direction_audit_human_confirmation": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_HUMAN_CONFIRMATION_20260918.json",
       "sha256": "f95106b6f3644309f7463e93a0b98b224837a4f4aafe206bb61c77a8db365788"
+    },
+    "mother_anchored_local_contour_refinement01_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_EXECUTION_20260918.json",
+      "sha256": "a55c0e2b4a9c38650e33b85893ec471cb07a953b55c198d9df79047e92c36525",
+      "figma_frame_id": "149:2"
     }
   },
   "t1_final_settlement_evidence": {
