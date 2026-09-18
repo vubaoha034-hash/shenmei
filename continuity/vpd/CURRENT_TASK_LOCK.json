@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 60,
+  "revision": 61,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 59,
-    "git_blob_sha": "487a5d0873603276d452e01d299d77fa62615e69",
-    "note": "Revision 59 closed M03 for insufficient visible delta and opened TYP-M04."
+    "revision": 60,
+    "git_blob_sha": "f30e0714bbc46d1e73d6d551749483a3a9c9b369",
+    "note": "Revision 60 executed TYP-M04 and waited for human actual-pixel verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "TYP-M04 typeface-outline surgical customization executed exactly once as Figma frame 137:2. Unlike M03, it does not reuse the old D outline topology: it starts from Noto Sans SC Black mature Chinese skeletons, converts them to editable outlines, applies one bounded terminal surgery to 作, and adds one structural connector sweep. No leaves, texture, gradient, shadow, hidden variants or pre-review retries. Await human actual-pixel verdict.",
-  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST04_WAITING_HUMAN_VERDICT",
+  "current_stage": "Human review rejects TYP-M04 decisively: the visible change is obvious, but it reads as a mature generic font plus an attached design line and is materially worse than M03. This exactly matches the researched failure risk of a base typeface with the wrong DNA. M04 is archived as negative evidence and cannot be retried or promoted. TYP-M05 texture remains blocked because no skeleton has passed the required quality gate. A new bounded skeleton-method extension is prepared: TYP-M06 historical/material/vernacular redraw, black/ivory only.",
+  "status": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_M06_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST04_VERDICT",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,15 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "executed exactly one visible TYP-M04 typeface-outline surgical customization candidate",
-    "verified Noto Sans SC Black exists in the actual Figma font environment and used it as the mature base skeleton",
-    "converted 茶 and 作 to editable vector outlines before customization",
-    "applied only bounded structural surgery: 作 optical compression, one diagonal terminal cut, and one tapered connector sweep",
-    "confirmed actual-pixel Figma readback for frame 137:2",
-    "kept leaves, texture, gradient, shadow, hidden variants and pre-review polish disabled",
+    "recorded exact human rejection of TYP-M04",
+    "classified M04 as a method-level decorated-font failure with lower design quality despite sufficient visible change",
+    "archived M04 as negative evidence and prohibited retries or rule promotion",
+    "kept TYP-M05 texture blocked because the skeleton gate is not passed",
+    "added a frozen research-only extension plan for TYP-M06 historical/material/vernacular redraw",
     "kept formal Chazuo nodes, Doufang, photography, T2 and P6 frozen"
   ],
-  "updated_at": "2026-09-18T02:24:00Z",
+  "updated_at": "2026-09-18T02:40:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -156,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "d9458865ceb5fad14d6a66929b1d5fed56320ed1",
+  "input_commit": "fb6473a352d4de927843b212ec8d4e6445ea8d7e",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,13 +165,13 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "TYP-M01 failed and is not eligible for rule promotion.",
-    "TYP-M02 is only a local fidelity pass; it does not prove visible quality improvement or justify production-rule promotion.",
-    "TYP-M03 is closed for insufficient visible delta and cannot be retried.",
-    "TYP-M04 is executed and blocked on human actual-pixel verdict.",
-    "Texture/material remains forbidden as rescue before a skeleton method passes.",
-    "T2 remains blocked until the title route achieves human visual acceptance at the required quality level.",
-    "P6 reintegration and photo regeneration remain blocked; prior image gains are preserved.",
+    "TYP-M01 failed glyph correctness and is not eligible for rule promotion.",
+    "TYP-M02 is only a local fidelity pass with insufficient visible quality gain.",
+    "TYP-M03 is closed for diminishing returns after one bounded correction.",
+    "TYP-M04 failed human taste review as decorated-font logic and cannot be retried.",
+    "TYP-M05 texture is blocked because no skeleton method has passed the required title-quality gate.",
+    "TYP-M06 is research-only and must pass black/white actual-pixel human review before any material surface or support typography work.",
+    "T2 and P6 remain blocked; prior photography gains are preserved.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -213,7 +212,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST04_WAITING_HUMAN_VERDICT",
+    "status": "TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_M06_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -225,7 +224,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST04_VERDICT",
+    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -555,7 +554,7 @@
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
-    "sandbox_next_test": null,
+    "sandbox_next_test": "TYP-M06",
     "sandbox_test02_execution": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_EXECUTION_20260917.json"
     },
@@ -593,6 +592,16 @@
       "sha256": "e1a933a9a01ef343425d7853d7b68d0acaaaf21773f1a88197ec3018933374e6",
       "figma_frame_id": "137:2",
       "base_typeface": "Noto Sans SC Black"
+    },
+    "sandbox_test04_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_20260918.json",
+      "sha256": "40e909b913424e31eb13e74bbdb4056090adfac963d8f6bacd7df0f2aec3fd75"
+    },
+    "sandbox_test04_verdict": "FAIL_DECORATED_FONT_LOWER_DESIGN_QUALITY",
+    "sandbox_test05_texture_status": "BLOCKED_NO_SKELETON_PASS",
+    "sandbox_extension_plan_v2": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_EXTENSION_PLAN_V2_20260918.json",
+      "sha256": "e14bbfa0f0033a4f8148011bc62467319d847a6310867c83dc1b2ccc29f4763c"
     }
   },
   "t1_final_settlement_evidence": {
