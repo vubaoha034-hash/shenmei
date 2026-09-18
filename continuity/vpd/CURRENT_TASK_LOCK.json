@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 64,
+  "revision": 65,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 63,
-    "git_blob_sha": "4632c205a91dd704ac6d70b0b24aedba1f70f465",
-    "note": "Revision 63 stopped method roulette and required a mother-reference direction audit before any new render."
+    "revision": 64,
+    "git_blob_sha": "7639aece042874661b3a8313bd532e9bf7094d05",
+    "note": "Revision 64 completed the mother-reference audit but its first raster placement in frame 143:2 was later shown by the user to be visually corrupted."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,8 +120,8 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Mother-reference direction audit is complete with no new wordmark render. The V5 茶作 D source was recovered from its Google Slides review deck as a direct 2048x690 board copy and a 345x190 D crop, then restored into Figma audit frame 143:2 beside M02 and M03. Audit confirms M03 is the strongest current correction and M02 the fidelity anchor; M04/M06 are negative evidence. The remaining gap is local contour/weight/terminal character, not a need for another style or construction method. Await human confirmation before exactly one mother-anchored local contour refinement.",
-  "status": "VPD_P1_TYPOGRAPHY_DIRECTION_AUDIT_COMPLETE_WAITING_HUMAN_CONFIRMATION",
+  "current_stage": "Mother-reference direction audit remains the active decision point. A user screenshot exposed that the recovered V5 mother raster in audit frame 143:2 had been corrupted by an incorrect inline image payload, showing a gray block and clipped glyph. The mother raster at node 143:6 has now been replaced with the verified local q85 crop bytes and independently screenshot-read back as complete. M02 and M03 were not changed. Await human confirmation on the repaired audit comparison before any contour refinement.",
+  "status": "VPD_P1_TYPOGRAPHY_DIRECTION_AUDIT_RASTER_REPAIRED_WAITING_HUMAN_CONFIRMATION",
   "p6_allowed": false,
   "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_DIRECTION_AUDIT_CONFIRMATION",
   "execution_boundary": {
@@ -136,15 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recovered the V5 original generative review board from Google Slides and verified it is a direct downscaled board copy, not a later vector derivative",
-    "isolated the selected 茶作 D mother crop without generating new design pixels",
-    "created Figma audit frame 143:2 containing recovered mother pixels, M02 fidelity reference and M03 structural reference",
-    "verified current Figma MCP has no callable Vectorize property and current Weave is not linked",
-    "completed the mother-reference gap audit and identified five local contour/weight gaps",
-    "selected M03 as best current correction and M02 as fidelity anchor; retained M04/M06 only as negative evidence",
-    "defined one bounded mother-anchored local contour refinement hypothesis but did not execute it"
+    "accepted the user's screenshot as evidence that the audit mother panel was corrupted",
+    "traced the failure to the first inline raster payload rather than to the recovered V5 mother source",
+    "validated the local V5 D mother crop is complete and visually correct",
+    "replaced Figma node 143:6 with verified q85 mother bytes using figma.createImage",
+    "independently screenshot-read back frame 143:2 and confirmed the full mother is visible with no gray block",
+    "left M02, M03 and all design geometry unchanged"
   ],
-  "updated_at": "2026-09-18T04:32:00Z",
+  "updated_at": "2026-09-18T07:19:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -156,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "27a5eaca455b8865708c822ad746bafd6acf2cc8",
+  "input_commit": "03cc78d8d1e57e2268144e23e4d2e4ac29373fce",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -212,7 +211,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_DIRECTION_AUDIT_COMPLETE_WAITING_HUMAN_CONFIRMATION",
+    "status": "TYPOGRAPHY_DIRECTION_AUDIT_RASTER_REPAIRED_WAITING_HUMAN_CONFIRMATION",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -626,7 +625,13 @@
     },
     "best_current_skeleton": "M03_129_2",
     "fidelity_anchor": "M02_121_2",
-    "proposed_next_correction": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01"
+    "proposed_next_correction": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
+    "direction_audit_raster_repair": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_RASTER_REPAIR_20260918.json",
+      "sha256": "d0342e8295af1f90388a335640a701e67c89a709121e3666be4508c306fc542b",
+      "figma_frame_id": "143:2",
+      "target_node_id": "143:6"
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
