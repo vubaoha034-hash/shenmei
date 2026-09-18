@@ -1,0 +1,77 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-test/v1",
+  "recorded_at": "2026-09-18T02:24:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "test_id": "TYP-M04",
+  "method": "TYPEFACE_OUTLINE_SURGICAL_CUSTOMIZATION",
+  "status": "EXECUTED_WAITING_HUMAN_BLACK_WHITE_GATE_NOT_RULE",
+  "input_commit": "66ebbc8ce0f26570dddc565da59b5c658b7b6d07",
+  "authority": {
+    "task_lock_next_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_04",
+    "sandbox_plan": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_PLAN_V1.json",
+    "m03_stop_settlement": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST03_CORRECTION01_HUMAN_SETTLEMENT_20260918.json"
+  },
+  "scope": {
+    "target": "茶作",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "leaves": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false,
+    "surface_effects": false
+  },
+  "base_typeface": {
+    "family": "Noto Sans SC",
+    "style": "Black",
+    "availability_verified_in_figma": true,
+    "selection_reason": "Use a mature high-legibility Chinese skeleton so glyph correctness is inherited before a small number of brand-specific outline surgeries."
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "sandbox_frame_id": "137:2",
+    "candidate_root_id": "137:3",
+    "final_mark_id": "137:13",
+    "frame_name": "SANDBOX_TYPO_M04_TYPEFACE_OUTLINE_SURGICAL_CUSTOM",
+    "frame_size": [
+      1200,
+      800
+    ],
+    "actual_pixel_readback": "PASS_OUTPUT_VISIBLE",
+    "export_png_url_short_lived": "https://www.figma.com/api/mcp/asset/2b42b12c-4a65-4e2d-9275-7026eb8a6a7e.png",
+    "formal_chazuo_nodes_overwritten": false,
+    "doufang_modified": false,
+    "photography_modified": false,
+    "T2_modified": false,
+    "P6_modified": false
+  },
+  "construction": [
+    "created 茶 and 作 in Noto Sans SC Black and converted both to editable vector outlines",
+    "compressed 作 horizontally to 92 percent and vertically to 96 percent for optical pairing",
+    "applied one diagonal lower-right terminal cut to 作",
+    "added one tapered structural connector sweep derived from the accepted D one-piece identity",
+    "united the customized outlines and connector into one editable wordmark system"
+  ],
+  "execution": {
+    "route": "Figma text -> flatten to vector outlines -> bounded subtractive terminal surgery -> one structural connector addition -> union",
+    "old_D_topology_reused": false,
+    "correctness_pass_claimed": false,
+    "aesthetic_pass_claimed": false,
+    "human_gate_required": true
+  },
+  "human_black_white_gate": {
+    "status": "WAITING",
+    "questions": [
+      "Does this read immediately as 茶作?",
+      "Is the design-language change versus M03/R1 finally large enough to matter?",
+      "Does the mature base plus limited surgery feel more authored and commercially credible, or does it read as a font with an underline?"
+    ]
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "M04 remains a single local research output pending actual-pixel human review and explicit user acceptance."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST04_VERDICT"
+}
