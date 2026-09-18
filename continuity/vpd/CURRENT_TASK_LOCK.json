@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 65,
+  "revision": 66,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 64,
-    "git_blob_sha": "7639aece042874661b3a8313bd532e9bf7094d05",
-    "note": "Revision 64 completed the mother-reference audit but its first raster placement in frame 143:2 was later shown by the user to be visually corrupted."
+    "revision": 65,
+    "git_blob_sha": "a25f4bdbf7979dff0f1b66ccf0d38c87fd3709ec",
+    "note": "Revision 65 repaired the audit mother raster and waited for human confirmation."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Mother-reference direction audit remains the active decision point. A user screenshot exposed that the recovered V5 mother raster in audit frame 143:2 had been corrupted by an incorrect inline image payload, showing a gray block and clipped glyph. The mother raster at node 143:6 has now been replaced with the verified local q85 crop bytes and independently screenshot-read back as complete. M02 and M03 were not changed. Await human confirmation on the repaired audit comparison before any contour refinement.",
-  "status": "VPD_P1_TYPOGRAPHY_DIRECTION_AUDIT_RASTER_REPAIRED_WAITING_HUMAN_CONFIRMATION",
+  "current_stage": "Human review accepts the repaired mother/M02/M03 audit for now and explicitly asks to proceed to refinement. Small M02/M03 visible delta is no longer treated as a failure signal. Exactly one mother-anchored local contour refinement is authorized on the M03 skeleton, with no new style family, no global silhouette/proportion change, and no texture rescue.",
+  "status": "VPD_P1_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_DIRECTION_AUDIT_CONFIRMATION",
+  "next_required_action": "P1_EXECUTE_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "accepted the user's screenshot as evidence that the audit mother panel was corrupted",
-    "traced the failure to the first inline raster payload rather than to the recovered V5 mother source",
-    "validated the local V5 D mother crop is complete and visually correct",
-    "replaced Figma node 143:6 with verified q85 mother bytes using figma.createImage",
-    "independently screenshot-read back frame 143:2 and confirmed the full mother is visible with no gray block",
-    "left M02, M03 and all design geometry unchanged"
+    "recorded human acceptance of the repaired mother/M02/M03 audit",
+    "recorded that small M02/M03 visible delta is acceptable for now",
+    "authorized exactly one mother-anchored local contour refinement",
+    "kept all new typography methods, texture, T2 and P6 blocked"
   ],
-  "updated_at": "2026-09-18T07:19:00Z",
+  "updated_at": "2026-09-18T07:23:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -155,7 +153,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "03cc78d8d1e57e2268144e23e4d2e4ac29373fce",
+  "input_commit": "2ca8f43c58b91302ca617676a4ec50a44bbcdf91",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,11 +164,9 @@
   "relay_bindings": {},
   "blockers": [
     "No new typography method or style-family experiment is allowed.",
-    "Figma MCP does not expose editor Vectorize/Agent as a callable action; Weave is currently not linked.",
-    "The recovered Drive board is a direct 2048x690 downscaled copy, not the exact original 2160x728 bytes.",
-    "Exactly one mother-anchored local contour refinement may open only after human confirmation of the direction audit.",
-    "TYP-M05 texture remains blocked until the skeleton/title direction passes human quality review.",
-    "T2 and P6 remain blocked; prior photography gains are preserved.",
+    "Only one mother-anchored local contour refinement is authorized.",
+    "Global silhouette and character proportions are frozen.",
+    "Texture/material, leaves, T2 and P6 remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -211,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "TYPOGRAPHY_DIRECTION_AUDIT_RASTER_REPAIRED_WAITING_HUMAN_CONFIRMATION",
+    "status": "MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT01_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -223,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_DIRECTION_AUDIT_CONFIRMATION",
+    "next_required_action": "P1_EXECUTE_MOTHER_ANCHORED_LOCAL_CONTOUR_REFINEMENT_01",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -631,6 +627,10 @@
       "sha256": "d0342e8295af1f90388a335640a701e67c89a709121e3666be4508c306fc542b",
       "figma_frame_id": "143:2",
       "target_node_id": "143:6"
+    },
+    "direction_audit_human_confirmation": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_DIRECTION_AUDIT_HUMAN_CONFIRMATION_20260918.json",
+      "sha256": "f95106b6f3644309f7463e93a0b98b224837a4f4aafe206bb61c77a8db365788"
     }
   },
   "t1_final_settlement_evidence": {
