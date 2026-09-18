@@ -1,0 +1,31 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-human-settlement/v1",
+  "recorded_at": "2026-09-18T04:32:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "test_id": "TYP-M06",
+  "method": "HISTORICAL_MATERIAL_VERNACULAR_REDRAW",
+  "execution_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST06_EXECUTION_20260918.json",
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame_id": "139:2"
+  },
+  "human_feedback": {
+    "exact": "为什么越改越差。你自己检查下。你的方向是不是越来越乱了",
+    "interpretation": "M06_FAIL_AND_OVERALL_DIRECTION_DRIFT"
+  },
+  "verdict": {
+    "m06_design_quality": "FAIL_WORSE",
+    "overall_sequence": "DIRECTION_DRIFT_CONFIRMED",
+    "continue_method_queue": false,
+    "production_rule_promotion_allowed": false
+  },
+  "diagnosis": [
+    "The project confused visible delta with quality improvement. M02 was penalized for small change even though fidelity was its purpose.",
+    "After M03, the experiment began optimizing method novelty rather than closeness to the approved mother visual character.",
+    "M04 changed the base DNA entirely and produced a decorated-font result.",
+    "M06 introduced a new historical/chisel design language that was not anchored to the approved mother and therefore increased divergence.",
+    "The method queue became the driver; the fixed visual target stopped being the driver."
+  ],
+  "decision": "STOP_METHOD_ROULETTE_STOP_M06_NO_M07_NO_TEXTURE_RETURN_TO_MOTHER_TARGET_AUDIT",
+  "next_required_action": "P1_EXECUTE_TYPOGRAPHY_DIRECTION_AUDIT_FROM_MOTHER_REFERENCE"
+}
