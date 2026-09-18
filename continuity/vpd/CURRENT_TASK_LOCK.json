@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 68,
+  "revision": 69,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 67,
-    "git_blob_sha": "31ef926a42d4704d94f01674de791a522d1630c4",
-    "note": "Revision 67 executed the single mother-anchored local contour refinement and waited for human verdict."
+    "revision": 68,
+    "git_blob_sha": "89d7974eda366e939157540ecd2421675b2e36f9",
+    "note": "Revision 68 froze 149:2 as the current best refined skeleton and opened Stage G preparation."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review says refinement 149:2 is broadly similar to M03 but slightly more refined. This is a marginal-positive black/white result, not a major quality jump. Freeze 149:2 as the current best refined skeleton and stop further contour micro-iteration. Treat the black/white skeleton as provisionally worth continuing, not commercially complete. The next allowed stage is a single mother-sourced surface/material probe derived from real mother pixels; synthetic gradient/shadow/outline rescue and the previously failed V7-style surface route remain prohibited.",
-  "status": "VPD_P1_REFINED_SKELETON_PROVISIONAL_PASS_STAGE_G_MOTHER_SURFACE_PROBE_READY",
+  "current_stage": "Stage G mother-sourced surface/material probe 01 is prepared but not executed. The geometry of 149:2 is frozen. A deterministic surface-color map has been derived only from the recovered V5 mother pixels, with mother edge silhouette excluded and replaced by neutral ivory so the map carries material/tone rather than raster shape. The first visible probe may use exactly this one real mother map as the vector fill; no gradients, shadows, outlines, synthetic grain, leaves, second variants or fallback maps are authorized.",
+  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_PREPARE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the human verdict that 149:2 is only slightly more refined than M03",
-    "froze 149:2 as the current best refined skeleton",
-    "stopped further local contour micro-iteration because expected marginal return is too low",
-    "classified the black/white skeleton as provisionally worth continuing but not commercially complete",
-    "opened only a mother-sourced Stage G surface/material probe using real mother texture information",
-    "kept synthetic effect rescue, support typography, T2 and P6 blocked"
+    "derived one primary surface-color map directly from recovered V5 mother pixels",
+    "removed dependence on the mother raster silhouette by eroding/feathering the glyph mask and filling outside with the mother median ivory",
+    "derived one diagnostic microtexture map but explicitly blocked it from the first visible probe",
+    "froze 149:2 geometry and all contour decisions",
+    "defined exactly one visible Stage G execution route with zero hidden variants or pre-review retries",
+    "kept gradients, shadows, outlines, synthetic noise, leaves, support typography, T2 and P6 blocked"
   ],
-  "updated_at": "2026-09-18T08:35:00Z",
+  "updated_at": "2026-09-18T11:57:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -155,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "a039d50448da94e9e3e83c935fbf8d37819d59f6",
+  "input_commit": "9b608711a2f8c2a4c411fc81a4ae806bc728a4d4",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -165,9 +165,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "No further contour micro-refinement is allowed unless a later context test exposes a specific structural defect.",
-    "Stage G may use only mother-sourced real material information; synthetic gradient/shadow/outline rescue and the failed V7 surface recipe remain prohibited.",
-    "Support typography, T2 and P6 remain blocked until the surface/context title route is human-accepted.",
+    "Only the prepared MOTHER_SURFACE_COLOR_MAP route may be executed for the first visible Stage G probe.",
+    "No fallback texture map, synthetic noise, gradient, shadow, outline, leaf or geometry change is allowed without a new explicit decision.",
+    "Support typography, T2 and P6 remain blocked until Stage G and context review pass.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -208,7 +208,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "REFINED_SKELETON_PROVISIONAL_PASS_STAGE_G_MOTHER_SURFACE_PROBE_READY",
+    "status": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -220,7 +220,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_PREPARE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+    "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -644,7 +644,11 @@
     },
     "current_best_refined_skeleton": "149:2",
     "black_white_gate": "PROVISIONAL_CONTINUE_PASS_NOT_COMMERCIAL",
-    "further_contour_refinement_allowed": false
+    "further_contour_refinement_allowed": false,
+    "mother_sourced_surface_material_probe01_preparation": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARATION_20260918.json",
+      "sha256": "624cfc14db5ba247ecd970bb1b17cbca41f745e9cd2c7bcb1a76df06d2b113c5"
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
