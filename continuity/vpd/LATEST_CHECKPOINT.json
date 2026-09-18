@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 90,
-  "recorded_at": "2026-09-18T08:35:00Z",
+  "sequence": 91,
+  "recorded_at": "2026-09-18T11:57:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human review says refinement 149:2 is broadly similar to M03 but slightly more refined. This is a marginal-positive black/white result, not a major quality jump. Freeze 149:2 as the current best refined skeleton and stop further contour micro-iteration. Treat the black/white skeleton as provisionally worth continuing, not commercially complete. The next allowed stage is a single mother-sourced surface/material probe derived from real mother pixels; synthetic gradient/shadow/outline rescue and the previously failed V7-style surface route remain prohibited.",
+  "current_focus": "Stage G mother-sourced surface/material probe 01 is prepared but not executed. The geometry of 149:2 is frozen. A deterministic surface-color map has been derived only from the recovered V5 mother pixels, with mother edge silhouette excluded and replaced by neutral ivory so the map carries material/tone rather than raster shape. The first visible probe may use exactly this one real mother map as the vector fill; no gradients, shadows, outlines, synthetic grain, leaves, second variants or fallback maps are authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -81,10 +81,11 @@
     "p1_typography_direction_audit_raster_repair",
     "p1_typography_direction_audit_human_confirmation",
     "p1_mother_anchored_local_contour_refinement_01_executed",
-    "p1_mother_anchored_local_contour_refinement_01_human_settlement"
+    "p1_mother_anchored_local_contour_refinement_01_human_settlement",
+    "p1_mother_sourced_surface_material_probe_01_prepared"
   ],
   "incomplete": [
-    "p1_mother_sourced_surface_material_probe_01",
+    "p1_mother_sourced_surface_material_probe_01_execution",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -93,12 +94,12 @@
     "scale"
   ],
   "blocked": [
-    "No further contour micro-refinement is allowed unless a later context test exposes a specific structural defect.",
-    "Stage G may use only mother-sourced real material information; synthetic gradient/shadow/outline rescue and the failed V7 surface recipe remain prohibited.",
-    "Support typography, T2 and P6 remain blocked until the surface/context title route is human-accepted.",
+    "Only the prepared MOTHER_SURFACE_COLOR_MAP route may be executed for the first visible Stage G probe.",
+    "No fallback texture map, synthetic noise, gradient, shadow, outline, leaf or geometry change is allowed without a new explicit decision.",
+    "Support typography, T2 and P6 remain blocked until Stage G and context review pass.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_PREPARE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -166,10 +167,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_REFINED_SKELETON_PROVISIONAL_PASS_STAGE_G_MOTHER_SURFACE_PROBE_READY",
+  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "0e4374c6e7adcce58ebbaa95b12c4e0b56ceaff335b26806cdb58432a5ad7571"
+    "sha256": "9d797b037789b3e6259f2befb73d5e2e61cd467dc453ec0ccbec110c4db0d1cc"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -190,12 +191,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-REFINED-SKELETON-PROVISIONAL-PASS-20260918-001",
-      "event_hash": "244bcefeea15e5e23881924bdcf61277a8ae97c89600bc4d6be57336047eaa27"
+      "event_id": "EVT-VPD-P1-MOTHER-SOURCED-SURFACE-PROBE01-PREPARED-20260918-001",
+      "event_hash": "88094b11b11041aa36066f4ab34bf64244890e51fc069e184b800fd00ca33f21"
     }
   },
   "typography_repair": {
-    "status": "REFINED_SKELETON_PROVISIONAL_PASS_STAGE_G_MOTHER_SURFACE_PROBE_READY",
+    "status": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -211,7 +212,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_PREPARE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+    "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -337,6 +338,10 @@
       "sha256": "a6e68b69838d1dc1c0ace8a797c5d5a7f1a0c4184bd6eee806eb42c15afaa33b"
     },
     "current_best_refined_skeleton": "149:2",
-    "black_white_gate": "PROVISIONAL_CONTINUE_PASS_NOT_COMMERCIAL"
+    "black_white_gate": "PROVISIONAL_CONTINUE_PASS_NOT_COMMERCIAL",
+    "mother_sourced_surface_material_probe01_preparation": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARATION_20260918.json",
+      "sha256": "624cfc14db5ba247ecd970bb1b17cbca41f745e9cd2c7bcb1a76df06d2b113c5"
+    }
   }
 }
