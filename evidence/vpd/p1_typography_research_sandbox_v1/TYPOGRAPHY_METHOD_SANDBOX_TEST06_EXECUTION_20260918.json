@@ -1,0 +1,96 @@
+{
+  "schema_version": "vpd-typography-method-sandbox-test/v1",
+  "recorded_at": "2026-09-18T02:55:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "test_id": "TYP-M06",
+  "method": "HISTORICAL_MATERIAL_VERNACULAR_REDRAW",
+  "status": "EXECUTED_WAITING_HUMAN_BLACK_WHITE_GATE_NOT_RULE",
+  "input_commit": "26d932c5959416507a63c035a0f204f732a57e3f",
+  "authority": {
+    "task_lock_next_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_06",
+    "extension_plan": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_EXTENSION_PLAN_V2_20260918.json",
+    "research_record": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md"
+  },
+  "live_reference_principles": [
+    {
+      "source": "The Metropolitan Museum of Art — The Printed Image in China",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china",
+      "applied_principle": "woodblock transfer begins from brush-drawn/written forms and carves away blank areas; borrow chisel/relief logic, not texture noise"
+    },
+    {
+      "source": "The Metropolitan Museum of Art — Yan Family Temple Stele",
+      "url": "https://www.metmuseum.org/art/collection/search/64029",
+      "applied_principle": "square public-inscription structure with articulated turns, hooks and dots; preserve Chinese-script readability"
+    },
+    {
+      "source": "The Metropolitan Museum of Art — Model Calligraphies / rubbings",
+      "url": "https://www.metmuseum.org/art/collection/search/36142",
+      "applied_principle": "stone engraving/rubbing emphasizes controlled positive-negative shape and precise carved structure"
+    },
+    {
+      "source": "The Metropolitan Museum of Art — On the Seventeenth Day",
+      "url": "https://www.metmuseum.org/art/collection/search/39899",
+      "applied_principle": "borrow continuity/movement relationships only; do not deconstruct Chinese script"
+    }
+  ],
+  "scope": {
+    "target": "茶作",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_polish_retries": 0,
+    "typeface_used": false,
+    "old_D_topology_reused": false,
+    "leaves": false,
+    "texture": false,
+    "gradient": false,
+    "shadow": false,
+    "surface_effects": false
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "70:2",
+    "sandbox_frame_id": "139:2",
+    "candidate_root_id": "139:3",
+    "tea_node_id": "139:4",
+    "work_node_id": "139:5",
+    "frame_name": "SANDBOX_TYPO_M06_HISTORICAL_MATERIAL_VERNACULAR_REDRAW",
+    "frame_size": [
+      1200,
+      800
+    ],
+    "actual_pixel_readback": "PASS_OUTPUT_VISIBLE",
+    "png_export_url_short_lived": "https://www.figma.com/api/mcp/asset/94310c2e-385a-4962-ad87-4c771816724e.png",
+    "formal_chazuo_nodes_overwritten": false,
+    "doufang_modified": false,
+    "photography_modified": false,
+    "T2_modified": false,
+    "P6_modified": false
+  },
+  "construction": [
+    "redrew 茶 and 作 from scratch as explicit component/stroke vectors rather than using a typeface outline",
+    "used square public-inscription proportions with systematic chisel-cut terminals",
+    "used trapezoidal stroke bodies, slightly flared horizontals and blunt falling strokes as intrinsic structure",
+    "shared the same terminal grammar across both glyphs instead of attaching a separate decorative line",
+    "kept each Chinese component legible and separate enough to inspect/edit"
+  ],
+  "execution": {
+    "route": "manual low-node filled-vector component redraw in Figma",
+    "correctness_pass_claimed": false,
+    "aesthetic_pass_claimed": false,
+    "human_gate_required": true
+  },
+  "human_black_white_gate": {
+    "status": "WAITING",
+    "questions": [
+      "Does it read immediately as 茶作?",
+      "Compared with M04, is the identity now inside the stroke system rather than attached decoration?",
+      "Compared with M03, is the design-language change large enough and is the quality actually better?",
+      "Is this black/ivory skeleton worth continuing?"
+    ]
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "TYP-M06 is one research-only local output pending actual-pixel human acceptance; no production rule promotion."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_TYPOGRAPHY_METHOD_SANDBOX_TEST06_VERDICT"
+}
