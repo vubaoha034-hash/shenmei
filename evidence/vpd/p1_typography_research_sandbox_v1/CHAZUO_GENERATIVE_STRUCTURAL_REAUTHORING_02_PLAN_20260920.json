@@ -1,0 +1,74 @@
+{
+  "schema_version": "vpd-chazuo-generative-structural-reauthoring-plan/v1",
+  "recorded_at": "2026-09-20T02:58:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "PREPARED_NO_RENDER",
+  "objective": "Escape the low-value scripted-vector deformation loop by re-authoring one new black/ivory 茶作 wordmark directly from the approved V5 D mother pixels, then vectorize only if the raster concept is visually accepted.",
+  "visual_authority": {
+    "primary": "Recovered V5 茶作 D mother crop, direct generative mother pixels",
+    "family_requirement": "Must remain unmistakably within the D / 连笔一体 family",
+    "not_authority": [
+      "149 vector topology",
+      "181 vector topology",
+      "151/169/173 material maps"
+    ]
+  },
+  "authoring_route": {
+    "stage_1": "Generate exactly one clean black-background / warm-ivory 茶作 wordmark concept using the mother raster as visual reference.",
+    "stage_2": "Human actual-pixel taste/readability gate.",
+    "stage_3": "Only if Stage 2 passes, faithfully vectorize the accepted concept into Figma and perform optical cleanup.",
+    "figma_role": "Production/vectorization/refinement after concept acceptance, not the primary taste-generation engine for this attempt."
+  },
+  "five_high_leverage_variables": [
+    {
+      "id": "G1",
+      "name": "one_piece_composition",
+      "target": "茶 and 作 must feel authored as one composition, not two corrected glyphs."
+    },
+    {
+      "id": "G2",
+      "name": "mass_hierarchy",
+      "target": "茶 broader/active, 作 narrower/upright, with deliberate unequal visual mass."
+    },
+    {
+      "id": "G3",
+      "name": "integrated_dual_coupling",
+      "target": "Mid bridge and lower sweep must be born from the characters and jointly bind the pair."
+    },
+    {
+      "id": "G4",
+      "name": "stroke_rhythm",
+      "target": "Clear blunt/heavy versus tapered/directional contrast; avoid generic smooth vector uniformity."
+    },
+    {
+      "id": "G5",
+      "name": "negative_space_tension",
+      "target": "Central and lower gaps must form distinctive irregular shapes that contribute to identity."
+    }
+  ],
+  "render_constraints": {
+    "visible_candidates": 1,
+    "hidden_candidates": 0,
+    "pre_review_retries": 0,
+    "text_content": "茶作",
+    "background": "clean deep black",
+    "foreground": "single warm ivory",
+    "texture": false,
+    "leaves": false,
+    "gradients": false,
+    "shadows": false,
+    "outlines": false,
+    "decorative_icons": false,
+    "extra_text": false,
+    "poster_context": false
+  },
+  "fail_conditions": [
+    "not immediately readable as 茶作",
+    "looks like two existing glyphs plus decorative connector",
+    "generic calligraphy/font styling",
+    "visible design-quality delta remains comparable to 149/181",
+    "drifts outside the approved D family"
+  ],
+  "pass_definition": "The one raster candidate must create an obvious design-quality improvement over both 149 and 181 while remaining immediately readable and family-consistent.",
+  "next_required_action": "P1_EXECUTE_CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_FROM_MOTHER_PIXELS"
+}
