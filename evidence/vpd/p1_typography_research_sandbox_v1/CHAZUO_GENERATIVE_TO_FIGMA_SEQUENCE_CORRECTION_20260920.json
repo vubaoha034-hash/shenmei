@@ -1,0 +1,35 @@
+{
+  "schema_version": "vpd-chazuo-generative-to-figma-sequence-correction/v1",
+  "recorded_at": "2026-09-20T05:08:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "SEQUENCE_CORRECTED",
+  "user_feedback": {
+    "exact": "为什么又是你的图片生成的。没进入FIGMA",
+    "interpretation": "The user expected the previously attractive generative concept to move into Figma production rather than opening another image-generation round."
+  },
+  "error": {
+    "description": "Attempt 03 repeated concept generation after the user had already given directional positive feedback on the prior generated concept.",
+    "consequence": "The workflow stayed in concept generation one step too long instead of moving to Figma intake/vector production.",
+    "assistant_responsibility": true
+  },
+  "corrected_authority": {
+    "preferred_concept_source": "Generative Attempt 02",
+    "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef",
+    "local_file": "/mnt/data/a_minimalist_graphic_image_on_a_solid_black_backgr.png",
+    "local_dimensions": [
+      1672,
+      941
+    ],
+    "human_signal": "directionally positive: user explicitly observed that image generation produced an attractive result easily",
+    "approval_level": "DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS"
+  },
+  "attempt03_status": "SUPERSEDED_BY_SEQUENCE_CORRECTION_NOT_SELECTED_FOR_FIGMA",
+  "corrected_pipeline": [
+    "Take the directionally positive Attempt 02 raster into Figma as the visual authority.",
+    "Create a dedicated Figma sandbox intake frame with the raster reference preserved.",
+    "Vectorize/trace faithfully into editable geometry without re-ideation.",
+    "Perform only optical cleanup needed for production.",
+    "Then present raster vs vector for human comparison."
+  ],
+  "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST"
+}
