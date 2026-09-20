@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 73,
+  "revision": 74,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 72,
-    "git_blob_sha": "571380a7b6800b1bb5602a388fa1daf02aa9055d",
-    "note": "Revision 72 executed the first mother-sourced surface cleanup at frame 169:2 and waited for human verdict."
+    "revision": 73,
+    "git_blob_sha": "ecfcd6792eb64949bdc71390a4294508b9447847",
+    "note": "Revision 73 rejected Cleanup 01 as over-flattened and required one selective decontamination preparation starting from 151."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review and follow-up pixel diagnosis reject cleanup frame 169:2 as over-cleaned. It preserves the refined geometry but globally suppresses roughly two thirds of the material variation that made 151:2 feel more designed, visually regressing toward the earlier flat-fill behavior. Do not continue from 169 and do not return to pure-flat 149. The valid next experiment is one selective decontamination pass starting from the 151 material mechanism, removing only dark outliers, ghost-contour remnants and dirty gray patches while preserving medium-strength mother-sourced variation.",
-  "status": "VPD_P1_SURFACE_CLEANUP01_HUMAN_FAIL_OVERFLATTENED_SELECTIVE_DECONTAMINATION_REQUIRED",
+  "current_stage": "Selective Stage G decontamination Probe 02 is prepared but not rendered. The new asset starts from the exact 151 mother-sourced material map and removes only localized dark outliers and excessive broad gray contamination. It preserves about 67.5% of the source texture standard deviation and 87.3% of the mean absolute material variation, versus only 32.2% texture retention in failed Cleanup 01. Geometry remains frozen and no global texture multiplier, final blur, gradient, shadow, outline, synthetic noise or new typography method is allowed.",
+  "status": "VPD_P1_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARED_EXECUTION_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_PREPARE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
+  "next_required_action": "P1_EXECUTE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,14 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "accepted the user's regression challenge and rechecked actual Figma fills for 100/121/149/151/169",
-    "confirmed 169 is not a geometry rollback but is a surface-behavior regression toward flat early versions",
-    "quantified that cleanup retained only about 32.2 percent of the original surface-map standard deviation",
-    "rejected 169:2 as over-cleaned and prohibited further work from that surface strength",
-    "retained 151:2 as the strongest material/design direction despite its cleanliness failure",
-    "defined one bounded selective-decontamination hypothesis that removes local dirt without globally weakening texture"
+    "derived one selective decontamination material asset directly from the exact 151 mother-sourced surface map",
+    "healed only local dark outliers using a bounded 5x5 median comparison",
+    "limited broad gray correction to low-frequency contamination beyond an allowed tonal shadow",
+    "preserved about 67.5 percent of 151 texture standard deviation and 87.3 percent of mean absolute material variation",
+    "avoided the global attenuation and blur mechanism that made 169 regress toward flat early versions",
+    "defined exactly one visible execution route with zero hidden variants and zero pre-review aesthetic retries"
   ],
-  "updated_at": "2026-09-20T01:36:00Z",
+  "updated_at": "2026-09-20T01:38:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -155,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "b148a51ba8deceed56650715e745d67866d9840f",
+  "input_commit": "ffd3bf5ca803f6b5f2c17480d86f60e34c619e7e",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -165,11 +165,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not continue surface iteration from 169:2.",
-    "Do not globally attenuate or blur all material variation.",
-    "Do not return to flat 149:2 as the target.",
-    "Only one selective-decontamination probe derived from the 151 material mechanism may be prepared next.",
-    "Geometry, support typography, T2 and P6 remain frozen.",
+    "Only the prepared selective-decontamination Probe 02 asset may be executed next.",
+    "Do not continue from 169:2 or globally attenuate/blur the 151 material.",
+    "No geometry change, gradient, shadow, outline, synthetic noise, leaf, diagnostic microtexture or second visible variant is allowed.",
+    "Support typography, T2 and P6 remain frozen until the title surface/context route is human-accepted.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -210,7 +209,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "SURFACE_CLEANUP01_HUMAN_FAIL_OVERFLATTENED_SELECTIVE_DECONTAMINATION_REQUIRED",
+    "status": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARED_EXECUTION_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -222,7 +221,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_PREPARE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
+    "next_required_action": "P1_EXECUTE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -684,7 +683,21 @@
       "figma_frame_id": "169:2"
     },
     "current_surface_direction": "151:2_DIRTY_BUT_DESIGN_GAIN",
-    "rejected_surface_cleanup": "169:2_OVERFLATTENED"
+    "rejected_surface_cleanup": "169:2_OVERFLATTENED",
+    "mother_surface_selective_decontamination_probe02_preparation": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARATION_20260920.json",
+      "sha256": "5c107958cdd6d871ea822e7f2bb5a91fcf0115ff8f931be5118eaa3b9e0fd0f7"
+    },
+    "surface_probe02_asset": {
+      "dimensions": [
+        345,
+        190
+      ],
+      "bytes": 21837,
+      "sha256": "415eed93e615c4342111f90e6f937b42ebf2451b6a68d97fdd74c1f47e718fb0",
+      "retained_texture_std_ratio": 0.6747870777953843,
+      "retained_mean_abs_material_variation_ratio": 0.8732618431230678
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
