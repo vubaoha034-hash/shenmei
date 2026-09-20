@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 88,
+  "revision": 89,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 87,
-    "git_blob_sha": "e6cc7c8a2d5903c7ef91f255ea233fba06d4a2ed",
-    "note": "Revision 87 rejected the generic brush title and photo-plus-text Stage H poster, then prepared one holistic poster/custom-wordmark concept."
+    "revision": 88,
+    "git_blob_sha": "7ae21927e567b2cc6121fdf5fa02efdf83521246",
+    "note": "Revision 88 generated one holistic Chazuo poster Concept 01 and waited for whole-poster review."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "One holistic Chazuo poster art-direction concept has been generated as the only visible Concept 01. It intentionally evaluates the poster as one system: custom wordmark, tea-process photography, support typography, asymmetric attention geometry and dark negative space. The concept is not a final production asset: exact text and existing PHOTO_RAW_LOCKED pixel fidelity are not claimed, and no Figma reconstruction has started. Await human whole-poster verdict; if accepted, the next step is to rebuild the accepted composition in Figma with the real photo, exact text and editable custom wordmark.",
-  "status": "VPD_P1_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
+  "current_stage": "Human review says holistic Concept 01 is much better than prior photo-plus-text attempts but still below Shanyeji in design sophistication. The gap is diagnosed at the mechanism level: the title remains calligraphic-adjacent, the composition still resolves too much as left dark title field versus right/bottom photography, type-safe space is not native enough to the photograph, support hierarchy is not yet a strong relation graph, and regional density/crop tension remains weaker than the Shanyeji mechanism target. Do not rebuild Concept 01 in Figma yet. One Concept 02 is prepared to strengthen exactly five mechanisms—structural display mass, title/photo counter-mass topology, photo-generated type-safe space, reading-order graph, and regional density/crop tension—without copying Shanyeji surface tokens.",
+  "status": "VPD_P1_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
+  "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "generated exactly one holistic poster/custom-wordmark concept",
-    "evaluated title, photography, support hierarchy and negative space as one art-direction system",
-    "did not create hidden variants or retries",
-    "did not modify Figma, formal P6, T2 or production text"
+    "recorded Concept 01 as directionally positive but below Shanyeji design sophistication",
+    "separated genuine mechanism gaps from superficial Shanyeji surface resemblance",
+    "blocked premature Figma reconstruction of Concept 01",
+    "prepared exactly one holistic Concept 02 with five mechanism-level design variables"
   ],
-  "updated_at": "2026-09-20T10:40:00Z",
+  "updated_at": "2026-09-20T11:56:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +153,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "e8278125622ec944db847c7f8dad69bc1e0f08f0",
+  "input_commit": "6236fed439a1a63e31bf37be47b199131a2851b2",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,9 +163,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not reconstruct the concept in Figma before human whole-poster approval.",
-    "Do not generate a second holistic concept or hidden retry.",
-    "Do not treat generated support text or photo pixels as production-authoritative.",
+    "Do not reconstruct Concept 01 in Figma as the final direction.",
+    "Do not copy Shanyeji fixed composition, brush surface, palette, motif or exact wordmark assets.",
+    "Only one Concept 02 may be generated next.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -206,7 +206,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
+    "status": "HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -218,7 +218,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
+    "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -805,6 +805,14 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_EXECUTION_20260920.json",
       "sha256": "c855822108d523a32ef26b2d846d85d5df2549529836cf0e64369a6dba8764b0",
       "gen_id": "6f1a4f8a-79a7-4618-92cd-d78e03cdc1a0"
+    },
+    "full_poster_concept01_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_CONCEPT01_HUMAN_DIRECTIONAL_PASS_NOT_SHANYEJI_LEVEL_20260920.json",
+      "sha256": "d419ff04c7a1c60e1817830d5fca1ee9720a44c123928097e83b4867f037753b"
+    },
+    "holistic_concept02_mechanism_plan": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_PLAN_20260920.json",
+      "sha256": "0aa99e0137f1a2d467be9d3bba0c12e99da2aa165352e282f580680b6a6fec40"
     }
   },
   "t1_final_settlement_evidence": {
