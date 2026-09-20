@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 79,
+  "revision": 80,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 78,
-    "git_blob_sha": "4d86a1a7844a48ef7cdd47a0dd4e758b414f3d37",
-    "note": "Revision 78 executed macro mother-anchored vector re-authoring 181:2 and waited for human verdict."
+    "revision": 79,
+    "git_blob_sha": "4220561ee5723f09826abb303c472ace430ea24b",
+    "note": "Revision 79 prepared one generative structural re-authoring candidate from the V5 D mother pixels."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review passes immediate 茶作 readability for 181:2 but finds no meaningful design-quality improvement. This closes scripted Figma/path-warp authoring as the primary taste-generation route for the current title: it can preserve correctness and change geometry, but current evidence does not support further quality gains. Figma remains the downstream vectorization/production environment. One new route is prepared: generate exactly one clean black/ivory structural wordmark directly from the approved V5 D mother pixels, with no texture or decoration; only vectorize it after human visual acceptance.",
-  "status": "VPD_P1_CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING02_PREPARED_EXECUTION_READY",
+  "current_stage": "Generative structural re-authoring 02 produced exactly one visible candidate. It remains immediately readable as 茶作 and uses black/ivory contrast, but the generator drifted into generic brush calligraphy and introduced visible brush/paper texture despite the explicit texture=false constraint. The output also does not clearly preserve the approved D-family dual-coupling structure. Because the plan allowed one candidate and zero pre-review retries, this attempt is automatically failed on constraint/style-family grounds and no silent regeneration is allowed. Await human decision on whether to open a corrected generative attempt with a stricter structural/anti-calligraphy specification.",
+  "status": "VPD_P1_CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING02_CONSTRAINT_FAIL_WAITING_HUMAN_DECISION",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_FROM_MOTHER_PIXELS",
+  "next_required_action": "P1_WAIT_HUMAN_DECISION_AFTER_GENERATIVE_REAUTHORING02_CONSTRAINT_FAIL",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded readability PASS and taste FAIL for structural re-authoring 181:2",
-    "closed scripted vector/path-warp authoring as the primary taste-generation route for this title",
-    "retained Figma for downstream vectorization, optical cleanup and production",
-    "prepared one generative structural re-authoring attempt anchored directly to V5 D mother pixels",
-    "limited the next attempt to one visible black/ivory candidate with no texture, leaves, effects or hidden retries"
+    "generated exactly one visible generative Chazuo structural candidate from the V5 D mother reference",
+    "preserved immediate 茶作 readability and black/ivory presentation",
+    "detected explicit texture-constraint violation and generic-calligraphy family drift",
+    "stopped before any vectorization or second generative retry",
+    "recorded generation ID and fail reasons for continuity"
   ],
-  "updated_at": "2026-09-20T02:58:00Z",
+  "updated_at": "2026-09-20T02:59:30Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "71f76c17ebef60c7f0a63455d67023b8c42a6200",
+  "input_commit": "5ee7cf14bb2141b095a73b14875df4a67ca119cc",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -164,10 +164,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not generate another scripted Figma/vector warp candidate.",
-    "Do not restart Stage G texture/material experiments.",
-    "Only one generative black/ivory structural candidate may be created next from the V5 D mother pixels.",
-    "Do not vectorize the new generative candidate before human acceptance.",
+    "Do not vectorize the failed generative candidate.",
+    "Do not silently regenerate or create a second candidate under the same attempt.",
+    "Do not restart scripted Figma/path-warp or Stage G texture tuning routes.",
+    "A corrected generative attempt requires a new explicit decision and stricter anti-calligraphy/no-texture structural constraints.",
     "Support typography redesign, T2 and formal P6 reintegration remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -209,7 +209,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING02_PREPARED_EXECUTION_READY",
+    "status": "CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING02_CONSTRAINT_FAIL_WAITING_HUMAN_DECISION",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -221,7 +221,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_FROM_MOTHER_PIXELS",
+    "next_required_action": "P1_WAIT_HUMAN_DECISION_AFTER_GENERATIVE_REAUTHORING02_CONSTRAINT_FAIL",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -739,7 +739,12 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_PLAN_20260920.json",
       "sha256": "2cc93fb38a427a59454cff16bb877ad7bff86cd52c6466850c7d214f28f773cf"
     },
-    "vector_warp_authoring_route": "CLOSED_LOW_INFORMATION_GAIN"
+    "vector_warp_authoring_route": "CLOSED_LOW_INFORMATION_GAIN",
+    "generative_structural_reauthoring02_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_EXECUTION_20260920.json",
+      "sha256": "639c6fcfd1f4b29ad21f51bdcd4d3d317826801785fd3220831054330a2884a2",
+      "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef"
+    }
   },
   "t1_final_settlement_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
