@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 91,
-  "recorded_at": "2026-09-18T11:57:00Z",
+  "sequence": 92,
+  "recorded_at": "2026-09-20T00:44:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Stage G mother-sourced surface/material probe 01 is prepared but not executed. The geometry of 149:2 is frozen. A deterministic surface-color map has been derived only from the recovered V5 mother pixels, with mother edge silhouette excluded and replaced by neutral ivory so the map carries material/tone rather than raster shape. The first visible probe may use exactly this one real mother map as the vector fill; no gradients, shadows, outlines, synthetic grain, leaves, second variants or fallback maps are authorized.",
+  "current_focus": "Stage G mother-sourced surface/material probe 01 has been executed as Figma frame 151:2. Geometry is identical to refined skeleton 149:2. The flat ivory fill was replaced only by the frozen real V5 mother surface color map through the encrypted Figma relay and a temporary rectangle staging fill, then the staging node was deleted. No gradient, shadow, outline, synthetic noise, leaf, microtexture diagnostic map, hidden aesthetic variant or geometry edit was used. Await human actual-pixel comparison against 149:2.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -82,10 +82,11 @@
     "p1_typography_direction_audit_human_confirmation",
     "p1_mother_anchored_local_contour_refinement_01_executed",
     "p1_mother_anchored_local_contour_refinement_01_human_settlement",
-    "p1_mother_sourced_surface_material_probe_01_prepared"
+    "p1_mother_sourced_surface_material_probe_01_prepared",
+    "p1_mother_sourced_surface_material_probe_01_executed"
   ],
   "incomplete": [
-    "p1_mother_sourced_surface_material_probe_01_execution",
+    "p1_mother_sourced_surface_material_probe_01_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -94,12 +95,12 @@
     "scale"
   ],
   "blocked": [
-    "Only the prepared MOTHER_SURFACE_COLOR_MAP route may be executed for the first visible Stage G probe.",
-    "No fallback texture map, synthetic noise, gradient, shadow, outline, leaf or geometry change is allowed without a new explicit decision.",
-    "Support typography, T2 and P6 remain blocked until Stage G and context review pass.",
+    "Stage G probe 151:2 is blocked on human actual-pixel taste verdict.",
+    "No second material variant, diagnostic microtexture, synthetic effect or geometry edit is allowed before the verdict.",
+    "Support typography, T2 and P6 remain blocked until the title surface/context route is human-accepted.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -167,10 +168,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
+  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "9d797b037789b3e6259f2befb73d5e2e61cd467dc453ec0ccbec110c4db0d1cc"
+    "sha256": "532ec7e5e6a85574a4594c5abb71ea8bf3e9a9ee3e354fa5225906d94aebb398"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -191,12 +192,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-MOTHER-SOURCED-SURFACE-PROBE01-PREPARED-20260918-001",
-      "event_hash": "88094b11b11041aa36066f4ab34bf64244890e51fc069e184b800fd00ca33f21"
+      "event_id": "EVT-VPD-P1-MOTHER-SOURCED-SURFACE-PROBE01-EXECUTION-20260920-001",
+      "event_hash": "08d4cccccc9c89c6ee146f714838fe472863f2437735f6bd2e27dff156a109e6"
     }
   },
   "typography_repair": {
-    "status": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARED_EXECUTION_READY",
+    "status": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -212,7 +213,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+    "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -342,6 +343,12 @@
     "mother_sourced_surface_material_probe01_preparation": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARATION_20260918.json",
       "sha256": "624cfc14db5ba247ecd970bb1b17cbca41f745e9cd2c7bcb1a76df06d2b113c5"
+    },
+    "mother_sourced_surface_material_probe01_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_EXECUTION_20260920.json",
+      "sha256": "310248f083d7154ae45bd359bad393a52738257d2fdef19af3b0d9eaf2f56000",
+      "figma_frame_id": "151:2",
+      "image_hash": "48017d8edcdde3b16ab7a161a708a5092d60a452"
     }
   }
 }
