@@ -1,0 +1,77 @@
+{
+  "schema_version": "vpd-mother-surface-selective-decontamination-execution/v1",
+  "recorded_at": "2026-09-20T02:15:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "G_SURFACE_MATERIAL",
+  "probe_id": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02",
+  "status": "EXECUTED_WAITING_HUMAN_VERDICT_NOT_RULE",
+  "input_commit": "930b6723cc5fa330803e4304452e48267d1324c8",
+  "baseline": {
+    "frame_id": "151:2",
+    "vector_id": "151:4",
+    "geometry_frozen": true,
+    "rejected_overcleaned_reference": "169:2"
+  },
+  "prepared_asset": {
+    "id": "MOTHER_SURFACE_SELECTIVE_DECONTAM02",
+    "source_sha256": "415eed93e615c4342111f90e6f937b42ebf2451b6a68d97fdd74c1f47e718fb0",
+    "source_size": 21837,
+    "dimensions": [
+      345,
+      190
+    ],
+    "retained_texture_std_ratio": 0.6747870777953843,
+    "retained_mean_abs_material_variation_ratio": 0.8732618431230678
+  },
+  "output": {
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame_id": "173:2",
+    "root_id": "173:3",
+    "vector_id": "173:4",
+    "stable_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1?node-id=173-2"
+  },
+  "transport": {
+    "relay_receipt": "evidence/vpd/figma_upload_relay/receipts/MOTHER_SURFACE_SELECTIVE_DECONTAM02_173_5_20260920_R1.json",
+    "relay_http_status": "200",
+    "relay_source_sha256": "415eed93e615c4342111f90e6f937b42ebf2451b6a68d97fdd74c1f47e718fb0",
+    "relay_source_size": 21837,
+    "relay_image_hash": "17c2a09a700c7c1836b38037b8ad0a80935fb88a",
+    "relay_placement_note": "The upload endpoint returned UPLOAD_PASS/imageHash but did not mutate the temporary rectangle fill in this connector path.",
+    "final_binding_route": "The exact same frozen PNG bytes were re-read through a temporary Drive byte bridge and passed to figma.createImage; resulting imageHash exactly matched the relay response, then IMAGE fill was assigned to 173:4.",
+    "final_image_hash": "17c2a09a700c7c1836b38037b8ad0a80935fb88a",
+    "exact_byte_length": 21837,
+    "temporary_drive_bridge_deleted": true,
+    "temporary_staging_rectangle": "173:5 deleted"
+  },
+  "figma_readback": {
+    "image_fill_applied": true,
+    "scale_mode": "FILL",
+    "geometry_unchanged": true,
+    "same_as_151_geometry": true,
+    "actual_pixel_screenshot": "PASS_OUTPUT_RENDERED",
+    "probe02_screenshot_url_short_lived": "https://www.figma.com/api/mcp/asset/2a8c92bc-ce4c-460f-9a8a-9614cd6e44e2.png",
+    "probe01_screenshot_url_short_lived": "https://www.figma.com/api/mcp/asset/ab379c8e-5fc1-48e6-8f22-68053eb05561.png",
+    "cleanup01_screenshot_url_short_lived": "https://www.figma.com/api/mcp/asset/2fc0c6f9-cb0f-40ad-b0da-fdfaed06416b.png"
+  },
+  "scope": {
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_aesthetic_retries": 0,
+    "geometry_change": false,
+    "gradient": false,
+    "shadow": false,
+    "outline": false,
+    "synthetic_noise": false,
+    "leaf": false,
+    "diagnostic_microtexture": false
+  },
+  "human_gate": {
+    "status": "WAITING",
+    "question": "Compared with 151:2 and 169:2, does 173:2 preserve the design/material gain of 151 while removing enough dirt, without collapsing back toward the flat early behavior?"
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "One local Probe 02 pending human actual-pixel taste review."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_VERDICT"
+}
