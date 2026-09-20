@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 82,
+  "revision": 83,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 81,
-    "git_blob_sha": "24523bc8cb955413ee55af9c0a2d926d0ee7a016",
-    "note": "Revision 81 authorized one design-quality-first generative candidate with mechanism-level mother preservation."
+    "revision": 82,
+    "git_blob_sha": "2ca92f2b6c3f7b1c846a15eabcce8ac6ef69ec75",
+    "note": "Revision 82 executed an unnecessary second generative design-quality candidate and waited for human verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Design-quality-first generative Attempt 03 has been executed as exactly one visible raster candidate. Unlike Attempt 02, it is not automatically failed for contour-family or surface deviation because this attempt intentionally prioritizes overall authored design quality before fidelity. The candidate remains immediately readable as 茶作 and shows stronger one-piece gesture/mass hierarchy than the scripted vector-warp route, while also carrying a more calligraphic character and visible surface irregularity. No Figma vectorization, hidden variant, retry or formal P6 mutation has occurred. Await human visual verdict before any cleanup/vector production.",
-  "status": "VPD_P1_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_WAITING_HUMAN_VERDICT",
+  "current_stage": "The user identified a workflow sequencing error: after directional-positive feedback on generative Attempt 02, the project should have moved that concept into Figma instead of generating Attempt 03. Attempt 03 is therefore superseded for workflow purposes and will not be vectorized. The next step is now Figma intake of Attempt 02 (gen_id 42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef): preserve the raster as visual authority, then produce a faithful editable vector without re-ideation, followed by limited optical cleanup and human raster-vs-vector review.",
+  "status": "VPD_P1_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_VERDICT",
+  "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "generated exactly one design-quality-first 茶作 candidate from the mother-pixel route",
-    "preserved immediate readability and black/ivory presentation",
-    "kept evaluation focused on visible design quality before fidelity",
-    "did not vectorize, retry, create hidden variants, or modify formal P6"
+    "accepted the user's correction that the workflow should already have entered Figma",
+    "classified Attempt 03 as superseded by a sequencing error rather than the selected production concept",
+    "selected Attempt 02 as the directionally positive generative concept for Figma intake",
+    "defined Figma's next role as faithful vector production, not another taste-generation round"
   ],
-  "updated_at": "2026-09-20T03:41:00Z",
+  "updated_at": "2026-09-20T05:08:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +153,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "d64359f8cabfaaf5e592858fb6c827a12cb8daa0",
+  "input_commit": "bc9df3f3b06ce96b02c095aaab58f13909cb88bc",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,10 +163,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not vectorize or clean up Attempt 03 before human visual verdict.",
-    "Do not generate a second Attempt 03 variant or hidden retry.",
-    "Do not restart Figma path-warp or Stage G texture tuning.",
-    "Support typography, T2 and formal P6 remain blocked until title quality passes.",
+    "Do not generate another Chazuo concept before the Attempt 02 Figma production test.",
+    "Do not vectorize Attempt 03 unless the user later explicitly selects it.",
+    "Figma vectorization must preserve Attempt 02 design character and must not re-ideate the wordmark.",
+    "Support typography, T2 and formal P6 remain blocked until raster-vs-vector review.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_WAITING_HUMAN_VERDICT",
+    "status": "GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_VERDICT",
+    "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -755,6 +755,16 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_EXECUTION_20260920.json",
       "sha256": "7ad86e571cf7cb51617d108d98162976846e63aeccab2a64c51a905d1151e52a",
       "gen_id": "002192ca-d355-41c4-8421-1ae95ea5a1b3"
+    },
+    "generative_to_figma_sequence_correction": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_TO_FIGMA_SEQUENCE_CORRECTION_20260920.json",
+      "sha256": "674711f51942e0e210291df5f4d42cbfdab92b3c5cb9febcb6ef8306101e6cb9"
+    },
+    "selected_generative_concept": {
+      "attempt": "02",
+      "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef",
+      "local_file": "/mnt/data/a_minimalist_graphic_image_on_a_solid_black_backgr.png",
+      "approval_level": "DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS"
     }
   },
   "t1_final_settlement_evidence": {
