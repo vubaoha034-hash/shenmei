@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 83,
+  "revision": 84,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 82,
-    "git_blob_sha": "2ca92f2b6c3f7b1c846a15eabcce8ac6ef69ec75",
-    "note": "Revision 82 executed an unnecessary second generative design-quality candidate and waited for human verdict."
+    "revision": 83,
+    "git_blob_sha": "a2c1bef05e57acbcebbfc1825fe162d607003045",
+    "note": "Revision 83 corrected the sequence and selected generative Attempt 02 for Figma intake."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "The user identified a workflow sequencing error: after directional-positive feedback on generative Attempt 02, the project should have moved that concept into Figma instead of generating Attempt 03. Attempt 03 is therefore superseded for workflow purposes and will not be vectorized. The next step is now Figma intake of Attempt 02 (gen_id 42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef): preserve the raster as visual authority, then produce a faithful editable vector without re-ideation, followed by limited optical cleanup and human raster-vs-vector review.",
-  "status": "VPD_P1_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
+  "current_stage": "Generative Attempt 02 has now actually entered Figma. A dedicated sandbox frame 183:2 contains a faithful editable vector production test derived from the directionally positive generated raster. The vectorization preserves the main silhouette and significant counters but deliberately drops raster surface texture; no re-ideation, new generation, formal P6 mutation or support-typography work occurred. The next decision is whether the Figma vector preserves enough of the generated design quality to justify optical cleanup/production.",
+  "status": "VPD_P1_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
+  "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "accepted the user's correction that the workflow should already have entered Figma",
-    "classified Attempt 03 as superseded by a sequencing error rather than the selected production concept",
-    "selected Attempt 02 as the directionally positive generative concept for Figma intake",
-    "defined Figma's next role as faithful vector production, not another taste-generation round"
+    "moved the directionally positive Attempt 02 concept into Figma",
+    "created one editable faithful vector production test at frame 183:2",
+    "preserved the generated silhouette/counters without re-ideation",
+    "kept generated surface texture out of the vector so geometry quality can be judged separately",
+    "stopped image generation and returned the workflow to Figma production"
   ],
-  "updated_at": "2026-09-20T05:08:00Z",
+  "updated_at": "2026-09-20T05:14:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "bc9df3f3b06ce96b02c095aaab58f13909cb88bc",
+  "input_commit": "1ee505c40328e2cc44c8df26335a9ffbd3b73b7a",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,10 +164,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not generate another Chazuo concept before the Attempt 02 Figma production test.",
-    "Do not vectorize Attempt 03 unless the user later explicitly selects it.",
-    "Figma vectorization must preserve Attempt 02 design character and must not re-ideate the wordmark.",
-    "Support typography, T2 and formal P6 remain blocked until raster-vs-vector review.",
+    "Do not generate another Chazuo concept before reviewing frame 183:2.",
+    "Do not perform optical cleanup or texture reconstruction on 183:2 before human raster-vs-vector judgment.",
+    "Do not vectorize Attempt 03 unless the user explicitly selects it.",
+    "Support typography, T2 and formal P6 remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -207,7 +208,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
+    "status": "GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -219,7 +220,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
+    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -765,6 +766,12 @@
       "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef",
       "local_file": "/mnt/data/a_minimalist_graphic_image_on_a_solid_black_backgr.png",
       "approval_level": "DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS"
+    },
+    "generative_attempt02_figma_vector_production_test": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_20260920.json",
+      "sha256": "4d868fcf8717fc2aee4a2fbfcb076634eeb8764d5c293a4710cb2300a3518210",
+      "figma_frame_id": "183:2",
+      "vector_id": "183:4"
     }
   },
   "t1_final_settlement_evidence": {
