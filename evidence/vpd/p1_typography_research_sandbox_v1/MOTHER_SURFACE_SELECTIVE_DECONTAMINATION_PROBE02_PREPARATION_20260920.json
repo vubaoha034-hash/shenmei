@@ -1,0 +1,96 @@
+{
+  "schema_version": "vpd-mother-surface-selective-decontamination-preparation/v1",
+  "recorded_at": "2026-09-20T01:38:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "G_SURFACE_MATERIAL",
+  "probe_id": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02",
+  "status": "PREPARED_EXECUTION_READY_NO_DESIGN_RENDER",
+  "authority": {
+    "accepted_surface_direction": "151:2_DIRTY_BUT_DESIGN_GAIN",
+    "rejected_cleanup": "169:2_OVERFLATTENED",
+    "human_fail_record": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_CLEANUP01_HUMAN_FAIL_OVERFLATTENED_20260920.json"
+  },
+  "baseline": {
+    "frame_id": "151:2",
+    "vector_id": "151:4",
+    "geometry_source": "149:2/151:2",
+    "geometry_frozen": true,
+    "source_material_sha256": "2bcae91966367ac1f927fcb69db46ded924b6f05601dbdfce3250779fd18c61e"
+  },
+  "derived_asset": {
+    "id": "MOTHER_SURFACE_SELECTIVE_DECONTAM02",
+    "path_hint": "local derived asset only until encrypted relay transport",
+    "dimensions": [
+      345,
+      190
+    ],
+    "bytes": 21837,
+    "sha256": "415eed93e615c4342111f90e6f937b42ebf2451b6a68d97fdd74c1f47e718fb0",
+    "derivation": {
+      "source": "exact 151 mother-sourced surface color map",
+      "local_artifact_detection": "5x5 median comparison",
+      "local_dark_start": 1.35,
+      "local_dark_full_strength_at": 6,
+      "max_local_heal_strength": 0.78,
+      "broad_gray_detection": "Gaussian low-frequency estimate radius 7 used only to identify broad negative dirt",
+      "broad_gray_allowed_shadow": 2.25,
+      "broad_gray_excess_lift_factor": 0.35,
+      "broad_gray_lift_cap": 4,
+      "global_texture_multiplier": false,
+      "final_global_blur": false,
+      "synthetic_noise": false
+    }
+  },
+  "preservation_metrics": {
+    "source_151": {
+      "mean_channel_std": 2.3458378314971924,
+      "mean_abs_deviation_from_neutral_ivory": 0.7226239442825317,
+      "pct_pixels_max_rgb_deviation_gt3": 11.37299771167048,
+      "pct_pixels_max_rgb_deviation_gt8": 1.4050343249427917
+    },
+    "selective_probe02_asset": {
+      "mean_channel_std": 1.5829410552978516,
+      "mean_abs_deviation_from_neutral_ivory": 0.6310399174690247,
+      "pct_pixels_max_rgb_deviation_gt3": 10.40427154843631,
+      "pct_pixels_max_rgb_deviation_gt8": 0.9046529366895499
+    },
+    "retained_texture_std_ratio": 0.6747870777953843,
+    "retained_mean_abs_material_variation_ratio": 0.8732618431230678,
+    "comparison_to_failed_cleanup01": {
+      "cleanup01_retained_texture_std_ratio": 0.3224425435383764,
+      "conclusion": "Probe 02 preserves materially more of 151's surface variation and removes only localized dirt rather than globally washing out the material."
+    }
+  },
+  "execution_route": {
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "pre_review_aesthetic_retries": 0,
+    "method": "clone 151:2; preserve geometry exactly; replace only 151:4 IMAGE fill with MOTHER_SURFACE_SELECTIVE_DECONTAM02 through the existing encrypted Figma relay and temporary rectangle staging path",
+    "geometry_change": false,
+    "gradient": false,
+    "shadow": false,
+    "outline": false,
+    "synthetic_noise": false,
+    "leaf": false,
+    "diagnostic_microtexture": false,
+    "fallback_requires_new_authorization": true
+  },
+  "intended_visual_change": [
+    "remove isolated dark outliers that read as dirt",
+    "reduce local broad gray contamination only where it exceeds the allowed mother tonal shadow",
+    "retain medium-strength mother-sourced irregularity and spatial variation responsible for 151's design-sense gain",
+    "avoid the flat early-version behavior caused by Cleanup 01"
+  ],
+  "fail_conditions": [
+    "still reads dirty or gray at first glance",
+    "material becomes flat or visually similar to 149/early solid-fill behavior",
+    "medium-strength mother-sourced variation is visibly washed out",
+    "ghost-contour artifacts remain obvious",
+    "readability or glyph silhouette degrades"
+  ],
+  "rule_admission": {
+    "allowed": false,
+    "reason": "Preparation only; actual-pixel human verdict still required."
+  },
+  "next_required_action": "P1_EXECUTE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151"
+}
