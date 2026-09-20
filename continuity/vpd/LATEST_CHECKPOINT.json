@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 95,
-  "recorded_at": "2026-09-20T01:36:00Z",
+  "sequence": 96,
+  "recorded_at": "2026-09-20T01:38:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human review and follow-up pixel diagnosis reject cleanup frame 169:2 as over-cleaned. It preserves the refined geometry but globally suppresses roughly two thirds of the material variation that made 151:2 feel more designed, visually regressing toward the earlier flat-fill behavior. Do not continue from 169 and do not return to pure-flat 149. The valid next experiment is one selective decontamination pass starting from the 151 material mechanism, removing only dark outliers, ghost-contour remnants and dirty gray patches while preserving medium-strength mother-sourced variation.",
+  "current_focus": "Selective Stage G decontamination Probe 02 is prepared but not rendered. The new asset starts from the exact 151 mother-sourced material map and removes only localized dark outliers and excessive broad gray contamination. It preserves about 67.5% of the source texture standard deviation and 87.3% of the mean absolute material variation, versus only 32.2% texture retention in failed Cleanup 01. Geometry remains frozen and no global texture multiplier, final blur, gradient, shadow, outline, synthetic noise or new typography method is allowed.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -86,10 +86,11 @@
     "p1_mother_sourced_surface_material_probe_01_executed",
     "p1_mother_sourced_surface_probe01_human_settlement",
     "p1_mother_sourced_surface_cleanup_01_executed",
-    "p1_mother_sourced_surface_cleanup_01_human_fail_overflattened"
+    "p1_mother_sourced_surface_cleanup_01_human_fail_overflattened",
+    "p1_mother_surface_selective_decontamination_probe_02_prepared"
   ],
   "incomplete": [
-    "p1_mother_surface_selective_decontamination_probe_02_preparation",
+    "p1_mother_surface_selective_decontamination_probe_02_execution",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -98,14 +99,13 @@
     "scale"
   ],
   "blocked": [
-    "Do not continue surface iteration from 169:2.",
-    "Do not globally attenuate or blur all material variation.",
-    "Do not return to flat 149:2 as the target.",
-    "Only one selective-decontamination probe derived from the 151 material mechanism may be prepared next.",
-    "Geometry, support typography, T2 and P6 remain frozen.",
+    "Only the prepared selective-decontamination Probe 02 asset may be executed next.",
+    "Do not continue from 169:2 or globally attenuate/blur the 151 material.",
+    "No geometry change, gradient, shadow, outline, synthetic noise, leaf, diagnostic microtexture or second visible variant is allowed.",
+    "Support typography, T2 and P6 remain frozen until the title surface/context route is human-accepted.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_PREPARE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
+  "next_required_action": "P1_EXECUTE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -173,10 +173,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_SURFACE_CLEANUP01_HUMAN_FAIL_OVERFLATTENED_SELECTIVE_DECONTAMINATION_REQUIRED",
+  "status": "VPD_P1_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARED_EXECUTION_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "7f06653770dfff66b7e53d3998457a43d9cc39d8dffc2b00f8d3474aaf422df2"
+    "sha256": "7379539bd82ddcd58a12771a62c658117d3778d836b31c162b86047640cdd631"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -197,12 +197,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-SURFACE-CLEANUP01-OVERFLATTENED-20260920-001",
-      "event_hash": "d1c8871a5647dd1731a4b6ee2e94da102773cb75e84a6799763424af782a9a3f"
+      "event_id": "EVT-VPD-P1-SURFACE-SELECTIVE-DECONTAMINATION-PROBE02-PREPARED-20260920-001",
+      "event_hash": "93945bb1bb678fc08a4b28fd4f5f1501beab527a83a471faa2c82fadc3a88883"
     }
   },
   "typography_repair": {
-    "status": "SURFACE_CLEANUP01_HUMAN_FAIL_OVERFLATTENED_SELECTIVE_DECONTAMINATION_REQUIRED",
+    "status": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARED_EXECUTION_READY",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -218,7 +218,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_PREPARE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
+    "next_required_action": "P1_EXECUTE_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE_02_FROM_151",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -382,6 +382,20 @@
       "figma_frame_id": "169:2"
     },
     "current_surface_direction": "151:2_DIRTY_BUT_DESIGN_GAIN",
-    "rejected_surface_cleanup": "169:2_OVERFLATTENED"
+    "rejected_surface_cleanup": "169:2_OVERFLATTENED",
+    "mother_surface_selective_decontamination_probe02_preparation": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_PREPARATION_20260920.json",
+      "sha256": "5c107958cdd6d871ea822e7f2bb5a91fcf0115ff8f931be5118eaa3b9e0fd0f7"
+    },
+    "surface_probe02_asset": {
+      "dimensions": [
+        345,
+        190
+      ],
+      "bytes": 21837,
+      "sha256": "415eed93e615c4342111f90e6f937b42ebf2451b6a68d97fdd74c1f47e718fb0",
+      "retained_texture_std_ratio": 0.6747870777953843,
+      "retained_mean_abs_material_variation_ratio": 0.8732618431230678
+    }
   }
 }
