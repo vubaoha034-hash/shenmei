@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 81,
+  "revision": 82,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 80,
-    "git_blob_sha": "7083134d909ca3438097f26c82576c95515bda7a",
-    "note": "Revision 80 stopped after generative re-authoring 02 violated strict surface/family constraints and waited for human decision."
+    "revision": 81,
+    "git_blob_sha": "24523bc8cb955413ee55af9c0a2d926d0ee7a016",
+    "note": "Revision 81 authorized one design-quality-first generative candidate with mechanism-level mother preservation."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human decision keeps the image-generation route but changes the optimization order: visible design quality is now primary; V5 D is retained at the mechanism level rather than literal contour fidelity. Exactly one design-quality-first candidate is authorized. It must remain immediately readable as 茶作, preserve the mother's one-piece asymmetry/dual-coupling/stroke-rhythm/negative-space mechanisms, but may redesign exact contours and proportions. Clean black/warm-ivory presentation is required; dirty paper texture, generic brush calligraphy, font-like appearance, leaves and effects are prohibited.",
-  "status": "VPD_P1_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_READY",
+  "current_stage": "Design-quality-first generative Attempt 03 has been executed as exactly one visible raster candidate. Unlike Attempt 02, it is not automatically failed for contour-family or surface deviation because this attempt intentionally prioritizes overall authored design quality before fidelity. The candidate remains immediately readable as 茶作 and shows stronger one-piece gesture/mass hierarchy than the scripted vector-warp route, while also carrying a more calligraphic character and visible surface irregularity. No Figma vectorization, hidden variant, retry or formal P6 mutation has occurred. Await human visual verdict before any cleanup/vector production.",
+  "status": "VPD_P1_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03",
+  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +136,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human decision to continue image generation rather than return to Figma taste iteration",
-    "changed priority from strict D-family contour fidelity to design-quality-first with mechanism-level mother preservation",
-    "prepared exactly one generative Attempt 03 with five high-leverage visual variables",
-    "kept Figma reserved for post-acceptance vectorization/production"
+    "generated exactly one design-quality-first 茶作 candidate from the mother-pixel route",
+    "preserved immediate readability and black/ivory presentation",
+    "kept evaluation focused on visible design quality before fidelity",
+    "did not vectorize, retry, create hidden variants, or modify formal P6"
   ],
-  "updated_at": "2026-09-20T03:39:00Z",
+  "updated_at": "2026-09-20T03:41:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +153,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "4a45a3305344cbc30a1165727a6e879f272ffcba",
+  "input_commit": "d64359f8cabfaaf5e592858fb6c827a12cb8daa0",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,9 +163,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Only one visible Attempt 03 candidate is authorized.",
-    "Do not silently retry, vectorize, or polish before human review.",
-    "Do not restart Figma path-warp or Stage G texture parameter routes.",
+    "Do not vectorize or clean up Attempt 03 before human visual verdict.",
+    "Do not generate a second Attempt 03 variant or hidden retry.",
+    "Do not restart Figma path-warp or Stage G texture tuning.",
     "Support typography, T2 and formal P6 remain blocked until title quality passes.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
@@ -207,7 +207,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_READY",
+    "status": "CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -219,7 +219,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -750,6 +750,11 @@
     "generative_design_quality_attempt03_plan": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_PLAN_20260920.json",
       "sha256": "dd179b96f9c99a4ad0ab7fe17134424d266d4f6be8648c30f41fba0fb3ed7d98"
+    },
+    "generative_design_quality_attempt03_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_EXECUTION_20260920.json",
+      "sha256": "7ad86e571cf7cb51617d108d98162976846e63aeccab2a64c51a905d1151e52a",
+      "gen_id": "002192ca-d355-41c4-8421-1ae95ea5a1b3"
     }
   },
   "t1_final_settlement_evidence": {
