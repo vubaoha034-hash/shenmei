@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-mother-sourced-surface-material-probe-human-settlement/v1",
+  "recorded_at": "2026-09-20T01:36:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "probe_id": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+  "figma": {
+    "baseline_frame_id": "149:2",
+    "probe_frame_id": "151:2"
+  },
+  "human_feedback": {
+    "exact": "更有设计感 了。但是我觉得变脏了",
+    "interpretation": "SURFACE_DIRECTION_POSITIVE_CLEANLINESS_FAIL"
+  },
+  "verdict": {
+    "design_character": "IMPROVED",
+    "flatness": "REDUCED",
+    "cleanliness": "FAIL_DIRTY",
+    "probe01_final": "FAIL_AS_FINAL_BUT_DIRECTION_WORTH_REFINING",
+    "geometry_change_needed": false,
+    "second_surface_correction_authorized": true,
+    "production_rule_promotion_allowed": false
+  },
+  "correction_authorization": {
+    "id": "MOTHER_SOURCED_SURFACE_CLEANUP_01",
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "geometry_change": false,
+    "allowed": "same mother-derived surface route with compressed dark/gray deviations and higher cleanliness",
+    "forbidden": [
+      "new style DNA",
+      "synthetic noise",
+      "gradient",
+      "shadow",
+      "outline",
+      "leaf",
+      "geometry edit",
+      "second cleanup retry before human review"
+    ]
+  },
+  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_CLEANUP_01"
+}
