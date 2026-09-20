@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 85,
+  "revision": 86,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 84,
-    "git_blob_sha": "517ceca20a8897142ea960185571425f930004b8",
-    "note": "Revision 84 staged Attempt 02 as editable Figma vector 183:2 and waited for human review."
+    "revision": 85,
+    "git_blob_sha": "8f7322b5e03d8f148ad219b3ae38c4eebd19e624",
+    "note": "Revision 85 executed optical cleanup 186:2 and waited for human comparison against 183:2."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review says Attempt 02 Figma vector 183:2 is now good enough to continue. One bounded optical cleanup has therefore been executed at frame 186:2. The cleanup removes redundant polygonal trace nodes from 500 to 387 while restoring strong corners and preserving macro silhouette, counters and ivory fill. No redesign, new generation, texture reconstruction or formal P6 mutation occurred. Await human comparison of 183 vs 186 before any further production step.",
-  "status": "VPD_P1_CHAZUO_ATTEMPT02_FIGMA_OPTICAL_CLEANUP01_WAITING_HUMAN_VERDICT",
+  "current_stage": "Human review accepts optical cleanup 186:2 as cleaner and authorizes continuation. A Stage H real-poster context test has now been executed at frame 189:2 by cloning the existing CHAZUO_B_DISTILLED poster, preserving the real photo and existing support typography, removing only the old title vectors, and inserting the accepted 186 title at poster scale. No title redesign, texture reconstruction, new generation, support-typography redesign or formal P6 overwrite occurred. Await human context verdict before Stage I support typography.",
+  "status": "VPD_P1_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_FIGMA_OPTICAL_CLEANUP01_VERDICT",
+  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human direction pass for Figma vector frame 183:2",
-    "authorized and executed one bounded optical cleanup only",
-    "reduced vector nodes from 500 to 387 while preserving strong corners and macro design",
-    "created one visible cleanup output at frame 186:2",
-    "kept generation, redesign, texture reconstruction and formal P6 frozen"
+    "recorded human PASS_CONTINUE for optical cleanup 186:2",
+    "stopped further title cleanup/redesign",
+    "executed one Stage H real-poster context test at frame 189:2",
+    "preserved real photography and existing support typography",
+    "kept formal P6 and Stage I support-typography redesign frozen pending context verdict"
   ],
-  "updated_at": "2026-09-20T06:18:00Z",
+  "updated_at": "2026-09-20T06:22:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "ed3a8cd5054954f1c17eb98d2415aabe502179c5",
+  "input_commit": "c087925bd18bd2c3d916f54645e769f8ae449732",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -164,10 +164,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not perform a second optical cleanup or redesign before human comparison of 183:2 and 186:2.",
-    "Do not generate another Chazuo concept.",
-    "Do not reconstruct texture before geometry cleanup is accepted.",
-    "Support typography, T2 and formal P6 remain blocked.",
+    "Do not redesign or further clean the title before human Stage H context verdict.",
+    "Do not regenerate Chazuo imagery or reconstruct title texture.",
+    "Stage I support typography redesign and formal P6 reintegration remain blocked until 189:2 passes.",
+    "T2 remains frozen.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -208,7 +208,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "ATTEMPT02_FIGMA_OPTICAL_CLEANUP01_WAITING_HUMAN_VERDICT",
+    "status": "ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -220,7 +220,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_FIGMA_OPTICAL_CLEANUP01_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -783,6 +783,16 @@
       "sha256": "594972c6ab3399dcb3d55239ed2b4ca732aead02faf589a5ab5a4e908afb33e6",
       "figma_frame_id": "186:2",
       "vector_id": "186:4"
+    },
+    "attempt02_figma_optical_cleanup01_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_ATTEMPT02_FIGMA_OPTICAL_CLEANUP01_HUMAN_PASS_20260920.json",
+      "sha256": "9dbc8148629003d77a1c9ad87f8ec1b6327a9369982a97ea72d779102660e18c",
+      "figma_frame_id": "186:2"
+    },
+    "attempt02_stage_h_context_test": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_EXECUTION_20260920.json",
+      "sha256": "f86e412c7cd4f30f9ea6d899c4de16ada0626fe9aeb77419a1c985b2cf14718b",
+      "figma_frame_id": "189:2"
     }
   },
   "t1_final_settlement_evidence": {
