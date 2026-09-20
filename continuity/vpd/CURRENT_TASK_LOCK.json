@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 71,
+  "revision": 72,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 70,
-    "git_blob_sha": "fbb3119ea950206ad6a30d1f15e3efcc412325b6",
-    "note": "Revision 70 executed Stage G probe 151:2 and waited for human verdict."
+    "revision": 71,
+    "git_blob_sha": "a13130cff35a3fb5c33785d861a9c2f8b666b455",
+    "note": "Prior revision authorized exactly one Stage G cleanup correction after 151:2 was judged more designed but too dirty."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review of Stage G probe 151:2 says the mother-sourced material makes the wordmark more designed but also visibly dirtier. Preserve the material direction, reject 151:2 as a final pass, freeze geometry, and authorize exactly one cleanup correction that compresses dark/gray deviations while preserving subtle mother-derived surface character.",
-  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_CLEANUP01_READY",
+  "current_stage": "Stage G mother-sourced surface cleanup 01 has been executed as Figma frame 169:2. The 151 geometry is unchanged. Only the mother-derived surface map was cleaned by strongly compressing dark deviations, retaining restrained light variation, applying a minimum RGB floor, and a very light 0.35 px smoothing. No synthetic effects or second variant were used. Await human comparison against 151:2 and 149:2.",
+  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_CLEANUP01_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_CLEANUP_01",
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_CLEANUP01_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,15 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's Stage G verdict: more design character but too dirty",
-    "rejected 151:2 as a final surface pass while preserving the mother-sourced material direction",
-    "kept 149/151 geometry frozen",
-    "authorized exactly one cleanup correction with no hidden variants",
-    "kept synthetic effects, leaves, support typography, T2 and P6 blocked"
+    "executed exactly one visible Stage G cleanup correction at frame 169:2",
+    "preserved 151 geometry exactly",
+    "used only the cleaned mother-derived surface map with verified SHA",
+    "successfully transported the cleanup asset through the encrypted Figma relay",
+    "deleted the temporary staging rectangle after IMAGE fill transfer",
+    "confirmed actual-pixel rendering of 169:2",
+    "kept gradients, shadows, outlines, synthetic noise, leaves, support typography, T2 and P6 disabled"
   ],
-  "updated_at": "2026-09-20T01:36:00Z",
+  "updated_at": "2026-09-20T01:42:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +156,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "33b61f71be93f0871d52bf015284d1168d464c69",
+  "input_commit": "2305c222771842accd3799a837990ad4e90eb4bb",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -164,9 +166,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Exactly one cleanup surface correction is authorized; no second correction before human review.",
-    "Geometry and typography structure remain frozen.",
-    "No synthetic noise, gradient, shadow, outline, leaf, support typography, T2 or P6 work is allowed.",
+    "Cleanup frame 169:2 is blocked on human taste verdict.",
+    "No second cleanup correction, microtexture variant, geometry edit or new surface method is allowed before the verdict.",
+    "Support typography, T2 and P6 remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -207,7 +209,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "MOTHER_SOURCED_SURFACE_CLEANUP01_READY",
+    "status": "MOTHER_SOURCED_SURFACE_CLEANUP01_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -219,7 +221,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_CLEANUP_01",
+    "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_CLEANUP01_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -668,6 +670,12 @@
       "sha256": "306f1f7fb2d1ac523673f174fb0882a4a84cfed58ef0b7c6624a57a967b29caa",
       "bytes": 15792,
       "derivation": "same mother surface map; negative/dark deviations compressed to 22 percent, positive deviations retained at 70 percent, channel floor 239/232/219, Gaussian blur radius 0.35"
+    },
+    "mother_sourced_surface_cleanup01_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_CLEANUP01_EXECUTION_20260920.json",
+      "sha256": "744d2c0dfefafd03cb1cbff48237785a9cd48e7fd411f020baae5a688a9ca074",
+      "figma_frame_id": "169:2",
+      "image_hash": "679dbedb3793b46d67325ca26aa6673e1066db08"
     }
   },
   "t1_final_settlement_evidence": {
