@@ -1,0 +1,74 @@
+{
+  "schema_version": "vpd-mother-sourced-surface-material-probe-execution/v1",
+  "recorded_at": "2026-09-20T00:44:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "G_SURFACE_MATERIAL",
+  "probe_id": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE_01",
+  "status": "EXECUTED_WAITING_HUMAN_VERDICT_NOT_RULE",
+  "input_commit": "47ca19464c1cfc9708fdc113b854f1e6e622fcfd",
+  "baseline": {
+    "frame_id": "149:2",
+    "vector_id": "149:4",
+    "geometry_frozen": true
+  },
+  "output": {
+    "frame_id": "151:2",
+    "root_id": "151:3",
+    "vector_id": "151:4",
+    "stable_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1?node-id=151-2"
+  },
+  "material_source": {
+    "id": "MOTHER_SURFACE_COLOR_MAP",
+    "source_sha256": "2bcae91966367ac1f927fcb69db46ded924b6f05601dbdfce3250779fd18c61e",
+    "source_size": 22931,
+    "dimensions": [
+      345,
+      190
+    ],
+    "source_kind": "real recovered V5 mother pixels",
+    "synthetic_noise": false
+  },
+  "transport": {
+    "route": "encrypted GitHub Actions Figma upload relay -> temporary rectangle IMAGE fill -> copy exact IMAGE fill to probe vector -> delete temporary rectangle",
+    "final_relay_receipt": "evidence/vpd/figma_upload_relay/receipts/MOTHER_SURFACE_PROBE01_STAGE_20260920_R3.json",
+    "final_http_status": "200",
+    "final_image_hash": "48017d8edcdde3b16ab7a161a708a5092d60a452",
+    "direct_vector_target_attempt_note": "Earlier relay to vector returned imageHash but placement did not mutate vector fill; no aesthetic variant was created.",
+    "no_target_attempt_note": "No-target relay also returned imageHash without a canvas IMAGE node; no aesthetic variant was created.",
+    "final_rectangle_staging": "PASS",
+    "temporary_staging_node": "167:3 deleted after fill copy"
+  },
+  "figma_readback": {
+    "image_fill_applied": true,
+    "image_hash": "48017d8edcdde3b16ab7a161a708a5092d60a452",
+    "scale_mode": "FILL",
+    "geometry_unchanged": true,
+    "same_as_baseline_geometry": true,
+    "strokes": [],
+    "effects": [],
+    "actual_pixel_screenshot": "PASS_OUTPUT_RENDERED",
+    "probe_screenshot_url_short_lived": "https://www.figma.com/api/mcp/asset/1278a07c-eb2a-4abc-b27e-6c7bdb531938.png",
+    "baseline_screenshot_url_short_lived": "https://www.figma.com/api/mcp/asset/16988d4e-236a-45df-b044-8855b0483381.png"
+  },
+  "scope": {
+    "visible_outputs": 1,
+    "hidden_variants": 0,
+    "aesthetic_retries": 0,
+    "geometry_change": false,
+    "gradient": false,
+    "shadow": false,
+    "outline": false,
+    "synthetic_noise": false,
+    "leaf": false,
+    "diagnostic_microtexture_used": false
+  },
+  "human_gate": {
+    "status": "WAITING",
+    "question": "Compared with 149:2, does 151:2 feel materially richer and less flat without becoming dirty, gray, synthetic, or less readable?"
+  },
+  "rule_admission": {
+    "allowed": false,
+    "reason": "One local Stage G probe pending human actual-pixel review."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_VERDICT"
+}
