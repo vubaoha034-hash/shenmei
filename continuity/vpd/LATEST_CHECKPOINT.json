@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 92,
-  "recorded_at": "2026-09-20T00:44:00Z",
+  "sequence": 93,
+  "recorded_at": "2026-09-20T01:36:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Stage G mother-sourced surface/material probe 01 has been executed as Figma frame 151:2. Geometry is identical to refined skeleton 149:2. The flat ivory fill was replaced only by the frozen real V5 mother surface color map through the encrypted Figma relay and a temporary rectangle staging fill, then the staging node was deleted. No gradient, shadow, outline, synthetic noise, leaf, microtexture diagnostic map, hidden aesthetic variant or geometry edit was used. Await human actual-pixel comparison against 149:2.",
+  "current_focus": "Human review of Stage G probe 151:2 says the mother-sourced material makes the wordmark more designed but also visibly dirtier. Preserve the material direction, reject 151:2 as a final pass, freeze geometry, and authorize exactly one cleanup correction that compresses dark/gray deviations while preserving subtle mother-derived surface character.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -83,10 +83,11 @@
     "p1_mother_anchored_local_contour_refinement_01_executed",
     "p1_mother_anchored_local_contour_refinement_01_human_settlement",
     "p1_mother_sourced_surface_material_probe_01_prepared",
-    "p1_mother_sourced_surface_material_probe_01_executed"
+    "p1_mother_sourced_surface_material_probe_01_executed",
+    "p1_mother_sourced_surface_probe01_human_settlement"
   ],
   "incomplete": [
-    "p1_mother_sourced_surface_material_probe_01_human_verdict",
+    "p1_mother_sourced_surface_cleanup_01",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -95,12 +96,12 @@
     "scale"
   ],
   "blocked": [
-    "Stage G probe 151:2 is blocked on human actual-pixel taste verdict.",
-    "No second material variant, diagnostic microtexture, synthetic effect or geometry edit is allowed before the verdict.",
-    "Support typography, T2 and P6 remain blocked until the title surface/context route is human-accepted.",
+    "Exactly one cleanup surface correction is authorized; no second correction before human review.",
+    "Geometry and typography structure remain frozen.",
+    "No synthetic noise, gradient, shadow, outline, leaf, support typography, T2 or P6 work is allowed.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_VERDICT",
+  "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_CLEANUP_01",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -168,10 +169,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_WAITING_HUMAN_VERDICT",
+  "status": "VPD_P1_MOTHER_SOURCED_SURFACE_CLEANUP01_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "532ec7e5e6a85574a4594c5abb71ea8bf3e9a9ee3e354fa5225906d94aebb398"
+    "sha256": "3e6de148e499c0ee39ec96c91737b54b7a2545f2d59df49b6bb38dd2445cb66a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -192,12 +193,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-MOTHER-SOURCED-SURFACE-PROBE01-EXECUTION-20260920-001",
-      "event_hash": "08d4cccccc9c89c6ee146f714838fe472863f2437735f6bd2e27dff156a109e6"
+      "event_id": "EVT-VPD-P1-SURFACE-CLEANUP01-READY-20260920-001",
+      "event_hash": "5b8523ec7d42e32b59fe3c0eeca7de9e54ecc7ef0c025b01d76b500286d17fb4"
     }
   },
   "typography_repair": {
-    "status": "MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_WAITING_HUMAN_VERDICT",
+    "status": "MOTHER_SOURCED_SURFACE_CLEANUP01_READY",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -213,7 +214,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_VERDICT",
+    "next_required_action": "P1_EXECUTE_MOTHER_SOURCED_SURFACE_CLEANUP_01",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -349,6 +350,21 @@
       "sha256": "310248f083d7154ae45bd359bad393a52738257d2fdef19af3b0d9eaf2f56000",
       "figma_frame_id": "151:2",
       "image_hash": "48017d8edcdde3b16ab7a161a708a5092d60a452"
+    },
+    "mother_sourced_surface_material_probe01_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_HUMAN_SETTLEMENT_20260920.json",
+      "sha256": "bf0ebe11b8fc455716ee455e90037a3e302897d068836b94fc394fc297a310fe"
+    },
+    "surface_probe01_verdict": "DESIGN_POSITIVE_CLEANLINESS_FAIL",
+    "surface_cleanup01_asset": {
+      "path_hint": "local derived asset only until transport",
+      "dimensions": [
+        345,
+        190
+      ],
+      "sha256": "306f1f7fb2d1ac523673f174fb0882a4a84cfed58ef0b7c6624a57a967b29caa",
+      "bytes": 15792,
+      "derivation": "same mother surface map; negative/dark deviations compressed to 22 percent, positive deviations retained at 70 percent, channel floor 239/232/219, Gaussian blur radius 0.35"
     }
   }
 }
