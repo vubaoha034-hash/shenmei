@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 110,
-  "recorded_at": "2026-09-20T10:40:00Z",
+  "sequence": 111,
+  "recorded_at": "2026-09-20T11:56:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "One holistic Chazuo poster art-direction concept has been generated as the only visible Concept 01. It intentionally evaluates the poster as one system: custom wordmark, tea-process photography, support typography, asymmetric attention geometry and dark negative space. The concept is not a final production asset: exact text and existing PHOTO_RAW_LOCKED pixel fidelity are not claimed, and no Figma reconstruction has started. Await human whole-poster verdict; if accepted, the next step is to rebuild the accepted composition in Figma with the real photo, exact text and editable custom wordmark.",
+  "current_focus": "Human review says holistic Concept 01 is much better than prior photo-plus-text attempts but still below Shanyeji in design sophistication. The gap is diagnosed at the mechanism level: the title remains calligraphic-adjacent, the composition still resolves too much as left dark title field versus right/bottom photography, type-safe space is not native enough to the photograph, support hierarchy is not yet a strong relation graph, and regional density/crop tension remains weaker than the Shanyeji mechanism target. Do not rebuild Concept 01 in Figma yet. One Concept 02 is prepared to strengthen exactly five mechanisms—structural display mass, title/photo counter-mass topology, photo-generated type-safe space, reading-order graph, and regional density/crop tension—without copying Shanyeji surface tokens.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -109,10 +109,12 @@
     "p1_attempt02_stage_h_real_poster_context_test_executed",
     "p1_attempt02_stage_h_real_poster_context_test_human_fail",
     "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_prepared",
-    "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_executed"
+    "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_executed",
+    "p1_chazuo_concept01_directional_positive_not_pass",
+    "p1_chazuo_holistic_concept02_mechanism_plan_prepared"
   ],
   "incomplete": [
-    "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_human_verdict",
+    "p1_chazuo_holistic_concept02_mechanism_execution",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -121,12 +123,12 @@
     "scale"
   ],
   "blocked": [
-    "Do not reconstruct the concept in Figma before human whole-poster approval.",
-    "Do not generate a second holistic concept or hidden retry.",
-    "Do not treat generated support text or photo pixels as production-authoritative.",
+    "Do not reconstruct Concept 01 in Figma as the final direction.",
+    "Do not copy Shanyeji fixed composition, brush surface, palette, motif or exact wordmark assets.",
+    "Only one Concept 02 may be generated next.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
+  "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -194,10 +196,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
+  "status": "VPD_P1_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "6f3d93a3d4297c13a7854036ff2522bbd01ca010d02f96c96cec00128e3da9f9"
+    "sha256": "9eb75eca9664ecb64d903eea7d0fe1d0b083dbdca08eb820acc66f9604eece3a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -218,12 +220,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-CHAZUO-HOLISTIC-POSTER-CONCEPT01-EXECUTED-20260920-001",
-      "event_hash": "3ef03b1b33575fd298ca6007c76cd6b73191c91df006fbe6bcc95f9aa2bea7d8"
+      "event_id": "EVT-VPD-P1-CHAZUO-HOLISTIC-CONCEPT02-READY-20260920-001",
+      "event_hash": "5b5612bdfa50ef1aa36914259b8e3a0e33634d498f0337bfb882d9a1b7df3998"
     }
   },
   "typography_repair": {
-    "status": "FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
+    "status": "HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -239,7 +241,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
+    "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -514,6 +516,14 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_EXECUTION_20260920.json",
       "sha256": "c855822108d523a32ef26b2d846d85d5df2549529836cf0e64369a6dba8764b0",
       "gen_id": "6f1a4f8a-79a7-4618-92cd-d78e03cdc1a0"
+    },
+    "full_poster_concept01_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_CONCEPT01_HUMAN_DIRECTIONAL_PASS_NOT_SHANYEJI_LEVEL_20260920.json",
+      "sha256": "d419ff04c7a1c60e1817830d5fca1ee9720a44c123928097e83b4867f037753b"
+    },
+    "holistic_concept02_mechanism_plan": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_PLAN_20260920.json",
+      "sha256": "0aa99e0137f1a2d467be9d3bba0c12e99da2aa165352e282f580680b6a6fec40"
     }
   }
 }
