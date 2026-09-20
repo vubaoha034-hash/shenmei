@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 87,
+  "revision": 88,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 86,
-    "git_blob_sha": "ffaa6e533fa07b3175ab260b1043ae0ed8297447",
-    "note": "Revision 86 executed Stage H poster context test 189:2 with accepted clean title 186 and preserved photo/support copy."
+    "revision": 87,
+    "git_blob_sha": "e6cc7c8a2d5903c7ef91f255ea233fba06d4a2ed",
+    "note": "Revision 87 rejected the generic brush title and photo-plus-text Stage H poster, then prepared one holistic poster/custom-wordmark concept."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review rejects both the current title and the Stage H poster. The 186 vector is cleaner but still reads as generic brush calligraphy rather than a distinctive custom wordmark. The 189 poster is structurally a preserved full-frame photo with the title and support copy stacked in one upper column, so it does not read as a designed poster. Stage I support typography and formal P6 are blocked. The next route treats wordmark and poster as one art-direction problem: create exactly one holistic concept with a custom non-generic 茶作 wordmark, title-photo interlock, asymmetric attention geometry, deliberate support hierarchy, and designed tonal/negative space; only after human acceptance should Figma reconstruct the full concept.",
-  "status": "VPD_P1_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_READY",
+  "current_stage": "One holistic Chazuo poster art-direction concept has been generated as the only visible Concept 01. It intentionally evaluates the poster as one system: custom wordmark, tea-process photography, support typography, asymmetric attention geometry and dark negative space. The concept is not a final production asset: exact text and existing PHOTO_RAW_LOCKED pixel fidelity are not claimed, and no Figma reconstruction has started. Await human whole-poster verdict; if accepted, the next step is to rebuild the accepted composition in Figma with the real photo, exact text and editable custom wordmark.",
+  "status": "VPD_P1_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01",
+  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human failure of 186 as final brand wordmark despite cleaner vector production",
-    "recorded human failure of 189 as a complete poster",
-    "audited the actual 189 layout and confirmed it is effectively an unchanged photo plus a stacked upper text column",
-    "blocked Stage I support typography and formal P6",
-    "prepared one holistic poster-art-direction plus custom-wordmark concept route with five high-leverage variables"
+    "generated exactly one holistic poster/custom-wordmark concept",
+    "evaluated title, photography, support hierarchy and negative space as one art-direction system",
+    "did not create hidden variants or retries",
+    "did not modify Figma, formal P6, T2 or production text"
   ],
-  "updated_at": "2026-09-20T10:25:00Z",
+  "updated_at": "2026-09-20T10:40:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +153,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "fa3b8002daac7c0ab3bfc5e2654768fe1c5e0d82",
+  "input_commit": "e8278125622ec944db847c7f8dad69bc1e0f08f0",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -164,10 +163,9 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not proceed to Stage I support typography using the failed 189 composition.",
-    "Do not promote 186 as the final wordmark; it is a clean production baseline only.",
-    "Do not make another isolated wordmark micro-refinement before the holistic poster concept.",
-    "Only one holistic poster/custom-wordmark concept may be generated next.",
+    "Do not reconstruct the concept in Figma before human whole-poster approval.",
+    "Do not generate a second holistic concept or hidden retry.",
+    "Do not treat generated support text or photo pixels as production-authoritative.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -208,7 +206,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_READY",
+    "status": "FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -220,7 +218,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -802,6 +800,11 @@
     "full_poster_art_direction_custom_wordmark_concept01_plan": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_PLAN_20260920.json",
       "sha256": "dc091f7f469d0578bd37472b6c18a6b5fd7deccc146cf81d2874d5a233e2ae55"
+    },
+    "full_poster_art_direction_custom_wordmark_concept01_execution": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_EXECUTION_20260920.json",
+      "sha256": "c855822108d523a32ef26b2d846d85d5df2549529836cf0e64369a6dba8764b0",
+      "gen_id": "6f1a4f8a-79a7-4618-92cd-d78e03cdc1a0"
     }
   },
   "t1_final_settlement_evidence": {
