@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 75,
+  "revision": 76,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 74,
-    "git_blob_sha": "fbc5a80d0e4d8b905122f8aee4e5c80a06aa0cc4",
-    "note": "Revision 74 prepared one selective decontamination Probe 02 derived from the 151 material mechanism."
+    "revision": 75,
+    "git_blob_sha": "ec089819aa3e02cfa5ad512ecce0be5e76a32eb9",
+    "note": "Revision 75 executed selective decontamination Probe 02 at frame 173:2 and waited for human verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Selective Stage G decontamination Probe 02 has been executed as Figma frame 173:2. It preserves the exact 151/149 geometry and replaces only the surface fill with the prepared selective-decontamination mother asset. The exact 21837-byte PNG was bound through figma.createImage after the relay endpoint independently verified the same SHA and returned the identical imageHash. No second aesthetic variant, geometry edit, gradient, shadow, outline, synthetic noise, leaf, global attenuation or final blur was used. Await human actual-pixel comparison against 151:2 and failed over-cleaned 169:2.",
-  "status": "VPD_P1_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_WAITING_HUMAN_VERDICT",
+  "current_stage": "Human review rejects 173:2 as effectively unchanged from 151 and still dirty. The Stage G mother-texture mapping/tuning route is closed: no Probe 03 or further texture-parameter tuning is allowed. A single Stage H real-poster context test has been executed at frame 179:2 by cloning the existing CHAZUO_B_DISTILLED poster, preserving its real photo and support typography, removing only the failed old title vectors, and inserting the clean refined skeleton 149 without texture. This is a sandbox context test, not formal P6 reintegration. Await human verdict on whether 149 gains enough design presence in context.",
+  "status": "VPD_P1_STAGE_H_CHAZUO_149_REAL_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_VERDICT",
+  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_149_REAL_POSTER_CONTEXT_TEST_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,15 +136,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "created exactly one visible Probe 02 frame 173:2 from 151:2 with geometry frozen",
-    "transport-verified the frozen selective-decontamination PNG with exact SHA and 21837-byte size",
-    "bound the exact PNG to vector 173:4 as IMAGE fill using figma.createImage",
-    "confirmed the resulting Figma imageHash exactly matches the relay response imageHash",
-    "deleted the temporary rectangle and temporary Drive byte bridge",
-    "confirmed actual-pixel rendering for 173:2 with 151:2 and 169:2 retained as comparison references",
-    "kept geometry, gradients, shadows, outlines, synthetic noise, leaves, support typography, T2 and P6 frozen"
+    "recorded human failure of selective decontamination Probe 02 as still dirty with no meaningful visual difference",
+    "closed the Stage G mother-texture mapping and texture-parameter tuning route",
+    "prohibited Probe 03 and further iterative texture tuning",
+    "executed one real-poster context test using clean refined skeleton 149",
+    "preserved the existing real Chazuo photo and support typography",
+    "kept formal P6 frames untouched and created only sandbox frame 179:2"
   ],
-  "updated_at": "2026-09-20T02:15:00Z",
+  "updated_at": "2026-09-20T02:36:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -156,7 +155,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "c82704d53dcdef1c0feee2878e2361d51cfd91e7",
+  "input_commit": "a83052f35c630f0985dab55e94d9454eab7d9b93",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -166,10 +165,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Probe 02 frame 173:2 is blocked on human actual-pixel taste verdict.",
-    "No second selective-decontamination variant, fallback material recipe or geometry edit is allowed before the verdict.",
-    "Do not continue from rejected 169:2.",
-    "Support typography, T2 and P6 remain frozen until the title surface/context route is human-accepted.",
+    "Do not run additional Stage G texture mapping, cleanup, decontamination or parameter probes.",
+    "Do not modify formal P6 frames before the context-test human verdict.",
+    "If 149 remains too ordinary in real context, treat wordmark structure/design ceiling as the problem rather than restarting texture tuning.",
+    "Support typography redesign, T2 and formal P6 reintegration remain blocked until the context verdict.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -210,7 +209,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_WAITING_HUMAN_VERDICT",
+    "status": "STAGE_H_CHAZUO_149_REAL_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -222,7 +221,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_149_REAL_POSTER_CONTEXT_TEST_VERDICT",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -704,6 +703,18 @@
       "sha256": "13533f255f62d41ad5f5e94a93dd01303966af1f17cb48dbf84ddf1eaf6586fd",
       "figma_frame_id": "173:2",
       "image_hash": "17c2a09a700c7c1836b38037b8ad0a80935fb88a"
+    },
+    "mother_surface_selective_decontamination_probe02_human_settlement": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_HUMAN_FAIL_20260920.json",
+      "sha256": "5d460b581d291b36df5eeb9361acab91118ab500df128edd42df8df4e8b68ff6",
+      "figma_frame_id": "173:2"
+    },
+    "stage_g_surface_route": "CLOSED_NO_ACCEPTABLE_SURFACE_VARIANT",
+    "texture_probe03_allowed": false,
+    "real_poster_context_test": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_149_REAL_POSTER_CONTEXT_TEST_EXECUTION_20260920.json",
+      "sha256": "445ad142ed7b1a852bf4d699b22246722c381392a3d37cde7dd6fe0fb144a69e",
+      "figma_frame_id": "179:2"
     }
   },
   "t1_final_settlement_evidence": {
