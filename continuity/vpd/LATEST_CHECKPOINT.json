@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 97,
-  "recorded_at": "2026-09-20T02:15:00Z",
+  "sequence": 98,
+  "recorded_at": "2026-09-20T02:36:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Selective Stage G decontamination Probe 02 has been executed as Figma frame 173:2. It preserves the exact 151/149 geometry and replaces only the surface fill with the prepared selective-decontamination mother asset. The exact 21837-byte PNG was bound through figma.createImage after the relay endpoint independently verified the same SHA and returned the identical imageHash. No second aesthetic variant, geometry edit, gradient, shadow, outline, synthetic noise, leaf, global attenuation or final blur was used. Await human actual-pixel comparison against 151:2 and failed over-cleaned 169:2.",
+  "current_focus": "Human review rejects 173:2 as effectively unchanged from 151 and still dirty. The Stage G mother-texture mapping/tuning route is closed: no Probe 03 or further texture-parameter tuning is allowed. A single Stage H real-poster context test has been executed at frame 179:2 by cloning the existing CHAZUO_B_DISTILLED poster, preserving its real photo and support typography, removing only the failed old title vectors, and inserting the clean refined skeleton 149 without texture. This is a sandbox context test, not formal P6 reintegration. Await human verdict on whether 149 gains enough design presence in context.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -88,10 +88,13 @@
     "p1_mother_sourced_surface_cleanup_01_executed",
     "p1_mother_sourced_surface_cleanup_01_human_fail_overflattened",
     "p1_mother_surface_selective_decontamination_probe_02_prepared",
-    "p1_mother_surface_selective_decontamination_probe_02_executed"
+    "p1_mother_surface_selective_decontamination_probe_02_executed",
+    "p1_mother_surface_selective_decontamination_probe_02_human_fail",
+    "p1_stage_g_texture_route_closed",
+    "p1_chazuo_149_real_poster_context_test_executed"
   ],
   "incomplete": [
-    "p1_mother_surface_selective_decontamination_probe_02_human_verdict",
+    "p1_chazuo_149_real_poster_context_test_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -100,13 +103,13 @@
     "scale"
   ],
   "blocked": [
-    "Probe 02 frame 173:2 is blocked on human actual-pixel taste verdict.",
-    "No second selective-decontamination variant, fallback material recipe or geometry edit is allowed before the verdict.",
-    "Do not continue from rejected 169:2.",
-    "Support typography, T2 and P6 remain frozen until the title surface/context route is human-accepted.",
+    "Do not run additional Stage G texture mapping, cleanup, decontamination or parameter probes.",
+    "Do not modify formal P6 frames before the context-test human verdict.",
+    "If 149 remains too ordinary in real context, treat wordmark structure/design ceiling as the problem rather than restarting texture tuning.",
+    "Support typography redesign, T2 and formal P6 reintegration remain blocked until the context verdict.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_WAIT_HUMAN_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_VERDICT",
+  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_149_REAL_POSTER_CONTEXT_TEST_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -174,10 +177,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_WAITING_HUMAN_VERDICT",
+  "status": "VPD_P1_STAGE_H_CHAZUO_149_REAL_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "40dd23d796b1a92de86d8c93e8da80e0111fac4b1fafa68a538879d930df4365"
+    "sha256": "25a639a57989706bc6085a1d5dda2b32807eb526c08cb2a53f5e98465effdc96"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -198,12 +201,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-SURFACE-SELECTIVE-DECONTAMINATION-PROBE02-EXECUTION-20260920-001",
-      "event_hash": "63203b855c3cf3b897e3893da572bf90cb72d8ee97fcc420b32452f08907f1e7"
+      "event_id": "EVT-VPD-P1-STAGE-H-REAL-CONTEXT-TEST-20260920-001",
+      "event_hash": "fe39b81ebc30a75b2063a79adbf623649689584a816d5580b4bd3ca0e8ea683d"
     }
   },
   "typography_repair": {
-    "status": "MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_WAITING_HUMAN_VERDICT",
+    "status": "STAGE_H_CHAZUO_149_REAL_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -219,7 +222,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_VERDICT",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_149_REAL_POSTER_CONTEXT_TEST_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -403,6 +406,13 @@
       "sha256": "13533f255f62d41ad5f5e94a93dd01303966af1f17cb48dbf84ddf1eaf6586fd",
       "figma_frame_id": "173:2",
       "image_hash": "17c2a09a700c7c1836b38037b8ad0a80935fb88a"
+    },
+    "stage_g_surface_route": "CLOSED_NO_ACCEPTABLE_SURFACE_VARIANT",
+    "texture_probe03_allowed": false,
+    "real_poster_context_test": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_149_REAL_POSTER_CONTEXT_TEST_EXECUTION_20260920.json",
+      "sha256": "445ad142ed7b1a852bf4d699b22246722c381392a3d37cde7dd6fe0fb144a69e",
+      "figma_frame_id": "179:2"
     }
   }
 }
