@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 86,
+  "revision": 87,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 85,
-    "git_blob_sha": "8f7322b5e03d8f148ad219b3ae38c4eebd19e624",
-    "note": "Revision 85 executed optical cleanup 186:2 and waited for human comparison against 183:2."
+    "revision": 86,
+    "git_blob_sha": "ffaa6e533fa07b3175ab260b1043ae0ed8297447",
+    "note": "Revision 86 executed Stage H poster context test 189:2 with accepted clean title 186 and preserved photo/support copy."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -120,10 +120,10 @@
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
     }
   },
-  "current_stage": "Human review accepts optical cleanup 186:2 as cleaner and authorizes continuation. A Stage H real-poster context test has now been executed at frame 189:2 by cloning the existing CHAZUO_B_DISTILLED poster, preserving the real photo and existing support typography, removing only the old title vectors, and inserting the accepted 186 title at poster scale. No title redesign, texture reconstruction, new generation, support-typography redesign or formal P6 overwrite occurred. Await human context verdict before Stage I support typography.",
-  "status": "VPD_P1_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
+  "current_stage": "Human review rejects both the current title and the Stage H poster. The 186 vector is cleaner but still reads as generic brush calligraphy rather than a distinctive custom wordmark. The 189 poster is structurally a preserved full-frame photo with the title and support copy stacked in one upper column, so it does not read as a designed poster. Stage I support typography and formal P6 are blocked. The next route treats wordmark and poster as one art-direction problem: create exactly one holistic concept with a custom non-generic 茶作 wordmark, title-photo interlock, asymmetric attention geometry, deliberate support hierarchy, and designed tonal/negative space; only after human acceptance should Figma reconstruct the full concept.",
+  "status": "VPD_P1_CHAZUO_FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_VERDICT",
+  "next_required_action": "P1_EXECUTE_CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,13 +136,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded human PASS_CONTINUE for optical cleanup 186:2",
-    "stopped further title cleanup/redesign",
-    "executed one Stage H real-poster context test at frame 189:2",
-    "preserved real photography and existing support typography",
-    "kept formal P6 and Stage I support-typography redesign frozen pending context verdict"
+    "recorded human failure of 186 as final brand wordmark despite cleaner vector production",
+    "recorded human failure of 189 as a complete poster",
+    "audited the actual 189 layout and confirmed it is effectively an unchanged photo plus a stacked upper text column",
+    "blocked Stage I support typography and formal P6",
+    "prepared one holistic poster-art-direction plus custom-wordmark concept route with five high-leverage variables"
   ],
-  "updated_at": "2026-09-20T06:22:00Z",
+  "updated_at": "2026-09-20T10:25:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -154,7 +154,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "c087925bd18bd2c3d916f54645e769f8ae449732",
+  "input_commit": "fa3b8002daac7c0ab3bfc5e2654768fe1c5e0d82",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -164,11 +164,11 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not redesign or further clean the title before human Stage H context verdict.",
-    "Do not regenerate Chazuo imagery or reconstruct title texture.",
-    "Stage I support typography redesign and formal P6 reintegration remain blocked until 189:2 passes.",
-    "T2 remains frozen.",
-    "Candidate promotion, Commercial, Golden and Scale remain blocked."
+    "Do not proceed to Stage I support typography using the failed 189 composition.",
+    "Do not promote 186 as the final wordmark; it is a clean production baseline only.",
+    "Do not make another isolated wordmark micro-refinement before the holistic poster concept.",
+    "Only one holistic poster/custom-wordmark concept may be generated next.",
+    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -208,7 +208,7 @@
     "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_WAITING_HUMAN_VERDICT",
+    "status": "FULL_POSTER_ART_DIRECTION_CUSTOM_WORDMARK_CONCEPT01_READY",
     "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "bench_plan": {
@@ -220,7 +220,7 @@
     "title_bench_render_allowed": false,
     "poster_reintegration_allowed": false,
     "support_typography_bench_allowed": false,
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_VERDICT",
+    "next_required_action": "P1_EXECUTE_CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01",
     "correction_passes_used": {
       "豆坊": 1,
       "茶作": 1
@@ -793,6 +793,15 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_EXECUTION_20260920.json",
       "sha256": "f86e412c7cd4f30f9ea6d899c4de16ada0626fe9aeb77419a1c985b2cf14718b",
       "figma_frame_id": "189:2"
+    },
+    "attempt02_stage_h_human_fail": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_ATTEMPT02_STAGE_H_REAL_POSTER_CONTEXT_TEST_HUMAN_FAIL_20260920.json",
+      "sha256": "fa4188f8c3bc525e2927e20feb4a281a58fce1d451b6edbe0f2a3046319e2d44",
+      "figma_frame_id": "189:2"
+    },
+    "full_poster_art_direction_custom_wordmark_concept01_plan": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_PLAN_20260920.json",
+      "sha256": "dc091f7f469d0578bd37472b6c18a6b5fd7deccc146cf81d2874d5a233e2ae55"
     }
   },
   "t1_final_settlement_evidence": {
