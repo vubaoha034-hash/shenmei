@@ -1,0 +1,48 @@
+{
+  "schema_version": "vpd-chazuo-generative-structural-reauthoring-execution/v1",
+  "recorded_at": "2026-09-20T02:59:30Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "EXECUTED_CONSTRAINT_FAIL_WAITING_HUMAN_DECISION",
+  "input_commit": "1b0935bf24aaa2b5bd8a4a7ba2c372393b9da8c6",
+  "generation": {
+    "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef",
+    "local_output_path_hint": "/mnt/data/a_minimalist_graphic_image_on_a_solid_black_backgr.png",
+    "visible_candidates": 1,
+    "hidden_candidates": 0,
+    "retry_count": 0
+  },
+  "intended_constraints": {
+    "text": "茶作",
+    "background": "clean deep black",
+    "foreground": "single warm ivory",
+    "texture": false,
+    "leaves": false,
+    "gradients": false,
+    "shadows": false,
+    "outlines": false,
+    "decorative_icons": false,
+    "extra_text": false,
+    "family_anchor": "V5 D / 连笔一体 mother pixels"
+  },
+  "actual_readback": {
+    "readability": "PASS_CHAZUO",
+    "black_background": "PASS",
+    "warm_ivory_foreground": "PASS",
+    "texture": "FAIL_VISIBLE_BRUSH_PAPER_TEXTURE",
+    "generic_calligraphy_drift": "FAIL",
+    "integrated_dual_coupling": "INSUFFICIENT",
+    "D_family_fidelity": "INSUFFICIENT",
+    "note": "The generator produced an expressive brush-calligraphy composition. It is readable and high-contrast but violates the no-texture constraint and drifts toward generic calligraphy rather than the approved D-family structural language."
+  },
+  "automatic_gate": {
+    "result": "FAIL_BEFORE_HUMAN_TASTE_PROMOTION",
+    "reasons": [
+      "explicit render constraint texture=false was violated",
+      "generic calligraphy styling is a listed fail condition",
+      "the output does not clearly preserve the mother's dual-coupling structural identity"
+    ],
+    "retry_allowed": false,
+    "reason_retry_blocked": "The plan authorizes one visible candidate and zero pre-review retries. A new attempt requires a new explicit decision."
+  },
+  "next_required_action": "P1_WAIT_HUMAN_DECISION_AFTER_GENERATIVE_REAUTHORING02_CONSTRAINT_FAIL"
+}
