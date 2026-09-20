@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 105,
-  "recorded_at": "2026-09-20T05:08:00Z",
+  "sequence": 106,
+  "recorded_at": "2026-09-20T05:14:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The user identified a workflow sequencing error: after directional-positive feedback on generative Attempt 02, the project should have moved that concept into Figma instead of generating Attempt 03. Attempt 03 is therefore superseded for workflow purposes and will not be vectorized. The next step is now Figma intake of Attempt 02 (gen_id 42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef): preserve the raster as visual authority, then produce a faithful editable vector without re-ideation, followed by limited optical cleanup and human raster-vs-vector review.",
+  "current_focus": "Generative Attempt 02 has now actually entered Figma. A dedicated sandbox frame 183:2 contains a faithful editable vector production test derived from the directionally positive generated raster. The vectorization preserves the main silhouette and significant counters but deliberately drops raster surface texture; no re-ideation, new generation, formal P6 mutation or support-typography work occurred. The next decision is whether the Figma vector preserves enough of the generated design quality to justify optical cleanup/production.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -101,10 +101,11 @@
     "p1_chazuo_generative_reauthoring02_human_decision_continue",
     "p1_chazuo_generative_design_quality_attempt03_prepared",
     "p1_chazuo_generative_design_quality_attempt03_executed",
-    "p1_chazuo_generative_to_figma_sequence_correction"
+    "p1_chazuo_generative_to_figma_sequence_correction",
+    "p1_attempt02_figma_vector_production_test_executed"
   ],
   "incomplete": [
-    "p1_stage_generative_attempt02_in_figma_for_vector_production_test",
+    "p1_attempt02_figma_vector_production_test_human_verdict",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -113,13 +114,13 @@
     "scale"
   ],
   "blocked": [
-    "Do not generate another Chazuo concept before the Attempt 02 Figma production test.",
-    "Do not vectorize Attempt 03 unless the user later explicitly selects it.",
-    "Figma vectorization must preserve Attempt 02 design character and must not re-ideate the wordmark.",
-    "Support typography, T2 and formal P6 remain blocked until raster-vs-vector review.",
+    "Do not generate another Chazuo concept before reviewing frame 183:2.",
+    "Do not perform optical cleanup or texture reconstruction on 183:2 before human raster-vs-vector judgment.",
+    "Do not vectorize Attempt 03 unless the user explicitly selects it.",
+    "Support typography, T2 and formal P6 remain blocked.",
     "Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
+  "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -187,10 +188,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
+  "status": "VPD_P1_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_WAITING_HUMAN_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "cbc6d1869364ddd015f7f6c47d540efa89eebf6d91ad3a16f5d79caa0e02835f"
+    "sha256": "2fb97989d0363fa11f73e8acdb23f8947f84d5d516736acf22efd6ea7856e331"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -211,12 +212,12 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-CHAZUO-GENERATIVE-TO-FIGMA-SEQUENCE-CORRECTION-20260920-001",
-      "event_hash": "76aae8aa69dae865994bdcaf078eadde47aac474f196d3d2cf1ddee8c09db6bf"
+      "event_id": "EVT-VPD-P1-ATTEMPT02-FIGMA-VECTOR-PRODUCTION-TEST-20260920-001",
+      "event_hash": "9e426db01ed27c93888a0927df26dfd916c8f2ab76e6e5853ce065cc0c6a14c6"
     }
   },
   "typography_repair": {
-    "status": "GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_READY",
+    "status": "GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_WAITING_HUMAN_VERDICT",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -232,7 +233,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_STAGE_GENERATIVE_ATTEMPT02_IN_FIGMA_FOR_VECTOR_PRODUCTION_TEST",
+    "next_required_action": "P1_WAIT_HUMAN_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_VERDICT",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -466,6 +467,12 @@
       "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef",
       "local_file": "/mnt/data/a_minimalist_graphic_image_on_a_solid_black_backgr.png",
       "approval_level": "DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS"
+    },
+    "generative_attempt02_figma_vector_production_test": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_ATTEMPT02_FIGMA_VECTOR_PRODUCTION_TEST_20260920.json",
+      "sha256": "4d868fcf8717fc2aee4a2fbfcb076634eeb8764d5c293a4710cb2300a3518210",
+      "figma_frame_id": "183:2",
+      "vector_id": "183:4"
     }
   }
 }
