@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 119,
-  "recorded_at": "2026-09-21T06:22:00Z",
+  "sequence": 120,
+  "recorded_at": "2026-09-21T07:50:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Formal Render Attempt 2 generation phase is complete: exactly one visible output was generated serially for each frozen H1, H2, H3 and H4 payload, with no hidden variants, no best-of-N and no retries before formal evaluation. The exact authorized R1C runtime anchor was loaded from Drive and SHA-256 verified before rendering; all four frozen payload byte hashes were independently verified. Raw outputs have been archived to Google Drive and provenance committed. Per the render handoff, no formal evaluation, human pixel verdict, Figma production, Capsule promotion, Commercial, Golden or Scale action has been performed in the generator turn. Next run the formal system-level holdout evaluation protocol on these exact four Attempt-2 outputs.",
+  "current_focus": "Formal evaluation stopped at protocol admissibility because all four Attempt-2 outputs materially violated their frozen challenge identities before aesthetic or mechanism scoring could be valid. H1/H2/H3/H4 returned collage/series compositions, wrong or missing communication jobs, prohibited scenic/brush/template tokens, and multiple wrong aspect ratios; H3/H4 did not preserve the required HANDMADE_TOFU_PROCESS_V1 relationship, so H4 aspect reflow is not evaluable. Attempt 2 is therefore PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE, not a Style Capsule failure. The byte-frozen payloads and authorized R1C anchor remain unchanged. Next prepare a new isolated renderer-attempt identity using the same frozen payloads, with a clean execution context that can bind exactly one challenge instruction plus the single R1C anchor and no prior project pixels.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -153,25 +153,35 @@
     "formal_holdout_attempt2_h3_generated_once",
     "formal_holdout_attempt2_h4_generated_once",
     "formal_holdout_attempt2_outputs_archived",
-    "formal_holdout_attempt2_provenance_committed"
+    "formal_holdout_attempt2_provenance_committed",
+    "formal_holdout_attempt2_drive_pixels_readback",
+    "formal_holdout_attempt2_protocol_admissibility_failed",
+    "formal_holdout_attempt2_settled_protocol_invalid",
+    "formal_holdout_attempt2_no_capsule_inference"
   ],
   "incomplete": [
-    "formal_holdout_attempt2_evaluation",
-    "formal_holdout_attempt2_human_pixel_review",
-    "formal_holdout_attempt2_family_verdict",
+    "prepare_isolated_formal_render_attempt3",
+    "formal_attempt3_h1",
+    "formal_attempt3_h2",
+    "formal_attempt3_h3",
+    "formal_attempt3_h4",
+    "formal_holdout_valid_evaluation",
+    "human_set_pixel_review",
+    "family_verdict",
     "second_style_family_validation",
     "commercial",
     "golden",
     "scale"
   ],
   "blocked": [
-    "Do not regenerate H1/H2/H3/H4 before formal evaluation; retry_before_formal_evaluation must remain false.",
-    "Do not select or replace outputs before formal evaluation.",
-    "Do not invoke Figma production before later reviews accept a visual direction.",
-    "Do not modify frozen payload bytes or runtime anchor identity.",
+    "Do not score Attempt-2 images as valid family-transfer evidence.",
+    "Do not infer Style Capsule success or failure from Attempt 2.",
+    "Do not Figma-polish or repair Attempt-2 images into holdout evidence.",
+    "Do not modify/recompile H1/H2/H3/H4 frozen payload bytes.",
+    "Do not reuse the current context-heavy renderer execution path for the next formal attempt without isolation.",
     "Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS",
+  "next_required_action": "PREPARE_ISOLATED_FORMAL_RENDER_ATTEMPT3_WITH_UNCHANGED_FROZEN_H1_H4_PAYLOADS",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -239,10 +249,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT2_GENERATED_4_OF_4_FORMAL_EVALUATION_REQUIRED",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT2_PROTOCOL_INVALID_RENDERER_BINDING_FAILURE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "3be7e77b17d14227480781e51d64f99e9aa166da4b9209113dfb12a3e044d576"
+    "sha256": "2e9cf133779d8021c8d6900dbced1e3636abb768702893e724044842f124f31a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -682,10 +692,10 @@
     "status": "ACTIVE",
     "evidence": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "formal_outputs": "4/4",
+    "formal_outputs": "4/4_PROTOCOL_INVALID",
     "payloads_frozen": true,
     "runtime_anchor_authorized": true,
-    "next": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS"
+    "next": "PREPARE_ISOLATED_FORMAL_RENDER_ATTEMPT3_WITH_UNCHANGED_FROZEN_H1_H4_PAYLOADS"
   },
   "formal_render_attempt2_output_provenance": {
     "status": "GENERATED_4_OF_4_FORMAL_EVALUATION_PENDING",
@@ -728,5 +738,15 @@
         1024
       ]
     }
+  },
+  "formal_render_attempt2_settlement": {
+    "classification": "PROTOCOL_INVALID",
+    "formal_holdout_verdict": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
+    "capsule_inference": "NO_CAPSULE_INFERENCE",
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_PROTOCOL_INVALID_SETTLEMENT_20260921.json",
+    "output_count_preserved": 4,
+    "outputs_are_formal_family_evidence": false,
+    "frozen_payloads_modified": false,
+    "runtime_anchor_modified": false
   }
 }
