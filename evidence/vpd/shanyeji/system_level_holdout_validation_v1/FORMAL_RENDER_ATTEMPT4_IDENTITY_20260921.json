@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-formal-render-attempt-identity/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT4_IDENTITY",
+  "identity_id": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+  "created_at": "2026-09-21T08:45:00Z",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "attempt_number": 4,
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "attempt_semantics": "RENDERER_INVOCATION_BINDING_REPAIR_ONLY",
+  "payload_semantics": "H1_H2_H3_H4_FROZEN_BYTES_UNCHANGED",
+  "payloads_created": false,
+  "payloads_recompiled": false,
+  "style_capsule_modified": false,
+  "runtime_anchor": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "reference_image_count": 1,
+    "role": "SOLE_POSITIVE_RUNTIME_VISUAL_ANCHOR"
+  },
+  "frozen_payloads": {
+    "H1": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H1_CONTROLLER_PAYLOAD.json",
+      "git_blob_sha": "373cf579e18dd6f52207a0e4593d5dcc70fe28bf",
+      "sha256": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7"
+    },
+    "H2": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H2_CONTROLLER_PAYLOAD.json",
+      "sha256": "18f899b6fa78d3bce78997fbba325a0f237fc9482eb99eb3f65614753e6c25bc"
+    },
+    "H3": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H3_CONTROLLER_PAYLOAD.json",
+      "sha256": "97deab9813c792e3de97571c545f3ccd70ec522cacc226ade36d72e43a5be99f"
+    },
+    "H4": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H4_CONTROLLER_PAYLOAD.json",
+      "sha256": "f1e695e7dd3499138cef8ee40d4b8be7bf4c1b62ccd4c3cea35bdaf8a238b28d"
+    }
+  },
+  "previous_attempt_boundary": "ATTEMPT3_TERMINATED_AT_H1_PROTOCOL_FAILURE_NO_CAPSULE_INFERENCE",
+  "invocation_repairs": {
+    "explicit_aspect_binding": true,
+    "natural_language_aspect_only": false,
+    "exact_renderer_instruction_source_binding": true,
+    "one_challenge_per_fresh_chat": true,
+    "post_generation_dimension_readback": true
+  },
+  "generation_executed": false,
+  "evaluation_executed": false,
+  "capsule_promotion": false,
+  "commercial_golden_scale": false
+}
