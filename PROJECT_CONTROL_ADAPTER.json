@@ -851,8 +851,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 90,
-    "sha256": "10ffb4f089f357f1f14848c95a550717e83d145382f2e6746fbc7ad446c7da9b",
+    "revision": 91,
+    "sha256": "9398214254fecbcd0219e01687862d0a62bff16d3416256e1d7c1ea4c9fd59a2",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -870,5 +870,18 @@
     "path": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
     "rule": "For VPD Figma raster binding, use the established encrypted GitHub Actions Figma Upload Relay V1 after upload_assets minting; do not default to direct chat-runtime HTTP POST. Local/manual fallback is permitted only after a relay-specific verified failure.",
     "readback_required": true
+  },
+  "typography_repair": {
+    "status": "CONCEPT02_PIXEL_REFERENCE_BOUND_EDITABLE_FIGMA_RECONSTRUCTION_READY",
+    "next_required_action": "P1_BUILD_CHAZUO_CONCEPT02_CLEAN_PHOTO_BASE_AND_EDITABLE_FIGMA_RECONSTRUCTION"
+  },
+  "concept02_binding": {
+    "status": "PASS_READBACK_CONFIRMED",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame_id": "197:2",
+    "raster_node_id": "197:3",
+    "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0",
+    "receipt": "evidence/vpd/figma_upload_relay/receipts/P1-CHAZUO-CONCEPT02-197-3-20260921-02.json",
+    "source_sha256": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f"
   }
 }
