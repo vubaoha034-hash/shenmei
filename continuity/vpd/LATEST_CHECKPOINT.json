@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 121,
-  "recorded_at": "2026-09-21T08:00:00Z",
+  "sequence": 122,
+  "recorded_at": "2026-09-21T08:50:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Formal Render Attempt 3 isolation package is prepared. Renderer change is execution-context isolation only; H1/H2/H3/H4 frozen payload bytes, Style Capsule candidate and authorized R1C anchor remain unchanged. Attempt 3 uses ONE_CHALLENGE_PER_FRESH_CHAT in strict serial order H1 -> H2 -> H3 -> H4. Each fresh chat may load only the exact R1C canonical anchor plus the one frozen challenge payload, with no previous VPD generated images in context, exactly one visible generation, no best-of-N, no pre-evaluation retry and no Figma/evaluation in the generator chat. The current long conversation is explicitly ineligible for Attempt-3 rendering because it contains prior VPD images and failed Attempt-2 outputs. Next execute H1 using RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt in a new clean project chat.",
+  "current_focus": "Attempt 3 H1 has now been formally settled as a protocol failure and Attempt 3 is terminated before H2. The failure is limited to renderer invocation/execution: the exact frozen H1 payload and sole authorized R1C anchor both passed SHA-256 verification, but the formal H1 output was landscape 1536x1024 instead of native 3:4 portrait, and verbatim renderer-instruction transport was not provable from returned metadata. No Style Capsule inference is allowed. Attempt 4 has been prepared as an invocation-binding repair only: payload bytes, Style Capsule, challenge matrix, evaluation protocol and anchor are unchanged. H1 must run in a new clean chat with an explicit image-generation aspect/size control set to 3:4 PORTRAIT; natural-language aspect alone is no longer sufficient. The current conversation is not eligible for Attempt-4 generation.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -161,14 +161,19 @@
     "formal_attempt3_identity_created",
     "formal_attempt3_isolation_plan_created",
     "formal_attempt3_h1_h4_fresh_chat_run_files_created",
-    "formal_attempt3_current_chat_render_blocked"
+    "formal_attempt3_current_chat_render_blocked",
+    "formal_attempt3_h1_protocol_failure_settled",
+    "formal_attempt3_terminated_before_h2",
+    "formal_attempt4_invocation_repair_plan_created",
+    "formal_attempt4_identity_created",
+    "formal_attempt4_h1_explicit_aspect_runner_created"
   ],
   "incomplete": [
-    "formal_attempt3_h1_fresh_chat_render",
-    "formal_attempt3_h1_archive_and_provenance",
-    "formal_attempt3_h2_fresh_chat_render",
-    "formal_attempt3_h3_fresh_chat_render",
-    "formal_attempt3_h4_fresh_chat_render",
+    "formal_attempt4_h1_fresh_chat_render",
+    "formal_attempt4_h1_archive_and_provenance",
+    "formal_attempt4_h2",
+    "formal_attempt4_h3",
+    "formal_attempt4_h4",
     "formal_holdout_valid_evaluation",
     "human_set_pixel_review",
     "family_verdict",
@@ -178,14 +183,16 @@
     "scale"
   ],
   "blocked": [
-    "Attempt 3 H1 must not be rendered in the current long chat.",
-    "Do not execute H2 before H1 raw output and provenance are archived.",
-    "Do not attach any image except the exact R1C canonical anchor in each generator chat.",
-    "Do not modify or paraphrase frozen renderer_instruction text.",
-    "Do not retry before formal evaluation if a generated output is wrong; settle the renderer attempt instead.",
+    "Do not rerender H1 under Attempt 3.",
+    "Do not execute H2/H3/H4 under Attempt 3.",
+    "Attempt 4 H1 must run in a new clean chat.",
+    "Attempt 4 H1 must set explicit 3:4 portrait aspect/size control before image generation; natural-language-only aspect is prohibited.",
+    "If explicit aspect control is unavailable, stop before generation.",
+    "Do not modify or paraphrase frozen H1 renderer_instruction.",
+    "Do not attach any image except the exact R1C canonical anchor.",
     "Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "SETTLE_ATTEMPT3_H1_PROTOCOL_FAILURE_IN_SEPARATE_CHAT_BEFORE_ANY_H2",
+  "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -253,10 +260,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_H1_EXECUTED_FAIL_CLOSED_H2_BLOCKED",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "2cd8a4fbdb0abb236d32595ac28d12e6e4cfdc8a1a733cd1363e64a072f62341"
+    "sha256": "f65b31ead4e2824c5142a7fefbfeca0f6746f954ecb2a5a74a217edd10e1cd8b"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -754,7 +761,7 @@
     "runtime_anchor_modified": false
   },
   "formal_render_attempt3": {
-    "status": "H1_EXECUTED_FAIL_CLOSED_H2_BLOCKED",
+    "status": "TERMINATED_AT_H1_PROTOCOL_FAILURE",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
     "identity_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_IDENTITY_20260921.json",
     "plan_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_ISOLATED_EXECUTION_PLAN_20260921.json",
@@ -771,10 +778,11 @@
       "H3": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H3_FRESH_CHAT_20260921.txt",
       "H4": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H4_FRESH_CHAT_20260921.txt"
     },
-    "H1": "EXECUTED_ONCE_FAIL_CLOSED_PROVENANCE_ARCHIVED",
-    "H2": "BLOCKED_PENDING_H1_PROTOCOL_SETTLEMENT",
-    "H3": "BLOCKED_UNTIL_H2_ARCHIVED",
-    "H4": "BLOCKED_UNTIL_H3_ARCHIVED"
+    "H1": "SETTLED_PROTOCOL_FAILURE_NO_CAPSULE_INFERENCE",
+    "H2": "NOT_EXECUTED",
+    "H3": "NOT_EXECUTED",
+    "H4": "NOT_EXECUTED",
+    "settlement_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_PROTOCOL_FAILURE_SETTLEMENT_20260921.json"
   },
   "attempt3_h1_operator_error_correction": {
     "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/ATTEMPT3_H1_OPERATOR_EXECUTION_ERROR_CORRECTION_20260921.json",
@@ -801,5 +809,21 @@
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
   "current_stage": "Attempt 3 H1 executed exactly once; provenance archived; fail-closed on protocol-level 3:4 portrait requirement; no retry; H2 blocked pending separate H1 protocol settlement.",
-  "updated_at": "2026-09-21T08:20:00Z"
+  "updated_at": "2026-09-21T08:20:00Z",
+  "formal_render_attempt4": {
+    "status": "PREPARED_H1_NOT_EXECUTED",
+    "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "identity_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_IDENTITY_20260921.json",
+    "repair_plan_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_INVOCATION_REPAIR_PLAN_20260921.json",
+    "h1_run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT4_H1_FRESH_CHAT_20260921.txt",
+    "H1": "READY_FRESH_CHAT_EXPLICIT_3_4_ASPECT_BINDING",
+    "H2": "BLOCKED_UNTIL_VALID_H1_ARCHIVED",
+    "H3": "BLOCKED_UNTIL_VALID_H2_ARCHIVED",
+    "H4": "BLOCKED_UNTIL_VALID_H3_ARCHIVED",
+    "frozen_payloads_unchanged": true,
+    "runtime_anchor_unchanged": true,
+    "explicit_aspect_control_required": true,
+    "natural_language_aspect_only_prohibited": true,
+    "current_chat_render_eligible": false
+  }
 }
