@@ -1,0 +1,73 @@
+{
+  "schema_version": "vpd-formal-render-attempt2-protocol-invalid-settlement/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT2_PROTOCOL_INVALID_SETTLEMENT",
+  "settlement_id": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2_INVALID_20260921_001",
+  "recorded_at": "2026-09-21T07:48:00Z",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2",
+  "classification": "PROTOCOL_INVALID",
+  "formal_holdout_verdict": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
+  "capsule_inference": "NO_CAPSULE_INFERENCE",
+  "evaluation_protocol": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+  "challenge_matrix": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+  "output_provenance": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_OUTPUT_PROVENANCE_20260921.json",
+  "reasons": {
+    "H1": [
+      "Output dimensions are 1536x1024 landscape, not native 3:4 portrait.",
+      "Output is a four-panel poster series rather than one H1 composition.",
+      "Required title/copy 晨席 / MORNING TABLE / 山野早餐 · 当日鲜作 is absent.",
+      "Scenic mountain/forest dependence is present despite explicit prohibition.",
+      "Brush/calligraphic title treatment and copied SHANYEJI identity/footer behavior are present.",
+      "Extra/filler copy is present."
+    ],
+    "H2": [
+      "Output dimensions are 1024x1536 (2:3), not native 3:4.",
+      "Output is a 2x2 collage rather than one H2 composition.",
+      "Required 山菌 / SEASONAL MUSHROOMS / 时令山菌 · 产地入味 communication job is not rendered.",
+      "Seasonal mushroom ingredient/material field is not the actual challenge subject.",
+      "Scenic mountain/forest, brush/calligraphy, copied SHANYEJI identity and extra copy are present."
+    ],
+    "H3": [
+      "Output dimensions are 1536x1024 landscape, not native 3:4 portrait.",
+      "Output is a 2x2 collage rather than one H3 composition.",
+      "Required 豆坊 / HANDMADE TOFU / 手作豆腐 · 当日现制 communication job is absent.",
+      "HANDMADE_TOFU_PROCESS_V1 is not rendered; the image instead contains unrelated mountain/tea/plant/workshop scenes.",
+      "Challenge identity and exact-copy requirements therefore fail before mechanism evaluation."
+    ],
+    "H4": [
+      "Output dimensions are 1536x1024 landscape, not native 9:16 portrait.",
+      "Output is a four-panel collage rather than one H4 composition.",
+      "It introduces multiple new subjects/processes rather than preserving H3 HANDMADE_TOFU_PROCESS_V1.",
+      "Required 豆坊 / HANDMADE TOFU / 手作豆腐 · 当日现制 copy is absent.",
+      "Giant vertical calligraphy, dark-panel behavior, scenic mountain imagery and new filler subjects are present despite explicit prohibitions.",
+      "Because H3 and H4 do not share the required tofu process/copy, H4 aspect reflow is not evaluable."
+    ]
+  },
+  "channel_disposition": {
+    "A_FRESH_BLIND_PIXEL_EVALUATION": "NOT_RUN_AS_FORMAL_CHANNEL_OUTPUTS_INELIGIBLE_AFTER_PROTOCOL_MISMATCH",
+    "B_FRESH_REFERENCE_AWARE_FAMILY_EVALUATION": "NOT_RUN_AS_FORMAL_CHANNEL_OUTPUTS_INELIGIBLE_AFTER_PROTOCOL_MISMATCH",
+    "C_FRESH_MECHANISM_CONTRACT_EVALUATION": "TERMINATED_AT_EXECUTION_IDENTITY_AND_HARD_CONSTRAINT_FAILURE",
+    "D_HUMAN_PIXEL_REVIEW": "NOT_REQUIRED_TO_INFER_CAPSULE_FROM_PROTOCOL_INVALID_OUTPUTS; HUMAN_MAY_REVIEW_RENDERER_FAILURE_PIXELS_ONLY"
+  },
+  "non_conclusions": [
+    "Do not conclude that Style Capsule V1.1 Candidate failed system-level transfer.",
+    "Do not score family kinship or commercial quality as formal holdout evidence from these outputs.",
+    "Do not promote or demote Capsule maturity from this attempt.",
+    "Do not select, repair or Figma-polish these outputs into valid holdout evidence.",
+    "Do not modify the byte-frozen H1/H2/H3/H4 payloads or authorized runtime anchor."
+  ],
+  "renderer_execution_diagnosis": {
+    "observed_pattern": "Renderer returned collage/series compositions and prior-project surface behavior instead of the exact frozen single-challenge instructions.",
+    "classification": "RENDERER_CONTEXT_OR_INSTRUCTION_BINDING_FAILURE",
+    "root_cause_status": "NOT_FULLY_PROVEN",
+    "required_next": "Use an isolated formal render execution context that can bind exactly one frozen challenge instruction and the single authorized R1C anchor, then create a new renderer-attempt identity without recompiling payloads."
+  },
+  "preservation": {
+    "attempt2_images_deleted": false,
+    "attempt2_images_reused_as_formal_evidence": false,
+    "frozen_payloads_modified": false,
+    "runtime_anchor_modified": false,
+    "capsule_modified": false
+  },
+  "next_required_action": "PREPARE_ISOLATED_FORMAL_RENDER_ATTEMPT3_WITH_UNCHANGED_FROZEN_H1_H4_PAYLOADS"
+}
