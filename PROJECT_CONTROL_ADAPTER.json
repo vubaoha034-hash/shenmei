@@ -856,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 94,
-    "sha256": "48a498637c21605ba676b833de589df9ff826748d19c4bf968f44fff3bca7feb",
+    "revision": 95,
+    "sha256": "4c5cc5b3c8ee1b3a4d54f22832d95bb6c022d3ddf8cd7df8a893bb6cb18020b2",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -877,8 +877,8 @@
     "readback_required": true
   },
   "typography_repair": {
-    "status": "CONCEPT02_MASTER_FREEZE_GUARD_ACTIVE_PHOTO_ONLY_REPAIR_REQUIRED",
-    "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_UNDER_MASTER_FREEZE_GUARD"
+    "status": "CONCEPT02_PHOTO_REPAIR01_READY_WAITING_HUMAN_PIXEL_COMPARE",
+    "next_required_action": "P1_WAIT_HUMAN_PIXEL_COMPARE_201_2_VS_205_2_FOR_PHOTO_AI_FEEL"
   },
   "concept02_binding": {
     "status": "PASS_READBACK_CONFIRMED",
@@ -938,5 +938,14 @@
       "rollback_on_regression": true,
       "solved_route_reuse": true
     }
+  },
+  "concept02_photo_repair01": {
+    "baseline_frame_id": "201:2",
+    "candidate_frame_id": "205:2",
+    "candidate_photo_node_id": "205:3",
+    "candidate_image_hash": "b2efd9591c1c2430e6c17a7194681b358b2c9c9a",
+    "frozen_layer_diff_count": 0,
+    "auto_promote": false,
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR01_CANDIDATE_20260921.json"
   }
 }
