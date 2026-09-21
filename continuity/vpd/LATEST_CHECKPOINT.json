@@ -185,7 +185,7 @@
     "Do not retry before formal evaluation if a generated output is wrong; settle the renderer attempt instead.",
     "Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT",
+  "next_required_action": "SETTLE_ATTEMPT3_H1_PROTOCOL_FAILURE_IN_SEPARATE_CHAT_BEFORE_ANY_H2",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -253,7 +253,7 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_ISOLATED_RENDER_READY_H1_FRESH_CHAT_REQUIRED",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_H1_EXECUTED_FAIL_CLOSED_H2_BLOCKED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "sha256": "2cd8a4fbdb0abb236d32595ac28d12e6e4cfdc8a1a733cd1363e64a072f62341"
@@ -799,5 +799,7 @@
     "evaluation_executed": false,
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
-  }
+  },
+  "current_stage": "Attempt 3 H1 executed exactly once; provenance archived; fail-closed on protocol-level 3:4 portrait requirement; no retry; H2 blocked pending separate H1 protocol settlement.",
+  "updated_at": "2026-09-21T08:20:00Z"
 }
