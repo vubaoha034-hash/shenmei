@@ -856,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 97,
-    "sha256": "3be7e77b17d14227480781e51d64f99e9aa166da4b9209113dfb12a3e044d576",
+    "revision": 99,
+    "sha256": "2cd8a4fbdb0abb236d32595ac28d12e6e4cfdc8a1a733cd1363e64a072f62341",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -951,12 +951,13 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT2_GENERATED_4_OF_4_FORMAL_EVALUATION_REQUIRED",
+    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT3_ISOLATED_RENDER_READY_H1_FRESH_CHAT_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS",
-    "payloads_frozen": true,
-    "runtime_anchor_authorized": true,
-    "formal_outputs": "4/4",
-    "output_provenance": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_OUTPUT_PROVENANCE_20260921.json"
+    "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT",
+    "attempt3_identity": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_IDENTITY_20260921.json",
+    "attempt3_plan": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_ISOLATED_EXECUTION_PLAN_20260921.json",
+    "h1_run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt",
+    "isolation_mode": "ONE_CHALLENGE_PER_FRESH_CHAT",
+    "current_chat_render_eligible": false
   }
 }
