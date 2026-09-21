@@ -1,0 +1,21 @@
+VPD ChatGPT Images Native A/B Stage 1 — Route B
+Repository: vubaoha034-hash/shenmei
+Branch: visual-program-distillation-v2-photography-design-20260814
+
+Execute only after CURRENT_TASK_LOCK explicitly authorizes Stage 1 generation.
+
+Read:
+1. START_HERE.md
+2. PROJECT_CONTROL_ADAPTER.json
+3. VPD_PROJECT_ROADMAP.md
+4. continuity/vpd/CURRENT_TASK_LOCK.json
+5. continuity/vpd/LATEST_CHECKPOINT.json
+6. evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TASK_AND_AB_FREEZE_20260921.json
+
+Fresh isolated chat only. Do not load Route A output or any prior generated VPD pixels.
+Load exactly one visual reference: Drive file 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ / R1C-APPROVED-SHANYEJI-CANONICAL.jpg / SHA-256 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414.
+Verify the bytes before generation.
+
+Execute Route B prompt exactly once with ChatGPT Images.
+Hard controls: n=1; explicit 3:4 portrait; generation, not edit; no hidden variants; no retry before review; no Figma.
+Archive raw output and provenance, then stop.
