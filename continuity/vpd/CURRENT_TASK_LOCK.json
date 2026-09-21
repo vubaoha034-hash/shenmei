@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 89,
+  "revision": 90,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 88,
-    "git_blob_sha": "7ae21927e567b2cc6121fdf5fa02efdf83521246",
-    "note": "Revision 88 generated one holistic Chazuo poster Concept 01 and waited for whole-poster review."
+    "revision": 89,
+    "git_blob_sha": "c4193705bddd8df4ad4aadc26e876ee15197cd1e",
+    "note": "Revision 89 prepared Concept 02 but had not yet recorded its render, human feedback, or mandatory relay routing."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -118,12 +118,20 @@
     "secret_metadata_receipt": {
       "path": "evidence/vpd/p6_authority_repair_v1/SECRET_METADATA.json",
       "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
+    },
+    "route_guard": {
+      "status": "MANDATORY",
+      "record": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
+      "direct_chat_runtime_post_default": "PROHIBITED",
+      "required_route": "EXISTING_ENCRYPTED_GITHUB_ACTIONS_RELAY_V1",
+      "local_codex_manual_fallback": "ONLY_AFTER_RELAY_SPECIFIC_FAILURE",
+      "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Human review says holistic Concept 01 is much better than prior photo-plus-text attempts but still below Shanyeji in design sophistication. The gap is diagnosed at the mechanism level: the title remains calligraphic-adjacent, the composition still resolves too much as left dark title field versus right/bottom photography, type-safe space is not native enough to the photograph, support hierarchy is not yet a strong relation graph, and regional density/crop tension remains weaker than the Shanyeji mechanism target. Do not rebuild Concept 01 in Figma yet. One Concept 02 is prepared to strengthen exactly five mechanisms—structural display mass, title/photo counter-mass topology, photo-generated type-safe space, reading-order graph, and regional density/crop tension—without copying Shanyeji surface tokens.",
-  "status": "VPD_P1_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
+  "current_stage": "Holistic Chazuo Concept 02 has now been rendered exactly once within the frozen visible-concept budget and received strong human directional feedback as the best recent Chazuo result. A dedicated Figma pixel-reference frame 197:2 and raster target 197:3 were created without overwriting prior evidence. A direct chat-runtime POST attempt to the Figma submit URL failed because that runtime lacks public egress; this is not a new blocker because the project already has a deployed and previously proven encrypted GitHub Actions Figma Upload Relay V1. The relay is now the mandatory route for raster binding. Do not rerender Concept 02. Bind the existing original raster to 197:3 through the established relay, independently read back the image fill and screenshot 197:2, then proceed to editable Figma reconstruction of typography and design layers.",
+  "status": "VPD_P1_CHAZUO_CONCEPT02_DIRECTIONAL_POSITIVE_FIGMA_RELAY_BINDING_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
+  "next_required_action": "P1_BIND_CHAZUO_CONCEPT02_RASTER_TO_197_3_VIA_EXISTING_FIGMA_UPLOAD_RELAY_V1_THEN_READBACK",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -136,12 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded Concept 01 as directionally positive but below Shanyeji design sophistication",
-    "separated genuine mechanism gaps from superficial Shanyeji surface resemblance",
-    "blocked premature Figma reconstruction of Concept 01",
-    "prepared exactly one holistic Concept 02 with five mechanism-level design variables"
+    "generated exactly one holistic Chazuo Concept 02 within the frozen output budget",
+    "recorded human feedback that Concept 02 is the best-looking recent Chazuo result",
+    "created dedicated Figma pixel-reference frame 197:2 and raster target 197:3 without overwriting prior evidence",
+    "diagnosed direct chat-runtime upload failure as an execution-route regression rather than a new Figma blocker",
+    "made the existing encrypted GitHub Actions Figma Upload Relay V1 the mandatory raster transport route"
   ],
-  "updated_at": "2026-09-20T11:56:00Z",
+  "updated_at": "2026-09-21T02:15:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -153,7 +162,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "6236fed439a1a63e31bf37be47b199131a2851b2",
+  "input_commit": "1fd9d8540fc0d3ef5c169272bc03f568dea4e315",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -163,9 +172,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not reconstruct Concept 01 in Figma as the final direction.",
+    "Do not rerender Concept 02 before Figma reconstruction/readback review.",
+    "Do not use direct ChatGPT/container HTTP POST as the default path for Figma raster submit URLs; use the existing relay.",
+    "Do not ask the user to switch to local Codex/manual upload unless the established relay has a specific verified failure.",
     "Do not copy Shanyeji fixed composition, brush surface, palette, motif or exact wordmark assets.",
-    "Only one Concept 02 may be generated next.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -850,5 +860,23 @@
   "wordmark_v5_execution_evidence": {
     "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
     "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
+  },
+  "concept02": {
+    "gen_id": "b13ff052-0d5f-4970-a75a-462545ad2624",
+    "generation_budget": {
+      "visible_concepts_used": 1,
+      "visible_concepts_max": 1,
+      "hidden_variants": 0,
+      "pre_review_retries": 0
+    },
+    "human_feedback": "目前最近生成的茶作中最好看",
+    "human_verdict": "STRONG_DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS",
+    "figma": {
+      "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+      "frame_id": "197:2",
+      "raster_node_id": "197:3",
+      "raster_bound": false
+    },
+    "rerender_allowed": false
   }
 }
