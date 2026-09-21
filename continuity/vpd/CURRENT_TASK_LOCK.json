@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 93,
+  "revision": 94,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 92,
-    "git_blob_sha": "a71ffb2c13e0da98b21af542b0306cccdd8f0d84",
-    "note": "Revision 92 executed editable reconstruction and waited for human whole-poster review."
+    "revision": 93,
+    "git_blob_sha": "93a70b467c6829b7ef0a7a022b96b7c0af11ae05",
+    "note": "Revision 93 froze accepted Concept 02 design dimensions and left only photo-base AI-feel repair open."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Human review of Chazuo Concept 02 editable reconstruction: overall design PASS, wordmark PASS, photo base FAIL because it feels heavily AI-generated. Freeze all accepted design layers and repair only PHOTO_BASE_CLEAN 201:3. The next step is not a new concept and not a layout or wordmark redesign; it is a photographic-realism repair focused on natural atmospheric irregularity, believable materials, less synthetic polish and lower AI feel while preserving the accepted composition.",
-  "status": "VPD_P1_CHAZUO_CONCEPT02_DESIGN_PASS_PHOTO_BASE_AI_FEEL_REPAIR_REQUIRED",
+  "current_stage": "Visual Master Freeze Guard V1 is now mandatory for the current VPD project. Human-approved or best-so-far visual assets must be protected as pixel authorities; accepted dimensions may not be changed while repairing another dimension. For Chazuo Concept 02, frame 197:2 is the immutable pixel reference; production frame 201:2 is partially frozen; all design nodes except PHOTO_BASE_CLEAN 201:3 are frozen. Only photographic realism / AI-feel reduction on 201:3 remains open. A different image is not automatically better, and any candidate that degrades frozen dimensions must be rejected and rolled back to the protected baseline.",
+  "status": "VPD_P1_CHAZUO_CONCEPT02_MASTER_FREEZE_GUARD_ACTIVE_PHOTO_ONLY_REPAIR_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_PRESERVE_EDITABLE_DESIGN",
+  "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_UNDER_MASTER_FREEZE_GUARD",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "settled human whole-poster review for 201:2",
-    "accepted overall composition and hierarchy",
-    "accepted editable wordmark vector 203:2",
-    "isolated failure to photo base 201:3 due heavy AI feel",
-    "froze non-photo editable design layers against unnecessary redesign"
+    "persisted Visual Master Freeze Guard V1 as machine-readable project control",
+    "protected actual visual assets above prompt summaries or text reconstruction",
+    "made human acceptance dimension-scoped rather than whole-artifact implicit",
+    "froze all accepted Chazuo Concept 02 design nodes and left only 201:3 open",
+    "required rollback instead of continuing from a candidate that regresses frozen dimensions",
+    "prohibited reinvention of previously solved execution routes"
   ],
-  "updated_at": "2026-09-21T03:40:00Z",
+  "updated_at": "2026-09-21T04:55:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -172,9 +173,11 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not alter accepted layout, wordmark or support hierarchy while repairing the photo base.",
-    "Do not generate a new Concept 03 or new poster direction.",
-    "Do not claim photo repair pass until human actual-pixel review confirms lower AI feel.",
+    "Only PHOTO_BASE_CLEAN 201:3 may change in the current loop.",
+    "Do not modify frame 197:2 or any frozen design node in 201:2.",
+    "Do not regenerate the accepted design from prose.",
+    "Do not promote a photography candidate without direct baseline comparison and human actual-pixel review.",
+    "If a candidate harms frozen dimensions, reject it and revert to the protected baseline rather than repairing from the degraded candidate.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -910,6 +913,42 @@
       "photo_base": "FAIL_AI_FEEL",
       "preserve_frame_id": "201:2",
       "repair_node_id": "201:3"
+    },
+    "freeze_state": {
+      "canonical_pixel_reference": "197:2",
+      "production_frame": "201:2",
+      "frozen_nodes": [
+        "201:4",
+        "201:5",
+        "203:2",
+        "203:13",
+        "203:14",
+        "203:15",
+        "203:16",
+        "203:17",
+        "203:18",
+        "203:19",
+        "203:22",
+        "203:23",
+        "203:24",
+        "203:25",
+        "203:26"
+      ],
+      "open_node": "201:3",
+      "open_problem": "PHOTO_REALISM_AI_FEEL_ONLY",
+      "photo_baseline_image_hash": "0ecf1c0819b959ef3265db0139022a18e700e4cb"
     }
+  },
+  "visual_master_freeze_guard": {
+    "status": "MANDATORY",
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "scope": "CURRENT_PROJECT_CONTROL",
+    "canonical_reference_frame_id": "197:2",
+    "protected_production_frame_id": "201:2",
+    "only_open_node_id": "201:3",
+    "non_target_change_default": "PROHIBITED",
+    "prompt_reconstruction_of_protected_master": "PROHIBITED",
+    "solved_route_reimplementation": "PROHIBITED",
+    "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW"
   }
 }
