@@ -9,7 +9,7 @@
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Formal Render Attempt 3 isolation package is prepared. Renderer change is execution-context isolation only; H1/H2/H3/H4 frozen payload bytes, Style Capsule candidate and authorized R1C anchor remain unchanged. Attempt 3 uses ONE_CHALLENGE_PER_FRESH_CHAT in strict serial order H1 -> H2 -> H3 -> H4. Each fresh chat may load only the exact R1C canonical anchor plus the one frozen challenge payload, with no previous VPD generated images in context, exactly one visible generation, no best-of-N, no pre-evaluation retry and no Figma/evaluation in the generator chat. The current long conversation is explicitly ineligible for Attempt-3 rendering because it contains prior VPD images and failed Attempt-2 outputs. Next execute H1 using RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt in a new clean project chat.",
+  "current_focus": "Formal Render Attempt 3 H1 executed exactly once in isolated chat and raw output/provenance archived. No retry, no evaluation and no Figma were performed. The observed raw output dimensions are 1536×1024, which do not satisfy the frozen native 3:4 portrait requirement, so execution is fail-closed and H2 remains blocked pending Attempt-3 H1 protocol settlement.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -185,7 +185,7 @@
     "Do not retry before formal evaluation if a generated output is wrong; settle the renderer attempt instead.",
     "Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT",
+  "next_required_action": "SETTLE_ATTEMPT3_H1_PROTOCOL_MISMATCH_BEFORE_ANY_H2",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -253,7 +253,7 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_ISOLATED_RENDER_READY_H1_FRESH_CHAT_REQUIRED",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_H1_ARCHIVED_FAIL_CLOSED_PROTOCOL_STOP",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "sha256": "2cd8a4fbdb0abb236d32595ac28d12e6e4cfdc8a1a733cd1363e64a072f62341"
@@ -754,7 +754,7 @@
     "runtime_anchor_modified": false
   },
   "formal_render_attempt3": {
-    "status": "PREPARED_NOT_EXECUTED",
+    "status": "H1_GENERATED_ONCE_ARCHIVED_FAIL_CLOSED_PROTOCOL_STOP",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
     "identity_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_IDENTITY_20260921.json",
     "plan_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_ISOLATED_EXECUTION_PLAN_20260921.json",
@@ -771,9 +771,19 @@
       "H3": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H3_FRESH_CHAT_20260921.txt",
       "H4": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H4_FRESH_CHAT_20260921.txt"
     },
-    "H1": "NOT_EXECUTED",
-    "H2": "BLOCKED_UNTIL_H1_ARCHIVED",
-    "H3": "BLOCKED_UNTIL_H2_ARCHIVED",
-    "H4": "BLOCKED_UNTIL_H3_ARCHIVED"
+    "H1": "GENERATED_ONCE_ARCHIVED_PROVENANCE_RECORDED_ASPECT_MISMATCH_NO_RETRY",
+    "H2": "BLOCKED_PENDING_ATTEMPT3_H1_PROTOCOL_SETTLEMENT",
+    "H3": "BLOCKED",
+    "H4": "BLOCKED",
+    "H1_provenance_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+    "H1_output": {
+      "gen_id": "8249a6d9-f3ec-4019-9815-784dbaaa9abd",
+      "sha256": "32d35404e5d61a1f4f5eac15bd6fc252563f749083040ca0c10f506b6a3744e1",
+      "drive_file_id": "1V5HepqORcjtvG4aIcY05OvdxO4UfXQG2",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
   }
 }
