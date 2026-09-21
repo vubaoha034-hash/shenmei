@@ -856,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 96,
-    "sha256": "8094504f3f6cba02c44df83d988c43ea129becad31e4ef6db376151e265cb057",
+    "revision": 97,
+    "sha256": "3be7e77b17d14227480781e51d64f99e9aa166da4b9209113dfb12a3e044d576",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -951,12 +951,12 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "SYSTEM_LEVEL_HOLDOUT_TRANSFER_VALIDATION_ACTIVE",
+    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT2_GENERATED_4_OF_4_FORMAL_EVALUATION_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
+    "next_required_action": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS",
     "payloads_frozen": true,
     "runtime_anchor_authorized": true,
-    "formal_outputs": "0/4",
-    "correction_record": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json"
+    "formal_outputs": "4/4",
+    "output_provenance": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_OUTPUT_PROVENANCE_20260921.json"
   }
 }
