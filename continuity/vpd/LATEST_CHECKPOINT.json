@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 122,
-  "recorded_at": "2026-09-21T08:50:00Z",
+  "sequence": 123,
+  "recorded_at": "2026-09-21T10:51:14.259350+00:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Attempt 3 H1 has now been formally settled as a protocol failure and Attempt 3 is terminated before H2. The failure is limited to renderer invocation/execution: the exact frozen H1 payload and sole authorized R1C anchor both passed SHA-256 verification, but the formal H1 output was landscape 1536x1024 instead of native 3:4 portrait, and verbatim renderer-instruction transport was not provable from returned metadata. No Style Capsule inference is allowed. Attempt 4 has been prepared as an invocation-binding repair only: payload bytes, Style Capsule, challenge matrix, evaluation protocol and anchor are unchanged. H1 must run in a new clean chat with an explicit image-generation aspect/size control set to 3:4 PORTRAIT; natural-language aspect alone is no longer sufficient. The current conversation is not eligible for Attempt-4 generation.",
+  "current_focus": "保留所有已有成果与原结论，按用户保存的主线计划，先完成首个免训练成熟工作流的完整落地与兼容性审计。当前仅授权只读资料/环境核查和复现方案卡，不授权出图、训练、付费算力、Figma修改或旧实验重试。Attempt 4准备成果保留，排期暂停；已通过字标与设计、原图、冻结输入和已有工具链均不重做。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -166,9 +166,15 @@
     "formal_attempt3_terminated_before_h2",
     "formal_attempt4_invocation_repair_plan_created",
     "formal_attempt4_identity_created",
-    "formal_attempt4_h1_explicit_aspect_runner_created"
+    "formal_attempt4_h1_explicit_aspect_runner_created",
+    "saved user-approved preservation mainline plan",
+    "preserved original assets, verdicts, capsule and frozen payloads",
+    "set read-only compatibility audit as sole next action",
+    "preserved Attempt 4 preparation with scheduling hold"
   ],
   "incomplete": [
+    "first_no_training_workflow_compatibility_card",
+    "bounded_reproduction_plan_and_budget",
     "formal_attempt4_h1_fresh_chat_render",
     "formal_attempt4_h1_archive_and_provenance",
     "formal_attempt4_h2",
@@ -190,9 +196,12 @@
     "If explicit aspect control is unavailable, stop before generation.",
     "Do not modify or paraphrase frozen H1 renderer_instruction.",
     "Do not attach any image except the exact R1C canonical anchor.",
-    "Commercial, Golden and Scale remain blocked."
+    "Commercial, Golden and Scale remain blocked.",
+    "Current user-authorized phase is read-only audit only; no new generation, training, paid compute, Figma writes or experiment retries.",
+    "Do not replace an accepted result merely because a third-party method exists.",
+    "Legacy full-state validation is not certified by this documentation update."
   ],
-  "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+  "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -260,10 +269,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
+  "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "f65b31ead4e2824c5142a7fefbfeca0f6746f954ecb2a5a74a217edd10e1cd8b"
+    "sha256": "32e517c359c4bbee04c368b45be03fb1b8df91e980cdc42fa2a38b8bc2f2c2b0"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -280,12 +289,12 @@
   },
   "workflow": {
     "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+    "sha256": "63179a48b49fccb227f3ab25c5aaa4d94b2d7daff707443c8388999d3032e50b"
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-CHAZUO-HOLISTIC-CONCEPT02-READY-20260920-001",
-      "event_hash": "5b5612bdfa50ef1aa36914259b8e3a0e33634d498f0337bfb882d9a1b7df3998"
+      "event_id": "EVT-VPD-MAINLINE-PRESERVATION-USER-PLAN-20260921-001",
+      "event_hash": "14e568ae5bcd884bcb29422285933cbbc57889c5109b57e7a161e0efa3884190"
     }
   },
   "typography_repair": {
@@ -825,5 +834,18 @@
     "explicit_aspect_control_required": true,
     "natural_language_aspect_only_prohibited": true,
     "current_chat_render_eligible": false
+  },
+  "mainline_plan": {
+    "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+    "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
+  },
+  "scheduling_hold": {
+    "scope": "READ_ONLY_AUDIT_NO_GENERATION_OR_TRAINING",
+    "reason": "USER_REQUESTED_PRESERVE_EXISTING_RESULTS_AND_FOLLOW_SAVED_MAINLINE",
+    "deferred_attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "prior_next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+    "prior_preparation_preserved": true,
+    "resume_requires": "COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED",
+    "full_state_validator_required_before_resource_execution": true
   }
 }

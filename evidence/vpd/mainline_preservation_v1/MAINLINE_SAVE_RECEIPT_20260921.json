@@ -1,0 +1,56 @@
+{
+  "schema_version": "vpd-user-mainline-save-receipt/v1",
+  "recorded_at": "2026-09-21T10:51:14.259350+00:00",
+  "base_commit": "32fc15181c09f273563fe79a91813f2fca7d4835",
+  "plan_commit": "900cd626af6d1f3160b73d0c3c39a8e989645f1b",
+  "publication_scope": "RECORD_ONLY_USER_AUTHORIZED_PLAN_AND_RESOURCE_EXECUTION_HOLD",
+  "plan": {
+    "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+    "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
+  },
+  "prior_state": {
+    "lock_revision": 101,
+    "checkpoint_sequence": 122
+  },
+  "saved_state": {
+    "lock_revision": 102,
+    "checkpoint_sequence": 123,
+    "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
+    "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
+    "task_lock_sha256": "32e517c359c4bbee04c368b45be03fb1b8df91e980cdc42fa2a38b8bc2f2c2b0"
+  },
+  "preservation": {
+    "existing_protected_repo_files_checked": 716,
+    "changed_protected_repo_files": 0,
+    "deleted_old_files": 0,
+    "protected_lock_sections_unchanged": true,
+    "prior_completed_history_preserved": true,
+    "prior_pending_work_preserved": true,
+    "prior_ledger_bytes_preserved": true,
+    "prior_roadmap_bytes_preserved": true,
+    "figma_calls": 0,
+    "image_generation_calls": 0,
+    "training_jobs": 0,
+    "paid_compute_started": 0,
+    "old_validators_or_executors_modified": false
+  },
+  "focused_record_consistency_checks": "PASS",
+  "full_state_validation_before": {
+    "exit_code": 1,
+    "stdout": "{\"status\": \"VPD_STATE_BLOCKED\", \"reason\": \"STATE_STATUS_CONFLICT\"}\n",
+    "stderr": "",
+    "pass": false
+  },
+  "full_state_validation_after": {
+    "exit_code": 1,
+    "stdout": "{\"status\": \"VPD_STATE_BLOCKED\", \"reason\": \"COMPOSITION_ACTION_UNKNOWN\"}\n",
+    "stderr": "",
+    "pass": false
+  },
+  "full_state_validation_claim": "NOT_PASS_NO_RESOURCE_EXECUTION_AUTHORIZED",
+  "legacy_validator_failure_is_not_aesthetic_failure": true,
+  "no_validator_bypass_claimed": true,
+  "note": "This save records the latest user plan and suspends old execution. Focused preservation/hash checks do not substitute for the full project validator. No model, asset, gate, or old experimental verdict was changed.",
+  "workflow_run_id": "35590927643",
+  "temporary_maintenance_workflow_removed_after_save": true
+}

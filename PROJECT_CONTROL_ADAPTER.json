@@ -16,6 +16,11 @@
       "purpose": "VPD-only full task workflow; read with current task lock, not as a competing current-state authority"
     },
     {
+      "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+      "priority": 0.1,
+      "purpose": "User-saved preservation mainline plan; current dispatch remains the original task lock."
+    },
+    {
       "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
       "priority": 0.5,
       "purpose": "mandatory current-project visual master protection, dimension-scoped freeze, local-delta-only repair, anti-regression rollback, and solved-route reuse guard"
@@ -806,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P1_TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL",
+    "checkpoint": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -844,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
+    "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -856,15 +861,15 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 101,
-    "sha256": "f65b31ead4e2824c5142a7fefbfeca0f6746f954ecb2a5a74a217edd10e1cd8b",
+    "revision": 102,
+    "sha256": "32e517c359c4bbee04c368b45be03fb1b8df91e980cdc42fa2a38b8bc2f2c2b0",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
   "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
   "workflow": {
     "path": "VPD_PROJECT_ROADMAP.md",
-    "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83",
+    "sha256": "63179a48b49fccb227f3ab25c5aaa4d94b2d7daff707443c8388999d3032e50b",
     "version": "1.1",
     "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "read_after": "task_lock",
@@ -951,6 +956,19 @@
     "current_mainline": false
   },
   "current_mainline": {
+    "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
+    "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
+    "plan": {
+      "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+      "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
+    },
+    "mode": "READ_ONLY_COMPATIBILITY_AUDIT",
+    "existing_results_preserved": true,
+    "attempt4_scheduling": "PAUSED_NOT_CANCELLED",
+    "current_chat_render_eligible": false
+  },
+  "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
     "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
@@ -961,5 +979,24 @@
     "explicit_aspect_control_required": true,
     "natural_language_aspect_only_prohibited": true,
     "current_chat_render_eligible": false
+  },
+  "mainline_plan": {
+    "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+    "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
+  },
+  "scheduling_hold": {
+    "scope": "READ_ONLY_AUDIT_NO_GENERATION_OR_TRAINING",
+    "reason": "USER_REQUESTED_PRESERVE_EXISTING_RESULTS_AND_FOLLOW_SAVED_MAINLINE",
+    "deferred_attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "prior_next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+    "prior_preparation_preserved": true,
+    "resume_requires": "COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED",
+    "full_state_validator_required_before_resource_execution": true
+  },
+  "ledger_tails": {
+    "commercial_design_pipeline": {
+      "event_id": "EVT-VPD-MAINLINE-PRESERVATION-USER-PLAN-20260921-001",
+      "event_hash": "14e568ae5bcd884bcb29422285933cbbc57889c5109b57e7a161e0efa3884190"
+    }
   }
 }

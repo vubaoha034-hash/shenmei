@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 101,
+  "revision": 102,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,10 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 100,
-    "git_blob_sha": "ce1efccb924ce5edc7edf843d4f7e9299ad88751",
-    "note": "Revision 100 recorded Attempt 3 H1 as executed once and fail-closed, with H2 blocked pending settlement."
+    "revision": 101,
+    "git_blob_sha": "ac224dec8dc635c2c7139692c875325e2e61abcd",
+    "commit": "32fc15181c09f273563fe79a91813f2fca7d4835",
+    "note": "Prior state preserved; scheduling paused, not cancelled or failed."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +129,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Attempt 3 H1 has now been formally settled as a protocol failure and Attempt 3 is terminated before H2. The failure is limited to renderer invocation/execution: the exact frozen H1 payload and sole authorized R1C anchor both passed SHA-256 verification, but the formal H1 output was landscape 1536x1024 instead of native 3:4 portrait, and verbatim renderer-instruction transport was not provable from returned metadata. No Style Capsule inference is allowed. Attempt 4 has been prepared as an invocation-binding repair only: payload bytes, Style Capsule, challenge matrix, evaluation protocol and anchor are unchanged. H1 must run in a new clean chat with an explicit image-generation aspect/size control set to 3:4 PORTRAIT; natural-language aspect alone is no longer sufficient. The current conversation is not eligible for Attempt-4 generation.",
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
+  "current_stage": "保留所有已有成果与原结论，按用户保存的主线计划，先完成首个免训练成熟工作流的完整落地与兼容性审计。当前仅授权只读资料/环境核查和复现方案卡，不授权出图、训练、付费算力、Figma修改或旧实验重试。Attempt 4准备成果保留，排期暂停；已通过字标与设计、原图、冻结输入和已有工具链均不重做。",
+  "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+  "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,27 +145,24 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "settled Attempt 3 H1 as protocol failure with no Capsule inference",
-    "terminated Attempt 3 before H2",
-    "preserved frozen H1-H4 payload bytes, Style Capsule and R1C anchor unchanged",
-    "prepared Attempt 4 invocation-repair plan",
-    "created Attempt 4 identity",
-    "created Attempt 4 H1 fresh-chat runner with explicit 3:4 aspect-binding gate",
-    "kept current conversation ineligible for formal Attempt-4 generation"
+    "saved user-approved preservation mainline plan",
+    "preserved original assets, verdicts, capsule and frozen payloads",
+    "set read-only compatibility audit as sole next action",
+    "preserved Attempt 4 preparation with scheduling hold"
   ],
-  "updated_at": "2026-09-21T08:50:00Z",
+  "updated_at": "2026-09-21T10:51:14.259350+00:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "document": {
       "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "24521ff7108f05fb1908ba38ee54fe020d5d45cf270d83474a9173964ad28c83"
+      "sha256": "63179a48b49fccb227f3ab25c5aaa4d94b2d7daff707443c8388999d3032e50b"
     }
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "9444d8fb680e8bdb4bacdbcd891580d2d7cfbd7d",
+  "input_commit": "32fc15181c09f273563fe79a91813f2fca7d4835",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -181,7 +179,10 @@
     "If explicit aspect control is unavailable, stop before generation.",
     "Do not modify or paraphrase frozen H1 renderer_instruction.",
     "Do not attach any image except the exact R1C canonical anchor.",
-    "Commercial, Golden and Scale remain blocked."
+    "Commercial, Golden and Scale remain blocked.",
+    "Current user-authorized phase is read-only audit only; no new generation, training, paid compute, Figma writes or experiment retries.",
+    "Do not replace an accepted result merely because a third-party method exists.",
+    "Legacy full-state validation is not certified by this documentation update."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1090,5 +1091,18 @@
     "explicit_aspect_control_required": true,
     "natural_language_aspect_only_prohibited": true,
     "current_chat_render_eligible": false
+  },
+  "mainline_plan": {
+    "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+    "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
+  },
+  "scheduling_hold": {
+    "scope": "READ_ONLY_AUDIT_NO_GENERATION_OR_TRAINING",
+    "reason": "USER_REQUESTED_PRESERVE_EXISTING_RESULTS_AND_FOLLOW_SAVED_MAINLINE",
+    "deferred_attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "prior_next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+    "prior_preparation_preserved": true,
+    "resume_requires": "COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED",
+    "full_state_validator_required_before_resource_execution": true
   }
 }
