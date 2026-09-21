@@ -851,8 +851,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 92,
-    "sha256": "7b2387ebd91391db01f19d8e455c7e4f805c49e8cd5e9609c699090ba8947031",
+    "revision": 93,
+    "sha256": "fdbe975aed7ba1b903e2d82a350f19aa7d7eb0d5d1e27216991ddb7eed6e9730",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -872,8 +872,8 @@
     "readback_required": true
   },
   "typography_repair": {
-    "status": "CONCEPT02_EDITABLE_RECONSTRUCTION_EXECUTED_WAITING_HUMAN_REVIEW",
-    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_WHOLE_POSTER_REVIEW"
+    "status": "CONCEPT02_DESIGN_PASS_PHOTO_BASE_AI_FEEL_REPAIR_REQUIRED",
+    "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_PRESERVE_EDITABLE_DESIGN"
   },
   "concept02_binding": {
     "status": "PASS_READBACK_CONFIRMED",
@@ -894,5 +894,13 @@
     "editable_layer_count": 16,
     "geometry_audit": "PASS",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_FIGMA_RECONSTRUCTION_20260921.json"
+  },
+  "concept02_human_review": {
+    "overall_design": "PASS",
+    "wordmark": "PASS",
+    "photo_base": "FAIL_AI_FEEL",
+    "repair_node_id": "201:3",
+    "preserve_frame_id": "201:2",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_HUMAN_REVIEW_PHOTO_FAIL_20260921.json"
   }
 }
