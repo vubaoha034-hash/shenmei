@@ -1,0 +1,44 @@
+{
+  "schema_version": "vpd-figma-upload-route-regression-guard/v1",
+  "recorded_at": "2026-09-21",
+  "project_id": "visual-aesthetic-vpd",
+  "incident": {
+    "type": "ROUTING_REGRESSION",
+    "summary": "A fresh Figma upload_assets submit URL was incorrectly followed by a direct chat-runtime HTTP POST attempt even though the existing GitHub Actions Figma upload relay had already been deployed and proven.",
+    "root_cause": "Execution routing failed to treat the previously proven relay as the mandatory transport for raster bytes when the chat runtime lacks direct public egress. This was not a new Figma defect and not a loss of prior relay capability.",
+    "classification": "PROCESS_CONTROL_FAILURE_NOT_NEW_TECHNICAL_BLOCKER"
+  },
+  "established_prior_solution": {
+    "implementation": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
+    "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
+    "packer": "scripts/vpd_figma_relay_pack.py",
+    "executor": "scripts/vpd_figma_relay_execute.py",
+    "secret": "VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "secret_present_verified": true,
+    "prior_formal_readback": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
+    "prior_status": "FORMAL_BINDINGS_LATE_READBACK_CONFIRMED"
+  },
+  "mandatory_route": {
+    "applies_to": "Any future raster/image byte binding to Figma via upload_assets submitUrl in this VPD project.",
+    "sequence": [
+      "Obtain fresh upload_assets submitUrl for the intended target node.",
+      "Use the existing encrypted GitHub Actions Figma Upload Relay V1 to transport image bytes and submitUrl.",
+      "Do not default to direct HTTP POST from the ChatGPT/container runtime.",
+      "Do not ask the user to switch to local Codex/manual upload unless the established relay itself has been tested and has a specific new failure.",
+      "After relay execution, independently read back the target Figma node/image fill and screenshot the containing frame before claiming success."
+    ],
+    "direct_chat_runtime_post_default": "PROHIBITED",
+    "local_codex_manual_fallback": "ONLY_AFTER_RELAY_SPECIFIC_FAILURE",
+    "duplicate_reimplementation": "PROHIBITED"
+  },
+  "current_concept02_target": {
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame_id": "197:2",
+    "image_node_id": "197:3",
+    "frame_name": "P1_CHAZUO_HOLISTIC_CONCEPT02_PIXEL_REFERENCE",
+    "generated_concept_id": "b13ff052-0d5f-4970-a75a-462545ad2624",
+    "human_feedback": "目前最近生成的茶作中最好看",
+    "approval_scope": "STRONG_DIRECTIONAL_POSITIVE_NOT_FORMAL_FINAL_PASS"
+  },
+  "next_required_action": "USE_EXISTING_FIGMA_UPLOAD_RELAY_V1_TO_BIND_CONCEPT02_RASTER_TO_197_3_THEN_READBACK_AND_CONTINUE_EDITABLE_FIGMA_RECONSTRUCTION"
+}
