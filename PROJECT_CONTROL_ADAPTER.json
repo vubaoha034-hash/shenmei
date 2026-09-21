@@ -851,8 +851,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 54,
-    "sha256": "ea23ca51ddbfcfe165066c213aad46cf9ba17b228f2533698d72878ddb25bd32",
+    "revision": 90,
+    "sha256": "10ffb4f089f357f1f14848c95a550717e83d145382f2e6746fbc7ad446c7da9b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -864,5 +864,11 @@
     "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "read_after": "task_lock",
     "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock."
+  },
+  "figma_upload_route_guard": {
+    "status": "MANDATORY",
+    "path": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
+    "rule": "For VPD Figma raster binding, use the established encrypted GitHub Actions Figma Upload Relay V1 after upload_assets minting; do not default to direct chat-runtime HTTP POST. Local/manual fallback is permitted only after a relay-specific verified failure.",
+    "readback_required": true
   }
 }
