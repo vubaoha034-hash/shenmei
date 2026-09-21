@@ -15,6 +15,11 @@
       "priority": 0,
       "purpose": "VPD-only full task workflow; read with current task lock, not as a competing current-state authority"
     },
+    {
+      "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+      "priority": 0.5,
+      "purpose": "mandatory current-project visual master protection, dimension-scoped freeze, local-delta-only repair, anti-regression rollback, and solved-route reuse guard"
+    },
     "AGENTS.md",
     "AESTHETIC_SKILL_DESIGN_CHARTER.md",
     "VISUAL_PROGRAM_DISTILLATION_V1.md",
@@ -851,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 93,
-    "sha256": "fdbe975aed7ba1b903e2d82a350f19aa7d7eb0d5d1e27216991ddb7eed6e9730",
+    "revision": 94,
+    "sha256": "48a498637c21605ba676b833de589df9ff826748d19c4bf968f44fff3bca7feb",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -872,8 +877,8 @@
     "readback_required": true
   },
   "typography_repair": {
-    "status": "CONCEPT02_DESIGN_PASS_PHOTO_BASE_AI_FEEL_REPAIR_REQUIRED",
-    "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_PRESERVE_EDITABLE_DESIGN"
+    "status": "CONCEPT02_MASTER_FREEZE_GUARD_ACTIVE_PHOTO_ONLY_REPAIR_REQUIRED",
+    "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_UNDER_MASTER_FREEZE_GUARD"
   },
   "concept02_binding": {
     "status": "PASS_READBACK_CONFIRMED",
@@ -901,6 +906,37 @@
     "photo_base": "FAIL_AI_FEEL",
     "repair_node_id": "201:3",
     "preserve_frame_id": "201:2",
-    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_HUMAN_REVIEW_PHOTO_FAIL_20260921.json"
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_HUMAN_REVIEW_PHOTO_FAIL_20260921.json",
+    "freeze_guard": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "frozen_nodes": [
+      "201:4",
+      "201:5",
+      "203:2",
+      "203:13",
+      "203:14",
+      "203:15",
+      "203:16",
+      "203:17",
+      "203:18",
+      "203:19",
+      "203:22",
+      "203:23",
+      "203:24",
+      "203:25",
+      "203:26"
+    ],
+    "only_open_node_id": "201:3"
+  },
+  "execution_guards": {
+    "visual_master_freeze": {
+      "status": "MANDATORY",
+      "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+      "required_on_resume": true,
+      "pixel_asset_over_prompt": true,
+      "dimension_scoped_freeze": true,
+      "local_delta_only": true,
+      "rollback_on_regression": true,
+      "solved_route_reuse": true
+    }
   }
 }
