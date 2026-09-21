@@ -856,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 95,
-    "sha256": "4c5cc5b3c8ee1b3a4d54f22832d95bb6c022d3ddf8cd7df8a893bb6cb18020b2",
+    "revision": 96,
+    "sha256": "8094504f3f6cba02c44df83d988c43ea129becad31e4ef6db376151e265cb057",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -877,8 +877,8 @@
     "readback_required": true
   },
   "typography_repair": {
-    "status": "CONCEPT02_PHOTO_REPAIR01_READY_WAITING_HUMAN_PIXEL_COMPARE",
-    "next_required_action": "P1_WAIT_HUMAN_PIXEL_COMPARE_201_2_VS_205_2_FOR_PHOTO_AI_FEEL"
+    "status": "PAUSED_LOCAL_EVIDENCE_NOT_CURRENT_MAINLINE",
+    "next_required_action": null
   },
   "concept02_binding": {
     "status": "PASS_READBACK_CONFIRMED",
@@ -946,6 +946,17 @@
     "candidate_image_hash": "b2efd9591c1c2430e6c17a7194681b358b2c9c9a",
     "frozen_layer_diff_count": 0,
     "auto_promote": false,
-    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR01_CANDIDATE_20260921.json"
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR01_CANDIDATE_20260921.json",
+    "status": "PAUSED_PRESERVED_LOCAL_QUALITY_EVIDENCE",
+    "current_mainline": false
+  },
+  "current_mainline": {
+    "status": "SYSTEM_LEVEL_HOLDOUT_TRANSFER_VALIDATION_ACTIVE",
+    "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
+    "payloads_frozen": true,
+    "runtime_anchor_authorized": true,
+    "formal_outputs": "0/4",
+    "correction_record": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json"
   }
 }
