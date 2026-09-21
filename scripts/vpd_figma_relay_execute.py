@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 NODE_RE = re.compile(r"^\d+:\d+$")
 SAFE_RESPONSE_KEYS = {'imageHash', 'targetNodeId', 'nodeId', 'status', 'message', 'placement'}
+SUPPORTED_TYPES = {'image/png', 'image/jpeg', 'image/gif', 'image/webp'}
 
 
 def sha256_file(path: Path) -> str:
@@ -25,9 +26,7 @@ def safe_extract(tf: tarfile.TarFile, dest: Path) -> None:
     tf.extractall(dest)
 
 
-def validate_manifest(m: dict, asset: Path) -> None:
-    if m.get('schema_version') != 'vpd-figma-upload-task/v1':
-        raise RuntimeError('unsupported task schema')
+def validate_common_manifest(m: dict) -> None:
     if not NODE_RE.match(str(m.get('node_id', ''))):
         raise RuntimeError('invalid node id')
     p = urlparse(str(m.get('submit_url', '')))
@@ -35,12 +34,34 @@ def validate_manifest(m: dict, asset: Path) -> None:
         raise RuntimeError('submit URL host rejected')
     if not p.path.startswith('/mcp/upload/') or not p.path.endswith('/submit'):
         raise RuntimeError('submit URL path rejected')
-    if m.get('content_type') not in {'image/png', 'image/jpeg', 'image/gif', 'image/webp'}:
+    if m.get('content_type') not in SUPPORTED_TYPES:
         raise RuntimeError('content type rejected')
+
+
+def validate_asset(m: dict, asset: Path) -> None:
     if asset.stat().st_size != int(m.get('source_size', -1)):
         raise RuntimeError('asset size mismatch')
     if sha256_file(asset) != m.get('source_sha256'):
         raise RuntimeError('asset sha256 mismatch')
+
+
+def validate_remote_source_url(url: str) -> None:
+    p = urlparse(url)
+    host = (p.hostname or '').lower()
+    if p.scheme != 'https' or not host.endswith('.oaiusercontent.com'):
+        raise RuntimeError('remote source URL host rejected')
+
+
+def download_remote_source(m: dict, dest: Path) -> None:
+    source_url = str(m.get('source_url', ''))
+    validate_remote_source_url(source_url)
+    cp = subprocess.run([
+        'curl','--fail-with-body','--silent','--show-error','--location',
+        '--connect-timeout','15','--max-time','90',
+        '--output',str(dest), source_url
+    ], text=True, capture_output=True)
+    if cp.returncode != 0:
+        raise RuntimeError('remote source download failed; URL intentionally omitted')
 
 
 def write_receipt(path: Path, body: dict) -> None:
@@ -70,11 +91,23 @@ def main() -> int:
             with tarfile.open(archive, 'r:gz') as tf:
                 safe_extract(tf, td)
             m = json.loads((td / 'manifest.json').read_text(encoding='utf-8'))
-            asset = td / m['asset_name']
-            validate_manifest(m, asset)
+            validate_common_manifest(m)
+
+            schema = m.get('schema_version')
+            if schema == 'vpd-figma-upload-task/v1':
+                asset = td / m['asset_name']
+            elif schema == 'vpd-figma-upload-url-task/v1':
+                suffix = Path(str(m.get('source_filename', 'asset.bin'))).suffix.lower() or '.bin'
+                asset = td / ('remote-asset' + suffix)
+                download_remote_source(m, asset)
+            else:
+                raise RuntimeError('unsupported task schema')
+
+            validate_asset(m, asset)
             safe_meta = {
                 'task_id': m['task_id'], 'node_id': m['node_id'], 'source_filename': m['source_filename'],
-                'source_sha256': m['source_sha256'], 'source_size': m['source_size'], 'content_type': m['content_type']
+                'source_sha256': m['source_sha256'], 'source_size': m['source_size'], 'content_type': m['content_type'],
+                'source_transport': 'embedded_ciphertext' if schema == 'vpd-figma-upload-task/v1' else 'encrypted_signed_url'
             }
             if args.dry_run:
                 body = {**base_receipt, **safe_meta, 'status':'DRY_RUN_PASS', 'finished_at':datetime.now(timezone.utc).isoformat()}
