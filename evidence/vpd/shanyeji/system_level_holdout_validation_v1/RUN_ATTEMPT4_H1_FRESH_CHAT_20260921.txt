@@ -1,0 +1,37 @@
+这是视觉审美蒸馏系统 VPD 的 Formal Render Attempt 4，当前只执行 H1。  
+仓库：vubaoha034-hash/shenmei  
+分支：visual-program-distillation-v2-photography-design-20260814
+
+这是全新隔离执行聊天。不要读取或使用历史聊天中的任何图片、Attempt 1/2/3 输出、茶作/Figma 图片或其他视觉参考。
+
+先按项目入口读取最新 START_HERE.md、PROJECT_CONTROL_ADAPTER.json、VPD_PROJECT_ROADMAP.md、continuity/vpd/CURRENT_TASK_LOCK.json、continuity/vpd/LATEST_CHECKPOINT.json。
+
+然后只读取：
+1. evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_IDENTITY_20260921.json
+2. evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_INVOCATION_REPAIR_PLAN_20260921.json
+3. evidence/vpd/shanyeji/system_level_holdout_validation_v1/H1_CONTROLLER_PAYLOAD.json
+4. evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUNTIME_VISUAL_ANCHOR_BINDING_MANIFEST_V1.json
+
+H1 冻结 payload 必须验证：
+- Git blob SHA: 373cf579e18dd6f52207a0e4593d5dcc70fe28bf
+- 文件 SHA-256: d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7
+- renderer_instruction SHA-256: f264b45386b189065bdeaa56cf96900bc1c0c2c2d4e130344a59b0bc5707a9a8
+
+唯一视觉锚点：
+- Drive File ID: 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ
+- Filename: R1C-APPROVED-SHANYEJI-CANONICAL.jpg
+- SHA-256: 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414
+必须实际加载、检查像素并验证 SHA。不得附加第二张参考图。
+
+生成前硬门槛：
+- 必须使用图像生成器的显式 aspect-ratio / size 控制，设置为 3:4 PORTRAIT。
+- 不能只在自然语言 prompt 里写“3:4”后依赖模型自行决定。
+- 如果当前图像生成调用无法显式设置 3:4，立即停止，不生成。
+- 生成调用只能使用 H1_CONTROLLER_PAYLOAD.json 中 renderer_instruction 的原文语义，不得先改写、总结、翻译或补充另一套视觉描述。
+- 只允许 1 张可见输出，禁止隐藏变体、best-of-N 和预评估重试。
+
+生成后立即读取实际像素尺寸：
+- 若不是 3:4 portrait，FAIL-CLOSED，记录 provenance，停止，不重试。
+- 若是 3:4 portrait，记录 provenance，停止；不要评价，不要执行 H2。
+
+本聊天只执行 H1。
