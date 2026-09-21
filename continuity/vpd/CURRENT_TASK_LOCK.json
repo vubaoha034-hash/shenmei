@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 99,
+  "revision": 100,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Formal Render Attempt 3 isolation package is prepared. Renderer change is execution-context isolation only; H1/H2/H3/H4 frozen payload bytes, Style Capsule candidate and authorized R1C anchor remain unchanged. Attempt 3 uses ONE_CHALLENGE_PER_FRESH_CHAT in strict serial order H1 -> H2 -> H3 -> H4. Each fresh chat may load only the exact R1C canonical anchor plus the one frozen challenge payload, with no previous VPD generated images in context, exactly one visible generation, no best-of-N, no pre-evaluation retry and no Figma/evaluation in the generator chat. The current long conversation is explicitly ineligible for Attempt-3 rendering because it contains prior VPD images and failed Attempt-2 outputs. Next execute H1 using RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt in a new clean project chat.",
-  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_ISOLATED_RENDER_READY_H1_FRESH_CHAT_REQUIRED",
+  "current_stage": "Formal Render Attempt 3 H1 was executed exactly once in the isolated generator chat. The authorized R1C anchor and frozen H1 payload both passed SHA-256 verification before generation. One visible generation was produced and provenance was archived. The returned raw output dimensions were 1536x1024, materially violating the frozen native 3:4 portrait requirement, so the execution is fail-closed. No retry, variant, Figma or aesthetic evaluation is allowed in this generator chat. H2 remains blocked pending separate H1 protocol settlement.",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT3_H1_EXECUTED_FAIL_CLOSED_H2_BLOCKED",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT",
+  "next_required_action": "SETTLE_ATTEMPT3_H1_PROTOCOL_FAILURE_IN_SEPARATE_CHAT_BEFORE_ANY_H2",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "created Attempt-3 renderer identity without modifying frozen payloads",
-    "created isolated execution plan with one challenge per fresh chat",
-    "created H1/H2/H3/H4 fresh-chat run files",
-    "preserved strict H1-to-H4 serial order",
-    "blocked the current context-heavy chat from formal Attempt-3 generation"
+    "verified frozen H1 payload SHA-256 d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "loaded and inspected the sole authorized R1C anchor and verified SHA-256 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "executed exactly one visible H1 generation with zero retries and no Figma/evaluation",
+    "archived H1 raw-output provenance at evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+    "fail-closed because returned output dimensions were 1536x1024 instead of native 3:4 portrait"
   ],
-  "updated_at": "2026-09-21T08:00:00Z",
+  "updated_at": "2026-09-21T08:20:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -177,7 +177,9 @@
     "Do not attach any image except the exact R1C canonical anchor in each generator chat.",
     "Do not modify or paraphrase frozen renderer_instruction text.",
     "Do not retry before formal evaluation if a generated output is wrong; settle the renderer attempt instead.",
-    "Commercial, Golden and Scale remain blocked."
+    "Commercial, Golden and Scale remain blocked.",
+    "Attempt 3 H1 already consumed its one allowed generation; do not rerender H1 in this chat or another chat as a hidden retry.",
+    "H2 is blocked until the H1 protocol failure is separately settled."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1051,5 +1053,23 @@
     "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/ATTEMPT3_H1_OPERATOR_EXECUTION_ERROR_CORRECTION_20260921.json",
     "classification": "INVALID_OPERATOR_EXECUTION_NOT_FORMAL_H1",
     "formal_evidence_allowed": false
+  },
+  "formal_render_attempt3_h1": {
+    "status": "EXECUTED_ONCE_FAIL_CLOSED",
+    "experiment_id": "SHY-SYS-HOLDOUT-V1-H1",
+    "provenance_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+    "provenance_commit": "ad52b2d467ddb7782660a7f5c24d4bed144460be",
+    "gen_id": "6e48eae7-213a-46a9-8ac6-9482838dcd88",
+    "output_file_id": "file_000000000ef081fd86509ab1c76addff",
+    "output_sha256": "872ee44543a33419a6b939d84dce4503cc749d8e4da903b31c2b21e575d63e0a",
+    "output_dimensions": [
+      1536,
+      1024
+    ],
+    "expected_aspect": "3:4 PORTRAIT",
+    "retry_count": 0,
+    "aesthetic_evaluation_executed": false,
+    "figma_executed": false,
+    "H2_blocked": true
   }
 }
