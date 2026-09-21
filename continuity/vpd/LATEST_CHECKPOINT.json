@@ -754,7 +754,7 @@
     "runtime_anchor_modified": false
   },
   "formal_render_attempt3": {
-    "status": "PREPARED_NOT_EXECUTED",
+    "status": "H1_EXECUTED_FAIL_CLOSED_H2_BLOCKED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
     "identity_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_IDENTITY_20260921.json",
     "plan_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_ISOLATED_EXECUTION_PLAN_20260921.json",
@@ -771,8 +771,8 @@
       "H3": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H3_FRESH_CHAT_20260921.txt",
       "H4": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H4_FRESH_CHAT_20260921.txt"
     },
-    "H1": "NOT_EXECUTED",
-    "H2": "BLOCKED_UNTIL_H1_ARCHIVED",
+    "H1": "EXECUTED_ONCE_FAIL_CLOSED_PROVENANCE_ARCHIVED",
+    "H2": "BLOCKED_PENDING_H1_PROTOCOL_SETTLEMENT",
     "H3": "BLOCKED_UNTIL_H2_ARCHIVED",
     "H4": "BLOCKED_UNTIL_H3_ARCHIVED"
   },
@@ -780,5 +780,24 @@
     "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/ATTEMPT3_H1_OPERATOR_EXECUTION_ERROR_CORRECTION_20260921.json",
     "classification": "INVALID_OPERATOR_EXECUTION_NOT_FORMAL_H1",
     "formal_evidence_allowed": false
+  },
+  "attempt3_h1_current_execution": {
+    "status": "EXECUTED_ONCE_FAIL_CLOSED",
+    "provenance_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+    "provenance_commit": "ad52b2d467ddb7782660a7f5c24d4bed144460be",
+    "payload_sha256_verified": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "anchor_sha256_verified": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "gen_id": "6e48eae7-213a-46a9-8ac6-9482838dcd88",
+    "output_file_id": "file_000000000ef081fd86509ab1c76addff",
+    "output_sha256": "872ee44543a33419a6b939d84dce4503cc749d8e4da903b31c2b21e575d63e0a",
+    "output_dimensions": [
+      1536,
+      1024
+    ],
+    "expected_aspect": "3:4 PORTRAIT",
+    "retry_count": 0,
+    "evaluation_executed": false,
+    "figma_executed": false,
+    "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   }
 }
