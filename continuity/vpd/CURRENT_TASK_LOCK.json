@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 95,
+  "revision": 96,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 94,
-    "git_blob_sha": "30727dc2523ef0450e5e85789c6ecfb57f25878f",
-    "note": "Revision 94 activated Visual Master Freeze Guard and left only photo realism repair open."
+    "revision": 95,
+    "git_blob_sha": "1507297821532b961f41c0f862dabc0f5776a9f5",
+    "note": "Revision 95 was a local Chazuo photo-repair comparison gate. It is preserved as evidence but no longer the current project mainline."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Exactly one visible Chazuo Concept 02 photo-realism repair candidate has been created under Visual Master Freeze Guard. Baseline production frame 201:2 remains untouched. Candidate frame 205:2 is a direct sibling clone; only candidate PHOTO_BASE_CLEAN 205:3 differs. Freeze audit confirms all 15 accepted design layers have zero geometry/text differences from baseline. Candidate photo was bound through the established GitHub Actions Figma Upload Relay V1 and independently read back with imageHash b2efd9591c1c2430e6c17a7194681b358b2c9c9a. Candidate is not assumed better. Human actual-pixel comparison of 201:2 versus 205:2 is now the only next action.",
-  "status": "VPD_P1_CHAZUO_CONCEPT02_PHOTO_REPAIR01_READY_WAITING_HUMAN_PIXEL_COMPARE",
+  "current_stage": "Mainline restored to VPD system-level holdout transfer validation. The active project task remains VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1. H1/H2/H3/H4 payloads are already frozen and the sole runtime visual anchor is authorized, but formal holdout outputs remain 0/4 and no formal evaluation or human set verdict has been executed. Recent Chazuo frames 197:2, 201:2 and 205:2 are preserved as local production/quality evidence only and are paused; they must not consume the project mainline. The next action is to execute the existing frozen H1-H4 formal system-level holdout render exactly as authorized, without recompiling payloads or reopening single-poster polishing.",
+  "status": "VPD_SYSTEM_MAINLINE_RESTORED_H1_H4_FORMAL_HOLDOUT_RENDER_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "P1_WAIT_HUMAN_PIXEL_COMPARE_201_2_VS_205_2_FOR_PHOTO_AI_FEEL",
+  "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "created exactly one visible photo-only sibling candidate frame 205:2",
-    "preserved baseline frame 201:2 without overwrite",
-    "changed only candidate photo node 205:3",
-    "uploaded candidate via established relay and independently read back its Figma image hash",
-    "verified 15 frozen design layers have zero differences",
-    "stopped at human actual-pixel comparison gate without auto-promotion"
+    "re-read root entry, adapter, roadmap, current task lock, checkpoint and existing project-goal drift correction",
+    "verified active task remains VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "verified H1-H4 frozen payloads and runtime anchor authorization already exist",
+    "verified formal H1-H4 outputs remain 0/4 in the latest system-level holdout authority",
+    "preserved Chazuo 197:2/201:2/205:2 as paused local evidence rather than deleting or overwriting it",
+    "restored the system-level holdout render as the unique project mainline"
   ],
-  "updated_at": "2026-09-21T05:44:00Z",
+  "updated_at": "2026-09-21T06:10:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -162,7 +162,7 @@
     }
   },
   "state_profile": "p6-composition/v1",
-  "render_allowed": false,
+  "render_allowed": true,
   "input_commit": "9444d8fb680e8bdb4bacdbcd891580d2d7cfbd7d",
   "authority_repair": {
     "record": {
@@ -173,11 +173,11 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not create another photo candidate until human compares 201:2 and 205:2.",
-    "Do not alter any frozen design layer.",
-    "Do not overwrite baseline 201:2 or canonical pixel reference 197:2.",
-    "Do not promote 205:2 merely because it is different.",
-    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
+    "Do not resume single-poster Chazuo photo polishing as the project mainline before the formal H1-H4 system holdout is settled.",
+    "Do not modify or recompile frozen H1/H2/H3/H4 payload bytes.",
+    "Do not replace the authorized runtime anchor or add extra references.",
+    "Do not use Chazuo local polish as proof of system-level VPD success.",
+    "Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -948,7 +948,8 @@
       "candidate_image_hash": "b2efd9591c1c2430e6c17a7194681b358b2c9c9a",
       "frozen_layer_diff_count": 0,
       "auto_promote": false
-    }
+    },
+    "branch_status": "PAUSED_PRESERVED_LOCAL_QUALITY_EVIDENCE_NOT_CURRENT_MAINLINE"
   },
   "visual_master_freeze_guard": {
     "status": "MANDATORY",
@@ -961,5 +962,14 @@
     "prompt_reconstruction_of_protected_master": "PROHIBITED",
     "solved_route_reimplementation": "PROHIBITED",
     "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW"
+  },
+  "mainline_restore": {
+    "status": "ACTIVE",
+    "evidence": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json",
+    "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "formal_outputs": "0/4",
+    "payloads_frozen": true,
+    "runtime_anchor_authorized": true,
+    "next": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
   }
 }
