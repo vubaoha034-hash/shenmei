@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 96,
+  "revision": 97,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 95,
-    "git_blob_sha": "1507297821532b961f41c0f862dabc0f5776a9f5",
-    "note": "Revision 95 was a local Chazuo photo-repair comparison gate. It is preserved as evidence but no longer the current project mainline."
+    "revision": 96,
+    "git_blob_sha": "bb391a17fcd5b57c0514f0cdddda0bb281dac939",
+    "note": "Revision 96 restored the system-level H1-H4 formal holdout render as the unique mainline."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Mainline restored to VPD system-level holdout transfer validation. The active project task remains VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1. H1/H2/H3/H4 payloads are already frozen and the sole runtime visual anchor is authorized, but formal holdout outputs remain 0/4 and no formal evaluation or human set verdict has been executed. Recent Chazuo frames 197:2, 201:2 and 205:2 are preserved as local production/quality evidence only and are paused; they must not consume the project mainline. The next action is to execute the existing frozen H1-H4 formal system-level holdout render exactly as authorized, without recompiling payloads or reopening single-poster polishing.",
-  "status": "VPD_SYSTEM_MAINLINE_RESTORED_H1_H4_FORMAL_HOLDOUT_RENDER_REQUIRED",
+  "current_stage": "Formal Render Attempt 2 generation phase is complete: exactly one visible output was generated serially for each frozen H1, H2, H3 and H4 payload, with no hidden variants, no best-of-N and no retries before formal evaluation. The exact authorized R1C runtime anchor was loaded from Drive and SHA-256 verified before rendering; all four frozen payload byte hashes were independently verified. Raw outputs have been archived to Google Drive and provenance committed. Per the render handoff, no formal evaluation, human pixel verdict, Figma production, Capsule promotion, Commercial, Golden or Scale action has been performed in the generator turn. Next run the formal system-level holdout evaluation protocol on these exact four Attempt-2 outputs.",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT2_GENERATED_4_OF_4_FORMAL_EVALUATION_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
+  "next_required_action": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,18 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "re-read root entry, adapter, roadmap, current task lock, checkpoint and existing project-goal drift correction",
-    "verified active task remains VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "verified H1-H4 frozen payloads and runtime anchor authorization already exist",
-    "verified formal H1-H4 outputs remain 0/4 in the latest system-level holdout authority",
-    "preserved Chazuo 197:2/201:2/205:2 as paused local evidence rather than deleting or overwriting it",
-    "restored the system-level holdout render as the unique project mainline"
+    "loaded exact authorized R1C canonical anchor pixels from Drive and verified SHA-256",
+    "verified exact frozen byte hashes for H1/H2/H3/H4 payloads",
+    "generated exactly one visible H1 output",
+    "generated exactly one visible H2 output",
+    "generated exactly one visible H3 output",
+    "generated exactly one visible H4 output",
+    "created no hidden variants, best-of-N selection or retries before evaluation",
+    "archived all four raw outputs to Google Drive",
+    "committed formal Attempt-2 output provenance",
+    "stopped generation before formal evaluation as required"
   ],
-  "updated_at": "2026-09-21T06:10:00Z",
+  "updated_at": "2026-09-21T06:22:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -162,7 +166,7 @@
     }
   },
   "state_profile": "p6-composition/v1",
-  "render_allowed": true,
+  "render_allowed": false,
   "input_commit": "9444d8fb680e8bdb4bacdbcd891580d2d7cfbd7d",
   "authority_repair": {
     "record": {
@@ -173,10 +177,10 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not resume single-poster Chazuo photo polishing as the project mainline before the formal H1-H4 system holdout is settled.",
-    "Do not modify or recompile frozen H1/H2/H3/H4 payload bytes.",
-    "Do not replace the authorized runtime anchor or add extra references.",
-    "Do not use Chazuo local polish as proof of system-level VPD success.",
+    "Do not regenerate H1/H2/H3/H4 before formal evaluation; retry_before_formal_evaluation must remain false.",
+    "Do not select or replace outputs before formal evaluation.",
+    "Do not invoke Figma production before later reviews accept a visual direction.",
+    "Do not modify frozen payload bytes or runtime anchor identity.",
     "Commercial, Golden and Scale remain blocked."
   ],
   "relay_placement_blocker": {
@@ -967,9 +971,51 @@
     "status": "ACTIVE",
     "evidence": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "formal_outputs": "0/4",
+    "formal_outputs": "4/4",
     "payloads_frozen": true,
     "runtime_anchor_authorized": true,
-    "next": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
+    "next": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS"
+  },
+  "formal_render_attempt2_output_provenance": {
+    "status": "GENERATED_4_OF_4_FORMAL_EVALUATION_PENDING",
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_OUTPUT_PROVENANCE_20260921.json",
+    "anchor_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "reference_image_count": 1,
+    "H1": {
+      "gen_id": "43e5600a-4494-4e13-8a92-717673f35b80",
+      "sha256": "a205f9547fb1d04c5d55ae5ef246139e0562a54e2ec4d8ef16d8d30b8a5c8f3d",
+      "drive_file_id": "1ijvDlUnnqVE1z67rmtWQIG4VOZVp2bmO",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "H2": {
+      "gen_id": "db2737af-f1ad-4fee-a89f-9b586c1344ad",
+      "sha256": "a2b24b3eec0c9d5998f979b45931d2919b130ca21cb305f9c7d94680b9ac355a",
+      "drive_file_id": "1soK_gqni5QqtqPx9PWJfG6DD7-uPjrNu",
+      "dimensions": [
+        1024,
+        1536
+      ]
+    },
+    "H3": {
+      "gen_id": "8a0c478e-40d9-4cd6-9af1-4760c45c985c",
+      "sha256": "cbaf614d05f63e5cb09a0a59a6b9bab4d9fe2cb7f91a126017b0e59b506bc296",
+      "drive_file_id": "1VCacmVucDiAIC_AkhPM6DfHZmd0LcJep",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "H4": {
+      "gen_id": "ecc9b7a4-6387-4ba7-825c-67c29d07deb0",
+      "sha256": "3e1657d13b6c49fb86344ed62a99c3c212e35d420dbcb89b21ef0536d080ced4",
+      "drive_file_id": "1lTGSHXerGvfETHqmqCX0WBNmkK9c-knu",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
   }
 }
