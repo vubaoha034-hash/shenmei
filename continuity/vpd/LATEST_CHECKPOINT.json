@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 116,
-  "recorded_at": "2026-09-21T04:55:00Z",
+  "sequence": 117,
+  "recorded_at": "2026-09-21T05:44:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Visual Master Freeze Guard V1 is now mandatory for the current VPD project. Human-approved or best-so-far visual assets must be protected as pixel authorities; accepted dimensions may not be changed while repairing another dimension. For Chazuo Concept 02, frame 197:2 is the immutable pixel reference; production frame 201:2 is partially frozen; all design nodes except PHOTO_BASE_CLEAN 201:3 are frozen. Only photographic realism / AI-feel reduction on 201:3 remains open. A different image is not automatically better, and any candidate that degrades frozen dimensions must be rejected and rolled back to the protected baseline.",
+  "current_focus": "Exactly one visible Chazuo Concept 02 photo-realism repair candidate has been created under Visual Master Freeze Guard. Baseline production frame 201:2 remains untouched. Candidate frame 205:2 is a direct sibling clone; only candidate PHOTO_BASE_CLEAN 205:3 differs. Freeze audit confirms all 15 accepted design layers have zero geometry/text differences from baseline. Candidate photo was bound through the established GitHub Actions Figma Upload Relay V1 and independently read back with imageHash b2efd9591c1c2430e6c17a7194681b358b2c9c9a. Candidate is not assumed better. Human actual-pixel comparison of 201:2 versus 205:2 is now the only next action.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -136,11 +136,15 @@
     "chazuo_concept02_dimension_scoped_freeze_active",
     "chazuo_concept02_only_photo_node_201_3_open",
     "visual_regression_rollback_rule_active",
-    "solved_route_reuse_rule_active"
+    "solved_route_reuse_rule_active",
+    "chazuo_concept02_photo_repair01_candidate_205_2_created",
+    "chazuo_concept02_photo_repair01_relay_binding_pass",
+    "chazuo_concept02_photo_repair01_frozen_layer_diff_zero",
+    "chazuo_concept02_photo_repair01_waiting_human_pixel_compare"
   ],
   "incomplete": [
-    "p1_chazuo_concept02_photo_base_ai_feel_repair_under_freeze_guard",
-    "p1_chazuo_concept02_photo_base_human_recheck",
+    "p1_chazuo_concept02_photo_repair01_human_pixel_compare",
+    "p1_chazuo_concept02_photo_candidate_promotion_or_rollback",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -149,14 +153,13 @@
     "scale"
   ],
   "blocked": [
-    "Only PHOTO_BASE_CLEAN 201:3 may change in the current loop.",
-    "Do not modify frame 197:2 or any frozen design node in 201:2.",
-    "Do not regenerate the accepted design from prose.",
-    "Do not promote a photography candidate without direct baseline comparison and human actual-pixel review.",
-    "If a candidate harms frozen dimensions, reject it and revert to the protected baseline rather than repairing from the degraded candidate.",
+    "Do not create another photo candidate until human compares 201:2 and 205:2.",
+    "Do not alter any frozen design layer.",
+    "Do not overwrite baseline 201:2 or canonical pixel reference 197:2.",
+    "Do not promote 205:2 merely because it is different.",
     "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_UNDER_MASTER_FREEZE_GUARD",
+  "next_required_action": "P1_WAIT_HUMAN_PIXEL_COMPARE_201_2_VS_205_2_FOR_PHOTO_AI_FEEL",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -224,10 +227,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_CHAZUO_CONCEPT02_MASTER_FREEZE_GUARD_ACTIVE_PHOTO_ONLY_REPAIR_REQUIRED",
+  "status": "VPD_P1_CHAZUO_CONCEPT02_PHOTO_REPAIR01_READY_WAITING_HUMAN_PIXEL_COMPARE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "48a498637c21605ba676b833de589df9ff826748d19c4bf968f44fff3bca7feb"
+    "sha256": "4c5cc5b3c8ee1b3a4d54f22832d95bb6c022d3ddf8cd7df8a893bb6cb18020b2"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -628,6 +631,18 @@
       "open_node": "201:3",
       "open_problem": "PHOTO_REALISM_AI_FEEL_ONLY",
       "photo_baseline_image_hash": "0ecf1c0819b959ef3265db0139022a18e700e4cb"
+    },
+    "photo_repair01": {
+      "status": "READY_WAITING_HUMAN_PIXEL_REVIEW",
+      "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR01_CANDIDATE_20260921.json",
+      "baseline_frame_id": "201:2",
+      "candidate_frame_id": "205:2",
+      "candidate_photo_node_id": "205:3",
+      "candidate_gen_id": "c4edaef1-4cc4-4898-b905-9c24469ef29c",
+      "candidate_source_sha256": "d9209168068b798a2453c6994ad51f59ca1111e39de5695b5aa9bfca5f1b9b52",
+      "candidate_image_hash": "b2efd9591c1c2430e6c17a7194681b358b2c9c9a",
+      "frozen_layer_diff_count": 0,
+      "auto_promote": false
     }
   },
   "figma_upload_route_guard": {
