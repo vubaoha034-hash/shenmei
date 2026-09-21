@@ -1,0 +1,48 @@
+{
+  "schema_version": "vpd-formal-render-attempt4-invocation-repair-plan/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT4_INVOCATION_REPAIR_PLAN",
+  "created_at": "2026-09-21T08:40:00Z",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "plan_state": "PREPARED_NOT_EXECUTED",
+  "purpose": "Repair renderer invocation/provenance only after Attempt 3 H1 failed on output aspect and unprovable verbatim instruction transport.",
+  "change_scope": "RENDERER_INVOCATION_AND_PROVENANCE_ONLY",
+  "invariants": {
+    "frozen_payload_bytes_unchanged": true,
+    "style_capsule_unchanged": true,
+    "runtime_anchor_unchanged": true,
+    "challenge_matrix_unchanged": true,
+    "evaluation_protocol_unchanged": true,
+    "one_visible_output_per_challenge": true,
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "no_pre_evaluation_retry": true,
+    "one_challenge_per_fresh_chat": true,
+    "serial_order": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ]
+  },
+  "repaired_controls": {
+    "explicit_aspect_control_required": true,
+    "aspect_by_challenge": {
+      "H1": "3:4 portrait",
+      "H2": "3:4 portrait",
+      "H3": "3:4 portrait",
+      "H4": "9:16 portrait"
+    },
+    "renderer_call_must_set_explicit_size_or_aspect_parameter": true,
+    "natural_language_aspect_only_is_insufficient": true,
+    "exact_renderer_instruction_source_must_be_recorded_by_git_blob_sha_and_sha256": true,
+    "generator_chat_must_not_paraphrase_renderer_instruction_before_generation": true,
+    "post_generation_provenance_must_record_requested_aspect_and_actual_pixel_dimensions": true,
+    "fail_closed_before_next_challenge_on_any_aspect_mismatch": true
+  },
+  "attempt3_failure_boundary": {
+    "settlement": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_PROTOCOL_FAILURE_SETTLEMENT_20260921.json",
+    "H1_retry_under_attempt3": false,
+    "H2_under_attempt3": false
+  },
+  "next_required_action": "CREATE_ATTEMPT4_IDENTITY_AND_H1_FRESH_CHAT_RUNNER_WITH_EXPLICIT_ASPECT_BINDING"
+}
