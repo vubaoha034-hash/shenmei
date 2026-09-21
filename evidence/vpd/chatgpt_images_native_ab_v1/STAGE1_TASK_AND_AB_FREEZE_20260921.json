@@ -1,0 +1,111 @@
+{
+  "schema_version": "vpd-chatgpt-images-native-ab-stage1/v1",
+  "artifact_type": "STAGE1_TASK_AND_AB_FREEZE",
+  "created_at": "2026-09-21T12:05:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "FROZEN_NOT_AUTHORIZED_FOR_GENERATION",
+  "objective": "Test whether compact VPD mechanism controls add visible value beyond direct use of the same approved reference in the same ChatGPT Images renderer.",
+  "renderer": "CHATGPT_IMAGES",
+  "reference": {
+    "count": 1,
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "role": "SOLE_FAMILY_STYLE_AND_RELATIONSHIP_ANCHOR",
+    "prohibited_copy": [
+      "source brand identity",
+      "source typography/glyph contours",
+      "source copy",
+      "mountain/forest subject",
+      "tea ware",
+      "motifs",
+      "layout coordinates"
+    ]
+  },
+  "new_content_task": {
+    "id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+    "working_name": "米仓",
+    "stage": "PHOTO_ONLY_VISUAL_DIRECTION",
+    "aspect": "3:4 PORTRAIT",
+    "output_count_per_route": 1,
+    "subject": "A real working rice granary in early morning: pale rice grains, woven baskets, linen sacks, aged wood bins, and a modest sorting/preparation surface.",
+    "realism": "Believable documentary photography with cool-neutral morning daylight and truthful materials.",
+    "required_absences": [
+      "mountain/forest scenic shortcut",
+      "tea ware",
+      "wok/flame spectacle",
+      "calligraphy",
+      "logos",
+      "labels",
+      "final text",
+      "detached text panel"
+    ]
+  },
+  "common_execution_constraints": {
+    "one_fresh_chat_per_route": true,
+    "no_prior_generated_images_in_chat": true,
+    "exactly_one_reference_image": true,
+    "n": 1,
+    "explicit_aspect_required": "3:4 PORTRAIT",
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "no_pre_review_retry": true,
+    "no_figma": true,
+    "no_final_typography": true,
+    "raw_output_must_be_archived": true
+  },
+  "route_A": {
+    "id": "REFERENCE_NATIVE_BASELINE",
+    "prompt": "Create exactly one native 3:4 portrait, photo-only editorial hero for a new content task: a working rice granary at early morning. Show pale rice grains, woven baskets, linen sacks, aged wood bins and a modest sorting/preparation surface in believable documentary photography with cool-neutral morning daylight; no mountains or forest, tea ware, wok or flame, calligraphy, logos, labels, final text, or detached text panels. Use the attached approved R1C reference only as a family-level visual/style anchor—not to copy its subject, brand identity, typography, motifs, or layout coordinates—and leave one natural quiet area for later Figma typography."
+  },
+  "route_B": {
+    "id": "REFERENCE_PLUS_COMPACT_VPD",
+    "prompt": "Create exactly one native 3:4 portrait, photo-only editorial hero for a new content task: a working rice granary at early morning. Show pale rice grains, woven baskets, linen sacks, aged wood bins and a modest sorting/preparation surface in believable documentary photography with cool-neutral morning daylight; no mountains or forest, tea ware, wok or flame, calligraphy, logos, labels, final text, or detached text panels. Use the attached approved R1C reference only as a family-level visual/style anchor—not to copy its subject, brand identity, typography, motifs, or layout coordinates. In addition, enforce these compact distilled mechanisms: (1) one dominant material mass counterbalanced by a scene-created quiet tonal pocket for future title; (2) a clear first-to-second-to-third read through mass, depth, and support detail; (3) high material detail concentrated regionally while the future-type pocket stays low-density; (4) truthful near/mid/far depth staging; (5) pale grain, linen and aged wood with cool-neutral shadow as role-based color behavior rather than palette copying; (6) semantic-role binding so rice, baskets, sacks and tools function as real process/material evidence rather than decorative motifs."
+  },
+  "ab_symmetry": {
+    "same_renderer": true,
+    "same_reference": true,
+    "same_content_task": true,
+    "same_aspect": true,
+    "same_output_count": true,
+    "same_correctness_constraints": true,
+    "only_difference": "Route B adds six compact distilled mechanism controls.",
+    "edit_budget_per_route": 0
+  },
+  "human_review": {
+    "labels": [
+      "X",
+      "Y"
+    ],
+    "display_order": [
+      "B",
+      "A"
+    ],
+    "reveal_mapping_only_after_human_verdict": true,
+    "first_question": "Which image is more usable as a visual direction: X, Y, both, or neither?",
+    "second_question": "If one is better, what visible reason makes it better?",
+    "assistant_must_not_recommend_before_human_verdict": true
+  },
+  "budget": {
+    "current_generation_authorization": 0,
+    "stage1_if_authorized": 2,
+    "stage2_additional_if_stage1_technically_valid": 2,
+    "total_cap_if_fully_authorized_later": 4
+  },
+  "stop_conditions": [
+    "wrong reference identity or more than one reference image",
+    "not a single image",
+    "wrong aspect/orientation",
+    "wrong subject class",
+    "source brand/copy/subject leakage",
+    "visible generation produced but hidden retry would be needed",
+    "Route B needs extra manual edit budget to look competitive"
+  ],
+  "non_conclusions": [
+    "Stage 1 does not validate typography.",
+    "Stage 1 does not promote Style Capsule.",
+    "A single B win does not prove stable transfer.",
+    "An A win does not invalidate prior accepted assets."
+  ],
+  "next_required_action": "WAIT_FOR_EXPLICIT_AUTHORIZATION_TO_GENERATE_STAGE1_TWO_IMAGES"
+}
