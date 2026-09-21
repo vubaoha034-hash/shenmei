@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 124,
-  "recorded_at": "2026-09-21T11:40:00Z",
+  "sequence": 125,
+  "recorded_at": "2026-09-21T11:35:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The first no-training mature-workflow reproducibility card is complete. The selected candidate is SDXL + Hugging Face Diffusers native IP-Adapter using the InstantStyle style-only block configuration. The method is technically compatible with the project goal and does not require training, but the currently available execution environments are not ready: the ChatGPT runtime is CPU-only without CUDA/Diffusers, and the known local workstation is not selected as the formal SDXL execution target. No image generation, training, paid GPU, Figma write or legacy experiment retry was performed. Existing accepted results and Attempt-4 preparation remain preserved. The next step is read-only selection and verification of a controllable GPU execution environment, including GPU/VRAM, system memory, CUDA/PyTorch, disk, model-download path and output-return path, before any reproduction budget can be authorized.",
+  "current_focus": "A concrete GPU execution environment has now been selected for the first bounded no-training reproduction: RunPod Secure Cloud, 1x NVIDIA A40 48GB, using the official RunPod PyTorch 2.8 / Python 3.11 / CUDA 12.8.1 container. The environment is selected but NOT provisioned. Current public Secure Cloud pricing lists A40 48GB at $0.49/hour, lower than Secure Cloud RTX 4090 24GB at $0.74/hour; the A40 is preferred because the first goal is low-variance reproducibility and VRAM headroom rather than peak throughput. A proposed future smoke-test cap is 2 hours and $2 total, but paid authorization remains $0. No image generation, training, paid compute, Figma write or legacy experiment retry was performed. Before any paid resource can be started, the existing full-state validator must be made compatible with the saved read-only audit action and must pass.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -174,10 +174,16 @@
     "first_no_training_candidate_selected_instantstyle_ipadapter",
     "instantstyle_ipadapter_reproducibility_card_complete",
     "chatgpt_runtime_cpu_only_environment_audited",
-    "no_generation_training_paid_compute_or_figma_write_performed"
+    "no_generation_training_paid_compute_or_figma_write_performed",
+    "gpu_environment_candidates_compared",
+    "runpod_secure_a40_48gb_selected_not_provisioned",
+    "gpu_environment_card_saved",
+    "paid_compute_authorization_remains_zero"
   ],
   "incomplete": [
-    "gpu_execution_environment_selection_and_verification",
+    "full_state_validator_read_only_action_compatibility_repair",
+    "full_state_validator_pass_before_resource_execution",
+    "user_paid_smoke_test_authorization",
     "bounded_reproduction_plan_final_authorization",
     "bounded_reproduction_plan_and_budget",
     "formal_attempt4_h1_fresh_chat_render",
@@ -209,9 +215,13 @@
     "Do not install/train/start paid compute under the current read-only audit authorization.",
     "Do not treat the new method as superior before a bounded same-task comparison.",
     "Do not replace or invalidate any accepted prior result because the new candidate exists.",
-    "Legacy full-state validation remains not certified for resource execution."
+    "Legacy full-state validation remains not certified for resource execution.",
+    "Do not create or fund a RunPod Pod before full-state validator compatibility is repaired and verified.",
+    "Paid compute authorization remains $0; the proposed $2 cap is not an authorization.",
+    "Do not auto-switch to a more expensive GPU if A40 Secure Cloud is unavailable.",
+    "Do not start image generation during environment or validator preflight."
   ],
-  "next_required_action": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION",
+  "next_required_action": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -279,10 +289,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_FIRST_NO_TRAINING_REPRO_CARD_COMPLETE_GPU_ENVIRONMENT_AUDIT_REQUIRED",
+  "status": "VPD_P1_RUNPOD_SECURE_A40_SELECTED_VALIDATOR_COMPATIBILITY_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "c32b53999ce6bc9396606f4f56fff51bcc4bfbc93ef2849326df6d222728b2e1"
+    "sha256": "5874f0f5a729c2e0da034dd258ff72713c54472af57bfc7a21f618042aa2fd8b"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -303,8 +313,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-MAINLINE-PRESERVATION-USER-PLAN-20260921-001",
-      "event_hash": "14e568ae5bcd884bcb29422285933cbbc57889c5109b57e7a161e0efa3884190"
+      "event_id": "EVT-VPD-P1-RUNPOD-A40-ENVIRONMENT-SELECTED-20260921-001",
+      "event_hash": "f5f23117265b08574bd5c07f6c6c7e8fd09c80614d02e1983ea0fc3bd96a79c4"
     }
   },
   "typography_repair": {
@@ -871,5 +881,23 @@
     "method_compatibility": "PASS_FOR_BOUNDED_REPRODUCTION_CANDIDATE",
     "execution_environment": "NOT_READY",
     "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION"
+  },
+  "gpu_environment_audit": {
+    "status": "SELECTED_NOT_PROVISIONED",
+    "provider": "RunPod",
+    "cloud_tier": "Secure Cloud",
+    "gpu": "NVIDIA A40",
+    "gpu_count": 1,
+    "vram_gb": 48,
+    "proposed_container_image": "runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu",
+    "current_public_compute_price_usd_per_hour": 0.49,
+    "proposed_auto_terminate_hours": 2,
+    "proposed_total_authorization_cap_usd": 2,
+    "paid_authorization_usd": 0,
+    "environment_card_path": "evidence/vpd/mature_workflow_audit_v1/RUNPOD_SECURE_A40_ENVIRONMENT_CARD_20260921.md",
+    "environment_card_git_blob_sha": "5fba8ad088a0c39212702b4e4c3deea5653b8f9e",
+    "actual_pod_created": false,
+    "actual_runtime_verified": false,
+    "next": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION"
   }
 }
