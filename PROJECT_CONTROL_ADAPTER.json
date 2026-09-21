@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 104,
-    "sha256": "5874f0f5a729c2e0da034dd258ff72713c54472af57bfc7a21f618042aa2fd8b",
+    "revision": 105,
+    "sha256": "b56cb1404b0953a3aa38900c879a25a135f2b53333dc42d9b9e89dae3ee70add",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,20 +956,19 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P1_RUNPOD_SECURE_A40_SELECTED_VALIDATOR_COMPATIBILITY_REQUIRED",
+    "status": "VPD_P1_CHATGPT_IMAGES_PRIMARY_RENDERER_RESTORED_METHOD_MAPPING_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION",
+    "next_required_action": "P1_MAP_MATURE_WORKFLOW_LOGIC_TO_CHATGPT_IMAGES_NATIVE_CONTROL_READ_ONLY",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "READ_ONLY_VALIDATOR_COMPATIBILITY_REPAIR",
+    "mode": "READ_ONLY_CHATGPT_IMAGES_NATIVE_WORKFLOW_MAPPING",
     "existing_results_preserved": true,
-    "attempt4_scheduling": "PAUSED_NOT_CANCELLED",
+    "primary_renderer": "CHATGPT_IMAGES",
+    "external_models_role": "RESEARCH_ONLY",
     "current_chat_render_eligible": false,
-    "candidate": "SDXL_DIFFUSERS_IPADAPTER_INSTANTSTYLE_STYLE_ONLY",
-    "execution_environment": "RUNPOD_SECURE_A40_SELECTED_NOT_PROVISIONED",
-    "paid_compute_authorization_usd": 0
+    "external_compute_authorization_usd": 0
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -998,8 +997,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-RUNPOD-A40-ENVIRONMENT-SELECTED-20260921-001",
-      "event_hash": "f5f23117265b08574bd5c07f6c6c7e8fd09c80614d02e1983ea0fc3bd96a79c4"
+      "event_id": "EVT-VPD-P1-CHATGPT-IMAGES-PRIMARY-RENDERER-RESTORED-20260921-001",
+      "event_hash": "22d7e11bdf19a4854958a42d5b92da1aa7057312eb01c0e780d9062286c8be97"
     }
   },
   "mature_workflow_audit": {
@@ -1017,7 +1016,7 @@
     "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION"
   },
   "gpu_environment_audit": {
-    "status": "SELECTED_NOT_PROVISIONED",
+    "status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE",
     "provider": "RunPod",
     "cloud_tier": "Secure Cloud",
     "gpu": "NVIDIA A40",
@@ -1032,6 +1031,16 @@
     "environment_card_git_blob_sha": "5fba8ad088a0c39212702b4e4c3deea5653b8f9e",
     "actual_pod_created": false,
     "actual_runtime_verified": false,
-    "next": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION"
+    "next": null
+  },
+  "primary_renderer_policy": {
+    "status": "ACTIVE",
+    "primary_renderer": "CHATGPT_IMAGES",
+    "external_models_role": "RESEARCH_EVIDENCE_OPTIONAL_FUTURE_BASELINE_ONLY",
+    "correction_record": "evidence/vpd/mainline_corrections/CHATGPT_IMAGES_PRIMARY_RENDERER_CORRECTION_20260921.md",
+    "same_renderer_ab_priority": true,
+    "current_generation_budget": 0,
+    "current_external_compute_budget_usd": 0,
+    "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   }
 }
