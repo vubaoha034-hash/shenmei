@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 118,
-  "recorded_at": "2026-09-21T06:10:00Z",
+  "sequence": 119,
+  "recorded_at": "2026-09-21T06:22:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Mainline restored to VPD system-level holdout transfer validation. The active project task remains VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1. H1/H2/H3/H4 payloads are already frozen and the sole runtime visual anchor is authorized, but formal holdout outputs remain 0/4 and no formal evaluation or human set verdict has been executed. Recent Chazuo frames 197:2, 201:2 and 205:2 are preserved as local production/quality evidence only and are paused; they must not consume the project mainline. The next action is to execute the existing frozen H1-H4 formal system-level holdout render exactly as authorized, without recompiling payloads or reopening single-poster polishing.",
+  "current_focus": "Formal Render Attempt 2 generation phase is complete: exactly one visible output was generated serially for each frozen H1, H2, H3 and H4 payload, with no hidden variants, no best-of-N and no retries before formal evaluation. The exact authorized R1C runtime anchor was loaded from Drive and SHA-256 verified before rendering; all four frozen payload byte hashes were independently verified. Raw outputs have been archived to Google Drive and provenance committed. Per the render handoff, no formal evaluation, human pixel verdict, Figma production, Capsule promotion, Commercial, Golden or Scale action has been performed in the generator turn. Next run the formal system-level holdout evaluation protocol on these exact four Attempt-2 outputs.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -145,29 +145,33 @@
     "system_holdout_h1_h4_frozen_payloads_reconfirmed",
     "system_holdout_runtime_anchor_authorization_reconfirmed",
     "system_holdout_formal_outputs_reconfirmed_0_of_4",
-    "chazuo_local_quality_branch_paused_preserved"
+    "chazuo_local_quality_branch_paused_preserved",
+    "formal_holdout_attempt2_anchor_loaded_sha_verified",
+    "formal_holdout_attempt2_all_payload_hashes_verified",
+    "formal_holdout_attempt2_h1_generated_once",
+    "formal_holdout_attempt2_h2_generated_once",
+    "formal_holdout_attempt2_h3_generated_once",
+    "formal_holdout_attempt2_h4_generated_once",
+    "formal_holdout_attempt2_outputs_archived",
+    "formal_holdout_attempt2_provenance_committed"
   ],
   "incomplete": [
-    "formal_h1_render",
-    "formal_h2_render",
-    "formal_h3_render",
-    "formal_h4_render",
-    "formal_holdout_evaluation",
-    "human_set_pixel_review",
-    "family_verdict",
+    "formal_holdout_attempt2_evaluation",
+    "formal_holdout_attempt2_human_pixel_review",
+    "formal_holdout_attempt2_family_verdict",
     "second_style_family_validation",
     "commercial",
     "golden",
     "scale"
   ],
   "blocked": [
-    "Do not resume single-poster Chazuo photo polishing as the project mainline before the formal H1-H4 system holdout is settled.",
-    "Do not modify or recompile frozen H1/H2/H3/H4 payload bytes.",
-    "Do not replace the authorized runtime anchor or add extra references.",
-    "Do not use Chazuo local polish as proof of system-level VPD success.",
+    "Do not regenerate H1/H2/H3/H4 before formal evaluation; retry_before_formal_evaluation must remain false.",
+    "Do not select or replace outputs before formal evaluation.",
+    "Do not invoke Figma production before later reviews accept a visual direction.",
+    "Do not modify frozen payload bytes or runtime anchor identity.",
     "Commercial, Golden and Scale remain blocked."
   ],
-  "next_required_action": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER",
+  "next_required_action": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -235,10 +239,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_SYSTEM_MAINLINE_RESTORED_H1_H4_FORMAL_HOLDOUT_RENDER_REQUIRED",
+  "status": "VPD_SYSTEM_HOLDOUT_ATTEMPT2_GENERATED_4_OF_4_FORMAL_EVALUATION_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "8094504f3f6cba02c44df83d988c43ea129becad31e4ef6db376151e265cb057"
+    "sha256": "3be7e77b17d14227480781e51d64f99e9aa166da4b9209113dfb12a3e044d576"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -678,9 +682,51 @@
     "status": "ACTIVE",
     "evidence": "evidence/vpd/mainline_corrections/VPD_MAINLINE_RESTORE_AFTER_CHAZUO_PHOTO_LOOP_20260921.json",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "formal_outputs": "0/4",
+    "formal_outputs": "4/4",
     "payloads_frozen": true,
     "runtime_anchor_authorized": true,
-    "next": "RUN_FORMAL_H1_H2_H3_H4_SYSTEM_LEVEL_HOLDOUT_RENDER"
+    "next": "RUN_FORMAL_SYSTEM_LEVEL_HOLDOUT_EVALUATION_ON_ATTEMPT2_OUTPUTS"
+  },
+  "formal_render_attempt2_output_provenance": {
+    "status": "GENERATED_4_OF_4_FORMAL_EVALUATION_PENDING",
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_OUTPUT_PROVENANCE_20260921.json",
+    "anchor_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "reference_image_count": 1,
+    "H1": {
+      "gen_id": "43e5600a-4494-4e13-8a92-717673f35b80",
+      "sha256": "a205f9547fb1d04c5d55ae5ef246139e0562a54e2ec4d8ef16d8d30b8a5c8f3d",
+      "drive_file_id": "1ijvDlUnnqVE1z67rmtWQIG4VOZVp2bmO",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "H2": {
+      "gen_id": "db2737af-f1ad-4fee-a89f-9b586c1344ad",
+      "sha256": "a2b24b3eec0c9d5998f979b45931d2919b130ca21cb305f9c7d94680b9ac355a",
+      "drive_file_id": "1soK_gqni5QqtqPx9PWJfG6DD7-uPjrNu",
+      "dimensions": [
+        1024,
+        1536
+      ]
+    },
+    "H3": {
+      "gen_id": "8a0c478e-40d9-4cd6-9af1-4760c45c985c",
+      "sha256": "cbaf614d05f63e5cb09a0a59a6b9bab4d9fe2cb7f91a126017b0e59b506bc296",
+      "drive_file_id": "1VCacmVucDiAIC_AkhPM6DfHZmd0LcJep",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "H4": {
+      "gen_id": "ecc9b7a4-6387-4ba7-825c-67c29d07deb0",
+      "sha256": "3e1657d13b6c49fb86344ed62a99c3c212e35d420dbcb89b21ef0536d080ced4",
+      "drive_file_id": "1lTGSHXerGvfETHqmqCX0WBNmkK9c-knu",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
   }
 }
