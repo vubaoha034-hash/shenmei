@@ -1,0 +1,35 @@
+{
+  "schema_version": "vpd-operator-execution-error-correction/v1",
+  "artifact_type": "ATTEMPT3_H1_OPERATOR_EXECUTION_ERROR_CORRECTION",
+  "date": "2026-09-21",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "attempt_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
+  "challenge_id": "H1",
+  "classification": "INVALID_OPERATOR_EXECUTION_NOT_FORMAL_H1",
+  "formal_evidence_allowed": false,
+  "counts_as_attempt3_h1_execution": false,
+  "counts_as_retry": false,
+  "reason": "The frozen H1 renderer_instruction was not executed. An unrelated tea-product image request was sent instead, producing a landscape tea package image. This is an operator execution error outside the formal H1 experiment, not a renderer result for the frozen payload.",
+  "frozen_payload_modified": false,
+  "runtime_anchor_modified": false,
+  "wrong_output": {
+    "gen_id": "8249a6d9-f3ec-4019-9815-784dbaaa9abd",
+    "drive_file_id": "1V5HepqORcjtvG4aIcY05OvdxO4UfXQG2",
+    "renamed_filename": "INVALID_OPERATOR_ERROR_NOT_ATTEMPT3_H1_20260921.png",
+    "sha256": "32d35404e5d61a1f4f5eac15bd6fc252563f749083040ca0c10f506b6a3744e1",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "excluded_from_formal_evidence": true
+  },
+  "erroneous_provenance_removed": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+  "restored_state": {
+    "H1": "NOT_EXECUTED",
+    "H2": "BLOCKED_UNTIL_H1_ARCHIVED",
+    "H3": "BLOCKED_UNTIL_H2_ARCHIVED",
+    "H4": "BLOCKED_UNTIL_H3_ARCHIVED",
+    "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT"
+  },
+  "isolation_note": "The current conversation is contaminated by the wrong generated image and is ineligible for the formal H1 render. Formal H1 must be executed in a new clean chat using the unchanged RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt."
+}
