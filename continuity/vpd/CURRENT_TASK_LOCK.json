@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 90,
+  "revision": 91,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 89,
-    "git_blob_sha": "c4193705bddd8df4ad4aadc26e876ee15197cd1e",
-    "note": "Revision 89 prepared Concept 02 but had not yet recorded its render, human feedback, or mandatory relay routing."
+    "revision": 90,
+    "git_blob_sha": "9dcba490891dd74f097beea1bbb02335398a0f49",
+    "note": "Revision 90 required relay binding of the accepted Concept 02 raster to Figma node 197:3."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Holistic Chazuo Concept 02 has now been rendered exactly once within the frozen visible-concept budget and received strong human directional feedback as the best recent Chazuo result. A dedicated Figma pixel-reference frame 197:2 and raster target 197:3 were created without overwriting prior evidence. A direct chat-runtime POST attempt to the Figma submit URL failed because that runtime lacks public egress; this is not a new blocker because the project already has a deployed and previously proven encrypted GitHub Actions Figma Upload Relay V1. The relay is now the mandatory route for raster binding. Do not rerender Concept 02. Bind the existing original raster to 197:3 through the established relay, independently read back the image fill and screenshot 197:2, then proceed to editable Figma reconstruction of typography and design layers.",
-  "status": "VPD_P1_CHAZUO_CONCEPT02_DIRECTIONAL_POSITIVE_FIGMA_RELAY_BINDING_REQUIRED",
+  "current_stage": "Chazuo Holistic Concept 02 is now bound as the real 1024x1536 raster reference in Figma frame 197:2. The existing encrypted GitHub Actions Figma Upload Relay V1 returned HTTP 200 / UPLOAD_PASS, and independent Figma readback confirms node 197:3 has IMAGE fill hash ed2119fd27ec6bdef468f81ede96607aad6673c0 matching the relay receipt. The first relay attempt was transport-successful but did not place because the newly created target node had mistakenly been locked=true; this violated the project's existing invariant that PHOTO_RAW_LOCKED is semantic identity only. The target was corrected to locked=false and one controlled retry passed. The upload/binding blocker is closed. The flattened reference still contains rasterized generated typography, so it is reference evidence only and cannot be called an editable Figma reproduction. Next build a clean-photo-base production frame and reconstruct typography, wordmark, supporting hierarchy, lines and layout as editable Figma layers while preserving the accepted photographic composition.",
+  "status": "VPD_P1_CHAZUO_CONCEPT02_PIXEL_REFERENCE_BOUND_EDITABLE_FIGMA_RECONSTRUCTION_READY",
   "p6_allowed": false,
-  "next_required_action": "P1_BIND_CHAZUO_CONCEPT02_RASTER_TO_197_3_VIA_EXISTING_FIGMA_UPLOAD_RELAY_V1_THEN_READBACK",
+  "next_required_action": "P1_BUILD_CHAZUO_CONCEPT02_CLEAN_PHOTO_BASE_AND_EDITABLE_FIGMA_RECONSTRUCTION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "generated exactly one holistic Chazuo Concept 02 within the frozen output budget",
-    "recorded human feedback that Concept 02 is the best-looking recent Chazuo result",
-    "created dedicated Figma pixel-reference frame 197:2 and raster target 197:3 without overwriting prior evidence",
-    "diagnosed direct chat-runtime upload failure as an execution-route regression rather than a new Figma blocker",
-    "made the existing encrypted GitHub Actions Figma Upload Relay V1 the mandatory raster transport route"
+    "used existing encrypted GitHub Actions Figma Upload Relay V1 rather than chat-runtime direct POST",
+    "identified and corrected target node 197:3 locked=true configuration regression",
+    "completed one controlled relay retry with HTTP 200 / UPLOAD_PASS",
+    "independently confirmed Figma IMAGE fill hash on 197:3",
+    "captured full 197:2 screenshot showing the accepted Concept 02 raster",
+    "closed Concept 02 raster-binding blocker"
   ],
-  "updated_at": "2026-09-21T02:15:00Z",
+  "updated_at": "2026-09-21T03:18:30Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -162,7 +163,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "1fd9d8540fc0d3ef5c169272bc03f568dea4e315",
+  "input_commit": "9444d8fb680e8bdb4bacdbcd891580d2d7cfbd7d",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -172,11 +173,11 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not rerender Concept 02 before Figma reconstruction/readback review.",
-    "Do not use direct ChatGPT/container HTTP POST as the default path for Figma raster submit URLs; use the existing relay.",
-    "Do not ask the user to switch to local Codex/manual upload unless the established relay has a specific verified failure.",
+    "Do not rerender a different Concept 02 direction.",
+    "Do not treat the flattened reference raster as an editable final Figma design.",
+    "Do not set production photo target nodes locked=true; PHOTO_RAW_LOCKED is semantic identity only.",
     "Do not copy Shanyeji fixed composition, brush surface, palette, motif or exact wordmark assets.",
-    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
+    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked until editable reconstruction and human review."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -875,8 +876,19 @@
       "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
       "frame_id": "197:2",
       "raster_node_id": "197:3",
-      "raster_bound": false
+      "raster_bound": true,
+      "raster_node_locked": false,
+      "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0",
+      "screenshot_verified": true
     },
-    "rerender_allowed": false
+    "rerender_allowed": false,
+    "binding_evidence": {
+      "pass_receipt": "evidence/vpd/figma_upload_relay/receipts/P1-CHAZUO-CONCEPT02-197-3-20260921-02.json",
+      "source_sha256": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f",
+      "source_size": 2110004,
+      "first_attempt_note": "UPLOAD_PASS transport receipt but no Figma fill because target node was incorrectly locked=true.",
+      "controlled_retry": "PASS_AFTER_TARGET_UNLOCK",
+      "readback_image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0"
+    }
   }
 }
