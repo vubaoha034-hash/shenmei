@@ -1,0 +1,62 @@
+{
+  "schema_version": "vpd-formal-render-attempt3-h1-protocol-failure-settlement/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT3_H1_PROTOCOL_FAILURE_SETTLEMENT",
+  "settlement_id": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_ATTEMPT3_H1_FAIL_CLOSED_20260921_001",
+  "recorded_at": "2026-09-21T08:40:00Z",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "attempt_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
+  "challenge_id": "H1",
+  "classification": "FORMAL_H1_PROTOCOL_FAILURE_ATTEMPT3_TERMINATED_BEFORE_H2",
+  "formal_holdout_verdict": "NOT_REACHED",
+  "capsule_inference": "NO_CAPSULE_INFERENCE",
+  "provenance": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
+  "prior_operator_error_correction": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/ATTEMPT3_H1_OPERATOR_EXECUTION_ERROR_CORRECTION_20260921.json",
+  "important_distinction": {
+    "unrelated_tea_product_output": "INVALID_OPERATOR_EXECUTION_NOT_FORMAL_H1_AND_DOES_NOT_COUNT_AS_RETRY",
+    "formal_h1_output": "GEN_ID_6e48eae7_213a_46a9_8ac6_9482838dcd88_EXECUTED_ONCE_AND_FAIL_CLOSED"
+  },
+  "verified_inputs": {
+    "frozen_h1_payload_sha256": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "payload_hash_match": true,
+    "runtime_anchor_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "runtime_anchor_hash_match": true,
+    "reference_image_count": 1
+  },
+  "failure": {
+    "expected": "NATIVE_3_BY_4_PORTRAIT",
+    "actual_dimensions": [
+      1536,
+      1024
+    ],
+    "actual_orientation": "LANDSCAPE",
+    "reasons": [
+      "OUTPUT_DIMENSIONS_MATERIALLY_VIOLATE_FROZEN_3_4_PORTRAIT_REQUIREMENT",
+      "VERBATIM_RENDERER_INSTRUCTION_TRANSPORT_NOT_PROVABLE_FROM_RETURNED_RENDERER_METADATA"
+    ],
+    "retry_attempted": false,
+    "retry_allowed": false
+  },
+  "disposition": {
+    "H1": "INVALID_FOR_FORMAL_HOLDOUT_EVIDENCE",
+    "H2": "NOT_EXECUTED",
+    "H3": "NOT_EXECUTED",
+    "H4": "NOT_EXECUTED",
+    "attempt3": "TERMINATED_AT_H1_PROTOCOL_FAILURE",
+    "formal_evaluation": "NOT_RUN",
+    "human_pixel_review": "NOT_RUN",
+    "family_verdict": "NOT_REACHED"
+  },
+  "non_conclusions": [
+    "Do not infer Style Capsule V1.1 Candidate success or failure from Attempt 3 H1.",
+    "Do not treat the unrelated tea-package image as formal H1 evidence.",
+    "Do not rerender H1 under Attempt 3.",
+    "Do not execute H2 under Attempt 3.",
+    "Do not modify frozen H1-H4 payload bytes or the authorized R1C anchor."
+  ],
+  "root_cause_scope": {
+    "current_evidence": "Renderer invocation/execution contract did not guarantee the frozen aspect and did not expose proof that the exact renderer_instruction was transported verbatim.",
+    "not_proven": "The frozen H1 design logic itself is not proven defective.",
+    "next_fix_scope": "Renderer invocation controls and provenance only; preserve payloads, anchor, capsule and challenge matrix."
+  },
+  "next_required_action": "PREPARE_FORMAL_RENDER_ATTEMPT4_WITH_EXPLICIT_ASPECT_AND_INSTRUCTION_BINDING_CONTROLS"
+}
