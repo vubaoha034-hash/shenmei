@@ -851,8 +851,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 91,
-    "sha256": "9398214254fecbcd0219e01687862d0a62bff16d3416256e1d7c1ea4c9fd59a2",
+    "revision": 92,
+    "sha256": "7b2387ebd91391db01f19d8e455c7e4f805c49e8cd5e9609c699090ba8947031",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -872,8 +872,8 @@
     "readback_required": true
   },
   "typography_repair": {
-    "status": "CONCEPT02_PIXEL_REFERENCE_BOUND_EDITABLE_FIGMA_RECONSTRUCTION_READY",
-    "next_required_action": "P1_BUILD_CHAZUO_CONCEPT02_CLEAN_PHOTO_BASE_AND_EDITABLE_FIGMA_RECONSTRUCTION"
+    "status": "CONCEPT02_EDITABLE_RECONSTRUCTION_EXECUTED_WAITING_HUMAN_REVIEW",
+    "next_required_action": "P1_WAIT_HUMAN_CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_WHOLE_POSTER_REVIEW"
   },
   "concept02_binding": {
     "status": "PASS_READBACK_CONFIRMED",
@@ -883,5 +883,16 @@
     "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0",
     "receipt": "evidence/vpd/figma_upload_relay/receipts/P1-CHAZUO-CONCEPT02-197-3-20260921-02.json",
     "source_sha256": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f"
+  },
+  "concept02_editable_reconstruction": {
+    "status": "EXECUTED_WAITING_HUMAN_WHOLE_POSTER_REVIEW",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "reference_frame_id": "197:2",
+    "production_frame_id": "201:2",
+    "clean_photo_node_id": "201:3",
+    "wordmark_vector_id": "203:2",
+    "editable_layer_count": 16,
+    "geometry_audit": "PASS",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_FIGMA_RECONSTRUCTION_20260921.json"
   }
 }
