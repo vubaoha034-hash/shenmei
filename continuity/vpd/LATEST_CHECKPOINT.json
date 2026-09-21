@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 123,
-  "recorded_at": "2026-09-21T10:51:14.259350+00:00",
+  "sequence": 124,
+  "recorded_at": "2026-09-21T11:40:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "保留所有已有成果与原结论，按用户保存的主线计划，先完成首个免训练成熟工作流的完整落地与兼容性审计。当前仅授权只读资料/环境核查和复现方案卡，不授权出图、训练、付费算力、Figma修改或旧实验重试。Attempt 4准备成果保留，排期暂停；已通过字标与设计、原图、冻结输入和已有工具链均不重做。",
+  "current_focus": "The first no-training mature-workflow reproducibility card is complete. The selected candidate is SDXL + Hugging Face Diffusers native IP-Adapter using the InstantStyle style-only block configuration. The method is technically compatible with the project goal and does not require training, but the currently available execution environments are not ready: the ChatGPT runtime is CPU-only without CUDA/Diffusers, and the known local workstation is not selected as the formal SDXL execution target. No image generation, training, paid GPU, Figma write or legacy experiment retry was performed. Existing accepted results and Attempt-4 preparation remain preserved. The next step is read-only selection and verification of a controllable GPU execution environment, including GPU/VRAM, system memory, CUDA/PyTorch, disk, model-download path and output-return path, before any reproduction budget can be authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -170,10 +170,15 @@
     "saved user-approved preservation mainline plan",
     "preserved original assets, verdicts, capsule and frozen payloads",
     "set read-only compatibility audit as sole next action",
-    "preserved Attempt 4 preparation with scheduling hold"
+    "preserved Attempt 4 preparation with scheduling hold",
+    "first_no_training_candidate_selected_instantstyle_ipadapter",
+    "instantstyle_ipadapter_reproducibility_card_complete",
+    "chatgpt_runtime_cpu_only_environment_audited",
+    "no_generation_training_paid_compute_or_figma_write_performed"
   ],
   "incomplete": [
-    "first_no_training_workflow_compatibility_card",
+    "gpu_execution_environment_selection_and_verification",
+    "bounded_reproduction_plan_final_authorization",
     "bounded_reproduction_plan_and_budget",
     "formal_attempt4_h1_fresh_chat_render",
     "formal_attempt4_h1_archive_and_provenance",
@@ -199,9 +204,14 @@
     "Commercial, Golden and Scale remain blocked.",
     "Current user-authorized phase is read-only audit only; no new generation, training, paid compute, Figma writes or experiment retries.",
     "Do not replace an accepted result merely because a third-party method exists.",
-    "Legacy full-state validation is not certified by this documentation update."
+    "Legacy full-state validation is not certified by this documentation update.",
+    "Do not start SDXL/IP-Adapter generation until a controllable GPU environment is selected and verified.",
+    "Do not install/train/start paid compute under the current read-only audit authorization.",
+    "Do not treat the new method as superior before a bounded same-task comparison.",
+    "Do not replace or invalidate any accepted prior result because the new candidate exists.",
+    "Legacy full-state validation remains not certified for resource execution."
   ],
-  "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
+  "next_required_action": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -269,10 +279,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
+  "status": "VPD_P1_FIRST_NO_TRAINING_REPRO_CARD_COMPLETE_GPU_ENVIRONMENT_AUDIT_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "32e517c359c4bbee04c368b45be03fb1b8df91e980cdc42fa2a38b8bc2f2c2b0"
+    "sha256": "c32b53999ce6bc9396606f4f56fff51bcc4bfbc93ef2849326df6d222728b2e1"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -847,5 +857,19 @@
     "prior_preparation_preserved": true,
     "resume_requires": "COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED",
     "full_state_validator_required_before_resource_execution": true
+  },
+  "mature_workflow_audit": {
+    "status": "FIRST_CANDIDATE_REPRO_CARD_COMPLETE_ENVIRONMENT_NOT_READY",
+    "candidate": "SDXL_DIFFUSERS_IPADAPTER_INSTANTSTYLE_STYLE_ONLY",
+    "card_path": "evidence/vpd/mature_workflow_audit_v1/INSTANTSTYLE_IPADAPTER_REPRODUCIBILITY_CARD_20260921.md",
+    "card_git_blob_sha": "766e91c02c6e17f3216afb2c84ff45735043b006",
+    "no_training": true,
+    "current_generation_budget": 0,
+    "current_training_budget": 0,
+    "current_paid_compute_budget": 0,
+    "current_figma_write_budget": 0,
+    "method_compatibility": "PASS_FOR_BOUNDED_REPRODUCTION_CANDIDATE",
+    "execution_environment": "NOT_READY",
+    "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION"
   }
 }
