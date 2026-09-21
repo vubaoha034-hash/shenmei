@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 112,
-  "recorded_at": "2026-09-21T02:15:00Z",
+  "sequence": 113,
+  "recorded_at": "2026-09-21T03:18:30Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Holistic Chazuo Concept 02 has now been rendered exactly once within the frozen visible-concept budget and received strong human directional feedback as the best recent Chazuo result. A dedicated Figma pixel-reference frame 197:2 and raster target 197:3 were created without overwriting prior evidence. A direct chat-runtime POST attempt to the Figma submit URL failed because that runtime lacks public egress; this is not a new blocker because the project already has a deployed and previously proven encrypted GitHub Actions Figma Upload Relay V1. The relay is now the mandatory route for raster binding. Do not rerender Concept 02. Bind the existing original raster to 197:3 through the established relay, independently read back the image fill and screenshot 197:2, then proceed to editable Figma reconstruction of typography and design layers.",
+  "current_focus": "Chazuo Holistic Concept 02 is now bound as the real 1024x1536 raster reference in Figma frame 197:2. The existing encrypted GitHub Actions Figma Upload Relay V1 returned HTTP 200 / UPLOAD_PASS, and independent Figma readback confirms node 197:3 has IMAGE fill hash ed2119fd27ec6bdef468f81ede96607aad6673c0 matching the relay receipt. The first relay attempt was transport-successful but did not place because the newly created target node had mistakenly been locked=true; this violated the project's existing invariant that PHOTO_RAW_LOCKED is semantic identity only. The target was corrected to locked=false and one controlled retry passed. The upload/binding blocker is closed. The flattened reference still contains rasterized generated typography, so it is reference evidence only and cannot be called an editable Figma reproduction. Next build a clean-photo-base production frame and reconstruct typography, wordmark, supporting hierarchy, lines and layout as editable Figma layers while preserving the accepted photographic composition.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -116,12 +116,18 @@
     "p1_chazuo_holistic_concept02_human_strong_directional_positive",
     "p1_chazuo_holistic_concept02_figma_pixel_reference_frame_created",
     "figma_upload_direct_runtime_route_regression_diagnosed",
-    "figma_upload_relay_v1_mandatory_route_guard_recorded"
+    "figma_upload_relay_v1_mandatory_route_guard_recorded",
+    "p1_chazuo_concept02_existing_relay_transport_pass",
+    "p1_chazuo_concept02_target_lock_regression_corrected",
+    "p1_chazuo_concept02_controlled_relay_retry_pass",
+    "p1_chazuo_concept02_figma_image_fill_readback_pass",
+    "p1_chazuo_concept02_full_frame_screenshot_verified",
+    "p1_chazuo_concept02_raster_binding_blocker_closed"
   ],
   "incomplete": [
-    "p1_chazuo_concept02_bind_original_raster_to_197_3_via_existing_relay",
-    "p1_chazuo_concept02_independent_figma_readback_and_frame_screenshot",
+    "p1_chazuo_concept02_clean_photo_base",
     "p1_chazuo_concept02_editable_figma_typography_and_design_layer_reconstruction",
+    "p1_chazuo_concept02_human_reconstruction_review",
     "p1_typography_support_hierarchy_bench",
     "p6_reintegration_after_typography_repair",
     "candidate_promotion",
@@ -130,13 +136,13 @@
     "scale"
   ],
   "blocked": [
-    "Do not rerender Concept 02 before Figma reconstruction/readback review.",
-    "Do not use direct ChatGPT/container HTTP POST as the default path for Figma raster submit URLs; use the existing relay.",
-    "Do not ask the user to switch to local Codex/manual upload unless the established relay has a specific verified failure.",
+    "Do not rerender a different Concept 02 direction.",
+    "Do not treat the flattened reference raster as an editable final Figma design.",
+    "Do not set production photo target nodes locked=true; PHOTO_RAW_LOCKED is semantic identity only.",
     "Do not copy Shanyeji fixed composition, brush surface, palette, motif or exact wordmark assets.",
-    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked."
+    "Formal P6, T2, Candidate promotion, Commercial, Golden and Scale remain blocked until editable reconstruction and human review."
   ],
-  "next_required_action": "P1_BIND_CHAZUO_CONCEPT02_RASTER_TO_197_3_VIA_EXISTING_FIGMA_UPLOAD_RELAY_V1_THEN_READBACK",
+  "next_required_action": "P1_BUILD_CHAZUO_CONCEPT02_CLEAN_PHOTO_BASE_AND_EDITABLE_FIGMA_RECONSTRUCTION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -204,10 +210,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_CHAZUO_CONCEPT02_DIRECTIONAL_POSITIVE_FIGMA_RELAY_BINDING_REQUIRED",
+  "status": "VPD_P1_CHAZUO_CONCEPT02_PIXEL_REFERENCE_BOUND_EDITABLE_FIGMA_RECONSTRUCTION_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "10ffb4f089f357f1f14848c95a550717e83d145382f2e6746fbc7ad446c7da9b"
+    "sha256": "9398214254fecbcd0219e01687862d0a62bff16d3416256e1d7c1ea4c9fd59a2"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -233,7 +239,7 @@
     }
   },
   "typography_repair": {
-    "status": "CONCEPT02_DIRECTIONAL_POSITIVE_FIGMA_RELAY_BINDING_REQUIRED",
+    "status": "CONCEPT02_PIXEL_REFERENCE_BOUND_EDITABLE_FIGMA_RECONSTRUCTION_READY",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
@@ -249,7 +255,7 @@
     },
     "T2_allowed": false,
     "P6_reintegration_allowed": false,
-    "next_required_action": "P1_BIND_CHAZUO_CONCEPT02_RASTER_TO_197_3_VIA_EXISTING_FIGMA_UPLOAD_RELAY_V1_THEN_READBACK",
+    "next_required_action": "P1_BUILD_CHAZUO_CONCEPT02_CLEAN_PHOTO_BASE_AND_EDITABLE_FIGMA_RECONSTRUCTION",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
@@ -548,9 +554,20 @@
       "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
       "frame_id": "197:2",
       "raster_node_id": "197:3",
-      "raster_bound": false
+      "raster_bound": true,
+      "raster_node_locked": false,
+      "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0",
+      "screenshot_verified": true
     },
-    "rerender_allowed": false
+    "rerender_allowed": false,
+    "binding_evidence": {
+      "pass_receipt": "evidence/vpd/figma_upload_relay/receipts/P1-CHAZUO-CONCEPT02-197-3-20260921-02.json",
+      "source_sha256": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f",
+      "source_size": 2110004,
+      "first_attempt_note": "UPLOAD_PASS transport receipt but no Figma fill because target node was incorrectly locked=true.",
+      "controlled_retry": "PASS_AFTER_TARGET_UNLOCK",
+      "readback_image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0"
+    }
   },
   "figma_upload_route_guard": {
     "status": "MANDATORY",
