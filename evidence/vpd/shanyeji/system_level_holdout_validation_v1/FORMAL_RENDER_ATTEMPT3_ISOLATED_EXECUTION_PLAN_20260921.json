@@ -1,0 +1,47 @@
+{
+  "schema_version": "vpd-formal-render-attempt3-isolation-plan/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT3_ISOLATION_PLAN",
+  "created_at": "2026-09-21T07:55:00Z",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
+  "problem_fixed": "Attempt 2 returned collage/series outputs and prior-project surface behavior instead of exact frozen challenge semantics.",
+  "change_scope": "EXECUTION_CONTEXT_ONLY",
+  "invariants": [
+    "Do not modify or paraphrase any frozen payload.",
+    "Use exactly one authorized R1C anchor and no other image.",
+    "Run H1 then H2 then H3 then H4.",
+    "Each challenge runs in a separate fresh ChatGPT conversation with no previous generated images in that conversation.",
+    "Exactly one visible generation per challenge.",
+    "No hidden variants, best-of-N, retries before formal evaluation, Figma, or aesthetic selection.",
+    "After each challenge, archive raw output and provenance before starting the next fresh chat."
+  ],
+  "fail_closed": [
+    "Fresh chat contains any prior VPD generated image.",
+    "Anchor cannot be loaded and SHA verified.",
+    "Payload hash mismatch.",
+    "More than one reference image is present.",
+    "Renderer returns multiple panels/series instead of one native challenge output.",
+    "Aspect ratio materially violates the frozen challenge requirement.",
+    "Required communication job is absent or replaced.",
+    "Any pre-evaluation retry is attempted."
+  ],
+  "sequence": {
+    "H1": {
+      "fresh_chat": true,
+      "run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt"
+    },
+    "H2": {
+      "fresh_chat": true,
+      "run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H2_FRESH_CHAT_20260921.txt"
+    },
+    "H3": {
+      "fresh_chat": true,
+      "run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H3_FRESH_CHAT_20260921.txt"
+    },
+    "H4": {
+      "fresh_chat": true,
+      "run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H4_FRESH_CHAT_20260921.txt"
+    }
+  },
+  "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT"
+}
