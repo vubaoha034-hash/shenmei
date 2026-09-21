@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 126,
-  "recorded_at": "2026-09-21T11:50:00Z",
+  "sequence": 127,
+  "recorded_at": "2026-09-21T12:15:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "User corrected a route error: external SDXL/RunPod must not become the default renderer merely because mature external workflows were studied. ChatGPT Images is restored as the primary renderer for VPD. InstantStyle/IP-Adapter/LoRA/ControlNet and the saved RunPod environment card are retained only as research evidence and optional future external baselines. No Pod was created, no money was spent, no external model was run, and all prior accepted visual assets remain unchanged. The next step is read-only: map mature reference-conditioning/control logic onto native ChatGPT Images capabilities and define a same-renderer bounded A/B plan before any new generation.",
+  "current_focus": "The mature-method-to-native-renderer mapping is complete and Stage 1 same-renderer A/B inputs are frozen. ChatGPT Images remains the sole active renderer. Stage 1 uses exactly one approved R1C reference, one new rice-granary content task, 3:4 portrait, photo-only visual direction, and exactly one output per route. Route A is the direct-reference native baseline; Route B is identical except for six compact VPD mechanism controls. Both routes must run in separate fresh chats with no prior VPD generated pixels. No image has been generated yet. Generation remains blocked until the user explicitly authorizes the two-image Stage 1 budget.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -181,10 +181,17 @@
     "paid_compute_authorization_remains_zero",
     "chatgpt_images_primary_renderer_restored",
     "runpod_external_model_route_reclassified_research_only",
-    "zero_external_compute_spend_confirmed"
+    "zero_external_compute_spend_confirmed",
+    "chatgpt_images_native_control_mapping_complete",
+    "stage1_rice_granary_ab_task_frozen",
+    "stage1_route_a_b_fresh_chat_runners_frozen",
+    "stage1_generation_not_started"
   ],
   "incomplete": [
-    "mature_method_logic_to_chatgpt_images_mapping_card",
+    "stage1_two_image_generation_authorization",
+    "stage1_route_a_generation",
+    "stage1_route_b_generation",
+    "stage1_blind_human_pixel_review",
     "same_renderer_bounded_ab_plan",
     "full_state_validator_pass_before_resource_execution",
     "bounded_reproduction_plan_final_authorization",
@@ -221,9 +228,13 @@
     "Do not provision external GPU/model infrastructure as the default VPD route.",
     "Do not replace ChatGPT Images before a controlled test proves a missing capability that matters to the project.",
     "Current phase is read-only method-to-native-renderer mapping; no new image generation yet.",
-    "Do not cancel or rewrite prior accepted assets or frozen experiment evidence."
+    "Do not cancel or rewrite prior accepted assets or frozen experiment evidence.",
+    "Stage 1 generation budget remains zero until the user explicitly authorizes exactly two ChatGPT Images outputs.",
+    "Do not expand to Stage 2 until both Stage 1 routes are technically valid and the human blind review is complete.",
+    "Do not change the frozen Stage 1 task, reference, aspect, or route prompts after authorization.",
+    "Do not expose A/B method labels to the user before the blind pixel verdict."
   ],
-  "next_required_action": "P1_MAP_MATURE_WORKFLOW_LOGIC_TO_CHATGPT_IMAGES_NATIVE_CONTROL_READ_ONLY",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_TO_GENERATE_STAGE1_TWO_CHATGPT_IMAGES",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -291,10 +302,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_CHATGPT_IMAGES_PRIMARY_RENDERER_RESTORED_METHOD_MAPPING_REQUIRED",
+  "status": "VPD_P3_CHATGPT_IMAGES_STAGE1_AB_FROZEN_WAITING_TWO_IMAGE_AUTHORIZATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "b56cb1404b0953a3aa38900c879a25a135f2b53333dc42d9b9e89dae3ee70add"
+    "sha256": "a10f7e080c81b81a977456352eb9724b7c68514a7a49597893b23c4e4a76d3a5"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -315,8 +326,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-CHATGPT-IMAGES-PRIMARY-RENDERER-RESTORED-20260921-001",
-      "event_hash": "22d7e11bdf19a4854958a42d5b92da1aa7057312eb01c0e780d9062286c8be97"
+      "event_id": "EVT-VPD-P3-CHATGPT-IMAGES-STAGE1-AB-FROZEN-20260921-001",
+      "event_hash": "a9dcb2cc75bc40a1813a28996494745bc85cae26030d5d535f3f79c327042406"
     }
   },
   "typography_repair": {
@@ -911,5 +922,29 @@
     "current_generation_budget": 0,
     "current_external_compute_budget_usd": 0,
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
+  },
+  "native_chatgpt_images_ab": {
+    "status": "STAGE1_FROZEN_NOT_GENERATED",
+    "renderer": "CHATGPT_IMAGES",
+    "mapping_card": {
+      "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
+      "git_blob_sha": "a93c5de8627b5a427d73dc2c312b46344759dd8c"
+    },
+    "freeze_pack": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TASK_AND_AB_FREEZE_20260921.json",
+      "git_blob_sha": "abeb8c942cd47d834292721613381ee8255e9aef"
+    },
+    "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "routes": [
+      "REFERENCE_NATIVE_BASELINE",
+      "REFERENCE_PLUS_COMPACT_VPD"
+    ],
+    "requested_aspect": "3:4 PORTRAIT",
+    "output_count_if_authorized": 2,
+    "current_generation_authorization": 0,
+    "stage2_locked": true,
+    "route_A_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
+    "route_B_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_B_FRESH_CHAT_20260921.txt"
   }
 }
