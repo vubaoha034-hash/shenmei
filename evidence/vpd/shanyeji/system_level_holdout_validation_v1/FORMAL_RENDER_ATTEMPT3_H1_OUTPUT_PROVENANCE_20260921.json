@@ -1,0 +1,76 @@
+{
+  "schema_version": "vpd-formal-render-attempt3-h1-output-provenance/v1",
+  "artifact_type": "FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE",
+  "recorded_at": "2026-09-21T08:20:00Z",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "attempt_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT3",
+  "experiment_id": "SHY-SYS-HOLDOUT-V1-H1",
+  "challenge_id": "H1",
+  "execution_scope": "ONE_CHALLENGE_PER_FRESH_CHAT",
+  "run_file": {
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt",
+    "git_blob_sha": "85bd6c6713cab22c38a3263ff6ea3eb0ebb51340"
+  },
+  "frozen_payload": {
+    "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H1_CONTROLLER_PAYLOAD.json",
+    "expected_sha256": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "verified_sha256": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "hash_match": true,
+    "modified": false
+  },
+  "runtime_visual_anchor": {
+    "reference_image_count": 1,
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "expected_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "verified_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "hash_match": true,
+    "bytes": 142983,
+    "dimensions": [
+      960,
+      1280
+    ],
+    "pixels_loaded_and_inspected": true,
+    "additional_reference_images_used": false
+  },
+  "generation": {
+    "visible_generation_count": 1,
+    "requested_output_count": 1,
+    "hidden_variants_requested": false,
+    "best_of_n_requested": false,
+    "retry_count": 0,
+    "figma_executed": false,
+    "evaluation_executed": false,
+    "capsule_modified": false,
+    "commercial_golden_scale_executed": false,
+    "gen_id": "6e48eae7-213a-46a9-8ac6-9482838dcd88",
+    "parent_gen_id": null,
+    "conversation_output_file_id": "file_000000000ef081fd86509ab1c76addff",
+    "output_sha256": "872ee44543a33419a6b939d84dce4503cc749d8e4da903b31c2b21e575d63e0a",
+    "output_bytes": 2217561,
+    "output_format": "PNG",
+    "output_dimensions": [
+      1536,
+      1024
+    ],
+    "frozen_expected_aspect": "3:4 PORTRAIT",
+    "renderer_metadata_prompt_field": ""
+  },
+  "protocol_observation": {
+    "status": "FAIL_CLOSED",
+    "reasons": [
+      "OUTPUT_DIMENSIONS_MATERIALLY_VIOLATE_FROZEN_3_4_PORTRAIT_REQUIREMENT",
+      "VERBATIM_RENDERER_INSTRUCTION_TRANSPORT_NOT_PROVABLE_FROM_RETURNED_RENDERER_METADATA"
+    ],
+    "aesthetic_quality_judgment_made": false,
+    "formal_holdout_verdict_made": false,
+    "retry_allowed_in_this_chat": false,
+    "retry_attempted": false
+  },
+  "stop_state": {
+    "generator_chat_must_stop": true,
+    "H2_must_remain_blocked": true,
+    "reason": "Attempt 3 isolation plan prohibits pre-evaluation retry and requires fail-closed on material aspect violation."
+  }
+}
