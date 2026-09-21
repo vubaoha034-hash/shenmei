@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 102,
-    "sha256": "32e517c359c4bbee04c368b45be03fb1b8df91e980cdc42fa2a38b8bc2f2c2b0",
+    "revision": 103,
+    "sha256": "c32b53999ce6bc9396606f4f56fff51bcc4bfbc93ef2849326df6d222728b2e1",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,17 +956,20 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED",
+    "status": "VPD_P1_FIRST_NO_TRAINING_REPRO_CARD_COMPLETE_GPU_ENVIRONMENT_AUDIT_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY",
+    "next_required_action": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "READ_ONLY_COMPATIBILITY_AUDIT",
+    "mode": "READ_ONLY_GPU_ENVIRONMENT_AUDIT",
     "existing_results_preserved": true,
     "attempt4_scheduling": "PAUSED_NOT_CANCELLED",
-    "current_chat_render_eligible": false
+    "current_chat_render_eligible": false,
+    "candidate": "SDXL_DIFFUSERS_IPADAPTER_INSTANTSTYLE_STYLE_ONLY",
+    "reproducibility_card": "evidence/vpd/mature_workflow_audit_v1/INSTANTSTYLE_IPADAPTER_REPRODUCIBILITY_CARD_20260921.md",
+    "execution_environment": "NOT_READY"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -998,5 +1001,19 @@
       "event_id": "EVT-VPD-MAINLINE-PRESERVATION-USER-PLAN-20260921-001",
       "event_hash": "14e568ae5bcd884bcb29422285933cbbc57889c5109b57e7a161e0efa3884190"
     }
+  },
+  "mature_workflow_audit": {
+    "status": "FIRST_CANDIDATE_REPRO_CARD_COMPLETE_ENVIRONMENT_NOT_READY",
+    "candidate": "SDXL_DIFFUSERS_IPADAPTER_INSTANTSTYLE_STYLE_ONLY",
+    "card_path": "evidence/vpd/mature_workflow_audit_v1/INSTANTSTYLE_IPADAPTER_REPRODUCIBILITY_CARD_20260921.md",
+    "card_git_blob_sha": "766e91c02c6e17f3216afb2c84ff45735043b006",
+    "no_training": true,
+    "current_generation_budget": 0,
+    "current_training_budget": 0,
+    "current_paid_compute_budget": 0,
+    "current_figma_write_budget": 0,
+    "method_compatibility": "PASS_FOR_BOUNDED_REPRODUCTION_CANDIDATE",
+    "execution_environment": "NOT_READY",
+    "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION"
   }
 }
