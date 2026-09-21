@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 125,
-  "recorded_at": "2026-09-21T11:35:00Z",
+  "sequence": 126,
+  "recorded_at": "2026-09-21T11:50:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "A concrete GPU execution environment has now been selected for the first bounded no-training reproduction: RunPod Secure Cloud, 1x NVIDIA A40 48GB, using the official RunPod PyTorch 2.8 / Python 3.11 / CUDA 12.8.1 container. The environment is selected but NOT provisioned. Current public Secure Cloud pricing lists A40 48GB at $0.49/hour, lower than Secure Cloud RTX 4090 24GB at $0.74/hour; the A40 is preferred because the first goal is low-variance reproducibility and VRAM headroom rather than peak throughput. A proposed future smoke-test cap is 2 hours and $2 total, but paid authorization remains $0. No image generation, training, paid compute, Figma write or legacy experiment retry was performed. Before any paid resource can be started, the existing full-state validator must be made compatible with the saved read-only audit action and must pass.",
+  "current_focus": "User corrected a route error: external SDXL/RunPod must not become the default renderer merely because mature external workflows were studied. ChatGPT Images is restored as the primary renderer for VPD. InstantStyle/IP-Adapter/LoRA/ControlNet and the saved RunPod environment card are retained only as research evidence and optional future external baselines. No Pod was created, no money was spent, no external model was run, and all prior accepted visual assets remain unchanged. The next step is read-only: map mature reference-conditioning/control logic onto native ChatGPT Images capabilities and define a same-renderer bounded A/B plan before any new generation.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -178,12 +178,15 @@
     "gpu_environment_candidates_compared",
     "runpod_secure_a40_48gb_selected_not_provisioned",
     "gpu_environment_card_saved",
-    "paid_compute_authorization_remains_zero"
+    "paid_compute_authorization_remains_zero",
+    "chatgpt_images_primary_renderer_restored",
+    "runpod_external_model_route_reclassified_research_only",
+    "zero_external_compute_spend_confirmed"
   ],
   "incomplete": [
-    "full_state_validator_read_only_action_compatibility_repair",
+    "mature_method_logic_to_chatgpt_images_mapping_card",
+    "same_renderer_bounded_ab_plan",
     "full_state_validator_pass_before_resource_execution",
-    "user_paid_smoke_test_authorization",
     "bounded_reproduction_plan_final_authorization",
     "bounded_reproduction_plan_and_budget",
     "formal_attempt4_h1_fresh_chat_render",
@@ -208,20 +211,19 @@
     "Do not modify or paraphrase frozen H1 renderer_instruction.",
     "Do not attach any image except the exact R1C canonical anchor.",
     "Commercial, Golden and Scale remain blocked.",
-    "Current user-authorized phase is read-only audit only; no new generation, training, paid compute, Figma writes or experiment retries.",
     "Do not replace an accepted result merely because a third-party method exists.",
     "Legacy full-state validation is not certified by this documentation update.",
-    "Do not start SDXL/IP-Adapter generation until a controllable GPU environment is selected and verified.",
-    "Do not install/train/start paid compute under the current read-only audit authorization.",
     "Do not treat the new method as superior before a bounded same-task comparison.",
     "Do not replace or invalidate any accepted prior result because the new candidate exists.",
     "Legacy full-state validation remains not certified for resource execution.",
-    "Do not create or fund a RunPod Pod before full-state validator compatibility is repaired and verified.",
-    "Paid compute authorization remains $0; the proposed $2 cap is not an authorization.",
     "Do not auto-switch to a more expensive GPU if A40 Secure Cloud is unavailable.",
-    "Do not start image generation during environment or validator preflight."
+    "Do not start image generation during environment or validator preflight.",
+    "Do not provision external GPU/model infrastructure as the default VPD route.",
+    "Do not replace ChatGPT Images before a controlled test proves a missing capability that matters to the project.",
+    "Current phase is read-only method-to-native-renderer mapping; no new image generation yet.",
+    "Do not cancel or rewrite prior accepted assets or frozen experiment evidence."
   ],
-  "next_required_action": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION",
+  "next_required_action": "P1_MAP_MATURE_WORKFLOW_LOGIC_TO_CHATGPT_IMAGES_NATIVE_CONTROL_READ_ONLY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -289,10 +291,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P1_RUNPOD_SECURE_A40_SELECTED_VALIDATOR_COMPATIBILITY_REQUIRED",
+  "status": "VPD_P1_CHATGPT_IMAGES_PRIMARY_RENDERER_RESTORED_METHOD_MAPPING_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5874f0f5a729c2e0da034dd258ff72713c54472af57bfc7a21f618042aa2fd8b"
+    "sha256": "b56cb1404b0953a3aa38900c879a25a135f2b53333dc42d9b9e89dae3ee70add"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -313,8 +315,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P1-RUNPOD-A40-ENVIRONMENT-SELECTED-20260921-001",
-      "event_hash": "f5f23117265b08574bd5c07f6c6c7e8fd09c80614d02e1983ea0fc3bd96a79c4"
+      "event_id": "EVT-VPD-P1-CHATGPT-IMAGES-PRIMARY-RENDERER-RESTORED-20260921-001",
+      "event_hash": "22d7e11bdf19a4854958a42d5b92da1aa7057312eb01c0e780d9062286c8be97"
     }
   },
   "typography_repair": {
@@ -883,7 +885,7 @@
     "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION"
   },
   "gpu_environment_audit": {
-    "status": "SELECTED_NOT_PROVISIONED",
+    "status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE",
     "provider": "RunPod",
     "cloud_tier": "Secure Cloud",
     "gpu": "NVIDIA A40",
@@ -898,6 +900,16 @@
     "environment_card_git_blob_sha": "5fba8ad088a0c39212702b4e4c3deea5653b8f9e",
     "actual_pod_created": false,
     "actual_runtime_verified": false,
-    "next": "P1_REPAIR_AND_VERIFY_FULL_STATE_VALIDATOR_FOR_READ_ONLY_AUDIT_NO_RESOURCE_EXECUTION"
+    "next": null
+  },
+  "primary_renderer_policy": {
+    "status": "ACTIVE",
+    "primary_renderer": "CHATGPT_IMAGES",
+    "external_models_role": "RESEARCH_EVIDENCE_OPTIONAL_FUTURE_BASELINE_ONLY",
+    "correction_record": "evidence/vpd/mainline_corrections/CHATGPT_IMAGES_PRIMARY_RENDERER_CORRECTION_20260921.md",
+    "same_renderer_ab_priority": true,
+    "current_generation_budget": 0,
+    "current_external_compute_budget_usd": 0,
+    "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   }
 }
