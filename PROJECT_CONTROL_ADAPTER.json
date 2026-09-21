@@ -856,8 +856,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 99,
-    "sha256": "2cd8a4fbdb0abb236d32595ac28d12e6e4cfdc8a1a733cd1363e64a072f62341",
+    "revision": 101,
+    "sha256": "f65b31ead4e2824c5142a7fefbfeca0f6746f954ecb2a5a74a217edd10e1cd8b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -951,13 +951,15 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT3_ISOLATED_RENDER_READY_H1_FRESH_CHAT_REQUIRED",
+    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "EXECUTE_ATTEMPT3_H1_IN_FRESH_ISOLATED_CHAT",
-    "attempt3_identity": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_IDENTITY_20260921.json",
-    "attempt3_plan": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_ISOLATED_EXECUTION_PLAN_20260921.json",
-    "h1_run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT3_H1_FRESH_CHAT_20260921.txt",
-    "isolation_mode": "ONE_CHALLENGE_PER_FRESH_CHAT",
+    "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+    "attempt3_settlement": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_PROTOCOL_FAILURE_SETTLEMENT_20260921.json",
+    "attempt4_identity": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_IDENTITY_20260921.json",
+    "attempt4_plan": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_INVOCATION_REPAIR_PLAN_20260921.json",
+    "h1_run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT4_H1_FRESH_CHAT_20260921.txt",
+    "explicit_aspect_control_required": true,
+    "natural_language_aspect_only_prohibited": true,
     "current_chat_render_eligible": false
   }
 }
