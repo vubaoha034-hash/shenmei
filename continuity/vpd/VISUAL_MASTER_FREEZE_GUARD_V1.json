@@ -1,0 +1,150 @@
+{
+  "schema_version": "vpd-visual-master-freeze-guard/v1",
+  "status": "MANDATORY_CURRENT_PROJECT_CONTROL",
+  "recorded_at": "2026-09-21T04:55:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "purpose": "Prevent visual regression caused by repeatedly reconstructing an already-successful image from prose, changing passed dimensions while repairing a failed one, or abandoning previously proven execution routes.",
+  "authority_boundary": {
+    "scope": "Current VPD project execution control only.",
+    "not_a_global_aesthetic_rule": true,
+    "does_not_prescribe_style": true,
+    "human_pixel_judgment_remains_authoritative": true
+  },
+  "core_invariants": [
+    {
+      "id": "G1_PIXEL_ASSET_OUTRANKS_PROMPT",
+      "rule": "When an actual accepted or best-so-far visual asset exists, that asset is the primary visual authority. A prose prompt, summary, distilled rule, or recreated description may not substitute for the asset."
+    },
+    {
+      "id": "G2_PROTECT_BEST_SO_FAR",
+      "rule": "When the user identifies a result as best-so-far but does not explicitly call it final, preserve it as BEST_SO_FAR_PROTECTED. Further exploration must use sibling variants and must not overwrite the protected asset."
+    },
+    {
+      "id": "G3_DIMENSION_SCOPED_FREEZE",
+      "rule": "Human acceptance is scoped to the dimension actually accepted. If layout and wordmark pass but photography fails, freeze layout and wordmark and leave only photography open. Do not reinterpret a local fail as permission to redesign passed dimensions."
+    },
+    {
+      "id": "G4_LOCAL_DELTA_ONLY",
+      "rule": "After any dimension is frozen, the next iteration may modify only the explicitly open failing dimension or target node(s). A full-image rerender or full-layout rebuild is prohibited unless the user explicitly reopens the frozen dimensions."
+    },
+    {
+      "id": "G5_NO_PROMPT_RECONSTRUCTION_OF_MASTER",
+      "rule": "Do not recreate a protected master from text when the real pixel asset is available. Prefer exact asset reuse, layer replacement, masks, local edits, or sibling variants anchored to the master."
+    },
+    {
+      "id": "G6_CANONICAL_MASTER_NEVER_OVERWRITE",
+      "rule": "Keep the protected pixel master/reference intact and addressable. Production experiments must be created in sibling nodes/frames or reversible target layers. Destructive overwrite of the canonical master is prohibited."
+    },
+    {
+      "id": "G7_REGRESSION_REJECT_AND_ROLLBACK",
+      "rule": "If a candidate improves the open dimension but degrades any frozen dimension, reject that candidate and return to the frozen baseline. Do not continue repairing from the degraded candidate."
+    },
+    {
+      "id": "G8_DIFFERENT_IS_NOT_BETTER",
+      "rule": "A visual change is not evidence of improvement. Promotion requires direct comparison against the protected baseline and, when the user is the human gate, actual-pixel human review."
+    },
+    {
+      "id": "G9_ONE_OPEN_PROBLEM_PER_LOOP",
+      "rule": "Keep one explicitly open visual problem per iteration whenever possible. Do not simultaneously optimize unrelated dimensions because that destroys causal attribution and increases drift."
+    },
+    {
+      "id": "G10_SOLVED_ROUTE_REUSE",
+      "rule": "Before inventing or retrying an execution path, read the current task lock and proven route evidence. If a route is already verified, reuse it. A new route is allowed only after a specific verified failure of the existing route."
+    },
+    {
+      "id": "G11_EVIDENCE_BEFORE_PROMOTION",
+      "rule": "Record asset identity/provenance for protected and candidate states where available: file reference, generation id, Figma frame/node ids, image hash, SHA-256, human verdict, and exact frozen/open dimensions."
+    },
+    {
+      "id": "G12_VISIBLE_CANDIDATE_BUDGET",
+      "rule": "Do not silently create many hidden alternatives after a master is protected. Default to one visible candidate per open-problem iteration unless the current task lock explicitly authorizes another budget."
+    }
+  ],
+  "human_verdict_mapping": {
+    "best_so_far_examples": [
+      "目前最好",
+      "最近最好看",
+      "这个最好"
+    ],
+    "best_so_far_state": "BEST_SO_FAR_PROTECTED",
+    "explicit_dimension_pass_examples": [
+      "这个行",
+      "这个通过",
+      "字标行",
+      "整体行"
+    ],
+    "explicit_dimension_pass_state": "DIMENSION_FROZEN",
+    "explicit_final_examples": [
+      "定了",
+      "定稿",
+      "最终版",
+      "不要再动"
+    ],
+    "explicit_final_state": "FINAL_FROZEN",
+    "ambiguity_rule": "If scope is ambiguous, preserve the existing best asset and do not infer permission to overwrite passed dimensions."
+  },
+  "current_chazuo_freeze_map": {
+    "canonical_pixel_reference": {
+      "frame_id": "197:2",
+      "raster_node_id": "197:3",
+      "state": "PROTECTED_IMMUTABLE_REFERENCE",
+      "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0"
+    },
+    "editable_production_frame": {
+      "frame_id": "201:2",
+      "state": "PARTIALLY_FROZEN"
+    },
+    "frozen_dimensions": [
+      "overall composition and hierarchy",
+      "茶作 wordmark",
+      "support typography system",
+      "reading-order graph",
+      "right vertical copy",
+      "brand mark and closure system",
+      "tonal/edge-density design-layer structure"
+    ],
+    "frozen_nodes": [
+      "201:4",
+      "201:5",
+      "203:2",
+      "203:13",
+      "203:14",
+      "203:15",
+      "203:16",
+      "203:17",
+      "203:18",
+      "203:19",
+      "203:22",
+      "203:23",
+      "203:24",
+      "203:25",
+      "203:26"
+    ],
+    "open_dimension": "photographic realism / AI-feel reduction only",
+    "open_node": "201:3",
+    "current_photo_baseline_hash": "0ecf1c0819b959ef3265db0139022a18e700e4cb",
+    "current_human_verdict": {
+      "overall_design": "PASS_FROZEN",
+      "wordmark": "PASS_FROZEN",
+      "photo_base": "FAIL_AI_FEEL_OPEN_REPAIR"
+    }
+  },
+  "mandatory_next_loop": {
+    "allowed": [
+      "Create at most one visible photography-repair candidate.",
+      "Change only PHOTO_BASE_CLEAN 201:3 or create a sibling photo candidate for comparison.",
+      "Keep all frozen design nodes unchanged.",
+      "Show the integrated full poster to the user for actual-pixel review.",
+      "Promote the photo only if the user says the AI-feel problem is materially improved without harming the accepted design."
+    ],
+    "prohibited": [
+      "Generate a new Concept 03.",
+      "Rebuild the accepted composition from prompt text.",
+      "Change the accepted wordmark while fixing photography.",
+      "Change support hierarchy while fixing photography.",
+      "Overwrite or delete frame 197:2.",
+      "Treat a merely different photo as an automatic improvement.",
+      "Retry a solved upload route from scratch."
+    ]
+  }
+}
