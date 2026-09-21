@@ -1,0 +1,155 @@
+name: VPD record user mainline once (20260921)
+on:
+  push:
+    branches: [visual-program-distillation-v2-photography-design-20260814]
+    paths: [.github/workflows/vpd-record-mainline-20260921.yml]
+permissions:
+  contents: write
+concurrency:
+  group: vpd-user-mainline-save-20260921
+  cancel-in-progress: false
+jobs:
+  record:
+    if: github.repository == 'vubaoha034-hash/shenmei'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Record plan, preserve prior work, verify and hold execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import copy, hashlib, json, os, subprocess
+          from datetime import datetime, timezone
+
+          BASE = '32fc15181c09f273563fe79a91813f2fca7d4835'
+          PLAN_COMMIT = '900cd626af6d1f3160b73d0c3c39a8e989645f1b'
+          BRANCH = 'visual-program-distillation-v2-photography-design-20260814'
+          PLAN = 'continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md'
+          RECEIPT = 'evidence/vpd/mainline_preservation_v1/MAINLINE_SAVE_RECEIPT_20260921.json'
+          SELF = '.github/workflows/vpd-record-mainline-20260921.yml'
+          LP = 'continuity/vpd/CURRENT_TASK_LOCK.json'
+          CP = 'continuity/vpd/LATEST_CHECKPOINT.json'
+          AP = 'PROJECT_CONTROL_ADAPTER.json'
+          ROAD = 'VPD_PROJECT_ROADMAP.md'
+          LEDGER = 'continuity/vpd/state_ledger/commercial_design_pipeline.jsonl'
+          STATUS = 'VPD_P1_MATURE_WORKFLOW_AUDIT_READ_ONLY_EXISTING_RESULTS_PRESERVED'
+          NEXT = 'P1_AUDIT_FIRST_NO_TRAINING_WORKFLOW_COMPATIBILITY_READ_ONLY'
+
+          def git(*args):
+              return subprocess.check_output(['git', *args])
+          def digest(b):
+              return hashlib.sha256(b).hexdigest()
+          def save(p, obj):
+              Path(p).parent.mkdir(parents=True, exist_ok=True)
+              Path(p).write_text(json.dumps(obj, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          def validator():
+              p = subprocess.run(['python', 'scripts/verify_visual_memory.py', '--vpd-state', '--status-card'], capture_output=True, text=True, timeout=60)
+              return {'exit_code':p.returncode, 'stdout':p.stdout[-8000:], 'stderr':p.stderr[-2000:], 'pass':p.returncode==0}
+
+          assert os.environ.get('GITHUB_REPOSITORY') == 'vubaoha034-hash/shenmei'
+          assert os.environ.get('GITHUB_REF') == 'refs/heads/'+BRANCH
+          assert git('rev-parse', 'HEAD^').decode().strip() == PLAN_COMMIT, 'Concurrent advance: stop'
+          assert not Path(RECEIPT).exists(), 'Already applied: stop'
+          assert digest(Path(PLAN).read_bytes()) == '97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0'
+
+          # User-authorized record/hold update only. Preserve the old validator;
+          # a failing result cannot authorize image/model/resource execution.
+          oldbytes = {p:git('show', f'{BASE}:{p}') for p in (LP,CP,AP,ROAD,LEDGER)}
+          for p,b in oldbytes.items():
+              assert Path(p).read_bytes() == b, 'Unexpected modification: '+p
+          oldl, oldc, olda = (json.loads(oldbytes[p]) for p in (LP,CP,AP))
+          assert oldl['revision']==101 and oldc['sequence']==122
+          before_validation = validator()
+          l,c,a = copy.deepcopy(oldl),copy.deepcopy(oldc),copy.deepcopy(olda)
+          now = datetime.now(timezone.utc).isoformat()
+          ref = {'path':PLAN,'sha256':digest(Path(PLAN).read_bytes())}
+          focus = '保留所有已有成果与原结论，按用户保存的主线计划，先完成首个免训练成熟工作流的完整落地与兼容性审计。当前仅授权只读资料/环境核查和复现方案卡，不授权出图、训练、付费算力、Figma修改或旧实验重试。Attempt 4准备成果保留，排期暂停；已通过字标与设计、原图、冻结输入和已有工具链均不重做。'
+          hold = {'scope':'READ_ONLY_AUDIT_NO_GENERATION_OR_TRAINING','reason':'USER_REQUESTED_PRESERVE_EXISTING_RESULTS_AND_FOLLOW_SAVED_MAINLINE','deferred_attempt':'SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4','prior_next_required_action':oldl['next_required_action'],'prior_preparation_preserved':True,'resume_requires':'COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED','full_state_validator_required_before_resource_execution':True}
+
+          l.update(revision=102, updated_at=now, status=STATUS, current_stage=focus,
+                   next_required_action=NEXT, render_allowed=False, p6_allowed=False,
+                   input_commit=BASE, mainline_plan=ref, scheduling_hold=hold)
+          l['preserved_prior_revision']={'revision':101,'git_blob_sha':git('rev-parse',BASE+':'+LP).decode().strip(),'commit':BASE,'note':'Prior state preserved; scheduling paused, not cancelled or failed.'}
+          l['completed_this_revision']=['saved user-approved preservation mainline plan','preserved original assets, verdicts, capsule and frozen payloads','set read-only compatibility audit as sole next action','preserved Attempt 4 preparation with scheduling hold']
+          l['blockers']=list(oldl['blockers'])+['Current user-authorized phase is read-only audit only; no new generation, training, paid compute, Figma writes or experiment retries.','Do not replace an accepted result merely because a third-party method exists.','Legacy full-state validation is not certified by this documentation update.']
+
+          addition='\n\n## 2026-09-21 用户保存的执行顺序补充｜保留成果优先\n\n接续时读取 `continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md`，并以原 `CURRENT_TASK_LOCK.json` 为唯一当前调度源。\n终点与 P0—P7 不变；顺序为：保留成果 → 首个免训练方案完整落地与兼容性审计 → 有界复现对照 → 只接入有收益的模块 → 内容/画幅/第二风格验证 → 固定交付。\nAttempt 4 准备成果保留，研究期间暂停排期；不取消旧成果、不修改冻结输入。当前出图、训练、付费算力与 Figma 修改预算均为零。资料阅读、运行成功和视觉通过分别记录；现有全量校验未通过前不得放行资源执行。\n'
+          Path(ROAD).write_bytes(oldbytes[ROAD]+addition.encode())
+          wf={'path':ROAD,'sha256':digest(Path(ROAD).read_bytes())}
+          l['workflow']['document']=wf
+          l['workflow']['focus_stage']='P1'
+          save(LP,l)
+          lhash=digest(Path(LP).read_bytes())
+
+          c.update(sequence=123, recorded_at=now, status=STATUS, current_focus=focus,
+                   next_required_action=NEXT, task_lock={'path':LP,'sha256':lhash},
+                   mainline_plan=ref, scheduling_hold=hold, workflow=wf)
+          c['completed']=list(oldc['completed'])+l['completed_this_revision']
+          c['incomplete']=['first_no_training_workflow_compatibility_card','bounded_reproduction_plan_and_budget']+list(oldc['incomplete'])
+          c['blocked']=l['blockers']
+
+          # Append-only event. Retain every previous ledger byte and event.
+          prior=[json.loads(x) for x in oldbytes[LEDGER].decode().splitlines() if x.strip()][-1]
+          event={'schema_version':'upcp-state-ledger-event/v1','stream_id':'commercial_design_pipeline','event_id':'EVT-VPD-MAINLINE-PRESERVATION-USER-PLAN-20260921-001','event_type':'USER_MAINLINE_PLAN_RECORDED_RESOURCE_EXECUTION_HELD','project_id':l['project_id'],'task_id':l['parent_active_task_id'],'recorded_at':now,'previous_event_id':prior['event_id'],'previous_event_hash':prior['event_hash'],'lock_sha256':lhash,'material':True,'before':{'lock_revision':101,'checkpoint_sequence':122,'next':oldl['next_required_action']},'after':{'lock_revision':102,'checkpoint_sequence':123,'next':NEXT,'render_allowed':False,'training_allowed':False,'commercial_promotion':False},'authorization':{'source':'current user instruction','instruction':'保存主线并保留前面做好的全部成果','scope':'plan and read-only scheduling records only'},'evidence':[PLAN,RECEIPT],'reason':'Persist the requested end-to-end plan without discarding previous work or asserting a new technical winner.'}
+          event['event_hash']=digest(json.dumps(event,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
+          sep=b'' if oldbytes[LEDGER].endswith(b'\n') else b'\n'
+          Path(LEDGER).write_bytes(oldbytes[LEDGER]+sep+json.dumps(event,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()+b'\n')
+          tail={'event_id':event['event_id'],'event_hash':event['event_hash']}
+          c.setdefault('ledger_tails',{})['commercial_design_pipeline']=tail
+          save(CP,c)
+
+          a['task_lock'].update(path=LP,revision=102,sha256=lhash)
+          a.setdefault('workflow',{}).update(wf)
+          a['preserved_prior_current_mainline']=copy.deepcopy(olda.get('current_mainline'))
+          a['current_mainline']={'status':STATUS,'task_id':l['parent_active_task_id'],'next_required_action':NEXT,'plan':ref,'mode':'READ_ONLY_COMPATIBILITY_AUDIT','existing_results_preserved':True,'attempt4_scheduling':'PAUSED_NOT_CANCELLED','current_chat_render_eligible':False}
+          a['mainline_plan']=ref
+          a['scheduling_hold']=hold
+          a.setdefault('vpd_system_goal_authority',{}).update(checkpoint=STATUS,next_required_action=NEXT,render_allowed=False)
+          a.setdefault('ledger_tails',{})['commercial_design_pipeline']=tail
+          entries=a['business_entrypoints']
+          assert not any((x if isinstance(x,str) else x.get('path'))==PLAN for x in entries)
+          entries.insert(1,{'path':PLAN,'priority':0.1,'purpose':'User-saved preservation mainline plan; current dispatch remains the original task lock.'})
+          save(AP,a)
+
+          # Preservation checks are not an aesthetic or full-state PASS.
+          for k in ('objective','family','capsule','mechanism_transfer_verdict','p6_integrated_design','figma_upload_relay','concept02','formal_render_attempt3','formal_render_attempt4','visual_master_freeze_guard'):
+              assert l.get(k)==oldl.get(k), 'Protected field changed: '+k
+          assert c['completed'][:len(oldc['completed'])]==oldc['completed']
+          assert c['incomplete'][2:]==oldc['incomplete']
+          assert Path(LEDGER).read_bytes().startswith(oldbytes[LEDGER])
+          assert Path(ROAD).read_bytes().startswith(oldbytes[ROAD])
+          assert l['next_required_action']==c['next_required_action']==a['current_mainline']['next_required_action']==a['vpd_system_goal_authority']['next_required_action']
+          assert a['task_lock']['sha256']==c['task_lock']['sha256']==digest(Path(LP).read_bytes())
+          assert l['workflow']['document']==c['workflow']=={k:a['workflow'][k] for k in ('path','sha256')}
+
+          allowed={LP,CP,AP,ROAD,LEDGER,PLAN,RECEIPT,SELF}
+          existing=git('ls-tree','-rz',BASE).split(b'\0')
+          protected_count=0
+          for entry in existing:
+              if not entry: continue
+              meta,name=entry.split(b'\t',1)
+              mode,kind,blob=meta.split()
+              name=name.decode()
+              if kind==b'blob' and name not in allowed:
+                  assert Path(name).exists(), 'Protected path missing: '+name
+                  assert git('hash-object','--',name).strip()==blob, 'Protected path changed: '+name
+                  protected_count+=1
+
+          after_validation=validator()
+          receipt={'schema_version':'vpd-user-mainline-save-receipt/v1','recorded_at':now,'base_commit':BASE,'plan_commit':PLAN_COMMIT,'publication_scope':'RECORD_ONLY_USER_AUTHORIZED_PLAN_AND_RESOURCE_EXECUTION_HOLD','plan':ref,'prior_state':{'lock_revision':101,'checkpoint_sequence':122},'saved_state':{'lock_revision':102,'checkpoint_sequence':123,'status':STATUS,'next_required_action':NEXT,'task_lock_sha256':lhash},'preservation':{'existing_protected_repo_files_checked':protected_count,'changed_protected_repo_files':0,'deleted_old_files':0,'protected_lock_sections_unchanged':True,'prior_completed_history_preserved':True,'prior_pending_work_preserved':True,'prior_ledger_bytes_preserved':True,'prior_roadmap_bytes_preserved':True,'figma_calls':0,'image_generation_calls':0,'training_jobs':0,'paid_compute_started':0,'old_validators_or_executors_modified':False},'focused_record_consistency_checks':'PASS','full_state_validation_before':before_validation,'full_state_validation_after':after_validation,'full_state_validation_claim':'PASS' if after_validation['pass'] else 'NOT_PASS_NO_RESOURCE_EXECUTION_AUTHORIZED','legacy_validator_failure_is_not_aesthetic_failure':True,'no_validator_bypass_claimed':True,'note':'This save records the latest user plan and suspends old execution. Focused preservation/hash checks do not substitute for the full project validator. No model, asset, gate, or old experimental verdict was changed.','workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'temporary_maintenance_workflow_removed_after_save':True}
+          save(RECEIPT,receipt)
+          Path(SELF).unlink()
+          subprocess.run(['git','add','--',LP,CP,AP,ROAD,LEDGER,RECEIPT,SELF],check=True)
+          changed=set(git('diff','--cached','--name-only').decode().splitlines())
+          assert changed<=allowed
+          print(json.dumps({'record_checks':'PASS','protected_files':protected_count,'full_state_validator':after_validation,'changed_paths':sorted(changed)},ensure_ascii=False,indent=2))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Persist user mainline plan and preservation hold atomically [skip ci]'
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
