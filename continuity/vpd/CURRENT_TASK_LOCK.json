@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 119,
+  "revision": 120,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 118,
-    "git_blob_sha": "f4c598e7c1c5d081676b9c7bbf6a89a7246654bd",
-    "note": "Revision 118 recorded the invalid controller execution of the first authorized Library A/B pair."
+    "revision": 119,
+    "git_blob_sha": "ba26390a5cb77f3fb26b35600dd280a44540bff1",
+    "note": "Revision 119 authorized one replacement A image and one replacement B image in separate fresh chats."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The user has explicitly chosen to replace the invalid controller-chat A/B pair and requested the prompts. One replacement Route A image and one replacement Route B image are authorized. Two separate fresh generator chats are mandatory. Each chat must attach the same canonical R1C from ChatGPT Library, generate exactly one 3:4 image, upload the raw PNG to Google Drive, and return only its route-tagged Drive handoff. The controller/main chat remains non-render-eligible.",
-  "status": "VPD_P3_LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_AUTHORIZED_FRESH_CHATS_REQUIRED",
+  "current_stage": "The user returned the replacement pair and explicitly labeled image 1 as Route A and image 2 as Route B. Both exact files have been technically checked: each is 1152x1536 (3:4), depicts the required rice granary and required material/process evidence, and contains no readable advertising text or invented brand. Both show minor exterior mountain/forest scenery through the opening, so correctness is not perfect. The exact uploaded bytes were archived to Google Drive under route-labeled filenames. Visual review with known A/B labels finds Route B stronger on dominant mass, reading hierarchy, regional detail concentration, near/mid/far depth and process-evidence organization; color temperature remains warm in both. This provides a one-pair qualitative signal that the compact VPD controls improve composition, but it is not blind and the fresh-chat execution isolation provenance was not independently verified from generator handoff blocks. No Style Capsule promotion is allowed from this single pair.",
+  "status": "VPD_P3_LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_REVIEWED_B_SHOWS_QUALITATIVE_SIGNAL_WAITING_USER_PREFERENCE",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
+  "next_required_action": "GET_USER_A_OR_B_PREFERENCE_AND_DECIDE_COMPACT_VPD_INTEGRATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's two-image Library A/B authorization",
-    "recorded that two actual image generations were consumed",
-    "classified both controller-chat outputs as invalid for formal A/B",
-    "blocked aesthetic/VPD inference from the invalid pair",
-    "stopped automatic replacement generation"
+    "received and route-labeled replacement A/B pair from user",
+    "verified both files are exact 3:4 portrait outputs",
+    "archived exact A and B bytes to Google Drive with route labels",
+    "completed known-label visual A/B review",
+    "identified a one-pair qualitative compositional benefit signal for Route B",
+    "kept Style Capsule promotion blocked pending broader evidence and user preference"
   ],
-  "updated_at": "2026-09-22T10:08:00Z",
+  "updated_at": "2026-09-22T16:05:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1369,7 +1370,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "REPLACEMENT_PAIR_AUTHORIZED_NOT_EXECUTED",
+    "status": "REPLACEMENT_PAIR_RECEIVED_AND_VISUALLY_REVIEWED",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1380,9 +1381,27 @@
     "proposed_images": 2,
     "authorized_images": 2,
     "retry_budget": 0,
-    "route_A": "REFERENCE_NATIVE_BASELINE",
-    "route_B": "REFERENCE_PLUS_COMPACT_VPD",
-    "next": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
+    "route_A": {
+      "sha256": "9783209903ab8bfaebc2c1e08cc7e7adb1ee904d7dd4e6229fdc037a25c9f741",
+      "dimensions": [
+        1152,
+        1536
+      ],
+      "drive_file_id": "1nUjKLqSxHOdQICYHA2I3fVFICqhwcdlI",
+      "drive_url": "https://drive.google.com/file/d/1nUjKLqSxHOdQICYHA2I3fVFICqhwcdlI/view?usp=drivesdk",
+      "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
+    },
+    "route_B": {
+      "sha256": "3350ecf4fca3e7bbff16b9a864a468243d077a6ef8628376d0b52c0c3bf7bc67",
+      "dimensions": [
+        1152,
+        1536
+      ],
+      "drive_file_id": "1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K",
+      "drive_url": "https://drive.google.com/file/d/1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K/view?usp=drivesdk",
+      "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
+    },
+    "next": "GET_USER_A_OR_B_PREFERENCE_AND_DECIDE_COMPACT_VPD_INTEGRATION",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1407,6 +1426,15 @@
     "replacement_route_B_authorized": 1,
     "replacement_retry_budget": 0,
     "route_A_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_A_TO_FRESH_CHAT_20260922.txt",
-    "route_B_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_B_TO_FRESH_CHAT_20260922.txt"
+    "route_B_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_B_TO_FRESH_CHAT_20260922.txt",
+    "replacement_formal_valid_images": 2,
+    "visual_review": {
+      "path": "evidence/vpd/library_native_ab_v1/REPLACEMENT_PAIR_VISUAL_REVIEW_20260922.json",
+      "git_blob_sha": "d6a0e279bfb6602acfd8dda7e99650960eb6409c"
+    },
+    "qualitative_signal": "B_STRONGER_ON_COMPOSITIONAL_MECHANISMS_IN_ONE_PAIR",
+    "blind_review": false,
+    "execution_isolation_provenance": "NOT_INDEPENDENTLY_VERIFIED_FROM_FRESH_CHAT_HANDOFFS",
+    "style_capsule_promotion_allowed": false
   }
 }
