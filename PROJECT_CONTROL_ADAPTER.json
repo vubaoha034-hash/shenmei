@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 118,
-    "sha256": "321bdf1a805cf3c23c48144cc486fa4d090275a9729f69c2d165cfcd49c82a8a",
+    "revision": 119,
+    "sha256": "db43824c627f349fdc8388ae493a3c06459eb6b2d7d2643c79231e356cc81135",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,18 +956,18 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_LIBRARY_NATIVE_AB_AUTHORIZED_BUT_INVALID_CONTROLLER_EXECUTION_TWO_IMAGES_SPENT",
+    "status": "VPD_P3_LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_AUTHORIZED_FRESH_CHATS_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+    "next_required_action": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "LIBRARY_NATIVE_AB_CONTROLLER_EXECUTION_ERROR_RECORDED",
+    "mode": "LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_AUTHORIZED",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
-    "current_generation_authorization": 0
+    "current_generation_authorization": 2
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-LIBRARY-AB-CONTROLLER-EXECUTION-ERROR-20260922-001",
-      "event_hash": "331e35c8d0bea7cd6abd77930aeb7df5d80e894f1013482f50ea3ea6ccf582bc"
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-REPLACEMENT-AUTHORIZED-20260922-001",
+      "event_hash": "41584a83a62694a234478df79850ed4726f884a9f3a6292e1db2f50df6a881ab"
     }
   },
   "mature_workflow_audit": {
@@ -1216,7 +1216,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "AUTHORIZED_BUT_INVALIDLY_EXECUTED_IN_CONTROLLER_CHAT",
+    "status": "REPLACEMENT_PAIR_AUTHORIZED_NOT_EXECUTED",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1229,7 +1229,7 @@
     "retry_budget": 0,
     "route_A": "REFERENCE_NATIVE_BASELINE",
     "route_B": "REFERENCE_PLUS_COMPACT_VPD",
-    "next": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+    "next": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1248,6 +1248,12 @@
       }
     ],
     "automatic_retry_authorized": false,
-    "current_chat_render_eligible": false
+    "current_chat_render_eligible": false,
+    "replacement_authorized_images": 2,
+    "replacement_route_A_authorized": 1,
+    "replacement_route_B_authorized": 1,
+    "replacement_retry_budget": 0,
+    "route_A_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_A_TO_FRESH_CHAT_20260922.txt",
+    "route_B_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_B_TO_FRESH_CHAT_20260922.txt"
   }
 }
