@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 112,
+  "revision": 113,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 111,
-    "git_blob_sha": "0df066fc4a6751e18e9b8dc5d0ce897b1c25a287",
-    "note": "Revision 111 closed Stage 1 A/B after two Route A execution-binding failures with no VPD inference."
+    "revision": 112,
+    "git_blob_sha": "115080e69ce31da7ba5241fdf2396a3e23bdc605",
+    "note": "Revision 112 prepared the minimal stateless ticket and waited for one-image authorization."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "A minimal stateless ChatGPT Images render ticket is now prepared. It is intentionally outside the closed Stage 1 A/B experiment and tests only renderer execution reliability. The future generator chat must not read GitHub, project files, memory, or prior VPD images; it receives only one self-contained user message plus the single approved R1C Drive reference. The ticket requests exactly one 3:4 portrait rice-granary image, no readable text, no invented brand, no retry, and mandatory raw-PNG upload to Google Drive with stable URL/file ID return. No image has been generated under this stateless ticket yet.",
-  "status": "VPD_P3_MINIMAL_STATELESS_CHATGPT_IMAGES_TICKET_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
+  "current_stage": "The user explicitly authorized one stateless smoke image, but the controller/main chat incorrectly invoked image generation itself. That image is invalid operator output and does not count as the stateless smoke because the generator was not a fresh stateless chat and the mandatory Drive handoff was not performed. A hard controller/generator separation guard is now active: the main VPD chat may record authorization and return tickets but must never call image generation. The previously authorized one-image stateless smoke budget remains available. The next action is to execute the already-frozen one-message ticket in a fresh generator chat only.",
+  "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_CONTROLLER_EXECUTION_ERROR_CORRECTED_FRESH_CHAT_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE",
+  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "prepared a one-message minimal stateless ChatGPT Images render ticket",
-    "removed GitHub/project/memory reads from the future generator chat",
-    "kept exactly one approved R1C visual reference",
-    "froze one rice-granary subject task and explicit 3:4 portrait requirement",
-    "made raw PNG Google Drive return mandatory",
-    "kept retry budget at zero and generated no image"
+    "recorded the user's one-image stateless smoke authorization",
+    "classified the accidental controller-chat image generation as operator execution error",
+    "preserved the one-image stateless smoke authorization as unconsumed",
+    "installed a hard controller/main-chat no-image-generation guard",
+    "kept the existing one-message stateless fresh-chat ticket unchanged"
   ],
-  "updated_at": "2026-09-22T02:50:00Z",
+  "updated_at": "2026-09-22T03:28:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -220,7 +219,11 @@
     "Stateless smoke generation is not authorized yet.",
     "Do not make the stateless generator chat read GitHub, project files, memory or prior VPD images.",
     "Do not treat the stateless smoke result as VPD/Style Capsule evidence; it tests renderer execution reliability only.",
-    "No retry is allowed under this ticket."
+    "No retry is allowed under this ticket.",
+    "The VPD controller/main chat must never call image generation.",
+    "Do not count the accidental controller-chat image as stateless smoke evidence.",
+    "The authorized stateless smoke may execute only in a fresh generator chat using the frozen one-message ticket.",
+    "Generator chat must upload the raw PNG to Google Drive and return the stable Drive URL/file ID."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1273,7 +1276,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "AUTHORIZED_NOT_EXECUTED_VALIDLY",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1288,11 +1291,27 @@
     "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "requested_aspect": "3:4 PORTRAIT",
-    "current_generation_authorization": 0,
+    "current_generation_authorization": 1,
     "retry_budget": 0,
     "drive_handoff_required": true,
     "generator_reads_project_repo": false,
     "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
-    "next": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE"
+    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
+    "authorization_source": "user message: 允许无状态测试 1 张",
+    "invalid_controller_generation": {
+      "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
+      "runtime_file_id": "file_00000000832481fdb3bec95108d5d2a7",
+      "classification": "OPERATOR_EXECUTION_ERROR_NOT_FORMAL_EVIDENCE",
+      "consumes_budget": false
+    },
+    "controller_generator_guard": {
+      "path": "evidence/vpd/stateless_render_v1/CONTROLLER_GENERATOR_SEPARATION_CORRECTION_20260922.json",
+      "git_blob_sha": "3b2b25bd894f44296340118a90ccfcee37033684"
+    },
+    "fresh_chat_ticket": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
+      "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
+    },
+    "current_chat_render_eligible": false
   }
 }
