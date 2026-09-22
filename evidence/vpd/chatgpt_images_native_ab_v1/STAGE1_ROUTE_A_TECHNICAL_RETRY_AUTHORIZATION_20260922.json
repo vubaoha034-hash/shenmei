@@ -1,0 +1,32 @@
+{
+  "schema_version": "vpd-chatgpt-images-stage1-route-a-retry-authorization/v1",
+  "artifact_type": "STAGE1_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE_AUTHORIZATION",
+  "recorded_at": "2026-09-22T02:20:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "source_user_message": "允许 Route A 重试 1 张",
+  "authorized_scope": {
+    "renderer": "CHATGPT_IMAGES",
+    "route": "REFERENCE_NATIVE_BASELINE",
+    "retry_type": "TECHNICAL_RETRY_ONLY",
+    "visible_output_count": 1,
+    "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "frozen_prompt_sha256": "3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c",
+    "requested_aspect": "3:4 PORTRAIT",
+    "generation_only": true,
+    "drive_handoff_required": true,
+    "figma": false,
+    "route_B_authorization_untouched": true
+  },
+  "execution_constraints": [
+    "Must run in a fresh isolated chat.",
+    "Current long chat is ineligible.",
+    "Exactly one R1C reference image.",
+    "Exactly one visible generation.",
+    "No paraphrase of the frozen image task.",
+    "No pre-review retry.",
+    "Upload raw PNG to Google Drive and return stable Drive URL/file ID.",
+    "Route B remains blocked until Route A retry is reviewed in the main chat."
+  ],
+  "next_required_action": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT"
+}
