@@ -1,0 +1,79 @@
+{
+  "schema_version": "vpd-minimal-stateless-chatgpt-images-render-ticket/v1",
+  "artifact_type": "MINIMAL_STATELESS_RENDER_TICKET",
+  "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
+  "created_at": "2026-09-22T02:45:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+  "purpose": "Test whether a fresh ChatGPT Images chat can reliably execute one explicit image task when all project orchestration and historical context are removed from the generator conversation.",
+  "experiment_relation": {
+    "stage1_native_ab": "CLOSED_INVALID_EXECUTION",
+    "this_ticket_is_stage1_retry": false,
+    "style_capsule_inference_allowed": false,
+    "only_question": "Can the native renderer execute the requested subject/aspect/reference binding in a stateless fresh chat?"
+  },
+  "generator_context_policy": {
+    "fresh_chat": true,
+    "read_github": false,
+    "read_project_files": false,
+    "read_memory": false,
+    "use_prior_chat_images": false,
+    "visual_reference_count": 1,
+    "only_user_message_is_ticket": true
+  },
+  "reference": {
+    "drive_url": "https://drive.google.com/file/d/1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ/view",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "role": "ONLY_STYLE_RELATIONSHIP_REFERENCE"
+  },
+  "image_task": "Create exactly one photo-only 3:4 portrait image of a real working rice granary in early morning. The scene must visibly contain pale rice grains, woven bamboo baskets, linen sacks, aged wooden grain bins, and a modest sorting/preparation table. Use believable documentary photography, cool-neutral morning daylight, realistic wood/cloth/rice materials, and one natural quiet low-detail area that could later hold typography. Do not include any people as the main subject, beauty/wellness products, bottles, cosmetics, supplements, laptops, home-office lifestyle scenes, tea ware, mountains/forest scenery, wok/fire, logos, labels, calligraphy, readable text, advertising copy, detached graphic panels, or invented brands. Use the attached R1C image only for overall visual family feeling and relational balance; do not copy its subject, brand, text, motifs, or layout.",
+  "hard_controls": {
+    "renderer": "CHATGPT_IMAGES",
+    "generation_not_edit": true,
+    "output_count": 1,
+    "requested_aspect": "3:4 PORTRAIT",
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "no_retry": true,
+    "no_figma": true,
+    "no_evaluation_in_generator_chat": true,
+    "if_explicit_3_4_control_unavailable": "STOP_BEFORE_GENERATION"
+  },
+  "drive_handoff": {
+    "required": true,
+    "raw_png_only": true,
+    "make_public": false,
+    "return_fields": [
+      "DRIVE_URL",
+      "DRIVE_FILE_ID",
+      "SHA256",
+      "DIMENSIONS"
+    ],
+    "no_user_reupload_required": true
+  },
+  "pass_conditions": [
+    "exactly one image",
+    "3:4 portrait",
+    "rice granary subject is unmistakable",
+    "rice, baskets, linen sacks, aged wooden grain bins and sorting/preparation surface are visibly present",
+    "no readable/generated advertising text or invented brand",
+    "raw PNG archived to Drive with matching SHA"
+  ],
+  "fail_conditions": [
+    "wrong subject class",
+    "wrong orientation/aspect",
+    "product-ad/lifestyle scene substitution",
+    "readable labels/advertising copy",
+    "more than one image",
+    "reference cannot be verified",
+    "Drive archive/provenance mismatch"
+  ],
+  "budget": {
+    "current_authorization": 0,
+    "if_authorized_visible_images": 1,
+    "retry_budget": 0
+  },
+  "next_required_action": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE"
+}
