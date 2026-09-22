@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 109,
-    "sha256": "d59b82660743f93991d2cb3aa6346f37584f606f27a0add076ba034104b8f12e",
+    "revision": 110,
+    "sha256": "69cfa5decb9fafe579eae47c8634a0df762cf40c9ba0156989fce272554b349b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,20 +956,19 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_RUNNER_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
+    "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_AUTHORIZED_FRESH_CHAT_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
+    "next_required_action": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "CHATGPT_IMAGES_STAGE1_ROUTE_A_TECHNICAL_RETRY_PREPARED",
+    "mode": "CHATGPT_IMAGES_STAGE1_ROUTE_A_RETRY_AUTHORIZED",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
-    "current_generation_authorization": 1,
-    "route_A_retry_authorization": 0,
-    "route_B_generation_authorization_reserved": 1,
     "current_chat_render_eligible": false,
+    "route_A_retry_authorization": 1,
+    "route_B_generation_authorization_reserved": 1,
     "stage2_authorized": false
   },
   "preserved_prior_current_mainline": {
@@ -999,8 +998,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-RUNNER-PREPARED-20260922-001",
-      "event_hash": "a30b09826a931ec8ceea35afbd1f8717a12be7e208ab47a6578d1f3b302f7984"
+      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-AUTHORIZED-20260922-001",
+      "event_hash": "33fece905976b6582d24efc7b5be4f31dddc1aa00ec7519ac866c7222bba698f"
     }
   },
   "mature_workflow_audit": {
@@ -1046,7 +1045,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_RETRY_PREPARED_NOT_AUTHORIZED",
+    "status": "STAGE1_ROUTE_A_RETRY_AUTHORIZED_NOT_EXECUTED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -1064,7 +1063,7 @@
     ],
     "requested_aspect": "3:4 PORTRAIT",
     "output_count_if_authorized": 2,
-    "current_generation_authorization": 1,
+    "current_generation_authorization": 2,
     "stage2_locked": true,
     "route_A_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
     "route_B_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_B_FRESH_CHAT_20260921.txt",
@@ -1072,10 +1071,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_RETRY_RUNNER_READY",
+    "route_A": "TECHNICALLY_INVALID_RETRY_AUTHORIZED",
     "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
     "current_chat_render_eligible": false,
-    "next": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
+    "next": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -1096,9 +1095,22 @@
     },
     "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
     "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52",
-    "route_A_retry_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
-    "route_A_retry_generation_authorization": 0,
-    "route_B_generation_authorization_reserved": 1
+    "route_A_retry_binding_packet": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_BINDING_PACKET_20260922.json",
+      "git_blob_sha": "4a4c53057df507f1211dd83763e00386690b337d",
+      "prompt_sha256": "3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c"
+    },
+    "route_A_retry_runner": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
+      "git_blob_sha": "f16b1ade2019cd6892caf14f33e1a7475f55d43a"
+    },
+    "route_A_retry_generation_authorization": 1,
+    "route_B_generation_authorization_reserved": 1,
+    "route_A_retry_authorization_receipt": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_AUTHORIZATION_20260922.json",
+      "git_blob_sha": "1da7d32966cae498e7fd68145c049bdb5d922eaa"
+    },
+    "route_A_retry": "AUTHORIZED_NOT_EXECUTED"
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
