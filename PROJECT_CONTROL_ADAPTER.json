@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 114,
-    "sha256": "b3d11341045962226fcf9b9571908dca5709411abd37a2e371f0672cf28ab4ec",
+    "revision": 115,
+    "sha256": "13070eef9c99e1e1b8373b4d4f9d5d813869cbf6d32e6ebcbda49044dc697f7b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,19 +956,19 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_DIRECT_ATTACHMENT_REFERENCE_REQUIRED",
+    "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_LIBRARY_ATTACHMENT_READY",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_WITH_DIRECT_R1C_ATTACHMENT_IN_FRESH_CHAT",
+    "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_CHAT_WITH_LIBRARY_ATTACHMENT",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "STATELESS_CHATGPT_IMAGES_DIRECT_ATTACHMENT_READY",
+    "mode": "STATELESS_CHATGPT_IMAGES_LIBRARY_ATTACHMENT_READY",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
     "current_generation_authorization": 1,
-    "reference_binding_mode": "DIRECT_CHAT_ATTACHMENT_REQUIRED"
+    "reference_binding_mode": "CHATGPT_LIBRARY_ATTACHMENT_PREFERRED"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -997,8 +997,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STATELESS-DIRECT-ATTACHMENT-REFERENCE-READY-20260922-001",
-      "event_hash": "2547b8c2414a56f1eadccab3d15042914c0f46c4f515d7bb91206119eccfbd08"
+      "event_id": "EVT-VPD-P3-CHATGPT-LIBRARY-REFERENCE-READY-20260922-001",
+      "event_hash": "928c8bbad67449cb30b662e2f9dd3beab36502a9730431e1c0900ebb37ab4be1"
     }
   },
   "mature_workflow_audit": {
@@ -1131,7 +1131,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "AUTHORIZED_DIRECT_ATTACHMENT_READY_NOT_EXECUTED",
+    "status": "AUTHORIZED_LIBRARY_ATTACHMENT_READY_NOT_EXECUTED",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1151,7 +1151,7 @@
     "drive_handoff_required": true,
     "generator_reads_project_repo": false,
     "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
-    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_WITH_DIRECT_R1C_ATTACHMENT_IN_FRESH_CHAT",
+    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_CHAT_WITH_LIBRARY_ATTACHMENT",
     "authorization_source": "user message: 允许无状态测试 1 张",
     "invalid_controller_generation": {
       "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
@@ -1168,7 +1168,7 @@
       "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
     },
     "current_chat_render_eligible": false,
-    "reference_binding_mode": "DIRECT_CHAT_ATTACHMENT_REQUIRED",
+    "reference_binding_mode": "CURRENT_CONVERSATION_ATTACHMENT_REQUIRED",
     "drive_connector_reference_binding": false,
     "drive_role": "OUTPUT_ARCHIVE_AND_RETURN_ONLY",
     "direct_attachment_correction": {
@@ -1183,6 +1183,18 @@
       "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_DIRECT_ATTACHMENT_20260922.txt",
       "git_blob_sha": "99c30cf2f2ab0dca1658ca1ba8502965fdbe8f91"
     },
-    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg"
+    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "preferred_attachment_source": "CHATGPT_LIBRARY",
+    "fallback_attachment_source": "DIRECT_DEVICE_UPLOAD",
+    "chatgpt_library_reference": {
+      "path": "/VPD_REFERENCES/R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+      "file_id": "file_0000000059a081fda1ba635ca2ceb5de",
+      "library_file_id": "libfile_45e5855018888191b4fdf74dbde1c55a",
+      "bytes": 142983,
+      "binding_record": {
+        "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_BINDING_RECORD_20260922.json",
+        "git_blob_sha": "72749e47ca0a62775b098e6934c7c5efad2fe435"
+      }
+    }
   }
 }
