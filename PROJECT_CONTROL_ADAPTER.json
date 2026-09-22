@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 112,
-    "sha256": "2ee004025f512f37ffda7c410f11535f5cebd6c265944cb06027e3a8a8fbaea0",
+    "revision": 113,
+    "sha256": "01578c124bd9b5673e0076dc67b4dd60584270d9d8436fb97612553be0f1d7ab",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,19 +956,19 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_MINIMAL_STATELESS_CHATGPT_IMAGES_TICKET_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
+    "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_CONTROLLER_EXECUTION_ERROR_CORRECTED_FRESH_CHAT_REQUIRED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE",
+    "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "STATELESS_CHATGPT_IMAGES_SMOKE_TICKET_READY_WAITING_AUTHORIZATION",
+    "mode": "STATELESS_CHATGPT_IMAGES_SMOKE_AUTHORIZED_FRESH_CHAT_ONLY",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
-    "current_generation_authorization": 0,
-    "stage1_closed": true
+    "current_generation_authorization": 1,
+    "controller_chat_image_generation_allowed": false
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -997,8 +997,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STATELESS-RENDER-TICKET-PREPARED-20260922-001",
-      "event_hash": "663b0945fefbfe759b79645761cd855f4912b06da654cf35e5378c6fed2e02d9"
+      "event_id": "EVT-VPD-P3-CONTROLLER-GENERATOR-SEPARATION-GUARD-20260922-001",
+      "event_hash": "9cd01245d7b2567d341af6b5f32eded2eabf23adf9b3900b2c15f4746a7a49a0"
     }
   },
   "mature_workflow_audit": {
@@ -1131,7 +1131,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "AUTHORIZED_NOT_EXECUTED_VALIDLY",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1146,11 +1146,27 @@
     "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "requested_aspect": "3:4 PORTRAIT",
-    "current_generation_authorization": 0,
+    "current_generation_authorization": 1,
     "retry_budget": 0,
     "drive_handoff_required": true,
     "generator_reads_project_repo": false,
     "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
-    "next": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE"
+    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
+    "authorization_source": "user message: 允许无状态测试 1 张",
+    "invalid_controller_generation": {
+      "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
+      "runtime_file_id": "file_00000000832481fdb3bec95108d5d2a7",
+      "classification": "OPERATOR_EXECUTION_ERROR_NOT_FORMAL_EVIDENCE",
+      "consumes_budget": false
+    },
+    "controller_generator_guard": {
+      "path": "evidence/vpd/stateless_render_v1/CONTROLLER_GENERATOR_SEPARATION_CORRECTION_20260922.json",
+      "git_blob_sha": "3b2b25bd894f44296340118a90ccfcee37033684"
+    },
+    "fresh_chat_ticket": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
+      "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
+    },
+    "current_chat_render_eligible": false
   }
 }
