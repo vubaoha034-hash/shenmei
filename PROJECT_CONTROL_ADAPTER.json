@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 110,
-    "sha256": "69cfa5decb9fafe579eae47c8634a0df762cf40c9ba0156989fce272554b349b",
+    "revision": 111,
+    "sha256": "2c693f94bcc483c8a460b2d45ee5df75d8e543325dc5ccaf7c94af044a5bc8e8",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,19 +956,18 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_AUTHORIZED_FRESH_CHAT_REQUIRED",
+    "status": "VPD_P3_STAGE1_AB_INVALID_TWO_ROUTE_A_BINDING_FAILURES_NO_VPD_INFERENCE",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
+    "next_required_action": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "CHATGPT_IMAGES_STAGE1_ROUTE_A_RETRY_AUTHORIZED",
+    "mode": "CHATGPT_IMAGES_MINIMAL_STATELESS_RENDER_TICKET_PREPARATION",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
-    "route_A_retry_authorization": 1,
-    "route_B_generation_authorization_reserved": 1,
+    "stage1_closed": true,
     "stage2_authorized": false
   },
   "preserved_prior_current_mainline": {
@@ -998,8 +997,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-AUTHORIZED-20260922-001",
-      "event_hash": "33fece905976b6582d24efc7b5be4f31dddc1aa00ec7519ac866c7222bba698f"
+      "event_id": "EVT-VPD-P3-STAGE1-AB-CLOSED-A-RETRY-INVALID-20260922-001",
+      "event_hash": "a2e46d52600b358861ce630eba5eeb7bafeecfa22417c9c345a6da5c77d5ff17"
     }
   },
   "mature_workflow_audit": {
@@ -1045,7 +1044,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_RETRY_AUTHORIZED_NOT_EXECUTED",
+    "status": "STAGE1_INVALID_EXECUTION_CLOSED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -1071,10 +1070,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_RETRY_AUTHORIZED",
-    "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
+    "route_A": "TECHNICALLY_INVALID_INITIAL_AND_RETRY",
+    "route_B": "NOT_EXECUTED_STAGE1_CLOSED",
     "current_chat_render_eligible": false,
-    "next": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
+    "next": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -1105,12 +1104,24 @@
       "git_blob_sha": "f16b1ade2019cd6892caf14f33e1a7475f55d43a"
     },
     "route_A_retry_generation_authorization": 1,
-    "route_B_generation_authorization_reserved": 1,
+    "route_B_generation_authorization_reserved": 0,
     "route_A_retry_authorization_receipt": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_AUTHORIZATION_20260922.json",
       "git_blob_sha": "1da7d32966cae498e7fd68145c049bdb5d922eaa"
     },
-    "route_A_retry": "AUTHORIZED_NOT_EXECUTED"
+    "route_A_retry": "TECHNICALLY_INVALID_WRONG_SUBJECT_WRONG_ASPECT_PROHIBITED_TEXT",
+    "route_A_retry_review": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_REVIEW_20260922.json",
+      "git_blob_sha": "ed4d1766f5bc3ea37f03856c371032b0a73e6eab"
+    },
+    "route_A_retry_drive_url": "https://drive.google.com/file/d/1qDx9TPHupVmLFYSsuJq-fE5Rqt_dJEtk/view?usp=drivesdk",
+    "route_A_retry_sha256": "49496a7fff47ce6db82d8d136ac1b921624490a05ed7ec9e28cd30cc5ff4d76c",
+    "route_A_retry_dimensions": [
+      1536,
+      1024
+    ],
+    "formal_ab_comparison_allowed": false,
+    "stage1_closed": true
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
