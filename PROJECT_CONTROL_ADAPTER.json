@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 108,
-    "sha256": "8c6f8a5c734412755f5d10a5ff410dba71b7222f721abec49e0e810aaa95e3cf",
+    "revision": 109,
+    "sha256": "d59b82660743f93991d2cb3aa6346f37584f606f27a0add076ba034104b8f12e",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,20 +956,20 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_STAGE1_ROUTE_A_TECHNICAL_INVALID_DRIVE_HANDOFF_ACTIVE_RETRY_PREP_REQUIRED",
+    "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_RUNNER_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "CHATGPT_IMAGES_STAGE1_ROUTE_A_TECHNICAL_RECOVERY",
+    "mode": "CHATGPT_IMAGES_STAGE1_ROUTE_A_TECHNICAL_RETRY_PREPARED",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_generation_authorization": 1,
+    "route_A_retry_authorization": 0,
+    "route_B_generation_authorization_reserved": 1,
     "current_chat_render_eligible": false,
-    "route_A": "TECHNICALLY_INVALID",
-    "route_B": "BLOCKED_NOT_CONSUMED",
     "stage2_authorized": false
   },
   "preserved_prior_current_mainline": {
@@ -1046,7 +1046,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_TECHNICAL_INVALID_ROUTE_B_BLOCKED",
+    "status": "STAGE1_ROUTE_A_RETRY_PREPARED_NOT_AUTHORIZED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -1072,10 +1072,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_WRONG_SUBJECT_AND_PROHIBITED_TEXT",
+    "route_A": "TECHNICALLY_INVALID_RETRY_RUNNER_READY",
     "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
     "current_chat_render_eligible": false,
-    "next": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -1095,7 +1095,10 @@
       "git_blob_sha": "f99d11dfe3b76e56bac24f2be43ba62b1c757189"
     },
     "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
-    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52"
+    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52",
+    "route_A_retry_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
+    "route_A_retry_generation_authorization": 0,
+    "route_B_generation_authorization_reserved": 1
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
