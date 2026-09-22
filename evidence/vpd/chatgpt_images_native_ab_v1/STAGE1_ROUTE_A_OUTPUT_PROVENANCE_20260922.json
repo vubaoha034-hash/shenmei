@@ -1,0 +1,60 @@
+{
+  "schema_version": "vpd-chatgpt-images-native-ab-route-output-provenance/v1",
+  "artifact_type": "STAGE1_ROUTE_A_OUTPUT_PROVENANCE",
+  "created_at": "2026-09-22T01:38:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "CHATGPT_IMAGES_NATIVE_AB_STAGE1",
+  "route": {
+    "id": "REFERENCE_NATIVE_BASELINE",
+    "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+    "runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
+    "freeze_pack": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TASK_AND_AB_FREEZE_20260921.json",
+    "frozen_prompt": "Create exactly one native 3:4 portrait, photo-only editorial hero for a new content task: a working rice granary at early morning. Show pale rice grains, woven baskets, linen sacks, aged wood bins and a modest sorting/preparation surface in believable documentary photography with cool-neutral morning daylight; no mountains or forest, tea ware, wok or flame, calligraphy, logos, labels, final text, or detached text panels. Use the attached approved R1C reference only as a family-level visual/style anchor—not to copy its subject, brand identity, typography, motifs, or layout coordinates—and leave one natural quiet area for later Figma typography."
+  },
+  "renderer": {
+    "name": "CHATGPT_IMAGES",
+    "invocation_mode": "generation_not_edit",
+    "n": 1,
+    "requested_aspect": "3:4 PORTRAIT",
+    "explicit_native_aspect_control": true,
+    "hidden_variants": 0,
+    "retry_count": 0,
+    "figma_executed": false,
+    "evaluation_executed": false,
+    "prompt_delivery_note": "Frozen Route A prompt supplied by the fresh-chat execution context; image tool prompt field is context-inferred/deprecated and renderer metadata returned an empty prompt string."
+  },
+  "reference": {
+    "count": 1,
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "runtime_file_id": "file_000000002b4881fd82190780d2ad0746",
+    "sha256_expected": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "sha256_verified": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "dimensions": [
+      960,
+      1280
+    ],
+    "bytes": 142983
+  },
+  "output": {
+    "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
+    "runtime_file_id": "file_00000000d45081fd8f8164574ea7602a",
+    "local_runtime_filename": "a_clean_modern_softly_lit_indoor_living_office_s.png",
+    "archive_filename": "VPD_NATIVE_AB_STAGE1_ROUTE_A_RAW_20260922.png",
+    "archive_drive_file_id": "1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm",
+    "mime_type": "image/png",
+    "sha256": "8e05f4cc4ca8317998c53350d657f9fbbd644a76b406700596e1bcb96e92880d",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "aspect_ratio": "3:4"
+  },
+  "isolation": {
+    "prior_generated_vpd_images_loaded": false,
+    "reference_image_count": 1,
+    "reference_identity_verified_before_generation": true,
+    "route_execution_count": 1
+  },
+  "stop_after_archive": true
+}
