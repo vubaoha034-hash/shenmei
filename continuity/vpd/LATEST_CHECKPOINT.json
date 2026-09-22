@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 131,
-  "recorded_at": "2026-09-22T02:22:00Z",
+  "sequence": 132,
+  "recorded_at": "2026-09-22T02:35:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The user has explicitly authorized exactly one controlled Route A technical retry image. The frozen Route A task, R1C reference, 3:4 aspect, and baseline prompt remain unchanged; only the already-prepared task-binding transport is used. The current long chat remains ineligible for generation. The retry must execute in a new fresh isolated chat using the dedicated retry runner, exactly once, then upload the raw PNG to Google Drive and return the stable Drive URL/file ID. Route B's previously reserved one-image authorization remains untouched and blocked until the retry is reviewed.",
+  "current_focus": "The controlled Route A technical retry has been read back from Google Drive and independently verified. It failed hard correctness again: the returned PNG is 1536x1024 landscape rather than 3:4 portrait, depicts a premium glutathione/wellness product advertisement rather than a working rice granary, and contains extensive invented brand/product/final copy. The Drive SHA-256 matches the user-provided hash, so this is the exact retry output. Route A initial and retry are both technically invalid; Route B was never executed and the Stage 1 A/B cannot produce a valid comparative verdict. No Style Capsule or accepted-asset inference is allowed. Further same-form retries are stopped to avoid wasting generation budget. Next prepare a minimal stateless ChatGPT Images render ticket that removes project orchestration from the generator context while preserving the main project controller and Drive handoff; do not generate yet.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -197,20 +197,13 @@
     "stage1_route_a_technical_retry_runner_prepared",
     "stage1_route_b_budget_reserved",
     "no_new_image_generated",
-    "stage1_route_a_retry_one_image_authorization_recorded"
+    "stage1_route_a_retry_one_image_authorization_recorded",
+    "stage1_route_a_retry_drive_readback_verified",
+    "stage1_route_a_retry_technical_invalid",
+    "stage1_ab_closed_no_vpd_inference"
   ],
   "incomplete": [
-    "stage1_route_a_controlled_technical_retry",
-    "stage1_route_a_retry_drive_archive_and_review",
-    "stage1_route_a_controlled_technical_retry",
-    "stage1_route_a_retry_drive_archive_and_review",
-    "stage1_route_a_retry_authorization",
-    "stage1_route_b_fresh_chat_generation",
-    "stage1_route_b_archive_and_provenance",
-    "stage1_blind_human_pixel_review",
-    "stage1_route_a_generation",
-    "stage1_route_b_generation",
-    "stage1_blind_human_pixel_review",
+    "minimal_stateless_chatgpt_images_render_ticket_preparation",
     "same_renderer_bounded_ab_plan",
     "full_state_validator_pass_before_resource_execution",
     "bounded_reproduction_plan_final_authorization",
@@ -268,9 +261,13 @@
     "Do not generate the Route A retry in the current long chat.",
     "Do not consume the Route B reserved authorization for the Route A retry.",
     "Execute the retry exactly once in a fresh isolated chat and upload raw PNG to Google Drive.",
-    "Do not execute Route B until the Route A retry is reviewed in the main chat."
+    "Do not execute Route B until the Route A retry is reviewed in the main chat.",
+    "Do not execute Route B under the closed invalid Stage 1 experiment.",
+    "Do not perform a third same-form Route A retry.",
+    "Do not infer VPD or Style Capsule quality from the two technically invalid Route A outputs.",
+    "Next action is preparation only: minimal stateless ChatGPT Images render ticket, no generation."
   ],
-  "next_required_action": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
+  "next_required_action": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -338,10 +335,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_AUTHORIZED_FRESH_CHAT_REQUIRED",
+  "status": "VPD_P3_STAGE1_AB_INVALID_TWO_ROUTE_A_BINDING_FAILURES_NO_VPD_INFERENCE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "69cfa5decb9fafe579eae47c8634a0df762cf40c9ba0156989fce272554b349b"
+    "sha256": "2c693f94bcc483c8a460b2d45ee5df75d8e543325dc5ccaf7c94af044a5bc8e8"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -362,8 +359,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-AUTHORIZED-20260922-001",
-      "event_hash": "33fece905976b6582d24efc7b5be4f31dddc1aa00ec7519ac866c7222bba698f"
+      "event_id": "EVT-VPD-P3-STAGE1-AB-CLOSED-A-RETRY-INVALID-20260922-001",
+      "event_hash": "a2e46d52600b358861ce630eba5eeb7bafeecfa22417c9c345a6da5c77d5ff17"
     }
   },
   "typography_repair": {
@@ -960,7 +957,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_RETRY_AUTHORIZED_NOT_EXECUTED",
+    "status": "STAGE1_INVALID_EXECUTION_CLOSED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -986,10 +983,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_RETRY_AUTHORIZED",
-    "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
+    "route_A": "TECHNICALLY_INVALID_INITIAL_AND_RETRY",
+    "route_B": "NOT_EXECUTED_STAGE1_CLOSED",
     "current_chat_render_eligible": false,
-    "next": "EXECUTE_STAGE1_ROUTE_A_TECHNICAL_RETRY_IN_FRESH_ISOLATED_CHAT",
+    "next": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -1020,12 +1017,24 @@
       "git_blob_sha": "f16b1ade2019cd6892caf14f33e1a7475f55d43a"
     },
     "route_A_retry_generation_authorization": 1,
-    "route_B_generation_authorization_reserved": 1,
+    "route_B_generation_authorization_reserved": 0,
     "route_A_retry_authorization_receipt": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_AUTHORIZATION_20260922.json",
       "git_blob_sha": "1da7d32966cae498e7fd68145c049bdb5d922eaa"
     },
-    "route_A_retry": "AUTHORIZED_NOT_EXECUTED"
+    "route_A_retry": "TECHNICALLY_INVALID_WRONG_SUBJECT_WRONG_ASPECT_PROHIBITED_TEXT",
+    "route_A_retry_review": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_REVIEW_20260922.json",
+      "git_blob_sha": "ed4d1766f5bc3ea37f03856c371032b0a73e6eab"
+    },
+    "route_A_retry_drive_url": "https://drive.google.com/file/d/1qDx9TPHupVmLFYSsuJq-fE5Rqt_dJEtk/view?usp=drivesdk",
+    "route_A_retry_sha256": "49496a7fff47ce6db82d8d136ac1b921624490a05ed7ec9e28cd30cc5ff4d76c",
+    "route_A_retry_dimensions": [
+      1536,
+      1024
+    ],
+    "formal_ab_comparison_allowed": false,
+    "stage1_closed": true
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
