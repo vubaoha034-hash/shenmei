@@ -1,0 +1,69 @@
+VPD ChatGPT Images Native A/B Stage 1 — Route A Controlled Technical Retry
+Repository: vubaoha034-hash/shenmei
+Branch: visual-program-distillation-v2-photography-design-20260814
+
+IMPORTANT
+- This retry is NOT authorized merely because this file exists.
+- Execute only after CURRENT_TASK_LOCK explicitly authorizes exactly one Route A technical retry image.
+- Do not use the remaining Route B authorization as the retry budget.
+- Fresh isolated chat only.
+
+MANDATORY READS
+1. START_HERE.md
+2. PROJECT_CONTROL_ADAPTER.json
+3. VPD_PROJECT_ROADMAP.md
+4. continuity/vpd/CURRENT_TASK_LOCK.json
+5. continuity/vpd/LATEST_CHECKPOINT.json
+6. continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md
+7. evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_BINDING_PACKET_20260922.json
+
+VISUAL INPUT
+Load exactly one visual reference:
+Drive file ID: 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ
+Filename: R1C-APPROVED-SHANYEJI-CANONICAL.jpg
+SHA-256: 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414
+Verify the bytes before generation.
+Do not load any prior generated VPD image or any unrelated image.
+
+TASK-BINDING RULE
+Do not paraphrase, summarize, translate, embellish, or replace the image task.
+Do not introduce any other visual scene description anywhere in the generator chat.
+Immediately before the image tool call, the only visible assistant commentary must be the exact text between IMAGE_TASK_START and IMAGE_TASK_END below, with no prefix or suffix.
+
+IMAGE_TASK_START
+Create exactly one native 3:4 portrait, photo-only editorial hero for a new content task: a working rice granary at early morning. Show pale rice grains, woven baskets, linen sacks, aged wood bins and a modest sorting/preparation surface in believable documentary photography with cool-neutral morning daylight; no mountains or forest, tea ware, wok or flame, calligraphy, logos, labels, final text, or detached text panels. Use the attached approved R1C reference only as a family-level visual/style anchor—not to copy its subject, brand identity, typography, motifs, or layout coordinates—and leave one natural quiet area for later Figma typography.
+IMAGE_TASK_END
+
+Frozen image task SHA-256:
+3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c
+
+IMAGE TOOL CALL
+- ChatGPT Images only.
+- generation, not edit.
+- n=1.
+- explicit 3:4 portrait size/aspect.
+- is_style_transfer=true when the tool exposes that flag.
+- prompt argument remains null because the image tool prompt field is deprecated/context-inferred.
+- no hidden variants.
+- no best-of-N.
+- no retry before main-chat review.
+- no Figma.
+
+AFTER GENERATION
+Follow continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md exactly:
+1. Save/archive the raw PNG.
+2. Upload the raw PNG to Google Drive.
+3. Read back Drive metadata.
+4. Record gen_id, raw runtime file id, Drive file ID, stable browser URL, SHA-256 and actual dimensions in provenance.
+5. Do not make the Drive file public.
+6. Stop after archival. Do not critique or revise the image.
+
+FINAL USER-VISIBLE RESPONSE
+Return only:
+
+已生成并归档。
+DRIVE_URL: <Google Drive browser URL>
+DRIVE_FILE_ID: <file id>
+SHA256: <sha256>
+DIMENSIONS: <width>x<height>
+请把 DRIVE_URL 发回主聊天。
