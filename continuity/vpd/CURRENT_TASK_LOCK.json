@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 120,
+  "revision": 121,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 119,
-    "git_blob_sha": "ba26390a5cb77f3fb26b35600dd280a44540bff1",
-    "note": "Revision 119 authorized one replacement A image and one replacement B image in separate fresh chats."
+    "revision": 120,
+    "git_blob_sha": "856c25608724686781f5529e4165d5518c911928",
+    "note": "Revision 120 recorded the known-label A/B review and waited for user preference."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The user returned the replacement pair and explicitly labeled image 1 as Route A and image 2 as Route B. Both exact files have been technically checked: each is 1152x1536 (3:4), depicts the required rice granary and required material/process evidence, and contains no readable advertising text or invented brand. Both show minor exterior mountain/forest scenery through the opening, so correctness is not perfect. The exact uploaded bytes were archived to Google Drive under route-labeled filenames. Visual review with known A/B labels finds Route B stronger on dominant mass, reading hierarchy, regional detail concentration, near/mid/far depth and process-evidence organization; color temperature remains warm in both. This provides a one-pair qualitative signal that the compact VPD controls improve composition, but it is not blind and the fresh-chat execution isolation provenance was not independently verified from generator handoff blocks. No Style Capsule promotion is allowed from this single pair.",
-  "status": "VPD_P3_LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_REVIEWED_B_SHOWS_QUALITATIVE_SIGNAL_WAITING_USER_PREFERENCE",
+  "current_stage": "The user also prefers B but explicitly raised a valid priming concern because the assistant had already analyzed the known-label pair before asking for the user's choice. The user preference is therefore recorded with a priming caveat and is not treated as blind evidence. No new images are being generated. Instead, the exact existing A/B files have been copied into ChatGPT Library under neutral X/Y names using a deterministic SHA-256 sort, and an independent fresh evaluator prompt has been frozen. The blind evaluator must see only PAIR1_X.jpg and PAIR1_Y.jpg plus the neutral task/rubric, with no A/B/VPD/history context. The X/Y-to-route mapping must remain undisclosed until the evaluator returns a verdict.",
+  "status": "VPD_P3_LIBRARY_NATIVE_AB_BLIND_REVIEW_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "GET_USER_A_OR_B_PREFERENCE_AND_DECIDE_COMPACT_VPD_INTEGRATION",
+  "next_required_action": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "received and route-labeled replacement A/B pair from user",
-    "verified both files are exact 3:4 portrait outputs",
-    "archived exact A and B bytes to Google Drive with route labels",
-    "completed known-label visual A/B review",
-    "identified a one-pair qualitative compositional benefit signal for Route B",
-    "kept Style Capsule promotion blocked pending broader evidence and user preference"
+    "recorded user preference for B with explicit psychological-priming caveat",
+    "created deterministic X/Y blind mapping from exact SHA-256 ordering",
+    "copied the exact existing pair to ChatGPT Library under neutral X/Y filenames",
+    "froze a neutral independent evaluator prompt before blind review",
+    "generated zero new images"
   ],
-  "updated_at": "2026-09-22T16:05:00Z",
+  "updated_at": "2026-09-22T16:18:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1370,7 +1369,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "REPLACEMENT_PAIR_RECEIVED_AND_VISUALLY_REVIEWED",
+    "status": "BLIND_REVIEW_PACKAGE_READY",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1401,7 +1400,7 @@
       "drive_url": "https://drive.google.com/file/d/1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K/view?usp=drivesdk",
       "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
     },
-    "next": "GET_USER_A_OR_B_PREFERENCE_AND_DECIDE_COMPACT_VPD_INTEGRATION",
+    "next": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1433,8 +1432,24 @@
       "git_blob_sha": "d6a0e279bfb6602acfd8dda7e99650960eb6409c"
     },
     "qualitative_signal": "B_STRONGER_ON_COMPOSITIONAL_MECHANISMS_IN_ONE_PAIR",
-    "blind_review": false,
+    "blind_review": {
+      "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR1",
+      "mapping_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_MAPPING_20260922.json",
+      "mapping_git_blob_sha": "a0462d8315cc07b6229b53683439d90030f46410",
+      "evaluator_prompt_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_EVALUATOR_PROMPT_20260922.txt",
+      "evaluator_prompt_git_blob_sha": "fda4f00bbde4685f9d072f6e172cfa10d4f5d3d6",
+      "feedback_path": "evidence/vpd/library_native_ab_v1/USER_PREFERENCE_B_WITH_PRIMING_CAVEAT_20260922.json",
+      "feedback_git_blob_sha": "a2308508b9f0ca6b44acc8d30f9fd21234c10902",
+      "library_X_path": "/VPD_BLIND_REVIEW/PAIR1_X.jpg",
+      "library_Y_path": "/VPD_BLIND_REVIEW/PAIR1_Y.jpg",
+      "evaluator_must_not_know_route_mapping": true,
+      "result_status": "PENDING"
+    },
     "execution_isolation_provenance": "NOT_INDEPENDENTLY_VERIFIED_FROM_FRESH_CHAT_HANDOFFS",
-    "style_capsule_promotion_allowed": false
+    "style_capsule_promotion_allowed": false,
+    "user_preference": "B",
+    "user_preference_blind": false,
+    "user_priming_caveat": true,
+    "integration_decision": "BLOCKED_PENDING_BLIND_REVIEW"
   }
 }
