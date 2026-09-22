@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 139,
-  "recorded_at": "2026-09-22T09:56:00Z",
+  "sequence": 140,
+  "recorded_at": "2026-09-22T10:08:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The user explicitly authorized two Library-native A/B images, but the controller/main chat incorrectly executed image generation directly and produced two outputs in the same controller conversation. This violated the hard controller/generator separation rule and the A/B isolation design: Route A and Route B were not run in separate fresh chats, per-route provenance/Drive handoff was not completed, and the outputs cannot be treated as valid formal A/B samples. Two real image generations were nevertheless consumed and are recorded as spent execution cost. No automatic replacement retry is authorized.",
+  "current_focus": "The user has explicitly chosen to replace the invalid controller-chat A/B pair and requested the prompts. One replacement Route A image and one replacement Route B image are authorized. Two separate fresh generator chats are mandatory. Each chat must attach the same canonical R1C from ChatGPT Library, generate exactly one 3:4 image, upload the raw PNG to Google Drive, and return only its route-tagged Drive handoff. The controller/main chat remains non-render-eligible.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -217,10 +217,15 @@
     "clean_library_native_ab_prepared",
     "library_ab_user_authorization_recorded",
     "controller_chat_ab_generation_marked_invalid",
-    "two_actual_generations_recorded_as_spent"
+    "two_actual_generations_recorded_as_spent",
+    "replacement_library_ab_pair_authorized",
+    "replacement_route_a_ticket_prepared",
+    "replacement_route_b_ticket_prepared"
   ],
   "incomplete": [
-    "user_decision_on_replacement_library_ab_pair"
+    "replacement_route_a_fresh_chat_execution",
+    "replacement_route_b_fresh_chat_execution",
+    "replacement_pair_drive_readback_and_review"
   ],
   "blocked": [
     "Do not rerender H1 under Attempt 3.",
@@ -283,7 +288,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+  "next_required_action": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -351,10 +356,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_LIBRARY_NATIVE_AB_AUTHORIZED_BUT_INVALID_CONTROLLER_EXECUTION_TWO_IMAGES_SPENT",
+  "status": "VPD_P3_LIBRARY_NATIVE_AB_REPLACEMENT_PAIR_AUTHORIZED_FRESH_CHATS_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "321bdf1a805cf3c23c48144cc486fa4d090275a9729f69c2d165cfcd49c82a8a"
+    "sha256": "db43824c627f349fdc8388ae493a3c06459eb6b2d7d2643c79231e356cc81135"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -375,8 +380,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-LIBRARY-AB-CONTROLLER-EXECUTION-ERROR-20260922-001",
-      "event_hash": "331e35c8d0bea7cd6abd77930aeb7df5d80e894f1013482f50ea3ea6ccf582bc"
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-REPLACEMENT-AUTHORIZED-20260922-001",
+      "event_hash": "41584a83a62694a234478df79850ed4726f884a9f3a6292e1db2f50df6a881ab"
     }
   },
   "typography_repair": {
@@ -1146,7 +1151,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "AUTHORIZED_BUT_INVALIDLY_EXECUTED_IN_CONTROLLER_CHAT",
+    "status": "REPLACEMENT_PAIR_AUTHORIZED_NOT_EXECUTED",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1159,7 +1164,7 @@
     "retry_budget": 0,
     "route_A": "REFERENCE_NATIVE_BASELINE",
     "route_B": "REFERENCE_PLUS_COMPACT_VPD",
-    "next": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+    "next": "EXECUTE_REPLACEMENT_ROUTE_A_AND_ROUTE_B_IN_TWO_SEPARATE_FRESH_CHATS",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1178,6 +1183,12 @@
       }
     ],
     "automatic_retry_authorized": false,
-    "current_chat_render_eligible": false
+    "current_chat_render_eligible": false,
+    "replacement_authorized_images": 2,
+    "replacement_route_A_authorized": 1,
+    "replacement_route_B_authorized": 1,
+    "replacement_retry_budget": 0,
+    "route_A_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_A_TO_FRESH_CHAT_20260922.txt",
+    "route_B_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_B_TO_FRESH_CHAT_20260922.txt"
   }
 }
