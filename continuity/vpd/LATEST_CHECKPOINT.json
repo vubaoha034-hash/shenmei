@@ -309,7 +309,7 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_CHATGPT_IMAGES_STAGE1_TWO_IMAGE_AUTHORIZED_ROUTE_A_FRESH_CHAT_REQUIRED",
+  "status": "VPD_P3_CHATGPT_IMAGES_STAGE1_ROUTE_A_EXECUTED_ARCHIVED_REVIEW_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "sha256": "fcb835d108abf0a17dad79856dbfa4f3e755cabcf33fc8eb0b8f9f30763c3a5a"
@@ -857,8 +857,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Attempt 3 H1 executed exactly once; provenance archived; fail-closed on protocol-level 3:4 portrait requirement; no retry; H2 blocked pending separate H1 protocol settlement.",
-  "updated_at": "2026-09-21T08:20:00Z",
+  "current_stage": "ChatGPT Images Native A/B Stage 1 Route A executed exactly once; raw output and provenance archived; no retry, no Figma, no evaluation; Route B remains blocked pending separate Route A review.",
+  "updated_at": "2026-09-22T01:38:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -931,7 +931,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_TWO_IMAGES_AUTHORIZED_ROUTE_A_PENDING",
+    "status": "STAGE1_ROUTE_A_EXECUTED_RAW_ARCHIVED_PENDING_REVIEW",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -953,9 +953,23 @@
     "stage2_locked": true,
     "route_A_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
     "route_B_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_B_FRESH_CHAT_20260921.txt",
-    "route_A": "AUTHORIZED_NOT_EXECUTED",
-    "route_B": "AUTHORIZED_BLOCKED_UNTIL_ROUTE_A_ARCHIVED",
+    "route_A": "EXECUTED_ONCE_RAW_ARCHIVED_EVALUATION_NOT_EXECUTED",
+    "route_B": "AUTHORIZED_BLOCKED_PENDING_ROUTE_A_REVIEW",
     "current_chat_render_eligible": false,
-    "next": "EXECUTE_STAGE1_ROUTE_A_IN_FRESH_ISOLATED_CHAT"
+    "next": "STOP_ROUTE_A_GENERATOR_CHAT_AND_REVIEW_ROUTE_A_BEFORE_ANY_ROUTE_B_EXECUTION",
+    "route_A_provenance": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
+      "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
+      "output_sha256": "8e05f4cc4ca8317998c53350d657f9fbbd644a76b406700596e1bcb96e92880d",
+      "output_dimensions": [
+        1086,
+        1448
+      ],
+      "output_drive_file_id": "1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm",
+      "reference_sha256_verified": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "retry_count": 0,
+      "evaluation_executed": false,
+      "figma_executed": false
+    }
   }
 }
