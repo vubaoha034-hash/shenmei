@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 117,
+  "revision": 118,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 116,
-    "git_blob_sha": "130d653d586b4b9b3ca94b8077294a6d53e31f33",
-    "note": "Revision 116 recorded user approval of the ChatGPT Library reference route and left one smoke image authorized."
+    "revision": 117,
+    "git_blob_sha": "d29880fb6160d1ffec693829aa071545e102fb64",
+    "note": "Revision 117 prepared the clean two-image Library-native A/B and waited for authorization."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The first stateless smoke using the Library/current-conversation attachment route has now been returned and archived. The exact returned PNG is 1086x1448 (3:4), unmistakably depicts the required working rice granary, includes the required rice/baskets/sacks/aged-wood/sorting-surface evidence, and contains no readable advertising text or invented brand. The raw bytes were archived to Google Drive with matching file size. This is a technical execution-path PASS only: it supports the Library attachment route and native task/aspect binding in one sample, but it does not prove VPD value or Style Capsule transfer. A new clean two-image Library-bound native A/B experiment is prepared; no A/B image is authorized yet.",
-  "status": "VPD_P3_LIBRARY_SMOKE_PASS_NATIVE_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
+  "current_stage": "The user explicitly authorized two Library-native A/B images, but the controller/main chat incorrectly executed image generation directly and produced two outputs in the same controller conversation. This violated the hard controller/generator separation rule and the A/B isolation design: Route A and Route B were not run in separate fresh chats, per-route provenance/Drive handoff was not completed, and the outputs cannot be treated as valid formal A/B samples. Two real image generations were nevertheless consumed and are recorded as spent execution cost. No automatic replacement retry is authorized.",
+  "status": "VPD_P3_LIBRARY_NATIVE_AB_AUTHORIZED_BUT_INVALID_CONTROLLER_EXECUTION_TWO_IMAGES_SPENT",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B",
+  "next_required_action": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "archived the exact valid smoke PNG to Google Drive",
-    "verified the smoke output is 1086x1448 3:4 portrait",
-    "settled the Library attachment smoke as a technical execution-path PASS",
-    "kept VPD/Style Capsule value inference explicitly unproven",
-    "prepared a new clean Library-bound native A/B experiment with two proposed images and zero retries",
-    "generated no A/B images in the controller chat"
+    "recorded the user's two-image Library A/B authorization",
+    "recorded that two actual image generations were consumed",
+    "classified both controller-chat outputs as invalid for formal A/B",
+    "blocked aesthetic/VPD inference from the invalid pair",
+    "stopped automatic replacement generation"
   ],
-  "updated_at": "2026-09-22T08:27:00Z",
+  "updated_at": "2026-09-22T09:56:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1370,7 +1369,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "AUTHORIZED_BUT_INVALIDLY_EXECUTED_IN_CONTROLLER_CHAT",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1379,10 +1378,29 @@
     "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "proposed_images": 2,
-    "authorized_images": 0,
+    "authorized_images": 2,
     "retry_budget": 0,
     "route_A": "REFERENCE_NATIVE_BASELINE",
     "route_B": "REFERENCE_PLUS_COMPACT_VPD",
-    "next": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B"
+    "next": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+    "user_authorization": "允许 Library A/B 两张",
+    "actual_generated_images_spent": 2,
+    "formal_valid_images": 0,
+    "controller_execution_error": {
+      "path": "evidence/vpd/library_native_ab_v1/CONTROLLER_EXECUTION_ERROR_20260922.json",
+      "git_blob_sha": "53c6906415fce8e2034257bcc1676092fac15461"
+    },
+    "accidental_outputs": [
+      {
+        "gen_id": "b6d674be-4176-496b-aedd-c30d80112ebc",
+        "runtime_file_id": "file_00000000485c81f58c84a4f90d035ccf"
+      },
+      {
+        "gen_id": "6fb75e49-75c5-4892-8b27-67e4063de853",
+        "runtime_file_id": "file_00000000025481fda1bf078ad12e35fb"
+      }
+    ],
+    "automatic_retry_authorized": false,
+    "current_chat_render_eligible": false
   }
 }
