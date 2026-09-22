@@ -1,0 +1,62 @@
+{
+  "schema_version": "vpd-stateless-library-smoke-result/v1",
+  "artifact_type": "STATELESS_LIBRARY_ATTACHMENT_SMOKE_RESULT",
+  "recorded_at": "2026-09-22T08:22:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
+  "status": "TECHNICAL_PASS",
+  "source_return": {
+    "mode": "USER_RETURNED_EXACT_OUTPUT_FILE_TO_MAIN_CHAT",
+    "conversation_file_id": "file_000000007d0481fdbe0accd12df46615",
+    "original_filename": "c94f3896-0037-490a-8c40-288b43c7c22c.png",
+    "sha256": "7b68629dda54ec22c210345359a8e5a0184465b88ef54aeebbfb517a4a940ac1",
+    "bytes": 3160588,
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "aspect": "3:4"
+  },
+  "drive_archive": {
+    "file_id": "1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj",
+    "url": "https://drive.google.com/file/d/1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj/view?usp=drivesdk",
+    "filename": "VPD_STATELESS_SMOKE_LIBRARY_R1C_RICE_GRANARY_20260922.png",
+    "mime_type": "image/png",
+    "bytes": 3160588
+  },
+  "correctness": {
+    "single_image": "PASS",
+    "portrait_3_4": "PASS",
+    "rice_granary_subject": "PASS",
+    "visible_pale_rice": "PASS",
+    "visible_woven_baskets": "PASS",
+    "visible_linen_sacks": "PASS",
+    "visible_aged_wood_bins": "PASS",
+    "visible_sorting_preparation_surface": "PASS",
+    "readable_text_or_invented_brand": "PASS_ABSENT",
+    "product_ad_substitution": "PASS_ABSENT",
+    "quiet_typography_area": "PASS_PRESENT"
+  },
+  "nonformal_visual_review": {
+    "status": "USABLE_BASE_VISUAL_NOT_FINAL_POSTER",
+    "strengths": [
+      "Material differentiation between rice, bamboo, linen and aged wood is strong.",
+      "Near/mid/far depth is coherent and the scene reads immediately as a working granary.",
+      "The image is materially more credible and less template-like than the two prior invalid outputs."
+    ],
+    "weaknesses": [
+      "Overall light is warmer than the requested cool-neutral morning direction.",
+      "The upper-right quiet area is useful but visually somewhat heavy/dull.",
+      "Foreground basket and table mass make the lower frame relatively dense.",
+      "Family-level relation to R1C is not yet strong enough to claim successful VPD/style transfer."
+    ]
+  },
+  "conclusion": {
+    "library_attachment_execution_path": "SUPPORTED_BY_ONE_VALID_SAMPLE",
+    "proves_renderer_task_binding": true,
+    "proves_vpd_value": false,
+    "proves_style_capsule_transfer": false,
+    "stage1_closed_invalid_experiment_reopened": false
+  },
+  "next_required_action": "PREPARE_NEW_CLEAN_LIBRARY_BOUND_A_B_NO_GENERATION"
+}
