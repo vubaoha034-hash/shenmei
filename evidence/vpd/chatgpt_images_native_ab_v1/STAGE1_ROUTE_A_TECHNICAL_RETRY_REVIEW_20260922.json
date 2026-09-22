@@ -1,0 +1,86 @@
+{
+  "schema_version": "vpd-chatgpt-images-stage1-route-a-retry-review/v1",
+  "artifact_type": "STAGE1_ROUTE_A_TECHNICAL_RETRY_REVIEW",
+  "recorded_at": "2026-09-22T02:32:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "CHATGPT_IMAGES_NATIVE_AB_STAGE1",
+  "route": "REFERENCE_NATIVE_BASELINE",
+  "retry": true,
+  "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+  "drive": {
+    "file_id": "1qDx9TPHupVmLFYSsuJq-fE5Rqt_dJEtk",
+    "url": "https://drive.google.com/file/d/1qDx9TPHupVmLFYSsuJq-fE5Rqt_dJEtk/view?usp=drivesdk",
+    "filename": "VPD_STAGE1_ROUTE_A_TECHNICAL_RETRY_20260922.png",
+    "sha256_user_reported": "49496a7fff47ce6db82d8d136ac1b921624490a05ed7ec9e28cd30cc5ff4d76c",
+    "sha256_runtime_verified": "49496a7fff47ce6db82d8d136ac1b921624490a05ed7ec9e28cd30cc5ff4d76c",
+    "bytes": 2035898,
+    "dimensions": [
+      1536,
+      1024
+    ]
+  },
+  "reference_readback": {
+    "drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "observed_identity": "Forest-based Shanyeji poster with large editorial typography and orange/white graphic accents.",
+    "reference_mismatch_claim": false
+  },
+  "correctness_review": {
+    "single_image": "PASS",
+    "requested_aspect": "3:4 PORTRAIT",
+    "actual_aspect": "3:2 LANDSCAPE",
+    "aspect": "FAIL",
+    "required_subject": "Working rice granary with rice grains, woven baskets, linen sacks, aged wood bins and sorting/preparation surface.",
+    "observed_subject": "Polished supplement/skincare product advertisement with bottle, drinking glass, flowers/leaves, stone plinth, capsules and promotional copy.",
+    "subject_class": "FAIL",
+    "rice_granary_material_evidence": "FAIL_ABSENT",
+    "prohibited_visible_text": "FAIL_PRESENT",
+    "visible_text_examples": [
+      "SHENMEI",
+      "GLUTATHIONE RADIANT COMPLEX",
+      "RADIANCE BEGINS WITHIN",
+      "PURE NUTRITION REAL RESULTS",
+      "BEAUTY LIVES IN BALANCE"
+    ],
+    "no_final_labels_requirement": "FAIL",
+    "no_brand_identity_requirement": "FAIL",
+    "route_identity": "TECHNICALLY_INVALID_FOR_STAGE1_AB"
+  },
+  "visual_quality_non_formal": {
+    "note": "Aesthetic observations are secondary because correctness failed first.",
+    "strengths": [
+      "Commercial product lighting is coherent and materially polished.",
+      "Bottle, stone, glass and botanical props are rendered with good local detail.",
+      "Hierarchy and whitespace are competent for a wellness advertisement."
+    ],
+    "weaknesses": [
+      "The image is a generic premium-supplement advertising template, not the requested documentary granary scene.",
+      "Warm beige/gold palette, centered product pedestal and wellness copy are stock-commercial rather than evidence of the intended Shanyeji family transfer.",
+      "It introduces an invented brand/product identity and extensive final typography, directly violating the photo-only task.",
+      "Landscape composition invalidates the explicit 3:4 portrait requirement."
+    ]
+  },
+  "experiment_disposition": {
+    "route_A_initial": "TECHNICALLY_INVALID",
+    "route_A_retry": "TECHNICALLY_INVALID",
+    "route_B": "NOT_EXECUTED",
+    "formal_ab_comparison_allowed": false,
+    "stage1_verdict": "INVALID_EXECUTION_NO_VPD_VALUE_INFERENCE",
+    "style_capsule_inference": "NONE",
+    "user_accepted_assets_affected": false,
+    "further_same_runner_retry_allowed": false
+  },
+  "diagnosis": {
+    "proven": [
+      "The stored frozen Route A task requests a rice granary.",
+      "The retry Drive bytes match the user-reported SHA-256.",
+      "The returned pixels do not match the task and do not satisfy the requested aspect."
+    ],
+    "not_proven": [
+      "The exact hidden prompt actually delivered internally to the image renderer.",
+      "Whether the failure is caused by orchestration context inference, renderer instruction binding, or another product-layer issue."
+    ],
+    "conclusion": "Current fresh-chat orchestration does not provide sufficient execution reliability for a controlled same-renderer A/B experiment. A third same-form retry would be uninformative and wasteful."
+  },
+  "next_required_action": "CLOSE_STAGE1_AB_AND_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION"
+}
