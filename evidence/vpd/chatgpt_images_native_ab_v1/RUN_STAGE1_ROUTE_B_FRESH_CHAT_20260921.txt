@@ -11,6 +11,7 @@ Read:
 4. continuity/vpd/CURRENT_TASK_LOCK.json
 5. continuity/vpd/LATEST_CHECKPOINT.json
 6. evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TASK_AND_AB_FREEZE_20260921.json
+7. continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md
 
 Fresh isolated chat only. Do not load Route A output or any prior generated VPD pixels.
 Load exactly one visual reference: Drive file 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ / R1C-APPROVED-SHANYEJI-CANONICAL.jpg / SHA-256 9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414.
@@ -18,4 +19,10 @@ Verify the bytes before generation.
 
 Execute Route B prompt exactly once with ChatGPT Images.
 Hard controls: n=1; explicit 3:4 portrait; generation, not edit; no hidden variants; no retry before review; no Figma.
-Archive raw output and provenance, then stop.
+After generation, follow continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md exactly:
+- upload the raw PNG to Google Drive;
+- read back Drive metadata;
+- write Drive file ID/browser URL plus SHA-256/dimensions into provenance;
+- do not make the file public;
+- return only the compact DRIVE_URL / DRIVE_FILE_ID / SHA256 / DIMENSIONS handoff block to the user.
+Then stop.
