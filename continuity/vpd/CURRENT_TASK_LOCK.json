@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 116,
+  "revision": 117,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 115,
-    "git_blob_sha": "bb7507211160c2adc91542c4abd32fb580527a73",
-    "note": "Revision 115 prepared ChatGPT Library as the preferred reusable attachment source."
+    "revision": 116,
+    "git_blob_sha": "130d653d586b4b9b3ca94b8077294a6d53e31f33",
+    "note": "Revision 116 recorded user approval of the ChatGPT Library reference route and left one smoke image authorized."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The user has now explicitly approved ChatGPT Library as the preferred VPD reference-image reuse path. The canonical R1C remains stored in /VPD_REFERENCES and the existing one-image stateless smoke authorization remains active and unconsumed. Rollout stays bounded: first validate the Library-to-current-chat-attachment-to-ChatGPT-Images path with R1C; do not bulk-migrate the remaining approved reference set yet. Google Drive remains source/archive and generated-output return, not runtime visual-reference binding.",
-  "status": "VPD_P3_STATELESS_SMOKE_LIBRARY_ROUTE_USER_APPROVED_READY_TO_EXECUTE",
+  "current_stage": "The first stateless smoke using the Library/current-conversation attachment route has now been returned and archived. The exact returned PNG is 1086x1448 (3:4), unmistakably depicts the required working rice granary, includes the required rice/baskets/sacks/aged-wood/sorting-surface evidence, and contains no readable advertising text or invented brand. The raw bytes were archived to Google Drive with matching file size. This is a technical execution-path PASS only: it supports the Library attachment route and native task/aspect binding in one sample, but it does not prove VPD value or Style Capsule transfer. A new clean two-image Library-bound native A/B experiment is prepared; no A/B image is authorized yet.",
+  "status": "VPD_P3_LIBRARY_SMOKE_PASS_NATIVE_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_CHAT_WITH_LIBRARY_ATTACHMENT",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded user approval of ChatGPT Library as the preferred reusable VPD reference path",
-    "kept direct upload as fallback",
-    "kept Google Drive as archive/return rather than image-reference binding",
-    "kept bulk migration of all approved references paused until the one-image smoke validates the route",
-    "preserved the existing one-image stateless smoke authorization"
+    "archived the exact valid smoke PNG to Google Drive",
+    "verified the smoke output is 1086x1448 3:4 portrait",
+    "settled the Library attachment smoke as a technical execution-path PASS",
+    "kept VPD/Style Capsule value inference explicitly unproven",
+    "prepared a new clean Library-bound native A/B experiment with two proposed images and zero retries",
+    "generated no A/B images in the controller chat"
   ],
-  "updated_at": "2026-09-22T06:14:00Z",
+  "updated_at": "2026-09-22T08:27:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1283,7 +1284,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "AUTHORIZED_LIBRARY_ROUTE_USER_APPROVED_READY",
+    "status": "TECHNICAL_PASS_ARCHIVED",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1298,12 +1299,12 @@
     "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "requested_aspect": "3:4 PORTRAIT",
-    "current_generation_authorization": 1,
+    "current_generation_authorization": 0,
     "retry_budget": 0,
     "drive_handoff_required": true,
     "generator_reads_project_repo": false,
     "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
-    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_CHAT_WITH_LIBRARY_ATTACHMENT",
+    "next": "COMPLETE",
     "authorization_source": "user message: 允许无状态测试 1 张",
     "invalid_controller_generation": {
       "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
@@ -1353,6 +1354,35 @@
       "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_ROUTE_USER_APPROVAL_20260922.json",
       "git_commit": "36391117c36bbd316557eb3d44c5e00497143e48"
     },
-    "bulk_library_migration_authorized": false
+    "bulk_library_migration_authorized": false,
+    "smoke_result": {
+      "path": "evidence/vpd/stateless_render_v1/STATELESS_LIBRARY_SMOKE_RESULT_20260922.json",
+      "git_blob_sha": "5157e0e8ea0590facc33da0fe6df92682cf8c4e4"
+    },
+    "output_sha256": "7b68629dda54ec22c210345359a8e5a0184465b88ef54aeebbfb517a4a940ac1",
+    "output_dimensions": [
+      1086,
+      1448
+    ],
+    "output_drive_file_id": "1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj",
+    "output_drive_url": "https://drive.google.com/file/d/1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj/view?usp=drivesdk",
+    "conclusion": "LIBRARY_ATTACHMENT_PATH_SUPPORTED_BY_ONE_VALID_SAMPLE",
+    "proves_vpd_value": false
+  },
+  "library_native_ab_v1": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
+    "prep": {
+      "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
+      "git_blob_sha": "dab667ecb4902ebd690d7546d1b3bbcabc8092e5"
+    },
+    "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "retry_budget": 0,
+    "route_A": "REFERENCE_NATIVE_BASELINE",
+    "route_B": "REFERENCE_PLUS_COMPACT_VPD",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B"
   }
 }
