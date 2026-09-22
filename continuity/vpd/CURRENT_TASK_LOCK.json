@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 108,
+  "revision": 109,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 107,
-    "git_blob_sha": "bc8ad1d90b869ece9d583422e2b1c7cd342c8fb7",
-    "note": "Revision 107 recorded Stage 1 Route A generation and raw archive pending review."
+    "revision": 108,
+    "git_blob_sha": "5a4a81a48a96f25f449499279e3ed272439384a5",
+    "note": "Revision 108 settled Route A as technically invalid and mandated Drive handoff."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Stage 1 Route A has been reviewed against the frozen task. The raw output is technically invalid for the A/B experiment: it is a single correct 3:4 portrait and the R1C reference identity was verified, but the pixels depict an unrelated woman-at-home-office lifestyle portrait instead of the required rice-granary subject, the required rice/material/process evidence is absent, and prohibited visible text/labels are present. Therefore no formal A/B aesthetic inference is allowed and Route B remains blocked; its authorized image budget is not consumed. A mandatory generator-to-Google-Drive handoff contract is now active for future fresh generator chats: upload the raw PNG immediately, read back a stable Drive browser URL/file ID, write provenance, and return only the Drive handoff block so the user can paste the link into the main chat. The current next step is to prepare a corrected Route A technical retry runner with stronger task-binding transport; no retry is yet authorized.",
-  "status": "VPD_P3_STAGE1_ROUTE_A_TECHNICAL_INVALID_DRIVE_HANDOFF_ACTIVE_RETRY_PREP_REQUIRED",
+  "current_stage": "A controlled Route A technical-retry runner is prepared but not authorized to generate. The frozen Route A task, approved R1C reference, 3:4 aspect and baseline semantics are unchanged. The retry changes only task-binding transport: the exact frozen image task is embedded directly in the initial generator-chat message, paraphrase is prohibited, the exact task text must be the only visible assistant commentary immediately before the single ChatGPT Images call, and the raw output must be uploaded to Google Drive with a stable link. The original remaining one-image authorization is reserved for Route B and cannot be reused for Route A retry. Route B remains blocked. No new image was generated.",
+  "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_RUNNER_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "reviewed the exact Route A Drive raw pixels against the frozen rice-granary task",
-    "classified Route A as technical invalid before aesthetic A/B review",
-    "kept Route B unexecuted and its authorized image budget unconsumed",
-    "saved the mandatory future generator-to-Google-Drive handoff contract",
-    "updated the unexecuted Route B runner to upload raw PNG to Drive and return the stable Drive URL",
-    "generated no additional image"
+    "prepared a controlled Route A technical retry binding packet without changing the frozen image task",
+    "embedded the exact frozen Route A prompt directly in the future initial generator-chat message",
+    "prohibited prompt paraphrase and unrelated visual descriptions before image generation",
+    "made Google Drive raw-output upload and stable link return mandatory",
+    "kept the remaining Route B image authorization reserved and unconsumed",
+    "generated zero new images"
   ],
-  "updated_at": "2026-09-22T01:58:00Z",
+  "updated_at": "2026-09-22T02:10:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -204,7 +204,11 @@
     "Do not use Route A lifestyle portrait as A/B aesthetic evidence.",
     "Do not consume the remaining Route B image authorization as an implicit Route A retry.",
     "A controlled Route A retry requires a new explicit authorization after its corrected runner is prepared.",
-    "All future fresh generator chats must upload the raw output to Google Drive and return the Drive browser URL/file ID."
+    "All future fresh generator chats must upload the raw output to Google Drive and return the Drive browser URL/file ID.",
+    "Route A technical retry is not authorized yet.",
+    "The remaining one-image Stage 1 authorization belongs to Route B and must not be reused for Route A retry.",
+    "Route B remains blocked until a technically valid Route A baseline exists.",
+    "Do not change the frozen Route A image-task text during technical retry."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1170,7 +1174,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_TECHNICAL_INVALID_ROUTE_B_BLOCKED",
+    "status": "STAGE1_ROUTE_A_RETRY_PREPARED_NOT_AUTHORIZED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -1196,10 +1200,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_WRONG_SUBJECT_AND_PROHIBITED_TEXT",
+    "route_A": "TECHNICALLY_INVALID_RETRY_RUNNER_READY",
     "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
     "current_chat_render_eligible": false,
-    "next": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -1219,7 +1223,18 @@
       "git_blob_sha": "f99d11dfe3b76e56bac24f2be43ba62b1c757189"
     },
     "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
-    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52"
+    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52",
+    "route_A_retry_binding_packet": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_BINDING_PACKET_20260922.json",
+      "git_blob_sha": "4a4c53057df507f1211dd83763e00386690b337d",
+      "prompt_sha256": "3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c"
+    },
+    "route_A_retry_runner": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
+      "git_blob_sha": "f16b1ade2019cd6892caf14f33e1a7475f55d43a"
+    },
+    "route_A_retry_generation_authorization": 0,
+    "route_B_generation_authorization_reserved": 1
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
