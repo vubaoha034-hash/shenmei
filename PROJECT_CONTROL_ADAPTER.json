@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 117,
-    "sha256": "dfe0ddfae201cff5f910522e6e289c86a7334859b5257d5eee1cf307dec35635",
+    "revision": 118,
+    "sha256": "321bdf1a805cf3c23c48144cc486fa4d090275a9729f69c2d165cfcd49c82a8a",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,19 +956,18 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_LIBRARY_SMOKE_PASS_NATIVE_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
+    "status": "VPD_P3_LIBRARY_NATIVE_AB_AUTHORIZED_BUT_INVALID_CONTROLLER_EXECUTION_TWO_IMAGES_SPENT",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B",
+    "next_required_action": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "LIBRARY_NATIVE_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
+    "mode": "LIBRARY_NATIVE_AB_CONTROLLER_EXECUTION_ERROR_RECORDED",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
-    "current_generation_authorization": 0,
-    "reference_binding_mode": "CHATGPT_LIBRARY_ATTACHMENT_PREFERRED"
+    "current_generation_authorization": 0
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -997,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-LIBRARY-SMOKE-PASS-AB-PREPARED-20260922-001",
-      "event_hash": "fe4252e4219c297e4619810fe07b5da78ac7170517177af1378dfcb7db4b5c22"
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-CONTROLLER-EXECUTION-ERROR-20260922-001",
+      "event_hash": "331e35c8d0bea7cd6abd77930aeb7df5d80e894f1013482f50ea3ea6ccf582bc"
     }
   },
   "mature_workflow_audit": {
@@ -1217,7 +1216,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "AUTHORIZED_BUT_INVALIDLY_EXECUTED_IN_CONTROLLER_CHAT",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1226,10 +1225,29 @@
     "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "proposed_images": 2,
-    "authorized_images": 0,
+    "authorized_images": 2,
     "retry_budget": 0,
     "route_A": "REFERENCE_NATIVE_BASELINE",
     "route_B": "REFERENCE_PLUS_COMPACT_VPD",
-    "next": "WAIT_FOR_USER_AUTHORIZATION_TWO_IMAGE_LIBRARY_BOUND_A_B"
+    "next": "WAIT_FOR_USER_DECISION_ON_REPLACEMENT_LIBRARY_AB_PAIR",
+    "user_authorization": "允许 Library A/B 两张",
+    "actual_generated_images_spent": 2,
+    "formal_valid_images": 0,
+    "controller_execution_error": {
+      "path": "evidence/vpd/library_native_ab_v1/CONTROLLER_EXECUTION_ERROR_20260922.json",
+      "git_blob_sha": "53c6906415fce8e2034257bcc1676092fac15461"
+    },
+    "accidental_outputs": [
+      {
+        "gen_id": "b6d674be-4176-496b-aedd-c30d80112ebc",
+        "runtime_file_id": "file_00000000485c81f58c84a4f90d035ccf"
+      },
+      {
+        "gen_id": "6fb75e49-75c5-4892-8b27-67e4063de853",
+        "runtime_file_id": "file_00000000025481fda1bf078ad12e35fb"
+      }
+    ],
+    "automatic_retry_authorized": false,
+    "current_chat_render_eligible": false
   }
 }
