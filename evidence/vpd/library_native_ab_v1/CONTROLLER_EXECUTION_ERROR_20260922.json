@@ -1,0 +1,38 @@
+{
+  "schema_version": "vpd-library-native-ab-controller-execution-error/v1",
+  "artifact_type": "LIBRARY_NATIVE_AB_CONTROLLER_EXECUTION_ERROR",
+  "recorded_at": "2026-09-22T09:52:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
+  "user_authorization_message": "允许 Library A/B 两张",
+  "expected_action": "Record authorization only, then execute Route A and Route B in two separate fresh generator chats using the Library reference attachment.",
+  "actual_action": "Controller/main chat directly invoked ChatGPT Images and returned two images in one controller conversation.",
+  "generated_outputs": [
+    {
+      "gen_id": "b6d674be-4176-496b-aedd-c30d80112ebc",
+      "runtime_file_id": "file_00000000485c81f58c84a4f90d035ccf"
+    },
+    {
+      "gen_id": "6fb75e49-75c5-4892-8b27-67e4063de853",
+      "runtime_file_id": "file_00000000025481fda1bf078ad12e35fb"
+    }
+  ],
+  "actual_generation_cost": {
+    "visible_images_consumed": 2,
+    "note": "These images were actually generated and must not be described as unconsumed budget."
+  },
+  "protocol_failures": [
+    "Controller/main chat was not render-eligible.",
+    "Route A and Route B were not executed in separate fresh chats.",
+    "The two outputs cannot be reliably assigned to A versus B from isolated execution provenance.",
+    "No per-route Drive archive/provenance handoff was completed before review."
+  ],
+  "experiment_disposition": {
+    "outputs_valid_for_formal_ab": false,
+    "formal_ab_status": "NOT_VALIDLY_EXECUTED",
+    "aesthetic_comparison_allowed": false,
+    "vpd_inference_allowed": false,
+    "automatic_retry_allowed": false
+  },
+  "next_required_action": "STOP_AND_WAIT_FOR_USER_DECISION_ON_WETHER_TO_AUTHORIZE_A_REPLACEMENT_AB_PAIR"
+}
