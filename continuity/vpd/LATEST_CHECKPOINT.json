@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 129,
-  "recorded_at": "2026-09-22T01:58:00Z",
+  "sequence": 130,
+  "recorded_at": "2026-09-22T02:11:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Stage 1 Route A has been reviewed against the frozen task. The raw output is technically invalid for the A/B experiment: it is a single correct 3:4 portrait and the R1C reference identity was verified, but the pixels depict an unrelated woman-at-home-office lifestyle portrait instead of the required rice-granary subject, the required rice/material/process evidence is absent, and prohibited visible text/labels are present. Therefore no formal A/B aesthetic inference is allowed and Route B remains blocked; its authorized image budget is not consumed. A mandatory generator-to-Google-Drive handoff contract is now active for future fresh generator chats: upload the raw PNG immediately, read back a stable Drive browser URL/file ID, write provenance, and return only the Drive handoff block so the user can paste the link into the main chat. The current next step is to prepare a corrected Route A technical retry runner with stronger task-binding transport; no retry is yet authorized.",
+  "current_focus": "Route A controlled technical retry runner is prepared but not authorized. The frozen prompt/reference/aspect are unchanged; only task-binding transport and mandatory Drive return were strengthened. The one remaining Stage 1 authorization remains reserved for Route B, which stays blocked until a technically valid Route A baseline exists.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -192,10 +192,16 @@
     "stage1_route_a_exact_drive_pixel_review",
     "stage1_route_a_technical_invalid_wrong_subject",
     "generator_drive_handoff_v1_mandatory",
-    "route_b_runner_drive_return_updated"
+    "route_b_runner_drive_return_updated",
+    "stage1_route_a_technical_retry_binding_packet_prepared",
+    "stage1_route_a_technical_retry_runner_prepared",
+    "stage1_route_b_budget_reserved",
+    "no_new_image_generated"
   ],
   "incomplete": [
-    "stage1_route_a_controlled_retry_runner_preparation",
+    "stage1_route_a_retry_one_image_authorization",
+    "stage1_route_a_controlled_technical_retry",
+    "stage1_route_a_retry_drive_archive_and_review",
     "stage1_route_a_retry_authorization",
     "stage1_route_b_fresh_chat_generation",
     "stage1_route_b_archive_and_provenance",
@@ -254,7 +260,7 @@
     "A controlled Route A retry requires a new explicit authorization after its corrected runner is prepared.",
     "All future fresh generator chats must upload the raw output to Google Drive and return the Drive browser URL/file ID."
   ],
-  "next_required_action": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -322,10 +328,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_STAGE1_ROUTE_A_TECHNICAL_INVALID_DRIVE_HANDOFF_ACTIVE_RETRY_PREP_REQUIRED",
+  "status": "VPD_P3_STAGE1_ROUTE_A_RETRY_RUNNER_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "8c6f8a5c734412755f5d10a5ff410dba71b7222f721abec49e0e810aaa95e3cf"
+    "sha256": "d59b82660743f93991d2cb3aa6346f37584f606f27a0add076ba034104b8f12e"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -944,7 +950,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_TECHNICAL_INVALID_ROUTE_B_BLOCKED",
+    "status": "STAGE1_ROUTE_A_RETRY_PREPARED_NOT_AUTHORIZED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -970,10 +976,10 @@
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
       "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
     },
-    "route_A": "TECHNICALLY_INVALID_WRONG_SUBJECT_AND_PROHIBITED_TEXT",
+    "route_A": "TECHNICALLY_INVALID_RETRY_RUNNER_READY",
     "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
     "current_chat_render_eligible": false,
-    "next": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_ROUTE_A_TECHNICAL_RETRY_ONE_IMAGE",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -993,7 +999,14 @@
       "git_blob_sha": "f99d11dfe3b76e56bac24f2be43ba62b1c757189"
     },
     "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
-    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52"
+    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52",
+    "route_A_retry_binding_packet": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_BINDING_PACKET_20260922.json",
+      "prompt_sha256": "3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c"
+    },
+    "route_A_retry_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
+    "route_A_retry_generation_authorization": 0,
+    "route_B_generation_authorization_reserved": 1
   },
   "generator_drive_handoff": {
     "status": "MANDATORY",
