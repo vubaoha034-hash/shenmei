@@ -1,0 +1,26 @@
+{
+  "schema_version": "vpd-direct-attachment-reference-binding-correction/v1",
+  "artifact_type": "DIRECT_ATTACHMENT_REFERENCE_BINDING_CORRECTION",
+  "recorded_at": "2026-09-22T03:52:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "ACTIVE",
+  "finding": "A Google Drive connector-loaded image can be fetched and hashed, but in the fresh ChatGPT Images generator chat it was not accepted as a usable visual reference input. Therefore Drive is retained for archive/return only, not for runtime visual-reference binding.",
+  "affected_ticket": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
+  "unaffected": [
+    "Google Drive remains the canonical archive/return path for generated raw PNGs.",
+    "The approved R1C bytes and SHA-256 remain unchanged.",
+    "The already-authorized one-image stateless smoke budget remains unconsumed because no generation occurred."
+  ],
+  "corrected_runtime_rule": [
+    "The R1C reference must be directly attached/uploaded to the fresh generator chat as an image/file attachment.",
+    "Do not use a Drive connector fetch as the image_gen reference binding path.",
+    "The fresh generator chat must use only the directly attached R1C image as the visual reference.",
+    "After generation, upload the raw output to Google Drive and return the stable Drive URL/file ID."
+  ],
+  "reference": {
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "bytes": 142983
+  },
+  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_WITH_DIRECT_R1C_ATTACHMENT_IN_FRESH_CHAT"
+}
