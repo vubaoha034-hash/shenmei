@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 132,
-  "recorded_at": "2026-09-22T02:35:00Z",
+  "sequence": 133,
+  "recorded_at": "2026-09-22T02:50:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The controlled Route A technical retry has been read back from Google Drive and independently verified. It failed hard correctness again: the returned PNG is 1536x1024 landscape rather than 3:4 portrait, depicts a premium glutathione/wellness product advertisement rather than a working rice granary, and contains extensive invented brand/product/final copy. The Drive SHA-256 matches the user-provided hash, so this is the exact retry output. Route A initial and retry are both technically invalid; Route B was never executed and the Stage 1 A/B cannot produce a valid comparative verdict. No Style Capsule or accepted-asset inference is allowed. Further same-form retries are stopped to avoid wasting generation budget. Next prepare a minimal stateless ChatGPT Images render ticket that removes project orchestration from the generator context while preserving the main project controller and Drive handoff; do not generate yet.",
+  "current_focus": "A minimal stateless ChatGPT Images render ticket is now prepared. It is intentionally outside the closed Stage 1 A/B experiment and tests only renderer execution reliability. The future generator chat must not read GitHub, project files, memory, or prior VPD images; it receives only one self-contained user message plus the single approved R1C Drive reference. The ticket requests exactly one 3:4 portrait rice-granary image, no readable text, no invented brand, no retry, and mandatory raw-PNG upload to Google Drive with stable URL/file ID return. No image has been generated under this stateless ticket yet.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -200,10 +200,14 @@
     "stage1_route_a_retry_one_image_authorization_recorded",
     "stage1_route_a_retry_drive_readback_verified",
     "stage1_route_a_retry_technical_invalid",
-    "stage1_ab_closed_no_vpd_inference"
+    "stage1_ab_closed_no_vpd_inference",
+    "minimal_stateless_chatgpt_images_render_ticket_prepared",
+    "stateless_generator_repo_reads_removed",
+    "stateless_drive_handoff_frozen"
   ],
   "incomplete": [
-    "minimal_stateless_chatgpt_images_render_ticket_preparation",
+    "stateless_smoke_one_image_authorization",
+    "stateless_smoke_fresh_chat_execution_and_drive_review",
     "same_renderer_bounded_ab_plan",
     "full_state_validator_pass_before_resource_execution",
     "bounded_reproduction_plan_final_authorization",
@@ -265,9 +269,13 @@
     "Do not execute Route B under the closed invalid Stage 1 experiment.",
     "Do not perform a third same-form Route A retry.",
     "Do not infer VPD or Style Capsule quality from the two technically invalid Route A outputs.",
-    "Next action is preparation only: minimal stateless ChatGPT Images render ticket, no generation."
+    "Next action is preparation only: minimal stateless ChatGPT Images render ticket, no generation.",
+    "Stateless smoke generation is not authorized yet.",
+    "Do not make the stateless generator chat read GitHub, project files, memory or prior VPD images.",
+    "Do not treat the stateless smoke result as VPD/Style Capsule evidence; it tests renderer execution reliability only.",
+    "No retry is allowed under this ticket."
   ],
-  "next_required_action": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -335,10 +343,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_STAGE1_AB_INVALID_TWO_ROUTE_A_BINDING_FAILURES_NO_VPD_INFERENCE",
+  "status": "VPD_P3_MINIMAL_STATELESS_CHATGPT_IMAGES_TICKET_READY_WAITING_ONE_IMAGE_AUTHORIZATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "2c693f94bcc483c8a460b2d45ee5df75d8e543325dc5ccaf7c94af044a5bc8e8"
+    "sha256": "2ee004025f512f37ffda7c410f11535f5cebd6c265944cb06027e3a8a8fbaea0"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -359,8 +367,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-STAGE1-AB-CLOSED-A-RETRY-INVALID-20260922-001",
-      "event_hash": "a2e46d52600b358861ce630eba5eeb7bafeecfa22417c9c345a6da5c77d5ff17"
+      "event_id": "EVT-VPD-P3-STATELESS-RENDER-TICKET-PREPARED-20260922-001",
+      "event_hash": "663b0945fefbfe759b79645761cd855f4912b06da654cf35e5378c6fed2e02d9"
     }
   },
   "typography_repair": {
@@ -1042,5 +1050,28 @@
     "git_blob_sha": "bfa3693eafc67674d4a75ad28ce8e6a0dae9a63c",
     "private_drive_link_return": true,
     "user_reupload_not_required": true
+  },
+  "stateless_render_v1": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
+    "ticket": {
+      "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
+      "git_blob_sha": "b8a40fd9a62116704e8a6164b2cf969077e4e18c"
+    },
+    "copy_to_fresh_chat": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
+      "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
+    },
+    "renderer": "CHATGPT_IMAGES",
+    "reference_count": 1,
+    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "requested_aspect": "3:4 PORTRAIT",
+    "current_generation_authorization": 0,
+    "retry_budget": 0,
+    "drive_handoff_required": true,
+    "generator_reads_project_repo": false,
+    "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_ONE_STATELESS_SMOKE_IMAGE"
   }
 }
