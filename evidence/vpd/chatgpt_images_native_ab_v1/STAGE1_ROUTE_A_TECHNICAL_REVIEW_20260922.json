@@ -1,0 +1,68 @@
+{
+  "schema_version": "vpd-chatgpt-images-stage1-route-a-technical-review/v1",
+  "artifact_type": "STAGE1_ROUTE_A_TECHNICAL_REVIEW",
+  "recorded_at": "2026-09-22T01:50:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "stage": "CHATGPT_IMAGES_NATIVE_AB_STAGE1",
+  "route": "REFERENCE_NATIVE_BASELINE",
+  "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+  "provenance": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
+  "drive": {
+    "file_id": "1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm",
+    "url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
+    "sha256": "8e05f4cc4ca8317998c53350d657f9fbbd644a76b406700596e1bcb96e92880d",
+    "dimensions": [
+      1086,
+      1448
+    ]
+  },
+  "correctness_review": {
+    "single_image": "PASS",
+    "aspect_3_4_portrait": "PASS",
+    "reference_identity_verified": "PASS",
+    "subject_class": "FAIL",
+    "subject_observed": "Young woman seated at a bright home-office/lifestyle table with laptop, flowers, books, mug and cat.",
+    "subject_required": "Working rice granary with rice grains, woven baskets, linen sacks, aged wood bins and a sorting/preparation surface.",
+    "required_material_evidence": "FAIL_ABSENT",
+    "prohibited_final_text_or_labels": "FAIL_PRESENT",
+    "visible_text_examples": [
+      "A Brighter You",
+      "Good Ideas Brighter Days",
+      "Good Food Good Mood",
+      "A Better Me",
+      "Modern Living"
+    ],
+    "mountain_forest_shortcut": "PASS_ABSENT",
+    "tea_wok_flame": "PASS_ABSENT",
+    "route_identity": "TECHNICALLY_INVALID_FOR_STAGE1_AB"
+  },
+  "aesthetic_observation_non_formal": {
+    "note": "This is not used for A/B scoring because the route failed correctness first.",
+    "strengths": [
+      "Clean 3:4 composition and coherent warm-neutral daylight.",
+      "Face, knitwear, wood, glass and flowers are visually polished and readable.",
+      "Subject separation and overall commercial lifestyle cleanliness are competent."
+    ],
+    "weaknesses": [
+      "Generic lifestyle/stock-social-media visual language rather than a distinctive family-transfer result.",
+      "Highly staged prop arrangement and idealized cleanliness reduce documentary credibility.",
+      "Skin, pose, room styling and accessory placement feel optimized toward a generic AI-commercial aesthetic.",
+      "Generated decorative text is irrelevant to the frozen task and adds obvious semantic contamination."
+    ]
+  },
+  "disposition": {
+    "formal_aesthetic_ab_review_allowed": false,
+    "route_A_valid": false,
+    "route_B_execute_now": false,
+    "route_B_budget_consumed": false,
+    "stage1_status": "STOP_AT_ROUTE_A_TECHNICAL_FAILURE",
+    "style_capsule_inference": "NONE",
+    "user_accepted_assets_affected": false
+  },
+  "likely_failure_scope": {
+    "classification": "GENERATOR_TASK_BINDING_OR_CONTEXT_INFERENCE_FAILURE",
+    "proven_root_cause": false,
+    "note": "The archived prompt is correct, but the returned pixels correspond to an unrelated lifestyle portrait. The image tool's context-inferred prompt transport is not directly exposed, so exact internal failure cause is not proven."
+  },
+  "next_required_action": "FIX_FRESH_CHAT_GENERATOR_HANDOFF_AND_DRIVE_RETURN_CONTRACT_BEFORE_ANY_ROUTE_B"
+}
