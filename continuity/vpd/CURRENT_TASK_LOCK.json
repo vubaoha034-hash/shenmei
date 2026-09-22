@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 113,
+  "revision": 114,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 112,
-    "git_blob_sha": "115080e69ce31da7ba5241fdf2396a3e23bdc605",
-    "note": "Revision 112 prepared the minimal stateless ticket and waited for one-image authorization."
+    "revision": 113,
+    "git_blob_sha": "93019d781ca8e999c1b8b98a4a7ff21e65f85f7d",
+    "note": "Revision 113 preserved the authorized stateless smoke after correcting a controller-chat execution error."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The user explicitly authorized one stateless smoke image, but the controller/main chat incorrectly invoked image generation itself. That image is invalid operator output and does not count as the stateless smoke because the generator was not a fresh stateless chat and the mandatory Drive handoff was not performed. A hard controller/generator separation guard is now active: the main VPD chat may record authorization and return tickets but must never call image generation. The previously authorized one-image stateless smoke budget remains available. The next action is to execute the already-frozen one-message ticket in a fresh generator chat only.",
-  "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_CONTROLLER_EXECUTION_ERROR_CORRECTED_FRESH_CHAT_REQUIRED",
+  "current_stage": "The fresh stateless generator chat verified the canonical R1C bytes through Google Drive but reported that a connector-loaded Drive file cannot be used by ChatGPT Images as a visual reference input. No image was generated, no retry occurred, and no Drive output was created, so the authorized one-image stateless smoke budget remains unconsumed. The runtime reference-binding rule is now corrected: Google Drive is archive/return only; the canonical R1C must be directly uploaded/attached to the fresh generator chat. A new direct-attachment stateless ticket is prepared and already covered by the existing one-image authorization.",
+  "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_DIRECT_ATTACHMENT_REFERENCE_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
+  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_WITH_DIRECT_R1C_ATTACHMENT_IN_FRESH_CHAT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded the user's one-image stateless smoke authorization",
-    "classified the accidental controller-chat image generation as operator execution error",
-    "preserved the one-image stateless smoke authorization as unconsumed",
-    "installed a hard controller/main-chat no-image-generation guard",
-    "kept the existing one-message stateless fresh-chat ticket unchanged"
+    "recorded the Drive-connector-to-image-reference binding limitation",
+    "preserved the one-image stateless smoke authorization as unconsumed because no generation occurred",
+    "created a direct-attachment stateless render ticket",
+    "kept Google Drive as output archive/return only",
+    "verified the canonical R1C local copy remains 142983 bytes with the expected SHA-256"
   ],
-  "updated_at": "2026-09-22T03:28:00Z",
+  "updated_at": "2026-09-22T03:56:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -223,7 +223,11 @@
     "The VPD controller/main chat must never call image generation.",
     "Do not count the accidental controller-chat image as stateless smoke evidence.",
     "The authorized stateless smoke may execute only in a fresh generator chat using the frozen one-message ticket.",
-    "Generator chat must upload the raw PNG to Google Drive and return the stable Drive URL/file ID."
+    "Generator chat must upload the raw PNG to Google Drive and return the stable Drive URL/file ID.",
+    "Do not use Google Drive connector fetch as the visual-reference binding path for ChatGPT Images.",
+    "The fresh generator chat must receive the canonical R1C as a direct attachment.",
+    "Do not generate in the controller/main chat.",
+    "Do not consume a retry: this is still the original authorized one-image stateless smoke because the failed Drive-binding attempt generated nothing."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1276,7 +1280,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "AUTHORIZED_NOT_EXECUTED_VALIDLY",
+    "status": "AUTHORIZED_DIRECT_ATTACHMENT_READY_NOT_EXECUTED",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1296,7 +1300,7 @@
     "drive_handoff_required": true,
     "generator_reads_project_repo": false,
     "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
-    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY",
+    "next": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_WITH_DIRECT_R1C_ATTACHMENT_IN_FRESH_CHAT",
     "authorization_source": "user message: 允许无状态测试 1 张",
     "invalid_controller_generation": {
       "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
@@ -1312,6 +1316,22 @@
       "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
       "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
     },
-    "current_chat_render_eligible": false
+    "current_chat_render_eligible": false,
+    "reference_binding_mode": "DIRECT_CHAT_ATTACHMENT_REQUIRED",
+    "drive_connector_reference_binding": false,
+    "drive_role": "OUTPUT_ARCHIVE_AND_RETURN_ONLY",
+    "direct_attachment_correction": {
+      "path": "evidence/vpd/stateless_render_v1/DIRECT_ATTACHMENT_REFERENCE_BINDING_CORRECTION_20260922.json",
+      "git_blob_sha": "dd710bef1d240bf09bc842d0b2d37a4b940dd498"
+    },
+    "direct_attachment_ticket": {
+      "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_DIRECT_ATTACHMENT_TICKET_RICE_GRANARY_20260922.json",
+      "git_blob_sha": "dc6a2d9667c3d21eb9c570269c6eaec6115add52"
+    },
+    "direct_attachment_copy": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_DIRECT_ATTACHMENT_20260922.txt",
+      "git_blob_sha": "99c30cf2f2ab0dca1658ca1ba8502965fdbe8f91"
+    },
+    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg"
   }
 }
