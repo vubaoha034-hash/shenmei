@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 128,
-  "recorded_at": "2026-09-21T13:27:00Z",
+  "sequence": 129,
+  "recorded_at": "2026-09-22T01:58:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Stage 1 two-image ChatGPT Images budget is authorized. Route A must execute first in a fresh isolated chat; Route B remains serially blocked until Route A raw output and provenance are archived. The current long chat remains ineligible for generation.",
+  "current_focus": "Stage 1 Route A has been reviewed against the frozen task. The raw output is technically invalid for the A/B experiment: it is a single correct 3:4 portrait and the R1C reference identity was verified, but the pixels depict an unrelated woman-at-home-office lifestyle portrait instead of the required rice-granary subject, the required rice/material/process evidence is absent, and prohibited visible text/labels are present. Therefore no formal A/B aesthetic inference is allowed and Route B remains blocked; its authorized image budget is not consumed. A mandatory generator-to-Google-Drive handoff contract is now active for future fresh generator chats: upload the raw PNG immediately, read back a stable Drive browser URL/file ID, write provenance, and return only the Drive handoff block so the user can paste the link into the main chat. The current next step is to prepare a corrected Route A technical retry runner with stronger task-binding transport; no retry is yet authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -188,11 +188,15 @@
     "stage1_generation_not_started",
     "stage1_two_image_generation_authorization_recorded",
     "stage1_route_a_authorized",
-    "stage1_route_b_authorized_but_serially_blocked"
+    "stage1_route_b_authorized_but_serially_blocked",
+    "stage1_route_a_exact_drive_pixel_review",
+    "stage1_route_a_technical_invalid_wrong_subject",
+    "generator_drive_handoff_v1_mandatory",
+    "route_b_runner_drive_return_updated"
   ],
   "incomplete": [
-    "stage1_route_a_fresh_chat_generation",
-    "stage1_route_a_archive_and_provenance",
+    "stage1_route_a_controlled_retry_runner_preparation",
+    "stage1_route_a_retry_authorization",
     "stage1_route_b_fresh_chat_generation",
     "stage1_route_b_archive_and_provenance",
     "stage1_blind_human_pixel_review",
@@ -239,9 +243,18 @@
     "Stage 1 generation budget remains zero until the user explicitly authorizes exactly two ChatGPT Images outputs.",
     "Do not expand to Stage 2 until both Stage 1 routes are technically valid and the human blind review is complete.",
     "Do not change the frozen Stage 1 task, reference, aspect, or route prompts after authorization.",
-    "Do not expose A/B method labels to the user before the blind pixel verdict."
+    "Do not expose A/B method labels to the user before the blind pixel verdict.",
+    "Do not generate Route A or Route B in the current long chat.",
+    "Do not execute Route B before Route A raw output and provenance are archived.",
+    "Do not change the frozen Stage 1 task, reference, aspect, or prompts after authorization.",
+    "Do not authorize Stage 2 from this two-image approval.",
+    "Do not execute Route B while Route A is technically invalid.",
+    "Do not use Route A lifestyle portrait as A/B aesthetic evidence.",
+    "Do not consume the remaining Route B image authorization as an implicit Route A retry.",
+    "A controlled Route A retry requires a new explicit authorization after its corrected runner is prepared.",
+    "All future fresh generator chats must upload the raw output to Google Drive and return the Drive browser URL/file ID."
   ],
-  "next_required_action": "EXECUTE_STAGE1_ROUTE_A_IN_FRESH_ISOLATED_CHAT",
+  "next_required_action": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -309,10 +322,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_CHATGPT_IMAGES_STAGE1_ROUTE_A_EXECUTED_ARCHIVED_REVIEW_REQUIRED",
+  "status": "VPD_P3_STAGE1_ROUTE_A_TECHNICAL_INVALID_DRIVE_HANDOFF_ACTIVE_RETRY_PREP_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "fcb835d108abf0a17dad79856dbfa4f3e755cabcf33fc8eb0b8f9f30763c3a5a"
+    "sha256": "8c6f8a5c734412755f5d10a5ff410dba71b7222f721abec49e0e810aaa95e3cf"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -333,8 +346,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-CHATGPT-IMAGES-STAGE1-TWO-IMAGE-AUTHORIZED-20260921-001",
-      "event_hash": "00f999e880b9df2e7109e27a8fc8ae1810cef20f72d9270885994e9944239ecf"
+      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-TECHNICAL-INVALID-DRIVE-HANDOFF-20260922-001",
+      "event_hash": "58438c50b8bbe8fe8613aad3eae47bd6592a47f58fb293d5b49bbb73760cc320"
     }
   },
   "typography_repair": {
@@ -931,7 +944,7 @@
     "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
   },
   "native_chatgpt_images_ab": {
-    "status": "STAGE1_ROUTE_A_EXECUTED_RAW_ARCHIVED_PENDING_REVIEW",
+    "status": "STAGE1_ROUTE_A_TECHNICAL_INVALID_ROUTE_B_BLOCKED",
     "renderer": "CHATGPT_IMAGES",
     "mapping_card": {
       "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
@@ -949,14 +962,18 @@
     ],
     "requested_aspect": "3:4 PORTRAIT",
     "output_count_if_authorized": 2,
-    "current_generation_authorization": 2,
+    "current_generation_authorization": 1,
     "stage2_locked": true,
     "route_A_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
     "route_B_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_B_FRESH_CHAT_20260921.txt",
-    "route_A": "EXECUTED_ONCE_RAW_ARCHIVED_EVALUATION_NOT_EXECUTED",
-    "route_B": "AUTHORIZED_BLOCKED_PENDING_ROUTE_A_REVIEW",
+    "authorization_receipt": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
+      "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
+    },
+    "route_A": "TECHNICALLY_INVALID_WRONG_SUBJECT_AND_PROHIBITED_TEXT",
+    "route_B": "AUTHORIZED_BUT_BLOCKED_NOT_CONSUMED",
     "current_chat_render_eligible": false,
-    "next": "STOP_ROUTE_A_GENERATOR_CHAT_AND_REVIEW_ROUTE_A_BEFORE_ANY_ROUTE_B_EXECUTION",
+    "next": "P3_PREPARE_ROUTE_A_CONTROLLED_TECHNICAL_RETRY_RUNNER_NO_GENERATION",
     "route_A_provenance": {
       "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
       "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
@@ -970,6 +987,19 @@
       "retry_count": 0,
       "evaluation_executed": false,
       "figma_executed": false
-    }
+    },
+    "route_A_review": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_REVIEW_20260922.json",
+      "git_blob_sha": "f99d11dfe3b76e56bac24f2be43ba62b1c757189"
+    },
+    "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
+    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52"
+  },
+  "generator_drive_handoff": {
+    "status": "MANDATORY",
+    "path": "continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md",
+    "git_blob_sha": "bfa3693eafc67674d4a75ad28ce8e6a0dae9a63c",
+    "private_drive_link_return": true,
+    "user_reupload_not_required": true
   }
 }
