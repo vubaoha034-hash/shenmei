@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 115,
-    "sha256": "13070eef9c99e1e1b8373b4d4f9d5d813869cbf6d32e6ebcbda49044dc697f7b",
+    "revision": 116,
+    "sha256": "3640f47064545a8f9fa05f3c7714f9b8f161cdf0f5ae70f6577248b86c99e1ed",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,14 +956,14 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_STATELESS_SMOKE_AUTHORIZED_LIBRARY_ATTACHMENT_READY",
+    "status": "VPD_P3_STATELESS_SMOKE_LIBRARY_ROUTE_USER_APPROVED_READY_TO_EXECUTE",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
     "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_CHAT_WITH_LIBRARY_ATTACHMENT",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "STATELESS_CHATGPT_IMAGES_LIBRARY_ATTACHMENT_READY",
+    "mode": "STATELESS_CHATGPT_IMAGES_LIBRARY_ROUTE_USER_APPROVED",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
@@ -997,8 +997,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-CHATGPT-LIBRARY-REFERENCE-READY-20260922-001",
-      "event_hash": "928c8bbad67449cb30b662e2f9dd3beab36502a9730431e1c0900ebb37ab4be1"
+      "event_id": "EVT-VPD-P3-LIBRARY-ROUTE-USER-APPROVED-20260922-001",
+      "event_hash": "d4bb73af785939447b7440f8e92d2ca41b8925412ed51905d9e9c1d634381a8a"
     }
   },
   "mature_workflow_audit": {
@@ -1131,7 +1131,7 @@
     "user_reupload_not_required": true
   },
   "stateless_render_v1": {
-    "status": "AUTHORIZED_LIBRARY_ATTACHMENT_READY_NOT_EXECUTED",
+    "status": "AUTHORIZED_LIBRARY_ROUTE_USER_APPROVED_READY",
     "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
     "ticket": {
       "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
@@ -1195,6 +1195,12 @@
         "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_BINDING_RECORD_20260922.json",
         "git_blob_sha": "72749e47ca0a62775b098e6934c7c5efad2fe435"
       }
-    }
+    },
+    "library_route_user_approved": true,
+    "library_route_approval": {
+      "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_ROUTE_USER_APPROVAL_20260922.json",
+      "git_commit": "36391117c36bbd316557eb3d44c5e00497143e48"
+    },
+    "bulk_library_migration_authorized": false
   }
 }
