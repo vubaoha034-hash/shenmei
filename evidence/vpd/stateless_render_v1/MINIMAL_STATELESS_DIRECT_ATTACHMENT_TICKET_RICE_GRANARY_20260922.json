@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-minimal-stateless-direct-attachment-ticket/v1",
+  "artifact_type": "MINIMAL_STATELESS_DIRECT_ATTACHMENT_RENDER_TICKET",
+  "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V2-RICE-GRANARY-DIRECT-ATTACH",
+  "created_at": "2026-09-22T03:52:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "AUTHORIZED_NOT_EXECUTED",
+  "purpose": "Test ChatGPT Images task/aspect execution reliability using a directly attached canonical R1C image, with no project-context reads.",
+  "relation_to_v1": "Replaces Drive-connector reference binding only. Image task and one-image authorization remain unchanged.",
+  "generator_context_policy": {
+    "fresh_chat": true,
+    "read_github": false,
+    "read_project_files": false,
+    "read_memory": false,
+    "use_prior_chat_images": false,
+    "only_visual_reference": "DIRECTLY_ATTACHED_R1C_FILE"
+  },
+  "direct_attachment": {
+    "required": true,
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "sha256_expected": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "bytes_expected": 142983,
+    "drive_connector_reference_binding_prohibited": true
+  },
+  "image_task": "Create exactly one photo-only 3:4 portrait image of a real working rice granary in early morning. The scene must visibly contain pale rice grains, woven bamboo baskets, linen sacks, aged wooden grain bins, and a modest sorting/preparation table. Use believable documentary photography, cool-neutral morning daylight, realistic wood/cloth/rice materials, and one natural quiet low-detail area that could later hold typography. Do not include any people as the main subject, beauty/wellness products, bottles, cosmetics, supplements, laptops, home-office lifestyle scenes, tea ware, mountains/forest scenery, wok/fire, logos, labels, calligraphy, readable text, advertising copy, detached graphic panels, or invented brands. Use the attached R1C image only for overall visual family feeling and relational balance; do not copy its subject, brand, text, motifs, or layout.",
+  "hard_controls": {
+    "renderer": "CHATGPT_IMAGES",
+    "generation_not_edit": true,
+    "output_count": 1,
+    "requested_aspect": "3:4 PORTRAIT",
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "no_retry": true,
+    "no_figma": true,
+    "no_evaluation_in_generator_chat": true
+  },
+  "drive_handoff": {
+    "required_for_output": true,
+    "make_public": false,
+    "return_fields": [
+      "DRIVE_URL",
+      "DRIVE_FILE_ID",
+      "SHA256",
+      "DIMENSIONS"
+    ]
+  },
+  "authorization": {
+    "visible_images_authorized": 1,
+    "source_user_message": "允许无状态测试 1 张",
+    "consumed": false
+  },
+  "next_required_action": "EXECUTE_IN_FRESH_CHAT_WITH_DIRECT_R1C_ATTACHMENT"
+}
