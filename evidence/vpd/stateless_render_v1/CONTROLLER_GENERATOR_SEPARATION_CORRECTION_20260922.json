@@ -1,0 +1,26 @@
+{
+  "schema_version": "vpd-controller-generator-separation-correction/v1",
+  "artifact_type": "CONTROLLER_GENERATOR_SEPARATION_CORRECTION",
+  "recorded_at": "2026-09-22T03:25:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "ACTIVE_HARD_GUARD",
+  "incident": {
+    "user_authorized": "允许无状态测试 1 张",
+    "incorrect_action": "The controller/main chat directly invoked ChatGPT Images instead of only recording authorization and instructing a fresh stateless generator chat.",
+    "invalid_generated_gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
+    "invalid_runtime_file_id": "file_00000000832481fdb3bec95108d5d2a7",
+    "invalid_output_role": "OPERATOR_EXECUTION_ERROR_NOT_STATELESS_SMOKE_EVIDENCE",
+    "drive_handoff_completed": false,
+    "consume_authorized_smoke_budget": false
+  },
+  "root_cause": "Control-plane authorization and generator-plane execution were conflated in the same conversation.",
+  "hard_guard": [
+    "The VPD controller/main chat MUST NEVER call image generation.",
+    "Authorization messages in the controller chat may only update task state and return the fresh-chat ticket.",
+    "Only a fresh stateless generator chat whose first user message is the frozen ticket may call ChatGPT Images.",
+    "The generator chat must not read GitHub/project state before generation.",
+    "After generation the generator chat must upload raw PNG to Google Drive and return the stable Drive URL/file ID.",
+    "If any controller chat accidentally generates an image, that image is invalid operator output and does not consume the user's authorized formal/smoke budget."
+  ],
+  "next_required_action": "EXECUTE_AUTHORIZED_STATELESS_SMOKE_IN_FRESH_GENERATOR_CHAT_ONLY"
+}
