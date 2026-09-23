@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 125,
+  "revision": 126,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 124,
-    "git_blob_sha": "70765a7c60d63374a765b1e8f319ec49136dbdfb",
-    "note": "Revision 124 prepared Pair2 for independent blind evaluation without known-label aesthetic priming."
+    "revision": 125,
+    "git_blob_sha": "4c242bcaed37fe7abf967bb25977cdb32d77eb50",
+    "note": "Revision 125 settled Pair2 independent blind replication and authorized only non-writing preparation for the equal-budget complete-poster/Figma A/B."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 independent blind evaluation is complete. The evaluator selected Y with MEDIUM confidence while both X and Y passed correctness. The pre-frozen deterministic mapping reveals X = Route A (reference-native baseline) and Y = Route B (reference + compact VPD candidate). Therefore Route B has now won two independent blind comparisons, each with MEDIUM confidence, across two materially different content tasks: a dry working rice granary and a wet traditional tofu workshop. The repeated benefits are reading hierarchy, near/mid/far spatial depth, material/process differentiation and production narrative. Recurring tradeoffs remain: the VPD route can become denser or more deliberately staged, typography quiet-zone advantage is not guaranteed, and cool-neutral color control is not independently proven. The six compact controls are retained unchanged as a thin first-family mechanism candidate and may now enter equal-budget full-poster/Figma production validation. This does not promote the full Style Capsule, replace the stable baseline, prove cross-aspect transfer or prove second-style transfer. No new image generation or Figma canvas write is authorized in this revision.",
-  "status": "VPD_P3_TWO_BLIND_CONTENT_REPLICATIONS_SUPPORT_COMPACT_VPD_READY_EQUAL_BUDGET_FIGMA_AB_PREP",
+  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B preparation is complete without any canvas write. The test will reuse the technically valid Pair2 tofu photos (A = reference-native baseline, B = reference + COMPACT_VPD_6_CONTROL_CANDIDATE_R1) and ask whether B's repeated photo-only advantages survive symmetric full-poster composition. The old failed P6 page remains frozen negative evidence and will not be modified. A and B will share the same clean editable typography control layer and the same scene-derived quiet-pocket composition rule; only route-local x/y/scale adaptation is permitted under that same rule. Each poster is limited to one composition pass plus at most one correction pass, with no B-only polish. This preparation does not prove the typography distillation program, does not promote the Style Capsule, and does not authorize Figma canvas writing yet.",
+  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREPARED_AWAITING_CANVAS_WRITE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "PREPARE_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_USING_PAIR2_NO_CANVAS_WRITE",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,17 +144,18 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded Pair2 independent blind verdict",
-    "revealed deterministic mapping only after blind verdict: Y = Route B",
-    "confirmed Route B blind win replicated across two materially different content tasks",
-    "retained the six compact VPD controls unchanged as a thin mechanism candidate",
-    "closed further photo-only same-family content A/B repetition by default",
-    "advanced the evidence plan to equal-budget complete-poster/Figma validation without canvas write"
+    "prepared the Pair2 equal-budget complete-poster/Figma A/B production-integration test without writing the Figma canvas",
+    "froze Pair2 Route A and Route B source-photo identities and exact poster copy",
+    "froze a symmetric editable typography control layer so typography redesign cannot confound the photo-route comparison",
+    "froze one shared scene-derived quiet-pocket composition rule with only route-local x/y/scale adaptation",
+    "froze equal effort at one composition pass plus at most one correction pass per poster with no Route B extra polish",
+    "froze a prewrite independent blind-evaluator prompt and A/B-to-X/Y mapping",
+    "preserved the old failed P6 page as negative evidence and prohibited modification"
   ],
-  "updated_at": "2026-09-23T03:35:00Z",
+  "updated_at": "2026-09-23T03:40:00Z",
   "workflow": {
     "version": "1.1",
-    "focus_stage": "P1",
+    "focus_stage": "P6",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "document": {
       "path": "VPD_PROJECT_ROADMAP.md",
@@ -1566,5 +1567,31 @@
     "stable_baseline_replacement_allowed": false,
     "style_capsule_promotion_allowed": false,
     "local_equal_budget_figma_test_allowed": true
+  },
+  "pair2_equal_budget_figma_ab": {
+    "status": "PREPARED_NO_CANVAS_WRITE",
+    "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
+    "prep": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
+      "sha256": "a4aec9b40b2cba81b85960f623268ab74a8438cbb0b0944758c167561fad1cf3"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_BLIND_EVALUATOR_PROMPT_PREWRITE_20260923.txt",
+      "sha256": "85245627d267d49893c8c0d888c50aea14891e13b14920c46f76ff44705edcf6",
+      "prewrite_frozen": true
+    },
+    "source_pair": {
+      "route_A_sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "route_B_sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17"
+    },
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "old_page_modify": false,
+    "new_page_id": "PENDING_CANVAS_WRITE",
+    "composition_pass_per_poster": 1,
+    "correction_pass_max_per_poster": 1,
+    "route_B_extra_manual_budget": false,
+    "typography_control_is_not_typography_distillation_pass": true,
+    "current_canvas_write_authorization": 0,
+    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
   }
 }

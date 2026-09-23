@@ -1,0 +1,176 @@
+{
+  "schema_version": "vpd-pair2-equal-budget-figma-complete-poster-ab-prep/v1",
+  "artifact_type": "PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP",
+  "recorded_at": "2026-09-23T03:40:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
+  "status": "PREPARED_NO_CANVAS_WRITE",
+  "purpose": "Test whether the Pair2 Route B photographic advantages survive an equal-budget full-poster Figma composition. This is a production-integration test, not an independent proof of the typography distillation program.",
+  "source_pair": {
+    "content": "TRADITIONAL_TOFU_WORKSHOP",
+    "output_receipt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
+      "sha256": "7fcec5e7c96f8d9a90c4b713ff1f1bc3298d0d3a"
+    },
+    "blind_result": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_RESULT_20260923.json",
+      "sha256": "1f81f8a474fb7231bf88ef3e206eb459b3691f0a"
+    },
+    "compact_replication_settlement": {
+      "path": "evidence/vpd/library_native_ab_v2/COMPACT_VPD_REPLICATION_SETTLEMENT_20260923.json",
+      "sha256": "e7c7510115060cfd998dfb081a20156abf68ce18"
+    },
+    "route_A": {
+      "role": "REFERENCE_NATIVE_BASELINE",
+      "sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "drive_file_id": "1dxwZpEkU5e3dH6da8NNekBs829BQi8rH"
+    },
+    "route_B": {
+      "role": "REFERENCE_PLUS_COMPACT_VPD",
+      "candidate_id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+      "sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "drive_file_id": "1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd"
+    }
+  },
+  "fixed_poster_input": {
+    "frame_size": [
+      2400,
+      3200
+    ],
+    "aspect": "3:4",
+    "copy": {
+      "title": "豆坊",
+      "english": "HANDMADE TOFU",
+      "support": "手作豆腐 · 当日现制"
+    },
+    "no_new_image_generation": true,
+    "no_photo_retouch": true,
+    "no_photo_regeneration": true
+  },
+  "typography_control_layer": {
+    "purpose": "Symmetric control layer to isolate photo-to-poster integration. It is not claimed as a passed distilled wordmark system.",
+    "title": {
+      "font": "Noto Sans SC Black",
+      "editable": true,
+      "route_specific_glyph_redesign": false,
+      "outline_deformation": false,
+      "pseudo_custom_cuts": false
+    },
+    "supporting_chinese": {
+      "font": "Noto Sans SC Medium",
+      "editable_text_required": true
+    },
+    "supporting_english": {
+      "font": "Inter Medium",
+      "editable_text_required": true
+    },
+    "old_failed_p6_custom_title_vectors_reused": false,
+    "typography_design_gate_claimed_by_this_control": false
+  },
+  "shared_composition_rule": {
+    "same_rule_for_A_and_B": true,
+    "rule": [
+      "Place the title/support system in a scene-created quiet tonal pocket.",
+      "Create a clear title-photo counter-mass without covering the primary production/process evidence.",
+      "Preserve the original near/mid/far depth and first-second-third photographic read.",
+      "Do not add a detached generic text panel, fake gradient rescue patch or bottom information slab.",
+      "Route-local x/y/scale adaptation is allowed only to satisfy the same scene-derived quiet-pocket rule; no route receives a bespoke extra design concept."
+    ]
+  },
+  "equal_budget": {
+    "same_figma_file": true,
+    "same_frame_size": true,
+    "same_copy": true,
+    "same_font_sources": true,
+    "same_typography_control_layer": true,
+    "composition_pass_per_poster": 1,
+    "correction_pass_max_per_poster": 1,
+    "hidden_polish": false,
+    "extra_assets_after_assignment": false,
+    "route_B_extra_manual_budget": false
+  },
+  "figma_plan": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "old_negative_evidence_page": {
+      "page_id": "12:2",
+      "name": "P6 Equal Budget Integrated Validation",
+      "modify": false
+    },
+    "new_page": {
+      "name": "P3 Pair2 Equal Budget Poster AB",
+      "page_id": "PENDING_CANVAS_WRITE"
+    },
+    "planned_frames": [
+      {
+        "name": "PAIR2_TOFU_A_BASELINE_POSTER",
+        "frame_id": "PENDING_CANVAS_WRITE",
+        "photo_node_id": "PENDING_CANVAS_WRITE"
+      },
+      {
+        "name": "PAIR2_TOFU_B_COMPACT_VPD_POSTER",
+        "frame_id": "PENDING_CANVAS_WRITE",
+        "photo_node_id": "PENDING_CANVAS_WRITE"
+      }
+    ],
+    "image_binding_route": "EXISTING_ENCRYPTED_GITHUB_ACTIONS_RELAY_V1",
+    "direct_chat_runtime_post": "PROHIBITED",
+    "post_write_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
+  },
+  "evaluation": {
+    "primary_question": "Does Route B retain or improve its photographic hierarchy/depth/material/process advantages after symmetric full-poster composition?",
+    "compare": [
+      "whole-poster first-second-third read",
+      "photo-type integration and counter-mass",
+      "scene-derived quiet-zone usability",
+      "preservation of near/mid/far depth",
+      "preservation of material-state differentiation",
+      "preservation of production/process narrative",
+      "thumbnail/normal/detail final-pixel balance"
+    ],
+    "six_gate_policy_still_applies_for_any_commercial_claim": true,
+    "this_test_does_not_independently_prove": [
+      "TYPOGRAPHY_DESIGN_GATE",
+      "BRAND_DISTINCTIVENESS_GATE",
+      "Style Capsule promotion",
+      "stable baseline replacement",
+      "cross-aspect transfer",
+      "second-style transfer"
+    ],
+    "blind_review": {
+      "required_after_exports": true,
+      "prewrite_prompt": {
+        "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_BLIND_EVALUATOR_PROMPT_PREWRITE_20260923.txt",
+        "sha256": "85245627d267d49893c8c0d888c50aea14891e13b14920c46f76ff44705edcf6"
+      },
+      "mapping_frozen_before_canvas_write": true,
+      "mapping": {
+        "X": "Route A",
+        "Y": "Route B"
+      },
+      "evaluator_must_not_know_mapping": true
+    }
+  },
+  "stop_rules": [
+    "No new image generation in this experiment.",
+    "No modification of the old failed P6 page or frames.",
+    "No second aesthetic correction beyond the one frozen correction pass per poster.",
+    "No route-specific bespoke typography redesign or extra manual polish.",
+    "A technical image-binding failure may be repaired only as a technical repair and must not consume or create an aesthetic correction pass.",
+    "One full-poster pair cannot promote the Style Capsule or replace the stable baseline."
+  ],
+  "authorization": {
+    "current_canvas_write_authorization": 0,
+    "current_image_generation_authorization": 0,
+    "user_message_scope": "下一步",
+    "allowed_now": "PREPARATION_AND_STATE_RECORDING_ONLY"
+  },
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
+}

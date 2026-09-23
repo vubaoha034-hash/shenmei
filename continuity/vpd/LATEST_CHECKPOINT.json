@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 146,
-  "recorded_at": "2026-09-23T03:35:00Z",
+  "sequence": 147,
+  "recorded_at": "2026-09-23T03:40:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -311,7 +311,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "PREPARE_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_USING_PAIR2_NO_CANVAS_WRITE",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -379,10 +379,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_TWO_BLIND_CONTENT_REPLICATIONS_SUPPORT_COMPACT_VPD_READY_EQUAL_BUDGET_FIGMA_AB_PREP",
+  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREPARED_AWAITING_CANVAS_WRITE_AUTHORIZATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "36a0211a4ebb40a053c2e58bd43a3a72f4894c9eb5da4f9f04c5c55fc6e53e58"
+    "sha256": "e1aac63eb471523b1b36430ab57ee342d224610cb86220301cb69c93f55477b1"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -403,8 +403,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-PAIR2-BLIND-B-REPLICATION-SETTLED-20260923-001",
-      "event_hash": "c665ffc5b86773fbd0552b25375e9edd93cfd342475060d5affbe3e5a8637229"
+      "event_id": "EVT-VPD-P3-PAIR2-EQUAL-BUDGET-FIGMA-AB-PREPARED-20260923-001",
+      "event_hash": "9ceb7b55d68b80dd430f53ceee275b4bb7d5e7bfb8badc9f6a67b5e143263904"
     }
   },
   "typography_repair": {
@@ -927,7 +927,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "ChatGPT Images Native A/B Stage 1 Route A executed exactly once; raw output and provenance archived; no retry, no Figma, no evaluation; Route B remains blocked pending separate Route A review.",
+  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B preparation is complete without any canvas write. The test will reuse the technically valid Pair2 tofu photos (A = reference-native baseline, B = reference + COMPACT_VPD_6_CONTROL_CANDIDATE_R1) and ask whether B's repeated photo-only advantages survive symmetric full-poster composition. The old failed P6 page remains frozen negative evidence and will not be modified. A and B will share the same clean editable typography control layer and the same scene-derived quiet-pocket composition rule; only route-local x/y/scale adaptation is permitted under that same rule. Each poster is limited to one composition pass plus at most one correction pass, with no B-only polish. This preparation does not prove the typography distillation program, does not promote the Style Capsule, and does not authorize Figma canvas writing yet.",
   "updated_at": "2026-09-22T01:38:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1296,7 +1296,7 @@
     "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "PRODUCTION_VALIDATION_PREP",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
     "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
     "output_receipt": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
@@ -1343,11 +1343,16 @@
     },
     "known_label_aesthetic_review_performed": false,
     "style_capsule_promotion_allowed": false,
-    "stable_baseline_replacement_allowed": false
+    "stable_baseline_replacement_allowed": false,
+    "production_integration_prep": {
+      "status": "PREPARED_NO_CANVAS_WRITE",
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
+      "sha256": "a4aec9b40b2cba81b85960f623268ab74a8438cbb0b0944758c167561fad1cf3"
+    }
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_READY_FOR_PRODUCTION_INTEGRATION_TEST",
+    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_PRODUCTION_TEST_PREPARED_NOT_EXECUTED",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1370,5 +1375,31 @@
     "stable_baseline_replacement_allowed": false,
     "style_capsule_promotion_allowed": false,
     "local_equal_budget_figma_test_allowed": true
+  },
+  "pair2_equal_budget_figma_ab": {
+    "status": "PREPARED_NO_CANVAS_WRITE",
+    "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
+    "prep": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
+      "sha256": "a4aec9b40b2cba81b85960f623268ab74a8438cbb0b0944758c167561fad1cf3"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_BLIND_EVALUATOR_PROMPT_PREWRITE_20260923.txt",
+      "sha256": "85245627d267d49893c8c0d888c50aea14891e13b14920c46f76ff44705edcf6",
+      "prewrite_frozen": true
+    },
+    "source_pair": {
+      "route_A_sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "route_B_sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17"
+    },
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "old_page_modify": false,
+    "new_page_id": "PENDING_CANVAS_WRITE",
+    "composition_pass_per_poster": 1,
+    "correction_pass_max_per_poster": 1,
+    "route_B_extra_manual_budget": false,
+    "typography_control_is_not_typography_distillation_pass": true,
+    "current_canvas_write_authorization": 0,
+    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
   }
 }
