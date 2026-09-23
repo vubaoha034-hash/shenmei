@@ -1,0 +1,144 @@
+name: VPD Figma Blind Export Relay
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/figma_export_relay/tasks/*.cms"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-figma-blind-export-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    env:
+      RELAY_PRIVATE_KEY_B64: ${{ secrets.VPD_FIGMA_RELAY_PRIVATE_KEY_B64 }}
+    steps:
+      - name: Checkout exact VPD branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Require relay private key secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${RELAY_PRIVATE_KEY_B64:-}" ]; then
+            echo "Missing required repository secret VPD_FIGMA_RELAY_PRIVATE_KEY_B64" >&2
+            exit 2
+          fi
+          umask 077
+          printf '%s' "$RELAY_PRIVATE_KEY_B64" | base64 --decode > /tmp/vpd-figma-relay-private.pem
+          openssl pkey -in /tmp/vpd-figma-relay-private.pem -check -noout >/dev/null
+
+      - name: Decrypt and fetch blind exports
+        id: export
+        shell: bash
+        run: |
+          set -euo pipefail
+          task_dir="evidence/vpd/figma_export_relay/tasks"
+          receipt_dir="evidence/vpd/figma_export_relay/receipts"
+          out_root="/tmp/vpd-figma-blind-export"
+          mkdir -p "$task_dir" "$receipt_dir" "$out_root"
+          found=0
+          shopt -s nullglob
+          for task in "$task_dir"/*.cms; do
+            found=1
+            base="$(basename "$task" .cms)"
+            work="/tmp/vpd-figma-export-$base"
+            mkdir -p "$work"
+            openssl cms -decrypt -binary -inform DER -in "$task"               -recip evidence/vpd/figma_upload_relay/relay-cert.pem               -inkey /tmp/vpd-figma-relay-private.pem               -out "$work/task.json"
+
+            python - "$work/task.json" "$out_root/$base" "$receipt_dir/$base.json" <<'PY'
+import hashlib, json, re, struct, sys, urllib.parse, urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+task_path, out_dir, receipt_path = map(Path, sys.argv[1:4])
+m = json.loads(task_path.read_text(encoding="utf-8"))
+if m.get("schema_version") != "vpd-figma-blind-export-task/v1":
+    raise SystemExit("unsupported blind export task schema")
+task_id = str(m.get("task_id",""))
+if not re.fullmatch(r"[A-Za-z0-9._-]{1,120}", task_id):
+    raise SystemExit("invalid task id")
+exports = m.get("exports")
+if not isinstance(exports, list) or len(exports) != 2:
+    raise SystemExit("expected exactly two blind exports")
+allowed_names = {"PAIR2_POSTER_X.png","PAIR2_POSTER_Y.png"}
+seen=set()
+out_dir.mkdir(parents=True, exist_ok=True)
+receipt_exports=[]
+for e in exports:
+    name=str(e.get("blind_name",""))
+    if name not in allowed_names or name in seen:
+        raise SystemExit("invalid or duplicate blind name")
+    seen.add(name)
+    node_id=str(e.get("node_id",""))
+    if not re.fullmatch(r"\d+:\d+", node_id):
+        raise SystemExit("invalid node id")
+    url=str(e.get("url",""))
+    p=urllib.parse.urlparse(url)
+    if p.scheme!="https" or p.hostname!="www.figma.com" or not p.path.startswith("/api/mcp/asset/"):
+        raise SystemExit("rejected Figma export URL")
+    req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"image/png"})
+    with urllib.request.urlopen(req,timeout=60) as r:
+        data=r.read()
+    if not data.startswith(b"\x89PNG\r\n\x1a\n") or len(data)<24:
+        raise SystemExit("download is not PNG")
+    width,height=struct.unpack(">II",data[16:24])
+    ew,eh=int(e["expected_width"]),int(e["expected_height"])
+    if (width,height)!=(ew,eh):
+        raise SystemExit(f"dimension mismatch {name}: {(width,height)} != {(ew,eh)}")
+    dest=out_dir/name
+    dest.write_bytes(data)
+    receipt_exports.append({
+        "blind_name":name,
+        "node_id":node_id,
+        "width":width,
+        "height":height,
+        "bytes":len(data),
+        "sha256":hashlib.sha256(data).hexdigest()
+    })
+receipt={
+    "schema_version":"vpd-figma-blind-export-receipt/v1",
+    "task_id":task_id,
+    "recorded_at":datetime.now(timezone.utc).isoformat(),
+    "status":"EXPORT_PASS",
+    "route_mapping_in_receipt":False,
+    "exports":sorted(receipt_exports,key=lambda x:x["blind_name"])
+}
+receipt_path.parent.mkdir(parents=True,exist_ok=True)
+receipt_path.write_text(json.dumps(receipt,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+PY
+            git rm -f "$task"
+            git add "$receipt_dir/$base.json"
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No encrypted blind export tasks pending." >&2
+            exit 2
+          fi
+
+      - name: Upload neutral blind package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PAIR2_COMPLETE_POSTER_BLIND_EXPORT_20260923
+          path: /tmp/vpd-figma-blind-export/**
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Persist redacted export receipt and task deletion
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record VPD Figma blind export receipt"
+          git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
