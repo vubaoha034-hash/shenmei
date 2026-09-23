@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 123,
-    "sha256": "eb62d900196296c78e2d8ed0cff90383a510bbad6a0c8c7266f4a8de5d2d2e94",
+    "revision": 124,
+    "sha256": "184dbf3c574a5337e182275ac79560c67e451a7399afa9ca24a8b609d4dff04a",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,14 +956,14 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
+    "status": "VPD_P3_SECOND_CONTENT_TOFU_PAIR2_READY_FOR_INDEPENDENT_BLIND_REVIEW",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES",
+    "next_required_action": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_AUTHORIZATION",
+    "mode": "SECOND_CONTENT_PAIR2_BLIND_REVIEW_PENDING",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-AB-PREPARED-20260923-001",
-      "event_hash": "1817bb5fd98f20233b6129dd29e4c7b4e8e1fd1b264f13b3d2c6c8fc0d4d2296"
+      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-PAIR2-BLIND-READY-20260923-001",
+      "event_hash": "58c742afa7951535013dbc5c02f432f8817c4e4d7eb12ec2f9e4b78cb35408d7"
     }
   },
   "mature_workflow_audit": {
@@ -1312,7 +1312,7 @@
     "stable_baseline_replacement_allowed": false
   },
   "library_native_ab_v2": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "PAIR2_OUTPUTS_RECEIVED_TECHNICAL_PASS_BLIND_PACKAGE_READY",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
     "freeze": {
       "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
@@ -1335,9 +1335,51 @@
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "content": "TRADITIONAL_TOFU_WORKSHOP",
     "proposed_images": 2,
-    "authorized_images": 0,
+    "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES"
+    "next": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
+    "output_receipt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
+      "git_blob_sha": "7fcec5e7c96f8d9a90c4b713ff1f1bc3298d0d3a"
+    },
+    "route_A": {
+      "sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1dxwZpEkU5e3dH6da8NNekBs829BQi8rH",
+      "drive_url": "https://drive.google.com/file/d/1dxwZpEkU5e3dH6da8NNekBs829BQi8rH/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "route_B": {
+      "sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd",
+      "drive_url": "https://drive.google.com/file/d/1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "blind_review": {
+      "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR2",
+      "mapping_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_MAPPING_20260923.json",
+      "mapping_git_blob_sha": "d074a8fb7ff6bb5bef41547c610f0a414e3e8dc9",
+      "evaluator_prompt_path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "evaluator_prompt_git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_prompt_frozen": true,
+      "library_X_path": "/VPD_BLIND_REVIEW/PAIR2_X.png",
+      "library_Y_path": "/VPD_BLIND_REVIEW/PAIR2_Y.png",
+      "evaluator_must_not_know_route_mapping": true,
+      "result_status": "PENDING"
+    },
+    "known_label_aesthetic_review_performed": false,
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false
   }
 }
