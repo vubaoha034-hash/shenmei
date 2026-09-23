@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 122,
-    "sha256": "b98d18f4129c251e50ff3e493a2ec4729922b9c88b6dd57d64734059278e14ca",
+    "revision": 123,
+    "sha256": "eb62d900196296c78e2d8ed0cff90383a510bbad6a0c8c7266f4a8de5d2d2e94",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,14 +956,14 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_COMPACT_VPD_CANDIDATE_SUPPORTED_BY_ONE_BLIND_PAIR_PREP_SECOND_CONTENT_REPLICATION",
+    "status": "VPD_P3_SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "COMPACT_VPD_CANDIDATE_SECOND_CONTENT_REPLICATION_PREP",
+    "mode": "SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_AUTHORIZATION",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-BLIND-B-SUPPORTED-CANDIDATE-ACCEPTED-20260923-001",
-      "event_hash": "cf3105b4d3c520425978e9b4b768e5f1d541cc3101a6b6e7b0d2bf799d045158"
+      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-AB-PREPARED-20260923-001",
+      "event_hash": "1817bb5fd98f20233b6129dd29e4c7b4e8e1fd1b264f13b3d2c6c8fc0d4d2296"
     }
   },
   "mature_workflow_audit": {
@@ -1310,5 +1310,34 @@
       "status": "CANDIDATE_ACCEPTED_FOR_REPLICATION_NOT_PROMOTED"
     },
     "stable_baseline_replacement_allowed": false
+  },
+  "library_native_ab_v2": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
+    "freeze": {
+      "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
+      "git_blob_sha": "51254c0ae9a7999241b347d821a64fc1468478ba"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_A_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "ddb10c42a6c6e6dd6d0df600b0c011dc11b00d87"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_B_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "085d7f4862560a96b3ac16568667527e08d2a75c"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_frozen": true
+    },
+    "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "content": "TRADITIONAL_TOFU_WORKSHOP",
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "retry_budget": 0,
+    "current_chat_render_eligible": false,
+    "next": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES"
   }
 }
