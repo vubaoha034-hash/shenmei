@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 129,
+  "revision": 130,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 128,
-    "git_blob_sha": "23c93dac252b36c09e27d1ad31b47cc7e22dac31",
-    "note": "Revision 128 implemented the forward-compatible Pair2 validator and started CI; CI attempt 1 isolated a blind-prompt reference-comparison bug."
+    "revision": 129,
+    "git_blob_sha": "f4a0fe12a11926effad99a70364d5635c5924c50",
+    "note": "Revision 129 corrected the CI-exposed blind-prompt reference comparison and awaited a clean validator rerun."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 Figma A/B remains frozen with zero canvas-write authorization. CI attempt 1 proved the new current-state validation step executes; regression tests passed, and the state check failed only on PAIR2_BLIND_PROMPT_DRIFT. The failure was a validator bug: equivalent blind-prompt references were compared as whole objects even though the lock mirror intentionally adds prewrite_frozen=true. The validator now compares path+sha256 identity and checks the freeze flag separately. A second CI run is required before any Figma write is reopened.",
-  "status": "VPD_PAIR2_FIGMA_AB_VALIDATOR_REPAIR_IMPLEMENTED_AWAITING_CI_PASS_NO_CANVAS_WRITE",
+  "current_stage": "The Pair2 equal-budget complete-poster/Figma A/B preparation is frozen and the state-validator control-plane repair has now passed CI. GitHub Actions run 35816321591 completed successfully: the 62-test visual-memory regression suite passed, the mandatory current VPD state validator passed, frozen renderer-request validation passed, and the serial V1 orchestrator dry-run passed. No Figma canvas write or image generation occurred. The next resource step remains explicitly gated: wait for user authorization to write the prepared Pair2 A/B into a new Figma page.",
+  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREPARED_AWAITING_CANVAS_WRITE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,12 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded CI attempt 1 run 35816214311 and isolated the failure to PAIR2_BLIND_PROMPT_DRIFT",
-    "confirmed the 62-test visual-memory regression suite passed before the state-check failure",
-    "corrected blind-prompt reference validation to compare path+sha256 identity while independently requiring prewrite_frozen=true",
-    "kept Pair2 Figma canvas-write authorization at zero pending CI rerun"
+    "confirmed VPD Renderer Adapter Validation run 35816321591 completed SUCCESS on commit 912cfffba0a91e785b9e752fe2551995deaf1998",
+    "confirmed the 62-test visual-memory regression suite passed",
+    "confirmed python scripts/verify_visual_memory.py --vpd-state --status-card exited successfully",
+    "confirmed frozen renderer-request validation and serial V1 orchestrator dry-run passed",
+    "closed the validator forward-compatibility blocker without rewriting the 22 frozen historical commercial-ledger defects",
+    "advanced only to waiting for explicit Pair2 Figma canvas-write authorization; no Figma write executed"
   ],
-  "updated_at": "2026-09-23T04:12:00Z",
+  "updated_at": "2026-09-23T04:18:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -233,8 +235,7 @@
     "Do not consume a retry: this is still the original authorized one-image stateless smoke because the failed Drive-binding attempt generated nothing.",
     "Do not ask the generator assistant to fetch the Drive file and use that fetch as the visual reference.",
     "The fresh generator conversation must show R1C as an attached image before generation.",
-    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file.",
-    "Mandatory state validator is forward-incompatible with the current Pair2 production-integration actions; current p6-composition ACTIONS does not include the active action and would raise COMPOSITION_ACTION_UNKNOWN."
+    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1594,9 +1595,9 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
     "validator_gate": {
-      "status": "REPAIR_IMPLEMENTED_AWAITING_CI",
+      "status": "PASS",
       "blocker": {
         "path": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
         "sha256": "bb9734919ce1281e7580309d261d3fb57b68c901765c80fbbc92acdcb58c016d"
@@ -1605,19 +1606,17 @@
         "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_REPAIR_IMPLEMENTATION_20260923.json",
         "sha256": "96e181946c767cd0c60d0945d374eed0226067f39259e2d35fd7cb3376c8267c"
       },
-      "required_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
-      "required_workflow": "VPD Renderer Adapter Validation",
-      "figma_canvas_write_allowed": false,
-      "last_ci_attempt": {
-        "run_id": 35816214311,
-        "job_id": 107038176781,
-        "conclusion": "FAILURE",
-        "reason": "PAIR2_BLIND_PROMPT_DRIFT"
-      },
       "technical_correction": {
         "path": "evidence/vpd/library_native_ab_v2/PAIR2_VALIDATOR_CI_ATTEMPT01_FAILURE_AND_CORRECTION_20260923.json",
         "sha256": "c8f7ad8443d0c37154ae932288c0998bf9c3a2fb800a2e7890a1e9892edba897"
-      }
+      },
+      "validation_receipt": {
+        "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_CI_PASS_RECEIPT_20260923.json",
+        "sha256": "08e75acbfbbd1de95fcf8fcd0e47c502d8aaed9b03ba6a7c20bfe884ab1dcc2a"
+      },
+      "required_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+      "required_workflow": "VPD Renderer Adapter Validation",
+      "figma_canvas_write_allowed": false
     }
   }
 }

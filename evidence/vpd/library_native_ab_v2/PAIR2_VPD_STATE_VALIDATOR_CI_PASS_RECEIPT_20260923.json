@@ -1,0 +1,28 @@
+{
+  "schema_version": "vpd-pair2-validator-ci-pass-receipt/v1",
+  "artifact_type": "PAIR2_VPD_STATE_VALIDATOR_CI_PASS_RECEIPT",
+  "recorded_at": "2026-09-23T04:18:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "conclusion": "SUCCESS",
+  "workflow": "VPD Renderer Adapter Validation",
+  "run_id": 35816321591,
+  "job_id": 107038501711,
+  "source_commit": "912cfffba0a91e785b9e752fe2551995deaf1998",
+  "state_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+  "state_command_exit_code": 0,
+  "state_validator": "VPD_STATE_VALID",
+  "verified_state": {
+    "lock_revision": 129,
+    "checkpoint_sequence": 150,
+    "next_required_action": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
+  },
+  "successful_steps": [
+    "Run visual-memory regression suite (62 tests)",
+    "Verify current VPD state",
+    "Verify frozen VPD renderer requests",
+    "Verify serial V1 orchestrator dry-run"
+  ],
+  "figma_canvas_write_authorized": false,
+  "image_generation_authorized": false,
+  "meaning": "The control-plane validator repair passed. This receipt reopens only the ability to ask for the next Figma canvas-write authorization; it does not itself authorize or perform any canvas write."
+}
