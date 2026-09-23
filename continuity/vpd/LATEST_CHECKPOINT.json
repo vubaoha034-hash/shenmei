@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 149,
-  "recorded_at": "2026-09-23T04:05:00Z",
+  "sequence": 150,
+  "recorded_at": "2026-09-23T04:12:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -382,7 +382,7 @@
   "status": "VPD_PAIR2_FIGMA_AB_VALIDATOR_REPAIR_IMPLEMENTED_AWAITING_CI_PASS_NO_CANVAS_WRITE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "9c5160675048846de054d0fe36ce773a63f53fc586e7972d06fac360d2775ba3"
+    "sha256": "4aee6202bebba1c9a3342aba4afd8cc8fbccfadb651071f62b0aa4370ee1ff76"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -403,8 +403,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-PAIR2-VALIDATOR-FORWARD-COMPAT-REPAIR-IMPLEMENTED-20260923-001",
-      "event_hash": "aef058c15fc82d7ac1b248549cd21a4fe1f8385e38c66028c9a54650bc3c8c8c"
+      "event_id": "EVT-VPD-PAIR2-VALIDATOR-CI1-PROMPT-REF-CORRECTED-20260923-001",
+      "event_hash": "e9278b6cc81291cb6fb75071c0a310e2a4a6386725c17047159594ad7b141ec9"
     }
   },
   "typography_repair": {
@@ -927,7 +927,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "The Pair2 equal-budget Figma A/B preparation remains frozen with zero canvas-write authorization. The control-plane repair is now implemented: the active p6-composition validator recognizes the Pair2 prewrite states, validates the frozen A/B production-integration contract, preserves the known pre-existing commercial-ledger hash-defect rows byte-for-byte instead of rewriting them, and requires canonical hashes for all non-frozen ledger events. The existing renderer-adapter CI workflow now runs the mandatory --vpd-state --status-card check on validator/state changes. Figma canvas writing remains blocked until that CI run succeeds.",
+  "current_stage": "Pair2 Figma A/B remains frozen with zero canvas-write authorization. CI attempt 1 proved the new current-state validation step executes; regression tests passed, and the state check failed only on PAIR2_BLIND_PROMPT_DRIFT. The failure was a validator bug: equivalent blind-prompt references were compared as whole objects even though the lock mirror intentionally adds prewrite_frozen=true. The validator now compares path+sha256 identity and checks the freeze flag separately. A second CI run is required before any Figma write is reopened.",
   "updated_at": "2026-09-22T01:38:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1413,7 +1413,17 @@
       },
       "required_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
       "required_workflow": "VPD Renderer Adapter Validation",
-      "figma_canvas_write_allowed": false
+      "figma_canvas_write_allowed": false,
+      "last_ci_attempt": {
+        "run_id": 35816214311,
+        "job_id": 107038176781,
+        "conclusion": "FAILURE",
+        "reason": "PAIR2_BLIND_PROMPT_DRIFT"
+      },
+      "technical_correction": {
+        "path": "evidence/vpd/library_native_ab_v2/PAIR2_VALIDATOR_CI_ATTEMPT01_FAILURE_AND_CORRECTION_20260923.json",
+        "sha256": "c8f7ad8443d0c37154ae932288c0998bf9c3a2fb800a2e7890a1e9892edba897"
+      }
     }
   },
   "validator_blocker": {
@@ -1423,5 +1433,9 @@
   "validator_repair_implementation": {
     "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_REPAIR_IMPLEMENTATION_20260923.json",
     "sha256": "96e181946c767cd0c60d0945d374eed0226067f39259e2d35fd7cb3376c8267c"
+  },
+  "validator_ci_correction": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_VALIDATOR_CI_ATTEMPT01_FAILURE_AND_CORRECTION_20260923.json",
+    "sha256": "c8f7ad8443d0c37154ae932288c0998bf9c3a2fb800a2e7890a1e9892edba897"
   }
 }

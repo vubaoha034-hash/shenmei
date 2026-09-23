@@ -165,7 +165,8 @@ def _validate_pair2_equal_budget_prewrite(root, lock, cp, action):
     require(prep["figma_plan"]["new_page"]["page_id"] == "PENDING_CANVAS_WRITE", "PAIR2_PREMATURE_FIGMA_PAGE_WRITE")
     require(prep["authorization"]["current_canvas_write_authorization"] == 0 and prep["authorization"]["current_image_generation_authorization"] == 0, "PAIR2_PREMATURE_RESOURCE_AUTH")
     blind = prep["evaluation"]["blind_review"]
-    require(blind["prewrite_prompt"] == pair["blind_evaluator_prompt"], "PAIR2_BLIND_PROMPT_DRIFT")
+    require(blind["prewrite_prompt"] == {k: pair["blind_evaluator_prompt"][k] for k in ("path", "sha256")}, "PAIR2_BLIND_PROMPT_DRIFT")
+    require(pair["blind_evaluator_prompt"].get("prewrite_frozen") is True, "PAIR2_BLIND_PROMPT_NOT_FROZEN")
     require(blind["mapping_frozen_before_canvas_write"] is True and blind["mapping"] == {"X":"Route A","Y":"Route B"}, "PAIR2_BLIND_MAPPING_DRIFT")
     require(blind["evaluator_must_not_know_mapping"] is True, "PAIR2_BLIND_LEAK")
 
