@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 124,
-    "sha256": "184dbf3c574a5337e182275ac79560c67e451a7399afa9ca24a8b609d4dff04a",
+    "revision": 125,
+    "sha256": "36a0211a4ebb40a053c2e58bd43a3a72f4894c9eb5da4f9f04c5c55fc6e53e58",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,14 +956,14 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_SECOND_CONTENT_TOFU_PAIR2_READY_FOR_INDEPENDENT_BLIND_REVIEW",
+    "status": "VPD_P3_TWO_BLIND_CONTENT_REPLICATIONS_SUPPORT_COMPACT_VPD_READY_EQUAL_BUDGET_FIGMA_AB_PREP",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "next_required_action": "PREPARE_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_USING_PAIR2_NO_CANVAS_WRITE",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "SECOND_CONTENT_PAIR2_BLIND_REVIEW_PENDING",
+    "mode": "TWO_BLIND_CONTENT_REPLICATIONS_COMPLETE_PREP_EQUAL_BUDGET_FIGMA_AB",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-PAIR2-BLIND-READY-20260923-001",
-      "event_hash": "58c742afa7951535013dbc5c02f432f8817c4e4d7eb12ec2f9e4b78cb35408d7"
+      "event_id": "EVT-VPD-P3-PAIR2-BLIND-B-REPLICATION-SETTLED-20260923-001",
+      "event_hash": "c665ffc5b86773fbd0552b25375e9edd93cfd342475060d5affbe3e5a8637229"
     }
   },
   "mature_workflow_audit": {
@@ -1312,7 +1312,7 @@
     "stable_baseline_replacement_allowed": false
   },
   "library_native_ab_v2": {
-    "status": "PAIR2_OUTPUTS_RECEIVED_TECHNICAL_PASS_BLIND_PACKAGE_READY",
+    "status": "PAIR2_BLIND_COMPLETE_B_WINS",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
     "freeze": {
       "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
@@ -1338,7 +1338,7 @@
     "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "next": "PRODUCTION_VALIDATION_PREP",
     "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
     "output_receipt": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
@@ -1376,10 +1376,41 @@
       "library_X_path": "/VPD_BLIND_REVIEW/PAIR2_X.png",
       "library_Y_path": "/VPD_BLIND_REVIEW/PAIR2_Y.png",
       "evaluator_must_not_know_route_mapping": true,
-      "result_status": "PENDING"
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_RESULT_20260923.json",
+      "result_git_blob_sha": "1f81f8a474fb7231bf88ef3e206eb459b3691f0a",
+      "winner_blind_label": "Y",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
     },
     "known_label_aesthetic_review_performed": false,
     "style_capsule_promotion_allowed": false,
     "stable_baseline_replacement_allowed": false
+  },
+  "compact_vpd_6_control_candidate": {
+    "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_READY_FOR_PRODUCTION_INTEGRATION_TEST",
+    "blind_replication_summary": {
+      "pair1": {
+        "content": "WORKING_RICE_GRANARY",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "pair2": {
+        "content": "TRADITIONAL_TOFU_WORKSHOP",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "consistent_direction": true
+    },
+    "settlement": {
+      "path": "evidence/vpd/library_native_ab_v2/COMPACT_VPD_REPLICATION_SETTLEMENT_20260923.json",
+      "git_blob_sha": "e7c7510115060cfd998dfb081a20156abf68ce18"
+    },
+    "controls_changed": false,
+    "add_more_rules": false,
+    "stable_baseline_replacement_allowed": false,
+    "style_capsule_promotion_allowed": false,
+    "local_equal_budget_figma_test_allowed": true
   }
 }
