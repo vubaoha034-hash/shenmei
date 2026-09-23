@@ -1,0 +1,35 @@
+{
+  "schema_version": "vpd-blind-review-result/v1",
+  "artifact_type": "BLIND_REVIEW_RESULT",
+  "recorded_at": "2026-09-23T02:15:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR1",
+  "evaluator_verdict": {
+    "winner": "X",
+    "confidence": "MEDIUM",
+    "correctness_X": "PASS",
+    "correctness_Y": "PASS",
+    "reasons": [
+      "X has a clearer three-level reading sequence across foreground, midground and background, with more natural spatial depth and documentary credibility.",
+      "X differentiates aged wood, linen, bamboo and rice materials more credibly, with less prop-like staging.",
+      "X presents rice storage, sacks, baskets and work areas as a more plausible production system rather than a concentrated display.",
+      "Y has stronger explicit sorting-work evidence and a larger central low-density area, but the arrangement feels more deliberately staged.",
+      "Both pass core scene conditions; X has a slight edge in overall visual narrative and naturalness."
+    ],
+    "tradeoff": "X wins on spatial narrative and现场 credibility but gives up some typography convenience; Y offers a clearer quiet zone and work-tool evidence but feels more commercially staged."
+  },
+  "revealed_mapping": {
+    "X": "B",
+    "Y": "A"
+  },
+  "blind_outcome": "B_WINS",
+  "evidence_strength": "ONE_PAIR_MEDIUM_CONFIDENCE_BLIND_SIGNAL",
+  "relation_to_prior_known_label_review": "CONSISTENT_DIRECTION",
+  "relation_to_user_preference": "CONSISTENT_DIRECTION_BUT_USER_PREFERENCE_WAS_PRIMED",
+  "conclusion": {
+    "compact_vpd_candidate_signal": "SUPPORTED",
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false,
+    "next_validation_needed": "SECOND_NEW_CONTENT_REPLICATION"
+  }
+}
