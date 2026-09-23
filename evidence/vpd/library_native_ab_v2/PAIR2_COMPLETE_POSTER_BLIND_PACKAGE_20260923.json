@@ -1,0 +1,92 @@
+{
+  "schema_version": "vpd-pair2-complete-poster-blind-package/v1",
+  "artifact_type": "PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE",
+  "recorded_at": "2026-09-23T10:12:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
+  "status": "READY_FOR_INDEPENDENT_BLIND_EVALUATION",
+  "no_canvas_write_this_step": true,
+  "composition_budget_unchanged": {
+    "composition_passes_used": {
+      "A": 1,
+      "B": 1
+    },
+    "correction_passes_used": {
+      "A": 0,
+      "B": 0
+    },
+    "correction_pass_max_per_poster": 1,
+    "route_B_extra_manual_budget": false
+  },
+  "figma_source": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "207:2",
+    "X_frame_id": "207:3",
+    "Y_frame_id": "207:5"
+  },
+  "export_transport": {
+    "first_workflow_attempt": {
+      "run_id": 35847050377,
+      "result": "INVALID_WORKFLOW_YAML_NO_JOB_NO_EXPORT",
+      "canvas_mutation": false
+    },
+    "corrected_workflow_run": {
+      "run_id": 35847225172,
+      "result": "SUCCESS"
+    },
+    "artifact": {
+      "id": 10743792318,
+      "name": "PAIR2_COMPLETE_POSTER_BLIND_EXPORT_20260923",
+      "digest": "sha256:2860222f086ddf11cd4a23adaacba58b67c212c45d70caa1ad6a01f3ed63ae0f"
+    },
+    "export_receipt": {
+      "path": "evidence/vpd/figma_export_relay/receipts/PAIR2_COMPLETE_POSTER_BLIND_EXPORT_20260923.json",
+      "sha256": "4fe87662619293c92db0abb0f265ec95feaef05ee8e3c05af3eec730b292e3c5"
+    }
+  },
+  "blind_mapping": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_MAPPING_20260923.json",
+    "sha256": "6f4be7035e6f7f42707a921e96998708fbc21a799df1d72dfce1bf4257bc6306"
+  },
+  "evaluator_prompt": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_BLIND_EVALUATOR_PROMPT_PREWRITE_20260923.txt",
+    "sha256": "416b99d9ae74100559fb34ac4426a93b8af4bdf65071d9a5ed3c1791e15a9a7b",
+    "frozen_before_canvas_write": true
+  },
+  "fresh_chat_handoff": {
+    "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260923.txt",
+    "sha256": "7851505030eb9bcc997bd1841b24ca1e8a341844e2cf949383aad228174feb40"
+  },
+  "library_assets": {
+    "X": {
+      "path": "/VPD_BLIND_REVIEW/PAIR2_POSTER_X.png",
+      "file_id": "file_0000000057ec81fda57404167beee3cd",
+      "library_file_id": "libfile_ed35243ecf7c8191ae23dacc925a1115",
+      "sha256": "6b52197bd7909098e684e05556e1857f414efe900302f8ce86628b128b8efef7",
+      "dimensions": [
+        2400,
+        3200
+      ],
+      "bytes": 7035404,
+      "materialized_readback_verified": true
+    },
+    "Y": {
+      "path": "/VPD_BLIND_REVIEW/PAIR2_POSTER_Y.png",
+      "file_id": "file_0000000053a081fb959ea4ee85a30719",
+      "library_file_id": "libfile_f77f3e0a0468819199e4e01fcb90e8b4",
+      "sha256": "d8dc1e06d8fe9d2f80bc7a37e08342f634303d00bc36992bd144afb557c9b494",
+      "dimensions": [
+        2400,
+        3200
+      ],
+      "bytes": 7413257,
+      "materialized_readback_verified": true
+    }
+  },
+  "evaluator_identity_boundary": {
+    "evaluator_must_not_know_mapping": true,
+    "mapping_reveal_only_after_verdict": true,
+    "current_verdict": "PENDING"
+  },
+  "next_required_action": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT"
+}

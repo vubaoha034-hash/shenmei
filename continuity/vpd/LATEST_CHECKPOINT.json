@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 152,
-  "recorded_at": "2026-09-23T09:54:00Z",
+  "sequence": 153,
+  "recorded_at": "2026-09-23T10:12:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -311,7 +311,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "PREPARE_PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+  "next_required_action": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -379,10 +379,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_COMPLETE_READY_BLIND_PACKAGE_PREP",
+  "status": "VPD_P3_PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "75891d180c4f359f975ff10d003520133d0b75a9a4d59a2e21809d4ac7d145de"
+    "sha256": "fb2f8cb872df51884a70b7f825bc678298251a98c5a45237849866a2b94b836b"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -403,8 +403,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-PAIR2-FIGMA-COMPOSITION-PASS1-COMPLETE-20260923-001",
-      "event_hash": "1007a87ce79160a9d7dd598f7c491a63af7804bba2dd7bcfde4b82b0cfebd007"
+      "event_id": "EVT-VPD-P3-PAIR2-COMPLETE-POSTER-BLIND-PACKAGE-READY-20260923-001",
+      "event_hash": "be6a73817d7866a93f04da62230e8bc839446463c2fb5592ea7ca6a4ded7c7b7"
     }
   },
   "typography_repair": {
@@ -927,7 +927,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B initial composition is complete on a new page. Both frozen Pair2 source photos were SHA-verified, transported through the existing encrypted GitHub Actions Figma relay, and independently read back as IMAGE fills. The relay upload stored both images but did not auto-apply the target fills, so a bounded technical repair applied the receipt imageHash values directly to PHOTO_RAW nodes without re-upload or aesthetic-budget consumption. Both posters use the same editable typography control layer and one composition pass each; no correction pass has been used. Frame screenshots were captured and structurally/pixel reviewed as suitable to proceed to blind complete-poster review. This is not human final aesthetic acceptance and does not prove the typography distillation program.",
+  "current_stage": "The Pair2 equal-budget complete-poster blind-review package is ready without any additional Figma canvas write. Exact 2400x3200 PNG exports of frames 207:3 and 207:5 were retrieved through a read-only encrypted Figma export relay, uploaded to ChatGPT Library as PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png, then re-materialized from Library and SHA-256 verified against the Figma export receipt. The pre-frozen mapping remains X = Route A and Y = Route B; it must not be revealed to the evaluator before verdict. The optional correction pass remains unused on both posters.",
   "updated_at": "2026-09-22T01:38:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1377,7 +1377,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "INITIAL_COMPOSITION_PASS_COMPLETE",
+    "status": "COMPLETE_POSTER_BLIND_PACKAGE_READY",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1400,7 +1400,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "PREPARE_PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+    "next": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1455,7 +1455,20 @@
     "composition_evidence": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_20260923.json",
       "sha256": "2c1a3b850ad17a66bcb77ac1dcc05068bb5d831747045208c6ae673a82056b98"
-    }
+    },
+    "blind_package": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json",
+      "sha256": "e9abd75157823214400f9fe9868c882c8aa53c4da00a5d399479a59ada177e59"
+    },
+    "blind_mapping": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_MAPPING_20260923.json",
+      "sha256": "6f4be7035e6f7f42707a921e96998708fbc21a799df1d72dfce1bf4257bc6306"
+    },
+    "blind_handoff": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260923.txt",
+      "sha256": "7851505030eb9bcc997bd1841b24ca1e8a341844e2cf949383aad228174feb40"
+    },
+    "complete_poster_blind_verdict": "PENDING"
   },
   "validator_blocker": {
     "path": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
@@ -1476,5 +1489,9 @@
   "pair2_figma_composition_evidence": {
     "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_20260923.json",
     "sha256": "2c1a3b850ad17a66bcb77ac1dcc05068bb5d831747045208c6ae673a82056b98"
+  },
+  "pair2_complete_poster_blind_package": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json",
+    "sha256": "e9abd75157823214400f9fe9868c882c8aa53c4da00a5d399479a59ada177e59"
   }
 }

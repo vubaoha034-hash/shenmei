@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 131,
+  "revision": 132,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 130,
-    "git_blob_sha": "93f673b48aecf7d16fd3f3314f3e7479d8fa2fb7",
-    "note": "Revision 130 closed the validator blocker and waited for explicit Pair2 Figma canvas-write authorization."
+    "revision": 131,
+    "git_blob_sha": "48f6242d6a1757d096849004dc9f6c89db7d0ec5",
+    "note": "Revision 131 completed one equal-budget Figma composition pass per route and advanced to blind-package preparation."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B initial composition is complete on a new page. Both frozen Pair2 source photos were SHA-verified, transported through the existing encrypted GitHub Actions Figma relay, and independently read back as IMAGE fills. The relay upload stored both images but did not auto-apply the target fills, so a bounded technical repair applied the receipt imageHash values directly to PHOTO_RAW nodes without re-upload or aesthetic-budget consumption. Both posters use the same editable typography control layer and one composition pass each; no correction pass has been used. Frame screenshots were captured and structurally/pixel reviewed as suitable to proceed to blind complete-poster review. This is not human final aesthetic acceptance and does not prove the typography distillation program.",
-  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_COMPLETE_READY_BLIND_PACKAGE_PREP",
+  "current_stage": "The Pair2 equal-budget complete-poster blind-review package is ready without any additional Figma canvas write. Exact 2400x3200 PNG exports of frames 207:3 and 207:5 were retrieved through a read-only encrypted Figma export relay, uploaded to ChatGPT Library as PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png, then re-materialized from Library and SHA-256 verified against the Figma export receipt. The pre-frozen mapping remains X = Route A and Y = Route B; it must not be revealed to the evaluator before verdict. The optional correction pass remains unused on both posters.",
+  "status": "VPD_P3_PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "PREPARE_PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+  "next_required_action": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,18 +144,16 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "interpreted the user's continuation as the previously requested one-shot Pair2 Figma canvas-write authorization",
-    "created new Figma page 207:2 without modifying old P6 page 12:2",
-    "created symmetric 2400x3200 A/B poster frames and PHOTO_RAW nodes",
-    "SHA-verified both frozen Pair2 PNG sources before transport",
-    "used the established encrypted GitHub Actions Figma Upload Relay V1; both receipts returned UPLOAD_PASS",
-    "detected that upload storage did not auto-apply target fills and performed a bounded technical imageHash binding repair",
-    "independently read back IMAGE fills on 207:4 and 207:6 with receipt-matching imageHash values",
-    "executed one symmetric composition pass per poster using the shared typography control layer",
-    "captured 2400x3200 frame screenshots and left the optional correction pass unused",
-    "advanced to blind complete-poster review package preparation without claiming human final acceptance"
+    "exported exact 2400x3200 PNG renders of Figma frames 207:3 and 207:5 through a read-only encrypted relay",
+    "recorded the first invalid YAML workflow attempt as technical no-job/no-export evidence and corrected the relay without touching Figma",
+    "verified corrected GitHub Actions blind-export run 35847225172 and artifact 10743792318",
+    "uploaded neutral PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png to /VPD_BLIND_REVIEW/",
+    "materialized both Library files back into the runtime and verified SHA256 matches the Figma export receipt",
+    "froze complete-poster X/Y mapping, Library IDs, hashes and the prewritten evaluator prompt",
+    "prepared a fresh-chat handoff while preserving evaluator route blindness",
+    "kept correction-pass usage at A=0, B=0 and performed no Figma canvas write in this step"
   ],
-  "updated_at": "2026-09-23T09:54:00Z",
+  "updated_at": "2026-09-23T10:12:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -1576,7 +1574,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "INITIAL_COMPOSITION_PASS_COMPLETE",
+    "status": "COMPLETE_POSTER_BLIND_PACKAGE_READY",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1599,7 +1597,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "PREPARE_PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+    "next": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1654,6 +1652,19 @@
     "composition_evidence": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_20260923.json",
       "sha256": "2c1a3b850ad17a66bcb77ac1dcc05068bb5d831747045208c6ae673a82056b98"
-    }
+    },
+    "blind_package": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json",
+      "sha256": "e9abd75157823214400f9fe9868c882c8aa53c4da00a5d399479a59ada177e59"
+    },
+    "blind_mapping": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_MAPPING_20260923.json",
+      "sha256": "6f4be7035e6f7f42707a921e96998708fbc21a799df1d72dfce1bf4257bc6306"
+    },
+    "blind_handoff": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260923.txt",
+      "sha256": "7851505030eb9bcc997bd1841b24ca1e8a341844e2cf949383aad228174feb40"
+    },
+    "complete_poster_blind_verdict": "PENDING"
   }
 }

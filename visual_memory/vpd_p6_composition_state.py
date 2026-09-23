@@ -54,6 +54,7 @@ ACTIONS = {
     PAIR2_VALIDATOR_CI_ACTION,
     PAIR2_WAIT_CANVAS_AUTH_ACTION,
     "PREPARE_PAIR2_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+    "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
 }
 
 
@@ -195,6 +196,31 @@ def _validate_pair2_equal_budget_prewrite(root, lock, cp, action):
         require(receipt["figma_canvas_write_authorized"] is False, "PAIR2_RECEIPT_PREMATURE_WRITE")
     require(lock.get("p6_allowed") is False, "PAIR2_P6_PREMATURE_OPEN")
 
+
+def _validate_pair2_complete_poster_blind_package(root, lock, cp):
+    pair = lock.get("pair2_equal_budget_figma_ab", {})
+    require(pair.get("status") == "COMPLETE_POSTER_BLIND_PACKAGE_READY", "PAIR2_POSTER_BLIND_PACKAGE_STATE")
+    require(cp.get("pair2_equal_budget_figma_ab") == pair, "PAIR2_POSTER_BLIND_CHECKPOINT_DRIFT")
+    require(pair.get("current_canvas_write_authorization") == 0, "PAIR2_POSTER_BLIND_CANVAS_REOPENED")
+    require(pair.get("composition_passes_used") == {"A":1,"B":1}, "PAIR2_POSTER_COMPOSITION_BUDGET_DRIFT")
+    require(pair.get("correction_passes_used") == {"A":0,"B":0}, "PAIR2_POSTER_CORRECTION_BUDGET_DRIFT")
+    require(pair.get("route_B_extra_manual_budget") is False, "PAIR2_POSTER_B_EXTRA_POLISH")
+    for name in ("composition_evidence", "blind_package", "blind_mapping", "blind_evaluator_prompt", "blind_handoff"):
+        check_ref(root, pair[name])
+    package = read(root, pair["blind_package"]["path"])
+    mapping = read(root, pair["blind_mapping"]["path"])
+    require(package["status"] == "READY_FOR_INDEPENDENT_BLIND_EVALUATION", "PAIR2_POSTER_PACKAGE_NOT_READY")
+    require(package["no_canvas_write_this_step"] is True, "PAIR2_POSTER_PACKAGE_CANVAS_WRITE")
+    require(package["evaluator_identity_boundary"]["current_verdict"] == "PENDING", "PAIR2_POSTER_PREMATURE_VERDICT")
+    require(package["evaluator_identity_boundary"]["evaluator_must_not_know_mapping"] is True, "PAIR2_POSTER_BLIND_LEAK")
+    require(mapping["blind_X"]["route"] == "A" and mapping["blind_Y"]["route"] == "B", "PAIR2_POSTER_MAPPING_DRIFT")
+    require(mapping["blind_X"]["sha256"] == package["library_assets"]["X"]["sha256"], "PAIR2_POSTER_X_HASH_DRIFT")
+    require(mapping["blind_Y"]["sha256"] == package["library_assets"]["Y"]["sha256"], "PAIR2_POSTER_Y_HASH_DRIFT")
+    require(mapping["blind_X"]["dimensions"] == mapping["blind_Y"]["dimensions"] == [2400,3200], "PAIR2_POSTER_DIMENSION_DRIFT")
+    require(package["composition_budget_unchanged"]["correction_passes_used"] == {"A":0,"B":0}, "PAIR2_POSTER_HIDDEN_CORRECTION")
+    require(lock.get("p6_allowed") is False, "PAIR2_POSTER_PREMATURE_P6_OPEN")
+
+
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
     cp = read(root, CHECKPOINT_PATH)
@@ -254,6 +280,8 @@ def validate_p6_composition_state(root):
     require(all(v in (0, 1) for v in used.values()), "CORRECTION_BUDGET_RANGE")
     if action in PAIR2_PREWRITE_ACTIONS:
         _validate_pair2_equal_budget_prewrite(root, lock, cp, action)
+    if action == "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT":
+        _validate_pair2_complete_poster_blind_package(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
