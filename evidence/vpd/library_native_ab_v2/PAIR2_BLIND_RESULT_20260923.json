@@ -1,0 +1,47 @@
+{
+  "schema_version": "vpd-blind-review-result/v1",
+  "artifact_type": "BLIND_REVIEW_RESULT",
+  "recorded_at": "2026-09-23T03:30:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR2",
+  "evaluator_verdict": {
+    "winner": "Y",
+    "confidence": "MEDIUM",
+    "correctness_X": "PASS",
+    "correctness_Y": "PASS",
+    "reasons": [
+      "Y has a clearer first-second-third reading chain from foreground soybean soaking trough to midground tofu mold and wet cloth to background finished tofu and steaming area.",
+      "Y has stronger near/mid/far transitions and occlusion depth; X has more visual competition among the foreground bamboo tray, wooden tub and right-side mold.",
+      "Both pass material realism, while Y differentiates wet, dry, rough and absorbent surface states more richly.",
+      "Y shows more production evidence—water inflow, soaking soybeans, pressing mold, press cloth, finished tofu and steaming equipment—so it reads more like an operating workshop.",
+      "X is quieter, cleaner-looking and offers slightly easier typography space, but Y has the stronger editorial spatial narrative and memory point."
+    ],
+    "tradeoff": "Y has stronger production narrative and spatial layering but is denser and more dramatic; X is calmer and easier to typeset but tells a less complete workshop story."
+  },
+  "revealed_mapping": {
+    "X": "A",
+    "Y": "B"
+  },
+  "blind_outcome": "B_WINS",
+  "evidence_strength": "SECOND_DISTINCT_CONTENT_MEDIUM_CONFIDENCE_BLIND_REPLICATION",
+  "relation_to_pair1": "CONSISTENT_DIRECTION_B_WINS_AGAIN",
+  "conclusion": {
+    "compact_vpd_candidate_signal": "REPLICATED_ACROSS_TWO_DISTINCT_CONTENT_TASKS",
+    "supported_dimensions": [
+      "reading hierarchy",
+      "near-mid-far spatial depth",
+      "material-state differentiation",
+      "production/process evidence",
+      "editorial visual narrative"
+    ],
+    "recurring_tradeoff": [
+      "B can become denser or more deliberately staged.",
+      "Typography quiet-zone advantage is not guaranteed.",
+      "Color-temperature control is not independently proven."
+    ],
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false,
+    "local_production_integration_test_allowed": true,
+    "next_validation_needed": "EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB"
+  }
+}
