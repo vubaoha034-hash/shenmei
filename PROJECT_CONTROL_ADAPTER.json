@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 121,
-    "sha256": "5468c9c12f2c7f13db6e15fe1697de8d85ae8cb29777c713de062408bc86c880",
+    "revision": 122,
+    "sha256": "b98d18f4129c251e50ff3e493a2ec4729922b9c88b6dd57d64734059278e14ca",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -956,14 +956,14 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_P3_LIBRARY_NATIVE_AB_BLIND_REVIEW_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
+    "status": "VPD_P3_COMPACT_VPD_CANDIDATE_SUPPORTED_BY_ONE_BLIND_PAIR_PREP_SECOND_CONTENT_REPLICATION",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "next_required_action": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
+    "next_required_action": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
     "plan": {
       "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
       "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
     },
-    "mode": "LIBRARY_NATIVE_AB_BLIND_REVIEW_PENDING",
+    "mode": "COMPACT_VPD_CANDIDATE_SECOND_CONTENT_REPLICATION_PREP",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
     "current_chat_render_eligible": false,
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-LIBRARY-AB-BLIND-PACKAGE-READY-20260922-001",
-      "event_hash": "8e381a0cdcad2854fc823f44f8a06afce7c8bab51965ebf773913d29800a49aa"
+      "event_id": "EVT-VPD-P3-BLIND-B-SUPPORTED-CANDIDATE-ACCEPTED-20260923-001",
+      "event_hash": "cf3105b4d3c520425978e9b4b768e5f1d541cc3101a6b6e7b0d2bf799d045158"
     }
   },
   "mature_workflow_audit": {
@@ -1216,7 +1216,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "BLIND_REVIEW_PACKAGE_READY",
+    "status": "BLIND_REVIEW_COMPLETE_B_SUPPORTED_AS_CANDIDATE",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1247,7 +1247,7 @@
       "drive_url": "https://drive.google.com/file/d/1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K/view?usp=drivesdk",
       "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
     },
-    "next": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
+    "next": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1278,7 +1278,7 @@
       "path": "evidence/vpd/library_native_ab_v1/REPLACEMENT_PAIR_VISUAL_REVIEW_20260922.json",
       "git_blob_sha": "d6a0e279bfb6602acfd8dda7e99650960eb6409c"
     },
-    "qualitative_signal": "B_STRONGER_ON_COMPOSITIONAL_MECHANISMS_IN_ONE_PAIR",
+    "qualitative_signal": "B_SUPPORTED_BY_KNOWN_LABEL_REVIEW_AND_INDEPENDENT_BLIND_REVIEW",
     "blind_review": {
       "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR1",
       "mapping_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_MAPPING_20260922.json",
@@ -1290,13 +1290,25 @@
       "library_X_path": "/VPD_BLIND_REVIEW/PAIR1_X.jpg",
       "library_Y_path": "/VPD_BLIND_REVIEW/PAIR1_Y.jpg",
       "evaluator_must_not_know_route_mapping": true,
-      "result_status": "PENDING"
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_RESULT_20260923.json",
+      "result_git_blob_sha": "09c777f4816a53f61a5221095192aeb3ff41a033",
+      "winner_blind_label": "X",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
     },
     "execution_isolation_provenance": "NOT_INDEPENDENTLY_VERIFIED_FROM_FRESH_CHAT_HANDOFFS",
     "style_capsule_promotion_allowed": false,
     "user_preference": "B",
     "user_preference_blind": false,
     "user_priming_caveat": true,
-    "integration_decision": "BLOCKED_PENDING_BLIND_REVIEW"
+    "integration_decision": "CANDIDATE_ONLY_PENDING_SECOND_NEW_CONTENT_REPLICATION",
+    "compact_vpd_candidate": {
+      "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+      "path": "evidence/vpd/library_native_ab_v1/COMPACT_VPD_6_CONTROL_CANDIDATE_R1_20260923.json",
+      "git_blob_sha": "2f3935df0fcc70a9dc7a7f956ad3c0ee9b7e0c04",
+      "status": "CANDIDATE_ACCEPTED_FOR_REPLICATION_NOT_PROMOTED"
+    },
+    "stable_baseline_replacement_allowed": false
   }
 }
