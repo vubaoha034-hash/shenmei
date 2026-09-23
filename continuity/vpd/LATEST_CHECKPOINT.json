@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 144,
-  "recorded_at": "2026-09-23T02:35:00Z",
+  "sequence": 145,
+  "recorded_at": "2026-09-23T03:12:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The second new-content replication is fully prepared but not authorized for generation. The new task is a traditional working tofu workshop, chosen to materially differ from the rice granary by changing from dry grain storage/sorting to wet food preparation/pressing and by changing the material/process evidence to soybeans or white tofu, press cloths, wooden tofu molds/pressing frames, mineral/stone troughs and a preparation/pressing table. Renderer, R1C Library reference, 3:4 aspect, one-image-per-route, no-retry policy and Drive archive remain symmetric. Route B uses the same six candidate mechanisms with content nouns/material roles substituted only; no mechanism has been added or removed. The blind evaluator rubric is frozen before any outputs or X/Y mapping. No image generation is authorized yet.",
+  "current_focus": "The user returned the second-content tofu pair and explicitly labeled image 2 as Route A and image 1 as Route B. Exact uploaded bytes were verified: both are PNG, 1086x1448 (exact 3:4), and both pass the frozen technical correctness gate for a traditional tofu workshop. The exact route-labeled files have been archived to Google Drive. To avoid priming, no known-label aesthetic comparison has been performed. The outputs were copied into ChatGPT Library under deterministic neutral X/Y names using the pre-frozen lexicographic SHA-256 rule. The Pair2 blind evaluator prompt had already been frozen before outputs and mapping. The X/Y route mapping must remain undisclosed until the independent blind verdict returns.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -233,13 +233,16 @@
     "second_content_tofu_ab_prepared",
     "second_content_route_a_ticket_frozen",
     "second_content_route_b_ticket_frozen",
-    "second_content_blind_prompt_frozen_pre_mapping"
+    "second_content_blind_prompt_frozen_pre_mapping",
+    "pair2_outputs_received",
+    "pair2_technical_correctness_pass",
+    "pair2_drive_archive_complete",
+    "pair2_blind_xy_package_ready"
   ],
   "incomplete": [
-    "second_content_ab_two_image_authorization",
-    "second_content_route_a_execution",
-    "second_content_route_b_execution",
-    "second_content_blind_review"
+    "pair2_independent_blind_verdict",
+    "pair2_mapping_reveal",
+    "replication_integration_decision"
   ],
   "blocked": [
     "Do not rerender H1 under Attempt 3.",
@@ -302,7 +305,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES",
+  "next_required_action": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -370,10 +373,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
+  "status": "VPD_P3_SECOND_CONTENT_TOFU_PAIR2_READY_FOR_INDEPENDENT_BLIND_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "eb62d900196296c78e2d8ed0cff90383a510bbad6a0c8c7266f4a8de5d2d2e94"
+    "sha256": "184dbf3c574a5337e182275ac79560c67e451a7399afa9ca24a8b609d4dff04a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -394,8 +397,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-AB-PREPARED-20260923-001",
-      "event_hash": "1817bb5fd98f20233b6129dd29e4c7b4e8e1fd1b264f13b3d2c6c8fc0d4d2296"
+      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-PAIR2-BLIND-READY-20260923-001",
+      "event_hash": "58c742afa7951535013dbc5c02f432f8817c4e4d7eb12ec2f9e4b78cb35408d7"
     }
   },
   "typography_repair": {
@@ -1261,7 +1264,7 @@
     "stable_baseline_replacement_allowed": false
   },
   "library_native_ab_v2": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "PAIR2_OUTPUTS_RECEIVED_TECHNICAL_PASS_BLIND_PACKAGE_READY",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
     "freeze": {
       "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
@@ -1284,9 +1287,51 @@
     "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "content": "TRADITIONAL_TOFU_WORKSHOP",
     "proposed_images": 2,
-    "authorized_images": 0,
+    "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES"
+    "next": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
+    "output_receipt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
+      "git_blob_sha": "7fcec5e7c96f8d9a90c4b713ff1f1bc3298d0d3a"
+    },
+    "route_A": {
+      "sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1dxwZpEkU5e3dH6da8NNekBs829BQi8rH",
+      "drive_url": "https://drive.google.com/file/d/1dxwZpEkU5e3dH6da8NNekBs829BQi8rH/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "route_B": {
+      "sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd",
+      "drive_url": "https://drive.google.com/file/d/1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "blind_review": {
+      "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR2",
+      "mapping_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_MAPPING_20260923.json",
+      "mapping_git_blob_sha": "d074a8fb7ff6bb5bef41547c610f0a414e3e8dc9",
+      "evaluator_prompt_path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "evaluator_prompt_git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_prompt_frozen": true,
+      "library_X_path": "/VPD_BLIND_REVIEW/PAIR2_X.png",
+      "library_Y_path": "/VPD_BLIND_REVIEW/PAIR2_Y.png",
+      "evaluator_must_not_know_route_mapping": true,
+      "result_status": "PENDING"
+    },
+    "known_label_aesthetic_review_performed": false,
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false
   }
 }
