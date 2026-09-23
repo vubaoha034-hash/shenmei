@@ -1,0 +1,42 @@
+name: VPD Pair2 Blind State Hash Repair
+
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - "evidence/vpd/pair2_state_hash_repair_triggers/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vpd-pair2-state-hash-repair-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: visual-program-distillation-v2-photography-design-20260814
+          fetch-depth: 0
+
+      - name: Repair exact state hashes
+        run: python scripts/vpd_repair_pair2_blind_state_hashes.py
+
+      - name: Validate repaired VPD state before commit
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
+
+      - name: Persist validated repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             continuity/vpd/CURRENT_TASK_LOCK.json             continuity/vpd/LATEST_CHECKPOINT.json             PROJECT_CONTROL_ADAPTER.json             continuity/vpd/state_ledger/commercial_design_pipeline.jsonl             evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json             evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_STATE_HASH_REPAIR_20260923.json
+          git commit -m "Repair Pair2 blind package state hashes"
+          git pull --rebase origin visual-program-distillation-v2-photography-design-20260814
+          git push origin HEAD:visual-program-distillation-v2-photography-design-20260814
