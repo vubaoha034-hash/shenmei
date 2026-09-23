@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 142,
-  "recorded_at": "2026-09-22T16:18:00Z",
+  "sequence": 143,
+  "recorded_at": "2026-09-23T02:20:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "The user also prefers B but explicitly raised a valid priming concern because the assistant had already analyzed the known-label pair before asking for the user's choice. The user preference is therefore recorded with a priming caveat and is not treated as blind evidence. No new images are being generated. Instead, the exact existing A/B files have been copied into ChatGPT Library under neutral X/Y names using a deterministic SHA-256 sort, and an independent fresh evaluator prompt has been frozen. The blind evaluator must see only PAIR1_X.jpg and PAIR1_Y.jpg plus the neutral task/rubric, with no A/B/VPD/history context. The X/Y-to-route mapping must remain undisclosed until the evaluator returns a verdict.",
+  "current_focus": "The independent blind evaluator returned WINNER X with MEDIUM confidence, with both X and Y passing correctness. The deterministic hidden mapping is now revealed: X = Route B (reference + compact VPD), Y = Route A (reference-native baseline). Thus the blind result independently supports the same direction as the earlier known-label visual review and the user's preference. Because the user's own preference was potentially primed, it is not counted as blind evidence; the independent blind result is the key stronger signal. The six compact VPD controls are therefore accepted only as a replication candidate, not promoted to stable baseline or Style Capsule. No new image generation is authorized. The next step is to prepare a second new-content A/B replication plan with the same Library reference-binding workflow and the same six candidate controls, without generating yet.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -226,11 +226,16 @@
     "replacement_pair_visual_review_complete",
     "user_b_preference_recorded_with_priming_caveat",
     "blind_pair1_library_package_prepared",
-    "blind_evaluator_prompt_frozen"
+    "blind_evaluator_prompt_frozen",
+    "blind_pair1_verdict_recorded",
+    "blind_mapping_revealed_after_verdict",
+    "compact_vpd_candidate_r1_accepted_for_replication"
   ],
   "incomplete": [
-    "independent_blind_evaluator_verdict",
-    "post_blind_mapping_reveal_and_integration_decision"
+    "second_new_content_ab_preparation",
+    "second_new_content_ab_authorization",
+    "second_new_content_ab_execution",
+    "second_blind_review_before_any_promotion"
   ],
   "blocked": [
     "Do not rerender H1 under Attempt 3.",
@@ -293,7 +298,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
+  "next_required_action": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -361,10 +366,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_LIBRARY_NATIVE_AB_BLIND_REVIEW_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
+  "status": "VPD_P3_COMPACT_VPD_CANDIDATE_SUPPORTED_BY_ONE_BLIND_PAIR_PREP_SECOND_CONTENT_REPLICATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5468c9c12f2c7f13db6e15fe1697de8d85ae8cb29777c713de062408bc86c880"
+    "sha256": "b98d18f4129c251e50ff3e493a2ec4729922b9c88b6dd57d64734059278e14ca"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -385,8 +390,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-LIBRARY-AB-BLIND-PACKAGE-READY-20260922-001",
-      "event_hash": "8e381a0cdcad2854fc823f44f8a06afce7c8bab51965ebf773913d29800a49aa"
+      "event_id": "EVT-VPD-P3-BLIND-B-SUPPORTED-CANDIDATE-ACCEPTED-20260923-001",
+      "event_hash": "cf3105b4d3c520425978e9b4b768e5f1d541cc3101a6b6e7b0d2bf799d045158"
     }
   },
   "typography_repair": {
@@ -1156,7 +1161,7 @@
     "proves_vpd_value": false
   },
   "library_native_ab_v1": {
-    "status": "BLIND_REVIEW_PACKAGE_READY",
+    "status": "BLIND_REVIEW_COMPLETE_B_SUPPORTED_AS_CANDIDATE",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
@@ -1187,7 +1192,7 @@
       "drive_url": "https://drive.google.com/file/d/1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K/view?usp=drivesdk",
       "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
     },
-    "next": "RUN_INDEPENDENT_BLIND_EVALUATOR_ON_PAIR1_X_Y_AND_RETURN_VERDICT",
+    "next": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
     "user_authorization": "允许 Library A/B 两张",
     "actual_generated_images_spent": 2,
     "formal_valid_images": 0,
@@ -1218,7 +1223,7 @@
       "path": "evidence/vpd/library_native_ab_v1/REPLACEMENT_PAIR_VISUAL_REVIEW_20260922.json",
       "git_blob_sha": "d6a0e279bfb6602acfd8dda7e99650960eb6409c"
     },
-    "qualitative_signal": "B_STRONGER_ON_COMPOSITIONAL_MECHANISMS_IN_ONE_PAIR",
+    "qualitative_signal": "B_SUPPORTED_BY_KNOWN_LABEL_REVIEW_AND_INDEPENDENT_BLIND_REVIEW",
     "blind_review": {
       "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR1",
       "mapping_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_MAPPING_20260922.json",
@@ -1230,13 +1235,25 @@
       "library_X_path": "/VPD_BLIND_REVIEW/PAIR1_X.jpg",
       "library_Y_path": "/VPD_BLIND_REVIEW/PAIR1_Y.jpg",
       "evaluator_must_not_know_route_mapping": true,
-      "result_status": "PENDING"
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_RESULT_20260923.json",
+      "result_git_blob_sha": "09c777f4816a53f61a5221095192aeb3ff41a033",
+      "winner_blind_label": "X",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
     },
     "execution_isolation_provenance": "NOT_INDEPENDENTLY_VERIFIED_FROM_FRESH_CHAT_HANDOFFS",
     "style_capsule_promotion_allowed": false,
     "user_preference": "B",
     "user_preference_blind": false,
     "user_priming_caveat": true,
-    "integration_decision": "BLOCKED_PENDING_BLIND_REVIEW"
+    "integration_decision": "CANDIDATE_ONLY_PENDING_SECOND_NEW_CONTENT_REPLICATION",
+    "compact_vpd_candidate": {
+      "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+      "path": "evidence/vpd/library_native_ab_v1/COMPACT_VPD_6_CONTROL_CANDIDATE_R1_20260923.json",
+      "git_blob_sha": "2f3935df0fcc70a9dc7a7f956ad3c0ee9b7e0c04",
+      "status": "CANDIDATE_ACCEPTED_FOR_REPLICATION_NOT_PROMOTED"
+    },
+    "stable_baseline_replacement_allowed": false
   }
 }
