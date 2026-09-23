@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 122,
+  "revision": 123,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 121,
-    "git_blob_sha": "41503422dbf62ba35e49f61b09ca11a55b72cd2b",
-    "note": "Revision 121 prepared the blind X/Y package and waited for an independent evaluator verdict."
+    "revision": 122,
+    "git_blob_sha": "176e8ee1ac14799a3e67f7729e1fea833eb9f30b",
+    "note": "Revision 122 accepted the six compact VPD controls as a replication candidate after one blind-supported rice-granary pair."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The independent blind evaluator returned WINNER X with MEDIUM confidence, with both X and Y passing correctness. The deterministic hidden mapping is now revealed: X = Route B (reference + compact VPD), Y = Route A (reference-native baseline). Thus the blind result independently supports the same direction as the earlier known-label visual review and the user's preference. Because the user's own preference was potentially primed, it is not counted as blind evidence; the independent blind result is the key stronger signal. The six compact VPD controls are therefore accepted only as a replication candidate, not promoted to stable baseline or Style Capsule. No new image generation is authorized. The next step is to prepare a second new-content A/B replication plan with the same Library reference-binding workflow and the same six candidate controls, without generating yet.",
-  "status": "VPD_P3_COMPACT_VPD_CANDIDATE_SUPPORTED_BY_ONE_BLIND_PAIR_PREP_SECOND_CONTENT_REPLICATION",
+  "current_stage": "The second new-content replication is fully prepared but not authorized for generation. The new task is a traditional working tofu workshop, chosen to materially differ from the rice granary by changing from dry grain storage/sorting to wet food preparation/pressing and by changing the material/process evidence to soybeans or white tofu, press cloths, wooden tofu molds/pressing frames, mineral/stone troughs and a preparation/pressing table. Renderer, R1C Library reference, 3:4 aspect, one-image-per-route, no-retry policy and Drive archive remain symmetric. Route B uses the same six candidate mechanisms with content nouns/material roles substituted only; no mechanism has been added or removed. The blind evaluator rubric is frozen before any outputs or X/Y mapping. No image generation is authorized yet.",
+  "status": "VPD_P3_SECOND_CONTENT_TOFU_AB_PREPARED_WAITING_TWO_IMAGE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded independent blind evaluator verdict",
-    "revealed deterministic mapping X=B and Y=A only after verdict",
-    "confirmed blind evaluator selected Route B with MEDIUM confidence",
-    "accepted six compact VPD controls as replication candidate only",
-    "kept stable baseline and Style Capsule unchanged",
+    "selected a materially different second content task: traditional tofu workshop",
+    "froze symmetric Route A and Route B generation tasks with the same Library R1C reference",
+    "compiled the same six compact VPD mechanisms to tofu-workshop content slots without adding or removing mechanisms",
+    "froze the blind evaluator prompt before generation and before X/Y mapping",
     "generated zero new images"
   ],
-  "updated_at": "2026-09-23T02:20:00Z",
+  "updated_at": "2026-09-23T02:35:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1464,5 +1463,34 @@
       "status": "CANDIDATE_ACCEPTED_FOR_REPLICATION_NOT_PROMOTED"
     },
     "stable_baseline_replacement_allowed": false
+  },
+  "library_native_ab_v2": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
+    "freeze": {
+      "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
+      "git_blob_sha": "51254c0ae9a7999241b347d821a64fc1468478ba"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_A_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "ddb10c42a6c6e6dd6d0df600b0c011dc11b00d87"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_B_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "085d7f4862560a96b3ac16568667527e08d2a75c"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_frozen": true
+    },
+    "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "content": "TRADITIONAL_TOFU_WORKSHOP",
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "retry_budget": 0,
+    "current_chat_render_eligible": false,
+    "next": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES"
   }
 }
