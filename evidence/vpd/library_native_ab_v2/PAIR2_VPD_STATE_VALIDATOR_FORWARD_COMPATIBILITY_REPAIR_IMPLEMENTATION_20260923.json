@@ -1,0 +1,24 @@
+{
+  "schema_version": "vpd-pair2-validator-forward-compatibility-repair/v1",
+  "artifact_type": "PAIR2_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_REPAIR_IMPLEMENTATION",
+  "recorded_at": "2026-09-23T04:05:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "IMPLEMENTED_AWAITING_CI",
+  "blocker": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
+  "fixes": [
+    "add Pair2 repair, CI-wait and canvas-authorization-wait actions to the active p6-composition validator",
+    "validate Pair2 frozen source identities, copy, frame size, typography control layer, shared composition rule, blind mapping and equal-budget limits",
+    "preserve pre-existing commercial-ledger canonical-hash defects byte-for-byte while requiring canonical hashes for every non-frozen event",
+    "run the mandatory --vpd-state --status-card check in the existing renderer-adapter validation workflow",
+    "trigger that workflow on current VPD state and Pair2 preparation/validator-evidence changes"
+  ],
+  "commercial_ledger_defect_freeze": {
+    "path": "evidence/vpd/p6_authority_repair_v1/COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE_20260923.json",
+    "sha256": "d4bd81d49640d4017496ce58c7202001a3bcae6cbe69a7f967c652de23bfeb0a"
+  },
+  "figma_canvas_write_authorized": false,
+  "image_generation_authorized": false,
+  "expected_ci_workflow": "VPD Renderer Adapter Validation",
+  "required_ci_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+  "next_required_action": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": "vpd-commercial-ledger-preexisting-hash-defect-freeze/v1",
+  "artifact_type": "COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE",
+  "recorded_at": "2026-09-23T04:05:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "source_commit": "73ef43de3533472f97b2c087451c5e2d73ec96ec",
+  "ledger_path": "continuity/vpd/state_ledger/commercial_design_pipeline.jsonl",
+  "ledger_git_blob_sha": "ab431726e1665d1d473da9c324d577f976aeb08f",
+  "ledger_sha256": "dd0a59f0213674a7496e7859a64f05f54bda3669eb484496ba6b531d1fe1ebae",
+  "event_count_before_repair": 85,
+  "defect_count": 22,
+  "treatment": "PRESERVE_EXACT_DEFECTIVE_LINES_NO_REHASH; REQUIRE_CANONICAL_HASH_FOR_ALL_NON_FROZEN_EVENTS",
+  "frozen_invalid_events": [
+    {
+      "line_number": 62,
+      "event_id": "EVT-VPD-P1-RUNPOD-A40-ENVIRONMENT-SELECTED-20260921-001",
+      "claimed_event_hash": "f5f23117265b08574bd5c07f6c6c7e8fd09c80614d02e1983ea0fc3bd96a79c4",
+      "recomputed_canonical_hash": "bf29165822883ebce16cdcd7332f006392a85aa64783ff158900881f233a44d0",
+      "line_sha256": "03a70acfc1bf6765288040ed350cf4d913cbcb5761d764d2b9ac028a4465cce2"
+    },
+    {
+      "line_number": 63,
+      "event_id": "EVT-VPD-P1-CHATGPT-IMAGES-PRIMARY-RENDERER-RESTORED-20260921-001",
+      "claimed_event_hash": "22d7e11bdf19a4854958a42d5b92da1aa7057312eb01c0e780d9062286c8be97",
+      "recomputed_canonical_hash": "3e2dd43cb19b503e697131f0feb30745f563d67260ed1ed4bc75a6686f866c71",
+      "line_sha256": "2424fbcba0a5743a1001a516c70df80add85e7d73b17c4070824ee846fdc9f22"
+    },
+    {
+      "line_number": 64,
+      "event_id": "EVT-VPD-P3-CHATGPT-IMAGES-STAGE1-AB-FROZEN-20260921-001",
+      "claimed_event_hash": "a9dcb2cc75bc40a1813a28996494745bc85cae26030d5d535f3f79c327042406",
+      "recomputed_canonical_hash": "67bc0edbc24d9eb16d4536f9d8d0af181383a19a4c9f8550f7962d2fe2fbe933",
+      "line_sha256": "7a0df9723af35203d5b1d9bffaf75c8c686a685d6597ed32d1b69e27a86187d6"
+    },
+    {
+      "line_number": 65,
+      "event_id": "EVT-VPD-P3-CHATGPT-IMAGES-STAGE1-TWO-IMAGE-AUTHORIZED-20260921-001",
+      "claimed_event_hash": "00f999e880b9df2e7109e27a8fc8ae1810cef20f72d9270885994e9944239ecf",
+      "recomputed_canonical_hash": "e59fd9a27f16cb65c8cfdc7e5918d8f7c971ffbe2d4ff7c24eb367f48a31e880",
+      "line_sha256": "8243a4b075ea258e34d97e974b2bf589981d51429e2285c4c0865444281ecf1b"
+    },
+    {
+      "line_number": 66,
+      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-TECHNICAL-INVALID-DRIVE-HANDOFF-20260922-001",
+      "claimed_event_hash": "58438c50b8bbe8fe8613aad3eae47bd6592a47f58fb293d5b49bbb73760cc320",
+      "recomputed_canonical_hash": "fcab126bb3f6ae4325aaeadbb68106b8be4ee8cfd98947d7ed60dddf8f9ceb3c",
+      "line_sha256": "418bce2336113c9acb44d71ff3aae9b63d600a9d53f5feb991dd5f9f90ee2437"
+    },
+    {
+      "line_number": 67,
+      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-RUNNER-PREPARED-20260922-001",
+      "claimed_event_hash": "a30b09826a931ec8ceea35afbd1f8717a12be7e208ab47a6578d1f3b302f7984",
+      "recomputed_canonical_hash": "ccc916fde86c14f7384d7ed92bc341df2a807a49e984e40843a572e5388577b9",
+      "line_sha256": "3b3b2f24f6599e7015f6fca66ad72bf49189178b56986f7abf7d85e01ae8b031"
+    },
+    {
+      "line_number": 68,
+      "event_id": "EVT-VPD-P3-STAGE1-ROUTE-A-RETRY-AUTHORIZED-20260922-001",
+      "claimed_event_hash": "33fece905976b6582d24efc7b5be4f31dddc1aa00ec7519ac866c7222bba698f",
+      "recomputed_canonical_hash": "3a5320b2f2c748aa53d5c8d937d6ca0f6840eac267089374ce656df9ac0a1e4c",
+      "line_sha256": "a23d19c5d0dfbd5e7dc526571e66b0978aef8131cd0988e2e667f438e699c8b6"
+    },
+    {
+      "line_number": 69,
+      "event_id": "EVT-VPD-P3-STAGE1-AB-CLOSED-A-RETRY-INVALID-20260922-001",
+      "claimed_event_hash": "a2e46d52600b358861ce630eba5eeb7bafeecfa22417c9c345a6da5c77d5ff17",
+      "recomputed_canonical_hash": "aa37101dabcc61fb50b7be05ff047b92a9c7030ea0e094d49c1efc118f22c607",
+      "line_sha256": "ee7d795098bd64b42b9494db6ff102196546ce79f45fe86cabefcf8daf133018"
+    },
+    {
+      "line_number": 70,
+      "event_id": "EVT-VPD-P3-STATELESS-RENDER-TICKET-PREPARED-20260922-001",
+      "claimed_event_hash": "663b0945fefbfe759b79645761cd855f4912b06da654cf35e5378c6fed2e02d9",
+      "recomputed_canonical_hash": "be1ecc53ac6d5cecda5d553a99cda7266a04cd5e3359e90e446bb21e904f5a58",
+      "line_sha256": "16fb12e48e0dd1a15a12be926e2f83885658d9eb23c34a211368d9798b470307"
+    },
+    {
+      "line_number": 71,
+      "event_id": "EVT-VPD-P3-CONTROLLER-GENERATOR-SEPARATION-GUARD-20260922-001",
+      "claimed_event_hash": "9cd01245d7b2567d341af6b5f32eded2eabf23adf9b3900b2c15f4746a7a49a0",
+      "recomputed_canonical_hash": "d7765d61352157cbcdbf678c1e41a1e9ee8ac66cf3f6ca23f1582d0ab136b024",
+      "line_sha256": "a0532f52a935ee4ae53aa170e4b24ce13d710dff468217f151b9e564ed20310c"
+    },
+    {
+      "line_number": 72,
+      "event_id": "EVT-VPD-P3-STATELESS-DIRECT-ATTACHMENT-REFERENCE-READY-20260922-001",
+      "claimed_event_hash": "2547b8c2414a56f1eadccab3d15042914c0f46c4f515d7bb91206119eccfbd08",
+      "recomputed_canonical_hash": "5737ca90a1b31d086d11e612ef49a69a28f2185d72772339e30fef0872aeebb5",
+      "line_sha256": "ebc9e7ecceab6af8fa85106c2e0bda473c4ff6fe61aa7b5ca9c770b5f21ae563"
+    },
+    {
+      "line_number": 73,
+      "event_id": "EVT-VPD-P3-CHATGPT-LIBRARY-REFERENCE-READY-20260922-001",
+      "claimed_event_hash": "928c8bbad67449cb30b662e2f9dd3beab36502a9730431e1c0900ebb37ab4be1",
+      "recomputed_canonical_hash": "61faf565edba73f99a421ee2689fd09dad4df78fd7e2df94b98fe13e5f45c30a",
+      "line_sha256": "e4d4f94ed13a82dbdecaac2cf9b2d605b32695dc6c5c8d05b882bb3320b9876f"
+    },
+    {
+      "line_number": 74,
+      "event_id": "EVT-VPD-P3-LIBRARY-ROUTE-USER-APPROVED-20260922-001",
+      "claimed_event_hash": "d4bb73af785939447b7440f8e92d2ca41b8925412ed51905d9e9c1d634381a8a",
+      "recomputed_canonical_hash": "e87ed7a9f20b7964f6c488fa99b5caa8b273556ed31cc72c1fd7e22bedebed28",
+      "line_sha256": "94699856b034b6bc41e65d020475f3afb4922118fae305be2ee4b4df10d4052f"
+    },
+    {
+      "line_number": 75,
+      "event_id": "EVT-VPD-P3-LIBRARY-SMOKE-PASS-AB-PREPARED-20260922-001",
+      "claimed_event_hash": "fe4252e4219c297e4619810fe07b5da78ac7170517177af1378dfcb7db4b5c22",
+      "recomputed_canonical_hash": "00242084a5ed47e7736f7299d707da6c317b0aa6005683283874f3a0e88a8aec",
+      "line_sha256": "3e64fbc01389afd2716f41f37a0f0bc4ef781b3a7004220cff2d76919c818f17"
+    },
+    {
+      "line_number": 76,
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-CONTROLLER-EXECUTION-ERROR-20260922-001",
+      "claimed_event_hash": "331e35c8d0bea7cd6abd77930aeb7df5d80e894f1013482f50ea3ea6ccf582bc",
+      "recomputed_canonical_hash": "13e0897b8efdf106818d2bf4ce91d33d2bb97009c80f2d177876214fe3f42b1a",
+      "line_sha256": "830469e93131e6b7d1708fed855e7c8d7fd073797870e79509520f02005015c2"
+    },
+    {
+      "line_number": 77,
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-REPLACEMENT-AUTHORIZED-20260922-001",
+      "claimed_event_hash": "41584a83a62694a234478df79850ed4726f884a9f3a6292e1db2f50df6a881ab",
+      "recomputed_canonical_hash": "8ab552f7956aa9f6da900fca5eb90750f60b8c8dfa91e00105299a4f0c003392",
+      "line_sha256": "6e1e2ca268d4a9b3afe4a2fdf63c052513a718a5901f9ab26bf3677769405a34"
+    },
+    {
+      "line_number": 78,
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-REPLACEMENT-PAIR-REVIEWED-20260922-001",
+      "claimed_event_hash": "75af5e68916bb40f47e5211838802d125b1ae26d8ab1d1bb8f92af900e3844b4",
+      "recomputed_canonical_hash": "092eb2e15b78808013c547324d2f270e814e33f2e3b00ff7e17a03212efbdb1f",
+      "line_sha256": "c5872f10162513f38694a8401d56e625071791246409dc0b54a1e8619a60c84b"
+    },
+    {
+      "line_number": 79,
+      "event_id": "EVT-VPD-P3-LIBRARY-AB-BLIND-PACKAGE-READY-20260922-001",
+      "claimed_event_hash": "8e381a0cdcad2854fc823f44f8a06afce7c8bab51965ebf773913d29800a49aa",
+      "recomputed_canonical_hash": "d9166fa779fbec3c5960ed3488da2610287bd2a300ce93da87912f4b43dd2ea3",
+      "line_sha256": "4f85c1db169a3f7876c42fa577d0285f4c348d59bd43cd8686ef9c7caa1c8a94"
+    },
+    {
+      "line_number": 80,
+      "event_id": "EVT-VPD-P3-BLIND-B-SUPPORTED-CANDIDATE-ACCEPTED-20260923-001",
+      "claimed_event_hash": "cf3105b4d3c520425978e9b4b768e5f1d541cc3101a6b6e7b0d2bf799d045158",
+      "recomputed_canonical_hash": "0dd09d58da8b1a0c1d600054460f785a1621c72c5e5df786dd2434429cc1bdf4",
+      "line_sha256": "39232ca1787506b01929964881f320b4e3f01481abb21bb0dff0aafcd5695006"
+    },
+    {
+      "line_number": 81,
+      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-AB-PREPARED-20260923-001",
+      "claimed_event_hash": "1817bb5fd98f20233b6129dd29e4c7b4e8e1fd1b264f13b3d2c6c8fc0d4d2296",
+      "recomputed_canonical_hash": "f8312811f39500fc28ebffa237d82b40505001b174240acd3d4a5d6de4fa12cd",
+      "line_sha256": "8cbb3ad7a3a6395d736eb1b9488ec0752414e3b8e12c02839714d2132d8fd111"
+    },
+    {
+      "line_number": 82,
+      "event_id": "EVT-VPD-P3-SECOND-CONTENT-TOFU-PAIR2-BLIND-READY-20260923-001",
+      "claimed_event_hash": "58c742afa7951535013dbc5c02f432f8817c4e4d7eb12ec2f9e4b78cb35408d7",
+      "recomputed_canonical_hash": "47ae3ec4baa4436123263c26e6c4392ae705590d7f4d2779fb208e45df5b44eb",
+      "line_sha256": "8c39c487f9ffbf18bb5e424c624a5af3aecbcadbab899539b16dc42add787019"
+    },
+    {
+      "line_number": 83,
+      "event_id": "EVT-VPD-P3-PAIR2-BLIND-B-REPLICATION-SETTLED-20260923-001",
+      "claimed_event_hash": "c665ffc5b86773fbd0552b25375e9edd93cfd342475060d5affbe3e5a8637229",
+      "recomputed_canonical_hash": "b236898ebc2d954c59ba52be16bce1e2fdb2a58e8526c597449c722126146ed6",
+      "line_sha256": "a2e94251333729084e9e08567b36e68cce462309c14f10dfde42775a15ac072d"
+    }
+  ],
+  "note": "These event lines predate this validator repair and fail the canonical event-hash recomputation. They are frozen byte-for-byte as historical defects rather than rewritten. Parent chaining and the current ledger tail remain validated."
+}

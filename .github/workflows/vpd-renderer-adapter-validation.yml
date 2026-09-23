@@ -11,6 +11,12 @@ on:
       - "scripts/run_vpd_distillation_only_runtime_v1.py"
       - "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_CONTROLLER_PAYLOAD_FREEZE.json"
       - ".github/workflows/vpd-renderer-adapter-validation.yml"
+      - "continuity/vpd/CURRENT_TASK_LOCK.json"
+      - "continuity/vpd/LATEST_CHECKPOINT.json"
+      - "PROJECT_CONTROL_ADAPTER.json"
+      - "continuity/vpd/state_ledger/commercial_design_pipeline.jsonl"
+      - "evidence/vpd/library_native_ab_v2/PAIR2_*.json"
+      - "evidence/vpd/p6_authority_repair_v1/COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE_*.json"
   workflow_dispatch:
 
 permissions:
@@ -33,6 +39,9 @@ jobs:
 
       - name: Run visual-memory regression suite
         run: python scripts/verify_visual_memory.py
+
+      - name: Verify current VPD state
+        run: python scripts/verify_visual_memory.py --vpd-state --status-card
 
       - name: Verify frozen VPD renderer requests
         run: python scripts/validate_vpd_renderer_adapter.py

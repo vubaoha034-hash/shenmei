@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 127,
+  "revision": 128,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 126,
-    "git_blob_sha": "46935980817ee169f601574fd2e49d29e6485c9a",
-    "note": "Revision 126 prepared Pair2 equal-budget complete-poster/Figma A/B with zero canvas-write authorization and passed independent remote state-file readback."
+    "revision": 127,
+    "git_blob_sha": "8c537124976b8551a736306e3234c0f5bee154ce",
+    "note": "Revision 127 preserved Pair2 full-poster A/B preparation and blocked Figma writing after detecting forward-incompatible state validation."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B preparation is preserved and remotely read back, but the mandatory VPD state validator cannot currently authorize the next resource step. The local execution environment could not clone GitHub due DNS, and static readback of visual_memory/vpd_p6_composition_state.py shows the current action is absent from its ACTIONS set, so the existing validator profile is forward-incompatible and would deterministically raise COMPOSITION_ACTION_UNKNOWN. This is a control-plane compatibility blocker, not a design failure. Figma canvas write remains prohibited until the validator is repaired and actually passes.",
-  "status": "VPD_PAIR2_FIGMA_AB_PREP_SAVED_VALIDATOR_FORWARD_COMPATIBILITY_BLOCKED_NO_CANVAS_WRITE",
+  "current_stage": "The Pair2 equal-budget Figma A/B preparation remains frozen with zero canvas-write authorization. The control-plane repair is now implemented: the active p6-composition validator recognizes the Pair2 prewrite states, validates the frozen A/B production-integration contract, preserves the known pre-existing commercial-ledger hash-defect rows byte-for-byte instead of rewriting them, and requires canonical hashes for all non-frozen ledger events. The existing renderer-adapter CI workflow now runs the mandatory --vpd-state --status-card check on validator/state changes. Figma canvas writing remains blocked until that CI run succeeds.",
+  "status": "VPD_PAIR2_FIGMA_AB_VALIDATOR_REPAIR_IMPLEMENTED_AWAITING_CI_PASS_NO_CANVAS_WRITE",
   "p6_allowed": false,
-  "next_required_action": "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
+  "next_required_action": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "preserved the completed Pair2 equal-budget Figma A/B preparation from revision 126",
-    "performed independent remote readback of the prepared commit and all changed state/evidence pointers",
-    "attempted to run the mandatory VPD state validator but the local container could not clone GitHub because DNS resolution failed",
-    "statically audited the active p6-composition validator and confirmed the current next action is not recognized, which would raise COMPOSITION_ACTION_UNKNOWN",
-    "blocked Figma canvas writing rather than bypassing the mandatory state gate"
+    "implemented Pair2 forward-compatible validation in visual_memory/vpd_p6_composition_state.py",
+    "added semantic checks for frozen Pair2 sources, exact copy, typography control, symmetric composition rules, blind mapping and equal-budget limits",
+    "froze 22 pre-existing commercial-ledger canonical-hash defects byte-for-byte rather than rewriting historical events",
+    "kept canonical event-hash enforcement for all non-frozen commercial-ledger events",
+    "updated the existing VPD Renderer Adapter Validation workflow to run --vpd-state --status-card and trigger on current VPD state/Pair2 evidence changes",
+    "kept Figma canvas write and image generation authorization at zero pending CI"
   ],
-  "updated_at": "2026-09-23T03:48:00Z",
+  "updated_at": "2026-09-23T04:05:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -168,7 +169,11 @@
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
       "sha256": "117670117ce912f353f55d0197dcf2c257637c7bbfd6bcc7deeee67324a38aa8"
     },
-    "historical_ledger_status": "PRESERVED_WITH_PREEXISTING_HASH_DEFECTS_NOT_RECERTIFIED"
+    "historical_ledger_status": "PRESERVED_WITH_PREEXISTING_HASH_DEFECTS_NOT_RECERTIFIED",
+    "commercial_ledger_preexisting_hash_defects": {
+      "path": "evidence/vpd/p6_authority_repair_v1/COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE_20260923.json",
+      "sha256": "d4bd81d49640d4017496ce58c7202001a3bcae6cbe69a7f967c652de23bfeb0a"
+    }
   },
   "relay_bindings": {},
   "blockers": [
@@ -1591,15 +1596,19 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
+    "next": "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
     "validator_gate": {
-      "status": "BLOCKED_FORWARD_INCOMPATIBLE",
+      "status": "REPAIR_IMPLEMENTED_AWAITING_CI",
       "blocker": {
         "path": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
         "sha256": "bb9734919ce1281e7580309d261d3fb57b68c901765c80fbbc92acdcb58c016d"
       },
+      "repair_implementation": {
+        "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_REPAIR_IMPLEMENTATION_20260923.json",
+        "sha256": "96e181946c767cd0c60d0945d374eed0226067f39259e2d35fd7cb3376c8267c"
+      },
       "required_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
-      "current_action_present_in_validator_actions": false,
+      "required_workflow": "VPD Renderer Adapter Validation",
       "figma_canvas_write_allowed": false
     }
   }

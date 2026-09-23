@@ -18,6 +18,10 @@ from .vpd_task_lock import (
 
 PROFILE = "p6-composition/v1"
 FILE_KEY = "uyDxOoN1iNDPpEHTKSUWg1"
+PAIR2_VALIDATOR_REPAIR_ACTION = "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
+PAIR2_VALIDATOR_CI_ACTION = "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
+PAIR2_WAIT_CANVAS_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
+PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
     ("12:11", "DOUFANG_B_DISTILLED", "12:12"),
@@ -46,6 +50,9 @@ ACTIONS = {
     "P1_PREPARE_HYBRID_TEXTURE_FINISH_PROBE",
     "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_01",
     "P1_EXECUTE_TYPOGRAPHY_METHOD_SANDBOX_TEST_02",
+    PAIR2_VALIDATOR_REPAIR_ACTION,
+    PAIR2_VALIDATOR_CI_ACTION,
+    PAIR2_WAIT_CANVAS_AUTH_ACTION,
 }
 
 
@@ -67,14 +74,35 @@ def validate_t1_retry_record(record):
 def _validate_commercial_ledger(root, lock, cp):
     stream = "commercial_design_pipeline"
     p = path(root, f"continuity/vpd/state_ledger/{stream}.jsonl")
+    freeze_ref = lock.get("authority_repair", {}).get("commercial_ledger_preexisting_hash_defects")
+    frozen = {}
+    if freeze_ref:
+        check_ref(root, freeze_ref)
+        freeze = read(root, freeze_ref["path"])
+        require(freeze["ledger_path"] == f"continuity/vpd/state_ledger/{stream}.jsonl", "COMMERCIAL_LEDGER_FREEZE_PATH")
+        frozen = {item["event_id"]: item for item in freeze["frozen_invalid_events"]}
+        require(len(frozen) == freeze["defect_count"], "COMMERCIAL_LEDGER_FREEZE_DUPLICATE_ID")
+
     previous = None
-    for line in p.read_text(encoding="utf-8").splitlines():
-        event = json.loads(line)
+    seen_frozen = set()
+    for raw_line in p.read_text(encoding="utf-8").splitlines():
+        event = json.loads(raw_line)
         claimed = event.pop("event_hash")
         actual = hashlib.sha256(
             json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest()
-        require(claimed == actual, "COMMERCIAL_LEDGER_HASH_MISMATCH")
+        frozen_item = frozen.get(event["event_id"])
+        if frozen_item is not None:
+            require(
+                hashlib.sha256(raw_line.encode()).hexdigest() == frozen_item["line_sha256"],
+                "COMMERCIAL_LEDGER_FROZEN_DEFECT_MUTATED",
+            )
+            require(claimed == frozen_item["claimed_event_hash"], "COMMERCIAL_LEDGER_FROZEN_CLAIM_DRIFT")
+            require(actual == frozen_item["recomputed_canonical_hash"], "COMMERCIAL_LEDGER_FROZEN_RECOMPUTE_DRIFT")
+            require(claimed != actual, "COMMERCIAL_LEDGER_FROZEN_DEFECT_REWRITTEN")
+            seen_frozen.add(event["event_id"])
+        else:
+            require(claimed == actual, "COMMERCIAL_LEDGER_HASH_MISMATCH")
         require(
             event["previous_event_id"] == (previous["event_id"] if previous else None),
             "COMMERCIAL_LEDGER_PARENT_ID",
@@ -84,6 +112,7 @@ def _validate_commercial_ledger(root, lock, cp):
             "COMMERCIAL_LEDGER_PARENT_HASH",
         )
         previous = {"event_id": event["event_id"], "event_hash": claimed, **event}
+    require(seen_frozen == set(frozen), "COMMERCIAL_LEDGER_FROZEN_DEFECT_SET_DRIFT")
     require(previous is not None, "COMMERCIAL_LEDGER_EMPTY")
     require(
         cp["ledger_tails"] == {
@@ -93,6 +122,76 @@ def _validate_commercial_ledger(root, lock, cp):
     )
     require(previous.get("lock_sha256") == digest(path(root, LOCK_PATH)), "COMMERCIAL_LEDGER_STALE_LOCK")
 
+
+def _validate_pair2_equal_budget_prewrite(root, lock, cp, action):
+    pair = lock.get("pair2_equal_budget_figma_ab", {})
+    require(pair.get("status") == "PREPARED_NO_CANVAS_WRITE", "PAIR2_FIGMA_PREP_STATUS")
+    require(cp.get("pair2_equal_budget_figma_ab") == pair, "PAIR2_FIGMA_CHECKPOINT_DRIFT")
+    require(pair.get("figma_file_key") == FILE_KEY, "PAIR2_FIGMA_FILE_DRIFT")
+    require(pair.get("current_canvas_write_authorization") == 0, "PAIR2_PREMATURE_CANVAS_WRITE_AUTH")
+    require(pair.get("composition_pass_per_poster") == 1, "PAIR2_COMPOSITION_BUDGET")
+    require(pair.get("correction_pass_max_per_poster") == 1, "PAIR2_CORRECTION_BUDGET")
+    require(pair.get("route_B_extra_manual_budget") is False, "PAIR2_B_EXTRA_POLISH")
+    require(pair.get("typography_control_is_not_typography_distillation_pass") is True, "PAIR2_FALSE_TYPOGRAPHY_PASS")
+    check_ref(root, pair["prep"])
+    check_ref(root, pair["blind_evaluator_prompt"])
+
+    prep = read(root, pair["prep"]["path"])
+    require(prep["status"] == "PREPARED_NO_CANVAS_WRITE", "PAIR2_PREP_NOT_FROZEN")
+    require(prep["fixed_poster_input"]["frame_size"] == [2400, 3200] and prep["fixed_poster_input"]["aspect"] == "3:4", "PAIR2_FRAME_DRIFT")
+    require(prep["fixed_poster_input"]["copy"] == {"title":"豆坊","english":"HANDMADE TOFU","support":"手作豆腐 · 当日现制"}, "PAIR2_COPY_DRIFT")
+    require(prep["fixed_poster_input"]["no_new_image_generation"] is True, "PAIR2_IMAGE_GENERATION_REOPENED")
+    require(prep["fixed_poster_input"]["no_photo_retouch"] is True and prep["fixed_poster_input"]["no_photo_regeneration"] is True, "PAIR2_PHOTO_MUTATION_REOPENED")
+    require(prep["source_pair"]["route_A"]["sha256"] == pair["source_pair"]["route_A_sha256"], "PAIR2_ROUTE_A_SOURCE_DRIFT")
+    require(prep["source_pair"]["route_B"]["sha256"] == pair["source_pair"]["route_B_sha256"], "PAIR2_ROUTE_B_SOURCE_DRIFT")
+    require(prep["source_pair"]["route_A"]["dimensions"] == [1086, 1448] and prep["source_pair"]["route_B"]["dimensions"] == [1086, 1448], "PAIR2_SOURCE_DIMENSION_DRIFT")
+    require(prep["typography_control_layer"]["old_failed_p6_custom_title_vectors_reused"] is False, "PAIR2_FAILED_TITLE_REUSED")
+    require(prep["typography_control_layer"]["typography_design_gate_claimed_by_this_control"] is False, "PAIR2_FALSE_TYPOGRAPHY_GATE")
+    require(prep["shared_composition_rule"]["same_rule_for_A_and_B"] is True, "PAIR2_ASYMMETRIC_COMPOSITION_RULE")
+    require(prep["equal_budget"] == {
+        "same_figma_file": True,
+        "same_frame_size": True,
+        "same_copy": True,
+        "same_font_sources": True,
+        "same_typography_control_layer": True,
+        "composition_pass_per_poster": 1,
+        "correction_pass_max_per_poster": 1,
+        "hidden_polish": False,
+        "extra_assets_after_assignment": False,
+        "route_B_extra_manual_budget": False,
+    }, "PAIR2_EQUAL_BUDGET_DRIFT")
+    old_page = prep["figma_plan"]["old_negative_evidence_page"]
+    require(old_page == {"page_id":"12:2","name":"P6 Equal Budget Integrated Validation","modify":False}, "PAIR2_OLD_P6_PAGE_MUTATION")
+    require(prep["figma_plan"]["new_page"]["page_id"] == "PENDING_CANVAS_WRITE", "PAIR2_PREMATURE_FIGMA_PAGE_WRITE")
+    require(prep["authorization"]["current_canvas_write_authorization"] == 0 and prep["authorization"]["current_image_generation_authorization"] == 0, "PAIR2_PREMATURE_RESOURCE_AUTH")
+    blind = prep["evaluation"]["blind_review"]
+    require(blind["prewrite_prompt"] == pair["blind_evaluator_prompt"], "PAIR2_BLIND_PROMPT_DRIFT")
+    require(blind["mapping_frozen_before_canvas_write"] is True and blind["mapping"] == {"X":"Route A","Y":"Route B"}, "PAIR2_BLIND_MAPPING_DRIFT")
+    require(blind["evaluator_must_not_know_mapping"] is True, "PAIR2_BLIND_LEAK")
+
+    gate = pair.get("validator_gate", {})
+    require(gate.get("figma_canvas_write_allowed") is False, "PAIR2_VALIDATOR_GATE_BYPASSED")
+    if action == PAIR2_VALIDATOR_REPAIR_ACTION:
+        require(lock["status"] == "VPD_PAIR2_FIGMA_AB_PREP_SAVED_VALIDATOR_FORWARD_COMPATIBILITY_BLOCKED_NO_CANVAS_WRITE", "PAIR2_REPAIR_STATE")
+        require(gate.get("status") == "BLOCKED_FORWARD_INCOMPATIBLE", "PAIR2_REPAIR_GATE_STATE")
+        check_ref(root, gate["blocker"])
+    elif action == PAIR2_VALIDATOR_CI_ACTION:
+        require(lock["status"] == "VPD_PAIR2_FIGMA_AB_VALIDATOR_REPAIR_IMPLEMENTED_AWAITING_CI_PASS_NO_CANVAS_WRITE", "PAIR2_VALIDATOR_CI_STATE")
+        require(gate.get("status") == "REPAIR_IMPLEMENTED_AWAITING_CI", "PAIR2_VALIDATOR_CI_GATE")
+        check_ref(root, gate["blocker"])
+        check_ref(root, gate["repair_implementation"])
+        implementation = read(root, gate["repair_implementation"]["path"])
+        require(implementation["status"] == "IMPLEMENTED_AWAITING_CI", "PAIR2_VALIDATOR_IMPLEMENTATION_STATE")
+        require(implementation["figma_canvas_write_authorized"] is False, "PAIR2_IMPLEMENTATION_PREMATURE_WRITE")
+        require(implementation["commercial_ledger_defect_freeze"] == lock["authority_repair"]["commercial_ledger_preexisting_hash_defects"], "PAIR2_LEDGER_FREEZE_REFERENCE_DRIFT")
+    elif action == PAIR2_WAIT_CANVAS_AUTH_ACTION:
+        require(lock["status"] == "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREPARED_AWAITING_CANVAS_WRITE_AUTHORIZATION", "PAIR2_WAIT_CANVAS_STATE")
+        require(gate.get("status") == "PASS", "PAIR2_VALIDATOR_NOT_PASSED")
+        check_ref(root, gate["validation_receipt"])
+        receipt = read(root, gate["validation_receipt"]["path"])
+        require(receipt["conclusion"] == "SUCCESS" and receipt["state_validator"] == "VPD_STATE_VALID", "PAIR2_VALIDATOR_PASS_RECEIPT")
+        require(receipt["figma_canvas_write_authorized"] is False, "PAIR2_RECEIPT_PREMATURE_WRITE")
+    require(lock.get("p6_allowed") is False, "PAIR2_P6_PREMATURE_OPEN")
 
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
@@ -151,6 +250,8 @@ def validate_p6_composition_state(root):
     used = p6["correction_passes_used"]
     require(set(used) == {f["id"] for f in p6["frames"]}, "CORRECTION_BUDGET_KEYS")
     require(all(v in (0, 1) for v in used.values()), "CORRECTION_BUDGET_RANGE")
+    if action in PAIR2_PREWRITE_ACTIONS:
+        _validate_pair2_equal_budget_prewrite(root, lock, cp, action)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
