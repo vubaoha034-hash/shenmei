@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 124,
+  "revision": 125,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 123,
-    "git_blob_sha": "e320767c6e7d3e4df5343d210bde01f74ea3282e",
-    "note": "Revision 123 prepared the second-content tofu A/B and waited for two-image authorization."
+    "revision": 124,
+    "git_blob_sha": "70765a7c60d63374a765b1e8f319ec49136dbdfb",
+    "note": "Revision 124 prepared Pair2 for independent blind evaluation without known-label aesthetic priming."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The user returned the second-content tofu pair and explicitly labeled image 2 as Route A and image 1 as Route B. Exact uploaded bytes were verified: both are PNG, 1086x1448 (exact 3:4), and both pass the frozen technical correctness gate for a traditional tofu workshop. The exact route-labeled files have been archived to Google Drive. To avoid priming, no known-label aesthetic comparison has been performed. The outputs were copied into ChatGPT Library under deterministic neutral X/Y names using the pre-frozen lexicographic SHA-256 rule. The Pair2 blind evaluator prompt had already been frozen before outputs and mapping. The X/Y route mapping must remain undisclosed until the independent blind verdict returns.",
-  "status": "VPD_P3_SECOND_CONTENT_TOFU_PAIR2_READY_FOR_INDEPENDENT_BLIND_REVIEW",
+  "current_stage": "Pair2 independent blind evaluation is complete. The evaluator selected Y with MEDIUM confidence while both X and Y passed correctness. The pre-frozen deterministic mapping reveals X = Route A (reference-native baseline) and Y = Route B (reference + compact VPD candidate). Therefore Route B has now won two independent blind comparisons, each with MEDIUM confidence, across two materially different content tasks: a dry working rice granary and a wet traditional tofu workshop. The repeated benefits are reading hierarchy, near/mid/far spatial depth, material/process differentiation and production narrative. Recurring tradeoffs remain: the VPD route can become denser or more deliberately staged, typography quiet-zone advantage is not guaranteed, and cool-neutral color control is not independently proven. The six compact controls are retained unchanged as a thin first-family mechanism candidate and may now enter equal-budget full-poster/Figma production validation. This does not promote the full Style Capsule, replace the stable baseline, prove cross-aspect transfer or prove second-style transfer. No new image generation or Figma canvas write is authorized in this revision.",
+  "status": "VPD_P3_TWO_BLIND_CONTENT_REPLICATIONS_SUPPORT_COMPACT_VPD_READY_EQUAL_BUDGET_FIGMA_AB_PREP",
   "p6_allowed": false,
-  "next_required_action": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+  "next_required_action": "PREPARE_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_USING_PAIR2_NO_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,14 +144,14 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "received user-labeled Pair2 tofu A/B outputs",
-    "verified exact file hashes, PNG MIME and 1086x1448 3:4 dimensions",
-    "passed both outputs through frozen technical correctness gate",
-    "archived exact route-labeled outputs to Google Drive",
-    "created deterministic neutral X/Y copies in ChatGPT Library",
-    "kept X/Y mapping undisclosed and performed no known-label aesthetic review"
+    "recorded Pair2 independent blind verdict",
+    "revealed deterministic mapping only after blind verdict: Y = Route B",
+    "confirmed Route B blind win replicated across two materially different content tasks",
+    "retained the six compact VPD controls unchanged as a thin mechanism candidate",
+    "closed further photo-only same-family content A/B repetition by default",
+    "advanced the evidence plan to equal-budget complete-poster/Figma validation without canvas write"
   ],
-  "updated_at": "2026-09-23T03:12:00Z",
+  "updated_at": "2026-09-23T03:35:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P1",
@@ -1466,7 +1466,7 @@
     "stable_baseline_replacement_allowed": false
   },
   "library_native_ab_v2": {
-    "status": "PAIR2_OUTPUTS_RECEIVED_TECHNICAL_PASS_BLIND_PACKAGE_READY",
+    "status": "PAIR2_BLIND_COMPLETE_B_WINS",
     "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
     "freeze": {
       "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
@@ -1492,7 +1492,7 @@
     "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "RUN_PAIR2_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "next": "PRODUCTION_VALIDATION_PREP",
     "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
     "output_receipt": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
@@ -1530,10 +1530,41 @@
       "library_X_path": "/VPD_BLIND_REVIEW/PAIR2_X.png",
       "library_Y_path": "/VPD_BLIND_REVIEW/PAIR2_Y.png",
       "evaluator_must_not_know_route_mapping": true,
-      "result_status": "PENDING"
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_RESULT_20260923.json",
+      "result_git_blob_sha": "1f81f8a474fb7231bf88ef3e206eb459b3691f0a",
+      "winner_blind_label": "Y",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
     },
     "known_label_aesthetic_review_performed": false,
     "style_capsule_promotion_allowed": false,
     "stable_baseline_replacement_allowed": false
+  },
+  "compact_vpd_6_control_candidate": {
+    "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_READY_FOR_PRODUCTION_INTEGRATION_TEST",
+    "blind_replication_summary": {
+      "pair1": {
+        "content": "WORKING_RICE_GRANARY",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "pair2": {
+        "content": "TRADITIONAL_TOFU_WORKSHOP",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "consistent_direction": true
+    },
+    "settlement": {
+      "path": "evidence/vpd/library_native_ab_v2/COMPACT_VPD_REPLICATION_SETTLEMENT_20260923.json",
+      "git_blob_sha": "e7c7510115060cfd998dfb081a20156abf68ce18"
+    },
+    "controls_changed": false,
+    "add_more_rules": false,
+    "stable_baseline_replacement_allowed": false,
+    "style_capsule_promotion_allowed": false,
+    "local_equal_budget_figma_test_allowed": true
   }
 }
