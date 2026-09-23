@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 126,
+  "revision": 127,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 125,
-    "git_blob_sha": "4c242bcaed37fe7abf967bb25977cdb32d77eb50",
-    "note": "Revision 125 settled Pair2 independent blind replication and authorized only non-writing preparation for the equal-budget complete-poster/Figma A/B."
+    "revision": 126,
+    "git_blob_sha": "46935980817ee169f601574fd2e49d29e6485c9a",
+    "note": "Revision 126 prepared Pair2 equal-budget complete-poster/Figma A/B with zero canvas-write authorization and passed independent remote state-file readback."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B preparation is complete without any canvas write. The test will reuse the technically valid Pair2 tofu photos (A = reference-native baseline, B = reference + COMPACT_VPD_6_CONTROL_CANDIDATE_R1) and ask whether B's repeated photo-only advantages survive symmetric full-poster composition. The old failed P6 page remains frozen negative evidence and will not be modified. A and B will share the same clean editable typography control layer and the same scene-derived quiet-pocket composition rule; only route-local x/y/scale adaptation is permitted under that same rule. Each poster is limited to one composition pass plus at most one correction pass, with no B-only polish. This preparation does not prove the typography distillation program, does not promote the Style Capsule, and does not authorize Figma canvas writing yet.",
-  "status": "VPD_P3_PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREPARED_AWAITING_CANVAS_WRITE_AUTHORIZATION",
+  "current_stage": "Pair2 equal-budget complete-poster/Figma A/B preparation is preserved and remotely read back, but the mandatory VPD state validator cannot currently authorize the next resource step. The local execution environment could not clone GitHub due DNS, and static readback of visual_memory/vpd_p6_composition_state.py shows the current action is absent from its ACTIONS set, so the existing validator profile is forward-incompatible and would deterministically raise COMPOSITION_ACTION_UNKNOWN. This is a control-plane compatibility blocker, not a design failure. Figma canvas write remains prohibited until the validator is repaired and actually passes.",
+  "status": "VPD_PAIR2_FIGMA_AB_PREP_SAVED_VALIDATOR_FORWARD_COMPATIBILITY_BLOCKED_NO_CANVAS_WRITE",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
+  "next_required_action": "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,15 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "prepared the Pair2 equal-budget complete-poster/Figma A/B production-integration test without writing the Figma canvas",
-    "froze Pair2 Route A and Route B source-photo identities and exact poster copy",
-    "froze a symmetric editable typography control layer so typography redesign cannot confound the photo-route comparison",
-    "froze one shared scene-derived quiet-pocket composition rule with only route-local x/y/scale adaptation",
-    "froze equal effort at one composition pass plus at most one correction pass per poster with no Route B extra polish",
-    "froze a prewrite independent blind-evaluator prompt and A/B-to-X/Y mapping",
-    "preserved the old failed P6 page as negative evidence and prohibited modification"
+    "preserved the completed Pair2 equal-budget Figma A/B preparation from revision 126",
+    "performed independent remote readback of the prepared commit and all changed state/evidence pointers",
+    "attempted to run the mandatory VPD state validator but the local container could not clone GitHub because DNS resolution failed",
+    "statically audited the active p6-composition validator and confirmed the current next action is not recognized, which would raise COMPOSITION_ACTION_UNKNOWN",
+    "blocked Figma canvas writing rather than bypassing the mandatory state gate"
   ],
-  "updated_at": "2026-09-23T03:40:00Z",
+  "updated_at": "2026-09-23T03:48:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -232,7 +230,8 @@
     "Do not consume a retry: this is still the original authorized one-image stateless smoke because the failed Drive-binding attempt generated nothing.",
     "Do not ask the generator assistant to fetch the Drive file and use that fetch as the visual reference.",
     "The fresh generator conversation must show R1C as an attached image before generation.",
-    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
+    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file.",
+    "Mandatory state validator is forward-incompatible with the current Pair2 production-integration actions; current p6-composition ACTIONS does not include the active action and would raise COMPOSITION_ACTION_UNKNOWN."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -1592,6 +1591,16 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
+    "next": "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE",
+    "validator_gate": {
+      "status": "BLOCKED_FORWARD_INCOMPATIBLE",
+      "blocker": {
+        "path": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
+        "sha256": "bb9734919ce1281e7580309d261d3fb57b68c901765c80fbbc92acdcb58c016d"
+      },
+      "required_command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+      "current_action_present_in_validator_actions": false,
+      "figma_canvas_write_allowed": false
+    }
   }
 }
