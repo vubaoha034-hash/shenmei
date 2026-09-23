@@ -151,9 +151,10 @@
     "materialized both Library files back into the runtime and verified SHA256 matches the Figma export receipt",
     "froze complete-poster X/Y mapping, Library IDs, hashes and the prewritten evaluator prompt",
     "prepared a fresh-chat handoff while preserving evaluator route blindness",
-    "kept correction-pass usage at A=0, B=0 and performed no Figma canvas write in this step"
+    "kept correction-pass usage at A=0, B=0 and performed no Figma canvas write in this step",
+    "recomputed Pair2 blind-package evidence and state hashes with Python hashlib after CI detected ADAPTER_STALE_LOCK; no Figma or Library asset mutation"
   ],
-  "updated_at": "2026-09-23T10:12:00Z",
+  "updated_at": "2026-09-23T10:16:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -1655,16 +1656,20 @@
     },
     "blind_package": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json",
-      "sha256": "e9abd75157823214400f9fe9868c882c8aa53c4da00a5d399479a59ada177e59"
+      "sha256": "f91e7bcd23c53efba8e2e5756edfe644292abf8c05281914716b6694d52619bd"
     },
     "blind_mapping": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_MAPPING_20260923.json",
-      "sha256": "6f4be7035e6f7f42707a921e96998708fbc21a799df1d72dfce1bf4257bc6306"
+      "sha256": "b85a60a92589c2ce6051cbbd716c3a70d6bda0a2a08068040d4a005d734b448e"
     },
     "blind_handoff": {
       "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260923.txt",
-      "sha256": "7851505030eb9bcc997bd1841b24ca1e8a341844e2cf949383aad228174feb40"
+      "sha256": "d5de6b897fa6fdbf5ca34875199b828d199cc185ced39bb3a149ae1a8dc5123a"
     },
-    "complete_poster_blind_verdict": "PENDING"
+    "complete_poster_blind_verdict": "PENDING",
+    "state_hash_repair": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_STATE_HASH_REPAIR_20260923.json",
+      "sha256": "0e5811cce56787b9cd52607d844fa0b0a095874f100dec9995cd85bdacc7c892"
+    }
   }
 }

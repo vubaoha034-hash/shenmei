@@ -1,0 +1,22 @@
+{
+  "schema_version": "vpd-pair2-complete-poster-blind-state-hash-repair/v1",
+  "artifact_type": "PAIR2_COMPLETE_POSTER_BLIND_STATE_HASH_REPAIR",
+  "recorded_at": "2026-09-23T10:15:53.483110+00:00",
+  "project_id": "visual-aesthetic-vpd",
+  "trigger_ci_run_id": 35847568508,
+  "trigger_failure": "ADAPTER_STALE_LOCK",
+  "classification": "STATE_HASH_CALCULATION_BUG_ONLY",
+  "figma_canvas_modified": false,
+  "library_assets_modified": false,
+  "blind_mapping_changed": false,
+  "old_adapter_claimed_lock_sha256": "fb2f8cb872df51884a70b7f825bc678298251a98c5a45237849866a2b94b836b",
+  "actual_lock_sha256_before_repair": "44f59ba8482206e8d68da7d99cdbfe491ee2d265d0791b0bd8fcee4292853e1d",
+  "recomputed_refs": {
+    "mapping_sha256": "b85a60a92589c2ce6051cbbd716c3a70d6bda0a2a08068040d4a005d734b448e",
+    "package_sha256": "f91e7bcd23c53efba8e2e5756edfe644292abf8c05281914716b6694d52619bd",
+    "handoff_sha256": "d5de6b897fa6fdbf5ca34875199b828d199cc185ced39bb3a149ae1a8dc5123a",
+    "prompt_sha256": "85245627d267d49893c8c0d888c50aea14891e13b14920c46f76ff44705edcf6",
+    "export_receipt_sha256": "51335e4774e08a9e2ba04f28ec704a1ee347e190cebed6e7b6f0cffd16a7e86b"
+  },
+  "repair_method": "Python hashlib.sha256 over exact repository bytes; then run mandatory VPD state validator before commit."
+}
