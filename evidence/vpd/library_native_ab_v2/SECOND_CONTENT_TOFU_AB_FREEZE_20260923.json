@@ -1,0 +1,86 @@
+{
+  "schema_version": "vpd-library-native-ab-second-content-freeze/v1",
+  "artifact_type": "SECOND_NEW_CONTENT_AB_FREEZE",
+  "created_at": "2026-09-23T02:30:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
+  "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+  "purpose": "Replicate the one-pair compact-VPD signal on a materially different new content task while keeping renderer, reference-binding path, aspect, output count and evaluation structure symmetric.",
+  "relation_to_pair1": {
+    "prior_content": "working rice granary",
+    "new_content": "traditional working tofu workshop",
+    "same_reference": true,
+    "same_renderer": true,
+    "same_aspect": true,
+    "same_one_image_per_route": true,
+    "same_no_retry_policy": true,
+    "same_blind_review_after_correctness": true
+  },
+  "why_this_content": [
+    "Changes the process from dry grain storage/sorting to wet food preparation/pressing.",
+    "Changes the dominant materials from rice/bamboo/sacks/wood bins to soybeans/tofu/press cloth/wood molds/stone or plaster surfaces.",
+    "Still provides real process evidence and an editorial-photography use case compatible with the approved R1C family reference.",
+    "Allows direct testing of whether the six mechanisms generalize after content-slot substitution."
+  ],
+  "reference": {
+    "source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "path": "/VPD_REFERENCES/R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "count": 1
+  },
+  "shared_image_task": "Create exactly one photo-only 3:4 portrait image of a real traditional tofu workshop in early morning. The scene must visibly contain pale soybeans or freshly made white tofu, natural pressing cloths, aged wooden tofu molds or pressing frames, a stone/plaster washing or soaking trough, and a modest preparation/pressing table with believable signs of active food production. Use restrained documentary photography, cool-neutral morning daylight, realistic wet/dry material differences, worn wood and cloth, and one natural quiet low-detail area that could later hold typography. Keep the scene primarily interior; do not use mountains, forest scenery, or a picturesque outdoor view as a compositional shortcut. Do not include any people as the main subject, beauty/wellness products, bottles, cosmetics, supplements, laptops, home-office lifestyle scenes, tea ware, wok/fire, logos, labels, calligraphy, readable text, advertising copy, detached graphic panels, or invented brands. Use the attached R1C image only for overall visual family feeling and relational balance; do not copy its subject, brand, text, motifs, palette literally, or layout coordinates.",
+  "shared_controls": {
+    "renderer": "CHATGPT_IMAGES",
+    "generation_not_edit": true,
+    "requested_aspect": "3:4 PORTRAIT",
+    "output_count_per_route": 1,
+    "fresh_chat_per_route": true,
+    "no_project_reads_in_generator": true,
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "retry_budget": 0,
+    "no_figma": true,
+    "raw_output_drive_archive_required": true
+  },
+  "route_A": {
+    "id": "REFERENCE_NATIVE_BASELINE",
+    "extra_vpd_controls": []
+  },
+  "route_B": {
+    "id": "REFERENCE_PLUS_COMPACT_VPD_CANDIDATE_R1",
+    "candidate_source": "evidence/vpd/library_native_ab_v1/COMPACT_VPD_6_CONTROL_CANDIDATE_R1_20260923.json",
+    "mechanism_preserving_content_slot_substitution": true,
+    "mechanism_controls": [
+      "One dominant material mass counterbalanced by a scene-created quiet tonal pocket.",
+      "Clear first-second-third read through dominant mass, depth layer and supporting process detail.",
+      "Concentrate high material detail regionally; keep the typography pocket visually low-density.",
+      "Preserve truthful near/mid/far depth rather than flattening the scene into a decorative still life.",
+      "Use pale tofu/soy, natural press cloth, aged wood and mineral/stone surfaces with cool-neutral shadow roles; do not copy the reference palette literally.",
+      "Bind soybeans/tofu, press cloths, molds, troughs and tools to real production/process evidence rather than decorative motifs."
+    ],
+    "substitution_note": "Only content nouns/material roles are changed from the rice-granary compilation. The six underlying mechanisms are unchanged."
+  },
+  "correctness_gate": [
+    "exactly one image per route",
+    "3:4 portrait",
+    "tofu workshop is unmistakable",
+    "required process/material evidence visible",
+    "no readable text or invented brand",
+    "no beauty/product-ad substitution",
+    "no scenic mountain/forest/outdoor-view shortcut"
+  ],
+  "evaluation": {
+    "blind_review_required": true,
+    "blind_mapping_method": "After both exact output hashes are known, assign X/Y by lexicographic ascending SHA-256 order.",
+    "blind_prompt_must_be_frozen_before_mapping": true,
+    "no_known_label_preference_prompt_before_blind_verdict": true,
+    "no_promotion_from_single_second_pair": true
+  },
+  "budget": {
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "retry_budget": 0
+  },
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_SECOND_CONTENT_AB_TWO_IMAGES"
+}
