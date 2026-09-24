@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 135,
+  "revision": 136,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 134,
-    "git_blob_sha": "f097629fe2244fcb62829c939b0a594bb88989a8",
-    "note": "Revision 134 authorized the single symmetric Pair2 correction pass."
+    "revision": 135,
+    "git_blob_sha": "db398edae92c88019abf02c8c859ed20f948c8bf",
+    "note": "Revision 135 completed the single symmetric correction and closed further correction budget."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 symmetric single correction executed and independently read back. Six text nodes match the frozen plan exactly; PHOTO_RAW hashes and frame geometry are unchanged. Correction budget is fully consumed A=1/B=1, canvas authorization is closed, and no second aesthetic correction is allowed. Next step is re-export/package only, with no Figma write.",
-  "status": "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
+  "current_stage": "Pair2 corrected complete-poster blind package frozen from byte-verified corrected Library assets; X=A/Y=B mapping remains hidden until verdict; frozen evaluator prompt reused unchanged; no Figma/export/Library/evaluation action in this step.",
+  "status": "VPD_P3_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
   "p6_allowed": false,
-  "next_required_action": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+  "next_required_action": "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,13 +144,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "recorded WRITTEN correction execution and independent read-only Figma readback",
-    "verified 6/6 text nodes exactly match frozen correction_plan",
-    "verified PHOTO_RAW imageHash/FILL and 2400x3200 frame geometry unchanged",
-    "consumed A/B correction budgets to 1/1 and closed canvas authorization",
-    "blocked any second aesthetic correction and advanced only to corrected-poster re-export/package"
+    "froze corrected complete-poster blind package",
+    "froze corrected mapping X=A/Y=B hidden until verdict",
+    "prepared corrected fresh-chat handoff using exact frozen evaluator prompt",
+    "preserved correction A=1/B=1 authorization=0 no-second-correction"
   ],
-  "updated_at": "2026-09-24T12:40:00Z",
+  "updated_at": "2026-09-24T13:40:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -162,7 +161,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "fdfc7c1924189c3a01a74f7b0691bf57ef79acea",
+  "input_commit": "23299f9535a91582eca76657ef9bdf77f059eb4a",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -1571,7 +1570,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
+    "status": "CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_READY",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1594,7 +1593,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
+    "next": "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1776,6 +1775,19 @@
     "correction_execution_readback": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_EXECUTION_READBACK_20260924.json",
       "sha256": "0a9138839db7bf8fb9304a342d7a911a7008f41a86db8489eabceda80d8e71f0"
-    }
+    },
+    "corrected_blind_package": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_20260924.json",
+      "sha256": "5574b1bb7380d53d4ccc44a50a32e5a8c195f8a5b401f50839465a5063bc928d"
+    },
+    "corrected_blind_mapping": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_MAPPING_20260924.json",
+      "sha256": "9a9aba2f9eacbb585c858bcb5bcb55c7e4bba0ed691f5f8530be31b1040b917a"
+    },
+    "corrected_blind_handoff": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260924.txt",
+      "sha256": "b510011a8f07910c4c339b39acbc55e12ab70fb4e8625bb3ba353e4a762936e5"
+    },
+    "corrected_complete_poster_blind_verdict": "PENDING"
   }
 }

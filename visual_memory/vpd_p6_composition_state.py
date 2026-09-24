@@ -24,6 +24,7 @@ PAIR2_WAIT_CANVAS_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_
 PAIR2_POSTER_BLIND_RESULT_ACTION = "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER_CORRECTION_OR_SETTLEMENT"
 PAIR2_SYMMETRIC_CORRECTION_ACTION = "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS"
 PAIR2_CORRECTION_COMPLETE_ACTION = "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE"
+PAIR2_CORRECTED_BLIND_ACTION = "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -61,6 +62,7 @@ ACTIONS = {
     PAIR2_POSTER_BLIND_RESULT_ACTION,
     PAIR2_SYMMETRIC_CORRECTION_ACTION,
     PAIR2_CORRECTION_COMPLETE_ACTION,
+    PAIR2_CORRECTED_BLIND_ACTION,
 }
 
 
@@ -286,6 +288,23 @@ def _validate_pair2_symmetric_correction_complete(root, lock, cp):
     require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False, "PAIR2_CORRECTION_COMPLETE_PREMATURE_OPEN")
 
 
+def _validate_pair2_corrected_blind_package(root, lock, cp):
+    pair = lock.get("pair2_equal_budget_figma_ab", {})
+    require(lock.get("status") == "VPD_P3_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT", "PAIR2_CORRECTED_BLIND_STATE")
+    require(cp.get("pair2_equal_budget_figma_ab") == pair, "PAIR2_CORRECTED_BLIND_CP")
+    require(pair.get("current_canvas_write_authorization") == 0 and pair.get("correction_passes_used") == {"A":1,"B":1}, "PAIR2_CORRECTED_BLIND_BUDGET")
+    require(pair.get("second_aesthetic_correction_allowed") is False, "PAIR2_CORRECTED_SECOND_CORRECTION")
+    for name in ("corrected_blind_package","corrected_blind_mapping","corrected_blind_handoff","blind_evaluator_prompt"):
+        check_ref(root, pair[name])
+    package = read(root, pair["corrected_blind_package"]["path"])
+    mapping = read(root, pair["corrected_blind_mapping"]["path"])
+    require(package["status"] == "READY_FOR_INDEPENDENT_BLIND_EVALUATION" and package["no_canvas_write_this_step"] is True, "PAIR2_CORRECTED_PACKAGE")
+    require(package["library_assets"]["X"]["sha256"] == "4b38ab9f7bf61a868e12e71c93603a9fcadd37d79285dca868e1c1f6682498f5" and package["library_assets"]["Y"]["sha256"] == "a84de786f4d9700c0466f3f2a96308a81febf133b73f2d3ff4e1dae1117f9912", "PAIR2_CORRECTED_HASH")
+    require(mapping["blind_X"]["route"] == "A" and mapping["blind_Y"]["route"] == "B" and mapping["evaluator_must_not_know_mapping"] is True, "PAIR2_CORRECTED_MAPPING")
+    require(pair["blind_evaluator_prompt"]["sha256"] == "85245627d267d49893c8c0d888c50aea14891e13b14920c46f76ff44705edcf6", "PAIR2_CORRECTED_PROMPT")
+    require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False, "PAIR2_CORRECTED_PREMATURE_OPEN")
+
+
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
     cp = read(root, CHECKPOINT_PATH)
@@ -353,6 +372,8 @@ def validate_p6_composition_state(root):
         _validate_pair2_symmetric_single_correction_authorized(root, lock, cp)
     if action == PAIR2_CORRECTION_COMPLETE_ACTION:
         _validate_pair2_symmetric_correction_complete(root, lock, cp)
+    if action == PAIR2_CORRECTED_BLIND_ACTION:
+        _validate_pair2_corrected_blind_package(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
