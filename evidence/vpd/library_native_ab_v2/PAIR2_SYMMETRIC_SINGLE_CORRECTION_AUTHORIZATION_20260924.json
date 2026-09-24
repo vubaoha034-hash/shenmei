@@ -1,0 +1,117 @@
+{
+  "schema_version": "vpd-pair2-correction-authorization/v1",
+  "artifact_type": "PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZATION",
+  "recorded_at": "2026-09-24T08:33:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "authorization": {
+    "source": "current_user_main_control_chat",
+    "source_message": "下一步",
+    "controller_interpretation": "使用 A、B 各自唯一剩余的 1 次修正机会，再做一次独立盲评；不新增图片、不重做摄影、不单独偏袒 B。",
+    "correction_pass_decision": "AUTHORIZED_BY_USER_NEXT_20260924"
+  },
+  "correction_plan": {
+    "shared_constraints": {
+      "allowed_mutations": {
+        "node_ids": [
+          "209:2",
+          "209:3",
+          "209:4",
+          "209:5",
+          "209:6",
+          "209:7"
+        ],
+        "properties": [
+          "x",
+          "y",
+          "fontSize"
+        ],
+        "existing_text_nodes_only": true
+      },
+      "forbidden_changes": {
+        "characters": true,
+        "fontFamily": true,
+        "color": true,
+        "frame_dimensions": true,
+        "PHOTO_RAW": true,
+        "imageHash": true,
+        "photo_crop": true,
+        "photo_content": true,
+        "node_creation": true,
+        "node_deletion": true,
+        "new_assets": true,
+        "image_generation": true,
+        "photo_retouch": true,
+        "photo_regeneration": true
+      },
+      "shared_typography": {
+        "font_system_unchanged": true,
+        "title_fontSize": 280,
+        "english_fontSize": 48,
+        "support_fontSize": 42
+      },
+      "budget": {
+        "correction_pass_per_route": 1,
+        "success_consumes_only_remaining_pass": true,
+        "second_aesthetic_correction_after_success_allowed": false,
+        "route_B_extra_manual_budget": false
+      }
+    },
+    "frozen_targets": {
+      "A": {
+        "209:2": {
+          "role": "title",
+          "x": 600,
+          "y": 200,
+          "fontSize": 280
+        },
+        "209:3": {
+          "role": "english",
+          "x": 607,
+          "y": 550,
+          "fontSize": 48
+        },
+        "209:4": {
+          "role": "support",
+          "x": 607,
+          "y": 630,
+          "fontSize": 42
+        }
+      },
+      "B": {
+        "209:5": {
+          "role": "title",
+          "x": 1540,
+          "y": 140,
+          "fontSize": 280
+        },
+        "209:6": {
+          "role": "english",
+          "x": 1547,
+          "y": 480,
+          "fontSize": 48
+        },
+        "209:7": {
+          "role": "support",
+          "x": 1547,
+          "y": 560,
+          "fontSize": 42
+        }
+      }
+    },
+    "rationale": [
+      "A 已处于自身上方偏左安静区，只做轻微光学校正和与 B 相同的缩放。",
+      "B 从中央 x≈1200 的纵深/蒸汽/后景豆腐主轴移到上方偏右深灰墙面，避免把 B 原始摄影优势毁在文字叠加上。",
+      "这是同一 scene-derived quiet-pocket 规则下的 route-local x/y 适配，不是给 B 额外设计概念。"
+    ]
+  },
+  "correction_passes_used": {
+    "A": 0,
+    "B": 0
+  },
+  "correction_pass_max_per_poster": 1,
+  "route_B_extra_manual_budget": false,
+  "no_figma_write_this_state_step": true,
+  "correction_executed": false,
+  "style_capsule_promotion_allowed": false,
+  "stable_baseline_replacement_allowed": false
+}
