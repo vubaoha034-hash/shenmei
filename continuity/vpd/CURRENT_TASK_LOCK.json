@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 136,
+  "revision": 137,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 135,
-    "git_blob_sha": "db398edae92c88019abf02c8c859ed20f948c8bf",
-    "note": "Revision 135 completed the single symmetric correction and closed further correction budget."
+    "revision": 136,
+    "git_blob_sha": "5f674c4fc699e19acf79891a10147419f43b0bcc",
+    "note": "Revision 136 froze corrected complete-poster blind package awaiting evaluator verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 corrected complete-poster blind package frozen from byte-verified corrected Library assets; X=A/Y=B mapping remains hidden until verdict; frozen evaluator prompt reused unchanged; no Figma/export/Library/evaluation action in this step.",
-  "status": "VPD_P3_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
+  "current_stage": "Pair2 formally settled. Photo-only Route B mechanism signal remains preserved, while both uncorrected and corrected equal-budget complete-poster blind evaluations favored Route A; Pair2 does not support an end-to-end complete-poster production-integration benefit for Route B. No correction budget remains and no chase-the-win rule additions are allowed.",
+  "status": "VPD_P3_PAIR2_SETTLED_PHOTO_ONLY_SIGNAL_PRESERVED_COMPLETE_POSTER_BENEFIT_NOT_SUPPORTED",
   "p6_allowed": false,
-  "next_required_action": "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+  "next_required_action": "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,12 +144,12 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "froze corrected complete-poster blind package",
-    "froze corrected mapping X=A/Y=B hidden until verdict",
-    "prepared corrected fresh-chat handoff using exact frozen evaluator prompt",
-    "preserved correction A=1/B=1 authorization=0 no-second-correction"
+    "recorded valid corrected independent blind verdict X/HIGH and revealed X=A only after verdict",
+    "settled three layers: photo-only B/MEDIUM; uncorrected complete-poster A/MEDIUM; corrected complete-poster A/HIGH",
+    "preserved compact photo-only mechanism signal while marking Pair2 complete-poster production-integration benefit not supported",
+    "closed Pair2 A=1/B=1 authorization=0 no second correction no rule chasing"
   ],
-  "updated_at": "2026-09-24T13:40:00Z",
+  "updated_at": "2026-09-24T13:48:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -161,7 +161,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "23299f9535a91582eca76657ef9bdf77f059eb4a",
+  "input_commit": "9c607d5157ede6be53fd503caa11520ca418031f",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -1545,7 +1545,7 @@
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_READY_FOR_PRODUCTION_INTEGRATION_TEST",
+    "status": "PHOTO_ONLY_MECHANISM_SIGNAL_PRESERVED_PRODUCTION_INTEGRATION_BENEFIT_NOT_SUPPORTED_BY_PAIR2",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1567,10 +1567,17 @@
     "add_more_rules": false,
     "stable_baseline_replacement_allowed": false,
     "style_capsule_promotion_allowed": false,
-    "local_equal_budget_figma_test_allowed": true
+    "local_equal_budget_figma_test_allowed": true,
+    "production_integration_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "final_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
+    "pair2_three_layer_settlement": {
+      "photo_only": "ROUTE_B_WINS_MEDIUM",
+      "first_uncorrected_complete_poster": "ROUTE_A_WINS_MEDIUM",
+      "corrected_complete_poster": "ROUTE_A_WINS_HIGH"
+    }
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_READY",
+    "status": "PAIR2_FORMALLY_SETTLED_COMPLETE_POSTER_BENEFIT_NOT_SUPPORTED",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1593,7 +1600,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "next": "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1788,6 +1795,14 @@
       "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260924.txt",
       "sha256": "b510011a8f07910c4c339b39acbc55e12ab70fb4e8625bb3ba353e4a762936e5"
     },
-    "corrected_complete_poster_blind_verdict": "PENDING"
+    "corrected_complete_poster_blind_verdict": "X_WINS_ROUTE_A_HIGH_CONFIDENCE",
+    "corrected_blind_result": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_RESULT_20260924.json",
+      "sha256": "f12557eda504242f7cac60e4991a32309289ac0aa627696b6ad15f149e97fbb1"
+    },
+    "corrected_blind_outcome": "ROUTE_A_WINS",
+    "production_integration_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "pair2_settled": true,
+    "add_more_rules": false
   }
 }

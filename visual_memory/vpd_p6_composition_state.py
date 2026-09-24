@@ -25,6 +25,7 @@ PAIR2_POSTER_BLIND_RESULT_ACTION = "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER
 PAIR2_SYMMETRIC_CORRECTION_ACTION = "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS"
 PAIR2_CORRECTION_COMPLETE_ACTION = "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE"
 PAIR2_CORRECTED_BLIND_ACTION = "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT"
+PAIR2_SETTLED_ACTION = "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -63,6 +64,7 @@ ACTIONS = {
     PAIR2_SYMMETRIC_CORRECTION_ACTION,
     PAIR2_CORRECTION_COMPLETE_ACTION,
     PAIR2_CORRECTED_BLIND_ACTION,
+    PAIR2_SETTLED_ACTION,
 }
 
 
@@ -305,6 +307,22 @@ def _validate_pair2_corrected_blind_package(root, lock, cp):
     require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False, "PAIR2_CORRECTED_PREMATURE_OPEN")
 
 
+def _validate_pair2_corrected_blind_settlement(root, lock, cp):
+    pair=lock.get("pair2_equal_budget_figma_ab",{})
+    require(lock.get("status")=="VPD_P3_PAIR2_SETTLED_PHOTO_ONLY_SIGNAL_PRESERVED_COMPLETE_POSTER_BENEFIT_NOT_SUPPORTED","PAIR2_SETTLEMENT_STATE")
+    require(pair.get("current_canvas_write_authorization")==0 and pair.get("correction_passes_used")=={"A":1,"B":1},"PAIR2_SETTLEMENT_BUDGET")
+    require(pair.get("second_aesthetic_correction_allowed") is False and pair.get("add_more_rules") is False,"PAIR2_SETTLEMENT_CHASE_WIN")
+    check_ref(root,pair["corrected_blind_result"]); result=read(root,pair["corrected_blind_result"]["path"])
+    require(result["valid_evaluator"]["verdict"]=={"winner":"X","confidence":"HIGH","correctness_X":"PASS","correctness_Y":"PASS"},"PAIR2_SETTLEMENT_VERDICT")
+    require(result["revealed_mapping_after_verdict"]=={"X":"A","Y":"B"} and result["blind_outcome"]=="ROUTE_A_WINS","PAIR2_SETTLEMENT_MAPPING")
+    require(result["three_layer_relationship"]["photo_only"]=={"winner_route":"B","confidence":"MEDIUM"},"PAIR2_SETTLEMENT_PHOTO_ONLY")
+    require(result["three_layer_relationship"]["first_uncorrected_complete_poster"]=={"winner_route":"A","confidence":"MEDIUM"},"PAIR2_SETTLEMENT_FIRST_POSTER")
+    require(result["three_layer_relationship"]["corrected_complete_poster_after_only_allowed_symmetric_correction"]=={"winner_route":"A","confidence":"HIGH"},"PAIR2_SETTLEMENT_CORRECTED_POSTER")
+    compact=lock["compact_vpd_6_control_candidate"];require(compact["final_scope"]=="PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT","PAIR2_SETTLEMENT_SCOPE")
+    require(compact["style_capsule_promotion_allowed"] is False and compact["stable_baseline_replacement_allowed"] is False,"PAIR2_SETTLEMENT_FALSE_PROMOTION")
+    require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False,"PAIR2_SETTLEMENT_PREMATURE_OPEN")
+
+
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
     cp = read(root, CHECKPOINT_PATH)
@@ -374,6 +392,8 @@ def validate_p6_composition_state(root):
         _validate_pair2_symmetric_correction_complete(root, lock, cp)
     if action == PAIR2_CORRECTED_BLIND_ACTION:
         _validate_pair2_corrected_blind_package(root, lock, cp)
+    if action == PAIR2_SETTLED_ACTION:
+        _validate_pair2_corrected_blind_settlement(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
