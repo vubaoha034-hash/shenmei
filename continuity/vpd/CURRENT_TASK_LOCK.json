@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 132,
+  "revision": 133,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 131,
-    "git_blob_sha": "48f6242d6a1757d096849004dc9f6c89db7d0ec5",
-    "note": "Revision 131 completed one equal-budget Figma composition pass per route and advanced to blind-package preparation."
+    "revision": 132,
+    "git_blob_sha": "2e26cf4fcb8f7c2635b7071eaf8d9152cad66417",
+    "note": "Revision 132 prepared and byte-verified the Pair2 complete-poster blind package and waited for an independent evaluator verdict."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The Pair2 equal-budget complete-poster blind-review package is ready without any additional Figma canvas write. Exact 2400x3200 PNG exports of frames 207:3 and 207:5 were retrieved through a read-only encrypted Figma export relay, uploaded to ChatGPT Library as PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png, then re-materialized from Library and SHA-256 verified against the Figma export receipt. The pre-frozen mapping remains X = Route A and Y = Route B; it must not be revealed to the evaluator before verdict. The optional correction pass remains unused on both posters.",
-  "status": "VPD_P3_PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_READY_WAITING_EVALUATOR_VERDICT",
+  "current_stage": "Pair2 equal-budget complete-poster independent blind evaluation is complete. In a fresh ChatGPT chat, only the frozen Library exports PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png were attached and the prewritten evaluator prompt was used unchanged with route identity hidden. The evaluator returned X = WINNER at MEDIUM confidence, with both X and Y correctness PASS. Only after the verdict was returned was the frozen mapping revealed: X = Route A and Y = Route B, so Route A wins this complete-poster integration comparison. This reverses the Pair2 photo-only result where Route B won; Route B still retained stronger raw depth/process narrative, but its central depth axis integrated less effectively with the symmetric typography control. No Figma canvas write, image generation, or aesthetic correction pass occurred in this evaluation step.",
+  "status": "VPD_P3_PAIR2_COMPLETE_POSTER_BLIND_VERDICT_ROUTE_A_WINS_WAITING_USER_SETTLEMENT",
   "p6_allowed": false,
-  "next_required_action": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+  "next_required_action": "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER_CORRECTION_OR_SETTLEMENT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,17 +144,15 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "exported exact 2400x3200 PNG renders of Figma frames 207:3 and 207:5 through a read-only encrypted relay",
-    "recorded the first invalid YAML workflow attempt as technical no-job/no-export evidence and corrected the relay without touching Figma",
-    "verified corrected GitHub Actions blind-export run 35847225172 and artifact 10743792318",
-    "uploaded neutral PAIR2_POSTER_X.png and PAIR2_POSTER_Y.png to /VPD_BLIND_REVIEW/",
-    "materialized both Library files back into the runtime and verified SHA256 matches the Figma export receipt",
-    "froze complete-poster X/Y mapping, Library IDs, hashes and the prewritten evaluator prompt",
-    "prepared a fresh-chat handoff while preserving evaluator route blindness",
-    "kept correction-pass usage at A=0, B=0 and performed no Figma canvas write in this step",
-    "recomputed Pair2 blind-package evidence and state hashes with Python hashlib after CI detected ADAPTER_STALE_LOCK; no Figma or Library asset mutation"
+    "ran the Pair2 complete-poster evaluation in a fresh ChatGPT chat through Opera Neon using only the two frozen Library poster exports",
+    "used the frozen evaluator prompt unchanged and kept X/Y route mapping hidden until after the verdict",
+    "recorded WINNER X, MEDIUM confidence, CORRECTNESS_X PASS and CORRECTNESS_Y PASS",
+    "revealed the frozen mapping only after verdict: X = Route A and Y = Route B, therefore Route A wins the equal-budget complete-poster comparison",
+    "preserved the earlier raw-photo finding that Route B won Pair2 photo-only; the full-poster result is a production-integration reversal, not a retraction of photo-only evidence",
+    "kept correction-pass usage at A=0 and B=0; performed no Figma canvas write and no image generation",
+    "extended the state validator only for the post-verdict waiting action so the new lock can be validated without opening any production write"
   ],
-  "updated_at": "2026-09-23T10:16:00Z",
+  "updated_at": "2026-09-24T07:30:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -1575,7 +1573,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "COMPLETE_POSTER_BLIND_PACKAGE_READY",
+    "status": "COMPLETE_POSTER_BLIND_VERDICT_RECORDED_ROUTE_A_WINS_WAITING_USER_SETTLEMENT",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1598,7 +1596,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
+    "next": "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER_CORRECTION_OR_SETTLEMENT",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1666,10 +1664,16 @@
       "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260923.txt",
       "sha256": "d5de6b897fa6fdbf5ca34875199b828d199cc185ced39bb3a149ae1a8dc5123a"
     },
-    "complete_poster_blind_verdict": "PENDING",
+    "complete_poster_blind_verdict": "X_WINS_ROUTE_A_MEDIUM_CONFIDENCE",
     "state_hash_repair": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_STATE_HASH_REPAIR_20260923.json",
       "sha256": "0e5811cce56787b9cd52607d844fa0b0a095874f100dec9995cd85bdacc7c892"
-    }
+    },
+    "blind_result": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_RESULT_20260924.json",
+      "sha256": "8a2ec0a6402d9257342ae9627cbb96e70f2e7b9d413ebb6ed3c20136bab97306"
+    },
+    "blind_outcome": "ROUTE_A_WINS",
+    "correction_pass_decision": "PENDING_USER_DECISION"
   }
 }

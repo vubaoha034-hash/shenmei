@@ -1,0 +1,79 @@
+{
+  "schema_version": "vpd-blind-review-result/v1",
+  "artifact_type": "BLIND_REVIEW_RESULT",
+  "recorded_at": "2026-09-24T07:30:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
+  "pair_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-BLIND",
+  "execution": {
+    "surface": "Fresh ChatGPT chat controlled through Opera Neon",
+    "evaluator_route_mapping_visible_before_verdict": false,
+    "frozen_prompt_used_without_rewrite": true,
+    "only_frozen_library_assets_attached": true,
+    "figma_canvas_modified": false,
+    "image_generation_performed": false
+  },
+  "inputs": {
+    "X": {
+      "library_path": "/VPD_BLIND_REVIEW/PAIR2_POSTER_X.png",
+      "sha256": "6b52197bd7909098e684e05556e1857f414efe900302f8ce86628b128b8efef7",
+      "dimensions": [
+        2400,
+        3200
+      ]
+    },
+    "Y": {
+      "library_path": "/VPD_BLIND_REVIEW/PAIR2_POSTER_Y.png",
+      "sha256": "d8dc1e06d8fe9d2f80bc7a37e08342f634303d00bc36992bd144afb557c9b494",
+      "dimensions": [
+        2400,
+        3200
+      ]
+    }
+  },
+  "evaluator_verdict": {
+    "winner": "X",
+    "confidence": "MEDIUM",
+    "correctness_X": "PASS",
+    "correctness_Y": "PASS",
+    "reasons": [
+      "缩略图尺度下，X 的“豆坊 → HANDMADE TOFU → 手作豆腐·当日现制”三级阅读关系更稳定。标题落在相对低细节的灰墙区域，同时左侧文字块与右侧压榨木模形成明确对重，第一眼既能读到标题，也能保住“作坊现场”的主体识别。",
+      "X 对场景留白的利用更成熟。文字基本避开黄豆、水槽、压榨布和豆腐主体，没有切断关键生产证据；Y 虽然同样可读，但标题采用较强的中央覆盖方式，与蒸汽、后方成品豆腐和纵深通道处在同一视觉轴线上，更容易产生“摄影上叠了一套居中文字”的感觉。",
+      "正常观看尺度下，X 的近景竹筛与木桶、中景压榨模和石槽、远景蒸汽锅形成三个比较独立的空间层级；文字位于其上方而没有把空间切断。Y 的纵深本身更强、更有戏剧性，但大标题正好占据画面最重要的中央纵深入口，使摄影原本的空间优势被文字削弱了一部分。",
+      "X 的材料区分在加入文字后依旧清楚：浅色黄豆、湿润灰泥槽壁、干湿变化明显的旧木、松软压榨布、积水地面都有各自的质感区间。Y 的材料表现同样很好，甚至局部更丰富，但前景石槽、右侧木模、后景成品豆腐同时争夺注意力，信息密度略高。",
+      "生产叙事方面，Y 更容易读成“浸泡 → 压制 → 成品”的连续流程，这是它明显优于 X 的部分；但作为完整 editorial hero，X 在“信息量”和“可编辑留白”之间更克制，后续加品牌、日期、价格或辅助信息时容错更高。",
+      "两张都没有发现明显错字、文字遮挡关键主体或严重可读性问题。X 的主要优势不是摄影内容更多，而是文字块与摄影结构结合得更自然，模板感相对更弱。"
+    ],
+    "tradeoff": "Y 的空间纵深、蒸汽氛围和完整生产链更有现场叙事性，单看摄影冲击力略强；X 则牺牲了一部分戏剧性，换来了更清楚的图文分区、更稳定的阅读层级和更高的商业编辑容错，因此本轮完整海报判断偏向 X。"
+  },
+  "revealed_mapping_after_verdict": {
+    "X": "A",
+    "Y": "B"
+  },
+  "blind_outcome": "ROUTE_A_WINS",
+  "relation_to_pair2_photo_only": "REVERSES_PHOTO_ONLY_ROUTE_B_WIN",
+  "conclusion": {
+    "photo_only_compact_vpd_signal_retracted": false,
+    "complete_poster_integration_signal": "ROUTE_B_PHOTO_ADVANTAGE_DID_NOT_SURVIVE_THIS_EQUAL_BUDGET_COMPLETE_POSTER_PAIR",
+    "route_B_retained_strengths": [
+      "raw spatial depth",
+      "steam atmosphere",
+      "production-chain narrative"
+    ],
+    "route_A_complete_poster_strengths": [
+      "photo-type integration",
+      "quiet-zone use",
+      "reading hierarchy",
+      "commercial editability"
+    ],
+    "correction_passes_used": {
+      "A": 0,
+      "B": 0
+    },
+    "correction_pass_max_per_poster": 1,
+    "correction_or_settlement_decision": "PENDING_USER_DECISION",
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false
+  },
+  "next_required_action": "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER_CORRECTION_OR_SETTLEMENT"
+}
