@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 155,
-  "recorded_at": "2026-09-24T08:33:00Z",
+  "sequence": 156,
+  "recorded_at": "2026-09-24T12:40:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Pair2 independent blind evaluation is complete. The evaluator selected Y with MEDIUM confidence while both X and Y passed correctness. The pre-frozen deterministic mapping reveals X = Route A (reference-native baseline) and Y = Route B (reference + compact VPD candidate). Therefore Route B has now won two independent blind comparisons, each with MEDIUM confidence, across two materially different content tasks: a dry working rice granary and a wet traditional tofu workshop. The repeated benefits are reading hierarchy, near/mid/far spatial depth, material/process differentiation and production narrative. Recurring tradeoffs remain: the VPD route can become denser or more deliberately staged, typography quiet-zone advantage is not guaranteed, and cool-neutral color control is not independently proven. The six compact controls are retained unchanged as a thin first-family mechanism candidate and may now enter equal-budget full-poster/Figma production validation. This does not promote the full Style Capsule, replace the stable baseline, prove cross-aspect transfer or prove second-style transfer. No new image generation or Figma canvas write is authorized in this revision.",
+  "current_focus": "Pair2 symmetric correction complete; A=1/B=1; authorization=0; no second correction; next is corrected complete-poster re-export/blind packaging only.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -311,7 +311,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS",
+  "next_required_action": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -379,10 +379,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZED_READY_FIGMA_WRITE",
+  "status": "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "1748a59b0852858b4d5ba70d82340dbc0684aa93977a5bebbfbd292c2025f2c7"
+    "sha256": "40802a3b2d10d752aaefe6a8b73a539af4e87d2a42967878d1702eddc168e4f3"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -403,8 +403,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P3-PAIR2-SYMMETRIC-CORRECTION-AUTHORIZED-20260924-001",
-      "event_hash": "eb3f93d5e75b824905b60b068be906ab915fa51c160225acdbae7fd2085af663"
+      "event_id": "EVT-VPD-P3-PAIR2-SYMMETRIC-CORRECTION-COMPLETE-20260924-001",
+      "event_hash": "b7ca148fe87e628f62e5c10e0a12c46355798db47dcc3f27adfb6d5eca9ced6c"
     }
   },
   "typography_repair": {
@@ -927,8 +927,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Pair2 symmetric single correction authorized; no Figma write yet; correction usage A=0/B=0.",
-  "updated_at": "2026-09-24T08:33:00Z",
+  "current_stage": "Pair2 symmetric single correction executed and independently read back. Six text nodes match the frozen plan exactly; PHOTO_RAW hashes and frame geometry are unchanged. Correction budget is fully consumed A=1/B=1, canvas authorization is closed, and no second aesthetic correction is allowed. Next step is re-export/package only, with no Figma write.",
+  "updated_at": "2026-09-24T12:40:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1377,7 +1377,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "SYMMETRIC_SINGLE_CORRECTION_AUTHORIZED_READY_FIGMA_WRITE",
+    "status": "SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1399,8 +1399,8 @@
     "correction_pass_max_per_poster": 1,
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
-    "current_canvas_write_authorization": 1,
-    "next": "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS",
+    "current_canvas_write_authorization": 0,
+    "next": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1448,8 +1448,8 @@
       "B": 1
     },
     "correction_passes_used": {
-      "A": 0,
-      "B": 0
+      "A": 1,
+      "B": 1
     },
     "canvas_write_authorization_consumed": 1,
     "composition_evidence": {
@@ -1478,7 +1478,7 @@
       "sha256": "8a2ec0a6402d9257342ae9627cbb96e70f2e7b9d413ebb6ed3c20136bab97306"
     },
     "blind_outcome": "ROUTE_A_WINS",
-    "correction_pass_decision": "AUTHORIZED_BY_USER_NEXT_20260924",
+    "correction_pass_decision": "CONSUMED_COMPLETE_NO_SECOND_CORRECTION",
     "correction_plan": {
       "shared_constraints": {
         "allowed_mutations": {
@@ -1577,6 +1577,11 @@
     "correction_authorization": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZATION_20260924.json",
       "sha256": "57b7f0cbf9fa666e20a743b846901659e82907a2754e27bc443b1e4e80f4c116"
+    },
+    "second_aesthetic_correction_allowed": false,
+    "correction_execution_readback": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_EXECUTION_READBACK_20260924.json",
+      "sha256": "0a9138839db7bf8fb9304a342d7a911a7008f41a86db8489eabceda80d8e71f0"
     }
   },
   "validator_blocker": {
@@ -1614,5 +1619,9 @@
   "pair2_correction_authorization": {
     "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZATION_20260924.json",
     "sha256": "57b7f0cbf9fa666e20a743b846901659e82907a2754e27bc443b1e4e80f4c116"
+  },
+  "pair2_correction_execution_readback": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_EXECUTION_READBACK_20260924.json",
+    "sha256": "0a9138839db7bf8fb9304a342d7a911a7008f41a86db8489eabceda80d8e71f0"
   }
 }

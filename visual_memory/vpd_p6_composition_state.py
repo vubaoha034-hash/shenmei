@@ -23,6 +23,7 @@ PAIR2_VALIDATOR_CI_ACTION = "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_F
 PAIR2_WAIT_CANVAS_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
 PAIR2_POSTER_BLIND_RESULT_ACTION = "WAIT_FOR_USER_DECISION_PAIR2_COMPLETE_POSTER_CORRECTION_OR_SETTLEMENT"
 PAIR2_SYMMETRIC_CORRECTION_ACTION = "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS"
+PAIR2_CORRECTION_COMPLETE_ACTION = "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -59,6 +60,7 @@ ACTIONS = {
     "RUN_PAIR2_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT",
     PAIR2_POSTER_BLIND_RESULT_ACTION,
     PAIR2_SYMMETRIC_CORRECTION_ACTION,
+    PAIR2_CORRECTION_COMPLETE_ACTION,
 }
 
 
@@ -267,6 +269,23 @@ def _validate_pair2_symmetric_single_correction_authorized(root, lock, cp):
     require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False,"PAIR2_PREMATURE_OPEN")
 
 
+def _validate_pair2_symmetric_correction_complete(root, lock, cp):
+    pair = lock.get("pair2_equal_budget_figma_ab", {})
+    require(lock.get("status") == "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT", "PAIR2_CORRECTION_COMPLETE_STATE")
+    require(cp.get("pair2_equal_budget_figma_ab") == pair, "PAIR2_CORRECTION_COMPLETE_CP_DRIFT")
+    require(pair.get("current_canvas_write_authorization") == 0, "PAIR2_CORRECTION_COMPLETE_AUTH_OPEN")
+    require(pair.get("correction_passes_used") == {"A":1,"B":1}, "PAIR2_CORRECTION_COMPLETE_BUDGET")
+    require(pair.get("correction_pass_decision") == "CONSUMED_COMPLETE_NO_SECOND_CORRECTION" and pair.get("second_aesthetic_correction_allowed") is False, "PAIR2_SECOND_CORRECTION_REOPENED")
+    check_ref(root, pair["correction_execution_readback"])
+    ev = read(root, pair["correction_execution_readback"]["path"])
+    require(ev["figma"]["write_status"] == "WRITTEN" and ev["frozen_plan_match"]["text_nodes_exact_match"] == "6/6", "PAIR2_CORRECTION_READBACK")
+    require(ev["figma"]["photo_raw"]["207:4"]["imageHash"] == "2ae8dce14d67c74628a177b972e2e0346632f945" and ev["figma"]["photo_raw"]["207:6"]["imageHash"] == "d5b93d1e24a8840f65859ddc0b17f572ab66cd32", "PAIR2_CORRECTION_PHOTO_HASH_DRIFT")
+    check_ref(root, pair["blind_result"])
+    require(pair["blind_result"]["sha256"] == "8a2ec0a6402d9257342ae9627cbb96e70f2e7b9d413ebb6ed3c20136bab97306", "PAIR2_OLD_BLIND_DRIFT")
+    require(lock["library_native_ab_v2"]["blind_review"]["result_git_blob_sha"] == "1f81f8a474fb7231bf88ef3e206eb459b3691f0a", "PAIR2_PHOTO_ONLY_DRIFT")
+    require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False, "PAIR2_CORRECTION_COMPLETE_PREMATURE_OPEN")
+
+
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
     cp = read(root, CHECKPOINT_PATH)
@@ -332,6 +351,8 @@ def validate_p6_composition_state(root):
         _validate_pair2_complete_poster_blind_result(root, lock, cp)
     if action == PAIR2_SYMMETRIC_CORRECTION_ACTION:
         _validate_pair2_symmetric_single_correction_authorized(root, lock, cp)
+    if action == PAIR2_CORRECTION_COMPLETE_ACTION:
+        _validate_pair2_symmetric_correction_complete(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")

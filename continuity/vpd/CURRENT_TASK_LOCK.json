@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 134,
+  "revision": 135,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 133,
-    "git_blob_sha": "fc22bfb31eaccde66fd3ea65f0e3dc436eb38598",
-    "note": "Pair2 complete-poster blind verdict state."
+    "revision": 134,
+    "git_blob_sha": "f097629fe2244fcb62829c939b0a594bb88989a8",
+    "note": "Revision 134 authorized the single symmetric Pair2 correction pass."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Pair2 symmetric single correction authorized; no Figma write yet; correction usage A=0/B=0.",
-  "status": "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZED_READY_FIGMA_WRITE",
+  "current_stage": "Pair2 symmetric single correction executed and independently read back. Six text nodes match the frozen plan exactly; PHOTO_RAW hashes and frame geometry are unchanged. Correction budget is fully consumed A=1/B=1, canvas authorization is closed, and no second aesthetic correction is allowed. Next step is re-export/package only, with no Figma write.",
+  "status": "VPD_P3_PAIR2_SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS",
+  "next_required_action": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -144,15 +144,13 @@
     "candidate_promotion_Golden_Scale_blocked": true
   },
   "completed_this_revision": [
-    "ran the Pair2 complete-poster evaluation in a fresh ChatGPT chat through Opera Neon using only the two frozen Library poster exports",
-    "used the frozen evaluator prompt unchanged and kept X/Y route mapping hidden until after the verdict",
-    "recorded WINNER X, MEDIUM confidence, CORRECTNESS_X PASS and CORRECTNESS_Y PASS",
-    "revealed the frozen mapping only after verdict: X = Route A and Y = Route B, therefore Route A wins the equal-budget complete-poster comparison",
-    "preserved the earlier raw-photo finding that Route B won Pair2 photo-only; the full-poster result is a production-integration reversal, not a retraction of photo-only evidence",
-    "kept correction-pass usage at A=0 and B=0; performed no Figma canvas write and no image generation",
-    "extended the state validator only for the post-verdict waiting action so the new lock can be validated without opening any production write"
+    "recorded WRITTEN correction execution and independent read-only Figma readback",
+    "verified 6/6 text nodes exactly match frozen correction_plan",
+    "verified PHOTO_RAW imageHash/FILL and 2400x3200 frame geometry unchanged",
+    "consumed A/B correction budgets to 1/1 and closed canvas authorization",
+    "blocked any second aesthetic correction and advanced only to corrected-poster re-export/package"
   ],
-  "updated_at": "2026-09-24T08:33:00Z",
+  "updated_at": "2026-09-24T12:40:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P6",
@@ -164,7 +162,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "e3080180879303a5a6b5ca93c16be2fc096b4ecd",
+  "input_commit": "fdfc7c1924189c3a01a74f7b0691bf57ef79acea",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -1573,7 +1571,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "pair2_equal_budget_figma_ab": {
-    "status": "SYMMETRIC_SINGLE_CORRECTION_AUTHORIZED_READY_FIGMA_WRITE",
+    "status": "SYMMETRIC_SINGLE_CORRECTION_COMPLETE_READY_REEXPORT",
     "experiment_id": "VPD-PAIR2-EQUAL-BUDGET-FIGMA-COMPLETE-POSTER-AB-V1",
     "prep": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
@@ -1595,8 +1593,8 @@
     "correction_pass_max_per_poster": 1,
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
-    "current_canvas_write_authorization": 1,
-    "next": "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_PASS",
+    "current_canvas_write_authorization": 0,
+    "next": "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1644,8 +1642,8 @@
       "B": 1
     },
     "correction_passes_used": {
-      "A": 0,
-      "B": 0
+      "A": 1,
+      "B": 1
     },
     "canvas_write_authorization_consumed": 1,
     "composition_evidence": {
@@ -1674,7 +1672,7 @@
       "sha256": "8a2ec0a6402d9257342ae9627cbb96e70f2e7b9d413ebb6ed3c20136bab97306"
     },
     "blind_outcome": "ROUTE_A_WINS",
-    "correction_pass_decision": "AUTHORIZED_BY_USER_NEXT_20260924",
+    "correction_pass_decision": "CONSUMED_COMPLETE_NO_SECOND_CORRECTION",
     "correction_plan": {
       "shared_constraints": {
         "allowed_mutations": {
@@ -1773,6 +1771,11 @@
     "correction_authorization": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZATION_20260924.json",
       "sha256": "57b7f0cbf9fa666e20a743b846901659e82907a2754e27bc443b1e4e80f4c116"
+    },
+    "second_aesthetic_correction_allowed": false,
+    "correction_execution_readback": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_EXECUTION_READBACK_20260924.json",
+      "sha256": "0a9138839db7bf8fb9304a342d7a911a7008f41a86db8489eabceda80d8e71f0"
     }
   }
 }
