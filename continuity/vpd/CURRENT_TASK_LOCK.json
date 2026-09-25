@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 149,
+  "revision": 150,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF2 zero-image causal-design audit complete. RF1 is restricted to R1C_NOT_NECESSARY only. Topic prior, shared minimal task structure, and general renderer prior remain unresolved. A sequential single-variable future design is proposed but has zero generation authorization pending audit gate.",
-  "status": "VPD_P4_RF2_CAUSAL_DESIGN_AUDIT_COMPLETE_WAITING_REVIEW_GATE",
+  "current_stage": "P4-RF2 reviewer-only mechanism decomposition complete. RF1 remains R1C_NOT_NECESSARY only; absolute realism remains FAIL. Renderer-prior language is decomposed into four falsifiable mechanisms, with no claim that renderer prior is proven primary. Future two-stage single-variable contract is frozen but generation authorization remains zero.",
+  "status": "VPD_P4_RF2_REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE",
   "p6_allowed": false,
-  "next_required_action": "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION",
+  "next_required_action": "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,14 +148,15 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "completed zero-image non-generative P4-RF2 causal-design audit",
-    "narrowed RF1 interpretation to R1C_NOT_NECESSARY only and removed renderer-primary overclaim",
-    "built causal matrix from RF1 A/B, historical rice-granary control and older tofu evidence",
-    "pre-registered sequential Stage 1 topic-only and conditional Stage 2 task-structure-only design",
-    "hard-capped proposed future budget at maximum 2 images with zero retry and conditional second image",
-    "kept image authorization=0, Figma=0 and P5 blocked"
+    "completed reviewer-only zero-image decomposition of renderer-prior working hypothesis",
+    "preserved RF1 strict causal conclusion R1C_NOT_NECESSARY only",
+    "kept absolute photographic realism FAIL",
+    "decomposed hypothesis into four falsifiable mechanism components",
+    "recorded support, counterevidence, R1C interactions and minimal single-variable tests for each mechanism",
+    "froze sequential topic-only then conditional structure-only future contract with max 2 images and zero retry",
+    "kept generation authorization=0, Figma=0 and P5 blocked pending reviewer gate"
   ],
-  "updated_at": "2026-09-25T20:20:00+08:00",
+  "updated_at": "2026-09-25T20:35:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2085,7 +2086,7 @@
     "stop_reason": "Any next empirical test would introduce a new experiment variable and/or new budget outside the settled RF1 protocol."
   },
   "p4_rf2_causal_design_audit": {
-    "status": "AUDIT_COMPLETE_WAITING_REVIEW_GATE",
+    "status": "REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE",
     "audit": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json",
       "sha256": "c3893475b9ce6f939d2bd8e8d0e152240fcee0b4c62de8a4826da76fc1b35d63"
@@ -2110,6 +2111,28 @@
       "stage2_variable": "TASK_STRUCTURE"
     },
     "standing_authorization_auto_continue": false,
-    "reason": "Future Stage 1 introduces a new experiment variable and new image budget, so standing authorization does not apply before the causal-design review gate and fresh explicit authorization."
+    "reason": "Future Stage 1 introduces a new experiment variable and new image budget, so standing authorization does not apply before the causal-design review gate and fresh explicit authorization.",
+    "mechanism_decomposition": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_REVIEWER_ONLY_RENDERER_PRIOR_MECHANISM_DECOMPOSITION_20260925.json",
+      "sha256": "bdb647fa92c40c7e3c3b16d0b97fc9753d3c56f4876686d2856ae3d0fe440f6f"
+    },
+    "absolute_realism_status": "FAIL",
+    "accepted_causal_boundary": "R1C_NOT_NECESSARY",
+    "renderer_prior_root_cause_proven": false,
+    "mechanisms": [
+      "M1_SCENE_ELEMENT_AUTO_COMPLETION_CHECKLISTING",
+      "M2_UNIFORM_PHOTOGENIC_PATINA",
+      "M3_DRAMATIC_STEAM_LIGHT_WET_FLOOR_BUNDLE",
+      "M4_DISPLAY_REPLACES_PROCESS_CAUSALITY"
+    ],
+    "frozen_contract": {
+      "id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
+      "status": "FROZEN_NOT_AUTHORIZED",
+      "max_images": 2,
+      "conditional_second_image": true,
+      "retry": 0,
+      "third_image": false,
+      "no_rule_append": true
+    }
   }
 }
