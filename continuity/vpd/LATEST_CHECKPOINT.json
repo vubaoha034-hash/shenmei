@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 170,
-  "recorded_at": "2026-09-25T20:05:00+08:00",
+  "sequence": 171,
+  "recorded_at": "2026-09-25T20:20:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4-RF1 settled: A(no R1C) and B(with R1C) both fail all four Golden realism gates; causal result R1C_NOT_NECESSARY. Stop before any new experiment variable/budget.",
+  "current_focus": "P4-RF2 zero-budget causal-design audit complete. RF1 only proves R1C_NOT_NECESSARY. Review gate must confirm single-variable design before any new generation budget.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -269,7 +269,11 @@
     "p4_rf1_golden_evaluator_existing_result_recorded_no_rerun",
     "p4_rf1_settled_r1c_not_necessary",
     "p4_rf1_budget_closed_two_of_two_zero_retry",
-    "p4_rf1_new_experiment_boundary_enforced"
+    "p4_rf1_new_experiment_boundary_enforced",
+    "p4_rf2_zero_image_causal_design_audit_complete",
+    "p4_rf1_renderer_primary_overclaim_removed",
+    "p4_rf2_sequential_single_variable_design_preregistered",
+    "p4_rf2_generation_authorization_remains_zero"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -340,7 +344,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "REVIEW_P4_RF1_R1C_NOT_NECESSARY_AND_DEFINE_NEW_RENDERER_PRIOR_TEST_NO_GENERATION",
+  "next_required_action": "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -408,10 +412,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_RF1_SETTLED_R1C_NOT_NECESSARY_NEW_EXPERIMENT_BOUNDARY",
+  "status": "VPD_P4_RF2_CAUSAL_DESIGN_AUDIT_COMPLETE_WAITING_REVIEW_GATE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "ca087740348589b6f12058877e48efa7730868fbfab7c33e4a639a1ca0ad37cc"
+    "sha256": "ddf986561c5105fd8d068ef1c925f4baf69c8734e10e3d43143b596628859310"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -432,8 +436,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-RF1-R1C-NOT-NECESSARY-SETTLED-20260925-001",
-      "event_hash": "b4bfa96a813d743da7f3fbbb1967028c3bd17a72e9c881f737289d7b7ccf205a"
+      "event_id": "EVT-VPD-P4-RF2-CAUSAL-DESIGN-AUDIT-20260925-001",
+      "event_hash": "df1aa3c13dc47f20a19735c9ef7300744385b77f9ade8de454c5ded0b8d77e88"
     }
   },
   "typography_repair": {
@@ -1899,8 +1903,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_SETTLEMENT_20260925.json",
-    "sha256": "16e73c0bef399ce51f455932067c90458bfba8d88ae2384f10aa7ae9ca830c9d"
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json",
+    "sha256": "c3893475b9ce6f939d2bd8e8d0e152240fcee0b4c62de8a4826da76fc1b35d63"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
