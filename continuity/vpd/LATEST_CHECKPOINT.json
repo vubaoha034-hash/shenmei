@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 159,
-  "recorded_at": "2026-09-24T13:48:00Z",
+  "sequence": 160,
+  "recorded_at": "2026-09-25T03:29:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -312,7 +312,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES",
+  "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -380,10 +380,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_PREPARED_WAITING_GENERATION_AUTHORIZATION",
+  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_AUTHORIZED_READY_EXECUTION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "0cebc99f768cd0f4d6feda6a20aaee59fbb67c69cdd24c4d0477b8eddcd0a6a5"
+    "sha256": "235562472d0992ea132491564d211509bc6097d8c56d5b0652f6029389f4cc06"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -404,8 +404,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-PREPARED-20260925-001",
-      "event_hash": "0eec05bda8438ce627002a1b4d10aa7137001370edbc37c0041e3e7b54d7e33a"
+      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-AUTHORIZED-20260925-001",
+      "event_hash": "35943e23b43015d6b6faf6d71f9795fa6a4fd3386869dec268f135174cd51270"
     }
   },
   "typography_repair": {
@@ -928,8 +928,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Post-Pair2 scope review completed. The six compact controls remain unchanged as a photo-only mechanism candidate; no chase-win rules were added. The next unfinished mainline validation is a symmetric 9:16 cross-aspect photo-only A/B using the same tofu content, renderer and reference. Protocol, route tickets and blind evaluator prompt are frozen; generation remains unauthorized.",
-  "updated_at": "2026-09-25T00:26:00Z",
+  "current_stage": "The already-frozen P4 9:16 cross-aspect photo-only A/B is explicitly authorized for exactly two outputs: Route A=1 and Route B=1, with zero retries, no hidden variants, no best-of-N, no third image, no Figma, and second-style execution still blocked. Frozen route tickets, compact controls and blind evaluator prompt remain unchanged.",
+  "updated_at": "2026-09-25T03:29:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1353,7 +1353,7 @@
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CROSS_ASPECT_9_16_PREPARED_NOT_PROMOTED",
+    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CROSS_ASPECT_9_16_AUTHORIZED_NOT_PROMOTED",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1384,7 +1384,7 @@
       "corrected_complete_poster": "ROUTE_A_WINS_HIGH"
     },
     "cross_aspect_validation": {
-      "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+      "status": "AUTHORIZED_READY_EXECUTION",
       "baseline_aspect": "3:4",
       "target_aspect": "9:16",
       "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1407,10 +1407,17 @@
       },
       "budget": {
         "proposed_images": 2,
-        "authorized_images": 0,
-        "retry_budget": 0
+        "authorized_images": 2,
+        "route_A_images": 1,
+        "route_B_images": 1,
+        "retry_budget": 0,
+        "no_third_image": true
       },
-      "result": "PENDING"
+      "result": "PENDING",
+      "authorization": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
+        "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+      }
     }
   },
   "pair2_equal_budget_figma_ab": {
@@ -1699,7 +1706,7 @@
     "sha256": "f12557eda504242f7cac60e4991a32309289ac0aa627696b6ad15f149e97fbb1"
   },
   "cross_aspect_photo_only_ab": {
-    "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+    "status": "AUTHORIZED_READY_EXECUTION",
     "baseline_aspect": "3:4",
     "target_aspect": "9:16",
     "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1722,16 +1729,22 @@
     },
     "budget": {
       "proposed_images": 2,
-      "authorized_images": 0,
-      "retry_budget": 0
+      "authorized_images": 2,
+      "route_A_images": 1,
+      "route_B_images": 1,
+      "retry_budget": 0,
+      "no_third_image": true
     },
-    "result": "PENDING"
+    "result": "PENDING",
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
+      "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+    }
   },
   "completed_this_revision": [
-    "reviewed Pair2 settlement against roadmap and aesthetic governance",
-    "kept all six compact controls unchanged but strictly photo-only in scope",
-    "selected 9:16 cross-aspect photo-only A/B as the next unfinished P4 validation",
-    "froze symmetric Route A/Route B tickets and blind evaluator prompt before any output mapping",
-    "kept image generation authorization=0, Figma authorization=0, retry budget=0, second-style execution blocked"
+    "recorded the user's existing explicit authorization for the frozen 9:16 cross-aspect A/B without expanding scope",
+    "authorized exactly Route A=1 and Route B=1; retry budget remains 0 and third image is forbidden",
+    "kept both frozen route tickets, the six compact controls and the pre-mapping blind evaluator prompt unchanged",
+    "kept Figma authorization=0 and second-style execution blocked"
   ]
 }
