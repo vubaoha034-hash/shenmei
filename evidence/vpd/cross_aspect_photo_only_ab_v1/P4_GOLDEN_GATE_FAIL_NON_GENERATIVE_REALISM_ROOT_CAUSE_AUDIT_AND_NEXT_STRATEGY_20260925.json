@@ -1,0 +1,123 @@
+{
+  "schema_version": "vpd-p4-realism-root-cause-audit/v1",
+  "artifact_type": "P4_GOLDEN_GATE_FAIL_NON_GENERATIVE_REALISM_ROOT_CAUSE_AUDIT_AND_NEXT_STRATEGY",
+  "recorded_at": "2026-09-25T10:30:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "authority_commit": "ce5f8e6d5e8e801ca33bb25f31d874210cf8ac59",
+  "status": "AUDIT_COMPLETE_STRATEGY_FROZEN_NO_GENERATION_AUTHORIZED",
+  "scope": {
+    "non_generative": true,
+    "new_images_created": 0,
+    "figma_used": false,
+    "route_mapping_revealed": false,
+    "relative_winner_evaluated": false
+  },
+  "evidence_chain": {
+    "golden_baseline": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+    "golden_gate": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+    "prior_ai_feel_diagnosis": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
+    "p4_repair_prep": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP_20260925.json",
+    "p4_result": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_RESULT_20260925.json",
+    "p4_evaluator_receipt": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_EVALUATOR_RECEIPT_20260925.json",
+    "r1c_manifest": "evidence/vpd/shanyeji/full_image_distillation_v1/CANONICAL_VISUAL_ANCHOR_MANIFEST.json",
+    "r1c_art_direction_lock": "R1C_ART_DIRECTION_LOCK_RESULT.md",
+    "stateless_rice_granary_control": "evidence/vpd/stateless_render_v1/STATELESS_LIBRARY_SMOKE_RESULT_20260922.json",
+    "prior_tofu_pair_receipt": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
+    "prior_tofu_blind_result": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_RESULT_20260923.json"
+  },
+  "observed_facts": [
+    "Golden-gated P4 candidates X and Y both failed FIRST_IMPRESSION_AI_GATE, DOCUMENTARY_CAUSALITY, MATERIAL_HETEROGENEITY and ABSOLUTE_REALISM_GATE at HIGH confidence.",
+    "The P4 repair already replaced the earlier checklist-heavy shared base with a lower-semantic-load single production moment and explicit anti-staging documentary cues; both routes still failed.",
+    "Route A had no compact six controls while Route B retained the frozen six; both failed in the same absolute realism direction.",
+    "R1C is a HYBRID_PHOTO_DESIGN / TYPE_LED mother reference, explicitly not a photographic-realism Golden.",
+    "A prior rice-granary stateless ChatGPT Images sample used the same R1C Library attachment path and was judged materially more credible and less template-like, so R1C alone is not a sufficient cause.",
+    "Earlier tofu A/B evidence already showed recurring density/staging tradeoffs while rewarding production completeness; that evidence predates the Golden absolute realism gate and therefore cannot certify realism."
+  ],
+  "causal_classification": {
+    "r1c_reference_anchor": {
+      "verdict": "PLAUSIBLE_AMPLIFIER_NOT_PROVEN_PRIMARY",
+      "rationale": "Its design-led compositional prior can encourage solved hierarchy and art-directed balance, but the same anchor produced a more credible rice-granary sample. The unisolated factor is interaction with tofu/workshop subject prior."
+    },
+    "tofu_traditional_workshop_subject_prior": {
+      "verdict": "STRONGLY_IMPLICATED",
+      "rationale": "Repeated failures concentrate on canonical generative motifs of heritage craft imagery: uniformly attractive aged wood, wet sheen, draped cloth, complete readable apparatus, tidy process storytelling and overly regular curd texture. Same renderer plus same R1C performed better on rice granary."
+    },
+    "shared_base_prompt_structure": {
+      "verdict": "CONTRIBUTOR_BUT_NOT_SUFFICIENT_ROOT_CAUSE",
+      "rationale": "The first 9:16 base was checklist-heavy, but the P4 low-load single-moment repair removed the major checklist structure and the absolute failures persisted."
+    },
+    "compact_six_controls": {
+      "verdict": "NOT_PRIMARY_CAUSE_CURRENTLY",
+      "rationale": "Route A omitted all six while Route B retained them, yet both failed all absolute realism gates. The controls may increase visual solvedness/density in B, but cannot explain Route A failure."
+    },
+    "chatgpt_images_mode_prior": {
+      "verdict": "STRONGLY_IMPLICATED_AS_SUBJECT_CONDITIONED_INTERACTION",
+      "rationale": "The evidence does not support a universal renderer failure because rice granary was more credible. It supports a renderer prior that becomes especially stereotyped on traditional tofu/workshop imagery, amplified by design-led reference conditioning."
+    }
+  },
+  "root_cause_model": {
+    "strongest_current_hypothesis": "SUBJECT_CONDITIONED_CHATGPT_IMAGES_PRIOR_X_R1C_DESIGN_ANCHOR_INTERACTION",
+    "confidence": "MEDIUM_HIGH",
+    "not_supported_as_single_primary_causes": [
+      "COMPACT_SIX_CONTROLS",
+      "SHARED_BASE_PROMPT_OVERLOAD_ONLY",
+      "R1C_REFERENCE_ALONE",
+      "GENERIC_CHATGPT_IMAGES_FAILURE_ACROSS_ALL_SUBJECTS"
+    ],
+    "mechanism": "The renderer appears to satisfy 'traditional tofu workshop' by synthesizing a coherent heritage-workshop visual schema, then the R1C design-led reference and VPD composition goals reward legibility, hierarchy and balance. The result is semantically correct but causally over-designed: objects are arranged to explain the scene rather than arising from one messy production event."
+  },
+  "frozen_minimal_next_strategy": {
+    "strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
+    "purpose": "Isolate whether R1C reference conditioning is a necessary amplifier before changing renderer, subject, or adding any realism rules.",
+    "status": "FROZEN_NOT_AUTHORIZED",
+    "future_budget_if_explicitly_authorized": {
+      "images": 2,
+      "retries": 0,
+      "third_image": false
+    },
+    "fixed_conditions": [
+      "ChatGPT Images generation",
+      "same 9:16 aspect",
+      "same tofu pressing moment",
+      "same minimal content-only documentary task",
+      "no compact six controls in either arm",
+      "no new anti-AI rule stack",
+      "Golden remains evaluation-only and is never a generation reference"
+    ],
+    "single_variable": {
+      "arm_A": "NO_R1C_GENERATION_REFERENCE",
+      "arm_B": "EXACT_R1C_GENERATION_REFERENCE",
+      "only_difference": "R1C reference conditioning"
+    },
+    "reason_for_order": "R1C interaction is currently plausible but unisolated. A two-arm anchor ablation is the smallest test that can either implicate or substantially clear it without conflating compact controls, subject changes, renderer changes or more prompt rules."
+  },
+  "frozen_validation_contract": {
+    "preconditions": [
+      "Explicit new user authorization for exactly two images is required.",
+      "Fresh generator chats only; controller chat does not generate.",
+      "No Figma and no hidden variants/best-of-N/reroll.",
+      "Exact future prompts and asset identities must be frozen before authorization is consumed."
+    ],
+    "evaluation_order": [
+      "G0 identity/content correctness",
+      "G1 FIRST_IMPRESSION_AI_GATE against the existing Mushroom Golden",
+      "G2 DOCUMENTARY_CAUSALITY",
+      "G2 MATERIAL_HETEROGENEITY",
+      "G3 compare A versus B only for causal anchor effect after recording absolute results",
+      "G4 human pixel verdict"
+    ],
+    "interpretation_rules": {
+      "A_PASS_B_FAIL": "R1C_REFERENCE_CONDITIONING_STRONGLY_IMPLICATED_AS_REALISM_REGRESSION_AMPLIFIER",
+      "A_FAIL_B_FAIL": "R1C_NOT_NECESSARY; ESCALATE_SUBJECT_CONDITIONED_RENDERER_PRIOR_WITHOUT_AUTOMATIC_NEW_GENERATION",
+      "A_PASS_B_PASS": "R1C_NOT_FATAL; PRIOR_P4_FAILURE_MORE_LIKELY_PROMPT_RANDOMNESS_OR_INTERACTION; DO_NOT_ADD_RULES_WITHOUT_REVIEW",
+      "A_FAIL_B_PASS": "CONTRADICTS_CURRENT_HYPOTHESIS; REVIEW_FOR_STOCHASTIC_OR_PROMPT_BINDING_CONFOUND"
+    },
+    "hard_stop": "After the two authorized images and one Golden-gated evaluation, stop. No retry, third image, subject switch, alternate renderer, Figma integration or P5 advance without a new explicit authorization."
+  },
+  "current_authorization": {
+    "image_generation": 0,
+    "figma_canvas": 0,
+    "second_style": false
+  },
+  "next_required_action": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_OF_FROZEN_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION"
+}
