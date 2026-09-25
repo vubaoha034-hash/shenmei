@@ -1,0 +1,191 @@
+{
+  "schema_version": "vpd-p4-rf2-causal-design-audit/v1",
+  "artifact_type": "P4_RF2_CAUSAL_DESIGN_AUDIT",
+  "recorded_at": "2026-09-25T20:20:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "AUDIT_COMPLETE_AWAITING_CAUSAL_DESIGN_REVIEW_GATE",
+  "scope": {
+    "image_budget": 0,
+    "generation": false,
+    "prompt_modified": false,
+    "figma": false,
+    "p5": false,
+    "evaluation_rerun": false
+  },
+  "correction_to_rf1_interpretation": {
+    "accepted_strict_conclusion": "R1C_NOT_NECESSARY",
+    "prohibited_overclaim": "DO_NOT_CLAIM_RENDERER_PRIOR_PROVEN_PRIMARY",
+    "unresolved_causes": [
+      "TOFU_TOPIC_CONDITIONED_PRIOR",
+      "SHARED_MINIMAL_TASK_STRUCTURE",
+      "GENERAL_RENDERER_GENERATION_PRIOR"
+    ]
+  },
+  "existing_evidence_matrix": [
+    {
+      "id": "RF1_A_TOFU_NO_R1C",
+      "renderer": "CHATGPT_IMAGES",
+      "topic": "TOFU_WORKSHOP",
+      "task_structure": "RF1_MINIMAL_SINGLE_MOMENT_9_16",
+      "reference": "NONE",
+      "absolute_realism": "FAIL_ALL_FOUR",
+      "causal_use": "Proves R1C is not necessary; cannot distinguish topic vs task structure vs general renderer."
+    },
+    {
+      "id": "RF1_B_TOFU_WITH_R1C",
+      "renderer": "CHATGPT_IMAGES",
+      "topic": "TOFU_WORKSHOP",
+      "task_structure": "RF1_MINIMAL_SINGLE_MOMENT_9_16",
+      "reference": "R1C",
+      "absolute_realism": "FAIL_ALL_FOUR",
+      "causal_use": "Together with RF1_A only addresses R1C necessity."
+    },
+    {
+      "id": "RICE_GRANARY_STATELESS_R1C",
+      "renderer": "CHATGPT_IMAGES",
+      "topic": "RICE_GRANARY",
+      "task_structure": "HISTORICAL_3_4_STATELESS_TASK_NOT_RF1_MATCHED",
+      "reference": "R1C",
+      "absolute_realism": "NOT_GOLDEN_GATED; NONFORMAL_MORE_CREDIBLE",
+      "causal_use": "Shows renderer can produce a more credible existing sample, but is confounded by topic, aspect/task wording and historical run conditions; cannot isolate topic."
+    },
+    {
+      "id": "PAIR2_TOFU_3_4",
+      "renderer": "CHATGPT_IMAGES",
+      "topic": "TOFU_WORKSHOP",
+      "task_structure": "OLDER_3_4_CHECKLIST_HEAVIER_TASK",
+      "reference": "A/B_LIBRARY_NATIVE_CONTEXT",
+      "absolute_realism": "PRE_GOLDEN_NOT_CERTIFIED",
+      "causal_use": "Shows repeated tofu staging/density behavior but cannot certify absolute realism or isolate structure."
+    }
+  ],
+  "causal_identifiability": {
+    "rf1_identifies": [
+      "R1C_NOT_NECESSARY"
+    ],
+    "rf1_does_not_identify": [
+      "TOFU_TOPIC_PRIOR_AS_PRIMARY_CAUSE",
+      "SHARED_TASK_STRUCTURE_AS_PRIMARY_CAUSE",
+      "GENERAL_RENDERER_PRIOR_AS_PRIMARY_CAUSE"
+    ],
+    "rice_control_excludes_only": "UNIVERSAL_ALWAYS_FAIL_RENDERER_HYPOTHESIS_AT_STRONG_FORM",
+    "rice_control_does_not_exclude": "GENERAL_RENDERER_TENDENCY_INTERACTING_WITH_TASK_STRUCTURE_OR_TOPIC"
+  },
+  "minimal_future_design": {
+    "design_id": "P4-RF2-SEQUENTIAL-SINGLE-VARIABLE-CAUSAL-GATES",
+    "status": "DESIGN_PROPOSED_NOT_AUTHORIZED",
+    "principle": "Use existing RF1_A as the fixed tofu baseline. New images are sequential and conditional so each comparison changes exactly one variable.",
+    "stage_1": {
+      "purpose": "Test topic prior while holding renderer and RF1 task structure fixed.",
+      "new_images_max": 1,
+      "fixed": [
+        "CHATGPT_IMAGES",
+        "9:16",
+        "NO_R1C",
+        "NO_COMPACT_SIX",
+        "NO_NEW_ANTI_AI_RULES",
+        "EXACT_RF1_MINIMAL_TASK_STRUCTURE_AND_SENTENCE_FUNCTIONS",
+        "same evaluation Golden and same four absolute gates"
+      ],
+      "only_variable": "TOPIC_CONTENT_SLOT",
+      "baseline": "EXISTING_RF1_A_TOFU_NO_R1C",
+      "candidate_topic_selection_rule": "Use one already-demonstrated non-tofu working-process subject with existing credible historical evidence; rice granary is preferred because a prior sample exists, but the new task must preserve RF1 structure rather than reuse the historical rice prompt.",
+      "prompt_policy": "No extra realism instructions. Perform only semantic slot substitution needed to make the same task structure coherent for the non-tofu process.",
+      "pre_registered_interpretation": {
+        "TOFU_FAIL_NONTOFU_PASS": "TOPIC_CONDITION_STRONGLY_IMPLICATED; stop. Shared RF1 task structure and general renderer are not sufficient to explain failure under this matched comparison.",
+        "TOFU_FAIL_NONTOFU_FAIL": "TOPIC_ALONE_NOT_SUFFICIENT_TO_EXPLAIN; proceed only to Stage 2 because task structure vs general renderer remain unresolved."
+      },
+      "stop_if_pass": true
+    },
+    "stage_2_conditional": {
+      "entry_condition": "Stage 1 non-tofu candidate also FAILS absolute realism.",
+      "purpose": "Test shared-task structure while holding renderer and non-tofu topic fixed.",
+      "new_images_max": 1,
+      "fixed": [
+        "CHATGPT_IMAGES",
+        "same non-tofu topic as Stage 1",
+        "9:16",
+        "NO_R1C",
+        "NO_COMPACT_SIX",
+        "NO_NEW_ANTI_AI_RULES",
+        "same Golden and same four absolute gates"
+      ],
+      "only_variable": "TASK_STRUCTURE",
+      "baseline": "STAGE_1_NONTOFU_WITH_RF1_STRUCTURE",
+      "candidate_structure": "CONTENT_ONLY_MINIMAL_REQUEST_WITHOUT_RF1_SCENE-EXPLANATION_SCAFFOLD",
+      "task_structure_change_definition": "Remove structural instructions whose function is to organize evidence/hierarchy/context, while preserving the same required subject event and output geometry. Do not add documentary, anti-staging, realism, imperfection, material, lighting, or negative-prompt rules.",
+      "pre_registered_interpretation": {
+        "STAGE1_FAIL_STAGE2_PASS": "SHARED_RF1_TASK_STRUCTURE_STRONGLY_IMPLICATED; general renderer prior is not sufficient under the same topic.",
+        "STAGE1_FAIL_STAGE2_FAIL": "GENERAL_RENDERER_PRIOR_REMAINS_COMPATIBLE_BUT_NOT_PROVEN_AS_SOLE_CAUSE; stop. A renderer-switch experiment would be required for stronger attribution.",
+        "STAGE1_PASS": "STAGE_2_PROHIBITED"
+      }
+    },
+    "maximum_new_images": 2,
+    "adaptive_expected_images": "1 if Stage 1 passes; 2 only if Stage 1 fails",
+    "retry_budget": 0,
+    "third_image": false,
+    "best_of_n": false,
+    "reroll": false
+  },
+  "preregistered_full_interpretation_table": [
+    {
+      "stage1": "PASS",
+      "stage2": "NOT_RUN",
+      "conclusion": "TOPIC_CONDITION_STRONGLY_IMPLICATED",
+      "allowed_claim": "Matched topic substitution changes outcome under same renderer/task structure.",
+      "forbidden_claims": [
+        "topic is the sole cause",
+        "R1C has no effect",
+        "renderer has no general prior"
+      ]
+    },
+    {
+      "stage1": "FAIL",
+      "stage2": "PASS",
+      "conclusion": "SHARED_TASK_STRUCTURE_STRONGLY_IMPLICATED",
+      "allowed_claim": "Matched task-structure change changes outcome for same non-tofu topic and renderer.",
+      "forbidden_claims": [
+        "task structure is sole cause",
+        "general renderer has no prior"
+      ]
+    },
+    {
+      "stage1": "FAIL",
+      "stage2": "FAIL",
+      "conclusion": "GENERAL_RENDERER_PRIOR_REMAINS_COMPATIBLE_NOT_PROVEN",
+      "allowed_claim": "Neither topic substitution nor task-structure simplification rescued the matched test.",
+      "forbidden_claims": [
+        "renderer proven primary",
+        "renderer proven sole cause"
+      ]
+    }
+  ],
+  "audit_gate": {
+    "questions": [
+      "Does Stage 1 change only topic content while preserving renderer, aspect, reference policy, RF1 structural functions and evaluation contract?",
+      "If Stage 1 fails, does Stage 2 change only task structure while keeping renderer, topic, aspect, reference policy and evaluator fixed?",
+      "Does Stage 2 avoid adding any realism/anti-AI/negative-prompt rules?",
+      "Are Stage 1 and Stage 2 sequential so Stage 2 is prohibited when Stage 1 already identifies topic sensitivity?",
+      "Is max new image budget hard-capped at 2 with zero retry, and is the second image conditional rather than automatic?",
+      "Do interpretation rules avoid claiming a sole/primary cause where the design cannot identify one?"
+    ],
+    "pass_condition": "ALL_TRUE",
+    "current_self_audit": "PASS",
+    "known_residual_limit": "Even Stage1 FAIL + Stage2 FAIL cannot prove a general renderer prior without changing renderer; it only leaves that explanation compatible and motivates a separate future renderer-switch experiment."
+  },
+  "stop_conditions": [
+    "Stop immediately if Stage 1 passes absolute realism; do not run Stage 2.",
+    "Stop after Stage 2 if Stage 1 and Stage 2 both fail; do not add a renderer switch under RF2.",
+    "Stop on any technical failure before generation without consuming extra image budget.",
+    "No retries, replacement images, third image, hidden variants, best-of-N or rerolls.",
+    "No Figma and no P5.",
+    "No new rules may be appended based on visual disappointment."
+  ],
+  "authorization_boundary": {
+    "zero_budget_audit_authorized_by_user": true,
+    "future_generation_budget_authorized": false,
+    "standing_authorization_policy_auto_applies": false,
+    "reason": "Any Stage 1 image introduces a new topic variable and new image budget outside RF1. The user's standing policy explicitly excludes new experimental variables or expanded budget."
+  },
+  "next_required_action": "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION"
+}
