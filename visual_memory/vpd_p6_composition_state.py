@@ -35,6 +35,7 @@ GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION = "EXECUTE_P4_GOLDEN_GATED_SHARED_BAS
 GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION = "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY"
 RF1_CI_ACTION = "VERIFY_CONTROL_PLANE_CI_THEN_EXECUTE_P4_RF1_ROUTE_A_EXACTLY_ONCE"
 RF1_ROUTE_B_ACTION = "EXECUTE_P4_RF1_ROUTE_B_EXACTLY_ONCE"
+RF1_SETTLEMENT_ACTION = "REVIEW_P4_RF1_R1C_NOT_NECESSARY_AND_DEFINE_NEW_RENDERER_PRIOR_TEST_NO_GENERATION"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -83,6 +84,7 @@ ACTIONS = {
     GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION,
     RF1_CI_ACTION,
     RF1_ROUTE_B_ACTION,
+    RF1_SETTLEMENT_ACTION,
 }
 
 
@@ -559,7 +561,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION, RF1_SETTLEMENT_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -630,6 +632,26 @@ def validate_p6_composition_state(root):
         require(auth["isolation"]["golden_generation_reference"] is False and auth["isolation"]["golden_evaluation_only"] is True, "RF1_GOLDEN_BOUNDARY")
         require(lock["execution_boundary"]["current_image_generation_authorization"] == 2, "RF1_AUTH_COUNT")
         require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_EXECUTION_BOUNDARY")
+    if action == RF1_SETTLEMENT_ACTION:
+        require(lock.get("status") == "VPD_P4_RF1_SETTLED_R1C_NOT_NECESSARY_NEW_EXPERIMENT_BOUNDARY", "RF1_SETTLED_STATE")
+        rf1 = lock.get("p4_rf1_r1c_anchor_causal_isolation", {})
+        require(rf1.get("status") == "SETTLED_R1C_NOT_NECESSARY", "RF1_SETTLED_STATUS")
+        require(rf1.get("budget") == {"authorized":2,"consumed":2,"remaining":0,"retry":0,"no_third_image":True}, "RF1_SETTLED_BUDGET")
+        require(rf1.get("route_A", {}).get("consumed") == 1 and rf1.get("route_B", {}).get("consumed") == 1, "RF1_SETTLED_CONSUMPTION")
+        require(rf1.get("causal_conclusion") == "R1C_NOT_NECESSARY", "RF1_SETTLED_CAUSAL_CONCLUSION")
+        require(rf1.get("relative_aesthetic_comparison_performed") is False, "RF1_RELATIVE_COMPARISON_REOPENED")
+        require(lock["execution_boundary"]["current_image_generation_authorization"] == 0, "RF1_SETTLED_AUTH_NOT_CLOSED")
+        require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_SETTLED_BOUNDARY")
+        for name in ("route_A_receipt","route_B_receipt","evaluator_receipt","settlement"):
+            check_ref(root, rf1[name])
+        er = read(root, rf1["evaluator_receipt"]["path"])
+        require(er["absolute_gates"]["A"] == {"FIRST_IMPRESSION_AI_GATE":"FAIL","DOCUMENTARY_CAUSALITY":"FAIL","MATERIAL_HETEROGENEITY":"FAIL","ABSOLUTE_REALISM_GATE":"FAIL"}, "RF1_A_GATES")
+        require(er["absolute_gates"]["B"] == {"FIRST_IMPRESSION_AI_GATE":"FAIL","DOCUMENTARY_CAUSALITY":"FAIL","MATERIAL_HETEROGENEITY":"FAIL","ABSOLUTE_REALISM_GATE":"FAIL"}, "RF1_B_GATES")
+        require(er["causal_interpretation"] == "R1C_NOT_NECESSARY" and er["relative_aesthetic_comparison_performed"] is False, "RF1_EVAL_CONTRACT")
+        st = read(root, rf1["settlement"]["path"])
+        require(st["status"] == "SETTLED_R1C_NOT_NECESSARY" and st["boundary_decision"] == "STOP_BEFORE_ANY_NEW_EXPERIMENT_VARIABLE_OR_BUDGET", "RF1_SETTLEMENT_DOC")
+        require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False, "RF1_SETTLED_PREMATURE_OPEN")
+
     if action == RF1_ROUTE_B_ACTION:
         require(lock.get("status") == "VPD_P4_RF1_ROUTE_A_ARCHIVED_ROUTE_B_READY", "RF1_B_READY_STATE")
         rf1 = lock.get("p4_rf1_r1c_anchor_causal_isolation", {})
