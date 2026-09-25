@@ -1,0 +1,260 @@
+{
+  "schema_version": "vpd-p4-rf2-reviewer-mechanism-decomposition/v1",
+  "artifact_type": "P4_RF2_REVIEWER_ONLY_RENDERER_PRIOR_MECHANISM_DECOMPOSITION",
+  "recorded_at": "2026-09-25T20:35:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "REVIEWER_DECOMPOSITION_COMPLETE_NO_GENERATION_AUTHORIZED",
+  "scope": {
+    "reviewer_only": true,
+    "new_images": 0,
+    "new_budget": 0,
+    "prompt_changes": 0,
+    "figma": false,
+    "p5": false,
+    "absolute_realism_status": "FAIL",
+    "accepted_causal_boundary": "R1C_NOT_NECESSARY",
+    "renderer_prior_root_cause_proven": false
+  },
+  "evidence_inputs": {
+    "rf1_settlement": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_SETTLEMENT_20260925.json",
+    "rf1_evaluator": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_GOLDEN_CAUSAL_EVALUATOR_RECEIPT_20260925.json",
+    "rf1_A": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_A_NO_R1C_EXECUTION_RECEIPT_20260925.json",
+    "rf1_B": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_B_WITH_R1C_EXECUTION_RECEIPT_20260925.json",
+    "golden": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+    "rice_control": "evidence/vpd/stateless_render_v1/STATELESS_LIBRARY_SMOKE_RESULT_20260922.json",
+    "rf2_audit": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json"
+  },
+  "decomposed_hypotheses": [
+    {
+      "id": "M1_SCENE_ELEMENT_AUTO_COMPLETION_CHECKLISTING",
+      "falsifiable_claim": "The renderer tends to auto-complete a canonical 'traditional tofu workshop' inventory even when the requested task centers on one moment, producing checklist-like staging.",
+      "existing_support": [
+        "RF1_A without R1C still presents multiple canonical workshop elements in legible positions; evaluator judged scene closer to proving 'this is a tofu workshop' than to an incidental work moment.",
+        "RF1_B shows the same tendency despite different reference condition.",
+        "Older tofu evidence repeatedly rewarded/contained complete process evidence and density."
+      ],
+      "counterevidence": [
+        "The rice-granary historical sample also contained multiple semantically relevant props yet was judged more credible and less template-like.",
+        "Existing evidence does not show whether checklist completion comes from tofu topic priors or from the shared task wording asking to make the workshop identifiable."
+      ],
+      "possible_r1c_interaction": "R1C may amplify legibility and compositional solvedness, but M1 survives without R1C; R1C is not necessary.",
+      "minimal_test": {
+        "only_variable": "TOPIC_CONTENT_SLOT",
+        "fixed": [
+          "renderer",
+          "aspect",
+          "no reference",
+          "RF1 task structure",
+          "evaluation gate"
+        ],
+        "intervention": "Replace tofu-workshop semantic slot with matched rice-granary work-process slot while preserving sentence functions and evidence requirements.",
+        "confirming_pattern": "tofu FAIL + matched non-tofu PASS",
+        "disconfirming_pattern": "tofu FAIL + matched non-tofu FAIL",
+        "new_images_needed": 1
+      }
+    },
+    {
+      "id": "M2_UNIFORM_PHOTOGENIC_PATINA",
+      "falsifiable_claim": "The renderer homogenizes wear, age, residue and surface treatment into a coherent photogenic patina, reducing material heterogeneity.",
+      "existing_support": [
+        "RF1 evaluator explicitly failed MATERIAL_HETEROGENEITY for both A and B.",
+        "Both candidates were described as sharing attractive aged-wood language and overly coherent surface treatment.",
+        "Golden differs by non-uniform dirt, moss, bark, leaf and moisture micro-variation."
+      ],
+      "counterevidence": [
+        "Historical rice-granary sample was specifically praised for differentiation among rice, bamboo, linen and aged wood.",
+        "Therefore uniform patina is not universal across all outputs from the renderer."
+      ],
+      "possible_r1c_interaction": "R1C could strengthen coherent surface aesthetics, but A fails the same material gate without R1C; any R1C effect is non-necessary.",
+      "minimal_test": {
+        "only_variable": "TASK_STRUCTURE",
+        "prerequisite": "Use same non-tofu topic that failed a matched RF1-structure test; otherwise M2 cannot be isolated from topic.",
+        "fixed": [
+          "renderer",
+          "topic",
+          "aspect",
+          "no reference",
+          "no new realism rules",
+          "same evaluator"
+        ],
+        "intervention": "Remove scene-organizing/evidence-display scaffold while keeping the same subject event and output geometry; do not add material realism instructions.",
+        "confirming_pattern": "RF1-structure FAIL material heterogeneity + content-only structure PASS",
+        "disconfirming_pattern": "both structures FAIL material heterogeneity",
+        "new_images_needed": 1,
+        "conditional": true
+      }
+    },
+    {
+      "id": "M3_DRAMATIC_STEAM_LIGHT_WET_FLOOR_BUNDLE",
+      "falsifiable_claim": "The renderer injects a recurring atmosphere bundle—steam, side/window light, wet floor or sheen—to signal craft authenticity, creating cinematic rather than incidental lighting/material behavior.",
+      "existing_support": [
+        "RF1 evaluator cites steam, wet floor and window/side light as a coordinated 'workshop atmosphere package' in A and stronger in B.",
+        "Prior tofu generations repeatedly used steam/wetness as authenticity cues."
+      ],
+      "counterevidence": [
+        "Not every historical credible sample uses the same atmosphere bundle; the rice control's main noted issue was warm light rather than theatrical steam/wet-floor coupling.",
+        "The tofu process itself legitimately involves moisture and steam, so presence alone is not evidence; the causal question is coordinated beautifying use."
+      ],
+      "possible_r1c_interaction": "R1C may encourage stronger visual hierarchy and atmospheric coherence, but A demonstrates the bundle can appear without R1C.",
+      "minimal_test": {
+        "only_variable": "TOPIC_CONTENT_SLOT",
+        "fixed": [
+          "renderer",
+          "RF1 task structure",
+          "aspect",
+          "no reference",
+          "no added negative rules"
+        ],
+        "intervention": "Matched non-steam industrial/food-process topic substitution chosen from an existing credible subject family; do not prohibit steam or wetness explicitly.",
+        "confirming_pattern": "bundle disappears and absolute realism passes in matched non-tofu task",
+        "disconfirming_pattern": "cinematic atmosphere reappears despite topic substitution",
+        "new_images_needed": 1,
+        "note": "Do not directly forbid steam/light/wet floor because that would add a new anti-AI rule and confound the mechanism."
+      }
+    },
+    {
+      "id": "M4_DISPLAY_REPLACES_PROCESS_CAUSALITY",
+      "falsifiable_claim": "The renderer arranges process evidence for viewer comprehension rather than letting a single production event causally determine occlusion, mess, crop and object placement.",
+      "existing_support": [
+        "DOCUMENTARY_CAUSALITY failed for both RF1 arms.",
+        "Evaluator described foreground molds/cloth/apparatus as unobstructed and display-oriented, with multiple process cues simultaneously readable.",
+        "Golden is characterized by incidental occlusion and unresolved environmental evidence rather than explanatory arrangement."
+      ],
+      "counterevidence": [
+        "Some readable process evidence is legitimate in documentary photography; the existing evaluator cannot quantify when legibility crosses into staging.",
+        "Historical rice sample had coherent near/mid/far reading and still looked more credible, so readable structure alone is not sufficient for failure."
+      ],
+      "possible_r1c_interaction": "R1C may enhance editorial hierarchy, but A shows display substitution without R1C; R1C is not required.",
+      "minimal_test": {
+        "only_variable": "TASK_STRUCTURE",
+        "prerequisite": "Same topic and renderer must be held fixed, ideally after a non-tofu Stage 1 failure.",
+        "fixed": [
+          "renderer",
+          "topic",
+          "aspect",
+          "no reference",
+          "same subject event",
+          "same evaluator"
+        ],
+        "intervention": "Use a content-only request that states the event but removes instructions whose function is to make the place identifiable or to organize contextual evidence.",
+        "confirming_pattern": "content-only PASS documentary causality while RF1-structure version FAILS",
+        "disconfirming_pattern": "both FAIL documentary causality",
+        "new_images_needed": 1,
+        "conditional": true
+      }
+    }
+  ],
+  "cross_mechanism_cautions": [
+    "M1 and M3 are strongly topic-sensitive and can co-vary; do not test either by adding explicit prohibitions.",
+    "M2 and M4 are more directly testable by structure ablation, but only after topic is held fixed.",
+    "A single PASS can falsify sufficiency of some mechanisms but cannot establish sole causality.",
+    "A FAIL/FAIL chain cannot prove a general renderer prior without a future renderer-switch experiment."
+  ],
+  "frozen_next_experiment_contract": {
+    "contract_id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
+    "status": "FROZEN_NOT_AUTHORIZED",
+    "purpose": "Distinguish topic-conditioned mechanisms from shared task-structure mechanisms before any renderer-switch test.",
+    "stage_1": {
+      "max_new_images": 1,
+      "variable": "TOPIC_CONTENT_SLOT_ONLY",
+      "baseline": "EXISTING_RF1_A_TOFU_NO_R1C",
+      "candidate": "RICE_GRANARY_MATCHED_TO_RF1_STRUCTURE",
+      "fixed": [
+        "CHATGPT_IMAGES",
+        "9:16",
+        "NO_R1C",
+        "NO_COMPACT_SIX",
+        "NO_NEW_ANTI_AI_RULES",
+        "RF1 sentence functions",
+        "Golden evaluator",
+        "four absolute gates"
+      ],
+      "stop_rule": "If Stage 1 passes absolute realism, stop and do not run Stage 2."
+    },
+    "stage_2_only_if_stage1_fails": {
+      "max_new_images": 1,
+      "variable": "TASK_STRUCTURE_ONLY",
+      "baseline": "STAGE1_RICE_GRANARY_RF1_STRUCTURE",
+      "candidate": "SAME_RICE_GRANARY_EVENT_CONTENT_ONLY_STRUCTURE",
+      "fixed": [
+        "CHATGPT_IMAGES",
+        "same rice topic",
+        "same event",
+        "9:16",
+        "NO_R1C",
+        "NO_COMPACT_SIX",
+        "NO_NEW_ANTI_AI_RULES",
+        "same Golden evaluator"
+      ],
+      "stop_rule": "Stop after evaluation regardless of result; no renderer switch under this contract."
+    },
+    "maximum_new_images": 2,
+    "expected_images": "1 if Stage 1 passes; otherwise 2",
+    "retry_budget": 0,
+    "third_image": false,
+    "best_of_n": false,
+    "reroll": false,
+    "figma": false,
+    "p5": false,
+    "no_rule_append": true,
+    "technical_failure_extra_budget": 0
+  },
+  "preregistered_interpretation": [
+    {
+      "pattern": "STAGE1_PASS",
+      "interpretation": "TOPIC-CONDITIONED MECHANISM FAMILY STRONGLY IMPLICATED",
+      "mechanism_implications": {
+        "M1": "supported as topic-sensitive candidate",
+        "M3": "supported as topic-sensitive candidate",
+        "M2": "not independently identified",
+        "M4": "not independently identified"
+      },
+      "prohibited_claims": [
+        "tofu topic is sole cause",
+        "renderer prior disproven",
+        "R1C has zero effect"
+      ]
+    },
+    {
+      "pattern": "STAGE1_FAIL__STAGE2_PASS",
+      "interpretation": "SHARED TASK-STRUCTURE MECHANISM FAMILY STRONGLY IMPLICATED",
+      "mechanism_implications": {
+        "M1": "topic-only explanation weakened",
+        "M2": "structure-sensitive material homogenization supported",
+        "M3": "not independently identified",
+        "M4": "structure-sensitive display substitution supported"
+      },
+      "prohibited_claims": [
+        "task structure is sole cause",
+        "general renderer prior disproven"
+      ]
+    },
+    {
+      "pattern": "STAGE1_FAIL__STAGE2_FAIL",
+      "interpretation": "TOPIC AND TASK-STRUCTURE ABLATIONS DID NOT RESCUE REALISM; GENERAL RENDERER PRIOR REMAINS COMPATIBLE BUT UNPROVEN",
+      "mechanism_implications": {
+        "M1": "not sufficient alone",
+        "M2": "not sufficient alone",
+        "M3": "not sufficient alone",
+        "M4": "not sufficient alone"
+      },
+      "prohibited_claims": [
+        "renderer prior proven primary",
+        "renderer prior proven sole cause"
+      ]
+    }
+  ],
+  "reviewer_gate": {
+    "required_checks": [
+      "Stage 1 changes only topic content slot and preserves RF1 structure/function.",
+      "Stage 2 is strictly conditional on Stage 1 FAIL.",
+      "Stage 2 changes only structure, not topic/event/renderer/reference/aspect/evaluator.",
+      "No explicit anti-AI, realism, negative-prompt, steam, patina, mess, occlusion or imperfection rules are added.",
+      "Maximum budget is 2 images, zero retry, conditional second image.",
+      "No result branch claims a sole or primary root cause beyond identifiability."
+    ],
+    "status": "PENDING_REVIEWER_DECISION",
+    "generation_authorization": 0
+  },
+  "next_required_action": "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION"
+}
