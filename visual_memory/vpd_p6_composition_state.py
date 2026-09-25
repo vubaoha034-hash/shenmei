@@ -33,7 +33,7 @@ CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED
 GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION = "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
 GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION = "EXECUTE_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_ROUTE_A_THEN_B_ZERO_RETRY"
 GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION = "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY"
-RF1_CI_ACTION = "VERIFY_CONTROL_PLANE_CI_THEN_EXECUTE_P4_RF1_ROUTE_A_EXACTLY_ONCE"
+RF1_CI_ACTION = "VERIFY_CONTROL_PLANE_CI_THEN_EXECUTE_P4_RF1_ROUTE_A_EXACTLY_ONCE"\nRF1_ROUTE_B_ACTION = "EXECUTE_P4_RF1_ROUTE_B_EXACTLY_ONCE"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -557,7 +557,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -628,6 +628,18 @@ def validate_p6_composition_state(root):
         require(auth["isolation"]["golden_generation_reference"] is False and auth["isolation"]["golden_evaluation_only"] is True, "RF1_GOLDEN_BOUNDARY")
         require(lock["execution_boundary"]["current_image_generation_authorization"] == 2, "RF1_AUTH_COUNT")
         require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_EXECUTION_BOUNDARY")
+    if action == RF1_ROUTE_B_ACTION:
+        require(lock.get("status") == "VPD_P4_RF1_ROUTE_A_ARCHIVED_ROUTE_B_READY", "RF1_B_READY_STATE")
+        rf1 = lock.get("p4_rf1_r1c_anchor_causal_isolation", {})
+        require(rf1.get("budget") == {"authorized":2,"consumed":1,"remaining":1,"retry":0,"no_third_image":True}, "RF1_B_READY_BUDGET")
+        require(rf1.get("route_A", {}).get("consumed") == 1 and rf1.get("route_B", {}).get("consumed") == 0, "RF1_B_READY_CONSUMPTION")
+        check_ref(root, rf1["route_A_receipt"])
+        ar = read(root, rf1["route_A_receipt"]["path"])
+        require(ar["output"]["sha256"] == "2185a904b284655f879e861a6fdf5bdc0280f2253a70912ef1785032f5ebb5f3", "RF1_A_OUTPUT_HASH")
+        require(ar["output"]["dimensions"] == [941,1672] and ar["output"]["mime_type"] == "image/png", "RF1_A_OUTPUT_IDENTITY")
+        require(lock["execution_boundary"]["current_image_generation_authorization"] == 1, "RF1_B_REMAINING_AUTH")
+        require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_B_BOUNDARY")
+
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
