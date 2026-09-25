@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 144,
+  "revision": 145,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The Golden-gated shared-base realism repair has completed at the absolute quality gate. Both neutral candidates fail FIRST_IMPRESSION_AI_GATE, DOCUMENTARY_CAUSALITY, MATERIAL_HETEROGENEITY and ABSOLUTE_REALISM_GATE at HIGH confidence. Per the frozen protocol, relative A/B comparison is prohibited and route mapping remains sealed. The two-image authorization is fully consumed with zero retries and zero third images. No new image generation, Figma work or P5 advance is allowed; next action is a non-generative failure review.",
-  "status": "VPD_P4_GOLDEN_GATED_REALISM_REPAIR_ABSOLUTE_FAIL_BOTH_RELATIVE_COMPARISON_BLOCKED",
+  "current_stage": "P4 Golden-gate failure review is complete. Existing evidence rejects compact-six controls and shared-base prompt overload as sufficient primary causes. Strongest current hypothesis is a subject-conditioned ChatGPT Images prior for traditional tofu/workshop imagery interacting with the design-led R1C generation reference. A minimal two-arm R1C anchor ablation strategy and Golden-gated validation contract are frozen but not authorized.",
+  "status": "VPD_P4_GOLDEN_GATE_FAIL_ROOT_CAUSE_AUDIT_COMPLETE_REALISM_STRATEGY_FROZEN_WAITING_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY",
+  "next_required_action": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_OF_FROZEN_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,15 +148,14 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "idempotently recovered the already-generated A=1 and B=1 outputs without regenerating either route",
-    "verified exact Golden/X/Y PNG byte identities by browser-side SHA-256 before evaluation",
-    "completed one valid independent Golden-gated evaluator run with all three images actually attached as image/png",
-    "recorded X absolute realism FAIL and Y absolute realism FAIL at HIGH confidence",
-    "stopped relative comparison exactly as frozen protocol requires and kept route mapping sealed",
-    "closed the image budget: consumed=2, retry=0, remaining=0, no third image",
-    "kept Figma authorization=0 and P5 second-style execution blocked"
+    "completed one non-generative P4 Golden-gate root-cause audit using existing Golden, A/B outputs, receipts and historical controls only",
+    "classified compact six controls as not primary cause and shared-base prompt overload as contributory but insufficient",
+    "classified R1C as plausible amplifier but not proven primary because same-anchor rice-granary evidence was more credible",
+    "identified subject-conditioned ChatGPT Images prior interacting with R1C design conditioning as strongest current hypothesis",
+    "froze minimal P4-RF1 two-arm R1C anchor causal-isolation strategy with zero current image authorization",
+    "froze Golden-gated validation contract and hard stop; no Figma, no mapping reveal, no P5 advance"
   ],
-  "updated_at": "2026-09-25T10:18:00Z",
+  "updated_at": "2026-09-25T10:30:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2012,5 +2011,14 @@
       "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
     },
     "runtime_generation_anchor_unchanged": true
+  },
+  "p4_realism_root_cause_audit": {
+    "status": "COMPLETE_STRATEGY_FROZEN_NOT_AUTHORIZED",
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATE_FAIL_NON_GENERATIVE_REALISM_ROOT_CAUSE_AUDIT_AND_NEXT_STRATEGY_20260925.json",
+    "evidence_commit": "503561147c35dca5ed1ad64d78b8151f7ba0f2fb",
+    "strongest_current_hypothesis": "SUBJECT_CONDITIONED_CHATGPT_IMAGES_PRIOR_X_R1C_DESIGN_ANCHOR_INTERACTION",
+    "frozen_strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
+    "image_authorization": 0,
+    "figma_authorization": 0
   }
 }
