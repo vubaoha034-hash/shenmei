@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 148,
+  "revision": 149,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF1 completed and settled. A without R1C and B with R1C both fail all four Golden absolute-realism gates. Frozen causal contract resolves A_FAIL/B_FAIL to R1C_NOT_NECESSARY; subject-conditioned renderer prior remains the primary suspect. No new experiment is authorized.",
-  "status": "VPD_P4_RF1_SETTLED_R1C_NOT_NECESSARY_NEW_EXPERIMENT_BOUNDARY",
+  "current_stage": "P4-RF2 zero-image causal-design audit complete. RF1 is restricted to R1C_NOT_NECESSARY only. Topic prior, shared minimal task structure, and general renderer prior remain unresolved. A sequential single-variable future design is proposed but has zero generation authorization pending audit gate.",
+  "status": "VPD_P4_RF2_CAUSAL_DESIGN_AUDIT_COMPLETE_WAITING_REVIEW_GATE",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_P4_RF1_R1C_NOT_NECESSARY_AND_DEFINE_NEW_RENDERER_PRIOR_TEST_NO_GENERATION",
+  "next_required_action": "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,15 +148,14 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "idempotently confirmed A and B receipts already exist and no RF1 evaluator receipt/settlement existed in repo",
-    "recorded the existing valid Golden evaluator result without re-evaluation",
-    "closed RF1 budget at consumed=2 remaining=0 retry=0 no-third-image=true",
-    "settled A_FAIL/B_FAIL as R1C_NOT_NECESSARY under the frozen causal contract",
-    "kept relative aesthetic comparison disabled",
-    "kept Figma=0 and P5 blocked",
-    "stopped before any new experiment variable or new generation budget"
+    "completed zero-image non-generative P4-RF2 causal-design audit",
+    "narrowed RF1 interpretation to R1C_NOT_NECESSARY only and removed renderer-primary overclaim",
+    "built causal matrix from RF1 A/B, historical rice-granary control and older tofu evidence",
+    "pre-registered sequential Stage 1 topic-only and conditional Stage 2 task-structure-only design",
+    "hard-capped proposed future budget at maximum 2 images with zero retry and conditional second image",
+    "kept image authorization=0, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-25T20:05:00+08:00",
+  "updated_at": "2026-09-25T20:20:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2080,9 +2079,37 @@
       "B": "FAIL_ALL_FOUR"
     },
     "causal_conclusion": "R1C_NOT_NECESSARY",
-    "renderer_prior_status": "PRIMARY_SUSPECT_SUBJECT_CONDITIONED",
+    "renderer_prior_status": "UNRESOLVED_NOT_PROVEN_PRIMARY",
     "relative_aesthetic_comparison_performed": false,
     "standing_authorization_auto_continue": false,
     "stop_reason": "Any next empirical test would introduce a new experiment variable and/or new budget outside the settled RF1 protocol."
+  },
+  "p4_rf2_causal_design_audit": {
+    "status": "AUDIT_COMPLETE_WAITING_REVIEW_GATE",
+    "audit": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json",
+      "sha256": "c3893475b9ce6f939d2bd8e8d0e152240fcee0b4c62de8a4826da76fc1b35d63"
+    },
+    "image_budget": 0,
+    "generation_performed": false,
+    "prompt_modified": false,
+    "figma_used": false,
+    "p5_entered": false,
+    "unresolved_causes": [
+      "TOFU_TOPIC_CONDITIONED_PRIOR",
+      "SHARED_MINIMAL_TASK_STRUCTURE",
+      "GENERAL_RENDERER_GENERATION_PRIOR"
+    ],
+    "future_design": {
+      "design_id": "P4-RF2-SEQUENTIAL-SINGLE-VARIABLE-CAUSAL-GATES",
+      "maximum_new_images": 2,
+      "adaptive_second_image": true,
+      "retry_budget": 0,
+      "third_image": false,
+      "stage1_variable": "TOPIC_CONTENT_SLOT",
+      "stage2_variable": "TASK_STRUCTURE"
+    },
+    "standing_authorization_auto_continue": false,
+    "reason": "Future Stage 1 introduces a new experiment variable and new image budget, so standing authorization does not apply before the causal-design review gate and fresh explicit authorization."
   }
 }
