@@ -1,0 +1,41 @@
+你将收到 3 张图片：
+1. GOLDEN_REALISM：摄影真实性 Golden，只用于校准真实摄影 vs 明显 AI，不比较题材、颜色或布局。
+2. CANDIDATE_A：本轮无 R1C 生成参考。
+3. CANDIDATE_B：本轮使用原始 R1C 生成参考。
+
+这是 P4-RF1 的因果消融验证。必须先分别判断 A、B 的绝对摄影真实性，不得先做相对审美偏好。
+
+对 A、B 分别输出：
+- FIRST_IMPRESSION_AI_GATE: PASS / FAIL
+- DOCUMENTARY_CAUSALITY: PASS / FAIL
+- MATERIAL_HETEROGENEITY: PASS / FAIL
+- ABSOLUTE_REALISM_GATE: PASS / FAIL
+
+Golden 的题材可以不同，只比较以下真实性行为：
+- camera-observed vs prompt-staged
+- one credible work moment vs catalogue/checklist display
+- heterogeneous functional wear vs uniform photogenic patina
+- incidental light vs theatrical/cinematic material beautification
+- operational causality, mundane irregularity, occlusion/crop/focus/exposure imperfection
+
+任何候选只要明显一眼 AI、搭景、统一漂亮做旧、物件都为了展示而安排，ABSOLUTE_REALISM_GATE 即 FAIL。
+
+完成 A/B 绝对门后，再按冻结因果合同解释 R1C：
+- A PASS / B FAIL → R1C_REFERENCE_CONDITIONING_STRONGLY_IMPLICATED_AS_REALISM_REGRESSION_AMPLIFIER
+- A FAIL / B FAIL → R1C_NOT_NECESSARY；题材条件下 renderer prior 仍是主要嫌疑
+- A PASS / B PASS → R1C_NOT_FATAL；不得据此增加规则
+- A FAIL / B PASS → 结论矛盾，优先检查随机性或绑定混杂
+
+不要评选“哪张更好看”。不要修改图片。最后输出：
+A_FIRST_IMPRESSION_AI_GATE:
+A_DOCUMENTARY_CAUSALITY:
+A_MATERIAL_HETEROGENEITY:
+A_ABSOLUTE_REALISM_GATE:
+B_FIRST_IMPRESSION_AI_GATE:
+B_DOCUMENTARY_CAUSALITY:
+B_MATERIAL_HETEROGENEITY:
+B_ABSOLUTE_REALISM_GATE:
+R1C_CAUSAL_INTERPRETATION:
+CONFIDENCE:
+REASONS:
+TRADEOFF_OR_UNCERTAINTY:
