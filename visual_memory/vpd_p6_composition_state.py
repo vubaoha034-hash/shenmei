@@ -175,29 +175,43 @@ def _validate_cross_aspect_ai_feel_repair_wait(root, lock, cp):
     compact = lock["compact_vpd_6_control_candidate"]
     require(compact["controls_changed"] is False and compact["add_more_rules"] is False, "CROSS_ASPECT_AI_FEEL_RULE_CHASING")
     require(compact["style_capsule_promotion_allowed"] is False and compact["stable_baseline_replacement_allowed"] is False, "CROSS_ASPECT_AI_FEEL_FALSE_PROMOTION")
+
+
+def _validate_golden_gated_realism_repair_wait(root, lock, cp):
+    require(lock.get("status") == "VPD_P4_GOLDEN_REALISM_REGRESSION_CONTROL_ACTIVE_SHARED_BASE_REPAIR_FROZEN_WAITING_TWO_IMAGE_AUTHORIZATION", "GOLDEN_REALISM_REPAIR_STATE")
+    cross = lock.get("cross_aspect_photo_only_ab", {})
+    require(cp.get("cross_aspect_photo_only_ab") == cross, "GOLDEN_REALISM_CROSS_CP_DRIFT")
+    require(cross.get("blind_outcome") == "ROUTE_B_WINS_MEDIUM" and cross.get("p4_quality_gate") == "FAIL", "GOLDEN_REALISM_PRIOR_RESULT_DRIFT")
+    check_ref(root, cross["human_absolute_quality"])
+    hv = read(root, cross["human_absolute_quality"]["path"])
+    require(hv["human_absolute_quality"]["set_verdict"] == "FAIL_BOTH" and hv["human_absolute_quality"]["primary_failure_mode"] == "OBVIOUS_AI_LOOK", "GOLDEN_REALISM_HUMAN_FAIL_LOST")
     golden = lock.get("photographic_realism_golden", {})
+    require(cp.get("photographic_realism_golden") == golden, "GOLDEN_REALISM_CP_DRIFT")
     check_ref(root, golden["baseline"])
     check_ref(root, golden["regression_gate"])
     gdoc = read(root, golden["baseline"]["path"])
     require(gdoc["status"] == "GOLDEN_VISUAL_REGRESSION_ANCHOR_ACTIVE", "GOLDEN_REALISM_BASELINE_INACTIVE")
     require(gdoc["asset"]["sha256"] == "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7", "GOLDEN_REALISM_ASSET_DRIFT")
-    require(gdoc["authority_rules"]["cannot_be_replaced_by_prompt_summary"] is True and gdoc["authority_rules"]["mandatory_evaluation_regression_anchor"] is True, "GOLDEN_REALISM_AUTHORITY_WEAKENED")
+    require(gdoc["authority_rules"]["actual_pixels_outrank_prose"] is True, "GOLDEN_REALISM_PIXEL_AUTHORITY_LOST")
+    require(gdoc["authority_rules"]["cannot_be_replaced_by_prompt_summary"] is True and gdoc["authority_rules"]["cannot_be_replaced_by_compact_controls"] is True and gdoc["authority_rules"]["cannot_be_replaced_by_style_capsule_text"] is True, "GOLDEN_REALISM_TEXT_SUBSTITUTION_REOPENED")
+    require(gdoc["authority_rules"]["mandatory_evaluation_regression_anchor"] is True and gdoc["authority_rules"]["default_generation_input"] is False, "GOLDEN_REALISM_ROLE_DRIFT")
+    require(gdoc["runtime_anchor_interaction"]["existing_runtime_manifest_must_remain_unchanged"] is True, "GOLDEN_REALISM_RUNTIME_ANCHOR_DRIFT")
     gate = read(root, golden["regression_gate"]["path"])
     require(gate["status"] == "MANDATORY_BEFORE_RELATIVE_PHOTOGRAPHIC_SCORING", "GOLDEN_REALISM_GATE_INACTIVE")
-    require(gate["first_impression_absolute_gate"]["relative_ab_win_cannot_override"] is True, "GOLDEN_REALISM_FAILFAST_DISABLED")
+    require(gate["first_impression_absolute_gate"]["relative_ab_win_cannot_override"] is True and gate["first_impression_absolute_gate"]["composition_depth_aspect_or_mechanism_scores_cannot_compensate"] is True, "GOLDEN_REALISM_FAILFAST_DISABLED")
     repair = lock["p4_shared_base_realism_repair"]
-    check_ref(root, repair["prep"])
-    check_ref(root, repair["route_A_ticket"])
-    check_ref(root, repair["route_B_ticket"])
-    check_ref(root, repair["evaluator_prompt"])
-    require(repair["status"] == "GOLDEN_GATED_FROZEN_NOT_AUTHORIZED", "GOLDEN_REALISM_REPAIR_STATE")
+    require(cp.get("p4_shared_base_realism_repair") == repair, "GOLDEN_REALISM_REPAIR_CP_DRIFT")
+    require(repair["status"] == "GOLDEN_GATED_FROZEN_NOT_AUTHORIZED", "GOLDEN_REALISM_REPAIR_NOT_FROZEN")
+    for key in ("prep", "route_A_ticket", "route_B_ticket", "evaluator_prompt"):
+        check_ref(root, repair[key])
     require(repair["proposed_images"] == 2 and repair["authorized_images"] == 0 and repair["route_A_images"] == 1 and repair["route_B_images"] == 1 and repair["retry_budget"] == 0 and repair["no_third_image"] is True, "GOLDEN_REALISM_REPAIR_BUDGET")
     prep = read(root, repair["prep"]["path"])
     require(prep["status"] == "FROZEN_NOT_AUTHORIZED", "GOLDEN_REALISM_PREP_STATUS")
+    require(prep["budget"] == {"proposed_images":2,"authorized_images":0,"route_A_images":1,"route_B_images":1,"retry_budget":0,"no_third_image":True}, "GOLDEN_REALISM_PREP_BUDGET")
     require(prep["isolation"]["route_A_compact_controls"] == [], "GOLDEN_REALISM_ROUTE_A_CONTAMINATION")
     old_prep = read(root, "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json")
     require(prep["isolation"]["route_B_compact_controls"] == old_prep["route_B"]["mechanism_controls"], "GOLDEN_REALISM_ROUTE_B_CONTROL_DRIFT")
-    require(prep["isolation"]["new_compact_control_count"] == 0, "GOLDEN_REALISM_RULE_GROWTH")
+    require(prep["isolation"]["route_B_controls_changed"] is False and prep["isolation"]["new_compact_control_count"] == 0, "GOLDEN_REALISM_RULE_GROWTH")
     require(lock["execution_boundary"]["current_image_generation_authorization"] == 0 and lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "GOLDEN_REALISM_PREMATURE_AUTH")
     require(lock["execution_boundary"]["second_style_execution_allowed"] is False, "GOLDEN_REALISM_P5_REOPENED")
 
@@ -533,8 +547,10 @@ def validate_p6_composition_state(root):
         _validate_cross_aspect_photo_only_authorized(root, lock, cp)
     if action == CROSS_ASPECT_RESULT_ACTION:
         _validate_cross_aspect_photo_only_result(root, lock, cp)
-    if action in (CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION):
+    if action == CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION:
         _validate_cross_aspect_ai_feel_repair_wait(root, lock, cp)
+    if action == GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION:
+        _validate_golden_gated_realism_repair_wait(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
