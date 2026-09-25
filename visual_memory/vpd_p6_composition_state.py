@@ -38,6 +38,7 @@ RF1_ROUTE_B_ACTION = "EXECUTE_P4_RF1_ROUTE_B_EXACTLY_ONCE"
 RF1_SETTLEMENT_ACTION = "REVIEW_P4_RF1_R1C_NOT_NECESSARY_AND_DEFINE_NEW_RENDERER_PRIOR_TEST_NO_GENERATION"
 RF2_AUDIT_GATE_ACTION = "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION"
 RF2_MECHANISM_REVIEW_ACTION = "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION"
+RF2_STAGE1_EVAL_ACTION = "RUN_P4_RF2_STAGE1_GOLDEN_ABSOLUTE_REALISM_GATE"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -89,6 +90,7 @@ ACTIONS = {
     RF1_SETTLEMENT_ACTION,
     RF2_AUDIT_GATE_ACTION,
     RF2_MECHANISM_REVIEW_ACTION,
+    RF2_STAGE1_EVAL_ACTION,
 }
 
 
@@ -565,7 +567,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION, RF1_SETTLEMENT_ACTION, RF2_AUDIT_GATE_ACTION, RF2_MECHANISM_REVIEW_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION, RF1_SETTLEMENT_ACTION, RF2_AUDIT_GATE_ACTION, RF2_MECHANISM_REVIEW_ACTION, RF2_STAGE1_EVAL_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -636,6 +638,20 @@ def validate_p6_composition_state(root):
         require(auth["isolation"]["golden_generation_reference"] is False and auth["isolation"]["golden_evaluation_only"] is True, "RF1_GOLDEN_BOUNDARY")
         require(lock["execution_boundary"]["current_image_generation_authorization"] == 2, "RF1_AUTH_COUNT")
         require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_EXECUTION_BOUNDARY")
+    if action == RF2_STAGE1_EVAL_ACTION:
+        require(lock.get("status") == "VPD_P4_RF2_STAGE1_RICE_GENERATED_WAITING_GOLDEN_GATE", "RF2_STAGE1_STATE")
+        rf2 = lock.get("p4_rf2_causal_design_audit", {})
+        require(rf2.get("stage1", {}).get("status") == "GENERATED_ONCE_WAITING_GOLDEN_GATE", "RF2_STAGE1_STATUS")
+        require(rf2.get("budget") == {"maximum":2,"consumed":1,"remaining_conditional":1,"retry":0,"third_image":False}, "RF2_STAGE1_BUDGET")
+        require(lock["execution_boundary"]["current_image_generation_authorization"] == 0, "RF2_STAGE1_PREMATURE_STAGE2")
+        for name in ("authorization","stage1_receipt"):
+            check_ref(root, rf2[name])
+        sr = read(root, rf2["stage1_receipt"]["path"])
+        require(sr["output"]["sha256"] == "ad0dfb992490c8f8a513bd54959cf84f618585bca03592bf3fb72f9016763260", "RF2_STAGE1_OUTPUT_HASH")
+        require(sr["output"]["dimensions"] == [941,1672] and sr["treatment"]["only_variable"] == "TOPIC_CONTENT_SLOT", "RF2_STAGE1_TREATMENT")
+        require(sr["idempotency"]["regenerated"] is False and sr["idempotency"]["retry"] is False, "RF2_STAGE1_RETRY")
+        require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF2_STAGE1_BOUNDARY")
+
     if action == RF2_MECHANISM_REVIEW_ACTION:
         require(lock.get("status") == "VPD_P4_RF2_REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE", "RF2_MECHANISM_STATE")
         rf2 = lock.get("p4_rf2_causal_design_audit", {})
