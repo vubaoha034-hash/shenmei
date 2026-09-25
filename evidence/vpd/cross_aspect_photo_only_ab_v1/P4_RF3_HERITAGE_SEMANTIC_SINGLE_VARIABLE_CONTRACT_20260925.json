@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-p4-rf3-single-variable-contract/v2",
+  "contract_id": "P4-RF3-HERITAGE-SEMANTIC-SINGLE-VARIABLE-V2",
+  "status": "FROZEN_REVIEWER_APPROVED_ZERO_BUDGET_NOW_SCOPED_AUTOAUTH_NEXT",
+  "variable": "HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
+  "baseline_asset": "EXISTING_RF1_A_TOFU_NO_R1C",
+  "baseline_semantic_slot": "traditional tofu workshop",
+  "treatment_semantic_slot": "contemporary working tofu workshop",
+  "baseline_prompt_sha256": "bd89079c8d68df5d4a35503ded06ac102b77bf8d8acbdd07cc5b2bb2d7513f6b",
+  "treatment_prompt_sha256": "553ff6459301bc6b858cb4339bfdc7be32d34124d6c27062c6ca55af7c3a9e51",
+  "prompt_diff_contract": {
+    "changed_field": "WORKSHOP_SEMANTIC_SLOT",
+    "baseline": "traditional tofu workshop",
+    "treatment": "contemporary working tofu workshop",
+    "any_other_change_invalidates_experiment": true
+  },
+  "fixed_conditions": [
+    "TOFU_TOPIC unchanged",
+    "same tofu pressing instant unchanged",
+    "same freshly transferred tofu curds unchanged",
+    "same cloth-lined wooden mold unchanged",
+    "same wet/hot pressing-stage semantics unchanged",
+    "CHATGPT_IMAGES unchanged",
+    "9:16 unchanged",
+    "NO_R1C unchanged",
+    "RF1 shared task structure unchanged",
+    "Golden evaluator and four absolute realism gates unchanged",
+    "no compact six controls",
+    "no anti-AI/realism/material/clutter/occlusion rules",
+    "no explicit prohibition of steam, wet floor, haze or cinematic light"
+  ],
+  "evaluation": {
+    "golden": "MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN",
+    "gates": [
+      "FIRST_IMPRESSION_AI_GATE",
+      "DOCUMENTARY_CAUSALITY",
+      "MATERIAL_HETEROGENEITY",
+      "ABSOLUTE_REALISM_GATE"
+    ],
+    "relative_aesthetic_winner": false
+  },
+  "interpretation": {
+    "TRADITIONAL_TOFU_FAIL__CONTEMPORARY_TOFU_PASS": "HERITAGE_X_TOFU_SEMANTIC_CONDITION_MECHANISM_STRONGLY_IMPLICATED; heritage is not a unique root cause.",
+    "TRADITIONAL_TOFU_FAIL__CONTEMPORARY_TOFU_FAIL": "HERITAGE_SEMANTIC_FRAME_INSUFFICIENT_TO_EXPLAIN_FAILURE; tofu process-object prior, wet/heat environment prior or other topic-conditioned mechanisms remain unresolved.",
+    "TECHNICAL_INVALID": "NO_CAUSAL_INTERPRETATION; STOP_ZERO_RETRY."
+  },
+  "stop_conditions": [
+    "Exactly one treatment image maximum.",
+    "Zero retry. Technical invalid stops without replacement.",
+    "After one Golden absolute evaluation, stop and settle.",
+    "No second semantic subvariable under this contract.",
+    "No Figma, no P5, no prompt-rule append."
+  ],
+  "budget": {
+    "current_authorized_images": 0,
+    "future_scoped_max_images": 1,
+    "retry": 0,
+    "third_image": false
+  },
+  "rf2_cancelled_budget_reusable": false
+}
