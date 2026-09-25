@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-p4-rf2-stage1-pass-settlement/v1",
+  "artifact_type": "P4_RF2_STAGE1_PASS_STOP_SETTLEMENT",
+  "recorded_at": "2026-09-25T21:39:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "contract_id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
+  "status": "SETTLED_STAGE1_PASS_STAGE2_PROHIBITED",
+  "stage1_absolute_realism": "PASS",
+  "stage1_gates": {
+    "FIRST_IMPRESSION_AI_GATE": "PASS",
+    "DOCUMENTARY_CAUSALITY": "PASS",
+    "MATERIAL_HETEROGENEITY": "PASS",
+    "ABSOLUTE_REALISM_GATE": "PASS"
+  },
+  "confidence": 0.76,
+  "causal_conclusion": "TOPIC_CONDITIONED_MECHANISM_FAMILY_STRONGLY_IMPLICATED",
+  "causal_scope": "A matched topic-slot substitution from tofu to rice-granary passed the Golden absolute-realism gate while the existing RF1 tofu baseline failed. This strongly implicates a topic-conditioned mechanism family under the fixed renderer/task structure, but does not identify a unique or sole cause.",
+  "budget": {
+    "maximum_authorized": 2,
+    "consumed": 1,
+    "unconsumed_cancelled": 1,
+    "retry_used": 0,
+    "third_image": false
+  },
+  "stage2": {
+    "allowed": false,
+    "status": "PROHIBITED_BY_PREREGISTERED_STAGE1_PASS_STOP_RULE"
+  },
+  "boundaries": {
+    "figma": false,
+    "p5": false,
+    "best_of_n": false,
+    "reroll": false,
+    "no_new_rules": true
+  },
+  "evaluator_receipt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_GOLDEN_EVALUATOR_RECEIPT_20260925.json",
+    "sha256": "5348841106c9483966119b5881bf55e10430ac2ff13285d9c9945e7039bd0d26"
+  },
+  "next_boundary": "Any further causal experiment is outside the completed RF2 contract and requires a new frozen design/budget."
+}
