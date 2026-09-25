@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 139,
+  "revision": 140,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 137,
-    "git_blob_sha": "2a1824cb222a9dc1563285b1c67c9ee6304baac6",
-    "note": "Revision 137 formally settled Pair2 and narrowed the compact candidate to photo-only mechanism scope."
+    "revision": 139,
+    "git_blob_sha": "42216a49321b715ff29aead594c7af800c473b8d",
+    "note": "Revision 139 authorized exactly one 9:16 output per route with zero retries."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The already-frozen P4 9:16 cross-aspect photo-only A/B is explicitly authorized for exactly two outputs: Route A=1 and Route B=1, with zero retries, no hidden variants, no best-of-N, no third image, no Figma, and second-style execution still blocked. Frozen route tickets, compact controls and blind evaluator prompt remain unchanged.",
-  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_AUTHORIZED_READY_EXECUTION",
+  "current_stage": "The frozen P4 9:16 cross-aspect photo-only A/B completed without retries or duplicate generation. Both routes pass correctness and native aspect reflow. Independent blind review selected X at MEDIUM confidence; deterministic post-verdict mapping reveals X=Route B and Y=Route A, so Route B wins the cross-aspect photo-only comparison. This strengthens the compact photo-only mechanism signal across two contents plus 9:16, but does not change Pair2's end-to-end complete-poster settlement. P5 remains blocked until the first-family complete-design-sample acceptance gate is explicitly satisfied.",
+  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_BLIND_COMPLETE_ROUTE_B_WINS_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_ACCEPTANCE",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY",
+  "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,18 +142,21 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 2,
+    "current_image_generation_authorization": 0,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "recorded the user's existing explicit authorization for the frozen 9:16 cross-aspect A/B without expanding scope",
-    "authorized exactly Route A=1 and Route B=1; retry budget remains 0 and third image is forbidden",
-    "kept both frozen route tickets, the six compact controls and the pre-mapping blind evaluator prompt unchanged",
-    "kept Figma authorization=0 and second-style execution blocked"
+    "idempotently recovered both already-generated 9:16 route outputs without regenerating either route",
+    "archived both exact Library originals to private Google Drive and verified metadata/byte size",
+    "settled the two-image budget as A=1, B=1, retry=0, remaining=0, no third image",
+    "created neutral byte-identical blind copies and ran the pre-frozen independent blind evaluator prompt unchanged",
+    "recorded WINNER X / MEDIUM with correctness PASS and aspect reflow PASS for both",
+    "revealed deterministic mapping after verdict: X=Route B, Y=Route A; cross-aspect outcome Route B wins",
+    "kept compact controls unchanged and kept Style Capsule promotion, stable baseline replacement, Figma, and P5 second-style execution closed"
   ],
-  "updated_at": "2026-09-25T03:29:00Z",
+  "updated_at": "2026-09-25T04:50:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -1549,7 +1552,7 @@
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CROSS_ASPECT_9_16_AUTHORIZED_NOT_PROMOTED",
+    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CONTENT_AND_CROSS_ASPECT_SUPPORTED_NOT_PROMOTED",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1573,14 +1576,14 @@
     "style_capsule_promotion_allowed": false,
     "local_equal_budget_figma_test_allowed": true,
     "production_integration_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
-    "final_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
+    "final_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_SUPPORTED_ACROSS_TWO_CONTENTS_AND_9_16__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
     "pair2_three_layer_settlement": {
       "photo_only": "ROUTE_B_WINS_MEDIUM",
       "first_uncorrected_complete_poster": "ROUTE_A_WINS_MEDIUM",
       "corrected_complete_poster": "ROUTE_A_WINS_HIGH"
     },
     "cross_aspect_validation": {
-      "status": "AUTHORIZED_READY_EXECUTION",
+      "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
       "baseline_aspect": "3:4",
       "target_aspect": "9:16",
       "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1607,12 +1610,36 @@
         "route_A_images": 1,
         "route_B_images": 1,
         "retry_budget": 0,
-        "no_third_image": true
+        "no_third_image": true,
+        "consumed_images": 2,
+        "remaining_images": 0
       },
-      "result": "PENDING",
+      "result": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+        "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+      },
       "authorization": {
         "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
         "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+      },
+      "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+      "correctness": {
+        "A": "PASS",
+        "B": "PASS"
+      },
+      "aspect_reflow": {
+        "A": "PASS",
+        "B": "PASS"
+      },
+      "drive_outputs": {
+        "A": {
+          "file_id": "1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb",
+          "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5"
+        },
+        "B": {
+          "file_id": "1KWukM1zLC3aNmpv81_d5nV--5liL1diB",
+          "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+        }
       }
     }
   },
@@ -1846,7 +1873,7 @@
     "add_more_rules": false
   },
   "cross_aspect_photo_only_ab": {
-    "status": "AUTHORIZED_READY_EXECUTION",
+    "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
     "baseline_aspect": "3:4",
     "target_aspect": "9:16",
     "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1873,12 +1900,44 @@
       "route_A_images": 1,
       "route_B_images": 1,
       "retry_budget": 0,
-      "no_third_image": true
+      "no_third_image": true,
+      "consumed_images": 2,
+      "remaining_images": 0
     },
-    "result": "PENDING",
+    "result": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+      "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+    },
     "authorization": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
       "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+    },
+    "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+    "correctness": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "aspect_reflow": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "drive_outputs": {
+      "A": {
+        "file_id": "1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb",
+        "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5"
+      },
+      "B": {
+        "file_id": "1KWukM1zLC3aNmpv81_d5nV--5liL1diB",
+        "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+      }
     }
+  },
+  "p5_gate": {
+    "status": "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE",
+    "mechanism_evidence": "SUPPORTED_DIRECTIONALLY_ACROSS_TWO_CONTENTS_AND_9_16",
+    "complete_design_sample_acceptance": "NOT_YET_SATISFIED",
+    "pair2_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "second_style_execution_allowed": false,
+    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
   }
 }

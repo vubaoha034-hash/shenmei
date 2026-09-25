@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 160,
-  "recorded_at": "2026-09-25T03:29:00Z",
+  "sequence": 161,
+  "recorded_at": "2026-09-25T04:50:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Pair2 formally settled: compact photo-only mechanism signal preserved; end-to-end complete-poster production-integration benefit not supported by Pair2; no P5 auto-advance.",
+  "current_focus": "P4 cross-aspect photo-only mechanism evidence complete: Route B wins at 9:16; P5 remains blocked pending first-family complete-design-sample acceptance.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -245,10 +245,12 @@
     "equal_budget_figma_complete_poster_ab_preparation",
     "equal_budget_figma_complete_poster_ab_execution",
     "complete_poster_blind_or_user_review",
-    "pair2_corrected_complete_poster_settlement"
+    "pair2_corrected_complete_poster_settlement",
+    "cross_aspect_9_16_photo_only_ab_blind_complete_route_b_wins",
+    "compact_photo_only_mechanism_supported_across_two_contents_and_9_16"
   ],
   "incomplete": [
-    "cross_aspect_validation",
+    "first_family_complete_design_sample_acceptance",
     "second_style_validation"
   ],
   "blocked": [
@@ -310,9 +312,10 @@
     "Do not consume a retry: this is still the original authorized one-image stateless smoke because the failed Drive-binding attempt generated nothing.",
     "Do not ask the generator assistant to fetch the Drive file and use that fetch as the visual reference.",
     "The fresh generator conversation must show R1C as an attached image before generation.",
-    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
+    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file.",
+    "P5 second-style remains blocked until first-family complete-design-sample acceptance is explicitly satisfied; no automatic advance from photo-only mechanism evidence."
   ],
-  "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY",
+  "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -380,10 +383,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_AUTHORIZED_READY_EXECUTION",
+  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_BLIND_COMPLETE_ROUTE_B_WINS_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_ACCEPTANCE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "235562472d0992ea132491564d211509bc6097d8c56d5b0652f6029389f4cc06"
+    "sha256": "85d590ec93a42bb5776f8dcacb0171631f3b1f65596bd96e2d7efe6996b372b8"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -404,8 +407,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-AUTHORIZED-20260925-001",
-      "event_hash": "35943e23b43015d6b6faf6d71f9795fa6a4fd3386869dec268f135174cd51270"
+      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-BLIND-RESULT-20260925-001",
+      "event_hash": "78af99b99e81e3ffb51d659ba1ad1b97825c766c3e75427406bb24ce331a0313"
     }
   },
   "typography_repair": {
@@ -928,8 +931,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "The already-frozen P4 9:16 cross-aspect photo-only A/B is explicitly authorized for exactly two outputs: Route A=1 and Route B=1, with zero retries, no hidden variants, no best-of-N, no third image, no Figma, and second-style execution still blocked. Frozen route tickets, compact controls and blind evaluator prompt remain unchanged.",
-  "updated_at": "2026-09-25T03:29:00Z",
+  "current_stage": "The frozen P4 9:16 cross-aspect photo-only A/B completed without retries or duplicate generation. Both routes pass correctness and native aspect reflow. Independent blind review selected X at MEDIUM confidence; deterministic post-verdict mapping reveals X=Route B and Y=Route A, so Route B wins the cross-aspect photo-only comparison. This strengthens the compact photo-only mechanism signal across two contents plus 9:16, but does not change Pair2's end-to-end complete-poster settlement. P5 remains blocked until the first-family complete-design-sample acceptance gate is explicitly satisfied.",
+  "updated_at": "2026-09-25T04:50:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1353,7 +1356,7 @@
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CROSS_ASPECT_9_16_AUTHORIZED_NOT_PROMOTED",
+    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CONTENT_AND_CROSS_ASPECT_SUPPORTED_NOT_PROMOTED",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1377,14 +1380,14 @@
     "style_capsule_promotion_allowed": false,
     "local_equal_budget_figma_test_allowed": true,
     "production_integration_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
-    "final_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
+    "final_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_SUPPORTED_ACROSS_TWO_CONTENTS_AND_9_16__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
     "pair2_three_layer_settlement": {
       "photo_only": "ROUTE_B_WINS_MEDIUM",
       "first_uncorrected_complete_poster": "ROUTE_A_WINS_MEDIUM",
       "corrected_complete_poster": "ROUTE_A_WINS_HIGH"
     },
     "cross_aspect_validation": {
-      "status": "AUTHORIZED_READY_EXECUTION",
+      "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
       "baseline_aspect": "3:4",
       "target_aspect": "9:16",
       "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1411,12 +1414,36 @@
         "route_A_images": 1,
         "route_B_images": 1,
         "retry_budget": 0,
-        "no_third_image": true
+        "no_third_image": true,
+        "consumed_images": 2,
+        "remaining_images": 0
       },
-      "result": "PENDING",
+      "result": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+        "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+      },
       "authorization": {
         "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
         "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+      },
+      "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+      "correctness": {
+        "A": "PASS",
+        "B": "PASS"
+      },
+      "aspect_reflow": {
+        "A": "PASS",
+        "B": "PASS"
+      },
+      "drive_outputs": {
+        "A": {
+          "file_id": "1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb",
+          "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5"
+        },
+        "B": {
+          "file_id": "1KWukM1zLC3aNmpv81_d5nV--5liL1diB",
+          "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+        }
       }
     }
   },
@@ -1706,7 +1733,7 @@
     "sha256": "f12557eda504242f7cac60e4991a32309289ac0aa627696b6ad15f149e97fbb1"
   },
   "cross_aspect_photo_only_ab": {
-    "status": "AUTHORIZED_READY_EXECUTION",
+    "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
     "baseline_aspect": "3:4",
     "target_aspect": "9:16",
     "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
@@ -1733,18 +1760,53 @@
       "route_A_images": 1,
       "route_B_images": 1,
       "retry_budget": 0,
-      "no_third_image": true
+      "no_third_image": true,
+      "consumed_images": 2,
+      "remaining_images": 0
     },
-    "result": "PENDING",
+    "result": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+      "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+    },
     "authorization": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
       "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+    },
+    "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+    "correctness": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "aspect_reflow": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "drive_outputs": {
+      "A": {
+        "file_id": "1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb",
+        "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5"
+      },
+      "B": {
+        "file_id": "1KWukM1zLC3aNmpv81_d5nV--5liL1diB",
+        "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+      }
     }
   },
   "completed_this_revision": [
-    "recorded the user's existing explicit authorization for the frozen 9:16 cross-aspect A/B without expanding scope",
-    "authorized exactly Route A=1 and Route B=1; retry budget remains 0 and third image is forbidden",
-    "kept both frozen route tickets, the six compact controls and the pre-mapping blind evaluator prompt unchanged",
-    "kept Figma authorization=0 and second-style execution blocked"
-  ]
+    "idempotently recovered both already-generated 9:16 route outputs without regenerating either route",
+    "archived both exact Library originals to private Google Drive and verified metadata/byte size",
+    "settled the two-image budget as A=1, B=1, retry=0, remaining=0, no third image",
+    "created neutral byte-identical blind copies and ran the pre-frozen independent blind evaluator prompt unchanged",
+    "recorded WINNER X / MEDIUM with correctness PASS and aspect reflow PASS for both",
+    "revealed deterministic mapping after verdict: X=Route B, Y=Route A; cross-aspect outcome Route B wins",
+    "kept compact controls unchanged and kept Style Capsule promotion, stable baseline replacement, Figma, and P5 second-style execution closed"
+  ],
+  "p5_gate": {
+    "status": "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE",
+    "mechanism_evidence": "SUPPORTED_DIRECTIONALLY_ACROSS_TWO_CONTENTS_AND_9_16",
+    "complete_design_sample_acceptance": "NOT_YET_SATISFIED",
+    "pair2_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "second_style_execution_allowed": false,
+    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+  }
 }

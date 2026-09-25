@@ -1,0 +1,162 @@
+{
+  "schema_version": "vpd-cross-aspect-9x16-execution-blind-result/v1",
+  "artifact_type": "CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT",
+  "recorded_at": "2026-09-25T04:50:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+  "recovery_and_execution": {
+    "recovery_mode": "IDEMPOTENT_RESUME_AFTER_EXECUTION_MESSAGE_TIMEOUT",
+    "route_A_regenerated_on_resume": false,
+    "route_B_regenerated_on_resume": false,
+    "retries_used": 0,
+    "third_image_created": false,
+    "figma_used": false
+  },
+  "frozen_inputs": {
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json",
+      "sha256": "a47a52d9790a6bd06058aff2341e7128459b665aadd3d13e26f4cc077812d4b4"
+    },
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
+      "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "81d82279808e53ced454e9d5c78036c73851a48e4554c4218151f061f61a8359"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "0a6c9cfa2491137abff14af1220fd59df91183e001e21b20db1c7d6a7f143836"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260925.txt",
+      "sha256": "cd9e179ccff333be3338c5ff2d5ef409342b2f51bb8fdb342cceb73c91afceda",
+      "pre_mapping_frozen": true
+    }
+  },
+  "outputs": {
+    "A": {
+      "route": "REFERENCE_NATIVE_BASELINE",
+      "generation_chat_url": "https://chatgpt.com/c/6ab5f17b-e7f0-83e8-a454-3ceeb53d7f50",
+      "library": {
+        "name": "晨光里的古法豆腐作坊.png",
+        "file_id": "file_000000003c5481fd8cd0969eda701f22",
+        "library_file_id": "libfile_99731016525481918643335ce92afd7d",
+        "size_bytes": 2297137
+      },
+      "drive": {
+        "file_id": "1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb",
+        "url": "https://drive.google.com/file/d/1zqhU62Mhv_GB4z9aqcXAnYiZUgG5DAFb/view?usp=drivesdk",
+        "file_name": "VPD_COMPACT_CROSS_ASPECT_9X16_TOFU_ROUTE_A_RAW_20260925.png",
+        "mime_type": "image/png",
+        "size_bytes": 2297137,
+        "private": true
+      },
+      "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png"
+    },
+    "B": {
+      "route": "REFERENCE_PLUS_COMPACT_VPD_CANDIDATE_R1",
+      "generation_chat_url": "https://chatgpt.com/c/6ab5f339-69dc-83ee-9d55-cf84c10f4b44",
+      "library": {
+        "name": "晨光蒸腾的古法豆腐坊.png",
+        "file_id": "file_000000001e0081fdaadba4385355907f",
+        "library_file_id": "libfile_681cbe8db3a481919dcd0e8aba980ba9",
+        "size_bytes": 2589300
+      },
+      "drive": {
+        "file_id": "1KWukM1zLC3aNmpv81_d5nV--5liL1diB",
+        "url": "https://drive.google.com/file/d/1KWukM1zLC3aNmpv81_d5nV--5liL1diB/view?usp=drivesdk",
+        "file_name": "VPD_COMPACT_CROSS_ASPECT_9X16_TOFU_ROUTE_B_RAW_20260925.png",
+        "mime_type": "image/png",
+        "size_bytes": 2589300,
+        "private": true
+      },
+      "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png"
+    }
+  },
+  "budget_settlement": {
+    "authorized_total": 2,
+    "consumed_total": 2,
+    "route_A_consumed": 1,
+    "route_B_consumed": 1,
+    "retries_used": 0,
+    "remaining_images": 0,
+    "third_image_allowed": false
+  },
+  "blind_mapping": {
+    "method": "LEXICOGRAPHIC_ASCENDING_SHA256",
+    "X": "B",
+    "Y": "A",
+    "X_sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4",
+    "Y_sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5",
+    "revealed_after_verdict": true
+  },
+  "blind_package": {
+    "X": {
+      "library_path": "/VPD_CROSS_ASPECT_BLIND_REVIEW/CROSS_ASPECT_X.png",
+      "file_id": "file_00000000a88081fdbcbb452009d778f1",
+      "library_file_id": "libfile_a19fff1ac1ec8191a409516a023dcc01",
+      "sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+    },
+    "Y": {
+      "library_path": "/VPD_CROSS_ASPECT_BLIND_REVIEW/CROSS_ASPECT_Y.png",
+      "file_id": "file_000000002a9481fda8c0efdeededa211",
+      "library_file_id": "libfile_96bbcae7bd3c8191883b0cc3afd6f615",
+      "sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5"
+    }
+  },
+  "evaluator": {
+    "url": "https://chatgpt.com/c/6ab5fd67-8d98-83e8-83c9-356ce67fbf83",
+    "independent": true,
+    "route_mapping_visible_before_verdict": false,
+    "frozen_prompt_used_unchanged": true,
+    "verdict": {
+      "winner": "X",
+      "confidence": "MEDIUM",
+      "correctness_X": "PASS",
+      "correctness_Y": "PASS",
+      "aspect_reflow_X": "PASS",
+      "aspect_reflow_Y": "PASS",
+      "reasons": [
+        "X 对 9:16 的纵向空间利用更完整，形成前景浸豆槽—中景木制压榨台—后景蒸汽/窗区的连续纵深，而不是上下堆叠。",
+        "X 的第一/第二/第三阅读层级更清楚，前景黄豆水槽形成 dominant material mass，中段压榨模具与豆腐承担生产叙事核心，后景自然退场。",
+        "X 的高细节更区域性集中，左上墙面、蒸汽及窗边形成更稳定的低密度排字区；Y 整体物件密度更平均。",
+        "两张材料与生产证据均可信完整，X 的压榨、浸泡、成品与处理区更容易读成真实连续工序。",
+        "X 更少出现为了填满竖幅而加东西的感觉；Y 的右侧模具与豆腐区域更规整，也略显摆拍与模板化。"
+      ],
+      "tradeoff": "Y 的画面更简洁、右侧豆腐与螺杆压榨结构更直接，但 X 在原生 9:16 重排、纵深连续性和 editorial hero 的可排版稳定性上略胜。"
+    }
+  },
+  "revealed_outcome": {
+    "blind_winner": "X",
+    "route_winner": "B",
+    "confidence": "MEDIUM",
+    "correctness_A": "PASS",
+    "correctness_B": "PASS",
+    "aspect_reflow_A": "PASS",
+    "aspect_reflow_B": "PASS"
+  },
+  "settlement": {
+    "photo_only_cross_aspect_signal": "SUPPORTED_BY_THIS_9_16_PAIR",
+    "combined_photo_only_scope": "ROUTE_B_DIRECTIONAL_BENEFIT_SUPPORTED_ACROSS_TWO_CONTENTS_AND_9_16_ASPECT",
+    "end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "compact_controls_changed": false,
+    "add_more_rules": false,
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false,
+    "p5_second_style_execution_allowed": false,
+    "p5_blocker": "ROADMAP_REQUIRES_FIRST_FAMILY_MECHANISM_AND_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE; MECHANISM EVIDENCE IS STRONGER, BUT COMPLETE DESIGN SAMPLE HAS NOT RECEIVED THE REQUIRED USER ACCEPTANCE."
+  },
+  "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+}

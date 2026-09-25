@@ -28,6 +28,7 @@ PAIR2_CORRECTED_BLIND_ACTION = "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_
 PAIR2_SETTLED_ACTION = "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE"
 CROSS_ASPECT_WAIT_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES"
 CROSS_ASPECT_EXECUTE_ACTION = "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY"
+CROSS_ASPECT_RESULT_ACTION = "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -69,6 +70,7 @@ ACTIONS = {
     PAIR2_SETTLED_ACTION,
     CROSS_ASPECT_WAIT_AUTH_ACTION,
     CROSS_ASPECT_EXECUTE_ACTION,
+    CROSS_ASPECT_RESULT_ACTION,
 }
 
 
@@ -122,6 +124,33 @@ def _validate_cross_aspect_photo_only_authorized(root, lock, cp):
     require(compact["controls_changed"] is False and compact["add_more_rules"] is False, "CROSS_ASPECT_AUTH_COMPACT_MUTATION")
     require(compact["cross_aspect_validation"] == cross, "CROSS_ASPECT_AUTH_COMPACT_MIRROR")
     require(lock.get("render_allowed") is False and lock.get("p6_allowed") is False, "CROSS_ASPECT_AUTH_WRONG_RUNTIME_SURFACE")
+
+def _validate_cross_aspect_photo_only_result(root, lock, cp):
+    require(lock.get("status") == "VPD_P4_COMPACT_CROSS_ASPECT_9_16_BLIND_COMPLETE_ROUTE_B_WINS_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_ACCEPTANCE", "CROSS_ASPECT_RESULT_STATE")
+    cross = lock.get("cross_aspect_photo_only_ab", {})
+    require(cp.get("cross_aspect_photo_only_ab") == cross, "CROSS_ASPECT_RESULT_CHECKPOINT_DRIFT")
+    require(cross.get("status") == "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS", "CROSS_ASPECT_RESULT_STATUS")
+    require(cross.get("blind_outcome") == "ROUTE_B_WINS_MEDIUM", "CROSS_ASPECT_RESULT_OUTCOME")
+    require(cross.get("correctness") == {"A":"PASS","B":"PASS"}, "CROSS_ASPECT_RESULT_CORRECTNESS")
+    require(cross.get("aspect_reflow") == {"A":"PASS","B":"PASS"}, "CROSS_ASPECT_RESULT_REFLOW")
+    require(cross.get("budget") == {"proposed_images":2,"authorized_images":2,"route_A_images":1,"route_B_images":1,"retry_budget":0,"no_third_image":True,"consumed_images":2,"remaining_images":0}, "CROSS_ASPECT_RESULT_BUDGET")
+    check_ref(root, cross["result"])
+    result = read(root, cross["result"]["path"])
+    require(result["evaluator"]["verdict"]["winner"] == "X" and result["evaluator"]["verdict"]["confidence"] == "MEDIUM", "CROSS_ASPECT_RESULT_VERDICT")
+    require(result["evaluator"]["verdict"]["correctness_X"] == result["evaluator"]["verdict"]["correctness_Y"] == "PASS", "CROSS_ASPECT_RESULT_VERDICT_CORRECTNESS")
+    require(result["evaluator"]["verdict"]["aspect_reflow_X"] == result["evaluator"]["verdict"]["aspect_reflow_Y"] == "PASS", "CROSS_ASPECT_RESULT_VERDICT_REFLOW")
+    require(result["blind_mapping"]["X"] == "B" and result["blind_mapping"]["Y"] == "A", "CROSS_ASPECT_RESULT_MAPPING")
+    require(result["revealed_outcome"]["route_winner"] == "B", "CROSS_ASPECT_RESULT_ROUTE_WINNER")
+    require(result["budget_settlement"]["consumed_total"] == 2 and result["budget_settlement"]["remaining_images"] == 0 and result["budget_settlement"]["retries_used"] == 0, "CROSS_ASPECT_RESULT_BUDGET_SETTLEMENT")
+    require(lock["execution_boundary"]["current_image_generation_authorization"] == 0, "CROSS_ASPECT_RESULT_AUTH_NOT_CLOSED")
+    require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "CROSS_ASPECT_RESULT_FIGMA_REOPENED")
+    require(lock["execution_boundary"]["second_style_execution_allowed"] is False, "CROSS_ASPECT_RESULT_SECOND_STYLE_REOPENED")
+    compact = lock["compact_vpd_6_control_candidate"]
+    require(compact["controls_changed"] is False and compact["add_more_rules"] is False, "CROSS_ASPECT_RESULT_COMPACT_MUTATION")
+    require(compact["style_capsule_promotion_allowed"] is False and compact["stable_baseline_replacement_allowed"] is False, "CROSS_ASPECT_RESULT_FALSE_PROMOTION")
+    gate = lock["p5_gate"]
+    require(gate["status"] == "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE" and gate["second_style_execution_allowed"] is False, "CROSS_ASPECT_RESULT_P5_GATE")
+    require(lock.get("render_allowed") is False and lock.get("p6_allowed") is False, "CROSS_ASPECT_RESULT_PREMATURE_RENDER")
 
 def validate_t1_retry_record(record):
     """Validate scope/budget only; this never certifies lettering or taste."""
@@ -410,7 +439,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -453,6 +482,8 @@ def validate_p6_composition_state(root):
         _validate_cross_aspect_photo_only_prep(root, lock, cp)
     if action == CROSS_ASPECT_EXECUTE_ACTION:
         _validate_cross_aspect_photo_only_authorized(root, lock, cp)
+    if action == CROSS_ASPECT_RESULT_ACTION:
+        _validate_cross_aspect_photo_only_result(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")

@@ -811,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_AUTHORIZED_READY_EXECUTION",
+    "checkpoint": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_BLIND_COMPLETE_ROUTE_B_WINS_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_ACCEPTANCE",
     "challenge_ids": [
       "H1",
       "H2",
@@ -849,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY",
+    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 139,
-    "sha256": "235562472d0992ea132491564d211509bc6097d8c56d5b0652f6029389f4cc06",
+    "revision": 140,
+    "sha256": "85d590ec93a42bb5776f8dcacb0171631f3b1f65596bd96e2d7efe6996b372b8",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-AUTHORIZED-20260925-001",
-      "event_hash": "35943e23b43015d6b6faf6d71f9795fa6a4fd3386869dec268f135174cd51270"
+      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-BLIND-RESULT-20260925-001",
+      "event_hash": "78af99b99e81e3ffb51d659ba1ad1b97825c766c3e75427406bb24ce331a0313"
     }
   },
   "mature_workflow_audit": {
@@ -1414,26 +1414,20 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "cross_aspect_photo_only_ab": {
-    "status": "AUTHORIZED_READY_EXECUTION",
+    "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
     "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
-    "evidence": {
-      "prep": {
-        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json",
-        "sha256": "a47a52d9790a6bd06058aff2341e7128459b665aadd3d13e26f4cc077812d4b4"
-      },
-      "route_A_ticket": {
-        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
-        "sha256": "81d82279808e53ced454e9d5c78036c73851a48e4554c4218151f061f61a8359"
-      },
-      "route_B_ticket": {
-        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
-        "sha256": "0a6c9cfa2491137abff14af1220fd59df91183e001e21b20db1c7d6a7f143836"
-      },
-      "blind_evaluator_prompt": {
-        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260925.txt",
-        "sha256": "cd9e179ccff333be3338c5ff2d5ef409342b2f51bb8fdb342cceb73c91afceda",
-        "pre_mapping_frozen": true
-      }
+    "result": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+      "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+    },
+    "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+    "correctness": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "aspect_reflow": {
+      "A": "PASS",
+      "B": "PASS"
     },
     "budget": {
       "proposed_images": 2,
@@ -1441,12 +1435,18 @@
       "route_A_images": 1,
       "route_B_images": 1,
       "retry_budget": 0,
-      "no_third_image": true
+      "no_third_image": true,
+      "consumed_images": 2,
+      "remaining_images": 0
     },
-    "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY",
-    "authorization": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION_20260925.json",
-      "sha256": "106f9cc31c8acffe70c1e2e0475779d35fa0c1a2881e8351072dccfb50b546e2"
-    }
+    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+  },
+  "p5_gate": {
+    "status": "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE",
+    "mechanism_evidence": "SUPPORTED_DIRECTIONALLY_ACROSS_TWO_CONTENTS_AND_9_16",
+    "complete_design_sample_acceptance": "NOT_YET_SATISFIED",
+    "pair2_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "second_style_execution_allowed": false,
+    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
   }
 }
