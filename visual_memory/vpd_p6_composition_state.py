@@ -85,7 +85,11 @@ def _validate_cross_aspect_photo_only_prep(root, lock, cp):
     require(prep["shared_controls"]["renderer"] == "CHATGPT_IMAGES" and prep["shared_controls"]["requested_aspect"] == "9:16 PORTRAIT", "CROSS_ASPECT_RENDERER_OR_RATIO")
     require(prep["route_A"]["extra_vpd_controls"] == [], "CROSS_ASPECT_ROUTE_A_CONTAMINATION")
     candidate = read(root, prep["route_B"]["candidate_source"])
-    require(prep["route_B"]["mechanism_controls"] == candidate["controls"], "CROSS_ASPECT_CONTROL_DRIFT")
+    prior_pair2 = read(root, "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json")
+    require(len(candidate["controls"]) == 6 and len(prep["route_B"]["mechanism_controls"]) == 6, "CROSS_ASPECT_CONTROL_COUNT_DRIFT")
+    require(prep["route_B"]["candidate_source"] == prior_pair2["route_B"]["candidate_source"], "CROSS_ASPECT_CANDIDATE_SOURCE_DRIFT")
+    require(prior_pair2["route_B"]["mechanism_preserving_content_slot_substitution"] is True, "CROSS_ASPECT_PAIR2_SUBSTITUTION_BOUNDARY_MISSING")
+    require(prep["route_B"]["mechanism_controls"] == prior_pair2["route_B"]["mechanism_controls"], "CROSS_ASPECT_CONTROL_DRIFT")
     require(prep["scope_review"]["keep_all_six_controls_unchanged"] is True and prep["scope_review"]["add_visual_rules"] is False, "CROSS_ASPECT_RULE_CHASING")
     require(prep["boundaries"]["current_image_generation_authorization"] == 0 and prep["boundaries"]["current_figma_canvas_authorization"] == 0, "CROSS_ASPECT_PREMATURE_AUTH")
     compact = lock["compact_vpd_6_control_candidate"]
