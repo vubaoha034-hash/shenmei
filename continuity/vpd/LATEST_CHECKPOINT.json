@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 168,
-  "recorded_at": "2026-09-25T10:50:00Z",
+  "sequence": 169,
+  "recorded_at": "2026-09-25T11:35:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4-RF1 authorized with synchronized commercial ledger tail; waiting validator PASS before Route A.",
+  "current_focus": "P4-RF1 Route A archived and verified; exactly one Route B image remains authorized.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -261,7 +261,9 @@
     "p4_rf1_golden_gated_validation_contract_frozen",
     "p4_rf1_explicit_two_image_authorization_recorded",
     "p4_rf1_exact_route_tickets_and_evaluator_frozen",
-    "p4_rf1_commercial_ledger_tail_synchronized"
+    "p4_rf1_commercial_ledger_tail_synchronized",
+    "p4_rf1_route_a_generated_once_no_r1c",
+    "p4_rf1_route_a_raw_sha256_verified_archived"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -332,7 +334,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "VERIFY_CONTROL_PLANE_CI_THEN_EXECUTE_P4_RF1_ROUTE_A_EXACTLY_ONCE",
+  "next_required_action": "EXECUTE_P4_RF1_ROUTE_B_EXACTLY_ONCE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -400,10 +402,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_AUTHORIZED_WAITING_CI",
+  "status": "VPD_P4_RF1_ROUTE_A_ARCHIVED_ROUTE_B_READY",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5d45537bdac6581fe08af725bf802c15ee5af2903ab325eb89557f6b6f912a49"
+    "sha256": "1cf868fcb89e4fc53f45545761e1c9ba19797860c0fa4e0fbbcb654e874ee993"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -424,8 +426,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION-AUTHORIZED-20260925-001",
-      "event_hash": "e1da38f4547e63a5d7e91ffb2a9d595ff98559964be47c284b2fb1788ba538bb"
+      "event_id": "EVT-VPD-P4-RF1-ROUTE-A-ARCHIVED-20260925-001",
+      "event_hash": "49194db22fc7f57e4a06e238684e6673b2e73a7fa54996640cb2fc9938be4ff6"
     }
   },
   "typography_repair": {
