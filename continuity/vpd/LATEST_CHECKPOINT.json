@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 165,
-  "recorded_at": "2026-09-25T10:18:00Z",
+  "sequence": 166,
+  "recorded_at": "2026-09-25T10:30:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4 Golden Gate completed: both candidates fail absolute realism; relative comparison is blocked; perform only non-generative failure review.",
+  "current_focus": "P4 non-generative realism root-cause audit complete; minimal R1C anchor causal-isolation strategy frozen; waiting explicit two-image authorization.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -255,7 +255,10 @@
     "p4_low_semantic_shared_base_ab_frozen_zero_budget",
     "p4_golden_gated_realism_evaluator_valid_both_fail",
     "p4_relative_comparison_stopped_by_absolute_gate",
-    "p4_two_image_budget_closed_zero_retry"
+    "p4_two_image_budget_closed_zero_retry",
+    "p4_golden_gate_fail_non_generative_root_cause_audit_complete",
+    "p4_rf1_r1c_anchor_causal_isolation_strategy_frozen_not_authorized",
+    "p4_rf1_golden_gated_validation_contract_frozen"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -326,7 +329,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY",
+  "next_required_action": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_OF_FROZEN_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -1883,5 +1886,9 @@
       "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
     },
     "runtime_generation_anchor_unchanged": true
+  },
+  "latest_evidence": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATE_FAIL_NON_GENERATIVE_REALISM_ROOT_CAUSE_AUDIT_AND_NEXT_STRATEGY_20260925.json",
+    "evidence_commit": "503561147c35dca5ed1ad64d78b8151f7ba0f2fb"
   }
 }
