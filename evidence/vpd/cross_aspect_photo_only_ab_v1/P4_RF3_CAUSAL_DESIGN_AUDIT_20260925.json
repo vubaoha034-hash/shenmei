@@ -1,0 +1,221 @@
+{
+  "schema_version": "vpd-p4-rf3-causal-design-audit/v1",
+  "artifact_type": "P4_RF3_CAUSAL_DESIGN_AUDIT",
+  "recorded_at": "2026-09-25T21:50:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "AUDIT_COMPLETE_WAITING_REVIEWER_GATE",
+  "scope": {
+    "image_budget": 0,
+    "new_images": 0,
+    "generation": false,
+    "prompt_execution": false,
+    "figma": false,
+    "p5": false,
+    "reuse_rf2_cancelled_budget": false
+  },
+  "accepted_prior_boundary": {
+    "rf1": "R1C_NOT_NECESSARY",
+    "rf2": "TOPIC_CONDITIONED_MECHANISM_FAMILY_STRONGLY_IMPLICATED",
+    "prohibited_overclaim": [
+      "TOFU_IS_UNIQUE_ROOT_CAUSE",
+      "RENDERER_PRIOR_PROVEN_PRIMARY"
+    ]
+  },
+  "evidence_basis": [
+    "RF1_A_TOFU_NO_R1C: FAIL all four Golden realism gates",
+    "RF1_B_TOFU_WITH_R1C: FAIL all four Golden realism gates",
+    "RF2_STAGE1_RICE_NO_R1C: PASS all four Golden realism gates",
+    "Golden realism anchor unchanged",
+    "Historical rice granary sample was also materially more credible but is not itself causal proof"
+  ],
+  "topic_conditioned_subvariables": [
+    {
+      "id": "S1_HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
+      "hypothesis": "The tokens/semantics that frame a scene as traditional/heritage craft activate stylized heritage-workshop imagery independent of tofu-specific process objects.",
+      "current_support": [
+        "RF1 tofu failures repeatedly contain old-wood/heritage-workshop visual conventions.",
+        "Historical tofu prompts and outputs often emphasize traditional workshop identity."
+      ],
+      "current_counterevidence": [
+        "RF2 rice candidate was also visually traditional/old-workshop-like yet passed all four gates.",
+        "Therefore heritage/traditional semantics alone are unlikely to be sufficient."
+      ],
+      "identifiability_now": "WEAKENED_NOT_ELIMINATED",
+      "minimal_single_variable_test": {
+        "variable": "HERITAGE_TRADITIONAL_SEMANTIC_FRAME",
+        "baseline": "TOFU_EVENT_WITH_TRADITIONAL_WORKSHOP_FRAME",
+        "treatment": "SAME_TOFU_EVENT_IN_FUNCTIONALLY_EQUIVALENT_CONTEMPORARY_SMALL-SCALE_WORKSPACE",
+        "fixed": [
+          "CHATGPT_IMAGES",
+          "same tofu pressing event",
+          "9:16",
+          "NO_R1C",
+          "same RF1 task structure",
+          "same Golden evaluator",
+          "no new realism rules"
+        ],
+        "caveat": "Changing workspace era may also alter expected objects/materials; reviewer must reject if semantic substitution necessarily changes multiple physical scene constraints."
+      }
+    },
+    {
+      "id": "S2_TOFU_PROCESS_OBJECT_PRIOR",
+      "hypothesis": "The tofu-making object/process schema itself (cloth-lined mold, pressing frame, curd/tofu, vats/troughs) triggers canonical explanatory staging and photogenic craft treatment.",
+      "current_support": [
+        "RF1 A fails without R1C while retaining tofu-specific process objects.",
+        "Repeated historical tofu outputs show molds, cloth, vats, steaming equipment and finished tofu arranged as legible production evidence.",
+        "RF2 rice passes under the same renderer/task structure after replacing the production domain."
+      ],
+      "current_counterevidence": [
+        "RF2 changed the entire production domain, so the effect cannot yet be attributed specifically to tofu objects versus moisture/heat or workspace semantics."
+      ],
+      "identifiability_now": "STRONGEST_SUBVARIABLE_CANDIDATE_NOT_PROVEN",
+      "minimal_single_variable_test": {
+        "variable": "PROCESS_OBJECT_SCHEMA_ONLY",
+        "baseline": "TOFU_PRESSING_EVENT",
+        "treatment": "NON_TOFU_PRESSING_EVENT_WITH_MATCHED_DRY_MECHANICAL_STRUCTURE",
+        "candidate": "traditional/manual seed-cake or dry curd-like pressing is rejected if heritage/moisture differs; preferred intervention must preserve pressing action, workbench, operator distance and spatial density while substituting tofu-specific material/object identity only",
+        "fixed": [
+          "CHATGPT_IMAGES",
+          "9:16",
+          "NO_R1C",
+          "same pressing action geometry",
+          "same workspace era",
+          "same RF1 task structure",
+          "same Golden evaluator",
+          "no new realism rules"
+        ],
+        "reviewer_requirement": "Approve only if the proposed substitute can be specified without changing wet/steam state, heritage framing, spatial furnishing or task structure."
+      }
+    },
+    {
+      "id": "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR",
+      "hypothesis": "Moisture, heat, steam and wet-surface expectations associated with tofu production activate cinematic haze, wet-floor sheen and beautified material treatment.",
+      "current_support": [
+        "RF1 evaluator explicitly identified steam, wet floor and window/side light as a coordinated atmosphere package.",
+        "Tofu production plausibly invites wet/steam cues that the renderer can exaggerate."
+      ],
+      "current_counterevidence": [
+        "RF1 A prompt did not explicitly require theatrical steam/wet floor; their appearance may arise from tofu-topic schema or general workshop aesthetics.",
+        "RF2 rice pass cannot isolate moisture because rice scene is substantially drier."
+      ],
+      "identifiability_now": "PLAUSIBLE_UNRESOLVED",
+      "minimal_single_variable_test": {
+        "variable": "ENVIRONMENTAL_MOISTURE_HEAT_STATE_ONLY",
+        "baseline": "TOFU_PRESSING_EVENT_WITH_NORMAL_WET_HOT_PROCESS_CONTEXT",
+        "treatment": "SAME_TOFU_PRESSING_EVENT_AT_A_DRY_COOL_POST-PRESS_HANDLING_MOMENT",
+        "fixed": [
+          "same tofu identity",
+          "same workspace",
+          "same renderer",
+          "9:16",
+          "NO_R1C",
+          "same RF1 task structure",
+          "same Golden evaluator"
+        ],
+        "prohibition": "Do not add 'no steam', 'dry floor', 'avoid haze' as anti-AI negatives; the event itself must naturally differ in moisture/heat state.",
+        "caveat": "Reviewer must verify that changing the event phase does not also change process-object inventory or scene layout."
+      }
+    },
+    {
+      "id": "S4_PRODUCTION_SPACE_FURNISHING_PRIOR",
+      "hypothesis": "Dense small-workshop production-space semantics encourage the renderer to arrange multiple tools, containers and machines as explanatory set dressing.",
+      "current_support": [
+        "RF1 A/B both fail documentary causality with multiple workshop cues kept legible.",
+        "Older tofu evidence also shows complete process-space storytelling."
+      ],
+      "current_counterevidence": [
+        "RF2 rice candidate remains a production workspace with machinery, sacks, sieve and broom yet passes.",
+        "Therefore production-space furnishing alone is not sufficient."
+      ],
+      "identifiability_now": "WEAKENED_NOT_ELIMINATED",
+      "minimal_single_variable_test": {
+        "variable": "SPACE_FURNISHING_DENSITY_SEMANTIC_ONLY",
+        "baseline": "TOFU_PRESSING_IN_FULL_WORKSHOP",
+        "treatment": "SAME_TOFU_PRESSING_EVENT_IN_A_FUNCTIONALLY_MINIMAL_PRESSING_BAY",
+        "fixed": [
+          "same tofu event",
+          "same renderer",
+          "9:16",
+          "NO_R1C",
+          "same RF1 task structure",
+          "same Golden evaluator",
+          "same heritage era if retained"
+        ],
+        "caveat": "If reducing furnishing changes 'make the place identifiable' semantics or task structure, the test is confounded and must not run."
+      }
+    }
+  ],
+  "causal_ranking_for_design_not_truth": {
+    "note": "This is experimental priority, not a causal verdict.",
+    "priority_order": [
+      "S2_TOFU_PROCESS_OBJECT_PRIOR",
+      "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR",
+      "S1_HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
+      "S4_PRODUCTION_SPACE_FURNISHING_PRIOR"
+    ],
+    "rationale": "S1 and S4 are weakened because the passing RF2 rice scene still contains traditional/old-workshop and production-space semantics. The remaining discriminating difference is more concentrated in tofu-specific process schema and associated wet/heat state."
+  },
+  "frozen_next_minimal_experiment": {
+    "contract_id": "P4-RF3-SINGLE-SEMANTIC-SUBVARIABLE-V1",
+    "status": "FROZEN_NOT_AUTHORIZED",
+    "selected_variable": "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR",
+    "reason_for_selection": "Among feasible single-variable interventions, changing the tofu process phase from wet/hot to dry/cool post-press handling can preserve tofu identity, workspace, renderer, aspect, R1C policy and RF1 task structure more cleanly than replacing the full process-object schema.",
+    "baseline": "EXISTING_RF1_A_TOFU_NO_R1C",
+    "proposed_candidate": "SAME_TOFU_WORKSHOP_AND_PRODUCT_IDENTITY, SAME 9:16 RF1 STRUCTURE, but anchor a dry/cool post-press handling moment rather than the wet/hot pressing context.",
+    "exact_single_variable": "PROCESS_PHASE_ENVIRONMENTAL_MOISTURE_HEAT_STATE",
+    "fixed": [
+      "CHATGPT_IMAGES",
+      "TOFU_TOPIC",
+      "TOFU_WORKSHOP",
+      "NO_R1C",
+      "9:16",
+      "RF1_SHARED_TASK_STRUCTURE",
+      "NO_COMPACT_SIX",
+      "NO_NEW_ANTI_AI_REALISM_MATERIAL_MESS_OCCLUSION_RULES",
+      "GOLDEN_EVALUATOR",
+      "FOUR_ABSOLUTE_REALISM_GATES"
+    ],
+    "prohibited_prompt_changes": [
+      "Do not add explicit 'no steam', 'dry floor', 'avoid cinematic light', 'less staged', or similar negative/realism instructions.",
+      "Do not remove workshop-identification structure.",
+      "Do not change renderer, reference policy, aspect, or evaluator."
+    ],
+    "proposed_budget": {
+      "new_images_max": 1,
+      "retries": 0,
+      "third_image": false,
+      "best_of_n": false,
+      "reroll": false,
+      "technical_failure_extra_budget": 0
+    },
+    "preregistered_interpretation": {
+      "RF1_TOFU_WET_FAIL__RF3_TOFU_DRY_PASS": "WET_HEAT_STEAM_ENVIRONMENT_SUBVARIABLE_STRONGLY_IMPLICATED_WITHIN_TOPIC_CONDITIONED_FAMILY; do not claim sole cause.",
+      "RF1_TOFU_WET_FAIL__RF3_TOFU_DRY_FAIL": "WET_HEAT_STEAM_STATE_NOT_SUFFICIENT_TO_EXPLAIN_TOPIC EFFECT; tofu process-object schema or other topic-conditioned factors remain unresolved.",
+      "TECHNICAL_INVALID": "NO_CAUSAL_INTERPRETATION; stop without retry."
+    },
+    "stop_conditions": [
+      "Stop after the one candidate and one Golden absolute-realism evaluation.",
+      "No second semantic subvariable under this contract.",
+      "No rule append after failure.",
+      "No Figma and no P5."
+    ]
+  },
+  "reviewer_gate": {
+    "status": "PENDING",
+    "required_checks": [
+      "Does the proposed candidate preserve tofu topic and workshop identity?",
+      "Is the only changed semantic subvariable truly the process phase / moisture-heat state?",
+      "Can the treatment be expressed without explicit anti-AI/realism negative rules?",
+      "Are object inventory, workspace era, task structure, renderer, aspect, reference policy and evaluator held fixed enough for causal interpretation?",
+      "Is budget exactly one new image, zero retry?"
+    ],
+    "generation_authorization": 0
+  },
+  "budget_boundary": {
+    "rf2_cancelled_second_image_reusable": false,
+    "rf3_current_image_budget": 0,
+    "future_proposed_image_budget": 1,
+    "future_budget_requires_new_authorization": true
+  },
+  "next_required_action": "REVIEW_P4_RF3_SINGLE_SEMANTIC_SUBVARIABLE_CONTRACT_NO_GENERATION"
+}
