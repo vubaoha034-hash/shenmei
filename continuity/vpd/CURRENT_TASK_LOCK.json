@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 145,
+  "revision": 146,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4 Golden-gate failure review is complete. Existing evidence rejects compact-six controls and shared-base prompt overload as sufficient primary causes. Strongest current hypothesis is a subject-conditioned ChatGPT Images prior for traditional tofu/workshop imagery interacting with the design-led R1C generation reference. A minimal two-arm R1C anchor ablation strategy and Golden-gated validation contract are frozen but not authorized.",
-  "status": "VPD_P4_GOLDEN_GATE_FAIL_ROOT_CAUSE_AUDIT_COMPLETE_REALISM_STRATEGY_FROZEN_WAITING_AUTHORIZATION",
+  "current_stage": "P4-RF1 R1C anchor causal isolation is explicitly authorized for exactly two ChatGPT Images outputs: A=1 with no R1C reference, B=1 with exact R1C reference. Budget is authorized but unconsumed. Execution is blocked until current control-plane CI passes.",
+  "status": "VPD_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_AUTHORIZED_WAITING_CI",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_OF_FROZEN_P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION",
+  "next_required_action": "VERIFY_CONTROL_PLANE_CI_THEN_EXECUTE_P4_RF1_ROUTE_A_EXACTLY_ONCE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,20 +142,20 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 2,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "completed one non-generative P4 Golden-gate root-cause audit using existing Golden, A/B outputs, receipts and historical controls only",
-    "classified compact six controls as not primary cause and shared-base prompt overload as contributory but insufficient",
-    "classified R1C as plausible amplifier but not proven primary because same-anchor rice-granary evidence was more credible",
-    "identified subject-conditioned ChatGPT Images prior interacting with R1C design conditioning as strongest current hypothesis",
-    "froze minimal P4-RF1 two-arm R1C anchor causal-isolation strategy with zero current image authorization",
-    "froze Golden-gated validation contract and hard stop; no Figma, no mapping reveal, no P5 advance"
+    "idempotency check confirmed no existing P4-RF1 execution or consumed authorization",
+    "recorded explicit two-image authorization for frozen P4-RF1",
+    "froze exact Route A no-R1C generation ticket",
+    "froze exact Route B exact-R1C generation ticket",
+    "froze Golden absolute-realism causal evaluator prompt",
+    "kept retry=0, third image=false, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-25T10:30:00Z",
+  "updated_at": "2026-09-25T10:40:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2020,5 +2020,43 @@
     "frozen_strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
     "image_authorization": 0,
     "figma_authorization": 0
+  },
+  "p4_rf1_r1c_anchor_causal_isolation": {
+    "status": "AUTHORIZED_WAITING_CI",
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_AUTHORIZATION_20260925.json",
+      "commit": "3da052ba5ca1178fa82aa1d89af70e5f98a97e89"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF1_ROUTE_A_NO_R1C_TO_FRESH_CHAT_20260925.txt",
+      "commit": "78304df158354f94a0bba988f33895fda52be066"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF1_ROUTE_B_WITH_R1C_TO_FRESH_CHAT_20260925.txt",
+      "commit": "0f0752dd47c3cba30df9e58a67732002e9245cd2"
+    },
+    "evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_GOLDEN_CAUSAL_EVALUATOR_PROMPT_20260925.txt",
+      "commit": "c8f2db50c805a5189e4827a0a53fef73dc0f7be7"
+    },
+    "budget": {
+      "authorized": 2,
+      "consumed": 0,
+      "remaining": 2,
+      "retry": 0,
+      "no_third_image": true
+    },
+    "route_A": {
+      "authorized": 1,
+      "consumed": 0,
+      "reference": "NONE"
+    },
+    "route_B": {
+      "authorized": 1,
+      "consumed": 0,
+      "reference": "R1C_EXACT"
+    },
+    "figma_authorization": 0,
+    "p5_allowed": false
   }
 }
