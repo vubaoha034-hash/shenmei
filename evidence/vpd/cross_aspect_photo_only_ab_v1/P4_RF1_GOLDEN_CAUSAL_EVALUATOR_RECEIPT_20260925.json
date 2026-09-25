@@ -1,0 +1,63 @@
+{
+  "schema_version": "vpd-p4-rf1-golden-evaluator-receipt/v1",
+  "artifact_type": "P4_RF1_GOLDEN_CAUSAL_EVALUATOR_RECEIPT",
+  "recorded_at": "2026-09-25T20:05:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
+  "source": "EXISTING_VALID_EVALUATOR_RESULT__NO_REEVALUATION",
+  "evaluator_chat_url": "https://chatgpt.com/c/6ab65f6e-9200-83ee-bf6d-753fb5819002",
+  "input_assets": {
+    "GOLDEN_REALISM": {
+      "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "role": "EVALUATION_ONLY"
+    },
+    "CANDIDATE_A": {
+      "sha256": "2185a904b284655f879e861a6fdf5bdc0280f2253a70912ef1785032f5ebb5f3",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png",
+      "route": "NO_R1C"
+    },
+    "CANDIDATE_B": {
+      "sha256": "4334dda3858ed9a601a49adfddb1ac81fb65ef1fe33a063fb03a88086d6433cf",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png",
+      "route": "WITH_R1C"
+    }
+  },
+  "absolute_gates": {
+    "A": {
+      "FIRST_IMPRESSION_AI_GATE": "FAIL",
+      "DOCUMENTARY_CAUSALITY": "FAIL",
+      "MATERIAL_HETEROGENEITY": "FAIL",
+      "ABSOLUTE_REALISM_GATE": "FAIL"
+    },
+    "B": {
+      "FIRST_IMPRESSION_AI_GATE": "FAIL",
+      "DOCUMENTARY_CAUSALITY": "FAIL",
+      "MATERIAL_HETEROGENEITY": "FAIL",
+      "ABSOLUTE_REALISM_GATE": "FAIL"
+    }
+  },
+  "causal_interpretation": "R1C_NOT_NECESSARY",
+  "frozen_contract_branch": "A_FAIL_B_FAIL",
+  "renderer_prior_interpretation": "SUBJECT_CONDITIONED_RENDERER_PRIOR_REMAINS_PRIMARY_SUSPECT",
+  "confidence": "HIGH",
+  "relative_aesthetic_comparison_performed": false,
+  "route_mapping_used_only_for_causal_variable_interpretation": true,
+  "no_new_generation": true,
+  "no_retry": true,
+  "no_third_image": true,
+  "figma_used": false,
+  "p5_entered": false
+}
