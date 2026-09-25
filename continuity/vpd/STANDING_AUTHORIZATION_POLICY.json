@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-standing-authorization-policy/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-25T19:59:00+08:00",
+  "status": "ACTIVE",
+  "source": "EXPLICIT_USER_PROJECT_POLICY",
+  "rule": {
+    "auto_authorize_when_all_true": [
+      "The next action is the unique legal successor under the currently frozen protocol.",
+      "The required state is only WAIT_FOR_USER_AUTHORIZATION or AUTH_REQUIRED.",
+      "The action stays inside the already-frozen budget.",
+      "The action preserves all currently frozen safety and experiment boundaries.",
+      "The action does not alter the experimental design, comparison contract, or hard gates."
+    ],
+    "do_not_auto_authorize_if_any_true": [
+      "Image, compute, retry, candidate, or other resource budget would increase.",
+      "A retry, third image, best-of-N, reroll, hidden variant, or replacement output would be added where currently prohibited.",
+      "Figma or any currently blocked production surface would be opened.",
+      "P5 or another currently unauthorized stage would be entered.",
+      "The experiment design, independent variable, reference policy, evaluator contract, or hard gate would change.",
+      "A current blocker, quality gate, safety gate, or protocol restriction would be relaxed or bypassed.",
+      "There is more than one legal successor or the control-plane state is ambiguous/inconsistent."
+    ],
+    "required_behavior": [
+      "Perform idempotency verification before consuming authorization.",
+      "Do not ask the user again when the auto-authorization conditions are satisfied.",
+      "Record the derived authorization in the authoritative control plane before execution.",
+      "Preserve all existing budget ceilings and stop rules.",
+      "Treat technical failures according to the frozen protocol; never convert this standing policy into extra retries or extra budget.",
+      "If any exclusion condition applies, stop at the authorization boundary and require fresh explicit user authorization."
+    ]
+  },
+  "scope": {
+    "project": "高级感P / visual-aesthetic-vpd only",
+    "unlimited_authorization": false,
+    "applies_retroactively_to_already_consumed_budget": false,
+    "overrides_hard_gates": false,
+    "overrides_budget": false,
+    "overrides_experiment_design": false
+  }
+}
