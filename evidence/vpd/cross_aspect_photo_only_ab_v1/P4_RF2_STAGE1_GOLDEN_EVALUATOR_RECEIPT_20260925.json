@@ -1,0 +1,48 @@
+{
+  "schema_version": "vpd-p4-rf2-stage1-golden-evaluator-receipt/v1",
+  "artifact_type": "P4_RF2_STAGE1_GOLDEN_EVALUATOR_RECEIPT",
+  "recorded_at": "2026-09-25T21:39:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "contract_id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
+  "evaluator_chat_url": "https://chatgpt.com/c/6ab6796f-a91c-83e8-a905-ebc2a824b5dd",
+  "inputs": {
+    "golden": {
+      "title": "GOLDEN_REALISM.png",
+      "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+      "role": "EVALUATION_ONLY"
+    },
+    "stage1_rice": {
+      "title": "传统米坊里的淘米筛选.png",
+      "sha256": "ad0dfb992490c8f8a513bd54959cf84f618585bca03592bf3fb72f9016763260",
+      "dimensions": [
+        941,
+        1672
+      ]
+    }
+  },
+  "evaluator_prompt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_GOLDEN_EVALUATOR_PROMPT_20260925.txt",
+    "sha256": "969ee3ebac9e94bb645656c04d59c4092ee4257fd8deb314249296441a993abc"
+  },
+  "gates": {
+    "FIRST_IMPRESSION_AI_GATE": "PASS",
+    "DOCUMENTARY_CAUSALITY": "PASS",
+    "MATERIAL_HETEROGENEITY": "PASS",
+    "ABSOLUTE_REALISM_GATE": "PASS"
+  },
+  "confidence": 0.76,
+  "reasons": [
+    "Rice sifting into the bag, the worker's hands and the sieve form one continuous work action; background equipment and grain state explain the process rather than reading as a static checklist.",
+    "Wood, bamboo sieve, metal machinery, woven sacks, plastic bucket and broom show differentiated material states rather than a single uniform aged finish.",
+    "Cropping of the worker, partial blur of machinery, sack occlusion and falling-grain trajectory contribute incidental documentary causality.",
+    "Residual risk remains: backlight/haze is somewhat photographic and traditional rice-workshop symbols are still relatively complete, but not enough to cross the FAIL threshold."
+  ],
+  "stop_decision": "STOP_STAGE1_PASS_STAGE2_PROHIBITED",
+  "causal_interpretation": "TOPIC_CONDITIONED_MECHANISM_FAMILY_STRONGLY_IMPLICATED",
+  "prohibited_claims": [
+    "TOPIC_IS_UNIQUE_CAUSE",
+    "RENDERER_PRIOR_DISPROVEN",
+    "R1C_HAS_ZERO_EFFECT"
+  ],
+  "relative_aesthetic_comparison_performed": false
+}
