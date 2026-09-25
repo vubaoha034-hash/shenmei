@@ -1,0 +1,100 @@
+{
+  "schema_version": "vpd-compact-cross-aspect-photo-only-ab-prep/v1",
+  "artifact_type": "COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_PREP",
+  "recorded_at": "2026-09-25T00:26:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+  "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+  "purpose": "Test the remaining cross-aspect question after Pair2 settlement while preserving the six-control compact module strictly as a photo-only mechanism candidate. Change aspect from 3:4 to 9:16 while holding renderer, reference, tofu subject/process class, one-image budget and blind evaluation structure symmetric.",
+  "scope_review": {
+    "pair2_settlement": "PHOTO_ONLY_SIGNAL_PRESERVED__END_TO_END_COMPLETE_POSTER_BENEFIT_NOT_SUPPORTED",
+    "keep_all_six_controls_unchanged": true,
+    "add_visual_rules": false,
+    "simplify_control_count_now": false,
+    "rationale": "Both photo-only blind replications favored Route B at MEDIUM confidence, so deleting validated photo-only controls now would discard supported mechanism evidence. Pair2 only narrows their claim boundary: they are not supported as an end-to-end complete-poster advantage.",
+    "final_candidate_scope": "PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT",
+    "second_style_blocked_until_first_family_validation_complete": true
+  },
+  "isolation": {
+    "baseline_aspect": "3:4",
+    "target_aspect": "9:16",
+    "same_content_as_pair2": true,
+    "subject_process_class": "HANDMADE_TOFU_PROCESS_V1",
+    "same_reference": true,
+    "same_renderer": true,
+    "same_output_count_per_route": true,
+    "only_intended_changed_variable": "ASPECT_RATIO_AND_NATIVE_RELATION_REFLOW",
+    "no_figma": true,
+    "no_complete_poster_claim": true
+  },
+  "reference": {
+    "source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "path": "/VPD_REFERENCES/R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "count": 1
+  },
+  "shared_image_task": "Create exactly one photo-only 9:16 portrait image of a real traditional tofu workshop in early morning. The scene must visibly contain pale soybeans or freshly made white tofu, natural pressing cloths, aged wooden tofu molds or pressing frames, a stone/plaster washing or soaking trough, and a modest preparation/pressing table with believable signs of active food production. Use restrained documentary photography, cool-neutral morning daylight, realistic wet/dry material differences, worn wood and cloth, and one natural quiet low-detail area that could later hold typography. Keep the scene primarily interior; do not use mountains, forest scenery, or a picturesque outdoor view as a compositional shortcut. Compose natively for a tall 9:16 frame: the spatial zones and near/mid/far relationships must structurally reflow rather than looking like a simple crop, stretch, stack, or centered-vertical fallback from a 3:4 composition. Do not include any people as the main subject, beauty/wellness products, bottles, cosmetics, supplements, laptops, home-office lifestyle scenes, tea ware, wok/fire, logos, labels, calligraphy, readable text, advertising copy, detached graphic panels, or invented brands. Use the attached R1C image only for overall visual family feeling and relational balance; do not copy its subject, brand, text, motifs, palette literally, or layout coordinates.",
+  "shared_controls": {
+    "renderer": "CHATGPT_IMAGES",
+    "generation_not_edit": true,
+    "requested_aspect": "9:16 PORTRAIT",
+    "output_count_per_route": 1,
+    "fresh_chat_per_route": true,
+    "no_project_reads_in_generator": true,
+    "no_hidden_variants": true,
+    "no_best_of_n": true,
+    "retry_budget": 0,
+    "no_figma": true,
+    "raw_output_drive_archive_required": true
+  },
+  "route_A": {
+    "id": "REFERENCE_NATIVE_BASELINE",
+    "extra_vpd_controls": []
+  },
+  "route_B": {
+    "id": "REFERENCE_PLUS_COMPACT_VPD_CANDIDATE_R1",
+    "candidate_source": "evidence/vpd/library_native_ab_v1/COMPACT_VPD_6_CONTROL_CANDIDATE_R1_20260923.json",
+    "controls_unchanged": true,
+    "mechanism_controls": [
+      "One dominant material mass counterbalanced by a scene-created quiet tonal pocket.",
+      "Clear first-second-third read through dominant mass, depth layer and supporting process detail.",
+      "Concentrate high material detail regionally; keep the typography pocket visually low-density.",
+      "Preserve truthful near/mid/far depth rather than flattening the scene into a decorative still life.",
+      "Use pale tofu/soy, natural press cloth, aged wood and mineral/stone surfaces with cool-neutral shadow roles; do not copy the reference palette literally.",
+      "Bind soybeans/tofu, press cloths, molds, troughs and tools to real production/process evidence rather than decorative motifs."
+    ]
+  },
+  "correctness_gate": [
+    "exactly one image per route",
+    "9:16 portrait",
+    "tofu workshop is unmistakable",
+    "required process/material evidence visible",
+    "native tall-frame reflow; not crop-only, stretch-only, stack-only, or generic centered vertical fallback",
+    "no readable text or invented brand",
+    "no beauty/product-ad substitution",
+    "no scenic mountain/forest/outdoor-view shortcut"
+  ],
+  "evaluation": {
+    "blind_review_required": true,
+    "blind_mapping_method": "After both exact output hashes are known, assign X/Y by lexicographic ascending SHA-256 order.",
+    "blind_prompt_must_be_frozen_before_mapping": true,
+    "primary_question": "Does the compact photo-only mechanism preserve hierarchy, quiet tonal pocket, regional density and truthful depth while structurally reflowing from 3:4 to 9:16?",
+    "no_known_label_preference_prompt_before_blind_verdict": true,
+    "no_complete_poster_inference_from_this_test": true,
+    "no_promotion_from_single_cross_aspect_pair": true
+  },
+  "budget": {
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "retry_budget": 0
+  },
+  "boundaries": {
+    "current_image_generation_authorization": 0,
+    "current_figma_canvas_authorization": 0,
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false,
+    "second_style_execution_allowed": false
+  },
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES"
+}

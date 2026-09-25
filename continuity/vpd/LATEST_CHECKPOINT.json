@@ -1,7 +1,7 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 158,
+  "sequence": 159,
   "recorded_at": "2026-09-24T13:48:00Z",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
@@ -312,7 +312,7 @@
     "The fresh generator conversation must show R1C as an attached image before generation.",
     "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
   ],
-  "next_required_action": "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -380,10 +380,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P3_PAIR2_SETTLED_PHOTO_ONLY_SIGNAL_PRESERVED_COMPLETE_POSTER_BENEFIT_NOT_SUPPORTED",
+  "status": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_PREPARED_WAITING_GENERATION_AUTHORIZATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "ba7da74133076b17d08876d097e483e454a7735bb1b0839f4063bea67c902a29"
+    "sha256": "0cebc99f768cd0f4d6feda6a20aaee59fbb67c69cdd24c4d0477b8eddcd0a6a5"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -928,8 +928,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Pair2 formally settled. Photo-only Route B mechanism signal remains preserved, while both uncorrected and corrected equal-budget complete-poster blind evaluations favored Route A; Pair2 does not support an end-to-end complete-poster production-integration benefit for Route B. No correction budget remains and no chase-the-win rule additions are allowed.",
-  "updated_at": "2026-09-24T13:48:00Z",
+  "current_stage": "Post-Pair2 scope review completed. The six compact controls remain unchanged as a photo-only mechanism candidate; no chase-win rules were added. The next unfinished mainline validation is a symmetric 9:16 cross-aspect photo-only A/B using the same tofu content, renderer and reference. Protocol, route tickets and blind evaluator prompt are frozen; generation remains unauthorized.",
+  "updated_at": "2026-09-25T00:26:00Z",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1353,7 +1353,7 @@
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
-    "status": "PHOTO_ONLY_MECHANISM_SIGNAL_PRESERVED_PRODUCTION_INTEGRATION_BENEFIT_NOT_SUPPORTED_BY_PAIR2",
+    "status": "PHOTO_ONLY_MECHANISM_CANDIDATE_CROSS_ASPECT_9_16_PREPARED_NOT_PROMOTED",
     "blind_replication_summary": {
       "pair1": {
         "content": "WORKING_RICE_GRANARY",
@@ -1382,6 +1382,35 @@
       "photo_only": "ROUTE_B_WINS_MEDIUM",
       "first_uncorrected_complete_poster": "ROUTE_A_WINS_MEDIUM",
       "corrected_complete_poster": "ROUTE_A_WINS_HIGH"
+    },
+    "cross_aspect_validation": {
+      "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+      "baseline_aspect": "3:4",
+      "target_aspect": "9:16",
+      "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+      "prep": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json",
+        "sha256": "a47a52d9790a6bd06058aff2341e7128459b665aadd3d13e26f4cc077812d4b4"
+      },
+      "route_A_ticket": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+        "sha256": "81d82279808e53ced454e9d5c78036c73851a48e4554c4218151f061f61a8359"
+      },
+      "route_B_ticket": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+        "sha256": "0a6c9cfa2491137abff14af1220fd59df91183e001e21b20db1c7d6a7f143836"
+      },
+      "blind_evaluator_prompt": {
+        "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260925.txt",
+        "sha256": "cd9e179ccff333be3338c5ff2d5ef409342b2f51bb8fdb342cceb73c91afceda",
+        "pre_mapping_frozen": true
+      },
+      "budget": {
+        "proposed_images": 2,
+        "authorized_images": 0,
+        "retry_budget": 0
+      },
+      "result": "PENDING"
     }
   },
   "pair2_equal_budget_figma_ab": {
@@ -1408,7 +1437,7 @@
     "route_B_extra_manual_budget": false,
     "typography_control_is_not_typography_distillation_pass": true,
     "current_canvas_write_authorization": 0,
-    "next": "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE",
+    "next": "PAIR2_SETTLED_NO_FURTHER_ACTION",
     "validator_gate": {
       "status": "PASS",
       "blocker": {
@@ -1668,5 +1697,41 @@
   "pair2_corrected_complete_poster_blind_result": {
     "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_RESULT_20260924.json",
     "sha256": "f12557eda504242f7cac60e4991a32309289ac0aa627696b6ad15f149e97fbb1"
-  }
+  },
+  "cross_aspect_photo_only_ab": {
+    "status": "PREPARED_NOT_AUTHORIZED_FOR_GENERATION",
+    "baseline_aspect": "3:4",
+    "target_aspect": "9:16",
+    "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json",
+      "sha256": "a47a52d9790a6bd06058aff2341e7128459b665aadd3d13e26f4cc077812d4b4"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "81d82279808e53ced454e9d5c78036c73851a48e4554c4218151f061f61a8359"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "0a6c9cfa2491137abff14af1220fd59df91183e001e21b20db1c7d6a7f143836"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260925.txt",
+      "sha256": "cd9e179ccff333be3338c5ff2d5ef409342b2f51bb8fdb342cceb73c91afceda",
+      "pre_mapping_frozen": true
+    },
+    "budget": {
+      "proposed_images": 2,
+      "authorized_images": 0,
+      "retry_budget": 0
+    },
+    "result": "PENDING"
+  },
+  "completed_this_revision": [
+    "reviewed Pair2 settlement against roadmap and aesthetic governance",
+    "kept all six compact controls unchanged but strictly photo-only in scope",
+    "selected 9:16 cross-aspect photo-only A/B as the next unfinished P4 validation",
+    "froze symmetric Route A/Route B tickets and blind evaluator prompt before any output mapping",
+    "kept image generation authorization=0, Figma authorization=0, retry budget=0, second-style execution blocked"
+  ]
 }

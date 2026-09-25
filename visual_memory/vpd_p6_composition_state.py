@@ -26,6 +26,7 @@ PAIR2_SYMMETRIC_CORRECTION_ACTION = "EXECUTE_PAIR2_SYMMETRIC_SINGLE_CORRECTION_P
 PAIR2_CORRECTION_COMPLETE_ACTION = "PREPARE_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_REVIEW_PACKAGE_NO_CANVAS_WRITE"
 PAIR2_CORRECTED_BLIND_ACTION = "RUN_PAIR2_CORRECTED_COMPLETE_POSTER_INDEPENDENT_BLIND_EVALUATION_AND_RETURN_VERDICT"
 PAIR2_SETTLED_ACTION = "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_COMPACT_VPD_CANDIDATE"
+CROSS_ASPECT_WAIT_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -65,7 +66,32 @@ ACTIONS = {
     PAIR2_CORRECTION_COMPLETE_ACTION,
     PAIR2_CORRECTED_BLIND_ACTION,
     PAIR2_SETTLED_ACTION,
+    CROSS_ASPECT_WAIT_AUTH_ACTION,
 }
+
+
+def _validate_cross_aspect_photo_only_prep(root, lock, cp):
+    require(lock.get("status") == "VPD_P4_COMPACT_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_PREPARED_WAITING_GENERATION_AUTHORIZATION", "CROSS_ASPECT_PREP_STATE")
+    cross = lock.get("cross_aspect_photo_only_ab", {})
+    require(cp.get("cross_aspect_photo_only_ab") == cross, "CROSS_ASPECT_CHECKPOINT_DRIFT")
+    require(cross.get("status") == "PREPARED_NOT_AUTHORIZED_FOR_GENERATION", "CROSS_ASPECT_PREP_STATUS")
+    require(cross.get("baseline_aspect") == "3:4" and cross.get("target_aspect") == "9:16", "CROSS_ASPECT_RATIO_DRIFT")
+    require(cross.get("budget") == {"proposed_images":2,"authorized_images":0,"retry_budget":0}, "CROSS_ASPECT_BUDGET_DRIFT")
+    for key in ("prep", "route_A_ticket", "route_B_ticket", "blind_evaluator_prompt"):
+        check_ref(root, cross[key])
+    prep = read(root, cross["prep"]["path"])
+    require(prep["status"] == "PREPARED_NOT_AUTHORIZED_FOR_GENERATION", "CROSS_ASPECT_PREP_DOC_STATUS")
+    require(prep["reference"]["sha256"] == "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414", "CROSS_ASPECT_REFERENCE_DRIFT")
+    require(prep["shared_controls"]["renderer"] == "CHATGPT_IMAGES" and prep["shared_controls"]["requested_aspect"] == "9:16 PORTRAIT", "CROSS_ASPECT_RENDERER_OR_RATIO")
+    require(prep["route_A"]["extra_vpd_controls"] == [], "CROSS_ASPECT_ROUTE_A_CONTAMINATION")
+    candidate = read(root, prep["route_B"]["candidate_source"])
+    require(prep["route_B"]["mechanism_controls"] == candidate["controls"], "CROSS_ASPECT_CONTROL_DRIFT")
+    require(prep["scope_review"]["keep_all_six_controls_unchanged"] is True and prep["scope_review"]["add_visual_rules"] is False, "CROSS_ASPECT_RULE_CHASING")
+    require(prep["boundaries"]["current_image_generation_authorization"] == 0 and prep["boundaries"]["current_figma_canvas_authorization"] == 0, "CROSS_ASPECT_PREMATURE_AUTH")
+    compact = lock["compact_vpd_6_control_candidate"]
+    require(compact["final_scope"] == "PHOTO_ONLY_MECHANISM_CANDIDATE_ONLY__NOT_END_TO_END_COMPLETE_POSTER_BENEFIT", "CROSS_ASPECT_SCOPE_DRIFT")
+    require(compact["controls_changed"] is False and compact["add_more_rules"] is False, "CROSS_ASPECT_COMPACT_MUTATION")
+    require(lock.get("render_allowed") is False and lock.get("p6_allowed") is False, "CROSS_ASPECT_PREMATURE_EXECUTION")
 
 
 def validate_t1_retry_record(record):
@@ -355,7 +381,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else "P6"
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action == CROSS_ASPECT_WAIT_AUTH_ACTION else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -394,6 +420,8 @@ def validate_p6_composition_state(root):
         _validate_pair2_corrected_blind_package(root, lock, cp)
     if action == PAIR2_SETTLED_ACTION:
         _validate_pair2_corrected_blind_settlement(root, lock, cp)
+    if action == CROSS_ASPECT_WAIT_AUTH_ACTION:
+        _validate_cross_aspect_photo_only_prep(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
