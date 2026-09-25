@@ -1,0 +1,67 @@
+{
+  "schema_version": "vpd-p4-golden-gated-realism-repair-result/v1",
+  "artifact_type": "P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_RESULT",
+  "recorded_at": "2026-09-25T10:18:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "ABSOLUTE_REALISM_FAIL_BOTH_STOP_RELATIVE_COMPARISON",
+  "evaluator_receipt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_EVALUATOR_RECEIPT_20260925.json",
+    "sha256": "6609071ec3e65824c14b1b2bc12f3fffd21a33e84c7337ad58e9dd7a3e70ba6b"
+  },
+  "golden_anchor": {
+    "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+    "sha256": "8383ef8e85115875462ba00949f1494890233f885590784557bbf956c01e3f65",
+    "asset_sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7"
+  },
+  "candidate_identity": {
+    "X": {
+      "sha256": "157ff594a911a074eb7804dbe6d10a0eb8a0a2eaaef72b30dde81bcf17df65a3",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "size_bytes": 2311438
+    },
+    "Y": {
+      "sha256": "d53ea554a7d6fe1d5106b38959f86c71bde750ff65b974e7f9b7d2aedff5e523",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "size_bytes": 2361694
+    },
+    "mapping_status": "SEALED_NOT_REVEALED"
+  },
+  "gate_outcome": {
+    "X": "FAIL",
+    "Y": "FAIL",
+    "confidence": "HIGH",
+    "relative_comparison_allowed": false,
+    "winner": "NOT_EVALUATED"
+  },
+  "budget_settlement": {
+    "authorized_images": 2,
+    "consumed_images": 2,
+    "route_A_consumed": 1,
+    "route_B_consumed": 1,
+    "retries_used": 0,
+    "remaining_images": 0,
+    "third_image_created": false,
+    "technical_failures_consumed_new_image_budget": 0
+  },
+  "boundaries": {
+    "current_image_generation_authorization": 0,
+    "figma_authorization": 0,
+    "second_style_execution_allowed": false,
+    "route_mapping_reveal_allowed": false,
+    "no_new_generation_budget": true
+  },
+  "interpretation": {
+    "shared_base_realism_repair_did_not_clear_absolute_gate": true,
+    "prior_relative_mechanism_signals_not_deleted": true,
+    "prior_relative_mechanism_signals_cannot_override_current_absolute_fail": true,
+    "p4_absolute_quality_pass": false,
+    "next_step_must_be_non_generative_review": true
+  },
+  "next_required_action": "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY"
+}

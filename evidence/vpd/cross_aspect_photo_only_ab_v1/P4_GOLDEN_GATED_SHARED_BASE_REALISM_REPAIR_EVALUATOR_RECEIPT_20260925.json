@@ -1,0 +1,75 @@
+{
+  "schema_version": "vpd-p4-golden-gated-realism-evaluator-receipt/v1",
+  "artifact_type": "P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_EVALUATOR_RECEIPT",
+  "recorded_at": "2026-09-25T10:18:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "evaluator": {
+    "chat_url": "https://chatgpt.com/c/6ab648e9-e380-83ee-803c-0745c2e34270",
+    "title": "比较摄影真实性",
+    "reasoning_level": "MEDIUM",
+    "independent_chat": true,
+    "route_mapping_visible": false,
+    "frozen_prompt_path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+    "frozen_prompt_sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
+  },
+  "pixel_transport": {
+    "method": "OPERA_TRUSTED_TEMP_RAW_NETWORK_RESPONSE_TO_BROWSER_FILE_OBJECT",
+    "bytes_reencoded": false,
+    "browser_file_name_only_changed": true,
+    "browser_mime_only_changed_to_image_png": true,
+    "sha256_verified_before_attachment": true,
+    "golden": {
+      "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+      "size_bytes": 2453774,
+      "attached_name": "GOLDEN_REALISM.png"
+    },
+    "candidate_X": {
+      "sha256": "157ff594a911a074eb7804dbe6d10a0eb8a0a2eaaef72b30dde81bcf17df65a3",
+      "size_bytes": 2311438,
+      "attached_name": "CANDIDATE_X.png"
+    },
+    "candidate_Y": {
+      "sha256": "d53ea554a7d6fe1d5106b38959f86c71bde750ff65b974e7f9b7d2aedff5e523",
+      "size_bytes": 2361694,
+      "attached_name": "CANDIDATE_Y.png"
+    }
+  },
+  "mapping": {
+    "status": "SEALED_NOT_REVEALED",
+    "relative_comparison_allowed": false,
+    "route_mapping_persisted_in_public_receipt": false
+  },
+  "valid_verdict": {
+    "GOLDEN_USED_ONLY_FOR_REALISM_CALIBRATION": "YES",
+    "X_FIRST_IMPRESSION_AI_GATE": "FAIL",
+    "Y_FIRST_IMPRESSION_AI_GATE": "FAIL",
+    "X_DOCUMENTARY_CAUSALITY": "FAIL",
+    "Y_DOCUMENTARY_CAUSALITY": "FAIL",
+    "X_MATERIAL_HETEROGENEITY": "FAIL",
+    "Y_MATERIAL_HETEROGENEITY": "FAIL",
+    "X_ABSOLUTE_REALISM_GATE": "FAIL",
+    "Y_ABSOLUTE_REALISM_GATE": "FAIL",
+    "RELATIVE_COMPARISON_ALLOWED": "NO",
+    "WINNER_IF_ALLOWED": "NOT_EVALUATED",
+    "CONFIDENCE": "HIGH",
+    "REASONS": [
+      "X 的主要问题是完整搭景感太强：豆腐模、白布、压榨机构、金属盆、石槽、窗户全部处在非常容易辨认和展示的位置，遮挡关系和随机工作痕迹明显不足，更像为了说明传统豆腐作坊而逐项摆齐。",
+      "X 的材质老化过于同一种审美：木头普遍深褐湿润高反光，布料统一洁白偏米且褶皱好看，石槽统一灰旧，真实作坊应有更强的非统一性和不同年代材料混用。",
+      "Y 虽然少一点器材陈列，但仍明显经过视觉整理：主木模、豆花、布边、压榨木梁和背景槽体都恰好承担清晰构图功能，过于每件东西都知道自己为什么出现。",
+      "Y 的湿润与做旧同样高度统一：木框、支架、工作台、地面同时深色湿亮，湿痕更像服务材质质感，而不是具体工序形成的局部泼溅、流向、踩踏和干湿边界。",
+      "两张豆腐凝乳纹理都偏生成式：颗粒尺度、蓬松程度和明暗变化过于均匀，缺少真实倒入模具后的压实差异、局部坍塌、浆水聚集、布面牵扯和不规则边界。",
+      "Golden 的优势是随机因果更强：泥土、苔藓、菌体、落叶、湿度、光照并不统一为了好看服务，局部存在凌乱、遮挡、脏污尺度差异和非设计性细节。X/Y 更像把真实感元素设计出来。"
+    ],
+    "TRADEOFF": "Y 在空间克制和主体集中度上略低于 X 的清单式展示感，X 的工序信息则更完整；但这只是两个未通过绝对真实性门槛的候选之间差异，不能进入相对胜负判断。"
+  },
+  "invalid_technical_attempts": [
+    {
+      "classification": "TECHNICAL_NO_VERDICT",
+      "reason": "first evaluator attachments rendered as unable-to-load images; invalid for aesthetic evidence"
+    },
+    {
+      "classification": "TECHNICAL_NO_VERDICT",
+      "reason": "subsequent Library index and Drive-plugin transport attempts stalled or timed out before a complete three-image verdict; invalid for aesthetic evidence"
+    }
+  ]
+}
