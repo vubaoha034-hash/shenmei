@@ -1,0 +1,101 @@
+{
+  "schema_version": "vpd-p4-rf3-heritage-semantic-correction/v1",
+  "artifact_type": "P4_RF3_HERITAGE_SEMANTIC_SINGLE_VARIABLE_CORRECTION",
+  "recorded_at": "2026-09-25T22:15:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "CORRECTION_PASS_TRUE_SINGLE_VARIABLE_DESIGN",
+  "supersedes": {
+    "selected_variable": "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR",
+    "contract_id": "P4-RF3-SINGLE-SEMANTIC-SUBVARIABLE-V1",
+    "reason": "Rejected because changing wet/hot pressing to dry/cool post-press handling simultaneously changes production phase, action, object state and environmental state."
+  },
+  "corrected_variable": "S1_HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
+  "single_variable_definition": {
+    "baseline_slot": "traditional tofu workshop",
+    "treatment_slot": "contemporary working tofu workshop",
+    "only_allowed_prompt_diff": "WORKSHOP_SEMANTIC_SLOT",
+    "all_other_prompt_text_identical": true
+  },
+  "invariants": [
+    "TOFU_TOPIC unchanged",
+    "same tofu pressing instant unchanged",
+    "same freshly transferred tofu curds unchanged",
+    "same cloth-lined wooden mold unchanged",
+    "same wet/hot pressing-stage semantics unchanged",
+    "CHATGPT_IMAGES unchanged",
+    "9:16 unchanged",
+    "NO_R1C unchanged",
+    "RF1 shared task structure unchanged",
+    "Golden evaluator and four absolute realism gates unchanged",
+    "no compact six controls",
+    "no anti-AI/realism/material/clutter/occlusion rules",
+    "no explicit prohibition of steam, wet floor, haze or cinematic light"
+  ],
+  "confound_audit": [
+    {
+      "dimension": "production_phase",
+      "result": "HELD_FIXED",
+      "evidence": "same 'freshly transferred tofu curds ... just before or during pressing' sentence"
+    },
+    {
+      "dimension": "action",
+      "result": "HELD_FIXED",
+      "evidence": "same pressing-moment anchor"
+    },
+    {
+      "dimension": "object_state",
+      "result": "HELD_FIXED",
+      "evidence": "same curds, cloth-lined wooden mold and pressing state"
+    },
+    {
+      "dimension": "environmental_state",
+      "result": "HELD_FIXED_BY_NON_INTERVENTION",
+      "evidence": "no steam/wetness/dryness/temperature rule added or removed"
+    },
+    {
+      "dimension": "renderer",
+      "result": "HELD_FIXED",
+      "evidence": "ChatGPT Images"
+    },
+    {
+      "dimension": "aspect",
+      "result": "HELD_FIXED",
+      "evidence": "9:16"
+    },
+    {
+      "dimension": "reference",
+      "result": "HELD_FIXED",
+      "evidence": "NO_R1C"
+    },
+    {
+      "dimension": "task_structure",
+      "result": "HELD_FIXED",
+      "evidence": "template bytes identical except one semantic slot"
+    },
+    {
+      "dimension": "evaluation",
+      "result": "HELD_FIXED",
+      "evidence": "same Golden + same four gates"
+    }
+  ],
+  "residual_risk": {
+    "note": "Changing 'traditional' to 'contemporary' can influence inferred architecture/material appearance. That is not an unintended second intervention; it is the downstream manifestation of the heritage semantic variable being tested. No explicit architecture/material substitutions are permitted.",
+    "reviewer_verdict": "ACCEPTABLE_SINGLE_SEMANTIC_VARIABLE"
+  },
+  "preregistered_interpretation": {
+    "TRADITIONAL_TOFU_FAIL__CONTEMPORARY_TOFU_PASS": "HERITAGE_X_TOFU_SEMANTIC_CONDITION_MECHANISM_STRONGLY_IMPLICATED; heritage is not a unique root cause.",
+    "TRADITIONAL_TOFU_FAIL__CONTEMPORARY_TOFU_FAIL": "HERITAGE_SEMANTIC_FRAME_INSUFFICIENT_TO_EXPLAIN_FAILURE; tofu process-object prior, wet/heat environment prior or other topic-conditioned mechanisms remain unresolved.",
+    "TECHNICAL_INVALID": "NO_CAUSAL_INTERPRETATION; STOP_ZERO_RETRY."
+  },
+  "proposed_budget": {
+    "new_images_max": 1,
+    "retry": 0,
+    "third_image": false,
+    "best_of_n": false,
+    "reroll": false,
+    "technical_failure_extra_budget": 0
+  },
+  "current_turn_generation": false,
+  "current_generation_authorization": 0,
+  "next_policy": "Because the user explicitly scoped standing authorization to this corrected RF3 design after true-single-variable confirmation, the next turn/state may auto-open exactly one image without asking again, but not in this zero-image correction turn."
+}
