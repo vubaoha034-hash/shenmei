@@ -1,0 +1,39 @@
+{
+  "schema_version": "vpd-p4-rf2-generation-authorization/v1",
+  "artifact_type": "P4_RF2_CONDITIONAL_MINIMAL_CAUSAL_EXPERIMENT_AUTHORIZATION",
+  "recorded_at": "2026-09-25T21:36:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "source": "EXPLICIT_REVIEWER_USER_AUTHORIZATION",
+  "contract_id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
+  "budget": {
+    "maximum_images": 2,
+    "stage1_images": 1,
+    "stage2_images_conditional": 1,
+    "retry_budget": 0,
+    "third_image": false,
+    "best_of_n": false,
+    "reroll": false,
+    "technical_failure_extra_budget": 0
+  },
+  "stage1": {
+    "authorized": true,
+    "only_variable": "TOPIC_CONTENT_SLOT",
+    "topic": "RICE_GRANARY",
+    "renderer": "CHATGPT_IMAGES",
+    "aspect": "9:16",
+    "reference": "NONE",
+    "shared_task_structure": "RF1",
+    "new_anti_ai_rules": false
+  },
+  "stage2": {
+    "authorized_only_if_stage1_absolute_realism_fail": true,
+    "pre_authorized_conditional_slot": true,
+    "currently_open": false,
+    "only_variable": "TASK_STRUCTURE"
+  },
+  "boundaries": {
+    "figma": false,
+    "p5": false,
+    "no_relative_aesthetic_winner": true
+  }
+}
