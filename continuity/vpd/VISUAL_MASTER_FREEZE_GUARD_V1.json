@@ -58,6 +58,10 @@
     {
       "id": "G12_VISIBLE_CANDIDATE_BUDGET",
       "rule": "Do not silently create many hidden alternatives after a master is protected. Default to one visible candidate per open-problem iteration unless the current task lock explicitly authorizes another budget."
+    },
+    {
+      "id": "G13_PROJECT_WIDE_PHOTOGRAPHIC_REALISM_GOLDEN_REGRESSION",
+      "rule": "The human-confirmed mushroom photographic-realism Golden must remain addressable as an actual-pixel evaluation benchmark. Future photographic candidates intended to support quality, migration, promotion or baseline claims must pass the absolute obvious-AI regression gate before relative A/B mechanism wins count as success. The Golden is an evaluation anchor by default, not an additional runtime generation reference."
     }
   ],
   "human_verdict_mapping": {
@@ -146,5 +150,20 @@
       "Treat a merely different photo as an automatic improvement.",
       "Retry a solved upload route from scratch."
     ]
+  },
+  "project_wide_photographic_realism_golden": {
+    "status": "ACTIVE",
+    "baseline": {
+      "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+      "sha256": "087338a6b68e6fc46293f67d7c185bd2ec913a21ab8c81d10cda4a588db51d5a"
+    },
+    "regression_gate": {
+      "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+      "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+    },
+    "fail_fast_on_obvious_ai": true,
+    "actual_pixels_outrank_text": true,
+    "relative_mechanism_win_cannot_override_absolute_fail": true,
+    "existing_runtime_anchor_binding_unchanged": true
   }
 }

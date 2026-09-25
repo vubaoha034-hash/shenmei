@@ -1,0 +1,37 @@
+你将收到 3 张图片：
+1. GOLDEN_REALISM：用户历史上明确确认摄影真实感明显更好的 Golden。
+2. CANDIDATE_X
+3. CANDIDATE_Y
+
+Golden 与候选题材可以不同。Golden 只用于校准“真实摄影 vs 明显 AI 搭景”，禁止因为候选不像 Golden 的题材、颜色或布局而扣分。
+
+第一阶段必须分别判断 X、Y 的绝对摄影真实性：
+- FIRST_IMPRESSION_AI_GATE: PASS / FAIL
+- DOCUMENTARY_CAUSALITY: PASS / FAIL
+- MATERIAL_HETEROGENEITY: PASS / FAIL
+- ABSOLUTE_REALISM_GATE: PASS / FAIL
+
+以下任一明显出现即可 FAIL：一眼 AI；像提示词清单逐项摆齐；所有旧木/石材/布料统一漂亮做旧；戏剧化蒸汽/窗光/湿地面；完美堆叠或摆拍；所有物件都为了展示而安排；空间过度“设计完成”而缺少真实工作中的遮挡、残缺、普通杂乱、焦点/曝光不完美。
+
+任何候选 ABSOLUTE_REALISM_GATE=FAIL，都不得用相对构图、纵深、9:16 重排或“比另一张好”把该候选改判成功。
+
+只有 X 和 Y 都通过 ABSOLUTE_REALISM_GATE，才进入第二阶段匿名相对比较：9:16 原生重排、阅读层级、区域密度、真实纵深、后续排版稳定性。
+
+最终严格返回：
+GOLDEN_USED_ONLY_FOR_REALISM_CALIBRATION: YES
+X_FIRST_IMPRESSION_AI_GATE: PASS / FAIL
+Y_FIRST_IMPRESSION_AI_GATE: PASS / FAIL
+X_DOCUMENTARY_CAUSALITY: PASS / FAIL
+Y_DOCUMENTARY_CAUSALITY: PASS / FAIL
+X_MATERIAL_HETEROGENEITY: PASS / FAIL
+Y_MATERIAL_HETEROGENEITY: PASS / FAIL
+X_ABSOLUTE_REALISM_GATE: PASS / FAIL
+Y_ABSOLUTE_REALISM_GATE: PASS / FAIL
+RELATIVE_COMPARISON_ALLOWED: YES / NO
+WINNER_IF_ALLOWED: X / Y / TIE / NOT_EVALUATED
+CONFIDENCE: LOW / MEDIUM / HIGH
+REASONS:
+- ...
+- ...
+- ...
+TRADEOFF: ...

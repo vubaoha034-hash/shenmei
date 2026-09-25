@@ -1,0 +1,71 @@
+{
+  "schema_version": "vpd-p4-golden-gated-shared-base-realism-repair-prep/v1",
+  "artifact_type": "P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP",
+  "recorded_at": "2026-09-25T06:58:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "FROZEN_NOT_AUTHORIZED",
+  "cause_classification": "SHARED_BASE_PROMPT_OVERLOAD_AND_STAGED_SCENE_CONSTRUCTION",
+  "prior_evidence": {
+    "relative_blind_result": "ROUTE_B_WINS_MEDIUM",
+    "absolute_human_result": "FAIL_BOTH_OBVIOUS_AI_LOOK",
+    "existing_fail_evidence_unchanged": [
+      "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_HUMAN_ABSOLUTE_QUALITY_VERDICT_20260925.json",
+      "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json"
+    ]
+  },
+  "golden_regression_gate": {
+    "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+    "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+  },
+  "isolation": {
+    "same_renderer": "CHATGPT_IMAGES",
+    "generation_reference": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "golden_used_during_generation": false,
+    "golden_used_during_evaluation": true,
+    "same_aspect": "9:16",
+    "same_subject_class": "HANDMADE_TOFU_PROCESS",
+    "single_shared_change": "LOW_SEMANTIC_LOAD_SINGLE_REAL_PRODUCTION_MOMENT_BASE_TASK",
+    "route_A_compact_controls": [],
+    "route_B_compact_controls": [
+      "One dominant material mass counterbalanced by a scene-created quiet tonal pocket.",
+      "Clear first-second-third read through dominant mass, depth layer and supporting process detail.",
+      "Concentrate high material detail regionally; keep the typography pocket visually low-density.",
+      "Preserve truthful near/mid/far depth rather than flattening the scene into a decorative still life.",
+      "Use pale tofu/soy, natural press cloth, aged wood and mineral/stone surfaces with cool-neutral shadow roles; do not copy the reference palette literally.",
+      "Bind soybeans/tofu, press cloths, molds, troughs and tools to real production/process evidence rather than decorative motifs."
+    ],
+    "route_B_controls_changed": false,
+    "new_compact_control_count": 0
+  },
+  "budget": {
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry_budget": 0,
+    "no_third_image": true
+  },
+  "frozen_tickets": {
+    "A": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "02ea68e3df052d10b391af9ce75e6d3144ebd2cb317dfe56c0a96a07bc8489f8"
+    },
+    "B": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "d19436f0dd9691a40d4d62ff812fb0cb137be7ea511a7eca29770ef9a1c7b317"
+    },
+    "evaluator": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+      "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
+    }
+  },
+  "execution_order_if_authorized": [
+    "Route A exactly once",
+    "Route B exactly once",
+    "Golden-gated absolute realism evaluation",
+    "relative blind comparison only if both absolute gates pass",
+    "human pixel verdict"
+  ],
+  "no_generation_this_state_step": true,
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+}

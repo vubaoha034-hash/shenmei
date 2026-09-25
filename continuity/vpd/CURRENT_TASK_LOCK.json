@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 141,
+  "revision": 142,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 140,
-    "git_blob_sha": "16fddb77853c806d693f03650455bee98f5448ad",
-    "note": "Revision 140 recorded the relative 9:16 blind result before the user's absolute-quality verdict."
+    "revision": 141,
+    "git_blob_sha": "9c93b43d9eec9a69c1adc1f0287f5797fabbf12d",
+    "note": "Revision 141 records the P4 absolute AI-feel failure; no prior frozen evidence is modified by this control repair."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The 9:16 blind comparison remains a valid relative result (Route B wins at MEDIUM; both correctness and aspect reflow pass), but the user has now issued an explicit absolute-quality FAIL for the entire set: both A and B are very poor and immediately read as AI-generated. Therefore P4 is not accepted. The failure is currently diagnosed as a shared documentary-realism/base-scene-construction problem because both routes fail similarly; no new compact rules are added. A symmetric two-image shared-base realism repair test is prepared but not authorized.",
-  "status": "VPD_P4_CROSS_ASPECT_RELATIVE_B_WIN_HUMAN_ABSOLUTE_FAIL_AI_FEEL_SHARED_BASE_REPAIR_PREPARED_WAITING_AUTHORIZATION",
+  "current_stage": "Zero-budget structural control repair completed in preparation: the user-confirmed mushroom image is now the project-wide actual-pixel Golden for photographic-realism regression; an absolute first-impression AI gate is mandatory before relative photographic A/B wins count as success; the next tofu A/B shared base has been rewritten and frozen around one low-semantic-load real production moment. Runtime generation anchor remains the existing sole R1C reference. No image generation, Figma write, retry or new budget is authorized.",
+  "status": "VPD_P4_GOLDEN_REALISM_REGRESSION_CONTROL_ACTIVE_SHARED_BASE_REPAIR_FROZEN_WAITING_TWO_IMAGE_AUTHORIZATION",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,13 +148,16 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "recorded the user's absolute visual-quality verdict verbatim: both 9:16 outputs are very bad and immediately read as AI",
-    "downgraded P4 from relative-mechanism success to absolute-quality FAIL without deleting the valid relative blind ranking",
-    "diagnosed the most likely local failure as shared prompt/scene-construction staging rather than proven compact-control failure",
-    "prepared a symmetric shared-base documentary-realism repair A/B with zero authorized images",
-    "kept compact six controls unchanged, Figma closed, P5 blocked, and all new image budget at zero"
+    "registered 溪畔湿润野生蘑菇静物.png as actual-pixel Golden Visual Regression Anchor for photographic realism",
+    "bound Golden file/library identity, recomputed SHA256, dimensions and human positive verdict",
+    "made Golden actual pixels non-substitutable by prose, compact controls or capsule text",
+    "added mandatory first-impression obvious-AI fail-fast gate before relative photographic A/B scoring",
+    "kept the frozen runtime visual anchor binding manifest unchanged; R1C remains sole generation reference",
+    "rewrote and froze the next tofu shared base around one specific low-semantic-load production moment",
+    "kept Route A without compact controls and Route B with exactly the original six controls unchanged",
+    "kept proposed images=2, authorized images=0, retry=0, Figma=0, P5 blocked"
   ],
-  "updated_at": "2026-09-25T05:02:00Z",
+  "updated_at": "2026-09-25T06:58:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -1022,7 +1025,8 @@
     "non_target_change_default": "PROHIBITED",
     "prompt_reconstruction_of_protected_master": "PROHIBITED",
     "solved_route_reimplementation": "PROHIBITED",
-    "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW"
+    "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW",
+    "sha256": "08f058f3dae822c655e4d929d67592f0213e2aa6a25532580dfcf21bf36a754f"
   },
   "mainline_restore": {
     "status": "ACTIVE",
@@ -1941,18 +1945,34 @@
     "p4_quality_gate": "FAIL"
   },
   "p5_gate": {
-    "status": "BLOCKED_P4_ABSOLUTE_QUALITY_FAIL_AND_FIRST_FAMILY_COMPLETE_DESIGN_NOT_ACCEPTED",
+    "status": "BLOCKED_P4_ABSOLUTE_QUALITY_FAIL_GOLDEN_GATED_REPAIR_NOT_EXECUTED",
     "mechanism_evidence": "RELATIVE_SIGNAL_PRESERVED",
     "absolute_visual_quality": "FAIL_BOTH_OBVIOUS_AI_LOOK",
     "complete_design_sample_acceptance": "NOT_SATISFIED",
     "second_style_execution_allowed": false,
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
   },
   "p4_shared_base_realism_repair": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "GOLDEN_GATED_FROZEN_NOT_AUTHORIZED",
     "diagnosis": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
       "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP_20260925.json",
+      "sha256": "dd7469dc22b609d090c05077cf165de9851a05caf2f74c9a015975c0b8b6d67f"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "02ea68e3df052d10b391af9ce75e6d3144ebd2cb317dfe56c0a96a07bc8489f8"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "d19436f0dd9691a40d4d62ff812fb0cb137be7ea511a7eca29770ef9a1c7b317"
+    },
+    "evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+      "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
     },
     "proposed_images": 2,
     "authorized_images": 0,
@@ -1960,5 +1980,17 @@
     "route_B_images": 1,
     "retry_budget": 0,
     "no_third_image": true
+  },
+  "photographic_realism_golden": {
+    "status": "ACTIVE_ACTUAL_PIXEL_REGRESSION_ANCHOR",
+    "baseline": {
+      "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+      "sha256": "087338a6b68e6fc46293f67d7c185bd2ec913a21ab8c81d10cda4a588db51d5a"
+    },
+    "regression_gate": {
+      "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+      "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+    },
+    "runtime_generation_anchor_unchanged": true
   }
 }

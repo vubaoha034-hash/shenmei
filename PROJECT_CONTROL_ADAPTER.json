@@ -811,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P4_CROSS_ASPECT_RELATIVE_B_WIN_HUMAN_ABSOLUTE_FAIL_AI_FEEL_SHARED_BASE_REPAIR_PREPARED_WAITING_AUTHORIZATION",
+    "checkpoint": "VPD_P4_GOLDEN_REALISM_REGRESSION_CONTROL_ACTIVE_SHARED_BASE_REPAIR_FROZEN_WAITING_TWO_IMAGE_AUTHORIZATION",
     "challenge_ids": [
       "H1",
       "H2",
@@ -849,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 141,
-    "sha256": "d9030ce1820471fc630cccc18e8940cf6b65f0219e6daa628afcdf2046bbbf6e",
+    "revision": 142,
+    "sha256": "d4f5bd3e8784f42d692a91a82d30e3064711cbfa548e7c1ee506100bb7a3dac9",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-CROSS-ASPECT-HUMAN-ABSOLUTE-FAIL-AI-FEEL-20260925-001",
-      "event_hash": "48e7c4742b1cd90fe2cd6304eb24504525fd1737ec73f0fe4729ed113175f533"
+      "event_id": "EVT-VPD-GOLDEN-REALISM-REGRESSION-CONTROL-20260925-001",
+      "event_hash": "e05bc61063c97ec874f4a08fa42c513f8b4d2b39a1053f67a94384a1b7842f56"
     }
   },
   "mature_workflow_audit": {
@@ -1452,18 +1452,34 @@
     "p4_quality_gate": "FAIL"
   },
   "p5_gate": {
-    "status": "BLOCKED_P4_ABSOLUTE_QUALITY_FAIL_AND_FIRST_FAMILY_COMPLETE_DESIGN_NOT_ACCEPTED",
+    "status": "BLOCKED_P4_ABSOLUTE_QUALITY_FAIL_GOLDEN_GATED_REPAIR_NOT_EXECUTED",
     "mechanism_evidence": "RELATIVE_SIGNAL_PRESERVED",
     "absolute_visual_quality": "FAIL_BOTH_OBVIOUS_AI_LOOK",
     "complete_design_sample_acceptance": "NOT_SATISFIED",
     "second_style_execution_allowed": false,
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
   },
   "p4_shared_base_realism_repair": {
-    "status": "PREPARED_NOT_AUTHORIZED",
+    "status": "GOLDEN_GATED_FROZEN_NOT_AUTHORIZED",
     "diagnosis": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
       "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP_20260925.json",
+      "sha256": "dd7469dc22b609d090c05077cf165de9851a05caf2f74c9a015975c0b8b6d67f"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "02ea68e3df052d10b391af9ce75e6d3144ebd2cb317dfe56c0a96a07bc8489f8"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "d19436f0dd9691a40d4d62ff812fb0cb137be7ea511a7eca29770ef9a1c7b317"
+    },
+    "evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+      "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
     },
     "proposed_images": 2,
     "authorized_images": 0,
@@ -1471,5 +1487,21 @@
     "route_B_images": 1,
     "retry_budget": 0,
     "no_third_image": true
+  },
+  "visual_master_freeze_guard": {
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "sha256": "08f058f3dae822c655e4d929d67592f0213e2aa6a25532580dfcf21bf36a754f"
+  },
+  "photographic_realism_golden": {
+    "status": "ACTIVE_ACTUAL_PIXEL_REGRESSION_ANCHOR",
+    "baseline": {
+      "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+      "sha256": "087338a6b68e6fc46293f67d7c185bd2ec913a21ab8c81d10cda4a588db51d5a"
+    },
+    "regression_gate": {
+      "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+      "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+    },
+    "runtime_generation_anchor_unchanged": true
   }
 }

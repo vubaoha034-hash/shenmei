@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-photography-realism-golden-regression-gate/v1",
+  "artifact_type": "PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE",
+  "recorded_at": "2026-09-25T06:58:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "MANDATORY_BEFORE_RELATIVE_PHOTOGRAPHIC_SCORING",
+  "golden_anchor": {
+    "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+    "sha256": "087338a6b68e6fc46293f67d7c185bd2ec913a21ab8c81d10cda4a588db51d5a"
+  },
+  "applies_to": "All future VPD photographic candidates used for quality, migration, promotion or baseline claims.",
+  "evaluation_order": [
+    "G0_IDENTITY_AND_CONTENT_CORRECTNESS",
+    "G1_FIRST_IMPRESSION_OBVIOUS_AI_FAIL_FAST",
+    "G2_DOCUMENTARY_CAUSALITY_AND_MATERIAL_HETEROGENEITY",
+    "G3_ONLY_AFTER_G1_G2_PASS_RELATIVE_AB_MECHANISM_COMPARISON",
+    "G4_HUMAN_PIXEL_REVIEW"
+  ],
+  "first_impression_absolute_gate": {
+    "question": "Does this candidate immediately read as obviously AI-generated or materially more synthetic/staged than the Golden photographic-realism anchor?",
+    "fail_terms": [
+      "明显AI",
+      "一眼AI",
+      "obvious AI",
+      "prompt-staged",
+      "synthetic set",
+      "checklist staging"
+    ],
+    "on_fail": "ABSOLUTE_VISUAL_QUALITY_FAIL",
+    "fail_is_candidate_specific": true,
+    "relative_ab_win_cannot_override": true,
+    "composition_depth_aspect_or_mechanism_scores_cannot_compensate": true,
+    "p4_pass_prohibited": true,
+    "promotion_prohibited": true
+  },
+  "realism_dimensions": [
+    "camera-observed versus prompt-staged feeling",
+    "one credible moment versus catalogue/checklist display",
+    "heterogeneous functional wear versus uniform photogenic patina",
+    "incidental light versus theatrical cinematic atmosphere",
+    "operational causality and mundane irregularity",
+    "natural occlusion/crop/focus/exposure imperfection consistent with documentary photography"
+  ],
+  "golden_usage_boundary": {
+    "compare_realism_behavior_not_subject": true,
+    "compare_realism_behavior_not_palette": true,
+    "compare_realism_behavior_not_layout_coordinates": true,
+    "golden_not_default_generation_input": true,
+    "existing_runtime_anchor_binding_unchanged": true
+  },
+  "current_budget_authorized_images": 0,
+  "human_final_authority": true
+}

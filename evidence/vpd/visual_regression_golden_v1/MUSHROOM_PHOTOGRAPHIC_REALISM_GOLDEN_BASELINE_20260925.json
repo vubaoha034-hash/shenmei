@@ -1,0 +1,54 @@
+{
+  "schema_version": "vpd-photographic-realism-golden-baseline/v1",
+  "artifact_type": "MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE",
+  "recorded_at": "2026-09-25T06:58:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "GOLDEN_VISUAL_REGRESSION_ANCHOR_ACTIVE",
+  "protected_dimension": "PHOTOGRAPHIC_REALISM_NON_AI_IMMEDIATE_IMPRESSION",
+  "asset": {
+    "title": "溪畔湿润野生蘑菇静物.png",
+    "file_id": "file_0000000086f48207b74d4ff62289a27f",
+    "library_file_id": "libfile_7cc9018f52988191b0308dc4ac623c40",
+    "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "size_bytes": 2453774,
+    "mime_type": "image/png"
+  },
+  "pixel_identity_verification": {
+    "verified_on_current_control_repair": true,
+    "sha256_recomputed_from_materialized_raw_bytes": true,
+    "dimensions_rechecked": true
+  },
+  "human_positive_verdict": {
+    "source": "CURRENT_USER_CONFIRMATION",
+    "verbatim": "明明前面有一次做的非常好。就是哪个蘑菇的。",
+    "interpretation": "HUMAN_CONFIRMED_HISTORICAL_BEST_SO_FAR_FOR_PHOTOGRAPHIC_REALISM"
+  },
+  "authority_rules": {
+    "actual_pixels_outrank_prose": true,
+    "cannot_be_replaced_by_prompt_summary": true,
+    "cannot_be_replaced_by_compact_controls": true,
+    "cannot_be_replaced_by_style_capsule_text": true,
+    "must_remain_addressable_for_future_regression_review": true,
+    "default_generation_input": false,
+    "default_runtime_positive_anchor": false,
+    "mandatory_evaluation_regression_anchor": true,
+    "literal_subject_palette_layout_copy_prohibited": true
+  },
+  "protected_visual_behaviors": [
+    "camera-observed rather than prompt-staged scene logic",
+    "one dominant real subject event with environment allowed to recede or remain unresolved",
+    "natural occlusion, irregularity, dirt/residue and heterogeneous functional wear",
+    "background softness or ambiguity without obligation to display every semantic requirement",
+    "asymmetric visual weight and imperfect documentary framing",
+    "incidental place lighting rather than theatrical light designed to beautify every material"
+  ],
+  "runtime_anchor_interaction": {
+    "existing_runtime_manifest_must_remain_unchanged": true,
+    "existing_runtime_anchor": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "golden_role": "EVALUATION_REGRESSION_ANCHOR_NOT_ADDITIONAL_RUNTIME_REFERENCE"
+  }
+}
