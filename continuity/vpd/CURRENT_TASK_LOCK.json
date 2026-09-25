@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 150,
+  "revision": 151,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF2 reviewer-only mechanism decomposition complete. RF1 remains R1C_NOT_NECESSARY only; absolute realism remains FAIL. Renderer-prior language is decomposed into four falsifiable mechanisms, with no claim that renderer prior is proven primary. Future two-stage single-variable contract is frozen but generation authorization remains zero.",
-  "status": "VPD_P4_RF2_REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE",
+  "current_stage": "P4-RF2 Stage 1 has exactly one rice-granary output, recovered from the already-generated current-conversation asset. No regeneration occurred. Stage 2 remains conditionally reserved but closed until Stage 1 Golden absolute-realism verdict.",
+  "status": "VPD_P4_RF2_STAGE1_RICE_GENERATED_WAITING_GOLDEN_GATE",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION",
+  "next_required_action": "RUN_P4_RF2_STAGE1_GOLDEN_ABSOLUTE_REALISM_GATE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,15 +148,13 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "completed reviewer-only zero-image decomposition of renderer-prior working hypothesis",
-    "preserved RF1 strict causal conclusion R1C_NOT_NECESSARY only",
-    "kept absolute photographic realism FAIL",
-    "decomposed hypothesis into four falsifiable mechanism components",
-    "recorded support, counterevidence, R1C interactions and minimal single-variable tests for each mechanism",
-    "froze sequential topic-only then conditional structure-only future contract with max 2 images and zero retry",
-    "kept generation authorization=0, Figma=0 and P5 blocked pending reviewer gate"
+    "recorded explicit reviewer authorization for max two conditional RF2 images",
+    "idempotently adopted the already-generated current-conversation rice image as the sole Stage 1 output",
+    "verified Stage 1 PNG identity 941x1672 sha256 ad0dfb992490c8f8a513bd54959cf84f618585bca03592bf3fb72f9016763260",
+    "set consumed=1 and kept the second image conditional and closed",
+    "kept retry=0, third image=false, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-25T20:35:00+08:00",
+  "updated_at": "2026-09-25T21:36:30+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2086,7 +2084,7 @@
     "stop_reason": "Any next empirical test would introduce a new experiment variable and/or new budget outside the settled RF1 protocol."
   },
   "p4_rf2_causal_design_audit": {
-    "status": "REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE",
+    "status": "STAGE1_GENERATED_WAITING_GOLDEN_GATE",
     "audit": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json",
       "sha256": "c3893475b9ce6f939d2bd8e8d0e152240fcee0b4c62de8a4826da76fc1b35d63"
@@ -2133,6 +2131,30 @@
       "retry": 0,
       "third_image": false,
       "no_rule_append": true
+    },
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_GENERATION_AUTHORIZATION_20260925.json",
+      "sha256": "c5746fadc2292ee512b3991b6ce6c5842f43b2f21c1bf698aabdf16e1eb63afe"
+    },
+    "stage1_receipt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_RICE_EXECUTION_RECEIPT_20260925.json",
+      "sha256": "9a66889c5fbb6d51896d9e0ad20fded02b3c9df2306ef4939f2e5a1204ee8be9"
+    },
+    "budget": {
+      "maximum": 2,
+      "consumed": 1,
+      "remaining_conditional": 1,
+      "retry": 0,
+      "third_image": false
+    },
+    "stage1": {
+      "status": "GENERATED_ONCE_WAITING_GOLDEN_GATE",
+      "only_variable": "TOPIC_CONTENT_SLOT",
+      "output_sha256": "ad0dfb992490c8f8a513bd54959cf84f618585bca03592bf3fb72f9016763260"
+    },
+    "stage2": {
+      "status": "CONDITIONAL_CLOSED_PENDING_STAGE1_VERDICT",
+      "authorization_open": false
     }
   }
 }
