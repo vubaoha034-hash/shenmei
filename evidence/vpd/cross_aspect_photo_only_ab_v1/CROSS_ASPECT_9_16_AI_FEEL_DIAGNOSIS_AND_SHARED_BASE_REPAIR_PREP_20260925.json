@@ -1,0 +1,62 @@
+{
+  "schema_version": "vpd-ai-feel-diagnosis-and-repair-prep/v1",
+  "artifact_type": "CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP",
+  "recorded_at": "2026-09-25T05:02:00Z",
+  "based_on": {
+    "human_verdict": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_HUMAN_ABSOLUTE_QUALITY_VERDICT_20260925.json",
+      "sha256": "4403cb620e769806b6e338566d5a2bfb38008f6eb4d6c4207cdcd0f817e9bad6"
+    },
+    "existing_outputs_only": true,
+    "route_A_sha256": "892121dcca2b1ff6aa6fcf3f5f0b4283ce151e71cd4b05db5eab20dfc2d6ceb5",
+    "route_B_sha256": "06062c9d26f8a58ca7e95d26168620dac84874b383ed25234d7a8cacf6fdb1f4"
+  },
+  "diagnosis_scope": "LOCAL_HYPOTHESES_FOR_THIS_TOFU_9_16_SET_ONLY__NOT_GLOBAL_RULES",
+  "primary_diagnosis": "The scene reads as a prompt-satisfaction set rather than a camera-observed real workshop.",
+  "visible_failure_hypotheses": [
+    "Checklist staging: soybeans/tofu, cloth, molds, troughs, old wood, steam and wet surfaces are all conspicuously presented, making the scene feel assembled to prove the prompt.",
+    "Uniform photogenic patina: wood, cloth, stone and walls are all aged in similarly attractive ways instead of showing heterogeneous functional wear.",
+    "Cinematic atmosphere is over-coherent: steam, window light, glossy wet floor and warm-cool material contrast look art-directed rather than incidental.",
+    "Operational causality is weak: objects are semantically correct but there is little irregular evidence of one specific interrupted production moment, such as partial occlusion, incomplete work, asymmetric residue, awkward tool placement or mundane clutter.",
+    "Repeated generative motifs: draped cloths, perfect tofu blocks, rounded wet trough edges and polished old-wood highlights recur with suspicious consistency.",
+    "Framing is too solved: the 9:16 near/mid/far structure is cleanly designed and visually legible, but lacks the accidental obstruction, imperfect crop, exposure variation and focal ambiguity typical of documentary workshop photography."
+  ],
+  "causal_read": {
+    "shared_base_prompt_implicated": true,
+    "compact_six_controls_primary_cause_not_proven": true,
+    "reason": "Both A and B fail in the same realism direction, while B only wins relatively on composition/depth. Therefore the strongest current hypothesis is a shared base-prompt/scene-construction problem, not evidence that the six compact controls themselves create the AI look."
+  },
+  "repair_principle": {
+    "do_not_add_more_compact_rules": true,
+    "do_not_retry_same_prompt": true,
+    "do_not_use_figma": true,
+    "repair_shared_base_prompt_symmetrically": true,
+    "keep_route_B_six_controls_unchanged_for_isolation": true,
+    "objective": "Reduce staged prompt-checklist behavior and force a credible single in-process documentary moment while preserving the already-supported composition controls."
+  },
+  "proposed_bounded_test": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "route_A": 1,
+    "route_B": 1,
+    "retry_budget": 0,
+    "no_third_image": true,
+    "same_renderer": "CHATGPT_IMAGES",
+    "same_reference": true,
+    "same_9_16_aspect": true,
+    "same_tofu_subject": true,
+    "shared_change_only": "DOCUMENTARY_REALISM_SHARED_BASE_REPAIR",
+    "route_B_compact_controls_change": "NONE",
+    "evaluation": "human absolute AI-feel gate first; only if both are not immediate FAIL does relative blind comparison matter"
+  },
+  "shared_base_repair_spec": [
+    "Anchor the frame to one specific active production moment, not a catalogue of all requested objects.",
+    "Allow required evidence to be secondary, partially occluded or awkwardly placed rather than hero-presented.",
+    "Prefer mundane functional wear, residue and asymmetry over uniformly beautiful heritage patina.",
+    "Avoid theatrical steam, glossy-wet-everywhere surfaces and deliberately picturesque window-light treatment.",
+    "Use imperfect documentary framing: partial crops, obstruction, uneven spacing, non-central subject balance and realistic exposure/focus falloff.",
+    "Keep surfaces food-safe and believable, but avoid showroom-clean or cinematic-set cleanliness."
+  ],
+  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+}

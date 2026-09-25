@@ -29,6 +29,7 @@ PAIR2_SETTLED_ACTION = "REVIEW_NEXT_UNFINISHED_MAINLINE_VALIDATION_OR_SIMPLIFY_C
 CROSS_ASPECT_WAIT_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_COMPACT_VPD_CROSS_ASPECT_9_16_PHOTO_ONLY_AB_TWO_IMAGES"
 CROSS_ASPECT_EXECUTE_ACTION = "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY"
 CROSS_ASPECT_RESULT_ACTION = "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -71,6 +72,7 @@ ACTIONS = {
     CROSS_ASPECT_WAIT_AUTH_ACTION,
     CROSS_ASPECT_EXECUTE_ACTION,
     CROSS_ASPECT_RESULT_ACTION,
+    CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION,
 }
 
 
@@ -151,6 +153,26 @@ def _validate_cross_aspect_photo_only_result(root, lock, cp):
     gate = lock["p5_gate"]
     require(gate["status"] == "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE" and gate["second_style_execution_allowed"] is False, "CROSS_ASPECT_RESULT_P5_GATE")
     require(lock.get("render_allowed") is False and lock.get("p6_allowed") is False, "CROSS_ASPECT_RESULT_PREMATURE_RENDER")
+
+def _validate_cross_aspect_ai_feel_repair_wait(root, lock, cp):
+    require(lock.get("status") == "VPD_P4_CROSS_ASPECT_RELATIVE_B_WIN_HUMAN_ABSOLUTE_FAIL_AI_FEEL_SHARED_BASE_REPAIR_PREPARED_WAITING_AUTHORIZATION", "CROSS_ASPECT_AI_FEEL_STATE")
+    cross = lock.get("cross_aspect_photo_only_ab", {})
+    require(cp.get("cross_aspect_photo_only_ab") == cross, "CROSS_ASPECT_AI_FEEL_CP_DRIFT")
+    require(cross.get("blind_outcome") == "ROUTE_B_WINS_MEDIUM", "CROSS_ASPECT_AI_FEEL_RELATIVE_RESULT_LOST")
+    require(cross.get("p4_quality_gate") == "FAIL", "CROSS_ASPECT_AI_FEEL_FALSE_PASS")
+    check_ref(root, cross["human_absolute_quality"])
+    check_ref(root, cross["ai_feel_diagnosis"])
+    hv = read(root, cross["human_absolute_quality"]["path"])
+    require(hv["human_absolute_quality"]["set_verdict"] == "FAIL_BOTH" and hv["human_absolute_quality"]["primary_failure_mode"] == "OBVIOUS_AI_LOOK", "CROSS_ASPECT_AI_FEEL_HUMAN_VERDICT")
+    repair = lock["p4_shared_base_realism_repair"]
+    require(repair["status"] == "PREPARED_NOT_AUTHORIZED" and repair["proposed_images"] == 2 and repair["authorized_images"] == 0, "CROSS_ASPECT_AI_FEEL_REPAIR_BUDGET")
+    require(repair["route_A_images"] == 1 and repair["route_B_images"] == 1 and repair["retry_budget"] == 0 and repair["no_third_image"] is True, "CROSS_ASPECT_AI_FEEL_REPAIR_SCOPE")
+    require(lock["execution_boundary"]["current_image_generation_authorization"] == 0, "CROSS_ASPECT_AI_FEEL_PREMATURE_IMAGE_AUTH")
+    require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "CROSS_ASPECT_AI_FEEL_FIGMA_REOPENED")
+    require(lock["execution_boundary"]["second_style_execution_allowed"] is False, "CROSS_ASPECT_AI_FEEL_P5_REOPENED")
+    compact = lock["compact_vpd_6_control_candidate"]
+    require(compact["controls_changed"] is False and compact["add_more_rules"] is False, "CROSS_ASPECT_AI_FEEL_RULE_CHASING")
+    require(compact["style_capsule_promotion_allowed"] is False and compact["stable_baseline_replacement_allowed"] is False, "CROSS_ASPECT_AI_FEEL_FALSE_PROMOTION")
 
 def validate_t1_retry_record(record):
     """Validate scope/budget only; this never certifies lettering or taste."""
@@ -439,7 +461,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -484,6 +506,8 @@ def validate_p6_composition_state(root):
         _validate_cross_aspect_photo_only_authorized(root, lock, cp)
     if action == CROSS_ASPECT_RESULT_ACTION:
         _validate_cross_aspect_photo_only_result(root, lock, cp)
+    if action == CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION:
+        _validate_cross_aspect_ai_feel_repair_wait(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")

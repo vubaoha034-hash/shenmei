@@ -1,0 +1,31 @@
+{
+  "schema_version": "vpd-human-absolute-visual-quality-verdict/v1",
+  "artifact_type": "CROSS_ASPECT_9_16_HUMAN_ABSOLUTE_QUALITY_VERDICT",
+  "recorded_at": "2026-09-25T05:02:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+  "user_verdict_verbatim": "我对这一组评价。都是很差。非常差。一眼AI",
+  "human_absolute_quality": {
+    "route_A": "FAIL",
+    "route_B": "FAIL",
+    "set_verdict": "FAIL_BOTH",
+    "severity": "VERY_BAD",
+    "primary_failure_mode": "OBVIOUS_AI_LOOK",
+    "first_impression_failure": true
+  },
+  "relationship_to_blind_result": {
+    "relative_blind_result_preserved": "ROUTE_B_WINS_MEDIUM",
+    "relative_result_does_not_equal_absolute_acceptance": true,
+    "absolute_human_verdict_overrides_any_claim_of_P4_quality_pass": true,
+    "interpretation": "Route B may retain a relative composition/mechanism advantage over A, but both outputs fail the user's absolute realism and photographic-quality bar."
+  },
+  "consequences": {
+    "p4_quality_gate": "FAIL",
+    "p5_auto_advance": false,
+    "style_capsule_promotion": false,
+    "stable_baseline_replacement": false,
+    "new_visual_rules_added": false,
+    "new_image_budget_authorized": 0,
+    "figma_authorization": 0
+  }
+}

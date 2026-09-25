@@ -811,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P4_COMPACT_CROSS_ASPECT_9_16_BLIND_COMPLETE_ROUTE_B_WINS_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_ACCEPTANCE",
+    "checkpoint": "VPD_P4_CROSS_ASPECT_RELATIVE_B_WIN_HUMAN_ABSOLUTE_FAIL_AI_FEEL_SHARED_BASE_REPAIR_PREPARED_WAITING_AUTHORIZATION",
     "challenge_ids": [
       "H1",
       "H2",
@@ -849,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5",
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 140,
-    "sha256": "85d590ec93a42bb5776f8dcacb0171631f3b1f65596bd96e2d7efe6996b372b8",
+    "revision": 141,
+    "sha256": "d9030ce1820471fc630cccc18e8940cf6b65f0219e6daa628afcdf2046bbbf6e",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-COMPACT-CROSS-ASPECT-9X16-BLIND-RESULT-20260925-001",
-      "event_hash": "78af99b99e81e3ffb51d659ba1ad1b97825c766c3e75427406bb24ce331a0313"
+      "event_id": "EVT-VPD-P4-CROSS-ASPECT-HUMAN-ABSOLUTE-FAIL-AI-FEEL-20260925-001",
+      "event_hash": "48e7c4742b1cd90fe2cd6304eb24504525fd1737ec73f0fe4729ed113175f533"
     }
   },
   "mature_workflow_audit": {
@@ -1414,7 +1414,7 @@
     "local_equal_budget_figma_test_allowed": true
   },
   "cross_aspect_photo_only_ab": {
-    "status": "COMPLETE_INDEPENDENT_BLIND_ROUTE_B_WINS",
+    "status": "RELATIVE_ROUTE_B_WIN_HUMAN_ABSOLUTE_QUALITY_FAIL_AI_FEEL",
     "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
     "result": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
@@ -1439,14 +1439,37 @@
       "consumed_images": 2,
       "remaining_images": 0
     },
-    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
+    "human_absolute_quality": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_HUMAN_ABSOLUTE_QUALITY_VERDICT_20260925.json",
+      "sha256": "4403cb620e769806b6e338566d5a2bfb38008f6eb4d6c4207cdcd0f817e9bad6",
+      "set_verdict": "FAIL_BOTH_OBVIOUS_AI_LOOK"
+    },
+    "ai_feel_diagnosis": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
+      "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "p4_quality_gate": "FAIL"
   },
   "p5_gate": {
-    "status": "BLOCKED_WAITING_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE",
-    "mechanism_evidence": "SUPPORTED_DIRECTIONALLY_ACROSS_TWO_CONTENTS_AND_9_16",
-    "complete_design_sample_acceptance": "NOT_YET_SATISFIED",
-    "pair2_end_to_end_complete_poster_benefit": "NOT_SUPPORTED_BY_PAIR2",
+    "status": "BLOCKED_P4_ABSOLUTE_QUALITY_FAIL_AND_FIRST_FAMILY_COMPLETE_DESIGN_NOT_ACCEPTED",
+    "mechanism_evidence": "RELATIVE_SIGNAL_PRESERVED",
+    "absolute_visual_quality": "FAIL_BOTH_OBVIOUS_AI_LOOK",
+    "complete_design_sample_acceptance": "NOT_SATISFIED",
     "second_style_execution_allowed": false,
-    "next_required_action": "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+  },
+  "p4_shared_base_realism_repair": {
+    "status": "PREPARED_NOT_AUTHORIZED",
+    "diagnosis": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
+      "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "proposed_images": 2,
+    "authorized_images": 0,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry_budget": 0,
+    "no_third_image": true
   }
 }
