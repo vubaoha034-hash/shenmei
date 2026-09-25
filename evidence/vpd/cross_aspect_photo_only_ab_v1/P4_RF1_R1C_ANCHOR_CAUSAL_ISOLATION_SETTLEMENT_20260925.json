@@ -1,0 +1,62 @@
+{
+  "schema_version": "vpd-p4-rf1-settlement/v1",
+  "artifact_type": "P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_SETTLEMENT",
+  "recorded_at": "2026-09-25T20:05:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
+  "status": "SETTLED_R1C_NOT_NECESSARY",
+  "idempotency": {
+    "evaluator_result_preexisted_in_chat": true,
+    "evaluator_result_preexisted_in_repo": false,
+    "images_regenerated": false,
+    "evaluation_rerun": false
+  },
+  "budget": {
+    "authorized_images": 2,
+    "consumed_images": 2,
+    "remaining_images": 0,
+    "retries_used": 0,
+    "third_image": false
+  },
+  "asset_identity": {
+    "A_sha256": "2185a904b284655f879e861a6fdf5bdc0280f2253a70912ef1785032f5ebb5f3",
+    "B_sha256": "4334dda3858ed9a601a49adfddb1ac81fb65ef1fe33a063fb03a88086d6433cf",
+    "Golden_sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7"
+  },
+  "gates": {
+    "A": {
+      "FIRST_IMPRESSION_AI_GATE": "FAIL",
+      "DOCUMENTARY_CAUSALITY": "FAIL",
+      "MATERIAL_HETEROGENEITY": "FAIL",
+      "ABSOLUTE_REALISM_GATE": "FAIL"
+    },
+    "B": {
+      "FIRST_IMPRESSION_AI_GATE": "FAIL",
+      "DOCUMENTARY_CAUSALITY": "FAIL",
+      "MATERIAL_HETEROGENEITY": "FAIL",
+      "ABSOLUTE_REALISM_GATE": "FAIL"
+    }
+  },
+  "causal_conclusion": "R1C_NOT_NECESSARY",
+  "meaning": "Because A fails all four absolute realism gates without R1C, R1C conditioning is not necessary for the realism regression. The traditional-tofu/workshop subject-conditioned ChatGPT Images renderer prior remains the primary suspect under the frozen contract.",
+  "exclusions": [
+    "Does not prove R1C has zero effect.",
+    "Does not establish a relative aesthetic winner.",
+    "Does not authorize a renderer change, subject change, new reference policy, new anti-AI rule stack, Figma, P5, retry, third image, or new generation budget."
+  ],
+  "frozen_contract_next": "ESCALATE_SUBJECT_CONDITIONED_RENDERER_PRIOR_WITHOUT_AUTOMATIC_NEW_GENERATION",
+  "boundary_decision": "STOP_BEFORE_ANY_NEW_EXPERIMENT_VARIABLE_OR_BUDGET",
+  "evaluator_receipt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_GOLDEN_CAUSAL_EVALUATOR_RECEIPT_20260925.json",
+    "sha256": "f1b5ace8560319a548f288abffaa31fee851b832fa78b7553a911fc8f5c2ed2d"
+  },
+  "route_A_receipt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_A_NO_R1C_EXECUTION_RECEIPT_20260925.json",
+    "sha256": "c78ff00895d08a9a0c1fcebef9fb86a7ff6534e0139144e0f27446e5777ad8e0"
+  },
+  "route_B_receipt": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_B_WITH_R1C_EXECUTION_RECEIPT_20260925.json",
+    "sha256": "30fc06ad0f88d30f27750dacb5e362921a6a91c388762e5598ca594d8b3d32e9"
+  },
+  "standing_authorization_policy_effect": "NOT_APPLICABLE_TO_NEW_EXPERIMENT_VARIABLE_OR_NEW_BUDGET"
+}
