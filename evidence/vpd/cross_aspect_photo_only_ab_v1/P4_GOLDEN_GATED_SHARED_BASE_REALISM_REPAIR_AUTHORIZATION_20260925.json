@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-p4-golden-gated-realism-repair-authorization/v1",
+  "artifact_type": "P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AUTHORIZATION",
+  "recorded_at": "2026-09-25T08:00:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "AUTHORIZED_READY_EXECUTION",
+  "authorization_source": {
+    "type": "EXPLICIT_USER_CONTINUATION",
+    "message": "下一步"
+  },
+  "experiment": "P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB",
+  "frozen_prep": {
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP_20260925.json",
+    "sha256": "dd7469dc22b609d090c05077cf165de9851a05caf2f74c9a015975c0b8b6d67f"
+  },
+  "frozen_tickets": {
+    "A": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "02ea68e3df052d10b391af9ce75e6d3144ebd2cb317dfe56c0a96a07bc8489f8"
+    },
+    "B": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "d19436f0dd9691a40d4d62ff812fb0cb137be7ea511a7eca29770ef9a1c7b317"
+    },
+    "evaluator": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+      "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
+    }
+  },
+  "golden_regression_gate": {
+    "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+    "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+  },
+  "budget": {
+    "proposed_images": 2,
+    "authorized_images": 2,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry_budget": 0,
+    "no_third_image": true,
+    "no_hidden_variants": true,
+    "no_best_of_n": true
+  },
+  "execution_order": [
+    "Route A exactly once",
+    "Route B exactly once",
+    "Golden-gated absolute realism evaluation",
+    "relative comparison only if both absolute gates pass",
+    "human pixel verdict"
+  ],
+  "boundaries": {
+    "figma_authorization": 0,
+    "second_style_execution_allowed": false,
+    "compact_controls_changed": false,
+    "new_compact_controls": 0
+  },
+  "consumption_rule": "Authorization may be consumed exactly once for A=1 and B=1. No retry, replacement variant or third image is authorized.",
+  "next_required_action": "EXECUTE_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_ROUTE_A_THEN_B_ZERO_RETRY"
+}

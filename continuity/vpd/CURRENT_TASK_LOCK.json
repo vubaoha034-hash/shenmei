@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 142,
+  "revision": 143,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -10,9 +10,9 @@
     "single_poster_optimization": false
   },
   "preserved_prior_revision": {
-    "revision": 141,
-    "git_blob_sha": "9c93b43d9eec9a69c1adc1f0287f5797fabbf12d",
-    "note": "Revision 141 records the P4 absolute AI-feel failure; no prior frozen evidence is modified by this control repair."
+    "revision": 142,
+    "git_blob_sha": "10d4ebe4c2984e37b55fb815881833ff861d43f1",
+    "note": "Revision 142 activated the Golden realism regression control and froze the two-image repair tickets with zero authorization."
   },
   "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
   "capsule": {
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "Zero-budget structural control repair completed in preparation: the user-confirmed mushroom image is now the project-wide actual-pixel Golden for photographic-realism regression; an absolute first-impression AI gate is mandatory before relative photographic A/B wins count as success; the next tofu A/B shared base has been rewritten and frozen around one low-semantic-load real production moment. Runtime generation anchor remains the existing sole R1C reference. No image generation, Figma write, retry or new budget is authorized.",
-  "status": "VPD_P4_GOLDEN_REALISM_REGRESSION_CONTROL_ACTIVE_SHARED_BASE_REPAIR_FROZEN_WAITING_TWO_IMAGE_AUTHORIZATION",
+  "current_stage": "The Golden-gated shared-base realism repair is now explicitly authorized for exactly two images: Route A=1 and Route B=1, zero retries, no hidden variants, no best-of-N, no third image, no Figma. Golden remains evaluation-only; R1C remains the sole generation reference. Relative comparison remains blocked unless both candidates pass the absolute realism gate.",
+  "status": "VPD_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AUTHORIZED_READY_EXECUTION",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
+  "next_required_action": "EXECUTE_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_ROUTE_A_THEN_B_ZERO_RETRY",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,22 +142,19 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 2,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "registered 溪畔湿润野生蘑菇静物.png as actual-pixel Golden Visual Regression Anchor for photographic realism",
-    "bound Golden file/library identity, recomputed SHA256, dimensions and human positive verdict",
-    "made Golden actual pixels non-substitutable by prose, compact controls or capsule text",
-    "added mandatory first-impression obvious-AI fail-fast gate before relative photographic A/B scoring",
-    "kept the frozen runtime visual anchor binding manifest unchanged; R1C remains sole generation reference",
-    "rewrote and froze the next tofu shared base around one specific low-semantic-load production moment",
-    "kept Route A without compact controls and Route B with exactly the original six controls unchanged",
-    "kept proposed images=2, authorized images=0, retry=0, Figma=0, P5 blocked"
+    "consumed the user's '下一步' only as authorization for the already-frozen two-image Golden-gated repair",
+    "authorized exactly Route A=1 and Route B=1 with retry=0 and no third image",
+    "kept Golden evaluation-only and kept the existing R1C runtime generation reference unchanged",
+    "kept Route A compact controls empty and Route B six controls frozen unchanged",
+    "kept Figma authorization=0 and P5 second-style execution blocked"
   ],
-  "updated_at": "2026-09-25T06:58:00Z",
+  "updated_at": "2026-09-25T08:00:00Z",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -1950,10 +1947,10 @@
     "absolute_visual_quality": "FAIL_BOTH_OBVIOUS_AI_LOOK",
     "complete_design_sample_acceptance": "NOT_SATISFIED",
     "second_style_execution_allowed": false,
-    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+    "next_required_action": "EXECUTE_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_ROUTE_A_THEN_B_ZERO_RETRY"
   },
   "p4_shared_base_realism_repair": {
-    "status": "GOLDEN_GATED_FROZEN_NOT_AUTHORIZED",
+    "status": "AUTHORIZED_READY_EXECUTION",
     "diagnosis": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
       "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
@@ -1975,11 +1972,15 @@
       "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
     },
     "proposed_images": 2,
-    "authorized_images": 0,
+    "authorized_images": 2,
     "route_A_images": 1,
     "route_B_images": 1,
     "retry_budget": 0,
-    "no_third_image": true
+    "no_third_image": true,
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AUTHORIZATION_20260925.json",
+      "sha256": "482bf4f77ab672bf5148fe079f46e1b16c7dc854fd2e28a6a11609353848e165"
+    }
   },
   "photographic_realism_golden": {
     "status": "ACTIVE_ACTUAL_PIXEL_REGRESSION_ANCHOR",

@@ -31,6 +31,7 @@ CROSS_ASPECT_EXECUTE_ACTION = "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THE
 CROSS_ASPECT_RESULT_ACTION = "WAIT_FOR_USER_FIRST_FAMILY_COMPLETE_DESIGN_SAMPLE_ACCEPTANCE_BEFORE_P5"
 CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
 GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION = "WAIT_FOR_USER_AUTHORIZATION_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES"
+GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION = "EXECUTE_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_ROUTE_A_THEN_B_ZERO_RETRY"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -75,6 +76,7 @@ ACTIONS = {
     CROSS_ASPECT_RESULT_ACTION,
     CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION,
     GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION,
+    GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION,
 }
 
 
@@ -214,6 +216,31 @@ def _validate_golden_gated_realism_repair_wait(root, lock, cp):
     require(prep["isolation"]["route_B_controls_changed"] is False and prep["isolation"]["new_compact_control_count"] == 0, "GOLDEN_REALISM_RULE_GROWTH")
     require(lock["execution_boundary"]["current_image_generation_authorization"] == 0 and lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "GOLDEN_REALISM_PREMATURE_AUTH")
     require(lock["execution_boundary"]["second_style_execution_allowed"] is False, "GOLDEN_REALISM_P5_REOPENED")
+
+def _validate_golden_gated_realism_repair_authorized(root, lock, cp):
+    require(lock.get("status") == "VPD_P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AUTHORIZED_READY_EXECUTION", "GOLDEN_REPAIR_AUTH_STATE")
+    repair = lock["p4_shared_base_realism_repair"]
+    require(cp.get("p4_shared_base_realism_repair") == repair, "GOLDEN_REPAIR_AUTH_CP_DRIFT")
+    require(repair["status"] == "AUTHORIZED_READY_EXECUTION", "GOLDEN_REPAIR_AUTH_STATUS")
+    for key in ("prep", "route_A_ticket", "route_B_ticket", "evaluator_prompt", "authorization"):
+        check_ref(root, repair[key])
+    auth = read(root, repair["authorization"]["path"])
+    require(auth["status"] == "AUTHORIZED_READY_EXECUTION", "GOLDEN_REPAIR_AUTH_EVIDENCE_STATE")
+    require(auth["budget"] == {"proposed_images":2,"authorized_images":2,"route_A_images":1,"route_B_images":1,"retry_budget":0,"no_third_image":True,"no_hidden_variants":True,"no_best_of_n":True}, "GOLDEN_REPAIR_AUTH_BUDGET")
+    require(lock["execution_boundary"]["current_image_generation_authorization"] == 2, "GOLDEN_REPAIR_AUTH_COUNT")
+    require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "GOLDEN_REPAIR_AUTH_FIGMA")
+    require(lock["execution_boundary"]["second_style_execution_allowed"] is False, "GOLDEN_REPAIR_AUTH_P5")
+    golden = lock["photographic_realism_golden"]
+    check_ref(root, golden["baseline"])
+    check_ref(root, golden["regression_gate"])
+    gate = read(root, golden["regression_gate"]["path"])
+    require(gate["first_impression_absolute_gate"]["relative_ab_win_cannot_override"] is True, "GOLDEN_REPAIR_AUTH_GATE_WEAKENED")
+    prep = read(root, repair["prep"]["path"])
+    require(prep["isolation"]["route_A_compact_controls"] == [], "GOLDEN_REPAIR_AUTH_ROUTE_A_CONTAMINATION")
+    old_prep = read(root, "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json")
+    require(prep["isolation"]["route_B_compact_controls"] == old_prep["route_B"]["mechanism_controls"], "GOLDEN_REPAIR_AUTH_ROUTE_B_DRIFT")
+    require(prep["isolation"]["new_compact_control_count"] == 0, "GOLDEN_REPAIR_AUTH_RULE_GROWTH")
+
 
 def validate_t1_retry_record(record):
     """Validate scope/budget only; this never certifies lettering or taste."""
@@ -502,7 +529,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -551,6 +578,8 @@ def validate_p6_composition_state(root):
         _validate_cross_aspect_ai_feel_repair_wait(root, lock, cp)
     if action == GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION:
         _validate_golden_gated_realism_repair_wait(root, lock, cp)
+    if action == GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION:
+        _validate_golden_gated_realism_repair_authorized(root, lock, cp)
     if action == "P6_APPLY_SINGLE_CORRECTION_PASS_ALL_POSTERS":
         require(all(v == 0 for v in used.values()), "CORRECTION_ALREADY_CONSUMED")
         require(p6["final_pixel_validation_allowed"] is False and cp["p6"]["final_pixel_validation_allowed"] is False, "PREMATURE_PIXEL_VALIDATION")
