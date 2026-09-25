@@ -1,0 +1,53 @@
+{
+  "schema_version": "vpd-cross-aspect-generation-authorization/v1",
+  "artifact_type": "CROSS_ASPECT_9_16_GENERATION_AUTHORIZATION",
+  "recorded_at": "2026-09-25T03:29:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+  "authorization_source": {
+    "type": "EXPLICIT_USER_AUTHORIZATION",
+    "message": "继续下一步。按当前已冻结协议，授权生成本轮 2 张 9:16 豆坊 A/B 图：A 基线 1 张 + B 六控制 1 张，零重试；随后按既定流程做独立盲评并推进主线，不扩大预算。"
+  },
+  "frozen_inputs": {
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COMPACT_VPD_CROSS_ASPECT_9_16_SCOPE_REVIEW_AND_PREP_20260925.json",
+      "sha256": "a47a52d9790a6bd06058aff2341e7128459b665aadd3d13e26f4cc077812d4b4"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "81d82279808e53ced454e9d5c78036c73851a48e4554c4218151f061f61a8359"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "0a6c9cfa2491137abff14af1220fd59df91183e001e21b20db1c7d6a7f143836"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260925.txt",
+      "sha256": "cd9e179ccff333be3338c5ff2d5ef409342b2f51bb8fdb342cceb73c91afceda",
+      "pre_mapping_frozen": true
+    }
+  },
+  "budget": {
+    "proposed_images": 2,
+    "authorized_images": 2,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry_budget": 0,
+    "hidden_variants_allowed": false,
+    "best_of_n_allowed": false,
+    "third_image_allowed": false
+  },
+  "execution_constraints": {
+    "target_aspect": "9:16",
+    "renderer": "CHATGPT_IMAGES",
+    "generation_not_edit": true,
+    "same_tofu_subject_process": true,
+    "figma_allowed": false,
+    "current_figma_canvas_authorization": 0,
+    "second_style_execution_allowed": false,
+    "compact_controls_must_remain_unchanged": true,
+    "independent_blind_review_after_both_outputs": true
+  },
+  "authorization_consumption_rule": "This authorization may be consumed exactly once for Route A=1 and Route B=1. No retries, replacement variants, or third image are authorized.",
+  "next_required_action": "EXECUTE_COMPACT_VPD_CROSS_ASPECT_9_16_ROUTE_A_THEN_B_ZERO_RETRY"
+}
