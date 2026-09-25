@@ -40,6 +40,7 @@ RF2_AUDIT_GATE_ACTION = "RUN_P4_RF2_CAUSAL_DESIGN_REVIEW_GATE_NO_GENERATION"
 RF2_MECHANISM_REVIEW_ACTION = "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION"
 RF2_STAGE1_EVAL_ACTION = "RUN_P4_RF2_STAGE1_GOLDEN_ABSOLUTE_REALISM_GATE"
 RF2_STAGE1_PASS_STOP_ACTION = "HOLD_P4_RF2_STAGE1_PASS_TOPIC_CONDITION_SIGNAL_NO_FURTHER_GENERATION"
+RF3_REVIEW_ACTION = "REVIEW_P4_RF3_SINGLE_SEMANTIC_SUBVARIABLE_CONTRACT_NO_GENERATION"
 PAIR2_PREWRITE_ACTIONS = {PAIR2_VALIDATOR_REPAIR_ACTION, PAIR2_VALIDATOR_CI_ACTION, PAIR2_WAIT_CANVAS_AUTH_ACTION}
 TARGETS = [
     ("12:3", "DOUFANG_A_BASELINE", "12:4"),
@@ -93,6 +94,7 @@ ACTIONS = {
     RF2_MECHANISM_REVIEW_ACTION,
     RF2_STAGE1_EVAL_ACTION,
     RF2_STAGE1_PASS_STOP_ACTION,
+    RF3_REVIEW_ACTION,
 }
 
 
@@ -569,7 +571,7 @@ def validate_p6_composition_state(root):
     wf = lock["workflow"]["document"]
     check_ref(root, wf)
     require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
-    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION, RF1_SETTLEMENT_ACTION, RF2_AUDIT_GATE_ACTION, RF2_MECHANISM_REVIEW_ACTION, RF2_STAGE1_EVAL_ACTION, RF2_STAGE1_PASS_STOP_ACTION) else "P6")
+    expected_focus = "P1" if action.startswith("P1_") else ("P4" if action in (CROSS_ASPECT_WAIT_AUTH_ACTION, CROSS_ASPECT_EXECUTE_ACTION, CROSS_ASPECT_RESULT_ACTION, CROSS_ASPECT_AI_FEEL_REPAIR_AUTH_ACTION, GOLDEN_GATED_REALISM_REPAIR_WAIT_ACTION, GOLDEN_GATED_REALISM_REPAIR_EXECUTE_ACTION, GOLDEN_GATED_REALISM_FAIL_REVIEW_ACTION, RF1_CI_ACTION, RF1_ROUTE_B_ACTION, RF1_SETTLEMENT_ACTION, RF2_AUDIT_GATE_ACTION, RF2_MECHANISM_REVIEW_ACTION, RF2_STAGE1_EVAL_ACTION, RF2_STAGE1_PASS_STOP_ACTION, RF3_REVIEW_ACTION) else "P6")
     require(lock["workflow"]["focus_stage"] == expected_focus and lock["workflow"]["status_authority"] == LOCK_PATH, "WORKFLOW_STAGE_DRIFT")
 
     transition = lock["composition_transition_evidence"]
@@ -640,6 +642,21 @@ def validate_p6_composition_state(root):
         require(auth["isolation"]["golden_generation_reference"] is False and auth["isolation"]["golden_evaluation_only"] is True, "RF1_GOLDEN_BOUNDARY")
         require(lock["execution_boundary"]["current_image_generation_authorization"] == 2, "RF1_AUTH_COUNT")
         require(lock["execution_boundary"]["current_figma_canvas_authorization"] == 0 and lock["execution_boundary"]["second_style_execution_allowed"] is False, "RF1_EXECUTION_BOUNDARY")
+    if action == RF3_REVIEW_ACTION:
+        require(lock.get("status") == "VPD_P4_RF3_CAUSAL_DESIGN_AUDIT_COMPLETE_WAITING_REVIEWER_GATE", "RF3_AUDIT_STATE")
+        rf3=lock.get("p4_rf3_causal_design_audit",{})
+        require(rf3.get("status") == "AUDIT_COMPLETE_WAITING_REVIEWER_GATE", "RF3_STATUS")
+        require(rf3.get("image_budget") == 0 and rf3.get("generation_performed") is False, "RF3_ZERO_BUDGET")
+        require(rf3.get("rf2_cancelled_budget_reused") is False, "RF3_RF2_BUDGET_REUSE")
+        check_ref(root,rf3["audit"])
+        d=read(root,rf3["audit"]["path"])
+        require(len(d["topic_conditioned_subvariables"]) >= 4, "RF3_SUBVARIABLE_COUNT")
+        require(d["frozen_next_minimal_experiment"]["selected_variable"] == "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR", "RF3_SELECTED_VARIABLE")
+        require(d["frozen_next_minimal_experiment"]["proposed_budget"] == {"new_images_max":1,"retries":0,"third_image":False,"best_of_n":False,"reroll":False,"technical_failure_extra_budget":0}, "RF3_BUDGET")
+        require(d["reviewer_gate"]["generation_authorization"] == 0, "RF3_PREMATURE_AUTH")
+        require(d["budget_boundary"]["rf2_cancelled_second_image_reusable"] is False, "RF3_BUDGET_BOUNDARY")
+        require(lock["execution_boundary"]["current_image_generation_authorization"] == 0 and lock["execution_boundary"]["current_figma_canvas_authorization"] == 0, "RF3_EXECUTION_BOUNDARY")
+
     if action == RF2_STAGE1_PASS_STOP_ACTION:
         require(lock.get("status") == "VPD_P4_RF2_STAGE1_ABSOLUTE_REALISM_PASS_STOP_STAGE2_PROHIBITED", "RF2_STAGE1_PASS_STATE")
         rf2 = lock.get("p4_rf2_causal_design_audit", {})
