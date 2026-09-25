@@ -1,0 +1,52 @@
+{
+  "schema_version": "vpd-p4-rf1-r1c-anchor-causal-isolation-authorization/v1",
+  "artifact_type": "P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_AUTHORIZATION",
+  "recorded_at": "2026-09-25T10:40:00Z",
+  "project_id": "visual-aesthetic-vpd",
+  "strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
+  "user_authorization": "EXPLICIT",
+  "authority_head_before_write": "e46ffe0a20ed9bd811e6d969df219bb6b590745b",
+  "idempotency": {
+    "prior_p4_rf1_execution_found": false,
+    "prior_p4_rf1_authorization_consumed": false,
+    "current_generation_authorization_before_write": 0
+  },
+  "budget": {
+    "authorized_images": 2,
+    "route_A": 1,
+    "route_B": 1,
+    "retry_budget": 0,
+    "no_third_image": true,
+    "technical_failure_extra_budget": 0
+  },
+  "isolation": {
+    "renderer": "CHATGPT_IMAGES",
+    "aspect": "9:16",
+    "subject_moment": "freshly transferred tofu curds sitting in a cloth-lined wooden mold just before or during pressing",
+    "compact_six_controls": false,
+    "new_anti_ai_rules": false,
+    "route_A_reference": "NONE",
+    "route_B_reference": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "route_B_reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "golden_generation_reference": false,
+    "golden_evaluation_only": true
+  },
+  "execution_order": [
+    "A exactly once",
+    "archive A raw output",
+    "B exactly once",
+    "archive B raw output",
+    "Golden absolute realism gate",
+    "causal interpretation",
+    "hard stop"
+  ],
+  "boundaries": {
+    "figma": false,
+    "p5": false,
+    "retry": false,
+    "third_image": false,
+    "best_of_n": false,
+    "reroll": false
+  },
+  "status": "AUTHORIZED_NOT_YET_CONSUMED"
+}
