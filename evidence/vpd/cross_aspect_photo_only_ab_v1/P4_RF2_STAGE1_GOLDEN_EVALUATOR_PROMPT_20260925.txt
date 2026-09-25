@@ -1,0 +1,34 @@
+你将收到 2 张图片：
+1. GOLDEN_REALISM：摄影真实性 Golden，只用于校准“真实摄影 vs 明显 AI”，题材不同不得扣分。
+2. STAGE1_RICE：P4-RF2 Stage 1 唯一米仓候选。
+
+本轮只做 Stage 1 Golden 绝对真实性门，不做相对审美胜负，不与 RF1 豆腐图比较美观。
+
+必须分别判断 STAGE1_RICE：
+- FIRST_IMPRESSION_AI_GATE: PASS / FAIL
+- DOCUMENTARY_CAUSALITY: PASS / FAIL
+- MATERIAL_HETEROGENEITY: PASS / FAIL
+- ABSOLUTE_REALISM_GATE: PASS / FAIL
+
+判定依据：
+- camera-observed vs prompt-staged
+- one credible work moment vs catalogue/checklist display
+- heterogeneous functional wear vs uniform photogenic patina
+- incidental light vs theatrical/cinematic atmosphere
+- operational causality, mundane irregularity, occlusion/crop/focus/exposure imperfection
+
+如果明显出现“一眼 AI、完整清单化摆齐、统一漂亮做旧、戏剧化光汽湿地面、为展示而安排所有物件”，则 ABSOLUTE_REALISM_GATE 必须 FAIL。
+
+预注册停止规则：
+- 若 ABSOLUTE_REALISM_GATE = PASS：立即停止，Stage 2 不得执行；只允许解释为“题材条件机制族被强烈指向”，不得说题材是唯一原因。
+- 若 ABSOLUTE_REALISM_GATE = FAIL：仅说明 Stage 1 未能通过绝对真实性门，因此按冻结合同才允许进入 Stage 2；不得宣称一般 renderer prior 已被证明。
+
+最后只输出：
+FIRST_IMPRESSION_AI_GATE:
+DOCUMENTARY_CAUSALITY:
+MATERIAL_HETEROGENEITY:
+ABSOLUTE_REALISM_GATE:
+CONFIDENCE:
+REASONS:
+STOP_DECISION:
+CAUSAL_INTERPRETATION:
