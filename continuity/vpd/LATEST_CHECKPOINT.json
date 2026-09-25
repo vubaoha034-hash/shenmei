@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 172,
-  "recorded_at": "2026-09-25T20:35:00+08:00",
+  "sequence": 173,
+  "recorded_at": "2026-09-25T21:36:30+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4-RF2 reviewer-only mechanism decomposition complete. Absolute realism remains FAIL; RF1 proves only R1C_NOT_NECESSARY. Four falsifiable mechanism hypotheses and a max-2-image sequential single-variable contract are frozen; generation authorization remains zero.",
+  "current_focus": "P4-RF2 Stage 1 rice output recorded exactly once; run Golden absolute realism gate before deciding whether Stage 2 conditional image may open.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -277,7 +277,10 @@
     "p4_rf2_reviewer_mechanism_decomposition_complete",
     "p4_rf2_four_falsifiable_renderer_mechanisms_registered",
     "p4_rf2_absolute_realism_still_fail",
-    "p4_rf2_future_contract_frozen_zero_generation_authorization"
+    "p4_rf2_future_contract_frozen_zero_generation_authorization",
+    "p4_rf2_generation_authorization_recorded",
+    "p4_rf2_stage1_rice_generated_once",
+    "p4_rf2_stage2_conditional_slot_closed_pending_stage1_gate"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -348,7 +351,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "REVIEW_P4_RF2_MECHANISM_DECOMPOSITION_AND_SINGLE_VARIABLE_CONTRACT_NO_GENERATION",
+  "next_required_action": "RUN_P4_RF2_STAGE1_GOLDEN_ABSOLUTE_REALISM_GATE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -416,10 +419,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_RF2_REVIEWER_MECHANISM_DECOMPOSITION_COMPLETE_WAITING_GATE",
+  "status": "VPD_P4_RF2_STAGE1_RICE_GENERATED_WAITING_GOLDEN_GATE",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "81b00d76ed95d9a2147874c6fbb4699ddf9c8e11e75b3738d27bf9f7851daf55"
+    "sha256": "de5a05d42d4a5d7759626c053326199e36bf2b72afe157c94695844a24c7db35"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -440,8 +443,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-RF2-REVIEWER-MECHANISM-DECOMPOSITION-20260925-001",
-      "event_hash": "7928f3d834b61b323172629eb15f1f05210ccfd2c98ac97dc5d0808f51e4089a"
+      "event_id": "EVT-VPD-P4-RF2-STAGE1-RICE-GENERATED-20260925-001",
+      "event_hash": "14563268a00a3a618b03df40e040dd45cef80b001b291a818e6aac828d972336"
     }
   },
   "typography_repair": {
@@ -1907,8 +1910,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_REVIEWER_ONLY_RENDERER_PRIOR_MECHANISM_DECOMPOSITION_20260925.json",
-    "sha256": "bdb647fa92c40c7e3c3b16d0b97fc9753d3c56f4876686d2856ae3d0fe440f6f"
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_RICE_EXECUTION_RECEIPT_20260925.json",
+    "sha256": "9a66889c5fbb6d51896d9e0ad20fded02b3c9df2306ef4939f2e5a1204ee8be9"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
