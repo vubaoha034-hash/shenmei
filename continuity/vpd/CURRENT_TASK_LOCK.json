@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 154,
+  "revision": 155,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF3 reviewer correction complete. The wet/heat process-phase design is rejected as structurally confounded. A true single-variable heritage semantic contract is frozen: only 'traditional tofu workshop' changes to 'contemporary working tofu workshop'; production phase, action, object state, environmental intervention, renderer, aspect, reference policy, RF1 structure and Golden evaluation remain fixed. This turn remains zero-image.",
-  "status": "VPD_P4_RF3_HERITAGE_SINGLE_VARIABLE_CONTRACT_FROZEN_ZERO_BUDGET_WAIT_NEXT",
+  "current_stage": "P4-RF3 corrected heritage semantic single-variable experiment is scoped-authorized for exactly one image after control-plane CI PASS. Authorization is unconsumed; no other variable or budget changed.",
+  "status": "VPD_P4_RF3_HERITAGE_SINGLE_VARIABLE_AUTHORIZED_UNCONSUMED",
   "p6_allowed": false,
-  "next_required_action": "WAIT_SCOPED_AUTOAUTH_P4_RF3_HERITAGE_ONE_IMAGE_NEXT_TURN",
+  "next_required_action": "EXECUTE_P4_RF3_HERITAGE_SINGLE_VARIABLE_EXACTLY_ONCE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,21 +142,18 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 1,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "rejected prior wet/heat process-phase intervention as structurally confounded",
-    "froze corrected heritage/traditional semantic single-variable contract",
-    "verified only semantic diff is traditional tofu workshop -> contemporary working tofu workshop",
-    "held production phase, action, object state and environmental intervention fixed",
-    "kept this turn at zero images and zero budget",
-    "recorded scoped next-step autoauthorization ceiling of one image with zero retry",
-    "kept RF2 cancelled second-image budget non-reusable, Figma=0 and P5 blocked"
+    "verified prior RF3 corrected contract CI PASS with synchronized commercial ledger",
+    "converted scoped reviewer authorization into exactly one current RF3 image authorization",
+    "kept only variable WORKSHOP_SEMANTIC_SLOT",
+    "kept retry=0, third image=false, best-of-N/reroll=false, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-25T22:15:00+08:00",
+  "updated_at": "2026-09-26T09:14:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2178,7 +2175,7 @@
     }
   },
   "p4_rf3_causal_design_audit": {
-    "status": "HERITAGE_SINGLE_VARIABLE_CONTRACT_FROZEN",
+    "status": "HERITAGE_SINGLE_VARIABLE_AUTHORIZED_UNCONSUMED",
     "correction": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SEMANTIC_SINGLE_VARIABLE_CORRECTION_20260925.json",
       "sha256": "8558c1b633d7978174d3cc9df22675e8198a8ae888060edb8e0e9e58a152cd53"
@@ -2187,7 +2184,7 @@
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SEMANTIC_SINGLE_VARIABLE_CONTRACT_20260925.json",
       "sha256": "8fdffbbca8b5a67803511711260cc35ad83265dc341dae181e75ca9a7e3b38e5"
     },
-    "image_budget": 0,
+    "image_budget": 1,
     "generation_performed": false,
     "rf2_cancelled_budget_reused": false,
     "selected_next_variable": "S1_HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
@@ -2199,6 +2196,18 @@
     "retry": 0,
     "third_image": false,
     "figma": false,
-    "p5": false
+    "p5": false,
+    "generation_authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SINGLE_VARIABLE_GENERATION_AUTHORIZATION_20260926.json",
+      "sha256": "0d56f1093a95e36a9be62561e139bc1a222c710452b5b1c0792182aa503ea8e8"
+    },
+    "current_budget": {
+      "authorized": 1,
+      "consumed": 0,
+      "remaining": 1,
+      "retry": 0,
+      "third_image": false
+    },
+    "scoped_autoauth_consumed_into_current_authorization": true
   }
 }
