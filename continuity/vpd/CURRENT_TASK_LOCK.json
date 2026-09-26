@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 156,
+  "revision": 157,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF3 heritage semantic single-variable experiment settled. The unique authorized treatment image was consumed exactly once and passed all four Golden absolute-realism gates under independent reviewer pixel recheck. Causal conclusion is limited to heritage×tofu semantic condition strongly implicated, not unique cause.",
-  "status": "VPD_P4_RF3_HERITAGE_SINGLE_VARIABLE_SETTLED_PASS_NO_FURTHER_GENERATION",
+  "current_stage": "P4-RF4 zero-image residual-causality design audit complete. RF3 remains settled and closed. Residual hypotheses are updated; a one-image continuation is a DESIGN_GAP because RF2 rice lacks exact frozen prompt identity. The only frozen future experiment is a fresh matched non-tofu rice heritage pair, but current generation authorization remains zero.",
+  "status": "VPD_P4_RF4_RESIDUAL_CAUSALITY_AUDIT_COMPLETE_WAITING_REVIEWER_GATE",
   "p6_allowed": false,
-  "next_required_action": "HOLD_P4_RF3_SETTLED_PASS_NO_FURTHER_GENERATION",
+  "next_required_action": "REVIEW_P4_RF4_NONTOFU_HERITAGE_MATCHED_PAIR_DESIGN_NO_GENERATION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,14 +148,14 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "confirmed unique RF3 treatment was generated exactly once and no retry/reroll/best-of-N occurred",
-    "recorded authoritative independent reviewer pixel verdict PASS/PASS/PASS/PASS confidence 0.74",
-    "closed RF3 image budget at authorized=1 consumed=1 remaining=0 retry=0",
-    "settled causal conclusion as heritage×tofu semantic condition strongly implicated, not unique root cause",
-    "kept renderer-prior-disproven=false and heritage-unique-root-cause=false",
-    "kept Figma=0 and P5 blocked; no further RF3 generation allowed"
+    "completed one zero-image RF4 residual-causality design audit",
+    "updated tofu-process-object, moisture/steam, heritage interaction, shared-task-structure and general-renderer residual hypotheses",
+    "identified heritage main effect vs heritage×tofu interaction as highest-information unresolved question",
+    "recorded DESIGN_GAP for any one-image reuse of RF2 rice because exact RF2 generator prompt identity was not frozen",
+    "froze exactly one future matched non-tofu heritage A/B contract with minimum proposed budget 2 images, not authorized",
+    "kept current image budget=0, authorization=0, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-26T09:48:00+08:00",
+  "updated_at": "2026-09-26T13:31:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2240,5 +2240,25 @@
       "sha256": "6368104dc04fecaa16234021feb0341700c32b6a67e758b32d344df207198c1e"
     },
     "preliminary_evaluator_receipt_status": "SUPERSEDED_FOR_FORMAL_SETTLEMENT"
+  },
+  "p4_rf4_residual_causality_audit": {
+    "status": "AUDIT_COMPLETE_ONE_IMAGE_DESIGN_GAP_WAITING_REVIEWER_GATE",
+    "audit": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT_20260926.json",
+      "sha256": "2a78c1dc6a491245d4d2c33f9930bbfff042f1d932f1936bcc74f6279b760bcc"
+    },
+    "image_budget": 0,
+    "generation_authorization": 0,
+    "generation_performed": false,
+    "rf3_budget_reused": false,
+    "one_image_design_gap": true,
+    "selected_future_contract": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
+    "future_minimum_budget_proposal": {
+      "images": 2,
+      "retry": 0
+    },
+    "standing_authorization_auto_continue": false,
+    "figma": false,
+    "p5": false
   }
 }
