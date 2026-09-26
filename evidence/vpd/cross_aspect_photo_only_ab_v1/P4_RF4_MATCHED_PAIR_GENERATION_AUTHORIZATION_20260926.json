@@ -1,0 +1,82 @@
+{
+  "schema_version": "vpd-p4-rf4-matched-pair-authorization/v1",
+  "artifact_type": "P4_RF4_MATCHED_PAIR_GENERATION_AUTHORIZATION",
+  "recorded_at": "2026-09-26T14:39:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "contract_id": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
+  "source": "EXPLICIT_INDEPENDENT_REVIEWER_PASS_PLUS_STANDING_DIRECT_EXECUTION_RULE",
+  "reviewer_verdict": "PASS_TRUE_SINGLE_VARIABLE_MATCHED_PAIR",
+  "frozen_prompt_artifacts": {
+    "template": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_FROZEN_PROMPT_TEMPLATE_20260926.txt",
+      "git_blob_sha": "188ee72fc0164def3fb002029441e17855705bf7"
+    },
+    "route_A": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF4_ROUTE_A_TRADITIONAL_RICE_TO_FRESH_CHAT_20260926.txt",
+      "git_blob_sha": "0874aa89c957ea8849602b4399c370fd2586640d"
+    },
+    "route_B": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF4_ROUTE_B_CONTEMPORARY_RICE_TO_FRESH_CHAT_20260926.txt",
+      "git_blob_sha": "98584fd8904e4726d43bd682619143fa3c9c047f"
+    }
+  },
+  "pair_integrity": {
+    "only_text_difference": "WORKSHOP_SEMANTIC_SLOT",
+    "route_A_slot": "traditional rice processing workshop",
+    "route_B_slot": "contemporary working rice processing workshop",
+    "any_other_text_or_control_difference_invalidates_experiment": true
+  },
+  "fixed_conditions": {
+    "renderer": "CHATGPT_IMAGES",
+    "aspect": "9:16",
+    "r1c": false,
+    "topic": "RICE_PROCESSING_WORKSHOP",
+    "event": "freshly sifted rice grain falling from a hand-held woven sieve into an open receiving sack or container at the processing station",
+    "object_set": "same sieve, rice/grain, receiving sack/container, same immediate processing station",
+    "operator_visibility_policy": "same",
+    "task_structure": "same RF1-style minimal documentary task structure",
+    "golden": "same Golden evaluation only",
+    "four_absolute_gates": [
+      "FIRST_IMPRESSION_AI_GATE",
+      "DOCUMENTARY_CAUSALITY",
+      "MATERIAL_HETEROGENEITY",
+      "ABSOLUTE_REALISM_GATE"
+    ],
+    "compact_six": false,
+    "new_anti_ai_rules": false,
+    "new_realism_rules": false,
+    "new_material_rules": false,
+    "new_clutter_rules": false,
+    "new_occlusion_rules": false,
+    "explicit_steam_wet_floor_haze_cinematic_light_controls": false
+  },
+  "authorization": {
+    "total_images": 2,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry": 0,
+    "reroll": 0,
+    "best_of_n": 0,
+    "third_image": false,
+    "technical_failure_extra_budget": 0,
+    "figma": 0,
+    "p5": false
+  },
+  "serialization": {
+    "route_A_first": true,
+    "route_B_blocked_until_A_technical_valid": true,
+    "if_A_technical_invalid": "STOP_TECHNICAL_INVALID_NO_B",
+    "if_B_technical_invalid": "STOP_TECHNICAL_INVALID_NO_REPLACEMENT"
+  },
+  "nuisance_boundary": {
+    "renderer_stochasticity_uncontrolled": true,
+    "causal_claim_ceiling": "DIRECTIONAL_SIGNAL_ONLY",
+    "strongest_allowed_if_A_FAIL_B_PASS": "HERITAGE_MAIN_EFFECT_DIRECTIONAL_SIGNAL_STRONGLY_IMPLICATED_IN_THIS_MATCHED_RICE_PAIR",
+    "prohibited": [
+      "UNIQUE_ROOT_CAUSE",
+      "DETERMINISTIC_EFFECT",
+      "PROBABILITY_EFFECT_ESTIMATE"
+    ]
+  },
+  "status": "AUTHORIZED_A_READY_B_SERIAL_BLOCKED"
+}
