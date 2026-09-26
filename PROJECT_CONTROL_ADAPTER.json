@@ -811,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_P4_RF3_HERITAGE_SINGLE_VARIABLE_CONTRACT_FROZEN_ZERO_BUDGET_WAIT_NEXT",
+    "checkpoint": "VPD_P4_RF3_HERITAGE_SINGLE_VARIABLE_AUTHORIZED_UNCONSUMED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -849,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "WAIT_SCOPED_AUTOAUTH_P4_RF3_HERITAGE_ONE_IMAGE_NEXT_TURN",
+    "next_required_action": "EXECUTE_P4_RF3_HERITAGE_SINGLE_VARIABLE_EXACTLY_ONCE",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 154,
-    "sha256": "17eff3dfaa8c1f01e3f765dbf3481ef25ea48b2e6fa8801a05d11a9b7282b375",
+    "revision": 155,
+    "sha256": "0a70bd273e244c3d0935972fc3dabce7ae8bc594d373fcbe353df0fcd2987daf",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
