@@ -1,0 +1,72 @@
+{
+  "schema_version": "vpd-p4-rf4-golden-evaluator-receipt/v1",
+  "artifact_type": "P4_RF4_MATCHED_PAIR_GOLDEN_EVALUATOR_RECEIPT",
+  "recorded_at": "2026-09-26T17:35:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "contract_id": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
+  "evaluation_mode": "EXISTING_PIXEL_READBACK_ONLY_NO_REGENERATION",
+  "inputs": {
+    "golden": {
+      "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png"
+    },
+    "route_A": {
+      "sha256": "f4a56280b0d14b00e75d54f42ed0447e50c24410e8c924cf50a916e764bac03e",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png",
+      "semantic_slot": "traditional rice processing workshop"
+    },
+    "route_B": {
+      "sha256": "bf8a46d04b904cbde4aa594bfbd3eaaa9cc318a089172ab422e9e292eac7d345",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "mime_type": "image/png",
+      "semantic_slot": "contemporary working rice processing workshop"
+    }
+  },
+  "absolute_gates": {
+    "A": {
+      "FIRST_IMPRESSION_AI_GATE": "PASS",
+      "DOCUMENTARY_CAUSALITY": "PASS",
+      "MATERIAL_HETEROGENEITY": "PASS",
+      "ABSOLUTE_REALISM_GATE": "PASS",
+      "confidence": 0.8,
+      "reasons": [
+        "Single rice-sifting action clearly drives the scene; sieve, falling grain and receiving sack form one coherent production event.",
+        "Traditional workshop context remains incidental rather than checklist-like; surrounding machine, broom, sacks and worn wood do not all compete for equal explanatory prominence.",
+        "Rice, woven sieve, sack fabric, aged wood, machine surfaces, clothing and dusty floor retain visibly different material behavior.",
+        "Lighting is restrained and workmanlike, without steam/haze/wet-floor/cinematic-light bundling."
+      ]
+    },
+    "B": {
+      "FIRST_IMPRESSION_AI_GATE": "PASS",
+      "DOCUMENTARY_CAUSALITY": "PASS",
+      "MATERIAL_HETEROGENEITY": "PASS",
+      "ABSOLUTE_REALISM_GATE": "PASS",
+      "confidence": 0.83,
+      "reasons": [
+        "Foreground worker, sieve and falling rice define one operational moment with a plausible secondary worker and machinery in the background.",
+        "Industrial context reads as functioning workspace rather than a staged inventory display.",
+        "Rice, bamboo, sack weave, apron, metal machinery, painted surfaces and floor wear remain materially differentiated.",
+        "Natural daylight and depth falloff are plausible and do not create a coordinated cinematic authenticity package."
+      ]
+    }
+  },
+  "relative_aesthetic_winner_performed": false,
+  "preregistered_combination": "A_TRADITIONAL_PASS__B_CONTEMPORARY_PASS",
+  "renderer_stochasticity_uncontrolled_nuisance": true,
+  "no_regeneration": true,
+  "no_retry": true,
+  "no_third_image": true,
+  "figma": false,
+  "p5": false
+}
