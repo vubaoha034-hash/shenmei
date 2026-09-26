@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 159,
+  "revision": 160,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF4 Route A traditional rice generated exactly once and is technically valid. Route B contemporary rice is now the only authorized remaining image.",
-  "status": "VPD_P4_RF4_ROUTE_A_TECHNICAL_VALID_B_READY",
+  "current_stage": "P4-RF4 matched pair generation complete. Route A and Route B are both technically valid and the full exactly-two image budget is consumed. No generation authorization remains. Next action is Golden absolute-realism evaluation and preregistered settlement only.",
+  "status": "VPD_P4_RF4_MATCHED_PAIR_GENERATED_BOTH_VALID_WAITING_GOLDEN_GATES",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_P4_RF4_ROUTE_B_CONTEMPORARY_RICE_EXACTLY_ONCE",
+  "next_required_action": "RUN_P4_RF4_GOLDEN_ABSOLUTE_REALISM_GATES_AND_SETTLE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,18 +142,19 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 1,
+    "current_image_generation_authorization": 0,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "generated RF4 Route A exactly once in a fresh chat",
-    "verified A technical validity: single PNG 941x1672, no retry/reroll/best-of-N",
-    "consumed A slot only and opened exactly one remaining B slot",
-    "kept retry=0, third image=false, Figma=0 and P5 blocked"
+    "idempotently confirmed RF4 A/B technical-valid receipts already exist",
+    "closed RF4 generation budget at authorized=2 consumed=2 remaining=0 retry=0",
+    "closed image generation authorization to zero",
+    "kept Figma=0 and P5 blocked",
+    "advanced only to Golden absolute-realism evaluation"
   ],
-  "updated_at": "2026-09-26T14:52:00+08:00",
+  "updated_at": "2026-09-26T16:17:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2240,7 +2241,7 @@
     "preliminary_evaluator_receipt_status": "SUPERSEDED_FOR_FORMAL_SETTLEMENT"
   },
   "p4_rf4_residual_causality_audit": {
-    "status": "ROUTE_A_TECHNICAL_VALID_B_READY",
+    "status": "MATCHED_PAIR_GENERATED_BOTH_VALID_WAITING_GOLDEN_GATES",
     "audit": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT_20260926.json",
       "sha256": "2a78c1dc6a491245d4d2c33f9930bbfff042f1d932f1936bcc74f6279b760bcc"
@@ -2264,18 +2265,22 @@
     "generation_authorization_count": 2,
     "current_budget": {
       "authorized": 2,
-      "consumed": 1,
-      "remaining": 1,
+      "consumed": 2,
+      "remaining": 0,
       "route_A": 0,
-      "route_B": 1,
+      "route_B": 0,
       "retry": 0,
       "third_image": false
     },
     "route_A_status": "TECHNICALLY_VALID_CONSUMED",
-    "route_B_status": "AUTHORIZED_READY",
+    "route_B_status": "TECHNICALLY_VALID_CONSUMED",
     "route_A_receipt": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_A_TRADITIONAL_RICE_EXECUTION_RECEIPT_20260926.json",
       "sha256": "266c8d442a00311004335f2712308dc100876574f9337881276e9a3fec5b0291"
+    },
+    "route_B_receipt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_B_CONTEMPORARY_RICE_EXECUTION_RECEIPT_20260926.json",
+      "sha256": "83f560f59c2b20b31f1a08c4e9359ac856ffc760a9b3179ef22e3eca6e0b23ed"
     }
   }
 }
