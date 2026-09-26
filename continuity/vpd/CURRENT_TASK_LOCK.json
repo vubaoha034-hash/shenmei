@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 157,
+  "revision": 158,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF4 zero-image residual-causality design audit complete. RF3 remains settled and closed. Residual hypotheses are updated; a one-image continuation is a DESIGN_GAP because RF2 rice lacks exact frozen prompt identity. The only frozen future experiment is a fresh matched non-tofu rice heritage pair, but current generation authorization remains zero.",
-  "status": "VPD_P4_RF4_RESIDUAL_CAUSALITY_AUDIT_COMPLETE_WAITING_REVIEWER_GATE",
+  "current_stage": "P4-RF4 reviewer PASS and exactly-two bounded matched-pair authorization recorded. Route A traditional rice is ready for exactly one generation. Route B contemporary rice remains serially blocked until A is technically valid.",
+  "status": "VPD_P4_RF4_MATCHED_PAIR_AUTHORIZED_A_READY_B_BLOCKED",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_P4_RF4_NONTOFU_HERITAGE_MATCHED_PAIR_DESIGN_NO_GENERATION",
+  "next_required_action": "EXECUTE_P4_RF4_ROUTE_A_TRADITIONAL_RICE_EXACTLY_ONCE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,20 +142,19 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 1,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "completed one zero-image RF4 residual-causality design audit",
-    "updated tofu-process-object, moisture/steam, heritage interaction, shared-task-structure and general-renderer residual hypotheses",
-    "identified heritage main effect vs heritage×tofu interaction as highest-information unresolved question",
-    "recorded DESIGN_GAP for any one-image reuse of RF2 rice because exact RF2 generator prompt identity was not frozen",
-    "froze exactly one future matched non-tofu heritage A/B contract with minimum proposed budget 2 images, not authorized",
-    "kept current image budget=0, authorization=0, Figma=0 and P5 blocked"
+    "recorded independent reviewer PASS for RF4 true single-variable matched pair",
+    "recorded exactly-two bounded authorization A=1 B=1 with zero retry/reroll/best-of-N/third-image/extra-budget",
+    "froze A/B serial execution with B blocked until A technical validity",
+    "kept only WORKSHOP_SEMANTIC_SLOT as the textual treatment difference",
+    "kept renderer stochasticity as an uncontrolled nuisance and causal claims directional-only"
   ],
-  "updated_at": "2026-09-26T13:31:00+08:00",
+  "updated_at": "2026-09-26T14:39:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2242,13 +2241,16 @@
     "preliminary_evaluator_receipt_status": "SUPERSEDED_FOR_FORMAL_SETTLEMENT"
   },
   "p4_rf4_residual_causality_audit": {
-    "status": "AUDIT_COMPLETE_ONE_IMAGE_DESIGN_GAP_WAITING_REVIEWER_GATE",
+    "status": "MATCHED_PAIR_AUTHORIZED_A_READY_B_BLOCKED",
     "audit": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT_20260926.json",
       "sha256": "2a78c1dc6a491245d4d2c33f9930bbfff042f1d932f1936bcc74f6279b760bcc"
     },
-    "image_budget": 0,
-    "generation_authorization": 0,
+    "image_budget": 2,
+    "generation_authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_GENERATION_AUTHORIZATION_20260926.json",
+      "sha256": "3ac25676aadf0ee77346f1c002eea8adb1120d7b6642912d5fab439c6a611967"
+    },
     "generation_performed": false,
     "rf3_budget_reused": false,
     "one_image_design_gap": true,
@@ -2259,6 +2261,18 @@
     },
     "standing_authorization_auto_continue": false,
     "figma": false,
-    "p5": false
+    "p5": false,
+    "generation_authorization_count": 2,
+    "current_budget": {
+      "authorized": 2,
+      "consumed": 0,
+      "remaining": 2,
+      "route_A": 1,
+      "route_B": 1,
+      "retry": 0,
+      "third_image": false
+    },
+    "route_A_status": "AUTHORIZED_READY",
+    "route_B_status": "SERIAL_BLOCKED_PENDING_A_TECHNICAL_VALID"
   }
 }
