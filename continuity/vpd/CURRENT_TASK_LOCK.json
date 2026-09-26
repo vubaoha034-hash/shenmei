@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 158,
+  "revision": 159,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4-RF4 reviewer PASS and exactly-two bounded matched-pair authorization recorded. Route A traditional rice is ready for exactly one generation. Route B contemporary rice remains serially blocked until A is technically valid.",
-  "status": "VPD_P4_RF4_MATCHED_PAIR_AUTHORIZED_A_READY_B_BLOCKED",
+  "current_stage": "P4-RF4 Route A traditional rice generated exactly once and is technically valid. Route B contemporary rice is now the only authorized remaining image.",
+  "status": "VPD_P4_RF4_ROUTE_A_TECHNICAL_VALID_B_READY",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_P4_RF4_ROUTE_A_TRADITIONAL_RICE_EXACTLY_ONCE",
+  "next_required_action": "EXECUTE_P4_RF4_ROUTE_B_CONTEMPORARY_RICE_EXACTLY_ONCE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -148,13 +148,12 @@
     "no_new_visual_rules_for_cross_aspect": true
   },
   "completed_this_revision": [
-    "recorded independent reviewer PASS for RF4 true single-variable matched pair",
-    "recorded exactly-two bounded authorization A=1 B=1 with zero retry/reroll/best-of-N/third-image/extra-budget",
-    "froze A/B serial execution with B blocked until A technical validity",
-    "kept only WORKSHOP_SEMANTIC_SLOT as the textual treatment difference",
-    "kept renderer stochasticity as an uncontrolled nuisance and causal claims directional-only"
+    "generated RF4 Route A exactly once in a fresh chat",
+    "verified A technical validity: single PNG 941x1672, no retry/reroll/best-of-N",
+    "consumed A slot only and opened exactly one remaining B slot",
+    "kept retry=0, third image=false, Figma=0 and P5 blocked"
   ],
-  "updated_at": "2026-09-26T14:39:00+08:00",
+  "updated_at": "2026-09-26T14:52:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2241,7 +2240,7 @@
     "preliminary_evaluator_receipt_status": "SUPERSEDED_FOR_FORMAL_SETTLEMENT"
   },
   "p4_rf4_residual_causality_audit": {
-    "status": "MATCHED_PAIR_AUTHORIZED_A_READY_B_BLOCKED",
+    "status": "ROUTE_A_TECHNICAL_VALID_B_READY",
     "audit": {
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT_20260926.json",
       "sha256": "2a78c1dc6a491245d4d2c33f9930bbfff042f1d932f1936bcc74f6279b760bcc"
@@ -2251,7 +2250,7 @@
       "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_GENERATION_AUTHORIZATION_20260926.json",
       "sha256": "3ac25676aadf0ee77346f1c002eea8adb1120d7b6642912d5fab439c6a611967"
     },
-    "generation_performed": false,
+    "generation_performed": true,
     "rf3_budget_reused": false,
     "one_image_design_gap": true,
     "selected_future_contract": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
@@ -2265,14 +2264,18 @@
     "generation_authorization_count": 2,
     "current_budget": {
       "authorized": 2,
-      "consumed": 0,
-      "remaining": 2,
-      "route_A": 1,
+      "consumed": 1,
+      "remaining": 1,
+      "route_A": 0,
       "route_B": 1,
       "retry": 0,
       "third_image": false
     },
-    "route_A_status": "AUTHORIZED_READY",
-    "route_B_status": "SERIAL_BLOCKED_PENDING_A_TECHNICAL_VALID"
+    "route_A_status": "TECHNICALLY_VALID_CONSUMED",
+    "route_B_status": "AUTHORIZED_READY",
+    "route_A_receipt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_A_TRADITIONAL_RICE_EXECUTION_RECEIPT_20260926.json",
+      "sha256": "266c8d442a00311004335f2712308dc100876574f9337881276e9a3fec5b0291"
+    }
   }
 }
