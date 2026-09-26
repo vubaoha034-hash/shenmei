@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 182,
-  "recorded_at": "2026-09-26T16:17:00+08:00",
+  "sequence": 183,
+  "recorded_at": "2026-09-26T17:35:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4-RF4 matched pair generation complete. A and B are both technically valid; the exactly-two image budget is fully consumed and no image generation authorization remains. Next action is Golden absolute-realism evaluation and preregistered settlement only.",
+  "current_focus": "P4-RF4 matched rice heritage pair settled. A traditional rice and B contemporary rice both pass all four Golden absolute-realism gates. Under the preregistered A_PASS/B_PASS branch, a simple general heritage main effect is not supported in rice; heritage×tofu interaction becomes more plausible but remains unproven. Renderer stochasticity remains an uncontrolled nuisance.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -307,7 +307,14 @@
     "p4_rf4_route_b_serial_gate_open_one_image_remaining",
     "p4_rf4_route_b_generated_once_technical_valid",
     "p4_rf4_generation_budget_closed_two_of_two",
-    "p4_rf4_waiting_golden_absolute_gates"
+    "p4_rf4_waiting_golden_absolute_gates",
+    "p4_rf4_existing_A_B_pixel_readback_no_regeneration",
+    "p4_rf4_route_A_golden_pass_all_four_confidence_0_80",
+    "p4_rf4_route_B_golden_pass_all_four_confidence_0_83",
+    "p4_rf4_preregistered_A_pass_B_pass_settlement",
+    "p4_rf4_budget_closed_2_of_2_zero_retry",
+    "p4_rf4_general_heritage_main_effect_not_supported_in_rice",
+    "p4_rf4_heritage_x_tofu_more_plausible_not_proven"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -378,7 +385,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "RUN_P4_RF4_GOLDEN_ABSOLUTE_REALISM_GATES_AND_SETTLE",
+  "next_required_action": "HOLD_P4_RF4_SETTLED_NO_FURTHER_GENERATION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -446,10 +453,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_P4_RF4_MATCHED_PAIR_GENERATED_BOTH_VALID_WAITING_GOLDEN_GATES",
+  "status": "VPD_P4_RF4_MATCHED_PAIR_SETTLED_A_PASS_B_PASS_NO_FURTHER_GENERATION",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "dd99552f76fe8feb4a5492158c5bd49ca114bbd48a1c753d46d6b87741a748e5"
+    "sha256": "74f04e01d26e089962008208acc04f8175e1b97a19977f67f08c7d70b92e0cd2"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -470,8 +477,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-RF4-BOTH-VALID-WAITING-GOLDEN-20260926-001",
-      "event_hash": "335b2774382e62da70eaf9fa0afe890dfda33c4e56c97e727ffc3e60ec75ab7e"
+      "event_id": "EVT-VPD-P4-RF4-MATCHED-PAIR-SETTLED-A-PASS-B-PASS-20260926-001",
+      "event_hash": "47048dbbdb90e4a2298080f0920495e970078127584dbb2bf7d682b228a4e08e"
     }
   },
   "typography_repair": {
@@ -1937,8 +1944,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_B_CONTEMPORARY_RICE_EXECUTION_RECEIPT_20260926.json",
-    "sha256": "83f560f59c2b20b31f1a08c4e9359ac856ffc760a9b3179ef22e3eca6e0b23ed"
+    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_SETTLEMENT_20260926.json",
+    "sha256": "961bb899429a28fb8cad83c356abbf692307404140904677bc431580256483bf"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
