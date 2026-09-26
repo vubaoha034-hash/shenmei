@@ -1,0 +1,248 @@
+{
+  "schema_version": "vpd-p4-rf4-residual-causality-design-audit/v1",
+  "artifact_type": "P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT",
+  "recorded_at": "2026-09-26T13:31:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "status": "AUDIT_COMPLETE_ONE_IMAGE_DESIGN_GAP_WAITING_REVIEWER_GATE",
+  "scope": {
+    "new_images": 0,
+    "current_image_budget": 0,
+    "generation": false,
+    "authorization": false,
+    "figma": false,
+    "p5": false,
+    "rf3_budget_reuse": false
+  },
+  "accepted_prior_results": {
+    "RF1": {
+      "result": "TRADITIONAL_TOFU_FAIL_ALL_FOUR",
+      "strict_conclusion": "R1C_NOT_NECESSARY"
+    },
+    "RF2": {
+      "result": "RICE_TOPIC_SLOT_PASS_ALL_FOUR",
+      "strict_conclusion": "TOPIC_CONDITIONED_MECHANISM_FAMILY_STRONGLY_IMPLICATED_NOT_UNIQUE_CAUSE"
+    },
+    "RF3": {
+      "result": "CONTEMPORARY_TOFU_PASS_ALL_FOUR",
+      "confidence": 0.74,
+      "strict_conclusion": "HERITAGE_X_TOFU_SEMANTIC_CONDITION_MECHANISM_STRONGLY_IMPLICATED_NOT_UNIQUE_CAUSE"
+    }
+  },
+  "residual_hypotheses": [
+    {
+      "id": "H1_TOFU_PROCESS_OBJECT_PRIOR",
+      "status": "ALONE_NOT_SUFFICIENT__CONDITIONAL_INTERACTION_REMAINS",
+      "supporting_evidence": [
+        "RF1 traditional tofu failure contains tofu-curd, cloth-lined mold, pressing apparatus and canonical tofu-workshop process schema.",
+        "Historical tofu outputs repeatedly show explanatory staging around tofu-process objects."
+      ],
+      "counterevidence": [
+        "RF3 contemporary tofu preserves tofu topic, same pressing instant, same freshly transferred curds, same cloth-lined wooden mold and same core process state, yet passes all four Golden realism gates."
+      ],
+      "updated_falsifiable_claim": "Tofu process-object semantics alone are not sufficient. They may still interact with heritage framing or another topic-conditioned factor."
+    },
+    {
+      "id": "H2_MOISTURE_STEAM_ENVIRONMENT_PRIOR",
+      "status": "ALONE_NOT_SUFFICIENT__CONDITIONAL_INTERACTION_REMAINS",
+      "supporting_evidence": [
+        "RF1 failures repeatedly exhibit wet surfaces, haze/steam and coherent atmospheric craft cues."
+      ],
+      "counterevidence": [
+        "RF3 did not add any prohibition on steam, wet floor, haze or cinematic light and preserved the same pressing-stage semantics, yet passes all four Golden gates."
+      ],
+      "updated_falsifiable_claim": "Moisture/steam semantics alone are not sufficient. Interaction with heritage framing remains possible, but a clean direct manipulation is difficult without changing phase/action/object state."
+    },
+    {
+      "id": "H3_HERITAGE_MAIN_EFFECT_VS_HERITAGE_X_TOFU_INTERACTION",
+      "status": "HIGHEST_VALUE_UNRESOLVED_IDENTIFICATION",
+      "supporting_evidence": [
+        "RF1 traditional tofu FAIL versus RF3 contemporary tofu PASS under an intended one-slot heritage semantic intervention.",
+        "RF3 therefore establishes that heritage framing matters in the tofu context."
+      ],
+      "counterevidence": [
+        "No matched non-tofu pair currently varies only heritage framing.",
+        "RF2 rice PASS cannot serve as a strict heritage baseline because the exact generation prompt identity was not frozen/retained in the repository."
+      ],
+      "updated_falsifiable_claim": "Unresolved whether heritage has a cross-topic main effect or whether the effect is specific to heritage×tofu interaction."
+    },
+    {
+      "id": "H4_SHARED_TASK_STRUCTURE_RESIDUAL",
+      "status": "ALONE_NOT_SUFFICIENT__INTERACTION_REMAINS",
+      "supporting_evidence": [
+        "RF1, RF2 and RF3 all use closely related minimal documentary task scaffolding."
+      ],
+      "counterevidence": [
+        "The same RF1 shared task structure is present in RF1 FAIL and RF3 PASS, so it cannot by itself be sufficient for failure.",
+        "RF2 also passes under the shared structural family."
+      ],
+      "updated_falsifiable_claim": "Shared task structure alone is not sufficient; any residual role must be an interaction with topic/heritage semantics."
+    },
+    {
+      "id": "H5_GENERAL_RENDERER_PRIOR",
+      "status": "UNIVERSAL_FAIL_FORM_REJECTED__CONDITIONAL_PRIOR_POSSIBLE",
+      "supporting_evidence": [
+        "Repeated traditional-tofu failures show stable renderer tendencies toward staging and photogenic craft cues."
+      ],
+      "counterevidence": [
+        "RF2 rice and RF3 contemporary tofu both pass Golden absolute realism under the same ChatGPT Images renderer."
+      ],
+      "updated_falsifiable_claim": "A universal renderer-failure explanation is contradicted. Conditional renderer priors may still mediate heritage/topic interactions."
+    }
+  ],
+  "information_gain_priority": [
+    {
+      "rank": 1,
+      "question": "HERITAGE_MAIN_EFFECT_VS_HERITAGE_X_TOFU_INTERACTION",
+      "reason": "Directly separates the strongest remaining causal ambiguity created by RF3."
+    },
+    {
+      "rank": 2,
+      "question": "TOFU_PROCESS_OBJECT_X_HERITAGE_INTERACTION",
+      "reason": "Still plausible, but clean object-schema intervention would change object identity/content and is harder to keep single-variable."
+    },
+    {
+      "rank": 3,
+      "question": "MOISTURE_STEAM_X_HERITAGE_INTERACTION",
+      "reason": "Plausible but direct manipulation risks changing process phase, action or object state; prior S3 design was already rejected for this confound."
+    },
+    {
+      "rank": 4,
+      "question": "SHARED_TASK_STRUCTURE_INTERACTION",
+      "reason": "Task structure is already shown not sufficient by itself; factorial interaction testing would cost more and deliver less immediate information."
+    }
+  ],
+  "single_variable_feasibility_audit": {
+    "one_image_reuse_RF2_rice": {
+      "verdict": "DESIGN_GAP",
+      "reason": "RF2 rice execution receipt preserves asset identity and high-level treatment metadata but not an exact frozen generator prompt identity. A new contemporary-rice image compared against that historical asset would therefore differ in an unknown prompt dimension in addition to heritage semantics."
+    },
+    "tofu_process_object_one_image": {
+      "verdict": "NOT_CLEAN",
+      "reason": "Changing tofu process-object identity while preserving the exact production instant/object set is logically incompatible with the variable itself; action/object semantics would co-change."
+    },
+    "moisture_one_image": {
+      "verdict": "NOT_CLEAN",
+      "reason": "Any natural change large enough to alter moisture/steam while preserving tofu identity risks changing process phase/action/object state. Explicit negative rules are prohibited and would also confound the task."
+    },
+    "heritage_non_tofu_matched_pair": {
+      "verdict": "TRUE_SINGLE_VARIABLE_FEASIBLE_WITH_TWO_NEW_IMAGES",
+      "reason": "Create a fresh matched non-tofu pair from one frozen template differing only in WORKSHOP_SEMANTIC_SLOT. Both arms share topic, event, object set, renderer, aspect, no-R1C policy, task structure and Golden gate."
+    }
+  },
+  "frozen_next_experiment_contract": {
+    "contract_id": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
+    "status": "FROZEN_NOT_AUTHORIZED",
+    "causal_question": "Does heritage/traditional framing have a cross-topic main effect, or is the RF3 effect more consistent with heritage×tofu interaction?",
+    "topic": "RICE_PROCESSING_WORKSHOP",
+    "rationale_for_topic": "Rice is the strongest existing non-tofu control family because RF2 and historical rice evidence already show that this topic can produce credible imagery under ChatGPT Images.",
+    "core_event": "one specific rice-sifting/transfer moment",
+    "core_object_set": "same sieve, rice/grain, receiving sack/container, same immediate processing station",
+    "arms": {
+      "A": {
+        "semantic_slot": "traditional rice processing workshop"
+      },
+      "B": {
+        "semantic_slot": "contemporary working rice processing workshop"
+      }
+    },
+    "only_variable": "HERITAGE_TRADITIONAL_SEMANTIC_SLOT",
+    "fixed": [
+      "CHATGPT_IMAGES",
+      "9:16",
+      "NO_R1C",
+      "same rice topic",
+      "same exact rice-processing moment",
+      "same exact object inventory and object state",
+      "same operator role/visibility policy",
+      "same RF1-style minimal documentary task structure",
+      "same Golden evaluator",
+      "same four absolute realism gates",
+      "no compact six controls",
+      "no anti-AI/realism/material/clutter/occlusion rules",
+      "no explicit steam/wet-floor/haze/cinematic-light rules"
+    ],
+    "pair_integrity_rule": "Both prompts must be frozen from one template before generation and must differ only in WORKSHOP_SEMANTIC_SLOT. Any other textual or control-plane difference invalidates the causal experiment.",
+    "future_minimum_budget": {
+      "images": 2,
+      "arm_A": 1,
+      "arm_B": 1,
+      "retry": 0,
+      "third_image": false,
+      "best_of_n": false,
+      "reroll": false,
+      "technical_failure_extra_budget": 0
+    },
+    "why_not_one_image": "The historical RF2 rice asset lacks an exact frozen prompt identity, so using it as one matched arm would introduce an unmeasured prompt confound."
+  },
+  "preregistered_interpretation": {
+    "A_TRADITIONAL_FAIL__B_CONTEMPORARY_PASS": {
+      "result_class": "PASS_FOR_HERITAGE_MAIN_EFFECT_SIGNAL",
+      "interpretation": "HERITAGE_SEMANTIC_MAIN_EFFECT_STRONGLY_IMPLICATED_ACROSS_NON_TOFU_TOPIC",
+      "allowed_claim": "Heritage/traditional framing shows a directional realism penalty outside tofu under a matched pair.",
+      "prohibited_claims": [
+        "heritage is the unique root cause",
+        "tofu interaction is disproven",
+        "renderer has no conditional prior"
+      ]
+    },
+    "A_TRADITIONAL_PASS__B_CONTEMPORARY_PASS": {
+      "result_class": "FAIL_FOR_GENERAL_HERITAGE_MAIN_EFFECT",
+      "interpretation": "GENERAL_HERITAGE_MAIN_EFFECT_NOT_SUPPORTED_IN_RICE; HERITAGE_X_TOFU_INTERACTION_BECOMES_MORE_PLAUSIBLE",
+      "allowed_claim": "The RF3 effect does not generalize as a simple heritage main effect in this matched rice pair.",
+      "prohibited_claims": [
+        "heritage×tofu interaction is proven sole cause",
+        "heritage has zero effect in all contexts"
+      ]
+    },
+    "A_TRADITIONAL_FAIL__B_CONTEMPORARY_FAIL": {
+      "result_class": "FAIL_FOR_IDENTIFYING_HERITAGE_EFFECT",
+      "interpretation": "COMMON_CONDITION_DOMINATES_OR_PAIR_NOT_INFORMATIVE; NO_HERITAGE_CAUSAL_CLAIM",
+      "allowed_claim": "Both arms fail; the pair does not identify a heritage effect.",
+      "prohibited_claims": [
+        "heritage is causal",
+        "heritage is irrelevant",
+        "renderer prior is proven primary"
+      ]
+    },
+    "A_TRADITIONAL_PASS__B_CONTEMPORARY_FAIL": {
+      "result_class": "CONTRADICTORY_DIRECTION",
+      "interpretation": "EXPECTED_DIRECTION_NOT_REPRODUCED; REVIEW_STOCHASTIC_OR_BINDING_CONFOUND",
+      "allowed_claim": "No preregistered heritage-direction causal conclusion.",
+      "prohibited_claims": [
+        "contemporary semantics cause failure",
+        "heritage improves realism"
+      ]
+    },
+    "TECHNICAL_INVALID": {
+      "result_class": "TECHNICAL_INVALID",
+      "interpretation": "STOP_WITHOUT_CAUSAL_INTERPRETATION",
+      "allowed_claim": "Technical invalidity only.",
+      "prohibited_claims": [
+        "any causal inference",
+        "retry under the same budget"
+      ]
+    }
+  },
+  "stop_conditions": [
+    "This RF4 audit itself authorizes zero images.",
+    "Future matched-pair experiment, if separately authorized, stops after exactly two valid images and one Golden absolute evaluation.",
+    "No retry, reroll, replacement, best-of-N or third image.",
+    "If either arm is technically invalid, stop the contract without replacement.",
+    "No Figma and no P5.",
+    "Do not add rules after seeing output quality.",
+    "Do not reuse RF2 or RF3 cancelled/consumed image budget."
+  ],
+  "reviewer_gate": {
+    "status": "PENDING",
+    "current_generation_authorization": 0,
+    "questions": [
+      "Are both future rice prompts generated from one frozen template?",
+      "Is WORKSHOP_SEMANTIC_SLOT the only difference?",
+      "Are core event and object inventory identical across arms?",
+      "Does the design avoid reusing RF2 rice as a supposedly matched baseline?",
+      "Is maximum budget exactly two images with zero retry?",
+      "Do result interpretations avoid unique-root-cause claims?"
+    ]
+  },
+  "next_required_action": "REVIEW_P4_RF4_NONTOFU_HERITAGE_MATCHED_PAIR_DESIGN_NO_GENERATION"
+}
