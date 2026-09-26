@@ -1,0 +1,68 @@
+{
+  "schema_version": "vpd-p4-rf4-matched-pair-settlement/v1",
+  "artifact_type": "P4_RF4_MATCHED_PAIR_SETTLEMENT",
+  "recorded_at": "2026-09-26T17:35:00+08:00",
+  "project_id": "visual-aesthetic-vpd",
+  "contract_id": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
+  "status": "SETTLED_A_PASS_B_PASS",
+  "technical_validity": {
+    "A": "VALID",
+    "B": "VALID"
+  },
+  "gates": {
+    "A": {
+      "FIRST_IMPRESSION_AI_GATE": "PASS",
+      "DOCUMENTARY_CAUSALITY": "PASS",
+      "MATERIAL_HETEROGENEITY": "PASS",
+      "ABSOLUTE_REALISM_GATE": "PASS",
+      "confidence": 0.8,
+      "reasons": [
+        "Single rice-sifting action clearly drives the scene; sieve, falling grain and receiving sack form one coherent production event.",
+        "Traditional workshop context remains incidental rather than checklist-like; surrounding machine, broom, sacks and worn wood do not all compete for equal explanatory prominence.",
+        "Rice, woven sieve, sack fabric, aged wood, machine surfaces, clothing and dusty floor retain visibly different material behavior.",
+        "Lighting is restrained and workmanlike, without steam/haze/wet-floor/cinematic-light bundling."
+      ]
+    },
+    "B": {
+      "FIRST_IMPRESSION_AI_GATE": "PASS",
+      "DOCUMENTARY_CAUSALITY": "PASS",
+      "MATERIAL_HETEROGENEITY": "PASS",
+      "ABSOLUTE_REALISM_GATE": "PASS",
+      "confidence": 0.83,
+      "reasons": [
+        "Foreground worker, sieve and falling rice define one operational moment with a plausible secondary worker and machinery in the background.",
+        "Industrial context reads as functioning workspace rather than a staged inventory display.",
+        "Rice, bamboo, sack weave, apron, metal machinery, painted surfaces and floor wear remain materially differentiated.",
+        "Natural daylight and depth falloff are plausible and do not create a coordinated cinematic authenticity package."
+      ]
+    }
+  },
+  "preregistered_result_class": "FAIL_FOR_GENERAL_HERITAGE_MAIN_EFFECT",
+  "causal_conclusion": "GENERAL_HERITAGE_MAIN_EFFECT_NOT_SUPPORTED_IN_RICE__HERITAGE_X_TOFU_INTERACTION_MORE_PLAUSIBLE_NOT_PROVEN",
+  "allowed_claim": "The RF3 effect does not generalize as a simple heritage main effect in this matched rice pair; heritage×tofu interaction becomes more plausible.",
+  "prohibited_claims": [
+    "heritage×tofu interaction is proven sole cause",
+    "heritage has zero effect in all contexts",
+    "renderer stochasticity is eliminated",
+    "deterministic effect",
+    "probability effect estimate"
+  ],
+  "nuisance_boundary": {
+    "renderer_stochasticity_uncontrolled": true,
+    "inference_ceiling": "DIRECTIONAL_CAUSAL_SIGNAL_ONLY"
+  },
+  "budget_after": {
+    "authorized": 2,
+    "consumed": 2,
+    "remaining": 0,
+    "retry": 0,
+    "third_image": false,
+    "best_of_n": 0,
+    "reroll": 0,
+    "technical_failure_extra_budget": 0
+  },
+  "generation_authorization_closed": true,
+  "no_further_rf4_generation": true,
+  "figma": false,
+  "p5": false
+}
