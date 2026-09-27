@@ -1,0 +1,77 @@
+{
+  "schema_version": "shenmei-chat-first-execution-routing-task/v1",
+  "task_id": "SHENMEI-CHAT-FIRST-EXECUTION-ROUTING-V1",
+  "project_id": "shenmei",
+  "branch": "main",
+  "created_from_head": "c6b9964760e15566df050ecd21ab6653ccbf795f",
+  "status": "STARTED_CHAT_MODE_EXTREME_HIGH",
+  "routing": {
+    "mode": "CHAT",
+    "thinking_effort": "EXTREME_HIGH",
+    "reason": "This task updates execution routing only; no visual production, Figma editing, website action, or local runtime is required."
+  },
+  "objective": "Make Chat + EXTREME_HIGH the canonical default execution route for the shenmei project, including ordinary web/Figma inspection and normal browser interaction, while reserving Work for materially better long autonomous multi-app workflows and Codex for full local engineering work.",
+  "mandatory_reads": [
+    "START_HERE.md",
+    "AESTHETIC_SKILL_DESIGN_CHARTER.md"
+  ],
+  "canonical_policy": {
+    "default_mode": "CHAT",
+    "default_chat_thinking_effort": "EXTREME_HIGH",
+    "chat_covers": [
+      "visual/art-direction reasoning",
+      "design critique and scoring",
+      "web search and source reading",
+      "ordinary browser navigation/clicking",
+      "ordinary Figma viewing/inspection when accessible from Chat",
+      "ordinary asset/reference browsing",
+      "prompt/brief/routing work"
+    ],
+    "work_only_when": [
+      "workflow is unusually long and autonomous",
+      "multiple apps/sites must be coordinated over many steps",
+      "Chat would be materially slower, fragmented, or unstable",
+      "a required capability is genuinely Work-only"
+    ],
+    "codex_local_when": [
+      "full local repository access is required",
+      "shell/python/tests/dependency installation/build/bulk file processing are required"
+    ]
+  },
+  "required_changes": [
+    "Add a highest-priority execution-surface routing section to START_HERE.md without disturbing the six existing aesthetic/business route definitions.",
+    "Explicitly state that needing a website or Figma page does not by itself imply Work.",
+    "Explicitly state every newly opened Chat execution should use EXTREME_HIGH thinking.",
+    "Preserve the rule that editable Figma formal brand-system route is only selected when the user explicitly requests editable Figma output; this is content routing, not execution-surface routing.",
+    "Create one reusable routing policy artifact and one regression receipt."
+  ],
+  "regression_cases": [
+    {
+      "case": "poster critique or ordinary web reference check",
+      "expected_route": "CHAT_EXTREME_HIGH"
+    },
+    {
+      "case": "ordinary Figma inspection/viewing",
+      "expected_route": "CHAT_EXTREME_HIGH_UNLESS_A_SPECIFIC_REQUIRED_CAPABILITY_IS_UNAVAILABLE"
+    },
+    {
+      "case": "long multi-app autonomous production workflow",
+      "expected_route": "WORK_IF_MATERIALLY_BETTER"
+    },
+    {
+      "case": "local scripts/tests/build/batch asset processing",
+      "expected_route": "CODEX_LOCAL"
+    }
+  ],
+  "forbidden": [
+    "visual generation",
+    "Figma design mutation",
+    "poster production",
+    "brand case production",
+    "aesthetic rule expansion",
+    "changing user visual preferences",
+    "starting any business rollout"
+  ],
+  "success_condition": "START_HERE and a reusable routing artifact make Chat + EXTREME_HIGH the default execution surface, Work an exception chosen only when materially advantageous, and Codex the local-engineering route, without changing any aesthetic/business route semantics.",
+  "next_required_action": "UPDATE_CANONICAL_ROUTING_WRITE_REGRESSION_RECEIPT_AND_STOP"
+}
