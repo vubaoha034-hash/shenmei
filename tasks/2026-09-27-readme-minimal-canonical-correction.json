@@ -1,0 +1,51 @@
+{
+  "schema_version": "shenmei-readme-minimal-canonical-correction-task/v1",
+  "task_id": "SHENMEI-README-MINIMAL-CANONICAL-CORRECTION-20260927",
+  "project": "shenmei",
+  "branch": "main",
+  "source_head": "8088afbd0d34df109e8ea5e377d15b3d369cfa1c",
+  "status": "STARTED_MINIMAL_CORRECTION",
+  "authority": {
+    "start_here_version": "4.2.2",
+    "agents_version": "4.2.2",
+    "readme_role": "USER_FACING_SUMMARY_ONLY"
+  },
+  "exact_corrections": [
+    {
+      "field": "README current version",
+      "from": "4.0.0",
+      "to": "4.2.2"
+    },
+    {
+      "field": "full brand case default size",
+      "from": "2160×2700 / 4:5",
+      "to": "2400×1600 / 3:2 landscape"
+    },
+    {
+      "field": "per-board module count",
+      "from": "2–6 ordered display modules",
+      "to": "1 primary visual center + 0–3 auxiliary modules"
+    },
+    {
+      "field": "section label",
+      "from": "V4 core rules",
+      "to": "V4.2 core rules"
+    }
+  ],
+  "scope": "README.md only unless audit finds another already-confirmed user-facing conflict",
+  "required_checks": [
+    "README must explicitly say START_HERE.md is the sole mandatory route authority",
+    "README must not contradict START_HERE.md or AGENTS.md on Figma routing",
+    "README must not restore deprecated tear-paper production entry",
+    "README must not add new aesthetic rules, thresholds, scores, or taste blockers"
+  ],
+  "forbidden": [
+    "generate images",
+    "change visual skill logic",
+    "modify prompt compiler",
+    "modify variation/color/typography/texture engines",
+    "change quality gates",
+    "start a ten-image brand case"
+  ],
+  "next_required_action": "APPLY_THE_FOUR_CONFIRMED_README_CORRECTIONS_AND_VERIFY_NO_NEW_ROUTE_CONFLICTS"
+}
