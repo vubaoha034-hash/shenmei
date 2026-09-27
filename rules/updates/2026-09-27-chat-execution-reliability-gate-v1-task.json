@@ -1,0 +1,133 @@
+{
+  "schema_version": "shenmei-chat-execution-reliability-gate-task/v1",
+  "task_id": "SHENMEI-CHAT-EXECUTION-RELIABILITY-GATE-V1",
+  "project_id": "shenmei",
+  "branch": "main",
+  "created_from_head": "4f61cfe5e20c2a9f07665b0ac7a60dc8882c64f3",
+  "status": "STARTED_CHAT_MODE_EXTREME_HIGH_AWAITING_CONFIRMED_DISPATCH",
+  "routing": {
+    "mode": "CHAT",
+    "thinking_effort": "EXTREME_HIGH",
+    "reason": "This task hardens Chat execution reliability only; no visual production, Figma mutation, browser production workflow, or local runtime is required."
+  },
+  "trigger_learning": [
+    {
+      "failure_class": "CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+      "lesson": "Git task creation, project page creation, filled editor, or attempted send do not prove actual Chat execution."
+    },
+    {
+      "failure_class": "CHAT_CONVERSATION_LOAD_UNAVAILABLE_AFTER_CONFIRMED_START",
+      "lesson": "A confirmed-start conversation can later become unreadable; blind Retry or rerun can duplicate creative work."
+    }
+  ],
+  "objective": "Bind two fail-closed execution reliability gates into the shenmei canonical entrypoint: positive Chat dispatch confirmation before claiming start, and unreadable-conversation recovery before any rerun. The gates must prevent duplicate visual generation and preserve the six existing content/aesthetic/business routes unchanged.",
+  "mandatory_reads": [
+    "START_HERE.md",
+    "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "rules/updates/2026-09-27-chat-first-execution-routing-v1.json",
+    "rules/updates/2026-09-27-chat-first-execution-routing-v1-regression-receipt.json"
+  ],
+  "gate_1_dispatch_confirmation": {
+    "gate_name": "CHAT_DISPATCH_CONFIRMATION",
+    "pass_requires_all": [
+      "post-send browser URL is a current-project conversation URL containing /c/",
+      "post-send active processing/response state is positively observed"
+    ],
+    "failure_code": "CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+    "insufficient_evidence": [
+      "Git task file exists",
+      "project page exists",
+      "prompt is filled in editor",
+      "Enter/send action was attempted without post-send confirmation"
+    ]
+  },
+  "gate_2_readability_recovery": {
+    "gate_name": "CHAT_CONVERSATION_READABILITY_RECOVERY_GATE",
+    "unreadable_triggers": [
+      "无法加载此 ChatGPT 对话",
+      "conversation cannot be loaded",
+      "conversation unavailable",
+      "equivalent unreadable-conversation UI"
+    ],
+    "hard_rules": [
+      "STOP interaction with the unreadable execution Chat.",
+      "Do not click Retry.",
+      "Do not infer visual/creative completion or failure from unreadable UI alone.",
+      "Before any rerun, inspect the task's declared durable outputs and current repository/task authority.",
+      "If durable output exists, recover/validate it; do not rerun.",
+      "If durable output does not exist, explicitly block the old execution before fresh recovery.",
+      "Fresh recovery is allowed only when frozen task scope is unchanged and a new Chat passes CHAT_DISPATCH_CONFIRMATION.",
+      "If authority changes before fresh recovery dispatch, STOP_REBASE_REQUIRED."
+    ]
+  },
+  "visual_safety_binding": {
+    "purpose": "Prevent duplicate image/Figma/brand-case production after UI uncertainty.",
+    "future_visual_tasks_must_declare": [
+      "generation_count_max or equivalent execution count",
+      "expected durable output identity/path/manifest when applicable",
+      "reroll policy",
+      "hidden variant policy",
+      "publish/write policy"
+    ],
+    "duplicate_prevention": [
+      "Unreadable UI alone never authorizes another image generation.",
+      "A missing Chat view is not evidence that generation did not happen.",
+      "Before visual rerun, check declared durable output/asset state first.",
+      "Fresh recovery cannot silently increase generation_count, reroll count, best-of-N, or hidden variants."
+    ]
+  },
+  "required_changes": [
+    "Add a highest-priority execution-reliability section to START_HERE.md without changing any of the six content-route semantics.",
+    "Bind both gates into rules/updates/2026-09-27-chat-first-execution-routing-v1.json.",
+    "Create one reusable reliability contract covering dispatch confirmation and unreadable-conversation recovery.",
+    "Create one regression receipt.",
+    "Keep visual/aesthetic rules untouched."
+  ],
+  "regression_cases": [
+    {
+      "case": "task record exists + project page open + prompt filled but URL remains /project and no processing state",
+      "expected": "FAIL_CHAT_DISPATCH_SEND_NOT_CONFIRMED"
+    },
+    {
+      "case": "post-send /c/... URL + active processing",
+      "expected": "PASS_STARTED"
+    },
+    {
+      "case": "visual Chat unreadable + durable output exists",
+      "expected": "RECOVER_EXISTING_OUTPUT_NO_RERUN"
+    },
+    {
+      "case": "visual Chat unreadable + no durable output + old task not blocked",
+      "expected": "BLOCK_OLD_TASK_NO_RETRY"
+    },
+    {
+      "case": "old task blocked + scope unchanged + no durable output",
+      "expected": "FRESH_RECOVERY_ALLOWED_ONLY_AFTER_NEW_DISPATCH_CONFIRMATION"
+    },
+    {
+      "case": "authority/head changes before recovery dispatch",
+      "expected": "STOP_REBASE_REQUIRED"
+    }
+  ],
+  "forbidden": [
+    "visual generation",
+    "image generation",
+    "Figma mutation",
+    "poster production",
+    "brand-case production",
+    "changing aesthetic rules",
+    "changing color/layout/typography rules",
+    "changing user visual preferences",
+    "starting business rollout"
+  ],
+  "success_condition": "Shenmei can no longer report Chat execution as started without /c/ + processing evidence, and cannot rerun an unreadable visual execution without durable-output readback, old-task blocking, unchanged scope, and confirmed fresh dispatch; all six content routes remain byte/semantically unchanged.",
+  "dispatch_confirmation_for_this_task": {
+    "required": true,
+    "pass_requires": [
+      "post-send URL is a project /c/... conversation",
+      "active processing/response state is observed"
+    ],
+    "failure_code": "CHAT_DISPATCH_SEND_NOT_CONFIRMED"
+  },
+  "next_required_action": "IMPLEMENT_RELIABILITY_GATES_BIND_CANONICAL_ENTRY_WRITE_REGRESSION_RECEIPT_AND_STOP"
+}
