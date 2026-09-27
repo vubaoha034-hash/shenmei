@@ -55,8 +55,55 @@
     "web activity mechanically triggers Work",
     "Figma viewing mechanically triggers Work",
     "Figma formal brand-system content routing mechanically triggers Work",
-    "Codex is used for ordinary web or visual-review tasks"
+    "Codex is used for ordinary web or visual-review tasks",
+    "Git task/project page/filled prompt alone proves Chat started",
+    "unreadable Chat proves prior visual generation did not happen",
+    "unreadable Chat authorizes Retry or duplicate visual generation"
   ],
   "aesthetic_rule_changes": "NONE",
-  "visual_generation": "NONE"
+  "visual_generation": "NONE",
+  "execution_reliability_gate": {
+    "status": "CANONICAL_ACTIVE",
+    "contract_path": "rules/updates/2026-09-27-chat-execution-reliability-contract-v1.json",
+    "precedence": "MUST_PASS_RELEVANT_RELIABILITY_GATE_BEFORE_REPORTING_START_OR_FRESH_RECOVERY",
+    "dispatch_confirmation": {
+      "pass_requires_all": [
+        "post-send current-project /c/... conversation URL",
+        "positively observed active processing/response started"
+      ],
+      "pass_status": "PASS_STARTED",
+      "failure_code": "CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+      "insufficient_evidence": [
+        "Git task exists",
+        "project page exists",
+        "prompt filled",
+        "send/Enter attempted without post-send confirmation"
+      ]
+    },
+    "unreadable_conversation_recovery": {
+      "on_unreadable_after_confirmed_start": "STOP_AND_DO_NOT_RETRY",
+      "durable_output_exists": "RECOVER_EXISTING_OUTPUT_NO_RERUN",
+      "no_output_old_task_not_blocked": "BLOCK_OLD_TASK_NO_RETRY",
+      "fresh_recovery_preconditions": [
+        "old execution task blocked",
+        "no durable output exists",
+        "frozen scope unchanged",
+        "authority/head unchanged",
+        "new Chat passes CHAT_DISPATCH_CONFIRMATION"
+      ],
+      "authority_or_head_drift": "STOP_REBASE_REQUIRED"
+    },
+    "visual_duplicate_prevention": {
+      "future_visual_task_required_declarations": [
+        "generation_count_max or equivalent",
+        "expected durable output identity/path/manifest when applicable",
+        "reroll policy",
+        "hidden variant policy",
+        "publish/write policy"
+      ],
+      "unreadable_ui_never_authorizes_regeneration": true,
+      "missing_chat_view_does_not_prove_generation_absent": true,
+      "fresh_recovery_may_not_silently_increase_generation_or_variant_budget": true
+    }
+  }
 }
