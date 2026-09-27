@@ -1,0 +1,37 @@
+{
+  "schema_version": "shenmei-canonical-entry-consistency-audit-task/v1",
+  "task_id": "SHENMEI-CANONICAL-ENTRY-CONSISTENCY-AUDIT-20260927",
+  "project": "shenmei",
+  "branch": "main",
+  "source_head": "22d1f9f2e57325ac71270f7f666220732f09fea9",
+  "status": "STARTED_CANONICAL_ENTRY_AUDIT",
+  "objective": "Reconcile stale root documentation and recover the single authoritative production route without changing visual taste logic or generating any artwork.",
+  "authority_order": [
+    "START_HERE.md status MANDATORY version 4.2.2",
+    "AGENTS.md version 4.2.2",
+    "route-specific canonical skill files",
+    "README.md only as user-facing summary, never as higher authority"
+  ],
+  "confirmed_conflict": {
+    "canonical_start_here_default_case_size": "3:2 landscape, recommended 2400×1600 PNG",
+    "agents_default_case_size": "3:2 landscape, recommended 2400×1600 PNG",
+    "stale_readme_default_size": "4:5, 2160×2700 PNG",
+    "risk": "Fresh executions that trust README may route daily/single full brand cases to obsolete aspect ratio and presentation behavior."
+  },
+  "audit_scope": [
+    "compare README.md against START_HERE.md and AGENTS.md for route, size, Figma, zine, and deprecation claims",
+    "identify every stale user-facing statement that can change execution behavior",
+    "prepare minimal corrections only; do not expand aesthetic rules",
+    "confirm old blind-evaluation chats are historical evidence, not current production authority",
+    "freeze a concise CURRENT_ROUTE summary for unified-dispatch use"
+  ],
+  "forbidden": [
+    "generate any image",
+    "modify Prompt Compiler / Variation Engine / Color Engine / Typography / Texture / Quality Gate",
+    "add new aesthetic thresholds, score systems, or taste blockers",
+    "reactivate deprecated tear-paper production route",
+    "force Figma onto non-Figma tasks",
+    "start a new ten-image brand case"
+  ],
+  "next_required_action": "AUDIT_STALE_ROOT_DOCS_AND_PREPARE_MINIMAL_CANONICAL_ENTRY_CORRECTION"
+}
