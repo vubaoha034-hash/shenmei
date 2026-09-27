@@ -1,0 +1,62 @@
+{
+  "schema_version": "shenmei-chat-first-execution-routing/v1",
+  "policy_id": "SHENMEI-CHAT-FIRST-EXECUTION-ROUTING-V1",
+  "status": "CANONICAL_ACTIVE",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "main",
+  "default_mode": "CHAT",
+  "default_chat_thinking_effort": "EXTREME_HIGH",
+  "routing_layers": {
+    "execution_surface": "This artifact chooses the execution surface only.",
+    "content_route": "START_HERE.md six-route content/aesthetic/business routing remains independently authoritative."
+  },
+  "chat_default_covers": [
+    "aesthetic analysis",
+    "visual critique and scoring",
+    "solution / brief / prompt work",
+    "web search and webpage reading",
+    "ordinary browser clicking and navigation",
+    "ordinary Figma viewing / inspection when Chat has the required capability",
+    "asset and reference browsing"
+  ],
+  "work_if_materially_better": [
+    "unusually long autonomous workflow",
+    "multi-App or multi-website continuous coordination",
+    "many-step execution where Chat is materially more fragmented, slower, or less stable",
+    "a required capability is genuinely Work-only"
+  ],
+  "codex_local": [
+    "full local repository",
+    "Shell",
+    "Python",
+    "unit or integration tests",
+    "dependency installation",
+    "build or compilation",
+    "bulk file processing",
+    "large-scale local Git operations"
+  ],
+  "hard_clarifications": {
+    "website_does_not_imply_work": true,
+    "figma_page_does_not_imply_work": true,
+    "figma_content_route_does_not_imply_work": true,
+    "editable_figma_formal_brand_system_content_route_preserved": true
+  },
+  "regression_expectations": {
+    "CASE_A": "CHAT_EXTREME_HIGH",
+    "CASE_B": "CHAT_EXTREME_HIGH_UNLESS_A_SPECIFIC_REQUIRED_CAPABILITY_IS_UNAVAILABLE",
+    "CASE_C": "WORK_IF_MATERIALLY_BETTER",
+    "CASE_D": "CODEX_LOCAL",
+    "CASE_E": {
+      "content_route": "EDITABLE_FIGMA_FORMAL_BRAND_SYSTEM",
+      "execution_surface": "CHAT_FIRST_THEN_WORK_ONLY_IF_MATERIALLY_BETTER_OR_REQUIRED"
+    }
+  },
+  "forbidden_interpretations": [
+    "web activity mechanically triggers Work",
+    "Figma viewing mechanically triggers Work",
+    "Figma formal brand-system content routing mechanically triggers Work",
+    "Codex is used for ordinary web or visual-review tasks"
+  ],
+  "aesthetic_rule_changes": "NONE",
+  "visual_generation": "NONE"
+}
