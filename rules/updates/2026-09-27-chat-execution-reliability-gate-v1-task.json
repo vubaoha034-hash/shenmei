@@ -4,7 +4,7 @@
   "project_id": "shenmei",
   "branch": "main",
   "created_from_head": "4f61cfe5e20c2a9f07665b0ac7a60dc8882c64f3",
-  "status": "STARTED_CHAT_MODE_EXTREME_HIGH_AWAITING_CONFIRMED_DISPATCH",
+  "status": "COMPLETED_RELIABILITY_GATES_BOUND_REGRESSION_PASS",
   "routing": {
     "mode": "CHAT",
     "thinking_effort": "EXTREME_HIGH",
@@ -129,5 +129,39 @@
     ],
     "failure_code": "CHAT_DISPATCH_SEND_NOT_CONFIRMED"
   },
-  "next_required_action": "IMPLEMENT_RELIABILITY_GATES_BIND_CANONICAL_ENTRY_WRITE_REGRESSION_RECEIPT_AND_STOP"
+  "next_required_action": "STOP_TASK_COMPLETE_USE_RELIABILITY_GATES_ON_FUTURE_CHAT_AND_VISUAL_EXECUTIONS",
+  "result": "CHAT_DISPATCH_CONFIRMATION_AND_UNREADABLE_CONVERSATION_RECOVERY_CANONICALIZED_NO_VISUAL_EXECUTION",
+  "dispatch_confirmation_resolution": {
+    "status": "PASS_STARTED",
+    "observed_by_unified_dispatcher": true,
+    "conversation_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6ab8ea06-7858-83e9-8f51-15d9dafb0069",
+    "conversation_url_has_c_path": true,
+    "active_processing_or_response_observed": true
+  },
+  "outputs": {
+    "start_here": {
+      "path": "START_HERE.md",
+      "git_blob": "109d212235795f6ad6a6ce0fe8079b494948ec71"
+    },
+    "reliability_contract": {
+      "path": "rules/updates/2026-09-27-chat-execution-reliability-contract-v1.json",
+      "git_blob": "e48a4d7c07016b51370a50c5d0d386fb980dd44d"
+    },
+    "routing_artifact": {
+      "path": "rules/updates/2026-09-27-chat-first-execution-routing-v1.json",
+      "git_blob": "611e70fd05cbb8345a46f53a1763a8f715008976"
+    },
+    "regression_receipt": {
+      "path": "rules/updates/2026-09-27-chat-execution-reliability-gate-v1-regression-receipt.json",
+      "git_blob": "58a353fb67d879cb5fb162e96e26fb56033891be"
+    }
+  },
+  "prohibited_activity_audit": {
+    "visual_generation": false,
+    "figma_mutation": false,
+    "poster_or_brand_case_production": false,
+    "aesthetic_rule_change": false,
+    "user_preference_change": false,
+    "business_rollout": false
+  }
 }
