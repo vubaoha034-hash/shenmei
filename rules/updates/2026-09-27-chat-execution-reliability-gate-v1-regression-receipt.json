@@ -1,0 +1,93 @@
+{
+  "schema_version": "shenmei-chat-execution-reliability-gate-regression-receipt/v1",
+  "task_id": "SHENMEI-CHAT-EXECUTION-RELIABILITY-GATE-V1",
+  "status": "PASS",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "main",
+  "baseline": {
+    "head": "a99ebb17665dc5d2bb4283feee2085abe6cd6754",
+    "start_here_blob_sha": "97937266d07d82e5da48e880f8d71572aad8dcbf",
+    "routing_artifact_blob_sha": "2102e18a21cb8f444c850072b5bda9755c314663"
+  },
+  "recovered_partial_write_state": {
+    "reason": "A local orchestration variable-name error occurred after START_HERE, routing binding, and reusable contract had already been durably committed.",
+    "action": "Recovered existing durable writes and did not replay or duplicate them; only the missing regression receipt was created.",
+    "head_before_receipt": "1646024c1a67d51884b4758902d39506baec1329"
+  },
+  "outputs_at_receipt_creation": {
+    "start_here_blob_sha": "109d212235795f6ad6a6ce0fe8079b494948ec71",
+    "reliability_contract_path": "rules/updates/2026-09-27-chat-execution-reliability-contract-v1.json",
+    "reliability_contract_blob_sha": "e48a4d7c07016b51370a50c5d0d386fb980dd44d",
+    "routing_artifact_path": "rules/updates/2026-09-27-chat-first-execution-routing-v1.json",
+    "routing_artifact_blob_sha": "611e70fd05cbb8345a46f53a1763a8f715008976"
+  },
+  "regression_guard": {
+    "content_route_anchor": "## 1. 最高优先级路由",
+    "six_existing_content_routes_tail_byte_identical_to_baseline": true,
+    "six_route_semantics_changed": false,
+    "aesthetic_skill_content_changed": false,
+    "color_layout_typography_rules_changed": false,
+    "aesthetic_thresholds_added": false
+  },
+  "cases": {
+    "CASE_A": {
+      "input": "task record + project page + prompt filled, but post-send URL remains /project and no processing/response-start state is observed",
+      "expected": "FAIL_CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+      "actual": "FAIL_CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+      "result": "PASS"
+    },
+    "CASE_B": {
+      "input": "post-send URL is current-project /c/... and active processing/response started is positively observed",
+      "expected": "PASS_STARTED",
+      "actual": "PASS_STARTED",
+      "result": "PASS"
+    },
+    "CASE_C": {
+      "input": "visual execution Chat unreadable + declared durable output exists",
+      "expected": "RECOVER_EXISTING_OUTPUT_NO_RERUN",
+      "actual": "RECOVER_EXISTING_OUTPUT_NO_RERUN",
+      "result": "PASS"
+    },
+    "CASE_D": {
+      "input": "visual execution Chat unreadable + no durable output + old execution task not blocked",
+      "expected": "BLOCK_OLD_TASK_NO_RETRY",
+      "actual": "BLOCK_OLD_TASK_NO_RETRY",
+      "result": "PASS"
+    },
+    "CASE_E": {
+      "input": "old execution task blocked + no durable output + frozen scope unchanged + authority/head unchanged",
+      "expected": "FRESH_RECOVERY_ALLOWED_ONLY_AFTER_NEW_DISPATCH_CONFIRMATION",
+      "actual": "FRESH_RECOVERY_ALLOWED_ONLY_AFTER_NEW_DISPATCH_CONFIRMATION",
+      "result": "PASS"
+    },
+    "CASE_F": {
+      "input": "authority/head changes before fresh-recovery dispatch",
+      "expected": "STOP_REBASE_REQUIRED",
+      "actual": "STOP_REBASE_REQUIRED",
+      "result": "PASS"
+    }
+  },
+  "visual_idempotency_assertions": {
+    "unreadable_ui_authorizes_new_generation": false,
+    "missing_chat_view_proves_old_generation_absent": false,
+    "existing_output_requires_recovery_before_rerun": true,
+    "fresh_recovery_can_increase_generation_count": false,
+    "fresh_recovery_can_add_reroll_or_best_of_n": false,
+    "fresh_recovery_can_add_hidden_variants": false,
+    "future_visual_tasks_require_execution_budget_and_output_identity_declarations": true
+  },
+  "prohibited_actions_audit": {
+    "visual_generated": false,
+    "image_generated": false,
+    "figma_mutated": false,
+    "poster_produced": false,
+    "brand_case_produced": false,
+    "visual_skill_content_modified": false,
+    "color_or_layout_rules_modified": false,
+    "typography_rules_modified": false,
+    "aesthetic_rules_added": false,
+    "user_visual_preferences_modified": false,
+    "business_rollout_started": false
+  },
+  "conclusion": "Dispatch cannot be reported as started without /c/ + positive processing evidence; unreadable confirmed-start Chats fail closed, recover durable output first, and cannot silently duplicate visual generation. The six existing content routes remain byte-identical from the route anchor."
+}
