@@ -1,0 +1,68 @@
+{
+  "schema_version": "shenmei-chat-first-execution-routing-regression-receipt/v1",
+  "task_id": "SHENMEI-CHAT-FIRST-EXECUTION-ROUTING-V1",
+  "status": "PASS",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "main",
+  "baseline": {
+    "head": "2a79c8759c502219cfaf2917fc089334c88e9bbb",
+    "start_here_blob_sha": "926740f37caa4936657d2e03983da86241f0e42f"
+  },
+  "outputs_at_receipt_creation": {
+    "start_here_blob_sha": "97937266d07d82e5da48e880f8d71572aad8dcbf",
+    "routing_artifact_path": "rules/updates/2026-09-27-chat-first-execution-routing-v1.json",
+    "routing_artifact_blob_sha": "2102e18a21cb8f444c850072b5bda9755c314663"
+  },
+  "regression_guard": {
+    "anchor": "## 1. 最高优先级路由",
+    "six_existing_content_routes_tail_byte_identical_to_baseline": true,
+    "six_route_semantics_changed": false,
+    "editable_figma_formal_brand_system_semantics_preserved": true
+  },
+  "cases": {
+    "CASE_A": {
+      "input": "poster critique / ordinary web reference check",
+      "expected": "CHAT_EXTREME_HIGH",
+      "actual": "CHAT_EXTREME_HIGH",
+      "result": "PASS"
+    },
+    "CASE_B": {
+      "input": "ordinary Figma viewing / read-only inspection",
+      "expected": "CHAT_EXTREME_HIGH unless a specific required capability is unavailable",
+      "actual": "CHAT_EXTREME_HIGH unless a specific required capability is unavailable",
+      "result": "PASS"
+    },
+    "CASE_C": {
+      "input": "long autonomous multi-App multi-step production",
+      "expected": "WORK_IF_MATERIALLY_BETTER",
+      "actual": "WORK_IF_MATERIALLY_BETTER",
+      "result": "PASS"
+    },
+    "CASE_D": {
+      "input": "local scripts / validator / build / bulk asset processing",
+      "expected": "CODEX_LOCAL",
+      "actual": "CODEX_LOCAL",
+      "result": "PASS"
+    },
+    "CASE_E": {
+      "input": "user explicitly requests editable Figma formal brand system",
+      "expected_content_route": "Figma formal brand system",
+      "actual_content_route": "Figma formal brand system",
+      "expected_execution_surface": "Chat-first; Work only if materially better or a required capability is Work-only",
+      "actual_execution_surface": "Chat-first; Work only if materially better or a required capability is Work-only",
+      "result": "PASS"
+    }
+  },
+  "prohibited_actions_audit": {
+    "visual_generated": false,
+    "visual_skill_content_modified": false,
+    "color_or_layout_rules_modified": false,
+    "figma_written": false,
+    "poster_produced": false,
+    "brand_case_produced": false,
+    "aesthetic_rules_added": false,
+    "user_visual_preferences_modified": false,
+    "business_rollout_started": false
+  },
+  "conclusion": "Chat-first execution routing is canonicalized without changing the six existing content/aesthetic/business routes."
+}
