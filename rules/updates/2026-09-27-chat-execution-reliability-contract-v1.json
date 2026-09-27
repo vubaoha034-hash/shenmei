@@ -1,0 +1,115 @@
+{
+  "schema_version": "shenmei-chat-execution-reliability-contract/v1",
+  "policy_id": "SHENMEI-CHAT-EXECUTION-RELIABILITY-GATE-V1",
+  "status": "CANONICAL_ACTIVE",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "main",
+  "purpose": "Fail-closed Chat execution reliability contract for dispatch confirmation, unreadable-conversation recovery, and duplicate-prevention for visual production.",
+  "precedence": {
+    "applies_before_claiming_actual_start": true,
+    "applies_before_any_fresh_recovery_or_rerun": true,
+    "content_route_semantics": "UNCHANGED",
+    "aesthetic_rule_semantics": "UNCHANGED"
+  },
+  "chat_dispatch_confirmation": {
+    "gate_name": "CHAT_DISPATCH_CONFIRMATION",
+    "pass_status": "PASS_STARTED",
+    "pass_requires_all": [
+      "post-send browser URL is the current project's conversation URL containing /c/",
+      "post-send active processing or response-start state is positively observed"
+    ],
+    "insufficient_evidence": [
+      "Git task or task record exists",
+      "project page is open",
+      "prompt is filled in the editor",
+      "Enter/send was attempted without post-send evidence"
+    ],
+    "failure_code": "CHAT_DISPATCH_SEND_NOT_CONFIRMED",
+    "reporting_rule": "Do not report actual start unless every pass requirement is positively observed."
+  },
+  "unreadable_conversation_recovery": {
+    "gate_name": "CHAT_CONVERSATION_READABILITY_RECOVERY_GATE",
+    "trigger_requires": "The execution Chat previously passed CHAT_DISPATCH_CONFIRMATION and later becomes unreadable, unavailable, or shows an equivalent load failure.",
+    "immediate_actions": [
+      "STOP interaction with the unreadable execution Chat",
+      "DO_NOT_CLICK_RETRY",
+      "DO_NOT_INFER_COMPLETION_OR_FAILURE_FROM_UNREADABLE_UI"
+    ],
+    "required_readback_before_any_rerun": [
+      "declared durable output identity/path/manifest",
+      "current task authority and repository/head authority",
+      "old execution task block status",
+      "frozen scope identity"
+    ],
+    "decisions": [
+      {
+        "when": "durable_output_exists",
+        "outcome": "RECOVER_EXISTING_OUTPUT_NO_RERUN",
+        "rerun_allowed": false
+      },
+      {
+        "when": "durable_output_state_unknown",
+        "outcome": "STOP_DURABLE_OUTPUT_READBACK_REQUIRED",
+        "rerun_allowed": false
+      },
+      {
+        "when": "durable_output_absent AND old_task_not_blocked",
+        "outcome": "BLOCK_OLD_TASK_NO_RETRY",
+        "rerun_allowed": false
+      },
+      {
+        "when": "durable_output_absent AND old_task_blocked AND frozen_scope_unchanged AND authority_head_unchanged",
+        "outcome": "FRESH_RECOVERY_ALLOWED_ONLY_AFTER_NEW_DISPATCH_CONFIRMATION",
+        "rerun_allowed": "ONLY_AFTER_NEW_CHAT_DISPATCH_CONFIRMATION"
+      },
+      {
+        "when": "authority_or_head_changed_before_fresh_recovery_dispatch",
+        "outcome": "STOP_REBASE_REQUIRED",
+        "rerun_allowed": false
+      }
+    ],
+    "fresh_recovery_invariant": "Fresh recovery reuses the frozen scope and existing execution budget. It does not create an additional creative attempt."
+  },
+  "visual_execution_idempotency_binding": {
+    "applies_to": "future visual/image/poster/brand-case/Figma-write production tasks when applicable",
+    "required_task_declarations": [
+      "generation_count_max or equivalent execution-count ceiling",
+      "expected durable output identity/path/manifest when applicable",
+      "reroll policy",
+      "hidden variant policy",
+      "publish/write policy"
+    ],
+    "hard_rules": [
+      "Unreadable Chat UI alone never authorizes another image generation.",
+      "Cannot see old Chat is not evidence that the old generation did not happen.",
+      "Existing durable output must be recovered and validated before any duplicate generation is considered.",
+      "Fresh recovery must not silently increase generation_count, reroll count, best-of-N attempts, or hidden variants.",
+      "Publish/write policy remains unchanged across fresh recovery unless separately re-authorized by current authority."
+    ]
+  },
+  "authority_drift_guard": {
+    "required_before_fresh_recovery_dispatch": [
+      "task authority unchanged",
+      "frozen scope unchanged",
+      "repository/head authority unchanged"
+    ],
+    "on_drift": "STOP_REBASE_REQUIRED"
+  },
+  "route_semantics_lock": {
+    "start_here_anchor": "## 1. 最高优先级路由",
+    "six_existing_content_routes": "UNCHANGED",
+    "note": "This contract changes execution reliability only. It does not alter the six content/aesthetic/business route meanings, visual taste thresholds, typography, color, layout, user preference, or business rollout logic."
+  },
+  "prohibited_side_effects_for_this_gate_task": [
+    "visual generation",
+    "image generation",
+    "Figma mutation",
+    "poster production",
+    "brand-case production",
+    "visual Skill content modification",
+    "color/layout/typography rule modification",
+    "aesthetic threshold addition",
+    "user preference modification",
+    "business rollout"
+  ]
+}
