@@ -1,6 +1,6 @@
 # START HERE — 强制执行入口
 
-版本：`4.2.2`
+版本：`4.2.3`
 状态：`MANDATORY`
 
 ## 0. 审美 Skill 设计治理｜全仓强制前置
@@ -27,6 +27,57 @@
 6. 若必须大幅改变成熟 Skill 的构图、色彩、字体、纹理、variation 或质量门槛，应新建实验 Skill，而不是污染稳定 Skill。
 
 本节优先于各视觉路线内部的“为了更高级而加规则”类做法，但不覆盖事实正确性、安全、品牌名、人物身份、用户明确尺寸等 correctness 硬约束。
+
+## 执行可靠性 Gate｜最高优先级（先于执行面路由）
+
+本节只约束 **Chat 是否真实启动、会话不可读时如何恢复、以及如何避免重复执行**。不改变下方六条内容 / 审美 / 经营路线的任何语义，也不新增审美阈值。
+
+权威契约：
+
+`rules/updates/2026-09-27-chat-execution-reliability-contract-v1.json`
+
+### CHAT_DISPATCH_CONFIRMATION
+
+只有同时满足以下两项，才允许报告 Chat 已 actual start：
+
+1. send 后浏览器 URL 已进入当前项目的 `/c/...` conversation URL；
+2. send 后已正面观察到 active processing / response started。
+
+以下都不是启动证据：Git task / task record 已存在、project page 已打开、prompt 已填、Enter / send 已尝试但没有 post-send 正面确认。
+
+未同时满足时：
+
+`failure_code = CHAT_DISPATCH_SEND_NOT_CONFIRMED`
+
+### CHAT_CONVERSATION_READABILITY_RECOVERY_GATE
+
+若某个 Chat 曾经通过启动确认，但随后出现“无法加载此 ChatGPT 对话”、conversation unavailable 或等价不可读状态：
+
+- 立即 STOP，不点 Retry；
+- 不根据不可读 UI 判断完成或失败；
+- 先读取该任务声明的 durable output / asset / path / manifest，并核对当前 task authority 与 repository/head authority；
+- 已有 durable output：`RECOVER_EXISTING_OUTPUT_NO_RERUN`，先恢复 / 验收已有输出，禁止重跑；
+- 无 durable output 且旧 execution 尚未 block：`BLOCK_OLD_TASK_NO_RETRY`；
+- 只有同时满足“旧 execution 已 block + 无 durable output + frozen scope unchanged + authority/head unchanged”时，才可进入 fresh recovery；
+- fresh recovery 仍必须重新通过 `CHAT_DISPATCH_CONFIRMATION`；
+- recovery 前 authority/head 漂移：`STOP_REBASE_REQUIRED`。
+
+### 视觉生产防重复绑定
+
+未来视觉生产任务在适用时必须声明：
+
+- `generation_count_max` 或等价执行次数上限；
+- expected durable output identity / path / manifest；
+- reroll policy；
+- hidden variant policy；
+- publish/write policy。
+
+硬规则：
+
+- Chat 不可读本身绝不授权再生成一次图片；
+- “看不到旧 Chat”不等于“旧 generation 没发生”；
+- fresh recovery 不得静默增加 generation_count、reroll、best-of-N 或 hidden variants；
+- 如果已有输出，必须先恢复 / 验收已有输出，不得 duplicate generation。
 
 ## 执行面路由｜最高优先级 CHAT-FIRST
 
