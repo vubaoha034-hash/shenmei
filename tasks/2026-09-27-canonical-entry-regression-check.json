@@ -4,7 +4,7 @@
   "project": "shenmei",
   "branch": "main",
   "source_head": "4e0e6468ca5cf13a934692d06cb4f3c5077fdf1f",
-  "status": "STARTED_ROOT_ROUTE_REGRESSION_CHECK",
+  "status": "COMPLETED_PASS_ROOT_ROUTE_CONSISTENT",
   "objective": "Verify that README.md, START_HERE.md and AGENTS.md now agree on all execution-changing root-route facts after the README correction.",
   "must_check": [
     "repository version and mandatory authority precedence",
@@ -30,5 +30,25 @@
     "exact file/section references for any conflict",
     "concise CURRENT_ROUTE summary for unified dispatch"
   ],
-  "next_required_action": "READ_ROOT_DOCS_AT_SAME_HEAD_AND_RUN_EXECUTION_BEHAVIOR_CONSISTENCY_CHECK"
+  "next_required_action": "NONE_FOR_ROOT_ROUTE_CONSISTENCY",
+  "result": "PASS_ROOT_ROUTE_CONSISTENT",
+  "checked_head": "d04fca517314e8ba001d17ecf79254f9e3362512",
+  "findings": [
+    "README/START_HERE/AGENTS agree on V4.2 authority precedence.",
+    "Full brand case defaults agree on 10 independent 3:2 landscape images, recommended 2400x1600.",
+    "Per-board composition agrees on one primary visual center plus 0-3 auxiliary modules.",
+    "Figma remains explicit-request-only for editable production files.",
+    "README omits the detailed Zine/tear-paper route but explicitly defers to START_HERE; no contradictory execution instruction exists.",
+    "Privacy/sensitive-data boundaries are compatible across root docs."
+  ],
+  "current_route_summary": {
+    "mandatory_entry": "START_HERE.md",
+    "full_brand_case": "V4.2, 10 independent 3:2 landscape boards, 2400x1600 recommended",
+    "single_poster": "restaurant-poster-art-director route",
+    "editable_figma": "only on explicit editable-Figma request",
+    "personal_aesthetic": "personal-aesthetic-critic route",
+    "restaurant_operations": "restaurant-operations-master route",
+    "travel_zine": "$zine -> gc-travel-zine-poster-v1 thin wrapper",
+    "deprecated": "$tear-paper is not a production entry"
+  }
 }
