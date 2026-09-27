@@ -4,7 +4,7 @@
   "project": "shenmei",
   "branch": "main",
   "source_head": "8088afbd0d34df109e8ea5e377d15b3d369cfa1c",
-  "status": "STARTED_MINIMAL_CORRECTION",
+  "status": "COMPLETED_READBACK_VERIFIED",
   "authority": {
     "start_here_version": "4.2.2",
     "agents_version": "4.2.2",
@@ -32,12 +32,12 @@
       "to": "V4.2 core rules"
     }
   ],
-  "scope": "README.md only unless audit finds another already-confirmed user-facing conflict",
+  "scope": "README.md only",
   "required_checks": [
-    "README must explicitly say START_HERE.md is the sole mandatory route authority",
-    "README must not contradict START_HERE.md or AGENTS.md on Figma routing",
-    "README must not restore deprecated tear-paper production entry",
-    "README must not add new aesthetic rules, thresholds, scores, or taste blockers"
+    "README explicitly states START_HERE.md is the mandatory route authority",
+    "README does not contradict START_HERE.md or AGENTS.md on Figma routing",
+    "README does not restore deprecated tear-paper production entry",
+    "README adds no new aesthetic rules, thresholds, scores, or taste blockers"
   ],
   "forbidden": [
     "generate images",
@@ -47,5 +47,8 @@
     "change quality gates",
     "start a ten-image brand case"
   ],
-  "next_required_action": "APPLY_THE_FOUR_CONFIRMED_README_CORRECTIONS_AND_VERIFY_NO_NEW_ROUTE_CONFLICTS"
+  "implementation_commit": "b265e333a018aeeda324595a0828d2189ba97ad8",
+  "readme_blob_after": "332dfc50e9eb671413c1e905969c0a37bdf12617",
+  "result": "FOUR_CONFIRMED_CORRECTIONS_APPLIED_AND_READ_BACK",
+  "next_required_action": "RUN_CANONICAL_ENTRY_REGRESSION_CHECK_ACROSS_ROOT_DOCS"
 }
