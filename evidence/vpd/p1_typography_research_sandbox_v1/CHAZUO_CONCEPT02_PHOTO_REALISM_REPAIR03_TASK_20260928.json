@@ -1,0 +1,66 @@
+{
+  "schema_version": "vpd-chazuo-concept02-photo-realism-repair03-task/v1",
+  "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR03-ONE-CANDIDATE",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-28T16:25:00+08:00",
+  "authority": {
+    "type": "EXPLICIT_USER_AUTHORIZATION_CURRENT_CHAT",
+    "base_head": "79ec472d81bc9e07636df976d10b2701b7df82c6",
+    "chat_dispatch_confirmation": {
+      "status": "PASS_STARTED",
+      "conversation_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6ab9cb26-fa34-83ea-b41d-157cab45b537",
+      "conversation_url_has_c_path": true,
+      "active_processing_observed": true,
+      "observed_ui_status": "停止"
+    }
+  },
+  "latest_authority": {
+    "repair02_machine_verdict": "FAIL",
+    "repair02_reason_summary": [
+      "前景茶叶竹筛+茶杯+茶壶与远景山村组合仍过于完整",
+      "主题表达过于精准，仍像为了说明山野茶生活而布置",
+      "缺少真实随手拍的废信息、局部失焦和不理想结构"
+    ],
+    "rule": "machine FAIL must not be packaged as usable candidate"
+  },
+  "scope": {
+    "target": "CHAZUO_CONCEPT02_PHOTO_REALISM_ONLY",
+    "independent_new_photo_candidate": true,
+    "use_prior_image_as_edit_or_style_transfer": false,
+    "text_or_logo": false,
+    "figma_write": false,
+    "layout_change": false,
+    "wordmark_change": false,
+    "text_layer_change": false,
+    "design_element_addition": false,
+    "full_poster": false,
+    "design_strengthening": false
+  },
+  "execution_budget": {
+    "generation_count_max": 1,
+    "generation_count_before": 0,
+    "hidden_variant_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0
+  },
+  "expected_durable_output": {
+    "execution_manifest_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_EXECUTION_20260928.json",
+    "expected_candidate_count": 1,
+    "machine_verdict_required": true
+  },
+  "preserved_history": {
+    "repair02_execution": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_EXECUTION_20260928.json",
+    "overwrite_repair02": false,
+    "overwrite_201_2": false,
+    "overwrite_205_2": false
+  },
+  "publish_write_policy": {
+    "repo_write": "TASK_EXECUTION_AND_STATE_ONLY",
+    "figma_write": false,
+    "image_bytes_to_public_repo": false,
+    "auto_promotion": false
+  },
+  "status": "AUTHORIZED_PRE_GENERATION",
+  "next_legal_action": "GENERATE_EXACTLY_ONE_INDEPENDENT_PHOTO_ONLY_CANDIDATE_THEN_MACHINE_ABSOLUTE_REALISM_REVIEW_AND_STOP"
+}
