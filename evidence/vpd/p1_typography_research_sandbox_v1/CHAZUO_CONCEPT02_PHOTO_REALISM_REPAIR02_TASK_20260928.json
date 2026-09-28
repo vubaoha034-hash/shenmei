@@ -1,0 +1,63 @@
+{
+  "schema_version": "vpd-chazuo-concept02-photo-realism-repair02-task/v1",
+  "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR02-ONE-CANDIDATE",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-28T15:24:00+08:00",
+  "authority": {
+    "type": "EXPLICIT_USER_AUTHORIZATION_CURRENT_CHAT",
+    "base_head": "d7ded59e961067c43ecc103163e29c1414bbd2ba",
+    "chat_dispatch_confirmation": {
+      "status": "PASS_STARTED",
+      "conversation_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6ab9cb26-fa34-83ea-b41d-157cab45b537",
+      "conversation_url_has_c_path": true,
+      "project": "高级感p",
+      "active_processing_observed": true,
+      "observed_ui_statuses": [
+        "处理中",
+        "停止"
+      ]
+    }
+  },
+  "latest_human_authority": {
+    "repair01_frame": "205:2",
+    "relative_vs_201_2": "BETTER_ONLY_RELATIVELY",
+    "photo_absolute_quality": "FAIL_OBVIOUS_AI_FEEL",
+    "complete_design": "FAIL_TOO_SIMPLE",
+    "waiting_for_ab_choice": false
+  },
+  "scope": {
+    "target": "CHAZUO_CONCEPT02_PHOTO_BASE_REALISM_ONLY",
+    "independent_new_photo_candidate": true,
+    "use_201_2_or_205_2_as_edit_input": false,
+    "use_mushroom_golden_as_generation_reference": false,
+    "figma_write": false,
+    "layout_change": false,
+    "wordmark_change": false,
+    "text_layer_change": false,
+    "design_element_addition": false
+  },
+  "execution_budget": {
+    "generation_count_max": 1,
+    "generation_count_before": 0,
+    "hidden_variant_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0
+  },
+  "publish_write_policy": {
+    "repo_write": "TASK_AND_EXECUTION_MANIFEST_ONLY",
+    "figma_write": false,
+    "candidate_auto_promotion": false
+  },
+  "expected_durable_output": {
+    "execution_manifest_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_EXECUTION_20260928.json",
+    "expected_candidate_count": 1,
+    "expected_review_state": "AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW"
+  },
+  "prior_failed_candidate_preserved": {
+    "frame_id": "205:2",
+    "status": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE"
+  },
+  "status": "AUTHORIZED_PRE_GENERATION",
+  "next_legal_action": "GENERATE_EXACTLY_ONE_INDEPENDENT_PHOTO_ONLY_CANDIDATE_THEN_STOP_FOR_HUMAN_PIXEL_REVIEW"
+}
