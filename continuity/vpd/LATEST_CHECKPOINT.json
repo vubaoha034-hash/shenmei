@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 184,
-  "recorded_at": "2026-09-28T15:24:00+08:00",
+  "sequence": 185,
+  "recorded_at": "2026-09-28T15:28:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR02-ONE-CANDIDATE"
   ],
-  "current_focus": "CHAZUO Concept02 photo realism repair02 authorized for exactly one independent photo-only candidate. Repair01 205:2 is preserved as relative improvement but absolute realism FAIL with obvious AI feel; design also remains FAIL too simple.",
+  "current_focus": "CHAZUO Concept02 photo realism repair02 generated exactly once as one independent 1024x1536 photo-only candidate. No Figma write. No retry, reroll, hidden variant or second candidate. Awaiting Liu Xiansheng actual-pixel review.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -314,7 +314,8 @@
     "p4_rf4_preregistered_A_pass_B_pass_settlement",
     "p4_rf4_budget_closed_2_of_2_zero_retry",
     "p4_rf4_general_heritage_main_effect_not_supported_in_rice",
-    "p4_rf4_heritage_x_tofu_more_plausible_not_proven"
+    "p4_rf4_heritage_x_tofu_more_plausible_not_proven",
+    "chazuo_concept02_photo_realism_repair02_generated_exactly_once"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -385,7 +386,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "GENERATE_EXACTLY_ONE_CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_CANDIDATE_THEN_STOP_FOR_HUMAN_PIXEL_REVIEW",
+  "next_required_action": "RETURN_EXACT_REPAIR02_CANDIDATE_PIXEL_TO_LIU_XIANSHENG_FOR_HUMAN_REVIEW_ONLY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -453,7 +454,7 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_AUTHORIZED_ONE_CANDIDATE",
+  "status": "VPD_CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_GENERATED_ONCE_AWAITING_HUMAN_PIXEL_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "sha256": "74f04e01d26e089962008208acc04f8175e1b97a19977f67f08c7d70b92e0cd2"
@@ -1953,17 +1954,25 @@
     "status": "ACTIVE"
   },
   "chazuo_concept02_photo_repair02": {
-    "status": "AUTHORIZED_PRE_GENERATION",
+    "status": "GENERATED_ONCE_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
     "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_TASK_20260928.json",
-    "execution_manifest_expected": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_EXECUTION_20260928.json",
+    "execution_manifest": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_EXECUTION_20260928.json",
     "generation_count_max": 1,
-    "generation_count": 0,
+    "generation_count": 1,
     "hidden_variant_count": 0,
     "reroll": 0,
     "best_of_n": false,
     "automatic_retry": 0,
+    "candidate_gen_id": "f2d97b21-0944-47ca-bb71-fa703a2ef42e",
+    "candidate_chatgpt_file_id": "file_00000000f67c81fd97bd802121249366",
+    "candidate_dimensions": [
+      1024,
+      1536
+    ],
+    "candidate_sha256": "ef1d9024854bd68d707e898440a0bdbc68520f967acd3faf749526dc1b780bbc",
     "figma_write": false,
-    "human_review_state": "NOT_YET_GENERATED",
-    "prior_205_2": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE"
+    "prior_205_2": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE",
+    "human_review_state": "AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
+    "next_legal_action": "RETURN_EXACT_CANDIDATE_PIXEL_TO_LIU_XIANSHENG_FOR_REVIEW_ONLY"
   }
 }
