@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 167,
+  "revision": 168,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO Repair03 accepted photo is now bound into one real editable Figma design-reinforcement candidate. Candidate awaits Liu Xiansheng actual complete-design pixel review.",
-  "status": "VPD_CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_AWAITING_ACTUAL_HUMAN_COMPLETE_DESIGN_REVIEW",
+  "current_stage": "CHAZUO Repair03 complete-design direction accepted by human, but professional finish quality not yet accepted. Preserve Repair03 and frame 213:32 direction; next is one targeted professionalization pass.",
+  "status": "VPD_CHAZUO_REPAIR03_DESIGN_DIRECTION_ACCEPTED_PROFESSIONAL_FINISH_GAP_REMAINS",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_COMPLETE_DESIGN_PIXEL_REVIEW_OF_FIGMA_FRAME_213_32",
+  "next_required_action": "CREATE_EXACTLY_ONE_TARGETED_PROFESSIONALIZATION_PASS_FROM_FRAME_213_32_PRESERVING_REPAIR03_AND_ACCEPTED_DIRECTION",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -2376,7 +2376,7 @@
   },
   "chazuo_concept02_design_reinforcement01": {
     "task_id": "VPD-CHAZUO-CONCEPT02-DESIGN-REINFORCEMENT01-ONE-CANDIDATE",
-    "status": "AWAITING_ACTUAL_HUMAN_COMPLETE_DESIGN_REVIEW",
+    "status": "HUMAN_DIRECTION_ACCEPTED_PROFESSIONAL_FINISH_GAP_REMAINS",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_EXECUTION_20260928.json",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "source_frame_id": "201:2",
@@ -2388,6 +2388,13 @@
     "photo_pixel_content_modified": false,
     "historical_frames_overwritten": false,
     "machine_minimal_self_review": "PASS_MINIMUM_ONLY_HUMAN_TASTE_PENDING",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_COMPLETE_DESIGN_PIXEL_REVIEW_OF_FIGMA_FRAME_213_32"
+    "next_legal_action": "CREATE_EXACTLY_ONE_TARGETED_PROFESSIONALIZATION_PASS_FROM_FRAME_213_32_PRESERVING_REPAIR03_AND_ACCEPTED_DIRECTION",
+    "human_review_state": "SETTLED_DIRECTION_PASS_NOT_FINAL",
+    "human_exact_quote": "歌曲这次感觉对了很多，高级感哪里终于也有一些设计感了。  但是还是跟专业的有差距，但是这个方向之少是对的。",
+    "human_direction_verdict": "PASS",
+    "final_professional_quality_verdict": "NOT_PASS",
+    "professional_finish_gap": "UNSPECIFIED_BY_HUMAN",
+    "settlement_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_HUMAN_DIRECTION_SETTLEMENT_20260928.json",
+    "successor_executed": false
   }
 }
