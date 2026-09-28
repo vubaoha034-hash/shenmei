@@ -1,0 +1,85 @@
+{
+  "schema_version": "vpd-chazuo-concept02-photo-realism-repair03-execution/v1",
+  "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR03-ONE-CANDIDATE",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-28T16:28:00+08:00",
+  "execution": {
+    "mode": "CHAT",
+    "generation_count_max": 1,
+    "generation_count": 1,
+    "hidden_variant_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "generation_call_count": 1,
+    "completed": true
+  },
+  "candidate": {
+    "role": "PHOTO_ONLY_INDEPENDENT_REALISM_REPAIR03_CANDIDATE",
+    "gen_id": "762ce33b-97e8-4913-91e4-035a77828bed",
+    "chatgpt_file_id": "file_0000000046f481fdbe5ec3e765c4f2be",
+    "runtime_file_path": "/mnt/data/a_quiet_moody_documentary_style_indoor_scene_sho.png",
+    "runtime_path_is_session_local": true,
+    "mime_type": "image/png",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "bytes": 2297155,
+    "sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
+    "edit": false,
+    "parent_gen_id": null,
+    "generated_from_reference_pixels": false,
+    "used_prior_repair_as_input": false,
+    "text_or_logo_baked_in": false
+  },
+  "machine_absolute_realism_review": {
+    "verdict": "UNCERTAIN",
+    "first_impression_ai_gate": "PASS_NOT_OBVIOUS_AI",
+    "scene_natural_causality": "PASS_WITH_RESERVATION",
+    "material_heterogeneity": "PASS",
+    "optics_and_sharp_blur_variation": "PASS_WITH_RESERVATION",
+    "every_element_too_perfect": "PARTIAL_CONCERN",
+    "reasons": [
+      "室内门口、旧桌、塑料袋、抹布、椅背和被裁切的前景形成了比 Repair02 更可信的生活废信息与遮挡，整体不像广告陈列得那么完整。",
+      "但前景搪瓷杯、装叶子的碗、塑料袋仍组成相对清楚的叙事三角，加上正中门洞纵深，构图仍有一点“为了说明乡村茶生活而安排”的感觉。",
+      "远景山坡与植被的虚化较顺滑、层次较干净，真实镜头感已经明显提升但还不足以让我排除生成式整洁感，因此不给绝对 PASS。"
+    ],
+    "machine_pass": false,
+    "human_review_required": true
+  },
+  "scope_audit": {
+    "full_poster": false,
+    "figma_modified": false,
+    "layout_modified": false,
+    "wordmark_modified": false,
+    "text_layers_modified": false,
+    "design_elements_added": false,
+    "prior_assets_overwritten": false
+  },
+  "history_preservation": {
+    "repair02_preserved": true,
+    "repair02_machine_verdict": "FAIL",
+    "repair02_not_overwritten": true,
+    "frames_201_2_and_205_2_not_modified": true
+  },
+  "durable_output": {
+    "manifest_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_EXECUTION_20260928.json",
+    "durable_identity_fields": [
+      "gen_id",
+      "chatgpt_file_id",
+      "dimensions",
+      "sha256"
+    ],
+    "image_bytes_committed_to_public_repo": false
+  },
+  "human_review": {
+    "status": "AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
+    "required_because_machine_verdict": "UNCERTAIN",
+    "next_legal_action": "RETURN_THIS_EXACT_REPAIR03_PIXEL_TO_LIU_XIANSHENG_FOR_REVIEW_ONLY",
+    "further_generation_allowed": false,
+    "design_strengthening_allowed": false
+  },
+  "blocker": null,
+  "status": "GENERATED_ONCE_MACHINE_UNCERTAIN_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW"
+}
