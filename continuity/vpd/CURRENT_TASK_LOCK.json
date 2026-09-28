@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 163,
+  "revision": 164,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO Concept02 photo realism repair02 generated exactly once. One independent 1024x1536 photo-only candidate exists and is awaiting Liu Xiansheng actual-pixel review.",
-  "status": "VPD_CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_GENERATED_ONCE_AWAITING_HUMAN_PIXEL_REVIEW",
+  "current_stage": "CHAZUO Concept02 photo realism Repair03: exactly one independent photo-only candidate explicitly authorized; Repair02 remains historical machine FAIL.",
+  "status": "VPD_CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_AUTHORIZED_ONE_CANDIDATE",
   "p6_allowed": false,
-  "next_required_action": "RETURN_EXACT_REPAIR02_CANDIDATE_PIXEL_TO_LIU_XIANSHENG_FOR_HUMAN_REVIEW_ONLY",
+  "next_required_action": "GENERATE_EXACTLY_ONE_REPAIR03_CANDIDATE_THEN_MACHINE_ABSOLUTE_REALISM_REVIEW_AND_STOP",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,11 +142,11 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 1,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": null,
+    "current_image_generation_authorization_scope": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR03-ONE-CANDIDATE_ONLY",
     "current_image_generation_count_max": 1,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
@@ -162,7 +162,7 @@
     "preserved renderer stochasticity nuisance and prohibited unique-root-cause claims",
     "kept image budget closed at 2/2 consumed, retry=0, no third image, Figma=0, P5 blocked"
   ],
-  "updated_at": "2026-09-28T15:28:00+08:00",
+  "updated_at": "2026-09-28T16:25:00+08:00",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -2341,5 +2341,20 @@
     "old_205_2_status": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE",
     "human_review_state": "AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
     "next_legal_action": "RETURN_EXACT_CANDIDATE_PIXEL_TO_LIU_XIANSHENG_FOR_REVIEW_ONLY"
+  },
+  "chazuo_concept02_photo_repair03": {
+    "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR03-ONE-CANDIDATE",
+    "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_TASK_20260928.json",
+    "execution_manifest_expected": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_EXECUTION_20260928.json",
+    "status": "AUTHORIZED_PRE_GENERATION",
+    "generation_count_max": 1,
+    "generation_count": 0,
+    "hidden_variant_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "figma_write": false,
+    "repair02_preserved": true,
+    "machine_review_required": true
   }
 }
