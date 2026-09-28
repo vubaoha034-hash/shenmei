@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 169,
+  "revision": 170,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO Repair03 accepted design direction has received exactly one professionalization pass in new editable Figma frame 216:2. Repair03 pixels remain unchanged; source frame 213:32 is preserved. Await actual human professional-finish pixel review.",
-  "status": "VPD_CHAZUO_REPAIR03_PROFESSIONALIZATION_PASS01_AWAITING_ACTUAL_HUMAN_PROFESSIONAL_FINISH_REVIEW",
+  "current_stage": "CHAZUO Repair03 professionalization pass01 received human directional-positive feedback with explicit instruction not to make a large rework. Exactly one local refinement candidate 221:2 was created from 216:2, preserving Repair03 pixels, wordmark and overall structure.",
+  "status": "VPD_CHAZUO_REPAIR03_LOCAL_REFINEMENT01_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2",
+  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_221_2",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,11 +159,11 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "chazuo_repair03_professionalization_pass01_exactly_one_editable_figma_candidate_created",
-    "source_frame_213_32_preserved",
-    "repair03_image_hash_transform_geometry_readback_unchanged",
-    "candidate_216_2_actual_screenshot_readback_completed",
-    "candidate_216_2_waiting_actual_human_professional_finish_review"
+    "human_feedback_recorded_professional_gap_still_large_but_direction_improving",
+    "human_authorized_incremental_continue_not_large_rework",
+    "exactly_one_local_refinement_candidate_221_2_created_from_216_2",
+    "repair03_photo_hash_transform_geometry_unchanged",
+    "actual_screenshot_221_2_readback_completed"
   ],
   "updated_at": "2026-09-28",
   "workflow": {
@@ -2427,7 +2427,27 @@
       "unnecessary_decoration": false,
       "photo_realism_preserved": true
     },
-    "human_review_state": "AWAITING_ACTUAL_HUMAN_PROFESSIONAL_FINISH_REVIEW",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2"
+    "human_review_state": "SETTLED_DIRECTIONAL_POSITIVE_NOT_FINAL",
+    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2",
+    "human_feedback": "设计感好了点，但跟参考图仍差距很大；不要大面积修改；现在越来越好。",
+    "successor_executed": true,
+    "successor_frame_id": "221:2"
+  },
+  "chazuo_repair03_professionalization_local_refinement01": {
+    "task_id": "VPD-CHAZUO-REPAIR03-PROFESSIONALIZATION-LOCAL-REFINEMENT01-ONE-CANDIDATE",
+    "status": "AWAITING_ACTUAL_HUMAN_LOCAL_REFINEMENT_PIXEL_REVIEW",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_PROFESSIONALIZATION_LOCAL_REFINEMENT01_EXECUTION_20260928.json",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "source_frame_id": "216:2",
+    "candidate_frame_id": "221:2",
+    "candidate_photo_node_id": "221:3",
+    "candidate_count": 1,
+    "hidden_variant_count": 0,
+    "automatic_retry_count": 0,
+    "best_of_n": false,
+    "photo_pixel_content_modified": false,
+    "large_rework": false,
+    "actual_screenshot_readback": true,
+    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_221_2"
   }
 }
