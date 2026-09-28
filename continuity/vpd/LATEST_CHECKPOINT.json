@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 190,
+  "sequence": 191,
   "recorded_at": "2026-09-28",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [],
-  "current_focus": "Repair03 photo realism remains HUMAN_PASS. Figma frame 213:32 now has human-confirmed correct design direction and visible design sense, but the user explicitly says it still differs from professional work. Direction passes; final professional quality does not.",
+  "current_focus": "Exactly one professionalization pass has been completed from human-direction-pass frame 213:32 into editable frame 216:2. Repair03 photo hash/crop/geometry remain unchanged, source frame 213:32 remains preserved, and actual Figma pixels were read back. Human professional-finish review is now required.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -317,7 +317,10 @@
     "chazuo_concept02_photo_realism_repair03_generated_exactly_once_machine_uncertain",
     "chazuo_concept02_repair03_human_photo_realism_pass",
     "chazuo_concept02_photo_repair_loop_closed",
-    "chazuo_concept02_repair03_design_reinforcement01_editable_figma_candidate_created"
+    "chazuo_concept02_repair03_design_reinforcement01_editable_figma_candidate_created",
+    "chazuo_repair03_professionalization_pass01_exactly_one_editable_figma_candidate_created",
+    "chazuo_repair03_professionalization_pass01_repair03_zero_pixel_modification_readback",
+    "chazuo_repair03_professionalization_pass01_actual_screenshot_readback"
   ],
   "incomplete": [
     "p4_non_generative_realism_failure_review",
@@ -388,7 +391,7 @@
     "Do not treat Route B's relative blind win as P4 acceptance: the user explicitly failed both 9:16 outputs for obvious AI look.",
     "Do not authorize or generate the shared-base realism repair until explicit user approval; proposed budget 2, authorized budget 0."
   ],
-  "next_required_action": "CREATE_EXACTLY_ONE_TARGETED_PROFESSIONALIZATION_PASS_FROM_FRAME_213_32_PRESERVING_REPAIR03_AND_ACCEPTED_DIRECTION",
+  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -456,7 +459,7 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_REPAIR03_DESIGN_DIRECTION_ACCEPTED_PROFESSIONAL_FINISH_GAP_REMAINS",
+  "status": "VPD_CHAZUO_REPAIR03_PROFESSIONALIZATION_PASS01_AWAITING_ACTUAL_HUMAN_PROFESSIONAL_FINISH_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "sha256": "74f04e01d26e089962008208acc04f8175e1b97a19977f67f08c7d70b92e0cd2"
@@ -2020,5 +2023,15 @@
     "professional_finish_gap": "UNSPECIFIED_BY_HUMAN",
     "settlement_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_HUMAN_DIRECTION_SETTLEMENT_20260928.json",
     "successor_executed": false
+  },
+  "chazuo_repair03_professionalization_pass01": {
+    "status": "AWAITING_ACTUAL_HUMAN_PROFESSIONAL_FINISH_REVIEW",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_PROFESSIONALIZATION_PASS01_EXECUTION_20260928.json",
+    "source_frame_id": "213:32",
+    "candidate_frame_id": "216:2",
+    "candidate_photo_node_id": "216:3",
+    "photo_pixel_content_modified": false,
+    "screenshot_readback": true,
+    "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2"
   }
 }
