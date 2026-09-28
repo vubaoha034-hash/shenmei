@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 166,
+  "revision": 167,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO Concept02 Repair03 human photo-realism PASS. Photo repair loop closed. Complete design remains FAIL_TOO_SIMPLE. Mainline moves to one design reinforcement candidate on accepted Repair03 photo base.",
-  "status": "VPD_CHAZUO_REPAIR03_HUMAN_PHOTO_REALISM_ACCEPTED_DESIGN_REINFORCEMENT_NEXT",
+  "current_stage": "CHAZUO Repair03 accepted photo is now bound into one real editable Figma design-reinforcement candidate. Candidate awaits Liu Xiansheng actual complete-design pixel review.",
+  "status": "VPD_CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_AWAITING_ACTUAL_HUMAN_COMPLETE_DESIGN_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "CREATE_EXACTLY_ONE_COMPLETE_DESIGN_REINFORCEMENT_CANDIDATE_ON_ACCEPTED_REPAIR03_PHOTO_BASE_WITHOUT_CHANGING_PHOTO",
+  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_COMPLETE_DESIGN_PIXEL_REVIEW_OF_FIGMA_FRAME_213_32",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,13 +159,9 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "read back exact existing RF4 A/B pixels without regeneration",
-    "evaluated both arms against the same Golden absolute-realism gate",
-    "recorded A PASS/PASS/PASS/PASS confidence 0.80",
-    "recorded B PASS/PASS/PASS/PASS confidence 0.83",
-    "settled preregistered A_PASS/B_PASS combination as general heritage main effect not supported in rice",
-    "preserved renderer stochasticity nuisance and prohibited unique-root-cause claims",
-    "kept image budget closed at 2/2 consumed, retry=0, no third image, Figma=0, P5 blocked"
+    "chazuo_repair03_design_reinforcement01_exactly_one_editable_figma_candidate_created",
+    "repair03_exact_source_bytes_bound_to_figma_node_213_33",
+    "design_reinforcement01_machine_minimum_visual_check_pass_human_taste_pending"
   ],
   "updated_at": "2026-09-28",
   "workflow": {
@@ -2377,5 +2373,21 @@
     "repair04_allowed": false,
     "settlement_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_HUMAN_SETTLEMENT_20260928.json",
     "current_mainline": "DESIGN_REINFORCEMENT_ON_ACCEPTED_REPAIR03"
+  },
+  "chazuo_concept02_design_reinforcement01": {
+    "task_id": "VPD-CHAZUO-CONCEPT02-DESIGN-REINFORCEMENT01-ONE-CANDIDATE",
+    "status": "AWAITING_ACTUAL_HUMAN_COMPLETE_DESIGN_REVIEW",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_EXECUTION_20260928.json",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "source_frame_id": "201:2",
+    "candidate_frame_id": "213:32",
+    "photo_node_id": "213:33",
+    "repair03_figma_image_hash": "7325ab1ca9b618a2cd789fa4adec50efd748f26f",
+    "repair03_source_sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
+    "candidate_count": 1,
+    "photo_pixel_content_modified": false,
+    "historical_frames_overwritten": false,
+    "machine_minimal_self_review": "PASS_MINIMUM_ONLY_HUMAN_TASTE_PENDING",
+    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_COMPLETE_DESIGN_PIXEL_REVIEW_OF_FIGMA_FRAME_213_32"
   }
 }
