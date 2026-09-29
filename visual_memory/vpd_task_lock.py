@@ -131,6 +131,9 @@ def validate_reconciliation(root, lock, cp):
 
 def validate_state(root):
     lock = read(root, LOCK_PATH)
+    if lock.get('state_profile') == 'p6-composition/v1':
+        from visual_memory.vpd_p6_composition_state import validate_p6_composition_state
+        return validate_p6_composition_state(root)
     if lock.get('state_profile') == 'p6-figma-relay/v1':
         from visual_memory.vpd_p6_relay_state import validate_p6_state
         return validate_p6_state(root)
