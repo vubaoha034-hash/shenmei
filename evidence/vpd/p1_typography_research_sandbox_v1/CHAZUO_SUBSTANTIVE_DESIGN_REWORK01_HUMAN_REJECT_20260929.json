@@ -4,12 +4,7 @@
   "project_id": "visual-aesthetic-vpd",
   "candidate_frame_id": "227:2",
   "prior_status": "VPD_CHAZUO_REPAIR03_SUBSTANTIVE_DESIGN_REWORK01_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
-  "human_exact_feedback": [
-    "完全没感觉。",
-    "这不就是把后面的白色 绿色去掉了吗？",
-    "这完全不属于有设计的感觉吧。",
-    "你这样真的属于浪费时间。"
-  ],
+  "human_exact_feedback": ["完全没感觉。", "这不就是把后面的白色 绿色去掉了吗？", "这完全不属于有设计的感觉吧。", "你这样真的属于浪费时间。"],
   "verdict": "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN",
   "diagnosis": {
     "claimed_substantive_rework_not_achieved": true,
@@ -17,15 +12,39 @@
     "design_system_transformation_insufficient": true,
     "user_reference_gap_remains_large": true,
     "repair03_photo_acceptance_preserved": true,
+    "repair03_photo_acceptance_scope": "历史真实性可接受，仅此；不是喜欢、审美通过或完整成品通过",
     "photo_repair_remains_closed": true,
-    "frame_227_2_must_not_be_incrementally_repaired": true
+    "frame_227_2_must_not_be_incrementally_repaired": true,
+    "repair03_mandatory_reuse": false,
+    "taste_accepted": false,
+    "final_quality_accepted": false
   },
-  "process_correction": [
+  "prior_process_correction_superseded_in_base_image_restriction_only": [
     "Do not label panel removal or copy relocation as a substantive redesign.",
     "Do not continue polishing frame 227:2.",
     "Before another visual execution, derive a genuinely different composition architecture from the already-approved reference mechanisms while preserving Repair03 pixels.",
     "The next design must change relationships among scale, overlap, negative space, reading path and photo geometry, not merely backgrounds or text placement."
   ],
-  "current_action": "STOP_FIGMA_AFTER_RECORDING_HUMAN_REJECT",
-  "next_required_action": "AWAIT_EXPLICIT_AUTHORIZATION_FOR_ONE_TRUE_REFERENCE_DRIVEN_COMPOSITION_REAUTHORING_ON_REPAIR03"
+  "process_correction": [
+    "可接受不等于喜欢；不得用真实性局部通过替代审美验收。",
+    "保留已淘汰227:2的历史，不再对其增量修补。",
+    "取消Repair03是下一候选必须使用底图的协调限制；旧底图可归档，不代表要继续修旧图。",
+    "用户提出新图路线：可以制定一个全新构图/新摄影底图的独立候选；本反馈结算不启动生成。",
+    "缺旧参考像素只阻塞明确依赖这些参考的执行；不能因此把独立新构图路线也永久冻结。任何执行仍须遵守该任务真正必需参考像素可见的硬要求。",
+    "不得声称依据未见像素的旧参考生成；不得把本次新图方向请求当作新成品审美通过。"
+  ],
+  "current_action": "记录反馈并取消强制复用底图；本轮不生成、不操作Figma、不启动新任务",
+  "next_required_action": "由统一指挥以新底图/新构图而非修227:2制定一个完整视觉候选；明确其是否依赖指定参考，满足真实必需素材后只执行一次并返回统一指挥真人审美验收。",
+  "latest_human_clarification": {
+    "exact_quote": "我并不喜欢那张图片。只是觉得能接受。你就不可以自己生成一张新的吗？",
+    "source": "统一指挥当前聊天最新用户消息编号3",
+    "source_chat_url": null,
+    "verified_head_before_feedback": "0f2ed438039599c1d7a1b8ef4b1bb8b20bb5cccb",
+    "binding": "高级感P当前茶作图路线；撤回协调端将能接受理解为喜欢及永久固定Repair03的推论，不伪造本轮图像像素审查",
+    "old_decision": "0f2ed438039599c1d7a1b8ef4b1bb8b20bb5cccb:evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json",
+    "new_image_route_requested": true,
+    "image_generated_in_this_settlement": false,
+    "not_a_final_quality_acceptance": true,
+    "continuity_sync_status": "本次先更新既有人审回执；continuity/vpd/LATEST_CHECKPOINT尚未同步，不宣称全入口恢复测试通过"
+  }
 }
