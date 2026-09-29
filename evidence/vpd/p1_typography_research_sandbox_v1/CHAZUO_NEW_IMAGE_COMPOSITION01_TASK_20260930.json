@@ -25,11 +25,11 @@
       "手工成茶"
     ],
     "support_english": "HANDCRAFTED TEA / IN DIALOGUE WITH NATURE",
-    "aspect_authority": "EXISTING_CURRENT_CHAZUO_CANDIDATE",
-    "aspect": "2:3 portrait",
+    "aspect_authority": "CURRENT_USER_FALLBACK_NO_HIGHER_BUSINESS_CONSTRAINT_FOUND",
+    "aspect": "3:4 portrait",
     "nominal_dimensions": [
-      1024,
-      1536
+      1086,
+      1448
     ],
     "figma_required_before_human_gate": false
   },
@@ -68,6 +68,14 @@
     "one_human_review_gate_after_generation": true,
     "figma_reconstruction_only_after_human_acceptance_of_direction": true
   },
-  "status": "AUTHORIZED_PRE_GENERATION",
-  "next_legal_action": "GENERATE_EXACTLY_ONE_NEW_CHAZUO_HOLISTIC_VISUAL_CANDIDATE_AND_RETURN_ACTUAL_PIXELS_FOR_HUMAN_REVIEW"
+  "status": "AUTHORIZED_AND_GENERATION_BUDGET_CONSUMED",
+  "next_legal_action": "WAIT_FOR_HUMAN_AESTHETIC_REVIEW_OF_THE_ONE_ACTUAL_CANDIDATE",
+  "runtime_correction": {
+    "reason": "No higher business-original aspect constraint was found for this bounded original route; the user's explicit fallback is 3:4 portrait.",
+    "actual_output_dimensions": [
+      1086,
+      1448
+    ],
+    "generation_retry_performed": false
+  }
 }
