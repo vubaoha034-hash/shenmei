@@ -1,0 +1,73 @@
+{
+  "schema_version": "vpd-chazuo-new-image-composition-task/v1",
+  "task_id": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-09-30T02:13:00+08:00",
+  "authority": {
+    "type": "EXPLICIT_USER_AUTHORIZATION_CURRENT_CHAT",
+    "base_head": "b7f5cb8bffb6a754f705624f4fded7698d52f4cf",
+    "prior_task_lock_revision": 176,
+    "prior_checkpoint_sequence": 198,
+    "human_exact_quote": "我并不喜欢那张图片。只是觉得能接受。你就不可以自己生成一张新的吗？"
+  },
+  "scope": {
+    "target": "ONE_NEW_CHAZUO_VISUAL_CANDIDATE",
+    "independent_original_new_image_route": true,
+    "repair03_mandatory_reuse": false,
+    "frame_227_2_closed": true,
+    "reference_pixel_dependency": false,
+    "reference_driven_claim": false,
+    "same_source_edit_claim": false,
+    "distillation_transfer_validation_claim": false,
+    "brand_identity": "茶作",
+    "product_identity": [
+      "鲜叶入作",
+      "手工成茶"
+    ],
+    "support_english": "HANDCRAFTED TEA / IN DIALOGUE WITH NATURE",
+    "aspect_authority": "EXISTING_CURRENT_CHAZUO_CANDIDATE",
+    "aspect": "2:3 portrait",
+    "nominal_dimensions": [
+      1024,
+      1536
+    ],
+    "figma_required_before_human_gate": false
+  },
+  "required_source_evidence": [
+    "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_FIGMA_RECONSTRUCTION_20260921.json",
+    "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_FULL_POSTER_ART_DIRECTION_AND_CUSTOM_WORDMARK_CONCEPT_01_PLAN_20260920.json",
+    "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_PLAN_20260920.json",
+    "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json"
+  ],
+  "execution_budget": {
+    "photo_generation_call_max": 1,
+    "visible_composition_candidates": 1,
+    "hidden_variants": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "second_version": false
+  },
+  "composition_requirements": [
+    "new photographic base",
+    "genuinely new composition architecture",
+    "title and photography act as counter-masses rather than panel plus text",
+    "type space emerges from photo geometry/negative space",
+    "deliberate reading-order graph",
+    "regional density contrast and crop tension",
+    "no repair of frame 227:2"
+  ],
+  "material_visibility_gate": {
+    "status": "PASS_FOR_INDEPENDENT_ORIGINAL_ROUTE",
+    "missing_required_reference_pixels": [],
+    "rationale": "Current branch contains authoritative text/brand/product identity sufficient for an original tea visual. This route does not claim reference-driven reproduction, same-source editing, or pixel inheritance."
+  },
+  "output_policy": {
+    "actual_visual_required": true,
+    "repo_image_bytes": false,
+    "one_human_review_gate_after_generation": true,
+    "figma_reconstruction_only_after_human_acceptance_of_direction": true
+  },
+  "status": "AUTHORIZED_PRE_GENERATION",
+  "next_legal_action": "GENERATE_EXACTLY_ONE_NEW_CHAZUO_HOLISTIC_VISUAL_CANDIDATE_AND_RETURN_ACTUAL_PIXELS_FOR_HUMAN_REVIEW"
+}
