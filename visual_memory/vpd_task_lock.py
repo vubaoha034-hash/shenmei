@@ -275,6 +275,14 @@ def validate_request(root, request):
     return lock
 
 def status_card(lock, cp):
+    if lock.get('next_required_action') == 'WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_227_2':
+        return {'status':'VPD_STATE_VALID_REVIEW_ONLY',
+                'scope':'STATE_AND_FROZEN_LEGACY_DEFECTS_ONLY_NOT_HUMAN_PIXEL_ACCEPTANCE',
+                'current_frame':'227:2', 'candidate_count':1,
+                'revision':lock['revision'], 'checkpoint':cp['sequence'],
+                'next_action':lock['next_required_action'],
+                'blocked':lock['blockers'],
+                'historical_ledger':lock['authority_repair']['historical_ledger_status']}
     if lock.get('state_profile') == 'p6-figma-relay/v1':
         return {'status':'VPD_STATE_VALID', 'scope':'P6_RELAY_ONLY_NOT_AESTHETIC_ACCEPTANCE',
                 'current_stage':lock['current_stage'], 'revision':lock['revision'],

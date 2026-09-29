@@ -18,6 +18,7 @@ from .vpd_task_lock import (
 
 PROFILE = "p6-composition/v1"
 FILE_KEY = "uyDxOoN1iNDPpEHTKSUWg1"
+CHAZUO_REWORK_REVIEW_ACTION = "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_227_2"
 PAIR2_VALIDATOR_REPAIR_ACTION = "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
 PAIR2_VALIDATOR_CI_ACTION = "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
 PAIR2_WAIT_CANVAS_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
@@ -367,6 +368,52 @@ def _validate_commercial_ledger(root, lock, cp):
     require(previous.get("lock_sha256") == digest(path(root, LOCK_PATH)), "COMMERCIAL_LEDGER_STALE_LOCK")
 
 
+def _validate_chazuo_rework_review(root, lock, cp, adapter):
+    """Current review-only state; historical hash defects stay frozen, not certified."""
+    require(lock["parent_active_task_id"] == PARENT and cp["active_task_ids"] == [PARENT], "PARENT_TASK_CHANGED")
+    require(lock["repository"] == adapter["repository"] == "vubaoha034-hash/shenmei", "REPOSITORY_DRIFT")
+    require(lock["branch"] == adapter["canonical_branch"] == "visual-program-distillation-v2-photography-design-20260814", "BRANCH_DRIFT")
+    dispatch = adapter["task_lock"]
+    require(dispatch["path"] == adapter["task_registry_path"] == LOCK_PATH, "COMPETING_TASK_INDEX")
+    require(dispatch["revision"] == lock["revision"] and dispatch["sha256"] == digest(path(root, LOCK_PATH)), "ADAPTER_STALE_LOCK")
+    require(cp["task_lock"] == {"path": LOCK_PATH, "sha256": dispatch["sha256"]}, "STALE_CHECKPOINT_LOCK")
+    goal = adapter["vpd_system_goal_authority"]
+    require(goal["active_task_id"] == PARENT, "GOAL_TASK_DRIFT")
+    require(cp["status"] == lock["status"] == goal["checkpoint"] == "VPD_CHAZUO_REPAIR03_SUBSTANTIVE_DESIGN_REWORK01_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW", "STATE_STATUS_CONFLICT")
+    require(cp["next_required_action"] == lock["next_required_action"] == goal["next_required_action"] == CHAZUO_REWORK_REVIEW_ACTION, "NEXT_ACTION_DRIFT")
+    require(lock["render_allowed"] is False and goal["render_allowed"] is False, "RENDER_NOT_AUTHORIZED")
+    boundary = lock["execution_boundary"]
+    require(boundary["current_image_generation_authorization"] == boundary["current_figma_canvas_authorization"] == 0, "REVIEW_ONLY_BOUNDARY")
+    require(boundary["second_style_execution_allowed"] is False and boundary["successor_execution_authorized"] is False, "SUCCESSOR_NOT_AUTHORIZED")
+    require(boundary["modify_accepted_repair03_photo"] is False and boundary["repair04_allowed"] is False, "PHOTO_REPAIR_REOPENED")
+    old = read(root, "evidence/vpd/p6_authority_repair_v1/LOCK_BEFORE.json")
+    require(lock["objective"] == old["objective"] and lock["family"] == old["family"], "OBJECTIVE_DRIFT")
+    require(lock["capsule"] == old["capsule"] and not lock["capsule"]["promoted"], "CAPSULE_IDENTITY_DRIFT")
+    require(lock["mechanism_transfer_verdict"] == old["mechanism_transfer_verdict"], "UNSUPPORTED_PROMOTION")
+    wf = lock["workflow"]["document"]
+    check_ref(root, wf)
+    require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
+    current = lock["chazuo_repair03_substantive_design_rework01"]
+    mirror = cp["chazuo_repair03_substantive_design_rework01"]
+    require(current["status"] == mirror["status"] == current["human_review_state"] == "AWAITING_ACTUAL_HUMAN_SUBSTANTIVE_DESIGN_PIXEL_REVIEW", "HUMAN_REVIEW_DRIFT")
+    require(current["evidence"] == mirror["evidence"] == cp["latest_evidence"]["path"], "CURRENT_EVIDENCE_DRIFT")
+    check_ref(root, cp["latest_evidence"])
+    evidence = read(root, current["evidence"])
+    require(evidence["task_id"] == current["task_id"] and evidence["status"] == current["status"], "REWORK_EVIDENCE_TASK_DRIFT")
+    require(evidence["figma"]["candidate_frame_id"] == current["candidate_frame_id"] == mirror["candidate_frame_id"] == "227:2", "REWORK_FRAME_DRIFT")
+    require(evidence["figma"]["candidate_count"] == current["candidate_count"] == mirror["candidate_count"] == 1, "REWORK_CANDIDATE_COUNT")
+    require(evidence["figma"]["hidden_variant_count"] == current["hidden_variant_count"] == 0 and evidence["figma"]["second_candidate_created"] is False, "REWORK_HIDDEN_VARIANT")
+    require(evidence["repair03_photo_freeze"]["photo_pixel_content_modified"] is False and evidence["repair03_photo_freeze"]["photo_regenerated"] is False, "PHOTO_FREEZE_DRIFT")
+    require(evidence["actual_readback"]["screenshot_node_id"] == "227:2" and evidence["actual_readback"]["actual_pixels_reviewed"] is True, "REWORK_READBACK_MISSING")
+    require(evidence["machine_minimal_self_review"]["final_professional_quality_claimed"] is False and evidence["machine_minimal_self_review"]["reference_gap_resolved"] == "HUMAN_REVIEW_REQUIRED", "PREMATURE_HUMAN_VERDICT")
+    check_ref(root, lock["authority_repair"]["current_authority_reconciliation"])
+    check_ref(root, lock["authority_repair"]["historical_blockers_archive"])
+    require(lock["blockers"] == cp["blocked"] == ["Human pixel review of Figma frame 227:2 is pending.", "No further generation or Figma canvas write is authorized."], "CURRENT_BLOCKER_DRIFT")
+    require(adapter["ledger_tails"] == cp["ledger_tails"], "ADAPTER_LEDGER_TAIL_DRIFT")
+    require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
+    _validate_commercial_ledger(root, lock, cp)
+
+
 def _validate_pair2_equal_budget_prewrite(root, lock, cp, action):
     pair = lock.get("pair2_equal_budget_figma_ab", {})
     require(pair.get("status") == "PREPARED_NO_CANVAS_WRITE", "PAIR2_FIGMA_PREP_STATUS")
@@ -563,6 +610,9 @@ def validate_p6_composition_state(root):
     require(lock["schema_version"] == "vpd-current-task-lock/v1", "LOCK_SCHEMA")
     require(lock.get("state_profile") == PROFILE, "STATE_PROFILE")
     require(lock["project_id"] == cp["project_id"] == adapter["project_id"] == PROJECT, "PROJECT_ID_MISMATCH")
+    if lock.get("next_required_action") == CHAZUO_REWORK_REVIEW_ACTION:
+        _validate_chazuo_rework_review(root, lock, cp, adapter)
+        return lock, cp
     require(lock["parent_active_task_id"] == PARENT and cp["active_task_ids"] == [PARENT], "PARENT_TASK_CHANGED")
     require(lock["repository"] == adapter["repository"] == "vubaoha034-hash/shenmei", "REPOSITORY_DRIFT")
     require(lock["branch"] == adapter["canonical_branch"] == "visual-program-distillation-v2-photography-design-20260814", "BRANCH_DRIFT")

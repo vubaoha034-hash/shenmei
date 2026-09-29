@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 172,
+  "revision": 173,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -159,13 +159,10 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "chazuo_local_refinement01_human_reject_preserved",
-    "exactly_one_substantive_design_rework_candidate_227_2_created",
-    "repair03_photo_hash_transform_geometry_unchanged",
-    "panelized_left_field_mid_band_divider_removed_from_visible_composition",
-    "accepted_chazuo_wordmark_vector_structure_preserved",
-    "actual_screenshot_227_2_readback_completed",
-    "candidate_227_2_waiting_actual_human_pixel_review"
+    "state_authority_reconciled_to_existing_single_candidate_227_2",
+    "preexisting_22_hash_defects_preserved_under_existing_freeze",
+    "review_only_validator_forward_compatibility_restored",
+    "no_pixel_quality_or_new_execution_authorization_claimed"
   ],
   "updated_at": "2026-09-29",
   "workflow": {
@@ -179,7 +176,7 @@
   },
   "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "9c607d5157ede6be53fd503caa11520ca418031f",
+  "input_commit": "d635badb850f790004925efddba2b484ca2fecf0",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -189,69 +186,20 @@
     "commercial_ledger_preexisting_hash_defects": {
       "path": "evidence/vpd/p6_authority_repair_v1/COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE_20260923.json",
       "sha256": "d4bd81d49640d4017496ce58c7202001a3bcae6cbe69a7f967c652de23bfeb0a"
+    },
+    "current_authority_reconciliation": {
+      "path": "continuity/vpd/audits/AUTHORITY_RECONCILIATION_20260929.md",
+      "sha256": "b5bffd1c4afe3cc1d01f199a928ce7ff7227750b98e71b429d1a31791d00710a"
+    },
+    "historical_blockers_archive": {
+      "path": "continuity/vpd/audits/HISTORICAL_BLOCKERS_20260929.json",
+      "sha256": "3ec8f1af07f15268eaf573e8e04ee024ba697bbebb132d8aac37c9abd32ebe3e"
     }
   },
   "relay_bindings": {},
   "blockers": [
-    "Do not rerender H1 under Attempt 3.",
-    "Do not execute H2/H3/H4 under Attempt 3.",
-    "Attempt 4 H1 must run in a new clean chat.",
-    "Attempt 4 H1 must set explicit 3:4 portrait aspect/size control before image generation; natural-language-only aspect is prohibited.",
-    "If explicit aspect control is unavailable, stop before generation.",
-    "Do not modify or paraphrase frozen H1 renderer_instruction.",
-    "Do not attach any image except the exact R1C canonical anchor.",
-    "Commercial, Golden and Scale remain blocked.",
-    "Do not replace an accepted result merely because a third-party method exists.",
-    "Legacy full-state validation is not certified by this documentation update.",
-    "Do not treat the new method as superior before a bounded same-task comparison.",
-    "Do not replace or invalidate any accepted prior result because the new candidate exists.",
-    "Legacy full-state validation remains not certified for resource execution.",
-    "Do not auto-switch to a more expensive GPU if A40 Secure Cloud is unavailable.",
-    "Do not start image generation during environment or validator preflight.",
-    "Do not provision external GPU/model infrastructure as the default VPD route.",
-    "Do not replace ChatGPT Images before a controlled test proves a missing capability that matters to the project.",
-    "Current phase is read-only method-to-native-renderer mapping; no new image generation yet.",
-    "Do not cancel or rewrite prior accepted assets or frozen experiment evidence.",
-    "Stage 1 generation budget remains zero until the user explicitly authorizes exactly two ChatGPT Images outputs.",
-    "Do not expand to Stage 2 until both Stage 1 routes are technically valid and the human blind review is complete.",
-    "Do not change the frozen Stage 1 task, reference, aspect, or route prompts after authorization.",
-    "Do not expose A/B method labels to the user before the blind pixel verdict.",
-    "Do not generate Route A or Route B in the current long chat.",
-    "Do not execute Route B before Route A raw output and provenance are archived.",
-    "Do not change the frozen Stage 1 task, reference, aspect, or prompts after authorization.",
-    "Do not authorize Stage 2 from this two-image approval.",
-    "Do not execute Route B while Route A is technically invalid.",
-    "Do not use Route A lifestyle portrait as A/B aesthetic evidence.",
-    "Do not consume the remaining Route B image authorization as an implicit Route A retry.",
-    "A controlled Route A retry requires a new explicit authorization after its corrected runner is prepared.",
-    "All future fresh generator chats must upload the raw output to Google Drive and return the Drive browser URL/file ID.",
-    "Route A technical retry is not authorized yet.",
-    "The remaining one-image Stage 1 authorization belongs to Route B and must not be reused for Route A retry.",
-    "Route B remains blocked until a technically valid Route A baseline exists.",
-    "Do not change the frozen Route A image-task text during technical retry.",
-    "Do not generate the Route A retry in the current long chat.",
-    "Do not consume the Route B reserved authorization for the Route A retry.",
-    "Execute the retry exactly once in a fresh isolated chat and upload raw PNG to Google Drive.",
-    "Do not execute Route B until the Route A retry is reviewed in the main chat.",
-    "Do not execute Route B under the closed invalid Stage 1 experiment.",
-    "Do not perform a third same-form Route A retry.",
-    "Do not infer VPD or Style Capsule quality from the two technically invalid Route A outputs.",
-    "Next action is preparation only: minimal stateless ChatGPT Images render ticket, no generation.",
-    "Stateless smoke generation is not authorized yet.",
-    "Do not make the stateless generator chat read GitHub, project files, memory or prior VPD images.",
-    "Do not treat the stateless smoke result as VPD/Style Capsule evidence; it tests renderer execution reliability only.",
-    "No retry is allowed under this ticket.",
-    "The VPD controller/main chat must never call image generation.",
-    "Do not count the accidental controller-chat image as stateless smoke evidence.",
-    "The authorized stateless smoke may execute only in a fresh generator chat using the frozen one-message ticket.",
-    "Generator chat must upload the raw PNG to Google Drive and return the stable Drive URL/file ID.",
-    "Do not use Google Drive connector fetch as the visual-reference binding path for ChatGPT Images.",
-    "The fresh generator chat must receive the canonical R1C as a direct attachment.",
-    "Do not generate in the controller/main chat.",
-    "Do not consume a retry: this is still the original authorized one-image stateless smoke because the failed Drive-binding attempt generated nothing.",
-    "Do not ask the generator assistant to fetch the Drive file and use that fetch as the visual reference.",
-    "The fresh generator conversation must show R1C as an attached image before generation.",
-    "Prefer ChatGPT Library attachment; use direct upload only if the client cannot add the Library file."
+    "Human pixel review of Figma frame 227:2 is pending.",
+    "No further generation or Figma canvas write is authorized."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
