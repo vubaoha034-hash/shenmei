@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 198,
-  "recorded_at": "2026-09-29",
+  "sequence": 199,
+  "recorded_at": "2026-09-30T02:21:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
-    "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
+    "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01"
   ],
-  "current_focus": "Human rejected frame 227:2. Repair03 was only acceptable for realism, not liked. User explicitly requested a new image and composition; a scoped successor must read required visible inputs before generation. No new candidate exists yet.",
+  "current_focus": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -336,15 +336,13 @@
     "repair03_photo_acceptance_preserved"
   ],
   "incomplete": [
-    "p4_non_generative_realism_failure_review",
-    "first_family_complete_design_sample_acceptance",
-    "second_style_validation"
+    "actual human aesthetic verdict on the one new candidate"
   ],
   "blocked": [
     "Frame 227:2 is rejected and closed; do not refine or resubmit it.",
     "User requested a new image. Actual generation still requires a scoped successor and visible required inputs; no new image has been produced."
   ],
-  "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
+  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_PIXEL_REVIEW_OF_NEW_CANDIDATE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -412,10 +410,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN",
+  "status": "VPD_CHAZUO_NEW_IMAGE_COMPOSITION01_AWAITING_HUMAN_AESTHETIC_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5fcd145cb38ba7f768b7e7205953c334d9e095e9cf9c03756de5feb6ff89133a"
+    "sha256": "bb4df0a95dec91c5d86eae40fd47c3a8bfb077a8dfc75af3675d8824f605686a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -436,8 +434,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CHAZUO-USER-NEW-IMAGE-REQUEST-RECONCILED-20260929-001",
-      "event_hash": "d1d226d322c1d080362f97414553164f6baba77bd28af6b836aa8847307ea1d5"
+      "event_id": "EVT-VPD-CHAZUO-NEW-IMAGE-COMPOSITION01-AWAITING-HUMAN-20260930-001",
+      "event_hash": "575f3fa9889ad9cba1f30829b2d4f3ab011e319dec39a606ed67ae594ea8b1ea"
     }
   },
   "typography_repair": {
@@ -952,8 +950,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "Human rejected frame 227:2. Repair03 was only acceptable for historical realism, not liked or aesthetically accepted. Coordinate one new image and composition candidate; old photo reuse is optional, and no execution is authorized yet.",
-  "updated_at": "2026-09-29",
+  "current_stage": "One new original Chazuo candidate generated once; durable image locator verified; awaiting actual human aesthetic pixel review.",
+  "updated_at": "2026-09-30T02:21:00+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1824,9 +1822,11 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "user_new_image_request_reconciled_with_native_task_lock",
-    "old_frame_closed",
-    "execution_preflight_still_pending_no_new_image"
+    "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01 authorization registered",
+    "required brand/product text inputs grounded",
+    "one new original 3:4 visual candidate generated",
+    "generation budget fully consumed with no retry",
+    "candidate locator verified in ChatGPT and private Google Drive"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -1899,8 +1899,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json",
-    "sha256": "5fa1f403de00254893430abfd834556b3dca8e5f2efa9473d8bebbb7643d1c23"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json",
+    "sha256": "1c0aaebd0d66db07d281d812e20c4cd66e2c06f21d1eb208c76b25273f1efd75"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2017,5 +2017,23 @@
     "verdict": "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN",
     "photo_pixel_content_modified": false,
     "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS"
+  },
+  "chazuo_new_image_composition01": {
+    "status": "GENERATED_ONCE_AWAITING_ACTUAL_HUMAN_AESTHETIC_PIXEL_REVIEW",
+    "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_TASK_20260930.json",
+    "execution_manifest": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json",
+    "gen_id": "38f917de-bf5a-435c-ab1d-143c5a4fddbc",
+    "chatgpt_file_id": "file_00000000a11c81fd90674b6dd2d0f46c",
+    "drive_file_id": "1inxn4w1TQvcw-2qV9MASuouLrxdn6blL",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "aspect": "3:4",
+    "sha256": "0aeeb282ab767001abb99435dcebf2412680e996ef839becea9c763f89bcb715",
+    "generation_count": 1,
+    "retry_count": 0,
+    "figma_write": false,
+    "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_PIXEL_REVIEW_OF_NEW_CANDIDATE"
   }
 }
