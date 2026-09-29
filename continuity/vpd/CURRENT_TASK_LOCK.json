@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 173,
+  "revision": 174,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO small-refinement path is closed after human reject. Exactly one substantive design rework candidate 227:2 has now been created on the accepted Repair03 photo base. The photo is unchanged; panelized composition was replaced with a full-bleed photo/text integration. Await actual human pixel review.",
-  "status": "VPD_CHAZUO_REPAIR03_SUBSTANTIVE_DESIGN_REWORK01_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
+  "current_stage": "CHAZUO frame 227:2 HUMAN_REJECT. User states it has no design feeling and is effectively just removal of the white/green panels. Repair03 photo remains accepted and unchanged. 227:2 is closed; do not continue polishing it.",
+  "status": "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_227_2",
+  "next_required_action": "AWAIT_EXPLICIT_AUTHORIZATION_FOR_ONE_TRUE_REFERENCE_DRIVEN_COMPOSITION_REAUTHORING_ON_REPAIR03",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,10 +159,10 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "state_authority_reconciled_to_existing_single_candidate_227_2",
-    "preexisting_22_hash_defects_preserved_under_existing_freeze",
-    "review_only_validator_forward_compatibility_restored",
-    "no_pixel_quality_or_new_execution_authorization_claimed"
+    "chazuo_substantive_design_rework01_human_reject_recorded",
+    "frame_227_2_closed_no_incremental_repair",
+    "repair03_photo_human_pass_preserved",
+    "misclassification_panel_removal_as_substantive_rework_corrected"
   ],
   "updated_at": "2026-09-29",
   "workflow": {
@@ -2406,7 +2406,7 @@
   },
   "chazuo_repair03_substantive_design_rework01": {
     "task_id": "VPD-CHAZUO-REPAIR03-SUBSTANTIVE-DESIGN-REWORK01-ONE-CANDIDATE",
-    "status": "AWAITING_ACTUAL_HUMAN_SUBSTANTIVE_DESIGN_PIXEL_REVIEW",
+    "status": "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_SUBSTANTIVE_DESIGN_REWORK01_EXECUTION_20260929.json",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "source_frame_id": "216:2",
@@ -2421,7 +2421,20 @@
     "photo_pixel_content_modified": false,
     "historical_frames_preserved": true,
     "actual_screenshot_readback": true,
-    "human_review_state": "AWAITING_ACTUAL_HUMAN_SUBSTANTIVE_DESIGN_PIXEL_REVIEW",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_227_2"
+    "human_review_state": "SETTLED_HUMAN_REJECT",
+    "next_legal_action": "DO_NOT_REPAIR_227_2__AWAIT_EXPLICIT_AUTHORIZATION_FOR_TRUE_REFERENCE_DRIVEN_REAUTHORING",
+    "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json"
+  },
+  "chazuo_true_reference_driven_reauthoring_next": {
+    "status": "NOT_AUTHORIZED_YET",
+    "photo_base": "Repair03",
+    "photo_change_allowed": false,
+    "source_frame_to_preserve": "216:2",
+    "rejected_frames_to_preserve": [
+      "221:2",
+      "227:2"
+    ],
+    "required_difference": "NEW_COMPOSITION_ARCHITECTURE_NOT_PANEL_REMOVAL_OR_TEXT_RELOCATION",
+    "next_legal_action": "AWAIT_EXPLICIT_USER_AUTHORIZATION"
   }
 }
