@@ -1,7 +1,7 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 197,
+  "sequence": 198,
   "recorded_at": "2026-09-29",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
@@ -9,7 +9,7 @@
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "Human rejected frame 227:2. Repair03 was only acceptable for historical realism, not liked or aesthetically accepted. Coordinate one new image and composition candidate; old photo reuse is optional, and no execution is authorized yet.",
+  "current_focus": "Human rejected frame 227:2. Repair03 was only acceptable for realism, not liked. User explicitly requested a new image and composition; a scoped successor must read required visible inputs before generation. No new candidate exists yet.",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -342,7 +342,7 @@
   ],
   "blocked": [
     "Frame 227:2 is rejected and closed; do not refine or resubmit it.",
-    "No image generation or Figma canvas write is authorized in this settlement; next candidate requires a scoped task and visible required inputs."
+    "User requested a new image. Actual generation still requires a scoped successor and visible required inputs; no new image has been produced."
   ],
   "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
   "p6": {
@@ -415,7 +415,7 @@
   "status": "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "166201be602f88199daa82836c5810f39dec4615a0b9c451bc3b9133a10a96ff"
+    "sha256": "5fcd145cb38ba7f768b7e7205953c334d9e095e9cf9c03756de5feb6ff89133a"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -436,8 +436,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CHAZUO-HUMAN-REJECT-NEW-IMAGE-ROUTE-SYNC-20260929-001",
-      "event_hash": "4f23f2b37e6e4a72d19e95651270e581f2caeb45abfb2179f9a3364889ac99f0"
+      "event_id": "EVT-VPD-CHAZUO-USER-NEW-IMAGE-REQUEST-RECONCILED-20260929-001",
+      "event_hash": "d1d226d322c1d080362f97414553164f6baba77bd28af6b836aa8847307ea1d5"
     }
   },
   "typography_repair": {
@@ -1824,10 +1824,9 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "human_rejection_and_new_image_clarification_synced_to_all_current_authorities",
-    "frame_227_2_closed",
-    "repair03_mandatory_reuse_cancelled",
-    "no_image_or_figma_write_authorized"
+    "user_new_image_request_reconciled_with_native_task_lock",
+    "old_frame_closed",
+    "execution_preflight_still_pending_no_new_image"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",

@@ -455,6 +455,9 @@ def _validate_chazuo_new_image_route(root, lock, cp, adapter):
     require(diagnosis["taste_accepted"] is False and diagnosis["final_quality_accepted"] is False, "FALSE_AESTHETIC_ACCEPTANCE")
     require(diagnosis["repair03_mandatory_reuse"] is False and diagnosis["frame_227_2_must_not_be_incrementally_repaired"] is True, "OLD_ROUTE_REOPENED")
     require(verdict["latest_human_clarification"]["new_image_route_requested"] is True and verdict["latest_human_clarification"]["image_generated_in_this_settlement"] is False, "NEW_IMAGE_ROUTE_EVIDENCE")
+    route = lock["chazuo_true_reference_driven_reauthoring_next"]
+    require(route["status"] == "USER_REQUESTED_ROUTE_INPUTS_PENDING" and route["photo_change_allowed"] is True, "NEW_IMAGE_USER_REQUEST_LOST")
+    require(route["next_legal_action"] == "PREPARE_ONE_SCOPED_NEW_IMAGE_CANDIDATE_AFTER_REQUIRED_INPUT_READ", "NEW_IMAGE_ROUTE_POINTER_DRIFT")
     require(cp["chazuo_substantive_design_rework01_human_reject"]["next_required_action"] == CHAZUO_NEW_IMAGE_ROUTE_ACTION, "HUMAN_REJECT_POINTER_DRIFT")
     require(adapter["ledger_tails"] == cp["ledger_tails"], "ADAPTER_LEDGER_TAIL_DRIFT")
     require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")

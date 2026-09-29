@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 175,
+  "revision": 176,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -159,10 +159,9 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "human_rejection_and_new_image_clarification_synced_to_all_current_authorities",
-    "frame_227_2_closed",
-    "repair03_mandatory_reuse_cancelled",
-    "no_image_or_figma_write_authorized"
+    "user_new_image_request_reconciled_with_native_task_lock",
+    "old_frame_closed",
+    "execution_preflight_still_pending_no_new_image"
   ],
   "updated_at": "2026-09-29",
   "workflow": {
@@ -199,7 +198,7 @@
   "relay_bindings": {},
   "blockers": [
     "Frame 227:2 is rejected and closed; do not refine or resubmit it.",
-    "No image generation or Figma canvas write is authorized in this settlement; next candidate requires a scoped task and visible required inputs."
+    "User requested a new image. Actual generation still requires a scoped successor and visible required inputs; no new image has been produced."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -2426,15 +2425,15 @@
     "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json"
   },
   "chazuo_true_reference_driven_reauthoring_next": {
-    "status": "NOT_AUTHORIZED_YET",
-    "photo_base": "Repair03",
-    "photo_change_allowed": false,
+    "status": "USER_REQUESTED_ROUTE_INPUTS_PENDING",
+    "photo_base": "NEW_IMAGE_ALLOWED_REPAIR03_OPTIONAL",
+    "photo_change_allowed": true,
     "source_frame_to_preserve": "216:2",
     "rejected_frames_to_preserve": [
       "221:2",
       "227:2"
     ],
     "required_difference": "NEW_COMPOSITION_ARCHITECTURE_NOT_PANEL_REMOVAL_OR_TEXT_RELOCATION",
-    "next_legal_action": "AWAIT_EXPLICIT_USER_AUTHORIZATION"
+    "next_legal_action": "PREPARE_ONE_SCOPED_NEW_IMAGE_CANDIDATE_AFTER_REQUIRED_INPUT_READ"
   }
 }
