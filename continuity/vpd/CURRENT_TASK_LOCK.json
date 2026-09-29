@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 174,
+  "revision": 175,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO frame 227:2 HUMAN_REJECT. User states it has no design feeling and is effectively just removal of the white/green panels. Repair03 photo remains accepted and unchanged. 227:2 is closed; do not continue polishing it.",
+  "current_stage": "Human rejected frame 227:2. Repair03 was only acceptable for historical realism, not liked or aesthetically accepted. Coordinate one new image and composition candidate; old photo reuse is optional, and no execution is authorized yet.",
   "status": "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN",
   "p6_allowed": false,
-  "next_required_action": "AWAIT_EXPLICIT_AUTHORIZATION_FOR_ONE_TRUE_REFERENCE_DRIVEN_COMPOSITION_REAUTHORING_ON_REPAIR03",
+  "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,10 +159,10 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "chazuo_substantive_design_rework01_human_reject_recorded",
-    "frame_227_2_closed_no_incremental_repair",
-    "repair03_photo_human_pass_preserved",
-    "misclassification_panel_removal_as_substantive_rework_corrected"
+    "human_rejection_and_new_image_clarification_synced_to_all_current_authorities",
+    "frame_227_2_closed",
+    "repair03_mandatory_reuse_cancelled",
+    "no_image_or_figma_write_authorized"
   ],
   "updated_at": "2026-09-29",
   "workflow": {
@@ -198,8 +198,8 @@
   },
   "relay_bindings": {},
   "blockers": [
-    "Human pixel review of Figma frame 227:2 is pending.",
-    "No further generation or Figma canvas write is authorized."
+    "Frame 227:2 is rejected and closed; do not refine or resubmit it.",
+    "No image generation or Figma canvas write is authorized in this settlement; next candidate requires a scoped task and visible required inputs."
   ],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
@@ -2422,7 +2422,7 @@
     "historical_frames_preserved": true,
     "actual_screenshot_readback": true,
     "human_review_state": "SETTLED_HUMAN_REJECT",
-    "next_legal_action": "DO_NOT_REPAIR_227_2__AWAIT_EXPLICIT_AUTHORIZATION_FOR_TRUE_REFERENCE_DRIVEN_REAUTHORING",
+    "next_legal_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
     "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json"
   },
   "chazuo_true_reference_driven_reauthoring_next": {

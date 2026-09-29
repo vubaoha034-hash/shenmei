@@ -19,6 +19,7 @@ from .vpd_task_lock import (
 PROFILE = "p6-composition/v1"
 FILE_KEY = "uyDxOoN1iNDPpEHTKSUWg1"
 CHAZUO_REWORK_REVIEW_ACTION = "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_227_2"
+CHAZUO_NEW_IMAGE_ROUTE_ACTION = "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS"
 PAIR2_VALIDATOR_REPAIR_ACTION = "REPAIR_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
 PAIR2_VALIDATOR_CI_ACTION = "WAIT_FOR_VPD_STATE_VALIDATOR_CI_PASS_BEFORE_PAIR2_FIGMA_CANVAS_WRITE"
 PAIR2_WAIT_CANVAS_AUTH_ACTION = "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE"
@@ -414,6 +415,52 @@ def _validate_chazuo_rework_review(root, lock, cp, adapter):
     _validate_commercial_ledger(root, lock, cp)
 
 
+def _validate_chazuo_new_image_route(root, lock, cp, adapter):
+    """Validate the settled human rejection and the unexecuted new-image route."""
+    require(lock["parent_active_task_id"] == PARENT and cp["active_task_ids"] == [PARENT], "PARENT_TASK_CHANGED")
+    require(lock["repository"] == adapter["repository"] == "vubaoha034-hash/shenmei", "REPOSITORY_DRIFT")
+    require(lock["branch"] == adapter["canonical_branch"], "BRANCH_DRIFT")
+    dispatch = adapter["task_lock"]
+    require(dispatch["path"] == adapter["task_registry_path"] == LOCK_PATH, "COMPETING_TASK_INDEX")
+    require(dispatch["revision"] == lock["revision"] and dispatch["sha256"] == digest(path(root, LOCK_PATH)), "ADAPTER_STALE_LOCK")
+    require(cp["task_lock"] == {"path": LOCK_PATH, "sha256": dispatch["sha256"]}, "STALE_CHECKPOINT_LOCK")
+    goal = adapter["vpd_system_goal_authority"]
+    require(goal["active_task_id"] == PARENT, "GOAL_TASK_DRIFT")
+    require(cp["status"] == lock["status"] == goal["checkpoint"] == "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN", "STATE_STATUS_CONFLICT")
+    require(cp["next_required_action"] == lock["next_required_action"] == goal["next_required_action"] == CHAZUO_NEW_IMAGE_ROUTE_ACTION, "NEXT_ACTION_DRIFT")
+    require(lock["blockers"] == cp["blocked"], "CURRENT_BLOCKER_DRIFT")
+    require(not any("227:2 is pending" in item for item in lock["blockers"]), "SETTLED_REVIEW_STILL_PENDING")
+    require(lock["render_allowed"] is False and goal["render_allowed"] is False, "RENDER_NOT_AUTHORIZED")
+    boundary = lock["execution_boundary"]
+    require(boundary["current_image_generation_authorization"] == boundary["current_figma_canvas_authorization"] == 0, "UNAUTHORIZED_EXECUTION")
+    require(boundary["second_style_execution_allowed"] is False and boundary["successor_execution_authorized"] is False, "SUCCESSOR_NOT_AUTHORIZED")
+    require(boundary["modify_accepted_repair03_photo"] is False and boundary["repair04_allowed"] is False, "PHOTO_REPAIR_REOPENED")
+    old = read(root, "evidence/vpd/p6_authority_repair_v1/LOCK_BEFORE.json")
+    require(lock["objective"] == old["objective"] and lock["family"] == old["family"], "OBJECTIVE_DRIFT")
+    require(lock["capsule"] == old["capsule"] and not lock["capsule"]["promoted"], "CAPSULE_IDENTITY_DRIFT")
+    require(lock["mechanism_transfer_verdict"] == old["mechanism_transfer_verdict"], "UNSUPPORTED_PROMOTION")
+    wf = lock["workflow"]["document"]
+    check_ref(root, wf)
+    require(cp["workflow"] == wf == {k: adapter["workflow"][k] for k in ("path", "sha256")}, "WORKFLOW_REFERENCE_CONFLICT")
+    current = lock["chazuo_repair03_substantive_design_rework01"]
+    mirror = cp["chazuo_repair03_substantive_design_rework01"]
+    require(current["status"] == mirror["status"] == "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN", "HUMAN_VERDICT_DRIFT")
+    require(current["human_review_state"] == "SETTLED_HUMAN_REJECT" and current["candidate_frame_id"] == mirror["candidate_frame_id"] == "227:2", "CLOSED_FRAME_DRIFT")
+    require(current["candidate_count"] == mirror["candidate_count"] == 1 and current["photo_pixel_content_modified"] is False, "CANDIDATE_OR_PHOTO_DRIFT")
+    require(current["human_verdict_evidence"] == cp["latest_evidence"]["path"], "HUMAN_EVIDENCE_DRIFT")
+    check_ref(root, cp["latest_evidence"])
+    verdict = read(root, current["human_verdict_evidence"])
+    require(verdict["verdict"] == current["status"] and verdict["candidate_frame_id"] == "227:2", "HUMAN_VERDICT_EVIDENCE")
+    diagnosis = verdict["diagnosis"]
+    require(diagnosis["taste_accepted"] is False and diagnosis["final_quality_accepted"] is False, "FALSE_AESTHETIC_ACCEPTANCE")
+    require(diagnosis["repair03_mandatory_reuse"] is False and diagnosis["frame_227_2_must_not_be_incrementally_repaired"] is True, "OLD_ROUTE_REOPENED")
+    require(verdict["latest_human_clarification"]["new_image_route_requested"] is True and verdict["latest_human_clarification"]["image_generated_in_this_settlement"] is False, "NEW_IMAGE_ROUTE_EVIDENCE")
+    require(cp["chazuo_substantive_design_rework01_human_reject"]["next_required_action"] == CHAZUO_NEW_IMAGE_ROUTE_ACTION, "HUMAN_REJECT_POINTER_DRIFT")
+    require(adapter["ledger_tails"] == cp["ledger_tails"], "ADAPTER_LEDGER_TAIL_DRIFT")
+    require(not set(cp["completed"]) & set(cp["incomplete"]), "COMPLETED_AND_INCOMPLETE")
+    _validate_commercial_ledger(root, lock, cp)
+
+
 def _validate_pair2_equal_budget_prewrite(root, lock, cp, action):
     pair = lock.get("pair2_equal_budget_figma_ab", {})
     require(pair.get("status") == "PREPARED_NO_CANVAS_WRITE", "PAIR2_FIGMA_PREP_STATUS")
@@ -612,6 +659,9 @@ def validate_p6_composition_state(root):
     require(lock["project_id"] == cp["project_id"] == adapter["project_id"] == PROJECT, "PROJECT_ID_MISMATCH")
     if lock.get("next_required_action") == CHAZUO_REWORK_REVIEW_ACTION:
         _validate_chazuo_rework_review(root, lock, cp, adapter)
+        return lock, cp
+    if lock.get("next_required_action") == CHAZUO_NEW_IMAGE_ROUTE_ACTION:
+        _validate_chazuo_new_image_route(root, lock, cp, adapter)
         return lock, cp
     require(lock["parent_active_task_id"] == PARENT and cp["active_task_ids"] == [PARENT], "PARENT_TASK_CHANGED")
     require(lock["repository"] == adapter["repository"] == "vubaoha034-hash/shenmei", "REPOSITORY_DRIFT")
