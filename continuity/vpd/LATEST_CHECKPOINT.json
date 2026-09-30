@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 202,
+  "sequence": 203,
   "recorded_at": "2026-09-30",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [],
-  "current_focus": "197:2与201:2实际像素已读取；唯一一次茶作新候选生成后触发已知明显回退，已FAIL_CLOSED，不进入真人审美，不允许第二次生成。",
+  "current_focus": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02 单次photo-only生成违反禁文字硬门：生成图直接含可读“茶作”。已在Figma写入前FAIL_CLOSED；无第二生成、无候选frame、旧节点未改。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -334,7 +334,8 @@
     "repair03_photo_acceptance_preserved",
     "scoped_design_baseline_actual_pixels_restored",
     "latest_generic_candidate_human_rejection_settled",
-    "vpd_chazuo_scoped_baseline_design_successor01_fail_closed_known_regression"
+    "vpd_chazuo_scoped_baseline_design_successor01_fail_closed_known_regression",
+    "p1_chazuo_composite_successor02_fail_closed_photo_only_text_gate"
   ],
   "incomplete": [
     "本次候选已FAIL_CLOSED；没有可送刘先生做实际审美的人审候选"
@@ -1897,8 +1898,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SCOPED_BASELINE_DESIGN_SUCCESSOR01_EXECUTION_20260930.json",
-    "sha256": "3c5a0e2c1e42d4fed46cd781fe5d77dc65c1eb0497d9640112ba696d8ffcaa03"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_COMPOSITE_SUCCESSOR02_EXECUTION_20260930.json",
+    "sha256": "5bf43c674aa9f4a5d7bcb2428f9614e60b71393594363fd53204d1784182edbb"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2129,5 +2130,17 @@
       "no claim that Liu Xiansheng would like the candidate",
       "no claim that the candidate exceeds historical best"
     ]
+  },
+  "chazuo_composite_successor02": {
+    "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+    "generation_count": 1,
+    "figma_candidate_frame_count": 0,
+    "figma_write": false,
+    "protected_old_nodes_modified": false,
+    "human_review_return_allowed": false,
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_COMPOSITE_SUCCESSOR02_EXECUTION_20260930.json",
+      "sha256": "5bf43c674aa9f4a5d7bcb2428f9614e60b71393594363fd53204d1784182edbb"
+    }
   }
 }
