@@ -68,8 +68,8 @@
     "one_human_review_gate_after_generation": true,
     "figma_reconstruction_only_after_human_acceptance_of_direction": true
   },
-  "status": "AUTHORIZED_AND_GENERATION_BUDGET_CONSUMED",
-  "next_legal_action": "WAIT_FOR_HUMAN_AESTHETIC_REVIEW_OF_THE_ONE_ACTUAL_CANDIDATE",
+  "status": "COMPLETED_HUMAN_REJECTED_CLOSED",
+  "next_legal_action": "CLOSED_NO_RESUBMISSION",
   "runtime_correction": {
     "reason": "No higher business-original aspect constraint was found for this bounded original route; the user's explicit fallback is 3:4 portrait.",
     "actual_output_dimensions": [
@@ -77,5 +77,9 @@
       1448
     ],
     "generation_retry_performed": false
+  },
+  "human_verdict_ref": {
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json",
+    "sha256": "54c05c7856f0176847858811a85d6d15fef4cb208704e2cade720eae593180a6"
   }
 }

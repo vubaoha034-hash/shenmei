@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 178,
+  "revision": 179,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "The one new Chazuo visual candidate was actually reviewed and rejected as extremely ordinary / a return to the original generic state. Photorealism and cleanliness are not accepted as design progress. Candidate is closed; no refinement or second image is authorized by this feedback alone.",
-  "status": "VPD_CHAZUO_NEW_IMAGE_COMPOSITION01_HUMAN_REJECT_GENERIC",
+  "current_stage": "已恢复197:2与201:2真实像素对照，旧认可仅限设计/字标；最新普通茶作图继续否决关闭。下一步为一个有界的新图文设计候选，不是再审旧图。",
+  "status": "VPD_CHAZUO_SCOPED_BASELINE_RESTORED_REJECTED_CANDIDATE_CLOSED",
   "p6_allowed": false,
-  "next_required_action": "UNIFIED_COMMAND_DIAGNOSE_GENERIC_VISUAL_REGRESSION_BEFORE_ANY_NEW_BOUNDED_CANDIDATE",
+  "next_required_action": "DEFINE_ONE_CHAZUO_DESIGN_SUCCESSOR_WITH_SCOPED_BASELINE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,16 +159,12 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "explicit_bounded_successor_authorization_registered",
-    "required_chazuo_text_brand_product_inputs_read",
-    "one_independent_original_visual_generated",
-    "one_generation_budget_consumed_no_retry",
-    "actual_candidate_saved_to_private_google_drive_and_chatgpt_file_locator",
-    "human_aesthetic_review_gate_open",
-    "actual_human_aesthetic_review_completed_reject_generic",
-    "new_image_candidate_closed_no_incremental_refinement"
+    "实际读取197:2和201:2完整图像",
+    "按原人审限定设计与摄影范围",
+    "最新失败候选不得替换历史设计参照",
+    "闭合本次人审状态镜像与哈希"
   ],
-  "updated_at": "2026-09-30T02:21:00+08:00",
+  "updated_at": "2026-09-30",
   "workflow": {
     "version": "1.1",
     "focus_stage": "P4",
@@ -201,10 +197,7 @@
     }
   },
   "relay_bindings": {},
-  "blockers": [
-    "The generated Chazuo candidate is human-rejected as extremely ordinary / generic and must not be refined or resubmitted.",
-    "No second visual candidate is authorized from this feedback alone; next work must first preserve the human rejection and diagnose the regression to generic premium-lifestyle priors."
-  ],
+  "blockers": [],
   "relay_placement_blocker": {
     "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
     "sha256": "b204ff65aeb59bc7fb5f614d368867186231b21d0c73fc7b170732dcb226b4c7"
@@ -988,7 +981,7 @@
     "prompt_reconstruction_of_protected_master": "PROHIBITED",
     "solved_route_reimplementation": "PROHIBITED",
     "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW",
-    "sha256": "08f058f3dae822c655e4d929d67592f0213e2aa6a25532580dfcf21bf36a754f"
+    "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "mainline_restore": {
     "status": "ACTIVE",
@@ -2443,7 +2436,7 @@
   },
   "chazuo_new_image_composition01": {
     "task_id": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01",
-    "status": "GENERATED_ONCE_AWAITING_ACTUAL_HUMAN_AESTHETIC_PIXEL_REVIEW",
+    "status": "HUMAN_REJECT_GENERIC_RETURN_TO_ORIGINAL",
     "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_TASK_20260930.json",
     "execution_manifest": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json",
     "generation_count_max": 1,
@@ -2465,7 +2458,12 @@
     "repair03_used": false,
     "figma_write": false,
     "old_frame_227_2_modified": false,
-    "human_review_state": "AWAITING_ACTUAL_HUMAN_AESTHETIC_PIXEL_REVIEW",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_PIXEL_REVIEW_OF_NEW_CANDIDATE"
+    "human_review_state": "ACTUAL_HUMAN_AESTHETIC_REJECT_GENERIC_RETURN_TO_ORIGINAL",
+    "next_legal_action": "CLOSED_NO_RESUBMISSION",
+    "baseline_promotion_allowed": false
+  },
+  "baseline_preservation": {
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   }
 }

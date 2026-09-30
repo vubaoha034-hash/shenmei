@@ -72,7 +72,7 @@
     "human_exact_feedback": "高级感你自己的评价呢？这不久非常非常普通的一个。这做了半天不又回到最初了。",
     "rejection_scope": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01 exact generated candidate only; rejects aesthetic distinctiveness/design quality, not permission to pursue the overall visual project.",
     "coordinator_assessment": "The candidate is a generic premium tea still-life: soft sunlight, bamboo/rock/tea ware and conventional left-side brand typography. It has acceptable cleanliness but lacks a distinctive composition architecture, visual tension, editorial surprise, brand-specific design language, and the strong design feeling the user repeatedly requested. Do not treat photorealism or cleanliness as taste progress.",
-    "next_legal_action": "STOP_THIS_CANDIDATE. Do not refine or resubmit it. Before any new image, diagnose why the execution collapsed back to generic premium-lifestyle priors and bind the next bounded candidate to concrete high-distinctiveness visual mechanisms; no automatic second image from this feedback alone."
+    "next_legal_action": "CLOSED_NO_RESUBMISSION_BASELINE_COMPARISON_COMPLETE"
   },
   "durable_output": {
     "task_record_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_TASK_20260930.json",
@@ -87,5 +87,84 @@
     ]
   },
   "blocker": null,
-  "status": "HUMAN_REJECT_GENERIC_RETURN_TO_ORIGINAL"
+  "status": "HUMAN_REJECT_GENERIC_RETURN_TO_ORIGINAL",
+  "coordinator_baseline_comparison": {
+    "task_id": "VPD-BASELINE-RESTORE-AND-REGRESSION-01",
+    "source_head": "6c9a4f67206156443ec6320f6bbd1cc5bf9a543e",
+    "review_type": "COORDINATOR_KNOWN_LABEL_PIXEL_COMPARISON_NOT_BLIND",
+    "actual_pixels_viewed": true,
+    "baseline": {
+      "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+      "reference_frame": "197:2",
+      "reference_raster": "197:3",
+      "design_frame": "201:2",
+      "wordmark_node": "203:2",
+      "reference_dimensions": [
+        1024,
+        1536
+      ],
+      "design_dimensions": [
+        1024,
+        1536
+      ],
+      "source_sha256_historical": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f",
+      "source_bytes_revalidated_this_task": false,
+      "readback": "Figma native full-node screenshots of 197:2 and 201:2 actually viewed; not regenerated. Original source-byte download unavailable in coordinator runtime.",
+      "human_scope_ref": {
+        "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_HUMAN_REVIEW_PHOTO_FAIL_20260921.json",
+        "sha256": "5c8820fb0e6ad1749a0569b11a17208d191a6364d4a9e1513de0b27fa107b8a9"
+      },
+      "accepted_dimensions": [
+        "composition_hierarchy",
+        "wordmark"
+      ],
+      "not_accepted": [
+        "photographic_realism",
+        "final_whole_poster_quality",
+        "cross_family_transfer"
+      ],
+      "role": "historical_internal_design_reference_not_universal_best_not_original_external_reference",
+      "generation_anchor_required": false,
+      "reuse_old_photo_required": false,
+      "old_route_reopened": false
+    },
+    "candidate": {
+      "task_id": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01",
+      "gen_id": "38f917de-bf5a-435c-ab1d-143c5a4fddbc",
+      "sha256": "0aeeb282ab767001abb99435dcebf2412680e996ef839becea9c763f89bcb715",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "actual_file_hash_checked": true,
+      "human_rejected": true,
+      "baseline_promotion_allowed": false
+    },
+    "findings": [
+      {
+        "dimension": "wordmark",
+        "baseline_observation": "大尺度茶作字标成为主视觉，叶片笔画与茶语义相接；201:2是已认可的可编辑字标版本。",
+        "candidate_observation": "左上较小书写字标与产品静物分离，退回品牌标签式摆放。",
+        "judgment": "已认可的字标存在感与产品语义关系未保住。"
+      },
+      {
+        "dimension": "composition_hierarchy",
+        "baseline_observation": "左侧大字、右侧深色竖向结构、下方近景茶器与远山纵深形成图文对重和阅读路径。",
+        "candidate_observation": "白墙承载左侧标题和文案，茶器静物集中右下，图与字主要依靠分区摆放。",
+        "judgment": "换了场景，但图文关系更通用；不构成设计能力进步。"
+      },
+      {
+        "dimension": "scope_and_photography",
+        "baseline_observation": "旧回执只接受整体设计与字标，摄影明确AI味重。",
+        "candidate_observation": "新图可更平顺干净，但真人明确评价非常普通。",
+        "judgment": "不以干净或摄影顺眼抵消设计回退，也不把旧摄影改判通过。"
+      }
+    ],
+    "verdict": "REJECTED_CANDIDATE_MUST_NOT_REPLACE_SCOPED_BASELINE",
+    "new_human_acceptance_inferred": false,
+    "independent_evaluator_calibrated": false,
+    "stable_quality_guaranteed": false,
+    "new_generation_count": 0,
+    "next_action": "使用已恢复的设计参照制定一个新图文设计候选；基线用于对照质量，不强制复制旧图骨架。不得继续修已否决的新茶具图或227:2，不自动扩成新一轮审计。"
+  }
 }

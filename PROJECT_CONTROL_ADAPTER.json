@@ -811,7 +811,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_NOT_TRUE_REDESIGN",
+    "checkpoint": "VPD_CHAZUO_SCOPED_BASELINE_RESTORED_REJECTED_CANDIDATE_CLOSED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -849,7 +849,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
+    "next_required_action": "DEFINE_ONE_CHAZUO_DESIGN_SUCCESSOR_WITH_SCOPED_BASELINE",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -861,8 +861,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 177,
-    "sha256": "524e0beaa6dfea95e00b92d51d427e58984263b83011b196fb9509bbea295fde",
+    "revision": 179,
+    "sha256": "372cae8eeb396a110accc77da765b23c1f6d44fb145ca3c381511e879f1ca165",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -996,8 +996,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CHAZUO-USER-NEW-IMAGE-REQUEST-RECONCILED-20260929-001",
-      "event_hash": "d1d226d322c1d080362f97414553164f6baba77bd28af6b836aa8847307ea1d5"
+      "event_id": "EVT-VPD-SCOPED-BASELINE-RESTORED-20260930-001",
+      "event_hash": "999b07c278bfc4af5c18e1f4c53722f84b99158379b8ee03596cbd4b04714ea8"
     }
   },
   "mature_workflow_audit": {
@@ -1530,5 +1530,9 @@
     "sha256": "5cc42e813e7bee38f57bf533d94dc0380ce620d734f5dbbfeb3e092dbb55ce08",
     "status": "ACTIVE",
     "semantics": "AUTO_AUTHORIZE_UNIQUE_FROZEN_SUCCESSOR_ONLY__NO_BUDGET_OR_STAGE_EXPANSION"
+  },
+  "baseline_preservation": {
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   }
 }

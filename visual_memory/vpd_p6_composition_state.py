@@ -652,6 +652,65 @@ def _validate_pair2_corrected_blind_settlement(root, lock, cp):
     require(lock.get("p6_allowed") is False and lock.get("render_allowed") is False,"PAIR2_SETTLEMENT_PREMATURE_OPEN")
 
 
+def _validate_scoped_baseline_preservation(root, lock, cp, adapter):
+    """Check actual-artifact identity and scoped feedback; never award taste PASS.
+
+    Uses the existing master guard, human receipt and ledger. This is the
+    post-rejection closure state, not a new image-generation authorization.
+    """
+    require(lock['parent_active_task_id'] == PARENT and cp['active_task_ids'] == [], 'BASELINE_ACTIVE_TASK_DRIFT')
+    require(lock['repository'] == adapter['repository'] == 'vubaoha034-hash/shenmei', 'REPOSITORY_DRIFT')
+    require(lock['branch'] == adapter['canonical_branch'] == 'visual-program-distillation-v2-photography-design-20260814', 'BRANCH_DRIFT')
+    state='VPD_CHAZUO_SCOPED_BASELINE_RESTORED_REJECTED_CANDIDATE_CLOSED'
+    action='DEFINE_ONE_CHAZUO_DESIGN_SUCCESSOR_WITH_SCOPED_BASELINE'
+    goal=adapter['vpd_system_goal_authority']
+    require(lock['status'] == cp['status'] == goal['checkpoint'] == state, 'BASELINE_STATUS_DRIFT')
+    require(lock['next_required_action'] == cp['next_required_action'] == goal['next_required_action'] == action, 'BASELINE_NEXT_DRIFT')
+    require(goal['active_task_id'] == PARENT, 'GOAL_TASK_DRIFT')
+    dispatch=adapter['task_lock']
+    require(dispatch['revision'] == lock['revision'] and dispatch['sha256'] == digest(path(root, LOCK_PATH)), 'ADAPTER_STALE_LOCK')
+    require(dispatch['path'] == adapter['task_registry_path'] == LOCK_PATH, 'COMPETING_TASK_INDEX')
+    require(cp['task_lock'] == {'path':LOCK_PATH,'sha256':dispatch['sha256']}, 'STALE_CHECKPOINT_LOCK')
+    ref=lock['baseline_preservation'];check_ref(root,ref)
+    require(ref == cp['baseline_preservation'] == adapter['baseline_preservation'], 'BASELINE_POINTER_DRIFT')
+    require(ref['path'] == lock['visual_master_freeze_guard']['path'] and ref['sha256'] == lock['visual_master_freeze_guard']['sha256'], 'MASTER_GUARD_DRIFT')
+    guard=read(root,ref['path']);basis=guard['current_comparison']
+    frozen=guard['current_chazuo_freeze_map']
+    require(basis['baseline_frame_ids'] == ['197:2','201:2'] and frozen['canonical_pixel_reference']['frame_id']=='197:2' and frozen['editable_production_frame']['frame_id']=='201:2', 'WRONG_PROTECTED_REFERENCE')
+    require(basis['accepted_dimensions'] == ['composition_hierarchy','wordmark'] and basis['photographic_realism_accepted'] is False and basis['whole_poster_accepted'] is False, 'SCOPED_ACCEPTANCE_UPGRADED')
+    require(basis['rejected_candidate_is_baseline'] is False and basis['current_generation_reference_mandatory'] is False and basis['evaluation_reference_is_not_a_fixed_template'] is True, 'WRONG_BASELINE_ROLE')
+    check_ref(root,basis['evidence'])
+    require(basis['evidence'] == cp['latest_evidence'], 'BASELINE_EVIDENCE_DRIFT')
+    receipt=read(root,basis['evidence']['path'])
+    compare=receipt['coordinator_baseline_comparison'];base=compare['baseline'];candidate=compare['candidate']
+    check_ref(root,base['human_scope_ref']);human=read(root,base['human_scope_ref']['path'])
+    require(human['human_review']['overall_design']==human['human_review']['wordmark']=='PASS' and human['human_review']['photo_base']=='FAIL_NEEDS_REPAIR', 'HISTORICAL_HUMAN_SCOPE_DRIFT')
+    require(base['accepted_dimensions']==basis['accepted_dimensions'] and base['source_bytes_revalidated_this_task'] is False, 'BASELINE_EVIDENCE_OVERCLAIM')
+    require(compare['actual_pixels_viewed'] is True and compare['review_type']=='COORDINATOR_KNOWN_LABEL_PIXEL_COMPARISON_NOT_BLIND', 'PIXEL_REVIEW_EVIDENCE_OR_ISOLATION_CLAIM')
+    require(compare['independent_evaluator_calibrated'] is False and compare['new_human_acceptance_inferred'] is False and compare['stable_quality_guaranteed'] is False, 'FALSE_QUALITY_OR_BLIND_PASS')
+    require(receipt['status']=='HUMAN_REJECT_GENERIC_RETURN_TO_ORIGINAL' and receipt['human_gate']['final_quality_accepted'] is False, 'HUMAN_REJECTION_LOST')
+    require(candidate['gen_id']==receipt['candidate']['gen_id']==basis['rejected_candidate_gen_id'] and candidate['sha256']==receipt['candidate']['sha256']==basis['rejected_candidate_sha256'], 'CANDIDATE_IDENTITY_DRIFT')
+    require(candidate['human_rejected'] is True and candidate['baseline_promotion_allowed'] is False and compare['verdict']=='REJECTED_CANDIDATE_MUST_NOT_REPLACE_SCOPED_BASELINE', 'FAILED_CANDIDATE_PROMOTED')
+    n=lock['chazuo_new_image_composition01']
+    require(n==cp['chazuo_new_image_composition01'] and n['status']==receipt['status'] and n['human_review_state']==receipt['human_gate']['status'] and n['baseline_promotion_allowed'] is False, 'CURRENT_CANDIDATE_MIRROR_DRIFT')
+    require(n['next_legal_action']=='CLOSED_NO_RESUBMISSION' and receipt['execution']['generation_count']==1 and compare['new_generation_count']==0, 'GENERATION_OR_RESUBMISSION_DRIFT')
+    boundary=lock['execution_boundary']
+    require(boundary['current_image_generation_authorization']==boundary['current_figma_canvas_authorization']==0 and boundary['successor_execution_authorized'] is False, 'UNAUTHORIZED_NEW_EXECUTION')
+    require(lock['render_allowed'] is False and lock['p6_allowed'] is False and goal['render_allowed'] is False, 'RENDER_NOT_AUTHORIZED')
+    require(lock['blockers']==cp['blocked']==[], 'CURRENT_BLOCKER_DRIFT')
+    require(cp['current_stage'] == cp['current_focus'] == lock['current_stage'], 'CURRENT_STAGE_MIRROR_DRIFT')
+    task=read(root,n['task_record']);check_ref(root,task['human_verdict_ref'])
+    require(task['task_id']==receipt['task_id'] and task['status']=='COMPLETED_HUMAN_REJECTED_CLOSED' and task['next_legal_action']=='CLOSED_NO_RESUBMISSION' and task['human_verdict_ref']==basis['evidence'], 'STALE_CANDIDATE_TASK')
+    require(not set(cp['completed']) & set(cp['incomplete']), 'COMPLETED_AND_INCOMPLETE')
+    wf=lock['workflow']['document'];check_ref(root,wf)
+    require(wf==cp['workflow']=={k:adapter['workflow'][k] for k in ('path','sha256')}, 'WORKFLOW_REFERENCE_CONFLICT')
+    old=read(root,'evidence/vpd/p6_authority_repair_v1/LOCK_BEFORE.json')
+    for k in ('objective','family','capsule','mechanism_transfer_verdict'):
+        require(lock[k]==old[k], 'PROTECTED_PROJECT_SEMANTICS_CHANGED')
+    require(adapter['ledger_tails']==cp['ledger_tails'], 'ADAPTER_LEDGER_TAIL_DRIFT')
+    _validate_commercial_ledger(root,lock,cp)
+
+
 def validate_p6_composition_state(root):
     lock = read(root, LOCK_PATH)
     cp = read(root, CHECKPOINT_PATH)
@@ -660,6 +719,9 @@ def validate_p6_composition_state(root):
     require(lock["schema_version"] == "vpd-current-task-lock/v1", "LOCK_SCHEMA")
     require(lock.get("state_profile") == PROFILE, "STATE_PROFILE")
     require(lock["project_id"] == cp["project_id"] == adapter["project_id"] == PROJECT, "PROJECT_ID_MISMATCH")
+    if lock.get("status") == "VPD_CHAZUO_SCOPED_BASELINE_RESTORED_REJECTED_CANDIDATE_CLOSED":
+        _validate_scoped_baseline_preservation(root, lock, cp, adapter)
+        return lock, cp
     if lock.get("next_required_action") == CHAZUO_REWORK_REVIEW_ACTION:
         _validate_chazuo_rework_review(root, lock, cp, adapter)
         return lock, cp
