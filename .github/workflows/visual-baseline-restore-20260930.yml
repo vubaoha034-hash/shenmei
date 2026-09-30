@@ -1,0 +1,53 @@
+name: Read actual visual baseline state (no generation)
+on:
+  push:
+    branches: [verify/visual-baseline-restore-20260930-01]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      SOURCE_HEAD: 6c9a4f67206156443ec6320f6bbd1cc5bf9a543e
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Read exact source and preserve native check result
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$RUNNER_TEMP/visual-source"
+          OUT="$RUNNER_TEMP/visual-baseline-evidence"
+          mkdir -p "$OUT"
+          git worktree add --detach "$ROOT" "$SOURCE_HEAD"
+          set +e
+          (cd "$ROOT" && python scripts/verify_visual_memory.py --vpd-state --status-card) > "$OUT/native-before.txt" 2>&1
+          CODE=$?
+          set -e
+          echo "$CODE" > "$OUT/native-exit.txt"
+          cat "$OUT/native-before.txt"
+          export ROOT OUT
+          python - <<'PY'
+          import os, subprocess, zipfile, json, hashlib
+          from pathlib import Path
+          root=Path(os.environ['ROOT']);out=Path(os.environ['OUT'])
+          prefixes=('continuity/vpd/','visual_memory/','tests/visual_memory/','.github/workflows/','evidence/vpd/p1_typography_research_sandbox_v1/','evidence/vpd/visual_regression_golden_v1/')
+          exact={'START_HERE.md','PROJECT_CONTROL_ADAPTER.json','VPD_PROJECT_ROADMAP.md','AESTHETIC_SKILL_DESIGN_CHARTER.md','scripts/verify_visual_memory.py'}
+          files=subprocess.check_output(['git','-C',str(root),'ls-files'],text=True).splitlines()
+          selected=[p for p in files if p in exact or (p.startswith(prefixes) and p.endswith(('.py','.json','.jsonl','.md','.yml','.yaml','.txt')))]
+          with zipfile.ZipFile(out/'source_subset.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in selected:z.write(root/p,p)
+          report={'source_head':os.environ['SOURCE_HEAD'],'files':len(selected),'native_exit':int((out/'native-exit.txt').read_text()),'raw_image_bytes_included':False,'active_branch_modified':False,'generation_count':0,'purpose':'recover and correctly scope existing real design references; not a quality PASS'}
+          (out/'inspection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: visual-baseline-source-evidence
+          path: ${{ runner.temp }}/visual-baseline-evidence
+          retention-days: 30
