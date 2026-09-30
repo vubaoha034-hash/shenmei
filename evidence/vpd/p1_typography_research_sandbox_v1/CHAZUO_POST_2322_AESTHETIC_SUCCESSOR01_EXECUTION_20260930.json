@@ -1,0 +1,111 @@
+{
+  "schema_version": "vpd-chazuo-post-2322-aesthetic-successor-execution/v1",
+  "task_id": "VPD-CHAZUO-POST-2322-AESTHETIC-SUCCESSOR-01",
+  "recorded_at": "2026-09-30T08:09:00Z",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "starting_head": "c8f31f30f15b9c9a95a291d7ae45b780dd54749c",
+  "starting_lock_revision": 183,
+  "starting_checkpoint_sequence": 205,
+  "human_scope": {
+    "source_frame_id": "232:2",
+    "exact_quote": "高级感稍微有一点设计感了。唯一值得肯定的是。",
+    "preserved_positive_signal": "图像、字标和留白开始形成一点设计关系，不是简单贴字",
+    "whole_candidate_pass": false,
+    "baseline_promotion_allowed": false
+  },
+  "required_reference_pixels": {
+    "232:2": {
+      "visible": true,
+      "role": "PARTIAL_POSITIVE_LOCAL_DESIGN_RELATION_REFERENCE",
+      "natural_size": [
+        1200,
+        1600
+      ]
+    },
+    "197:2": {
+      "visible": true,
+      "role": "HISTORICAL_COMPLETE_POSTER_REFERENCE",
+      "natural_size": [
+        1024,
+        1536
+      ]
+    },
+    "201:2": {
+      "visible": true,
+      "role": "EDITABLE_COMPLETE_POSTER_REFERENCE",
+      "natural_size": [
+        1024,
+        1536
+      ]
+    },
+    "203:2": {
+      "visible": true,
+      "role": "APPROVED_CHAZUO_WORDMARK_SOURCE",
+      "natural_size": [
+        300,
+        520
+      ]
+    }
+  },
+  "pre_generation_visual_extraction": {
+    "must_preserve": [
+      "wordmark participates in photographic negative-space/action relation rather than sitting as an unrelated label",
+      "real tea-production specificity",
+      "restrained support typography; target support_copy_count=0"
+    ],
+    "must_change": [
+      "232:2 remains too close to close-up photography plus one large wordmark",
+      "needs stronger structure through scale contrast, crop hierarchy, layered depth and deliberate negative-space rhythm",
+      "wordmark should not mechanically return to upper-left placement"
+    ],
+    "planned_design_relation": "Use one real tea-production photograph as both the full photographic field and a deliberate secondary crop/scale layer; bridge the 203:2 wordmark across the worker-hand-leaf action axis so the title becomes part of the visual structure rather than an annotation."
+  },
+  "image_generation": {
+    "allowed_count": 1,
+    "generation_count": 1,
+    "second_candidate": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "gen_id": "9c5f847b-73eb-43c3-9dd7-2c3080d34258",
+    "chatgpt_file_id": "file_0000000015fc81f5a2b0d3885d1bd78a",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "sha256": "a8c18dbb7469d158ac59110e0803db316627811b8a10b4c4d6e3e09d2a129a2b",
+    "intended_stage": "PHOTO_ONLY_RENDER",
+    "readable_text_detected": true,
+    "readable_text_detected_value": "茶作",
+    "text_gate": "FAIL_CLOSED_PHOTO_ONLY_RENDER_CONTAINS_FINAL_TYPOGRAPHY"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "candidate_frame_count": 0,
+    "figma_write": false,
+    "screenshot_readback_count": 0,
+    "source_wordmark_node_id": "203:2",
+    "protected_old_nodes_unchanged": true,
+    "protected_frame_ids": [
+      "232:2",
+      "197:2",
+      "201:2",
+      "203:2"
+    ]
+  },
+  "result": {
+    "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+    "human_review_return_allowed": false,
+    "generated_image_promoted": false,
+    "second_generation_allowed": false,
+    "reason": "The single authorized generated photo contains readable final typography ('茶作'), which violates the explicit photo-only hard gate. The run therefore stops before any Figma candidate is created.",
+    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
+  },
+  "claim_limits": [
+    "No claim that the generated photo is aesthetically accepted.",
+    "No claim that 232:2 is an overall baseline.",
+    "No Figma successor candidate exists in this run.",
+    "No second generation is authorized or attempted."
+  ]
+}
