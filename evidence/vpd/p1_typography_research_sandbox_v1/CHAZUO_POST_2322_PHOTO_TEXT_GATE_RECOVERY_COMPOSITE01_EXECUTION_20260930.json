@@ -1,0 +1,103 @@
+{
+  "schema_version": "vpd-chazuo-photo-text-gate-recovery-composite-execution/v1",
+  "task_id": "VPD-CHAZUO-POST-2322-PHOTO-TEXT-GATE-RECOVERY-COMPOSITE-01",
+  "recorded_at": "2026-09-30T09:18:00Z",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "starting_head": "14f3b3b25e6fac7e6e8bb9d6a83f4ca286ea7bce",
+  "starting_lock_revision": 184,
+  "starting_checkpoint_sequence": 206,
+  "authority": {
+    "human_quote_on_232_2": "高级感稍微有一点设计感了。唯一值得肯定的是。",
+    "scope": "PARTIAL_POSITIVE_DESIGN_RELATION_ONLY",
+    "whole_frame_pass": false,
+    "baseline_promotion_allowed": false
+  },
+  "reference_pixels": {
+    "232:2": {
+      "visible": true,
+      "role": "PARTIAL_POSITIVE_LOCAL_DESIGN_RELATION_REFERENCE",
+      "size": [
+        1200,
+        1600
+      ]
+    },
+    "197:2": {
+      "visible": true,
+      "role": "HISTORICAL_COMPLETE_POSTER_REFERENCE",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "201:2": {
+      "visible": true,
+      "role": "EDITABLE_COMPLETE_POSTER_REFERENCE",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "203:2": {
+      "visible": true,
+      "role": "APPROVED_CHAZUO_WORDMARK_SOURCE",
+      "size": [
+        300,
+        520
+      ]
+    }
+  },
+  "pre_generation_visual_relation": {
+    "preserve": "image-wordmark-negative-space relation beginning to act as one composition",
+    "change": "avoid single close-up photo plus one large wordmark; require stronger action axis, scale contrast and layered spatial structure"
+  },
+  "image_generation": {
+    "authorized_count": 1,
+    "image_generation_count": 1,
+    "second_generation": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "gen_id": "72b2cf7d-4172-43db-a3e8-9a91946c26e8",
+    "chatgpt_file_id": "file_00000000c48481fd9156cb9c67fec7cd",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "aspect": "3:4",
+    "sha256": "8d72ec551414c3fb367c4747d354bf36a85de3656b20d986a13d9bcfb65fc96b",
+    "intended_stage": "PHOTO_ONLY_RENDER",
+    "readable_text_detected": true,
+    "readable_text": "茶作",
+    "photo_only_gate": "FAIL_CLOSED_PHOTO_ONLY_RENDER_CONTAINS_FINAL_TYPOGRAPHY"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "write_performed": false,
+    "candidate_frame_count": 0,
+    "screenshot_readback_count": 0,
+    "protected_old_nodes_unchanged": true,
+    "protected_frame_ids": [
+      "232:2",
+      "197:2",
+      "201:2",
+      "203:2"
+    ]
+  },
+  "result": {
+    "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+    "failure_stage": "PHOTO_ONLY_RENDER",
+    "reason": "The exactly-one authorized generated image contains clear readable 茶作 text. Per task hard gate, Figma composition is not entered.",
+    "generated_image_reuse_allowed": false,
+    "human_review_return_allowed": false,
+    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
+  },
+  "constraints_confirmed": {
+    "new_rules_added": false,
+    "new_gate_added": false,
+    "new_validator_added": false,
+    "old_candidate_modified": false,
+    "prior_illegal_generated_image_reused": false,
+    "second_candidate_created": false
+  }
+}

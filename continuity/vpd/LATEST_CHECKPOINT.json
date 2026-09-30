@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 206,
+  "sequence": 207,
   "recorded_at": "2026-09-30",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [],
-  "current_focus": "VPD-CHAZUO-POST-2322-AESTHETIC-SUCCESSOR-01 已执行到唯一一次生成；底图出现可读“茶作”字样，按photo-only硬门FAIL_CLOSED。232:2仍只保留局部设计感正信号，不升级为完整基线。",
+  "current_focus": "茶作实际视觉成品主线保持不变；本轮唯一photo-only生成再次出现可读“茶作”字样，按硬门FAIL_CLOSED，未形成可送真人审美的新完整Figma候选。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -339,7 +339,7 @@
     "p1_chazuo_crop_composite_stream_recovery04_complete_waiting_human_review"
   ],
   "incomplete": [
-    "本轮没有合法的新Figma完整候选可返回真人审美；失败后禁止第二次生成。"
+    "本轮没有合法的新3:4完整Figma候选可返回刘先生审美；失败后禁止第二次生成。"
   ],
   "blocked": [
     "PHOTO_ONLY_GENERATION_CONTAINS_READABLE_TEXT_CHAZUO"
@@ -412,10 +412,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_POST_2322_AESTHETIC_SUCCESSOR01_FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+  "status": "VPD_CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_FAIL_CLOSED_TEXT",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "529fd37fc909309c65268b84ddc70e61fb319c66e83a089dc37a2ae371484225"
+    "sha256": "13eebac8a08f9acc3f3c77154acd77c673d227f6e2ee2d551da32c0645716f74"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -952,7 +952,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "四个必需Figma参考像素均已实际读取；image_generation_count=1；生成图文字门失败；Figma candidate_frame_count=0；second_candidate=0；STOP。",
+  "current_stage": "四个必需参考像素均当前可见；image_generation_count=1；photo-only文字门失败；Figma candidate_frame_count=0；screenshot_readback=0；second_generation=0；STOP。",
   "updated_at": "2026-09-30",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1824,14 +1824,14 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "232:2 actual Figma pixels loaded",
-    "197:2 actual Figma pixels loaded",
-    "201:2 actual Figma pixels loaded",
-    "203:2 actual wordmark pixels loaded",
-    "exactly one photo-only generation attempted",
-    "readable 茶作 text detected in generated image and hard gate triggered FAIL_CLOSED",
-    "no Figma write, no candidate frame, no screenshot readback because composition stage was never legally entered",
-    "no second generation or hidden variant"
+    "current 232:2 actual pixels loaded",
+    "current 197:2 actual pixels loaded",
+    "current 201:2 actual pixels loaded",
+    "current 203:2 actual wordmark pixels loaded",
+    "exactly one authorized 3:4 photo-only generation executed",
+    "clear readable 茶作 text detected; hard gate triggered FAIL_CLOSED",
+    "no Figma canvas write, no new candidate frame and no candidate screenshot readback",
+    "no second generation, retry, reroll or hidden variant"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -1904,9 +1904,9 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_AESTHETIC_SUCCESSOR01_EXECUTION_20260930.json",
-    "git_blob_sha": "6bba3ce1354de72cb17ecd03fbf68adaa2e109ab",
-    "sha256": "3b42e74cf149d245685322c1b9b4eb170d24f214cb33abe157091410372195ec"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_EXECUTION_20260930.json",
+    "git_blob_sha": "57f55098099a389ec948cfddee3a24e5dfbb28e2",
+    "sha256": "e7e95a527232c55383e3875c20d05d7908f689e83f8b6b6c5c12407947a12c7b"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2188,6 +2188,27 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_AESTHETIC_SUCCESSOR01_EXECUTION_20260930.json",
       "git_blob_sha": "6bba3ce1354de72cb17ecd03fbf68adaa2e109ab",
       "sha256": "3b42e74cf149d245685322c1b9b4eb170d24f214cb33abe157091410372195ec"
+    },
+    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
+  },
+  "chazuo_post_2322_photo_text_gate_recovery_composite01": {
+    "task_id": "VPD-CHAZUO-POST-2322-PHOTO-TEXT-GATE-RECOVERY-COMPOSITE-01",
+    "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+    "starting_head": "14f3b3b25e6fac7e6e8bb9d6a83f4ca286ea7bce",
+    "image_generation_count": 1,
+    "gen_id": "72b2cf7d-4172-43db-a3e8-9a91946c26e8",
+    "generated_sha256": "8d72ec551414c3fb367c4747d354bf36a85de3656b20d986a13d9bcfb65fc96b",
+    "readable_text_detected": "茶作",
+    "figma_candidate_frame_count": 0,
+    "figma_write": false,
+    "protected_old_nodes_modified": false,
+    "second_generation": 0,
+    "screenshot_readback": 0,
+    "human_review_return_allowed": false,
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_EXECUTION_20260930.json",
+      "git_blob_sha": "57f55098099a389ec948cfddee3a24e5dfbb28e2",
+      "sha256": "e7e95a527232c55383e3875c20d05d7908f689e83f8b6b6c5c12407947a12c7b"
     },
     "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
   }
