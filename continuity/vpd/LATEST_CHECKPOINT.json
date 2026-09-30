@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 207,
+  "sequence": 208,
   "recorded_at": "2026-09-30",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [],
-  "current_focus": "茶作实际视觉成品主线保持不变；本轮唯一photo-only生成再次出现可读“茶作”字样，按硬门FAIL_CLOSED，未形成可送真人审美的新完整Figma候选。",
+  "current_focus": "茶作实际视觉成品主线：已通过真实可追溯摄影路径形成一个新的完整3:4 Figma候选 241:2；机器只确认没有明显回退，等待刘先生实际像素审美。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -339,12 +339,10 @@
     "p1_chazuo_crop_composite_stream_recovery04_complete_waiting_human_review"
   ],
   "incomplete": [
-    "本轮没有合法的新3:4完整Figma候选可返回刘先生审美；失败后禁止第二次生成。"
+    "刘先生尚未对Figma frame 241:2做实际像素审美结论；不得自动晋升候选。"
   ],
-  "blocked": [
-    "PHOTO_ONLY_GENERATION_CONTAINS_READABLE_TEXT_CHAZUO"
-  ],
-  "next_required_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION",
+  "blocked": [],
+  "next_required_action": "RETURN_EXACT_ONE_REAL_PHOTO_CHAZUO_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -412,10 +410,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_FAIL_CLOSED_TEXT",
+  "status": "VPD_CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_MACHINE_SCREEN_PASS_AWAITING_HUMAN",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "13eebac8a08f9acc3f3c77154acd77c673d227f6e2ee2d551da32c0645716f74"
+    "sha256": "753376191a532c5debd1bcffbc184e7cfd129f83f2e9ce8d8c4735401dac1384"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -952,7 +950,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "四个必需参考像素均当前可见；image_generation_count=1；photo-only文字门失败；Figma candidate_frame_count=0；screenshot_readback=0；second_generation=0；STOP。",
+  "current_stage": "参考像素可见；项目内素材无合格项后选定 exactly 1 张Pexels真实制茶摄影；image_generation_count=0；Figma candidate_frame_count=1；candidate=241:2；support_text=0；screenshot_readback=1；明显退步筛查PASS；等待真人审美。",
   "updated_at": "2026-09-30",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1824,14 +1822,16 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "current 232:2 actual pixels loaded",
-    "current 197:2 actual pixels loaded",
-    "current 201:2 actual pixels loaded",
-    "current 203:2 actual wordmark pixels loaded",
-    "exactly one authorized 3:4 photo-only generation executed",
-    "clear readable 茶作 text detected; hard gate triggered FAIL_CLOSED",
-    "no Figma canvas write, no new candidate frame and no candidate screenshot readback",
-    "no second generation, retry, reroll or hidden variant"
+    "current actual pixels loaded for 232:2, 197:2, 201:2 and 203:2",
+    "exactly one legal traceable real tea-processing photograph selected from Pexels after internal asset search failed to find an eligible source",
+    "source actual pixels verified at 5726x4160; no embedded text, logo or watermark",
+    "Pexels source/author/license recorded",
+    "image_generation_count=0",
+    "exactly one new Figma top-level candidate frame: 241:2 at 1200x1600",
+    "approved 203:2 wordmark copied to 243:3; original unchanged",
+    "support_text_count=0",
+    "exactly one post-composition candidate screenshot readback completed",
+    "machine obvious-regression screen PASS; human aesthetic review pending"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -1904,9 +1904,9 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_EXECUTION_20260930.json",
-    "git_blob_sha": "57f55098099a389ec948cfddee3a24e5dfbb28e2",
-    "sha256": "e7e95a527232c55383e3875c20d05d7908f689e83f8b6b6c5c12407947a12c7b"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_EXECUTION_20260930.json",
+    "git_blob_sha": "deccbadf386877fe5813c3ebd3358bddf1f08273",
+    "sha256": "f0830b7373f1c1d5f4d7ff11127a6a3a196a13d25829e4b0efc9fa40b7b001d3"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2211,5 +2211,40 @@
       "sha256": "e7e95a527232c55383e3875c20d05d7908f689e83f8b6b6c5c12407947a12c7b"
     },
     "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
+  },
+  "chazuo_real_photo_source_figma_composite01": {
+    "task_id": "VPD-CHAZUO-REAL-PHOTO-SOURCE-FIGMA-COMPOSITE-01",
+    "status": "COMPLETE_MACHINE_REGRESSION_SCREEN_PASS_AWAITING_HUMAN_AESTHETIC_REVIEW",
+    "starting_head": "a764391be0f002e7eb4421d3d9784d2c7ffbc5dd",
+    "source_photo_count": 1,
+    "source_platform": "Pexels",
+    "source_author": "Gu Ko",
+    "source_page_url": "https://www.pexels.com/photo/hands-sorting-fresh-tea-leaves-in-yunnan-31756539/",
+    "source_license": "Pexels License",
+    "source_pixels_verified": true,
+    "source_dimensions": [
+      5726,
+      4160
+    ],
+    "source_figma_image_hash": "e39dcabc1eb55372e775e6179fa42cc852186758",
+    "image_generation_count": 0,
+    "candidate_frame_id": "241:2",
+    "candidate_dimensions": [
+      1200,
+      1600
+    ],
+    "candidate_count": 1,
+    "support_text_count": 0,
+    "screenshot_readback_count": 1,
+    "protected_old_nodes_modified": false,
+    "machine_regression_screen": "PASS_NO_OBVIOUS_REGRESSION_HUMAN_TASTE_PENDING",
+    "human_review_return_allowed": true,
+    "candidate_promoted": false,
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_EXECUTION_20260930.json",
+      "git_blob_sha": "deccbadf386877fe5813c3ebd3358bddf1f08273",
+      "sha256": "f0830b7373f1c1d5f4d7ff11127a6a3a196a13d25829e4b0efc9fa40b7b001d3"
+    },
+    "next_legal_action": "RETURN_EXACT_ONE_REAL_PHOTO_CHAZUO_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
   }
 }
