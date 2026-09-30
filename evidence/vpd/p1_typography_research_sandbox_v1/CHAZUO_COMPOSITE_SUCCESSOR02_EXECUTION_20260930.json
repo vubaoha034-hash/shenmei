@@ -1,0 +1,101 @@
+{
+  "schema_version": "vpd-chazuo-composite-successor02-execution/v1",
+  "recorded_at": "2026-09-30",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "source_head": "bf7a05bd1e56c01e5db910d0349645dc01e51b00",
+  "task_id": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02",
+  "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+  "preflight": {
+    "head_match": true,
+    "expected_lock_revision": 180,
+    "observed_lock_revision": 180,
+    "expected_checkpoint_sequence": 202,
+    "observed_checkpoint_sequence": 202,
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "reference_pixels": {
+      "197:2": {
+        "visible": true,
+        "read_in_current_chat": true,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "role": "HISTORICAL_ORIGINAL_PIXEL_REFERENCE"
+      },
+      "201:2": {
+        "visible": true,
+        "read_in_current_chat": true,
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "role": "EDITABLE_RECONSTRUCTED_COMPLETE_POSTER"
+      },
+      "203:2": {
+        "visible": true,
+        "read_in_current_chat": true,
+        "dimensions": [
+          300,
+          520
+        ],
+        "role": "APPROVED_EDITABLE_CHAZUO_WORDMARK_VECTOR"
+      }
+    }
+  },
+  "protected_sources": {
+    "nodes": [
+      "197:2",
+      "201:2",
+      "203:2"
+    ],
+    "modified_by_this_task": false,
+    "figma_write": false
+  },
+  "generation": {
+    "generation_count": 1,
+    "hidden_variant_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "automatic_retry": 0,
+    "retry": 0,
+    "second_candidate": 0,
+    "gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
+    "chatgpt_file_id": "file_00000000eaa48230a920ebab8c209a1b",
+    "local_runtime_path": "/mnt/data/a_wide_cinematic_earthy_close_up_scene_of_tradit.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82"
+  },
+  "hard_gate_failure": {
+    "stage": "PHOTO_ONLY_GENERATION",
+    "gate": "NO_READABLE_TEXT_LOGO_SEAL_CALLIGRAPHY_OR_BRAND_TEXT",
+    "result": "FAIL",
+    "observed_readable_text": [
+      "茶",
+      "作"
+    ],
+    "exact_failure": "The single generated photo base visibly embedded readable Chinese calligraphy '茶作'. The task required photo-only pixels with zero readable text, so execution stops before any Figma composition.",
+    "additional_non_promotion_notes": [
+      "No Figma candidate frame was created.",
+      "The generated raster is failure evidence only and is not a visual candidate for human aesthetic review.",
+      "No second generation is allowed."
+    ]
+  },
+  "composite": {
+    "figma_candidate_frame_count": 0,
+    "wordmark_copy_from_203_2": false,
+    "regression_screen_run": false,
+    "regression_screen_reason": "NOT_RUN_PHOTO_ONLY_HARD_GATE_FAILED_BEFORE_COMPOSITION"
+  },
+  "human_review_return_allowed": false,
+  "candidate_promoted": false,
+  "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND",
+  "claim_limits": [
+    "This is a correctness fail-closed result, not a claim about Liu Xiansheng's taste.",
+    "No claim that the failed raster is better or worse aesthetically than 197:2 or 201:2.",
+    "No protected baseline or approved wordmark was modified."
+  ]
+}
