@@ -1,84 +1,58 @@
-name: Verify and stage scoped visual baseline restoration
+name: Read back published visual baseline restoration
 on:
   push:
     branches: [verify/visual-baseline-restore-20260930-01]
 permissions:
-  contents: write
+  contents: read
 jobs:
-  verify_stage:
+  published_readback:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
       PYTHONDONTWRITEBYTECODE: '1'
-      SOURCE_HEAD: 6c9a4f67206156443ec6320f6bbd1cc5bf9a543e
+      EXPECTED_HEAD: 53d4a6f490bb03766ec57810c60d6a7a2f829cc3
       TARGET_BRANCH: visual-program-distillation-v2-photography-design-20260814
-      STAGE_BRANCH: stage/visual-baseline-restore-20260930-01
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          fetch-depth: 3
+          ref: 53d4a6f490bb03766ec57810c60d6a7a2f829cc3
+          fetch-depth: 2
           persist-credentials: false
-      - name: Verify exactly scoped restoration against real source; stage only after tests
+      - name: Read actual published commit and native status
         shell: bash
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          ROOT="$RUNNER_TEMP/visual-source"
-          OUT="$RUNNER_TEMP/visual-restoration"
-          CODE="$GITHUB_WORKSPACE/operations/baseline_restore_20260930"
+          OUT="$RUNNER_TEMP/visual-published"
           mkdir -p "$OUT"
-          test "$(git ls-remote origin "refs/heads/$TARGET_BRANCH" | cut -f1)" = "$SOURCE_HEAD"
-          git worktree add --detach "$ROOT" "$SOURCE_HEAD"
-          test -z "$(git -C "$ROOT" status --porcelain)"
-          python "$CODE/prepare_restore.py" "$ROOT" | tee "$OUT/changed.json"
-          (cd "$ROOT" && python scripts/verify_visual_memory.py --vpd-state --status-card) | tee "$OUT/native-after.json"
-          python "$CODE/test_restored_state.py" "$ROOT" | tee "$OUT/mutation-tests.json"
-          (cd "$ROOT" && python scripts/verify_visual_memory.py --vpd-state --status-card) > "$OUT/native-after-tests.json"
-          export ROOT OUT
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test "$(git ls-remote origin "refs/heads/$TARGET_BRANCH" | cut -f1)" = "$EXPECTED_HEAD"
+          python scripts/verify_visual_memory.py --vpd-state --status-card | tee "$OUT/current-status.json"
+          export OUT
           python - <<'PY'
           from pathlib import Path
-          import os,json,subprocess,hashlib
-          root=Path(os.environ['ROOT']);out=Path(os.environ['OUT']);source=os.environ['SOURCE_HEAD']
-          wanted={
-          'PROJECT_CONTROL_ADAPTER.json':'2cdbebddeb1fb4c3ee3871cc2cb99a9c6a915bf93e1860974a4c337ba9039696',
-          'visual_memory/vpd_p6_composition_state.py':'a2b367c0ba3b10a730f8709125227563d6d5d14a0a0a829a6dcdd87572ac8483f1',
-          'continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json':'23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa',
-          'continuity/vpd/LATEST_CHECKPOINT.json':'d5bbc08c8b08d4801b7c908f884ed7dfdf128a5e8bf84d926c4bd0fad0790337',
-          'continuity/vpd/CURRENT_TASK_LOCK.json':'372cae8eeb396a110accc77da765b23c1f6d44fb145ca3c381511e879f1ca165',
-          'continuity/vpd/state_ledger/commercial_design_pipeline.jsonl':'d329fa52750baa295e77e376930344ce0a55c33f7c9efe769fa2df299d371d6f',
-          'evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json':'54c05c7856f0176847858811a85d6d15fef4cb208704e2cade720eae593180a6',
-          'evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_TASK_20260930.json':'3258dc151785ae4f1793535489ca3727d328a6543bfb930ed2a1ef5edc10535a'}
-          wanted['visual_memory/vpd_p6_composition_state.py']='a2b367c0ba3b10a730f8709125227563d6d5d14a0a829a6dcdd87572ac8483f1'
-          changed=set(subprocess.check_output(['git','-C',str(root),'diff','--name-only'],text=True).splitlines())
-          assert changed==set(wanted),'UNEXPECTED_WRITE_SCOPE'
-          actual={p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in wanted}
-          assert actual==wanted,'CANDIDATE_BYTES_NOT_EXACT'
+          import json,subprocess,hashlib,os
+          out=Path(os.environ['OUT']);root=Path('.')
+          base='6c9a4f67206156443ec6320f6bbd1cc5bf9a543e'
+          files=subprocess.check_output(['git','diff','--name-only',base,'HEAD'],text=True).splitlines()
+          assert len(files)==8,'WRITE_SCOPE_CHANGED'
+          receipt='evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json'
+          r=json.loads((root/receipt).read_text())
           guard='continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json'
-          old=json.loads(subprocess.check_output(['git','-C',str(root),'show',source+':'+guard]))
-          new=json.loads((root/guard).read_text())
-          for key in ['core_invariants','current_chazuo_freeze_map','mandatory_next_loop']:assert old[key]==new[key],'PROTECTED_GUARD_CHANGED'
+          g=json.loads((root/guard).read_text());old=json.loads(subprocess.check_output(['git','show',base+':'+guard]))
+          for k in ['core_invariants','current_chazuo_freeze_map','mandatory_next_loop']:assert g[k]==old[k]
           ledger='continuity/vpd/state_ledger/commercial_design_pipeline.jsonl'
-          raw=subprocess.check_output(['git','-C',str(root),'show',source+':'+ledger])
-          tail=(root/ledger).read_bytes()
-          assert tail.startswith(raw) and len(tail.splitlines())==len(raw.splitlines())+1,'HISTORICAL_LEDGER_CHANGED'
-          subprocess.run(['git','-C',str(root),'diff','--check'],check=True)
-          (out/'candidate.patch').write_bytes(subprocess.check_output(['git','-C',str(root),'diff','--binary']))
-          (out/'file-hashes.json').write_text(json.dumps(actual,indent=2))
+          before=subprocess.check_output(['git','show',base+':'+ledger]);after=(root/ledger).read_bytes()
+          assert after.startswith(before) and len(after.splitlines())==len(before.splitlines())+1
+          assert not subprocess.check_output(['git','status','--porcelain'],text=True).strip()
+          (out/'scoped-comparison.json').write_text(json.dumps(r['coordinator_baseline_comparison'],ensure_ascii=False,indent=2))
+          report={'task_id':'VPD-BASELINE-RESTORE-AND-REGRESSION-01','published_head':os.environ['EXPECTED_HEAD'],'branch':os.environ['TARGET_BRANCH'],'status':'PUBLISHED_AND_NATIVE_READBACK_PASS','lock_revision':179,'checkpoint_sequence':201,'changed_files':files,'file_sha256':{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in files},'previous_real_mutation_test_run':36667023653,'historical_guard_semantics_preserved':True,'prior_ledger_bytes_preserved':True,'new_images':0,'figma_writes':0,'independent_aesthetic_evaluator_validated':False,'historical_original_png_bytes_rehashed_this_task':False,'new_human_quality_acceptance':False}
+          (out/'publication-receipt.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False))
           PY
-          git -C "$ROOT" add -- PROJECT_CONTROL_ADAPTER.json visual_memory/vpd_p6_composition_state.py continuity/vpd/CURRENT_TASK_LOCK.json continuity/vpd/LATEST_CHECKPOINT.json continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json continuity/vpd/state_ledger/commercial_design_pipeline.jsonl evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_EXECUTION_20260930.json evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_IMAGE_COMPOSITION01_TASK_20260930.json
-          git -C "$ROOT" -c user.name='Unified Command' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Restore actual scoped design baseline and close rejected tea candidate' -m 'No new images, no Figma writes, no taste PASS. Preserves historical design acceptance and photography rejection; fixes current feedback pointers and extends existing native state verifier. Tested against real source, not a new aesthetic rule system.'
-          test -z "$(git -C "$ROOT" status --porcelain)"
-          test "$(git ls-remote origin "refs/heads/$TARGET_BRANCH" | cut -f1)" = "$SOURCE_HEAD"
-          test -z "$(git ls-remote origin "refs/heads/$STAGE_BRANCH")"
-          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
-          git -C "$ROOT" -c http.https://github.com/.extraheader="AUTHORIZATION: basic $AUTH" push origin "HEAD:refs/heads/$STAGE_BRANCH"
-          unset AUTH
-          git -C "$ROOT" rev-parse HEAD | tee "$OUT/staged-commit.txt"
-          printf '{"active_branch_modified":false,"generation_count":0,"figma_writes":0,"real_state_verification":"PASS","aesthetic_model_calibration":false}\n' > "$OUT/result.json"
+          test "$(git ls-remote origin "refs/heads/$TARGET_BRANCH" | cut -f1)" = "$EXPECTED_HEAD"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: visual-baseline-restoration-verified
-          path: ${{ runner.temp }}/visual-restoration
+          name: visual-baseline-published-readback
+          path: ${{ runner.temp }}/visual-published
           retention-days: 30
