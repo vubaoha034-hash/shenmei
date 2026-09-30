@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 180,
+  "revision": 181,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,8 +128,8 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "197:2与201:2实际像素已读取；唯一一次茶作新候选生成后触发已知明显回退，已FAIL_CLOSED，不进入真人审美，不允许第二次生成。",
-  "status": "VPD_CHAZUO_SCOPED_BASELINE_DESIGN_SUCCESSOR01_FAIL_CLOSED_KNOWN_REGRESSION",
+  "current_stage": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02：197:2、201:2与203:2均已实际读取；唯一一次photo-only生成违反禁文字硬门，画面直接嵌入可读“茶作”，因此在Figma写入前FAIL_CLOSED。",
+  "status": "VPD_CHAZUO_COMPOSITE_SUCCESSOR02_FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
   "p6_allowed": false,
   "next_required_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND",
   "execution_boundary": {
@@ -161,9 +161,10 @@
   "completed_this_revision": [
     "197:2 actual Figma pixels loaded in current execution chat",
     "201:2 actual Figma pixels loaded in current execution chat",
-    "exactly one 3:4 tea visual generated",
-    "single known-regression screen triggered FAIL_CLOSED",
-    "no second candidate, no retry, no Figma canvas write"
+    "203:2 approved editable 茶作 wordmark pixels loaded in current execution chat",
+    "exactly one image generation executed",
+    "photo-only hard gate failed because readable 茶作 text was embedded by the image model",
+    "no Figma candidate frame created, no protected node modified, no retry and no second candidate"
   ],
   "updated_at": "2026-09-30",
   "workflow": {
@@ -2544,5 +2545,62 @@
       "no claim that Liu Xiansheng would like the candidate",
       "no claim that the candidate exceeds historical best"
     ]
+  },
+  "chazuo_composite_successor02": {
+    "task_id": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02",
+    "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+    "started_from_head": "bf7a05bd1e56c01e5db910d0349645dc01e51b00",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "reference_pixels": {
+      "197:2": {
+        "visible": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "201:2": {
+        "visible": true,
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "203:2": {
+        "visible": true,
+        "dimensions": [
+          300,
+          520
+        ],
+        "role": "APPROVED_EDITABLE_CHAZUO_WORDMARK_VECTOR"
+      }
+    },
+    "generation": {
+      "generation_count": 1,
+      "hidden_variant_count": 0,
+      "reroll": 0,
+      "best_of_n": false,
+      "automatic_retry": 0,
+      "retry": 0,
+      "second_candidate": 0,
+      "gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
+      "chatgpt_file_id": "file_00000000eaa48230a920ebab8c209a1b",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82"
+    },
+    "hard_gate_failure": "READABLE_CHAZUO_TEXT_EMBEDDED_IN_REQUIRED_PHOTO_ONLY_RASTER",
+    "figma_write": false,
+    "figma_candidate_frame_count": 0,
+    "protected_old_nodes_modified": false,
+    "human_review_return_allowed": false,
+    "candidate_promoted": false,
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_COMPOSITE_SUCCESSOR02_EXECUTION_20260930.json",
+      "sha256": "5bf43c674aa9f4a5d7bcb2428f9614e60b71393594363fd53204d1784182edbb"
+    },
+    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND"
   }
 }
