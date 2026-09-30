@@ -1,0 +1,144 @@
+{
+  "schema_version": "vpd-chazuo-crop-composite-stream-recovery-execution/v1",
+  "recorded_at": "2026-09-30",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "task_id": "VPD-CHAZUO-CROP-COMPOSITE-STREAM-RECOVERY-04",
+  "source_head": "4456801824288240eef76b965a542849ffde395e",
+  "status": "COMPLETE_MACHINE_REGRESSION_SCREEN_PASS_AWAITING_HUMAN_AESTHETIC_REVIEW",
+  "preflight": {
+    "head_match": true,
+    "expected_lock_revision": 181,
+    "observed_lock_revision": 181,
+    "expected_checkpoint_sequence": 203,
+    "observed_checkpoint_sequence": 203,
+    "image_generation_count": 0,
+    "existing_raster": {
+      "gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
+      "sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "actual_pixels_reconfirmed_in_current_chat": true,
+      "original_embedded_text_location": "LEFT_SIDE",
+      "photography_subject": "HANDS_SORTING_FRESH_TEA_LEAVES_WITH_STEAM_AND_REAL_PRODUCTION_CONTEXT"
+    },
+    "figma_references": {
+      "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+      "197:2": {
+        "visible": true,
+        "role": "HISTORICAL_DESIGN_REFERENCE"
+      },
+      "201:2": {
+        "visible": true,
+        "role": "EDITABLE_DESIGN_REFERENCE"
+      },
+      "203:2": {
+        "visible": true,
+        "role": "APPROVED_EDITABLE_CHAZUO_WORDMARK_VECTOR"
+      }
+    }
+  },
+  "stream_recovery": {
+    "prior_task_id": "VPD-CHAZUO-EXISTING-RASTER-CROP-COMPOSITE-03",
+    "github_durable_state_from_prior_task": false,
+    "figma_residual_probe": {
+      "attributable_candidate_count": 1,
+      "candidate_frame_id": "232:2",
+      "candidate_name": "VPD_CHAZUO_EXISTING_RASTER_CROP_COMPOSITE_03_CANDIDATE",
+      "candidate_dimensions": [
+        1200,
+        1600
+      ],
+      "initial_photo_node_id": "232:3",
+      "initial_photo_fill_state": "SOLID_PLACEHOLDER_ONLY",
+      "approved_wordmark_clone_id": "232:4",
+      "second_frame_created_in_recovery": false
+    }
+  },
+  "execution": {
+    "image_generation_count": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "second_candidate": 0,
+    "candidate_frame_count": 1,
+    "candidate_frame_id": "232:2",
+    "candidate_aspect": "3:4",
+    "photo_node": {
+      "id": "232:3",
+      "name": "EXISTING_RASTER_RIGHT_HALF_CROP_NO_TEXT",
+      "image_hash": "97235c7d3b48ad169cd2362b8a1240fc9ffd4aa0",
+      "source_size_bytes": 2150913,
+      "bounds_in_candidate": {
+        "x": -1200,
+        "y": 0,
+        "width": 2400,
+        "height": 1600
+      },
+      "scale_mode": "FILL",
+      "crop_geometry": "The source 3:2 raster is mapped to a 2400x1600 photo rectangle and shifted x=-1200 inside a clipped 1200x1600 frame, exposing only source x=768..1536 (the right half).",
+      "masking_or_cover_block_used_to_hide_wrong_text": false,
+      "original_left_embedded_text_pixels_visible": false
+    },
+    "wordmark": {
+      "source_node_id": "203:2",
+      "clone_node_id": "232:4",
+      "source_modified": false,
+      "position": {
+        "x": 82,
+        "y": 150
+      },
+      "size": [
+        384,
+        665.5999755859375
+      ],
+      "primary_visual_role": true
+    },
+    "reading_path_axis": {
+      "node_id": "232:15",
+      "position": {
+        "x": 126,
+        "y": 865
+      },
+      "size": [
+        2,
+        210
+      ],
+      "role": "links the wordmark's vertical descent into the fresh-leaf process field"
+    },
+    "protected_nodes_modified": false,
+    "protected_nodes": [
+      "197:2",
+      "201:2",
+      "203:2"
+    ]
+  },
+  "final_pixel_readback": {
+    "screenshot_run_count": 1,
+    "figma_frame_id": "232:2",
+    "screenshot_locator": "Figma file uyDxOoN1iNDPpEHTKSUWg1 / frame 232:2",
+    "natural_dimensions": [
+      1200,
+      1600
+    ],
+    "contents_only": true,
+    "actual_pixels_visible": true
+  },
+  "known_regression_screen": {
+    "run_count": 1,
+    "embedded_wrong_text": "PASS_NOT_VISIBLE_BY_GEOMETRIC_CROP",
+    "wordmark_visual_role": "PASS_PRIMARY_STRUCTURE",
+    "tea_process_relation": "PASS_REAL_HANDS_AND_FRESH_LEAF_ACTION_REMAINS_THE_VISUAL_ANCHOR_AND_INTERACTS_WITH_WORDMARK_PATH",
+    "generic_eastern_tea_ad_regression": "PASS_NO_MOUNTAIN_TEA_CUP_WARM_SUN_LEAF_BRANCH_WOOD_TABLE_COMBINATION",
+    "photographic_realism": "PASS_NO_PIXEL_REGENERATION_OR_REALISM_DEGRADATION_FROM_SOURCE_RASTER",
+    "overall": "PASS_NO_OBVIOUS_KNOWN_REGRESSION"
+  },
+  "human_review": {
+    "machine_screen_is_not_human_taste_verdict": true,
+    "liu_xiansheng_aesthetic_review_state": "PENDING",
+    "candidate_promoted": false,
+    "return_allowed": true
+  },
+  "next_required_action": "RETURN_EXACT_ONE_CROPPED_COMPOSITE_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
+}
