@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 179,
+  "revision": 180,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "已恢复197:2与201:2真实像素对照，旧认可仅限设计/字标；最新普通茶作图继续否决关闭。下一步为一个有界的新图文设计候选，不是再审旧图。",
-  "status": "VPD_CHAZUO_SCOPED_BASELINE_RESTORED_REJECTED_CANDIDATE_CLOSED",
+  "current_stage": "197:2与201:2实际像素已读取；唯一一次茶作新候选生成后触发已知明显回退，已FAIL_CLOSED，不进入真人审美，不允许第二次生成。",
+  "status": "VPD_CHAZUO_SCOPED_BASELINE_DESIGN_SUCCESSOR01_FAIL_CLOSED_KNOWN_REGRESSION",
   "p6_allowed": false,
-  "next_required_action": "DEFINE_ONE_CHAZUO_DESIGN_SUCCESSOR_WITH_SCOPED_BASELINE",
+  "next_required_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -159,10 +159,11 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "实际读取197:2和201:2完整图像",
-    "按原人审限定设计与摄影范围",
-    "最新失败候选不得替换历史设计参照",
-    "闭合本次人审状态镜像与哈希"
+    "197:2 actual Figma pixels loaded in current execution chat",
+    "201:2 actual Figma pixels loaded in current execution chat",
+    "exactly one 3:4 tea visual generated",
+    "single known-regression screen triggered FAIL_CLOSED",
+    "no second candidate, no retry, no Figma canvas write"
   ],
   "updated_at": "2026-09-30",
   "workflow": {
@@ -2465,5 +2466,83 @@
   "baseline_preservation": {
     "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
+  },
+  "latest_evidence": {
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SCOPED_BASELINE_DESIGN_SUCCESSOR01_EXECUTION_20260930.json",
+    "sha256": "3c5a0e2c1e42d4fed46cd781fe5d77dc65c1eb0497d9640112ba696d8ffcaa03"
+  },
+  "chazuo_scoped_baseline_design_successor01": {
+    "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
+    "status": "FAIL_CLOSED_KNOWN_REGRESSION",
+    "started_from_head": "53d4a6f490bb03766ec57810c60d6a7a2f829cc3",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "reference_pixels": {
+      "197:2": {
+        "visible": true,
+        "role": "HISTORICAL_ORIGINAL_PIXEL_REFERENCE",
+        "dimensions": [
+          1024,
+          1536
+        ]
+      },
+      "201:2": {
+        "visible": true,
+        "role": "EDITABLE_RECONSTRUCTED_COMPLETE_POSTER",
+        "dimensions": [
+          1024,
+          1536
+        ]
+      }
+    },
+    "human_scope": {
+      "composition_hierarchy": "PASS",
+      "chazuo_wordmark": "PASS",
+      "photography_photo_base": "FAIL_AI_FEEL",
+      "whole_poster_final_pass": false
+    },
+    "design_proposition": "让“茶作”四字与真实制茶工序共用一条纵向动作轴——鲜叶从上方进入、经摊晾与手工整理向下收束，字标被这条叶流与留白共同“切开”，使文字、制茶动作和阅读路径成为同一个视觉事件。",
+    "generation": {
+      "generation_count": 1,
+      "hidden_variant_count": 0,
+      "reroll": 0,
+      "best_of_n": false,
+      "automatic_retry": 0,
+      "retry": 0,
+      "second_candidate": 0,
+      "gen_id": "5bc086da-3442-44e4-97e1-b73c3bc8190c",
+      "chatgpt_file_id": "file_0000000089b481fd904d1ca74b7c50ef",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "aspect": "3:4",
+      "sha256": "e621fbc6ff6f48208a23ce130fb64e76be4f56024aa23bf09f57b082217e4f5c",
+      "figma_write": false
+    },
+    "regression_screen": {
+      "run_count": 1,
+      "wordmark_visual_role": "FAIL_CHAZUO_WORDMARK_MISSING_AND_REPLACED_BY_UNRELATED_LU_YU_IDENTITY",
+      "typography_image_negative_space": "FAIL_REVERTED_TO_LEFT_TEXT_ZONE_PLUS_RIGHT_LOWER_TEA_STILL_LIFE_TEMPLATE",
+      "tea_specific_design_relation": "FAIL_GENERIC_TEA_STILL_LIFE_DOES_NOT_REALIZE_PROCESS_RELATION",
+      "photography_vs_design": "FAIL_VISUAL_PLEASANTNESS_DOES_NOT_RECOVER_ACCEPTED_DESIGN_RELATION",
+      "known_regression_motifs": [
+        "warm_sun",
+        "leafy_branch",
+        "mountain_ink_wash",
+        "ceramic_gaiwan_and_cup",
+        "wood_table",
+        "generic_ai_eastern_premium_styling"
+      ],
+      "overall": "FAIL_CLOSED"
+    },
+    "human_review_return_allowed": false,
+    "candidate_promoted": false,
+    "second_generation_allowed": false,
+    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND",
+    "claim_limits": [
+      "machine screen only blocks known obvious regressions",
+      "no claim that Liu Xiansheng would like the candidate",
+      "no claim that the candidate exceeds historical best"
+    ]
   }
 }
