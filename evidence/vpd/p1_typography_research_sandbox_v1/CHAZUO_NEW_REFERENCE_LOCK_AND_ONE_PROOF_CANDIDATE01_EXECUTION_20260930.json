@@ -1,0 +1,200 @@
+{
+  "schema_version": "vpd-chazuo-new-reference-lock-and-one-proof-candidate-execution/v1",
+  "task_id": "VPD-CHAZUO-NEW-REFERENCE-LOCK-AND-ONE-PROOF-CANDIDATE-01",
+  "recorded_at": "2026-09-30",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "starting_head": "c959eeb46c767437e2f4f0ce0cc6e7a17075bd65",
+  "starting_lock_revision": 186,
+  "starting_checkpoint_sequence": 208,
+  "human_settlement": {
+    "rejected_candidate_frame_id": "241:2",
+    "exact_quote": "丑的让我直视。我没见过比这个更丑的设计，当然这个背影图你选的也是有问题，但是真的很丑很丑与。你现在到底错在哪里了。。。。我很奇怪。你现在到底如何才能调整好",
+    "verdict": "HUMAN_STRONG_WHOLE_CANDIDATE_REJECT",
+    "whole_candidate_accepted": false,
+    "parent_version_allowed": false,
+    "baseline_allowed": false,
+    "machine_screen_pass_cannot_override_human_reject": true,
+    "specific_failure_observations": [
+      "large artificial dark-green block split the image and design into separate zones",
+      "same photograph was repeated as a second crop/card",
+      "arm/local limb mass competed with tea as the main subject",
+      "image and wordmark became separated design-vs-photo regions",
+      "multiple visible design maneuvers created complexity without one strong visual decision"
+    ],
+    "preserved_historical_signal": {
+      "frame_id": "232:2",
+      "scope": "ONLY_LOCAL_POSITIVE_SIGNAL",
+      "signal": "image, wordmark and negative space had begun to form a small amount of design relationship",
+      "full_baseline": false
+    },
+    "retained_negative_history": {
+      "201:3": "HUMAN_FAIL_AI_FEEL",
+      "banned_photo_only_text_generations": [
+        "9c5f847b-73eb-43c3-9dd7-2c3080d34258",
+        "72b2cf7d-4172-43db-a3e8-9a91946c26e8"
+      ]
+    }
+  },
+  "new_reference_lock": {
+    "source": "CURRENT_CHAT_USER_ATTACHMENT",
+    "original_filename": "餐饮设计_自然山野的松弛感_8_大未设计_来自小红书网页版.jpg",
+    "natural_dimensions": [
+      1080,
+      1439
+    ],
+    "size_bytes": 646432,
+    "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "actual_pixels_visible_in_execution_chat": true,
+    "durable_drive_path": "/Google Drive/高级感P_新参考锁/VPD_CHAZUO_NEW_REFERENCE_LOCK_20260930.jpg",
+    "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "drive_view_url": "https://drive.google.com/file/d/11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC/view",
+    "integrity_boundary": "PIXEL_ASSET_IS_AUTHORITY; text summary may not replace actual reference pixels"
+  },
+  "reference_structural_distillation": {
+    "relation_count": 4,
+    "scope_note": "distilled from the upper finished-design area of the supplied reference; lower environmental mockup is not treated as the poster composition mechanism",
+    "relations": [
+      {
+        "id": "R1_ONE_ABSOLUTE_STAGE",
+        "relation": "one dominant stage / strong main shape",
+        "pixel_evidence": "upper design: the large round woven platter and radial food arrangement occupy the visual center (roughly central x=180..930, y=180..700); moss, wood and fern forms remain peripheral support"
+      },
+      {
+        "id": "R2_ONE_CONTINUOUS_WORLD",
+        "relation": "subject, props and environment exist in one continuous photographic world",
+        "pixel_evidence": "upper design: platter, moss, wood branches, fern leaves and serving props share continuous lighting and spatial depth; there is no detached photo card or artificial panel separating subject from environment"
+      },
+      {
+        "id": "R3_TEXT_USES_SCENE_SPACE",
+        "relation": "display typography uses naturally available scene space instead of an artificial text board",
+        "pixel_evidence": "upper design lower-right: the large white headline occupies green moss / subject-edge space (roughly x=640..1050, y=430..650) and visually follows the platter boundary; no separate background panel is introduced"
+      },
+      {
+        "id": "R4_ONE_CORE_VISUAL_DECISION",
+        "relation": "first impression is governed by one memorable visual decision",
+        "pixel_evidence": "upper design reads first as a circular hero stage held inside a dense mountain/forest environment; secondary props and brand marks do not create competing centers"
+      }
+    ],
+    "prohibited_expansion": "NOT_A_NEW_GLOBAL_RULESET_OR_GATE"
+  },
+  "composition_target": {
+    "one_sentence": "A real tea-sorting action and foreground leaf mass form the only hero stage inside one continuous factory world; 茶作 enters the naturally bright window space and touches the action boundary without panels, repeated crops or support copy.",
+    "target_locked_before_photo_selection": true
+  },
+  "formal_photo_source": {
+    "source_count": 1,
+    "platform": "Pexels",
+    "photo_id": "32379820",
+    "photographer": "Eslam Mohammed Abdelmaksoud",
+    "page_url": "https://www.pexels.com/photo/worker-sorting-tea-leaves-in-nuwara-eliya-factory-32379820/",
+    "raster_url": "https://images.pexels.com/photos/32379820/pexels-photo-32379820.jpeg?cs=srgb&fm=jpg",
+    "natural_dimensions": [
+      3648,
+      5472
+    ],
+    "actual_pixels_viewed": true,
+    "description": "A man working in a tea factory in Nuwara Eliya, Sri Lanka, sorting fresh tea leaves.",
+    "license": "Pexels License / Free",
+    "crop": {
+      "type": "GEOMETRIC_SINGLE_SOURCE_3_4_CROP",
+      "sx": 0,
+      "sy": 1000,
+      "sw": 3000,
+      "sh": 4000,
+      "cropped_bytes": 2563318
+    },
+    "crop_actual_pixels_viewed_before_figma": true,
+    "embedded_text_in_used_crop": false,
+    "watermark": false,
+    "logo": false,
+    "image_generation": false,
+    "figma_image_hash": "017537fbdc13d71a59029e37ed6193700fc9819c"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "candidate_count": 1,
+    "candidate_frame_id": "244:2",
+    "candidate_frame_name": "VPD_CHAZUO_NEW_REFERENCE_PROOF_CANDIDATE_01",
+    "candidate_dimensions": [
+      1200,
+      1600
+    ],
+    "aspect": "3:4",
+    "source_photo_count": 1,
+    "source_photo_repeated_as_second_crop": false,
+    "artificial_color_blocks": 0,
+    "support_text_count": 0,
+    "wordmark": {
+      "source_node_id": "203:2",
+      "clone_node_id": "245:2",
+      "source_modified": false,
+      "bounds": {
+        "x": 58,
+        "y": 300,
+        "width": 435,
+        "height": 754
+      },
+      "role": "occupies the naturally bright left window and approaches/overlaps the tea-action boundary rather than sitting in a detached corner panel"
+    },
+    "protected_old_nodes_unchanged": true,
+    "protected_old_frame_ids": [
+      "241:2",
+      "232:2",
+      "197:2",
+      "201:2",
+      "203:2"
+    ],
+    "second_candidate": 0,
+    "best_of_n": false
+  },
+  "final_pixel_readback": {
+    "requested_final_readback_count": 1,
+    "transient_transport_failure_before_any_pixel_result": 1,
+    "successful_final_readback_count": 1,
+    "figma_frame_id": "244:2",
+    "screenshot_locator": "Figma file uyDxOoN1iNDPpEHTKSUWg1 / frame 244:2",
+    "rendered_dimensions": [
+      1050,
+      1400
+    ],
+    "natural_dimensions": [
+      1200,
+      1600
+    ],
+    "actual_pixels_visible": true
+  },
+  "obvious_regression_screen": {
+    "machine_screen_only": true,
+    "user_liking_claim": false,
+    "first_impression_one_main_stage": "PASS_WORKER_AND_FOREGROUND_TEA_ACTION_FORM_ONE_PRIMARY_STAGE",
+    "one_complete_tea_world": "PASS_FULL_FACTORY_PHOTOGRAPHIC_WORLD_NO_POSTER_COLLAGE",
+    "wordmark_grows_into_space": "PASS_WORDMARK_USES_REAL_BRIGHT_WINDOW_AND_MEETS_ACTION_BOUNDARY",
+    "old_241_errors": {
+      "artificial_large_color_block": "ABSENT",
+      "repeated_photo_crop_card": "ABSENT",
+      "limb_overrides_tea": "ABSENT_NO_CLOSEUP_ARM_MASS",
+      "image_text_split_panel": "ABSENT",
+      "complexity_as_fake_premium": "ABSENT"
+    },
+    "one_memorable_visual_decision": "PASS_SINGLE_TEA_SORTING_STAGE_WITH_WORDMARK_IN_WINDOW",
+    "overall": "PASS_NO_OBVIOUS_REPRODUCTION_OF_241_2_FAILURE_SKELETON",
+    "human_aesthetic_verdict": "PENDING"
+  },
+  "execution_counts": {
+    "image_generation_count": 0,
+    "formal_photo_source_count": 1,
+    "new_figma_candidate_count": 1,
+    "second_candidate": 0,
+    "support_text_count": 0,
+    "final_successful_screenshot_readback_count": 1,
+    "new_rules": 0,
+    "new_gates": 0,
+    "new_validators": 0
+  },
+  "result": {
+    "status": "NEW_REFERENCE_LOCKED_ONE_PROOF_CANDIDATE_READY_FOR_HUMAN_AESTHETIC_REVIEW",
+    "candidate_promoted": false,
+    "next_required_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
+  }
+}

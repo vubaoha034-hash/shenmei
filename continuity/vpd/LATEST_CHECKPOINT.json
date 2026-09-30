@@ -1,13 +1,13 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 208,
+  "sequence": 209,
   "recorded_at": "2026-09-30",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [],
-  "current_focus": "茶作实际视觉成品主线：已通过真实可追溯摄影路径形成一个新的完整3:4 Figma候选 241:2；机器只确认没有明显回退，等待刘先生实际像素审美。",
+  "current_focus": "茶作实际视觉主线：241:2已真人整体强否决；新上传参考真实像素已持久锁定；按其4条像素可验证结构关系制作了exactly 1个新3:4完整候选244:2，等待刘先生实际像素审美。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -339,10 +339,10 @@
     "p1_chazuo_crop_composite_stream_recovery04_complete_waiting_human_review"
   ],
   "incomplete": [
-    "刘先生尚未对Figma frame 241:2做实际像素审美结论；不得自动晋升候选。"
+    "刘先生尚未对新参考证明候选Figma frame 244:2给出实际像素审美结论；不得自动晋升。"
   ],
   "blocked": [],
-  "next_required_action": "RETURN_EXACT_ONE_REAL_PHOTO_CHAZUO_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
+  "next_required_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -410,10 +410,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_MACHINE_SCREEN_PASS_AWAITING_HUMAN",
+  "status": "VPD_CHAZUO_NEW_REFERENCE_LOCKED_ONE_PROOF_CANDIDATE_AWAITING_HUMAN",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "753376191a532c5debd1bcffbc184e7cfd129f83f2e9ce8d8c4735401dac1384"
+    "sha256": "2916b03688bc764c01ec7de9024d113200a6360a5c63efe8787264fceed5bd19"
   },
   "history_snapshot": {
     "path": "evidence/vpd/p6_authority_repair_v1/CHECKPOINT_BEFORE.json",
@@ -950,7 +950,7 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "参考像素可见；项目内素材无合格项后选定 exactly 1 张Pexels真实制茶摄影；image_generation_count=0；Figma candidate_frame_count=1；candidate=241:2；support_text=0；screenshot_readback=1；明显退步筛查PASS；等待真人审美。",
+  "current_stage": "新参考1080×1439 / SHA-256 87a28f5c…2167已实际读取并保存到Drive；image_generation_count=0；formal_photo_source_count=1；Figma candidate=244:2；support_text=0；second_candidate=0；成功final screenshot_readback=1；机器仅判未明显复现241:2失败骨架。",
   "updated_at": "2026-09-30",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
@@ -1822,16 +1822,18 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "current actual pixels loaded for 232:2, 197:2, 201:2 and 203:2",
-    "exactly one legal traceable real tea-processing photograph selected from Pexels after internal asset search failed to find an eligible source",
-    "source actual pixels verified at 5726x4160; no embedded text, logo or watermark",
-    "Pexels source/author/license recorded",
+    "241:2 human strong rejection durably settled",
+    "new user reference actual pixels read and locked by dimensions/hash",
+    "new reference persisted to Google Drive with file identity",
+    "exactly four pixel-verifiable reference structure relations recorded",
+    "composition target locked before formal photo selection",
+    "exactly one real Pexels tea-processing source selected and used",
     "image_generation_count=0",
-    "exactly one new Figma top-level candidate frame: 241:2 at 1200x1600",
-    "approved 203:2 wordmark copied to 243:3; original unchanged",
-    "support_text_count=0",
-    "exactly one post-composition candidate screenshot readback completed",
-    "machine obvious-regression screen PASS; human aesthetic review pending"
+    "exactly one Figma candidate frame 244:2 at 1200x1600",
+    "approved wordmark source 203:2 copied to 245:2; source unchanged",
+    "support_text_count=0; repeated_photo_crop_count=0; artificial_color_block_count=0",
+    "exactly one successful final candidate screenshot/pixel readback completed",
+    "machine obvious-regression screen PASS only; human aesthetic review pending"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -1904,9 +1906,9 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_EXECUTION_20260930.json",
-    "git_blob_sha": "deccbadf386877fe5813c3ebd3358bddf1f08273",
-    "sha256": "f0830b7373f1c1d5f4d7ff11127a6a3a196a13d25829e4b0efc9fa40b7b001d3"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_REFERENCE_LOCK_AND_ONE_PROOF_CANDIDATE01_EXECUTION_20260930.json",
+    "git_blob_sha": "03bcf7637a12f59b2cfb76e9d5388c7e8a42d485",
+    "sha256": "85b070d2fc9c237ba95da23b7969674580e00efc53ca0c1eb94ae0d2c1893ad8"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2164,9 +2166,9 @@
   },
   "latest_human_review": {
     "recorded_date": "2026-09-30",
-    "candidate_frame_id": "232:2",
-    "exact_quote": "高级感稍微有一点设计感了。唯一值得肯定的是。",
-    "verdict": "PARTIAL_POSITIVE_DESIGN_SENSE_ONLY_NOT_FINAL_PASS",
+    "candidate_frame_id": "241:2",
+    "exact_quote": "丑的让我直视。我没见过比这个更丑的设计，当然这个背影图你选的也是有问题，但是真的很丑很丑与。你现在到底错在哪里了。。。。我很奇怪。你现在到底如何才能调整好",
+    "verdict": "HUMAN_STRONG_WHOLE_CANDIDATE_REJECT",
     "overall_accepted": false,
     "candidate_promoted": false
   },
@@ -2246,5 +2248,48 @@
       "sha256": "f0830b7373f1c1d5f4d7ff11127a6a3a196a13d25829e4b0efc9fa40b7b001d3"
     },
     "next_legal_action": "RETURN_EXACT_ONE_REAL_PHOTO_CHAZUO_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
+  },
+  "chazuo_new_reference_lock_and_one_proof_candidate01": {
+    "task_id": "VPD-CHAZUO-NEW-REFERENCE-LOCK-AND-ONE-PROOF-CANDIDATE-01",
+    "status": "READY_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
+    "starting_head": "c959eeb46c767437e2f4f0ce0cc6e7a17075bd65",
+    "rejected_241_2_settled": true,
+    "reference_drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "reference_dimensions": [
+      1080,
+      1439
+    ],
+    "reference_sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "reference_pixels_visible": true,
+    "structural_relation_count": 4,
+    "image_generation_count": 0,
+    "formal_photo_source_count": 1,
+    "formal_photo_id": "32379820",
+    "formal_photo_crop": {
+      "sx": 0,
+      "sy": 1000,
+      "sw": 3000,
+      "sh": 4000
+    },
+    "candidate_frame_id": "244:2",
+    "candidate_dimensions": [
+      1200,
+      1600
+    ],
+    "candidate_count": 1,
+    "wordmark_clone_id": "245:2",
+    "support_text_count": 0,
+    "second_candidate": 0,
+    "successful_final_screenshot_readback_count": 1,
+    "protected_old_nodes_modified": false,
+    "machine_regression_screen": "PASS_NO_OBVIOUS_REPRODUCTION_OF_241_2_FAILURE_SKELETON",
+    "candidate_promoted": false,
+    "human_review_pending": true,
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_REFERENCE_LOCK_AND_ONE_PROOF_CANDIDATE01_EXECUTION_20260930.json",
+      "git_blob_sha": "03bcf7637a12f59b2cfb76e9d5388c7e8a42d485",
+      "sha256": "85b070d2fc9c237ba95da23b7969674580e00efc53ca0c1eb94ae0d2c1893ad8"
+    },
+    "next_legal_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
   }
 }
