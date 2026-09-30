@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 181,
+  "revision": 182,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02：197:2、201:2与203:2均已实际读取；唯一一次photo-only生成违反禁文字硬门，画面直接嵌入可读“茶作”，因此在Figma写入前FAIL_CLOSED。",
-  "status": "VPD_CHAZUO_COMPOSITE_SUCCESSOR02_FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
+  "current_stage": "VPD-CHAZUO-CROP-COMPOSITE-STREAM-RECOVERY-04：恢复确认上一任务只留下唯一Figma候选232:2；未新建第二frame、未生成图片。现有raster已绑定到232:3并通过右半几何裁切排除原图错误文字；203:2复制字标参与主视觉。唯一一次候选截图回读未触发已知明显回退，进入刘先生真人审美门。",
+  "status": "VPD_CHAZUO_CROP_COMPOSITE_STREAM_RECOVERY04_COMPLETE_AWAITING_HUMAN_AESTHETIC_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND",
+  "next_required_action": "RETURN_EXACT_ONE_CROPPED_COMPOSITE_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -147,7 +147,7 @@
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": null,
-    "current_image_generation_count_max": 1,
+    "current_image_generation_count_max": 0,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -159,12 +159,16 @@
     "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "197:2 actual Figma pixels loaded in current execution chat",
-    "201:2 actual Figma pixels loaded in current execution chat",
-    "203:2 approved editable 茶作 wordmark pixels loaded in current execution chat",
-    "exactly one image generation executed",
-    "photo-only hard gate failed because readable 茶作 text was embedded by the image model",
-    "no Figma candidate frame created, no protected node modified, no retry and no second candidate"
+    "reconfirmed existing raster pixels and exact sha256 with image_generation_count=0",
+    "reloaded actual Figma pixels for protected references 197:2, 201:2, and 203:2",
+    "read-only recovery found exactly one attributable residual candidate frame 232:2",
+    "continued the same frame without creating a second candidate",
+    "bound the exact existing 1536x1024 raster to photo node 232:3",
+    "used geometric right-half crop only; original embedded left-side text pixels are outside the clipped candidate frame",
+    "kept approved 203:2 wordmark source unchanged and used clone 232:4 as primary visual structure",
+    "ran exactly one final candidate screenshot/pixel readback on 232:2",
+    "single known-regression screen did not trigger fail-closed",
+    "protected nodes 197:2, 201:2, and 203:2 were not modified"
   ],
   "updated_at": "2026-09-30",
   "workflow": {
@@ -2602,5 +2606,33 @@
       "sha256": "5bf43c674aa9f4a5d7bcb2428f9614e60b71393594363fd53204d1784182edbb"
     },
     "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND"
+  },
+  "chazuo_crop_composite_stream_recovery04": {
+    "task_id": "VPD-CHAZUO-CROP-COMPOSITE-STREAM-RECOVERY-04",
+    "status": "COMPLETE_MACHINE_REGRESSION_SCREEN_PASS_AWAITING_HUMAN_AESTHETIC_REVIEW",
+    "started_from_head": "4456801824288240eef76b965a542849ffde395e",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "candidate_frame_id": "232:2",
+    "photo_node_id": "232:3",
+    "wordmark_clone_id": "232:4",
+    "source_wordmark_id": "203:2",
+    "source_raster_gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
+    "source_raster_sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82",
+    "figma_image_hash": "97235c7d3b48ad169cd2362b8a1240fc9ffd4aa0",
+    "image_generation_count": 0,
+    "candidate_frame_count": 1,
+    "second_candidate": 0,
+    "reroll": 0,
+    "best_of_n": false,
+    "screenshot_run_count": 1,
+    "original_embedded_text_visible": false,
+    "protected_old_nodes_modified": false,
+    "machine_regression_screen": "PASS_NO_OBVIOUS_KNOWN_REGRESSION",
+    "human_review_state": "PENDING_ACTUAL_LIU_XIANSHENG_AESTHETIC_REVIEW",
+    "evidence": {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CROP_COMPOSITE_STREAM_RECOVERY04_EXECUTION_20260930.json",
+      "git_blob_sha": "b5e9c6975ff70f0c38c5c04da8f349d651577008"
+    },
+    "next_legal_action": "RETURN_EXACT_ONE_CROPPED_COMPOSITE_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
   }
 }
