@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 193,
+  "revision": 194,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "首轮局部修订R2两张完整海报已生成并保存；两次额度已消耗，以图27和图68等待刘先生的整图实际反馈。",
-  "status": "VPD_MAINLINE_STAGE1_R2_EXECUTED_WAITING_HUMAN_REVIEW",
+  "current_stage": "R2反馈：条件式偏向68但完整设计仍与目标差距很大；本轮未达到整图目标。保留直接参考对照和历史范围，已准备完整设计关系的追加段修订草案。",
+  "status": "VPD_MAINLINE_STAGE1_R2_HUMAN_TARGET_GAP",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
+  "next_required_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -164,11 +164,11 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "R2两次实际生成已完成",
-    "两张原件已保存至Drive并独立回读文件元数据",
-    "中性编号与输出身份对应保存，等待整图真人反馈"
+    "R2暂定相对偏好与整图目标差距已绑定实际输出记录",
+    "实际路线映射已核对，未把相对选择当整图通过",
+    "下一追加段关系草案已准备，尚未验证"
   ],
-  "updated_at": "2026-10-01T12:46:19.554666+08:00",
+  "updated_at": "2026-10-01T13:07:22.768774+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -2774,7 +2774,7 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "AWAITING_HUMAN_REVIEW",
+    "status": "TEST_FAILED_OR_NO_GAIN",
     "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
     "attempts_consumed": 2,
     "outputs": [
@@ -2821,7 +2821,7 @@
         }
       }
     ],
-    "human_verdict": "NOT_REVIEWED",
+    "human_verdict": "TEST_FAILED_OR_NO_GAIN",
     "completed_stage_receipts": [],
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
@@ -2860,7 +2860,7 @@
         "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
       },
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "EXECUTED_WAITING_HUMAN_REVIEW",
+      "status": "HUMAN_REVIEW_SETTLED_TARGET_NOT_MET",
       "closing_receipt": {
         "path": "evidence/vpd/mainline_stage1_20261001/r2/EXECUTION_RECEIPT.json",
         "sha256": "78719e4b6a6bd2391980bca70ed1b3c4083b1e9d797e4d22b727d5566cc57a56"
@@ -2876,6 +2876,19 @@
     "execution_receipt": {
       "path": "evidence/vpd/mainline_stage1_20261001/r2/EXECUTION_RECEIPT.json",
       "sha256": "78719e4b6a6bd2391980bca70ed1b3c4083b1e9d797e4d22b727d5566cc57a56"
+    },
+    "review_receipt": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r2/REVIEW_RECEIPT.json",
+      "sha256": "9c18878653040f556964ff366aa55c3f5c20ce2a9738f400428326003687c47f"
+    },
+    "local_amendment_preparation": {
+      "status": "DRAFT_PREPARED_NOT_EXECUTED",
+      "receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r2/WHOLE_DESIGN_AMENDMENT_DRAFT.json",
+        "sha256": "0c17e4f31235d202bb70e0ff62c71eb6b58153490b89c71171e7548ba8272133"
+      },
+      "proposed_new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
+      "active_task_unchanged": true
     }
   },
   "legacy_fields_scope": {
