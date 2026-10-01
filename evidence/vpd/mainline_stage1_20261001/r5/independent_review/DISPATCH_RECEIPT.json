@@ -1,0 +1,65 @@
+{
+  "schema_version": "vpd-independent-review-dispatch-receipt/v1",
+  "task_id": "VPD-STAGE1-R5-EXTERNAL-BLIND-REVIEW-20261001-01",
+  "callback_id": "VPD-R5-REVIEW-CALLBACK-20261001-01",
+  "parent_render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R5",
+  "attempt_id": "VPD-STAGE1-R5-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
+  "recorded_at": "2026-10-01T19:25:07.651120+09:00",
+  "status": "NEW_OUTPUT_REVIEW_SENT_AWAITING_REVIEWER_PUSH",
+  "source_commit": "5c93bb38dc233a83d9a1b7ac4fd090637618259c",
+  "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+  "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+  "message_sha256": "4e61bc9bf9cc5f04730d036ed5cab0af2eb865177054bbf7b71a07f7b7bb9e38",
+  "actual_new_user_text_sha256": "4e61bc9bf9cc5f04730d036ed5cab0af2eb865177054bbf7b71a07f7b7bb9e38",
+  "observed_user_message_count_for_task": 1,
+  "full_text_match": true,
+  "composer_empty": true,
+  "send_clicks": 1,
+  "selected_plugins": [
+    {
+      "name": "google-drive",
+      "path": "app://connector_5f3c8c41a1e54ad7a76272c89e2554fa"
+    },
+    {
+      "name": "opera-neon",
+      "path": "app://asdk_app_6ab32747a960819180d4f438d8d739cf"
+    }
+  ],
+  "input_identity_binding": {
+    "reference_drive_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "outputs": [
+      {
+        "label": "27",
+        "drive_file_id": "19mAl-eiaE6vww092r4oFfcQDrnN_-Gh9",
+        "sha256": "23502c513caacde389824f4796f0a949185ed22dbe804802bad0ad81d2b512b9",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "label": "63",
+        "drive_file_id": "1Kz9vX07ee-N3IKHZ_qo288s5X7-gmSsB",
+        "sha256": "424505fc806a25afacb9d7b2663f7294302c1c9cffc3566665b3deccd5f945d5",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      }
+    ]
+  },
+  "execution_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r5/EXECUTION_RECEIPT.json",
+    "sha256": "d219a24d536b1819cd035192de1fd15c0171a38d210384848a883508072d31be"
+  },
+  "delegation_authority": {
+    "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
+    "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+  },
+  "reviewer_push_required": true,
+  "coordinator_polls_or_waits": false,
+  "callback_received": false,
+  "human_aesthetic_acceptance": false,
+  "native_summary": "R5新原件27、63已通过Opera Neon向既有独立审核聊天实际发送一次；新消息全文匹配且输入框清空，等待审核方主动回传，收到后执行下一次有界修订，不要求刘先生逐轮审核。",
+  "proof_scope": "Actual complete review-task dispatch verified. The new review and callback are pending; no unattended completed cycle or aesthetic pass claimed."
+}

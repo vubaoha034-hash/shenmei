@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 231,
-  "recorded_at": "2026-10-01T18:22:57.314368+08:00",
+  "sequence": 232,
+  "recorded_at": "2026-10-01T18:25:07.684148+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -429,7 +429,7 @@
   "status": "VPD_MAINLINE_STAGE1_R5_EXECUTED_WAITING_INDEPENDENT_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "145a5555d867050d71b1b75c3814c3940f6fe63b0c6e09adc647b11ebf2574bd"
+    "sha256": "71f654207b0c8fb3f41744cc92e4efc6471c7eb0c717e7561ff8edced4081eec"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R5-CLAIM-20261001-001",
-      "event_hash": "a0aa759456dabb7791cdc18702d320a6cfd3d19f7f5f96033d4be82ddd9443d9"
+      "event_id": "EVT-VPD-R5-DISPATCH-20261001-001",
+      "event_hash": "9f12fa20a20096e752c69170517ebee867e00b9620dfd4320464ec001dab661d"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "R5新原件27、63的独立审图任务已完整冻结，全文回读及插件选择核验通过，单一派发已登记；尚未发送。",
-  "updated_at": "2026-10-01T18:22:57.314368+08:00",
+  "current_stage": "R5新原件27、63已通过Opera Neon向既有独立审核聊天实际发送一次；新消息全文匹配且输入框清空，等待审核方主动回传，收到后执行下一次有界修订，不要求刘先生逐轮审核。",
+  "updated_at": "2026-10-01T18:25:07.684148+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "R5新原件27、63的独立审图任务已完整冻结，全文回读及插件选择核验通过，单一派发已登记；尚未发送。"
+    "R5新原件27、63已通过Opera Neon向既有独立审核聊天实际发送一次；新消息全文匹配且输入框清空，等待审核方主动回传，收到后执行下一次有界修订，不要求刘先生逐轮审核。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2434,7 +2434,7 @@
     },
     "independent_review": {
       "task_id": "VPD-STAGE1-R5-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "NEW_OUTPUT_REVIEW_SENT_AWAITING_REVIEWER_PUSH",
       "claim": {
         "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/DISPATCH_CLAIM.json",
         "sha256": "f54537ee1d317e62494ea16e8f9d25a17d513fda203efe18ab7479a82c85c865"
@@ -2443,7 +2443,11 @@
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
+      "human_acceptance_replaced": false,
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/DISPATCH_RECEIPT.json",
+        "sha256": "49101ed1b84918d3478ef56c8fa3df6aa9f4352020543d27a9027e23e87665da"
+      }
     }
   }
 }

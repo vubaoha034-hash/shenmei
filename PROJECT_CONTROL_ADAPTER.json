@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 209,
-    "sha256": "145a5555d867050d71b1b75c3814c3940f6fe63b0c6e09adc647b11ebf2574bd",
+    "revision": 210,
+    "sha256": "71f654207b0c8fb3f41744cc92e4efc6471c7eb0c717e7561ff8edced4081eec",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1000,7 +1000,7 @@
     },
     "independent_review": {
       "task_id": "VPD-STAGE1-R5-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "NEW_OUTPUT_REVIEW_SENT_AWAITING_REVIEWER_PUSH",
       "claim": {
         "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/DISPATCH_CLAIM.json",
         "sha256": "f54537ee1d317e62494ea16e8f9d25a17d513fda203efe18ab7479a82c85c865"
@@ -1009,7 +1009,11 @@
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
+      "human_acceptance_replaced": false,
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/DISPATCH_RECEIPT.json",
+        "sha256": "49101ed1b84918d3478ef56c8fa3df6aa9f4352020543d27a9027e23e87665da"
+      }
     }
   },
   "preserved_prior_current_mainline": {
@@ -1040,8 +1044,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R5-CLAIM-20261001-001",
-      "event_hash": "a0aa759456dabb7791cdc18702d320a6cfd3d19f7f5f96033d4be82ddd9443d9"
+      "event_id": "EVT-VPD-R5-DISPATCH-20261001-001",
+      "event_hash": "9f12fa20a20096e752c69170517ebee867e00b9620dfd4320464ec001dab661d"
     }
   },
   "mature_workflow_audit": {
