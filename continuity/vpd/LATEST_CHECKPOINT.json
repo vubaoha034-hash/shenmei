@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 221,
-  "recorded_at": "2026-10-01T15:27:50.501685+08:00",
+  "sequence": 222,
+  "recorded_at": "2026-10-01T15:56:47.463159+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -429,7 +429,7 @@
   "status": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "8bcd6e399fcd8acb0ff7364ad4aedddf2012b358e25c31692fec3ca1b0addcfa"
+    "sha256": "e109d20fab5d860ac74dc16e7414301be70b3966357910419bf2446eb2a12991"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-STAGE1-R4-EXECUTED-20261001-001",
-      "event_hash": "fc3fa799375016133c802d224acb8d78ce1e5279fbc2245ca41d0e5fb9c5b826"
+      "event_id": "EVT-VPD-R4-INDEPENDENT-REVIEW-CLAIM-20261001-001",
+      "event_hash": "73da67bbcc74e2a6ccf1a2c42aac1b661132f02cba536a7481c5689d15630f26"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "R4两张完整茶作海报已按冻结输入实际生成，原件已保存并回读文件元数据；以19、54中性编号交付，摄影与整体设计待真人判断。",
-  "updated_at": "2026-10-01T15:27:50.501685+08:00",
+  "current_stage": "R4两张成品19、54保持待真人整图验收；已确认Opera Neon当前连接和输入/点击能力，独立审图任务已冻结并登记，尚未发送。",
+  "updated_at": "2026-10-01T15:56:47.463159+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,9 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "R4冻结输入已完成两次实际生成",
-    "两张原件已保存并独立回读文件元数据",
-    "中性编号绑定实际原件，等待摄影与整幅设计判断"
+    "已确认Opera Neon当前连接和输入/点击能力，独立审图任务已冻结并登记，尚未发送。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2425,6 +2423,18 @@
     "execution_receipt": {
       "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
       "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
+    },
+    "independent_review": {
+      "task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "CLAIMED_READY_TO_SEND",
+      "claim": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/DISPATCH_CLAIM.json",
+        "sha256": "ed1d5f7581213b60066a21559aab75c14a1aeadf11e578c9113fcfb19747edba"
+      },
+      "active_attempt_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
+      "human_acceptance_replaced": false,
+      "whole_stage_accepted": false,
+      "reviewer_writes_repo": false
     }
   }
 }

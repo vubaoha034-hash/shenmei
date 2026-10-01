@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 199,
-    "sha256": "8bcd6e399fcd8acb0ff7364ad4aedddf2012b358e25c31692fec3ca1b0addcfa",
+    "revision": 200,
+    "sha256": "e109d20fab5d860ac74dc16e7414301be70b3966357910419bf2446eb2a12991",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -997,6 +997,18 @@
     "execution_receipt": {
       "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
       "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
+    },
+    "independent_review": {
+      "task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "CLAIMED_READY_TO_SEND",
+      "claim": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/DISPATCH_CLAIM.json",
+        "sha256": "ed1d5f7581213b60066a21559aab75c14a1aeadf11e578c9113fcfb19747edba"
+      },
+      "active_attempt_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
+      "human_acceptance_replaced": false,
+      "whole_stage_accepted": false,
+      "reviewer_writes_repo": false
     }
   },
   "preserved_prior_current_mainline": {
@@ -1027,8 +1039,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-STAGE1-R4-EXECUTED-20261001-001",
-      "event_hash": "fc3fa799375016133c802d224acb8d78ce1e5279fbc2245ca41d0e5fb9c5b826"
+      "event_id": "EVT-VPD-R4-INDEPENDENT-REVIEW-CLAIM-20261001-001",
+      "event_hash": "73da67bbcc74e2a6ccf1a2c42aac1b661132f02cba536a7481c5689d15630f26"
     }
   },
   "mature_workflow_audit": {
