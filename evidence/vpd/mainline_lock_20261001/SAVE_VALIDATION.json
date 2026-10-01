@@ -1,0 +1,30 @@
+{
+  "schema_version": "vpd-mainline-save-validation/v1",
+  "recorded_at": "2026-10-01T02:24:26.970045+00:00",
+  "source_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
+  "scope": "PREPUBLICATION_TECHNICAL_CHECKS_NOT_VISUAL_OR_REMOTE_ACCEPTANCE",
+  "passed_local_checks": [
+    "python scripts/verify_visual_memory.py --vpd-state --status-card",
+    "python scripts/validate_vpd_renderer_adapter.py",
+    "python scripts/run_vpd_distillation_only_runtime_v1.py --output-dir [temporary scratch directory]",
+    "python -m compileall -q visual_memory/vpd_locked_mainline_state.py tests/visual_memory/test_vpd_locked_mainline_state.py",
+    "git diff --check"
+  ],
+  "local_regression_status": "BLOCKED_BY_MISSING_PYTEST_AND_JSONSCHEMA",
+  "dependency_install_attempt": "FAILED_NO_AVAILABLE_DISTRIBUTIONS_IN_THIS_EXECUTION_ENVIRONMENT",
+  "remote_regression_status_at_creation": "PENDING_GITHUB_ACTIONS_RESULT",
+  "remote_workflow": ".github/workflows/vpd-renderer-adapter-validation.yml",
+  "image_generation_attempts_this_save": 0,
+  "visual_test_executed": false,
+  "human_whole_poster_acceptance_claimed": false,
+  "historical_assets_and_original_feedback": "BYTE_PRESERVED_WITH_MANIFEST; NO_RECERTIFICATION_OF_LEGACY_LEDGER_HASH_DEFECTS",
+  "repo_learning": {
+    "target": "vpd-state-continuity",
+    "layer": "repo",
+    "evidence_id": "ev_9999a36bdfd3",
+    "operation": "observe_only",
+    "candidate_id": null,
+    "core_skill_line_delta": 0,
+    "promotion": "NOT_REQUESTED_NO_NEW_AESTHETIC_RULE"
+  }
+}

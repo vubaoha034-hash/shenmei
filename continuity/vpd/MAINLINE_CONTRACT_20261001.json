@@ -1,0 +1,196 @@
+{
+  "schema_version": "vpd-locked-mainline-contract/v1",
+  "id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+  "version": "1.0",
+  "project_id": "visual-aesthetic-vpd",
+  "parent_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "recorded_at": "2026-10-01T09:46:59+08:00",
+  "source_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
+  "fixed_goal": {
+    "text": "从用户原先批准的海报真实像素蒸馏可复用视觉程序，用新作品验证视觉逻辑、迁移能力和质量；不同家族共用同一个蒸馏器。",
+    "single_poster_optimization": false
+  },
+  "primary_renderer": "CHATGPT_IMAGES",
+  "execution_surface": "CHAT",
+  "thinking_effort": "EXTREME_HIGH",
+  "existing_assets_and_results_preserved": true,
+  "production_after_whole_visual_acceptance": true,
+  "current_save_authorization_is_not_image_generation_authorization": true,
+  "stage1": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+    "reference": {
+      "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+      "drive_view_url": "https://drive.google.com/file/d/11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC/view",
+      "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+      "original_dimensions": [
+        1080,
+        1439
+      ],
+      "interpretation": "UPPER_HORIZONTAL_AD_ONLY; LOWER_MOCKUP_EXCLUDED",
+      "pixel_binding_required": true
+    },
+    "same_reference_in_both_arms": true,
+    "only_variable": "ADDED_DISTILLED_VISUAL_RELATIONS",
+    "brand": "茶作",
+    "copy": "一杯茶，慢下来",
+    "content": "一杯茶、一小份干茶、少量鲜叶；完整茶产品广告",
+    "aspect": "3:2",
+    "output_kind": "COMPLETE_FLAT_POSTER_WITH_PRODUCT_ENVIRONMENT_BRAND_AND_COPY",
+    "prompt_files": {
+      "common": {
+        "path": "continuity/vpd/stage1/COMMON_PROMPT.txt",
+        "sha256": "9cd0f35514a7aa43c9c3937773dd115703750415845dc54ba57c60e983c45c5e"
+      },
+      "distilled_delta": {
+        "path": "continuity/vpd/stage1/DISTILLED_DELTA.txt",
+        "sha256": "c96b96c4c5472ea3978b1664590db191b479fe2f4b04adf01c516a2f7484d3ac"
+      }
+    },
+    "arms": {
+      "direct_reference": {
+        "common_prompt": true,
+        "distilled_delta": false
+      },
+      "distilled_candidate": {
+        "common_prompt": true,
+        "distilled_delta": true
+      }
+    },
+    "budget": {
+      "attempts_max": 2,
+      "per_arm": 1,
+      "retries": 0,
+      "hidden_variants": 0,
+      "best_of_n": false
+    },
+    "failure_consumes_attempt": true,
+    "external_compute_usd": 0,
+    "figma_writes": 0,
+    "no_long_term_promotion_from_single_pair": true
+  },
+  "stages": [
+    {
+      "id": "P3_STAGE1",
+      "scope": "首轮茶作完整海报对照",
+      "images_max": 2,
+      "authority": "NOT_CURRENTLY_AUTHORIZED",
+      "actions": {
+        "NEEDS_INPUT_FREEZE": "PREPARE_STAGE1_INPUTS",
+        "READY_WAITING_EXECUTION_REQUEST": "WAIT_FOR_STAGE1_EXECUTION_REQUEST",
+        "AUTHORIZED": "EXECUTE_STAGE1_FROZEN_TASK",
+        "AWAITING_HUMAN_REVIEW": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
+        "TEST_FAILED_OR_NO_GAIN": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+        "PARTIAL_OR_UNKNOWN": "HOLD_STAGE1_PRESERVE_SCOPED_RESULT",
+        "PASSED": "PREPARE_NEXT_STAGE_AFTER_STAGE1",
+        "COMPLETED": "MAINLINE_DELIVERY_COMPLETE_STOP",
+        "TECHNICAL_BLOCKED": "REPAIR_STAGE1_OBSERVED_EXECUTION_PROBLEM"
+      }
+    },
+    {
+      "id": "P4_CONTENT",
+      "scope": "两个新内容，各两路对照",
+      "images_max": 4,
+      "authority": "NOT_CURRENTLY_AUTHORIZED",
+      "actions": {
+        "NEEDS_INPUT_FREEZE": "PREPARE_P4_CONTENT_INPUTS",
+        "READY_WAITING_EXECUTION_REQUEST": "WAIT_FOR_P4_CONTENT_EXECUTION_REQUEST",
+        "AUTHORIZED": "EXECUTE_P4_CONTENT_FROZEN_TASK",
+        "AWAITING_HUMAN_REVIEW": "REVIEW_P4_CONTENT_ACTUAL_OUTPUTS",
+        "TEST_FAILED_OR_NO_GAIN": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+        "PARTIAL_OR_UNKNOWN": "HOLD_P4_CONTENT_PRESERVE_SCOPED_RESULT",
+        "PASSED": "PREPARE_NEXT_STAGE_AFTER_P4_CONTENT",
+        "COMPLETED": "MAINLINE_DELIVERY_COMPLETE_STOP",
+        "TECHNICAL_BLOCKED": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM"
+      }
+    },
+    {
+      "id": "P4_ASPECT",
+      "scope": "固定内容，只改变画幅，两路对照",
+      "images_max": 2,
+      "authority": "NOT_CURRENTLY_AUTHORIZED",
+      "actions": {
+        "NEEDS_INPUT_FREEZE": "PREPARE_P4_ASPECT_INPUTS",
+        "READY_WAITING_EXECUTION_REQUEST": "WAIT_FOR_P4_ASPECT_EXECUTION_REQUEST",
+        "AUTHORIZED": "EXECUTE_P4_ASPECT_FROZEN_TASK",
+        "AWAITING_HUMAN_REVIEW": "REVIEW_P4_ASPECT_ACTUAL_OUTPUTS",
+        "TEST_FAILED_OR_NO_GAIN": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+        "PARTIAL_OR_UNKNOWN": "HOLD_P4_ASPECT_PRESERVE_SCOPED_RESULT",
+        "PASSED": "PREPARE_NEXT_STAGE_AFTER_P4_ASPECT",
+        "COMPLETED": "MAINLINE_DELIVERY_COMPLETE_STOP",
+        "TECHNICAL_BLOCKED": "REPAIR_P4_ASPECT_OBSERVED_EXECUTION_PROBLEM"
+      }
+    },
+    {
+      "id": "P5_SECOND_STYLE",
+      "scope": "另一批准参考家族，两个内容各两路对照",
+      "images_max": 4,
+      "authority": "NOT_CURRENTLY_AUTHORIZED",
+      "actions": {
+        "NEEDS_INPUT_FREEZE": "PREPARE_P5_SECOND_STYLE_INPUTS",
+        "READY_WAITING_EXECUTION_REQUEST": "WAIT_FOR_P5_SECOND_STYLE_EXECUTION_REQUEST",
+        "AUTHORIZED": "EXECUTE_P5_SECOND_STYLE_FROZEN_TASK",
+        "AWAITING_HUMAN_REVIEW": "REVIEW_P5_SECOND_STYLE_ACTUAL_OUTPUTS",
+        "TEST_FAILED_OR_NO_GAIN": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+        "PARTIAL_OR_UNKNOWN": "HOLD_P5_SECOND_STYLE_PRESERVE_SCOPED_RESULT",
+        "PASSED": "PREPARE_NEXT_STAGE_AFTER_P5_SECOND_STYLE",
+        "COMPLETED": "MAINLINE_DELIVERY_COMPLETE_STOP",
+        "TECHNICAL_BLOCKED": "REPAIR_P5_SECOND_STYLE_OBSERVED_EXECUTION_PROBLEM"
+      }
+    },
+    {
+      "id": "P7_DELIVERY",
+      "scope": "固定调用入口与有效成品；按需可编辑生产",
+      "images_max": 0,
+      "authority": "NOT_CURRENTLY_AUTHORIZED",
+      "actions": {
+        "NEEDS_INPUT_FREEZE": "PREPARE_P7_DELIVERY_INPUTS",
+        "READY_WAITING_EXECUTION_REQUEST": "WAIT_FOR_P7_DELIVERY_EXECUTION_REQUEST",
+        "AUTHORIZED": "EXECUTE_P7_DELIVERY_FROZEN_TASK",
+        "AWAITING_HUMAN_REVIEW": "REVIEW_P7_DELIVERY_ACTUAL_OUTPUTS",
+        "TEST_FAILED_OR_NO_GAIN": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+        "PARTIAL_OR_UNKNOWN": "HOLD_P7_DELIVERY_PRESERVE_SCOPED_RESULT",
+        "PASSED": "PREPARE_NEXT_STAGE_AFTER_P7_DELIVERY",
+        "COMPLETED": "MAINLINE_DELIVERY_COMPLETE_STOP",
+        "TECHNICAL_BLOCKED": "REPAIR_P7_DELIVERY_OBSERVED_EXECUTION_PROBLEM"
+      }
+    }
+  ],
+  "amendment_policy": {
+    "allowed_triggers": [
+      "ACTUAL_TEST_WHOLE_FAILURE",
+      "ACTUAL_TEST_NO_GAIN",
+      "ACCEPTED_DIMENSION_REGRESSION",
+      "OBSERVED_TECHNICAL_FAILURE"
+    ],
+    "required_evidence": [
+      "actual_test_identity",
+      "actual_input_and_output_or_error_receipts",
+      "human_feedback_scope_when_visual",
+      "observed_vs_hypothesized_cause",
+      "one_changed_component",
+      "preserved_components",
+      "bounded_retest_budget"
+    ],
+    "retain_prior_versions": true,
+    "no_new_global_aesthetic_rules_from_single_failure": true,
+    "goal_renderer_source_or_budget_change_requires_explicit_user_scope": true,
+    "prohibited_triggers": [
+      "ARTICLE_OR_SKILL_INTRODUCTION",
+      "MACHINE_PASS",
+      "DOCUMENT_COUNT",
+      "ASSISTANT_PREFERENCE",
+      "UNTESTED_HYPOTHESIS"
+    ]
+  },
+  "progress_receipt_policy": {
+    "advance_with": "hashed completed_stage_receipts containing actual execution and whole-poster human feedback",
+    "execute_with": "explicit user execution receipt scoped to current task and stage ceiling; save authority cannot substitute",
+    "executed_state": "hashed execution_receipt with task/stage identity, frozen_inputs, consumed attempts, outputs/errors, and actual tool trace",
+    "visual_verdict": "hashed review_receipt linked to that execution and scoped HUMAN_USER_FEEDBACK; machine success cannot substitute",
+    "later_inputs": "versioned input_freeze with actual input_refs; initial prompt files remain immutable",
+    "amendment": "versioned amendment_receipt with trigger, prior actual test evidence, one changed component, preserved components and bounded retest",
+    "technical_failure": "TECHNICAL_BLOCKED with actual execution errors; not a visual failure verdict",
+    "delivery": "P7_DELIVERY COMPLETED with artifact_refs and all prior accepted-stage receipts",
+    "enforcement_scope": "repository metadata consistency for cooperating executors; no host-wide enforcement or independent human identity authentication"
+  }
+}

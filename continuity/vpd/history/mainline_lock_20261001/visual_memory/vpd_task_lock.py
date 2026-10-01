@@ -131,9 +131,6 @@ def validate_reconciliation(root, lock, cp):
 
 def validate_state(root):
     lock = read(root, LOCK_PATH)
-    if lock.get('state_profile') == 'vpd-locked-mainline/v1':
-        from visual_memory.vpd_locked_mainline_state import validate_locked_mainline
-        return validate_locked_mainline(root)
     if lock.get('state_profile') == 'p6-composition/v1':
         from visual_memory.vpd_p6_composition_state import validate_p6_composition_state
         return validate_p6_composition_state(root)
@@ -246,9 +243,6 @@ def validate_legacy_state(root):
 def validate_request(root, request):
     """Validate a proposed dispatch/claim before accepting it; does not perform actions."""
     lock, cp = validate_state(root)
-    if lock.get('state_profile') == 'vpd-locked-mainline/v1':
-        from visual_memory.vpd_locked_mainline_state import validate_locked_request
-        return validate_locked_request(root, request, lock)
     require(request.get('lock_sha256') == digest(path(root, LOCK_PATH)), 'REQUEST_STALE_LOCK')
     action = request.get('action')
     # This evidence-reconciliation scope grants no rendering or domain mutations.
@@ -284,17 +278,6 @@ def validate_request(root, request):
     return lock
 
 def status_card(lock, cp):
-    if lock.get('state_profile') == 'vpd-locked-mainline/v1':
-        progress = lock['mainline_progress']
-        return {'状态':'主线已锁定，状态检查通过',
-                '检查范围':'任务、历史保留、预算与证据一致性；不证明视觉质量或远端发布',
-                '主目标':lock['objective']['text'], '主线':lock['mainline_lock']['plan']['path'],
-                '当前阶段':progress['stage_id'], '阶段状态':progress['status'],
-                '实际生成尝试':progress['attempts_consumed'],
-                '真人结论':progress['human_verdict'],
-                '当前出图授权':progress['execution_authorization']['images'],
-                '当前锁修订':lock['revision'], '当前检查点':cp['sequence'],
-                '唯一下一动作':lock['next_required_action']}
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',
                 'scope':'STATE_AND_LEDGER_ONLY_NOT_NEW_IMAGE_OR_HUMAN_ACCEPTANCE',

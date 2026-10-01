@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 188,
+  "revision": 187,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "锁定主线1.0已保存；首轮两张完整茶产品广告的共同输入与唯一变量已冻结。首轮出图/真人验收未执行；等待首轮明确执行指令。",
-  "status": "VPD_MAINLINE_LOCKED_STAGE1_PREPARED_NOT_EXECUTED",
+  "current_stage": "VPD-CHAZUO-NEW-REFERENCE-LOCK-AND-ONE-PROOF-CANDIDATE-01：241:2已按刘先生最新原话结算为真人整体强否决，旧machine screen不得覆盖；新上传参考图真实像素已读取并以1080×1439 / SHA-256 87a28f5c…2167锁定到Google Drive。只提炼4条像素可验证结构关系。按先锁槽位后选摄影原则，使用exactly 1张Pexels真实制茶竖图的单一3:4几何裁切，在Figma形成exactly 1个候选244:2；支持文字=0，无色块、无重复摄影。完成1次成功最终像素回读，未明显复现241:2失败骨架；等待刘先生真人审美。",
+  "status": "VPD_CHAZUO_NEW_REFERENCE_LOCKED_ONE_PROOF_CANDIDATE_AWAITING_HUMAN",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_STAGE1_EXECUTION_REQUEST",
+  "next_required_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -156,31 +156,37 @@
     "repair04_allowed": false,
     "modify_accepted_repair03_photo": false,
     "successor_execution_authorized": false,
-    "add_new_rules_gates_validators": false,
-    "new_mainline_contract": {
-      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
-      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
-    },
-    "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
+    "add_new_rules_gates_validators": false
   },
   "completed_this_revision": [
-    "用户授权的主线与首轮输入已冻结",
-    "已有资产、反馈范围及历史实验保留",
-    "旧适配器调度投影与状态检查接续已修复；不代表审美通过"
+    "settled Figma 241:2 as Liu Xiansheng strong whole-candidate rejection using exact human quote; removed any waiting-human or baseline implication",
+    "read actual pixels of the newly uploaded reference in the same chat",
+    "locked new reference as 1080x1439 / 646432 bytes / SHA-256 87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "persisted the new reference pixel asset to Google Drive /高级感P_新参考锁/VPD_CHAZUO_NEW_REFERENCE_LOCK_20260930.jpg",
+    "distilled exactly four pixel-verifiable structural relations with explicit reference locations",
+    "locked a one-sentence composition target before formal photo selection",
+    "used exactly one traceable real Pexels tea-processing photograph and no image generation",
+    "used a single 3000x4000 geometric crop from the 3648x5472 source; no repeated photo card",
+    "created exactly one new Figma candidate by converting upload-created frame 244:2 to 1200x1600",
+    "used approved wordmark source 203:2 only as clone 245:2; old source unchanged",
+    "support text=0; artificial color block count=0; second candidate=0",
+    "completed exactly one successful final candidate pixel readback after one transient transport failure that returned no pixels",
+    "obvious regression screen did not reproduce the 241:2 failure skeleton; no claim of human liking or aesthetic pass",
+    "protected old frames 241:2, 232:2, 197:2, 201:2 and wordmark source 203:2 remained unchanged"
   ],
-  "updated_at": "2026-10-01T09:46:59+08:00",
+  "updated_at": "2026-09-30",
   "workflow": {
-    "version": "1.1 + mainline-lock 1.0",
-    "focus_stage": "P3",
+    "version": "1.1",
+    "focus_stage": "P4",
     "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "document": {
       "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "2abced161c0c4bcd4e71ba2b3e5571cb74cfe8053344e6a0aa41e6a714d887b5"
+      "sha256": "63179a48b49fccb227f3ab25c5aaa4d94b2d7daff707443c8388999d3032e50b"
     }
   },
-  "state_profile": "vpd-locked-mainline/v1",
+  "state_profile": "p6-composition/v1",
   "render_allowed": false,
-  "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
+  "input_commit": "d635badb850f790004925efddba2b484ca2fecf0",
   "authority_repair": {
     "record": {
       "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
@@ -975,7 +981,16 @@
     "branch_status": "PAUSED_PRESERVED_LOCAL_QUALITY_EVIDENCE_NOT_CURRENT_MAINLINE"
   },
   "visual_master_freeze_guard": {
+    "status": "MANDATORY",
     "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "scope": "CURRENT_PROJECT_CONTROL",
+    "canonical_reference_frame_id": "197:2",
+    "protected_production_frame_id": "201:2",
+    "only_open_node_id": "201:3",
+    "non_target_change_default": "PROHIBITED",
+    "prompt_reconstruction_of_protected_master": "PROHIBITED",
+    "solved_route_reimplementation": "PROHIBITED",
+    "candidate_promotion_requires": "DIRECT_BASELINE_COMPARISON_AND_HUMAN_PIXEL_REVIEW",
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "mainline_restore": {
@@ -1103,17 +1118,16 @@
     "current_chat_render_eligible": false
   },
   "mainline_plan": {
-    "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
-    "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
+    "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+    "sha256": "97b17a99d9e6db7da817ecf996094b382c0a7a7fdc40c076bb1bf0d1cec893a0"
   },
   "scheduling_hold": {
-    "scope": "MAINLINE_SAVED_RESOURCE_EXECUTION_NOT_REQUESTED",
+    "scope": "READ_ONLY_AUDIT_NO_GENERATION_OR_TRAINING",
+    "reason": "USER_REQUESTED_PRESERVE_EXISTING_RESULTS_AND_FOLLOW_SAVED_MAINLINE",
     "deferred_attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "prior_next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
     "prior_preparation_preserved": true,
-    "legacy_scheduling_hold": {
-      "path": "continuity/vpd/history/mainline_lock_20261001/continuity/vpd/CURRENT_TASK_LOCK.json",
-      "sha256": "2916b03688bc764c01ec7de9024d113200a6360a5c63efe8787264fceed5bd19"
-    },
+    "resume_requires": "COMPATIBILITY_AND_EXECUTION_PLAN_CONFIRMED; OLD_FROZEN_PROTOCOL_UNCHANGED",
     "full_state_validator_required_before_resource_execution": true
   },
   "mature_workflow_audit": {
@@ -2463,8 +2477,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
-    "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
+    "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_REFERENCE_LOCK_AND_ONE_PROOF_CANDIDATE01_EXECUTION_20260930.json",
+    "sha256": "85b070d2fc9c237ba95da23b7969674580e00efc53ca0c1eb94ae0d2c1893ad8"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -2749,56 +2763,5 @@
       "sha256": "85b070d2fc9c237ba95da23b7969674580e00efc53ca0c1eb94ae0d2c1893ad8"
     },
     "next_legal_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
-  },
-  "mainline_lock": {
-    "id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
-    "version": "1.0",
-    "locked": true,
-    "plan": {
-      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
-      "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
-    },
-    "contract": {
-      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
-      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
-    },
-    "authority": {
-      "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
-      "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
-    },
-    "preservation": {
-      "path": "continuity/vpd/history/mainline_lock_20261001/PRESERVATION_MANIFEST.json",
-      "sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd"
-    },
-    "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
-  },
-  "mainline_progress": {
-    "stage_id": "P3_STAGE1",
-    "status": "READY_WAITING_EXECUTION_REQUEST",
-    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
-    "attempts_consumed": 0,
-    "outputs": [],
-    "human_verdict": "NOT_REVIEWED",
-    "completed_stage_receipts": [],
-    "execution_authorization": {
-      "status": "NOT_REQUESTED",
-      "images": 0,
-      "figma_writes": 0,
-      "external_compute_usd": 0
-    },
-    "planned_attempts_max": 2
-  },
-  "legacy_fields_scope": {
-    "scope": "HISTORICAL_RESULTS_NOT_CURRENT_EXECUTION_AUTHORITY",
-    "current_authority": "mainline_lock + mainline_progress",
-    "fields": [
-      "experiment",
-      "source_library",
-      "requirements",
-      "execution",
-      "concept02",
-      "chazuo_concept02_photo_repair03",
-      "chazuo_new_reference_lock_and_one_proof_candidate01"
-    ]
   }
 }

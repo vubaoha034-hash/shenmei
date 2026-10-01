@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,6 +41,9 @@ jobs:
 
       - name: Run visual-memory regression suite
         run: python scripts/verify_visual_memory.py
+
+      - name: Verify locked mainline and preserved legacy state
+        run: python -m pytest -q tests/visual_memory/test_vpd_locked_mainline_state.py tests/visual_memory/test_vpd_task_lock.py
 
       - name: Verify current VPD state
         run: python scripts/verify_visual_memory.py --vpd-state --status-card

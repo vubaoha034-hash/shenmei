@@ -1,0 +1,24 @@
+{
+  "candidates": [],
+  "created_at": "2026-10-01T02:21:06+00:00",
+  "evaluations": [],
+  "evidence": [
+    {
+      "case_id": "vpd-mainline-state-pointer-20261001",
+      "confidence": "verified",
+      "contradicts": [],
+      "created_at": "2026-10-01T02:21:06+00:00",
+      "detail": "基线bce9be57f8be0e8ad8c83b47acd02e964488aa81实际文件和原状态检查可复现；本次按用户授权保存主线时同步唯一任务锁、检查点、适配器并保留历史字节。技术一致性修复不证明视觉方法有效；仅observe，不形成新审美规则或Skill晋升。",
+      "fingerprint": "fp_f74cfb7fe2f4",
+      "id": "ev_9999a36bdfd3",
+      "kind": "failure",
+      "layer": "repo",
+      "severity": "high",
+      "source": "test",
+      "summary": "当前锁已到revision187但接管适配器仍为revision180，检查点缺失父任务，原状态入口报PARENT_TASK_CHANGED。"
+    }
+  ],
+  "schema": 1,
+  "target": "vpd-state-continuity",
+  "updated_at": "2026-10-01T02:21:06+00:00"
+}
