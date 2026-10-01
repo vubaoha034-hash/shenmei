@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 201,
+  "revision": 200,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "R4两张成品19、54保持待真人整图验收；独立审图任务已在项目外按完整消息发送一次并回读取证，审核正在读取三张指定图片。",
+  "current_stage": "R4两张成品19、54保持待真人整图验收；已确认Opera Neon当前连接和输入/点击能力，独立审图任务已冻结并登记，尚未发送。",
   "status": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
   "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "独立审图任务已在项目外按完整消息发送一次并回读取证，审核正在读取三张指定图片。"
+    "已确认Opera Neon当前连接和输入/点击能力，独立审图任务已冻结并登记，尚未发送。"
   ],
-  "updated_at": "2026-10-01T16:02:45.528960+08:00",
+  "updated_at": "2026-10-01T15:56:47.463159+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -2877,7 +2877,7 @@
     },
     "independent_review": {
       "task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "OBSERVED_SINGLE_MESSAGE_REVIEW_RUNNING",
+      "status": "CLAIMED_READY_TO_SEND",
       "claim": {
         "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/DISPATCH_CLAIM.json",
         "sha256": "ed1d5f7581213b60066a21559aab75c14a1aeadf11e578c9113fcfb19747edba"
@@ -2885,12 +2885,7 @@
       "active_attempt_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
       "human_acceptance_replaced": false,
       "whole_stage_accepted": false,
-      "reviewer_writes_repo": false,
-      "latest_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/DISPATCH_RECEIPT.json",
-        "sha256": "18a605443bc28754a19489a51db83ba60918061663fac90bbe22b6bc82f0ef82"
-      },
-      "conversation_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189"
+      "reviewer_writes_repo": false
     }
   },
   "legacy_fields_scope": {
