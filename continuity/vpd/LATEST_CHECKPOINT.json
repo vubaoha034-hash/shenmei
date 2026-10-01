@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 213,
-  "recorded_at": "2026-10-01T12:28:30.957891+08:00",
+  "sequence": 214,
+  "recorded_at": "2026-10-01T12:40:18.216402+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "首轮两张完整茶作海报均被刘先生否定为没有设计；第二张相对优先仅为局部比较。已保存整体构图与字形关系的局部修订草案，待完成修订输入冻结。",
+  "current_focus": "同参考同内容的局部修订已冻结；本轮两张完整茶作海报复验已获继续执行授权，待实际生成与保存，评审仅展示中性编号。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -341,16 +341,17 @@
     "p1_chazuo_crop_composite_stream_recovery04_complete_waiting_human_review",
     "locked_mainline_20261001_and_stage1_inputs_saved",
     "locked_mainline_stage1_chazuo_two_full_posters_generated_and_archived_20261001",
-    "locked_mainline_stage1_whole_design_fail_feedback_settled_and_local_amendment_draft_prepared_20261001"
+    "locked_mainline_stage1_whole_design_fail_feedback_settled_and_local_amendment_draft_prepared_20261001",
+    "stage1_r2_local_amendment_inputs_frozen_and_bounded_execution_authorized_20261001"
   ],
   "incomplete": [
-    "首轮整图失败；局部修订输入冻结与有界复验尚未完成",
+    "首轮局部修订R2两张复验待实际执行与真人整图判断",
     "内容、画幅与第二风格复验尚未完成",
     "旧候选244:2仍待真人结论，保留但不是新主线前置条件",
     "尚无长期方法晋升或完整商业交付"
   ],
   "blocked": [],
-  "next_required_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -418,14 +419,14 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_STAGE1_HUMAN_DESIGN_FAIL",
+  "status": "VPD_MAINLINE_STAGE1_R2_AUTHORIZED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "c446448418334ac6749aa03d2620acd843680b803dd50bcfe51cfc730edd0d92"
+    "sha256": "a566a3b620e838de0a433efc71cde4c5cfab880cc43e8fb995e50acfa64f614b"
   },
   "history_snapshot": {
-    "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_212_BEFORE_HUMAN_REVIEW.json",
-    "sha256": "813e05d5ac32716f18b11936f23bdec37dd37e70458408419762caddb9be2f8d"
+    "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_213_BEFORE_R2_AUTHORIZATION.json",
+    "sha256": "88d89f6b89a0b97cbf7f07109762a8bffba19f3884417c4a6090969a2984fb23"
   },
   "requirements": {
     "p4_mechanism_transfer": {
@@ -442,8 +443,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-STAGE1-HUMAN-DESIGN-FAIL-20261001-001",
-      "event_hash": "ea4fffb902547a24145c17718d1aeeb7f9477ddf44ed50aa63bed140e59e6daf"
+      "event_id": "EVT-VPD-STAGE1-R2-AUTHORIZED-20261001-001",
+      "event_hash": "4788862fe8e594018ebf070438a67d500ed51510ef06aaba3920296488861585"
     }
   },
   "typography_repair": {
@@ -958,8 +959,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "首轮两张完整茶作海报均被刘先生否定为没有设计；第二张相对优先仅为局部比较。已保存整体构图与字形关系的局部修订草案，待完成修订输入冻结。",
-  "updated_at": "2026-10-01T12:28:30.957891+08:00",
+  "current_stage": "同参考同内容的局部修订已冻结；本轮两张完整茶作海报复验已获继续执行授权，待实际生成与保存，评审仅展示中性编号。",
+  "updated_at": "2026-10-01T12:40:18.216402+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1831,9 +1832,9 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "整图真人反馈已绑定两张实际输出并结算为失败",
-    "评审前公开路线造成暗示的纠正已按当前项目范围记录",
-    "第五条整体构图与字形关系修订草案已准备，原输入与执行证据保留"
+    "R1整图失败和相对偏好保留",
+    "第五条构图与字形修订输入已冻结",
+    "用户继续指令已登记为本轮两张有界执行授权"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2315,95 +2316,57 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "TEST_FAILED_OR_NO_GAIN",
-    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
-    "attempts_consumed": 2,
-    "outputs": [
-      {
-        "arm": "direct_reference",
-        "label": "X",
-        "file_name": "VPD_CHAZUO_STAGE1_X_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "6397ac30864b519d5bd505a7d87ab3017d9d55a0300cc88795da3d651a5e84c0",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2530737,
-        "drive_file_id": "10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt",
-        "drive_url": "https://drive.google.com/file/d/10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt",
-          "mime_type": "image/png",
-          "size": 2530737,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "arm": "distilled_candidate",
-        "label": "Y",
-        "file_name": "VPD_CHAZUO_STAGE1_Y_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "4849376bb8c4320ac58ecc049e60d276581ec37bafae41ab820a46614311ce74",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2863827,
-        "drive_file_id": "1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5",
-        "drive_url": "https://drive.google.com/file/d/1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5",
-          "mime_type": "image/png",
-          "size": 2863827,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      }
-    ],
-    "human_verdict": "TEST_FAILED_OR_NO_GAIN",
+    "status": "AUTHORIZED",
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
+    "attempts_consumed": 0,
+    "outputs": [],
+    "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 2,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_AUTHORIZATION.json",
-        "sha256": "3166b9236d83525db3bff074919654e4e291b604635ae675339dfd5c1e3f8537"
+        "path": "continuity/vpd/stage1/r2/EXECUTION_AUTHORIZATION.json",
+        "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
       }
     },
     "planned_attempts_max": 2,
-    "session": {
-      "source_commit": "bd8a04b659840e04a677fac1b7294dd7615bf53a",
-      "opening_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_AUTHORIZATION.json",
-        "sha256": "3166b9236d83525db3bff074919654e4e291b604635ae675339dfd5c1e3f8537"
+    "input_freeze": {
+      "path": "continuity/vpd/stage1/r2/INPUT_FREEZE.json",
+      "sha256": "584902f76b4d7286f124ea8869744168449dfb8f7f2f12b79614bd15215ed2aa"
+    },
+    "amendment_receipt": {
+      "path": "continuity/vpd/stage1/r2/LOCAL_AMENDMENT.json",
+      "sha256": "64f3f3f28406771e408ee7bcf7ad4fc8203c3f3bc2c0df45a5125df3dae12c78"
+    },
+    "prior_settled_task": {
+      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+      "review_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_REVIEW_RECEIPT.json",
+        "sha256": "40ad2086a5c7c47ef4981d194b4f04ce7157daf8b72e60bf5b8b3a876435b591"
       },
-      "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "closing_receipt": {
+      "execution_receipt": {
         "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_RECEIPT.json",
         "sha256": "b13ddcee783fa5fba5b1fd05e05c7612fb5d1bae32c23958eb2f9ba15b31bfc0"
+      }
+    },
+    "session": {
+      "source_commit": "aecd357b2818a0efb4853eb5baf1c9960c0428bf",
+      "opening_receipt": {
+        "path": "continuity/vpd/stage1/r2/EXECUTION_AUTHORIZATION.json",
+        "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
       },
-      "status": "HUMAN_REVIEW_SETTLED_WHOLE_DESIGN_FAIL"
+      "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+      "status": "AUTHORIZED_NOT_EXECUTED"
     },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_RECEIPT.json",
-      "sha256": "b13ddcee783fa5fba5b1fd05e05c7612fb5d1bae32c23958eb2f9ba15b31bfc0"
-    },
-    "review_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_REVIEW_RECEIPT.json",
-      "sha256": "40ad2086a5c7c47ef4981d194b4f04ce7157daf8b72e60bf5b8b3a876435b591"
-    },
-    "local_amendment_preparation": {
-      "status": "DRAFT_PREPARED_NOT_EXECUTED",
-      "receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/LOCAL_AMENDMENT_DRAFT.json",
-        "sha256": "53027a35176efacb0e41e9a7a1b2b249562a3ea2460bfd86829d4c7c094e3d3b"
-      },
-      "proposed_new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
-      "active_task_unchanged": true
+    "neutral_review_delivery": {
+      "identifiers": [
+        "27",
+        "68"
+      ],
+      "route_or_assistant_ranking_disclosed_before_review": false
     }
   }
 }
