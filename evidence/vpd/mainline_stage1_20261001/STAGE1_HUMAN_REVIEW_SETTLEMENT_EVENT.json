@@ -1,0 +1,34 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-STAGE1-HUMAN-DESIGN-FAIL-20261001-001",
+  "event_type": "STAGE1_HUMAN_WHOLE_DESIGN_FAIL_WITH_RELATIVE_PREFERENCE",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T12:28:30.957891+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-STAGE1-EXECUTED-20261001-001",
+  "previous_event_hash": "f15651664c8297c50ffe74de9c4e84e008736c50454791a978bc4cf3fba7c64a",
+  "lock_sha256": "c446448418334ac6749aa03d2620acd843680b803dd50bcfe51cfc730edd0d92",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_EXECUTED_WAITING_HUMAN_REVIEW",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_HUMAN_DESIGN_FAIL",
+    "next_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/STAGE1_HUMAN_FEEDBACK.json",
+    "evidence/vpd/mainline_stage1_20261001/STAGE1_REVIEW_RECEIPT.json",
+    "evidence/vpd/mainline_stage1_20261001/LOCAL_AMENDMENT_DRAFT.json",
+    "evidence/vpd/mainline_stage1_20261001/STAGE1_DESIGN_REVIEW_AND_LOCAL_AMENDMENT.md"
+  ],
+  "reason": "记录刘先生第二张相对优先但两张完整设计均不认可；原评审路线已公开，不能证明因果蒸馏收益。按真实整图失败准备单项局部修订，保留主线、历史认可及原执行证据。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "ea4fffb902547a24145c17718d1aeeb7f9477ddf44ed50aa63bed140e59e6daf"
+}

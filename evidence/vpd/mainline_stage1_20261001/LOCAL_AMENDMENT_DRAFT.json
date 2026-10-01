@@ -1,0 +1,80 @@
+{
+  "schema_version": "vpd-evidence-based-local-amendment-draft/v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "recorded_at": "2026-10-01T12:22:39.564049+08:00",
+  "stage_id": "P3_STAGE1",
+  "actual_test_identity": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+    "source_commit": "4d426d97383c64c51204268740cb8a58b5c4a561",
+    "output_labels": [
+      "X",
+      "Y"
+    ]
+  },
+  "trigger": "ACTUAL_TEST_WHOLE_FAILURE",
+  "actual_input_and_output_or_error_receipts": {
+    "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_RECEIPT.json",
+    "sha256": "b13ddcee783fa5fba5b1fd05e05c7612fb5d1bae32c23958eb2f9ba15b31bfc0"
+  },
+  "human_feedback_scope_when_visual": {
+    "scope": "WHOLE_POSTER",
+    "feedback": {
+      "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_HUMAN_FEEDBACK.json",
+      "sha256": "8ac676a842d6f01fa26ab79e80db743fe227477b3b6c6f7ce54ce3f3c907927b"
+    }
+  },
+  "observed_vs_hypothesized_cause": {
+    "observed": [
+      "User relatively preferred Y but explicitly rejected both complete designs as lacking design.",
+      "Both outputs use mossy product photography, corner wordmark and isolated right-hand slogan.",
+      "In the reference upper ad, a broad clustered product form and irregular headline share a boundary; the headline overlaps the platter/product field.",
+      "The first four distilled items describe photography; item5 does not specify actual letterform construction or product-type composition."
+    ],
+    "hypotheses": [
+      "The existing translation gives the renderer detailed photographic relations but leaves lettering and composition to generic defaults.",
+      "A concrete lettering-and-composition description may express more of the reference design mechanism."
+    ],
+    "not_established": [
+      "A unique cause",
+      "Model inability",
+      "Causal gain from the exposed R1 pair",
+      "A new accepted photo or typography scope",
+      "Effectiveness of this amendment"
+    ]
+  },
+  "one_changed_component": {
+    "id": "DISTILLED_ITEM5_PRODUCT_WORDMARK_HEADLINE_COMPOSITION",
+    "baseline_path": "continuity/vpd/stage1/DISTILLED_DELTA.txt",
+    "baseline_sha256": "c96b96c4c5472ea3978b1664590db191b479fe2f4b04adf01c516a2f7484d3ac",
+    "candidate": {
+      "path": "evidence/vpd/mainline_stage1_20261001/NEXT_DISTILLED_DELTA_DRAFT.txt",
+      "sha256": "9304727d93e722847b44c68a28d8e82166b76f36459da18dd4ccd632a4585468"
+    },
+    "change": "Replace item5 only: define a tea-specific wordmark silhouette and a headline that follows the product boundary instead of an isolated copy block.",
+    "exact_image_pixels_preserved": false,
+    "photography_description_items_1_through_4_unchanged": true
+  },
+  "preserved_components": [
+    "Locked mainline goal and stage order",
+    "Same original approved reference pixels, upper horizontal ad only",
+    "Original R1 prompts, execution receipt, tool trace and outputs remain immutable",
+    "Common prompt, brand 茶作, copy 一杯茶，慢下来, content and 3:2 aspect",
+    "CHATGPT_IMAGES renderer and complete flat-poster output",
+    "Next comparison: common prompt alone versus common prompt plus the amended delta",
+    "Earlier scoped accepted results remain unchanged"
+  ],
+  "bounded_retest_budget": {
+    "proposed_attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "external_compute_usd": 0,
+    "figma_writes": 0,
+    "authorized_now": 0
+  },
+  "proposed_new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
+  "task_activation": "NOT_ACTIVATED; R1 remains the current settled task. Freeze the amended input refs before any newly scoped execution.",
+  "future_review_delivery": "Neutral identifiers and actual images; presentation order independent of route order. Bind identifiers to hashes. Reveal routes and assistant assessments after the user verdict.",
+  "formal_skill_or_global_rule_promotion": false
+}

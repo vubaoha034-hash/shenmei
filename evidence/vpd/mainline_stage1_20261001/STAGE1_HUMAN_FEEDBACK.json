@@ -1,0 +1,51 @@
+{
+  "schema_version": "vpd-scoped-human-feedback/v1",
+  "authority_class": "HUMAN_USER_FEEDBACK",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T12:22:39.564049+08:00",
+  "source": {
+    "type": "CURRENT_PROJECT_CONVERSATION",
+    "locator": "Current user review of the two stage1 茶作 outputs immediately following the saved execution receipt",
+    "received_message_ends_mid_sentence": true
+  },
+  "outcome": "TEST_FAILED_OR_NO_GAIN",
+  "scope": "WHOLE_POSTER",
+  "whole_poster_accepted": false,
+  "user_verdict_excerpt": "第二张优先于第一张；这两张按我的设计想法，都属于没有设计的。",
+  "outputs_reviewed": [
+    {
+      "label": "X",
+      "display_position": 1,
+      "sha256": "6397ac30864b519d5bd505a7d87ab3017d9d55a0300cc88795da3d651a5e84c0",
+      "whole_poster_accepted": false
+    },
+    {
+      "label": "Y",
+      "display_position": 2,
+      "sha256": "4849376bb8c4320ac58ecc049e60d276581ec37bafae41ab820a46614311ce74",
+      "whole_poster_accepted": false
+    }
+  ],
+  "relative_preference": {
+    "preferred": "Y",
+    "over": "X",
+    "scope": "PAIR_RELATIVE_ONLY",
+    "whole_acceptance_implied": false
+  },
+  "review_conditions": {
+    "blind": false,
+    "routes_disclosed_before_verdict": true,
+    "assistant_observations_disclosed_before_verdict": true,
+    "user_reported_psychological_suggestion": true,
+    "measured_effect_of_suggestion": "UNKNOWN",
+    "causal_distillation_gain_established": false
+  },
+  "future_review_delivery": {
+    "scope": "SUBSEQUENT_VPD_REVIEW_DELIVERY",
+    "before_user_verdict": "Actual images and neutral identifiers only; withhold route labels, assistant ranking and recommendation until the verdict is recorded",
+    "identity_binding": "Bind neutral identifier to exact output hash and file; do not infer identity from attachment display order"
+  },
+  "newly_accepted_component_scopes": [],
+  "prior_historical_scoped_acceptances": "UNCHANGED"
+}
