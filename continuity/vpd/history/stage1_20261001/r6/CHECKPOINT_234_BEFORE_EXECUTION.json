@@ -1,92 +1,399 @@
 {
-  "schema_version": "vpd-current-task-lock/v1",
-  "revision": 214,
+  "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-  "repository": "vubaoha034-hash/shenmei",
-  "branch": "visual-program-distillation-v2-photography-design-20260814",
-  "objective": {
-    "text": "从用户原先批准的海报真实像素蒸馏可复用视觉程序，用新作品验证视觉逻辑、迁移能力和质量；不同家族共用同一个蒸馏器。",
-    "single_poster_optimization": false
-  },
-  "preserved_prior_revision": {
-    "revision": 143,
-    "git_blob_sha": "80be2fbc7b94d8a73d364e5a1f34f798f7efa39f",
-    "note": "Revision 143 authorized the exact two-image Golden-gated repair; both authorized images are now consumed and no relative comparison was permitted."
-  },
-  "family": "SHANYEJI_BRAND_EDITORIAL_VISUAL_FAMILY",
-  "capsule": {
-    "id": "style_capsule_shanyeji_brand_editorial_v1_1_candidate",
-    "maturity": "CONTROLLED_VALIDATION_REQUIRED",
-    "promoted": false
-  },
-  "mechanism_transfer_verdict": {
-    "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY",
-    "positive_no_reference_pairs": 2,
-    "tofu_delta_B_minus_A": 0.5,
-    "tea_delta_B_minus_A": 0.7,
-    "mean_directional_delta": 0.6,
-    "stable_independent_distillation_proven": false,
-    "commercial_master_quality_proven": false,
-    "candidate_promotion_allowed": false
-  },
-  "p6_integrated_design": {
-    "status": "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED",
+  "sequence": 234,
+  "recorded_at": "2026-10-01T18:35:13.287146+08:00",
+  "task_model": "TASK_REGISTRY",
+  "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
+  "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
+  "active_task_ids": [
+    "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
+  ],
+  "current_focus": "R4两张完整茶作海报已按冻结输入实际生成，原件已保存并回读文件元数据；以19、54中性编号交付，摄影与整体设计待真人判断。",
+  "completed": [
+    "p3b_doufang_no_reference_pair_complete_directional_benefit",
+    "p4_chazuo_pair_complete_repeated_directional_benefit",
+    "p4_mechanism_transfer_verdict_pass_repeated_directional_only",
+    "p6_equal_budget_validation_inputs_frozen",
+    "p6_figma_page_and_four_frames_created",
+    "p6_display_titles_vectorized",
+    "p6_support_text_editable_and_fonts_verified",
+    "p6_doufang_A_real_image_bound",
+    "p6_remaining_photo_nodes_unlocked",
+    "p6_normal_chat_submit_post_blocker_confirmed",
+    "p6_encrypted_github_actions_figma_upload_relay_v1_deployed",
+    "p6_relay_local_encrypt_decrypt_validate_dry_run_pass",
+    "p6_relay_key_rotated_after_old_private_key_artifact_unrecoverable",
+    "p6_relay_rotated_public_certificate_committed",
+    "p6_relay_rotated_cms_roundtrip_pass",
+    "p6_figma_node_12_12_precheck_pass",
+    "p6_authority_compatibility_repaired",
+    "install_rotated_repository_secret_VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
+    "p6_doufang_B_relay_transport_upload_pass",
+    "p6_doufang_B_placement_mismatch_recorded",
+    "p6_placement_protocol_probe_pass",
+    "p6_doufang_B_controlled_retry_consumed_placement_failed",
+    "p6_nested_target_probe_pass",
+    "p6_exact_frozen_doufang_B_source_scratch_reproduced_failure",
+    "p6_pixel_equivalent_png_of_doufang_B_still_failed_placement",
+    "p6_doufang_A_large_bound_node_control_pass",
+    "p6_all_four_formal_photo_nodes_direct_readback_confirmed",
+    "p6_equal_budget_composition_review_round1_completed",
+    "p6_single_correction_pass_per_poster",
+    "p6_final_pixel_and_editability_validation",
+    "human_set_verdict",
+    "p1_typography_only_distillation_repair_bench",
+    "p1_typography_title_only_ab_execution",
+    "p1_typography_title_blind_human_verdict",
+    "p1_t1_candidate2_technical_correctness_retry",
+    "p1_t1_retry_drive_exports_readback",
+    "p1_t1_technical_retry_human_verdict",
+    "p1_wordmark_system_repair_v2_execution",
+    "p1_wordmark_system_repair_v2_human_verdict",
+    "p1_semantic_anchor_wordmark_v3_execution",
+    "p1_semantic_anchor_wordmark_v3_human_verdict",
+    "p1_structural_wordmark_v4_execution",
+    "p1_structural_wordmark_v4_direction_selection",
+    "p1_generative_custom_wordmark_v5_execution",
+    "p1_generative_custom_wordmark_v5_direction_selection",
+    "p1_noncalligraphic_semantic_wordmark_v6_execution",
+    "p1_v6_figma_vector_reconstruction",
+    "p1_v6_doufang_endpoint_optical_fix",
+    "p1_v6_figma_contour_cleanup",
+    "p1_v6_per_contour_bezier_refinement",
+    "p1_chazuo_v6_hifi_surface_test",
+    "p1_chazuo_v6_hifi_surface_human_fail_route_stop",
+    "p1_typography_creation_method_research_sandbox",
+    "p1_typography_method_sandbox_plan",
+    "p1_typography_method_sandbox_test01_fail",
+    "p1_typography_method_sandbox_test02_pass_local_only",
+    "p1_typography_method_sandbox_test03_executed",
+    "p1_typography_method_sandbox_test03_directional_positive",
+    "p1_typography_method_sandbox_test03_correction01_executed",
+    "p1_typography_method_sandbox_test03_closed_insufficient_delta",
+    "p1_typography_method_sandbox_test04_executed",
+    "p1_typography_method_sandbox_test04_human_fail",
+    "p1_typography_method_sandbox_extension_v2",
+    "p1_typography_method_sandbox_test06_executed",
+    "p1_typography_method_sandbox_test06_human_fail_direction_drift",
+    "p1_typography_direction_audit_plan",
+    "p1_typography_direction_audit_from_mother_reference",
+    "p1_typography_direction_audit_raster_repair",
+    "p1_typography_direction_audit_human_confirmation",
+    "p1_mother_anchored_local_contour_refinement_01_executed",
+    "p1_mother_anchored_local_contour_refinement_01_human_settlement",
+    "p1_mother_sourced_surface_material_probe_01_prepared",
+    "p1_mother_sourced_surface_material_probe_01_executed",
+    "p1_mother_sourced_surface_probe01_human_settlement",
+    "p1_mother_sourced_surface_cleanup_01_executed",
+    "p1_mother_sourced_surface_cleanup_01_human_fail_overflattened",
+    "p1_mother_surface_selective_decontamination_probe_02_prepared",
+    "p1_mother_surface_selective_decontamination_probe_02_executed",
+    "p1_mother_surface_selective_decontamination_probe_02_human_fail",
+    "p1_stage_g_texture_route_closed",
+    "p1_chazuo_149_real_poster_context_test_executed",
+    "p1_chazuo_149_real_poster_context_test_no_explicit_pass",
+    "p1_chazuo_mother_anchored_structural_reauthoring_01_prepared",
+    "p1_chazuo_mother_anchored_structural_reauthoring_01_executed",
+    "p1_chazuo_structural_reauthoring_01_readability_pass_taste_fail",
+    "p1_chazuo_generative_structural_reauthoring_02_prepared",
+    "p1_chazuo_generative_structural_reauthoring_02_executed_constraint_fail",
+    "p1_chazuo_generative_reauthoring02_human_decision_continue",
+    "p1_chazuo_generative_design_quality_attempt03_prepared",
+    "p1_chazuo_generative_design_quality_attempt03_executed",
+    "p1_chazuo_generative_to_figma_sequence_correction",
+    "p1_attempt02_figma_vector_production_test_executed",
+    "p1_attempt02_figma_vector_direction_pass",
+    "p1_attempt02_figma_optical_cleanup01_executed",
+    "p1_attempt02_figma_optical_cleanup01_human_pass",
+    "p1_attempt02_stage_h_real_poster_context_test_executed",
+    "p1_attempt02_stage_h_real_poster_context_test_human_fail",
+    "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_prepared",
+    "p1_chazuo_full_poster_art_direction_custom_wordmark_concept01_executed",
+    "p1_chazuo_concept01_directional_positive_not_pass",
+    "p1_chazuo_holistic_concept02_mechanism_plan_prepared",
+    "p1_chazuo_holistic_concept02_generated_once",
+    "p1_chazuo_holistic_concept02_human_strong_directional_positive",
+    "p1_chazuo_holistic_concept02_figma_pixel_reference_frame_created",
+    "figma_upload_direct_runtime_route_regression_diagnosed",
+    "figma_upload_relay_v1_mandatory_route_guard_recorded",
+    "p1_chazuo_concept02_existing_relay_transport_pass",
+    "p1_chazuo_concept02_target_lock_regression_corrected",
+    "p1_chazuo_concept02_controlled_relay_retry_pass",
+    "p1_chazuo_concept02_figma_image_fill_readback_pass",
+    "p1_chazuo_concept02_full_frame_screenshot_verified",
+    "p1_chazuo_concept02_raster_binding_blocker_closed",
+    "p1_chazuo_concept02_clean_photo_base_bound_to_201_3",
+    "p1_chazuo_concept02_wordmark_vector_extracted_to_203_2",
+    "p1_chazuo_concept02_editable_typography_rebuilt",
+    "p1_chazuo_concept02_editable_layout_layers_completed",
+    "p1_chazuo_concept02_geometry_audit_pass",
+    "p1_chazuo_concept02_editable_reconstruction_waiting_human_review",
+    "p1_chazuo_concept02_human_overall_design_pass",
+    "p1_chazuo_concept02_human_wordmark_pass",
+    "p1_chazuo_concept02_photo_base_fail_ai_feel",
+    "vpd_visual_master_freeze_guard_v1_persisted",
+    "chazuo_concept02_dimension_scoped_freeze_active",
+    "chazuo_concept02_only_photo_node_201_3_open",
+    "visual_regression_rollback_rule_active",
+    "solved_route_reuse_rule_active",
+    "chazuo_concept02_photo_repair01_candidate_205_2_created",
+    "chazuo_concept02_photo_repair01_relay_binding_pass",
+    "chazuo_concept02_photo_repair01_frozen_layer_diff_zero",
+    "chazuo_concept02_photo_repair01_waiting_human_pixel_compare",
+    "vpd_mainline_restored_after_chazuo_single_poster_drift",
+    "system_holdout_h1_h4_frozen_payloads_reconfirmed",
+    "system_holdout_runtime_anchor_authorization_reconfirmed",
+    "system_holdout_formal_outputs_reconfirmed_0_of_4",
+    "chazuo_local_quality_branch_paused_preserved",
+    "formal_holdout_attempt2_anchor_loaded_sha_verified",
+    "formal_holdout_attempt2_all_payload_hashes_verified",
+    "formal_holdout_attempt2_h1_generated_once",
+    "formal_holdout_attempt2_h2_generated_once",
+    "formal_holdout_attempt2_h3_generated_once",
+    "formal_holdout_attempt2_h4_generated_once",
+    "formal_holdout_attempt2_outputs_archived",
+    "formal_holdout_attempt2_provenance_committed",
+    "formal_holdout_attempt2_drive_pixels_readback",
+    "formal_holdout_attempt2_protocol_admissibility_failed",
+    "formal_holdout_attempt2_settled_protocol_invalid",
+    "formal_holdout_attempt2_no_capsule_inference",
+    "formal_attempt3_identity_created",
+    "formal_attempt3_isolation_plan_created",
+    "formal_attempt3_h1_h4_fresh_chat_run_files_created",
+    "formal_attempt3_current_chat_render_blocked",
+    "formal_attempt3_h1_protocol_failure_settled",
+    "formal_attempt3_terminated_before_h2",
+    "formal_attempt4_invocation_repair_plan_created",
+    "formal_attempt4_identity_created",
+    "formal_attempt4_h1_explicit_aspect_runner_created",
+    "saved user-approved preservation mainline plan",
+    "preserved original assets, verdicts, capsule and frozen payloads",
+    "set read-only compatibility audit as sole next action",
+    "preserved Attempt 4 preparation with scheduling hold",
+    "first_no_training_candidate_selected_instantstyle_ipadapter",
+    "instantstyle_ipadapter_reproducibility_card_complete",
+    "chatgpt_runtime_cpu_only_environment_audited",
+    "no_generation_training_paid_compute_or_figma_write_performed",
+    "gpu_environment_candidates_compared",
+    "runpod_secure_a40_48gb_selected_not_provisioned",
+    "gpu_environment_card_saved",
+    "paid_compute_authorization_remains_zero",
+    "chatgpt_images_primary_renderer_restored",
+    "runpod_external_model_route_reclassified_research_only",
+    "zero_external_compute_spend_confirmed",
+    "chatgpt_images_native_control_mapping_complete",
+    "stage1_rice_granary_ab_task_frozen",
+    "stage1_route_a_b_fresh_chat_runners_frozen",
+    "stage1_generation_not_started",
+    "stage1_two_image_generation_authorization_recorded",
+    "stage1_route_a_authorized",
+    "stage1_route_b_authorized_but_serially_blocked",
+    "stage1_route_a_exact_drive_pixel_review",
+    "stage1_route_a_technical_invalid_wrong_subject",
+    "generator_drive_handoff_v1_mandatory",
+    "route_b_runner_drive_return_updated",
+    "stage1_route_a_technical_retry_binding_packet_prepared",
+    "stage1_route_a_technical_retry_runner_prepared",
+    "stage1_route_b_budget_reserved",
+    "no_new_image_generated",
+    "stage1_route_a_retry_one_image_authorization_recorded",
+    "stage1_route_a_retry_drive_readback_verified",
+    "stage1_route_a_retry_technical_invalid",
+    "stage1_ab_closed_no_vpd_inference",
+    "minimal_stateless_chatgpt_images_render_ticket_prepared",
+    "stateless_generator_repo_reads_removed",
+    "stateless_drive_handoff_frozen",
+    "stateless_smoke_one_image_authorization_recorded",
+    "controller_chat_generation_marked_operator_error",
+    "controller_generator_separation_guard_active",
+    "stateless_drive_connector_reference_binding_limit_recorded",
+    "direct_attachment_stateless_ticket_prepared",
+    "stateless_one_image_authorization_preserved",
+    "canonical_r1c_copied_to_chatgpt_library",
+    "library_attachment_reference_path_ready",
+    "chatgpt_library_reference_route_user_approved",
+    "library_attachment_smoke_technical_pass_archived",
+    "clean_library_native_ab_prepared",
+    "library_ab_user_authorization_recorded",
+    "controller_chat_ab_generation_marked_invalid",
+    "two_actual_generations_recorded_as_spent",
+    "replacement_library_ab_pair_authorized",
+    "replacement_route_a_ticket_prepared",
+    "replacement_route_b_ticket_prepared",
+    "replacement_pair_received",
+    "replacement_pair_drive_archived",
+    "replacement_pair_visual_review_complete",
+    "user_b_preference_recorded_with_priming_caveat",
+    "blind_pair1_library_package_prepared",
+    "blind_evaluator_prompt_frozen",
+    "blind_pair1_verdict_recorded",
+    "blind_mapping_revealed_after_verdict",
+    "compact_vpd_candidate_r1_accepted_for_replication",
+    "second_content_tofu_ab_prepared",
+    "second_content_route_a_ticket_frozen",
+    "second_content_route_b_ticket_frozen",
+    "second_content_blind_prompt_frozen_pre_mapping",
+    "pair2_outputs_received",
+    "pair2_technical_correctness_pass",
+    "pair2_drive_archive_complete",
+    "pair2_blind_xy_package_ready",
+    "pair2_blind_verdict_recorded",
+    "pair2_mapping_revealed_after_verdict",
+    "compact_vpd_blind_replication_across_two_contents_settled",
+    "photo_only_content_replication_gate_closed",
+    "equal_budget_figma_complete_poster_ab_preparation",
+    "equal_budget_figma_complete_poster_ab_execution",
+    "complete_poster_blind_or_user_review",
+    "pair2_corrected_complete_poster_settlement",
+    "cross_aspect_9_16_photo_only_ab_blind_complete_route_b_wins",
+    "compact_photo_only_mechanism_supported_across_two_contents_and_9_16",
+    "cross_aspect_9_16_human_absolute_quality_fail_both_ai_feel",
+    "p4_shared_base_realism_repair_prepared_not_authorized",
+    "mushroom_actual_pixel_photographic_realism_golden_registered",
+    "photography_realism_golden_regression_gate_active",
+    "p4_low_semantic_shared_base_ab_frozen_zero_budget",
+    "p4_golden_gated_realism_evaluator_valid_both_fail",
+    "p4_relative_comparison_stopped_by_absolute_gate",
+    "p4_two_image_budget_closed_zero_retry",
+    "p4_golden_gate_fail_non_generative_root_cause_audit_complete",
+    "p4_rf1_r1c_anchor_causal_isolation_strategy_frozen_not_authorized",
+    "p4_rf1_golden_gated_validation_contract_frozen",
+    "p4_rf1_explicit_two_image_authorization_recorded",
+    "p4_rf1_exact_route_tickets_and_evaluator_frozen",
+    "p4_rf1_commercial_ledger_tail_synchronized",
+    "p4_rf1_route_a_generated_once_no_r1c",
+    "p4_rf1_route_a_raw_sha256_verified_archived",
+    "vpd_standing_bounded_authorization_policy_active",
+    "p4_rf1_route_b_generated_once_exact_r1c",
+    "p4_rf1_golden_evaluator_existing_result_recorded_no_rerun",
+    "p4_rf1_settled_r1c_not_necessary",
+    "p4_rf1_budget_closed_two_of_two_zero_retry",
+    "p4_rf1_new_experiment_boundary_enforced",
+    "p4_rf2_zero_image_causal_design_audit_complete",
+    "p4_rf1_renderer_primary_overclaim_removed",
+    "p4_rf2_sequential_single_variable_design_preregistered",
+    "p4_rf2_generation_authorization_remains_zero",
+    "p4_rf2_reviewer_mechanism_decomposition_complete",
+    "p4_rf2_four_falsifiable_renderer_mechanisms_registered",
+    "p4_rf2_absolute_realism_still_fail",
+    "p4_rf2_future_contract_frozen_zero_generation_authorization",
+    "p4_rf2_generation_authorization_recorded",
+    "p4_rf2_stage1_rice_generated_once",
+    "p4_rf2_stage2_conditional_slot_closed_pending_stage1_gate",
+    "p4_rf2_stage1_golden_absolute_realism_pass",
+    "p4_rf2_stage2_prohibited_by_stop_rule",
+    "p4_rf2_second_image_slot_cancelled_unconsumed",
+    "p4_rf2_topic_conditioned_mechanism_family_strongly_implicated_no_unique_cause",
+    "p4_rf3_zero_image_causal_audit_complete",
+    "p4_rf3_four_semantic_subvariables_registered",
+    "p4_rf3_rf2_cancelled_budget_not_reused",
+    "p4_rf3_one_image_future_contract_frozen_not_authorized",
+    "p4_rf3_scoped_authorization_unconsumed_synced",
+    "p4_rf3_checkpoint_sequence177_synced",
+    "p4_rf3_unique_authorization_consumed_exactly_once",
+    "p4_rf3_absolute_realism_pass_all_four_confidence_0_74",
+    "p4_rf3_budget_closed_consumed1_remaining0_retry0",
+    "p4_rf3_settled_heritage_x_tofu_strongly_implicated_not_unique",
+    "p4_rf4_zero_image_residual_causality_audit_complete",
+    "p4_rf4_one_image_reuse_design_gap_recorded",
+    "p4_rf4_information_gain_priority_heritage_main_vs_interaction",
+    "p4_rf4_matched_non_tofu_heritage_pair_contract_frozen_not_authorized",
+    "p4_rf4_current_generation_authorization_zero",
+    "p4_rf4_reviewer_pass_exactly_two_authorized",
+    "p4_rf4_route_a_ready_route_b_serial_blocked",
+    "p4_rf4_zero_retry_zero_extra_budget",
+    "p4_rf4_route_a_generated_once_technical_valid",
+    "p4_rf4_route_b_serial_gate_open_one_image_remaining",
+    "p4_rf4_route_b_generated_once_technical_valid",
+    "p4_rf4_generation_budget_closed_two_of_two",
+    "p4_rf4_waiting_golden_absolute_gates",
+    "p4_rf4_existing_A_B_pixel_readback_no_regeneration",
+    "p4_rf4_route_A_golden_pass_all_four_confidence_0_80",
+    "p4_rf4_route_B_golden_pass_all_four_confidence_0_83",
+    "p4_rf4_preregistered_A_pass_B_pass_settlement",
+    "p4_rf4_budget_closed_2_of_2_zero_retry",
+    "p4_rf4_general_heritage_main_effect_not_supported_in_rice",
+    "p4_rf4_heritage_x_tofu_more_plausible_not_proven",
+    "chazuo_concept02_photo_realism_repair02_generated_exactly_once",
+    "chazuo_concept02_photo_realism_repair03_generated_exactly_once_machine_uncertain",
+    "chazuo_concept02_repair03_human_photo_realism_pass",
+    "chazuo_concept02_photo_repair_loop_closed",
+    "chazuo_concept02_repair03_design_reinforcement01_editable_figma_candidate_created",
+    "chazuo_repair03_professionalization_pass01_exactly_one_editable_figma_candidate_created",
+    "chazuo_repair03_professionalization_pass01_repair03_zero_pixel_modification_readback",
+    "chazuo_repair03_professionalization_pass01_actual_screenshot_readback",
+    "chazuo_professionalization_pass01_human_directional_positive_not_final",
+    "chazuo_professionalization_local_refinement01_exactly_one_candidate_221_2",
+    "chazuo_local_refinement01_repair03_zero_pixel_modification_readback",
+    "chazuo_local_refinement01_actual_screenshot_readback",
+    "chazuo_local_refinement01_human_reject_substantial_rework_authorized",
+    "chazuo_substantive_design_rework01_exactly_one_candidate_227_2",
+    "chazuo_substantive_design_rework01_repair03_zero_pixel_modification_readback",
+    "chazuo_substantive_design_rework01_actual_screenshot_readback",
+    "chazuo_substantive_design_rework01_human_reject_not_true_redesign",
+    "chazuo_227_2_closed_no_incremental_repair",
+    "repair03_photo_acceptance_preserved",
+    "scoped_design_baseline_actual_pixels_restored",
+    "latest_generic_candidate_human_rejection_settled",
+    "vpd_chazuo_scoped_baseline_design_successor01_fail_closed_known_regression",
+    "p1_chazuo_composite_successor02_fail_closed_photo_only_text_gate",
+    "p1_chazuo_crop_composite_stream_recovery04_complete_waiting_human_review",
+    "locked_mainline_20261001_and_stage1_inputs_saved",
+    "locked_mainline_stage1_chazuo_two_full_posters_generated_and_archived_20261001",
+    "locked_mainline_stage1_whole_design_fail_feedback_settled_and_local_amendment_draft_prepared_20261001",
+    "stage1_r2_local_amendment_inputs_frozen_and_bounded_execution_authorized_20261001",
+    "stage1_r2_two_full_posters_generated_archived_and_neutral_identifiers_bound_20261001",
+    "stage1_r2_whole_target_gap_and_tentative_preference_settled_20261001",
+    "stage1_r3_whole_design_relations_frozen_and_bounded_execution_authorized_20261001",
+    "stage1_r3_two_full_posters_generated_archived_and_neutral_identifiers_bound_20261001",
+    "stage1_r3_human_ai_look_and_whole_design_fail_settled_and_simplification_draft_prepared_20261001",
+    "stage1_r4_simplified_relations_inputs_frozen_and_bounded_execution_authorized_20261001",
+    "stage1_r4_two_full_posters_generated_archived_and_neutral_identifiers_bound_20261001"
+  ],
+  "incomplete": [
+    "R4两张完整海报已生成保存；摄影真实性与整幅设计仍待真人判断",
+    "内容、画幅与第二风格复验尚未完成",
+    "旧候选244:2仍待真人结论，保留但不是新主线前置条件",
+    "尚无长期方法晋升或完整商业交付"
+  ],
+  "blocked": [],
+  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
+  "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
-    "page": {
-      "id": "12:2",
-      "name": "P6 Equal Budget Integrated Validation"
+    "page_id": "12:2",
+    "frames": [
+      "12:3",
+      "12:11",
+      "12:19",
+      "12:27"
+    ],
+    "photo_nodes": {
+      "12:4": {
+        "bound": true,
+        "locked": false
+      },
+      "12:12": {
+        "bound": true,
+        "locked": false
+      },
+      "12:20": {
+        "bound": true,
+        "locked": false
+      },
+      "12:28": {
+        "bound": true,
+        "locked": false
+      }
     },
     "frame_size": [
       2400,
       3200
     ],
-    "frames": [
-      {
-        "id": "12:3",
-        "name": "DOUFANG_A_BASELINE",
-        "photo": "12:4",
-        "bound": true,
-        "locked": false
-      },
-      {
-        "id": "12:11",
-        "name": "DOUFANG_B_DISTILLED",
-        "photo": "12:12",
-        "bound": true,
-        "locked": false
-      },
-      {
-        "id": "12:19",
-        "name": "CHAZUO_A_BASELINE",
-        "photo": "12:20",
-        "bound": true,
-        "locked": false
-      },
-      {
-        "id": "12:27",
-        "name": "CHAZUO_B_DISTILLED",
-        "photo": "12:28",
-        "bound": true,
-        "locked": false
-      }
-    ],
-    "fonts_verified": [
-      "Noto Sans SC Black",
-      "Noto Sans SC Medium",
-      "Inter Medium"
-    ],
-    "equal_budget": {
-      "composition_pass_per_poster": 1,
-      "correction_pass_max_per_poster": 1,
-      "B_extra_manual_budget": false
-    },
-    "semantic_raw_asset_identity_locked": true,
-    "figma_photo_node_locked_required": false,
-    "bound_count": 4,
-    "remaining_bindings": [],
-    "normal_chat_blocker": null,
+    "real_images_bound_count": 4,
+    "figma_entry_allowed": true,
     "final_pixel_validation_allowed": false,
+    "composition_review_completed": true,
     "correction_passes_used": {
       "12:3": 1,
       "12:11": 1,
@@ -95,462 +402,87 @@
     },
     "final_pixel_validation_completed": true,
     "assistant_set_recommendation": "FAIL_HOLD_NOT_COMMERCIAL_READY",
-    "formal_human_set_verdict": "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED",
-    "human_feedback_scope": "BOTTOM_IMAGES_ACCEPTABLE_ENOUGH; TYPOGRAPHY_COMPLETELY_FAILS; NO_VISIBLE_DISTILLATION_DESIGN_EFFECT"
+    "formal_human_set_verdict": "FAIL_TYPOGRAPHY_DISTILLATION_NOT_DEMONSTRATED"
   },
-  "figma_upload_relay": {
+  "relay": {
     "version": "V1",
     "status": "FORMAL_BINDINGS_LATE_READBACK_CONFIRMED",
     "implementation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_V1_IMPLEMENTATION_20260913.json",
     "key_rotation_record": "evidence/vpd/figma_upload_relay/P6_FIGMA_UPLOAD_RELAY_KEY_ROTATION_20260913.json",
     "workflow": ".github/workflows/vpd-figma-upload-relay.yml",
-    "packer": "scripts/vpd_figma_relay_pack.py",
-    "executor": "scripts/vpd_figma_relay_execute.py",
-    "public_certificate": "evidence/vpd/figma_upload_relay/relay-cert.pem",
-    "public_certificate_rotation_commit": "16e14faf6c6c2a1031b33c9c0f226cc6be962794",
-    "public_certificate_sha256": "b90fcddbbed3a966f515297bedfef7c93edf514fa8cc0d590fb6b5706577d667",
     "required_secret": "VPD_FIGMA_RELAY_PRIVATE_KEY_B64",
-    "secret_present_verified": true,
+    "public_certificate_sha256": "b90fcddbbed3a966f515297bedfef7c93edf514fa8cc0d590fb6b5706577d667",
+    "public_certificate_rotation_commit": "16e14faf6c6c2a1031b33c9c0f226cc6be962794",
     "private_key_committed": false,
+    "plaintext_submit_url_committed": false,
+    "plaintext_image_committed": false,
     "local_cms_roundtrip": "PASS",
-    "security_model": "plain image bytes, private key, and Figma submit URLs are never committed; only CMS ciphertext is public",
-    "public_standard_runner_expected_billed_minutes": 0,
-    "secret_metadata_receipt": {
-      "path": "evidence/vpd/p6_authority_repair_v1/SECRET_METADATA.json",
-      "sha256": "d7574bc334f064cf0d2927ef56b8354c1999005b2b39d71061a9557799d8df75"
-    },
-    "route_guard": {
-      "status": "MANDATORY",
-      "record": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
-      "direct_chat_runtime_post_default": "PROHIBITED",
-      "required_route": "EXISTING_ENCRYPTED_GITHUB_ACTIONS_RELAY_V1",
-      "local_codex_manual_fallback": "ONLY_AFTER_RELAY_SPECIFIC_FAILURE",
-      "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
-    }
+    "runner": "ubuntu-latest",
+    "repository_visibility": "public"
   },
-  "current_stage": "R6新原件31、76的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。",
-  "status": "VPD_MAINLINE_STAGE1_R6_EXECUTED_WAITING_INDEPENDENT_REVIEW",
-  "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
-  "execution_boundary": {
-    "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
-    "do_not_relock_photo_nodes": true,
-    "PHOTO_RAW_LOCKED_is_semantic_identity_not_figma_locked_property": true,
-    "do_not_commit_private_key_plain_submit_urls_or_plain_image_bytes_to_public_repo": true,
-    "do_not_request_fresh_submit_url_before_secret_is_installed": true,
-    "do_not_claim_photo_type_fusion_pass_before_all_real_images_are_bound": true,
-    "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
-    "do_not_claim_universal_independent_distillation": true,
-    "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
-    "current_figma_canvas_authorization": 0,
-    "second_style_execution_allowed": false,
-    "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
-    "current_image_generation_count_max": 0,
-    "current_image_generation_hidden_variants": 0,
-    "current_image_generation_reroll": 0,
-    "current_image_generation_best_of_n": false,
-    "current_image_generation_automatic_retry": 0,
-    "photo_repair_loop_closed": true,
-    "repair04_allowed": false,
-    "modify_accepted_repair03_photo": false,
-    "successor_execution_authorized": false,
-    "add_new_rules_gates_validators": false,
-    "new_mainline_contract": {
-      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
-      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
-    },
-    "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
+  "mechanism_evidence": {
+    "tofu_delta_B_minus_A": 0.5,
+    "tea_delta_B_minus_A": 0.7,
+    "mean_delta": 0.6,
+    "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "completed_this_revision": [
-    "R6新原件31、76的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。"
-  ],
-  "updated_at": "2026-10-01T18:43:04.540562+08:00",
+  "status": "VPD_MAINLINE_STAGE1_R6_AUTHORIZED",
+  "task_lock": {
+    "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "sha256": "59b5f027c3f667ddef8babaccfee1f5932e17afb02a1783430d626a4ac949454"
+  },
+  "history_snapshot": {
+    "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
+    "sha256": "ff436c4f9819f7118642d49702e976a188cf30bfee6d678c70628df53f3371c1"
+  },
+  "requirements": {
+    "p4_mechanism_transfer": {
+      "status": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
+    },
+    "p6_integrated_design": {
+      "status": "HUMAN_FAIL_TYPOGRAPHY_PROGRAM_REPAIR_REQUIRED"
+    },
+    "candidate_promotion": "BLOCKED"
+  },
   "workflow": {
-    "version": "1.1 + mainline-lock 1.0",
-    "focus_stage": "P3",
-    "status_authority": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "document": {
-      "path": "VPD_PROJECT_ROADMAP.md",
-      "sha256": "2abced161c0c4bcd4e71ba2b3e5571cb74cfe8053344e6a0aa41e6a714d887b5"
+    "path": "VPD_PROJECT_ROADMAP.md",
+    "sha256": "2abced161c0c4bcd4e71ba2b3e5571cb74cfe8053344e6a0aa41e6a714d887b5"
+  },
+  "ledger_tails": {
+    "commercial_design_pipeline": {
+      "event_id": "EVT-VPD-R6-AUTHORIZE-20261001-001",
+      "event_hash": "48d36ca5abe7c3046259fb7e2657ab16cfd2d74a8c250218e071b93713b45dcd"
     }
-  },
-  "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": false,
-  "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
-  "authority_repair": {
-    "record": {
-      "path": "evidence/vpd/p6_authority_repair_v1/REPAIR_RECORD.json",
-      "sha256": "117670117ce912f353f55d0197dcf2c257637c7bbfd6bcc7deeee67324a38aa8"
-    },
-    "historical_ledger_status": "PRESERVED_WITH_PREEXISTING_HASH_DEFECTS_NOT_RECERTIFIED",
-    "commercial_ledger_preexisting_hash_defects": {
-      "path": "evidence/vpd/p6_authority_repair_v1/COMMERCIAL_LEDGER_PREEXISTING_HASH_DEFECT_FREEZE_20260923.json",
-      "sha256": "d4bd81d49640d4017496ce58c7202001a3bcae6cbe69a7f967c652de23bfeb0a"
-    },
-    "current_authority_reconciliation": {
-      "path": "continuity/vpd/audits/AUTHORITY_RECONCILIATION_20260929.md",
-      "sha256": "b5bffd1c4afe3cc1d01f199a928ce7ff7227750b98e71b429d1a31791d00710a"
-    },
-    "historical_blockers_archive": {
-      "path": "continuity/vpd/audits/HISTORICAL_BLOCKERS_20260929.json",
-      "sha256": "3ec8f1af07f15268eaf573e8e04ee024ba697bbebb132d8aac37c9abd32ebe3e"
-    }
-  },
-  "relay_bindings": {},
-  "blockers": [],
-  "relay_placement_blocker": {
-    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_CONTROLLED_RETRY_PLACEMENT_BLOCKER_20260914.json",
-    "sha256": "b204ff65aeb59bc7fb5f614d368867186231b21d0c73fc7b170732dcb226b4c7"
-  },
-  "diagnostic_next_required_action": null,
-  "exact_source_scratch_diagnosis": {
-    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_EXACT_SOURCE_SCRATCH_DIAGNOSIS_20260914.json",
-    "sha256": "4f259fd7438483268a480ba8aab9354d2aa1b69af3bf3126599136f0bfac455e"
-  },
-  "pixel_equivalent_png_diagnosis": {
-    "path": "evidence/vpd/p6_authority_repair_v1/DOUFANG_B_PIXEL_EQUIVALENT_PNG_DIAGNOSIS_20260914.json",
-    "sha256": "fa1c62fbc48dfdb3842ec83c659552a17fc1e6a367c0b953fa1a1c6c524ffd52"
-  },
-  "composition_transition_evidence": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
-    "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38"
-  },
-  "composition_review_evidence": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_COMPOSITION_REVIEW_ROUND1_20260914.json",
-    "sha256": "3f83c52bfb867832560aec17c2bd87a331435b2b08ca121619a117aa6508b983"
-  },
-  "relay_placement_resolution": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
-    "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38"
-  },
-  "correction_pass_evidence": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_SINGLE_CORRECTION_PASS_EXECUTION_20260914.json",
-    "sha256": "7ca4d5ab22be9348c2e76369b6c120467dcd4decad2834f4cf8077b3a615fff3"
-  },
-  "final_validation_evidence": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FINAL_PIXEL_EDITABILITY_VALIDATION_20260914.json",
-    "sha256": "d0a8f97d1fa2f845c0c4cb2fe37246defecbc20efb6024c7246192c1365d8543"
-  },
-  "human_set_verdict_evidence": {
-    "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_HUMAN_SET_VERDICT_TYPOGRAPHY_FAIL_20260914.json",
-    "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf"
   },
   "typography_repair": {
-    "status": "HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_READY",
-    "bench_id": "TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1",
+    "status": "CONCEPT02_DESIGN_PASS_PHOTO_BASE_AI_FEEL_REPAIR_REQUIRED",
     "phase": "TYPOGRAPHY_METHOD_SANDBOX",
-    "bench_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
-      "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee"
-    },
-    "preserve_photo_bases": true,
-    "failed_p6_frames_are_negative_evidence": true,
-    "title_bench_render_allowed": false,
-    "poster_reintegration_allowed": false,
-    "support_typography_bench_allowed": false,
-    "next_required_action": "P1_EXECUTE_CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING",
-    "correction_passes_used": {
-      "豆坊": 1,
-      "茶作": 1
-    },
-    "human_blind_verdict": {
-      "design_sense": "B_ROUTE_DESIGN_SENSE_ADVANTAGE",
-      "glyph_correctness": "FAIL",
-      "title_gate": "NOT_PASS"
-    },
-    "blind_order_mapping_revealed": true,
-    "blind_order_commitment_sha256": "e5fdde8d13c03c8e319b28b7d36cabd4d618abbc8ddc478de717c375a5511ac0",
-    "execution_evidence": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_TITLE_BENCH_EXECUTION_20260914.json",
-      "sha256": "78a87b67ecd11cc52d184f6d26c2d2e874c4780b881f4236c3a91ca1c4a57981"
-    },
-    "drive_blind_review": {
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "presentation_id": "1vdviPhYzHyOP4BDiOZzsMGBMHSLbQfRosHal7PSiYsc"
-    },
-    "human_verdict_evidence": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_HUMAN_BLIND_VERDICT_TECHNICAL_RETRY_20260914.json",
-      "sha256": "8e1df7d2cbe8d3c94eaca3e70e78551ed1a7901d22f94b5c5a0aec8fd2dc2a89"
-    },
-    "technical_retry_receipt": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_TECHNICAL_RETRY_RECEIPT_20260914.json",
-      "sha256": "1cfa7cc1509ece5565c74d9e90f27800ad8146af20545e0812b9bbae8bfa2b1e"
-    },
-    "glyphs_before": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_GLYPHS_BEFORE.json",
-      "sha256": "e63eecb23ad956a1a2177ead8a70359737ae68ca027b4928b9df25edcb211668"
-    },
-    "glyphs_after": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_GLYPHS_AFTER.json",
-      "sha256": "1b4a43f0096e53950c0f205259f5a7a9c6e198efcacfcd11b40b1481dff6e1e8"
-    },
-    "tree_before": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_TREE_BEFORE.json",
-      "sha256": "1020a78c96bb6632230cd9ad782a428f168c0ebf0839020a3ec842f67bd8ae37"
-    },
-    "tree_after": {
-      "path": "evidence/vpd/p1_typography_repair_v1/T1_RETRY_TREE_AFTER.json",
-      "sha256": "10d74774334070924471a686b9c34c778c56b19a9935ee70c9f01afd041bfabe"
-    },
-    "technical_retries_used": {
-      "豆坊": 1,
-      "茶作": 1
-    },
-    "technical_retry_budget_remaining": 0,
-    "post_retry_human_verdict": {
-      "status": "FAIL",
-      "reason": "WORDMARK_SYSTEM_COHERENCE_FAIL_AND_DESIGN_QUALITY_STILL_FAR_BELOW_MOTHER_REFERENCE"
-    },
-    "blind_order_commitment_recertified": false,
-    "drive_retry_exports": [
-      {
-        "label": "Doufang_Candidate_1",
-        "title": "T1_技术修复复判_豆坊_Candidate_1.png",
-        "drive_file_id": "1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r",
-        "url": "https://drive.google.com/file/d/1n-_PYoYfz8Gd9mr-loXjeH3hZcf02g-r/view?usp=drivesdk",
-        "bytes": 18849,
-        "sha256": "650ce21d830e23993f49759f11a2a9ca4935b9099cc4a3ef0c9d1d5cb3841112",
-        "dimensions": [
-          1600,
-          900
-        ],
-        "metadata_readback_verified": true
-      },
-      {
-        "label": "Chazuo_Candidate_1",
-        "title": "T1_技术修复复判_茶作_Candidate_1.png",
-        "drive_file_id": "1nAndwjIS7jv05na42aHjJc1s3yaBCoZf",
-        "url": "https://drive.google.com/file/d/1nAndwjIS7jv05na42aHjJc1s3yaBCoZf/view?usp=drivesdk",
-        "bytes": 31008,
-        "sha256": "9ec1c258da42eb1813efd3deae75ddcd73ff16d9ba282fb30d0edc3e6ba3d745",
-        "dimensions": [
-          1600,
-          900
-        ],
-        "metadata_readback_verified": true
-      },
-      {
-        "label": "Doufang_Candidate_2",
-        "title": "T1_技术修复复判_豆坊_Candidate_2.png",
-        "drive_file_id": "1o8pA6oDmi2sUCzGty030_cxjccp7cm6R",
-        "url": "https://drive.google.com/file/d/1o8pA6oDmi2sUCzGty030_cxjccp7cm6R/view?usp=drivesdk",
-        "bytes": 23538,
-        "sha256": "e1bfd7cf21982a4e6efca639642357f50e152ef3367fd5e7fac3f277cfef854a",
-        "dimensions": [
-          1600,
-          900
-        ],
-        "metadata_readback_verified": true
-      },
-      {
-        "label": "Chazuo_Candidate_2",
-        "title": "T1_技术修复复判_茶作_Candidate_2.png",
-        "drive_file_id": "10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz",
-        "url": "https://drive.google.com/file/d/10IQAogKitP4dE8XFPpSTVwhQ7CwfLyqz/view?usp=drivesdk",
-        "bytes": 26231,
-        "sha256": "702f62b83ecc3958c5578cce958d9ae8760fce31dc094501c6149ff874396795",
-        "dimensions": [
-          1600,
-          900
-        ],
-        "metadata_readback_verified": true
-      }
-    ],
-    "repeat_glyph_failure_action": "STOP_CURRENT_TYPOGRAPHY_COMPILER_DO_NOT_ENTER_T2",
-    "wordmark_v2_render_allowed": false,
-    "final_t1_settlement": {
-      "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
-      "sha256": "a4dc8c2ede13fd248f3d70ba2e68d78eb4a404950af8cadad9ff44e9c2ef1fcf"
-    },
-    "wordmark_v2_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
-      "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
-    },
-    "wordmark_v2_correction_passes_used": {
-      "豆坊": 1,
-      "茶作": 1
-    },
-    "wordmark_v2_human_verdict": {
-      "豆坊": "FAIL",
-      "茶作": "FAIL",
-      "overall": "FAIL_CONTINUE_TYPOGRAPHY_ONLY"
-    },
-    "wordmark_v2_execution": {
-      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
-      "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
-    },
-    "drive_wordmark_v2_review": {
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "presentation_id": "1HGpfLCzBad8aqgzBCqJwSiXQo-uOJY5EsUb_dINrojE",
-      "title": "T1_V2_字标复判_20260914",
-      "contains": [
-        "豆坊 frozen Candidate 1 vs V2 Candidate 2",
-        "茶作 frozen Candidate 1 vs V2 Candidate 2"
-      ]
-    },
-    "wordmark_v2_human_fail_and_v3_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
-      "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
-    },
-    "wordmark_v3_render_allowed": false,
-    "wordmark_v3_correction_passes_used": {
-      "豆坊": 1,
-      "茶作": 1
-    },
-    "wordmark_v3_human_verdict": {
-      "豆坊": "IMPROVED_NOT_PASS",
-      "茶作": "IMPROVED_NOT_PASS",
-      "overall": "FAIL_FAR_FROM_SHANYEJI_CONTINUE_TYPOGRAPHY_ONLY"
-    },
-    "wordmark_v3_execution": {
-      "path": "evidence/vpd/p1_typography_repair_v3/SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTION_20260914.json",
-      "sha256": "9b3af657d85ff2da729b66c3a148988715e8d9afd6fd0689e801a0fc2362ad86"
-    },
-    "drive_v3_review": {
-      "presentation_id": "12BWCYEZD6Oy3ef4ZhS8MuTm7gcgdIuIrYNgYCFdw8SQ",
-      "title": "T1_V3_语义锚点字标复判_20260914",
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "url": "https://docs.google.com/presentation/d/12BWCYEZD6Oy3ef4ZhS8MuTm7gcgdIuIrYNgYCFdw8SQ/edit",
-      "structure": [
-        "豆坊: frozen strong baseline -> V2 coherence stage -> V3 semantic anchor",
-        "茶作: frozen strong baseline -> V2 coherence stage -> V3 semantic anchor"
-      ],
-      "readback_verified": true
-    },
-    "wordmark_v3_human_fail_and_v4_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
-      "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9"
-    },
-    "wordmark_v4_render_allowed": false,
-    "wordmark_v4_direction_budget": {
-      "豆坊": 3,
-      "茶作": 3
-    },
-    "wordmark_v4_selected_direction": {
-      "豆坊": null,
-      "茶作": null
-    },
-    "wordmark_v4_visible_directions_generated": {
-      "豆坊": 3,
-      "茶作": 3
-    },
-    "wordmark_v4_hidden_variants": 0,
-    "wordmark_v4_preselection_polish_passes": 0,
-    "wordmark_v4_execution": {
-      "path": "evidence/vpd/p1_typography_repair_v4/STRUCTURAL_WORDMARK_V4_EXECUTION_20260914.json",
-      "sha256": "2a23b534045aaec40021131cb504addbe6c9f60086d246af5f2036416bf51b36"
-    },
-    "drive_wordmark_v4_review": {
-      "presentation_id": "1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM",
-      "title": "T1_V4_结构方向复判_20260914",
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "url": "https://docs.google.com/presentation/d/1YjnZKpLUhoQVClPu06ojvhF7iudkWdLXuSP8EeQkOwM/edit",
-      "slides": [
-        "豆坊: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT",
-        "茶作: V3 -> A_MASS_BLOCK -> B_NEGATIVE_CHANNEL -> C_ANCHOR_DOMINANT"
-      ],
-      "image_elements_readback_verified": 8,
-      "readback_verified": true
-    },
-    "wordmark_v4_human_direction_verdict": {
-      "豆坊": "NONE",
-      "茶作": "NONE",
-      "overall": "FAIL_ALL_V4_STRUCTURES_NO_DESIGN_SENSE"
-    },
-    "wordmark_v4_human_none_and_v5_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
-      "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6"
-    },
-    "wordmark_v5_generation_allowed": false,
-    "wordmark_v5_visible_concept_budget": {
-      "豆坊": 6,
-      "茶作": 6
-    },
-    "wordmark_v5_selected_direction": {
-      "豆坊": "B",
-      "茶作": "D"
-    },
-    "wordmark_v5_execution": {
-      "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
-      "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
-    },
-    "wordmark_v5_drive_review": {
-      "presentation_id": "1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ",
-      "title": "T1_V5_生成式定制字标探索_20260914",
-      "folder_id": "1TaQJeK5BGskE7gVXUL5yEfEDVNSSvCG9",
-      "url": "https://docs.google.com/presentation/d/1qj21-h8GT_K-J-rsnidsl7VcSw04qkWXq9OuSBzk9MQ/edit",
-      "thumbnail_readback_verified": true
-    },
-    "wordmark_v5_selection_status": "SELECTED_AS_SEEDS_NOT_PASS",
-    "wordmark_v5_human_selection_and_v6_plan": {
-      "path": "evidence/vpd/p1_typography_repair_v6/V5_HUMAN_SELECTION_AND_NONCALLIGRAPHIC_V6_PLAN_20260914.json",
-      "sha256": "8f83e2a12505863c192a9e1861875f781d8d3fa7a3754628a093c4e68d5c7153"
-    },
-    "wordmark_v6_generation_allowed": true,
-    "wordmark_v6_visible_concept_budget": {
-      "豆坊": 6,
-      "茶作": 6
-    },
-    "wordmark_v6_hidden_variants": 0,
-    "selected_direction": {
-      "豆坊": "B",
-      "茶作": "D"
-    },
     "v6_execution": {
       "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
       "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25"
     },
-    "v6_human_feedback": {
-      "positive_exact": "这个设计好很多了。",
-      "quality_boundary_exact": "这个跟山野集还是差很多。",
-      "formal_interpretation": "DIRECTIONAL_POSITIVE_NOT_PASS"
-    },
-    "figma_vector_reconstruction_allowed": false,
-    "figma_reideation_allowed": false,
-    "T2_allowed": false,
-    "P6_reintegration_allowed": false,
     "v6_vector_reconstruction": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
       "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22"
     },
+    "selected_direction": {
+      "豆坊": "B",
+      "茶作": "D"
+    },
+    "T2_allowed": false,
+    "P6_reintegration_allowed": false,
+    "next_required_action": "P1_REPAIR_CHAZUO_CONCEPT02_PHOTO_BASE_AI_FEEL_ONLY_PRESERVE_EDITABLE_DESIGN",
     "v6_doufang_endpoint_optical_fix": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
       "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4"
-    },
-    "v6_human_review_before_endpoint_fix": {
-      "豆坊": "CONTINUE_WITH_ENDPOINT_FIX_REQUIRED",
-      "茶作": "CONTINUE_UNCHANGED",
-      "feedback_exact": "两个都可以继续。但是有个很严重的问题，豆坊 明显的感觉左边和右边被截取去除了的感觉。"
     },
     "v6_figma_contour_cleanup": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
       "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581"
     },
-    "v6_human_review_before_contour_cleanup": {
-      "豆坊": "CONTINUE; endpoint improved but lower edge still reads cut",
-      "茶作": "CONTINUE",
-      "shared_edge_issue": "high-frequency bitten/jagged contour is visually uncomfortable and does not resemble controlled lettering",
-      "feedback_exact": [
-        "豆坊端头：解决了一些，但是还是下面有很明显的切割感。",
-        "两个标题：都可以继续",
-        "很少有文字会这种凹凸不平的边缘。感觉就是很不舒服的感觉。就算是毛笔字，也不会边缘这样像咬了一样的感觉。"
-      ]
-    },
     "v6_per_contour_bezier_refinement": {
       "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
       "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce"
-    },
-    "v6_human_review_before_bezier_refinement": {
-      "doufang_cropping": "PASS_NO_LONGER_READS_AS_CUT",
-      "shared_edge_quality": "FAIL_UNACCEPTABLE",
-      "chazuo_green_leaf": "PASS_PRESERVED",
-      "feedback_exact": [
-        "1 没有被切掉",
-        "2 不可接受",
-        "3 茶叶保留了。"
-      ]
     },
     "v7_hifi_surface_test": {
       "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_D_MOTHER_FAITHFUL_VECTOR_TEST_20260915.json",
@@ -559,10 +491,6 @@
     "v7_hifi_surface_human_rejection": {
       "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json",
       "sha256": "f5eaf4cb6d1659771281072bea5f7caf03b9f3ec5563b0038157138f72e5f78a"
-    },
-    "current_vector_only_surface_route": "STOPPED_NOT_WORTH_CONTINUING",
-    "selected_direction_geometry": {
-      "茶作": "V6 full-concept geometry preserved as research-only"
     },
     "typography_method_research": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md",
@@ -574,16 +502,12 @@
     },
     "sandbox_rule_promotion_allowed": false,
     "sandbox_first_test": "TYP-M01",
-    "sandbox_first_test_scope": "茶 only; monochrome centerline plus variable-width construction; no leaves/texture/shadow/gradient; one visible output; zero hidden variants",
     "sandbox_test01_evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL_20260916.json",
       "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f"
     },
     "sandbox_test01_verdict": "FAIL_NOT_READABLE_AS_CHA",
     "sandbox_next_test": null,
-    "sandbox_test02_execution": {
-      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_EXECUTION_20260917.json"
-    },
     "sandbox_test02_human_settlement": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST02_HUMAN_SETTLEMENT_20260918.json",
       "sha256": "9e20ad51a198f043c156ead7909bbec0737b33cebe28c432e8ca2ed711bcb443"
@@ -674,7 +598,6 @@
     },
     "current_best_refined_skeleton": "149:2",
     "black_white_gate": "PROVISIONAL_CONTINUE_PASS_NOT_COMMERCIAL",
-    "further_contour_refinement_allowed": false,
     "mother_sourced_surface_material_probe01_preparation": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SOURCED_SURFACE_MATERIAL_PROBE01_PREPARATION_20260918.json",
       "sha256": "624cfc14db5ba247ecd970bb1b17cbca41f745e9cd2c7bcb1a76df06d2b113c5"
@@ -733,21 +656,11 @@
       "figma_frame_id": "173:2",
       "image_hash": "17c2a09a700c7c1836b38037b8ad0a80935fb88a"
     },
-    "mother_surface_selective_decontamination_probe02_human_settlement": {
-      "path": "evidence/vpd/p1_typography_research_sandbox_v1/MOTHER_SURFACE_SELECTIVE_DECONTAMINATION_PROBE02_HUMAN_FAIL_20260920.json",
-      "sha256": "5d460b581d291b36df5eeb9361acab91118ab500df128edd42df8df4e8b68ff6",
-      "figma_frame_id": "173:2"
-    },
     "stage_g_surface_route": "CLOSED_NO_ACCEPTABLE_SURFACE_VARIANT",
     "texture_probe03_allowed": false,
     "real_poster_context_test": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_149_REAL_POSTER_CONTEXT_TEST_EXECUTION_20260920.json",
       "sha256": "445ad142ed7b1a852bf4d699b22246722c381392a3d37cde7dd6fe0fb144a69e",
-      "figma_frame_id": "179:2"
-    },
-    "real_poster_context_test_settlement": {
-      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_149_REAL_POSTER_CONTEXT_TEST_NO_PASS_CONTINUE_20260920.json",
-      "sha256": "ebe6a026ad27190ce5d5b9b868f895a7d9572b73872db37e7a5c560843a5648d",
       "figma_frame_id": "179:2"
     },
     "structural_reauthoring01_plan": {
@@ -773,10 +686,6 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_STRUCTURAL_REAUTHORING_02_EXECUTION_20260920.json",
       "sha256": "639c6fcfd1f4b29ad21f51bdcd4d3d317826801785fd3220831054330a2884a2",
       "gen_id": "42fe2cd4-5f2d-4bef-8bbf-f365c95dd7ef"
-    },
-    "generative_reauthoring02_human_decision": {
-      "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_REAUTHORING02_HUMAN_DECISION_20260920.json",
-      "sha256": "e8bf1d02257f385cef54e2f2602337511db5ccfbf1480ab5f292130b1b4d88b4"
     },
     "generative_design_quality_attempt03_plan": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_GENERATIVE_DESIGN_QUALITY_ATTEMPT03_PLAN_20260920.json",
@@ -846,42 +755,6 @@
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_HOLISTIC_CONCEPT02_SHANYEJI_MECHANISM_STRENGTHENING_PLAN_20260920.json",
       "sha256": "0aa99e0137f1a2d467be9d3bba0c12e99da2aa165352e282f580680b6a6fec40"
     }
-  },
-  "t1_final_settlement_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
-    "sha256": "a4dc8c2ede13fd248f3d70ba2e68d78eb4a404950af8cadad9ff44e9c2ef1fcf"
-  },
-  "wordmark_v2_plan": {
-    "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
-    "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a"
-  },
-  "wordmark_v2_execution_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
-    "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f"
-  },
-  "wordmark_v2_human_fail_and_v3_plan_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
-    "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba"
-  },
-  "semantic_anchor_wordmark_v3_execution_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v3/SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTION_20260914.json",
-    "sha256": "9b3af657d85ff2da729b66c3a148988715e8d9afd6fd0689e801a0fc2362ad86"
-  },
-  "wordmark_v3_human_fail_and_v4_plan_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
-    "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9"
-  },
-  "wordmark_v4_execution_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v4/STRUCTURAL_WORDMARK_V4_EXECUTION_20260914.json",
-    "sha256": "2a23b534045aaec40021131cb504addbe6c9f60086d246af5f2036416bf51b36"
-  },
-  "wordmark_v4_human_none_and_v5_plan_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
-    "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6"
-  },
-  "wordmark_v5_execution_evidence": {
-    "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
-    "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b"
   },
   "concept02": {
     "gen_id": "b13ff052-0d5f-4970-a75a-462545ad2624",
@@ -971,6 +844,14 @@
       "auto_promote": false
     },
     "branch_status": "PAUSED_PRESERVED_LOCAL_QUALITY_EVIDENCE_NOT_CURRENT_MAINLINE"
+  },
+  "figma_upload_route_guard": {
+    "status": "MANDATORY",
+    "record": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
+    "direct_chat_runtime_post_default": "PROHIBITED",
+    "required_route": "EXISTING_ENCRYPTED_GITHUB_ACTIONS_RELAY_V1",
+    "local_codex_manual_fallback": "ONLY_AFTER_RELAY_SPECIFIC_FAILURE",
+    "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
   },
   "visual_master_freeze_guard": {
     "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
@@ -1066,11 +947,12 @@
     "classification": "INVALID_OPERATOR_EXECUTION_NOT_FORMAL_H1",
     "formal_evidence_allowed": false
   },
-  "formal_render_attempt3_h1": {
+  "attempt3_h1_current_execution": {
     "status": "EXECUTED_ONCE_FAIL_CLOSED",
-    "experiment_id": "SHY-SYS-HOLDOUT-V1-H1",
     "provenance_path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_OUTPUT_PROVENANCE_20260921.json",
     "provenance_commit": "ad52b2d467ddb7782660a7f5c24d4bed144460be",
+    "payload_sha256_verified": "d8b1e301742f07918c9036e8f92a04ee974baa1605908287a9084fe0b616f5f7",
+    "anchor_sha256_verified": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
     "gen_id": "6e48eae7-213a-46a9-8ac6-9482838dcd88",
     "output_file_id": "file_000000000ef081fd86509ab1c76addff",
     "output_sha256": "872ee44543a33419a6b939d84dce4503cc749d8e4da903b31c2b21e575d63e0a",
@@ -1080,10 +962,12 @@
     ],
     "expected_aspect": "3:4 PORTRAIT",
     "retry_count": 0,
-    "aesthetic_evaluation_executed": false,
+    "evaluation_executed": false,
     "figma_executed": false,
-    "H2_blocked": true
+    "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
+  "current_stage": "已结算R5独立负面审核并保留63的结构进步；按既有用户闭环授权冻结R6材质主次与图文对齐修订，恰好2次出图、每臂1次，不要求逐轮真人审核。",
+  "updated_at": "2026-10-01T18:35:13.287146+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1452,7 +1336,7 @@
     "authorized_images": 2,
     "retry_budget": 0,
     "current_chat_render_eligible": false,
-    "next": "PRODUCTION_VALIDATION_PREP",
+    "next": "WAIT_FOR_USER_AUTHORIZATION_PAIR2_EQUAL_BUDGET_FIGMA_CANVAS_WRITE",
     "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
     "output_receipt": {
       "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
@@ -1499,7 +1383,12 @@
     },
     "known_label_aesthetic_review_performed": false,
     "style_capsule_promotion_allowed": false,
-    "stable_baseline_replacement_allowed": false
+    "stable_baseline_replacement_allowed": false,
+    "production_integration_prep": {
+      "status": "PREPARED_NO_CANVAS_WRITE",
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPLETE_POSTER_AB_PREP_20260923.json",
+      "sha256": "a4aec9b40b2cba81b85960f623268ab74a8438cbb0b0944758c167561fad1cf3"
+    }
   },
   "compact_vpd_6_control_candidate": {
     "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
@@ -1823,6 +1712,62 @@
     "pair2_settled": true,
     "add_more_rules": false
   },
+  "validator_blocker": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_FIGMA_PREWRITE_VALIDATOR_BLOCKER_20260923.json",
+    "sha256": "bb9734919ce1281e7580309d261d3fb57b68c901765c80fbbc92acdcb58c016d"
+  },
+  "validator_repair_implementation": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_FORWARD_COMPATIBILITY_REPAIR_IMPLEMENTATION_20260923.json",
+    "sha256": "96e181946c767cd0c60d0945d374eed0226067f39259e2d35fd7cb3376c8267c"
+  },
+  "validator_ci_correction": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_VALIDATOR_CI_ATTEMPT01_FAILURE_AND_CORRECTION_20260923.json",
+    "sha256": "c8f7ad8443d0c37154ae932288c0998bf9c3a2fb800a2e7890a1e9892edba897"
+  },
+  "validator_ci_pass_receipt": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_VPD_STATE_VALIDATOR_CI_PASS_RECEIPT_20260923.json",
+    "sha256": "08e75acbfbbd1de95fcf8fcd0e47c502d8aaed9b03ba6a7c20bfe884ab1dcc2a"
+  },
+  "pair2_figma_composition_evidence": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_EQUAL_BUDGET_FIGMA_COMPOSITION_PASS1_20260923.json",
+    "sha256": "2c1a3b850ad17a66bcb77ac1dcc05068bb5d831747045208c6ae673a82056b98"
+  },
+  "pair2_complete_poster_blind_package": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_PACKAGE_20260923.json",
+    "sha256": "f91e7bcd23c53efba8e2e5756edfe644292abf8c05281914716b6694d52619bd"
+  },
+  "pair2_complete_poster_state_hash_repair": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_STATE_HASH_REPAIR_20260923.json",
+    "sha256": "0e5811cce56787b9cd52607d844fa0b0a095874f100dec9995cd85bdacc7c892"
+  },
+  "pair2_complete_poster_blind_result": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_COMPLETE_POSTER_BLIND_RESULT_20260924.json",
+    "sha256": "8a2ec0a6402d9257342ae9627cbb96e70f2e7b9d413ebb6ed3c20136bab97306"
+  },
+  "pair2_correction_authorization": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_AUTHORIZATION_20260924.json",
+    "sha256": "57b7f0cbf9fa666e20a743b846901659e82907a2754e27bc443b1e4e80f4c116"
+  },
+  "pair2_correction_execution_readback": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_SYMMETRIC_SINGLE_CORRECTION_EXECUTION_READBACK_20260924.json",
+    "sha256": "0a9138839db7bf8fb9304a342d7a911a7008f41a86db8489eabceda80d8e71f0"
+  },
+  "pair2_corrected_complete_poster_blind_package": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_PACKAGE_20260924.json",
+    "sha256": "5574b1bb7380d53d4ccc44a50a32e5a8c195f8a5b401f50839465a5063bc928d"
+  },
+  "pair2_corrected_complete_poster_blind_mapping": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_MAPPING_20260924.json",
+    "sha256": "9a9aba2f9eacbb585c858bcb5bcb55c7e4bba0ed691f5f8530be31b1040b917a"
+  },
+  "pair2_corrected_complete_poster_blind_handoff": {
+    "path": "evidence/vpd/library_native_ab_v2/COPY_PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_TO_FRESH_CHAT_20260924.txt",
+    "sha256": "b510011a8f07910c4c339b39acbc55e12ab70fb4e8625bb3ba353e4a762936e5"
+  },
+  "pair2_corrected_complete_poster_blind_result": {
+    "path": "evidence/vpd/library_native_ab_v2/PAIR2_CORRECTED_COMPLETE_POSTER_BLIND_RESULT_20260924.json",
+    "sha256": "f12557eda504242f7cac60e4991a32309289ac0aa627696b6ad15f149e97fbb1"
+  },
   "cross_aspect_photo_only_ab": {
     "status": "RELATIVE_ROUTE_B_WIN_HUMAN_ABSOLUTE_QUALITY_FAIL_AI_FEEL",
     "baseline_aspect": "3:4",
@@ -1893,6 +1838,9 @@
     },
     "p4_quality_gate": "FAIL"
   },
+  "completed_this_revision": [
+    "已结算R5独立负面审核并保留63的结构进步；按既有用户闭环授权冻结R6材质主次与图文对齐修订，恰好2次出图、每臂1次，不要求逐轮真人审核。"
+  ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
     "mechanism_evidence": "RELATIVE_SIGNAL_PRESERVED",
@@ -1963,311 +1911,19 @@
     },
     "runtime_generation_anchor_unchanged": true
   },
-  "p4_realism_root_cause_audit": {
-    "status": "COMPLETE_STRATEGY_FROZEN_NOT_AUTHORIZED",
-    "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATE_FAIL_NON_GENERATIVE_REALISM_ROOT_CAUSE_AUDIT_AND_NEXT_STRATEGY_20260925.json",
-    "evidence_commit": "503561147c35dca5ed1ad64d78b8151f7ba0f2fb",
-    "strongest_current_hypothesis": "SUBJECT_CONDITIONED_CHATGPT_IMAGES_PRIOR_X_R1C_DESIGN_ANCHOR_INTERACTION",
-    "frozen_strategy_id": "P4-RF1-R1C-ANCHOR-CAUSAL-ISOLATION",
-    "image_authorization": 0,
-    "figma_authorization": 0
+  "latest_evidence": {
+    "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
+    "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
   },
-  "p4_rf1_r1c_anchor_causal_isolation": {
-    "status": "SETTLED_R1C_NOT_NECESSARY",
-    "authorization": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_AUTHORIZATION_20260925.json",
-      "sha256": "6a6a806b2a047bfe44ca93506c06769c6f2cb4cf7fcdeeb1b30d39b9b10b1979"
-    },
-    "route_A_ticket": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF1_ROUTE_A_NO_R1C_TO_FRESH_CHAT_20260925.txt",
-      "sha256": "91728173c62192e0f7bb47c2215742ccf541cae45920acccaf1def55260637e0"
-    },
-    "route_B_ticket": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_P4_RF1_ROUTE_B_WITH_R1C_TO_FRESH_CHAT_20260925.txt",
-      "sha256": "d79ada805e55a5c8c7aa01b954855cdbaebc549d26fec49970d94e1ddae148ea"
-    },
-    "evaluator_prompt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_GOLDEN_CAUSAL_EVALUATOR_PROMPT_20260925.txt",
-      "sha256": "e74a483f65d91a648c7e253d6abfabdb2ceefaa67afaea3693e4ecd95484bc44"
-    },
-    "budget": {
-      "authorized": 2,
-      "consumed": 2,
-      "remaining": 0,
-      "retry": 0,
-      "no_third_image": true
-    },
-    "route_A": {
-      "authorized": 1,
-      "consumed": 1,
-      "reference": "NONE"
-    },
-    "route_B": {
-      "authorized": 1,
-      "consumed": 1,
-      "reference": "R1C_EXACT"
-    },
-    "figma_authorization": 0,
-    "p5_allowed": false,
-    "route_A_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_A_NO_R1C_EXECUTION_RECEIPT_20260925.json",
-      "sha256": "c78ff00895d08a9a0c1fcebef9fb86a7ff6534e0139144e0f27446e5777ad8e0"
-    },
-    "route_B_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_ROUTE_B_WITH_R1C_EXECUTION_RECEIPT_20260925.json",
-      "sha256": "30fc06ad0f88d30f27750dacb5e362921a6a91c388762e5598ca594d8b3d32e9"
-    },
-    "evaluator_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_GOLDEN_CAUSAL_EVALUATOR_RECEIPT_20260925.json",
-      "sha256": "f1b5ace8560319a548f288abffaa31fee851b832fa78b7553a911fc8f5c2ed2d"
-    },
-    "settlement": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF1_R1C_ANCHOR_CAUSAL_ISOLATION_SETTLEMENT_20260925.json",
-      "sha256": "16e73c0bef399ce51f455932067c90458bfba8d88ae2384f10aa7ae9ca830c9d"
-    },
-    "absolute_realism_gates": {
-      "A": "FAIL_ALL_FOUR",
-      "B": "FAIL_ALL_FOUR"
-    },
-    "causal_conclusion": "R1C_NOT_NECESSARY",
-    "renderer_prior_status": "UNRESOLVED_NOT_PROVEN_PRIMARY",
-    "relative_aesthetic_comparison_performed": false,
-    "standing_authorization_auto_continue": false,
-    "stop_reason": "Any next empirical test would introduce a new experiment variable and/or new budget outside the settled RF1 protocol."
-  },
-  "p4_rf2_causal_design_audit": {
-    "status": "SETTLED_STAGE1_PASS_STAGE2_PROHIBITED",
-    "audit": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_CAUSAL_DESIGN_AUDIT_20260925.json",
-      "sha256": "c3893475b9ce6f939d2bd8e8d0e152240fcee0b4c62de8a4826da76fc1b35d63"
-    },
-    "image_budget": 0,
-    "generation_performed": false,
-    "prompt_modified": false,
-    "figma_used": false,
-    "p5_entered": false,
-    "unresolved_causes": [
-      "TOFU_TOPIC_CONDITIONED_PRIOR",
-      "SHARED_MINIMAL_TASK_STRUCTURE",
-      "GENERAL_RENDERER_GENERATION_PRIOR"
-    ],
-    "future_design": {
-      "design_id": "P4-RF2-SEQUENTIAL-SINGLE-VARIABLE-CAUSAL-GATES",
-      "maximum_new_images": 2,
-      "adaptive_second_image": true,
-      "retry_budget": 0,
-      "third_image": false,
-      "stage1_variable": "TOPIC_CONTENT_SLOT",
-      "stage2_variable": "TASK_STRUCTURE"
-    },
-    "standing_authorization_auto_continue": false,
-    "reason": "Future Stage 1 introduces a new experiment variable and new image budget, so standing authorization does not apply before the causal-design review gate and fresh explicit authorization.",
-    "mechanism_decomposition": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_REVIEWER_ONLY_RENDERER_PRIOR_MECHANISM_DECOMPOSITION_20260925.json",
-      "sha256": "bdb647fa92c40c7e3c3b16d0b97fc9753d3c56f4876686d2856ae3d0fe440f6f"
-    },
-    "absolute_realism_status": "FAIL",
-    "accepted_causal_boundary": "R1C_NOT_NECESSARY",
-    "renderer_prior_root_cause_proven": false,
-    "mechanisms": [
-      "M1_SCENE_ELEMENT_AUTO_COMPLETION_CHECKLISTING",
-      "M2_UNIFORM_PHOTOGENIC_PATINA",
-      "M3_DRAMATIC_STEAM_LIGHT_WET_FLOOR_BUNDLE",
-      "M4_DISPLAY_REPLACES_PROCESS_CAUSALITY"
-    ],
-    "frozen_contract": {
-      "id": "P4-RF2-MINIMAL-CAUSAL-SEQUENCE-V2",
-      "status": "FROZEN_NOT_AUTHORIZED",
-      "max_images": 2,
-      "conditional_second_image": true,
-      "retry": 0,
-      "third_image": false,
-      "no_rule_append": true
-    },
-    "authorization": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_GENERATION_AUTHORIZATION_20260925.json",
-      "sha256": "c5746fadc2292ee512b3991b6ce6c5842f43b2f21c1bf698aabdf16e1eb63afe"
-    },
-    "stage1_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_RICE_EXECUTION_RECEIPT_20260925.json",
-      "sha256": "9a66889c5fbb6d51896d9e0ad20fded02b3c9df2306ef4939f2e5a1204ee8be9"
-    },
-    "budget": {
-      "maximum": 2,
-      "consumed": 1,
-      "cancelled_unconsumed": 1,
-      "retry": 0,
-      "third_image": false
-    },
-    "stage1": {
-      "status": "PASS_GOLDEN_ABSOLUTE_REALISM",
-      "gates": {
-        "FIRST_IMPRESSION_AI_GATE": "PASS",
-        "DOCUMENTARY_CAUSALITY": "PASS",
-        "MATERIAL_HETEROGENEITY": "PASS",
-        "ABSOLUTE_REALISM_GATE": "PASS"
-      },
-      "confidence": 0.76,
-      "output_sha256": "ad0dfb992490c8f8a513bd54959cf84f618585bca03592bf3fb72f9016763260"
-    },
-    "stage2": {
-      "allowed": false,
-      "status": "PROHIBITED_BY_PREREGISTERED_STAGE1_PASS_STOP_RULE"
-    },
-    "causal_conclusion": "TOPIC_CONDITIONED_MECHANISM_FAMILY_STRONGLY_IMPLICATED",
-    "unique_cause_claim_allowed": false,
-    "renderer_prior_proven_primary": false,
-    "relative_aesthetic_comparison_performed": false,
-    "stage1_evaluator_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_GOLDEN_EVALUATOR_RECEIPT_20260925.json",
-      "sha256": "5348841106c9483966119b5881bf55e10430ac2ff13285d9c9945e7039bd0d26"
-    },
-    "stage1_settlement": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF2_STAGE1_PASS_STOP_SETTLEMENT_20260925.json",
-      "sha256": "60040cabe708625a2f823fa53b0c3f17fa0862611da00b59856ef993e384c1c0"
-    }
-  },
-  "p4_rf3_causal_design_audit": {
-    "status": "SETTLED_PASS",
-    "correction": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SEMANTIC_SINGLE_VARIABLE_CORRECTION_20260925.json",
-      "sha256": "8558c1b633d7978174d3cc9df22675e8198a8ae888060edb8e0e9e58a152cd53"
-    },
-    "contract": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SEMANTIC_SINGLE_VARIABLE_CONTRACT_20260925.json",
-      "sha256": "8fdffbbca8b5a67803511711260cc35ad83265dc341dae181e75ca9a7e3b38e5"
-    },
-    "image_budget": 1,
-    "generation_performed": true,
-    "rf2_cancelled_budget_reused": false,
-    "selected_next_variable": "S1_HERITAGE_TRADITIONAL_SEMANTIC_PRIOR",
-    "rejected_variable": "S3_WET_HEAT_STEAM_ENVIRONMENT_PRIOR",
-    "true_single_variable_audit": "PASS",
-    "prompt_diff_only": "WORKSHOP_SEMANTIC_SLOT",
-    "scoped_autoauth_next_max_images": 1,
-    "scoped_autoauth_source": "explicit user reviewer instruction after true-single-variable confirmation",
-    "retry": 0,
-    "third_image": false,
-    "figma": false,
-    "p5": false,
-    "generation_authorization": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SINGLE_VARIABLE_GENERATION_AUTHORIZATION_20260926.json",
-      "sha256": "0d56f1093a95e36a9be62561e139bc1a222c710452b5b1c0792182aa503ea8e8"
-    },
-    "current_budget": {
-      "authorized": 1,
-      "consumed": 1,
-      "remaining": 0,
-      "retry": 0,
-      "third_image": false
-    },
-    "scoped_autoauth_consumed_into_current_authorization": true,
-    "treatment_asset": {
-      "sha256": "313c3985fc18b05657c92d96a87bc97fbcddc08cb6ff6201731a5ca6d514f499",
-      "dimensions": [
-        941,
-        1672
-      ],
-      "bytes": 2318547,
-      "mime_type": "image/png",
-      "unique_generation_count": 1
-    },
-    "absolute_realism_gates": {
-      "FIRST_IMPRESSION_AI_GATE": "PASS",
-      "DOCUMENTARY_CAUSALITY": "PASS",
-      "MATERIAL_HETEROGENEITY": "PASS",
-      "ABSOLUTE_REALISM_GATE": "PASS"
-    },
-    "confidence": 0.74,
-    "causal_conclusion": "HERITAGE_X_TOFU_SEMANTIC_CONDITION_MECHANISM_STRONGLY_IMPLICATED_NOT_UNIQUE_CAUSE",
-    "renderer_prior_disproven": false,
-    "heritage_unique_root_cause": false,
-    "authoritative_reviewer_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_AUTHORITATIVE_REVIEWER_PIXEL_VERDICT_20260926.json",
-      "sha256": "c721880db75d56f977de2cf40ff34c31a3b0560d52f0c8c418ff487040db5cc2"
-    },
-    "settlement": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF3_HERITAGE_SINGLE_VARIABLE_SETTLEMENT_20260926.json",
-      "sha256": "6368104dc04fecaa16234021feb0341700c32b6a67e758b32d344df207198c1e"
-    },
-    "preliminary_evaluator_receipt_status": "SUPERSEDED_FOR_FORMAL_SETTLEMENT"
-  },
-  "p4_rf4_residual_causality_audit": {
-    "status": "SETTLED_A_PASS_B_PASS",
-    "audit": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_RESIDUAL_CAUSALITY_DESIGN_AUDIT_20260926.json",
-      "sha256": "2a78c1dc6a491245d4d2c33f9930bbfff042f1d932f1936bcc74f6279b760bcc"
-    },
-    "image_budget": 2,
-    "generation_authorization": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_GENERATION_AUTHORIZATION_20260926.json",
-      "sha256": "3ac25676aadf0ee77346f1c002eea8adb1120d7b6642912d5fab439c6a611967"
-    },
-    "generation_performed": true,
-    "rf3_budget_reused": false,
-    "one_image_design_gap": true,
-    "selected_future_contract": "P4-RF4-NONTOFU-HERITAGE-MAIN-EFFECT-MATCHED-PAIR-V1",
-    "future_minimum_budget_proposal": {
-      "images": 2,
-      "retry": 0
-    },
-    "standing_authorization_auto_continue": false,
-    "figma": false,
-    "p5": false,
-    "generation_authorization_count": 0,
-    "current_budget": {
-      "authorized": 2,
-      "consumed": 2,
-      "remaining": 0,
-      "route_A": 0,
-      "route_B": 0,
-      "retry": 0,
-      "third_image": false
-    },
-    "route_A_status": "PASS_GOLDEN_ABSOLUTE_REALISM",
-    "route_B_status": "PASS_GOLDEN_ABSOLUTE_REALISM",
-    "route_A_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_A_TRADITIONAL_RICE_EXECUTION_RECEIPT_20260926.json",
-      "sha256": "266c8d442a00311004335f2712308dc100876574f9337881276e9a3fec5b0291"
-    },
-    "route_B_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_ROUTE_B_CONTEMPORARY_RICE_EXECUTION_RECEIPT_20260926.json",
-      "sha256": "83f560f59c2b20b31f1a08c4e9359ac856ffc760a9b3179ef22e3eca6e0b23ed"
-    },
-    "absolute_realism_gates": {
-      "A": {
-        "FIRST_IMPRESSION_AI_GATE": "PASS",
-        "DOCUMENTARY_CAUSALITY": "PASS",
-        "MATERIAL_HETEROGENEITY": "PASS",
-        "ABSOLUTE_REALISM_GATE": "PASS",
-        "confidence": 0.8
-      },
-      "B": {
-        "FIRST_IMPRESSION_AI_GATE": "PASS",
-        "DOCUMENTARY_CAUSALITY": "PASS",
-        "MATERIAL_HETEROGENEITY": "PASS",
-        "ABSOLUTE_REALISM_GATE": "PASS",
-        "confidence": 0.83
-      }
-    },
-    "preregistered_combination": "A_TRADITIONAL_PASS__B_CONTEMPORARY_PASS",
-    "causal_conclusion": "GENERAL_HERITAGE_MAIN_EFFECT_NOT_SUPPORTED_IN_RICE__HERITAGE_X_TOFU_INTERACTION_MORE_PLAUSIBLE_NOT_PROVEN",
-    "renderer_stochasticity_uncontrolled": true,
-    "unique_root_cause_claim_allowed": false,
-    "golden_evaluator_receipt": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_GOLDEN_EVALUATOR_RECEIPT_20260926.json",
-      "sha256": "aa47f51f6645941b924e570fb7fbb222bd9d9203dd191fe1580e54c033c3b01d"
-    },
-    "settlement": {
-      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_RF4_MATCHED_PAIR_SETTLEMENT_20260926.json",
-      "sha256": "961bb899429a28fb8cad83c356abbf692307404140904677bc431580256483bf"
-    }
+  "standing_authorization_policy": {
+    "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
+    "sha256": "5cc42e813e7bee38f57bf533d94dc0380ce620d734f5dbbfeb3e092dbb55ce08",
+    "status": "ACTIVE"
   },
   "chazuo_concept02_photo_repair02": {
-    "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR02-ONE-CANDIDATE",
+    "status": "GENERATED_ONCE_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
     "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_TASK_20260928.json",
     "execution_manifest": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR02_EXECUTION_20260928.json",
-    "status": "GENERATED_ONCE_AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
     "generation_count_max": 1,
     "generation_count": 1,
     "hidden_variant_count": 0,
@@ -2282,15 +1938,14 @@
     ],
     "candidate_sha256": "ef1d9024854bd68d707e898440a0bdbc68520f967acd3faf749526dc1b780bbc",
     "figma_write": false,
-    "old_205_2_status": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE",
+    "prior_205_2": "FAIL_OBVIOUS_AI_FEEL_HISTORICAL_EVIDENCE",
     "human_review_state": "AWAITING_ACTUAL_HUMAN_PIXEL_REVIEW",
     "next_legal_action": "RETURN_EXACT_CANDIDATE_PIXEL_TO_LIU_XIANSHENG_FOR_REVIEW_ONLY"
   },
   "chazuo_concept02_photo_repair03": {
-    "task_id": "VPD-CHAZUO-CONCEPT02-PHOTO-REALISM-REPAIR03-ONE-CANDIDATE",
+    "status": "HUMAN_PASS_PHOTO_REALISM_ACCEPTED",
     "task_record": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_TASK_20260928.json",
     "execution_manifest": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_EXECUTION_20260928.json",
-    "status": "HUMAN_PASS_PHOTO_REALISM_ACCEPTED",
     "generation_count_max": 1,
     "generation_count": 1,
     "hidden_variant_count": 0,
@@ -2304,129 +1959,77 @@
       1536
     ],
     "candidate_sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
-    "machine_realism_verdict": "UNCERTAIN",
+    "machine_realism_verdict": "UNCERTAIN_SUPERSEDED_BY_HUMAN_PASS",
     "figma_write": false,
-    "human_review_state": "SETTLED",
+    "human_review_state": "SETTLED_HUMAN_PASS",
     "next_legal_action": "CREATE_EXACTLY_ONE_COMPLETE_DESIGN_REINFORCEMENT_CANDIDATE_ON_ACCEPTED_REPAIR03_PHOTO_BASE_WITHOUT_CHANGING_PHOTO",
     "human_exact_quote": "高级感这个真实感可以了。继续。。",
     "human_photo_realism_verdict": "HUMAN_PASS",
-    "human_photo_realism_state": "PHOTO_REALISM_ACCEPTED",
     "complete_design_verdict": "STILL_FAIL_TOO_SIMPLE",
     "photo_repair_loop": "CLOSED",
-    "repair04_allowed": false,
     "settlement_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR03_HUMAN_SETTLEMENT_20260928.json",
-    "current_mainline": "DESIGN_REINFORCEMENT_ON_ACCEPTED_REPAIR03"
+    "current_mainline": "DESIGN_REINFORCEMENT_ON_ACCEPTED_REPAIR03",
+    "successor_executed": false
   },
   "chazuo_concept02_design_reinforcement01": {
-    "task_id": "VPD-CHAZUO-CONCEPT02-DESIGN-REINFORCEMENT01-ONE-CANDIDATE",
     "status": "HUMAN_DIRECTION_ACCEPTED_PROFESSIONAL_FINISH_GAP_REMAINS",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_EXECUTION_20260928.json",
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
-    "source_frame_id": "201:2",
     "candidate_frame_id": "213:32",
-    "photo_node_id": "213:33",
-    "repair03_figma_image_hash": "7325ab1ca9b618a2cd789fa4adec50efd748f26f",
-    "repair03_source_sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
-    "candidate_count": 1,
+    "candidate_photo_node_id": "213:33",
+    "source_photo": "Repair03",
+    "source_photo_sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
     "photo_pixel_content_modified": false,
-    "historical_frames_overwritten": false,
     "machine_minimal_self_review": "PASS_MINIMUM_ONLY_HUMAN_TASTE_PENDING",
-    "next_legal_action": "CREATE_EXACTLY_ONE_TARGETED_PROFESSIONALIZATION_PASS_FROM_FRAME_213_32_PRESERVING_REPAIR03_AND_ACCEPTED_DIRECTION",
     "human_review_state": "SETTLED_DIRECTION_PASS_NOT_FINAL",
+    "next_legal_action": "CREATE_EXACTLY_ONE_TARGETED_PROFESSIONALIZATION_PASS_FROM_FRAME_213_32_PRESERVING_REPAIR03_AND_ACCEPTED_DIRECTION",
     "human_exact_quote": "歌曲这次感觉对了很多，高级感哪里终于也有一些设计感了。  但是还是跟专业的有差距，但是这个方向之少是对的。",
-    "human_direction_verdict": "PASS",
-    "final_professional_quality_verdict": "NOT_PASS",
+    "design_direction_accepted": true,
+    "professional_quality_accepted": false,
     "professional_finish_gap": "UNSPECIFIED_BY_HUMAN",
     "settlement_path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_DESIGN_REINFORCEMENT01_HUMAN_DIRECTION_SETTLEMENT_20260928.json",
-    "successor_executed": true,
-    "successor_frame_id": "216:2"
+    "successor_executed": false
   },
   "chazuo_repair03_professionalization_pass01": {
-    "task_id": "VPD-CHAZUO-REPAIR03-PROFESSIONALIZATION-PASS01-ONE-CANDIDATE",
     "status": "AWAITING_ACTUAL_HUMAN_PROFESSIONAL_FINISH_REVIEW",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_PROFESSIONALIZATION_PASS01_EXECUTION_20260928.json",
-    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "source_frame_id": "213:32",
     "candidate_frame_id": "216:2",
     "candidate_photo_node_id": "216:3",
-    "repair03_figma_image_hash": "7325ab1ca9b618a2cd789fa4adec50efd748f26f",
-    "repair03_source_sha256": "dbf2771450d9824b427098b142430e3afc4e0239dcab79c1da63ed58e391d54c",
-    "candidate_count": 1,
-    "version_count": 1,
-    "hidden_variant_count": 0,
-    "reroll": 0,
-    "automatic_retry": 0,
-    "best_of_n": false,
     "photo_pixel_content_modified": false,
-    "source_frame_preserved": true,
-    "editable": true,
-    "actual_screenshot_readback": true,
-    "machine_minimal_self_review": {
-      "professional_finish_improved": true,
-      "hierarchy_cleaner": true,
-      "spacing_grid_more_precise": true,
-      "unnecessary_decoration": false,
-      "photo_realism_preserved": true
-    },
-    "human_review_state": "SETTLED_DIRECTIONAL_POSITIVE_NOT_FINAL",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2",
-    "human_feedback": "设计感好了点，但跟参考图仍差距很大；不要大面积修改；现在越来越好。",
-    "successor_executed": true,
-    "successor_frame_id": "221:2"
+    "screenshot_readback": true,
+    "next_required_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PROFESSIONAL_FINISH_PIXEL_REVIEW_OF_FIGMA_FRAME_216_2"
   },
   "chazuo_repair03_professionalization_local_refinement01": {
-    "task_id": "VPD-CHAZUO-REPAIR03-PROFESSIONALIZATION-LOCAL-REFINEMENT01-ONE-CANDIDATE",
     "status": "HUMAN_REJECT_LOCAL_REFINEMENT_DIRECTION_INSUFFICIENT",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_PROFESSIONALIZATION_LOCAL_REFINEMENT01_EXECUTION_20260928.json",
-    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "source_frame_id": "216:2",
     "candidate_frame_id": "221:2",
     "candidate_photo_node_id": "221:3",
-    "candidate_count": 1,
-    "hidden_variant_count": 0,
-    "automatic_retry_count": 0,
-    "best_of_n": false,
     "photo_pixel_content_modified": false,
-    "large_rework": false,
-    "actual_screenshot_readback": true,
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_PIXEL_REVIEW_OF_FIGMA_FRAME_221_2",
-    "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_LOCAL_REFINEMENT01_HUMAN_REJECT_20260929.json",
+    "screenshot_readback": true,
     "next_required_action": "CREATE_EXACTLY_ONE_SUBSTANTIAL_DESIGN_REWORK_CANDIDATE_ON_ACCEPTED_REPAIR03_PHOTO_BASE_WITHOUT_CHANGING_PHOTO",
-    "successor_executed": true,
-    "successor_frame_id": "227:2"
+    "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_LOCAL_REFINEMENT01_HUMAN_REJECT_20260929.json"
   },
   "chazuo_repair03_substantive_design_rework01": {
-    "task_id": "VPD-CHAZUO-REPAIR03-SUBSTANTIVE-DESIGN-REWORK01-ONE-CANDIDATE",
     "status": "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN",
     "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REPAIR03_SUBSTANTIVE_DESIGN_REWORK01_EXECUTION_20260929.json",
-    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "source_frame_id": "216:2",
-    "rejected_local_refinement_frame_id": "221:2",
     "candidate_frame_id": "227:2",
     "candidate_photo_node_id": "227:3",
-    "candidate_count": 1,
-    "hidden_variant_count": 0,
-    "best_of_n": false,
-    "automatic_retry_count": 0,
-    "second_candidate_created": false,
     "photo_pixel_content_modified": false,
-    "historical_frames_preserved": true,
-    "actual_screenshot_readback": true,
+    "candidate_count": 1,
+    "screenshot_readback": true,
+    "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
     "human_review_state": "SETTLED_HUMAN_REJECT",
-    "next_legal_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS",
     "human_verdict_evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json"
   },
-  "chazuo_true_reference_driven_reauthoring_next": {
-    "status": "EXECUTED_ONE_NEW_ORIGINAL_CANDIDATE_AWAITING_HUMAN_REVIEW",
-    "photo_base": "NEW_ORIGINAL_IMAGE_GENERATED_REPAIR03_NOT_USED",
-    "photo_change_allowed": true,
-    "source_frame_to_preserve": "216:2",
-    "rejected_frames_to_preserve": [
-      "221:2",
-      "227:2"
-    ],
-    "required_difference": "NEW_COMPOSITION_ARCHITECTURE_NOT_PANEL_REMOVAL_OR_TEXT_RELOCATION",
-    "next_legal_action": "WAIT_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_PIXEL_REVIEW_OF_NEW_CANDIDATE"
+  "chazuo_substantive_design_rework01_human_reject": {
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_SUBSTANTIVE_DESIGN_REWORK01_HUMAN_REJECT_20260929.json",
+    "frame_id": "227:2",
+    "verdict": "HUMAN_REJECT_NOT_A_TRUE_SUBSTANTIVE_REDESIGN",
+    "photo_pixel_content_modified": false,
+    "next_required_action": "COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS"
   },
   "chazuo_new_image_composition01": {
     "task_id": "VPD-CHAZUO-NEW-IMAGE-COMPOSITION-01",
@@ -2456,13 +2059,17 @@
     "next_legal_action": "CLOSED_NO_RESUBMISSION",
     "baseline_promotion_allowed": false
   },
+  "actual_human_aesthetic_verdict_20260930": {
+    "verdict": "FAIL_GENERIC_RETURN_TO_ORIGINAL",
+    "human_exact_feedback": "高级感你自己的评价呢？这不久非常非常普通的一个。这做了半天不又回到最初了。",
+    "candidate_gen_id": "38f917de-bf5a-435c-ab1d-143c5a4fddbc",
+    "final_quality_accepted": false,
+    "same_candidate_must_not_be_resubmitted": true,
+    "automatic_second_candidate_authorized": false
+  },
   "baseline_preservation": {
     "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
-  },
-  "latest_evidence": {
-    "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
-    "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -2539,89 +2146,28 @@
     ]
   },
   "chazuo_composite_successor02": {
-    "task_id": "VPD-CHAZUO-COMPOSITE-SUCCESSOR-02",
     "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
-    "started_from_head": "bf7a05bd1e56c01e5db910d0349645dc01e51b00",
-    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
-    "reference_pixels": {
-      "197:2": {
-        "visible": true,
-        "dimensions": [
-          1024,
-          1536
-        ]
-      },
-      "201:2": {
-        "visible": true,
-        "dimensions": [
-          1024,
-          1536
-        ]
-      },
-      "203:2": {
-        "visible": true,
-        "dimensions": [
-          300,
-          520
-        ],
-        "role": "APPROVED_EDITABLE_CHAZUO_WORDMARK_VECTOR"
-      }
-    },
-    "generation": {
-      "generation_count": 1,
-      "hidden_variant_count": 0,
-      "reroll": 0,
-      "best_of_n": false,
-      "automatic_retry": 0,
-      "retry": 0,
-      "second_candidate": 0,
-      "gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
-      "chatgpt_file_id": "file_00000000eaa48230a920ebab8c209a1b",
-      "dimensions": [
-        1536,
-        1024
-      ],
-      "sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82"
-    },
-    "hard_gate_failure": "READABLE_CHAZUO_TEXT_EMBEDDED_IN_REQUIRED_PHOTO_ONLY_RASTER",
-    "figma_write": false,
+    "generation_count": 1,
     "figma_candidate_frame_count": 0,
+    "figma_write": false,
     "protected_old_nodes_modified": false,
     "human_review_return_allowed": false,
-    "candidate_promoted": false,
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_COMPOSITE_SUCCESSOR02_EXECUTION_20260930.json",
       "sha256": "5bf43c674aa9f4a5d7bcb2428f9614e60b71393594363fd53204d1784182edbb"
-    },
-    "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND"
+    }
   },
   "chazuo_crop_composite_stream_recovery04": {
-    "task_id": "VPD-CHAZUO-CROP-COMPOSITE-STREAM-RECOVERY-04",
     "status": "COMPLETE_MACHINE_REGRESSION_SCREEN_PASS_AWAITING_HUMAN_AESTHETIC_REVIEW",
-    "started_from_head": "4456801824288240eef76b965a542849ffde395e",
-    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "candidate_frame_id": "232:2",
-    "photo_node_id": "232:3",
-    "wordmark_clone_id": "232:4",
-    "source_wordmark_id": "203:2",
-    "source_raster_gen_id": "a35e28c2-495f-4011-af3b-f45562be0161",
-    "source_raster_sha256": "77a805bad941f906a7dd8bace9df2fd2bc37449dd2e053e2f7582a71d692bf82",
-    "figma_image_hash": "97235c7d3b48ad169cd2362b8a1240fc9ffd4aa0",
     "image_generation_count": 0,
     "candidate_frame_count": 1,
-    "second_candidate": 0,
-    "reroll": 0,
-    "best_of_n": false,
     "screenshot_run_count": 1,
-    "original_embedded_text_visible": false,
     "protected_old_nodes_modified": false,
-    "machine_regression_screen": "PASS_NO_OBVIOUS_KNOWN_REGRESSION",
-    "human_review_state": "PENDING_ACTUAL_LIU_XIANSHENG_AESTHETIC_REVIEW",
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CROP_COMPOSITE_STREAM_RECOVERY04_EXECUTION_20260930.json",
       "git_blob_sha": "b5e9c6975ff70f0c38c5c04da8f349d651577008"
-    },
-    "next_legal_action": "RETURN_EXACT_ONE_CROPPED_COMPOSITE_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
+    }
   },
   "latest_human_review": {
     "recorded_date": "2026-09-30",
@@ -2629,26 +2175,15 @@
     "exact_quote": "丑的让我直视。我没见过比这个更丑的设计，当然这个背影图你选的也是有问题，但是真的很丑很丑与。你现在到底错在哪里了。。。。我很奇怪。你现在到底如何才能调整好",
     "verdict": "HUMAN_STRONG_WHOLE_CANDIDATE_REJECT",
     "overall_accepted": false,
-    "parent_or_baseline_allowed": false,
-    "machine_screen_overridden": true
+    "candidate_promoted": false
   },
   "chazuo_post_2322_aesthetic_successor01": {
-    "task_id": "VPD-CHAZUO-POST-2322-AESTHETIC-SUCCESSOR-01",
     "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
-    "started_from_head": "c8f31f30f15b9c9a95a291d7ae45b780dd54749c",
-    "reference_pixels_visible": {
-      "232:2": true,
-      "197:2": true,
-      "201:2": true,
-      "203:2": true
-    },
+    "task_id": "VPD-CHAZUO-POST-2322-AESTHETIC-SUCCESSOR-01",
+    "starting_head": "c8f31f30f15b9c9a95a291d7ae45b780dd54749c",
     "image_generation_count": 1,
     "gen_id": "9c5f847b-73eb-43c3-9dd7-2c3080d34258",
     "generated_sha256": "a8c18dbb7469d158ac59110e0803db316627811b8a10b4c4d6e3e09d2a129a2b",
-    "generated_dimensions": [
-      1086,
-      1448
-    ],
     "readable_text_detected": "茶作",
     "figma_candidate_frame_count": 0,
     "figma_write": false,
@@ -2658,6 +2193,7 @@
     "human_review_return_allowed": false,
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_AESTHETIC_SUCCESSOR01_EXECUTION_20260930.json",
+      "git_blob_sha": "6bba3ce1354de72cb17ecd03fbf68adaa2e109ab",
       "sha256": "3b42e74cf149d245685322c1b9b4eb170d24f214cb33abe157091410372195ec"
     },
     "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
@@ -2665,20 +2201,10 @@
   "chazuo_post_2322_photo_text_gate_recovery_composite01": {
     "task_id": "VPD-CHAZUO-POST-2322-PHOTO-TEXT-GATE-RECOVERY-COMPOSITE-01",
     "status": "FAIL_CLOSED_PHOTO_ONLY_TEXT_GATE",
-    "started_from_head": "14f3b3b25e6fac7e6e8bb9d6a83f4ca286ea7bce",
-    "reference_pixels_visible": {
-      "232:2": true,
-      "197:2": true,
-      "201:2": true,
-      "203:2": true
-    },
+    "starting_head": "14f3b3b25e6fac7e6e8bb9d6a83f4ca286ea7bce",
     "image_generation_count": 1,
     "gen_id": "72b2cf7d-4172-43db-a3e8-9a91946c26e8",
     "generated_sha256": "8d72ec551414c3fb367c4747d354bf36a85de3656b20d986a13d9bcfb65fc96b",
-    "generated_dimensions": [
-      1086,
-      1448
-    ],
     "readable_text_detected": "茶作",
     "figma_candidate_frame_count": 0,
     "figma_write": false,
@@ -2688,6 +2214,7 @@
     "human_review_return_allowed": false,
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_POST_2322_PHOTO_TEXT_GATE_RECOVERY_COMPOSITE01_EXECUTION_20260930.json",
+      "git_blob_sha": "57f55098099a389ec948cfddee3a24e5dfbb28e2",
       "sha256": "e7e95a527232c55383e3875c20d05d7908f689e83f8b6b6c5c12407947a12c7b"
     },
     "next_legal_action": "STOP_FAIL_CLOSED_AWAIT_UNIFIED_COMMAND_NO_SECOND_GENERATION"
@@ -2695,12 +2222,18 @@
   "chazuo_real_photo_source_figma_composite01": {
     "task_id": "VPD-CHAZUO-REAL-PHOTO-SOURCE-FIGMA-COMPOSITE-01",
     "status": "COMPLETE_MACHINE_REGRESSION_SCREEN_PASS_AWAITING_HUMAN_AESTHETIC_REVIEW",
-    "started_from_head": "a764391be0f002e7eb4421d3d9784d2c7ffbc5dd",
+    "starting_head": "a764391be0f002e7eb4421d3d9784d2c7ffbc5dd",
     "source_photo_count": 1,
     "source_platform": "Pexels",
     "source_author": "Gu Ko",
     "source_page_url": "https://www.pexels.com/photo/hands-sorting-fresh-tea-leaves-in-yunnan-31756539/",
     "source_license": "Pexels License",
+    "source_pixels_verified": true,
+    "source_dimensions": [
+      5726,
+      4160
+    ],
+    "source_figma_image_hash": "e39dcabc1eb55372e775e6179fa42cc852186758",
     "image_generation_count": 0,
     "candidate_frame_id": "241:2",
     "candidate_dimensions": [
@@ -2709,16 +2242,14 @@
     ],
     "candidate_count": 1,
     "support_text_count": 0,
-    "wordmark_source_node_id": "203:2",
-    "wordmark_clone_node_id": "243:3",
     "screenshot_readback_count": 1,
     "protected_old_nodes_modified": false,
-    "second_photo_candidate": 0,
-    "second_design_candidate": 0,
+    "machine_regression_screen": "PASS_NO_OBVIOUS_REGRESSION_HUMAN_TASTE_PENDING",
     "human_review_return_allowed": true,
     "candidate_promoted": false,
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_REAL_PHOTO_SOURCE_FIGMA_COMPOSITE01_EXECUTION_20260930.json",
+      "git_blob_sha": "deccbadf386877fe5813c3ebd3358bddf1f08273",
       "sha256": "f0830b7373f1c1d5f4d7ff11127a6a3a196a13d25829e4b0efc9fa40b7b001d3"
     },
     "next_legal_action": "RETURN_EXACT_ONE_REAL_PHOTO_CHAZUO_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
@@ -2727,23 +2258,41 @@
     "task_id": "VPD-CHAZUO-NEW-REFERENCE-LOCK-AND-ONE-PROOF-CANDIDATE-01",
     "status": "READY_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW",
     "starting_head": "c959eeb46c767437e2f4f0ce0cc6e7a17075bd65",
-    "rejected_parent_frame_id": "241:2",
-    "rejected_parent_reusable": false,
+    "rejected_241_2_settled": true,
     "reference_drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "reference_dimensions": [
+      1080,
+      1439
+    ],
     "reference_sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "reference_pixels_visible": true,
     "structural_relation_count": 4,
     "image_generation_count": 0,
     "formal_photo_source_count": 1,
+    "formal_photo_id": "32379820",
+    "formal_photo_crop": {
+      "sx": 0,
+      "sy": 1000,
+      "sw": 3000,
+      "sh": 4000
+    },
     "candidate_frame_id": "244:2",
+    "candidate_dimensions": [
+      1200,
+      1600
+    ],
     "candidate_count": 1,
     "wordmark_clone_id": "245:2",
     "support_text_count": 0,
     "second_candidate": 0,
-    "successful_final_readback_count": 1,
+    "successful_final_screenshot_readback_count": 1,
+    "protected_old_nodes_modified": false,
+    "machine_regression_screen": "PASS_NO_OBVIOUS_REPRODUCTION_OF_241_2_FAILURE_SKELETON",
     "candidate_promoted": false,
     "human_review_pending": true,
     "evidence": {
       "path": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_NEW_REFERENCE_LOCK_AND_ONE_PROOF_CANDIDATE01_EXECUTION_20260930.json",
+      "git_blob_sha": "03bcf7637a12f59b2cfb76e9d5388c7e8a42d485",
       "sha256": "85b070d2fc9c237ba95da23b7969674580e00efc53ca0c1eb94ae0d2c1893ad8"
     },
     "next_legal_action": "RETURN_EXACT_ONE_NEW_REFERENCE_PROOF_CANDIDATE_TO_UNIFIED_COMMAND_FOR_LIU_XIANSHENG_ACTUAL_AESTHETIC_REVIEW"
@@ -2772,59 +2321,16 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "AWAITING_INDEPENDENT_REVIEW",
+    "status": "AUTHORIZED",
     "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
-    "attempts_consumed": 2,
-    "outputs": [
-      {
-        "arm": "direct_reference",
-        "label": "31",
-        "file_name": "VPD_CHAZUO_R6_31_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "5c662dcbb98507475b8d1092d1100498bda93896fb20aa98978d0fbd9729c0e0",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2582148,
-        "drive_file_id": "1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ",
-        "drive_url": "https://drive.google.com/file/d/1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ",
-          "mime_type": "image/png",
-          "size": 2582148,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "arm": "distilled_candidate",
-        "label": "76",
-        "file_name": "VPD_CHAZUO_R6_76_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "822a72363c59325af545f3fabe50cd1884f15fb2a59b59c5222a450eaf418ce1",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2358928,
-        "drive_file_id": "1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy",
-        "drive_url": "https://drive.google.com/file/d/1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy",
-          "mime_type": "image/png",
-          "size": 2358928,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      }
-    ],
+    "attempts_consumed": 0,
+    "outputs": [],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
     "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 2,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
@@ -2870,11 +2376,7 @@
         "sha256": "6e02a5d07a9a6618dd4b486a06f0c32cefe08df8f8c79973b9fce5d07f7de28f"
       },
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "EXECUTED_WAITING_INDEPENDENT_REVIEW",
-      "closing_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
-        "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
-      }
+      "status": "AUTHORIZED"
     },
     "neutral_review_delivery": {
       "identifiers": [
@@ -2882,36 +2384,6 @@
         "76"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
-      "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
-    },
-    "independent_review": {
-      "task_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
-      "claim": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/DISPATCH_CLAIM.json",
-        "sha256": "247fd41d79eb869f91d130877d2ec099a9ab0863796c8156d7fcda1ed7495f55"
-      },
-      "active_attempt_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
-      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
-      "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
     }
-  },
-  "legacy_fields_scope": {
-    "scope": "HISTORICAL_RESULTS_NOT_CURRENT_EXECUTION_AUTHORITY",
-    "current_authority": "mainline_lock + mainline_progress",
-    "fields": [
-      "experiment",
-      "source_library",
-      "requirements",
-      "execution",
-      "concept02",
-      "chazuo_concept02_photo_repair03",
-      "chazuo_new_reference_lock_and_one_proof_candidate01"
-    ]
   }
 }

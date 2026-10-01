@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 234,
-  "recorded_at": "2026-10-01T18:35:13.287146+08:00",
+  "sequence": 236,
+  "recorded_at": "2026-10-01T18:43:04.540562+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -358,7 +358,7 @@
     "尚无长期方法晋升或完整商业交付"
   ],
   "blocked": [],
-  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
+  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -426,10 +426,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_STAGE1_R6_AUTHORIZED",
+  "status": "VPD_MAINLINE_STAGE1_R6_EXECUTED_WAITING_INDEPENDENT_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "59b5f027c3f667ddef8babaccfee1f5932e17afb02a1783430d626a4ac949454"
+    "sha256": "42258ad0f4326b973291b2b116e338e64f0b2e69b5390e3f4a84d33372970745"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R6-AUTHORIZE-20261001-001",
-      "event_hash": "48d36ca5abe7c3046259fb7e2657ab16cfd2d74a8c250218e071b93713b45dcd"
+      "event_id": "EVT-VPD-R6-CLAIM-20261001-001",
+      "event_hash": "64cbddeaa0673bb562715d8d21d82cc9e4c0fc25cdac9d81529e6737ae285582"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "已结算R5独立负面审核并保留63的结构进步；按既有用户闭环授权冻结R6材质主次与图文对齐修订，恰好2次出图、每臂1次，不要求逐轮真人审核。",
-  "updated_at": "2026-10-01T18:35:13.287146+08:00",
+  "current_stage": "R6新原件31、76的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。",
+  "updated_at": "2026-10-01T18:43:04.540562+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "已结算R5独立负面审核并保留63的结构进步；按既有用户闭环授权冻结R6材质主次与图文对齐修订，恰好2次出图、每臂1次，不要求逐轮真人审核。"
+    "R6新原件31、76的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2321,16 +2321,59 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "AUTHORIZED",
+    "status": "AWAITING_INDEPENDENT_REVIEW",
     "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
-    "attempts_consumed": 0,
-    "outputs": [],
+    "attempts_consumed": 2,
+    "outputs": [
+      {
+        "arm": "direct_reference",
+        "label": "31",
+        "file_name": "VPD_CHAZUO_R6_31_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "5c662dcbb98507475b8d1092d1100498bda93896fb20aa98978d0fbd9729c0e0",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2582148,
+        "drive_file_id": "1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ",
+        "drive_url": "https://drive.google.com/file/d/1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1R_9RXdmSu_2JstDgatgJzOIcStQNYLjJ",
+          "mime_type": "image/png",
+          "size": 2582148,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "arm": "distilled_candidate",
+        "label": "76",
+        "file_name": "VPD_CHAZUO_R6_76_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "822a72363c59325af545f3fabe50cd1884f15fb2a59b59c5222a450eaf418ce1",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2358928,
+        "drive_file_id": "1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy",
+        "drive_url": "https://drive.google.com/file/d/1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1uy4XxDTfWDZgdjhjxq5GfxD7DOMHVUcy",
+          "mime_type": "image/png",
+          "size": 2358928,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      }
+    ],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
     "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 2,
+      "images": 0,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
@@ -2376,7 +2419,11 @@
         "sha256": "6e02a5d07a9a6618dd4b486a06f0c32cefe08df8f8c79973b9fce5d07f7de28f"
       },
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "AUTHORIZED"
+      "status": "EXECUTED_WAITING_INDEPENDENT_REVIEW",
+      "closing_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
+        "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
+      }
     },
     "neutral_review_delivery": {
       "identifiers": [
@@ -2384,6 +2431,23 @@
         "76"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
+    },
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
+      "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
+    },
+    "independent_review": {
+      "task_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "CLAIMED_READY_TO_SEND",
+      "claim": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/DISPATCH_CLAIM.json",
+        "sha256": "247fd41d79eb869f91d130877d2ec099a9ab0863796c8156d7fcda1ed7495f55"
+      },
+      "active_attempt_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
+      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+      "reviewer_writes_repo": false,
+      "human_acceptance_replaced": false
     }
   }
 }
