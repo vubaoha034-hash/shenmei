@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 222,
+  "revision": 223,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "主线进度已澄清：首轮审核传输与修订闭环完成，88仅通过独立初筛；全系统未完成。已准备P4豆腐/草莓四张准确输入及后续合计10张的有界方案，尚未扩大授权或生成新图。",
-  "status": "VPD_MAINLINE_STAGE1_R7_CANDIDATE_READY_WAITING_USER_REVIEW",
+  "current_stage": "接续完成请求，按既有有界方案启动P4豆腐与草莓四张完整广告对照；同一独立审核驱动内部验证，后续新增总上限10张，个人审美未验收。",
+  "status": "VPD_MAINLINE_P4_CONTENT_R1_AUTHORIZED",
   "p6_allowed": false,
-  "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
+  "next_required_action": "EXECUTE_P4_CONTENT_FROZEN_TASK",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 4,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-    "current_image_generation_count_max": 0,
+    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+    "current_image_generation_count_max": 4,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -155,7 +155,7 @@
     "photo_repair_loop_closed": true,
     "repair04_allowed": false,
     "modify_accepted_repair03_photo": false,
-    "successor_execution_authorized": false,
+    "successor_execution_authorized": true,
     "add_new_rules_gates_validators": false,
     "new_mainline_contract": {
       "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "主线进度已澄清：首轮审核传输与修订闭环完成，88仅通过独立初筛；全系统未完成。已准备P4豆腐/草莓四张准确输入及后续合计10张的有界方案，尚未扩大授权或生成新图。"
+    "接续完成请求，按既有有界方案启动P4豆腐与草莓四张完整广告对照；同一独立审核驱动内部验证，后续新增总上限10张，个人审美未验收。"
   ],
-  "updated_at": "2026-10-01T20:37:24.682788+08:00",
+  "updated_at": "2026-10-01T22:05:24.326510+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": false,
+  "render_allowed": true,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2771,245 +2771,114 @@
     "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
   },
   "mainline_progress": {
-    "stage_id": "P3_STAGE1",
-    "status": "AWAITING_HUMAN_REVIEW",
-    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-    "attempts_consumed": 2,
-    "outputs": [
+    "stage_id": "P4_CONTENT",
+    "status": "AUTHORIZED",
+    "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+    "attempts_consumed": 0,
+    "outputs": [],
+    "human_verdict": "NOT_REVIEWED",
+    "completed_stage_receipts": [
       {
-        "arm": "direct_reference",
-        "label": "53",
-        "file_name": "VPD_CHAZUO_R7_53_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2568026,
-        "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-        "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-          "mime_type": "image/png",
-          "size": 2568026,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "arm": "distilled_candidate",
-        "label": "88",
-        "file_name": "VPD_CHAZUO_R7_88_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2176052,
-        "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-        "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-          "mime_type": "image/png",
-          "size": 2176052,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
+        "path": "continuity/vpd/mainline_completion_20261001/P3_STAGE_PROGRESSION_RECEIPT.json",
+        "sha256": "68c6c84006efb6fa743f304221acc7396909fa97f25164f717a836779b8ffafe"
       }
     ],
-    "human_verdict": "NOT_REVIEWED",
-    "completed_stage_receipts": [],
-    "planned_attempts_max": 2,
+    "planned_attempts_max": 4,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 4,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/stage1/r7/EXECUTION_AUTHORIZATION.json",
-        "sha256": "84166d14e60e794e5124e8ed02b75c45a37e28c1195fcc3edc0abf14079728f8"
+        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
       }
     },
     "input_freeze": {
-      "path": "continuity/vpd/stage1/r7/INPUT_FREEZE.json",
-      "sha256": "1bf6a8c956f3ee265ebaec29c8b265eefe22000e4c0a3cb540acd5e50c71fcb1"
-    },
-    "amendment_receipt": {
-      "path": "continuity/vpd/stage1/r7/LOCAL_AMENDMENT.json",
-      "sha256": "56f5fd3cd265e0416bc2980491269ddb89969ce2e7f923ff61b7cd9e60b8c1c6"
+      "path": "continuity/vpd/p4_content/20261001_r1/INPUT_FREEZE.json",
+      "sha256": "678f4bcfed5cea29947bd329eddc15210a17e1a67fa0294c13764f6c9b90fd2a"
     },
     "review_delegation": {
-      "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
-      "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+      "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
+      "sha256": "95a8f625ab834d0bed848b69b2ae6cfe9ee0be97409f4316bbc0989f6169bc05"
+    },
+    "continuation_authority": {
+      "path": "continuity/vpd/mainline_completion_20261001/COMPLETION_EXECUTION_SCOPE.json",
+      "sha256": "39f4d1751ef9b82315d249634a7b9957ab67ce46e1e7e87776fe916ac14606ce"
+    },
+    "budget_state": {
+      "path": "continuity/vpd/mainline_completion_20261001/BUDGET_STATE.json",
+      "sha256": "5150313d0892daf49762e37e19d74cf8db3f8b7e9f12e39fd7d6afa238fbc0e3"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
-      "execution_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
-        "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
-      },
+      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
       "review_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/REVIEW_RECEIPT.json",
-        "sha256": "d998d903620835ba6a034f40bdc21e73c87b97c575860006e50942059cea7a75"
+        "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
+        "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
       },
-      "callback_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/CALLBACK_RECEIPT.json",
-        "sha256": "f0251a5bc20214226df82ed9fb5ab51b2a47c9bb0cc8ede9889396c72bd845da"
-      },
-      "transport_timing_correction": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/TRANSPORT_TIMING_CORRECTION.json",
-        "sha256": "28ac2b15292393682c61c2e50bc87299181a79f280ee3b34bfd976d740e6d7b5"
-      },
-      "preserved_progress": {
-        "path": "continuity/vpd/history/stage1_20261001/r7/R6_SETTLED_PROGRESS.json",
-        "sha256": "345d60a9269d9f0b2c2799ed37e9cc226936fec1908fac71627858e28e28e5a4"
-      }
+      "originals": [
+        {
+          "arm": "direct_reference",
+          "label": "53",
+          "file_name": "VPD_CHAZUO_R7_53_20261001.png",
+          "mime_type": "image/png",
+          "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "bytes": 2568026,
+          "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+          "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
+          "provider_readback": {
+            "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+            "mime_type": "image/png",
+            "size": 2568026,
+            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+            "verified": true
+          }
+        },
+        {
+          "arm": "distilled_candidate",
+          "label": "88",
+          "file_name": "VPD_CHAZUO_R7_88_20261001.png",
+          "mime_type": "image/png",
+          "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "bytes": 2176052,
+          "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+          "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
+          "provider_readback": {
+            "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+            "mime_type": "image/png",
+            "size": 2176052,
+            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+            "verified": true
+          }
+        }
+      ],
+      "human_verdict": "NOT_REVIEWED"
     },
     "session": {
-      "source_commit": "db707cef28e6faca1db36d2e60ea59ac98daea1a",
-      "opening_receipt": {
-        "path": "continuity/vpd/stage1/r7/EXECUTION_AUTHORIZATION.json",
-        "sha256": "84166d14e60e794e5124e8ed02b75c45a37e28c1195fcc3edc0abf14079728f8"
-      },
+      "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "INDEPENDENT_REVIEW_COMPLETE_CANDIDATE_READY_FOR_FINAL_USER_REVIEW",
-      "closing_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/EXECUTION_RECEIPT.json",
-        "sha256": "623c2900acf88aa23ce473fd0a889439f28905dd158735c2bbc38c7b2f75f602"
+      "status": "AUTHORIZED_INPUTS_FROZEN",
+      "opening_receipt": {
+        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
       }
     },
     "neutral_review_delivery": {
       "identifiers": [
-        "53",
-        "88"
+        "14",
+        "67",
+        "39",
+        "92"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r7/EXECUTION_RECEIPT.json",
-      "sha256": "623c2900acf88aa23ce473fd0a889439f28905dd158735c2bbc38c7b2f75f602"
-    },
-    "independent_review": {
-      "task_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "INDEPENDENT_SCREENING_COMPLETE_CANDIDATE_READY",
-      "claim": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/DISPATCH_CLAIM.json",
-        "sha256": "10e8f73fae17987895c32d112f605d216e87c2cafdabf9ca3977cc22a06ec471"
-      },
-      "active_attempt_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
-      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
-      "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false,
-      "latest_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
-        "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
-      },
-      "callback_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/CALLBACK_RECEIPT.json",
-        "sha256": "212994d59ba0e7a10fef348b6e64e3685a4daba18e92a0fce657b2b10cee537e"
-      },
-      "reviewer_verdict": {
-        "callback_id": "VPD-R7-REVIEW-CALLBACK-20261001-01",
-        "parent_task_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01",
-        "render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-        "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-        "image_files": {
-          "53": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-          "88": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-          "R": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC"
-        },
-        "pixels_loaded": {
-          "53": true,
-          "88": true,
-          "R": true
-        },
-        "image_identity_evidence": {
-          "53": [
-            "中央偏下为斑点陶瓷茶杯置于苔藓石台上，右下棕色浅盘盛卷曲干茶，前景有鲜绿茶叶",
-            "左上是超大白色“茶作”并配绿色小叶图形，右上是大号两行“一杯茶，慢下来”"
-          ],
-          "88": [
-            "左中大号浅色陶瓷茶杯与右侧棕色干茶盘共同置于宽大的木托盘上，前方仅有少量鲜叶",
-            "左上为小号“茶作”，右上深色虚化负空间内为两行“一杯茶，慢下来”"
-          ],
-          "R": [
-            "上半幅中央为大型圆形藤编托盘，托盘上排列多片红色肉片并带绿色配料",
-            "左上为小号品牌字标，右下为大号白色中文标题，托盘右侧有木勺和葫芦状器物"
-          ]
-        },
-        "image_verdicts": {
-          "53": "NEEDS_REVISION",
-          "88": "READY_FOR_USER_REVIEW"
-        },
-        "relative_choice": "88",
-        "whole_set_ready": true,
-        "critical_issues": {
-          "53": [
-            "品牌与标题同时过大，与中央茶杯形成三个近似同级视觉锚点",
-            "环境亮部和高对比细节不断切入产品区，主簇边界和第一视觉不够稳定",
-            "茶汤、鲜叶、干茶、石面和苔藓同时被高光与锐度强化，材质主次不足"
-          ],
-          "88": []
-        },
-        "preserve": {
-          "53": [
-            "中央茶杯与干茶的基本产品关系",
-            "自然景深和暖黄色茶汤",
-            "正确中文与完整产品结构"
-          ],
-          "88": [
-            "茶杯第一视觉、干茶第二层、少量鲜叶第三层的清晰产品层级",
-            "统一木托盘承托、右上深色负空间和小尺寸品牌节点",
-            "可信的主光、景深、陶瓷与茶汤材质关系"
-          ]
-        },
-        "next_changes": [],
-        "confidence": "HIGH"
-      },
-      "last_processed_callback_id": "VPD-R7-REVIEW-CALLBACK-20261001-01",
-      "ready_candidate_ids": [
-        "88"
-      ],
-      "automatic_revision_loop_stopped": true
-    },
-    "screening_verdict": "READY_FOR_USER_REVIEW",
-    "independent_screening_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
-      "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
-    },
-    "final_candidate_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r7/FINAL_CANDIDATE_RECEIPT.json",
-      "sha256": "8c38033e37851899d87f58b6432d8bf058772dab8f90d0a14002c7a0c5bf40ce"
-    },
-    "round_close_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r7/ROUND_CLOSE_RECEIPT.json",
-      "sha256": "6a1a53cad9c600c6eeddba003f8235cb0a08f8d9b9fbdf0c0567d196d24c546c"
-    },
-    "prepared_successor": {
-      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-      "stage_id": "P4_CONTENT",
-      "status": "INPUTS_PREPARED_NOT_EXECUTION_AUTHORIZED",
-      "inputs": {
-        "path": "continuity/vpd/p4_content/20261001_r1_preparation/DRAFT_INPUT_FREEZE.json",
-        "sha256": "488e107e1cf425ebd08ed794c0e54283a28b07a9e4d560fa66f9bae3bf052f36"
-      },
-      "continuation_proposal": {
-        "path": "continuity/vpd/p4_content/20261001_r1_preparation/BOUNDED_CONTINUATION_PROPOSAL.json",
-        "sha256": "52d37d14572b17b6a3dfed6f7257b36ac82eb2669cf20f5e418f668df8b0f121"
-      },
-      "progress_reconciliation": {
-        "path": "evidence/vpd/mainline_continuation_20261001/ACTUAL_PROGRESS_AND_AUTHORITY_RECEIPT.json",
-        "sha256": "b767b628c5b6db0b7c2b9cdc36ed663823fb32eb12a528c8f65e97c52e8449d4"
-      },
-      "reviewable_task": {
-        "path": "evidence/vpd/mainline_continuation_20261001/NEXT_CONCRETE_TASK.md",
-        "sha256": "e13ed9186292356b556c69c6898249e37af96a89fae50d4d873ec850bb2cf3ca"
-      },
-      "generation_authorized": false,
-      "generation_consumed": 0
     }
   },
   "legacy_fields_scope": {

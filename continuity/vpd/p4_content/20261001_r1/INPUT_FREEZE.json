@@ -1,0 +1,160 @@
+{
+  "schema_version": "vpd-stage-input-freeze/v1",
+  "stage_id": "P4_CONTENT",
+  "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+  "recorded_at": "2026-10-01T22:05:24.318068+08:00",
+  "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
+  "status": "FROZEN_FOR_CURRENT_EXECUTION",
+  "reference_pixels": {
+    "schema_version": "vpd-reference-binding/v1",
+    "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+    "reference_role": "SAME_ORIGINAL_APPROVED_REFERENCE_UPPER_AD_ONLY",
+    "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "local_runtime_path": "/workspace/scratch/251cba462a1a/attachments/8649cec8-4c1f-485b-888e-35e0fe673ba4/R1C-APPROVED-17.jpg",
+    "runtime_bytes_verified_before_freeze": true,
+    "pixel_binding_required": true,
+    "pixel_binding_proof": "Actual referenced_image_paths and output trace to be settled after generation; manifest is not renderer proof."
+  },
+  "input_refs": [
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/CANDIDATE_PROGRAM_NOT_PROMOTED.txt",
+      "sha256": "5820ae70d90f3bb36ba0537baea0c01589fb5b1e8209e5dca44c23e9b4a0d8dc"
+    },
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/REFERENCE_BINDING.json",
+      "sha256": "a1861d9a204fd6d8e01ef188f0008a17385a33509bc4aa21ff6c805ffdf1795e"
+    },
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+      "sha256": "1f7a0e2001fe8d966c34e59e59975853948a6973e625718d326d903abf0ce783"
+    },
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+      "sha256": "4854b96d74e6385c3bc738bda577ba19bbd8913a5aadb86d4f7908854263cb7d"
+    },
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/STRAWBERRY_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+      "sha256": "f5061c9efcb88f1ac424ac708bc980ba5c95c23432621fca01b6305c559d81cc"
+    },
+    {
+      "path": "continuity/vpd/p4_content/20261001_r1_preparation/STRAWBERRY_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+      "sha256": "e8a36fa5f27657206f5f912cfcb7f0cdc9ecbc2f702879ff79e399d203203241"
+    }
+  ],
+  "arms": {
+    "direct_reference": "Each content exact common prompt",
+    "distilled_candidate": "Same content common prompt + one LF + the corresponding content-specific candidate block"
+  },
+  "calls": [
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "direct_reference",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+        "sha256": "1f7a0e2001fe8d966c34e59e59975853948a6973e625718d326d903abf0ce783"
+      },
+      "same_reference": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/REFERENCE_BINDING.json",
+        "sha256": "a1861d9a204fd6d8e01ef188f0008a17385a33509bc4aa21ff6c805ffdf1795e"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "distilled_candidate",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+        "sha256": "4854b96d74e6385c3bc738bda577ba19bbd8913a5aadb86d4f7908854263cb7d"
+      },
+      "same_reference": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/REFERENCE_BINDING.json",
+        "sha256": "a1861d9a204fd6d8e01ef188f0008a17385a33509bc4aa21ff6c805ffdf1795e"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "strawberry",
+      "brand": "果间",
+      "copy": "一口鲜甜，慢慢尝",
+      "arm": "direct_reference",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/STRAWBERRY_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+        "sha256": "f5061c9efcb88f1ac424ac708bc980ba5c95c23432621fca01b6305c559d81cc"
+      },
+      "same_reference": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/REFERENCE_BINDING.json",
+        "sha256": "a1861d9a204fd6d8e01ef188f0008a17385a33509bc4aa21ff6c805ffdf1795e"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "strawberry",
+      "brand": "果间",
+      "copy": "一口鲜甜，慢慢尝",
+      "arm": "distilled_candidate",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/STRAWBERRY_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+        "sha256": "e8a36fa5f27657206f5f912cfcb7f0cdc9ecbc2f702879ff79e399d203203241"
+      },
+      "same_reference": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/REFERENCE_BINDING.json",
+        "sha256": "a1861d9a204fd6d8e01ef188f0008a17385a33509bc4aa21ff6c805ffdf1795e"
+      },
+      "attempts_max": 1
+    }
+  ],
+  "budget": {
+    "attempts_max": 4,
+    "per_content": 2,
+    "per_arm_per_content": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0
+  },
+  "generation_authorized": true,
+  "generation_consumed": 0,
+  "outputs": [],
+  "prior_positive_scope": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
+    "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
+  },
+  "promotion_allowed": false,
+  "interpretability_limit": "This is a prepared transfer test, not proof that the R7 prompt clauses caused improvement. No new images have been generated.",
+  "completion_scope": {
+    "path": "continuity/vpd/mainline_completion_20261001/COMPLETION_EXECUTION_SCOPE.json",
+    "sha256": "39f4d1751ef9b82315d249634a7b9957ab67ce46e1e7e87776fe916ac14606ce"
+  },
+  "prior_stage_progression": {
+    "path": "continuity/vpd/mainline_completion_20261001/P3_STAGE_PROGRESSION_RECEIPT.json",
+    "sha256": "68c6c84006efb6fa743f304221acc7396909fa97f25164f717a836779b8ffafe"
+  },
+  "neutral_review_binding_internal": [
+    {
+      "content_id": "tofu",
+      "arm": "direct_reference",
+      "label": "14"
+    },
+    {
+      "content_id": "tofu",
+      "arm": "distilled_candidate",
+      "label": "67"
+    },
+    {
+      "content_id": "strawberry",
+      "arm": "direct_reference",
+      "label": "39"
+    },
+    {
+      "content_id": "strawberry",
+      "arm": "distilled_candidate",
+      "label": "92"
+    }
+  ]
+}
