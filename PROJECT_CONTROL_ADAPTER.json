@@ -820,7 +820,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_MAINLINE_P4_CONTENT_R1_AUTHORIZED",
+    "checkpoint": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -858,9 +858,9 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "EXECUTE_P4_CONTENT_FROZEN_TASK",
+    "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
     "formal_outputs_verified": null,
-    "render_allowed": true,
+    "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "formal_render_attempt2_classification": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
     "reconciliation": {
@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 223,
-    "sha256": "e8a10d583904232d7581c1a70b087d702452445f6d591d01712fc78d19d44b48",
+    "revision": 225,
+    "sha256": "4b4fe34fcb767cd7b18bfb31d0073116f73797b3fa0b564e47e01481d3de3a53",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,10 +981,10 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_MAINLINE_P4_CONTENT_R1_AUTHORIZED",
+    "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
     "subtask_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "next_required_action": "EXECUTE_P4_CONTENT_FROZEN_TASK",
+    "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
     "plan": {
       "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
       "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
@@ -992,11 +992,34 @@
     "mode": "LOCKED_COMPLETE_POSTER_FIRST",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
-    "current_generation_authorization": 4,
-    "current_chat_render_eligible": true,
+    "current_generation_authorization": 0,
+    "current_chat_render_eligible": false,
     "continuation_authority": {
       "path": "continuity/vpd/mainline_completion_20261001/COMPLETION_EXECUTION_SCOPE.json",
       "sha256": "39f4d1751ef9b82315d249634a7b9957ab67ce46e1e7e87776fe916ac14606ce"
+    },
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
+      "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
+    },
+    "independent_review": {
+      "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "TRANSPORT_BLOCKED_NOT_DISPATCHED",
+      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+      "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
+      "frozen_message": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/FROZEN_DISPATCH_RECEIPT.json",
+        "sha256": "e90190e7ef2ca185b638c5b95976b8163ab63d6d7b243a721422059e15834eb8"
+      },
+      "block_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
+        "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
+      },
+      "actual_send_clicks": 0,
+      "active_attempt_id": null,
+      "reviewer_writes_repo": false,
+      "human_acceptance_replaced": false
     }
   },
   "preserved_prior_current_mainline": {
@@ -1027,8 +1050,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-COMPLETION-CONTINUE-AUTHORIZE-20261001-001",
-      "event_hash": "f5f0360e69a5a4f6ca2ad37c28cae31ebb2bfd3954367ae33fec1c46e41623bc"
+      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-BLOCK-20261001-001",
+      "event_hash": "fcc3d3f164dfa6fd99bc12ea326eaeea479ad120691ce1c44006dbc6e7f0798a"
     }
   },
   "mature_workflow_audit": {

@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 223,
+  "revision": 225,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "接续完成请求，按既有有界方案启动P4豆腐与草莓四张完整广告对照；同一独立审核驱动内部验证，后续新增总上限10张，个人审美未验收。",
-  "status": "VPD_MAINLINE_P4_CONTENT_R1_AUTHORIZED",
+  "current_stage": "P4四张原件已完成并保存，预算消耗4/10；同一审核方的完整任务已冻结，但Opera连接超时且备用Opera接口明确未连接，尚未发出，当前只需修复审核传输。",
+  "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_P4_CONTENT_FROZEN_TASK",
+  "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 4,
+    "current_image_generation_authorization": 0,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "current_image_generation_count_max": 4,
+    "current_image_generation_count_max": 0,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -155,7 +155,7 @@
     "photo_repair_loop_closed": true,
     "repair04_allowed": false,
     "modify_accepted_repair03_photo": false,
-    "successor_execution_authorized": true,
+    "successor_execution_authorized": false,
     "add_new_rules_gates_validators": false,
     "new_mainline_contract": {
       "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "接续完成请求，按既有有界方案启动P4豆腐与草莓四张完整广告对照；同一独立审核驱动内部验证，后续新增总上限10张，个人审美未验收。"
+    "P4四张原件已完成并保存，预算消耗4/10；同一审核方的完整任务已冻结，但Opera连接超时且备用Opera接口明确未连接，尚未发出，当前只需修复审核传输。"
   ],
-  "updated_at": "2026-10-01T22:05:24.326510+08:00",
+  "updated_at": "2026-10-01T22:20:31.609105+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": true,
+  "render_allowed": false,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2772,10 +2772,99 @@
   },
   "mainline_progress": {
     "stage_id": "P4_CONTENT",
-    "status": "AUTHORIZED",
+    "status": "TECHNICAL_BLOCKED",
     "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "attempts_consumed": 0,
-    "outputs": [],
+    "attempts_consumed": 4,
+    "outputs": [
+      {
+        "label": "14",
+        "content_id": "tofu",
+        "arm": "direct_reference",
+        "file_name": "VPD_P4_CONTENT_R1_14_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "62e4fe2f5618f128ac2872b840431a7a5cabd1eef7cfbc0424516cb36fd8bddd",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2868301,
+        "drive_file_id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+        "drive_url": "https://drive.google.com/file/d/18RVvyOSS4KImcV2dJ_ulftp88k3hQst9/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+          "mime_type": "image/png",
+          "size": 2868301,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "67",
+        "content_id": "tofu",
+        "arm": "distilled_candidate",
+        "file_name": "VPD_P4_CONTENT_R1_67_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "cc06d23618a6b90c9a487465fa28cd13e24bf2ec025e13d03143a04427fd14c3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2470059,
+        "drive_file_id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+        "drive_url": "https://drive.google.com/file/d/1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+          "mime_type": "image/png",
+          "size": 2470059,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "39",
+        "content_id": "strawberry",
+        "arm": "direct_reference",
+        "file_name": "VPD_P4_CONTENT_R1_39_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "ed98249445bd4c60c342faeedf4394038ed7e130940929c75792953b76630f8c",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2955427,
+        "drive_file_id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
+        "drive_url": "https://drive.google.com/file/d/1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
+          "mime_type": "image/png",
+          "size": 2955427,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "92",
+        "content_id": "strawberry",
+        "arm": "distilled_candidate",
+        "file_name": "VPD_P4_CONTENT_R1_92_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "5ab1b38a5cf18dcd2343293b235e3ddfd33bc505b7d05b07b05285f705d28fbe",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2822429,
+        "drive_file_id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
+        "drive_url": "https://drive.google.com/file/d/1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
+          "mime_type": "image/png",
+          "size": 2822429,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      }
+    ],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [
       {
@@ -2786,7 +2875,7 @@
     "planned_attempts_max": 4,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 4,
+      "images": 0,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
@@ -2808,7 +2897,7 @@
     },
     "budget_state": {
       "path": "continuity/vpd/mainline_completion_20261001/BUDGET_STATE.json",
-      "sha256": "5150313d0892daf49762e37e19d74cf8db3f8b7e9f12e39fd7d6afa238fbc0e3"
+      "sha256": "ad676c22d4fec219c4887bdda3c69d3b9429a2b17e9f01b65c350815ee58a5f4"
     },
     "prior_settled_task": {
       "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
@@ -2865,10 +2954,14 @@
     "session": {
       "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "AUTHORIZED_INPUTS_FROZEN",
+      "status": "GENERATED_SAVED_REVIEW_TRANSPORT_BLOCKED",
       "opening_receipt": {
         "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
         "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
+      },
+      "closing_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
+        "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
       }
     },
     "neutral_review_delivery": {
@@ -2879,6 +2972,29 @@
         "92"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
+    },
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
+      "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
+    },
+    "independent_review": {
+      "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "TRANSPORT_BLOCKED_NOT_DISPATCHED",
+      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+      "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
+      "frozen_message": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/FROZEN_DISPATCH_RECEIPT.json",
+        "sha256": "e90190e7ef2ca185b638c5b95976b8163ab63d6d7b243a721422059e15834eb8"
+      },
+      "block_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
+        "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
+      },
+      "actual_send_clicks": 0,
+      "active_attempt_id": null,
+      "reviewer_writes_repo": false,
+      "human_acceptance_replaced": false
     }
   },
   "legacy_fields_scope": {

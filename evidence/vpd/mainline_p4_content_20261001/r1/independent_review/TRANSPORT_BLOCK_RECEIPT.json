@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-review-transport-block/v1",
+  "recorded_at": "2026-10-01T22:20:31.608346+08:00",
+  "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
+  "render_task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+  "observed_errors": [
+    {
+      "plugin": "Opera Neon",
+      "operation": "new_page",
+      "target_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "error": "MCP request timed out",
+      "navigation_result": "UNKNOWN_NO_SEND_ATTEMPT"
+    },
+    {
+      "plugin": "Opera Neon",
+      "operation": "list_pages_after_timeout",
+      "error": "Connection timed out",
+      "error_code": "UNAVAILABLE"
+    },
+    {
+      "plugin": "Opera Neon Browser",
+      "operation": "list_tabs",
+      "error": "Browser not connected. Make sure to enable Allow AI connection in the MCP Connector and sign in with your Opera account.",
+      "error_code": "UNAVAILABLE"
+    }
+  ],
+  "observed_before_failure": "Initial Opera Neon list_pages succeeded and showed the reviewer conversation tab absent; root was page8. No task was sent to the root or another conversation.",
+  "frozen_message": {
+    "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/FROZEN_DISPATCH_RECEIPT.json",
+    "sha256": "e90190e7ef2ca185b638c5b95976b8163ab63d6d7b243a721422059e15834eb8"
+  },
+  "new_review_task_sent": false,
+  "actual_send_clicks": 0,
+  "all_four_originals_preserved": true,
+  "new_image_calls_after_block": 0,
+  "remaining_total_images": 6,
+  "next_required_dependency": "Restore Opera Neon connection so the same reviewer can receive the frozen task and actively return its report.",
+  "reviewer_tab_created_by_timed_out_call": "UNKNOWN_RECHECK_EXISTING_TABS_BEFORE_ANY_NEW_PAGE",
+  "recovery_scope": "Transport only; no rerender, hidden retry, duplicate review or change of source/route.",
+  "claim_global_or_current_loop_complete": false
+}
