@@ -1,0 +1,96 @@
+{
+  "schema_version": "vpd-evidence-based-local-amendment/v1",
+  "status": "FROZEN_FOR_BOUNDED_RETEST",
+  "recorded_at": "2026-10-01T15:20:40.575350+08:00",
+  "stage_id": "P3_STAGE1",
+  "trigger": "ACTUAL_TEST_WHOLE_FAILURE",
+  "actual_test_identity": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
+    "source_commit": "ea3c0eeb056ec326ddf9f30f5673a77555b4c455",
+    "output_labels": [
+      "42",
+      "85"
+    ]
+  },
+  "actual_input_and_output_or_error_receipts": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r3/EXECUTION_RECEIPT.json",
+    "sha256": "3d14c40e97bbed7b7712d17ad63acdec9a8b2db26ba5308424eb0c5ff4c929ec"
+  },
+  "human_feedback_scope_when_visual": {
+    "scope": "WHOLE_POSTER",
+    "feedback": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r3/HUMAN_FEEDBACK.json",
+      "sha256": "0c9f7ef37af3c0401cf6e9b1c150e926217f7594001d3e38620323100b737cd3"
+    }
+  },
+  "observed_vs_hypothesized_cause": {
+    "observed": [
+      "User rejects both42 and85 as visibly artificial, and rejects the integrated design while acknowledging added text design.",
+      "42 uses a side-by-side cup and shallow tea dish on a horizontal wood slab; its large slogan sits mainly above/right of the products.",
+      "85 enlarges the cup at left and puts its slogan at lower right over the tea-dish/platform boundary. This placement change did not satisfy the user.",
+      "Both actual images have bright dense moss, conspicuous yellow tea-liquid reflections, coarse emphasized material detail, and a blurred green background.",
+      "The original upper ad is organized around a broad inclined oval platter holding a dense product grouping; its lower-right irregular lettering intersects that grouping.",
+      "The upper reference shows a compact near-field plant/rock setting, rather than an expansive forest horizon.",
+      "Actual traces show both calls received the same original reference pixels; the amended arm received the exact R3 added block."
+    ],
+    "hypotheses": [
+      "The generated treatment exaggerates scenic depth, liquid reflections and surface detail, contributing to the artificial impression.",
+      "A cup plus separate dish does not inherit the broad shared carrier and clustered attention geometry strongly enough; moving a text block alone is insufficient.",
+      "Replacing descriptive attribute lists with a shorter, concrete tabletop capture and one shared diagonal image/text shape may address the whole failure."
+    ],
+    "not_established": [
+      "Unique cause of artificiality",
+      "Reliable benefit of the next simplified block",
+      "Failure of all textual distillation",
+      "Any accepted final photograph or complete-poster design in R3"
+    ]
+  },
+  "one_changed_component": {
+    "id": "ADDED_DISTILLED_VISUAL_RELATIONS_BLOCK",
+    "baseline": {
+      "path": "continuity/vpd/stage1/r3/DISTILLED_DELTA.txt",
+      "sha256": "4619492e3e1c10f3a984a9bd3560180fd0e7b53b55e0423876ff005ec9b2cfbb"
+    },
+    "candidate": {
+      "path": "continuity/vpd/stage1/r4/DISTILLED_DELTA.txt",
+      "sha256": "23436d5122b2bc385be4d6b4f374ea7f1b580dadaa0f0b5158d318f517ab06a5"
+    },
+    "change": "Replace the entire R3 added block with a shorter concrete photographic set and one shared product/typography shape.",
+    "interpretability_limit": "One prompt component is changed, with several internal visual variables; a future pair tests the complete added block, not individual causes."
+  },
+  "preserved_components": [
+    "Locked goal, original reference pixels, stage order and renderer",
+    "Frozen common prompt, brand 茶作, copy 一杯茶，慢下来, content and3:2 aspect",
+    "Direct-reference comparator and one output per arm",
+    "R1/R2/R3 actual inputs, originals, traces and scoped human feedback",
+    "Earlier explicitly accepted photography/wordmark scopes; no modification of accepted originals"
+  ],
+  "bounded_retest_budget": {
+    "proposed_attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0,
+    "authorized_now": 2
+  },
+  "proposed_new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "activation": "Current user 下一步 explicitly continues the prepared bounded two-image retest.",
+  "character_counts": {
+    "baseline_added_block": 384,
+    "draft_added_block": 213
+  },
+  "future_review": "Both outputs remain complete posters; assess absolute realism and the whole image/text design, without forced relative selection.",
+  "no_photo_only_repair_loop": true,
+  "formal_skill_or_global_rule_promotion": false,
+  "new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "source_draft": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r3/LOCAL_AMENDMENT_DRAFT.json",
+    "sha256": "87f973d96c4c1ec01fef9d29cba32f71d97eba8166cd7b5282669e08661dac61"
+  },
+  "prior_review_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r3/REVIEW_RECEIPT.json",
+    "sha256": "8b852594328984cffa1689f3fc893c28da9a7eaa50b37f407c2e523c95a74e61"
+  }
+}

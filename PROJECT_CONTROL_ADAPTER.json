@@ -820,7 +820,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_MAINLINE_STAGE1_R3_HUMAN_WHOLE_DESIGN_FAIL",
+    "checkpoint": "VPD_MAINLINE_STAGE1_R4_AUTHORIZED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -858,9 +858,9 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+    "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
     "formal_outputs_verified": null,
-    "render_allowed": false,
+    "render_allowed": true,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "formal_render_attempt2_classification": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
     "reconciliation": {
@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 197,
-    "sha256": "3cb759688785b7da9584374c8c2a9b47c252f34788a00798b3876ac4247b522e",
+    "revision": 198,
+    "sha256": "5ff9d455d747c8e2743feeb7744226e315c6fc23b31d26b635e161d0e1cab800",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,10 +981,10 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_MAINLINE_STAGE1_R3_HUMAN_WHOLE_DESIGN_FAIL",
+    "status": "VPD_MAINLINE_STAGE1_R4_AUTHORIZED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
-    "next_required_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+    "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+    "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
     "plan": {
       "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
       "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
@@ -992,16 +992,8 @@
     "mode": "LOCKED_COMPLETE_POSTER_FIRST",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
-    "current_generation_authorization": 0,
-    "current_chat_render_eligible": false,
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r3/EXECUTION_RECEIPT.json",
-      "sha256": "3d14c40e97bbed7b7712d17ad63acdec9a8b2db26ba5308424eb0c5ff4c929ec"
-    },
-    "review_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r3/REVIEW_RECEIPT.json",
-      "sha256": "8b852594328984cffa1689f3fc893c28da9a7eaa50b37f407c2e523c95a74e61"
-    }
+    "current_generation_authorization": 2,
+    "current_chat_render_eligible": true
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1031,8 +1023,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-STAGE1-R3-HUMAN-WHOLE-FAIL-20261001-001",
-      "event_hash": "cde7caf122db5f594760affc6ea0cfd7fb86e05daaaf2c17c30eee435bf1adaa"
+      "event_id": "EVT-VPD-STAGE1-R4-AUTHORIZED-20261001-001",
+      "event_hash": "f3d518201b1a66a36f09d310c4c7022e07916b4b8d1e2fef2dbcb313d08383cf"
     }
   },
   "mature_workflow_audit": {
