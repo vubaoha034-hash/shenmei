@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 243,
-  "recorded_at": "2026-10-01T19:21:54.266501+08:00",
+  "sequence": 244,
+  "recorded_at": "2026-10-01T20:37:24.682788+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -429,7 +429,7 @@
   "status": "VPD_MAINLINE_STAGE1_R7_CANDIDATE_READY_WAITING_USER_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "a37831e18e536b468a79bb0302dc4068d92a25da16548ffc33f1a5f7e4fb3b99"
+    "sha256": "5d5b481766b772ce8161f0168d69cf33e66257720d46b8600207fb45230c388b"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R7-CALLBACK-CLOSE-20261001-001",
-      "event_hash": "b6cb26e73166606c0b931f228bb7cb9e8f9b755b6f3d88a5d7077c3b5f918f14"
+      "event_id": "EVT-VPD-MAINLINE-CONTINUATION-PREP-20261001-001",
+      "event_hash": "b8dbabf78eefe244616427dd95ab0fd345114765329b57be920c565250b5a81a"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "R7回传已核验、去重保存：88通过独立完整海报初筛，53仍需修订。停止追加出图并保留两张原件，88供最终查看；真人审美未验收，不晋升通用规则或进入新阶段。",
-  "updated_at": "2026-10-01T19:21:54.266501+08:00",
+  "current_stage": "主线进度已澄清：首轮审核传输与修订闭环完成，88仅通过独立初筛；全系统未完成。已准备P4豆腐/草莓四张准确输入及后续合计10张的有界方案，尚未扩大授权或生成新图。",
+  "updated_at": "2026-10-01T20:37:24.682788+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "R7回传已核验、去重保存：88通过独立完整海报初筛，53仍需修订。停止追加出图并保留两张原件，88供最终查看；真人审美未验收，不晋升通用规则或进入新阶段。"
+    "主线进度已澄清：首轮审核传输与修订闭环完成，88仅通过独立初筛；全系统未完成。已准备P4豆腐/草莓四张准确输入及后续合计10张的有界方案，尚未扩大授权或生成新图。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2536,6 +2536,29 @@
     "round_close_receipt": {
       "path": "evidence/vpd/mainline_stage1_20261001/r7/ROUND_CLOSE_RECEIPT.json",
       "sha256": "6a1a53cad9c600c6eeddba003f8235cb0a08f8d9b9fbdf0c0567d196d24c546c"
+    },
+    "prepared_successor": {
+      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+      "stage_id": "P4_CONTENT",
+      "status": "INPUTS_PREPARED_NOT_EXECUTION_AUTHORIZED",
+      "inputs": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/DRAFT_INPUT_FREEZE.json",
+        "sha256": "488e107e1cf425ebd08ed794c0e54283a28b07a9e4d560fa66f9bae3bf052f36"
+      },
+      "continuation_proposal": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/BOUNDED_CONTINUATION_PROPOSAL.json",
+        "sha256": "52d37d14572b17b6a3dfed6f7257b36ac82eb2669cf20f5e418f668df8b0f121"
+      },
+      "progress_reconciliation": {
+        "path": "evidence/vpd/mainline_continuation_20261001/ACTUAL_PROGRESS_AND_AUTHORITY_RECEIPT.json",
+        "sha256": "b767b628c5b6db0b7c2b9cdc36ed663823fb32eb12a528c8f65e97c52e8449d4"
+      },
+      "reviewable_task": {
+        "path": "evidence/vpd/mainline_continuation_20261001/NEXT_CONCRETE_TASK.md",
+        "sha256": "e13ed9186292356b556c69c6898249e37af96a89fae50d4d873ec850bb2cf3ca"
+      },
+      "generation_authorized": false,
+      "generation_consumed": 0
     }
   }
 }

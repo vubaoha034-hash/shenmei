@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 221,
-    "sha256": "a37831e18e536b468a79bb0302dc4068d92a25da16548ffc33f1a5f7e4fb3b99",
+    "revision": 222,
+    "sha256": "5d5b481766b772ce8161f0168d69cf33e66257720d46b8600207fb45230c388b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1089,6 +1089,29 @@
     "round_close_receipt": {
       "path": "evidence/vpd/mainline_stage1_20261001/r7/ROUND_CLOSE_RECEIPT.json",
       "sha256": "6a1a53cad9c600c6eeddba003f8235cb0a08f8d9b9fbdf0c0567d196d24c546c"
+    },
+    "prepared_successor": {
+      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+      "stage_id": "P4_CONTENT",
+      "status": "INPUTS_PREPARED_NOT_EXECUTION_AUTHORIZED",
+      "inputs": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/DRAFT_INPUT_FREEZE.json",
+        "sha256": "488e107e1cf425ebd08ed794c0e54283a28b07a9e4d560fa66f9bae3bf052f36"
+      },
+      "continuation_proposal": {
+        "path": "continuity/vpd/p4_content/20261001_r1_preparation/BOUNDED_CONTINUATION_PROPOSAL.json",
+        "sha256": "52d37d14572b17b6a3dfed6f7257b36ac82eb2669cf20f5e418f668df8b0f121"
+      },
+      "progress_reconciliation": {
+        "path": "evidence/vpd/mainline_continuation_20261001/ACTUAL_PROGRESS_AND_AUTHORITY_RECEIPT.json",
+        "sha256": "b767b628c5b6db0b7c2b9cdc36ed663823fb32eb12a528c8f65e97c52e8449d4"
+      },
+      "reviewable_task": {
+        "path": "evidence/vpd/mainline_continuation_20261001/NEXT_CONCRETE_TASK.md",
+        "sha256": "e13ed9186292356b556c69c6898249e37af96a89fae50d4d873ec850bb2cf3ca"
+      },
+      "generation_authorized": false,
+      "generation_consumed": 0
     }
   },
   "preserved_prior_current_mainline": {
@@ -1119,8 +1142,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R7-CALLBACK-CLOSE-20261001-001",
-      "event_hash": "b6cb26e73166606c0b931f228bb7cb9e8f9b755b6f3d88a5d7077c3b5f918f14"
+      "event_id": "EVT-VPD-MAINLINE-CONTINUATION-PREP-20261001-001",
+      "event_hash": "b8dbabf78eefe244616427dd95ab0fd345114765329b57be920c565250b5a81a"
     }
   },
   "mature_workflow_audit": {
