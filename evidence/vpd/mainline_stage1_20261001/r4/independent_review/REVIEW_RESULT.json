@@ -1,0 +1,109 @@
+{
+  "schema_version": "vpd-independent-review-result-receipt/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
+  "parent_render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "source_commit": "d63a54d30d163898237cba59c7191b1eaafd5ef8",
+  "status": "INDEPENDENT_SCREENING_COMPLETE_NOT_HUMAN_ACCEPTANCE",
+  "conversation_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+  "report_kind": "COMPLETE_VISIBLE_ASSISTANT_REPORT_TEXT",
+  "reviewer_verdict": {
+    "pixels_loaded": {
+      "19": true,
+      "54": true,
+      "R": true
+    },
+    "image_identity_evidence": {
+      "19": [
+        "中左为斑点陶瓷茶杯，置于圆形木杯垫上，琥珀色茶汤上方有可见蒸汽",
+        "右侧为不规则浅色盘盛干茶，左上为大号“茶作”，右上为“一杯茶，慢下来”"
+      ],
+      "54": [
+        "一块深色长木板横贯画面，左侧白色茶杯内为淡黄绿色茶汤",
+        "木板中右部为小棕盘干茶，右侧仅一支鲜叶，文案位于右下"
+      ],
+      "R": [
+        "上半幅中央为圆形藤编托盘，托盘上排列多片红色肉片并带绿色配料",
+        "托盘右侧可见木勺与葫芦状器物，外围由大面积苔藓和蕨类形成自然环境"
+      ]
+    },
+    "image_verdicts": {
+      "19": "REJECT",
+      "54": "NEEDS_REVISION"
+    },
+    "relative_choice": "54",
+    "whole_set_ready": false,
+    "critical_issues": {
+      "19": [
+        "左上品牌与右上标题同时过大，形成两个竞争性的白色视觉块，产品主视觉被削弱",
+        "苔藓、鲜叶、石面与茶汤同时呈现较强锐度、高光和饱和度，产生过度渲染观感",
+        "茶杯、干茶与多组叶片没有收束成统一产品主簇，整体仍偏产品照加文字"
+      ],
+      "54": [
+        "杯、干茶和鲜叶沿木板横向平均展开，产品区域统一但核心焦点仍不够集中",
+        "右下标题过大且逼近复杂木纹和画面边缘，图文边界及标题节奏尚未稳定",
+        "木板、苔藓和叶片材质同时被强化，真实摄影应有的材质主次不足"
+      ]
+    },
+    "preserve": {
+      "19": [
+        "茶杯和干茶的基本产品可信度",
+        "暖色茶汤与自然绿色环境",
+        "石台对产品的承托关系"
+      ],
+      "54": [
+        "横向木板形成的产品舞台",
+        "杯、干茶、鲜叶已归入同一产品区域",
+        "左上品牌留白和淡黄色茶汤"
+      ]
+    },
+    "next_changes": [
+      "以54为基础重组产品权重，让茶杯成为唯一第一视觉，干茶与鲜叶明确降为陪体",
+      "重做标题与品牌层级，缩减右下标题占比并移入更完整的负空间，避免贴边和压复杂纹理",
+      "降低环境材质的统一锐化、饱和和高光竞争，把最强光影与质感集中到产品主簇"
+    ],
+    "confidence": "HIGH"
+  },
+  "pixels_loaded": {
+    "19": true,
+    "54": true,
+    "R": true
+  },
+  "coordinator_identity_verification": {
+    "reference": "MATCH_LOCAL_FROZEN_BYTES_AND_VISIBLE_TRAY_MEAT_HERBS",
+    "image_19": "MATCH_LOCAL_FROZEN_BYTES_AND_VISIBLE_SPECKLED_CUP_ROUND_COASTER_RIGHT_TEA_DISH",
+    "image_54": "MATCH_LOCAL_FROZEN_BYTES_AND_VISIBLE_ELONGATED_WOOD_LEFT_CUP_RIGHT_LEAF_BOTTOM_RIGHT_COPY",
+    "remote_pixel_sha256_proven": false,
+    "scope": "Local frozen SHA256 and visible image identity checked; reviewer tool responses report original pixels and dimensions."
+  },
+  "report_refs": [
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEWER_REPORT.txt",
+      "sha256": "11c382f476cb8ca789f64d72067efa0df7f5033880c27496a9b6408f24e3145e"
+    },
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEWER_VERDICT.json",
+      "sha256": "0e5ff2a9de390ed3ab80f5e3c241bdb41b7bab109774faa318b376fb41ecb2ed"
+    },
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/RESULT.md",
+      "sha256": "883d840e59869d77a9df6ac34751356a073da72b8afeabe4a735f0c28a5ea708"
+    }
+  ],
+  "delivery_verification": {
+    "sent_once": true,
+    "full_task_text_verified": true,
+    "conversation_outside_project": true,
+    "reported_actual_three_pixels": true,
+    "response_complete_ui_observed": true,
+    "composer_empty": true,
+    "stop_button_absent": true
+  },
+  "human_verdict": "NOT_REVIEWED",
+  "stage_promotion_allowed": false,
+  "visual_skill_promotion_allowed": false,
+  "repeated_dispatch_allowed": false,
+  "new_generation_authorized_by_this_receipt": false,
+  "future_prescreen_scope": "User requests project-external screening of already-authorized outputs, with neutral labels and no route/author-rank disclosure; final user taste remains separate.",
+  "native_summary": "独立审图结果已取回并核对三张原件身份：19否决、54需修改、整组未通过；初筛已完成，真人整图验收与改进复验仍未完成。"
+}

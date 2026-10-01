@@ -1,0 +1,32 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-R4-INDEPENDENT-REVIEW-RESULT-20261001-001",
+  "event_type": "R4_INDEPENDENT_REVIEW_RESULT",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T16:07:27.204084+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-R4-INDEPENDENT-REVIEW-DISPATCH-20261001-001",
+  "previous_event_hash": "b743ce5984e1a3fd6001f3046cfe2dd6ccd8f6ed752957d5b90f2ee019f92502",
+  "lock_sha256": "84f4a0f689adeb79ca6956ef7a56d59ee555d1f4cc7977327676e75078fafb90",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "independent_review": "INDEPENDENT_SCREENING_COMPLETE_NOT_HUMAN_ACCEPTANCE"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "independent_review": "INDEPENDENT_SCREENING_COMPLETE_NOT_HUMAN_ACCEPTANCE",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json"
+  ],
+  "reason": "独立审图结果已取回并核对三张原件身份：19否决、54需修改、整组未通过；初筛已完成，真人整图验收与改进复验仍未完成。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "41de55b2a7cef8b26bb261d8964c37ece276ea340dafa21c4c9a7b7aa35a8633"
+}
