@@ -1,0 +1,83 @@
+{
+  "schema_version": "vpd-mainline-stage-execution/v1",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T12:01:54.978415+08:00",
+  "frozen_inputs": {
+    "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+    "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+  },
+  "source_commit": "bd8a04b659840e04a677fac1b7294dd7615bf53a",
+  "authorized_state_commit": "5c3adfeb51cec1d1946f07f656476fd0b99209e1",
+  "authorization_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_AUTHORIZATION.json",
+    "sha256": "3166b9236d83525db3bff074919654e4e291b604635ae675339dfd5c1e3f8537"
+  },
+  "trace": {
+    "path": "evidence/vpd/mainline_stage1_20261001/ACTUAL_TOOL_TRACE.json",
+    "sha256": "07392ca9bb97be1b1eaa3837fdc988cc7aa644f77df90fc66618a4736ded42a2"
+  },
+  "attempts_consumed": 2,
+  "attempts_remaining": 0,
+  "outputs": [
+    {
+      "arm": "direct_reference",
+      "label": "X",
+      "file_name": "VPD_CHAZUO_STAGE1_X_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "6397ac30864b519d5bd505a7d87ab3017d9d55a0300cc88795da3d651a5e84c0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2530737,
+      "drive_file_id": "10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt",
+      "drive_url": "https://drive.google.com/file/d/10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "10cnn4GLCL_X0aS0HbADRo0M0ZtnfMzAt",
+        "mime_type": "image/png",
+        "size": 2530737,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "arm": "distilled_candidate",
+      "label": "Y",
+      "file_name": "VPD_CHAZUO_STAGE1_Y_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "4849376bb8c4320ac58ecc049e60d276581ec37bafae41ab820a46614311ce74",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2863827,
+      "drive_file_id": "1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5",
+      "drive_url": "https://drive.google.com/file/d/1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1Pd0eGx1h0cDrivs-llE0Oq1RfBbD3IN5",
+        "mime_type": "image/png",
+        "size": 2863827,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "errors": [],
+  "status": "AWAITING_HUMAN_REVIEW",
+  "human_verdict": "NOT_REVIEWED",
+  "correctness": {
+    "aspect": {
+      "expected": "3:2",
+      "actual_both": [
+        1536,
+        1024
+      ],
+      "observed_match": true
+    },
+    "required_text": "两张均可见茶作、一杯茶，慢下来。",
+    "requested_subjects": "两张均可见一杯茶、干茶和鲜叶。",
+    "unrequested_detail": "Y品牌旁的小标记已记录，未改图。"
+  },
+  "promotion_allowed": false
+}
