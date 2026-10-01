@@ -1,0 +1,32 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-DISPATCH-20261001-001",
+  "event_type": "ASYNC_REVIEW_LOOP_DISPATCH",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T16:27:12.434438+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CLAIM-20261001-001",
+  "previous_event_hash": "d7838ddfcbbb42c0019e33bf3fbcfb917d5769777c6bda3c564d8a0c85470798",
+  "lock_sha256": "869d6f9eabc116fda419e37e7d75314d99bf02824d920ea48818dc3d4bdf7b46",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "CLAIMED_READY_TO_SEND"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "CALLBACK_PROTOCOL_SENT_AWAITING_REVIEWER_PUSH",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/ROUTE_STATE.json"
+  ],
+  "reason": "异步回传流程已作为一条完整消息发给现有独立审图聊天；等待审核方主动回传，主控不轮询。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "474441f7433935ed000a247e7d640b3c6aa67f030e6055e17e4176f8b3348153"
+}

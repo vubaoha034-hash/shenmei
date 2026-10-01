@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 203,
-    "sha256": "e752bfb886ca3758cf9353653b85b6689ed925adabbb0aae906fb3b11322c29d",
+    "revision": 204,
+    "sha256": "869d6f9eabc116fda419e37e7d75314d99bf02824d920ea48818dc3d4bdf7b46",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1082,7 +1082,7 @@
         "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
         "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
         "recorded_at": "2026-10-01T16:23:24.997248+08:00",
-        "status": "CLAIMED_READY_TO_SEND",
+        "status": "CALLBACK_PROTOCOL_SENT_AWAITING_REVIEWER_PUSH",
         "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
         "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
         "writer": "PROJECT_COORDINATOR_ONLY",
@@ -1098,7 +1098,7 @@
         },
         "message_sha256": "f089b5fa24ff02317f8387a37166a3f26e215edc8f9e142d857b27281457e9bb",
         "draft_readback_match": true,
-        "send_clicks": 0,
+        "send_clicks": 1,
         "existing_result_receipt": {
           "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
           "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
@@ -1137,8 +1137,12 @@
         "schedule_created": false,
         "proof_limit": "A future autonomous roundtrip is not established until the reviewer message and coordinator resumption are actually observed.",
         "route_receipt": {
-          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CLAIM.json",
-          "sha256": "7a17e697d08d8084a812f477a7eab1782c9c938acb215b6721ff8da34eb5b103"
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/ROUTE_STATE.json",
+          "sha256": "f9d24a68630668e32be13c8d96d4a4f0881cdb99117c377622e55e3dff3666f3"
+        },
+        "latest_receipt": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/DISPATCH_RECEIPT.json",
+          "sha256": "385974cfbb833fcd4b230c057cc0f686c323e34279bd41d2e1b8ad349d7dc281"
         }
       }
     }
@@ -1171,8 +1175,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CLAIM-20261001-001",
-      "event_hash": "d7838ddfcbbb42c0019e33bf3fbcfb917d5769777c6bda3c564d8a0c85470798"
+      "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-DISPATCH-20261001-001",
+      "event_hash": "474441f7433935ed000a247e7d640b3c6aa67f030e6055e17e4176f8b3348153"
     }
   },
   "mature_workflow_audit": {
