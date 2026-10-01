@@ -820,7 +820,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_MAINLINE_STAGE1_R7_EXECUTED_WAITING_INDEPENDENT_REVIEW",
+    "checkpoint": "VPD_MAINLINE_STAGE1_R7_CANDIDATE_READY_WAITING_USER_REVIEW",
     "challenge_ids": [
       "H1",
       "H2",
@@ -858,7 +858,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+    "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 220,
-    "sha256": "2d5d7883b912d3e0fa034aee73919987dbe89067565069f4f32c5137925ea39e",
+    "revision": 221,
+    "sha256": "a37831e18e536b468a79bb0302dc4068d92a25da16548ffc33f1a5f7e4fb3b99",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,10 +981,10 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_MAINLINE_STAGE1_R7_EXECUTED_WAITING_INDEPENDENT_REVIEW",
+    "status": "VPD_MAINLINE_STAGE1_R7_CANDIDATE_READY_WAITING_USER_REVIEW",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
     "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+    "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
     "plan": {
       "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
       "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
@@ -1000,7 +1000,7 @@
     },
     "independent_review": {
       "task_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "NEW_OUTPUT_REVIEW_SENT_AWAITING_REVIEWER_PUSH",
+      "status": "INDEPENDENT_SCREENING_COMPLETE_CANDIDATE_READY",
       "claim": {
         "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/DISPATCH_CLAIM.json",
         "sha256": "10e8f73fae17987895c32d112f605d216e87c2cafdabf9ca3977cc22a06ec471"
@@ -1011,9 +1011,84 @@
       "reviewer_writes_repo": false,
       "human_acceptance_replaced": false,
       "latest_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/DISPATCH_RECEIPT.json",
-        "sha256": "e86872a7298f88e2b8cb0effb96aa53417fdccf3564e6e2493026a2316984350"
-      }
+        "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
+        "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
+      },
+      "callback_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/CALLBACK_RECEIPT.json",
+        "sha256": "212994d59ba0e7a10fef348b6e64e3685a4daba18e92a0fce657b2b10cee537e"
+      },
+      "reviewer_verdict": {
+        "callback_id": "VPD-R7-REVIEW-CALLBACK-20261001-01",
+        "parent_task_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01",
+        "render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+        "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+        "image_files": {
+          "53": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+          "88": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+          "R": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC"
+        },
+        "pixels_loaded": {
+          "53": true,
+          "88": true,
+          "R": true
+        },
+        "image_identity_evidence": {
+          "53": [
+            "中央偏下为斑点陶瓷茶杯置于苔藓石台上，右下棕色浅盘盛卷曲干茶，前景有鲜绿茶叶",
+            "左上是超大白色“茶作”并配绿色小叶图形，右上是大号两行“一杯茶，慢下来”"
+          ],
+          "88": [
+            "左中大号浅色陶瓷茶杯与右侧棕色干茶盘共同置于宽大的木托盘上，前方仅有少量鲜叶",
+            "左上为小号“茶作”，右上深色虚化负空间内为两行“一杯茶，慢下来”"
+          ],
+          "R": [
+            "上半幅中央为大型圆形藤编托盘，托盘上排列多片红色肉片并带绿色配料",
+            "左上为小号品牌字标，右下为大号白色中文标题，托盘右侧有木勺和葫芦状器物"
+          ]
+        },
+        "image_verdicts": {
+          "53": "NEEDS_REVISION",
+          "88": "READY_FOR_USER_REVIEW"
+        },
+        "relative_choice": "88",
+        "whole_set_ready": true,
+        "critical_issues": {
+          "53": [
+            "品牌与标题同时过大，与中央茶杯形成三个近似同级视觉锚点",
+            "环境亮部和高对比细节不断切入产品区，主簇边界和第一视觉不够稳定",
+            "茶汤、鲜叶、干茶、石面和苔藓同时被高光与锐度强化，材质主次不足"
+          ],
+          "88": []
+        },
+        "preserve": {
+          "53": [
+            "中央茶杯与干茶的基本产品关系",
+            "自然景深和暖黄色茶汤",
+            "正确中文与完整产品结构"
+          ],
+          "88": [
+            "茶杯第一视觉、干茶第二层、少量鲜叶第三层的清晰产品层级",
+            "统一木托盘承托、右上深色负空间和小尺寸品牌节点",
+            "可信的主光、景深、陶瓷与茶汤材质关系"
+          ]
+        },
+        "next_changes": [],
+        "confidence": "HIGH"
+      },
+      "last_processed_callback_id": "VPD-R7-REVIEW-CALLBACK-20261001-01",
+      "ready_candidate_ids": [
+        "88"
+      ],
+      "automatic_revision_loop_stopped": true
+    },
+    "final_candidate_receipt": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r7/FINAL_CANDIDATE_RECEIPT.json",
+      "sha256": "8c38033e37851899d87f58b6432d8bf058772dab8f90d0a14002c7a0c5bf40ce"
+    },
+    "round_close_receipt": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r7/ROUND_CLOSE_RECEIPT.json",
+      "sha256": "6a1a53cad9c600c6eeddba003f8235cb0a08f8d9b9fbdf0c0567d196d24c546c"
     }
   },
   "preserved_prior_current_mainline": {
@@ -1044,8 +1119,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R7-DISPATCH-20261001-001",
-      "event_hash": "b5e10541bb30481b843390c96df5de2d85ba5ff1262cef71d5dc17d63a6c0379"
+      "event_id": "EVT-VPD-R7-CALLBACK-CLOSE-20261001-001",
+      "event_hash": "b6cb26e73166606c0b931f228bb7cb9e8f9b755b6f3d88a5d7077c3b5f918f14"
     }
   },
   "mature_workflow_audit": {
