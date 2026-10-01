@@ -1,0 +1,77 @@
+{
+  "schema_version": "vpd-evidence-based-local-amendment-draft/v1",
+  "recorded_at": "2026-10-01T16:32:38.614287+08:00",
+  "status": "CONCRETE_DRAFT_NOT_EXECUTED",
+  "proposed_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R5",
+  "stage_id": "P3_STAGE1",
+  "actual_test_identity": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+    "output_labels": [
+      "19",
+      "54"
+    ]
+  },
+  "actual_execution_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
+    "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
+  },
+  "review_evidence": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
+    "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
+  },
+  "callback_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_RECEIPT.json",
+    "sha256": "efe2720ee38dc058cdb74d7964ebd2c65fc0443d2cd674871ff899d8c55be145"
+  },
+  "review_authority": "USER_DELEGATED_EXTERNAL_INDEPENDENT_SCREENING",
+  "user_round_by_round_reassessment_requested": false,
+  "observed": [
+    "Reviewer rejects19 and requires revision of54 after loading all actual pixels.",
+    "54 has a useful shared wood carrier but cup/tea/leaves have similar visual weight.",
+    "54 headline overlaps busy carrier texture and approaches the outer boundary.",
+    "Environment highlights, local sharpness and material prominence compete with the cup."
+  ],
+  "hypotheses": [
+    "A single cup focus with smaller nearby auxiliaries may make the product cluster clearer.",
+    "A smaller headline within continuous low-detail space may stabilize the image/text boundary.",
+    "A matte carrier and subordinate near-field environment may reduce the overly rendered impression."
+  ],
+  "one_changed_component": {
+    "id": "ADDED_DISTILLED_VISUAL_RELATIONS_BLOCK",
+    "baseline": {
+      "path": "continuity/vpd/stage1/r4/DISTILLED_DELTA.txt",
+      "sha256": "23436d5122b2bc385be4d6b4f374ea7f1b580dadaa0f0b5158d318f517ab06a5"
+    },
+    "draft": {
+      "path": "continuity/vpd/stage1/r5/DISTILLED_DELTA_DRAFT.txt",
+      "sha256": "a0c7b92b2a052de1b32e694d1b28b099a9d59015f3f2e2a390e5b6a38213c6f6"
+    },
+    "interpretability_limit": "This tests the whole added prompt block, not separately identified causal effects."
+  },
+  "preserved_components": [
+    "Original approved R reference pixels;54 is feedback evidence and not a replacement reference.",
+    "Frozen common prompt, brand, copy, content,3:2 aspect and complete-poster objective.",
+    "One direct-reference comparator and one distilled output; identical original R attachment in both arms.",
+    "All historical inputs, outputs and scoped user feedback; no skill or global rule promotion."
+  ],
+  "bounded_retest_budget": {
+    "proposed_attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0,
+    "authorized_now": 0
+  },
+  "current_scope": "User asked for asynchronous review routing; the callback expressly requests preparing concrete revisions within existing authority. Current R4 generation budget is fully consumed; this draft does not reactivate R4 or declare an R5 execution receipt.",
+  "future_review": {
+    "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+    "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+    "neutral_labels_only": true,
+    "reviewer_pushes_result": true,
+    "resend_old_images": false
+  },
+  "whole_stage_promoted": false,
+  "draft_benefit_tested": false
+}

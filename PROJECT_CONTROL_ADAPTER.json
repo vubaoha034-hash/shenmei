@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 204,
-    "sha256": "869d6f9eabc116fda419e37e7d75314d99bf02824d920ea48818dc3d4bdf7b46",
+    "revision": 205,
+    "sha256": "5b714792eaa78dc84c57309382ee9838e3a064fff960bee4d5f3d491ab3343c3",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1082,7 +1082,7 @@
         "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
         "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
         "recorded_at": "2026-10-01T16:23:24.997248+08:00",
-        "status": "CALLBACK_PROTOCOL_SENT_AWAITING_REVIEWER_PUSH",
+        "status": "ROUNDTRIP_CONFIRMED_R5_REVISION_DRAFT_PREPARED",
         "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
         "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
         "writer": "PROJECT_COORDINATOR_ONLY",
@@ -1125,8 +1125,10 @@
             "ACTUAL_TECHNICAL_BLOCK",
             "AUTHORIZED_TASK_BUDGET_EXHAUSTED"
           ],
-          "automatic_callback_observed": false,
-          "automatic_resumption_observed": false
+          "automatic_callback_observed": true,
+          "automatic_resumption_observed": true,
+          "observed_resumption_mode": "NEW_MESSAGE_STEERED_ACTIVE_COORDINATOR_TURN",
+          "idle_conversation_auto_wake_tested": false
         },
         "plugin_mention_observed": "Opera Neon",
         "scheduler_event_sources": [
@@ -1137,13 +1139,23 @@
         "schedule_created": false,
         "proof_limit": "A future autonomous roundtrip is not established until the reviewer message and coordinator resumption are actually observed.",
         "route_receipt": {
-          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/ROUTE_STATE.json",
-          "sha256": "f9d24a68630668e32be13c8d96d4a4f0881cdb99117c377622e55e3dff3666f3"
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_SETTLED_STATE.json",
+          "sha256": "5c97d2952552cbb3a7eecb0b7836a1d1c89c9b2335bd3041b26eb49705d10d12"
         },
         "latest_receipt": {
-          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/DISPATCH_RECEIPT.json",
-          "sha256": "385974cfbb833fcd4b230c057cc0f686c323e34279bd41d2e1b8ad349d7dc281"
-        }
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_RECEIPT.json",
+          "sha256": "efe2720ee38dc058cdb74d7964ebd2c65fc0443d2cd674871ff899d8c55be145"
+        },
+        "next_revision_draft": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+          "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
+        },
+        "last_processed_callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
+        "next_distinct_review_task_pending": false
+      },
+      "next_revision_draft": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+        "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
       }
     }
   },
@@ -1175,8 +1187,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-DISPATCH-20261001-001",
-      "event_hash": "474441f7433935ed000a247e7d640b3c6aa67f030e6055e17e4176f8b3348153"
+      "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CALLBACK-20261001-001",
+      "event_hash": "6bbda9cbd7643045c40ee88f6f1afe49665137d0deb130f57705f5d1a9e78a7a"
     }
   },
   "mature_workflow_audit": {

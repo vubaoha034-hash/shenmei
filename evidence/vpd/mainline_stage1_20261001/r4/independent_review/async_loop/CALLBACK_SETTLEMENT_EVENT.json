@@ -1,0 +1,34 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CALLBACK-20261001-001",
+  "event_type": "ASYNC_REVIEW_CALLBACK_AND_REVISION_DRAFT",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T16:32:38.614287+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-DISPATCH-20261001-001",
+  "previous_event_hash": "474441f7433935ed000a247e7d640b3c6aa67f030e6055e17e4176f8b3348153",
+  "lock_sha256": "5b714792eaa78dc84c57309382ee9838e3a064fff960bee4d5f3d491ab3343c3",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "CALLBACK_PROTOCOL_SENT_AWAITING_REVIEWER_PUSH"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "ROUNDTRIP_CONFIRMED_R5_REVISION_DRAFT_PREPARED",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_RECEIPT.json",
+    "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+    "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_SETTLED_STATE.json"
+  ],
+  "reason": "审核方已通过Opera Neon主动回传，当前主控实际收到并继续处理；报告与既存审图结果一致并去重，R5三项具体修订已成草案，尚未出新图。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "6bbda9cbd7643045c40ee88f6f1afe49665137d0deb130f57705f5d1a9e78a7a"
+}

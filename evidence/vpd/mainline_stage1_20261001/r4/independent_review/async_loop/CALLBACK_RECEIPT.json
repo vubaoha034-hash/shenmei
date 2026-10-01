@@ -1,0 +1,40 @@
+{
+  "schema_version": "vpd-independent-review-callback-receipt/v1",
+  "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
+  "task_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01",
+  "parent_review_task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
+  "parent_render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "recorded_at": "2026-10-01T16:32:38.614287+08:00",
+  "received_at_user_timezone": "2026-10-01T16:27:38+08:00",
+  "status": "REVIEWER_PUSH_RECEIVED_AND_COORDINATOR_RESUMED",
+  "source_reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+  "actual_destination_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+  "observed_destination_callback_count": 1,
+  "observed_callback_text_sha256": "ec6ee2ae0ed209c2937e3fb910f527455f69d3dbd4a99634e477b033e437fdd7",
+  "coordinator_received_new_message": true,
+  "coordinator_waited_or_polled_for_delivery": false,
+  "resume_mode": "NEW_MESSAGE_STEERED_ACTIVE_COORDINATOR_TURN",
+  "idle_conversation_auto_wake_tested": false,
+  "peer_send_receipt": {
+    "full_text_match_reported": true,
+    "status": "QUEUED_ONCE_WHILE_COORDINATOR_RUNNING",
+    "input_cleared_reported": true,
+    "stopped_coordinator": false,
+    "refreshed_coordinator": false,
+    "duplicate_send_reported": false
+  },
+  "report_json_and_image_identity_match": true,
+  "deduplicated_existing_result": true,
+  "existing_result": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
+    "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
+  },
+  "verdict": {
+    "19": "REJECT",
+    "54": "NEEDS_REVISION",
+    "whole_set_ready": false
+  },
+  "human_feedback_identity": "NOT_USER_PERSONAL_AESTHETIC_FEEDBACK",
+  "new_review_task_sent_for_same_images": false,
+  "proof_limit": "This proves one actual two-way Opera Neon handoff while the coordinator was active. It does not establish unattended idle wake-up, perpetual retries, or new image execution authority."
+}
