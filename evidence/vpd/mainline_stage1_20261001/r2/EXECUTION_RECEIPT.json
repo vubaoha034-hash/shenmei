@@ -1,0 +1,106 @@
+{
+  "schema_version": "vpd-stage-execution-receipt/v1",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T12:46:19.554666+08:00",
+  "frozen_inputs": {
+    "path": "continuity/vpd/stage1/r2/INPUT_FREEZE.json",
+    "sha256": "584902f76b4d7286f124ea8869744168449dfb8f7f2f12b79614bd15215ed2aa"
+  },
+  "source_commit": "aecd357b2818a0efb4853eb5baf1c9960c0428bf",
+  "authorized_state_commit": "060cc6dcaab0000f26b26651b729caf811e81a44",
+  "authorization_receipt": {
+    "path": "continuity/vpd/stage1/r2/EXECUTION_AUTHORIZATION.json",
+    "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
+  },
+  "amendment_receipt": {
+    "path": "continuity/vpd/stage1/r2/LOCAL_AMENDMENT.json",
+    "sha256": "64f3f3f28406771e408ee7bcf7ad4fc8203c3f3bc2c0df45a5125df3dae12c78"
+  },
+  "trace": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r2/ACTUAL_TOOL_TRACE.json",
+    "sha256": "08d6d0a65d1787a5f4f398cf198ba0b6f97a2c6bc97b5d2b6b02636c8efaf492"
+  },
+  "actual_prompt_refs": [
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r2/ACTUAL_PROMPT_27.txt",
+      "sha256": "7aece3bb436a86780b7986aff7bd808a134f3d37b7810eb955bb7f0355da86e3"
+    },
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r2/ACTUAL_PROMPT_68.txt",
+      "sha256": "9cd0f35514a7aa43c9c3937773dd115703750415845dc54ba57c60e983c45c5e"
+    }
+  ],
+  "attempts_consumed": 2,
+  "attempts_remaining": 0,
+  "outputs": [
+    {
+      "arm": "distilled_candidate",
+      "label": "27",
+      "file_name": "VPD_CHAZUO_R2_27_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "1627f015a341ff8afe85d6229b83a2114031f7288fefbe5109ab6cd664f6433e",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2850187,
+      "drive_file_id": "1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-",
+      "drive_url": "https://drive.google.com/file/d/1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-",
+        "mime_type": "image/png",
+        "size": 2850187,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "arm": "direct_reference",
+      "label": "68",
+      "file_name": "VPD_CHAZUO_R2_68_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "50259481fafb68b812bbb142c7a67a90e33954b28f1b297074c2c651033dad78",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2760090,
+      "drive_file_id": "11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C",
+      "drive_url": "https://drive.google.com/file/d/11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C",
+        "mime_type": "image/png",
+        "size": 2760090,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "errors": [],
+  "status": "AWAITING_HUMAN_REVIEW",
+  "human_verdict": "NOT_REVIEWED",
+  "correctness": {
+    "actual_dimensions": [
+      1536,
+      1024
+    ],
+    "aspect": "3:2",
+    "requested_brand_and_copy_visibly_present": true,
+    "complete_flat_poster": true,
+    "lower_mockup_not_present": true,
+    "local_original_pixel_hashes_recorded": true,
+    "drive_metadata_readback_verified": true,
+    "remote_pixel_sha256_verified": false,
+    "scope": "Content and storage observations; not a design-acceptance verdict"
+  },
+  "review_delivery": {
+    "neutral_identifiers": [
+      "27",
+      "68"
+    ],
+    "route_and_assistant_ranking_withheld_in_delivery": true,
+    "independent_blindness_established": false
+  },
+  "promotion_allowed": false
+}

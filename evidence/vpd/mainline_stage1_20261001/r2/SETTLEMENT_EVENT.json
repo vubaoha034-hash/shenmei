@@ -1,0 +1,33 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-STAGE1-R2-EXECUTED-20261001-001",
+  "event_type": "STAGE1_R2_TWO_POSTERS_EXECUTED_WAITING_HUMAN_REVIEW",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T12:46:19.554666+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-STAGE1-R2-AUTHORIZED-20261001-001",
+  "previous_event_hash": "4788862fe8e594018ebf070438a67d500ed51510ef06aaba3920296488861585",
+  "lock_sha256": "645d151ef28a16b301633bc84f44979d128f43d88d880d1e4a423b2aeaa2f2c6",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R2_AUTHORIZED",
+    "next_action": "EXECUTE_STAGE1_FROZEN_TASK"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R2_EXECUTED_WAITING_HUMAN_REVIEW",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/r2/EXECUTION_RECEIPT.json",
+    "evidence/vpd/mainline_stage1_20261001/r2/ACTUAL_TOOL_TRACE.json",
+    "evidence/vpd/mainline_stage1_20261001/r2/RESULT.md"
+  ],
+  "reason": "按实际失败支持的冻结局部修订完成两次生成，原件保存并核对元数据；中性展示待真人整图判断，历史认可与主线不变。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "552bca502af47c0d4bcc91c38e510d103d9a1ed6a84c6ffc609732eca5858a30"
+}
