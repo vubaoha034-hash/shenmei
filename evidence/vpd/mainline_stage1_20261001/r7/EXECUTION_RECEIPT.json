@@ -1,0 +1,109 @@
+{
+  "schema_version": "vpd-stage-execution-receipt/v1",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T19:05:08.952638+08:00",
+  "source_commit": "db707cef28e6faca1db36d2e60ea59ac98daea1a",
+  "authorized_state_commit": "d657fbe68060c28e7690ee15da23d70337e954cc",
+  "authorization_receipt": {
+    "path": "continuity/vpd/stage1/r7/EXECUTION_AUTHORIZATION.json",
+    "sha256": "84166d14e60e794e5124e8ed02b75c45a37e28c1195fcc3edc0abf14079728f8"
+  },
+  "amendment_receipt": {
+    "path": "continuity/vpd/stage1/r7/LOCAL_AMENDMENT.json",
+    "sha256": "56f5fd3cd265e0416bc2980491269ddb89969ce2e7f923ff61b7cd9e60b8c1c6"
+  },
+  "frozen_inputs": {
+    "path": "continuity/vpd/stage1/r7/INPUT_FREEZE.json",
+    "sha256": "1bf6a8c956f3ee265ebaec29c8b265eefe22000e4c0a3cb540acd5e50c71fcb1"
+  },
+  "trace": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r7/ACTUAL_TOOL_TRACE.json",
+    "sha256": "bf73595866d8b029895776e435b7f84e7f87729dc726aff6f6182555b9dfff19"
+  },
+  "actual_prompt_refs": [
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r7/ACTUAL_PROMPT_53.txt",
+      "sha256": "9cd0f35514a7aa43c9c3937773dd115703750415845dc54ba57c60e983c45c5e",
+      "neutral_id": "53",
+      "arm": "direct_reference"
+    },
+    {
+      "path": "evidence/vpd/mainline_stage1_20261001/r7/ACTUAL_PROMPT_88.txt",
+      "sha256": "5625a07a9a3dbcf5e3d17d861bbbf39303af63c06a4fd940d0d53cfb3c7e7a47",
+      "neutral_id": "88",
+      "arm": "distilled_candidate"
+    }
+  ],
+  "primary_renderer": "CHATGPT_IMAGES",
+  "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+  "attempts_consumed": 2,
+  "attempts_remaining": 0,
+  "outputs": [
+    {
+      "arm": "direct_reference",
+      "label": "53",
+      "file_name": "VPD_CHAZUO_R7_53_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2568026,
+      "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+      "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+        "mime_type": "image/png",
+        "size": 2568026,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "arm": "distilled_candidate",
+      "label": "88",
+      "file_name": "VPD_CHAZUO_R7_88_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2176052,
+      "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+      "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+        "mime_type": "image/png",
+        "size": 2176052,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "errors": [],
+  "status": "AWAITING_INDEPENDENT_REVIEW",
+  "human_verdict": "NOT_REVIEWED",
+  "correctness": {
+    "actual_dimensions": [
+      1536,
+      1024
+    ],
+    "aspect": "3:2",
+    "brand_and_requested_copy_visibly_present": true,
+    "complete_flat_poster": true,
+    "lower_wall_mockup_present": false,
+    "basis": "Both displayed actual outputs inspected for content and flat-poster format.",
+    "local_original_hash_verified": true,
+    "drive_file_metadata_readback_verified": true,
+    "remote_pixel_sha256_verified": false,
+    "scope": "CONTENT_FORMAT_AND_STORAGE_ONLY_NOT_AESTHETIC_ACCEPTANCE"
+  },
+  "review_delegation": {
+    "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
+    "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+  },
+  "promotion_allowed": false
+}

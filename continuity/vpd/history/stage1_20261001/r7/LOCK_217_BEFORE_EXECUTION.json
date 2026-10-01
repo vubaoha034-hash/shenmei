@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 219,
+  "revision": 217,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "R7新原件53、88的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。",
-  "status": "VPD_MAINLINE_STAGE1_R7_EXECUTED_WAITING_INDEPENDENT_REVIEW",
+  "current_stage": "已结算R6独立负面审核，保留76的主簇与承托；按既有用户闭环授权冻结R7具体品牌比例、杯口标题连接和树荫材质修订，恰好2次出图、每臂1次，不要求逐轮真人审核。",
+  "status": "VPD_MAINLINE_STAGE1_R7_AUTHORIZED",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 2,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-    "current_image_generation_count_max": 0,
+    "current_image_generation_count_max": 2,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "R7新原件53、88的独立审图任务已完整冻结，全文回读和插件选择核验通过，单一派发已登记；尚未发送。"
+    "已结算R6独立负面审核，保留76的主簇与承托；按既有用户闭环授权冻结R7具体品牌比例、杯口标题连接和树荫材质修订，恰好2次出图、每臂1次，不要求逐轮真人审核。"
   ],
-  "updated_at": "2026-10-01T19:07:22.824397+08:00",
+  "updated_at": "2026-10-01T18:55:55.710633+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": false,
+  "render_allowed": true,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2772,59 +2772,16 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "AWAITING_INDEPENDENT_REVIEW",
+    "status": "AUTHORIZED",
     "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
-    "attempts_consumed": 2,
-    "outputs": [
-      {
-        "arm": "direct_reference",
-        "label": "53",
-        "file_name": "VPD_CHAZUO_R7_53_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2568026,
-        "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-        "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-          "mime_type": "image/png",
-          "size": 2568026,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "arm": "distilled_candidate",
-        "label": "88",
-        "file_name": "VPD_CHAZUO_R7_88_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2176052,
-        "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-        "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-          "mime_type": "image/png",
-          "size": 2176052,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      }
-    ],
+    "attempts_consumed": 0,
+    "outputs": [],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
     "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 2,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
@@ -2874,11 +2831,7 @@
         "sha256": "84166d14e60e794e5124e8ed02b75c45a37e28c1195fcc3edc0abf14079728f8"
       },
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "EXECUTED_WAITING_INDEPENDENT_REVIEW",
-      "closing_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/EXECUTION_RECEIPT.json",
-        "sha256": "623c2900acf88aa23ce473fd0a889439f28905dd158735c2bbc38c7b2f75f602"
-      }
+      "status": "AUTHORIZED"
     },
     "neutral_review_delivery": {
       "identifiers": [
@@ -2886,23 +2839,6 @@
         "88"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r7/EXECUTION_RECEIPT.json",
-      "sha256": "623c2900acf88aa23ce473fd0a889439f28905dd158735c2bbc38c7b2f75f602"
-    },
-    "independent_review": {
-      "task_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
-      "claim": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/independent_review/DISPATCH_CLAIM.json",
-        "sha256": "10e8f73fae17987895c32d112f605d216e87c2cafdabf9ca3977cc22a06ec471"
-      },
-      "active_attempt_id": "VPD-STAGE1-R7-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
-      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
-      "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
     }
   },
   "legacy_fields_scope": {
