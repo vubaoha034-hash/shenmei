@@ -1,0 +1,52 @@
+{
+  "schema_version": "vpd-stage-execution-authorization/v1",
+  "authority_class": "EXPLICIT_USER_STAGE_EXECUTION",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T18:35:13.287146+08:00",
+  "source_commit": "f7a437546e2c2fb74692d29fe8f7d7d2031016ce",
+  "source": {
+    "kind": "CURRENT_USER_MESSAGE",
+    "verbatim": "所以现在你改好而后继续闭环",
+    "submitted_at": "2026-10-01T18:02:36+08:00",
+    "conversation_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9"
+  },
+  "scope": "Continue the already authorized two-image-per-revision P3 loop using verified R5 negative review; this receipt allocates exactly2 R6 calls.",
+  "authorized_images": 2,
+  "attempts_max": 2,
+  "per_arm": 1,
+  "retries": 0,
+  "hidden_variants": 0,
+  "best_of_n": false,
+  "figma_writes": 0,
+  "external_compute_usd": 0,
+  "input_freeze": {
+    "path": "continuity/vpd/stage1/r6/INPUT_FREEZE.json",
+    "sha256": "5f3e6c160dca617c2f2780c70f3d96e97aea95f68df4e7f3b64c666e5c711319"
+  },
+  "amendment_receipt": {
+    "path": "continuity/vpd/stage1/r6/LOCAL_AMENDMENT.json",
+    "sha256": "976c07df342e2dd626b84a30505b34096098e2bda24b9cdac9683a242d3705d6"
+  },
+  "future_stages_authorized": false,
+  "long_term_promotion_authorized": false,
+  "review_binding_internal": [
+    {
+      "neutral_id": "31",
+      "arm": "direct_reference"
+    },
+    {
+      "neutral_id": "76",
+      "arm": "distilled_candidate"
+    }
+  ],
+  "neutral_review_delivery_required": true,
+  "review_delegation": {
+    "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
+    "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+  },
+  "continuation_basis": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/CALLBACK_RECEIPT.json",
+    "sha256": "1b769f408c4c4e1b3668096ea4b802c50cb4fd057c0ae259360979d07ff83446"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "vpd-evidence-based-local-amendment/v1",
+  "status": "FROZEN_FOR_BOUNDED_RETEST",
+  "recorded_at": "2026-10-01T18:35:13.287146+08:00",
+  "stage_id": "P3_STAGE1",
+  "trigger": "ACTUAL_TEST_WHOLE_FAILURE",
+  "new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
+  "actual_test_identity": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R5",
+    "source_commit": "f7a437546e2c2fb74692d29fe8f7d7d2031016ce",
+    "output_labels": [
+      "27",
+      "63"
+    ]
+  },
+  "actual_input_and_output_or_error_receipts": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r5/EXECUTION_RECEIPT.json",
+    "sha256": "d219a24d536b1819cd035192de1fd15c0171a38d210384848a883508072d31be"
+  },
+  "human_feedback_scope_when_visual": {
+    "scope": "WHOLE_POSTER",
+    "feedback_class": "USER_DELEGATED_INDEPENDENT_SCREENING",
+    "feedback": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r5/REVIEW_RECEIPT.json",
+      "sha256": "2e7287e19d9e4ae01d4f625e7209dd2e733c782f4b605af2a574dd1ecf7cc198"
+    },
+    "delegation_authority": {
+      "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
+      "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+    },
+    "user_personal_feedback": false
+  },
+  "observed_vs_hypothesized_cause": {
+    "observed": [
+      "标题虽然进入负空间，但仍与产品/木板几何关系较弱，存在悬浮贴字感",
+      "鲜叶、干茶、木板和苔藓的局部高光与微对比仍偏强，陪体抢质感",
+      "小品牌与标题缺少共同版式网格，品牌节点仍略像角落署名"
+    ],
+    "positive_observations_to_preserve": [
+      "木板统一承托面",
+      "杯—鲜叶—干茶的紧密产品主簇",
+      "杯为第一视觉、右上负空间和小尺寸品牌层级"
+    ],
+    "hypotheses": [
+      "A shared upper margin, a cup-rim headline boundary and a compact text rhythm may integrate image and type without increasing brand size.",
+      "Dry diffuse auxiliary materials and darker moss may reduce competing highlights and microcontrast."
+    ],
+    "not_established": [
+      "Individual causal effect of each wording change",
+      "Commercial completion of the next output",
+      "User personal aesthetic acceptance"
+    ]
+  },
+  "one_changed_component": {
+    "id": "ADDED_DISTILLED_VISUAL_RELATIONS_BLOCK",
+    "baseline": {
+      "path": "continuity/vpd/stage1/r5/DISTILLED_DELTA.txt",
+      "sha256": "a0c7b92b2a052de1b32e694d1b28b099a9d59015f3f2e2a390e5b6a38213c6f6"
+    },
+    "candidate": {
+      "path": "continuity/vpd/stage1/r6/DISTILLED_DELTA.txt",
+      "sha256": "dfbddf70e2b22eeec7610ae289fbc08ce4461c56433fab89188bb53b9ad9d859"
+    },
+    "change": "Preserve the R5 cup-first cluster and negative space, refine auxiliary material hierarchy and one common text/image alignment system.",
+    "interpretability_limit": "Only the added prompt block changes; internal clauses are not independent causal tests."
+  },
+  "preserved_components": [
+    "Original R pixels only as generation reference;63 remains feedback evidence.",
+    "Same frozen common prompt, 茶作 brand, 一杯茶，慢下来 copy, product content and3:2 full-poster objective.",
+    "Cup-first product cluster, common wood carrier, small brand and dark title space from63.",
+    "All R5 originals, actual trace, explicit user delegation and negative independent review.",
+    "One original-reference control and one revised candidate, one output per arm."
+  ],
+  "bounded_retest_budget": {
+    "proposed_attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0,
+    "authorized_now": 2
+  },
+  "activation": "Standing explicit user instruction 所以现在你改好而后继续闭环, followed by the verified R5 independent callback.",
+  "review_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r5/REVIEW_RECEIPT.json",
+    "sha256": "2e7287e19d9e4ae01d4f625e7209dd2e733c782f4b605af2a574dd1ecf7cc198"
+  },
+  "callback_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r5/independent_review/CALLBACK_RECEIPT.json",
+    "sha256": "1b769f408c4c4e1b3668096ea4b802c50cb4fd057c0ae259360979d07ff83446"
+  },
+  "formal_skill_or_global_rule_promotion": false,
+  "no_photo_only_repair_loop": true
+}
