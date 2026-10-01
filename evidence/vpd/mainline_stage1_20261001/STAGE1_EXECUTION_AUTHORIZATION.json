@@ -1,0 +1,33 @@
+{
+  "schema_version": "vpd-stage-execution-authority/v1",
+  "authority_class": "EXPLICIT_USER_STAGE_EXECUTION",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+  "stage_id": "P3_STAGE1",
+  "source": "CURRENT_PROJECT_CONVERSATION_20261001_USER_APPROVED_FROZEN_TWO_POSTER_STAGE",
+  "recorded_at": "2026-10-01T11:49:50.807308+08:00",
+  "attempts_max": 2,
+  "per_arm": 1,
+  "retries": 0,
+  "hidden_variants": 0,
+  "best_of_n": false,
+  "primary_renderer": "CHATGPT_IMAGES",
+  "source_commit": "bd8a04b659840e04a677fac1b7294dd7615bf53a",
+  "authorization_summary": "用户确认完成上一条提出的冻结首轮两张完整海报对照，并要求固定范围内直接连续推进，提高效率。",
+  "bounded_execution": [
+    "reference_readback",
+    "two_frozen_image_calls",
+    "save_both_originals",
+    "persist_execution_receipts",
+    "return_both_for_human_whole_poster_review"
+  ],
+  "figma_writes": 0,
+  "external_compute_usd": 0,
+  "human_acceptance_granted": false,
+  "observation": {
+    "requested_surface": "CHAT",
+    "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+    "tool": "image_gen.imagegen",
+    "thinking_effort_actual": "NOT_EXPOSED"
+  },
+  "efficiency_preference": "复用同提交已验证事实，合并独立读取；本轮不再逐步询问，不扩大生成额度。"
+}

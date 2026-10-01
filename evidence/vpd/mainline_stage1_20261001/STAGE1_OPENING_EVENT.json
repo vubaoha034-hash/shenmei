@@ -1,0 +1,31 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-STAGE1-AUTHORIZED-20261001-001",
+  "event_type": "STAGE1_EXPLICIT_USER_AUTHORIZED",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T11:49:50.807308+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-MAINLINE-LOCK-20261001-001",
+  "previous_event_hash": "4e65458ed651c2d709945f589a89e03980bd8212a3fb164714f56952fb8263a9",
+  "lock_sha256": "50123629ba0c8b54ea6d30712bc59f73cb2d4c2488c89f00b823d6ea5bdce432",
+  "before": {
+    "state": "VPD_MAINLINE_LOCKED_STAGE1_PREPARED_NOT_EXECUTED",
+    "next_action": "WAIT_FOR_STAGE1_EXECUTION_REQUEST"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_AUTHORIZED",
+    "next_action": "EXECUTE_STAGE1_FROZEN_TASK"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_AUTHORIZATION.json"
+  ],
+  "reason": "按当前用户确认执行已冻结首轮，连续完成两张整图与持久化；不改变主线、参考、提示词或预算，不推定真人通过。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "914311f0a1da580c7fcc6fa480745aefd6231b0b943b020693f2283e2bb8a1db"
+}
