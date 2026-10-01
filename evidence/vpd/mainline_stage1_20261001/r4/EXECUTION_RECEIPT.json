@@ -1,0 +1,114 @@
+{
+  "schema_version": "vpd-stage-execution-receipt/v1",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "stage_id": "P3_STAGE1",
+  "recorded_at": "2026-10-01T15:27:50.501685+08:00",
+  "source_commit": "42a02bc25e9cc0c45349e36633d7b82d251990d0",
+  "authorized_state_commit": "02bc4dfeeff12db151cc5d303c2f1870ab61076a",
+  "authorization_receipt": {
+    "path": "continuity/vpd/stage1/r4/EXECUTION_AUTHORIZATION.json",
+    "sha256": "ea7b340acb538c2ca8bee651f8e779e7cb8d3cd11b0948b051b519ac06926d31"
+  },
+  "amendment_receipt": {
+    "path": "continuity/vpd/stage1/r4/LOCAL_AMENDMENT.json",
+    "sha256": "b29074cf18991e023789dc789df0dcd2d7e35f50aa1d11457b59ca6a53bcdf0b"
+  },
+  "frozen_inputs": {
+    "path": "continuity/vpd/stage1/r4/INPUT_FREEZE.json",
+    "sha256": "ce0158287ad7b3d48ae800bd3e2d9da9464dc44bfc70d9080dfda7aa3a005983"
+  },
+  "trace": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/ACTUAL_TOOL_TRACE.json",
+    "sha256": "fb16fc1cf8927e8e383a9594cfc94e3693d166864cb68fc61a3bc4f3157cf823"
+  },
+  "actual_prompt_refs": [
+    {
+      "neutral_id": "19",
+      "arm": "direct_reference",
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/ACTUAL_PROMPT_19.txt",
+      "sha256": "9cd0f35514a7aa43c9c3937773dd115703750415845dc54ba57c60e983c45c5e"
+    },
+    {
+      "neutral_id": "54",
+      "arm": "distilled_candidate",
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/ACTUAL_PROMPT_54.txt",
+      "sha256": "a2815e1b2c8ab66e0b006f800dfcc7a140683806e553127188ded34e09c32ee4"
+    }
+  ],
+  "primary_renderer": "CHATGPT_IMAGES",
+  "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+  "attempts_consumed": 2,
+  "attempts_remaining": 0,
+  "outputs": [
+    {
+      "arm": "direct_reference",
+      "label": "19",
+      "file_name": "VPD_CHAZUO_R4_19_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "2a2352d068acc5926e4695c1bc3ce2db7117e6a246aa8bd81b7437b7266e5907",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2782141,
+      "drive_file_id": "1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs",
+      "drive_url": "https://drive.google.com/file/d/1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs",
+        "mime_type": "image/png",
+        "size": 2782141,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "arm": "distilled_candidate",
+      "label": "54",
+      "file_name": "VPD_CHAZUO_R4_54_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "20bc13765f6b93109cd99a009ac5dcec6611d563f36fe1a54349a75867983035",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2832063,
+      "drive_file_id": "1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET",
+      "drive_url": "https://drive.google.com/file/d/1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET",
+        "mime_type": "image/png",
+        "size": 2832063,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "errors": [],
+  "status": "AWAITING_HUMAN_REVIEW",
+  "human_verdict": "NOT_REVIEWED",
+  "correctness": {
+    "actual_dimensions": [
+      1536,
+      1024
+    ],
+    "aspect": "3:2",
+    "brand_and_requested_copy_visibly_present": true,
+    "complete_flat_poster": true,
+    "lower_wall_mockup_present": false,
+    "basis": "Actual displayed outputs inspected for requested content and flat-poster format only.",
+    "local_original_hash_verified": true,
+    "drive_file_metadata_readback_verified": true,
+    "remote_pixel_sha256_verified": false,
+    "scope": "CONTENT_FORMAT_AND_STORAGE_ONLY_NOT_AESTHETIC_ACCEPTANCE"
+  },
+  "review_delivery": {
+    "neutral_ids": [
+      "19",
+      "54"
+    ],
+    "route_or_assistant_ranking_disclosed_before_review": false,
+    "independent_blindness_established": false,
+    "scope": "Neutral user-facing delivery; public provenance is not proof of independent blindness."
+  },
+  "promotion_allowed": false
+}
