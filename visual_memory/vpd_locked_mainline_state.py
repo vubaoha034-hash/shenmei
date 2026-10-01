@@ -114,6 +114,20 @@ def _receipt(root, ref):
     return read(root, ref['path'])
 
 
+def _delegated_review_authority(root, ref, stage_id, task_id):
+    authority = _receipt(root, ref)
+    require(authority.get('authority_class') == 'EXPLICIT_USER_DELEGATED_INDEPENDENT_REVIEW'
+            and authority.get('project_id') == PROJECT and authority.get('source')
+            and authority.get('recorded_at'), 'DELEGATED_REVIEW_AUTHORITY_REQUIRED')
+    require(isinstance(task_id, str) and stage_id in authority.get('stage_ids', []) and
+            task_id.startswith(authority.get('task_prefix') or '\0'),
+            'DELEGATED_REVIEW_SCOPE_MISMATCH')
+    require(authority.get('reviewer_url') and authority.get('callback_url') and
+            authority.get('round_by_round_user_review_required') is False,
+            'DELEGATED_REVIEW_ROUTE_REQUIRED')
+    return authority
+
+
 def _tested_result(root, ref, stage_id):
     """Check recorded provenance, never infer a verdict from the rendered pixels."""
     result = _receipt(root, ref)
@@ -122,8 +136,19 @@ def _tested_result(root, ref, stage_id):
     require(execution.get('stage_id') == stage_id and execution.get('attempts_consumed', 0) > 0,
             'ACTUAL_TEST_REQUIRED')
     _receipt(root, execution.get('trace'))
-    feedback = _receipt(root, result.get('human_feedback'))
-    require(feedback.get('authority_class') == 'HUMAN_USER_FEEDBACK' and
+    delegated = result.get('delegated_review')
+    feedback = _receipt(root, delegated or result.get('human_feedback'))
+    if delegated:
+        authority = _delegated_review_authority(root, feedback.get('delegation_authority'),
+                                               stage_id, execution.get('task_id', ''))
+        require(feedback.get('authority_class') == 'USER_DELEGATED_INDEPENDENT_REVIEW' and
+                feedback.get('reviewer_url') == authority['reviewer_url'],
+                'DELEGATED_REVIEWER_IDENTITY_MISMATCH')
+        _receipt(root, feedback.get('callback_receipt'))
+    else:
+        require(feedback.get('authority_class') == 'HUMAN_USER_FEEDBACK',
+                'HUMAN_FEEDBACK_REQUIRED')
+    require(
             feedback.get('task_id') == execution.get('task_id') and
             feedback.get('source') and feedback.get('recorded_at'), 'HUMAN_FEEDBACK_REQUIRED')
     require(result.get('outcome') == feedback.get('outcome') and
@@ -140,7 +165,12 @@ def _validate_progress(root, lock, adapter, contract):
     stage_id, state = progress['stage_id'], progress['status']
     require(stage_id in STAGES, 'UNKNOWN_MAINLINE_STAGE')
     stage = next(s for s in contract['stages'] if s['id'] == stage_id)
-    require(state in stage['actions'] and lock['next_required_action'] == stage['actions'][state],
+    actions = dict(stage['actions'])
+    if state == 'AWAITING_INDEPENDENT_REVIEW':
+        _delegated_review_authority(root, progress.get('review_delegation'),
+                                    stage_id, progress['task_id'])
+        actions[state] = 'WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK'
+    require(state in actions and lock['next_required_action'] == actions[state],
             'STAGE_ACTION_CONFLICT')
     receipts = progress['completed_stage_receipts']
     require(len(receipts) == STAGES.index(stage_id), 'PRIOR_STAGE_EVIDENCE_REQUIRED')
@@ -206,14 +236,20 @@ def _validate_progress(root, lock, adapter, contract):
         require(progress['human_verdict'] == 'NOT_REVIEWED', 'UNSUPPORTED_TEST_OR_ACCEPTANCE_CLAIM')
     if state in ['PASSED', 'TEST_FAILED_OR_NO_GAIN', 'PARTIAL_OR_UNKNOWN']:
         result = _tested_result(root, progress.get('review_receipt'), stage_id)
-        require(result['outcome'] == state == progress['human_verdict'], 'TEST_VERDICT_SCOPE_CONFLICT')
+        if result.get('delegated_review'):
+            require(progress['human_verdict'] == 'NOT_REVIEWED' and
+                    result['outcome'] == state == progress.get('review_verdict'),
+                    'TEST_VERDICT_SCOPE_CONFLICT')
+        else:
+            require(result['outcome'] == state == progress['human_verdict'],
+                    'TEST_VERDICT_SCOPE_CONFLICT')
         require(result['execution_receipt'] == progress.get('execution_receipt'),
                 'REVIEW_EXECUTION_MISMATCH')
     else:
         require(progress['human_verdict'] == 'NOT_REVIEWED', 'UNSUPPORTED_TEST_OR_ACCEPTANCE_CLAIM')
     if state in ['NEEDS_INPUT_FREEZE', 'READY_WAITING_EXECUTION_REQUEST']:
         require(attempts == 0 and progress['outputs'] == [], 'EXECUTION_RECEIPT_CONFLICT')
-    if state == 'AWAITING_HUMAN_REVIEW':
+    if state in ['AWAITING_HUMAN_REVIEW', 'AWAITING_INDEPENDENT_REVIEW']:
         require(attempts > 0, 'ACTUAL_TEST_REQUIRED')
     if state == 'TECHNICAL_BLOCKED':
         require(attempts > 0 and execution.get('errors'), 'OBSERVED_EXECUTION_ERROR_REQUIRED')

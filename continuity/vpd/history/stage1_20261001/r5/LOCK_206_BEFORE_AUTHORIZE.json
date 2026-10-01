@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 207,
+  "revision": 206,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "R5两张正式出图已获当前用户明确授权；沿用原始R与公共提示，冻结三项修订，后续独立审核主动回传，不要求用户逐轮审图。",
-  "status": "VPD_MAINLINE_STAGE1_R5_AUTHORIZED",
+  "current_stage": "核验16:27首份报告确已回传；后续停在主控修订草案，未出新图或再送审。纠正一次消息往返等于自动出图审核闭环的过度表述。",
+  "status": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
+  "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 2,
+    "current_image_generation_authorization": 0,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R5",
-    "current_image_generation_count_max": 2,
+    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+    "current_image_generation_count_max": 0,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "R5两张正式出图已获当前用户明确授权；沿用原始R与公共提示，冻结三项修订，后续独立审核主动回传，不要求用户逐轮审图。"
+    "核验16:27首份报告确已回传；后续停在主控修订草案，未出新图或再送审。纠正一次消息往返等于自动出图审核闭环的过度表述。"
   ],
-  "updated_at": "2026-10-01T18:15:21.427855+08:00",
+  "updated_at": "2026-10-01T17:48:14.689022+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": true,
+  "render_allowed": false,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2772,65 +2772,275 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "AUTHORIZED",
-    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R5",
-    "attempts_consumed": 0,
-    "outputs": [],
+    "status": "AWAITING_HUMAN_REVIEW",
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+    "attempts_consumed": 2,
+    "outputs": [
+      {
+        "arm": "direct_reference",
+        "label": "19",
+        "file_name": "VPD_CHAZUO_R4_19_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "2a2352d068acc5926e4695c1bc3ce2db7117e6a246aa8bd81b7437b7266e5907",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2782141,
+        "drive_file_id": "1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs",
+        "drive_url": "https://drive.google.com/file/d/1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1Llj-2FxyZwSzxt_i8gX3cNv1Zh4NDMSs",
+          "mime_type": "image/png",
+          "size": 2782141,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "arm": "distilled_candidate",
+        "label": "54",
+        "file_name": "VPD_CHAZUO_R4_54_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "20bc13765f6b93109cd99a009ac5dcec6611d563f36fe1a54349a75867983035",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2832063,
+        "drive_file_id": "1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET",
+        "drive_url": "https://drive.google.com/file/d/1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1VWEVtwGzx6ckFMAckcgJAE7aJaFnQbET",
+          "mime_type": "image/png",
+          "size": 2832063,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      }
+    ],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
-    "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 2,
+      "images": 0,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/stage1/r5/EXECUTION_AUTHORIZATION.json",
-        "sha256": "bd9f64507c9670f31c73f0e80bc9a0bb8275011c8d4785429cc3a3dceeda0c88"
+        "path": "continuity/vpd/stage1/r4/EXECUTION_AUTHORIZATION.json",
+        "sha256": "ea7b340acb538c2ca8bee651f8e779e7cb8d3cd11b0948b051b519ac06926d31"
       }
     },
+    "planned_attempts_max": 2,
     "input_freeze": {
-      "path": "continuity/vpd/stage1/r5/INPUT_FREEZE.json",
-      "sha256": "f87d79f569cec195b74b5d1dd722ebdb6e0ffd368872293a4675cac13840855a"
+      "path": "continuity/vpd/stage1/r4/INPUT_FREEZE.json",
+      "sha256": "ce0158287ad7b3d48ae800bd3e2d9da9464dc44bfc70d9080dfda7aa3a005983"
     },
     "amendment_receipt": {
-      "path": "continuity/vpd/stage1/r5/LOCAL_AMENDMENT.json",
-      "sha256": "23d653e605c20cc2e4bcf0205c00c1990c543a0220fe38a1cf02bf2fb35ec424"
-    },
-    "review_delegation": {
-      "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
-      "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+      "path": "continuity/vpd/stage1/r4/LOCAL_AMENDMENT.json",
+      "sha256": "b29074cf18991e023789dc789df0dcd2d7e35f50aa1d11457b59ca6a53bcdf0b"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
+      "review_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r3/REVIEW_RECEIPT.json",
+        "sha256": "8b852594328984cffa1689f3fc893c28da9a7eaa50b37f407c2e523c95a74e61"
+      },
       "execution_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
-        "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
-      },
-      "independent_review": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
-        "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
-      },
-      "preserved_progress": {
-        "path": "continuity/vpd/history/stage1_20261001/r5/R4_SETTLED_PROGRESS.json",
-        "sha256": "9d2b297cede4043a57232300c4e2d1655ce1cfe929491d3b359a3c9db618279a"
+        "path": "evidence/vpd/mainline_stage1_20261001/r3/EXECUTION_RECEIPT.json",
+        "sha256": "3d14c40e97bbed7b7712d17ad63acdec9a8b2db26ba5308424eb0c5ff4c929ec"
       }
     },
     "session": {
-      "source_commit": "8ad17608334af339e67cf2319162e27192877f78",
+      "source_commit": "42a02bc25e9cc0c45349e36633d7b82d251990d0",
       "opening_receipt": {
-        "path": "continuity/vpd/stage1/r5/EXECUTION_AUTHORIZATION.json",
-        "sha256": "bd9f64507c9670f31c73f0e80bc9a0bb8275011c8d4785429cc3a3dceeda0c88"
+        "path": "continuity/vpd/stage1/r4/EXECUTION_AUTHORIZATION.json",
+        "sha256": "ea7b340acb538c2ca8bee651f8e779e7cb8d3cd11b0948b051b519ac06926d31"
       },
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "AUTHORIZED"
+      "status": "EXECUTED_WAITING_HUMAN_REVIEW",
+      "closing_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
+        "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
+      }
     },
     "neutral_review_delivery": {
       "identifiers": [
-        "27",
-        "63"
+        "19",
+        "54"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
+    },
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r4/EXECUTION_RECEIPT.json",
+      "sha256": "4ee082c58d20ee020b7b910a7fe6075e9b216e8720a190730c79d2e7ba56a2ec"
+    },
+    "independent_review": {
+      "task_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "INDEPENDENT_SCREENING_COMPLETE_NOT_HUMAN_ACCEPTANCE",
+      "claim": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/DISPATCH_CLAIM.json",
+        "sha256": "ed1d5f7581213b60066a21559aab75c14a1aeadf11e578c9113fcfb19747edba"
+      },
+      "active_attempt_id": "VPD-STAGE1-R4-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
+      "human_acceptance_replaced": false,
+      "whole_stage_accepted": false,
+      "reviewer_writes_repo": false,
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
+        "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
+      },
+      "conversation_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "reviewer_verdict": {
+        "pixels_loaded": {
+          "19": true,
+          "54": true,
+          "R": true
+        },
+        "image_identity_evidence": {
+          "19": [
+            "中左为斑点陶瓷茶杯，置于圆形木杯垫上，琥珀色茶汤上方有可见蒸汽",
+            "右侧为不规则浅色盘盛干茶，左上为大号“茶作”，右上为“一杯茶，慢下来”"
+          ],
+          "54": [
+            "一块深色长木板横贯画面，左侧白色茶杯内为淡黄绿色茶汤",
+            "木板中右部为小棕盘干茶，右侧仅一支鲜叶，文案位于右下"
+          ],
+          "R": [
+            "上半幅中央为圆形藤编托盘，托盘上排列多片红色肉片并带绿色配料",
+            "托盘右侧可见木勺与葫芦状器物，外围由大面积苔藓和蕨类形成自然环境"
+          ]
+        },
+        "image_verdicts": {
+          "19": "REJECT",
+          "54": "NEEDS_REVISION"
+        },
+        "relative_choice": "54",
+        "whole_set_ready": false,
+        "critical_issues": {
+          "19": [
+            "左上品牌与右上标题同时过大，形成两个竞争性的白色视觉块，产品主视觉被削弱",
+            "苔藓、鲜叶、石面与茶汤同时呈现较强锐度、高光和饱和度，产生过度渲染观感",
+            "茶杯、干茶与多组叶片没有收束成统一产品主簇，整体仍偏产品照加文字"
+          ],
+          "54": [
+            "杯、干茶和鲜叶沿木板横向平均展开，产品区域统一但核心焦点仍不够集中",
+            "右下标题过大且逼近复杂木纹和画面边缘，图文边界及标题节奏尚未稳定",
+            "木板、苔藓和叶片材质同时被强化，真实摄影应有的材质主次不足"
+          ]
+        },
+        "preserve": {
+          "19": [
+            "茶杯和干茶的基本产品可信度",
+            "暖色茶汤与自然绿色环境",
+            "石台对产品的承托关系"
+          ],
+          "54": [
+            "横向木板形成的产品舞台",
+            "杯、干茶、鲜叶已归入同一产品区域",
+            "左上品牌留白和淡黄色茶汤"
+          ]
+        },
+        "next_changes": [
+          "以54为基础重组产品权重，让茶杯成为唯一第一视觉，干茶与鲜叶明确降为陪体",
+          "重做标题与品牌层级，缩减右下标题占比并移入更完整的负空间，避免贴边和压复杂纹理",
+          "降低环境材质的统一锐化、饱和和高光竞争，把最强光影与质感集中到产品主簇"
+        ],
+        "confidence": "HIGH"
+      },
+      "pixels_loaded": {
+        "19": true,
+        "54": true,
+        "R": true
+      },
+      "async_loop": {
+        "schema_version": "vpd-async-review-loop/v1",
+        "task_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01",
+        "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+        "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
+        "recorded_at": "2026-10-01T16:23:24.997248+08:00",
+        "status": "ONE_ROUNDTRIP_CONFIRMED_AUTOMATIC_RENDER_REVIEW_LOOP_INCOMPLETE",
+        "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
+        "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
+        "writer": "PROJECT_COORDINATOR_ONLY",
+        "coordinator_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+        "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+        "coordinator_identity_evidence": "Observed exact latest user request for the Opera Neon two-way loop and previous final with lock=202/checkpoint=224 in this conversation.",
+        "authorization": {
+          "source": "EXPLICIT_USER_REQUEST_20261001",
+          "scope": "Reviewer actively sends each finished report to the coordinator via Opera Neon; coordinator resumes work and sends the next distinct review task without user relaying or waiting.",
+          "round_by_round_user_review_required": false,
+          "reviewer_repo_writes": false,
+          "no_new_images_in_transport_test": true
+        },
+        "message_sha256": "f089b5fa24ff02317f8387a37166a3f26e215edc8f9e142d857b27281457e9bb",
+        "draft_readback_match": true,
+        "send_clicks": 1,
+        "existing_result_receipt": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
+          "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
+        },
+        "on_callback": {
+          "identity_fields": [
+            "callback_id",
+            "parent_task_id",
+            "reviewer_url",
+            "image_identities"
+          ],
+          "deduplicate_existing_report": true,
+          "record_transport_receipt": true,
+          "resume_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT_WITHIN_LOCKED_MAINLINE",
+          "do_not_send_ack_as_another_review_task": true,
+          "do_not_relabel_external_review_as_user_feedback": true
+        },
+        "loop": {
+          "coordinator_polls": false,
+          "reviewer_waits_for_coordinator": false,
+          "only_new_outputs_trigger_next_review": true,
+          "stop_conditions": [
+            "REVIEW_PASSES",
+            "ACTUAL_TECHNICAL_BLOCK",
+            "AUTHORIZED_TASK_BUDGET_EXHAUSTED"
+          ],
+          "automatic_callback_observed": true,
+          "automatic_resumption_observed": true,
+          "observed_resumption_mode": "NEW_MESSAGE_STEERED_ACTIVE_COORDINATOR_TURN",
+          "idle_conversation_auto_wake_tested": false,
+          "runtime_proof_scope": "ONE_REVIEWER_PUSH_TO_AN_ACTIVE_COORDINATOR_ONLY",
+          "automatic_next_render_dispatched": false,
+          "completed_render_review_revision_cycles": 0
+        },
+        "plugin_mention_observed": "Opera Neon",
+        "scheduler_event_sources": [
+          "GitHub",
+          "Gmail"
+        ],
+        "scheduler_chat_message_event_exposed": false,
+        "schedule_created": false,
+        "proof_limit": "A future autonomous roundtrip is not established until the reviewer message and coordinator resumption are actually observed.",
+        "route_receipt": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_SETTLED_STATE.json",
+          "sha256": "5c97d2952552cbb3a7eecb0b7836a1d1c89c9b2335bd3041b26eb49705d10d12"
+        },
+        "latest_receipt": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_RECEIPT.json",
+          "sha256": "efe2720ee38dc058cdb74d7964ebd2c65fc0443d2cd674871ff899d8c55be145"
+        },
+        "next_revision_draft": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+          "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
+        },
+        "last_processed_callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
+        "next_distinct_review_task_pending": false,
+        "latest_diagnosis": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/LOOP_GAP_DIAGNOSIS.json",
+          "sha256": "105f6505395d9f53311fc402d8042ee29db33a86bde67a77f0ce98beafa344e4"
+        }
+      },
+      "next_revision_draft": {
+        "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+        "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
+      }
     }
   },
   "legacy_fields_scope": {

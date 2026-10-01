@@ -268,3 +268,68 @@ def test_whole_review_receipt_supports_next_stage_without_unlocking(isolated):
     validated, _ = validate_state(isolated)
     assert validated['mainline_lock']['locked'] is True
     assert not validated['render_allowed']
+
+
+def delegation_synthetic(root, task_prefix='VPD-FULL-POSTER-STAGE1-CHAZUO-'):
+    return save(root, 'synthetic/delegated_authority.json', {
+        'authority_class': 'EXPLICIT_USER_DELEGATED_INDEPENDENT_REVIEW',
+        'project_id': 'visual-aesthetic-vpd', 'stage_ids': ['P3_STAGE1'],
+        'task_prefix': task_prefix, 'reviewer_url': 'SYNTHETIC_REVIEWER',
+        'callback_url': 'SYNTHETIC_COORDINATOR',
+        'round_by_round_user_review_required': False,
+        'source': 'SYNTHETIC_TEST_NOT_RUNTIME_EVIDENCE',
+        'recorded_at': 'SYNTHETIC_TEST_NOT_RUNTIME_EVIDENCE',
+    })
+
+
+def test_explicit_delegation_can_wait_for_callback_without_claiming_human_review(isolated):
+    lock, _ = reviewed_synthetic(isolated)
+    p = lock['mainline_progress']
+    p.update(status='AWAITING_INDEPENDENT_REVIEW', human_verdict='NOT_REVIEWED',
+             review_delegation=delegation_synthetic(isolated))
+    lock['next_required_action'] = 'WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK'
+    reseal(isolated, lock)
+    validated, _ = validate_state(isolated)
+    assert validated['mainline_progress']['human_verdict'] == 'NOT_REVIEWED'
+
+
+@pytest.mark.parametrize('task_prefix,reason', [
+    (None, 'MISSING_EVIDENCE_REFERENCE'),
+    ('UNRELATED_PROJECT-', 'DELEGATED_REVIEW_SCOPE_MISMATCH'),
+])
+def test_callback_wait_rejects_missing_or_unrelated_delegation(isolated, task_prefix, reason):
+    lock, _ = reviewed_synthetic(isolated)
+    p = lock['mainline_progress']
+    p.update(status='AWAITING_INDEPENDENT_REVIEW', human_verdict='NOT_REVIEWED')
+    if task_prefix is not None:
+        p['review_delegation'] = delegation_synthetic(isolated, task_prefix)
+    lock['next_required_action'] = 'WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK'
+    reseal(isolated, lock)
+    with pytest.raises(TaskLockError, match=reason):
+        validate_state(isolated)
+
+
+def test_delegated_feedback_is_scoped_and_keeps_human_verdict_unreviewed(isolated):
+    lock, review = reviewed_synthetic(isolated)
+    p = lock['mainline_progress']
+    authority = delegation_synthetic(isolated)
+    callback = save(isolated, 'synthetic/callback.json', {
+        'source': 'SYNTHETIC_TEST_NOT_RUNTIME_EVIDENCE'})
+    feedback = load(isolated, 'synthetic/feedback.json')
+    feedback.update(authority_class='USER_DELEGATED_INDEPENDENT_REVIEW',
+                    delegation_authority=authority, reviewer_url='SYNTHETIC_REVIEWER',
+                    callback_receipt=callback)
+    feedback_ref = save(isolated, 'synthetic/delegated_feedback.json', feedback)
+    result = load(isolated, review['path'])
+    del result['human_feedback']
+    result['delegated_review'] = feedback_ref
+    p.update(human_verdict='NOT_REVIEWED', review_verdict='PASSED',
+             review_receipt=save(isolated, 'synthetic/delegated_result.json', result))
+    reseal(isolated, lock)
+    assert validate_state(isolated)[0]['mainline_progress']['human_verdict'] == 'NOT_REVIEWED'
+    feedback['reviewer_url'] = 'WRONG_REVIEWER'
+    result['delegated_review'] = save(isolated, 'synthetic/delegated_feedback.json', feedback)
+    p['review_receipt'] = save(isolated, 'synthetic/delegated_result.json', result)
+    reseal(isolated, lock)
+    with pytest.raises(TaskLockError, match='DELEGATED_REVIEWER_IDENTITY_MISMATCH'):
+        validate_state(isolated)
