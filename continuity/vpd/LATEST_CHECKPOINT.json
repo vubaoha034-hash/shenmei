@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 216,
-  "recorded_at": "2026-10-01T13:07:22.768774+08:00",
+  "sequence": 217,
+  "recorded_at": "2026-10-01T13:15:43.469659+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "R2反馈：条件式偏向68但完整设计仍与目标差距很大；本轮未达到整图目标。保留直接参考对照和历史范围，已准备完整设计关系的追加段修订草案。",
+  "current_focus": "整幅设计关系的追加段修订已冻结；R3两张有界复验已获下一步执行授权，待实际生成与保存，评审仅展示中性编号。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -344,16 +344,17 @@
     "locked_mainline_stage1_whole_design_fail_feedback_settled_and_local_amendment_draft_prepared_20261001",
     "stage1_r2_local_amendment_inputs_frozen_and_bounded_execution_authorized_20261001",
     "stage1_r2_two_full_posters_generated_archived_and_neutral_identifiers_bound_20261001",
-    "stage1_r2_whole_target_gap_and_tentative_preference_settled_20261001"
+    "stage1_r2_whole_target_gap_and_tentative_preference_settled_20261001",
+    "stage1_r3_whole_design_relations_frozen_and_bounded_execution_authorized_20261001"
   ],
   "incomplete": [
-    "首轮整图目标尚未达到；下一关系草案冻结与有界验证尚未完成",
+    "首轮整体关系修订R3两张复验待实际执行与真人整图判断",
     "内容、画幅与第二风格复验尚未完成",
     "旧候选244:2仍待真人结论，保留但不是新主线前置条件",
     "尚无长期方法晋升或完整商业交付"
   ],
   "blocked": [],
-  "next_required_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT",
+  "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -421,14 +422,14 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_STAGE1_R2_HUMAN_TARGET_GAP",
+  "status": "VPD_MAINLINE_STAGE1_R3_AUTHORIZED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "a9d9e73cbd620dcf1ae598e061d456d9c7738b141f8f4ba47229df4d75e942d4"
+    "sha256": "ca1ad256da9768c1a5674978994a910a99a326d253555ce557cba7f73ecca9ff"
   },
   "history_snapshot": {
-    "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_215_BEFORE_R2_HUMAN_REVIEW.json",
-    "sha256": "6436797ccc118f56340a536bb3e37bf3f01bf385f5ed1d2d3e01c5cfab6d5aa9"
+    "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_216_BEFORE_R3_AUTHORIZATION.json",
+    "sha256": "731e36c10cad2e28a2a422d6de65b73e550b4623ea4546b67113eb348244c2db"
   },
   "requirements": {
     "p4_mechanism_transfer": {
@@ -445,8 +446,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-STAGE1-R2-HUMAN-TARGET-GAP-20261001-001",
-      "event_hash": "7e8401f3d04ea5faa411ace1943dbe232201b1be01bee161d1c93df3f506cd67"
+      "event_id": "EVT-VPD-STAGE1-R3-AUTHORIZED-20261001-001",
+      "event_hash": "c9d8d2c725276022ccf110e39ffab32f0353214d710ee208108a028ccc2397ab"
     }
   },
   "typography_repair": {
@@ -961,8 +962,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "R2反馈：条件式偏向68但完整设计仍与目标差距很大；本轮未达到整图目标。保留直接参考对照和历史范围，已准备完整设计关系的追加段修订草案。",
-  "updated_at": "2026-10-01T13:07:22.768774+08:00",
+  "current_stage": "整幅设计关系的追加段修订已冻结；R3两张有界复验已获下一步执行授权，待实际生成与保存，评审仅展示中性编号。",
+  "updated_at": "2026-10-01T13:15:43.469659+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1834,9 +1835,9 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "R2暂定相对偏好与整图目标差距已绑定实际输出记录",
-    "实际路线映射已核对，未把相对选择当整图通过",
-    "下一追加段关系草案已准备，尚未验证"
+    "R2目标差距和条件式相对偏好保留",
+    "整段视觉关系修订输入已冻结",
+    "下一步指令已登记为本轮两张有界执行授权"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2318,121 +2319,57 @@
   },
   "mainline_progress": {
     "stage_id": "P3_STAGE1",
-    "status": "TEST_FAILED_OR_NO_GAIN",
-    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
-    "attempts_consumed": 2,
-    "outputs": [
-      {
-        "arm": "distilled_candidate",
-        "label": "27",
-        "file_name": "VPD_CHAZUO_R2_27_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "1627f015a341ff8afe85d6229b83a2114031f7288fefbe5109ab6cd664f6433e",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2850187,
-        "drive_file_id": "1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-",
-        "drive_url": "https://drive.google.com/file/d/1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1EZ8mJYfVBkBfXJ5aGYeYIsruDmRPqNL-",
-          "mime_type": "image/png",
-          "size": 2850187,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "arm": "direct_reference",
-        "label": "68",
-        "file_name": "VPD_CHAZUO_R2_68_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "50259481fafb68b812bbb142c7a67a90e33954b28f1b297074c2c651033dad78",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2760090,
-        "drive_file_id": "11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C",
-        "drive_url": "https://drive.google.com/file/d/11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "11QoJFvFbn9BonYTvnNmOhhbQ7Jjakd1C",
-          "mime_type": "image/png",
-          "size": 2760090,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      }
-    ],
-    "human_verdict": "TEST_FAILED_OR_NO_GAIN",
+    "status": "AUTHORIZED",
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
+    "attempts_consumed": 0,
+    "outputs": [],
+    "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [],
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 2,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/stage1/r2/EXECUTION_AUTHORIZATION.json",
-        "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
+        "path": "continuity/vpd/stage1/r3/EXECUTION_AUTHORIZATION.json",
+        "sha256": "d6c92c740ed97670a30c6caa0b18438bde263c9f2e1239ad6a98cc3c78fbf7e9"
       }
     },
     "planned_attempts_max": 2,
     "input_freeze": {
-      "path": "continuity/vpd/stage1/r2/INPUT_FREEZE.json",
-      "sha256": "584902f76b4d7286f124ea8869744168449dfb8f7f2f12b79614bd15215ed2aa"
+      "path": "continuity/vpd/stage1/r3/INPUT_FREEZE.json",
+      "sha256": "5dbe6ef03627bf508104d6bcccc0eedf0e7e19f7a04953e71ea696e34f10243c"
     },
     "amendment_receipt": {
-      "path": "continuity/vpd/stage1/r2/LOCAL_AMENDMENT.json",
-      "sha256": "64f3f3f28406771e408ee7bcf7ad4fc8203c3f3bc2c0df45a5125df3dae12c78"
+      "path": "continuity/vpd/stage1/r3/LOCAL_AMENDMENT.json",
+      "sha256": "f26e369e4e404c4495085b80023178d89ec5e24614a707ac5648705cc22a122d"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R1",
+      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R2",
       "review_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_REVIEW_RECEIPT.json",
-        "sha256": "40ad2086a5c7c47ef4981d194b4f04ce7157daf8b72e60bf5b8b3a876435b591"
+        "path": "evidence/vpd/mainline_stage1_20261001/r2/REVIEW_RECEIPT.json",
+        "sha256": "9c18878653040f556964ff366aa55c3f5c20ce2a9738f400428326003687c47f"
       },
       "execution_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/STAGE1_EXECUTION_RECEIPT.json",
-        "sha256": "b13ddcee783fa5fba5b1fd05e05c7612fb5d1bae32c23958eb2f9ba15b31bfc0"
-      }
-    },
-    "session": {
-      "source_commit": "aecd357b2818a0efb4853eb5baf1c9960c0428bf",
-      "opening_receipt": {
-        "path": "continuity/vpd/stage1/r2/EXECUTION_AUTHORIZATION.json",
-        "sha256": "898f455fac44e0906b70ffb523ae67e26229544fe7c4053d3f420ef7f905f7ad"
-      },
-      "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "HUMAN_REVIEW_SETTLED_TARGET_NOT_MET",
-      "closing_receipt": {
         "path": "evidence/vpd/mainline_stage1_20261001/r2/EXECUTION_RECEIPT.json",
         "sha256": "78719e4b6a6bd2391980bca70ed1b3c4083b1e9d797e4d22b727d5566cc57a56"
       }
     },
+    "session": {
+      "source_commit": "1719e9f00daa7151b9840c7dd883af1bf27033e7",
+      "opening_receipt": {
+        "path": "continuity/vpd/stage1/r3/EXECUTION_AUTHORIZATION.json",
+        "sha256": "d6c92c740ed97670a30c6caa0b18438bde263c9f2e1239ad6a98cc3c78fbf7e9"
+      },
+      "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+      "status": "AUTHORIZED_NOT_EXECUTED"
+    },
     "neutral_review_delivery": {
       "identifiers": [
-        "27",
-        "68"
+        "42",
+        "85"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r2/EXECUTION_RECEIPT.json",
-      "sha256": "78719e4b6a6bd2391980bca70ed1b3c4083b1e9d797e4d22b727d5566cc57a56"
-    },
-    "review_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r2/REVIEW_RECEIPT.json",
-      "sha256": "9c18878653040f556964ff366aa55c3f5c20ce2a9738f400428326003687c47f"
-    },
-    "local_amendment_preparation": {
-      "status": "DRAFT_PREPARED_NOT_EXECUTED",
-      "receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r2/WHOLE_DESIGN_AMENDMENT_DRAFT.json",
-        "sha256": "0c17e4f31235d202bb70e0ff62c71eb6b58153490b89c71171e7548ba8272133"
-      },
-      "proposed_new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
-      "active_task_unchanged": true
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-STAGE1-R3-AUTHORIZED-20261001-001",
+  "event_type": "STAGE1_R3_WHOLE_DESIGN_RELATIONS_FROZEN_AND_RETEST_AUTHORIZED",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R3",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T13:15:43.469659+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-STAGE1-R2-HUMAN-TARGET-GAP-20261001-001",
+  "previous_event_hash": "7e8401f3d04ea5faa411ace1943dbe232201b1be01bee161d1c93df3f506cd67",
+  "lock_sha256": "ca1ad256da9768c1a5674978994a910a99a326d253555ce557cba7f73ecca9ff",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R2_HUMAN_TARGET_GAP",
+    "next_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R3_AUTHORIZED",
+    "next_action": "EXECUTE_STAGE1_FROZEN_TASK"
+  },
+  "evidence": [
+    "continuity/vpd/stage1/r3/INPUT_FREEZE.json",
+    "continuity/vpd/stage1/r3/LOCAL_AMENDMENT.json",
+    "continuity/vpd/stage1/r3/EXECUTION_AUTHORIZATION.json"
+  ],
+  "reason": "据R2实际未达整图目标的反馈，冻结较短的完整设计关系追加段；用户下一步指令授权两张同参考同内容复验，保留原主线与历史结论。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "c9d8d2c725276022ccf110e39ffab32f0353214d710ee208108a028ccc2397ab"
+}
