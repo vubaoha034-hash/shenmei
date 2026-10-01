@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 205,
-    "sha256": "5b714792eaa78dc84c57309382ee9838e3a064fff960bee4d5f3d491ab3343c3",
+    "revision": 206,
+    "sha256": "4054422d22cc4c61e2daca22afe09da35edbc7f6bdf53d1be13f01538ee168d7",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1082,7 +1082,7 @@
         "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
         "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
         "recorded_at": "2026-10-01T16:23:24.997248+08:00",
-        "status": "ROUNDTRIP_CONFIRMED_R5_REVISION_DRAFT_PREPARED",
+        "status": "ONE_ROUNDTRIP_CONFIRMED_AUTOMATIC_RENDER_REVIEW_LOOP_INCOMPLETE",
         "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
         "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
         "writer": "PROJECT_COORDINATOR_ONLY",
@@ -1128,7 +1128,10 @@
           "automatic_callback_observed": true,
           "automatic_resumption_observed": true,
           "observed_resumption_mode": "NEW_MESSAGE_STEERED_ACTIVE_COORDINATOR_TURN",
-          "idle_conversation_auto_wake_tested": false
+          "idle_conversation_auto_wake_tested": false,
+          "runtime_proof_scope": "ONE_REVIEWER_PUSH_TO_AN_ACTIVE_COORDINATOR_ONLY",
+          "automatic_next_render_dispatched": false,
+          "completed_render_review_revision_cycles": 0
         },
         "plugin_mention_observed": "Opera Neon",
         "scheduler_event_sources": [
@@ -1151,7 +1154,11 @@
           "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
         },
         "last_processed_callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
-        "next_distinct_review_task_pending": false
+        "next_distinct_review_task_pending": false,
+        "latest_diagnosis": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/LOOP_GAP_DIAGNOSIS.json",
+          "sha256": "105f6505395d9f53311fc402d8042ee29db33a86bde67a77f0ce98beafa344e4"
+        }
       },
       "next_revision_draft": {
         "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
@@ -1187,8 +1194,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CALLBACK-20261001-001",
-      "event_hash": "6bbda9cbd7643045c40ee88f6f1afe49665137d0deb130f57705f5d1a9e78a7a"
+      "event_id": "EVT-VPD-ASYNC-LOOP-GAP-DIAGNOSIS-20261001-001",
+      "event_hash": "e5f66b6125d9482d4a5558d0af82361ca70ec706df916709f1e628911f963436"
     }
   },
   "mature_workflow_audit": {

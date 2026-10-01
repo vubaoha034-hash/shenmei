@@ -1,0 +1,36 @@
+{
+  "schema_version": "vpd-async-review-gap-diagnosis/v1",
+  "recorded_at": "2026-10-01T17:48:14.689022+08:00",
+  "task_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01",
+  "render_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "status": "FIRST_CALLBACK_RECEIVED_NEXT_PRODUCTION_REVIEW_CYCLE_NOT_STARTED",
+  "first_callback": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/CALLBACK_RECEIPT.json",
+    "sha256": "efe2720ee38dc058cdb74d7964ebd2c65fc0443d2cd674871ff899d8c55be145"
+  },
+  "first_callback_received_at": "2026-10-01T16:27:38+08:00",
+  "current_revision_draft": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
+    "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
+  },
+  "observed": {
+    "reviewer_sent_first_report": true,
+    "coordinator_received_first_report": true,
+    "r5_draft_prepared": true,
+    "r5_images_generated": false,
+    "r5_review_task_dispatched": false,
+    "business_state_still_waiting_human_review": true,
+    "current_render_authorization": 0,
+    "r4_attempts_consumed": 2
+  },
+  "cause": "Coordinator ended after preparing the next draft and did not launch the next render or send new outputs to the reviewer. Existing routine-review state still requests human review despite the user request to delegate it.",
+  "previous_claim_correction": "Only one two-way message transfer was tested. The production/review continuation and idle wake-up were not tested or established.",
+  "user_intent_preserved": "Reviewer sends results back directly; coordinator continues and submits new outputs without user relaying or doing round-by-round screening.",
+  "not_a_plugin_send_failure": true,
+  "unfinished": [
+    "Reconcile delegated routine review with the existing pending human-review state without relabeling external judgments as user feedback.",
+    "Continue a bounded authorized revision and submit only newly produced outputs.",
+    "Verify the subsequent reviewer callback and actual continuation; do not claim indefinite unattended execution from one message exchange."
+  ],
+  "new_generation_or_dispatch_in_this_diagnosis": false
+}

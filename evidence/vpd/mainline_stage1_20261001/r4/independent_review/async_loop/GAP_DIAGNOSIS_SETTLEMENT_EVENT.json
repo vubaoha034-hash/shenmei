@@ -1,0 +1,32 @@
+{
+  "schema_version": "upcp-state-ledger-event/v1",
+  "stream_id": "commercial_design_pipeline",
+  "event_id": "EVT-VPD-ASYNC-LOOP-GAP-DIAGNOSIS-20261001-001",
+  "event_type": "ASYNC_LOOP_GAP_DIAGNOSIS",
+  "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+  "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-01T17:48:14.689022+08:00",
+  "material": true,
+  "previous_event_id": "EVT-VPD-ASYNC-REVIEW-LOOP-CALLBACK-20261001-001",
+  "previous_event_hash": "6bbda9cbd7643045c40ee88f6f1afe49665137d0deb130f57705f5d1a9e78a7a",
+  "lock_sha256": "4054422d22cc4c61e2daca22afe09da35edbc7f6bdf53d1be13f01538ee168d7",
+  "before": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "ROUNDTRIP_CONFIRMED_R5_REVISION_DRAFT_PREPARED"
+  },
+  "after": {
+    "state": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
+    "async_loop": "ONE_ROUNDTRIP_CONFIRMED_AUTOMATIC_RENDER_REVIEW_LOOP_INCOMPLETE",
+    "next_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS"
+  },
+  "evidence": [
+    "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/LOOP_GAP_DIAGNOSIS.json"
+  ],
+  "reason": "核验16:27首份报告确已回传；后续停在主控修订草案，未出新图或再送审。纠正一次消息往返等于自动出图审核闭环的过度表述。",
+  "remote_authority": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814"
+  },
+  "event_hash": "e5f66b6125d9482d4a5558d0af82361ca70ec706df916709f1e628911f963436"
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 205,
+  "revision": 206,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "审核方已通过Opera Neon主动回传，当前主控实际收到并继续处理；报告与既存审图结果一致并去重，R5三项具体修订已成草案，尚未出新图。",
+  "current_stage": "核验16:27首份报告确已回传；后续停在主控修订草案，未出新图或再送审。纠正一次消息往返等于自动出图审核闭环的过度表述。",
   "status": "VPD_MAINLINE_STAGE1_R4_EXECUTED_WAITING_HUMAN_REVIEW",
   "p6_allowed": false,
   "next_required_action": "REVIEW_STAGE1_ACTUAL_OUTPUTS",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "审核方已通过Opera Neon主动回传，当前主控实际收到并继续处理；报告与既存审图结果一致并去重，R5三项具体修订已成草案，尚未出新图。"
+    "核验16:27首份报告确已回传；后续停在主控修订草案，未出新图或再送审。纠正一次消息往返等于自动出图审核闭环的过度表述。"
   ],
-  "updated_at": "2026-10-01T16:32:38.614287+08:00",
+  "updated_at": "2026-10-01T17:48:14.689022+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -2959,7 +2959,7 @@
         "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
         "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
         "recorded_at": "2026-10-01T16:23:24.997248+08:00",
-        "status": "ROUNDTRIP_CONFIRMED_R5_REVISION_DRAFT_PREPARED",
+        "status": "ONE_ROUNDTRIP_CONFIRMED_AUTOMATIC_RENDER_REVIEW_LOOP_INCOMPLETE",
         "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
         "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
         "writer": "PROJECT_COORDINATOR_ONLY",
@@ -3005,7 +3005,10 @@
           "automatic_callback_observed": true,
           "automatic_resumption_observed": true,
           "observed_resumption_mode": "NEW_MESSAGE_STEERED_ACTIVE_COORDINATOR_TURN",
-          "idle_conversation_auto_wake_tested": false
+          "idle_conversation_auto_wake_tested": false,
+          "runtime_proof_scope": "ONE_REVIEWER_PUSH_TO_AN_ACTIVE_COORDINATOR_ONLY",
+          "automatic_next_render_dispatched": false,
+          "completed_render_review_revision_cycles": 0
         },
         "plugin_mention_observed": "Opera Neon",
         "scheduler_event_sources": [
@@ -3028,7 +3031,11 @@
           "sha256": "044179b3b11d3170d6e9b67385929e375a9b57dae7d2c5338b259e49999f56ce"
         },
         "last_processed_callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
-        "next_distinct_review_task_pending": false
+        "next_distinct_review_task_pending": false,
+        "latest_diagnosis": {
+          "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/async_loop/LOOP_GAP_DIAGNOSIS.json",
+          "sha256": "105f6505395d9f53311fc402d8042ee29db33a86bde67a77f0ce98beafa344e4"
+        }
       },
       "next_revision_draft": {
         "path": "evidence/vpd/mainline_stage1_20261001/r4/R5_LOCAL_AMENDMENT_DRAFT.json",
