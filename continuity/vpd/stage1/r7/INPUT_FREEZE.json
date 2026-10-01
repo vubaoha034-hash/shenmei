@@ -1,0 +1,71 @@
+{
+  "schema_version": "vpd-stage-input-freeze/v1",
+  "stage_id": "P3_STAGE1",
+  "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+  "recorded_at": "2026-10-01T18:55:55.710633+08:00",
+  "source_commit": "db707cef28e6faca1db36d2e60ea59ac98daea1a",
+  "input_refs": [
+    {
+      "path": "continuity/vpd/stage1/COMMON_PROMPT.txt",
+      "sha256": "9cd0f35514a7aa43c9c3937773dd115703750415845dc54ba57c60e983c45c5e"
+    },
+    {
+      "path": "continuity/vpd/stage1/r7/DISTILLED_DELTA.txt",
+      "sha256": "6e55075ea13353cd5f7ea989f98af7139a2a60a5304fc7e3369a6e2ac5781483"
+    },
+    {
+      "path": "continuity/vpd/stage1/r7/REFERENCE_BINDING.json",
+      "sha256": "e6de9a2cb6eab5cf01a56c59ef8775abb123aa3e7ae0b702f75c470c2eb4c8b9"
+    },
+    {
+      "path": "continuity/vpd/stage1/r7/LOCAL_AMENDMENT.json",
+      "sha256": "56f5fd3cd265e0416bc2980491269ddb89969ce2e7f923ff61b7cd9e60b8c1c6"
+    }
+  ],
+  "mainline_contract": {
+    "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+    "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+  },
+  "reference_pixels": {
+    "schema_version": "vpd-reference-binding/v1",
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+    "reference_role": "SAME_ORIGINAL_APPROVED_REFERENCE_UPPER_AD_ONLY",
+    "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "local_runtime_path": "/workspace/scratch/251cba462a1a/attachments/8649cec8-4c1f-485b-888e-35e0fe673ba4/R1C-APPROVED-17.jpg",
+    "runtime_bytes_verified_before_freeze": true,
+    "pixel_binding_required": true,
+    "pixel_binding_proof": "Actual referenced_image_paths and output trace to be settled after generation; manifest is not renderer proof."
+  },
+  "brand": "茶作",
+  "copy": "一杯茶，慢下来",
+  "content": "一杯茶、一小份干茶、少量鲜叶；完整茶产品广告",
+  "aspect": "3:2",
+  "output_kind": "COMPLETE_FLAT_POSTER_WITH_PRODUCT_ENVIRONMENT_BRAND_AND_COPY",
+  "primary_renderer": "CHATGPT_IMAGES",
+  "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+  "arms": {
+    "direct_reference": {
+      "prompt": "exact common prompt",
+      "actual_reference_required": true
+    },
+    "distilled_candidate": {
+      "prompt": "exact common prompt + one LF + exact R7 delta",
+      "actual_reference_required": true
+    }
+  },
+  "budget": {
+    "attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false
+  },
+  "unknown_provider_fields": [
+    "model_version",
+    "seed",
+    "quality",
+    "thinking_effort"
+  ],
+  "review_delivery": "Neutral originals only to the same independent reviewer; no prompt or route/ranking disclosed."
+}

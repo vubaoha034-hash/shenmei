@@ -1,0 +1,95 @@
+{
+  "schema_version": "vpd-evidence-based-local-amendment/v1",
+  "status": "FROZEN_FOR_BOUNDED_RETEST",
+  "recorded_at": "2026-10-01T18:55:55.710633+08:00",
+  "stage_id": "P3_STAGE1",
+  "trigger": "ACTUAL_TEST_WHOLE_FAILURE",
+  "new_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+  "actual_test_identity": {
+    "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
+    "source_commit": "db707cef28e6faca1db36d2e60ea59ac98daea1a",
+    "output_labels": [
+      "31",
+      "76"
+    ]
+  },
+  "actual_input_and_output_or_error_receipts": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
+    "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
+  },
+  "human_feedback_scope_when_visual": {
+    "scope": "WHOLE_POSTER",
+    "feedback_class": "USER_DELEGATED_INDEPENDENT_SCREENING",
+    "feedback": {
+      "path": "evidence/vpd/mainline_stage1_20261001/r6/REVIEW_RECEIPT.json",
+      "sha256": "d998d903620835ba6a034f40bdc21e73c87b97c575860006e50942059cea7a75"
+    },
+    "delegation_authority": {
+      "path": "continuity/vpd/stage1/r5/REVIEW_DELEGATION.json",
+      "sha256": "ef2638ffa61dd6c26060c08ca5dcd63b398cdf7cb810e1985ddbf53bc0e267ad"
+    },
+    "user_personal_feedback": false
+  },
+  "observed_vs_hypothesized_cause": {
+    "observed": [
+      "左上品牌仍偏大，与茶杯和右上标题共同竞争视觉层级",
+      "标题虽位于有效负空间，但与杯口、木板或干茶盘缺少明确几何关系，仍有悬浮贴字感",
+      "鲜叶、干茶、木板和苔藓的高光与微对比偏强，陪体和环境抢质感"
+    ],
+    "positive_observations_to_preserve": [
+      "木板统一产品舞台",
+      "茶杯第一视觉及集中产品主簇",
+      "右上深色负空间、统一光向和正确中文"
+    ],
+    "hypotheses": [
+      "A concrete small brand-to-cup proportion and a single nearby cup-rim title anchor may realize the intended hierarchy more clearly than the failed shared-margin instruction.",
+      "A shaded capture, smaller partially occluded auxiliaries and dry matte surfaces may reduce the persistent competing detail."
+    ],
+    "not_established": [
+      "Individual causal effect of each wording change",
+      "Commercial completion of the next output",
+      "User personal aesthetic acceptance"
+    ]
+  },
+  "one_changed_component": {
+    "id": "ADDED_DISTILLED_VISUAL_RELATIONS_BLOCK",
+    "baseline": {
+      "path": "continuity/vpd/stage1/r6/DISTILLED_DELTA.txt",
+      "sha256": "dfbddf70e2b22eeec7610ae289fbc08ce4461c56433fab89188bb53b9ad9d859"
+    },
+    "candidate": {
+      "path": "continuity/vpd/stage1/r7/DISTILLED_DELTA.txt",
+      "sha256": "6e55075ea13353cd5f7ea989f98af7139a2a60a5304fc7e3369a6e2ac5781483"
+    },
+    "change": "Preserve the useful R6 cup-first carrier and negative space; replace vague small-brand and alignment wording with one local proportion and contact relation.",
+    "interpretability_limit": "Only the added prompt block changes; internal clauses are not independent causal tests."
+  },
+  "preserved_components": [
+    "Original R pixels only as generation reference;63 remains feedback evidence.",
+    "Same frozen common prompt, 茶作 brand, 一杯茶，慢下来 copy, product content and3:2 full-poster objective.",
+    "Cup-first product cluster, common wood carrier and dark title space from76; small brand size did not succeed in R6.",
+    "All R6 originals, actual trace, explicit user delegation and negative independent review.",
+    "One original-reference control and one revised candidate, one output per arm."
+  ],
+  "bounded_retest_budget": {
+    "proposed_attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0,
+    "authorized_now": 2
+  },
+  "activation": "Standing explicit user instruction 所以现在你改好而后继续闭环, followed by the verified R6 independent callback.",
+  "review_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r6/REVIEW_RECEIPT.json",
+    "sha256": "d998d903620835ba6a034f40bdc21e73c87b97c575860006e50942059cea7a75"
+  },
+  "callback_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/CALLBACK_RECEIPT.json",
+    "sha256": "f0251a5bc20214226df82ed9fb5ab51b2a47c9bb0cc8ede9889396c72bd845da"
+  },
+  "formal_skill_or_global_rule_promotion": false,
+  "no_photo_only_repair_loop": true
+}

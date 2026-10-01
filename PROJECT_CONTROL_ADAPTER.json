@@ -820,7 +820,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_MAINLINE_STAGE1_R6_EXECUTED_WAITING_INDEPENDENT_REVIEW",
+    "checkpoint": "VPD_MAINLINE_STAGE1_R7_AUTHORIZED",
     "challenge_ids": [
       "H1",
       "H2",
@@ -858,9 +858,9 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+    "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
     "formal_outputs_verified": null,
-    "render_allowed": false,
+    "render_allowed": true,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "formal_render_attempt2_classification": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
     "reconciliation": {
@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 215,
-    "sha256": "fb5d9d115fd43f5141bc75cfc049fc2822e9b3588f7aa005496f491318cf7257",
+    "revision": 217,
+    "sha256": "48090d02ff5704802ed9140e2757fe8ff8eb86eb53f2f6f6d2df6bae7aaf55a7",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,10 +981,10 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_MAINLINE_STAGE1_R6_EXECUTED_WAITING_INDEPENDENT_REVIEW",
+    "status": "VPD_MAINLINE_STAGE1_R7_AUTHORIZED",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R6",
-    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+    "subtask_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+    "next_required_action": "EXECUTE_STAGE1_FROZEN_TASK",
     "plan": {
       "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
       "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
@@ -992,29 +992,8 @@
     "mode": "LOCKED_COMPLETE_POSTER_FIRST",
     "existing_results_preserved": true,
     "primary_renderer": "CHATGPT_IMAGES",
-    "current_generation_authorization": 0,
-    "current_chat_render_eligible": false,
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_stage1_20261001/r6/EXECUTION_RECEIPT.json",
-      "sha256": "9c0eb6056644dacb02a88963be64980487a982f2cb73f250566a96e9c7678b05"
-    },
-    "independent_review": {
-      "task_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "NEW_OUTPUT_REVIEW_SENT_AWAITING_REVIEWER_PUSH",
-      "claim": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/DISPATCH_CLAIM.json",
-        "sha256": "247fd41d79eb869f91d130877d2ec099a9ab0863796c8156d7fcda1ed7495f55"
-      },
-      "active_attempt_id": "VPD-STAGE1-R6-EXTERNAL-BLIND-REVIEW-20261001-01-ATTEMPT1",
-      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
-      "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false,
-      "latest_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r6/independent_review/DISPATCH_RECEIPT.json",
-        "sha256": "b50638b6deed638383303ce326aa47d34f8eff8b4952e0633c14dcf8a5b1b1f6"
-      }
-    }
+    "current_generation_authorization": 2,
+    "current_chat_render_eligible": true
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1044,8 +1023,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-R6-DISPATCH-20261001-001",
-      "event_hash": "f3483fb75e9f0e081c1a4049f3025cc4a592c8a76f1276a594b278423f34b403"
+      "event_id": "EVT-VPD-R7-AUTHORIZE-20261001-001",
+      "event_hash": "1552417df5d00d792522ad7475316d92c85f4e71c77c841e3f6b5c6465fc8780"
     }
   },
   "mature_workflow_audit": {
