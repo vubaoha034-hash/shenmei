@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-async-review-loop/v1",
+  "task_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01",
+  "parent_task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R4",
+  "source_commit": "f5a900020fa10b391033ccb6e62e8c76d969597d",
+  "recorded_at": "2026-10-01T16:23:24.997248+08:00",
+  "status": "CLAIMED_READY_TO_SEND",
+  "attempt_id": "VPD-ASYNC-REVIEW-LOOP-20261001-01-ATTEMPT1",
+  "callback_id": "VPD-R4-REVIEW-CALLBACK-20261001-01",
+  "writer": "PROJECT_COORDINATOR_ONLY",
+  "coordinator_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+  "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+  "coordinator_identity_evidence": "Observed exact latest user request for the Opera Neon two-way loop and previous final with lock=202/checkpoint=224 in this conversation.",
+  "authorization": {
+    "source": "EXPLICIT_USER_REQUEST_20261001",
+    "scope": "Reviewer actively sends each finished report to the coordinator via Opera Neon; coordinator resumes work and sends the next distinct review task without user relaying or waiting.",
+    "round_by_round_user_review_required": false,
+    "reviewer_repo_writes": false,
+    "no_new_images_in_transport_test": true
+  },
+  "message_sha256": "f089b5fa24ff02317f8387a37166a3f26e215edc8f9e142d857b27281457e9bb",
+  "draft_readback_match": true,
+  "send_clicks": 0,
+  "existing_result_receipt": {
+    "path": "evidence/vpd/mainline_stage1_20261001/r4/independent_review/REVIEW_RESULT.json",
+    "sha256": "fed7a472161399fb09b6b0d62c25cdde98170e69f8919df31151fbd075204655"
+  },
+  "on_callback": {
+    "identity_fields": [
+      "callback_id",
+      "parent_task_id",
+      "reviewer_url",
+      "image_identities"
+    ],
+    "deduplicate_existing_report": true,
+    "record_transport_receipt": true,
+    "resume_action": "PREPARE_EVIDENCE_BASED_LOCAL_AMENDMENT_WITHIN_LOCKED_MAINLINE",
+    "do_not_send_ack_as_another_review_task": true,
+    "do_not_relabel_external_review_as_user_feedback": true
+  },
+  "loop": {
+    "coordinator_polls": false,
+    "reviewer_waits_for_coordinator": false,
+    "only_new_outputs_trigger_next_review": true,
+    "stop_conditions": [
+      "REVIEW_PASSES",
+      "ACTUAL_TECHNICAL_BLOCK",
+      "AUTHORIZED_TASK_BUDGET_EXHAUSTED"
+    ],
+    "automatic_callback_observed": false,
+    "automatic_resumption_observed": false
+  },
+  "plugin_mention_observed": "Opera Neon",
+  "scheduler_event_sources": [
+    "GitHub",
+    "Gmail"
+  ],
+  "scheduler_chat_message_event_exposed": false,
+  "schedule_created": false,
+  "proof_limit": "A future autonomous roundtrip is not established until the reviewer message and coordinator resumption are actually observed."
+}
