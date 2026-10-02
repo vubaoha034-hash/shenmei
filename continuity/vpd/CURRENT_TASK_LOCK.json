@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 243,
+  "revision": 244,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "当前接续聊天已实际收到唯一新地址确认，核对回传及父任务身份并处理一次；新回传地址测试完成。P7交付、P4/P5结论、全部预算和真人未验收范围保持不变，不回信、不出图、不重审。",
+  "current_stage": "当前接续协调聊天实际收到唯一二次地址测试；核对父任务、来源会话和当前收件地址，去重处理并保留首次测试证据。P7交付、P4/P5结论、出图预算和真人未验收范围不变，不出图、不重审、不发送外部回信。",
   "status": "VPD_MAINLINE_BOUNDED_DELIVERY_COMPLETE_WITH_KNOWN_LIMITATIONS",
   "p6_allowed": false,
   "next_required_action": "MAINLINE_DELIVERY_COMPLETE_STOP",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "当前接续聊天已实际收到唯一新地址确认，核对回传及父任务身份并处理一次；新回传地址测试完成。P7交付、P4/P5结论、全部预算和真人未验收范围保持不变，不回信、不出图、不重审。"
+    "当前接续协调聊天实际收到唯一二次地址测试；核对父任务、来源会话和当前收件地址，去重处理并保留首次测试证据。P7交付、P4/P5结论、出图预算和真人未验收范围不变，不出图、不重审、不发送外部回信。"
   ],
-  "updated_at": "2026-10-02T12:21:47.762505+08:00",
+  "updated_at": "2026-10-02T12:57:13.837391+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P7",
@@ -2904,15 +2904,20 @@
     "target_verification": "VERIFIED_BY_ACTUAL_RECIPIENT_MESSAGE",
     "route_repair": {
       "path": "continuity/vpd/coordinator_route_repair_20261002/ROUTE_REPAIR.json",
-      "sha256": "6964f93e4449e648b38f86a1250f1ac399b5e49e88f1aff07fba852edcc1368a"
+      "sha256": "0a816d084d11c04562ca66e29c341e0da9aaa023466bc11967ababf45012ff7c"
     },
     "active_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
-    "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-20261002-01",
+    "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-01",
     "callback_receipt": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/RETRY_CALLBACK_RECEIPT.json",
+      "sha256": "10ffd27fb4a3ca778362631934688547a85355a8b39db42bbae155ba842bdab3"
+    },
+    "pending_callback": false,
+    "next_transport_action": "NONE_CURRENT_ROUTE_TEST_COMPLETE",
+    "prior_callback_receipt": {
       "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
       "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
     },
-    "pending_callback": false,
-    "next_transport_action": "NONE_CURRENT_ROUTE_TEST_COMPLETE"
+    "callback_tests_processed": 2
   }
 }

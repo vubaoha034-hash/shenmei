@@ -2,7 +2,7 @@
   "task_id": "VPD-COORDINATOR-ROUTE-REBIND-20261002-01",
   "attempt_id": "VPD-COORDINATOR-ROUTE-REBIND-20261002-01-ATTEMPT1",
   "source_commit": "5a9362d0f778688144ef331f124454d86886fe33",
-  "recorded_at": "2026-10-02T12:21:47.762234+08:00",
+  "recorded_at": "2026-10-02T12:57:13.836975+08:00",
   "status": "ROUTE_REPAIR_COMPLETED_CALLBACK_RECEIVED",
   "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
   "requested_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
@@ -35,11 +35,26 @@
     "helper_limit": "Project-only helper URL schema cannot handle authorized existing standalone reviewer; used exact URL/text and all observed task-message inventory comparator."
   },
   "active_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
-  "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-20261002-01",
+  "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-01",
   "callback_receipt": {
     "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
     "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
   },
-  "callback_processed_count": 1,
-  "awaiting_ack": false
+  "callback_processed_count": 2,
+  "awaiting_ack": false,
+  "latest_callback_receipt": {
+    "path": "continuity/vpd/coordinator_route_repair_20261002/RETRY_CALLBACK_RECEIPT.json",
+    "sha256": "10ffd27fb4a3ca778362631934688547a85355a8b39db42bbae155ba842bdab3"
+  },
+  "callback_test_receipts": [
+    {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
+      "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
+    },
+    {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/RETRY_CALLBACK_RECEIPT.json",
+      "sha256": "10ffd27fb4a3ca778362631934688547a85355a8b39db42bbae155ba842bdab3"
+    }
+  ],
+  "second_test_status": "VERIFIED_BY_ACTUAL_RECIPIENT_MESSAGE"
 }

@@ -1,0 +1,41 @@
+{
+  "schema_version": "vpd-coordinator-route-callback-receipt/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "task_id": "VPD-COORDINATOR-ROUTE-REBIND-20261002-01",
+  "callback_id": "VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-01",
+  "source_commit": "d0205cbf25d5d3088ab07f73afbfa97e4bbf0670",
+  "received_at": "2026-10-02T12:52:34+08:00",
+  "recorded_at": "2026-10-02T12:57:13.836692+08:00",
+  "status": "SECOND_ROUTE_TEST_RECEIVED_IN_CURRENT_COORDINATOR",
+  "source_reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+  "actual_destination_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
+  "stable_destination_conversation_id": "6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
+  "observed_callback_count": 1,
+  "processed_count": 1,
+  "deduplicated": true,
+  "observed_message_sha256": "55a536a44f87ad5d1bed3cf772219e971cf87cbdd7b25dc2beeb865384bfe9dd",
+  "identity_checks": [
+    "Retry callback ID",
+    "Parent route task ID",
+    "Reviewer conversation ID",
+    "Current destination conversation ID",
+    "Unique actual recipient message in tab34"
+  ],
+  "current_coordinator_new_turn_received": true,
+  "actual_target_body_loaded": true,
+  "target_composer_empty": true,
+  "prior_test_receipt": {
+    "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
+    "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
+  },
+  "authority": "Current received test explicitly requests a second delivery check under the existing route-rebind task.",
+  "sender_mechanism": "Recipient delivery is independently observed through Opera Neon. Sender click trace not inspected in this turn.",
+  "incoming_link_markup": "Incoming Markdown link included trailing message text in its href; canonical reviewer identity is confirmed from the stored route and visible conversation ID. No navigation to malformed href.",
+  "scope": "Second delivery test of this route only; no persistent unattended-runtime or global-browser-health claim.",
+  "business_result_changes": false,
+  "new_images": 0,
+  "new_business_review": false,
+  "human_aesthetic_acceptance": false,
+  "external_reply_sent": false,
+  "private_observation_locator": "LOCAL_PRIVATE_SCRATCH:route_retry_ack_observed.json"
+}

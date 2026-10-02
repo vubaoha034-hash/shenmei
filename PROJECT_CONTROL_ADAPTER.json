@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 243,
-    "sha256": "a961daef54c270f5c1d163a7504d54ab5ff4965eada1bab4d088ec93c9fa14ae",
+    "revision": 244,
+    "sha256": "0065251b46551970f191ce730e866259c7e4ca9192b6f155cf0083d71e4797ef",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1034,8 +1034,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-COORDINATOR-ROUTE-ACK-20261002-001",
-      "event_hash": "df57efe3532f76f768854b1845dfca0e9689f8c6438b6145212d8053c4572cd5"
+      "event_id": "EVT-VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-001",
+      "event_hash": "1dfdeea1330cb8d60284c297ea50e39da133bb3a1a2e1100690fec48e52da150"
     }
   },
   "mature_workflow_audit": {
@@ -1615,15 +1615,20 @@
     "target_verification": "VERIFIED_BY_ACTUAL_RECIPIENT_MESSAGE",
     "route_repair": {
       "path": "continuity/vpd/coordinator_route_repair_20261002/ROUTE_REPAIR.json",
-      "sha256": "6964f93e4449e648b38f86a1250f1ac399b5e49e88f1aff07fba852edcc1368a"
+      "sha256": "0a816d084d11c04562ca66e29c341e0da9aaa023466bc11967ababf45012ff7c"
     },
     "active_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
-    "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-20261002-01",
+    "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-01",
     "callback_receipt": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/RETRY_CALLBACK_RECEIPT.json",
+      "sha256": "10ffd27fb4a3ca778362631934688547a85355a8b39db42bbae155ba842bdab3"
+    },
+    "pending_callback": false,
+    "next_transport_action": "NONE_CURRENT_ROUTE_TEST_COMPLETE",
+    "prior_callback_receipt": {
       "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
       "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
     },
-    "pending_callback": false,
-    "next_transport_action": "NONE_CURRENT_ROUTE_TEST_COMPLETE"
+    "callback_tests_processed": 2
   }
 }
