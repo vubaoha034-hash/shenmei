@@ -1,0 +1,141 @@
+{
+  "schema_version": "vpd-stage-execution-receipt/v1",
+  "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+  "stage_id": "P4_ASPECT",
+  "recorded_at": "2026-10-02T08:34:25.297435+08:00",
+  "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
+  "authorized_state_commit": "9b118580b7547e00955be18a75cfe485fc92c299",
+  "authorization_receipt": {
+    "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
+    "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
+  },
+  "frozen_inputs": {
+    "path": "continuity/vpd/p4_aspect/20261002_r1/INPUT_FREEZE.json",
+    "sha256": "801c9ddf90880ffe874127816b906e1d9374a6651198bd641f6b247a3ad30d02"
+  },
+  "trace": {
+    "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/ACTUAL_TOOL_TRACE.json",
+    "sha256": "0af02ccf22fdc30cbf2ce0f8cf6fc719a0bdd50ff0fdeee6ef943497ed51e05c"
+  },
+  "primary_renderer": "CHATGPT_IMAGES",
+  "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
+  "attempts_consumed": 2,
+  "attempts_remaining": 0,
+  "outputs": [
+    {
+      "label": "26",
+      "content_id": "tofu",
+      "arm": "direct_reference",
+      "file_name": "VPD_P4_ASPECT_R1_26_20261002.png",
+      "mime_type": "image/png",
+      "sha256": "ef8832b5495d4808515c46fc879e57b85af5029b1d14dd7df5e9956b8451c0da",
+      "dimensions": [
+        1054,
+        1492
+      ],
+      "bytes": 2492882,
+      "drive_file_id": "1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL",
+      "drive_url": "https://drive.google.com/file/d/1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL/view?usp=drivesdk",
+      "format_gate_passed": false,
+      "requested_dimensions": [
+        1152,
+        2048
+      ],
+      "requested_aspect": "9:16",
+      "provider_readback": {
+        "id": "1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL",
+        "mime_type": "image/png",
+        "size": 2492882,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "label": "71",
+      "content_id": "tofu",
+      "arm": "distilled_candidate",
+      "file_name": "VPD_P4_ASPECT_R1_71_20261002.png",
+      "mime_type": "image/png",
+      "sha256": "ae91a85cd9adf4ba4819bc0e1cf4f6ca2942517ef6e434a88d35e4a2f33dfba5",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "bytes": 2432694,
+      "drive_file_id": "1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I",
+      "drive_url": "https://drive.google.com/file/d/1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I/view?usp=drivesdk",
+      "format_gate_passed": false,
+      "requested_dimensions": [
+        1152,
+        2048
+      ],
+      "requested_aspect": "9:16",
+      "provider_readback": {
+        "id": "1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I",
+        "mime_type": "image/png",
+        "size": 2432694,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "errors": [
+    {
+      "label": "26",
+      "code": "OUTPUT_FORMAT_MISMATCH",
+      "requested_dimensions": [
+        1152,
+        2048
+      ],
+      "actual_dimensions": [
+        1054,
+        1492
+      ],
+      "exact_ratio_equation": {
+        "width_times_16": 16864,
+        "height_times_9": 13428,
+        "passed": false
+      },
+      "retry_attempted": false,
+      "postprocessing_attempted": false
+    },
+    {
+      "label": "71",
+      "code": "OUTPUT_FORMAT_MISMATCH",
+      "requested_dimensions": [
+        1152,
+        2048
+      ],
+      "actual_dimensions": [
+        941,
+        1672
+      ],
+      "exact_ratio_equation": {
+        "width_times_16": 15056,
+        "height_times_9": 15048,
+        "passed": false
+      },
+      "retry_attempted": false,
+      "postprocessing_attempted": false
+    }
+  ],
+  "status": "AWAITING_INDEPENDENT_REVIEW",
+  "human_verdict": "NOT_REVIEWED",
+  "correctness": {
+    "reference_bound_in_all_actual_calls": true,
+    "actual_dimensions_and_hashes_verified": true,
+    "formats_and_dimensions_match_requested": false,
+    "exact_9_16_gate": {
+      "26": false,
+      "71": false
+    },
+    "postprocessing_crop_stretch_resize": false,
+    "quality_and_absolute_taste": "AWAITING_INDEPENDENT_REVIEW"
+  },
+  "interpretability_limit": "The renderer returned different aspect ratios despite identical frozen 9:16 instructions; strict aspect transfer has not passed. Visual assessment remains possible on the unmodified originals; it cannot establish exact-format success.",
+  "review_delegation": {
+    "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
+    "sha256": "95a8f625ab834d0bed848b69b2ae6cfe9ee0be97409f4316bbc0989f6169bc05"
+  },
+  "promotion_allowed": false
+}
