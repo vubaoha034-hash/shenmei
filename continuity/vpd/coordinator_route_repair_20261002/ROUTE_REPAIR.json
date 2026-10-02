@@ -2,8 +2,8 @@
   "task_id": "VPD-COORDINATOR-ROUTE-REBIND-20261002-01",
   "attempt_id": "VPD-COORDINATOR-ROUTE-REBIND-20261002-01-ATTEMPT1",
   "source_commit": "5a9362d0f778688144ef331f124454d86886fe33",
-  "recorded_at": "2026-10-02T10:04:39.470515+08:00",
-  "status": "CLAIMED_READY_TO_SEND",
+  "recorded_at": "2026-10-02T10:06:39.910499+08:00",
+  "status": "DISPATCHED_ONCE_WAITING_ROUTE_VERIFICATION",
   "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
   "requested_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
   "prior_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
@@ -15,12 +15,23 @@
   "one_writer": "CURRENT_COORDINATOR",
   "frozen_message_utf8_sha256": "9d9a42139427e5d4984f21af21e42baafeab7655e1d01947aa5bd35eec3d325c",
   "frozen_message_private_locator": "LOCAL_PRIVATE_SCRATCH:route_dispatch_freeze.json",
-  "send_clicks": 0,
+  "send_clicks": 1,
   "prior_result_action": "P7 already completed by original coordinator; current coordinator returns existing delivery to user, no duplicate business work.",
   "no_generation_or_rereview": true,
   "operational_authority": {
     "path": "continuity/vpd/coordinator_route_repair_20261002/OPERATIONAL_CONTINUATION.json",
     "sha256": "ee57aed56fbe5496ee04abb311997c375f5aab1d58a1cb37e535a4718be492fd"
   },
-  "host_global_interception": false
+  "host_global_interception": false,
+  "dispatch_observation": {
+    "draft_match": true,
+    "sent_match": true,
+    "send_clicks": 1,
+    "observed_target_task_count": 1,
+    "url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+    "composer_text": "",
+    "selected_app": "opera-neon",
+    "pending_ack": true,
+    "helper_limit": "Project-only helper URL schema cannot handle authorized existing standalone reviewer; used exact URL/text and all observed task-message inventory comparator."
+  }
 }
