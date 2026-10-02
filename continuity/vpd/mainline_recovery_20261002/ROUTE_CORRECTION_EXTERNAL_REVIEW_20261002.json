@@ -1,0 +1,51 @@
+{
+  "schema_version": "vpd-mainline-route-correction/v1",
+  "task_id": "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-02T14:51:30+08:00",
+  "source_head": "b5d26aa070736d68736f7abecdc7309b15ca5e22",
+  "correction_scope": "STATE_ROUTING_ONLY_NO_IMAGE_GENERATION_NO_REVIEW_RERUN_NO_PIXEL_CHANGE",
+  "corrected_user_intent": {
+    "summary": "高级感P日常视觉成品先进入项目外新聊天的独立AI审核；审核结果回传高级感P，由项目按结论修正或淘汰，必要时再次项目外复核；达到项目内部可交付标准后，才进入刘先生最终真人审美验收。",
+    "external_review_is_not_human_acceptance": true,
+    "do_not_send_to_liu_before_external_review_and_project_settlement": true
+  },
+  "superseded_route": {
+    "revision": 245,
+    "status": "VPD_MAINLINE_RECOVERED_WAITING_LIU_HUMAN_AESTHETIC_REVIEW_88",
+    "next_required_action": "LIU_XIANSHENG_REVIEW_CANDIDATE_88_AND_RETURN_ACTUAL_AESTHETIC_VERDICT",
+    "superseded_reason": "协调端误把最终真人验收门提前成第一轮审核；不代表刘先生改变既有流程。"
+  },
+  "preserved_candidate_88": {
+    "image_pixels_modified": false,
+    "candidate_id": "88",
+    "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+    "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1"
+  },
+  "preserved_history": {
+    "p7": true,
+    "p4": true,
+    "p5": true,
+    "route_test_receipts": true,
+    "prior_hashes_and_verdicts": true
+  },
+  "corrected_flow": {
+    "current_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+    "review_surface": "FRESH_EXTERNAL_CHAT_OUTSIDE_PROJECT",
+    "review_actor": "INDEPENDENT_AI_VISUAL_REVIEWER",
+    "callback_required": true,
+    "project_settlement_required": true,
+    "on_fail": "PROCESS_NEAREST_DELIVERABLE_VISUAL_ISSUE_IDENTIFIED_BY_REVIEW_THEN_EXTERNAL_REVIEW_AGAIN_IF_NEEDED",
+    "on_internal_deliverable_pass": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW",
+    "external_review_must_not_be_claimed_as_liu_acceptance": true
+  },
+  "generation_count": 0,
+  "review_rerun_count": 0,
+  "candidate88_pixel_change": false,
+  "next_legal_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 267,
-  "recorded_at": "2026-10-02T14:51:00+08:00",
+  "sequence": 268,
+  "recorded_at": "2026-10-02T14:51:30+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01"
   ],
-  "current_focus": "P7有界交付已完成且旧审核/路由测试已结清；当前真正主线进入刘先生本人审美验收门。只送审图88这一张实际完整海报，67/92/68/93保留但不并行送审；不出新图、不重跑P4/P5/P7、不写新规则/Gate/validator。",
+  "current_focus": "图88保持原件不变；当前串行流程为先派发到项目外新聊天做独立AI视觉审核，审核结果必须回传高级感P并由项目结算。只有项目按外审结论处理并达到内部可交付标准后，才允许进入刘先生最终真人审美验收。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,13 +357,14 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "图88当前等待刘先生本人实际审美结论；67、92、68、93保留为已通过独立初筛的样张，但本轮不并行送审。",
-    "精确9:16和1152×2048输出未通过；26、71保留原件与格式失败，本轮不重跑。",
-    "长期方法晋升、可编辑商业源文件及规模化验证尚未完成，未自动启动。",
-    "旧候选244:2仍待真人结论，保留历史身份，但不是当前串行主线。"
+    "图88尚未派发到项目外新聊天独立AI视觉审核。",
+    "外审结果尚未回传高级感P并完成项目内结算。",
+    "若外审FAIL，尚未按审核定位处理最近可交付视觉问题并完成必要复核。",
+    "只有达到项目内部可交付标准后，才可进入刘先生最终真人审美验收。",
+    "精确9:16和1152×2048输出未通过；历史失败继续保留，本轮不重跑。"
   ],
   "blocked": [],
-  "next_required_action": "LIU_XIANSHENG_REVIEW_CANDIDATE_88_AND_RETURN_ACTUAL_AESTHETIC_VERDICT",
+  "next_required_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -431,11 +432,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_RECOVERED_WAITING_LIU_HUMAN_AESTHETIC_REVIEW_88",
+  "status": "VPD_MAINLINE_ROUTE_CORRECTED_WAITING_EXTERNAL_VISUAL_REVIEW_DISPATCH_88",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "d454358d1a2eff03443b50ef07c4d78b83c4c25a0a185961a66685f22b1614fc",
-    "revision": 245
+    "sha256": "e669aa2c10f7b3f5143ddf6ca57383e933a7cc3a2b8d2ec8708dccb29a379d08",
+    "revision": 246
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -456,8 +457,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-MAINLINE-RECOVERY-HUMAN-GATE-20261002-001",
-      "event_hash": "a7fb06d260b0ae643751d53926434024a36098553a6b789fd9d48501831c035b"
+      "event_id": "EVT-VPD-MAINLINE-ROUTE-CORRECTION-EXTERNAL-REVIEW-20261002-001",
+      "event_hash": "90ccc90d573c7cd6f5cb9504ee8f4fcca303102377e4038fa557f4597830985c"
     }
   },
   "typography_repair": {
@@ -972,8 +973,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "P7有界交付已完成且旧审核/路由测试已结清；当前真正主线进入刘先生本人审美验收门。只送审图88这一张实际完整海报，67/92/68/93保留但不并行送审；不出新图、不重跑P4/P5/P7、不写新规则/Gate/validator。",
-  "updated_at": "2026-10-02T14:51:00+08:00",
+  "current_stage": "图88保持原件不变；当前串行流程为先派发到项目外新聊天做独立AI视觉审核，审核结果必须回传高级感P并由项目结算。只有项目按外审结论处理并达到内部可交付标准后，才允许进入刘先生最终真人审美验收。",
+  "updated_at": "2026-10-02T14:51:30+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1845,7 +1846,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "恢复P7之后的真实视觉主线；核实P7个人审美未验收是明确未完成项；Google Drive实际核到图88原件；将图88设为当前唯一真人审美材料并STOP，未生成新图、未重审旧组、未重复路由测试。"
+    "纠正revision245提前进入刘先生真人审核的误路由；保留图88及P7/P4/P5全部事实、hash和历史结论；当前改为先项目外独立AI审核，回传项目结算后再决定修正/淘汰/复核，达到内部可交付标准后才进入刘先生最终真人审美验收。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2438,11 +2439,17 @@
       "Broader unseen-style and scale validation"
     ],
     "post_p7_human_review": {
-      "status": "WAITING_LIU_XIANSHENG_ACTUAL_AESTHETIC_VERDICT",
+      "status": "DEFERRED_UNTIL_EXTERNAL_REVIEW_AND_PROJECT_SETTLEMENT_REACH_INTERNAL_DELIVERABLE_STANDARD",
       "candidate_id": "88",
-      "candidate_drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-      "candidate_sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
-      "serial_only": true
+      "human_personal_acceptance": false,
+      "current_route": false
+    },
+    "post_p7_external_review": {
+      "status": "WAITING_DISPATCH_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+      "candidate_id": "88",
+      "serial_only": true,
+      "callback_required": true,
+      "project_settlement_required": true
     }
   },
   "operational_continuation": {
@@ -2475,7 +2482,7 @@
   },
   "mainline_recovery_20261002": {
     "task_id": "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01",
-    "status": "VPD_MAINLINE_RECOVERED_WAITING_LIU_HUMAN_AESTHETIC_REVIEW_88",
+    "status": "VPD_MAINLINE_ROUTE_CORRECTED_WAITING_EXTERNAL_VISUAL_REVIEW_DISPATCH_88",
     "receipt": {
       "path": "continuity/vpd/mainline_recovery_20261002/MAINLINE_RECOVERY_AND_HUMAN_REVIEW_GATE.json",
       "sha256": "301100fdc9f70df4b08186c978779655780d23d19ec93d9b5c7ab20c633b89f1"
@@ -2499,10 +2506,42 @@
         "92",
         "68",
         "93"
-      ]
+      ],
+      "superseded_as_current_route": true,
+      "preserved_as_historical_record": true,
+      "not_current_action": true
     },
     "technical_blockers": [],
     "human_personal_acceptance": false,
-    "next_legal_action": "LIU_XIANSHENG_REVIEW_CANDIDATE_88_AND_RETURN_ACTUAL_AESTHETIC_VERDICT"
+    "next_legal_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+    "route_correction": {
+      "path": "continuity/vpd/mainline_recovery_20261002/ROUTE_CORRECTION_EXTERNAL_REVIEW_20261002.json",
+      "sha256": "b41ed3e4ba31adf4f4b4d7d1b531f5298e1c8f25258b2229727ced0f13708549"
+    },
+    "current_external_review_gate": {
+      "candidate_id": "88",
+      "review_surface": "FRESH_EXTERNAL_CHAT_OUTSIDE_PROJECT",
+      "review_actor": "INDEPENDENT_AI_VISUAL_REVIEWER",
+      "callback_required": true,
+      "project_settlement_required": true
+    }
+  },
+  "mainline_route_correction_20261002": {
+    "task_id": "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01",
+    "status": "VPD_MAINLINE_ROUTE_CORRECTED_WAITING_EXTERNAL_VISUAL_REVIEW_DISPATCH_88",
+    "correction_receipt": {
+      "path": "continuity/vpd/mainline_recovery_20261002/ROUTE_CORRECTION_EXTERNAL_REVIEW_20261002.json",
+      "sha256": "b41ed3e4ba31adf4f4b4d7d1b531f5298e1c8f25258b2229727ced0f13708549"
+    },
+    "revision245_direct_liu_route_superseded": true,
+    "candidate_88_pixels_modified": false,
+    "candidate_88_facts_preserved": true,
+    "p7_p4_p5_history_preserved": true,
+    "external_review_role": "PROJECT_EXTERNAL_INDEPENDENT_AI_REVIEW_NOT_LIU_HUMAN_ACCEPTANCE",
+    "dispatch_target": "FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+    "callback_and_project_settlement_required": true,
+    "fail_branch": "REPAIR_OR_ELIMINATE_NEAREST_DELIVERABLE_VISUAL_ISSUE_THEN_REVIEW_AGAIN_IF_NEEDED",
+    "pass_branch": "ONLY_AFTER_INTERNAL_DELIVERABLE_STANDARD_LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW",
+    "next_legal_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
   }
 }
