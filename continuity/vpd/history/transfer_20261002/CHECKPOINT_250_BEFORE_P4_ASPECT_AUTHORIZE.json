@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 251,
-  "recorded_at": "2026-10-02T08:23:57.518183+08:00",
+  "sequence": 250,
+  "recorded_at": "2026-10-02T08:23:57.432320+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "依据内容迁移实报，冻结豆坊9:16竖版两路对照；只改变画幅及对应画布尺寸，保留内容、文案、原始参考和蒸馏关系块，授权本阶段2次，后续第二风格留4次。",
+  "current_focus": "P4内容迁移主动回传已核对并去重：豆腐67与草莓92达到独立完整广告初筛门槛，14及39保留为需修订对照；个人审美未验收，进入画幅验证。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -358,7 +358,7 @@
     "尚无长期方法晋升或完整商业交付"
   ],
   "blocked": [],
-  "next_required_action": "EXECUTE_P4_ASPECT_FROZEN_TASK",
+  "next_required_action": "PREPARE_NEXT_STAGE_AFTER_P4_CONTENT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -426,10 +426,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_P4_ASPECT_R1_AUTHORIZED",
+  "status": "VPD_MAINLINE_P4_CONTENT_R1_SCREENING_PASSED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "f59cb5f07e7d3237957c8aef8d8f02e211f99fafda57025df2265723748760c8"
+    "sha256": "946f8afe6c1e4f654d442cd2b0be6d9fd627549c85a2605d9ae1ce83228e682b"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-ASPECT-AUTHORIZE-20261002-001",
-      "event_hash": "925e403cac9f333bb5c718e886505fb6c56dacc269caebb4b9615443f08bd792"
+      "event_id": "EVT-VPD-P4-CONTENT-CALLBACK-20261002-001",
+      "event_hash": "5f2f0a08f30b698379fe18550ddf329dbd29982f94a5da0f6ae15ce96846d372"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "依据内容迁移实报，冻结豆坊9:16竖版两路对照；只改变画幅及对应画布尺寸，保留内容、文案、原始参考和蒸馏关系块，授权本阶段2次，后续第二风格留4次。",
-  "updated_at": "2026-10-02T08:23:57.518183+08:00",
+  "current_stage": "P4内容迁移主动回传已核对并去重：豆腐67与草莓92达到独立完整广告初筛门槛，14及39保留为需修订对照；个人审美未验收，进入画幅验证。",
+  "updated_at": "2026-10-02T08:23:57.432320+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "依据内容迁移实报，冻结豆坊9:16竖版两路对照；只改变画幅及对应画布尺寸，保留内容、文案、原始参考和蒸馏关系块，授权本阶段2次，后续第二风格留4次。"
+    "P4内容迁移主动回传已核对并去重：豆腐67与草莓92达到独立完整广告初筛门槛，14及39保留为需修订对照；个人审美未验收，进入画幅验证。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2320,36 +2320,121 @@
     "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
   },
   "mainline_progress": {
-    "stage_id": "P4_ASPECT",
-    "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
-    "status": "AUTHORIZED",
-    "attempts_consumed": 0,
-    "outputs": [],
+    "stage_id": "P4_CONTENT",
+    "status": "PASSED",
+    "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+    "attempts_consumed": 4,
+    "outputs": [
+      {
+        "label": "14",
+        "content_id": "tofu",
+        "arm": "direct_reference",
+        "file_name": "VPD_P4_CONTENT_R1_14_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "62e4fe2f5618f128ac2872b840431a7a5cabd1eef7cfbc0424516cb36fd8bddd",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2868301,
+        "drive_file_id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+        "drive_url": "https://drive.google.com/file/d/18RVvyOSS4KImcV2dJ_ulftp88k3hQst9/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+          "mime_type": "image/png",
+          "size": 2868301,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "67",
+        "content_id": "tofu",
+        "arm": "distilled_candidate",
+        "file_name": "VPD_P4_CONTENT_R1_67_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "cc06d23618a6b90c9a487465fa28cd13e24bf2ec025e13d03143a04427fd14c3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2470059,
+        "drive_file_id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+        "drive_url": "https://drive.google.com/file/d/1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+          "mime_type": "image/png",
+          "size": 2470059,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "39",
+        "content_id": "strawberry",
+        "arm": "direct_reference",
+        "file_name": "VPD_P4_CONTENT_R1_39_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "ed98249445bd4c60c342faeedf4394038ed7e130940929c75792953b76630f8c",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2955427,
+        "drive_file_id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
+        "drive_url": "https://drive.google.com/file/d/1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
+          "mime_type": "image/png",
+          "size": 2955427,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "92",
+        "content_id": "strawberry",
+        "arm": "distilled_candidate",
+        "file_name": "VPD_P4_CONTENT_R1_92_20261001.png",
+        "mime_type": "image/png",
+        "sha256": "5ab1b38a5cf18dcd2343293b235e3ddfd33bc505b7d05b07b05285f705d28fbe",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2822429,
+        "drive_file_id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
+        "drive_url": "https://drive.google.com/file/d/1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4/view?usp=drivesdk",
+        "provider_readback": {
+          "id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
+          "mime_type": "image/png",
+          "size": 2822429,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      }
+    ],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [
       {
         "path": "continuity/vpd/mainline_completion_20261001/P3_STAGE_PROGRESSION_RECEIPT.json",
         "sha256": "68c6c84006efb6fa743f304221acc7396909fa97f25164f717a836779b8ffafe"
-      },
-      {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
-        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
       }
     ],
-    "planned_attempts_max": 2,
+    "planned_attempts_max": 4,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 2,
+      "images": 0,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
+        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
       }
     },
     "input_freeze": {
-      "path": "continuity/vpd/p4_aspect/20261002_r1/INPUT_FREEZE.json",
-      "sha256": "801c9ddf90880ffe874127816b906e1d9374a6651198bd641f6b247a3ad30d02"
+      "path": "continuity/vpd/p4_content/20261001_r1/INPUT_FREEZE.json",
+      "sha256": "678f4bcfed5cea29947bd329eddc15210a17e1a67fa0294c13764f6c9b90fd2a"
     },
     "review_delegation": {
       "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
@@ -2361,39 +2446,238 @@
     },
     "budget_state": {
       "path": "continuity/vpd/mainline_completion_20261001/BUDGET_STATE.json",
-      "sha256": "4425063aaaed22f512d9ab47b834948954fc9607e549971a9bf655634262dfb4"
+      "sha256": "ad676c22d4fec219c4887bdda3c69d3b9429a2b17e9f01b65c350815ee58a5f4"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
       "review_receipt": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
-        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
+        "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
+        "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
       },
-      "callback_receipt": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/CALLBACK_RECEIPT.json",
-        "sha256": "22103457510ecd6416b351c96ae31543d389f6e018b26957c238a6b3a7ac954d"
-      },
-      "selected_images": [
-        "67",
-        "92"
+      "originals": [
+        {
+          "arm": "direct_reference",
+          "label": "53",
+          "file_name": "VPD_CHAZUO_R7_53_20261001.png",
+          "mime_type": "image/png",
+          "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "bytes": 2568026,
+          "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+          "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
+          "provider_readback": {
+            "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
+            "mime_type": "image/png",
+            "size": 2568026,
+            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+            "verified": true
+          }
+        },
+        {
+          "arm": "distilled_candidate",
+          "label": "88",
+          "file_name": "VPD_CHAZUO_R7_88_20261001.png",
+          "mime_type": "image/png",
+          "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "bytes": 2176052,
+          "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+          "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
+          "provider_readback": {
+            "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+            "mime_type": "image/png",
+            "size": 2176052,
+            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+            "verified": true
+          }
+        }
       ],
       "human_verdict": "NOT_REVIEWED"
     },
     "session": {
-      "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
+      "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "AUTHORIZED_INPUTS_FROZEN",
+      "status": "CONTENT_TRANSFER_SCREENING_COMPLETE",
       "opening_receipt": {
-        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
+        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
+      },
+      "closing_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
+        "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
       }
     },
     "neutral_review_delivery": {
       "identifiers": [
-        "26",
-        "71"
+        "14",
+        "67",
+        "39",
+        "92"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    }
+    },
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
+      "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
+    },
+    "independent_review": {
+      "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
+      "status": "INDEPENDENT_SCREENING_COMPLETE_CONTENT_TRANSFER_READY",
+      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+      "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
+      "frozen_message": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/FROZEN_DISPATCH_RECEIPT.json",
+        "sha256": "e90190e7ef2ca185b638c5b95976b8163ab63d6d7b243a721422059e15834eb8"
+      },
+      "block_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
+        "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
+      },
+      "actual_send_clicks": 1,
+      "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
+      "reviewer_writes_repo": false,
+      "human_acceptance_replaced": false,
+      "claim": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
+        "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
+      },
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
+      },
+      "transport_block_resolved": true,
+      "review_result": "COMPLETE",
+      "last_processed_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
+      "callback_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/CALLBACK_RECEIPT.json",
+        "sha256": "22103457510ecd6416b351c96ae31543d389f6e018b26957c238a6b3a7ac954d"
+      },
+      "reviewer_verdict": {
+        "callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
+        "parent_task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
+        "render_task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+        "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+        "image_files": {
+          "R": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+          "14": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+          "67": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+          "39": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
+          "92": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4"
+        },
+        "actual_sha256": {
+          "R": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+          "14": "62e4fe2f5618f128ac2872b840431a7a5cabd1eef7cfbc0424516cb36fd8bddd",
+          "67": "cc06d23618a6b90c9a487465fa28cd13e24bf2ec025e13d03143a04427fd14c3",
+          "39": "ed98249445bd4c60c342faeedf4394038ed7e130940929c75792953b76630f8c",
+          "92": "5ab1b38a5cf18dcd2343293b235e3ddfd33bc505b7d05b07b05285f705d28fbe"
+        },
+        "pixels_loaded": {
+          "R": true,
+          "14": true,
+          "67": true,
+          "39": true,
+          "92": true
+        },
+        "image_identity_evidence": {
+          "R": [
+            "上半幅中央为大型圆形藤编托盘，托盘上排列多片红色肉片并带绿色配料",
+            "左上为白色品牌字标，右下为大型白色中文标题，托盘右侧可见木勺与葫芦状器物"
+          ],
+          "14": [
+            "中央为一大块白豆腐与两片厚切豆腐，统一置于深色木托盘内",
+            "左下有木碗黄豆并有多颗散豆，右上大面积米白色网状压榨布，左上为大号“豆坊”"
+          ],
+          "67": [
+            "右侧木板上是一整块白豆腐，前方叠放两块明显切面，豆腐表面可见细小孔隙",
+            "左下有黄豆碗和散豆，后方铺米白压榨布；左上小号“豆坊”，左中两行“一方豆腐，一口豆香”"
+          ],
+          "39": [
+            "中央藤编托盘内堆叠多颗整草莓并有两块切开草莓，周围伴随大量绿色草莓叶",
+            "左上为大号“果间”，右上为大号两行“一口鲜甜，慢慢尝”，画面前后还有多颗托盘外草莓"
+          ],
+          "92": [
+            "左中木盘内集中放置多颗整草莓与两块切开草莓，切面朝向镜头，绿叶主要围绕产品边缘",
+            "左上为小号“果间”，右上深色虚化负空间内为两行“一口鲜甜，慢慢尝”"
+          ]
+        },
+        "image_verdicts": {
+          "14": "NEEDS_REVISION",
+          "67": "READY_FOR_USER_REVIEW",
+          "39": "NEEDS_REVISION",
+          "92": "READY_FOR_USER_REVIEW"
+        },
+        "relative_choices": {
+          "tofu": "67",
+          "strawberry": "92"
+        },
+        "whole_set_ready": true,
+        "critical_issues": {
+          "14": [
+            "品牌与标题同时过大，与豆腐形成近似同级视觉锚点",
+            "黄豆与压榨布面积过重，辅助物削弱主产品集中度",
+            "豆腐、黄豆、木托盘、苔藓和布料同时高锐高亮，材质主次不足"
+          ],
+          "67": [
+            "豆腐切面孔隙与表面高光略强，局部有过湿、过细腻观感",
+            "左下黄豆仍稍醒目，但属于非阻塞问题"
+          ],
+          "39": [
+            "大品牌、大标题与草莓主簇同时竞争第一视觉",
+            "草莓红色饱和、镜面高光与籽粒锐度过强，真实感下降",
+            "叶片与托盘外草莓过多，压缩产品边界和文字留白"
+          ],
+          "92": [
+            "草莓果面高光和红色饱和度仍略强",
+            "切面中心略偏亮、偏通透，但属于非阻塞问题"
+          ]
+        },
+        "preserve": {
+          "14": [
+            "大块豆腐与切面关系",
+            "木托盘承托",
+            "豆腐白、黄豆暖黄与自然绿的配色"
+          ],
+          "67": [
+            "小品牌—大标题—主产品的三层关系",
+            "豆腐整块与切面结构",
+            "木板、黄豆、压榨布组成的完整产品叙事"
+          ],
+          "39": [
+            "整颗与切开草莓的完整产品结构",
+            "藤编托盘聚合产品",
+            "红绿食欲对比"
+          ],
+          "92": [
+            "小品牌、右上标题与左中产品主簇的清晰层级",
+            "木盘统一承托与受控绿叶",
+            "可信主光、景深与完整草莓结构"
+          ]
+        },
+        "next_changes": [
+          "若继续精修豆腐，沿67降低豆腐表面湿亮高光和切面微对比，保留现有版式层级",
+          "若继续精修草莓，沿92降低果面镜面高光与红色饱和度，并增加切面自然纤维/水分层次",
+          "若继续处理14或39，只降低品牌/标题权重和辅助物占比，不增加新元素"
+        ],
+        "confidence": "HIGH"
+      },
+      "ready_candidate_ids": [
+        "67",
+        "92"
+      ],
+      "automatic_revision_loop_stopped": true
+    },
+    "review_verdict": "PASSED",
+    "review_receipt": {
+      "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+      "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
+    },
+    "screening_verdict": "TWO_CONTENT_CANDIDATES_READY"
   }
 }

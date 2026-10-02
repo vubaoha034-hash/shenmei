@@ -1,0 +1,39 @@
+{
+  "schema_version": "vpd-stage-execution-authorization/v1",
+  "authority_class": "EXPLICIT_USER_STAGE_EXECUTION",
+  "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+  "stage_id": "P4_ASPECT",
+  "recorded_at": "2026-10-02T08:23:57.507986+08:00",
+  "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
+  "source": {
+    "kind": "STANDING_USER_MAINLINE_COMPLETION_SCOPE",
+    "authority": {
+      "path": "continuity/vpd/mainline_completion_20261001/COMPLETION_EXECUTION_SCOPE.json",
+      "sha256": "39f4d1751ef9b82315d249634a7b9957ab67ce46e1e7e87776fe916ac14606ce"
+    },
+    "user_quote": "现在做成闭环了吗？我们能不能完成",
+    "trigger_callback": {
+      "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/CALLBACK_RECEIPT.json",
+      "sha256": "22103457510ecd6416b351c96ae31543d389f6e018b26957c238a6b3a7ac954d"
+    }
+  },
+  "authorized_images": 2,
+  "attempts_max": 2,
+  "per_arm": 1,
+  "retries": 0,
+  "hidden_variants": 0,
+  "best_of_n": false,
+  "figma_writes": 0,
+  "external_compute_usd": 0,
+  "input_freeze": {
+    "path": "continuity/vpd/p4_aspect/20261002_r1/INPUT_FREEZE.json",
+    "sha256": "801c9ddf90880ffe874127816b906e1d9374a6651198bd641f6b247a3ad30d02"
+  },
+  "review_delegation": {
+    "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
+    "sha256": "95a8f625ab834d0bed848b69b2ae6cfe9ee0be97409f4316bbc0989f6169bc05"
+  },
+  "total_continuation_ceiling": 10,
+  "consumed_before_this_stage": 4,
+  "remaining_after_successful_two_calls": 4
+}

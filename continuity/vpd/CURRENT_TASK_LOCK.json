@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 227,
+  "revision": 229,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "P4四张完整海报的冻结审核任务已原文发送一次并回读核验；原审核聊天使用Chat极高思考，等待主动回传，未新增出图。",
-  "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_DISPATCHED_WAITING_CALLBACK",
+  "current_stage": "依据内容迁移实报，冻结豆坊9:16竖版两路对照；只改变画幅及对应画布尺寸，保留内容、文案、原始参考和蒸馏关系块，授权本阶段2次，后续第二风格留4次。",
+  "status": "VPD_MAINLINE_P4_ASPECT_R1_AUTHORIZED",
   "p6_allowed": false,
-  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
+  "next_required_action": "EXECUTE_P4_ASPECT_FROZEN_TASK",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 0,
+    "current_image_generation_authorization": 2,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "current_image_generation_count_max": 0,
+    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+    "current_image_generation_count_max": 2,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -155,7 +155,7 @@
     "photo_repair_loop_closed": true,
     "repair04_allowed": false,
     "modify_accepted_repair03_photo": false,
-    "successor_execution_authorized": false,
+    "successor_execution_authorized": true,
     "add_new_rules_gates_validators": false,
     "new_mainline_contract": {
       "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "P4四张完整海报的冻结审核任务已原文发送一次并回读核验；原审核聊天使用Chat极高思考，等待主动回传，未新增出图。"
+    "依据内容迁移实报，冻结豆坊9:16竖版两路对照；只改变画幅及对应画布尺寸，保留内容、文案、原始参考和蒸馏关系块，授权本阶段2次，后续第二风格留4次。"
   ],
-  "updated_at": "2026-10-02T08:13:41.276095+08:00",
+  "updated_at": "2026-10-02T08:23:57.518183+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": false,
+  "render_allowed": true,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2771,121 +2771,36 @@
     "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
   },
   "mainline_progress": {
-    "stage_id": "P4_CONTENT",
-    "status": "AWAITING_INDEPENDENT_REVIEW",
-    "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "attempts_consumed": 4,
-    "outputs": [
-      {
-        "label": "14",
-        "content_id": "tofu",
-        "arm": "direct_reference",
-        "file_name": "VPD_P4_CONTENT_R1_14_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "62e4fe2f5618f128ac2872b840431a7a5cabd1eef7cfbc0424516cb36fd8bddd",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2868301,
-        "drive_file_id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
-        "drive_url": "https://drive.google.com/file/d/18RVvyOSS4KImcV2dJ_ulftp88k3hQst9/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
-          "mime_type": "image/png",
-          "size": 2868301,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "label": "67",
-        "content_id": "tofu",
-        "arm": "distilled_candidate",
-        "file_name": "VPD_P4_CONTENT_R1_67_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "cc06d23618a6b90c9a487465fa28cd13e24bf2ec025e13d03143a04427fd14c3",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2470059,
-        "drive_file_id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
-        "drive_url": "https://drive.google.com/file/d/1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
-          "mime_type": "image/png",
-          "size": 2470059,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "label": "39",
-        "content_id": "strawberry",
-        "arm": "direct_reference",
-        "file_name": "VPD_P4_CONTENT_R1_39_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "ed98249445bd4c60c342faeedf4394038ed7e130940929c75792953b76630f8c",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2955427,
-        "drive_file_id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
-        "drive_url": "https://drive.google.com/file/d/1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1y5pK1TS5J3nQ7NLm1QiOcy4zKZ79kZV2",
-          "mime_type": "image/png",
-          "size": 2955427,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      },
-      {
-        "label": "92",
-        "content_id": "strawberry",
-        "arm": "distilled_candidate",
-        "file_name": "VPD_P4_CONTENT_R1_92_20261001.png",
-        "mime_type": "image/png",
-        "sha256": "5ab1b38a5cf18dcd2343293b235e3ddfd33bc505b7d05b07b05285f705d28fbe",
-        "dimensions": [
-          1536,
-          1024
-        ],
-        "bytes": 2822429,
-        "drive_file_id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
-        "drive_url": "https://drive.google.com/file/d/1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4/view?usp=drivesdk",
-        "provider_readback": {
-          "id": "1otLYJp_wSErAlcEYnyeiE08_PoAlh8B4",
-          "mime_type": "image/png",
-          "size": 2822429,
-          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-          "verified": true
-        }
-      }
-    ],
+    "stage_id": "P4_ASPECT",
+    "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+    "status": "AUTHORIZED",
+    "attempts_consumed": 0,
+    "outputs": [],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [
       {
         "path": "continuity/vpd/mainline_completion_20261001/P3_STAGE_PROGRESSION_RECEIPT.json",
         "sha256": "68c6c84006efb6fa743f304221acc7396909fa97f25164f717a836779b8ffafe"
+      },
+      {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
       }
     ],
-    "planned_attempts_max": 4,
+    "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 0,
+      "images": 2,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
+        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
       }
     },
     "input_freeze": {
-      "path": "continuity/vpd/p4_content/20261001_r1/INPUT_FREEZE.json",
-      "sha256": "678f4bcfed5cea29947bd329eddc15210a17e1a67fa0294c13764f6c9b90fd2a"
+      "path": "continuity/vpd/p4_aspect/20261002_r1/INPUT_FREEZE.json",
+      "sha256": "801c9ddf90880ffe874127816b906e1d9374a6651198bd641f6b247a3ad30d02"
     },
     "review_delegation": {
       "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
@@ -2897,114 +2812,39 @@
     },
     "budget_state": {
       "path": "continuity/vpd/mainline_completion_20261001/BUDGET_STATE.json",
-      "sha256": "ad676c22d4fec219c4887bdda3c69d3b9429a2b17e9f01b65c350815ee58a5f4"
+      "sha256": "4425063aaaed22f512d9ab47b834948954fc9607e549971a9bf655634262dfb4"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-STAGE1-CHAZUO-20261001-R7",
+      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
       "review_receipt": {
-        "path": "evidence/vpd/mainline_stage1_20261001/r7/REVIEW_RECEIPT.json",
-        "sha256": "19b0d04c89d1d2fee651f61990606e8412307206da5ef308f0c692cca59abfc0"
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
       },
-      "originals": [
-        {
-          "arm": "direct_reference",
-          "label": "53",
-          "file_name": "VPD_CHAZUO_R7_53_20261001.png",
-          "mime_type": "image/png",
-          "sha256": "19afc5125ded5b7be0104580078c85c3efeebf8450ab0d05ac8e86be3a679c5c",
-          "dimensions": [
-            1536,
-            1024
-          ],
-          "bytes": 2568026,
-          "drive_file_id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-          "drive_url": "https://drive.google.com/file/d/1LoLqlvyA88mEV79qENEVqxXIedgaswj6/view?usp=drivesdk",
-          "provider_readback": {
-            "id": "1LoLqlvyA88mEV79qENEVqxXIedgaswj6",
-            "mime_type": "image/png",
-            "size": 2568026,
-            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-            "verified": true
-          }
-        },
-        {
-          "arm": "distilled_candidate",
-          "label": "88",
-          "file_name": "VPD_CHAZUO_R7_88_20261001.png",
-          "mime_type": "image/png",
-          "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
-          "dimensions": [
-            1536,
-            1024
-          ],
-          "bytes": 2176052,
-          "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-          "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
-          "provider_readback": {
-            "id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
-            "mime_type": "image/png",
-            "size": 2176052,
-            "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
-            "verified": true
-          }
-        }
+      "callback_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/CALLBACK_RECEIPT.json",
+        "sha256": "22103457510ecd6416b351c96ae31543d389f6e018b26957c238a6b3a7ac954d"
+      },
+      "selected_images": [
+        "67",
+        "92"
       ],
       "human_verdict": "NOT_REVIEWED"
     },
     "session": {
-      "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
+      "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "GENERATED_SAVED_REVIEW_DISPATCHED",
+      "status": "AUTHORIZED_INPUTS_FROZEN",
       "opening_receipt": {
-        "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
-      },
-      "closing_receipt": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
-        "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
+        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
       }
     },
     "neutral_review_delivery": {
       "identifiers": [
-        "14",
-        "67",
-        "39",
-        "92"
+        "26",
+        "71"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
-    },
-    "execution_receipt": {
-      "path": "evidence/vpd/mainline_p4_content_20261001/r1/EXECUTION_RECEIPT.json",
-      "sha256": "b4c31244f458eb8994c0b412b2ddb53eb57e9b819a8e4f07a0854124cbaa6503"
-    },
-    "independent_review": {
-      "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "SENT_AWAITING_REVIEWER_CALLBACK",
-      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
-      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
-      "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
-      "frozen_message": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/FROZEN_DISPATCH_RECEIPT.json",
-        "sha256": "e90190e7ef2ca185b638c5b95976b8163ab63d6d7b243a721422059e15834eb8"
-      },
-      "block_receipt": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
-        "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
-      },
-      "actual_send_clicks": 1,
-      "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
-      "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false,
-      "claim": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
-        "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
-      },
-      "latest_receipt": {
-        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_RECEIPT.json",
-        "sha256": "46ea81d0f96f3d7931423ce3315abfcc7670bdd82a2cf5ab8c4f0a2182c748ee"
-      },
-      "transport_block_resolved": true,
-      "review_result": "PENDING"
     }
   },
   "legacy_fields_scope": {

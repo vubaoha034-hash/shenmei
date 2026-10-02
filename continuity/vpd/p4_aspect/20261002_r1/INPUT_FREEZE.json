@@ -1,0 +1,138 @@
+{
+  "schema_version": "vpd-stage-input-freeze/v1",
+  "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+  "stage_id": "P4_ASPECT",
+  "recorded_at": "2026-10-02T08:23:57.507986+08:00",
+  "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
+  "reference_pixels": {
+    "schema_version": "vpd-reference-binding/v1",
+    "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+    "reference_role": "SAME_ORIGINAL_APPROVED_REFERENCE_UPPER_AD_ONLY",
+    "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+    "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+    "local_runtime_path": "/workspace/scratch/251cba462a1a/attachments/8649cec8-4c1f-485b-888e-35e0fe673ba4/R1C-APPROVED-17.jpg",
+    "runtime_bytes_verified_before_freeze": true,
+    "pixel_binding_required": true,
+    "pixel_binding_proof": "Actual referenced_image_paths and output trace to be settled after generation; manifest is not renderer proof."
+  },
+  "input_refs": [
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/REFERENCE_BINDING.json",
+      "sha256": "89ba727c160792e056f844e3eb20e0e502853ba7fde5ce7e0671ef5e9bc80ae5"
+    },
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/COMMON_PROMPT.txt",
+      "sha256": "3d8306f4eed0faa7923e3295058eca3e4a87544f21c7ad6e1df942306a5a6aab"
+    },
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/DISTILLED_DELTA.txt",
+      "sha256": "e8c2b616cccc824fafb6df790dbf7f0f1a2d17c57e921a87f7ef97b768ed87ce"
+    },
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/ASPECT_ONLY_CHANGE_RECEIPT.json",
+      "sha256": "acdadb0284a51784136d22f7f54b4f85c21b25aa3f2c8bc4bce65ed4b655f63c"
+    },
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+      "sha256": "3d8306f4eed0faa7923e3295058eca3e4a87544f21c7ad6e1df942306a5a6aab"
+    },
+    {
+      "path": "continuity/vpd/p4_aspect/20261002_r1/DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+      "sha256": "2f1dfe9a5fb6f447327a0cfdc6dcd823dc7dacce97208d287ca1e5da151bed5c"
+    }
+  ],
+  "calls": [
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "direct_reference",
+      "label": "26",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_aspect/20261002_r1/DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+        "sha256": "3d8306f4eed0faa7923e3295058eca3e4a87544f21c7ad6e1df942306a5a6aab"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "distilled_candidate",
+      "label": "71",
+      "exact_prompt": {
+        "path": "continuity/vpd/p4_aspect/20261002_r1/DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+        "sha256": "2f1dfe9a5fb6f447327a0cfdc6dcd823dc7dacce97208d287ca1e5da151bed5c"
+      },
+      "attempts_max": 1
+    }
+  ],
+  "budget": {
+    "attempts_max": 2,
+    "per_arm": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0
+  },
+  "aspect": "9:16",
+  "requested_dimensions": [
+    1152,
+    2048
+  ],
+  "generation_authorized": true,
+  "generation_reference_policy": "R original only. Neither67 nor92 is a generation attachment.",
+  "prior_stage_result": {
+    "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+    "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
+  },
+  "comparison_prior_outputs": [
+    {
+      "label": "14",
+      "content_id": "tofu",
+      "arm": "direct_reference",
+      "file_name": "VPD_P4_CONTENT_R1_14_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "62e4fe2f5618f128ac2872b840431a7a5cabd1eef7cfbc0424516cb36fd8bddd",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2868301,
+      "drive_file_id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+      "drive_url": "https://drive.google.com/file/d/18RVvyOSS4KImcV2dJ_ulftp88k3hQst9/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "18RVvyOSS4KImcV2dJ_ulftp88k3hQst9",
+        "mime_type": "image/png",
+        "size": 2868301,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    },
+    {
+      "label": "67",
+      "content_id": "tofu",
+      "arm": "distilled_candidate",
+      "file_name": "VPD_P4_CONTENT_R1_67_20261001.png",
+      "mime_type": "image/png",
+      "sha256": "cc06d23618a6b90c9a487465fa28cd13e24bf2ec025e13d03143a04427fd14c3",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2470059,
+      "drive_file_id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+      "drive_url": "https://drive.google.com/file/d/1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC/view?usp=drivesdk",
+      "provider_readback": {
+        "id": "1bUd2bOBIWpAeAXHOnhSvds1xMpzjxmwC",
+        "mime_type": "image/png",
+        "size": 2470059,
+        "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+        "verified": true
+      }
+    }
+  ],
+  "neutral_review_delivery": "26 and71, no arm mapping or controller ranking before verdict",
+  "promotion_allowed": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "vpd-aspect-only-input-change/v1",
+  "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+  "stage_id": "P4_ASPECT",
+  "recorded_at": "2026-10-02T08:23:57.507986+08:00",
+  "source_content_task": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
+  "source_review": {
+    "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+    "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
+  },
+  "source_common": {
+    "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_COMMON_PROMPT.txt",
+    "sha256": "1f7a0e2001fe8d966c34e59e59975853948a6973e625718d326d903abf0ce783"
+  },
+  "source_delta": {
+    "path": "continuity/vpd/p4_content/20261001_r1_preparation/TOFU_DISTILLED_DELTA.txt",
+    "sha256": "e8c2b616cccc824fafb6df790dbf7f0f1a2d17c57e921a87f7ef97b768ed87ce"
+  },
+  "exact_common_replacement": {
+    "from": "三比二横版完整产品海报",
+    "to": "九比十六竖版完整产品海报（画布1152×2048像素）"
+  },
+  "candidate_delta_bytes_unchanged": true,
+  "only_experimental_change": "OUTPUT_ASPECT_3_2_TO_9_16_AND_MATCHING_CANVAS_DIMENSIONS",
+  "preserved": [
+    "原始R唯一参考",
+    "豆坊白豆腐、黄豆与压榨布内容",
+    "原文案",
+    "两路结构与每臂一次",
+    "既有蒸馏关系块原文"
+  ],
+  "no_nonblocking_material_refinement_added": true,
+  "no_crop_stretch_or_composite_postprocessing": true,
+  "format_gate": "Actual original width*16 == height*9 must be checked. Failure consumes the attempt; no resize or hidden retry."
+}
