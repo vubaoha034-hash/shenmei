@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 236,
+  "revision": 237,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "第二风格四张原件、R11参照及唯一回传目标已绑定，派发认领已冻结；仅准备发送本轮新组一次，未把认领当作送达。",
+  "current_stage": "第二风格审核已通过Opera Neon实际发送一次：审核会话URL、完整消息及唯一新消息均核验，输入框清空。预算10/10，余0；由审核方主动回传后结算交付，不轮询、不重发。",
   "status": "VPD_MAINLINE_P5_SECOND_STYLE_R1_EXECUTED_WAITING_INDEPENDENT_REVIEW",
   "p6_allowed": false,
   "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "第二风格四张原件、R11参照及唯一回传目标已绑定，派发认领已冻结；仅准备发送本轮新组一次，未把认领当作送达。"
+    "第二风格审核已通过Opera Neon实际发送一次：审核会话URL、完整消息及唯一新消息均核验，输入框清空。预算10/10，余0；由审核方主动回传后结算交付，不轮询、不重发。"
   ],
-  "updated_at": "2026-10-02T09:28:07.815632+08:00",
+  "updated_at": "2026-10-02T09:32:31.455528+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -2965,7 +2965,7 @@
     "format_gate_passed": true,
     "independent_review": {
       "task_id": "VPD-P5-SECOND-STYLE-R1-EXTERNAL-BLIND-REVIEW-20261002-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "DISPATCHED_ONCE_CONFIRMED",
       "claim": {
         "path": "evidence/vpd/mainline_p5_second_style_20261002/r1/independent_review/DISPATCH_CLAIM.json",
         "sha256": "b7aac2452ef6ef8761c438c87c5f762777fb7c5b1f354c8d4712d238d5b82be2"
@@ -2975,7 +2975,11 @@
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "reviewer_writes_repo": false,
       "human_acceptance_replaced": false,
-      "expected_callback_id": "VPD-P5-SECOND-STYLE-R1-REVIEW-CALLBACK-20261002-01"
+      "expected_callback_id": "VPD-P5-SECOND-STYLE-R1-REVIEW-CALLBACK-20261002-01",
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p5_second_style_20261002/r1/independent_review/DISPATCH_RECEIPT.json",
+        "sha256": "398cfe2e91eec1311f63e09a31a98268bb4eb605262ca6242c25b12224721b6e"
+      }
     }
   },
   "legacy_fields_scope": {
