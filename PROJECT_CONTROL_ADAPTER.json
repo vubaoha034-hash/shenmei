@@ -820,7 +820,7 @@
   "vpd_system_goal_authority": {
     "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
     "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
-    "checkpoint": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
+    "checkpoint": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_DISPATCHED_WAITING_CALLBACK",
     "challenge_ids": [
       "H1",
       "H2",
@@ -858,7 +858,7 @@
       "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
       "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
     },
-    "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
+    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
     "formal_outputs_verified": null,
     "render_allowed": false,
     "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 226,
-    "sha256": "743c2968a043d51b6965597018c72298791cafad70a68cb3db3dd0bde192408f",
+    "revision": 227,
+    "sha256": "34500432a873bdbfb4fa808fd0b0e8432414c16fa145f605a8baf3398bd29e1f",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,10 +981,10 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
+    "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_DISPATCHED_WAITING_CALLBACK",
     "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
     "subtask_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
-    "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
+    "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
     "plan": {
       "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
       "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
@@ -1004,7 +1004,7 @@
     },
     "independent_review": {
       "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "SENT_AWAITING_REVIEWER_CALLBACK",
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
@@ -1016,14 +1016,20 @@
         "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
         "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
       },
-      "actual_send_clicks": 0,
+      "actual_send_clicks": 1,
       "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
       "reviewer_writes_repo": false,
       "human_acceptance_replaced": false,
       "claim": {
         "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
         "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
-      }
+      },
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_RECEIPT.json",
+        "sha256": "46ea81d0f96f3d7931423ce3315abfcc7670bdd82a2cf5ab8c4f0a2182c748ee"
+      },
+      "transport_block_resolved": true,
+      "review_result": "PENDING"
     }
   },
   "preserved_prior_current_mainline": {
@@ -1054,8 +1060,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-CLAIM-20261002-001",
-      "event_hash": "67de9a842c49d1524e6a6a3e2a8c96852e23ff7104a1c9d220f30ff6aa443555"
+      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-DISPATCH-20261002-001",
+      "event_hash": "1488a2b84e3f410b81d6cf89ddf6216333cca5be85cf47c856bc5b5103904577"
     }
   },
   "mature_workflow_audit": {

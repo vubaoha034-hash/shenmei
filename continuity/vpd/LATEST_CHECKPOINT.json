@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 248,
-  "recorded_at": "2026-10-02T08:09:26.786776+08:00",
+  "sequence": 249,
+  "recorded_at": "2026-10-02T08:13:41.276095+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。",
+  "current_focus": "P4四张完整海报的冻结审核任务已原文发送一次并回读核验；原审核聊天使用Chat极高思考，等待主动回传，未新增出图。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -352,13 +352,13 @@
     "stage1_r4_two_full_posters_generated_archived_and_neutral_identifiers_bound_20261001"
   ],
   "incomplete": [
-    "R4两张完整海报已生成保存；摄影真实性与整幅设计仍待真人判断",
+    "P4豆腐与草莓四张完整海报已生成保存并派审，独立审核及回传尚未完成",
     "内容、画幅与第二风格复验尚未完成",
     "旧候选244:2仍待真人结论，保留但不是新主线前置条件",
     "尚无长期方法晋升或完整商业交付"
   ],
   "blocked": [],
-  "next_required_action": "REPAIR_P4_CONTENT_OBSERVED_EXECUTION_PROBLEM",
+  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -426,10 +426,10 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
+  "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_DISPATCHED_WAITING_CALLBACK",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "743c2968a043d51b6965597018c72298791cafad70a68cb3db3dd0bde192408f"
+    "sha256": "34500432a873bdbfb4fa808fd0b0e8432414c16fa145f605a8baf3398bd29e1f"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-CLAIM-20261002-001",
-      "event_hash": "67de9a842c49d1524e6a6a3e2a8c96852e23ff7104a1c9d220f30ff6aa443555"
+      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-DISPATCH-20261002-001",
+      "event_hash": "1488a2b84e3f410b81d6cf89ddf6216333cca5be85cf47c856bc5b5103904577"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。",
-  "updated_at": "2026-10-02T08:09:26.786776+08:00",
+  "current_stage": "P4四张完整海报的冻结审核任务已原文发送一次并回读核验；原审核聊天使用Chat极高思考，等待主动回传，未新增出图。",
+  "updated_at": "2026-10-02T08:13:41.276095+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。"
+    "P4四张完整海报的冻结审核任务已原文发送一次并回读核验；原审核聊天使用Chat极高思考，等待主动回传，未新增出图。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2321,7 +2321,7 @@
   },
   "mainline_progress": {
     "stage_id": "P4_CONTENT",
-    "status": "TECHNICAL_BLOCKED",
+    "status": "AWAITING_INDEPENDENT_REVIEW",
     "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
     "attempts_consumed": 4,
     "outputs": [
@@ -2503,7 +2503,7 @@
     "session": {
       "source_commit": "5a8a897837f421134df2553de3f83ac51bd3ea0c",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "GENERATED_SAVED_REVIEW_TRANSPORT_BLOCKED",
+      "status": "GENERATED_SAVED_REVIEW_DISPATCHED",
       "opening_receipt": {
         "path": "continuity/vpd/p4_content/20261001_r1/EXECUTION_AUTHORIZATION.json",
         "sha256": "c29a113cdcd27707cafdc3e7bb1128810e329f954a6cfe6baf39b0dbb1901b41"
@@ -2528,7 +2528,7 @@
     },
     "independent_review": {
       "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "SENT_AWAITING_REVIEWER_CALLBACK",
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
@@ -2540,14 +2540,20 @@
         "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/TRANSPORT_BLOCK_RECEIPT.json",
         "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
       },
-      "actual_send_clicks": 0,
+      "actual_send_clicks": 1,
       "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
       "reviewer_writes_repo": false,
       "human_acceptance_replaced": false,
       "claim": {
         "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
         "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
-      }
+      },
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_RECEIPT.json",
+        "sha256": "46ea81d0f96f3d7931423ce3315abfcc7670bdd82a2cf5ab8c4f0a2182c748ee"
+      },
+      "transport_block_resolved": true,
+      "review_result": "PENDING"
     }
   }
 }
