@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 247,
+  "revision": 248,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "图88项目外独立冷审已回传并核对为FAIL。已按minimum_next_action完成一个局部修订R1：摄影主体、综合色彩与总体构图冻结；只重做茶作品牌记忆点与字标/主文案关系。正式R1已上传Drive，下一步只派发到新的项目外独立视觉复核；复核PASS并由项目结算前禁止进入刘先生最终审美门。",
-  "status": "VPD_CANDIDATE_88_EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_EXTERNAL_REVIEW_DISPATCH",
+  "current_stage": "候选88修订R1项目外复核已完成并FAIL；按外审最小动作完成R2：唯一母题收敛为弧线/茶汤轨迹，清除字标碎切口，文案统一衬线家族，深绿场取消无意义削角；摄影、综合色彩和总体构图继续冻结。R2正式候选exactly 1已上传Drive，下一步只送新的项目外冷审。",
+  "status": "VPD_CANDIDATE_88_R1_EXTERNAL_FAIL_SETTLED_R2_READY_FOR_FRESH_EXTERNAL_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R2_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -164,12 +164,11 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "核对并结算VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-CALLBACK-20261002-01。",
-    "保留图88原件及P7/P4/P5历史事实不变。",
-    "按外审最小动作完成候选88局部修订R1；正式候选exactly 1，原图未覆盖。",
-    "两个越界生成式编辑结果明确丢弃，不进入候选、不送审。"
+    "保存R1新鲜项目外冷审结果：EXTERNAL_FAIL_NEEDS_PROJECT_REVISION。",
+    "按外审最小动作完成候选88局部修订R2，正式候选exactly 1。",
+    "原图88与R1原件均保留，摄影主体未重做；未新增规则/Gate/validator。"
   ],
-  "updated_at": "2026-10-02T15:53:00+08:00",
+  "updated_at": "2026-10-02T16:08:00+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2887,8 +2886,8 @@
       "human_personal_acceptance": false
     },
     "post_p7_external_review": {
-      "status": "EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_FRESH_REVIEW_DISPATCH",
-      "candidate_id": "88-R1",
+      "status": "R1_FAIL_SETTLED_R2_READY_FOR_FRESH_REVIEW_DISPATCH",
+      "candidate_id": "88-R2",
       "serial_only": true,
       "callback_required": true,
       "project_settlement_required": true
@@ -3021,5 +3020,27 @@
     },
     "human_final_review_allowed": false,
     "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+  },
+  "candidate88_external_review_r2": {
+    "prior_r1_review": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r1/FRESH_REVIEW_RESULT.json",
+      "sha256": "7f9803c8f86d2e7610e0858eed2653ed5affef7be1d38f179f1466ad760259cc",
+      "verdict": "EXTERNAL_FAIL_NEEDS_PROJECT_REVISION"
+    },
+    "revision": {
+      "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R2-20261002-01",
+      "receipt": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r2/REVISION_EXECUTION_RECEIPT.json",
+        "sha256": "7ca3c6f34470b99588a1ebc8315d969f53e5814986b4eb62fba0eadd910af7be"
+      },
+      "drive_file_id": "1lg3VsHl5tv1fazGWe8zU6t-1eoh6wi4p",
+      "sha256": "8c6545ca7a3c388d48ec2fa29f038e676c20aa6d60d2b387986cb2d2b82fe1e6",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "human_final_review_allowed": false,
+    "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R2_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
   }
 }

@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 247,
-    "sha256": "417d4d7f592167367a9957625761c5ca88469da69c30bbebfa8203da5066ab3b",
+    "revision": 248,
+    "sha256": "0a11cf7fe91c725103000a28132ece37b691c15cd907834603b59c3bcc25ca1c",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,20 +981,20 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R1-20261002-01",
-    "status": "VPD_CANDIDATE_88_EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_EXTERNAL_REVIEW_DISPATCH",
-    "current_visual_unit": "CANDIDATE_88_EXTERNAL_FAIL_LOCAL_REVISION_R1",
+    "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R2-20261002-01",
+    "status": "VPD_CANDIDATE_88_R1_EXTERNAL_FAIL_SETTLED_R2_READY_FOR_FRESH_EXTERNAL_REVIEW",
+    "current_visual_unit": "CANDIDATE_88_REVISION_R2_READY_FOR_FRESH_EXTERNAL_REVIEW",
     "evidence": {
-      "callback": {
-        "path": "evidence/vpd/candidate88_external_review_20261002/r1/CALLBACK_RECEIPT.json",
-        "sha256": "0d47fad19a97410c9457795f9e6e3896d0596683fdada5c80d72d984b39f041d"
+      "r1_review": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r1/FRESH_REVIEW_RESULT.json",
+        "sha256": "7f9803c8f86d2e7610e0858eed2653ed5affef7be1d38f179f1466ad760259cc"
       },
-      "revision": {
-        "path": "evidence/vpd/candidate88_external_review_20261002/r1/REVISION_EXECUTION_RECEIPT.json",
-        "sha256": "03f24efa4e5fcaf6c1ef8fc48817afc9f77ada1bd8c6ad397b8bb25cf0906749"
+      "r2_revision": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r2/REVISION_EXECUTION_RECEIPT.json",
+        "sha256": "7ca3c6f34470b99588a1ebc8315d969f53e5814986b4eb62fba0eadd910af7be"
       }
     },
-    "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+    "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R2_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1024,8 +1024,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-EXTERNAL-FAIL-REVISION-R1-20261002-001",
-      "event_hash": "7979246b5f6d69a99fe24d35316385eadfe4ecd005f40cce8197e050273238e2"
+      "event_id": "EVT-VPD-CANDIDATE88-R1-REVIEW-FAIL-R2-READY-20261002-001",
+      "event_hash": "5be7bf0556cee181d1cfee7a30f15d9b8819006f81b893a5c241f10ed2b57be5"
     }
   },
   "mature_workflow_audit": {
