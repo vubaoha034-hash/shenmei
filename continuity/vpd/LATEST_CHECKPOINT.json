@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 272,
-  "recorded_at": "2026-10-02T16:26:00+08:00",
+  "sequence": 273,
+  "recorded_at": "2026-10-02T16:36:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R4-20261002-01"
   ],
-  "current_focus": "候选88 R3新鲜外审FAIL已结算，唯一剩余问题是左上弧线看起来像重画而非字标原件抽取。R4已将弧线+末端短斜杠先生成成单一透明母件，并把同一份母件像素平移复用到右侧字标尾部与左上；其余全部冻结。",
+  "current_focus": "候选88 R4已完成新的项目外独立冷审，并以EXTERNAL_PASS_INTERNAL_DELIVERABLE通过项目内部可交付门槛。R4原件身份、尺寸与SHA已由外审核验一致；项目侧无需继续修订。外审不等于刘先生真人通过，当前唯一下一步进入刘先生最终真人审美验收。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,12 +357,11 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "R4尚未派发新鲜项目外冷审。",
-    "R4外审结果尚未回传并结算。",
-    "PASS前禁止进入刘先生最终真人审美验收。"
+    "刘先生尚未对R4给出最终真人审美结论。",
+    "外审PASS只允许进入最终真人门，不等于最终通过。"
   ],
   "blocked": [],
-  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R4_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+  "next_required_action": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW_CANDIDATE_88_R4",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -430,11 +429,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CANDIDATE_88_R3_EXTERNAL_FAIL_SETTLED_R4_READY_FOR_FRESH_EXTERNAL_REVIEW",
+  "status": "VPD_CANDIDATE_88_R4_EXTERNAL_PASS_READY_FOR_LIU_FINAL_AESTHETIC_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "c5106d34e3b2cf9e11c96d98992f864f35a92db2f129b756f997ddbbe55c547d",
-    "revision": 250
+    "sha256": "921cd58d3a316932518e0f021244319e9a96f01c17b03a0201c4f86ae129f485",
+    "revision": 251
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +454,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-R3-REVIEW-FAIL-R4-READY-20261002-001",
-      "event_hash": "69ce01b2d8c4f85a5f31a859244bd3289b56bf9dd2e8f23029e4defe309fdcbd"
+      "event_id": "EVT-VPD-CANDIDATE88-R4-EXTERNAL-PASS-20261002-001",
+      "event_hash": "496a3b621c4f5c99b33849b491e65558b12516e968c99e440acd5c57bb91a563"
     }
   },
   "typography_repair": {
@@ -971,8 +970,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "候选88 R3新鲜外审FAIL已结算，唯一剩余问题是左上弧线看起来像重画而非字标原件抽取。R4已将弧线+末端短斜杠先生成成单一透明母件，并把同一份母件像素平移复用到右侧字标尾部与左上；其余全部冻结。",
-  "updated_at": "2026-10-02T16:26:00+08:00",
+  "current_stage": "候选88 R4已完成新的项目外独立冷审，并以EXTERNAL_PASS_INTERNAL_DELIVERABLE通过项目内部可交付门槛。R4原件身份、尺寸与SHA已由外审核验一致；项目侧无需继续修订。外审不等于刘先生真人通过，当前唯一下一步进入刘先生最终真人审美验收。",
+  "updated_at": "2026-10-02T16:36:00+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1844,8 +1843,9 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "保存R3新鲜外审FAIL。",
-    "按minimum_next_action完成R4 exactly 1候选；同一弧线母件像素双处复用，其余冻结。"
+    "保存并结算R4新鲜项目外冷审PASS。",
+    "R4达到项目内部可交付标准，停止继续项目内修补。",
+    "开放刘先生最终真人审美验收门；外审结论明确不冒充真人通过。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2608,5 +2608,34 @@
     },
     "human_final_review_allowed": false,
     "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R3_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+  },
+  "candidate88_external_review_r4": {
+    "prior_r3_review": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r3/FRESH_REVIEW_RESULT.json",
+      "sha256": "22d7b3ba8bcf1cc9f8ccc52d44c6af4d5ee45b1047963c674385ca9c8690d871",
+      "verdict": "EXTERNAL_FAIL_NEEDS_PROJECT_REVISION"
+    },
+    "revision": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r4/REVISION_EXECUTION_RECEIPT.json",
+      "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+      "drive_file_id": "195jV49c3YdrI6VtIuONJJ1d09lsRqT8D",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "human_final_review_allowed": true,
+    "next_legal_action": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW_CANDIDATE_88_R4",
+    "review": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r4/FRESH_REVIEW_RESULT.json",
+      "sha256": "e75e7e1492824de58aa89a7647af3c0658f332032c5089a9e22cfe42c079b27f",
+      "verdict": "EXTERNAL_PASS_INTERNAL_DELIVERABLE",
+      "reviewer_url": "https://chatgpt.com/c/6abf6bfa-4468-83ea-8c42-b3d1c5e85be6"
+    },
+    "callback_receipt": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r4/CALLBACK_RECEIPT.json",
+      "sha256": "231bb1e2a676c7a236cd8c3a9c6665cda03eeecd94988094248240131f61d869"
+    },
+    "project_revision_required": false
   }
 }

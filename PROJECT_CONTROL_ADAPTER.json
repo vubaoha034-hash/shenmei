@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 250,
-    "sha256": "c5106d34e3b2cf9e11c96d98992f864f35a92db2f129b756f997ddbbe55c547d",
+    "revision": 251,
+    "sha256": "921cd58d3a316932518e0f021244319e9a96f01c17b03a0201c4f86ae129f485",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -982,9 +982,19 @@
   },
   "current_mainline": {
     "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R4-20261002-01",
-    "status": "VPD_CANDIDATE_88_R3_EXTERNAL_FAIL_SETTLED_R4_READY_FOR_FRESH_EXTERNAL_REVIEW",
-    "current_visual_unit": "CANDIDATE_88_REVISION_R4_READY_FOR_FRESH_EXTERNAL_REVIEW",
-    "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R4_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+    "status": "VPD_CANDIDATE_88_R4_EXTERNAL_PASS_READY_FOR_LIU_FINAL_AESTHETIC_REVIEW",
+    "current_visual_unit": "CANDIDATE_88_R4_INTERNAL_DELIVERABLE_READY_FOR_LIU_FINAL_REVIEW",
+    "evidence": {
+      "review": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r4/FRESH_REVIEW_RESULT.json",
+        "sha256": "e75e7e1492824de58aa89a7647af3c0658f332032c5089a9e22cfe42c079b27f"
+      },
+      "callback": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r4/CALLBACK_RECEIPT.json",
+        "sha256": "231bb1e2a676c7a236cd8c3a9c6665cda03eeecd94988094248240131f61d869"
+      }
+    },
+    "next_required_action": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW_CANDIDATE_88_R4"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1014,8 +1024,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-R3-REVIEW-FAIL-R4-READY-20261002-001",
-      "event_hash": "69ce01b2d8c4f85a5f31a859244bd3289b56bf9dd2e8f23029e4defe309fdcbd"
+      "event_id": "EVT-VPD-CANDIDATE88-R4-EXTERNAL-PASS-20261002-001",
+      "event_hash": "496a3b621c4f5c99b33849b491e65558b12516e968c99e440acd5c57bb91a563"
     }
   },
   "mature_workflow_audit": {
