@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 246,
-    "sha256": "e669aa2c10f7b3f5143ddf6ca57383e933a7cc3a2b8d2ec8708dccb29a379d08",
+    "revision": 247,
+    "sha256": "417d4d7f592167367a9957625761c5ca88469da69c30bbebfa8203da5066ab3b",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,14 +981,20 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "task_id": "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01",
-    "status": "VPD_MAINLINE_ROUTE_CORRECTED_WAITING_EXTERNAL_VISUAL_REVIEW_DISPATCH_88",
-    "current_visual_unit": "CANDIDATE_88_EXTERNAL_INDEPENDENT_VISUAL_REVIEW_ROUTING",
-    "correction_receipt": {
-      "path": "continuity/vpd/mainline_recovery_20261002/ROUTE_CORRECTION_EXTERNAL_REVIEW_20261002.json",
-      "sha256": "b41ed3e4ba31adf4f4b4d7d1b531f5298e1c8f25258b2229727ced0f13708549"
+    "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R1-20261002-01",
+    "status": "VPD_CANDIDATE_88_EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_EXTERNAL_REVIEW_DISPATCH",
+    "current_visual_unit": "CANDIDATE_88_EXTERNAL_FAIL_LOCAL_REVISION_R1",
+    "evidence": {
+      "callback": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r1/CALLBACK_RECEIPT.json",
+        "sha256": "0d47fad19a97410c9457795f9e6e3896d0596683fdada5c80d72d984b39f041d"
+      },
+      "revision": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r1/REVISION_EXECUTION_RECEIPT.json",
+        "sha256": "03f24efa4e5fcaf6c1ef8fc48817afc9f77ada1bd8c6ad397b8bb25cf0906749"
+      }
     },
-    "next_required_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+    "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1018,8 +1024,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-MAINLINE-ROUTE-CORRECTION-EXTERNAL-REVIEW-20261002-001",
-      "event_hash": "90ccc90d573c7cd6f5cb9504ee8f4fcca303102377e4038fa557f4597830985c"
+      "event_id": "EVT-VPD-CANDIDATE88-EXTERNAL-FAIL-REVISION-R1-20261002-001",
+      "event_hash": "7979246b5f6d69a99fe24d35316385eadfe4ecd005f40cce8197e050273238e2"
     }
   },
   "mature_workflow_audit": {

@@ -1,0 +1,47 @@
+{
+  "schema_version": "vpd-external-visual-review-callback/v1",
+  "callback_id": "VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-CALLBACK-20261002-01",
+  "review_task_id": "VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-20261002-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-02T15:53:00+08:00",
+  "reviewer_url": "https://chatgpt.com/c/6abf61ff-6554-83e9-ada1-e7fd0b3485f6",
+  "target": {
+    "candidate_id": "88",
+    "file_name": "VPD_CHAZUO_R7_88_20261001.png",
+    "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd"
+  },
+  "identity_verified": true,
+  "verdict": "EXTERNAL_FAIL_NEEDS_PROJECT_REVISION",
+  "critical_findings": [
+    "品牌独有记忆点不足；更像质量不错的茶类氛围摄影加泛用手写文案。",
+    "字体系统偏现成文艺手写；右上主文案强于左上茶作，未形成统一品牌字标体系。",
+    "摄影质感不错但有轻度生成式商业摄影/高级图库风险；非主要阻断项，不建议推翻摄影。"
+  ],
+  "protected_visuals": [
+    "茶杯/茶叶盘/前景鲜叶主体层级",
+    "左实右虚与右上负空间",
+    "深绿+木色+茶汤暖黄综合色彩",
+    "统一光影、器皿与茶汤材质",
+    "安静、自然、克制总体气质"
+  ],
+  "minimum_next_action": {
+    "scope": "LOCAL_REVISION_ONLY",
+    "variables": [
+      "A_BRAND_MEMORY_POINT",
+      "B_WORDMARK_AND_COPY_TYPOGRAPHIC_RELATION"
+    ],
+    "freeze": [
+      "PHOTOGRAPHIC_SUBJECTS",
+      "COLOR_SYSTEM",
+      "OVERALL_COMPOSITION"
+    ],
+    "must_re_review_external": true,
+    "block_liu_final_review_until_external_pass_and_project_settlement": true
+  },
+  "claim_limits": "独立AI冷审，不等于刘先生真人结论；当前FAIL，不能宣称成品就绪。"
+}

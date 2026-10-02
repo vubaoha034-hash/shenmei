@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 246,
+  "revision": 247,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "图88保持原件不变；当前串行流程为先派发到项目外新聊天做独立AI视觉审核，审核结果必须回传高级感P并由项目结算。只有项目按外审结论处理并达到内部可交付标准后，才允许进入刘先生最终真人审美验收。",
-  "status": "VPD_MAINLINE_ROUTE_CORRECTED_WAITING_EXTERNAL_VISUAL_REVIEW_DISPATCH_88",
+  "current_stage": "图88项目外独立冷审已回传并核对为FAIL。已按minimum_next_action完成一个局部修订R1：摄影主体、综合色彩与总体构图冻结；只重做茶作品牌记忆点与字标/主文案关系。正式R1已上传Drive，下一步只派发到新的项目外独立视觉复核；复核PASS并由项目结算前禁止进入刘先生最终审美门。",
+  "status": "VPD_CANDIDATE_88_EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_EXTERNAL_REVIEW_DISPATCH",
   "p6_allowed": false,
-  "next_required_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -164,9 +164,12 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "纠正revision245提前进入刘先生真人审核的误路由；保留图88及P7/P4/P5全部事实、hash和历史结论；当前改为先项目外独立AI审核，回传项目结算后再决定修正/淘汰/复核，达到内部可交付标准后才进入刘先生最终真人审美验收。"
+    "核对并结算VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-CALLBACK-20261002-01。",
+    "保留图88原件及P7/P4/P5历史事实不变。",
+    "按外审最小动作完成候选88局部修订R1；正式候选exactly 1，原图未覆盖。",
+    "两个越界生成式编辑结果明确丢弃，不进入候选、不送审。"
   ],
-  "updated_at": "2026-10-02T14:51:30+08:00",
+  "updated_at": "2026-10-02T15:53:00+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2879,14 +2882,13 @@
       "Broader unseen-style and scale validation"
     ],
     "post_p7_human_review": {
-      "status": "DEFERRED_UNTIL_EXTERNAL_REVIEW_AND_PROJECT_SETTLEMENT_REACH_INTERNAL_DELIVERABLE_STANDARD",
-      "candidate_id": "88",
-      "human_personal_acceptance": false,
-      "current_route": false
+      "status": "BLOCKED_UNTIL_EXTERNAL_REVIEW_PASS_AND_PROJECT_SETTLEMENT",
+      "current_route": false,
+      "human_personal_acceptance": false
     },
     "post_p7_external_review": {
-      "status": "WAITING_DISPATCH_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
-      "candidate_id": "88",
+      "status": "EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_FRESH_REVIEW_DISPATCH",
+      "candidate_id": "88-R1",
       "serial_only": true,
       "callback_required": true,
       "project_settlement_required": true
@@ -2996,5 +2998,28 @@
     "fail_branch": "REPAIR_OR_ELIMINATE_NEAREST_DELIVERABLE_VISUAL_ISSUE_THEN_REVIEW_AGAIN_IF_NEEDED",
     "pass_branch": "ONLY_AFTER_INTERNAL_DELIVERABLE_STANDARD_LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW",
     "next_legal_action": "DISPATCH_CANDIDATE_88_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+  },
+  "candidate88_external_review_r1": {
+    "callback": {
+      "path": "evidence/vpd/candidate88_external_review_20261002/r1/CALLBACK_RECEIPT.json",
+      "sha256": "0d47fad19a97410c9457795f9e6e3896d0596683fdada5c80d72d984b39f041d",
+      "verdict": "EXTERNAL_FAIL_NEEDS_PROJECT_REVISION"
+    },
+    "revision": {
+      "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R1-20261002-01",
+      "receipt": {
+        "path": "evidence/vpd/candidate88_external_review_20261002/r1/REVISION_EXECUTION_RECEIPT.json",
+        "sha256": "03f24efa4e5fcaf6c1ef8fc48817afc9f77ada1bd8c6ad397b8bb25cf0906749"
+      },
+      "candidate_drive_file_id": "1T517OK-yWh2k87vQnW_QGFkAYC3DAIPB",
+      "candidate_sha256": "669c2605e1f9866f2147a632ed537a552974cf6acd9ee5c1bbb5bb195b95f4a5",
+      "candidate_dimensions": [
+        1536,
+        1024
+      ],
+      "formal_candidate_count": 1
+    },
+    "human_final_review_allowed": false,
+    "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
   }
 }

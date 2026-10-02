@@ -1,0 +1,68 @@
+{
+  "schema_version": "vpd-candidate88-local-revision-execution/v1",
+  "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R1-20261002-01",
+  "parent_review_task_id": "VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-20261002-01",
+  "callback_id": "VPD-CANDIDATE-88-FRESH-EXTERNAL-REVIEW-CALLBACK-20261002-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-02T15:53:00+08:00",
+  "source_head": "64c861b0696dfb9a3c16d9289637e847f2f6bf64",
+  "source_candidate": {
+    "id": "88",
+    "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+    "modified_in_place": false
+  },
+  "revision_scope": {
+    "only_variables": [
+      "BRAND_MEMORY_POINT",
+      "WORDMARK_COPY_TYPOGRAPHIC_RELATION"
+    ],
+    "frozen": [
+      "tea_cup",
+      "dry_tea_plate",
+      "fresh_leaves",
+      "wood_tray",
+      "photo_crop",
+      "subject_hierarchy",
+      "deep_green_wood_amber_palette",
+      "overall_lighting"
+    ],
+    "new_visual_rules_added": 0,
+    "new_gate_or_validator_added": 0,
+    "full_photo_regeneration_allowed": false
+  },
+  "execution": {
+    "formal_candidate_count": 1,
+    "formal_candidate_file_name": "VPD_CHAZUO_R7_88_EXTERNAL_REVISION_R1_20261002.png",
+    "formal_candidate_drive_file_id": "1T517OK-yWh2k87vQnW_QGFkAYC3DAIPB",
+    "formal_candidate_drive_url": "https://drive.google.com/file/d/1T517OK-yWh2k87vQnW_QGFkAYC3DAIPB/view?usp=drivesdk",
+    "formal_candidate_dimensions": [
+      1536,
+      1024
+    ],
+    "formal_candidate_sha256": "669c2605e1f9866f2147a632ed537a552974cf6acd9ee5c1bbb5bb195b95f4a5",
+    "formal_candidate_bytes": 1774848,
+    "typography_method": "REAL_FONT_RASTER_COMPOSITION_WITH_CUSTOM_GLYPH_CUT_AND_CUP_RIM_MNEMONIC",
+    "photography_pixels_source": "ORIGINAL_CANDIDATE_88",
+    "discarded_noncandidate_tool_attempts": [
+      {
+        "tool_family": "CHATGPT_IMAGE_EDIT",
+        "count": 2,
+        "disposition": "DISCARDED_NOT_SAVED_NOT_REVIEWED",
+        "reason": "编辑器未遵守局部冻结，重构了摄影主体/构图并加入额外文案；不进入项目候选。"
+      }
+    ]
+  },
+  "visible_delta": [
+    "用可读真实字体重建茶作字标，加入共享切口+开口杯沿弧线作为本轮品牌记忆点。",
+    "右上文案改为克制的现代无衬线从属排版，品牌视觉权重高于文案。",
+    "仅在原文字负空间区域加入同色深绿排版场，完整覆盖旧生成式手写字；主体摄影区域不动。"
+  ],
+  "status": "REVISION_R1_CREATED_AWAITING_FRESH_EXTERNAL_REVIEW",
+  "human_personal_acceptance": false,
+  "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R1_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+}
