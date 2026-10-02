@@ -1,0 +1,54 @@
+{
+  "schema_version": "vpd-candidate88-local-revision-execution/v1",
+  "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R3-20261002-01",
+  "parent_review_task_id": "VPD-CANDIDATE-88-REVISION-R2-FRESH-EXTERNAL-REVIEW-20261002-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-02T16:18:00+08:00",
+  "source_head": "ff54c7f9410fc14a804a427559c582fb13aa8d0e",
+  "source_candidate": {
+    "id": "88",
+    "original_sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+    "modified_in_place": false
+  },
+  "revision_scope": {
+    "only_variables": [
+      "REMOVE_LEFT_MODULE_BACKGROUND",
+      "EXACTLY_REUSE_WORDMARK_ARC_MASTER_AS_AUXILIARY_SYMBOL",
+      "LOCAL_SOFT_DARKENING_ONLY_FOR_CONTRAST"
+    ],
+    "frozen": [
+      "RIGHT_GREEN_INFORMATION_FIELD",
+      "RIGHT_WORDMARK",
+      "RIGHT_SLOGAN",
+      "PHOTO_SUBJECTS",
+      "PHOTO_CROP",
+      "PALETTE",
+      "LIGHTING",
+      "OVERALL_COMPOSITION"
+    ],
+    "full_photo_regeneration_allowed": false,
+    "new_visual_rules_added": 0,
+    "new_gate_or_validator_added": 0
+  },
+  "output": {
+    "file_name": "VPD_CHAZUO_R7_88_EXTERNAL_REVISION_R3_20261002.png",
+    "drive_file_id": "1cuVCBLCd90Vmdsp-Dk4LjI3Ys-qK1a8j",
+    "drive_url": "https://drive.google.com/file/d/1cuVCBLCd90Vmdsp-Dk4LjI3Ys-qK1a8j/view?usp=drivesdk",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "sha256": "4e568b98255cf1f36cfdd6460321592d184a3553ce9ec950fb8c9a7549b62501",
+    "bytes": 1790354,
+    "formal_candidate_count": 1
+  },
+  "visible_delta": [
+    "取消左上独立深绿矩形卡片。",
+    "左上辅助符号直接落在摄影背景上，几何完全复用右侧茶作字标弧线母版。",
+    "只在旧小字标区域加入无硬边的局部自然暗化以消除旧字并保证符号对比；不改变照片结构。",
+    "右侧主信息场、字标、标语保持R2不变。"
+  ],
+  "status": "REVISION_R3_CREATED_AWAITING_FRESH_EXTERNAL_REVIEW",
+  "human_personal_acceptance": false,
+  "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R3_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+}
