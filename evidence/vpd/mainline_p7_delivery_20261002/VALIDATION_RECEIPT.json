@@ -1,0 +1,18 @@
+{
+  "schema_version": "vpd-delivery-assembly-validation/v1",
+  "task_id": "VPD-FULL-POSTER-P7-DELIVERY-20261002-01",
+  "state_check": "PASSED_METADATA_ONLY",
+  "selected_count": 5,
+  "boundary_count": 7,
+  "all_artifact_and_prompt_refs_match": true,
+  "originals_changed": false,
+  "extra_generation_or_review": false,
+  "resolved_assembly_error": {
+    "observed": "KeyError actual_sha256 while assembling the old R7 entry; P7 already authorized, no image action occurred.",
+    "cause": "Private assembly code assumed every historical verdict embeds hashes; R7 stores that verification in its callback receipt. Actual prompt refs are a list in R7.",
+    "affected_scope": "Delivery index preparation only; original stage receipts and verdicts untouched.",
+    "bounded_correction": "Read the existing verified R7 callback hash-verification flags and its list of actual prompt refs; continue the same authorized P7 step.",
+    "recurrence_check": "Every indexed original is tied to the execution and callback identity; every prompt and output artifact reference hash matches; native state passes."
+  },
+  "quality_claim": "Independent model verdicts retained; validation does not certify taste."
+}
