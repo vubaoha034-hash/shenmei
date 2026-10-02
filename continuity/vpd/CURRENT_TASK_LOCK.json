@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 231,
+  "revision": 232,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "两张画幅原件及已知格式偏差已绑定新审核任务，派发认领已冻结；仅准备发送本轮26与71一次，未把认领当作已送达。",
+  "current_stage": "画幅新任务已通过Opera Neon实际发送一次：目标审核会话、完整消息全文及唯一新消息均核验，输入框清空；等待审核方主动回传，当前不轮询、不重发。",
   "status": "VPD_MAINLINE_P4_ASPECT_R1_EXECUTED_WAITING_INDEPENDENT_REVIEW",
   "p6_allowed": false,
   "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "两张画幅原件及已知格式偏差已绑定新审核任务，派发认领已冻结；仅准备发送本轮26与71一次，未把认领当作已送达。"
+    "画幅新任务已通过Opera Neon实际发送一次：目标审核会话、完整消息全文及唯一新消息均核验，输入框清空；等待审核方主动回传，当前不轮询、不重发。"
   ],
-  "updated_at": "2026-10-02T08:34:25.372720+08:00",
+  "updated_at": "2026-10-02T08:56:34.451992+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -2915,7 +2915,7 @@
     "format_gate_result": "BOTH_ORIGINALS_FAIL_FROZEN_EXACT_RATIO_GATE",
     "independent_review": {
       "task_id": "VPD-P4-ASPECT-R1-EXTERNAL-BLIND-REVIEW-20261002-01",
-      "status": "CLAIMED_READY_TO_SEND",
+      "status": "DISPATCHED_ONCE_CONFIRMED",
       "claim": {
         "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/independent_review/DISPATCH_CLAIM.json",
         "sha256": "20e650adfe05747f73bf4d44620fa1c0f692aae75ba2a80ceb74a8a0c1e95da2"
@@ -2925,7 +2925,11 @@
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "reviewer_writes_repo": false,
       "human_acceptance_replaced": false,
-      "expected_callback_id": "VPD-P4-ASPECT-R1-REVIEW-CALLBACK-20261002-01"
+      "expected_callback_id": "VPD-P4-ASPECT-R1-REVIEW-CALLBACK-20261002-01",
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/independent_review/DISPATCH_RECEIPT.json",
+        "sha256": "ad80f15a5a8c876e89201170d73202b5a28af42919ab211f7bff41a57bce1ce5"
+      }
     }
   },
   "legacy_fields_scope": {
