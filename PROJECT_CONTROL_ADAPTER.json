@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 251,
-    "sha256": "921cd58d3a316932518e0f021244319e9a96f01c17b03a0201c4f86ae129f485",
+    "revision": 252,
+    "sha256": "5446b661b47fe5f603005018410f690d15bea5836bc94d6030c2e092e4e64593",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -981,20 +981,16 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R4-20261002-01",
-    "status": "VPD_CANDIDATE_88_R4_EXTERNAL_PASS_READY_FOR_LIU_FINAL_AESTHETIC_REVIEW",
-    "current_visual_unit": "CANDIDATE_88_R4_INTERNAL_DELIVERABLE_READY_FOR_LIU_FINAL_REVIEW",
+    "task_id": "VPD-CANDIDATE-88-HUMAN-FINAL-AESTHETIC-REVIEW-20261003-01",
+    "status": "VPD_CANDIDATE_88_HUMAN_FINAL_FAIL_PHOTO_PROTECTED_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
+    "current_visual_unit": "FROZEN_FIRST_IMAGE_PHOTO_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
     "evidence": {
-      "review": {
-        "path": "evidence/vpd/candidate88_external_review_20261002/r4/FRESH_REVIEW_RESULT.json",
-        "sha256": "e75e7e1492824de58aa89a7647af3c0658f332032c5089a9e22cfe42c079b27f"
-      },
-      "callback": {
-        "path": "evidence/vpd/candidate88_external_review_20261002/r4/CALLBACK_RECEIPT.json",
-        "sha256": "231bb1e2a676c7a236cd8c3a9c6665cda03eeecd94988094248240131f61d869"
+      "human_verdict": {
+        "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
+        "sha256": "a535b6cf5c7bb66d9ff5f0c244db46d2f17b7b160f670b9ba9919ba7b5a57bf2"
       }
     },
-    "next_required_action": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW_CANDIDATE_88_R4"
+    "next_required_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1024,8 +1020,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-R4-EXTERNAL-PASS-20261002-001",
-      "event_hash": "496a3b621c4f5c99b33849b491e65558b12516e968c99e440acd5c57bb91a563"
+      "event_id": "EVT-VPD-CANDIDATE88-HUMAN-FINAL-FAIL-20261003-001",
+      "event_hash": "986fe17874f75ab8cb1a6babe4d009136da8c6cb9aebd2b45a5099a8759a671a"
     }
   },
   "mature_workflow_audit": {
