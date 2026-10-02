@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 271,
-  "recorded_at": "2026-10-02T16:18:00+08:00",
+  "sequence": 272,
+  "recorded_at": "2026-10-02T16:26:00+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
-    "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R3-20261002-01"
+    "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R4-20261002-01"
   ],
-  "current_focus": "候选88修订R2新鲜外审已FAIL，且问题进一步收敛到左上辅助模块。已按唯一minimum_next_action完成R3：取消左上深绿卡片，辅助符号直接落在摄影区并精确复用字标弧线母版，只做轻微无硬边局部暗化；右侧主信息场/字标/标语与摄影主体全部冻结。下一步只送新的项目外冷审。",
+  "current_focus": "候选88 R3新鲜外审FAIL已结算，唯一剩余问题是左上弧线看起来像重画而非字标原件抽取。R4已将弧线+末端短斜杠先生成成单一透明母件，并把同一份母件像素平移复用到右侧字标尾部与左上；其余全部冻结。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,12 +357,12 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "候选88修订R3尚未派发到新的项目外独立视觉冷审。",
-    "R3外审结果尚未回传并由项目结算。",
-    "外审PASS并项目结算前禁止进入刘先生最终真人审美验收。"
+    "R4尚未派发新鲜项目外冷审。",
+    "R4外审结果尚未回传并结算。",
+    "PASS前禁止进入刘先生最终真人审美验收。"
   ],
   "blocked": [],
-  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R3_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
+  "next_required_action": "DISPATCH_CANDIDATE_88_REVISION_R4_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -430,11 +430,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CANDIDATE_88_R2_EXTERNAL_FAIL_SETTLED_R3_READY_FOR_FRESH_EXTERNAL_REVIEW",
+  "status": "VPD_CANDIDATE_88_R3_EXTERNAL_FAIL_SETTLED_R4_READY_FOR_FRESH_EXTERNAL_REVIEW",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "944075d4eb8300ee4dfb0ebb2f63d2231bf19a34273b2e866b89e9d688726a55",
-    "revision": 249
+    "sha256": "c5106d34e3b2cf9e11c96d98992f864f35a92db2f129b756f997ddbbe55c547d",
+    "revision": 250
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-R2-REVIEW-FAIL-R3-READY-20261002-001",
-      "event_hash": "4c68c32743f5be720ce8dde50a3699d415267963b3a5afbf66129d0fb9dbe154"
+      "event_id": "EVT-VPD-CANDIDATE88-R3-REVIEW-FAIL-R4-READY-20261002-001",
+      "event_hash": "69ce01b2d8c4f85a5f31a859244bd3289b56bf9dd2e8f23029e4defe309fdcbd"
     }
   },
   "typography_repair": {
@@ -971,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "候选88修订R2新鲜外审已FAIL，且问题进一步收敛到左上辅助模块。已按唯一minimum_next_action完成R3：取消左上深绿卡片，辅助符号直接落在摄影区并精确复用字标弧线母版，只做轻微无硬边局部暗化；右侧主信息场/字标/标语与摄影主体全部冻结。下一步只送新的项目外冷审。",
-  "updated_at": "2026-10-02T16:18:00+08:00",
+  "current_stage": "候选88 R3新鲜外审FAIL已结算，唯一剩余问题是左上弧线看起来像重画而非字标原件抽取。R4已将弧线+末端短斜杠先生成成单一透明母件，并把同一份母件像素平移复用到右侧字标尾部与左上；其余全部冻结。",
+  "updated_at": "2026-10-02T16:26:00+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1844,9 +1844,8 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "保存R2新鲜项目外冷审FAIL结果。",
-    "按最小动作完成R3 exactly 1正式候选；右侧品牌层与摄影继续冻结。",
-    "未新增规则/Gate/validator，未全面重做。"
+    "保存R3新鲜外审FAIL。",
+    "按minimum_next_action完成R4 exactly 1候选；同一弧线母件像素双处复用，其余冻结。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",

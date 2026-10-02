@@ -1,0 +1,42 @@
+{
+  "schema_version": "vpd-candidate88-local-revision-execution/v1",
+  "task_id": "VPD-CANDIDATE-88-EXTERNAL-FAIL-LOCAL-REVISION-R4-20261002-01",
+  "parent_review_task_id": "VPD-CANDIDATE-88-REVISION-R3-FRESH-EXTERNAL-REVIEW-20261002-01",
+  "recorded_at": "2026-10-02T16:26:00+08:00",
+  "source_head": "2f11449800e31fe1a9e72410dd53760db6d26dba",
+  "revision_scope": {
+    "only_variables": [
+      "EXACT_SHARED_PIXEL_MASTER_FOR_ARC_MOTIF",
+      "REDUCE_LEFT_LOCAL_DARKENING"
+    ],
+    "frozen": [
+      "RIGHT_GREEN_INFORMATION_FIELD",
+      "RIGHT_WORDMARK",
+      "RIGHT_SLOGAN",
+      "PHOTO_SUBJECTS",
+      "PHOTO_CROP",
+      "PALETTE",
+      "LIGHTING",
+      "OVERALL_COMPOSITION"
+    ],
+    "full_photo_regeneration_allowed": false,
+    "new_visual_rules_added": 0,
+    "new_gate_or_validator_added": 0
+  },
+  "output": {
+    "file_name": "VPD_CHAZUO_R7_88_EXTERNAL_REVISION_R4_20261002.png",
+    "drive_file_id": "195jV49c3YdrI6VtIuONJJ1d09lsRqT8D",
+    "drive_url": "https://drive.google.com/file/d/195jV49c3YdrI6VtIuONJJ1d09lsRqT8D/view?usp=drivesdk",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 1797503,
+    "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+    "formal_candidate_count": 1
+  },
+  "implementation": "弧线+末端短斜杠先生成一次透明母件，然后同一母件像素分别平移到右侧字标尾部与左上；无二次描线、无曲率重建、无角度重建。",
+  "status": "REVISION_R4_CREATED_AWAITING_FRESH_EXTERNAL_REVIEW",
+  "human_personal_acceptance": false,
+  "next_legal_action": "DISPATCH_CANDIDATE_88_REVISION_R4_TO_FRESH_EXTERNAL_VISUAL_REVIEW_CHAT"
+}
