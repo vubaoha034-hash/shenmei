@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 234,
+  "revision": 232,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "依据已授权有界完成范围，保留P4精确格式失败原结论，以现有批准参考11上半幅浅纸字形家族进入第二风格四张对照；同一蒸馏方法、两个固定内容各两路、每路一次，新增总额仍10张，个人审美与全局晋升未通过。",
-  "status": "VPD_MAINLINE_P5_SECOND_STYLE_R1_AUTHORIZED",
+  "current_stage": "画幅新任务已通过Opera Neon实际发送一次：目标审核会话、完整消息全文及唯一新消息均核验，输入框清空；等待审核方主动回传，当前不轮询、不重发。",
+  "status": "VPD_MAINLINE_P4_ASPECT_R1_EXECUTED_WAITING_INDEPENDENT_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "EXECUTE_P5_SECOND_STYLE_FROZEN_TASK",
+  "next_required_action": "WAIT_FOR_INDEPENDENT_REVIEWER_CALLBACK",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -142,12 +142,12 @@
     "do_not_claim_final_pixel_pass_from_placeholders_or_proxies": true,
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
-    "current_image_generation_authorization": 4,
+    "current_image_generation_authorization": 0,
     "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
-    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P5-SECOND-STYLE-20261002-R1",
-    "current_image_generation_count_max": 4,
+    "current_image_generation_authorization_scope": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+    "current_image_generation_count_max": 0,
     "current_image_generation_hidden_variants": 0,
     "current_image_generation_reroll": 0,
     "current_image_generation_best_of_n": false,
@@ -155,7 +155,7 @@
     "photo_repair_loop_closed": true,
     "repair04_allowed": false,
     "modify_accepted_repair03_photo": false,
-    "successor_execution_authorized": true,
+    "successor_execution_authorized": false,
     "add_new_rules_gates_validators": false,
     "new_mainline_contract": {
       "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
@@ -164,9 +164,9 @@
     "legacy_do_not_rerender_scope": "OLD_TOFU_AND_TEA_EXPERIMENTS_ONLY_NOT_NEW_STAGE1"
   },
   "completed_this_revision": [
-    "依据已授权有界完成范围，保留P4精确格式失败原结论，以现有批准参考11上半幅浅纸字形家族进入第二风格四张对照；同一蒸馏方法、两个固定内容各两路、每路一次，新增总额仍10张，个人审美与全局晋升未通过。"
+    "画幅新任务已通过Opera Neon实际发送一次：目标审核会话、完整消息全文及唯一新消息均核验，输入框清空；等待审核方主动回传，当前不轮询、不重发。"
   ],
-  "updated_at": "2026-10-02T09:12:59.355234+08:00",
+  "updated_at": "2026-10-02T08:56:34.451992+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "P3",
@@ -177,7 +177,7 @@
     }
   },
   "state_profile": "vpd-locked-mainline/v1",
-  "render_allowed": true,
+  "render_allowed": false,
   "input_commit": "bce9be57f8be0e8ad8c83b47acd02e964488aa81",
   "authority_repair": {
     "record": {
@@ -2771,11 +2771,68 @@
     "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
   },
   "mainline_progress": {
-    "stage_id": "P5_SECOND_STYLE",
-    "task_id": "VPD-FULL-POSTER-P5-SECOND-STYLE-20261002-R1",
-    "status": "AUTHORIZED",
-    "attempts_consumed": 0,
-    "outputs": [],
+    "stage_id": "P4_ASPECT",
+    "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+    "status": "AWAITING_INDEPENDENT_REVIEW",
+    "attempts_consumed": 2,
+    "outputs": [
+      {
+        "label": "26",
+        "content_id": "tofu",
+        "arm": "direct_reference",
+        "file_name": "VPD_P4_ASPECT_R1_26_20261002.png",
+        "mime_type": "image/png",
+        "sha256": "ef8832b5495d4808515c46fc879e57b85af5029b1d14dd7df5e9956b8451c0da",
+        "dimensions": [
+          1054,
+          1492
+        ],
+        "bytes": 2492882,
+        "drive_file_id": "1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL",
+        "drive_url": "https://drive.google.com/file/d/1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL/view?usp=drivesdk",
+        "format_gate_passed": false,
+        "requested_dimensions": [
+          1152,
+          2048
+        ],
+        "requested_aspect": "9:16",
+        "provider_readback": {
+          "id": "1DvLQwT_FXFIkdls8gPkr_pybkZtuT9XL",
+          "mime_type": "image/png",
+          "size": 2492882,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      },
+      {
+        "label": "71",
+        "content_id": "tofu",
+        "arm": "distilled_candidate",
+        "file_name": "VPD_P4_ASPECT_R1_71_20261002.png",
+        "mime_type": "image/png",
+        "sha256": "ae91a85cd9adf4ba4819bc0e1cf4f6ca2942517ef6e434a88d35e4a2f33dfba5",
+        "dimensions": [
+          941,
+          1672
+        ],
+        "bytes": 2432694,
+        "drive_file_id": "1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I",
+        "drive_url": "https://drive.google.com/file/d/1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I/view?usp=drivesdk",
+        "format_gate_passed": false,
+        "requested_dimensions": [
+          1152,
+          2048
+        ],
+        "requested_aspect": "9:16",
+        "provider_readback": {
+          "id": "1OkR6w7kSExMV_na3FnmKVFuSPftbQy7I",
+          "mime_type": "image/png",
+          "size": 2432694,
+          "scope": "FILE_METADATA_READBACK_NOT_REMOTE_PIXEL_SHA256",
+          "verified": true
+        }
+      }
+    ],
     "human_verdict": "NOT_REVIEWED",
     "completed_stage_receipts": [
       {
@@ -2785,26 +2842,22 @@
       {
         "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
         "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
-      },
-      {
-        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/REVIEW_RECEIPT.json",
-        "sha256": "d91662b5924a8382c84556612e3b0cc45b914117800af9e0e4d9e0485a3a07ae"
       }
     ],
-    "planned_attempts_max": 4,
+    "planned_attempts_max": 2,
     "execution_authorization": {
       "status": "EXPLICIT_USER_AUTHORIZED",
-      "images": 4,
+      "images": 0,
       "figma_writes": 0,
       "external_compute_usd": 0,
       "receipt": {
-        "path": "continuity/vpd/p5_second_style/20261002_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "cd1c94db9226c36f009f74d725049a6dbfdb8ce3ff5d2345ed3ed996c3e82f07"
+        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
       }
     },
     "input_freeze": {
-      "path": "continuity/vpd/p5_second_style/20261002_r1/INPUT_FREEZE.json",
-      "sha256": "7f3065a708044276ea0031db6e7c3072bcb5c2707f4a540e0b3e013197198bf9"
+      "path": "continuity/vpd/p4_aspect/20261002_r1/INPUT_FREEZE.json",
+      "sha256": "801c9ddf90880ffe874127816b906e1d9374a6651198bd641f6b247a3ad30d02"
     },
     "review_delegation": {
       "path": "continuity/vpd/mainline_completion_20261001/REVIEW_DELEGATION.json",
@@ -2816,47 +2869,68 @@
     },
     "budget_state": {
       "path": "continuity/vpd/mainline_completion_20261001/BUDGET_STATE.json",
-      "sha256": "0127b7c2d2aaa45e59d654de947a784546aa040205f91684a6467a6f4f837ef6"
-    },
-    "scoped_progression_amendment": {
-      "path": "continuity/vpd/mainline_completion_20261001/ASPECT_FORMAT_FAILURE_SCOPED_CONTINUATION_20261002.json",
-      "sha256": "1cf28850fee0ef10e45f831a7f1cdb288f89e196777e5383632a8567247c9573"
+      "sha256": "97db7d0ef665d6b7f3cfec8c5cdd991799b1889a11fd92b39152437004936c80"
     },
     "prior_settled_task": {
-      "task_id": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+      "task_id": "VPD-FULL-POSTER-P4-CONTENT-20261001-R1",
       "review_receipt": {
-        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/REVIEW_RECEIPT.json",
-        "sha256": "d91662b5924a8382c84556612e3b0cc45b914117800af9e0e4d9e0485a3a07ae"
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/REVIEW_RECEIPT.json",
+        "sha256": "e31b7e3146c7b56d566388b332ec4d7bbecd759c1d058123710b67fb48de87fa"
       },
       "callback_receipt": {
-        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/independent_review/CALLBACK_RECEIPT.json",
-        "sha256": "a4a1dbc77e5daff2d3faa5c9ccc90ee4f10639ee6d10efa72211d57db48b5ee5"
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/CALLBACK_RECEIPT.json",
+        "sha256": "22103457510ecd6416b351c96ae31543d389f6e018b26957c238a6b3a7ac954d"
       },
-      "outcome": "TEST_FAILED_OR_NO_GAIN",
-      "visual_ready_candidate": "71",
-      "exact_aspect_passed": false,
+      "selected_images": [
+        "67",
+        "92"
+      ],
       "human_verdict": "NOT_REVIEWED"
     },
     "session": {
-      "source_commit": "b30746044c04fda2bc4502c5eb9cd2b1632cc7ba",
+      "source_commit": "b702f2a08afec2ef935f7dbe1326f091f6ca5797",
       "actual_surface": "CURRENT_CHATGPT_WORK_CONVERSATION",
-      "status": "AUTHORIZED_INPUTS_FROZEN",
+      "status": "EXECUTED_WAITING_INDEPENDENT_REVIEW",
       "opening_receipt": {
-        "path": "continuity/vpd/p5_second_style/20261002_r1/EXECUTION_AUTHORIZATION.json",
-        "sha256": "cd1c94db9226c36f009f74d725049a6dbfdb8ce3ff5d2345ed3ed996c3e82f07"
+        "path": "continuity/vpd/p4_aspect/20261002_r1/EXECUTION_AUTHORIZATION.json",
+        "sha256": "232d5b7003971bd4b7ae577e55ca3861d51cc429f818b7a6650f7461569d486a"
+      },
+      "closing_receipt": {
+        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/EXECUTION_RECEIPT.json",
+        "sha256": "a3e250a8e6c3802ae88a002159b10cc49233215ea0f2c03713539a67b137f90e"
       }
     },
     "neutral_review_delivery": {
       "identifiers": [
-        "24",
-        "68",
-        "42",
-        "93"
+        "26",
+        "71"
       ],
       "route_or_assistant_ranking_disclosed_before_review": false
     },
-    "system_validation_complete": false,
-    "global_production_promotion_allowed": false
+    "execution_receipt": {
+      "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/EXECUTION_RECEIPT.json",
+      "sha256": "a3e250a8e6c3802ae88a002159b10cc49233215ea0f2c03713539a67b137f90e"
+    },
+    "format_gate_passed": false,
+    "format_gate_result": "BOTH_ORIGINALS_FAIL_FROZEN_EXACT_RATIO_GATE",
+    "independent_review": {
+      "task_id": "VPD-P4-ASPECT-R1-EXTERNAL-BLIND-REVIEW-20261002-01",
+      "status": "DISPATCHED_ONCE_CONFIRMED",
+      "claim": {
+        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/independent_review/DISPATCH_CLAIM.json",
+        "sha256": "20e650adfe05747f73bf4d44620fa1c0f692aae75ba2a80ceb74a8a0c1e95da2"
+      },
+      "active_attempt_id": "VPD-P4-ASPECT-R1-DISPATCH-20261002-01",
+      "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
+      "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+      "reviewer_writes_repo": false,
+      "human_acceptance_replaced": false,
+      "expected_callback_id": "VPD-P4-ASPECT-R1-REVIEW-CALLBACK-20261002-01",
+      "latest_receipt": {
+        "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/independent_review/DISPATCH_RECEIPT.json",
+        "sha256": "ad80f15a5a8c876e89201170d73202b5a28af42919ab211f7bff41a57bce1ce5"
+      }
+    }
   },
   "legacy_fields_scope": {
     "scope": "HISTORICAL_RESULTS_NOT_CURRENT_EXECUTION_AUTHORITY",

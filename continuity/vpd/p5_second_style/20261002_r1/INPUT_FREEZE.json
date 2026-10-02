@@ -1,0 +1,140 @@
+{
+  "schema_version": "vpd-stage-input-freeze/v1",
+  "task_id": "VPD-FULL-POSTER-P5-SECOND-STYLE-20261002-R1",
+  "stage_id": "P5_SECOND_STYLE",
+  "recorded_at": "2026-10-02T09:12:59.346596+08:00",
+  "source_commit": "b30746044c04fda2bc4502c5eb9cd2b1632cc7ba",
+  "reference_pixels": {
+    "schema_version": "vpd-reference-binding/v1",
+    "task_id": "VPD-FULL-POSTER-P5-SECOND-STYLE-20261002-R1",
+    "reference_role": "EXISTING_APPROVED_LIBRARY_SECOND_VISUAL_FAMILY",
+    "filename": "R1C-APPROVED-11.jpg",
+    "drive_file_id": "1E_DpEgaqd2Xypjb3AyKQO6isWSLL84w4",
+    "drive_url": "https://drive.google.com/file/d/1E_DpEgaqd2Xypjb3AyKQO6isWSLL84w4/view",
+    "sha256": "3e06f6c527042f4ea642491ab7b2c9cdcaf31bda8dd9014b4fda302023b0b8d9",
+    "dimensions": [
+      1080,
+      1440
+    ],
+    "bytes": 185151,
+    "local_runtime_path": "/workspace/scratch/251cba462a1a/attachments/af641254-88c1-415e-9dc5-c8745ab67110/R1C-APPROVED-11.jpg",
+    "pixel_binding_required": true,
+    "runtime_bytes_verified_before_freeze": true,
+    "approval_evidence": {
+      "path": "R1C_ART_DIRECTION_LOCK_RESULT.md",
+      "sha256": "67039f6a73f5b3de16949003fe1b9f53d501045b499d10f4b164c70bca4d5b7b"
+    },
+    "original_locator": {
+      "path": "evidence/vpd/task_lock_repair_v1/SOURCE_LOCATOR_READBACK.json",
+      "sha256": "7b2da93cef6e0147c7424da8933f6a908f4cecffe378a711c962da405b9ef048"
+    },
+    "style_source_region": "Upper half y=0..719: pale-paper typographic identity with olive lettering and softly fading planar mountains; bottom color-specification board excluded.",
+    "historical_exposure": "Previously included in the18 approved references reviewed in2026-08; not unseen to the overall project.",
+    "used_in_current_P3_R1_R7_or_P4_development": false,
+    "new_style_development_holdout_only": true,
+    "visual_identity_observations": [
+      "Upper panel has a vertically stacked olive-green 拾山季 wordmark, muted salmon disc near its top, small side text and pale angular mountain forms.",
+      "Lower panel contains large BRAND COLOR wording, olive swatches and a small photographic banner; these production-board modules are excluded."
+    ],
+    "difference_from_first_family": "TYPE_LED_MATERIAL_PRINT vs dark PHOTO_LED forest product scene; same broad natural-brand palette ancestry is disclosed."
+  },
+  "input_refs": [
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/REFERENCE_BINDING.json",
+      "sha256": "b9f14c4833045faa37db92f777bcb9467dcd02eca9831d2147ceafb5a0642de7"
+    },
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/DISTILLATION_RECEIPT.json",
+      "sha256": "55cc74b303c44efbbce0e4e47fb0f8b310f252a10ac2b525ef49af0d6196defe"
+    },
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/TOFU_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+      "sha256": "9834f492f13dc7f37a3d366101d06072b23978929f7186c70ba0353ea894f1dd"
+    },
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/TOFU_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+      "sha256": "335612cca4ea061004d618d162870593cea244dbc884f2dfd3a9f7ee208caf0d"
+    },
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/STRAWBERRY_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+      "sha256": "d21942603493ac6e64cbdc7107a79abd2e46fded486b335abb5322c27aae2b73"
+    },
+    {
+      "path": "continuity/vpd/p5_second_style/20261002_r1/STRAWBERRY_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+      "sha256": "6175494f6c264dae25b8baea25ef66944401d7fc3e6d3b05a7be0b703c2bbbcf"
+    }
+  ],
+  "calls": [
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "direct_reference",
+      "label": "24",
+      "exact_prompt": {
+        "path": "continuity/vpd/p5_second_style/20261002_r1/TOFU_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+        "sha256": "9834f492f13dc7f37a3d366101d06072b23978929f7186c70ba0353ea894f1dd"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "tofu",
+      "brand": "豆坊",
+      "copy": "一方豆腐，一口豆香",
+      "arm": "distilled_candidate",
+      "label": "68",
+      "exact_prompt": {
+        "path": "continuity/vpd/p5_second_style/20261002_r1/TOFU_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+        "sha256": "335612cca4ea061004d618d162870593cea244dbc884f2dfd3a9f7ee208caf0d"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "strawberry",
+      "brand": "果间",
+      "copy": "一口鲜甜，慢慢尝",
+      "arm": "direct_reference",
+      "label": "42",
+      "exact_prompt": {
+        "path": "continuity/vpd/p5_second_style/20261002_r1/STRAWBERRY_DIRECT_REFERENCE_ACTUAL_PROMPT.txt",
+        "sha256": "d21942603493ac6e64cbdc7107a79abd2e46fded486b335abb5322c27aae2b73"
+      },
+      "attempts_max": 1
+    },
+    {
+      "content_id": "strawberry",
+      "brand": "果间",
+      "copy": "一口鲜甜，慢慢尝",
+      "arm": "distilled_candidate",
+      "label": "93",
+      "exact_prompt": {
+        "path": "continuity/vpd/p5_second_style/20261002_r1/STRAWBERRY_DISTILLED_CANDIDATE_ACTUAL_PROMPT.txt",
+        "sha256": "6175494f6c264dae25b8baea25ef66944401d7fc3e6d3b05a7be0b703c2bbbcf"
+      },
+      "attempts_max": 1
+    }
+  ],
+  "budget": {
+    "attempts_max": 4,
+    "per_arm_per_content": 1,
+    "retries": 0,
+    "hidden_variants": 0,
+    "best_of_n": false,
+    "figma_writes": 0,
+    "external_compute_usd": 0
+  },
+  "aspect": "3:2",
+  "generation_authorized": true,
+  "generation_reference_policy": "R11 original only, not R17, other reviewed library images or prior outputs.",
+  "prior_stage_result": {
+    "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/REVIEW_RECEIPT.json",
+    "sha256": "d91662b5924a8382c84556612e3b0cc45b914117800af9e0e4d9e0485a3a07ae"
+  },
+  "scoped_progression_amendment": {
+    "path": "continuity/vpd/mainline_completion_20261001/ASPECT_FORMAT_FAILURE_SCOPED_CONTINUATION_20261002.json",
+    "sha256": "1cf28850fee0ef10e45f831a7f1cdb288f89e196777e5383632a8567247c9573"
+  },
+  "neutral_review_delivery": "24,68 tofu;42,93 strawberry; no arm mapping or controller ranking before verdict",
+  "promotion_allowed": false,
+  "human_personal_acceptance": false
+}

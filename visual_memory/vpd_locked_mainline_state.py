@@ -160,6 +160,32 @@ def _tested_result(root, ref, stage_id):
     return result
 
 
+def _scoped_format_failure_continuation(root, progress, prior, result_ref, result):
+    """Admit an authorized exploratory successor while retaining the failed result."""
+    require(prior == 'P4_ASPECT' and progress['stage_id'] in ['P5_SECOND_STYLE', 'P7_DELIVERY']
+            and result['outcome'] == 'TEST_FAILED_OR_NO_GAIN'
+            and result.get('exact_aspect_passed') is False
+            and result.get('visual_set_ready') is True, 'PRIOR_WHOLE_ACCEPTANCE_REQUIRED')
+    amendment = _receipt(root, progress.get('scoped_progression_amendment'))
+    authority = _receipt(root, amendment.get('source_scope'))
+    require(amendment.get('authority_class') == 'USER_SCOPED_EXPLORATORY_CONTINUATION'
+            and amendment.get('trigger') == 'OBSERVED_TECHNICAL_FAILURE'
+            and amendment.get('prior_result') == result_ref
+            and amendment.get('prior_stage_passed') is False
+            and amendment.get('promotion_allowed') is False
+            and amendment.get('source_scope') == progress.get('continuation_authority'),
+            'SCOPED_CONTINUATION_REQUIRED')
+    require(authority.get('authority_class') == 'USER_REQUESTED_MAINLINE_COMPLETION'
+            and authority.get('project_id') == PROJECT and authority.get('source')
+            and authority.get('total_new_images_max') == 10
+            and any(s.get('stage_id') == progress['stage_id'] for s in authority.get('stages', [])),
+            'SCOPED_CONTINUATION_REQUIRED')
+    execution = _receipt(root, result['execution_receipt'])
+    require(execution.get('attempts_consumed') == 2
+            and any(e.get('code') == 'OUTPUT_FORMAT_MISMATCH' for e in execution.get('errors', [])),
+            'OBSERVED_EXECUTION_ERROR_REQUIRED')
+
+
 def _validate_progress(root, lock, adapter, contract):
     progress = lock['mainline_progress']
     stage_id, state = progress['stage_id'], progress['status']
@@ -175,8 +201,9 @@ def _validate_progress(root, lock, adapter, contract):
     receipts = progress['completed_stage_receipts']
     require(len(receipts) == STAGES.index(stage_id), 'PRIOR_STAGE_EVIDENCE_REQUIRED')
     for prior, ref in zip(STAGES, receipts):
-        require(_tested_result(root, ref, prior)['outcome'] == 'PASSED',
-                'PRIOR_WHOLE_ACCEPTANCE_REQUIRED')
+        result = _tested_result(root, ref, prior)
+        if result['outcome'] != 'PASSED':
+            _scoped_format_failure_continuation(root, progress, prior, ref, result)
     attempts, ceiling = progress['attempts_consumed'], stage['images_max']
     require(type(attempts) is int and 0 <= attempts <= ceiling and
             progress['planned_attempts_max'] == ceiling, 'BUDGET_CHANGED')

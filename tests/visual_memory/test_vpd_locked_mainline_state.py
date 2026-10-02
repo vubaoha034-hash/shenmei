@@ -11,8 +11,43 @@ import pytest
 from visual_memory.vpd_task_lock import (
     LOCK_PATH, CHECKPOINT_PATH, TaskLockError, digest, validate_state, validate_request,
 )
+from visual_memory.vpd_locked_mainline_state import _scoped_format_failure_continuation
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_known_format_failure_continuation_requires_scoped_authority(tmp_path):
+    """Exploration must preserve format failure and cannot mint a passed stage."""
+    authority = save(tmp_path, 'synthetic/continuation.json', {
+        'authority_class': 'USER_REQUESTED_MAINLINE_COMPLETION',
+        'project_id': 'visual-aesthetic-vpd', 'source': 'SYNTHETIC_NOT_RUNTIME_EVIDENCE',
+        'total_new_images_max': 10, 'stages': [{'stage_id': 'P5_SECOND_STYLE'}],
+    })
+    execution = save(tmp_path, 'synthetic/execution.json', {
+        'attempts_consumed': 2, 'errors': [{'code': 'OUTPUT_FORMAT_MISMATCH'}],
+    })
+    result = {'outcome': 'TEST_FAILED_OR_NO_GAIN', 'exact_aspect_passed': False,
+              'visual_set_ready': True, 'execution_receipt': execution}
+    result_ref = save(tmp_path, 'synthetic/result.json', result)
+    amendment = {'authority_class': 'USER_SCOPED_EXPLORATORY_CONTINUATION',
+                 'trigger': 'OBSERVED_TECHNICAL_FAILURE', 'prior_result': result_ref,
+                 'prior_stage_passed': False, 'promotion_allowed': False,
+                 'source_scope': authority}
+    progress = {'stage_id': 'P5_SECOND_STYLE', 'continuation_authority': authority,
+                'scoped_progression_amendment': save(tmp_path, 'synthetic/amendment.json', amendment)}
+    _scoped_format_failure_continuation(tmp_path, progress, 'P4_ASPECT', result_ref, result)
+    assert result['outcome'] == 'TEST_FAILED_OR_NO_GAIN'
+    for flag in ['prior_stage_passed', 'promotion_allowed']:
+        changed = dict(amendment, **{flag: True})
+        progress['scoped_progression_amendment'] = save(tmp_path, 'synthetic/amendment.json', changed)
+        with pytest.raises(TaskLockError, match='SCOPED_CONTINUATION_REQUIRED'):
+            _scoped_format_failure_continuation(tmp_path, progress, 'P4_ASPECT', result_ref, result)
+    progress['scoped_progression_amendment'] = save(tmp_path, 'synthetic/amendment.json', amendment)
+    with pytest.raises(TaskLockError, match='PRIOR_WHOLE_ACCEPTANCE_REQUIRED'):
+        _scoped_format_failure_continuation(tmp_path, progress, 'P4_CONTENT', result_ref, result)
+    with pytest.raises(TaskLockError, match='PRIOR_WHOLE_ACCEPTANCE_REQUIRED'):
+        _scoped_format_failure_continuation(tmp_path, progress, 'P4_ASPECT', result_ref,
+                                          dict(result, visual_set_ready=False))
 
 
 def load(root, name):

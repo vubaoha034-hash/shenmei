@@ -1,0 +1,52 @@
+{
+  "schema_version": "vpd-scoped-progression-amendment/v1",
+  "authority_class": "USER_SCOPED_EXPLORATORY_CONTINUATION",
+  "recorded_at": "2026-10-02T09:12:59.346596+08:00",
+  "source_commit": "b30746044c04fda2bc4502c5eb9cd2b1632cc7ba",
+  "source_scope": {
+    "path": "continuity/vpd/mainline_completion_20261001/COMPLETION_EXECUTION_SCOPE.json",
+    "sha256": "39f4d1751ef9b82315d249634a7b9957ab67ce46e1e7e87776fe916ac14606ce"
+  },
+  "trigger": "OBSERVED_TECHNICAL_FAILURE",
+  "prior_result": {
+    "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/REVIEW_RECEIPT.json",
+    "sha256": "d91662b5924a8382c84556612e3b0cc45b914117800af9e0e4d9e0485a3a07ae"
+  },
+  "prior_stage_passed": false,
+  "actual_test_identity": "VPD-FULL-POSTER-P4-ASPECT-20261002-R1",
+  "actual_input_and_output_or_error_receipts": {
+    "path": "evidence/vpd/mainline_p4_aspect_20261002/r1/EXECUTION_RECEIPT.json",
+    "sha256": "a3e250a8e6c3802ae88a002159b10cc49233215ea0f2c03713539a67b137f90e"
+  },
+  "human_feedback_scope_when_visual": "Independent delegated whole-ad visual readiness only; Liu has not personally accepted the poster.",
+  "observed_vs_hypothesized_cause": {
+    "observed": "The actual two output dimensions fail frozen exact ratio despite unchanged requested canvas;71 has independent visual readiness.",
+    "cause": "Renderer dimension behavior or rounding is unproven; no causal technical fix claimed."
+  },
+  "one_changed_component": "Exploratory progression eligibility after a settled format failure; the failed P4 result is retained unchanged, rather than requiring it to be relabeled PASSED.",
+  "preserved_components": [
+    "locked stage order",
+    "primary renderer",
+    "all frozen inputs and originals",
+    "exact-format failure",
+    "review delegation",
+    "historical human verdicts",
+    "10-image ceiling",
+    "zero retries"
+  ],
+  "bounded_retest_budget": {
+    "aspect_retries": 0,
+    "second_style_calls_max": 4,
+    "hidden_variants": 0,
+    "remaining_total": 4
+  },
+  "allowed_successor_stages": [
+    "P5_SECOND_STYLE",
+    "P7_DELIVERY"
+  ],
+  "promotion_allowed": false,
+  "interpretation": "The standing completion scope authorizes the bounded remaining tests and honest limitations. A visual-ready portrait with an observed exact-format failure permits the independent style experiment; it does not prove P4 acceptance or production reliability.",
+  "rollback": "Remove the scoped amendment from current progress to restore the original all-passed progression condition; do not change any historical receipt.",
+  "global_aesthetic_rule_changed": false,
+  "frozen_contract_bytes_changed": false
+}
