@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 247,
-  "recorded_at": "2026-10-01T22:20:31.609105+08:00",
+  "sequence": 248,
+  "recorded_at": "2026-10-02T08:09:26.786776+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1"
   ],
-  "current_focus": "P4四张原件已完成并保存，预算消耗4/10；同一审核方的完整任务已冻结，但Opera连接超时且备用Opera接口明确未连接，尚未发出，当前只需修复审核传输。",
+  "current_focus": "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -429,7 +429,7 @@
   "status": "VPD_MAINLINE_P4_CONTENT_R1_REVIEW_TRANSPORT_BLOCKED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "4b4fe34fcb767cd7b18bfb31d0073116f73797b3fa0b564e47e01481d3de3a53"
+    "sha256": "743c2968a043d51b6965597018c72298791cafad70a68cb3db3dd0bde192408f"
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -450,8 +450,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-BLOCK-20261001-001",
-      "event_hash": "fcc3d3f164dfa6fd99bc12ea326eaeea479ad120691ce1c44006dbc6e7f0798a"
+      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-CLAIM-20261002-001",
+      "event_hash": "67de9a842c49d1524e6a6a3e2a8c96852e23ff7104a1c9d220f30ff6aa443555"
     }
   },
   "typography_repair": {
@@ -966,8 +966,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "P4四张原件已完成并保存，预算消耗4/10；同一审核方的完整任务已冻结，但Opera连接超时且备用Opera接口明确未连接，尚未发出，当前只需修复审核传输。",
-  "updated_at": "2026-10-01T22:20:31.609105+08:00",
+  "current_stage": "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。",
+  "updated_at": "2026-10-02T08:09:26.786776+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1839,7 +1839,7 @@
     "p4_quality_gate": "FAIL"
   },
   "completed_this_revision": [
-    "P4四张原件已完成并保存，预算消耗4/10；同一审核方的完整任务已冻结，但Opera连接超时且备用Opera接口明确未连接，尚未发出，当前只需修复审核传输。"
+    "接管并恢复原独立审图会话，P4四张原件保留；登记唯一传输恢复尝试，尚未发送，未新增出图。"
   ],
   "p5_gate": {
     "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
@@ -2528,7 +2528,7 @@
     },
     "independent_review": {
       "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "TRANSPORT_BLOCKED_NOT_DISPATCHED",
+      "status": "CLAIMED_READY_TO_SEND",
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
@@ -2541,9 +2541,13 @@
         "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
       },
       "actual_send_clicks": 0,
-      "active_attempt_id": null,
+      "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
       "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
+      "human_acceptance_replaced": false,
+      "claim": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
+        "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
+      }
     }
   }
 }

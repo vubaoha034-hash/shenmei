@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 225,
-    "sha256": "4b4fe34fcb767cd7b18bfb31d0073116f73797b3fa0b564e47e01481d3de3a53",
+    "revision": 226,
+    "sha256": "743c2968a043d51b6965597018c72298791cafad70a68cb3db3dd0bde192408f",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1004,7 +1004,7 @@
     },
     "independent_review": {
       "task_id": "VPD-P4-CONTENT-R1-EXTERNAL-BLIND-REVIEW-20261001-01",
-      "status": "TRANSPORT_BLOCKED_NOT_DISPATCHED",
+      "status": "CLAIMED_READY_TO_SEND",
       "reviewer_url": "https://chatgpt.com/c/6abe1302-8410-83ea-877e-d50361da0189",
       "callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
       "expected_callback_id": "VPD-P4-CONTENT-R1-REVIEW-CALLBACK-20261001-01",
@@ -1017,9 +1017,13 @@
         "sha256": "ff83f637fb5aa667fe4b57eb14d7c23e29b539eda999513a1efdcdfee8ea9a47"
       },
       "actual_send_clicks": 0,
-      "active_attempt_id": null,
+      "active_attempt_id": "VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-20261002-01",
       "reviewer_writes_repo": false,
-      "human_acceptance_replaced": false
+      "human_acceptance_replaced": false,
+      "claim": {
+        "path": "evidence/vpd/mainline_p4_content_20261001/r1/independent_review/recovery_20261002/DISPATCH_CLAIM.json",
+        "sha256": "2dbbec5aa853fdb4af6486b877fb561fcaae614628ead5873c897d9ab96d1d4b"
+      }
     }
   },
   "preserved_prior_current_mainline": {
@@ -1050,8 +1054,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-BLOCK-20261001-001",
-      "event_hash": "fcc3d3f164dfa6fd99bc12ea326eaeea479ad120691ce1c44006dbc6e7f0798a"
+      "event_id": "EVT-VPD-P4-CONTENT-R1-TRANSPORT-RECOVERY-CLAIM-20261002-001",
+      "event_hash": "67de9a842c49d1524e6a6a3e2a8c96852e23ff7104a1c9d220f30ff6aa443555"
     }
   },
   "mature_workflow_audit": {
