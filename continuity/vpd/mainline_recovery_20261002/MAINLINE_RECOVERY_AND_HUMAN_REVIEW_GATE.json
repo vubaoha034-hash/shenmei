@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-mainline-recovery-human-gate/v1",
+  "task_id": "VPD-MAINLINE-RECOVERY-AND-NEXT-VISUAL-UNIT-20261002-01",
+  "project_id": "visual-aesthetic-vpd",
+  "recorded_at": "2026-10-02T14:51:00+08:00",
+  "starting_head": "8ae5f1cae323dd6f3d0c556ed30c547c3c40caee",
+  "recovered_true_mainline": "从已完成的P7有界交付接续到刘先生本人对实际完整视觉样张的审美验收；不是路由、可靠性、规则、Gate或旧审核重跑。",
+  "durable_findings": {
+    "p7_delivery": "COMPLETED_DO_NOT_RERUN",
+    "p4_content_review": "SETTLED_DO_NOT_RERUN",
+    "p4_aspect_review": "SETTLED_FORMAT_FAILURE_PRESERVED_DO_NOT_RERUN",
+    "p5_second_style_review": "SETTLED_DO_NOT_RERUN",
+    "coordinator_route_tests": "SETTLED_DO_NOT_RERUN",
+    "image_generation_budget_remaining": 0,
+    "new_visual_rules_added": 0,
+    "new_gate_or_validator_added": 0
+  },
+  "human_review_gate": {
+    "exists": true,
+    "exactly_one_current_material": true,
+    "candidate": {
+      "label": "88",
+      "title": "VPD_CHAZUO_R7_88_20261001.png",
+      "stage_id": "P3_STAGE1",
+      "family": "森林产品广告",
+      "content_id": "tea",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "bcb35ac9cca27de7ee1dcee00cbb748eb00d6d4e26296876e4e44089bf16cca1",
+      "drive_file_id": "1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd",
+      "drive_url": "https://drive.google.com/file/d/1yAUei9mUoF-9zt4ak8WfaUEEq50ilqXd/view?usp=drivesdk",
+      "verdict_before_human": "READY_FOR_USER_REVIEW",
+      "role": "INDEPENDENT_SCREENING_READY_SAMPLE"
+    },
+    "why_this_one": "图88是首家族P3主线的独立初筛READY样张，可直接检验当前蒸馏方法形成的完整海报是否达到刘先生本人审美；这不是对五张候选做最佳排序，也不代表其余候选失败。",
+    "other_ready_candidates_preserved_not_dispatched": [
+      "67",
+      "92",
+      "68",
+      "93"
+    ],
+    "human_personal_acceptance": false
+  },
+  "real_blockers": {
+    "technical": [],
+    "missing_reference_pixels_for_this_gate": false,
+    "missing_material_or_permission": false,
+    "current_blocker_type": "HUMAN_AESTHETIC_DECISION_REQUIRED"
+  },
+  "execution_this_task": {
+    "new_images_generated": 0,
+    "figma_writes": 0,
+    "review_reruns": 0,
+    "route_tests": 0,
+    "visual_rules_or_validators_added": 0
+  },
+  "next_legal_action": "LIU_XIANSHENG_REVIEW_CANDIDATE_88_AND_RETURN_ACTUAL_AESTHETIC_VERDICT",
+  "stop_after_state_sync": true
+}
