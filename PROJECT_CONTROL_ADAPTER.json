@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 240,
-    "sha256": "fd05a13e2e3998892556b0c09e847e1ca86019dfe945f423e7bd2ce84e42e8d4",
+    "revision": 241,
+    "sha256": "5b9bcf85cc26ddc61e49975e1d738c162f616c9ce2dfb93240a669d73e3821c1",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -1034,8 +1034,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-P7-BOUNDED-DELIVERY-CLOSE-20261002-001",
-      "event_hash": "fa00771669ec360339561e07a0a8792ba73054bedcc18580ae2c7cef1a8ef4f4"
+      "event_id": "EVT-VPD-COORDINATOR-ROUTE-CLAIM-20261002-001",
+      "event_hash": "db5ca93a4e4320b44c83fe39057391d5a56aa3c7d0c91fcc8a5f838aad556b17"
     }
   },
   "mature_workflow_audit": {
@@ -1568,7 +1568,11 @@
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
     "sha256": "5cc42e813e7bee38f57bf533d94dc0380ce620d734f5dbbfeb3e092dbb55ce08",
     "status": "ACTIVE",
-    "semantics": "AUTO_AUTHORIZE_UNIQUE_FROZEN_SUCCESSOR_ONLY__NO_BUDGET_OR_STAGE_EXPANSION"
+    "semantics": "AUTO_AUTHORIZE_UNIQUE_FROZEN_SUCCESSOR_ONLY__NO_BUDGET_OR_STAGE_EXPANSION",
+    "operational_amendment": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/OPERATIONAL_CONTINUATION.json",
+      "sha256": "ee57aed56fbe5496ee04abb311997c375f5aab1d58a1cb37e535a4718be492fd"
+    }
   },
   "baseline_preservation": {
     "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
@@ -1602,5 +1606,16 @@
       "sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd"
     },
     "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
+  },
+  "coordinator_return_route": {
+    "requested_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
+    "prior_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+    "callback_binding_status": "REQUESTED_PENDING_IDENTITY_AND_DELIVERY_VERIFICATION",
+    "expected_callback_id": "VPD-COORDINATOR-ROUTE-ACK-20261002-01",
+    "target_verification": "PENDING_REVIEWER_VERIFICATION",
+    "route_repair": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/ROUTE_REPAIR.json",
+      "sha256": "caee12bafb41aec5b9289ee65624c163e4419f2dd9a02e55480f5a100fe22055"
+    }
   }
 }
