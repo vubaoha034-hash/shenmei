@@ -1,0 +1,209 @@
+{
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "version": 3,
+  "pixels_seen": [
+    "P",
+    "N",
+    "R",
+    "S",
+    "T"
+  ],
+  "verdict": "AI_FAIL",
+  "skill_applied": {
+    "name": "Anthropic 官方 design-critique",
+    "commit": "d3ee81913e5e179273313345847a2a4f42449bd2",
+    "license": "Apache-2.0",
+    "instruction_basis": "采用任务提供的静态海报审核核心；本审稿人未读取技能文件。",
+    "steps_applied": [
+      "两秒第一印象：首要吸引、情绪及用途辨识。",
+      "视觉层级：阅读顺序、强调、留白及文字层级。",
+      "一致性：色彩、文字和间距关系。",
+      "先记录可见证据，再区分任务正确性与设计判断。",
+      "提出最多三个具体、说明原因及修改方向的优先问题。"
+    ],
+    "not_applicable": [
+      "导航",
+      "触控目标",
+      "交互反馈"
+    ],
+    "personal_aesthetic_critic_application": "采用证据优先及判断分离；私人锚点不足，不给个人契合分数。"
+  },
+  "first_impression": {
+    "T": {
+      "first_two_seconds": "右上浅色大字标与左中明亮茶杯共同吸引视线；随后才能读到字标右侧的小字号文案。",
+      "purpose": "茶品牌和一杯茶的产品情境可以立即识别。",
+      "emotion": "摄影温暖、明亮，有饮茶吸引力；大面积深绿矩形使文字区域呈现独立招牌感。",
+      "hierarchy": "品牌与茶杯都有强强调，但核心文案明显次要，图文尚未形成连续的观看路径。"
+    },
+    "S": {
+      "first_two_seconds": "左下茶杯的暖色茶汤与右上手写文案构成呼应，林间暗绿背景支持安静的饮茶情境。",
+      "qualification": "摄影成立不代表字标及完整海报通过。"
+    }
+  },
+  "observations": [
+    {
+      "image": "S",
+      "region": "左下至中下的茶杯、茶盘与木桌",
+      "evidence": "杯口和茶汤受到暖光照射，杯身斑点、茶叶及木纹有不同的材质表现；茶杯与后方茶盘形成前后层次。",
+      "consequence": "产品可感知且具有触感，暖色主体与暗绿环境形成清楚的观看重点。",
+      "classification": "摄影成功关系"
+    },
+    {
+      "image": "S",
+      "region": "左侧苔石、下方虚化叶片及中右溪水",
+      "evidence": "前景叶片虚化，苔石较清楚，溪水亮点位于更远处；上半背景保持较暗且柔和。",
+      "consequence": "空间层次和自然环境共同支撑慢饮情绪，也为上方文字提供可用背景。",
+      "classification": "摄影成功关系"
+    },
+    {
+      "image": "S",
+      "region": "左上茶作字标",
+      "evidence": "茶、作采用较常规的明体式结构，绿色叶片独立放在两字之间偏下位置。",
+      "consequence": "品牌名称可读，但特色主要来自附加叶片，尚未由两字笔画自身建立足够的识别。",
+      "classification": "字标设计不足"
+    },
+    {
+      "image": "T",
+      "region": "全幅摄影，尤其茶杯、桌沿与右侧背景",
+      "evidence": "相较S，茶杯更大且俯视程度更高，桌面变成显著的弧形木台；清晰叶枝移至杯前，S的前景虚化叶片、溪水及右缘茶壶关系不再保留。",
+      "consequence": "这已改变被要求保护的构图、主体比例和环境关系，不能视为仅修正S文字。",
+      "classification": "任务正确性问题"
+    },
+    {
+      "image": "T",
+      "region": "右上深绿文字矩形",
+      "evidence": "大矩形覆盖背景并延伸到右边界；字标占据其中主要面积，核心文案以较小字号置于字标右侧。",
+      "consequence": "文字容易辨认，但品牌、文案与摄影被分成两个区域，核心文案未有效连接茶杯和品牌。",
+      "classification": "图文关系判断"
+    },
+    {
+      "image": "T",
+      "region": "左上靠边的小深绿横矩形",
+      "evidence": "背景上出现一块没有可见文字或标识的实色横块，与右上文字区域没有明确对齐或内容关系。",
+      "consequence": "它成为无法解释的视觉残件，削弱完整海报的完成感；仅凭图片不能确定其来源。",
+      "classification": "完成度问题"
+    },
+    {
+      "image": "T",
+      "region": "右上茶作两字",
+      "evidence": "叶形已经进入茶字右下和作字右上的笔画位置，两处均使用封闭叶片及内部切口；其余笔画主要呈平滑、较整齐的浅色轮廓。",
+      "consequence": "已有笔画改造，不能归为单纯独立叶子贴普通字体；但最突出的是重复叶形，整组字的笔势与结构个性仍弱于P。",
+      "classification": "字标设计判断"
+    },
+    {
+      "image": "T",
+      "region": "字标右侧核心文案",
+      "evidence": "可辨读为两行“一杯茶，”和“慢下来”，内容与冻结文案一致。",
+      "consequence": "核心文字内容正确；问题在强调与图文关系，而非需采用S的另一套文案。",
+      "classification": "可见正确性"
+    }
+  ],
+  "source_photo_findings": {
+    "S_visible_successes": [
+      "茶杯、茶盘、木纹与苔石保持可区分的材质表现。",
+      "暖色茶汤和杯口光线从暗绿环境中建立主体。",
+      "虚化前景、清楚主体及远处溪水共同产生空间深度。",
+      "上半背景的暗色留白有利于文字与摄影共存。"
+    ],
+    "T_preservation_assessment": "从可见构图判断，T没有保护S的整体摄影关系。茶杯角度和比例、桌面轮廓、叶片位置及背景环境均发生明显变化。",
+    "cannot_verify": [
+      "文字烘焙区域是否恢复为原摄影。",
+      "文件身份、源层及摄影源文件是否未变。",
+      "任何局部恢复是否使用了原始无字像素。"
+    ],
+    "modification_direction": "恢复S的摄影基底及主体关系，在其现有可用背景内重做文字；局部去字是否准确需另行核验源文件。"
+  },
+  "source_typography_findings": {
+    "S_wordmark": "常规字形加独立叶片，使品牌识别依赖附加符号，未达到由茶作结构和笔画形成识别的要求。",
+    "S_supporting_type": "左上品牌、右上手写句、右侧细小英文及右下署名各自可读，但书写与排印语气较分散，缺少共同的笔画及层级组织。",
+    "T_difference": "T把叶形嵌入文字笔画，较S的独立叶片有实质改进；同时移除了S的分散辅助文字。不过，大矩形把文字变成独立牌面，字号差距又使核心文案退居次要。",
+    "copy_boundary": "S、P、N的文案仅用于观察排版，不构成替换T冻结文案的依据。"
+  },
+  "priority_problems": [
+    {
+      "priority": 1,
+      "region": "T全幅摄影",
+      "problem": "被要求保护的S摄影关系发生明显改变。",
+      "visible_evidence": "茶杯角度和尺度、弧形桌沿、杯前清晰叶枝，以及溪水和右缘茶壶的缺失均可直接比较。",
+      "why_it_matters": "任务已经认可S摄影，改写摄影会丢失现有成功关系，也使字体修订偏离授权目标。",
+      "modification_direction": "回到S摄影基底，保留构图、主体、材质、光影及色彩，只处理需要恢复的文字区域和新的排版。"
+    },
+    {
+      "priority": 2,
+      "region": "T右上文字矩形与左上小横块",
+      "problem": "文字成为独立牌面，且存在无内容的孤立色块。",
+      "visible_evidence": "右上实色大框与自然背景形成硬边界，核心文案小而靠右；左上另有一块无法解释的实色横矩形。",
+      "why_it_matters": "图文读序被拆开，核心文案与茶杯的联系偏弱；孤立横块直接降低完成感。",
+      "modification_direction": "去除无内容横块；利用S上半暗绿背景组织品牌和冻结文案，调整二者尺度、距离及位置，使文字与产品形成共同构图。"
+    },
+    {
+      "priority": 3,
+      "region": "T茶作字标",
+      "problem": "已有叶形笔画改造，但整体笔势与结构识别仍不足。",
+      "visible_evidence": "两字各用一枚封闭叶形，其他笔画较平滑整齐；相较P，缺少明显由笔画轻重、收放和字内空间共同形成的个性。",
+      "why_it_matters": "观看记忆容易停留在叶片装饰，而不是整组茶作字标；尚未达到已认可字标提供的辨识强度。",
+      "modification_direction": "以茶作两字的重心、部件关系和笔画收放为基础统一设计，再判断叶形是否有助于结构；同时在整幅海报中检验可读性和识别。"
+    }
+  ],
+  "technical": {
+    "visible_correctness": [
+      "T呈横版，画面比例可见符合3:2。",
+      "品牌名称可辨读为茶作。",
+      "核心文案可辨读为“一杯茶，慢下来”。",
+      "叶形已经进入字标笔画位置，不能判为仅有独立叶子贴普通字体。"
+    ],
+    "visible_task_mismatch": [
+      "T的摄影构图和主体关系明显不同于S，不满足摄影保护要求。"
+    ],
+    "unverifiable": [
+      "未读取文件元数据，不能独立确认文件实际为1536×1024。",
+      "不能通过显示图片确认源层、文件身份或原摄影像素未变。",
+      "不能确认原文字区域的修复过程与像素准确性。",
+      "不能从成图反推准确提示词、模型、镜头或seed。"
+    ]
+  },
+  "design": {
+    "wordmark": "能够读出品牌，且存在结构改造；但叶形比整组笔画语言更突出，与P的识别强度仍有差距。",
+    "image_text_relation": "茶杯摄影具有吸引力，但右上实色牌面与产品环境分离。S的文字直接落在自然暗部，保持了更多图文空间联系；T的可读性提高，却牺牲了整体连接。",
+    "brand_identity": "茶类属性清楚，茶作自身的视觉记忆仍不够充分。",
+    "completion": "冻结文案已出现，但孤立横块、文字牌面和摄影保护失败使作品尚不具交付审核所需的完成度。",
+    "reference_gap": "R上半广告通过产品主体、品牌及主文案在同一环境中的位置和尺度形成整体。T虽具有显著品牌和产品，却主要用矩形分区实现清晰度，尚未形成相同程度的共同构图。",
+    "judgment_boundary": "字标及图文评价属于AI专业判断；摄影保护问题属于可见任务不符；未将个人偏好当作通过标准。"
+  },
+  "calibration_comparison": {
+    "P": {
+      "used_for": "字标、构图和辅助文字校准。",
+      "comparison": "P的大字通过笔画收放与不规则轮廓建立识别，大小文字形成明确层级，并利用背景位置组织信息。T具有更简单的阅读内容，但字标笔画语言和整体排版关系较弱。",
+      "excluded": "P摄影曾被否决，不作为认可摄影或要求T采用其场景的依据。"
+    },
+    "N": {
+      "used_for": "完整设计否决校准。",
+      "comparison": "N的大字跨越色带与摄影，下方插入重复摄影，使构图断开。T没有重复插图且核心文案完整，但实色牌面与孤立横块仍产生类似的分区和残件感。",
+      "boundary": "N被否决不能推出所有矩形或所有大字都不成立。"
+    },
+    "R": {
+      "used_for": "仅上半横版广告的组织机制。",
+      "comparison": "R的产品集中，品牌和大文案与周围自然环境共同组织画面。T的茶杯和字标分别成立，但文字区域被硬边界隔离，核心文案的作用偏弱。",
+      "excluded": "未评价下半样机，不建议复制R的品牌字形或水印。"
+    },
+    "S": {
+      "used_for": "摄影正向校准与文字否决校准，分别观察。",
+      "comparison": "S的茶杯、茶盘、前景和溪水构成更完整的自然饮茶情境。T的杯体更大、视角更高且更明亮，摄影并非S关系的保留；T字标比S多了笔画内的叶形改造，但尚不足以弥补整体任务及排版问题。"
+    }
+  },
+  "reviewer": {
+    "type": "独立AI品牌视觉与中文排版审稿人",
+    "qualification": "不是创作者，也不是真人专家；不声称具有汉字专科资历。",
+    "evidence_basis": "仅观察P、N、R、S、T的实际图片，每张通过view_image读取一次。",
+    "decision_scope": "AI评审不等于刘先生认可；即使AI通过，也只允许进入交付审核。本轮结论为AI_FAIL。"
+  },
+  "actual_tool_read_paths": [
+    "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/review_packets/skill_review_20261003/P.png",
+    "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/review_packets/skill_review_20261003/N.png",
+    "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/review_packets/skill_review_20261003/R.jpg",
+    "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/review_packets/skill_review_20261003/S.png",
+    "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/review_packets/skill_review_20261003/T.png"
+  ],
+  "human_verdict": "HIDDEN_PENDING",
+  "personal_fit": null
+}

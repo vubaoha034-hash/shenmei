@@ -1,0 +1,19 @@
+{
+  "scope": "Synthetic negative controls of evidence collection; not image quality or additional reviews",
+  "cases": [
+    {
+      "case": "wrong_target",
+      "expected_synthetic_fault": true,
+      "exit_code": 1,
+      "assertion": "Target identity mismatch",
+      "verified_outputs_created": false
+    },
+    {
+      "case": "unproven_fallback",
+      "expected_synthetic_fault": true,
+      "exit_code": 1,
+      "assertion": "Fallback requires a recorded actual pixel-review capacity failure",
+      "verified_outputs_created": false
+    }
+  ]
+}

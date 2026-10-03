@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- INDEPENDENT_REVIEW_SKILL_ENTRY_20261003 -->
+多角色与实际审核skill入口：读取原生任务锁及下方原件纠偏后，读 `continuity/vpd/codex_takeover_20261003/REVIEW_FIRST_REUSE.md`。已实际完成独立五图像素审核及真人结论隐藏后的核对；官方design-critique固定版本与项目必要适配可复用，仍是实验方法。摄影成功与文字失败分别保留，当前作品仍为AI_FAIL/真人REJECTED，唯一下一动作及既有预算不扩大。
+<!-- END_INDEPENDENT_REVIEW_SKILL_ENTRY_20261003 -->
+
 <!-- CODEX_REFERENCE_FEEDBACK_CORRECTION_20261003 -->
 最新纠偏先读 `continuity/vpd/codex_takeover_20261003/RECONCILE_REFERENCE_AND_FEEDBACK.md`。已通过网页实际原件和全幅像素对比确认：用户评价的第一张为网页生成图1（e7af9c9e…），与16:24上传图（a579e846…）像素相同；它不是R4。旧R4摄影认可绑定已撤回，三版保留为AI_FAIL和真人否定结果。不得只凭旧恢复回执重新认定认可底图，也不得自动增加第四版。
 <!-- END_CODEX_REFERENCE_FEEDBACK_CORRECTION_20261003 -->

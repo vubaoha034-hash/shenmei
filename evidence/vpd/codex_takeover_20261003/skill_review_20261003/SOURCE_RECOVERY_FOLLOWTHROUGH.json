@@ -1,0 +1,48 @@
+{
+  "schema_version": "vpd-bounded-first-photo-source-recovery/v1",
+  "checked_at": "2026-10-03T09:40:58.004150+00:00",
+  "after_independent_review": "AI_FAIL and five-image context audit verified",
+  "browser_page": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d-gao-ji-gan-p/c/6abf5480-0ebc-83ea-a73c-314bda3d498f",
+  "actions": [
+    "Read existing open page via user-requested Opera Neon plugin",
+    "Expand observed 44m21s visible execution summary",
+    "Inspect visible text for image-edit/cleanup steps",
+    "Read exact R1 execution receipt and bounded related evidence search",
+    "Inspect original PNG chunks for embedded generation metadata"
+  ],
+  "actual_first_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
+  "png_metadata_chunks": [],
+  "visible_page_statements": [
+    "局部生成测试明显越界改动了摄影，不进入项目候选，也不会送外审。",
+    "只对原始图88做文字清除，要求其他像素/构图不变；之后再叠加新的字标与文案系统。",
+    "两个生成式编辑越界失败、未作为候选。"
+  ],
+  "statements_source": "Visible ChatGPT execution summary, not new human feedback or verified prompt payload",
+  "historical_receipt": {
+    "path": "evidence/vpd/candidate88_external_review_20261002/r1/REVISION_EXECUTION_RECEIPT.json",
+    "sha256": "03f24efa4e5fcaf6c1ef8fc48817afc9f77ada1bd8c6ad397b8bb25cf0906749",
+    "discarded_attempts": [
+      {
+        "tool_family": "CHATGPT_IMAGE_EDIT",
+        "count": 2,
+        "disposition": "DISCARDED_NOT_SAVED_NOT_REVIEWED",
+        "reason": "编辑器未遵守局部冻结，重构了摄影主体/构图并加入额外文案；不进入项目候选。"
+      }
+    ]
+  },
+  "inference": "The gallery contains generated edits while R1-R4 native receipts describe font-raster overlays on candidate88; the successful first photography may originate from a discarded generated edit. The visible summary does not bind each discarded call to e7af9c9e; do not state this as proven call identity.",
+  "confirmed_gap": [
+    "Correct original is a baked complete poster, not a text-free layer",
+    "No exact e7af9c9e successful prompt/reference/parameter binding in searched native evidence",
+    "Original PNG has no textual generation metadata",
+    "Visible UI gives execution summaries, not complete image-tool input payload"
+  ],
+  "clean_text_free_source": "NOT_LOCATED",
+  "exact_successful_call": "UNKNOWN_NOT_RECOVERED",
+  "bounded_search_stopped": true,
+  "raw_image_reuploaded_publicly": false,
+  "image_generations": 0,
+  "figma_mutations": 0,
+  "formal_versions_added": 0,
+  "next_required_action": "RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE"
+}
