@@ -1,0 +1,237 @@
+{
+  "schema_version": "vpd-independent-professional-audit/v2",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "auditor": "/root/professional_audit",
+  "read_only": true,
+  "files_or_business_state_written": false,
+  "figma_node_content_modified": false,
+  "result": "TECHNICAL_DELIVERY_VERIFIED_AESTHETIC_AI_FAIL",
+  "conclusion": "三版作品真实制作完成，摄影保护、可编辑结构、真实独立审稿和原始PNG原生保存已有实际证据。纠正校准输入后的第三版审稿仍为AI_FAIL，不能宣称审美交付通过、真人认可或整体系统完成。远端提交与freshclone完整恢复仍待后续核对。",
+  "target": {
+    "path": ".liu-visual-private/versions/v3/poster.png",
+    "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a",
+    "bytes": 1821889,
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "editable_frame": "259:2",
+    "exact_png_archive_node": "261:2",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1"
+  },
+  "actual_pixel_inspection": {
+    "inspected": [
+      "T",
+      "R",
+      "P_PROXY",
+      "N",
+      "P_DIRECT"
+    ],
+    "reference_scope": "仅R上半横版广告",
+    "observations": [
+      {
+        "region": [
+          952,
+          112,
+          1305,
+          349
+        ],
+        "evidence": "茶作可以辨认，叶形与叶脉留白已进入字内笔画，具有可见结构关联。",
+        "limit": "局部结构成立不等于整体字标完成或审美通过。"
+      },
+      {
+        "region": [
+          39,
+          48,
+          195,
+          80
+        ],
+        "evidence": "左上无内容的深绿色短条仍像未完成的覆盖区域，削弱交付完成感。"
+      },
+      {
+        "region": [
+          920,
+          94,
+          1536,
+          409
+        ],
+        "evidence": "右上实色文字板保证可读性，但硬边使文字区与自然摄影的关系偏独立。"
+      },
+      {
+        "region": [
+          1320,
+          261,
+          1448,
+          354
+        ],
+        "evidence": "准确文案分成一杯茶，和慢下来两行，清楚可读；与主字标的阅读连接仍偏弱。"
+      }
+    ],
+    "aesthetic_authority": "不替代另一独立代理的正式像素判断或刘先生真人验收"
+  },
+  "verified_checks": [
+    {
+      "check": "原件身份及原生摄影层",
+      "status": "VERIFIED",
+      "evidence": [
+        "continuity/vpd/codex_takeover_20261003/PHOTO_PROTECTION.json",
+        "evidence/vpd/candidate88_external_review_20261002/r4/REVISION_EXECUTION_RECEIPT.json",
+        "evidence/vpd/codex_takeover_20261003/v3/FIGMA_READBACK.json"
+      ],
+      "independent_result": "官方getBytesAsync实际读取1797503字节，SHA为7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed。三版源图均相同；位置、尺寸、旋转及变换为1:1，源层锁定，滤镜全部为0。",
+      "limit": "第一张摄影正向评价与R4的对应来自连续派发及结算链；真人反馈本身没有写文件ID。原件包含烘焙旧字，并非无字摄影母片。"
+    },
+    {
+      "check": "摄影保护与机械保真导出",
+      "status": "VERIFIED_WITH_EXPLICIT_SCOPE",
+      "evidence": [
+        "scripts/vpd_export_photo_safe.py",
+        "evidence/vpd/codex_takeover_20261003/v3/EXPORT_FIDELITY.json"
+      ],
+      "independent_result": "三版分别重新解码比较：1356936个保护区像素与R4差0；设计区像素全部与各版raw Figma导出相同。raw Figma在保护区均有6601个像素变化，最大通道差1。",
+      "assessment": "恢复源RGB的技术补偿真实且透明，满足声明保护范围。不能称为Figma原始渲染逐像素未变，也不能声称恢复了旧字遮挡下的摄影。"
+    },
+    {
+      "check": "颜色声明",
+      "status": "VERIFIED_FOR_THIS_SOURCE",
+      "evidence": "evidence/vpd/codex_takeover_20261003/PNG_COLOR_PROFILE_AUDIT.json",
+      "independent_result": "R4与三版最终PNG均无sRGB、gAMA、iCCP等颜色声明；三版raw Figma含sRGB及gAMA，gamma为0.45455。",
+      "limit": "证明固定未标记RGB源的数值保护，不证明任意ICC输入的色彩转换或跨显示设备一致性。"
+    },
+    {
+      "check": "字标与文案可编辑性",
+      "status": "VERIFIED",
+      "evidence": [
+        "evidence/vpd/codex_takeover_20261003/chazuo-wordmark-v3.svg",
+        "evidence/vpd/codex_takeover_20261003/v3/FIGMA_EXPORTED_WORDMARK.svg",
+        "evidence/vpd/codex_takeover_20261003/v3/FIGMA_READBACK.json"
+      ],
+      "independent_result": "官方读取259:46包含16个闭合VECTOR；259:65和259:66为真实TEXT，内容准确，Noto Serif SC Medium32，无MissingFont。V1和V2原生源仍存在。",
+      "limit": "本地闭合路径来源与原生结构可追溯；不构成全球原创性、商标独占或成熟字标质量证明。"
+    },
+    {
+      "check": "实际交付PNG原生保存",
+      "status": "VERIFIED",
+      "evidence": "evidence/vpd/codex_takeover_20261003/DELIVERY_ASSET_MANIFEST.json",
+      "independent_result": {
+        "262:2": "5845727b910bec294a27faa3f471bf3d41aba72bfd7b7776e42f4f866b1132f8",
+        "262:3": "deb61c6039643dea4c46082c85ca78012349aae1f4967ffdeeafd245bdca5103",
+        "261:2": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a"
+      },
+      "assessment": "官方原生图像字节逐版匹配实际交付。恢复必须取rawImages；export重新渲染不能替代精确交付文件。"
+    },
+    {
+      "check": "校准身份修正",
+      "status": "RESOLVED",
+      "evidence": [
+        "evidence/vpd/codex_takeover_20261003/REVIEW_INPUT_PROVENANCE_CANONICAL.json",
+        "evidence/vpd/codex_takeover_20261003/CANONICAL_REFERENCE_CORRECTION.json"
+      ],
+      "independent_result": "官方独立导出201:2与241:2的SHA分别为78e6d85f…和3f4c6797…，与保存的独立导出一致。corrected P与201、N与241逐RGBA像素差0，alpha全部255。265:2、265:3、265:4的原始字节分别精确匹配P代理、N和P直接样本。",
+      "scope": "201:2/203:2只校准真人认可的设计、字标、层级及阅读关系；其摄影被否决。241:2对应真人整体否决。旧197:2代理不能自动继承201:2的认可范围，旧审稿保留该限制。"
+    },
+    {
+      "check": "真实独立审稿",
+      "status": "VERIFIED_WITH_DISCLOSED_LIMITATIONS",
+      "evidence": [
+        "scripts/vpd_collect_agent_review.py",
+        "continuity/vpd/codex_takeover_20261003/REVIEW_CARRIER_AMENDMENT.json",
+        "evidence/vpd/codex_takeover_20261003/v3_corrected/PIXEL_REVIEW.json"
+      ],
+      "independent_result": "实际root spawn为fork_turns=none；corrected child仅1个gpt-6.1-sol/max turn_context、1个exec且只调用4次view_image、4个实际ImageView、1次完成。真实结果AI_FAIL。V1、V2、原V3实际运行也已核对。",
+      "corrected_rollout_sha256": "f60b12d34b364436cb2212866a6965304e526f84429d5fb4092029a8d866a271",
+      "limits": [
+        "载体仍在相同文件系统，不能称为项目外目录冷审。",
+        "保存提示副本的SHA不能证明加密spawn消息的明文字节相等。",
+        "验证针对实际运行及工具读取范围，不是任意JavaScript的通用隔离证明。"
+      ]
+    },
+    {
+      "check": "旧R4检验样本",
+      "status": "VERIFIED_SINGLE_SAMPLE_ONLY",
+      "evidence": "evidence/vpd/codex_takeover_20261003/HOLDOUT_COMPARISON_CANONICAL.json",
+      "independent_result": "实际run的rollout SHA为e801f9359c991d7954fa4779a07ceae95733c53023afa285282fe61dbfcb8fac；P/N/R各读取1次，T读取2次，第二次仅解析同T返回PNG头。共5次ImageView、4张唯一图片、1个检验样本，实际AI_FAIL。",
+      "assessment": "version0及显式target的有界重读例外不影响正式版必须4次读取的要求。该样本与真人设计拒绝一致；没有准确率、统计置信度或普遍减少误判的证据。"
+    },
+    {
+      "check": "恢复脚本本体",
+      "status": "VERIFIED_DOWNLOAD_METHOD_FRESHCLONE_PENDING",
+      "evidence": [
+        "scripts/vpd_download_bound_asset.py",
+        "evidence/vpd/codex_takeover_20261003/RESTORE_SCRIPT_SMOKE.json",
+        "continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md"
+      ],
+      "independent_result": "同一URL并行探测：默认urllib收到202空体，常规UA收到200 PNG及正确SHA。修正后实际调用download函数，1次请求取得1821889字节，SHA与V3一致；本审查仅在内存读取。",
+      "assessment": "脚本保留HTTP200、PNG签名、精确SHA及private目标路径检查，不把202或HTML当成功。原生保存及实际下载能力成立；完整freshclone入口测试尚待核对。"
+    },
+    {
+      "check": "原生最终状态",
+      "status": "VERIFIED_CURRENT_SNAPSHOT",
+      "evidence": [
+        "scripts/vpd_codex_takeover.py",
+        "visual_memory/vpd_locked_mainline_state.py",
+        "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json"
+      ],
+      "independent_result": {
+        "validate_state": "PASS",
+        "revision": 261,
+        "checkpoint_sequence": 283,
+        "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+        "formal_versions_used": 3,
+        "revisions_used": 2,
+        "photo_generations": 0,
+        "next_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW"
+      },
+      "limits": [
+        "writer预检、并发差异检查和异常回滚已补；逐文件replace不是掉电或进程崩溃下的跨文件原子提交。",
+        "技术guard仍不能仅凭通过自动证明Figma源字节、矢量和字体；本任务这些证据由独立官方读取核销。"
+      ]
+    }
+  ],
+  "method_research": {
+    "status": "REAL_BOUNDED_TRIAL_VISUAL_BENEFIT_UNPROVED",
+    "evidence": [
+      "evidence/vpd/codex_takeover_20261003/METHOD_ADOPTION.json",
+      "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/RESEARCH_RESULT.json",
+      "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/RUNTIME_SOURCE_MATCH_ADJUDICATION.json"
+    ],
+    "verified": [
+      "fontTools4.63.0固定源码、MIT许可及两个中文字形的实际几何试用已独立查验和复算。",
+      "Source Han Serif SC2.003固定字体SHA及OFL1.1许可可追溯，字体未改制。",
+      "Noto Serif SC固定Google Fonts提交的OFL原文已独立下载，与保存许可逐字节一致；实际Figma字体二进制版本仍不可观察。",
+      "官方figma-use实际制作核心未被项目重写。",
+      "canvas-design、frontend-design及HarfBuzz只有候选研究，未冒充已安装或有效采用。"
+    ],
+    "unproved": [
+      "两个字形的BoundsPen与ControlBounds结果相同，本样本没有额外精度收益证据。",
+      "轮廓面积和重心不是字标审美、视觉字距或墨迹并集面积证明。",
+      "MomentsPen原生扩展的完整构建来源未重建。",
+      "未找到并验证适用的成熟中文品牌Logo Skill。",
+      "未证明字标更美、时间节省、迁移收益、第二风格或整体系统完成。"
+    ]
+  },
+  "remaining_aesthetic_blockers": [
+    "左上空短条导致未完成感。",
+    "右上文字板与摄影的整体组织仍生硬。",
+    "字标虽有字内叶形机制，整体笔画语言和主副文字关系仍不足。"
+  ],
+  "pending_checks": [
+    {
+      "item": "最终提交、非强推及远端独立回读",
+      "status": "PENDING",
+      "required_evidence": "实际commit、远端分支HEAD及关键文件规范字节回读"
+    },
+    {
+      "item": "freshclone及新上下文完整入口恢复",
+      "status": "PENDING",
+      "required_evidence": "空private目录中按入口取得真实源图与V3、精确SHA验证、原生状态检查通过，并核对实际下一动作"
+    },
+    {
+      "item": "本轮新成品真人审美验收",
+      "status": "PENDING",
+      "personal_fit": null
+    }
+  ],
+  "promotion_allowed": false,
+  "additional_design_execution_authorized_by_this_audit": false
+}
