@@ -70,8 +70,15 @@ def main():
     if prior and args.versions>prior['budget']['formal_versions_used']+1: raise ValueError('NON_SERIAL_VERSION')
     now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()
     take={**(prior or {}),'task_id':TASK,'status':args.status,'next_required_action':args.next,'authorization':ref(BASE+'EXECUTION_AUTHORIZATION.json'),'photo_protection':ref(BASE+'PHOTO_PROTECTION.json'),'receipt':ref(args.receipt),'budget':{'formal_versions_max':3,'formal_versions_used':args.versions,'revisions_max':2,'revisions_used':args.revisions,'photo_generations':0,'paid_compute_usd':0,'training':0,'automations':0,'second_style':0},'human_verdict':receipt.get('human_verdict','PENDING'),'candidate_promoted':False,'state_writer':'ROOT_EXECUTOR_ONLY'}
-    for key in ['human_feedback', 'source_identity_correction', 'source_recovery']:
+    for key in ['human_feedback', 'source_identity_correction', 'source_recovery', 'worker_continuation']:
         if receipt.get(key):take[key]=receipt[key]
+    unit = take.get('worker_continuation')
+    if unit:
+        old_unit = (prior or {}).get('worker_continuation')
+        if old_unit:
+            if old_unit['unit_id'] != unit['unit_id']: raise ValueError('WORKER_CANNOT_CHANGE_UNIT')
+            old_used, used = old_unit['budget']['formal_versions_used'], unit['budget']['formal_versions_used']
+            if not old_used <= used <= old_used + 1: raise ValueError('CONTINUATION_BUDGET_ROLLBACK_OR_SKIP')
     entry='REUSE_FINAL.md' if (ROOT/BASE/'REUSE_FINAL.md').exists() else 'REUSE.md'
     if (ROOT/BASE/entry).exists():
         take['reuse_entry']=ref(BASE+entry)
@@ -79,6 +86,9 @@ def main():
     lock['revision']+=1; lock['codex_takeover']=take; lock['current_task_id']=TASK; lock['status']=args.status; lock['next_required_action']=args.next; lock['current_stage']=args.focus; lock['updated_at']=now; lock['latest_evidence']=ref(args.receipt); lock['completed_this_revision']=receipt.get('completed_this_revision') or ['本次授权范围内真实制作与证据按回执保存；历史已认可范围保留']
     lock['execution_boundary']['current_image_generation_authorization']=0
     lock['execution_boundary']['current_figma_canvas_authorization']=3-args.versions
+    if unit:
+        lock['execution_boundary']['current_figma_canvas_authorization']=unit['budget']['formal_versions_max']-unit['budget']['formal_versions_used']
+        lock['execution_boundary']['independent_worker_contract']=unit['worker_contract']
     lock['execution_boundary']['current_image_generation_authorization_scope']=TASK
     lock['execution_boundary']['successor_execution_authorized']=True
     lock['execution_boundary']['bounded_typography_design_versions_authorization']=take['authorization']
@@ -111,6 +121,9 @@ def main():
         adapter['current_mainline']['evidence']['latest_human_feedback']=take['human_feedback']
     if take.get('reuse_entry'):
         adapter['workflow']['current_bounded_delivery_entry']=take['reuse_entry']
+    if unit:
+        adapter['current_mainline']['current_visual_unit']='HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY'
+        cp['incomplete']=['完整海报真人验收仍待完成；摄影修补候选已获真人认可','原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证']
     fresh_remote=remote_head()
     if fresh_remote!=remote:raise ValueError('REMOTE_ADVANCED_DURING_PREPARATION')
     if any(p.read_bytes()!=v for p,v in originals.items()):raise ValueError('LOCAL_CONCURRENT_STATE_WRITE')

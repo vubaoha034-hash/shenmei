@@ -365,6 +365,16 @@ def status_card(lock, cp):
                 if recovery['phase'] == 'HUMAN_REVIEW_REQUIRED':
                     card.update(当前阶段='LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW',
                                 摄影保护='声明文字邻域外RGB零变化；邻域为重建，非隐藏原件恢复')
+            if take.get('worker_continuation'):
+                unit = take['worker_continuation']
+                card.update(当前阶段='CORRECT_SOURCE_TYPOGRAPHY_INDEPENDENT_WORKER',
+                            真人结论=unit['poster_human_verdict'],
+                            旧三版真人结论=take['human_verdict'],
+                            正式设计版本=f"{unit['budget']['formal_versions_used']}/3（当前同任务续办）",
+                            修订次数=f"{unit['budget']['revisions_used']}/2（当前同任务续办）",
+                            旧失败版本预算='3/3；2/2；保留未清零',
+                            摄影保护='冻结真人认可7fd7777f摄影；只新增独立矢量与文字层',
+                            worker可改主线=False)
         return card
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',

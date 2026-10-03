@@ -1,0 +1,135 @@
+"""Current work-unit checks inside the one existing VPD state authority.
+
+The worker supplies evidence, never business state or authorization. This is
+repository consistency, not an operating-system capability sandbox or taste oracle.
+"""
+from .vpd_task_lock import read, require, check_ref
+
+SOURCE = '7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618'
+UNIT = 'CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1'
+TASK = 'VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01'
+
+def load(root, ref):
+    check_ref(root, ref)
+    return read(root, ref['path'])
+
+def validate_continuation(root, lock, cp, adapter, receipt):
+    take = lock['codex_takeover']; unit = take['worker_continuation']
+    require(unit == receipt.get('worker_continuation') and unit['unit_id'] == UNIT,
+            'WORKER_UNIT_CHANGED')
+    require(take['human_verdict'] == receipt['human_verdict'] == 'REJECTED' and
+            take['budget']['formal_versions_used'] == 3 and take['budget']['revisions_used'] == 2,
+            'OLD_FAILED_CYCLE_REWRITTEN')
+    prior = load(root, unit['prior_failed_cycle_receipt'])
+    require(prior['human_verdict'] == 'REJECTED' and prior['budget'] ==
+            {'formal_versions_used':3,'revisions_used':2}, 'OLD_FAILED_CYCLE_REWRITTEN')
+    authorization = load(root, unit['authorization'])
+    worker = load(root, unit['worker_contract'])
+    require(authorization['task_id'] == TASK and authorization['unit_id'] == UNIT and
+            authorization['source']['kind'] == 'CURRENT_HUMAN_USER_MESSAGE' and
+            authorization['source']['verbatim'] and authorization['scope']['mainline_change'] is False
+            and authorization['scope']['old_formal_budget_reset'] is False,
+            'EXPLICIT_SAME_TASK_CONTINUATION_REQUIRED')
+    require(worker['task_id'] == TASK and worker['roles']['business_state_writer'] == 'ROOT_ONLY'
+            and worker['roles']['reviewer'] == 'FRESH_FORK_NONE_READ_ONLY_PIXEL_WORKER'
+            and worker['worker_permissions'] == {
+                'read_declared_review_images':True, 'write_business_state':False,
+                'change_mainline':False, 'change_goal':False, 'change_reference':False,
+                'change_copy_or_aspect':False, 'expand_budget':False,
+                'generate_or_edit_artwork':False, 'give_human_acceptance':False}
+            and worker['mainline_change_requires'] == 'EXPLICIT_HUMAN_USER_CONSENT'
+            and lock['execution_boundary']['independent_worker_contract'] == unit['worker_contract'],
+            'WORKER_AUTHORITY_EXPANSION')
+    require(authorization['preserved_mainline'] == worker['preserved_mainline'] == lock['mainline_lock']
+            and authorization['brand'] == unit['brand'] == '茶作'
+            and authorization['copy'] == unit['copy'] == '一杯茶，慢下来'
+            and unit['dimensions'] == [1536,1024], 'WORKER_MAINLINE_DRIFT')
+    approval = load(root, unit['source_approval'])
+    require(approval['source_kind'] == 'CURRENT_HUMAN_USER_MESSAGE' and approval['verbatim']
+            and approval['target_sha256'] == SOURCE and approval['human_verdict'] == 'ACCEPTED'
+            and approval['scope'] == 'LOCAL_BACKGROUND_RECONSTRUCTION_PHOTOGRAPHY_ONLY'
+            and unit['frozen_source']['sha256'] == SOURCE
+            and unit['poster_human_verdict'] == 'PENDING', 'SCOPED_HUMAN_APPROVAL_REQUIRED')
+    recovery = take['source_recovery']
+    require(recovery == receipt['source_recovery'] == lock['execution_boundary']['source_recovery_tool_trial']
+            and recovery['phase'] == 'APPROVED_FROZEN' and recovery['human_verdict'] == 'ACCEPTED'
+            and recovery['human_approval'] == unit['source_approval']
+            and recovery['imagegen_edit_calls_used'] == 1
+            and recovery['is_recovered_hidden_original'] is False, 'SOURCE_RECOVERY_SCOPE_CONFLICT')
+    delivered = load(root, recovery['delivery_manifest'])
+    require(delivered['output']['sha256'] == SOURCE and delivered['hidden_original_recovered'] is False,
+            'APPROVED_SOURCE_IDENTITY_CHANGED')
+    budget = unit['budget']; used = budget['formal_versions_used']
+    require(type(used) is int and 0 <= used <= 3 and budget['revisions_used'] == max(0,used-1)
+            and budget['formal_versions_max'] == 3 and budget['revisions_max'] == 2
+            and all(budget[k] == 0 for k in ['photo_generations','paid_compute_usd','training',
+                'automations','second_style','parallel_alternatives','hidden_variants'])
+            and authorization['operational_ceiling']['formal_versions_max'] == 3
+            and authorization['operational_ceiling']['revisions_max'] == 2,
+            'CONTINUATION_BUDGET_EXCEEDED')
+    require(receipt['budget'] == {'formal_versions_used':3,'revisions_used':2}
+            and receipt['task_id'] == TASK and receipt['status'] == take['status']
+            and receipt['next_required_action'] == take['next_required_action'], 'CONTINUATION_RECEIPT_CONFLICT')
+    require(receipt.get('artifact_refs'), 'CONTINUATION_ARTIFACT_REQUIRED')
+    for ref in receipt['artifact_refs']: check_ref(root, ref)
+    actions = {'AUTHORIZED':'CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1',
+        'AWAITING_PIXEL_REVIEW':'REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS',
+        'REVISION_REQUIRED':'REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE',
+        'DELIVERED_AI_PASS':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER',
+        'DELIVERED_AI_FAIL':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW',
+        'TECHNICAL_BLOCKED':'REPAIR_OBSERVED_CORRECT_SOURCE_TECHNICAL_BLOCKER'}
+    require(unit['phase'] in actions and take['next_required_action'] == actions[unit['phase']]
+            and take['status'] == 'VPD_CODEX_CHAZUO_CORRECT_SOURCE_'+unit['phase'],
+            'WORKER_CONTINUATION_ACTION_CONFLICT')
+    if unit['phase'] in ['AUTHORIZED','TECHNICAL_BLOCKED']: return
+    require(used > 0 and len(unit['versions']) == used, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
+    for number, version in enumerate(unit['versions'],1):
+        require(version['number'] == number, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
+        technical = load(root, version['technical_check'])
+        require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
+                and technical['protected_pixels_changed'] == 0
+                and technical['protected_max_channel_difference'] == 0
+                and technical['source_layer_unchanged'] is True,
+                'ACCEPTED_PHOTOGRAPHY_CHANGED')
+        if version.get('pixel_review'): validate_review(root, version, number)
+    current = unit['versions'][-1]
+    if unit['phase'] == 'AWAITING_PIXEL_REVIEW': return
+    verdict = validate_review(root, current, used)['verdict']
+    require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and used<3)
+            or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
+            or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
+    if unit['phase'].startswith('DELIVERED_'):
+        archive=load(root,current['drive_archive'])
+        require(archive['readback_result']=='PASS' and archive['poster_sha256']==current['export']['sha256']
+                and archive['raw_bytes_equal_local'] is True, 'DRIVE_RAW_READBACK_REQUIRED')
+
+def validate_review(root, version, number):
+    review=load(root,version['pixel_review']); ids=['P','N','R','S','T']
+    require(review['task_id']==TASK and review['work_unit_id']==UNIT and review['version']==number
+            and review['human_verdict']=='HIDDEN_PENDING' and review['personal_fit'] is None
+            and review['verdict'] in ['AI_PASS','AI_FAIL'] and review['pixels_seen']==ids
+            and review['export']==version['export'] and len(review['observations'])>=5
+            and all(o.get('region') and o.get('evidence') for o in review['observations']),
+            'ACTUAL_WORKER_PIXEL_REVIEW_REQUIRED')
+    audit=load(root,review['isolation_audit']); evidence=load(root,audit['evidence'])
+    raw=load(root,evidence['raw_tool_read_audit']); spawn=load(root,evidence['spawn_receipt'])
+    bindings={b['neutral_id']:b['sha256'] for b in review['input_bindings']}
+    require(audit['verified'] is True and audit['fork_turns']=='none' and audit['history_inherited'] is False
+            and audit['source_project_context_read'] is False and audit['fresh_agent'] is True
+            and audit['completed'] is True and audit['tool_scope_violations']==[]
+            and audit['attachments_verified']==ids and audit['actual_model']=='gpt-6.1-sol'
+            and audit['actual_reasoning_effort']=='max' and len(bindings)==5
+            and bindings['T']==version['export']['sha256']
+            and evidence['turn_context']=={'model':'gpt-6.1-sol','reasoning_effort':'max'}
+            and len(evidence['tool_reads'])==5
+            and {r['neutral_id']:r['sha256'] for r in evidence['tool_reads']}==bindings
+            and all(r['tool']=='view_image' for r in evidence['tool_reads'])
+            and raw['tool_reads']==evidence['tool_reads'] and raw['extra_tool_reads']==[]
+            and raw['source_project_context_reads']==[]
+            and spawn['thread_id']==evidence['thread_id']==raw['thread_id']
+            and spawn['fork_turns']=='none' and spawn['history_inherited'] is False
+            and spawn['actual_model']=='gpt-6.1-sol' and spawn['actual_reasoning_effort']=='max'
+            and spawn['initial_prompt_sha256']==audit['initial_prompt_sha256']==evidence['initial_prompt_sha256'],
+            'WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED')
+    load(root,audit['carrier_amendment']); load(root,evidence['reviewer_output'])
+    return review

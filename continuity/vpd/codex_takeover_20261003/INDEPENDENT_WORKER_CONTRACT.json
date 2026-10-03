@@ -1,0 +1,86 @@
+{
+  "schema_version": "vpd-independent-worker-contract/v1",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "authorization": {
+    "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
+    "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
+  },
+  "preserved_mainline": {
+    "id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+    "version": "1.0",
+    "locked": true,
+    "plan": {
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
+    },
+    "contract": {
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+    },
+    "authority": {
+      "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
+      "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
+    },
+    "preservation": {
+      "path": "continuity/vpd/history/mainline_lock_20261001/PRESERVATION_MANIFEST.json",
+      "sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd"
+    },
+    "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
+  },
+  "roles": {
+    "business_state_writer": "ROOT_ONLY",
+    "maker": "ROOT_OR_SEPARATE_ASSET_MAKER",
+    "reviewer": "FRESH_FORK_NONE_READ_ONLY_PIXEL_WORKER"
+  },
+  "worker_permissions": {
+    "read_declared_review_images": true,
+    "write_business_state": false,
+    "change_mainline": false,
+    "change_goal": false,
+    "change_reference": false,
+    "change_copy_or_aspect": false,
+    "expand_budget": false,
+    "generate_or_edit_artwork": false,
+    "give_human_acceptance": false
+  },
+  "mainline_change_requires": "EXPLICIT_HUMAN_USER_CONSENT",
+  "pipeline": [
+    "ROOT_PREPARES_DECLARED_IMAGES_AND_REQUIREMENTS",
+    "FRESH_WORKER_VIEWS_ALL_PIXELS_AND_GIVES_SPECIFIC_EVIDENCE",
+    "ROOT_VERIFIES_REAL_SPAWN_CONTEXT_MODEL_IMAGES_AND_TOOL_SCOPE",
+    "AI_FAIL_ROOT_REPAIRS_ONLY_AUTHORIZED_TYPOGRAPHY_WITHIN_CAP_THEN_FRESH_REVIEW",
+    "AI_PASS_ROOT_CHECKS_TECHNICAL_EXPORT_DRIVE_AND_GIT_READBACK",
+    "SAVE_INTERNAL_ACCEPTANCE_AND_CONTINUE_ONLY_EXISTING_AUTHORIZED_DEPENDENCIES",
+    "STOP_AT_COMPLETE_POSTER_HUMAN_VISUAL_REVIEW_OR_PRECISE_BLOCKER"
+  ],
+  "evidence_gate": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "max",
+    "actual_runtime_required": true,
+    "fork_turns": "none",
+    "expected_images": [
+      "P",
+      "N",
+      "R",
+      "S",
+      "T"
+    ],
+    "allowed_tools": [
+      "view_image"
+    ],
+    "creator_history_or_self_score": false,
+    "prior_review_verdicts": false,
+    "collector": "scripts/vpd_collect_agent_review.py",
+    "missing_pixel_or_isolation_evidence": "UNABLE_TO_EVALUATE_NOT_PASS"
+  },
+  "reuse_skill": {
+    "path": "skills/chazuo-independent-art-review/SKILL.md",
+    "sha256": "7ce1086b055775ac755902456254c6182f526371f8edd3edd0cf71c81e68d04e"
+  },
+  "limits": [
+    "Same filesystem remains accessible in principle; actual read scope is audited, not an OS sandbox",
+    "A fresh fork-none worker is the recorded carrier replacement, not a physical project-external session",
+    "Aesthetic judgment remains qualitative; passing engineering is not aesthetics",
+    "No silent model fallback, threshold reduction, historical overwrite or unlimited retry"
+  ]
+}

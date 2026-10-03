@@ -230,7 +230,8 @@ def _validate_codex_takeover(root, lock, cp, adapter):
             take.get('status') == lock['status'] and
             take.get('next_required_action') == lock['next_required_action'],
             'CONTINUATION_MIRROR_CONFLICT')
-    feedback_settled = take.get('status') == 'VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH'
+    feedback_settled = (take.get('status') == 'VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH'
+                        or bool(take.get('worker_continuation')))
     require(take.get('state_writer') == 'ROOT_EXECUTOR_ONLY' and
             take.get('candidate_promoted') is False and take.get('human_verdict') ==
             ('REJECTED' if feedback_settled else 'PENDING'),
@@ -274,7 +275,10 @@ def _validate_codex_takeover(root, lock, cp, adapter):
             boundary['current_image_generation_authorization'] ==
             boundary['current_image_generation_count_max'] == 0 and
             type(boundary['current_figma_canvas_authorization']) is int and
-            boundary['current_figma_canvas_authorization'] == 3 - versions and
+            boundary['current_figma_canvas_authorization'] ==
+                (take['worker_continuation']['budget']['formal_versions_max'] -
+                 take['worker_continuation']['budget']['formal_versions_used']
+                 if take.get('worker_continuation') else 3 - versions) and
             boundary['current_image_generation_authorization_scope'] == TAKEOVER_TASK and
             boundary.get('bounded_typography_design_versions_authorization') == take['authorization']
             and boundary.get('successor_execution_authorized') is True,
@@ -287,6 +291,10 @@ def _validate_codex_takeover(root, lock, cp, adapter):
             [lock['candidate88_human_final_review'], _ref_only(lock['candidate88_human_final_review'])],
             'CURRENT_EVIDENCE_MIRROR_CONFLICT')
     state = take['status'].removeprefix('VPD_CODEX_CHAZUO_')
+    if take.get('worker_continuation'):
+        from .vpd_correct_source_worker import validate_continuation
+        validate_continuation(root, lock, cp, adapter, receipt)
+        return
     if state == 'AUTHORIZED_SOURCE_PROTECTED':
         require(ref == take['authorization'] and versions == revisions == 0 and
                 take['next_required_action'] == 'CREATE_ONE_EDITABLE_CHAZUO_POSTER_VERSION_1',
@@ -863,6 +871,19 @@ def validate_locked_request(root, request, lock):
         require(not any(request.get(k) for k in ['render', 'photo_generation', 'training',
                 'paid_compute_usd', 'automations', 'second_style', 'hidden_variants']),
                 'RENDER_NOT_AUTHORIZED')
+        if take.get('worker_continuation'):
+            unit = take['worker_continuation']
+            require(request.get('actor') == 'ROOT_EXECUTOR' and
+                    request.get('work_unit_id') == unit['unit_id'], 'WORKER_STATE_WRITE_NOT_AUTHORIZED')
+            if request.get('figma_write') or request.get('wordmark_image_tool'):
+                require(unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'] and
+                        request.get('task_id') == take['task_id'] and
+                        request.get('authorization') == unit['authorization'] and
+                        request.get('frozen_source_sha256') == unit['frozen_source']['sha256'] and
+                        type(request.get('formal_version')) is int and
+                        request['formal_version'] == unit['budget']['formal_versions_used'] + 1 <= 3,
+                        'CORRECT_SOURCE_REQUEST_SCOPE_OR_BUDGET_CONFLICT')
+            return lock
         if request.get('figma_write') or request.get('wordmark_image_tool'):
             require(take['status'] in ['VPD_CODEX_CHAZUO_AUTHORIZED_SOURCE_PROTECTED',
                     'VPD_CODEX_CHAZUO_REVISION_REQUIRED'] and

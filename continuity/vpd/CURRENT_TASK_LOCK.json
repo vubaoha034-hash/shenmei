@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 269,
+  "revision": 270,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW",
-  "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
+  "current_stage": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
   "p6_allowed": false,
-  "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+  "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -143,7 +143,7 @@
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
     "current_image_generation_authorization": 0,
-    "current_figma_canvas_authorization": 0,
+    "current_figma_canvas_authorization": 3,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
@@ -173,12 +173,12 @@
         "sha256": "d3853a895f1fc75537e3de33260a1655bde82529606bdfe7beeb61bcf861a8db"
       },
       "source_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
-      "phase": "HUMAN_REVIEW_REQUIRED",
+      "phase": "APPROVED_FROZEN",
       "imagegen_edit_calls_max": 1,
       "imagegen_edit_calls_used": 1,
       "formal_poster_versions_added": 0,
       "is_recovered_hidden_original": false,
-      "human_verdict": "PENDING",
+      "human_verdict": "ACCEPTED",
       "delivery_manifest": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DELIVERY_MANIFEST.json",
         "sha256": "28dc4f69e88267b0451088ae3b88b2b4f319d660973840b26dfcde48a313d903"
@@ -208,16 +208,23 @@
       "fresh_drive_runtime": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
         "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
+      },
+      "human_approval": {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+        "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
       }
+    },
+    "independent_worker_contract": {
+      "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
+      "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
     }
   },
   "completed_this_revision": [
-    "八份图片实际存入私人Drive并绑定文件/版本ID、SHA和HTTP200原字节回读，Figma源保留",
-    "独立像素审稿及专业审查仅允许摄影修补送真人验收，完整海报仍未完成",
-    "新读取上下文恢复Drive入口，首轮SHA失配和下载403失败保留；针对具体原因有界复测后原生检查及两图实际下载/看图均通过",
-    "实际方法、依赖、成熟skill版本、失败边界和唯一真人摄影验收下一动作已在同一仓库入口保存"
+    "保存刘先生对摄影修补候选的真人认可，冻结精确7fd7777f完整底图",
+    "保存独立worker及无权改主线边界；原三版失败预算及历史完整保留",
+    "按同一未完成任务续办字标文字；本次主执行者有界自限、不进入新主线阶段"
   ],
-  "updated_at": "2026-10-03T19:56:41.949374+08:00",
+  "updated_at": "2026-10-03T20:46:05.000959+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2512,8 +2519,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-    "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
+    "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3155,8 +3162,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
-    "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
+    "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -3166,8 +3173,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-      "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
+      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
+      "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3184,8 +3191,8 @@
     "candidate_promoted": false,
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
-      "path": "continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md",
-      "sha256": "0b8423aa6a5cd37219e31298e1bcbdba5df7b43e27552d0952a5b8713c789b6b"
+      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "sha256": "5d1012f6e21a2af6340f0df15feaad28dfcbce725a62e62f6a3a0cea93e653c0"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -3201,12 +3208,12 @@
         "sha256": "d3853a895f1fc75537e3de33260a1655bde82529606bdfe7beeb61bcf861a8db"
       },
       "source_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
-      "phase": "HUMAN_REVIEW_REQUIRED",
+      "phase": "APPROVED_FROZEN",
       "imagegen_edit_calls_max": 1,
       "imagegen_edit_calls_used": 1,
       "formal_poster_versions_added": 0,
       "is_recovered_hidden_original": false,
-      "human_verdict": "PENDING",
+      "human_verdict": "ACCEPTED",
       "delivery_manifest": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DELIVERY_MANIFEST.json",
         "sha256": "28dc4f69e88267b0451088ae3b88b2b4f319d660973840b26dfcde48a313d903"
@@ -3236,7 +3243,59 @@
       "fresh_drive_runtime": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
         "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
+      },
+      "human_approval": {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+        "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
       }
+    },
+    "worker_continuation": {
+      "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+      "phase": "AUTHORIZED",
+      "authorization": {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
+        "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
+      },
+      "worker_contract": {
+        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
+        "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
+      },
+      "source_approval": {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+        "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
+      },
+      "prior_failed_cycle_receipt": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+        "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
+      },
+      "brand": "茶作",
+      "copy": "一杯茶，慢下来",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "frozen_source": {
+        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+        "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+        "figma_node": "283:5",
+        "local_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
+      },
+      "budget": {
+        "formal_versions_max": 3,
+        "formal_versions_used": 0,
+        "revisions_max": 2,
+        "revisions_used": 0,
+        "photo_generations": 0,
+        "paid_compute_usd": 0,
+        "training": 0,
+        "automations": 0,
+        "second_style": 0,
+        "parallel_alternatives": 0,
+        "hidden_variants": 0
+      },
+      "versions": [],
+      "poster_human_verdict": "PENDING",
+      "old_cycle_human_verdict": "REJECTED"
     }
   },
   "current_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"

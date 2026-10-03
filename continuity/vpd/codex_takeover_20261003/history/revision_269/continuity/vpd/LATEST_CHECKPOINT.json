@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 292,
-  "recorded_at": "2026-10-03T20:46:05.000959+08:00",
+  "sequence": 291,
+  "recorded_at": "2026-10-03T19:56:41.949374+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
+  "current_focus": "LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,11 +357,12 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "完整海报真人验收仍待完成；摄影修补候选已获真人认可",
-    "原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证"
+    "局部背景重建候选等待刘先生摄影保护验收；不冒充无字摄影原件",
+    "原三版海报仍否决；后续字标及完整设计未完成",
+    "视觉蒸馏收益及迁移能力未验证"
   ],
   "blocked": [],
-  "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
+  "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -429,11 +430,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
+  "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "2951b169cfa883a7f400d5955d9b43be2e9d55f269db3fc711e406674530d43c",
-    "revision": 270
+    "sha256": "47f2a770f35288e8a9d6fee41eb1d324af5dfa06f049b4358e9fb6d8c3e391a4",
+    "revision": 269
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -454,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-270-20261003",
-      "event_hash": "cad42aeff62ed2bc4743152de0788d145e6ee7322dc8b8de3d5fbaecc92907c3"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-269-20261003",
+      "event_hash": "57829a1fe2a9102e49baa17df439d96fc790e5d7d7a145381a959ef6602c2856"
     }
   },
   "typography_repair": {
@@ -970,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
-  "updated_at": "2026-10-03T20:46:05.000959+08:00",
+  "current_stage": "LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW",
+  "updated_at": "2026-10-03T19:56:41.949374+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1920,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
-    "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+    "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2652,8 +2653,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
-    "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
+    "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
+    "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2663,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
-      "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
+      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+      "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2681,8 +2682,8 @@
     "candidate_promoted": false,
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
-      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "5d1012f6e21a2af6340f0df15feaad28dfcbce725a62e62f6a3a0cea93e653c0"
+      "path": "continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md",
+      "sha256": "0b8423aa6a5cd37219e31298e1bcbdba5df7b43e27552d0952a5b8713c789b6b"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2698,12 +2699,12 @@
         "sha256": "d3853a895f1fc75537e3de33260a1655bde82529606bdfe7beeb61bcf861a8db"
       },
       "source_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
-      "phase": "APPROVED_FROZEN",
+      "phase": "HUMAN_REVIEW_REQUIRED",
       "imagegen_edit_calls_max": 1,
       "imagegen_edit_calls_used": 1,
       "formal_poster_versions_added": 0,
       "is_recovered_hidden_original": false,
-      "human_verdict": "ACCEPTED",
+      "human_verdict": "PENDING",
       "delivery_manifest": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DELIVERY_MANIFEST.json",
         "sha256": "28dc4f69e88267b0451088ae3b88b2b4f319d660973840b26dfcde48a313d903"
@@ -2733,59 +2734,7 @@
       "fresh_drive_runtime": {
         "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
         "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
-      },
-      "human_approval": {
-        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
-        "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
       }
-    },
-    "worker_continuation": {
-      "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "AUTHORIZED",
-      "authorization": {
-        "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
-        "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
-      },
-      "worker_contract": {
-        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
-        "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
-      },
-      "source_approval": {
-        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
-        "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
-      },
-      "prior_failed_cycle_receipt": {
-        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-        "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
-      },
-      "brand": "茶作",
-      "copy": "一杯茶，慢下来",
-      "dimensions": [
-        1536,
-        1024
-      ],
-      "frozen_source": {
-        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
-        "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
-        "figma_node": "283:5",
-        "local_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
-      },
-      "budget": {
-        "formal_versions_max": 3,
-        "formal_versions_used": 0,
-        "revisions_max": 2,
-        "revisions_used": 0,
-        "photo_generations": 0,
-        "paid_compute_usd": 0,
-        "training": 0,
-        "automations": 0,
-        "second_style": 0,
-        "parallel_alternatives": 0,
-        "hidden_variants": 0
-      },
-      "versions": [],
-      "poster_human_verdict": "PENDING",
-      "old_cycle_human_verdict": "REJECTED"
     }
   }
 }
