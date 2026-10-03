@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 276,
-    "sha256": "21e61d0342adb0935d8b3f381ebe18c84769896b5c853853ed6e554d3fd69682",
+    "revision": 275,
+    "sha256": "359b869122f5e45ef8a3826647edd0b33cd5852bf31ec8515fd87333f74e72f7",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -901,7 +901,7 @@
     "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock.",
     "current_bounded_delivery_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "de13610971c1632ffda2a76288d64f958a5b9aeec1354e8bdb7ac23888974570"
+      "sha256": "e7a8a1e2be3f5a4004549168b389b8cd1c9d2421593deba93b3d761c0c618067"
     }
   },
   "figma_upload_route_guard": {
@@ -986,12 +986,12 @@
   },
   "current_mainline": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
     "current_visual_unit": "HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY",
     "evidence": {
       "execution": {
-        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_FINAL_DELIVERY_RECEIPT.json",
-        "sha256": "7a735ddeebec0b5a37274c898ddb1be752a092fc4df41b3ff1b8df04e3b410bf"
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_EXECUTION_RECEIPT.json",
+        "sha256": "cd66a370db9767fefefe20c5f2f009a3ad6bd7c054cf1cbc0e69b6c294d056bd"
       },
       "human_verdict": {
         "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
@@ -1002,11 +1002,11 @@
         "next_legal_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
       }
     },
-    "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW",
+    "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
     "codex_takeover": {
       "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL",
-      "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW",
+      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
+      "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
         "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -1016,8 +1016,8 @@
         "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
       },
       "receipt": {
-        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_FINAL_DELIVERY_RECEIPT.json",
-        "sha256": "7a735ddeebec0b5a37274c898ddb1be752a092fc4df41b3ff1b8df04e3b410bf"
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_EXECUTION_RECEIPT.json",
+        "sha256": "cd66a370db9767fefefe20c5f2f009a3ad6bd7c054cf1cbc0e69b6c294d056bd"
       },
       "budget": {
         "formal_versions_max": 3,
@@ -1035,7 +1035,7 @@
       "state_writer": "ROOT_EXECUTOR_ONLY",
       "reuse_entry": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-        "sha256": "de13610971c1632ffda2a76288d64f958a5b9aeec1354e8bdb7ac23888974570"
+        "sha256": "e7a8a1e2be3f5a4004549168b389b8cd1c9d2421593deba93b3d761c0c618067"
       },
       "human_feedback": {
         "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -1094,7 +1094,7 @@
       },
       "worker_continuation": {
         "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-        "phase": "DELIVERED_AI_FAIL",
+        "phase": "AWAITING_PIXEL_REVIEW",
         "authorization": {
           "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
           "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -1208,8 +1208,8 @@
               "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826"
             },
             "technical_check": {
-              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/TECHNICAL_FINAL_CHECK.json",
-              "sha256": "dd449bc193e6cc0c71738ce3c155dc023cee064da2bf7fa29b6c65d855a096bb"
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/TECHNICAL_CHECK.json",
+              "sha256": "3c924c7241afa864dbdb622a5fffd5b44e378c10844c2b97786859e0ef1f5400"
             },
             "figma": {
               "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
@@ -1222,16 +1222,7 @@
               "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/provenance.json",
               "sha256": "ebd5876a7e9edda69034ef3db7bba00e1dc4ac07009da66af6d01e2398e40437"
             },
-            "preserved": true,
-            "pixel_review": {
-              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/pixel_review/PIXEL_REVIEW.json",
-              "sha256": "19e9183d815d9a3e9df19f5413badcb9403cc6a8ce7944f8ecbdb9aee08cfea3"
-            },
-            "verdict": "AI_FAIL",
-            "drive_archive": {
-              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json",
-              "sha256": "8dbaea7f1adbc9ad9b0e00cccacb1e624722b0ba4e79b4893ea38283a52127d1"
-            }
+            "preserved": true
           }
         ],
         "poster_human_verdict": "PENDING",
@@ -1275,8 +1266,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-276-20261003",
-      "event_hash": "9e6b17a0b929e847d5379ee703ef48981898a6ced387a467a997309449e02d7d"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-275-20261003",
+      "event_hash": "a1c2eff111f1b083c48331a9db4280dacf28464209cd1bb976eb33375db7f272"
     }
   },
   "mature_workflow_audit": {

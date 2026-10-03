@@ -1,0 +1,35 @@
+{
+  "scope": "Final one-direction repair of the lettering language, not another weight-only or location-only variation",
+  "independent_v2_review": {
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v2/pixel_review/REVIEWER_OUTPUT.json",
+    "sha256": "b70cc82e1a9fc47bd9c400b79a24698770fc653442b21137c689315f0531bdda",
+    "source_verdict": "AI_FAIL"
+  },
+  "actual_changes": [
+    {
+      "issue": "Free narrow wordmark and standard Song headline are visibly separate",
+      "change": "Rebase the wordmark on the licensed correct glyph skeleton and redesign its roof, hook, shaft widths and horizontal contours. Use the same edited definition of 茶 in the headline. Replace all named headline horizontal serif peaks with continuous low Bézier shoulders.",
+      "evidence": "contour_design.json contains original and edited operations, exact source glyph IDs, every replacement coordinate and shared 茶 path hash."
+    },
+    {
+      "issue": "Wordmark lacks a stable two-character structure",
+      "change": "茶 and 作 now share the source family's established stroke topology and width proportions, with72–75unit main-shaft rhythm, a shared shallow curved horizontal treatment and a compact985unit cell start for作.",
+      "evidence": "Brand no longer preserves the V1/V2 16-outline count. Final two compound paths retain7 closed source-based contours with local redraws."
+    },
+    {
+      "issue": "Headline remains distant from the tea tray",
+      "change": "Shift the headline from approximately1047..1351 to approximately940..1240, keep its lower edge close to430, and relate its narrower width to the enlarged upper-left wordmark. Line sizes become80/96 with107px baseline spacing.",
+      "evidence": "typography-layout.json and final raster export alpha bounds record the exact result."
+    }
+  ],
+  "retained": [
+    "Frozen source photography7fd7777…",
+    "1536x1024 and3:2",
+    "Tea brand 茶作",
+    "Exact copy 一杯茶，慢下来",
+    "Quiet mountain/forest photograph and #F5F5EF type",
+    "Original fixed left/right envelopes",
+    "No standalone leaf, band, badge or new style"
+  ],
+  "production_boundary": "This is one V3 asset set. No self score, independent acceptance claim, hidden alternate, image generation or project-state update."
+}

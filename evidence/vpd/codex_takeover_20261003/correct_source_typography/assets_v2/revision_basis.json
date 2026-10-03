@@ -1,0 +1,34 @@
+{
+  "scope": "One main revision: common typography stroke and spacing rhythm within the same visual direction",
+  "independent_review_source": {
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/REVIEWER_OUTPUT.json",
+    "sha256": "6da873f69891efbb3320f80ba2832e8112aae2c0a1ff0fc11e1ae2c07213fb22",
+    "source_verdict": "AI_FAIL"
+  },
+  "basis": [
+    {
+      "review_issue": "茶/作 weight, width and terminals not unified",
+      "changes": "作 falling strokes and verticals widened; shared gently lifted round horizontal terminals; 茶 sharp right roof corner replaced with a continuous rounded terminal; existing 茶/作 identities and structures retained",
+      "specific_geometry": "13 of 16 existing stroke shapes locally revised; all 16 closed paths remain. 作 x offset 1100 -> 1015; physical character gap decreases rather than adding a new shape."
+    },
+    {
+      "review_issue": "Brand and headline share too little stroke rhythm",
+      "changes": "Brand horizontals share continuous soft terminals; licensed headline outline is reinforced by 11 font units with round joins, reducing the frailty of thin horizontals; first/second size ratio 68:104 -> 76:98",
+      "specific_geometry": "Final visible stroke style is fill + explicit same-color SVG stroke. Font data is not edited and all Unicode characters remain exact."
+    },
+    {
+      "review_issue": "Headline stands too high and lines are too far apart",
+      "changes": "Title baseline y 190/329 -> 299/412; first/second tracking 7/12 -> 5/7; baseline separation 139 -> 113; visible interline space approx 41 -> 15 px",
+      "specific_geometry": "Headline is approximately x1048..1351, y235..421, with its lower edge closer to the stream and tea-tray reading line; fixed right region still ends at440."
+    }
+  ],
+  "retained": [
+    "Exact frozen photograph 7fd7777…",
+    "Brand 茶作 and core copy 一杯茶，慢下来",
+    "Same upper-left brand / upper-right two-line wording",
+    "Same type color #F5F5EF",
+    "Same original 16 stroke identities and licensed Source Han Serif headline",
+    "Existing fixed protection rectangles"
+  ],
+  "review_boundary": "This records revision intent and actual geometry, not self scoring or design acceptance."
+}

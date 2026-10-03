@@ -1,4 +1,34 @@
-# 茶作同一任务的独立 worker 入口
+# 茶作当前成果与独立 worker 调用入口
+
+当前说明优先于下方历史过程，实际状态仍只由原生任务锁决定。正确摄影上本次一初版、两修订均真实制作、导出、保存与独立复审，三版都为 AI_FAIL，预算3/3、修订2/2。不能继续第四版、内容迁移、画幅迁移或第二风格。唯一下一动作是刘先生查看 V3 与失败审稿作整图验收。摄影已认可，整图真人结论 PENDING。
+
+| 版本 | Drive完整原件 | Figma同文件：frame / photo / vector | 完整PNG SHA-256 | 冷审 |
+|---|---|---|---|---|
+| V1 | [原件](https://drive.google.com/file/d/1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE/view) | 286:2 / 286:3 / 286:4 | a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96 | AI_FAIL |
+| V2 | [原件](https://drive.google.com/file/d/1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ/view) | 287:2 / 287:3 / 287:4 | c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4 | AI_FAIL |
+| V3交付 | [完整PNG](https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view) | [290:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2) / 290:3 / 290:4 | 0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826 | AI_FAIL |
+
+V3 [字标SVG](https://drive.google.com/file/d/1ceZuyHDkMTzeW5qw0-j-qtfaZlD6PvZn/view)，SHA f83a8b20b2b97c2e53bd40b85124023d53fea0c397ad8ac90dae7382eaeb823e。Figma file key uyDxOoN1iNDPpEHTKSUWg1，page251:2，V3有9个可编辑VECTOR（2字标+7标题），0原生TEXT，不能宣称可直接打字。Unicode标题源、轮廓加工脚本、许可、来源及修改依据在 `evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/`、`assets_v2/`、`assets_v3/`。每版像素审稿与隔离证据在同目录 `v1/pixel_review/`、`v2/pixel_review/`、`v3/pixel_review/`，技术/Drive/专业审查也分别保留。
+
+V3冷审认为字标仍接近常规宋体、独特结构弱；标题气质与自然摄影不协调；品牌、标题、产品重心分散。工程检查不改写审美结论。流程改善已验证，视觉收益未验证；节时收益未测量，整图真人认可待定，整体蒸馏及迁移能力尚未验证。
+
+实际采用的成熟方法：
+
+- [Anthropic官方design-critique](https://github.com/anthropics/knowledge-work-plugins/blob/d3ee81913e5e179273313345847a2a4f42449bd2/design/skills/design-critique/SKILL.md)，提交d3ee81913e5e179273313345847a2a4f42449bd2，Apache-2.0。上游 `skills/design-critique/upstream/` 与项目thin wrapper `skills/chazuo-independent-art-review/SKILL.md`。实际三次brief调用第一印象、层级、间距、区域证据和优先问题，排除网页UX项；不能冒充中文品牌字标技能。
+- [FontTools](https://github.com/fonttools/fonttools/tree/978d9edccb60ea0e5fbad7015cb11817c3532328)4.63.0，提交978d9edccb60ea0e5fbad7015cb11817c3532328，MIT；[Adobe Source Han Serif](https://github.com/adobe-fonts/source-han-serif/tree/7889f11bf31170b5d092a083b357c8c8130f89e0)2.003，提交7889f11bf31170b5d092a083b357c8c8130f89e0，OFL1.1。V3基于许可轮廓作局部Bézier加工，字体软件未改写，字标不是100%原创。没有找到经本项目验证有效的自动中文品牌字标技能；这些是专业工具与实验方法。
+- 实际 Python3.12.14 / FontTools4.63.0 / Node24.19.0 / sharp0.35.4，模块位置、SHA及真实执行见各版provenance。用load_workspace_dependencies查询bundled runtime；本机FontTools来自已有hermes venv site-packages，新环境先检测。许可字体原件位于 `evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf`，SHA78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117。
+- 本次矢量制作没有调用生图；此前一次局部摄影修补用内置image_gen编辑，底层模型名未暴露。没有重生摄影、训练、付费算力或定时任务。好底图的完整原始生成输入仍不足，不能从单一样本虚构可重现生图规则。`.skill-evolution/vpd-correct-source-worker/`仅一次工程观察，无审美规则晋升或权重训练。
+- 稳定 `scripts/vpd_export_photo_safe.py` 保真导出：raw Figma保护区有1152像素最大1级RGB舍入差；正式PNG保留既定文字区域的raw像素，其他1,204,672像素复制冻结源，实测差0。不能声称raw Figma本来零差。
+
+### 全新克隆恢复真实像素
+
+Drive是图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。用连接Drive的fetch(url=原件地址,download_raw_file=true,include_base64=true)获取真实b64_string。signed download_url曾403，不盲目重试；实际raw base64回读均字节匹配。每版DRIVE_ARCHIVE.json含ID、revision、SHA与元数据，字标在WORDMARK_DRIVE_ARCHIVE.json。不得提交签名URL/base64。
+
+将已认可摄影（ID1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA）及V1–V3实际fetch结果写入私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`，再运行 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本从原生锁/Drive回执绑定路径和SHA，先验证所有输入及私有路径，再恢复缺失PNG并读回；业务状态写入0、新增版本0。冲突报错。专业审查发现的路径逃逸已修复并留前后证据；不宣称OS沙盒隔离。
+
+校准P/N真实Drive归档在CALIBRATION_DRIVE_ARCHIVE.json：P 1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu（仅文字认可，摄影否决），N 1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO（整体否决）。参考R 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC，SHA87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167，只用上半广告。S为7fd摄影，T本版成品，T真人/旧AI结论隐藏。P/N不是最高水平标准。历史一例隐去真人否决的检验对账一致，只报告实际一例；新三版未真人对账，不虚构准确率。
+
+新的读取上下文恢复结果以最新原生receipt引用为准，不能用本机缓存成功冒充全新恢复。以下保留调用协议与过程，V1描述是历史定位而非当前唯一动作。
 
 先固定分支最新提交，读取 START_HERE.md、原生 CURRENT_TASK_LOCK.json、LATEST_CHECKPOINT.json、PROJECT_CONTROL_ADAPTER.json。唯一权威仍是原生任务锁；本文件只解释如何调用成果。
 

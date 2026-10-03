@@ -1,0 +1,217 @@
+{
+  "schema_version": "vpd-read-only-delivery-technical-supplement/v1",
+  "version": 2,
+  "result": "TECHNICAL_PASS_WITH_LIMITATIONS",
+  "scope": "核验实际 PNG、摄影保护、Unicode 与矢量来源、字体许可、制作调用、官方 Figma 和 Drive 回读。未代判审美。",
+  "reviewer_runtime": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_absolute_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl"
+  },
+  "read_only_scope": {
+    "reviewer_file_writes": 0,
+    "business_state_writes": 0,
+    "figma_node_mutations": 0,
+    "cold_reviewer_runtime_or_reasoning_read": false,
+    "prior_governance_counterexamples_retested": false,
+    "V3_examined": false
+  },
+  "actual_target": {
+    "path": ".liu-visual-private/correct_source_typography/v2/poster.png",
+    "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+    "bytes": 1730322,
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "actual_view_image_completed": true,
+    "aesthetic_verdict_by_this_reviewer": "NOT_EVALUATED"
+  },
+  "independent_photography_check": {
+    "method": "读取实际 source、raw Figma、final PNG，逐行解码并独立比较 RGB。",
+    "frozen_source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "protected_pixels_compared": 1204672,
+    "final_protected_pixels_changed": 0,
+    "final_max_channel_difference": 0,
+    "design_pixels_compared": 368192,
+    "final_design_pixels_differ_from_raw_figma": 0,
+    "raw_figma_sha256": "345844a043c7ddcaabcd6578451f41557ecb05b5d106c49ef7859aefbae4d192",
+    "raw_figma_protected_pixels_changed": 1152,
+    "raw_figma_max_channel_difference": 1,
+    "conclusion": "机械保真合成在实际 V2 成立；原始 Figma 渲染仍有舍入差，不能称其逐像素未变。"
+  },
+  "png_integrity_and_color_metadata": {
+    "source_raw_and_final_chunk_CRC_valid": true,
+    "source_color_type": "RGB",
+    "final_color_type": "RGB",
+    "source_and_final_color_chunks_equal": true,
+    "source_and_final_iCCP_sRGB_gAMA_cHRM_chunks": "均不存在",
+    "raw_figma_color_metadata": "RGBA；含 sRGB 与 gAMA",
+    "limit": "已证明保护区 RGB 及源/成品色彩标记状态一致；未据此证明绝对色度校准。"
+  },
+  "official_figma_live_readback": {
+    "tool": "mcp__codex_apps__figma_use_figma",
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "251:2",
+    "frame_id": "287:2",
+    "frame_dimensions": [
+      1536,
+      1024
+    ],
+    "frame_children": [
+      "287:3",
+      "287:4"
+    ],
+    "photography": {
+      "node_id": "287:3",
+      "source_node_id": "283:5",
+      "locked": true,
+      "position": [
+        0,
+        0
+      ],
+      "rotation": 0,
+      "opacity": 1,
+      "node_and_image_transforms": "IDENTITY",
+      "filters": "exposure、contrast、saturation、temperature、tint、highlights、shadows 全为 0",
+      "same_source_image_hash": "074a11ff4345752bae19150e799d9cae49518b8b",
+      "actual_getBytesAsync_bytes": 1735549,
+      "actual_getBytesAsync_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    },
+    "editable_overlay": {
+      "node_id": "287:4",
+      "actual_VECTOR_count": 23,
+      "wordmark_strokes": 16,
+      "headline_glyph_paths": 7,
+      "all_vectors_nonempty_and_unlocked": true,
+      "overlay_IMAGE_count": 0,
+      "overlay_TEXT_count": 0,
+      "meaning": "实际可编辑矢量路径；不是原生可键入文字的 Figma TEXT 节点。"
+    },
+    "createdNodeIds": [],
+    "mutatedNodeIds": [],
+    "initial_read_limit": "首次返回全部路径数据造成 JSON 文本截断；改用有界结构及路径长度回读，获得完整有效结果。",
+    "source_hash_method": "对官方 getBytesAsync 返回字节计算 SHA256；算法通过 empty/abc 已知向量自检，结果与本地 hashlib 源 SHA 一致。"
+  },
+  "unicode_and_vector_sources": {
+    "asset_directory": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v2/",
+    "actual_live_text_source": "一杯茶，慢下来",
+    "actual_codepoints": [
+      "U+4E00",
+      "U+676F",
+      "U+8336",
+      "U+FF0C",
+      "U+6162",
+      "U+4E0B",
+      "U+6765"
+    ],
+    "outlined_characters_match_live_source": true,
+    "fresh_font_cmap_outline_and_bounds_checks": {
+      "glyphs_checked": 7,
+      "all_cmap_glyph_names_match": true,
+      "all_source_outline_commands_match": true,
+      "all_source_bounds_match": true
+    },
+    "wordmark": {
+      "actual_paths": 16,
+      "stroke_ids_match_saved_construction": true,
+      "every_path_reproduced_from_saved_drawing_commands": true,
+      "global_originality_proven": false
+    },
+    "asset_sha256": {
+      "chazuo-wordmark.svg": "728be386879b052dd29276a46836edc59d0d74a0f94b3a0dfbeb2afb2489d152",
+      "headline.svg": "b9939f1fbec3bcf78974abf56549d0136056fc8e30f0da5e7102da04b33ed54b",
+      "headline-live-text.svg": "8347dbd61f775ae046e5ecdd2e4fcec929da486010157e9927a5662f5d6854db",
+      "typography-overlay.svg": "94f34241018d6c985c18d51b8ff9c48e0fb814d530f269c1f37e394ad6ca49a3"
+    },
+    "all_asset_hashes_match_provenance": true,
+    "readonly_reconstruction": "仅在内存重新描出字体及绘制命令；未重新执行会写资产的生产脚本。"
+  },
+  "font_and_license": {
+    "family": "Source Han Serif SC",
+    "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+    "font_sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+    "font_sha_matches_declared_source": true,
+    "license": "SIL Open Font License 1.1",
+    "preserved_license_sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+    "preserved_license_exact_upstream_bytes_match": true,
+    "license_basis": "完整许可允许字体使用，并明确字体许可延续要求不适用于使用字体创建的文档；字体分发及 Reserved Font Name 条件仍保留。[Adobe 官方许可](https://raw.githubusercontent.com/adobe-fonts/source-han-serif/release/LICENSE.txt)",
+    "initial_literal_probe_correction": "初次固定短语探测未命中；随后核对完整本地条款及 Adobe 官方原文，确认文档例外存在。",
+    "fonttools_actual_version": "4.63.0",
+    "fonttools_actual_runtime": "C:/Users/Administrator/AppData/Local/hermes/hermes-agent/venv/Lib/site-packages/fontTools/__init__.py",
+    "editing_limit": "轮廓矢量显示和路径编辑不依赖安装字体；Unicode 源文字编辑及重新描边需要所绑定的精确字体。"
+  },
+  "actual_asset_production_provenance": {
+    "maker_thread_id": "01a101c6-fa5b-7dd3-9df5-f318b704810f",
+    "explicit_rollout_absolute_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T20-39-39-01a101c6-fa5b-7dd3-9df5-f318b704810f.jsonl",
+    "agent_path": "/root/chazuo_correct_source_lettering",
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max",
+    "v2_build_call_id": "call_GuszNkDqa3dFVABfu7GeXoHv",
+    "v2_build_call_input_sha256": "a29fccbb81eaac690ba61d147a21b5fe8e9f5f11e5b217e0aa6fb49e117b8f9e",
+    "actual_CommandExecution_items": [
+      {
+        "id": "exec-e5b7ad3d-f761-4d97-8509-7e580ebac5a4",
+        "script": "assets_v2/build_lettering.py",
+        "runtime": "bundled Python",
+        "status": "completed",
+        "exit_code": 0,
+        "output_sha256": "4656563c79ff16f0f3bbe7a711d743d2804c6af73a4fa5f09ef7a3a084806938"
+      },
+      {
+        "id": "exec-523a563c-5243-4df8-a3b3-eb068b8debad",
+        "script": "assets_v2/render_assets.cjs",
+        "runtime": "bundled Node and sharp",
+        "status": "completed",
+        "exit_code": 0,
+        "output_sha256": "c811681509776685d029973aca05d6a221b33c22deba8d0ba44f1e24ada861cd"
+      }
+    ],
+    "verified_methods": [
+      "TTFont",
+      "getBestCmap",
+      "getGlyphSet",
+      "RecordingPen",
+      "BoundsPen",
+      "SVGPathPen",
+      "TransformPen"
+    ],
+    "conclusion": "真实命令调用、完成事件、退出码及产物来源得到核验；这不证明方法带来审美收益。"
+  },
+  "official_drive_readback": {
+    "metadata_tool": "mcp__codex_apps__google_drive_get_file_metadata",
+    "raw_tool": "mcp__codex_apps__google_drive_fetch",
+    "file_id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+    "observed_title": "CHAZUO_APPROVED_PHOTO_TYPOGRAPHY_R1_V2_c92aa90e.png",
+    "mime_type": "image/png",
+    "parent_ids": [
+      "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+    ],
+    "shared": false,
+    "metadata_size": 1730322,
+    "streamed_file_uri_attempt": {
+      "http_status": 403,
+      "original_bytes_obtained": false,
+      "counted_as_success": false
+    },
+    "authorized_bounded_legacy_raw_fetch": {
+      "download_raw_file": true,
+      "include_base64": true,
+      "isError": false,
+      "actual_decoded_bytes": 1730322,
+      "actual_sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "matches_local_actual_v2_png": true,
+      "reviewer_saved_downloaded_bytes": false
+    }
+  },
+  "remaining_limits": [
+    "本版 Figma 为可编辑轮廓矢量；不得描述为原生 TEXT 文案编辑。",
+    "未做全网字形原创性鉴定，也未给出审美分数或通过判词。",
+    "V2 冷审线程、推理和结果未读取；冷审结论仍由其真实独立执行证据负责。",
+    "未扩大到 V3，也未重测已覆盖治理框架或声称本轮最终 Git 保存已独立完成。"
+  ],
+  "blocking_technical_findings": []
+}

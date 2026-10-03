@@ -1,0 +1,40 @@
+{
+  "schema": "vpd-restore-helper-actual-execution/v1",
+  "executed_at": "2026-10-03T14:53:08.219940+00:00",
+  "command": [
+    "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "scripts/vpd_restore_correct_source_exports.py",
+    "--bundle",
+    "PRIVATE_ACTUAL_DRIVE_BUNDLE"
+  ],
+  "exit_code": 0,
+  "actual_stdout": {
+    "result": "PASS",
+    "restored": [
+      {
+        "drive_id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+        "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+        "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+        "bytes": 1732795
+      }
+    ],
+    "business_state_writes": 0,
+    "new_design_versions": 0
+  },
+  "script_sha256": "6e8034c23b768014ec9036f732c7dd5a4e01eb32ddfef13eb030a408ea10a27b",
+  "business_state_before": {
+    "continuity/vpd/CURRENT_TASK_LOCK.json": "21e61d0342adb0935d8b3f381ebe18c84769896b5c853853ed6e554d3fd69682",
+    "continuity/vpd/LATEST_CHECKPOINT.json": "e15af0097ad354535f686dd34dedfdf198c5885d893d5fb82e2802e2a01f434d",
+    "PROJECT_CONTROL_ADAPTER.json": "f8ce4d21783520ffad00d0870411e1ce45395b01dafc9169c6b8614f79c7e27c",
+    "continuity/vpd/state_ledger/commercial_design_pipeline.jsonl": "c46a928de8ca1514f772ad1e4237d7473b04e15a66c5ce617a536b9aeac871c9"
+  },
+  "business_state_after": {
+    "continuity/vpd/CURRENT_TASK_LOCK.json": "21e61d0342adb0935d8b3f381ebe18c84769896b5c853853ed6e554d3fd69682",
+    "continuity/vpd/LATEST_CHECKPOINT.json": "e15af0097ad354535f686dd34dedfdf198c5885d893d5fb82e2802e2a01f434d",
+    "PROJECT_CONTROL_ADAPTER.json": "f8ce4d21783520ffad00d0870411e1ce45395b01dafc9169c6b8614f79c7e27c",
+    "continuity/vpd/state_ledger/commercial_design_pipeline.jsonl": "c46a928de8ca1514f772ad1e4237d7473b04e15a66c5ce617a536b9aeac871c9"
+  },
+  "business_state_changed": false,
+  "cache_precondition": "V3 cache already existed; actual Drive decoded bytes checked idempotently. Fresh missing-cache test not claimed here."
+}

@@ -1,0 +1,219 @@
+{
+  "schema_version": "vpd-read-only-worker-governance-audit/v1",
+  "result": "IMPLEMENTATION_REVIEW_PASS_WITH_LIMITATIONS",
+  "scope": "独立复核治理实现、真实 worker 执行证据及当前原生状态；不替代冷启动审美审核。",
+  "reviewer_runtime": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_absolute_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max",
+    "identity_matches_environment": true,
+    "role": "READ_ONLY_GOVERNANCE_IMPLEMENTATION_REVIEWER",
+    "is_current_cold_pixel_reviewer": false
+  },
+  "reviewer_actions": {
+    "business_state_writes": 0,
+    "file_writes": 0,
+    "figma_mutations": 0,
+    "subagents_spawned": 0,
+    "private_runtime_read_scope": "仅本审查者、明确指定的主执行者及本轮 V1 worker 运行；未读取其他会话或凭据。",
+    "test_method": "负向状态及审核记录只在内存中变异；writer 所有文件写入均被 mock 拦截。"
+  },
+  "native_state": {
+    "actual_validate_state": "PASS",
+    "actual_validate_review_v1": "PASS_EVIDENCE_GATE",
+    "revision": 272,
+    "checkpoint": 294,
+    "work_unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+    "phase": "REVISION_REQUIRED",
+    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "continuation_budget": {
+      "formal_versions_max": 3,
+      "formal_versions_used": 1,
+      "revisions_max": 2,
+      "revisions_used": 0,
+      "photo_generations": 0
+    },
+    "budget_origin": "本次 3/2 为主执行者在同一未完成任务内的自限；不是用户新增数字原话，也未重置旧周期。",
+    "preserved_old_cycle": {
+      "formal_versions_used": 3,
+      "revisions_used": 2,
+      "human_verdict": "REJECTED"
+    },
+    "current_complete_poster_human_verdict": "PENDING"
+  },
+  "authorization_and_mainline": {
+    "source_photography_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "photography_human_approval_scope": "LOCAL_BACKGROUND_RECONSTRUCTION_PHOTOGRAPHY_ONLY",
+    "hidden_original_recovered": false,
+    "approved_photography_actually_viewed": true,
+    "brand": "茶作",
+    "copy": "一杯茶，慢下来",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mainline_id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+    "mainline_reference_and_order_preserved": true,
+    "worker_permissions": "只读取声明的图片并报告；不得写业务状态、改主线目标或顺序、参考、文案、画幅、扩预算、制作作品或给出真人验收。",
+    "business_state_writer": "ROOT_ONLY",
+    "ai_pass_is_human_acceptance": false
+  },
+  "resolved_findings": [
+    {
+      "finding": "技术回执曾仅依赖摄影未变的声明。",
+      "resolution": "technical.export 与当前 version.export 精确绑定；固定保护区域从真实 PNG 逐行解码并重算 RGB。",
+      "evidence": "visual_memory/vpd_correct_source_worker.py"
+    },
+    {
+      "finding": "审核输入及执行证据曾可一致错误改绑或缺失。",
+      "resolution": "固定 P/N/R/S、逐版本 T、五次实际 ImageView、非空且仅 view_image 的工具调用、非空创建调用及明确载体均设拒绝门。",
+      "evidence": [
+        "visual_memory/vpd_correct_source_worker.py",
+        "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json"
+      ]
+    },
+    {
+      "finding": "项目外新 worker 创建调用曾未绑定真实返回 threadId。",
+      "resolution": "collector 读取对应 call_id 的唯一真实返回，绑定返回 threadId 与 child session_meta.id；缺返回或仅 clientThreadId 均拒绝。",
+      "evidence": "scripts/vpd_collect_agent_review.py"
+    },
+    {
+      "finding": "writer 曾缺少实际主执行身份约束及写后完整验证。",
+      "resolution": "续办要求 ROOT_EXECUTOR 和当前 root CODEX_THREAD_ID；写后执行原生复核，失败恢复四个权威文件原字节。",
+      "evidence": "scripts/vpd_codex_takeover.py"
+    },
+    {
+      "finding": "复用入口及 skill 曾指向旧合同、旧 S 含义和 supplemental 协议。",
+      "resolution": "当前 UNIT 已明确指向 V2 合同、正式五图 amendment、7fd 摄影认可范围及 projectless 参数；历史协议保留。",
+      "evidence": [
+        "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+        "skills/chazuo-independent-art-review/SKILL.md"
+      ]
+    },
+    {
+      "finding": "并发修复代码后，rev271 回执一度出现脚本 SHA 失配。",
+      "resolution": "实际失败被保留为审查事实；新回执重绑当前代码后，rev272/cp294 原生检查通过，未宽松校验。",
+      "evidence": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/NATIVE_REVIEW_RECEIPT.json"
+    }
+  ],
+  "executed_negative_tests": {
+    "synthetic_valid_review_baseline": "ACCEPTED",
+    "five_previous_counterexamples": [
+      {
+        "case": "一致错误改绑 S",
+        "result": "REJECTED",
+        "code": "WORKER_REFERENCE_BINDING_CHANGED"
+      },
+      {
+        "case": "实际 ImageView 标记数为 0",
+        "result": "REJECTED",
+        "code": "WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED"
+      },
+      {
+        "case": "空 tool_calls",
+        "result": "REJECTED",
+        "code": "WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED"
+      },
+      {
+        "case": "空 root 创建调用 ID",
+        "result": "REJECTED",
+        "code": "WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED"
+      },
+      {
+        "case": "未知审核载体",
+        "result": "REJECTED",
+        "code": "WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED"
+      }
+    ],
+    "additional_rejections": {
+      "worker_actor_or_missing_actor": "WORKER_STATE_WRITE_NOT_AUTHORIZED",
+      "root_actor_with_this_reviewer_thread": "WORKER_STATE_WRITE_NOT_AUTHORIZED",
+      "fourth_version_or_wrong_photography": "CORRECT_SOURCE_REQUEST_SCOPE_OR_BUDGET_CONFLICT",
+      "continuation_budget_4_3": "CONTINUATION_BUDGET_EXCEEDED",
+      "changed_copy_or_mainline_id": "WORKER_MAINLINE_DRIFT",
+      "technical_export_not_same_version": "ACCEPTED_PHOTOGRAPHY_CHANGED",
+      "one_protected_channel_changed_in_memory": "APPROVED_PHOTO_ACTUAL_PIXELS_CHANGED",
+      "missing_or_mismatched_projectless_creation": "WORKER_CREATION_EVIDENCE_REQUIRED"
+    },
+    "collector_creation_return_tests": {
+      "matching_call_and_return": "ACCEPTED_IN_MEMORY_FIXTURE",
+      "different_returned_thread": "REJECTED_BEFORE_SAVE",
+      "missing_return": "REJECTED_BEFORE_SAVE",
+      "clientThreadId_only": "REJECTED_BEFORE_SAVE",
+      "wrong_return_call_id": "REJECTED_BEFORE_SAVE",
+      "duplicate_return": "REJECTED_BEFORE_SAVE"
+    },
+    "writer_postvalidation_failure_test": {
+      "filesystem_mutations_mocked": true,
+      "transaction_calls": 2,
+      "rollback_four_exact_original_bytes": true,
+      "actual_four_authoritative_files_unchanged_during_test": true
+    },
+    "synthetic_tests_are_real_aesthetic_reviews": false
+  },
+  "actual_v1_worker": {
+    "carrier": "FRESH_PROJECTLESS_CODEX_WORKER",
+    "fork_turns": "NOT_APPLICABLE_NEW_THREAD",
+    "thread_id": "01a101e6-416a-7590-bac0-f9cf39f9efa7",
+    "rollout_absolute_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T21-13-49-01a101e6-416a-7590-bac0-f9cf39f9efa7.jsonl",
+    "rollout_sha256": "e787a22d6392fe111504a7934a91ee8b4197d699d66f4735c82f470239c8de86",
+    "metadata_source": "vscode",
+    "cwd": "C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-independent-pixel-worker-v1",
+    "root_creation_call_id": "call_vg5ASeUZEusLQ5qVPJZmAk8A",
+    "actual_creation_result_sha256": "21a261e103b38b39018b4d903f6677be6b8babfeadfb1ccdd93df66e009dbf85",
+    "actual_returned_thread_id_matches_child": true,
+    "history_fork_observed": false,
+    "turn_context_count": 1,
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max",
+    "actual_ImageView_count": 5,
+    "unique_images": [
+      "P",
+      "N",
+      "R",
+      "S",
+      "T"
+    ],
+    "actual_attachment_bytes_match_archived_sha256": true,
+    "exec_call_count": 2,
+    "observed_tools": [
+      "view_image"
+    ],
+    "extra_tool_or_project_context_reads_observed": false,
+    "unique_completed_verdict": "AI_FAIL",
+    "human_verdict": "HIDDEN_PENDING",
+    "personal_fit": null,
+    "target_sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96",
+    "pixel_review_sha256": "12f401759d8d0ea3d7b818d237327324b6a667db44544b9a59340e2f26fa7568",
+    "evidence_directory": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/"
+  },
+  "actual_v1_photography_preservation": {
+    "method": "直接读取实际 source、raw Figma、final PNG，独立逐行解码 RGB；没有对 T 作新的审美判断。",
+    "protected_pixels_compared": 1204672,
+    "raw_figma_protected_pixels_changed": 1152,
+    "raw_figma_max_channel_difference": 1,
+    "final_protected_pixels_changed": 0,
+    "final_max_channel_difference": 0,
+    "design_pixels_compared": 368192,
+    "final_design_pixels_differ_from_raw_figma": 0,
+    "protection_receipt_matches_actual_files": true,
+    "conclusion": "已披露的机械保真合成在 V1 实际成立；不能称 raw Figma 逐像素未变，不能由此判审美通过。"
+  },
+  "verified_carrier_failure": {
+    "task_name": "independent_worker_governance_audit",
+    "requested_fork_turns": "none",
+    "actual_call_id": "call_foR5Fc6wQDvcRPB2cW7jZsm3",
+    "actual_tool_output": "collab spawn failed: agent thread limit reached",
+    "replacement_is_fake_fork_none": false
+  },
+  "remaining_conditions_and_limits": [
+    "V2 及后续版本须分别绑定实际 T、技术回执和新的独立审核；本报告不覆盖其尚未完成的审稿。",
+    "V1 实际 AI_FAIL，当前应在同方向及剩余预算内修复复审；整张海报真人验收仍为 PENDING。",
+    "最终版本的 Figma、Drive、Git 保存及回读须依据其实际新证据验收；本次没有重复执行 live Figma 可编辑性读取或独立 Drive 下载。",
+    "协作状态校验和已观察工具范围不是 OS 权限沙箱；同一文件系统原则上可访问，环境身份标签可伪造。",
+    "保存的 prompt 副本与加密运行消息的逐字节绑定仍为 NOT_VERIFIABLE，未将其描述为已证明。",
+    "AI 内部通过不等于真人认可，也不证明成熟方法的长期蒸馏或迁移收益。"
+  ],
+  "blocking_findings_in_reviewed_implementation": []
+}

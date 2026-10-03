@@ -1,0 +1,190 @@
+{
+  "schema_version": "vpd-professional-technical-audit/v3",
+  "version": 3,
+  "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+  "result": "TECHNICAL_PASS",
+  "scope": "V3实际交付、摄影保护、字形来源、Figma矢量、Drive原字节及恢复脚本；不评判审美，不复测此前工程框架。",
+  "auditor": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "runtime_identity_matches": true,
+    "model": "gpt-6.1-sol",
+    "effort": "max",
+    "business_state_writes": 0,
+    "real_filesystem_writes": 0,
+    "figma_design_mutations": 0,
+    "cold_reviewer_thread_read": false
+  },
+  "actual_export": {
+    "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+    "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+    "bytes": 1732795,
+    "dimensions": [1536, 1024],
+    "mode": "RGB",
+    "actual_pixels_viewed": true,
+    "view_tool": "view_image",
+    "detail": "original",
+    "png_chunk_crcs_valid": true,
+    "color_profile_chunks": [],
+    "source_profile_chunks": []
+  },
+  "photography_protection": {
+    "result": "PASS",
+    "source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "source_scope": "真人认可的摄影重建候选；不称为恢复的隐藏原件或整张海报获真人认可。",
+    "independent_method": "实际解码源图、source-raw、raw-figma和最终PNG，逐RGB通道重算。",
+    "fixed_envelopes": [[64, 56, 504, 304], [800, 72, 1504, 440]],
+    "protected_pixels_compared": 1204672,
+    "final_protected_pixels_changed": 0,
+    "final_protected_max_channel_difference": 0,
+    "source_raw_bytes_match": true,
+    "raw_figma_sha256": "abcfb9a77dd2a25b9060a0892e20a09002022010380e50e331ba7a53bf5f94d4",
+    "raw_protected_pixels_changed": 1152,
+    "raw_protected_max_channel_difference": 1,
+    "design_region_pixels_compared": 368192,
+    "final_design_region_equals_raw_figma": true,
+    "conclusion": "最终交付的摄影保护通过。Figma原始渲染存在通道舍入；最终PNG在保护区复制源RGB，设计区保留真实Figma渲染，此限制已如实披露。"
+  },
+  "copy_and_glyph_provenance": {
+    "result": "PASS",
+    "brand": "茶作",
+    "brand_codepoints": ["U+8336", "U+4F5C"],
+    "copy": "一杯茶，慢下来",
+    "copy_codepoints": ["U+4E00", "U+676F", "U+8336", "U+FF0C", "U+6162", "U+4E0B", "U+6765"],
+    "line_breaks": ["一杯茶，", "慢下来"],
+    "font": "Source Han Serif SC Regular 2.003",
+    "font_sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+    "license": "SIL Open Font License 1.1",
+    "license_sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+    "authorship": "基于已许可字体轮廓的局部贝塞尔加工，不是16条原创建模，也不宣称100%原创字形。",
+    "independent_recomputation": {
+      "method": "只执行制作脚本写文件前的纯几何AST；移除旧审稿JSON读取，禁止写文件调用。",
+      "glyphs_checked": 8,
+      "actual_font_cmap_and_original_commands_match": true,
+      "processed_commands_and_svg_paths_match": true,
+      "all_processed_glyphs_differ_from_original": true,
+      "three_svg_contents_match": true,
+      "byte_encoding_note": "保存SVG尾部为CRLF；规范文本与重算内容一致，实际原字节SHA另由清单核验。",
+      "brand_and_headline_share_exact_tea_path": true,
+      "shared_tea_path_sha256": "2c65195dbca80aa0a6294159091bd53ec65c622d0d2352db5a11be9ac5988508"
+    },
+    "asset_manifest_files_checked": 12,
+    "all_manifest_byte_counts_and_sha256_match": true,
+    "evidence_directory": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3",
+    "license_boundary": "此次交付是字体衍生图形文档，未修改或再发布字体软件；通用许可已在前版核验，本次确认仍使用相同字体及许可原字节。"
+  },
+  "actual_maker_execution": {
+    "thread_id": "01a101c6-fa5b-7dd3-9df5-f318b704810f",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T20-39-39-01a101c6-fa5b-7dd3-9df5-f318b704810f.jsonl",
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max",
+    "source": "实际item_completed.CommandExecution记录",
+    "commands": [
+      {
+        "script": "assets_v3/build_lettering.py",
+        "script_sha256": "ed99750304c72993a35149a89bbb2bc0536441c0b146fd62d7b5c432e381a5ea",
+        "execution_id": "exec-84fa9f3c-4699-4937-806a-be07011733c8",
+        "status": "completed",
+        "exit_code": 0,
+        "stdout_sha256": "76d3be8369c426ef01ca1995f67d96a952f237947cfbe09f264623cbc1a0540c"
+      },
+      {
+        "script": "assets_v3/render_assets.cjs",
+        "script_sha256": "4266d523180212331d06a6a34ca70d85dd85438240bde679df48d9873f122373",
+        "execution_id": "exec-acb261ac-7465-45e0-87fc-dac168b0a94f",
+        "status": "completed",
+        "exit_code": 0,
+        "stdout_sha256": "a62993a435c3dbc78d1f577a4859025a2e0c575e1f9fbb749bbacfb055bddd65",
+        "stdout_matches_raster_exports_json_sha256": true
+      }
+    ]
+  },
+  "official_figma_readback": {
+    "result": "PASS",
+    "tool": "mcp__codex_apps__figma_use_figma",
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page": "251:2",
+    "frame": "290:2",
+    "photography": "290:3",
+    "overlay": "290:4",
+    "frame_dimensions": [1536, 1024],
+    "photography_position": [0, 0],
+    "photography_locked": true,
+    "photography_transform": "IDENTITY",
+    "photography_filters": "ALL_ZERO",
+    "image_hash": "074a11ff4345752bae19150e799d9cae49518b8b",
+    "actual_getBytesAsync_length": 1735549,
+    "actual_getBytesAsync_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "editable_unlocked_vectors": 9,
+    "brand_compound_paths": 2,
+    "headline_paths": 7,
+    "text_nodes": 0,
+    "overlay_image_paints": 0,
+    "actual_vector_ids": ["290:7", "290:8", "290:10", "290:11", "290:12", "290:13", "290:14", "290:15", "290:16"],
+    "live_geometry_comparison": {
+      "paths_checked": 9,
+      "paths_matching": 9,
+      "method": "官方读取实际vectorPaths；将SVG隐式闭合线规范为显式闭合，按节点尺寸归一后逐M/L/C控制点比对重算字形。",
+      "maximum_coordinate_difference_px": 0.000006241325706923817,
+      "tolerance_px": 0.0002
+    },
+    "editability_limit": "可编辑贝塞尔矢量成立；没有可直接键入改文案的原生TEXT节点。"
+  },
+  "official_drive_readback": {
+    "result": "PASS",
+    "metadata_tool": "mcp__codex_apps__google_drive_get_file_metadata",
+    "bytes_tool": "mcp__codex_apps__google_drive_fetch",
+    "transport": "download_raw_file=true, include_base64=true；实际返回原字节，在内存独立解码及SHA256比对。",
+    "file_id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+    "parent_id": "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O",
+    "shared": false,
+    "mime_type": "image/png",
+    "actual_bytes": 1732795,
+    "actual_sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+    "matches_formal_export": true
+  },
+  "restore_script_review": {
+    "result": "PASS_AFTER_FIX",
+    "path": "scripts/vpd_restore_correct_source_exports.py",
+    "before_sha256": "61c1d2b51c417dc3ef29365b8b80953c12446c2f197b7d11fb8bf6ccbff91331",
+    "after_sha256": "6e8034c23b768014ec9036f732c7dd5a4e01eb32ddfef13eb030a408ea10a27b",
+    "actual_test_method": "执行真实脚本main，但所有路径、临时文件、写入和替换由内存文件系统替身承接；零真实文件写入。",
+    "resolved_findings": [
+      {
+        "finding": "原私有根junction指向仓库外时，在报告路径转换报错前已经发生越界写入。",
+        "after": "新增仓库内私有根预检；原反例在任何写入前以PRIVATE_CACHE_ESCAPES_REPOSITORY拒绝。"
+      },
+      {
+        "finding": "原固定暂存文件若为外部symlink别名，write_bytes会覆盖外部目标并报告PASS。",
+        "after": "废除固定暂存名，使用已验证目录中的排他mkstemp；原反例的外部目标原字节不变，新写入全部位于私有目录。"
+      }
+    ],
+    "bounded_normal_case": "PASS",
+    "negative_cases_rejected_before_write": [
+      "UNDECLARED_DRIVE_FILE",
+      "ACTUAL_DRIVE_BYTES_DO_NOT_MATCH_NATIVE_IDENTITY",
+      "PRIVATE_CACHE_ONLY",
+      "EMPTY_OR_DUPLICATE_INPUT",
+      "EXISTING_PRIVATE_CACHE_CONFLICT"
+    ],
+    "binding": "当前UNIT声明的Drive ID、原生export SHA及经check_ref核验的归档回执；归档poster SHA必须匹配版本export。",
+    "limits": "脚本校验调用者提供字节的资产身份，不自行认证Drive传输；本附审另用官方连接取得原字节。内存反例复核不等同OS隔离或并发恶意文件系统证明。"
+  },
+  "aesthetic_review": {
+    "assessed_by_this_auditor": false,
+    "parent_reported_status": "AI_FAIL",
+    "parent_reported_budget": "本续办三版、两次修订已用完",
+    "cold_reviewer_results_read": false,
+    "technical_pass_implies_aesthetic_or_human_acceptance": false
+  },
+  "blocking_findings": [],
+  "pending_finalization": [
+    {
+      "item": "V3 Drive原生恢复引用绑定",
+      "observed": "最新只读检查中，CURRENT_TASK_LOCK的worker_continuation.versions[number=3].drive_archive仍为null。",
+      "existing_archive": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json",
+      "existing_archive_sha256": "8dbaea7f1adbc9ad9b0e00cccacb1e624722b0ba4e79b4893ea38283a52127d1",
+      "implication": "Drive原字节已独立核验成功；恢复脚本须等唯一业务写者正式绑定该回执，方可按当前原生声明恢复V3。最终原生结算与远端保存不在本附审已完成范围内。"
+    }
+  ]
+}
