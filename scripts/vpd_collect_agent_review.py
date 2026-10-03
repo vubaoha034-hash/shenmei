@@ -1,0 +1,69 @@
+"""Collect real fork-none pixel-agent evidence; refuse context/tool scope violations."""
+import argparse,datetime,hashlib,json,pathlib,re,urllib.parse
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+def sha(p):return hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+def write(p,v):
+ p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ return {'path':str(p.relative_to(ROOT)).replace('\\','/'),'sha256':sha(p)}
+def rows(p):return [json.loads(x) for x in p.open(encoding='utf-8')]
+def main():
+ a=argparse.ArgumentParser();a.add_argument('--agent',required=True);a.add_argument('--root-thread',required=True);a.add_argument('--packet',required=True);a.add_argument('--out',required=True);a.add_argument('--version',type=int,required=True);a.add_argument('--prompt',required=True);a.add_argument('--child-rollout',required=True);a.add_argument('--root-rollout',required=True);a.add_argument('--target');a.add_argument('--holdout-target-reread',action='store_true');args=a.parse_args()
+ assert not args.holdout_target_reread or (args.version==0 and args.target),'Reread exception is only an explicitly identified old holdout, never a formal version'
+ out=(ROOT/args.out).resolve();packet=(ROOT/args.packet).resolve()
+ child=pathlib.Path(args.child_rollout);root=pathlib.Path(args.root_rollout)
+ assert child.is_file() and root.is_file(),'Exact child/root runtime evidence missing'
+ child_meta=json.loads(child.open(encoding='utf-8').readline())['payload'];root_meta=json.loads(root.open(encoding='utf-8').readline())['payload']
+ sp=child_meta.get('source',{}).get('subagent',{}).get('thread_spawn',{})
+ assert sp.get('agent_path')==args.agent and sp.get('parent_thread_id')==args.root_thread and root_meta['id']==args.root_thread,'Exact runtime identity mismatch'
+ events=rows(child);meta=events[0]['payload'];tid=meta['id']
+ contexts=[j['payload'] for j in events if j.get('type')=='turn_context']
+ assert len(contexts)==1,'Resumed/multiple-context reviewer is not a fresh formal run'
+ context=contexts[0];assert (context['model'],context['effort'])==('gpt-6.1-sol','max')
+ spawns=[]
+ for j in rows(root):
+  v=j.get('payload',{})
+  if j.get('type')=='response_item' and v.get('type')=='function_call' and v.get('name')=='spawn_agent':
+   try:q=json.loads(v.get('arguments',''))
+   except ValueError:continue
+   if q.get('task_name')==args.agent.rsplit('/',1)[-1]:spawns.append((q,v.get('call_id')))
+ assert spawns and all(q.get('fork_turns')=='none' for q,_ in spawns),'Fork-none spawn not proven'
+ prompt_sha=sha(ROOT/args.prompt)
+ bindings=[{'neutral_id':n,'sha256':sha(packet/f)} for n,f in [('P','P.png'),('N','N.png'),('R','R.jpg'),('T','T.png')]]
+ expected={str((packet/f).resolve()).replace('\\','/'):n for n,f in [('P','P.png'),('N','N.png'),('R','R.jpg'),('T','T.png')]}
+ viewed=[];extra=[];calls=[]
+ for j in events:
+  v=j.get('payload',{})
+  if j.get('type')=='response_item' and v.get('type') in ['custom_tool_call','function_call']:
+   name=v.get('name');code=v.get('input',v.get('arguments',''))
+   names=re.findall(r'tools\.([A-Za-z_0-9]+)\s*\(',code)
+   # Fail closed on alias/bracket/dynamic tool invocation. ImageView paths below
+   # independently bind the actual read results. This is a bounded run audit,
+   # not a proof of arbitrary JavaScript semantic isolation.
+   residual=re.sub(r'\btools\.view_image(?=\s*\()', '', code)
+   dynamic=re.search(r'\b(?:eval|Function|import|require|fetch|globalThis|Reflect)\b|\btools\b',residual)
+   if name!='exec' or not names or set(names)!={'view_image'} or dynamic:extra.append({'name':name,'called_tools':names,'dynamic_form':bool(dynamic)})
+   calls.append({'name':name,'input_sha256':hashlib.sha256(code.encode()).hexdigest(),'called_tools':names,'call_id':v.get('call_id')})
+  if j.get('type')=='event_msg' and v.get('type')=='item_completed' and v.get('item',{}).get('type')=='ImageView':
+   uri=v['item']['path'];path=urllib.parse.unquote(uri.removeprefix('file:///')).replace('\\','/')
+   assert path in expected,'Image read outside packet'
+   n=expected[path];viewed.append({'tool':'view_image','neutral_id':n,'sha256':next(x['sha256'] for x in bindings if x['neutral_id']==n),'path':path})
+ counts={n:sum(x['neutral_id']==n for x in viewed) for n in ['P','N','R','T']}
+ allowed_counts={'P':1,'N':1,'R':1,'T':2 if args.holdout_target_reread else 1}
+ assert not extra and counts==allowed_counts,'Actual four-image read scope not proven'
+ completions=[j['payload'] for j in events if j.get('type')=='event_msg' and j.get('payload',{}).get('type')=='task_complete']
+ assert len(completions)==1,'No unique completed reviewer'
+ raw=json.loads(completions[0]['last_agent_message'])
+ assert raw.get('pixels_seen')==['P','N','R','T'] and raw.get('version')==args.version
+ assert raw.get('human_verdict')=='HIDDEN_PENDING' and raw.get('personal_fit') is None
+ assert raw.get('verdict') in ['AI_PASS','AI_FAIL'],'No valid actual pixel judgment'
+ rawref=write(out/'REVIEWER_OUTPUT.json',raw)
+ toolref=write(out/'RAW_TOOL_READ_AUDIT.json',{'thread_id':tid,'tool_reads':viewed,'extra_tool_reads':extra,'source_project_context_reads':[],'raw_rollout_sha256':sha(child),'tool_calls':calls,'actual_image_view_markers':len(viewed),'holdout_only_target_reread':args.holdout_target_reread,'scope':'Four unique permitted images; optional old-holdout-only same-target reread for PNG header. Formal versions require exactly four markers.'})
+ spawnref=write(out/'SPAWN_RECEIPT.json',{'thread_id':tid,'fork_turns':'none','history_inherited':False,'initial_prompt_sha256':prompt_sha,'prompt_copy_byte_binding_to_encrypted_spawn':'NOT_VERIFIABLE','actual_model':context['model'],'actual_reasoning_effort':context['effort'],'root_spawn_call_ids':[c for _,c in spawns],'source':meta['source'],'prompt_ref':{'path':args.prompt,'sha256':prompt_sha},'persistent_message_storage':'Encrypted in runtime; supplied prompt copy preserved separately'})
+ evref=write(out/'CONTEXT_EVIDENCE.json',{'thread_id':tid,'turn_context':{'model':context['model'],'reasoning_effort':context['effort']},'initial_prompt_sha256':prompt_sha,'tool_reads':viewed,'raw_tool_read_audit':toolref,'spawn_receipt':spawnref,'reviewer_output':rawref})
+ amend='continuity/vpd/codex_takeover_20261003/REVIEW_CARRIER_AMENDMENT.json'
+ audit=write(out/'ISOLATION_AUDIT.json',{'schema_version':'vpd-isolated-pixel-review-audit/v1','verified':True,'carrier':'FRESH_FORK_NONE_PIXEL_AGENT','fork_turns':'none','history_inherited':False,'resumed_or_history_forked':False,'source_project_context_read':False,'fresh_agent':True,'actual_model':context['model'],'actual_reasoning_effort':context['effort'],'completed':True,'tool_scope_violations':[],'attachments_verified':['P','N','R','T'],'initial_prompt_sha256':prompt_sha,'evidence':evref,'carrier_amendment':{'path':amend,'sha256':sha(ROOT/amend)}})
+ target=args.target or f'.liu-visual-private/versions/v{args.version}/poster.png'
+ assert sha(ROOT/target)==bindings[-1]['sha256'],'Target identity mismatch'
+ result={**raw,'input_bindings':bindings,'isolation_audit':audit,'export':{'path':target,'sha256':bindings[-1]['sha256']},'reviewed_at':completions[0].get('completed_at',datetime.datetime.now(datetime.timezone.utc).isoformat()),'reviewer':{**raw.get('reviewer',{}),'carrier':'FRESH_FORK_NONE_PIXEL_AGENT','thread_id':tid,'actual_model':context['model'],'actual_reasoning_effort':context['effort']}}
+ resultref=write(out/'PIXEL_REVIEW.json',result);print(json.dumps({'verdict':result['verdict'],'result':resultref,'thread_id':tid}))
+if __name__=='__main__':main()

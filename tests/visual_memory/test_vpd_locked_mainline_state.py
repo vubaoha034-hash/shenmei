@@ -1,15 +1,18 @@
 """Metadata regression tests. Synthetic receipts are never runtime evidence."""
 import json
 import hashlib
+import io
 import shutil
 import subprocess
 import sys
+import tarfile
 from pathlib import Path
 
 import pytest
 
 from visual_memory.vpd_task_lock import (
     LOCK_PATH, CHECKPOINT_PATH, TaskLockError, digest, validate_state, validate_request,
+    PARENT,
 )
 from visual_memory.vpd_locked_mainline_state import _scoped_format_failure_continuation
 
@@ -64,10 +67,27 @@ def save(root, name, value):
 @pytest.fixture(scope='module')
 def snapshot(tmp_path_factory):
     target = tmp_path_factory.mktemp('locked-mainline-snapshot') / 'repo'
-    shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns('.git', '__pycache__', '.pytest_cache'))
+    target.mkdir()
+    # Git evidence hashes describe canonical repository bytes, including on Windows.
+    # A detached temporary archive avoids turning checkout CRLF into false drift.
+    archive = subprocess.check_output([
+        'git', '-c', 'core.autocrlf=false', '-C', str(ROOT), 'archive', '--format=tar', 'HEAD'])
+    with tarfile.open(fileobj=io.BytesIO(archive)) as source:
+        source.extractall(target, filter='data')
+    for module in ['visual_memory/vpd_locked_mainline_state.py', 'visual_memory/vpd_task_lock.py']:
+        shutil.copyfile(ROOT / module, target / module)
     # Fixed R1 preparation scenario, independent of later legitimate progress.
     # Only this temporary fixture is normalized; live state is checked by CLI/CI.
     lock = load(target, LOCK_PATH)
+    for name in ['candidate88_human_final_review', 'codex_takeover']:
+        lock.pop(name, None)
+    cp = load(target, CHECKPOINT_PATH)
+    for name in ['candidate88_human_final_review', 'codex_takeover']:
+        cp.pop(name, None)
+    save(target, CHECKPOINT_PATH, cp)
+    adapter = load(target, 'PROJECT_CONTROL_ADAPTER.json')
+    adapter['current_mainline'] = {'task_id': PARENT, 'plan': lock['mainline_lock']['plan']}
+    save(target, 'PROJECT_CONTROL_ADAPTER.json', adapter)
     contract = load(target, lock['mainline_lock']['contract']['path'])
     lock['mainline_progress'] = {
         'stage_id': 'P3_STAGE1', 'status': 'READY_WAITING_EXECUTION_REQUEST',
@@ -96,7 +116,8 @@ def reseal(root, lock):
     cp = load(root, CHECKPOINT_PATH)
     cp.update(task_lock={'path': LOCK_PATH, 'sha256': digest(root / LOCK_PATH)},
               mainline_progress=lock['mainline_progress'], mainline_lock=lock['mainline_lock'],
-              status=lock['status'], next_required_action=lock['next_required_action'])
+              status=lock['status'], next_required_action=lock['next_required_action'],
+              active_task_ids=[PARENT])
     adapter = load(root, 'PROJECT_CONTROL_ADAPTER.json')
     adapter['task_lock'].update(sha256=digest(root / LOCK_PATH), revision=lock['revision'])
     adapter['mainline_lock'] = lock['mainline_lock']
@@ -111,6 +132,8 @@ def reseal(root, lock):
     lines = ledger.read_bytes().splitlines(keepends=True)
     event = json.loads(lines[-1])
     event['lock_sha256'] = digest(root / LOCK_PATH)
+    event['task_id'] = PARENT
+    event['after'] = {'state': lock['status'], 'next_action': lock['next_required_action']}
     event.pop('event_hash')
     event['event_hash'] = hashlib.sha256(json.dumps(event, ensure_ascii=False, sort_keys=True,
         separators=(',', ':')).encode()).hexdigest()
@@ -150,7 +173,7 @@ def test_prepared_state_and_actual_cli_pass(isolated):
     assert lock['mainline_progress']['attempts_consumed'] == 0
     assert not lock['render_allowed']
     assert validate_request(isolated, request(isolated)) == lock
-    result = subprocess.run([sys.executable, str(isolated / 'scripts/verify_visual_memory.py'),
+    result = subprocess.run([sys.executable, '-X', 'utf8', str(isolated / 'scripts/verify_visual_memory.py'),
         '--vpd-state', '--status-card'], capture_output=True, text=True, encoding='utf-8')
     assert result.returncode == 0, result.stdout
     assert json.loads(result.stdout)['真人结论'] == 'NOT_REVIEWED'

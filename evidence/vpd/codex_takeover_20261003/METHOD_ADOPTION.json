@@ -1,0 +1,103 @@
+{
+  "schema_version": "vpd-method-adoption/v1",
+  "actual_adoptions": [
+    {
+      "name": "Figma official figma-use",
+      "type": "INSTALLED_OFFICIAL_SKILL",
+      "version": "15.0.0",
+      "maintainer": "Figma, Inc.",
+      "source": "Installed Figma plugin; https://www.figma.com/developers/api",
+      "skill_sha256": "ac385b80a05c850b5abc6bcae7c56625c4576318510545453a568aa5f21b8a95",
+      "plugin_manifest_sha256": "070d53e90eafd213e812898329e7fddcc7f4d77366935acf707851349f6fd883",
+      "license": "Provided plugin/account under Figma terms https://www.figma.com/legal/tos/; no standalone open-source license exposed in installed bundle; core not redistributed or rewritten",
+      "discovery": "Available skills catalog exposes figma:figma-use and installed plugin tools; actual calls include skillNames=figma-use",
+      "actual_calls": [
+        "use_figma: original closedVECTOR paths and editableTEXT",
+        "upload_assets: source photograph and exact PNG/calibration byte archives",
+        "download_assets: natural frame render and original image fill bytes"
+      ],
+      "core_modifications": 0,
+      "thin_project_adaptation": [
+        "Immutable full-size R4 layer",
+        "Serial version receipts and source/text readbacks",
+        "Numerical protectedRGB restoration after measuredFigma1levelrounding",
+        "OriginalPNG byte archive and bounded exact restore"
+      ],
+      "proof": {
+        "path": "evidence/vpd/codex_takeover_20261003/DELIVERY_ASSET_MANIFEST.json",
+        "sha256": "b50ff60867e909437c4c0355931da06201e694a819ed0e0a1e7a3c68498c7520"
+      },
+      "limitations": [
+        "Makingeditablelayers does not establish branddesignquality",
+        "Neither new global install nor download-only activation claimed",
+        "Connected account/file access verified; anonymous public sharing not altered or verified"
+      ]
+    },
+    {
+      "name": "fontTools",
+      "type": "OFFICIAL_PROFESSIONAL_METHOD_NOT_A_SKILL",
+      "version": "4.63.0",
+      "commit": "978d9edccb60ea0e5fbad7015cb11817c3532328",
+      "source": "https://github.com/fonttools/fonttools/tree/978d9edccb60ea0e5fbad7015cb11817c3532328",
+      "license": "MIT; retained LICENSE/LICENSE.external",
+      "actual_trial": {
+        "path": "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/CHAZUO_GLYPH_METRICS_TRIAL_01.json",
+        "sha256": "7e8254f7ffd9631b907911abe601d8c5fffe2bb4f69347976d88499f17e2ab07"
+      },
+      "upstream_core_modifications": 0,
+      "wrapper": "probe_glyph_metrics.py uses TTFont/getBestCmap/getGlyphSet/BoundsPen/RecordingPen/StatisticsPen",
+      "main_variable": "Same font/text; advance-only baseline vs realoutline geometric diagnosis",
+      "benefit": "Actual missingglyph/bounds/area/centroid traceability",
+      "visual_benefit": "UNVERIFIED",
+      "font_sample_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "font_sample_license": "OFL1.1; ReservedNameSource",
+      "font_sample_changed": false,
+      "final_wordmark_derived_from_trial_font": false
+    }
+  ],
+  "font_used_in_final_copy": {
+    "family": "Noto Serif SC",
+    "style": "Medium",
+    "size_px": 32,
+    "nodes": [
+      "259:65",
+      "259:66"
+    ],
+    "figma_missing_font": false,
+    "binary_version": "NOT_EXPOSED_BY_FIGMA",
+    "license_source": "https://github.com/google/fonts/blob/beff1d8226e598dfaf06f9f8312c01021f70e9d2/ofl/notoserifsc/OFL.txt",
+    "source_commit": "beff1d8226e598dfaf06f9f8312c01021f70e9d2",
+    "license_file": {
+      "path": "evidence/vpd/codex_takeover_20261003/skill_research/NotoSerifSC_OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+    },
+    "claims_same_binary_as_source_commit": false
+  },
+  "custom_wordmark": {
+    "origin": "PROJECT_AUTHORED_CLOSED_BEZIER_CONTOURS",
+    "font_outline_conversion": false,
+    "reference_logo_traced": false,
+    "assets": [
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/chazuo-wordmark-v1.svg",
+        "sha256": "4107ccf9c88fea0afe365fe7d1e8d995e30f92b139b340259c778c97b193c06a"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/chazuo-wordmark-v2.svg",
+        "sha256": "921369859a0af98a1fc14691b84f59c8de05abf8cd86c40476acdf403940405f"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/chazuo-wordmark-v3.svg",
+        "sha256": "4c1fbdd79cd991ded8f3f06bc50b9f72a71d9650c9d93614c3709476959e7379"
+      }
+    ],
+    "brand_quality": "AI_FAIL_NO_PROMOTION"
+  },
+  "candidate_research": {
+    "path": "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/RESEARCH_RESULT.json",
+    "sha256": "35e70f9d272e4cfe01a9433d0897ce35d835f1cfd6bd0d1a638a4aee2653970f"
+  },
+  "new_global_skill_installs": 0,
+  "mature_chinese_logo_skill_claim": "NONE_FOUND_AND_VERIFIED_APPLICABLE",
+  "continual_learning": "Targetedgap research, fixedtrial,compare,persist; no modelweights or untriggeredbackgroundexecution"
+}

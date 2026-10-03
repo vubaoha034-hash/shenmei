@@ -1,0 +1,11 @@
+{
+  "schema_version": "vpd-actual-implementation-checks/v1",
+  "native_current_state": {"result": "PASS", "lock_revision": 261, "checkpoint": 283, "command": "python scripts/verify_visual_memory.py --vpd-state --status-card"},
+  "prior_independent_state_repair_tests": {"reported_actual_passed": 84, "source": "state_repair/STATE_REPAIR_REPORT.md", "scope": "Before final parallel-completion binding correction; not counted as new visual evidence"},
+  "latest_targeted_tests": {"result": "PASS", "passed": 23, "elapsed_seconds": 16.55, "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests/visual_memory/test_vpd_isolated_pixel_review.py tests/visual_memory/test_vpd_bound_asset_download.py -q", "scope": "Exact unique image binding despite asynchronous completion order, duplicate rejection, isolation/model proofs, HTTP202/PNG/SHA failures and bounded recovery"},
+  "broad_repeat": {"result": "STOPPED_NOT_CLAIMED_PASS", "reason": "Prior 84 checks had passed; repeated broad fixture run was stopped. Latest small correction tested with targeted tests and actual native final check."},
+  "pytest_environment_failure": "Unrelated auto-loaded pytest_html/MarkupSafe DLL access denied; disable plugin auto-load for core tests, no package reinstall",
+  "native_initial_finalize_failure": "Actual corrected review ImageView completion order differed from P,N,R,T. State guard incorrectly treated completion order as attachment identity. Corrected to exact unique neutral-ID/SHA map; raw actual order preserved, four distinct required images unchanged.",
+  "writer_rollback": "Earlier actual forced second replace failure restored originals; report kept in professional audit chain. Sequential replace is not crash atomicity.",
+  "aesthetic_test_claim": "NONE; engineering tests do not prove visual improvement"
+}

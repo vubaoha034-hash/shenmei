@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- CODEX_BOUNDED_CHAZUO_DELIVERY_20261003 -->
+本轮已明确授权Codex制作茶作成品及Figma写入，取代该任务旧零额度/Chat-only限制；历史限制仍保留原范围。按下文读取当前任务锁后，若 `codex_takeover.task_id` 为 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`，继续读 `continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md`：真实成品、源节点、精确PNG恢复、独立审稿、依赖和失败边界均在此。三版/两修订已用尽，当前动作以任务锁为准，不按历史下一步再出图。
+<!-- END_CODEX_BOUNDED_CHAZUO_DELIVERY_20261003 -->
+
 <!-- UNIFIED_USER_INSTRUCTION_20261003 -->
 ## 最新用户执行偏好与总审核权限（2026-10-03）
 

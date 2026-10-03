@@ -1,0 +1,137 @@
+{
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "version": 0,
+  "pixels_seen": [
+    "P",
+    "N",
+    "R",
+    "T"
+  ],
+  "verdict": "AI_FAIL",
+  "observations": [
+    {
+      "region": "T／右上“茶作”字标",
+      "evidence": "名称可读，但主体呈常见印刷衬线字形；字脚附近的细弧没有形成清晰的部件或笔画识别机制。可见形态与 P 字标的独特轮廓、笔势和识别强度存在明显差距。",
+      "priority_issue": "HIGH：字标未达到从“茶作”字形部件建立品牌识别的要求。"
+    },
+    {
+      "region": "T／右上主文案",
+      "evidence": "实际显示“一杯茶，慢下来。”，末尾多出句号；要求的准确文案是“一杯茶，慢下来”。",
+      "priority_issue": "HIGH：准确文案要求未满足。"
+    },
+    {
+      "region": "T／左上角",
+      "evidence": "绿色虚化背景上悬空出现一条白色弧线，与字标、文案和茶杯没有明确连接关系。",
+      "priority_issue": "HIGH：装饰没有收束，降低交付完成度。"
+    },
+    {
+      "region": "T／右上文字区与整幅摄影",
+      "evidence": "深绿色矩形保证文字对比度，但其硬边与摄影的自然光影、木盘曲线之间缺少呼应，图文主要依靠覆盖关系组成。",
+      "priority_issue": "MEDIUM：图文关系清楚，但整合程度不足。"
+    },
+    {
+      "region": "T／中下部茶杯、干茶盘与茶叶",
+      "evidence": "茶杯体量明确，茶汤、干茶和叶片能共同建立茶品类别；暖色木盘与绿色背景也提供了统一色调。",
+      "priority_issue": "NONE：产品主体和基本色彩关系成立。"
+    },
+    {
+      "region": "T／整体阅读层级",
+      "evidence": "大茶杯首先吸引注意，右上文字可随后读取；不过字标的辨识主要依赖名称本身，细弧装饰不能提供稳定的品牌记忆。",
+      "priority_issue": "HIGH：基础阅读顺序成立，品牌识别不足。"
+    },
+    {
+      "region": "P／字标、构图和辅助文字",
+      "evidence": "大字标具备独特笔画轮廓，辅助文字按位置、尺度和方向形成阅读关系。本次仅将这些项目用于正向校准，未将 P 的摄影视为合格依据，未迁移其文案。",
+      "priority_issue": "CALIBRATION：T 未达到该字标与层级校准的识别强度。"
+    },
+    {
+      "region": "N／整体组织",
+      "evidence": "巨幅局部摄影与重复小幅摄影并置，文字系统较少，分区边界明显。T 已具备品牌名和主文案，但单一文字框仍表现出较机械的分区方式。",
+      "priority_issue": "CALIBRATION：N 仅用于否决校准。"
+    },
+    {
+      "region": "R／上半横版广告",
+      "evidence": "主体、品牌位置和大文案围绕同一画面组织，文字与产品共同形成视觉重心。T 的摄影主体清楚，但文字块与主体之间的构图联系较弱。",
+      "priority_issue": "MEDIUM：与参考的组织机制仍有差距；未采用其品牌、独特字形、水印或下半样机。"
+    }
+  ],
+  "priority_problems": [
+    {
+      "priority": 1,
+      "problem": "字标缺少由“茶作”部件和笔画建立的专属识别形态。"
+    },
+    {
+      "priority": 2,
+      "problem": "主文案末尾多出句号，不符合准确文案要求。"
+    },
+    {
+      "priority": 3,
+      "problem": "左上悬空白弧没有明确用途，完成度不足。"
+    },
+    {
+      "priority": 4,
+      "problem": "文字框与摄影主体之间的组织联系弱于参考。"
+    }
+  ],
+  "technical": {
+    "raster_dimensions": {
+      "status": "PASS",
+      "observed": "1536×1024",
+      "evidence": "由 view_image 返回的原始 PNG 的 IHDR 确认。"
+    },
+    "aspect_ratio": {
+      "status": "PASS",
+      "observed": "3:2"
+    },
+    "orientation": {
+      "status": "PASS",
+      "observed": "横版"
+    },
+    "exact_copy": {
+      "status": "FAIL",
+      "required": "一杯茶，慢下来",
+      "observed": "一杯茶，慢下来。"
+    },
+    "technical_original_identity": "UNKNOWN",
+    "hidden_layer_protection": "UNKNOWN",
+    "editable_structure": "UNKNOWN",
+    "note": "扁平图片不能证明技术原件身份、隐藏图层保护或可编辑结构。"
+  },
+  "design": {
+    "wordmark": {
+      "status": "FAIL",
+      "evidence": "文字可读，但可见笔画未建立足够明确的专属品牌识别。"
+    },
+    "image_text_relation": {
+      "status": "PARTIAL",
+      "evidence": "主体与文案读取清楚；实色文字框与摄影的构图联系不足。"
+    },
+    "brand_identity": {
+      "status": "FAIL",
+      "evidence": "茶品类别明确，茶作品牌的独有形态不足。"
+    },
+    "completion": {
+      "status": "FAIL",
+      "evidence": "尺寸合格，但准确文案和孤立装饰仍需修正，字标也未达到交付要求。"
+    },
+    "reference_gap": {
+      "status": "FAIL",
+      "evidence": "与 P 的字标识别及阅读层级、R 上半广告的图文组织机制相比，尚未达到内部交付标准。"
+    }
+  },
+  "reviewer": {
+    "role": "独立中文品牌海报审稿人",
+    "method": "仅查看指定四张图片进行盲审",
+    "target_human_verdict_visible": false,
+    "previous_ai_verdict_visible": false,
+    "note": "AI_PASS 也不代表真人认可。"
+  },
+  "actual_tool_read_paths": [
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\holdout_corrected\\P.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\holdout_corrected\\N.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\holdout_corrected\\R.jpg",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\holdout_corrected\\T.png"
+  ],
+  "human_verdict": "HIDDEN_PENDING",
+  "personal_fit": null
+}

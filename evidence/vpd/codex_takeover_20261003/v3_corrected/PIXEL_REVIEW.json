@@ -1,0 +1,142 @@
+{
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "version": 3,
+  "pixels_seen": [
+    "P",
+    "N",
+    "R",
+    "T"
+  ],
+  "verdict": "AI_FAIL",
+  "observations": [
+    {
+      "region": "T 左上约 [40,48,195,80]",
+      "evidence": "虚化树林中出现没有可读内容的深绿色短矩形，边缘清晰，缺少与其余画面的关系。",
+      "priority_issue": "高：明显影响完整海报的完成感。"
+    },
+    {
+      "region": "T 右上 [920,94,1536,409]",
+      "evidence": "大面积不透明深绿色矩形承载字标和文案，直角边界将自然背景切开，右侧直接贴到画布边缘。",
+      "priority_issue": "高：文字区作为独立面板悬在摄影上，图文关系较生硬。"
+    },
+    {
+      "region": "T 右上字标，约 [953,120,1306,337]",
+      "evidence": "“茶作”可以辨认；“茶”的右下笔画和“作”的上部横向笔画已经转化为带内部切口的叶形，并非独立叶子贴在字外。",
+      "priority_issue": "中：局部满足部件改写要求，但叶形、尖角、曲线与其余笔画尚未形成充分统一的造型语言。"
+    },
+    {
+      "region": "T 字标中的“茶”下部与“作”上部",
+      "evidence": "两处叶形成为醒目的局部特征，其他主要笔画仍较规整；“作”的上部叶形显著伸长，而“茶”的下部叶形较集中。",
+      "priority_issue": "中：字标的整体识别与笔画节奏需要继续统一，不能仅凭两处叶形认定品牌字标已完成。"
+    },
+    {
+      "region": "T 右侧文案，约 [1320,270,1426,351]",
+      "evidence": "准确呈现“一杯茶，慢下来”，分成两行；字号明显小于字标，且靠近右侧，与字标之间形成较窄的阅读连接。",
+      "priority_issue": "中：文案可读，但像面板内的附属说明，尚未充分参与整张海报的阅读组织。"
+    },
+    {
+      "region": "T 全幅，杯与木盘对应右上文字区",
+      "evidence": "杯、茶叶、鲜叶和木盘形成明确的摄影主体；右上文字区具有视觉重量，但其硬矩形边界与主体的圆形、弧形轮廓缺少呼应。",
+      "priority_issue": "高：主体与品牌表达各自清楚，整体关系仍不够成立。"
+    },
+    {
+      "region": "P 左侧字标及周围辅助文字；与 T 右上比较",
+      "evidence": "P 的字标有贯穿两字的笔画走势，辅助文字分布形成大小、方向和疏密的层级；T 虽具醒目字标，但层级基本集中在单一矩形内。",
+      "priority_issue": "中：仅用 P 校准字标、构图与阅读关系，未将其摄影或文案作为 T 的合格依据。"
+    },
+    {
+      "region": "R 上半横版广告；与 T 全幅比较",
+      "evidence": "R 的产品主体、左上品牌和右下主文案利用画面不同位置形成相互关联的阅读路径，文字直接参与场景组织。T 的空白短矩形及独立大面板削弱了这种整体完成度。",
+      "priority_issue": "高：与 R 上半广告相比，T 的排版整合和交付完成感仍有明显差距。"
+    },
+    {
+      "region": "N 左侧深色带及重复照片区域；与 T 对照",
+      "evidence": "N 可见明显的硬分区及重复照片插入。T 没有重复照片问题，但仍存在缺少内容的色块和与摄影硬切分的文字面板。",
+      "priority_issue": "中：这是像素层面的对照，不推断真人否决 N 的具体原因。"
+    }
+  ],
+  "priority_problems": [
+    {
+      "priority": 1,
+      "problem": "左上无内容短矩形使作品呈现未完成状态。",
+      "scope": "仅限允许的左上设计区域。"
+    },
+    {
+      "priority": 1,
+      "problem": "右上大矩形与摄影割裂，品牌、文案和主体尚未组织成完整海报。",
+      "scope": "仅限允许的右上设计区域；保留受保护摄影。"
+    },
+    {
+      "priority": 2,
+      "problem": "字标已有部件内叶形，但整体笔画语言与两字节奏仍需统一。",
+      "scope": "调整字标本身。"
+    },
+    {
+      "priority": 2,
+      "problem": "准确文案的阅读连接和整体层级仍偏弱。",
+      "scope": "调整允许区域内的排版关系。"
+    }
+  ],
+  "technical": {
+    "visible_dimensions": "1536×1024",
+    "visible_aspect_ratio": "3:2",
+    "visible_copy": "一杯茶，慢下来",
+    "copy_accuracy": "PASS",
+    "brand_readability": "可识别为“茶作”。",
+    "source_identity": "UNKNOWN：仅凭图片无法证明技术身份。",
+    "source_layer_protection": "UNKNOWN：未读取源文件、图层或技术回执。",
+    "photography_integrity": "UNKNOWN：可观察当前杯、茶、鲜叶、木盘、构图和光色，无法证明与受保护源图逐像素一致。",
+    "photography_change_recommendation": "无；上述问题应在允许的设计区域内解决。"
+  },
+  "design": {
+    "wordmark": "部分成立：叶形来自字内笔画，但整体造型语言和节奏尚不足以通过。",
+    "image_text_relation": "未通过：文字面板与摄影之间的硬边界过强。",
+    "brand_identity": "部分成立：品牌名称明确，字标具有局部特征，系统性的识别尚弱。",
+    "completion": "未通过：左上无内容色块和右上独立面板影响完整交付感。",
+    "reference_gap": "与 R 上半广告相比，差距主要在主体、品牌与主文案的整体组织及排版完成度；不要求复制其品牌或字形。"
+  },
+  "reviewer": {
+    "role": "独立像素审稿人",
+    "basis": "实际查看指定四图，仅依据可见像素。",
+    "pass_meaning": "AI_PASS 仅表示内部交付审核通过，不能替代真人验收。",
+    "carrier": "FRESH_FORK_NONE_PIXEL_AGENT",
+    "thread_id": "01a10002-548a-7993-931c-640f062f6d93",
+    "actual_model": "gpt-6.1-sol",
+    "actual_reasoning_effort": "max"
+  },
+  "actual_tool_read_paths": [
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v3_corrected\\P.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v3_corrected\\N.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v3_corrected\\R.jpg",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v3_corrected\\T.png"
+  ],
+  "human_verdict": "HIDDEN_PENDING",
+  "personal_fit": null,
+  "input_bindings": [
+    {
+      "neutral_id": "P",
+      "sha256": "57c21466512a79cbb25c75db1d6a1748b595c3bc2d00c85ba51615557f74f925"
+    },
+    {
+      "neutral_id": "N",
+      "sha256": "deb1a5909bcc6ca8cb9119b3efabd5f65ccdef0dcf00f60e6b215806a44b2cf4"
+    },
+    {
+      "neutral_id": "R",
+      "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167"
+    },
+    {
+      "neutral_id": "T",
+      "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a"
+    }
+  ],
+  "isolation_audit": {
+    "path": "evidence/vpd/codex_takeover_20261003/v3_corrected/ISOLATION_AUDIT.json",
+    "sha256": "3b66fbcd238e5817997a0ec43587ab818cdfcd817af7491757ee0e834f2abfdb"
+  },
+  "export": {
+    "path": ".liu-visual-private/versions/v3/poster.png",
+    "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a"
+  },
+  "reviewed_at": 1791001655
+}

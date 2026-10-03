@@ -1,0 +1,86 @@
+{
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "version": 2,
+  "pixels_seen": [
+    "P",
+    "N",
+    "R",
+    "T"
+  ],
+  "verdict": "AI_FAIL",
+  "observations": [
+    {
+      "region": "T右上[920,94,1536,409]",
+      "evidence": "深绿实色矩形形成突出的硬边，遮断背景的光影和空间连续性；文字整体成为一块悬浮品牌卡片。",
+      "priority_issue": "高：调整该区域的底块与文字组织，使文字参与完整画面的构成。"
+    },
+    {
+      "region": "T右上大字“茶作”",
+      "evidence": "两字可辨，笔画有收尖、倾斜与粗细变化；“茶”右下笔画带叶片联想，但“作”缺乏相应的字形设计逻辑。",
+      "priority_issue": "高：将字标识别从单个尖叶形笔画推进到两字一致、可识别的部件与笔画体系。"
+    },
+    {
+      "region": "P左上大字与T右上大字",
+      "evidence": "P把叶形、笔势、纹理直接纳入字形，文字本身承担自然与茶的品牌表达；T的字形表面光洁，主要依靠照片和绿色底块传达茶品牌。",
+      "priority_issue": "高：字标的品牌表达仍明显弱于P；P摄影未被用作合格依据。"
+    },
+    {
+      "region": "T左上[32,28,224,142]",
+      "evidence": "小字标也置于深绿矩形，与右上重复同一名称和底块。两处重复未形成清楚的主次功能，左上矩形增加了第二处硬边。",
+      "priority_issue": "中：明确左上标识与右上主信息的分工，统一尺度和底块处理。"
+    },
+    {
+      "region": "T右上文案",
+      "evidence": "可读为“一杯茶，慢下来”，分成两行，文案准确、对比充分；其与大字并排，但位置略偏低，周围留白缺乏明确的共同节奏。",
+      "priority_issue": "中：调整字标、文案的对齐、间距与视觉重心。"
+    },
+    {
+      "region": "R上半横版广告与T整体",
+      "evidence": "R的标题直接进入主体周围的画面空间，文字与产品轮廓、环境共同组织视线；T将全部主信息隔离在实色矩形内，图与字主要呈上下分区关系。",
+      "priority_issue": "高：参考R的整体组织机制，在许可区域内建立文字与摄影主体的视觉联系。"
+    },
+    {
+      "region": "N整体与T整体",
+      "evidence": "T没有N中重复摄影拼贴、局部图块堆叠的问题，信息也完整；但大色块与摄影分离的处理仍留下拼接感。",
+      "priority_issue": "中：已有完整横版基础，仍需解决图形层与照片的融合。"
+    },
+    {
+      "region": "T中下部杯、茶、叶与木盘",
+      "evidence": "产品主体清楚，杯与茶盘构成主要视觉重心；当前问题集中在上方字标和底块组织。",
+      "priority_issue": "保护项：字体与布局修改应限定在授权区域，保留摄影主体、构图和光色。"
+    }
+  ],
+  "priority_problems": [
+    "右上实色矩形把品牌信息隔离为卡片，整体图文关系未达到参考的完成度。",
+    "字标虽有笔画造型，但两字缺少一致的品牌识别机制，与P仍有明显差距。",
+    "左上重复字标及右上文案需要形成明确的功能、尺度与排版秩序。"
+  ],
+  "technical": {
+    "canvas": "T呈完整横版、3:2画面；精确文件尺寸未独立读取元数据核验。",
+    "required_dimensions": "1536×1024",
+    "copy": "像素可读文案为“一杯茶，慢下来”，符合要求。",
+    "visible_design_regions": "主要文字与底块位于指定左上及右上区域。",
+    "identity_and_source_layers": "UNKNOWN：仅凭四张图不能证明技术身份、源层结构或摄影保护。",
+    "photography_preservation": "UNKNOWN：缺少同源摄影基准，不能证明摄影像素未改动。"
+  },
+  "design": {
+    "wordmark": "可读，有笔画级造型，未见独立叶子贴普通字体；整体识别系统与完成度仍不足。",
+    "image_text_relation": "主要问题：实色底块造成明显分离，图文缺乏共同构成。",
+    "brand_identity": "茶品牌属性可理解，独有识别主要依赖少量尖叶形笔画，尚不充分。",
+    "completion": "具备完整海报、正确文案和清楚主体，但仍像照片上附加两块标识牌。",
+    "reference_gap": "弱于P的字形整合与排版层次，也弱于R上半横版的图文组织；优于N的信息完整性和摄影使用秩序。"
+  },
+  "reviewer": {
+    "role": "独立像素审稿人",
+    "basis": "仅实际查看P、N、R、T四张指定图片。",
+    "verdict_scope": "AI内部交付审核；不代表真人认可或个人审美适配。"
+  },
+  "actual_tool_read_paths": [
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v2\\P.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v2\\N.png",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v2\\R.jpg",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\review_packets\\v2\\T.png"
+  ],
+  "human_verdict": "HIDDEN_PENDING",
+  "personal_fit": null
+}

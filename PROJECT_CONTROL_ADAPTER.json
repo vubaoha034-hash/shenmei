@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 252,
-    "sha256": "5446b661b47fe5f603005018410f690d15bea5836bc94d6030c2e092e4e64593",
+    "revision": 261,
+    "sha256": "84f33d7a7964832bc87573da941f1cfe719f900e0b1aed508dc3246a278fbc4f",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -898,7 +898,11 @@
     "version": "1.1 + mainline-lock 1.0",
     "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
     "read_after": "task_lock",
-    "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock."
+    "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock.",
+    "current_bounded_delivery_entry": {
+      "path": "continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md",
+      "sha256": "506e2054b1862caeaa9cec9360ec63c916227c02532c12bc0dfeb4a607d1b93f"
+    }
   },
   "figma_upload_route_guard": {
     "status": "MANDATORY",
@@ -981,16 +985,59 @@
     "current_mainline": false
   },
   "current_mainline": {
-    "task_id": "VPD-CANDIDATE-88-HUMAN-FINAL-AESTHETIC-REVIEW-20261003-01",
-    "status": "VPD_CANDIDATE_88_HUMAN_FINAL_FAIL_PHOTO_PROTECTED_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
-    "current_visual_unit": "FROZEN_FIRST_IMAGE_PHOTO_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+    "current_visual_unit": "FROZEN_R4_PHOTO_NEW_WORDMARK_TYPOGRAPHY",
     "evidence": {
+      "execution": {
+        "path": "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+        "sha256": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9"
+      },
       "human_verdict": {
         "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
-        "sha256": "a535b6cf5c7bb66d9ff5f0c244db46d2f17b7b160f670b9ba9919ba7b5a57bf2"
+        "sha256": "a535b6cf5c7bb66d9ff5f0c244db46d2f17b7b160f670b9ba9919ba7b5a57bf2",
+        "verdict": "HUMAN_FAIL_DESIGN_SYSTEM_NOT_READY",
+        "photo_protected": true,
+        "design_failed": true,
+        "next_legal_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
       }
     },
-    "next_required_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
+    "next_required_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
+    "codex_takeover": {
+      "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+      "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+      "next_required_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
+      "authorization": {
+        "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
+        "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
+      },
+      "photo_protection": {
+        "path": "continuity/vpd/codex_takeover_20261003/PHOTO_PROTECTION.json",
+        "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
+      },
+      "receipt": {
+        "path": "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+        "sha256": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9"
+      },
+      "budget": {
+        "formal_versions_max": 3,
+        "formal_versions_used": 3,
+        "revisions_max": 2,
+        "revisions_used": 2,
+        "photo_generations": 0,
+        "paid_compute_usd": 0,
+        "training": 0,
+        "automations": 0,
+        "second_style": 0
+      },
+      "human_verdict": "PENDING",
+      "candidate_promoted": false,
+      "state_writer": "ROOT_EXECUTOR_ONLY",
+      "reuse_entry": {
+        "path": "continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md",
+        "sha256": "506e2054b1862caeaa9cec9360ec63c916227c02532c12bc0dfeb4a607d1b93f"
+      }
+    }
   },
   "preserved_prior_current_mainline": {
     "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
@@ -1020,8 +1067,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-HUMAN-FINAL-FAIL-20261003-001",
-      "event_hash": "986fe17874f75ab8cb1a6babe4d009136da8c6cb9aebd2b45a5099a8759a671a"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-261-20261003",
+      "event_hash": "6c1cc6f48aeb0cbc1ff701f1a009198ab94320ef03513532ba444f64e79161a7"
     }
   },
   "mature_workflow_audit": {

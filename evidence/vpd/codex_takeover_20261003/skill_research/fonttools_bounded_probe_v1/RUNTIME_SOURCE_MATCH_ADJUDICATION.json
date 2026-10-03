@@ -1,0 +1,18 @@
+{
+  "status": "REPRESENTATION_DIFFERENCE_IDENTIFIED_NO_SOURCE_MUTATION_DEMONSTRATED",
+  "read_after_probe": "RUNTIME_SOURCE_MATCH.json",
+  "python_modules": "ttFont, boundsPen, statisticsPen, recordingPen and svgPathPen match the pinned 4.63.0 source after CRLF/LF normalization; exact byte hashes differ and are preserved in the record",
+  "moments_module": {
+    "runtime_file_kind": "momentsPen.cp311-win_amd64.pyd native extension",
+    "observed_COMPILED": true,
+    "observed_first_four_bytes_hex": "4d5a9000",
+    "pinned_reference_file_kind": "momentsPen.py Python source",
+    "interpretation": "Binary-to-source equality is not a valid identity check. The false byte and newline comparisons do not demonstrate a patch or semantic difference.",
+    "remaining_limit": "The installed native extension build provenance was not reconstructed, and native-to-Python numerical equivalence was not tested. Do not claim full runtime source-byte verification."
+  },
+  "diagnostic_errors_recorded": [
+    "Initial metadata lookup in bundled Python 3.12.14 reported PackageNotFoundError for fonttools; no install or change followed. Existing system Python 3.11.15 had fontTools 4.63.0.",
+    "Attempt to read runtime MomentsPen as a text source raised UnicodeDecodeError because the selected runtime module is a .pyd binary; then its path, COMPILED flag and MZ bytes were inspected."
+  ],
+  "scope": "No runtime package, installed source, project rule, task lock, checkpoint or ledger was edited."
+}

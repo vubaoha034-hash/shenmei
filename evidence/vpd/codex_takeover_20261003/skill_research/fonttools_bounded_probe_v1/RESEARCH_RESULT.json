@@ -1,0 +1,127 @@
+{
+  "status": "BOUNDED_ENGINEERING_PROBE_COMPLETE_NO_VISUAL_PROMOTION",
+  "project_source_commit": "003cfdfaa6481f8ac41cc46f56539bb4782ec34b",
+  "task_focus": "茶作中文品牌字标、字体工程、参考像素证据、视觉评测/审美校准及工作流编排",
+  "execution_settings_observable": {
+    "parent_assignment_requested_model": "GPT-6.1 Sol",
+    "parent_assignment_requested_reasoning_effort": "Max",
+    "exact_spawn_tool_arguments": "not exposed in this child context",
+    "service_side_model_binding": "not observable; not claimed verified",
+    "service_side_reasoning_binding": "not observable; not claimed verified",
+    "effective_record": "Only the model/effort preference communicated by the parent is recorded as a request."
+  },
+  "selected_one_method": {
+    "name": "fontTools 固定字体/轮廓读取与真实字形边界诊断",
+    "purpose": "为已认可字形的工程核验、功能性中文字及必要的可编辑轮廓提供可追溯底层；不代替字标作者性和人工审美",
+    "is_upstream_SKILL": false,
+    "reason": "本轮检查到的成熟上游 SKILL 没有直接证明其可解决茶作中文定制字标。fontTools 是官方专业工具方法，不能假称为成熟中文 Logo Skill。",
+    "official_repository": "https://github.com/fonttools/fonttools",
+    "official_documentation": "https://fonttools.readthedocs.io/en/stable/pens/boundsPen.html",
+    "source_commit": "978d9edccb60ea0e5fbad7015cb11817c3532328",
+    "source_tag_and_runtime_version": "4.63.0",
+    "license": "MIT; LICENSE 与 LICENSE.external 已保留",
+    "adopted_for_trial": ["TTFont.getBestCmap", "TTFont.getGlyphSet", "BoundsPen", "ControlBoundsPen", "RecordingPen", "StatisticsPen diagnostic only"],
+    "reusable_entry": "probe_glyph_metrics.py --font <licensed OTF/TTF> --text 茶作 --output <new JSON path>",
+    "dependency": "现有系统 Python 3.11.15 + fontTools 4.63.0；没有新安装依赖；核心轮廓读取不需要 GPU、Figma 或联网",
+    "production_outline_entry_read_not_executed": "python -m fontTools.pens.svgPathPen <font.otf> 茶作；官方 CLI 会输出 SVG 并处理 Y 轴翻转。它仅输出原字形，应由主执行者在正式制作预算内决定是否使用、定制和导入。",
+    "production_caution": "字体轮廓必须做被批准方向中的专属设计才能作为 Logo；直接转轮廓、缩放或调字距不证明满足定制字标标准。没有母参考视觉认可时，不推荐用思源宋体骨架替换既有认可字标。"
+  },
+  "font_sample": {
+    "repository": "https://github.com/adobe-fonts/source-han-serif",
+    "source_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+    "sample": "SourceHanSerifSC-Regular.otf",
+    "observed_font_version": "2.003",
+    "bytes": 24543332,
+    "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+    "license": "SIL Open Font License 1.1; Reserved Font Name: Source",
+    "license_boundary": "保留原许可与版权；如以后分发改制字体软件，须遵守 OFL 与保留字体名条件。字体许可不等于品牌注册可用性审查。此次只读取未修改字体。"
+  },
+  "trial": {
+    "id": "CHAZUO_GLYPH_METRICS_TRIAL_01",
+    "inputs": "同一字体、同一 Regular 字重、同一字符串 茶作",
+    "one_primary_variable": "从 advance 字面框的基线诊断切换为真实 Bézier 轮廓范围；没有设计/像素改动",
+    "baseline": "两个字的 hmtx advance 都是 1000 units",
+    "observed": {
+      "茶": {"codepoint": "U+8336", "glyph": "cid33872", "exact_bounds_units": [32, -77, 965, 832], "width_em": 0.933, "height_em": 0.909, "signed_contour_area_em2": 0.2104421499999998, "signed_contour_centroid_x_em": 0.5247924550704769},
+      "作": {"codepoint": "U+4F5C", "glyph": "cid09998", "exact_bounds_units": [32, -78, 966, 838], "width_em": 0.934, "height_em": 0.916, "signed_contour_area_em2": 0.18471899999999994, "signed_contour_centroid_x_em": 0.4792056854052965}
+    },
+    "missing_codepoints": [],
+    "input_font_hash_unchanged": true,
+    "observed_probe_elapsed_seconds": 0.6917,
+    "real_benefit": "可重建缺字/替字检查、显示字面宽不代表轮廓占用/重心相同，并给出人工光学校核可引用的几何事实。一次试用无需安装、无出图、无付费。",
+    "not_demonstrated": ["审美改善", "字距应该调成哪个值", "字体骨架适合已认可茶作方向", "光学调整后的真人通过", "SVG/Figma 导入后视觉保真", "native MomentsPen 的完整源码字节绑定"],
+    "specific_negative_or_null_result": "两个样本的 ControlBoundsPen 与 BoundsPen 结果相同；此样本未证实精确曲线极值相对控制点框带来新增优势。面积/质心为有向闭合轮廓积分；交叠/自交时不等于可见墨迹并集。",
+    "artifact": "CHAZUO_GLYPH_METRICS_TRIAL_01.json"
+  },
+  "other_upstream_candidates_checked": [
+    {
+      "name": "Anthropic canvas-design",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+      "commit_date": "2026-09-29T02:20:03Z",
+      "SKILL": "skills/canvas-design/SKILL.md",
+      "license": "Apache-2.0; 单技能许可已下载；捆绑字体/第三方组件须分别检查许可",
+      "inspected": "完整 SKILL、许可首部、fonts 目录元数据、仓库 README 官方免责声明与部分 THIRD_PARTY_NOTICES",
+      "decision": "READ_ONLY_CANDIDATE_NOT_INTEGRATED_OR_TRIALED",
+      "reason": "完整流程创建视觉哲学并产出新 PNG/PDF；并未提供经验证的中文定制字标程序。其整张画布路线与现有字标/认可摄影局部制作范围不能自动等同。官方说明这些为演示教育示例，并不保证实际结果一致。",
+      "reusable_pattern_only": "借鉴第二轮细化已有结构、避免无因增加新装饰的原则；不据此新增生产规则或保证审美收益。"
+    },
+    {
+      "name": "Anthropic frontend-design",
+      "commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+      "SKILL": "skills/frontend-design/SKILL.md",
+      "license": "Apache-2.0; 单技能 LICENSE.txt 已下载",
+      "inspected": "完整 SKILL、许可尾部及来源",
+      "decision": "OUT_OF_SCOPE_FOR_WORDMARK_CREATION",
+      "reason": "面向网页 UI 的字体、配色、布局与 CSS 构建；不能用网页视觉特征或通用页面美化证明品牌字标设计已经完成。"
+    },
+    {
+      "name": "HarfBuzz",
+      "repository": "https://github.com/harfbuzz/harfbuzz",
+      "commit": "152313c8cc8182aa5bf2e3c173bd16ee72943f97",
+      "license": "Old MIT; 完整 COPYING 已读并保留；子目录异许可按实际采用文件检查",
+      "documentation": "https://harfbuzz.github.io/",
+      "decision": "METHOD_COMPATIBLE_NOT_EXECUTED",
+      "reason": "用于 Unicode 到定位字形的 OpenType shaping，支持语言/书写系统及可变字体轴；不能生成作者性字标。本机两个已检查 Python 环境均未装 uharfbuzz，未安装依赖或声称实际成字测试。"
+    }
+  ],
+  "reference_and_aesthetic_evaluation_boundary": {
+    "current_repo_practice_kept": "真实像素身份以具体文件/哈希绑定；区分 correctness、专业形式评估、任务意图和 personal_fit；以同类批准/拒绝锚点做逐对比较",
+    "taste_not_metric": "轮廓面积、质心、图片尺寸、像素差异或 hash 只能建立工程/身份事实，不能证明高级感或私人审美通过",
+    "not_run": "没有检查实际参考图像像素，没有评分，没有构造个人审美分数，没有原图像素分析结果冒充实际产出",
+    "production_review_suggestion": "主执行者每个正式版本先展示真实成品像素、逐字检查茶作，再在相同摄影和版面前提下对批准字形/拒绝锚点进行匿名比较；研究指标只解释观察，不能覆盖人工审美门。"
+  },
+  "files_read_in_fixed_project": [
+    "AGENTS.md",
+    "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "START_HERE.md",
+    "skills/personal-aesthetic-critic/SKILL.md",
+    "skills/restaurant-brand-aesthetic-gate/SKILL.md",
+    "rules/BRAND_WORDMARK_AND_TYPOGRAPHY_RULES_V4.md",
+    "rules/CONTINUAL_LEARNING_TRIGGER_RULE.md",
+    "VPD_V3_TOP_SKILL_REFERENCE_AUDIT.md",
+    "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
+    "evidence/vpd/mature_workflow_audit_v1/INSTANTSTYLE_IPADAPTER_REPRODUCIBILITY_CARD_20260921.md",
+    "evidence/vpd/mature_workflow_audit_v1/RUNPOD_SECURE_A40_ENVIRONMENT_CARD_20260921.md",
+    "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md"
+  ],
+  "fonttools_sources_read": {
+    "complete": ["LICENSE", "Lib/fontTools/pens/boundsPen.py", "Lib/fontTools/pens/svgPathPen.py"],
+    "targeted": ["LICENSE.external lines 1-80", "Lib/fontTools/ttLib/ttFont.py getGlyphSet/getBestCmap", "Lib/fontTools/pens/statisticsPen.py lines 1-160", "Lib/fontTools/pens/recordingPen.py lines 1-86", "Lib/fontTools/pens/momentsPen.py lines 1-44"],
+    "downloaded_but_not_claimed_read": ["fonttools README.rst full", "Anthropic skill-creator/SKILL.md full", "fonttools generated MomentsPen arithmetic body full", "Anthropic font binaries and per-font cmap coverage"]
+  },
+  "operational_boundary": {
+    "writes": "only added new files below evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1",
+    "business_state_writes": 0,
+    "git_commits": 0,
+    "new_finished_designs_or_images": 0,
+    "Figma_writes": 0,
+    "paid_compute": 0,
+    "training": 0,
+    "upstream_skill_installs_or_global_runtime_edits": 0,
+    "formal_version_budget_consumed": 0,
+    "promotion": "none; the main executor may use the bounded helper, but no project rule/default or mainline was modified",
+    "continual_learning_check": "未用一次元数据试用宣称稳定视觉成功；没有正式晋升事件。证据仅保存在用户授权 research 目录，没有写 .skill-evolution 或声称长期学习完成。"
+  },
+  "supporting_records": ["UPSTREAM_SOURCE_MANIFEST.json", "FONTTOOLS_FONT_SOURCE_MANIFEST.json", "RUNTIME_SOURCE_MATCH.json", "RUNTIME_SOURCE_MATCH_ADJUDICATION.json", "CHAZUO_GLYPH_METRICS_TRIAL_01.json"]
+}

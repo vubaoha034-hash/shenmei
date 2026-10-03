@@ -1,0 +1,34 @@
+{
+  "schema_version": "vpd-actual-blind-holdout-comparison/v1",
+  "checked_at": "2026-10-03T04:44:02.028227+00:00",
+  "unique_heldout_samples": 1,
+  "calibration_samples": [
+    "DIRECT201:2 DESIGN_WORDMARK_PASS_PHOTO_FAIL",
+    "241:2 WHOLE_CANDIDATE_REJECT"
+  ],
+  "heldout_identity": {
+    "candidate": "88-R4",
+    "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+    "used_in_calibration": false
+  },
+  "independent_review": {
+    "path": "evidence/vpd/codex_takeover_20261003/holdout_corrected/PIXEL_REVIEW.json",
+    "sha256": "f9118e44cc07c77f13f9149c104557c4b409d971f7024c1b82f36806fca25f95"
+  },
+  "actual_ai_verdict": "AI_FAIL",
+  "hidden_human_conclusion_at_review": true,
+  "actual_image_views": 5,
+  "distinct_images": 4,
+  "target_reread_reason": "OnlysameT returnedPNGheader, noothercontext",
+  "human_receipt": {
+    "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
+    "sha256": "a535b6cf5c7bb66d9ff5f0c244db46d2f17b7b160f670b9ba9919ba7b5a57bf2"
+  },
+  "human_conclusion": "PHOTO_POSITIVE_PROTECTED; DESIGN_WORDMARK_FAIL",
+  "comparison": "AI_FAIL and human design rejection agree on thisoneheldoutsample; AI identified ordinaryglyph/isolatedarc/hardpanel and extracopyperiod. Photographyacceptance is scoped independently.",
+  "false_positive_in_this_sample": false,
+  "accuracy_rate": null,
+  "statistical_confidence": null,
+  "unproved": "No large-sample false-passreduction, revieweraccuracy, or humanacceptance for newV3",
+  "historical_error": "Old R4 AI protocolpass and finalhuman designreject retained in nativehistory; thisone coldresultdoesnotrewrite them"
+}

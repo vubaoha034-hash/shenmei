@@ -11,6 +11,7 @@ RECONCILE_ACTION = 'RECONCILE_FORMAL_RENDER_ATTEMPT2_EVIDENCE'
 NEXT_ACTION = 'PREPARE_P3_PHOTO_TYPOGRAPHY_COMPARISON'
 PROJECT = 'visual-aesthetic-vpd'
 PARENT = 'VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1'
+_EVIDENCE_INDEX_CACHE = {}
 
 class TaskLockError(ValueError):
     pass
@@ -26,6 +27,42 @@ def path(root, value):
     require(p.is_relative_to(root), 'PATH_ESCAPE')
     return p
 
+
+def _indexed_blob(p):
+    """One index read per repository revision, preserving exact byte proof."""
+    root = next((parent for parent in p.parents if (parent / '.git').exists()), None)
+    if root is None:
+        return None
+    cached = _EVIDENCE_INDEX_CACHE.get(root)
+    if cached:
+        index = cached[0]
+    else:
+        index = Path(subprocess.check_output(['git', '-C', str(root), 'rev-parse',
+            '--git-path', 'index'], stderr=subprocess.DEVNULL).decode().strip())
+        if not index.is_absolute():
+            index = root / index
+    stamp = (index.stat().st_mtime_ns, index.stat().st_size)
+    if cached is None or cached[1] != stamp:
+        entries = subprocess.check_output(['git', '-C', str(root), 'ls-files', '--stage', '-z'],
+                                          stderr=subprocess.DEVNULL)
+        blobs = {}
+        for entry in entries.split(b'\0'):
+            if not entry:
+                continue
+            metadata, filename = entry.split(b'\t', 1)
+            _, blob, stage = metadata.split()
+            if stage == b'0':
+                blobs[filename.decode('utf-8', errors='surrogateescape')] = blob.decode()
+        if len(_EVIDENCE_INDEX_CACHE) >= 8 and root not in _EVIDENCE_INDEX_CACHE:
+            _EVIDENCE_INDEX_CACHE.clear()
+        cached = (index, stamp, blobs)
+        _EVIDENCE_INDEX_CACHE[root] = cached
+    return cached[2].get(p.relative_to(root).as_posix())
+
+
+def _git_blob_sha1(raw):
+    return hashlib.sha1(b'blob ' + str(len(raw)).encode('ascii') + b'\0' + raw).hexdigest()
+
 def evidence_bytes(p):
     """Exact repository bytes when Git proves the worktree matches its index.
 
@@ -38,6 +75,13 @@ def evidence_bytes(p):
     if b'\r\n' not in raw:
         return raw
     try:
+        indexed_blob = _indexed_blob(p)
+        if indexed_blob:
+            if _git_blob_sha1(raw) == indexed_blob:
+                return raw
+            canonical = raw.replace(b'\r\n', b'\n')
+            if _git_blob_sha1(canonical) == indexed_blob:
+                return canonical
         def git(*args):
             return subprocess.check_output(['git', '-C', str(p.parent), *args], stderr=subprocess.DEVNULL)
         root = Path(git('rev-parse', '--show-toplevel').decode().strip())
@@ -286,7 +330,7 @@ def validate_request(root, request):
 def status_card(lock, cp):
     if lock.get('state_profile') == 'vpd-locked-mainline/v1':
         progress = lock['mainline_progress']
-        return {'状态':'主线已锁定，状态检查通过',
+        card = {'状态':'主线已锁定，状态检查通过',
                 '检查范围':'任务、历史保留、预算与证据一致性；不证明视觉质量或远端发布',
                 '主目标':lock['objective']['text'], '主线':lock['mainline_lock']['plan']['path'],
                 '当前阶段':progress['stage_id'], '阶段状态':progress['status'],
@@ -295,6 +339,22 @@ def status_card(lock, cp):
                 '当前出图授权':progress['execution_authorization']['images'],
                 '当前锁修订':lock['revision'], '当前检查点':cp['sequence'],
                 '唯一下一动作':lock['next_required_action']}
+        if lock.get('candidate88_human_final_review'):
+            card.update(当前任务=cp['active_task_ids'][0],
+                        当前阶段='POST_P7_HUMAN_AESTHETIC_REVIEW_GATE',
+                        阶段状态=lock['candidate88_human_final_review']['verdict'],
+                        真人结论=lock['candidate88_human_final_review']['verdict'],
+                        实际生成尝试=0,
+                        当前出图授权=lock['execution_boundary']['current_image_generation_authorization'],
+                        当前Figma授权=lock['execution_boundary']['current_figma_canvas_authorization'])
+        if lock.get('codex_takeover'):
+            take = lock['codex_takeover']
+            card.update(当前阶段='CODEX_COMPLETE_CHAZUO_POSTER', 阶段状态=take['status'],
+                        真人结论=take['human_verdict'],
+                        正式设计版本=f"{take['budget']['formal_versions_used']}/3",
+                        修订次数=f"{take['budget']['revisions_used']}/2",
+                        摄影保护='EXACT_SOURCE_FROZEN_VISIBLE_PIXELS_OUTSIDE_DESIGN_ENVELOPES')
+        return card
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',
                 'scope':'STATE_AND_LEDGER_ONLY_NOT_NEW_IMAGE_OR_HUMAN_ACCEPTANCE',

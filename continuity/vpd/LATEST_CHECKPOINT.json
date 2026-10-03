@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 274,
-  "recorded_at": "2026-10-03T07:47:00+08:00",
+  "sequence": 283,
+  "recorded_at": "2026-10-03T12:52:18.371622+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
-    "VPD-CANDIDATE-88-HUMAN-FINAL-AESTHETIC-REVIEW-20261003-01"
+    "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "刘先生已完成真人最终审美验收并否决当前设计层：第一张摄影底图明显进步，必须冻结保护；但茶作设计仍非常差，尤其叶子/辅助符号与文字没有任何关系。第二张文字设计仍很一般，不作为新基准。此前R4外审PASS仅保留为项目外技术性证据，不能覆盖真人结论。下一步只重做字标/文字系统，不动摄影。",
+  "current_focus": "FINAL_CHAZUO_ARTIFACT_READY_AI_FAIL_HUMAN_PENDING",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,12 +357,11 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "尚未定义下一版唯一字标/文字系统 successor。",
-    "尚未执行新的文字设计。",
-    "摄影不需要重做。"
+    "本轮设计未通过内部审美审核，等待刘先生验收失败成品",
+    "长期视觉蒸馏及迁移收益未验证"
   ],
   "blocked": [],
-  "next_required_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO",
+  "next_required_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -430,11 +429,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CANDIDATE_88_HUMAN_FINAL_FAIL_PHOTO_PROTECTED_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
+  "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "5446b661b47fe5f603005018410f690d15bea5836bc94d6030c2e092e4e64593",
-    "revision": 252
+    "sha256": "84f33d7a7964832bc87573da941f1cfe719f900e0b1aed508dc3246a278fbc4f",
+    "revision": 261
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +454,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CANDIDATE88-HUMAN-FINAL-FAIL-20261003-001",
-      "event_hash": "986fe17874f75ab8cb1a6babe4d009136da8c6cb9aebd2b45a5099a8759a671a"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-261-20261003",
+      "event_hash": "6c1cc6f48aeb0cbc1ff701f1a009198ab94320ef03513532ba444f64e79161a7"
     }
   },
   "typography_repair": {
@@ -971,8 +970,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "刘先生已完成真人最终审美验收并否决当前设计层：第一张摄影底图明显进步，必须冻结保护；但茶作设计仍非常差，尤其叶子/辅助符号与文字没有任何关系。第二张文字设计仍很一般，不作为新基准。此前R4外审PASS仅保留为项目外技术性证据，不能覆盖真人结论。下一步只重做字标/文字系统，不动摄影。",
-  "updated_at": "2026-10-03T07:47:00+08:00",
+  "current_stage": "FINAL_CHAZUO_ARTIFACT_READY_AI_FAIL_HUMAN_PENDING",
+  "updated_at": "2026-10-03T12:52:18.371622+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1920,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
-    "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
+    "path": "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+    "sha256": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2441,16 +2440,17 @@
       "Broader unseen-style and scale validation"
     ],
     "post_p7_human_review": {
-      "status": "BLOCKED_UNTIL_EXTERNAL_REVIEW_PASS_AND_PROJECT_SETTLEMENT",
-      "current_route": false,
-      "human_personal_acceptance": false
+      "status": "HUMAN_FAIL_DESIGN_SYSTEM_NOT_READY",
+      "current_route": true,
+      "human_personal_acceptance": false,
+      "photo_protected": true,
+      "next_required_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
     },
     "post_p7_external_review": {
-      "status": "EXTERNAL_FAIL_SETTLED_REVISION_R1_READY_FOR_FRESH_REVIEW_DISPATCH",
-      "candidate_id": "88-R1",
-      "serial_only": true,
-      "callback_required": true,
-      "project_settlement_required": true
+      "status": "R4_EXTERNAL_PASS_PRESERVED_AS_TECHNICAL_EVIDENCE_ONLY",
+      "candidate_id": "88-R4",
+      "callback_settled": true,
+      "project_revision_required": false
     }
   },
   "operational_continuation": {
@@ -2620,12 +2620,13 @@
     },
     "revision": {
       "path": "evidence/vpd/candidate88_external_review_20261002/r4/REVISION_EXECUTION_RECEIPT.json",
-      "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+      "sha256": "5a3cc3dcf4376282fb1a4c925de32ed598cc2c4a59469f0e6e323c6e267ed72f",
       "drive_file_id": "195jV49c3YdrI6VtIuONJJ1d09lsRqT8D",
       "dimensions": [
         1536,
         1024
-      ]
+      ],
+      "output_sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed"
     },
     "human_final_review_allowed": true,
     "next_legal_action": "LIU_XIANSHENG_FINAL_AESTHETIC_REVIEW_CANDIDATE_88_R4",
@@ -2648,5 +2649,40 @@
     "photo_protected": true,
     "design_failed": true,
     "next_legal_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
+  },
+  "codex_takeover": {
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+    "next_required_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
+    "authorization": {
+      "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
+      "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
+    },
+    "photo_protection": {
+      "path": "continuity/vpd/codex_takeover_20261003/PHOTO_PROTECTION.json",
+      "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
+    },
+    "receipt": {
+      "path": "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+      "sha256": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9"
+    },
+    "budget": {
+      "formal_versions_max": 3,
+      "formal_versions_used": 3,
+      "revisions_max": 2,
+      "revisions_used": 2,
+      "photo_generations": 0,
+      "paid_compute_usd": 0,
+      "training": 0,
+      "automations": 0,
+      "second_style": 0
+    },
+    "human_verdict": "PENDING",
+    "candidate_promoted": false,
+    "state_writer": "ROOT_EXECUTOR_ONLY",
+    "reuse_entry": {
+      "path": "continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md",
+      "sha256": "506e2054b1862caeaa9cec9360ec63c916227c02532c12bc0dfeb4a607d1b93f"
+    }
   }
 }
