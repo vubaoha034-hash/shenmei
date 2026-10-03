@@ -354,6 +354,9 @@ def status_card(lock, cp):
                         正式设计版本=f"{take['budget']['formal_versions_used']}/3",
                         修订次数=f"{take['budget']['revisions_used']}/2",
                         摄影保护='EXACT_SOURCE_FROZEN_VISIBLE_PIXELS_OUTSIDE_DESIGN_ENVELOPES')
+            if take['status'] == 'VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH':
+                card.update(摄影保护='仅证实历史R4数值保真；认可第一张绑定已纠正，无字源待恢复',
+                            当前阶段='CONFIRMED_FIRST_IMAGE_SOURCE_RECOVERY_REQUIRED')
         return card
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',

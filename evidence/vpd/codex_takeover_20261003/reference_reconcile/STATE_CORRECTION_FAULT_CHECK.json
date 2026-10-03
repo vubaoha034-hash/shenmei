@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-03T08:45:58.299045+00:00",
+  "scope": "Metadata fault injection against actual current state; not an image review or runtime production claim",
+  "cases": [
+    {
+      "case": "Synthetic fault: keep human pending after rejection",
+      "result": "REJECTED",
+      "code": "CONTINUATION_SCOPE_CHANGED"
+    },
+    {
+      "case": "Synthetic fault: human_feedback",
+      "result": "REJECTED",
+      "code": "HUMAN_FEEDBACK_TARGET_CONFLICT"
+    },
+    {
+      "case": "Synthetic fault: source_identity_correction",
+      "result": "REJECTED",
+      "code": "SOURCE_IDENTITY_CORRECTION_REQUIRED"
+    }
+  ]
+}

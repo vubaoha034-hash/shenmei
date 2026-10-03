@@ -230,8 +230,10 @@ def _validate_codex_takeover(root, lock, cp, adapter):
             take.get('status') == lock['status'] and
             take.get('next_required_action') == lock['next_required_action'],
             'CONTINUATION_MIRROR_CONFLICT')
+    feedback_settled = take.get('status') == 'VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH'
     require(take.get('state_writer') == 'ROOT_EXECUTOR_ONLY' and
-            take.get('candidate_promoted') is False and take.get('human_verdict') == 'PENDING',
+            take.get('candidate_promoted') is False and take.get('human_verdict') ==
+            ('REJECTED' if feedback_settled else 'PENDING'),
             'CONTINUATION_SCOPE_CHANGED')
     authority = _receipt(root, take.get('authorization'))
     require(authority.get('schema_version') == 'vpd-codex-bounded-design-authorization/v1' and
@@ -291,7 +293,8 @@ def _validate_codex_takeover(root, lock, cp, adapter):
                 'CONTINUATION_ACTION_CONFLICT')
         return
     require(state in ['AWAITING_PIXEL_REVIEW', 'REVISION_REQUIRED',
-                     'DELIVERED_AI_PASS_HUMAN_PENDING', 'DELIVERED_AI_FAIL_HUMAN_PENDING'],
+                     'DELIVERED_AI_PASS_HUMAN_PENDING', 'DELIVERED_AI_FAIL_HUMAN_PENDING',
+                     'REJECTED_SOURCE_MISMATCH'],
             'UNKNOWN_CONTINUATION_STATE')
     require(receipt.get('task_id') == TAKEOVER_TASK and receipt.get('status') == take['status'] and
             receipt.get('next_required_action') == take['next_required_action'] and
@@ -307,6 +310,32 @@ def _validate_codex_takeover(root, lock, cp, adapter):
         return
     review = _validate_isolated_pixel_review(root, receipt.get('pixel_review'), versions,
                                             technical['export'])
+    if state == 'REJECTED_SOURCE_MISMATCH':
+        feedback = _receipt(root, take.get('human_feedback'))
+        correction = _receipt(root, take.get('source_identity_correction'))
+        require(versions == 3 and revisions == 2 and review['verdict'] == 'AI_FAIL' and
+                take['next_required_action'] == 'RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE'
+                and receipt.get('human_verdict') == 'REJECTED'
+                and receipt.get('human_feedback') == take['human_feedback']
+                and receipt.get('source_identity_correction') == take['source_identity_correction'],
+                'HUMAN_FEEDBACK_STATE_CONFLICT')
+        require(feedback.get('source_kind') == 'CURRENT_HUMAN_USER_MESSAGE' and
+                feedback.get('verbatim') and feedback.get('human_verdict') == 'REJECTED' and
+                feedback.get('target_sha256') == technical['export']['sha256'],
+                'HUMAN_FEEDBACK_TARGET_CONFLICT')
+        comparison = correction.get('pixel_comparison', {})
+        require(correction.get('prior_r4_human_photo_binding') == 'REVOKED' and
+                correction.get('new_design_created') is False and
+                correction.get('clean_photography_source') == 'NOT_YET_LOCATED' and
+                correction.get('generated_first_image', {}).get('sha256') ==
+                'e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29' and
+                correction.get('user_uploaded_image', {}).get('sha256') ==
+                'a579e846b41be42faf92d0c9e6322dd67da25a1ff0c67a1bc9e9c4d194aaf590' and
+                comparison.get('gallery_vs_upload', {}).get('rgb_pixels_changed') == 0 and
+                comparison.get('gallery_vs_upload', {}).get('pixels_compared') == 1572864 and
+                comparison.get('gallery_vs_r4', {}).get('rgb_pixels_changed', 0) > 0,
+                'SOURCE_IDENTITY_CORRECTION_REQUIRED')
+        return
     if state == 'REVISION_REQUIRED':
         require(review['verdict'] == 'AI_FAIL' and versions < 3 and
                 take['next_required_action'] == 'REVISE_CURRENT_CHAZUO_TYPOGRAPHY_FROM_PIXEL_EVIDENCE',

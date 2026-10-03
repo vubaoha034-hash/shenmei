@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- CODEX_REFERENCE_FEEDBACK_CORRECTION_20261003 -->
+最新纠偏先读 `continuity/vpd/codex_takeover_20261003/RECONCILE_REFERENCE_AND_FEEDBACK.md`。已通过网页实际原件和全幅像素对比确认：用户评价的第一张为网页生成图1（e7af9c9e…），与16:24上传图（a579e846…）像素相同；它不是R4。旧R4摄影认可绑定已撤回，三版保留为AI_FAIL和真人否定结果。不得只凭旧恢复回执重新认定认可底图，也不得自动增加第四版。
+<!-- END_CODEX_REFERENCE_FEEDBACK_CORRECTION_20261003 -->
+
 <!-- CODEX_BOUNDED_CHAZUO_DELIVERY_20261003 -->
 本轮已明确授权Codex制作茶作成品及Figma写入，取代该任务旧零额度/Chat-only限制；历史限制仍保留原范围。按下文读取当前任务锁后，若 `codex_takeover.task_id` 为 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`，继续读 `continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md`：真实成品、源节点、精确PNG恢复、独立审稿、依赖和失败边界均在此。三版/两修订已用尽，当前动作以任务锁为准，不按历史下一步再出图。
 保存与冷进入补充：接着读 `continuity/vpd/codex_takeover_20261003/ENTRY_RECOVERY_NOTES.md`。其中保留首次新克隆的真实哈希失败、限定字节保存修复、全新上下文的实际PNG恢复验证、源节点真实类型与冷环境字体加载条件；这些工程验证不把AI_FAIL改为通过。最终审查与恢复证据以最新原生receipt引用为准。

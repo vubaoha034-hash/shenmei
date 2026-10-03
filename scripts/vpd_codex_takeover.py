@@ -69,10 +69,13 @@ def main():
     if prior and (args.versions<prior['budget']['formal_versions_used'] or args.revisions<prior['budget']['revisions_used']): raise ValueError('BUDGET_ROLLBACK')
     if prior and args.versions>prior['budget']['formal_versions_used']+1: raise ValueError('NON_SERIAL_VERSION')
     now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()
-    take={**(prior or {}),'task_id':TASK,'status':args.status,'next_required_action':args.next,'authorization':ref(BASE+'EXECUTION_AUTHORIZATION.json'),'photo_protection':ref(BASE+'PHOTO_PROTECTION.json'),'receipt':ref(args.receipt),'budget':{'formal_versions_max':3,'formal_versions_used':args.versions,'revisions_max':2,'revisions_used':args.revisions,'photo_generations':0,'paid_compute_usd':0,'training':0,'automations':0,'second_style':0},'human_verdict':'PENDING','candidate_promoted':False,'state_writer':'ROOT_EXECUTOR_ONLY'}
+    take={**(prior or {}),'task_id':TASK,'status':args.status,'next_required_action':args.next,'authorization':ref(BASE+'EXECUTION_AUTHORIZATION.json'),'photo_protection':ref(BASE+'PHOTO_PROTECTION.json'),'receipt':ref(args.receipt),'budget':{'formal_versions_max':3,'formal_versions_used':args.versions,'revisions_max':2,'revisions_used':args.revisions,'photo_generations':0,'paid_compute_usd':0,'training':0,'automations':0,'second_style':0},'human_verdict':receipt.get('human_verdict','PENDING'),'candidate_promoted':False,'state_writer':'ROOT_EXECUTOR_ONLY'}
+    for key in ['human_feedback', 'source_identity_correction']:
+        if receipt.get(key):take[key]=receipt[key]
     entry='REUSE_FINAL.md' if (ROOT/BASE/'REUSE_FINAL.md').exists() else 'REUSE.md'
     if (ROOT/BASE/entry).exists():
         take['reuse_entry']=ref(BASE+entry)
+    if receipt.get('reuse_entry'):take['reuse_entry']=receipt['reuse_entry']
     lock['revision']+=1; lock['codex_takeover']=take; lock['current_task_id']=TASK; lock['status']=args.status; lock['next_required_action']=args.next; lock['current_stage']=args.focus; lock['updated_at']=now; lock['latest_evidence']=ref(args.receipt); lock['completed_this_revision']=receipt.get('completed_this_revision') or ['本次授权范围内真实制作与证据按回执保存；历史已认可范围保留']
     lock['execution_boundary']['current_image_generation_authorization']=0
     lock['execution_boundary']['current_figma_canvas_authorization']=3-args.versions
@@ -95,8 +98,13 @@ def main():
     tail={'commercial_design_pipeline':{k:event[k] for k in ['event_id','event_hash']}}
     cp.update(sequence=cp['sequence']+1,recorded_at=now,updated_at=now,current_focus=args.focus,current_stage=args.focus,active_task_ids=[TASK],status=args.status,next_required_action=args.next,task_lock={**lr,'revision':lock['revision']},codex_takeover=copy.deepcopy(take),latest_evidence=lock['latest_evidence'],ledger_tails=tail,mainline_progress=copy.deepcopy(lock['mainline_progress']))
     cp['incomplete']=['本轮设计未通过内部审美审核，等待刘先生验收失败成品','长期视觉蒸馏及迁移收益未验证'] if args.status.endswith('DELIVERED_AI_FAIL_HUMAN_PENDING') else ['最终成品刘先生真人验收','长期视觉蒸馏及迁移收益未验证']
+    if args.status.endswith('REJECTED_SOURCE_MISMATCH'):
+        cp['incomplete']=['当前三版作品已被刘先生否定；R4作为认可第一张的绑定已撤回','已找回第一张真实原件，尚未取得其无字摄影层；先解决源文件保护缺口','字标和整体设计未完成，长期视觉收益未验证']
     adapter['task_lock']={**adapter['task_lock'],**lr,'revision':lock['revision']}; adapter['ledger_tails']=tail
     adapter['current_mainline']={'task_id':TASK,'status':args.status,'current_visual_unit':'FROZEN_R4_PHOTO_NEW_WORDMARK_TYPOGRAPHY','evidence':{'execution':take['receipt'],'human_verdict':lock['candidate88_human_final_review']},'next_required_action':args.next,'codex_takeover':copy.deepcopy(take)}
+    if args.status.endswith('REJECTED_SOURCE_MISMATCH'):
+        adapter['current_mainline']['current_visual_unit']='CONFIRMED_FIRST_IMAGE_SOURCE_RECOVERY_BEFORE_NEXT_DESIGN'
+        adapter['current_mainline']['evidence']['latest_human_feedback']=take['human_feedback']
     if take.get('reuse_entry'):
         adapter['workflow']['current_bounded_delivery_entry']=take['reuse_entry']
     fresh_remote=remote_head()

@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-03T08:51:27.730303+00:00",
+  "actual_current_native_state_check": {
+    "command": "python -B -X utf8 scripts/verify_visual_memory.py --vpd-state --status-card",
+    "exit_code": 0,
+    "revision": 263,
+    "checkpoint": 285,
+    "human_verdict": "REJECTED",
+    "source_identity": "CORRECTED_FIRST_IMAGE_RESTORED",
+    "scope": "State/history/budget/evidence; not visual acceptance"
+  },
+  "targeted_metadata_fault_checks": {
+    "cases": 3,
+    "all_rejected": true,
+    "evidence": "STATE_CORRECTION_FAULT_CHECK.json"
+  },
+  "existing_r1_fixture_regression": {
+    "result": "FAILED_FIXTURE_COMPATIBILITY",
+    "first_error": "MAINLINE_MIRROR_CONFLICT",
+    "context": "Fixed R1 preparation fixture archives current HEAD, removes codex_takeover and human-final fields, but leaves latest_evidence and historical Codex ledger events. This no longer describes its own R1 scenario.",
+    "bounded_investigation": "Only normalizing latest_evidence reached CONTINUATION_LEDGER_SCOPE_CHANGED; stopped unrelated fixture repair and reverted test edit. Actual current native guard remains strict and passes.",
+    "full_suite_pass_claimed": false,
+    "initial_environment_failure": "pytest_html plugin auto-load hit blocked markupsafe DLL; disabled auto-loading, then actual tests reached fixture semantic errors."
+  },
+  "new_design_or_visual_review": false
+}
