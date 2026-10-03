@@ -356,6 +356,26 @@ def _validate_codex_takeover(root, lock, cp, adapter):
                         and protection_recovery.get('protected_max_channel_difference') == 0,
                         'SOURCE_RECOVERY_ACTUAL_DELIVERY_REQUIRED')
                 require(recovery.get('human_verdict') == 'PENDING', 'SOURCE_RECOVERY_HUMAN_ACCEPTANCE_REQUIRED')
+                if recovery.get('drive_archive'):
+                    drive_authority = _receipt(root, recovery.get('drive_archive_authorization'))
+                    drive_archive = _receipt(root, recovery['drive_archive'])
+                    drive_files = drive_archive.get('files', [])
+                    by_role = {item.get('role'): item for item in drive_files}
+                    require(drive_authority.get('source', {}).get('kind') == 'CURRENT_HUMAN_USER_MESSAGE'
+                            and drive_authority['source'].get('verbatim')
+                            and drive_archive.get('task_id') == TAKEOVER_TASK
+                            and drive_archive.get('primary_pixel_storage') == 'GOOGLE_DRIVE'
+                            and drive_archive.get('readback_result') == 'PASS'
+                            and drive_archive.get('connected_account_matches_existing_project_owner') is True
+                            and drive_archive.get('permissions_changed') is False
+                            and drive_archive.get('file_count') == len(drive_files)
+                            and by_role.get('confirmed_first_original', {}).get('sha256') == recovery['source_sha256']
+                            and by_role.get('final_local_reconstruction', {}).get('sha256') == delivered['output']['sha256']
+                            and all(item.get('drive_id') and item.get('drive_revision_id')
+                                    and item.get('shared') is False
+                                    and item.get('readback', {}).get('http_status') == 200
+                                    and item['readback'].get('bytes_equal_local_original') is True
+                                    for item in drive_files), 'SOURCE_RECOVERY_DRIVE_BINDING_REQUIRED')
             else:
                 require(recovery.get('phase') in ['PREPARING', 'EDIT_IN_PROGRESS', 'TOOL_BLOCKED'],
                         'SOURCE_RECOVERY_PHASE_UNKNOWN')

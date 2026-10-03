@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- CHAZUO_DRIVE_PRIMARY_ARCHIVE_ENTRY_20261003 -->
+最新图片调用入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md`。按刘先生最新要求，原件、当前摄影修补候选、透明层、素材、失败预览及旧三版已存入Drive，绑定实际文件ID、revision ID和完整SHA并逐个原字节回读。Drive为图片主存储，Figma源文件保留。当前只待摄影修补真人验收，旧海报否决与版本预算保留。
+<!-- END_CHAZUO_DRIVE_PRIMARY_ARCHIVE_ENTRY_20261003 -->
+
 <!-- FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->
 最新摄影恢复入口：先读当前原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_REUSE.md`。已制作原认可第一张的局部去字背景重建候选，原件、透明修补层和精确PNG均有Figma节点与身份回读；隔离审稿AI实际看五图后仅通过“摄影修补可送真人验收”。不是无字摄影原件，也不是新海报完成。旧三版海报否决、3版/2修订上限保留；本次一次必要修补工具操作单独记账。当前唯一下一动作由任务锁确定，真人反馈前不自动继续出图。
 <!-- END_FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->

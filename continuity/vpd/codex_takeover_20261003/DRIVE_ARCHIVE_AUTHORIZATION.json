@@ -1,0 +1,42 @@
+{
+  "schema_version": "vpd-drive-image-archive-authorization/v1",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "source": {
+    "kind": "CURRENT_HUMAN_USER_MESSAGE",
+    "verbatim": "我发现有一个不对的地方，你的图片应该放到drive里面去。这样以后随时可以调用。"
+  },
+  "scope": {
+    "primary_pixel_storage": "GOOGLE_DRIVE",
+    "current_images_and_historical_rejected_versions": true,
+    "folder_private": true,
+    "sharing_changes": false,
+    "new_design_versions": 0,
+    "additional_imagegen": 0,
+    "new_paid_compute": 0,
+    "business_state_writer": "ROOT_EXECUTOR_ONLY"
+  },
+  "destination_ownership_checks": {
+    "same_connected_owner_as_existing_CHazuo_project_image": true,
+    "new_folder_same_owner": true,
+    "owner_email_sha256": "5b88e99ce0864c3756a0c72296f026243d02f46ed4bb684a46ac0caef6a4037e",
+    "provider_permissions_show_owner": true,
+    "shared": false
+  },
+  "initial_upload_auto_review": {
+    "result": "REJECTED",
+    "reason": "Private project content; destination account ownership not yet verified",
+    "checks_after_rejection": [
+      "Official connected profile",
+      "Official new-folder permission metadata",
+      "Official existing-project-image permission metadata",
+      "Confirmed same owner and My Drive root, no sharing"
+    ],
+    "same_official_upload_after_checks": "SUCCEEDED",
+    "workaround_used": false
+  },
+  "archive_manifest": {
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DRIVE_ARCHIVE_MANIFEST.json",
+    "sha256": "4e0649c492a8ea341ddaf40632f894e2d9aefc04188911954fa2b34d70ef9a43"
+  },
+  "recorded_at": "2026-10-03T11:33:53.445293+00:00"
+}
