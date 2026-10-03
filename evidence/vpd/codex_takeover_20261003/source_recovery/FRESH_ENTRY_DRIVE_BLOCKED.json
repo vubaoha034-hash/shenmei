@@ -1,0 +1,88 @@
+{
+  "result": "BLOCKED_READ_RECOVERY",
+  "snapshot": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "remote_and_head": "34690110e9feb5014d9584c3522d71c1ab435c93",
+    "lock_revision": 267,
+    "checkpoint_sequence": 289
+  },
+  "entry": "START_HERE.md → PROJECT_CONTROL_ADAPTER.json → 原生锁/检查点 → SOURCE_RECOVERY_DRIVE_REUSE.md → DRIVE_ARCHIVE_MANIFEST.json",
+  "native_check": {
+    "command": "python -B scripts/verify_visual_memory.py --vpd-state --status-card",
+    "exit_code": 1,
+    "result": "VPD_STATE_BLOCKED:EVIDENCE_HASH_MISMATCH:visual_memory/vpd_locked_mainline_state.py",
+    "local_sha": "83e923ba8b0027023ba05b56ca338e6edc2c37301ca45703bfc7ff96f0a8e4ee",
+    "committed_sha": "b66d959e7e0c1171a6d64fdece45c4deca301e77d6e18c09000624d199004e3c",
+    "diagnosis": "仅CRLF/LF字节差；未修改或算作通过"
+  },
+  "candidate": {
+    "id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+    "expected_sha": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "expected_bytes": 1735549,
+    "expected_dimensions": [
+      1536,
+      1024
+    ],
+    "metadata_success": true,
+    "official_fetch_success": true,
+    "download_http": [
+      403,
+      403
+    ],
+    "diagnostic": "error code: 1010",
+    "measured_sha": null,
+    "measured_dimensions": null,
+    "pixels_viewed": false
+  },
+  "original": {
+    "id": "1a4vS6o7yXaCS-EPU18nGvXsUelc3bnwn",
+    "expected_sha": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
+    "expected_bytes": 2006202,
+    "expected_dimensions": [
+      1536,
+      1024
+    ],
+    "metadata_success": true,
+    "official_fetch_success": true,
+    "download_http": null,
+    "download_status": "候选重复失败后停止",
+    "measured_sha": null,
+    "measured_dimensions": null,
+    "pixels_viewed": false
+  },
+  "download_recovery": "有效认证file_uri；一次网络权限恢复获准但仍403；未改走其他通道",
+  "private_destination": ".liu-visual-private/fresh_drive_entry_recovery/",
+  "png_files_saved": 0,
+  "next_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+  "human": {
+    "old_posters": "REJECTED",
+    "reconstruction": "PENDING"
+  },
+  "poster_complete": false,
+  "promoted": false,
+  "budget": {
+    "formal_versions": "3/3",
+    "revisions": "2/2",
+    "repair_edit_calls": "1/1",
+    "new_poster_allowance": 0,
+    "paid_compute": 0,
+    "training": 0,
+    "automations": 0,
+    "second_style": 0
+  },
+  "runtime": {
+    "env_thread_id": "01a1018f-5a82-73a0-8018-d91f9c3e7d44",
+    "agent_path": "/root/fresh_drive_entry_recovery",
+    "checkout": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003",
+    "model": "无法观察实际绑定",
+    "effort": "无法观察实际绑定"
+  },
+  "limitations": [
+    "继承环境thread_id未证明独立宿主或子线程配置",
+    "未取得原字节或实际图像像素",
+    "原生检查失败保留",
+    "无Figma、业务状态、生成、合成或审美自评修改",
+    "认证临时引用未写入公共证据"
+  ]
+}

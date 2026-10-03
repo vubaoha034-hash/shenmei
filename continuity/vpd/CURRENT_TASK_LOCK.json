@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 267,
+  "revision": 268,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -204,12 +204,11 @@
     }
   },
   "completed_this_revision": [
-    "按刘先生最新明确要求，八份实际图片归档到同一项目所有者的私人Drive目录",
-    "实际Drive ID、revision ID、原字节SHA与HTTP200下载回读全部绑定",
-    "新隔离读取上下文从已固定仓库入口恢复Figma原件与候选并实际看图，原生检查通过",
-    "Drive主调用入口已保存；摄影修补仍AI_PASS仅送真人验收，旧三版否决及预算保留"
+    "新的Drive入口冷读检验发现保存后代码SHA引用失配，失败快照与旧回执保留",
+    "仅修正当前原生回执对Git代码原字节的绑定；检查规则及八份图片全部未改",
+    "Drive两图恢复仍在独立检验；当前唯一动作继续为刘先生摄影修补验收"
   ],
-  "updated_at": "2026-10-03T19:37:19.771783+08:00",
+  "updated_at": "2026-10-03T19:44:41.359037+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2504,8 +2503,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_RECEIPT.json",
-    "sha256": "640726b61fd22d61dfe1d45d0477cdaeb9bad5ab244b74f4bbbbe9534868c686"
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_REPAIRED_RECEIPT.json",
+    "sha256": "93a706f193d5f1e3e6039fce41869cdb31beac08f91bac7220a9efc92fbdfa51"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3158,8 +3157,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_RECEIPT.json",
-      "sha256": "640726b61fd22d61dfe1d45d0477cdaeb9bad5ab244b74f4bbbbe9534868c686"
+      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_REPAIRED_RECEIPT.json",
+      "sha256": "93a706f193d5f1e3e6039fce41869cdb31beac08f91bac7220a9efc92fbdfa51"
     },
     "budget": {
       "formal_versions_max": 3,

@@ -1,0 +1,21 @@
+{
+  "schema_version": "vpd-git-canonical-code-reference-repair/v1",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "failed_commit": "34690110e9feb5014d9584c3522d71c1ab435c93",
+  "failure": "EVIDENCE_HASH_MISMATCH:visual_memory/vpd_locked_mainline_state.py",
+  "detected_by": "/root/fresh_drive_entry_recovery",
+  "cause": "Binding was computed from dirty CRLF worktree before Git staged canonical LF code bytes. Commit normalization made the declared raw SHA differ from canonical Git bytes.",
+  "code_path": "visual_memory/vpd_locked_mainline_state.py",
+  "declared_before": "83e923ba8b0027023ba05b56ca338e6edc2c37301ca45703bfc7ff96f0a8e4ee",
+  "canonical_git_sha256_after": "b66d959e7e0c1171a6d64fdece45c4deca301e77d6e18c09000624d199004e3c",
+  "raw_bytes": 55348,
+  "canonical_bytes": 55070,
+  "only_line_endings_differ": true,
+  "guard_code_changed": false,
+  "guard_rules_loosened": false,
+  "images_changed": false,
+  "new_generation_or_design_version": 0,
+  "repair": "Rebind current receipt to verified indexed Git bytes; retain failed receipt/commit. Stage changed code before freezing future evidence references, then re-run native state check after commit as well as before.",
+  "drive_image_readbacks_remain_exact": true,
+  "recorded_at": "2026-10-03T11:44:40.060882+00:00"
+}
