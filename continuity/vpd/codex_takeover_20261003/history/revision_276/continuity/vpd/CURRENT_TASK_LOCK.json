@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 277,
+  "revision": 276,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,7 +128,7 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "真实V3海报、冷审失败和全新恢复证据已结算；等待刘先生整图验收",
+  "current_stage": "V3真实海报与独立失败审核已交付；等待刘先生整图验收",
   "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL",
   "p6_allowed": false,
   "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW",
@@ -220,15 +220,15 @@
     }
   },
   "completed_this_revision": [
-    "同方向三真实完整海报及两修订已做完、独立像素冷审均AI_FAIL；整图真人PENDING",
-    "V3摄影保护区1,204,672像素RGB变化0；官方Figma9可编辑矢量、Drive原字节读回独立技术审查PASS",
-    "恢复脚本两个真实路径问题有界修复复核，V3原生归档绑定独立回读RESOLVED",
-    "新项目外读取上下文仅从已发布C1入口恢复15素材、真实PNG/字体、两次实际看图；状态检查exit0，1,629个tracked文件不变",
-    "fresh worker实际gpt-6.1-sol/max/首次单上下文，由主执行核验真实创建返回、命令、看图标记和文件字节；后续收尾不冒充首次冷恢复",
-    "字体不随Git分发的事实与固定上游原字节恢复方法补进入口；无软件安装、图像生成、主线改变或业务worker写入",
-    "实际远端C1入口和锁/检查点/审稿已回读；最终交接仍只待刘先生整图验收失败成品"
+    "V3新项目外worker实际单一6.1 Sol/Max上下文看五图，结论AI_FAIL",
+    "摄影最终保护区RGB零变化，文字内容独立看图准确",
+    "Drive实际原字节回读一致；同一原生锁记录版本与审稿",
+    "整张海报真人结论PENDING；AI结论不改变主线",
+    "V1至V3全部真实AI_FAIL；三正式版与两修订预算用尽，保持整图真人PENDING",
+    "worker只读审稿不得改变主线；图片Drive原字节保存、Figma矢量源与仓库入口关联",
+    "专业审查发现恢复脚本路径问题，主执行修复且由独立worker负向复核；新读取上下文恢复测试尚待运行"
   ],
-  "updated_at": "2026-10-03T23:49:12.850712+08:00",
+  "updated_at": "2026-10-03T22:51:22.486024+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2523,8 +2523,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-    "sha256": "003a7d1d7b4f4da01f05035c75c62817fa7275cfca545f15445631ae590cf682"
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_FINAL_DELIVERY_RECEIPT.json",
+    "sha256": "7a735ddeebec0b5a37274c898ddb1be752a092fc4df41b3ff1b8df04e3b410bf"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3177,8 +3177,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-      "sha256": "003a7d1d7b4f4da01f05035c75c62817fa7275cfca545f15445631ae590cf682"
+      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_FINAL_DELIVERY_RECEIPT.json",
+      "sha256": "7a735ddeebec0b5a37274c898ddb1be752a092fc4df41b3ff1b8df04e3b410bf"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3196,7 +3196,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "81a1a737b9bc8c76694f71a6925f186af0617896952f03b40b83e8bfcaee8dbf"
+      "sha256": "de13610971c1632ffda2a76288d64f958a5b9aeec1354e8bdb7ac23888974570"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",

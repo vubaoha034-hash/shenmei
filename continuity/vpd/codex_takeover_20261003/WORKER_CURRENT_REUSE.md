@@ -22,6 +22,8 @@ V3冷审认为字标仍接近常规宋体、独特结构弱；标题气质与自
 
 ### 全新克隆恢复真实像素
 
+字体二进制被Git忽略，不随克隆分发。重新制作文字时，从 `evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json` 的OTF条目获取固定提交raw URL，下载并核验24,543,332 bytes及上述78aa…完整SHA，再放回其声明的字体缓存路径；许可随仓库保留。全新读取worker已仅凭该清单实际下载HTTP200并核验原字节，未安装软件、未修改tracked文件。使用现有SVG/Figma矢量不需要字体安装；重跑制作脚本需要该许可原件和实际FontTools依赖。具体证据见最新回执中的fresh_entry_recovery结果，不把本机字体缓存冒充Git交付。
+
 Drive是图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。用连接Drive的fetch(url=原件地址,download_raw_file=true,include_base64=true)获取真实b64_string。signed download_url曾403，不盲目重试；实际raw base64回读均字节匹配。每版DRIVE_ARCHIVE.json含ID、revision、SHA与元数据，字标在WORDMARK_DRIVE_ARCHIVE.json。不得提交签名URL/base64。
 
 将已认可摄影（ID1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA）及V1–V3实际fetch结果写入私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`，再运行 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本从原生锁/Drive回执绑定路径和SHA，先验证所有输入及私有路径，再恢复缺失PNG并读回；业务状态写入0、新增版本0。冲突报错。专业审查发现的路径逃逸已修复并留前后证据；不宣称OS沙盒隔离。

@@ -1,0 +1,856 @@
+{
+  "schema_version": "vpd-fresh-entry-observed-execution/v1",
+  "original_completed_at": "2026-10-03T15:35:57.842Z",
+  "worker_thread_id": "01a1024b-3f46-74a3-a21e-1587f09c4bfb",
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "max",
+  "context_count_before_original_completion": 1,
+  "source": "vscode",
+  "creator_history_inherited": false,
+  "fork_turns": "NOT_APPLICABLE_NEW_THREAD",
+  "root_creation_call_id": "call_GFoGtTAeoh3Io6rBAnmZKnEI",
+  "actual_returned_thread_id": "01a1024b-3f46-74a3-a21e-1587f09c4bfb",
+  "actual_creation_result_sha256": "97639510d9cf7700f758136e7998e01a25c5a52ae68ea34e8850538d8798b1da",
+  "raw_reply_sha256": "fae88aee030272b2a488e6bde09eaf2fc50b70d426ebfce3914f83cc6e3fb1b3",
+  "rollout_sha256_at_collection": "b7ee62d54f1ba71360d98f4abb0896063ae4d77250bb878cb3e681da6dd74cf1",
+  "cold_aesthetic_review": false,
+  "supplied_prompt_copy_byte_binding_to_encrypted_spawn": "NOT_VERIFIABLE",
+  "later_contexts_excluded_from_original_entry_test": 1,
+  "actual_image_view_results": [
+    {
+      "id": "exec-f93aeb60-1c06-4a89-8985-d0eeca64a0e6",
+      "path_relative_to_fresh_cache": "correct_source_typography/v3/poster.png",
+      "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826"
+    },
+    {
+      "id": "exec-3d75271e-ab32-4c0c-973e-fc3c827af39f",
+      "path_relative_to_fresh_cache": "source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    }
+  ],
+  "actual_completed_command_executions": [
+    {
+      "id": "exec-fa703e35-c12f-4907-aa34-cbbe04f2837c",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-drive/SKILL.md' -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "fde24ac9c0a1ad012e8fdd88696740e2de1a109ae7b8d8c2d99a2a7cf2e402aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-beeb5908-bb2d-4477-a91d-49cca65bae86",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Location; rg --files -g AGENTS.md -g START_HERE.md -g '*'"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "failed",
+      "exit_code": 1,
+      "stdout_sha256": "32ee21a7a2a078538bcb4b2cd18ca070d23977caeeed6057cb0c81f8a977e99e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-9b66ba94-2816-41a0-b34d-1b4f19b2f2d9",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/SKILL.md' -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "e8b7a4b590e5dd5c72ea1bb3751667999b0ddd13641686c2a05da9429b037439",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-eedbaf1c-1fc1-4b83-a4d6-8ea99ad5124f",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$taskPaths = @('C:/Users/Administrator/Documents/Codex/AGENTS.md','C:/Users/Administrator/Documents/Codex/2026-10-03/AGENTS.md','C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/AGENTS.md'); foreach ($taskPath in $taskPaths) { if (Test-Path -LiteralPath $taskPath) { Get-Content -LiteralPath $taskPath -Raw } }; New-Item -ItemType Directory -Path './work' -Force | Out-Null; & 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd/git.exe' clone --single-branch --branch visual-program-distillation-v2-photography-design-20260814 https://github.com/vubaoha034-hash/shenmei.git ./work/fresh-repo"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "failed",
+      "exit_code": 1,
+      "stdout_sha256": "6cab66f7a10c8a0c684195faadea43ea3fee6076d6de559728645d8d8462dd49",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-cd0295fb-836e-4608-b8f2-73e0c99332b3",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Command git -ErrorAction SilentlyContinue | Select-Object Source; rg --files 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git' -g '*remote-https*' -g 'git.exe'; Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/plugin-api-standalone.index.md' -Raw; Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/gotchas.md' -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "d8d7df5c546f3e43b02c7ca0aa1d97d51ee7e153f3a059afc8fae40575427e34",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-d025534e-f9f3-4f32-9083-ef26c0ba8cfa",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$figmaSkill = Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/SKILL.md'; $figmaSkill | Select-Object -Skip 180 -First 85"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "bc40c405606bbf1ec056878db94d27e802fdc2fea40da35ce4b242ad35da32a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-d4db4c4e-7f87-4002-b0b4-f9559b84090d",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Program Files/Git/cmd/git.exe' clone --single-branch --branch visual-program-distillation-v2-photography-design-20260814 https://github.com/vubaoha034-hash/shenmei.git ./work/fresh-repo"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "failed",
+      "exit_code": 1,
+      "stdout_sha256": "3c773d1f962a972291a4c527f46c047669fd2feaf452cd12640afc0a3273644d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-d62c7c63-3af5-4bb8-9707-c0a728e95a0d",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/gotchas.md' -TotalCount 220; rg -n -A 10 -B 2 'getNodeByIdAsync|listAvailableFontsAsync|hasMissingFont|getStyledTextSegments|readonly currentUser|readonly name|interface Image' 'C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/plugin-api-standalone.d.ts'"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "424b34777065153927b90df8aa78c10c1dea5635d4b23d4ba9b76757f3d92520",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-68f967f8-ca61-4bc8-bc69-c4c312dab982",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Program Files/Git/cmd/git.exe' -c http.sslBackend=openssl clone --single-branch --branch visual-program-distillation-v2-photography-design-20260814 https://github.com/vubaoha034-hash/shenmei.git ./work/fresh-repo"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "4289be759868f0acb9c8b42572e735fb86d1f6699e82b85bc30bceff5b2dd522",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-947f47de-53ff-45e6-9da0-90775694cb5d",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Program Files/Git/cmd/git.exe' checkout --detach e2a758363bea0f6cba0cf71e51f0e9112131f483; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:/Program Files/Git/cmd/git.exe' rev-parse HEAD; & 'C:/Program Files/Git/cmd/git.exe' remote -v; & 'C:/Program Files/Git/cmd/git.exe' status --porcelain; rg --files -g AGENTS.md; Get-Content -LiteralPath START_HERE.md -TotalCount 122; Get-Content -LiteralPath PROJECT_CONTROL_ADAPTER.json -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "58d8a0f0f28c4ae3d2020b1a35ce92c6d192db386c178ea94c6feab3380a41d6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-ebacbb30-a446-4cb7-81c5-05139a7960d2",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath VPD_PROJECT_ROADMAP.md -Raw; Get-Content -LiteralPath continuity/vpd/CURRENT_TASK_LOCK.json -Raw; Get-Content -LiteralPath continuity/vpd/LATEST_CHECKPOINT.json -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "7b9c001f221019832c55aba25628191a1de9c602df70ccb8d02dbc1d2ae5af1f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-9e042103-67dd-4f7e-a14f-1bf73df4fb3b",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath AGENTS.md -Raw; $adapter = Get-Content -LiteralPath PROJECT_CONTROL_ADAPTER.json -Raw | ConvertFrom-Json; @{task_lock=$adapter.task_lock;workflow=$adapter.workflow;state_authorities=$adapter.state_authorities;permission=$adapter.permission} | ConvertTo-Json -Depth 20; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md -Raw; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md -Raw; Get-Item VPD_PROJECT_ROADMAP.md,continuity/vpd/CURRENT_TASK_LOCK.json,continuity/vpd/LATEST_CHECKPOINT.json,scripts/verify_visual_memory.py | Select-Object Name,Length; rg --files scripts | rg 'recover|drive|verify_visual_memory'"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "387f8631864c934006b2e701312c987f839cb26244d37776e8158e90e959df2c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-03b2eff0-e9a0-453a-9e41-d8dafbd54a90",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B ./work/audit_snapshot.py before"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "8e480a3f784d875210d0a4d02d3feca00f500666005b72e341c8cfa2676756f6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-f9237df8-0da7-437d-96b1-6aac15af11a4",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$taskLock = Get-Content -LiteralPath continuity/vpd/CURRENT_TASK_LOCK.json -Raw | ConvertFrom-Json; $checkpoint = Get-Content -LiteralPath continuity/vpd/LATEST_CHECKPOINT.json -Raw | ConvertFrom-Json; $adapter = Get-Content -LiteralPath PROJECT_CONTROL_ADAPTER.json -Raw | ConvertFrom-Json; $taskLock.PSObject.Properties | Select-Object Name; @{schema_version=$taskLock.schema_version;revision=$taskLock.revision;current_task=$taskLock.current_task;task_id=$taskLock.task_id;status=$taskLock.status;next_required_action=$taskLock.next_required_action;codex_takeover=$taskLock.codex_takeover;adapter_task_lock=$adapter.task_lock;adapter_workflow=$adapter.workflow;checkpoint_summary=$checkpoint.codex_takeover} | ConvertTo-Json -Depth 30; Get-Content -LiteralPath scripts/verify_visual_memory.py -Raw; rg --files --hidden --no-ignore scripts | rg 'restore|memory|drive'; Get-Content -LiteralPath VPD_PROJECT_ROADMAP.md -TotalCount 90"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "90f67755a4f9a6400e0945b7544ec5fdf054b2cee929d34151244b3973034e4d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-31773e70-bb2b-45eb-a4fb-09467583233f",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath scripts/vpd_restore_correct_source_exports.py -Raw; Get-Content -LiteralPath continuity/vpd/MAINLINE_LOCK_20261001.md -Raw; Get-Content -LiteralPath continuity/vpd/MAINLINE_CONTRACT_20261001.json -Raw; rg -n 'write_text|write_bytes|open\\(|validate_p6|codex_takeover|correct_source|liu-visual-private|git show|subprocess|def status_card' visual_memory/vpd_task_lock.py visual_memory/vpd_p6_composition_state.py; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/WORDMARK_DRIVE_ARCHIVE.json -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "6a6d5dc6176e3fb9f63157fd6c0a809df4a5b8db222783a2a34f66bbaf613862",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-edcdae60-df1c-4785-a795-8e3b8db68f1d",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath visual_memory/vpd_task_lock.py -TotalCount 150; $validatorLines = Get-Content -LiteralPath visual_memory/vpd_p6_composition_state.py; $validatorLines | Select-Object -Skip 710 -First 160; rg -n 'codex_takeover|worker_continuation|correct_source|liu-visual-private|write_|open\\(' visual_memory/vpd_codex*; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json -Raw; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/NATIVE_FINAL_DELIVERY_RECEIPT.json -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "5a1c47f329602db67738c7fc533f269e03a41864b4437cab6339c836b78a87d5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-51aba2b5-23ec-4ce8-a88f-0f7731e5cee0",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/run_native_check.py empty_cache_status"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "failed",
+      "exit_code": 1,
+      "stdout_sha256": "08b5bc73a1f3c32ab39416504e0957800c78a778cf033e07e6c39c665f9bed60",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-5faa9838-292e-411d-93ac-9e08c924d384",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "rg -n --no-ignore 'codex_takeover|worker_continuation|correct_source|liu-visual-private|write_text|write_bytes' visual_memory/vpd_codex_takeover_state.py visual_memory/vpd_correct_source_worker.py; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json -Raw; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/provenance.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/revision_basis.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/chazuo-wordmark.svg -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "64c2e0aabf64170547c25296f4e47edff8833b91941d291260d848a68309e0fd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-b54bd455-159c-496f-a7a2-73e36cba88e1",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath visual_memory/vpd_correct_source_worker.py -Raw; rg --files --hidden --no-ignore visual_memory | rg 'codex|takeover'; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/CALIBRATION_DRIVE_ARCHIVE.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/pixel_review/PIXEL_REVIEW.json -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "40c68126887c8155026dc40ec0de1aa2f10f5618f9920d08cbe48f8131a37996",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-5bffd542-ed37-49a4-b747-8fb358c6c88b",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/run_native_check.py restore_native --restore"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "c812c0777b9b14b057e3524f547e1cae88d7a8774147421b8fd020f5e870e369",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-9ac4176c-f258-45e4-ab05-d480fd8882f9",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/run_native_check.py recovered_four_status"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "9f97aeb3d2d4985242bcf87a9dd23d2e7ce3ed5acb992f12d03d408b0130d91e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-d749dec9-a0d2-4244-8202-83a69e2325fa",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$taskRead = @'\nimport json,pathlib\nr=pathlib.Path('work/fresh-repo'); lock=json.loads((r/'continuity/vpd/CURRENT_TASK_LOCK.json').read_text('utf-8')); cp=json.loads((r/'continuity/vpd/LATEST_CHECKPOINT.json').read_text('utf-8'))\nprint(json.dumps({'lock':{k:lock.get(k) for k in ['revision','current_task_id','current_stage','status','next_required_action','render_allowed','mainline_lock','mainline_progress','execution_boundary','scheduling_hold']},'checkpoint':{k:cp.get(k) for k in ['revision','sequence','status','next_required_action','ledger_tails']},'source_archive':json.loads((r/'evidence/vpd/codex_takeover_20261003/source_recovery/DRIVE_ARCHIVE_MANIFEST.json').read_text('utf-8'))},ensure_ascii=True))\n'@; & 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B -c $taskRead"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "e23a5441f652f258202f49109ab97b782d63f60d4df674b6dcbfc090b8c5e73a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-86d27411-9135-494d-999a-42910cab89a5",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$statusRead = @'\nimport json,pathlib\nrecord=json.loads(pathlib.Path('work/recovered_four_status.json').read_text('utf-8')); record['status_card']=json.loads(record.pop('stdout')); print(json.dumps(record,ensure_ascii=True))\n'@; & 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B -c $statusRead"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "39eaacb906575415a7746e0c5904b7b634b9c466f76fc6d3213f77df72cd3ec0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-691a8112-9f70-46e5-bf24-f5cde07743f8",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "rg --files --hidden --no-ignore evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1 evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v2 evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3 evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1 | rg 'LICENSE|OFL|\\.py$|\\.cjs$|unicode|headline|font'; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/typography-layout.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/render_assets.cjs -Raw; Get-Content -LiteralPath rules/CONTINUAL_LEARNING_TRIGGER_RULE.md -Raw"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "47dfc9cf75e787d1b58bc6f71bfbac4cb0099e3647cdbb0c7ade8cae3937750c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-0899fe25-ab59-46ba-8227-b8abe88141b9",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "$fontRel = 'evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf'; Test-Path -LiteralPath $fontRel; if (Test-Path -LiteralPath $fontRel) { Get-Item -LiteralPath $fontRel | Select-Object Length; Get-FileHash -LiteralPath $fontRel -Algorithm SHA256 }; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/headline-copy.txt -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/SOURCE_HAN_SERIF_OFL.txt -TotalCount 48"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "a4c06bda8351e462248201fb9936313c82fc30efeaddfd03c2e89d8875329050",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-3d8cdfa3-5ff2-4683-8c6b-695178ce5a5f",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/verify_supplemental_assets.py"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "fe2ac3207f3fbd30a889d9612ec93981adbbefb02cd04657a402c2c2f88428e2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-74073f99-1780-48c5-a2f9-297b2959489d",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' work/probe_node.cjs"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "7627b5025e640171d578830fc39e63b3e8eea80e30353d3974ec8e9fccbdb9da",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-5a472c80-57a0-49db-a9fc-d409ae39b590",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/probe_dependencies.py"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "4ee6575186c6531dbb817ce400783f69c98be782cf776aa9a6cda6ba31255777",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-216c7ca7-9b07-46f9-ae26-7c1e368ee100",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/verify_current_pixels.py"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "17312c5196abe5173c66f6acfee359c6f018091e071a879a8232a72532294732",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-5b075457-6022-42a4-8140-f4c37b96b39a",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/audit_snapshot.py after; & 'C:/Program Files/Git/cmd/git.exe' -C ./work/fresh-repo status --porcelain --untracked-files=all"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "14ec4b7d375cbf40a5b761f9e729fe3ffcb9dadc61c5f72c69acfa5df03c4b04",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-afb6664b-0925-4cb4-99c7-063d6f298d4a",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md -Raw; Get-Content -LiteralPath continuity/vpd/codex_takeover_20261003/ENTRY_RECOVERY_NOTES.md -Raw; Get-Content -LiteralPath evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json -Raw; & 'C:/Program Files/Git/cmd/git.exe' check-ignore evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf; & 'C:/Program Files/Git/cmd/git.exe' rev-parse refs/remotes/origin/visual-program-distillation-v2-photography-design-20260814"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003/work/fresh-repo",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "3bf209194861a81d226aa0f19810a6099816af05d01aabd45cffb2f3d6b4db6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-ae07a102-54af-4c1a-b38c-53859775f064",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/bind_recovered_font.py"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "2ad0e258b5fa082fecbdb56d3d3e5187e0d268c27a4a784d2977ffa6b3c560e2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-4a811506-6433-4407-bbac-ae2876c423f1",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/audit_snapshot.py after; & 'C:/Program Files/Git/cmd/git.exe' -C work/fresh-repo status --porcelain --untracked-files=all"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "14ec4b7d375cbf40a5b761f9e729fe3ffcb9dadc61c5f72c69acfa5df03c4b04",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "exec-04e82318-a7b6-4108-be83-e925c188c44c",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-Command",
+        "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B work/build_recovery_report.py"
+      ],
+      "cwd": "file:///C:/Users/Administrator/Documents/Codex/2026-10-03/chazuo-fresh-entry-recovery-20261003",
+      "status": "completed",
+      "exit_code": 0,
+      "stdout_sha256": "458898b5dbe64de3154f99b4a021e5515c8df2b8b13f1755ba5382398a6a1ae2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_JsDAlTuJAjgK4ZYYaemuvWJG",
+      "input_sha256": "d122afe70459c36f477bedbb5f8d01d641e8204b6e3466d2d5ec23c4859bd1ca",
+      "nested_tools": [
+        "exec_command",
+        "exec_command",
+        "mcp__codex_app__load_workspace_dependencies"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_BwUhyuD3JDXLls2NBcjvlJ5H",
+      "input_sha256": "70fcc7ad0ec19b3293172ec36eac41e160ba14a7291cad014812b8c5dd4f9eea",
+      "nested_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_4ZV2czSz800VVO9F65VIp6oc",
+      "input_sha256": "f8abd85ae4e84cc46c25df57166c690929b5fb7e29b10284e35410f5d49949fa",
+      "nested_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_l1mLPVNzNsjyXfdJAFIvkneY",
+      "input_sha256": "04686b10af4b98da9115d0dc150892e65db550c4321ea692eefe1f21eb270842",
+      "nested_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_YJZMTwKn6I2Y7IJDCsmPrlj6",
+      "input_sha256": "cd7c5175f6efc210e429b391071cb3e711f4f735d4ef1c7d5743dc0bc8391b5e",
+      "nested_tools": [
+        "exec_command",
+        "mcp__codex_apps__github_fetch_file"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_DnVEt0M5wMxO6XCMeha8LqJW",
+      "input_sha256": "ccc040a409d14cf28012bb2978657d808ece900109c7f12867bc40cba586e2b2",
+      "nested_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_YEnIws3ZJE2VKxmzwB9jCjrX",
+      "input_sha256": "3f71ca4cbba0982ca82d80e033f2f9a0b1594035ca09071445bc000b0db71084",
+      "nested_tools": [
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_srY61MpusOIzpX8ehTsMyxqk",
+      "input_sha256": "7b0ba244f54ccb25356ae2effceedb17b9af9f37072948995519487815a57574",
+      "nested_tools": [
+        "apply_patch",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_H79opwtu8yde4e0FyS7F3hno",
+      "input_sha256": "a6e14029bfd2263430ce7a76f9c190dcb98c66199eec4ed908123f1fd7c87a38",
+      "nested_tools": [
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_Q96zFd8oM5rUGAD40yasBLkB",
+      "input_sha256": "bfe1c6e5593e7729849d064a49f528017c55ef06bb0985cfcaa797a1b97ab5ab",
+      "nested_tools": [
+        "exec_command",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_xVIGDpE75qYcGCD4TlGaomjv",
+      "input_sha256": "7a73b973999f10f9665e1c5129bb592539bd9fed961f81a5aa7f56b7b63db5da",
+      "nested_tools": [
+        "exec_command",
+        "mcp__codex_apps__google_drive_get_file_metadata"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_DSVTE1pRi871wdF8854A34nB",
+      "input_sha256": "4beb01c37c097431eaeecc0fc100a844091058e2ce1d4fed7ebf048cf9ba04ae",
+      "nested_tools": [
+        "mcp__codex_apps__google_drive_fetch",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_nxRu5x9GHdLxrKnsIFb7YNOS",
+      "input_sha256": "6922a8efa325c56ffd69c8e7ce0ef503870c1c718a1028f42cdd68f99183aa09",
+      "nested_tools": [
+        "apply_patch",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_TuLyHBc2VYxPblcTQ0iaz3Ut",
+      "input_sha256": "635080932177577fd26ec3b3e7b8996af4e322936549dd1d7d08978fc4ca6278",
+      "nested_tools": [
+        "exec_command",
+        "mcp__codex_apps__figma_use_figma"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_kYZSryHGjtUDt4Zik4Jl0JEK",
+      "input_sha256": "8fe96a8100b604bcbba12f7dfccc067d791d756e7684ff9476c6873ce9be35d8",
+      "nested_tools": [
+        "write_stdin",
+        "view_image"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_4SltjZBzd1QuQQKP2r6qPylk",
+      "input_sha256": "478633c97b8edaea8a7879d17b837d8ddef37ae520d9bc3d7238072c7c270b14",
+      "nested_tools": [
+        "exec_command",
+        "exec_command",
+        "mcp__codex_apps__figma_whoami"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_oHfgEnKlHqrNMFePf5dOz5R2",
+      "input_sha256": "65ab4d863b6c9120f64612220f443beee2bdb2658d4d94b387620a4a05125357",
+      "nested_tools": [
+        "mcp__codex_apps__google_drive_get_file_metadata",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_KNZVfNIcBe2EIpcZBUv2c4sj",
+      "input_sha256": "7e4b421fa128da339bf89aefff6ea7ee5fa21f0ebc88269d21e3fb323eb364ff",
+      "nested_tools": [
+        "mcp__codex_apps__google_drive_fetch",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "wait",
+      "call_id": "call_8qPNo8x5GbB55oWiuQSLNqzH",
+      "input_sha256": "22c68dcc41982fbd287cb85b0ab97f4789726d317edd9ff57c2fb384a335cfc6",
+      "nested_tools": []
+    },
+    {
+      "name": "exec",
+      "call_id": "call_MTdhDosnvdDtt7uWfY100yPL",
+      "input_sha256": "149ff2c1498cd98f95b0ef2102fbbe049a8df62c2d2c9ececca2bf05bb11bb42",
+      "nested_tools": [
+        "apply_patch",
+        "exec_command",
+        "mcp__codex_apps__google_drive_list_file_revisions"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_52P7B0lbMZ8Nkge0VR5ZKeqK",
+      "input_sha256": "58fc54de395381dd30cb4fc53168cb6c427be47063db57297d63c27d75fdd686",
+      "nested_tools": [
+        "apply_patch",
+        "exec_command",
+        "exec_command",
+        "apply_patch"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_rtsinldJTxHF1Hs5jir5QopC",
+      "input_sha256": "f7a6d8275f185d9bc3be070acf45d02690b045fd57ab1c6ebfe6179336cfd39a",
+      "nested_tools": [
+        "apply_patch",
+        "exec_command",
+        "apply_patch",
+        "clock__curr_time",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_sfMbU8yojcIfh9ZAyR6UQYxE",
+      "input_sha256": "f25d89ac45661f65c62e0e2fdcb80df68b24503e08dbe3081557a199fe0f3f62",
+      "nested_tools": [
+        "exec_command",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_lCviqkB8Jl0jrP5lgtSvQ3W5",
+      "input_sha256": "e5cc12efee623f15a76f3ea0fe99f271b87d2267e74c770cce8d00e3154d8dc0",
+      "nested_tools": [
+        "apply_patch",
+        "apply_patch",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "name": "exec",
+      "call_id": "call_F9mFR7P8dKYNRIm9fRXK71Wc",
+      "input_sha256": "962fe4e499335b0eb0cb69090ad732f274366bb1936e5f6cba433e20fa666310",
+      "nested_tools": []
+    }
+  ],
+  "restored_asset_bytes_independently_readback_by_root": [
+    {
+      "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "bytes": 1735549,
+      "role": "frozen_source"
+    },
+    {
+      "drive_id": "1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE",
+      "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96",
+      "bytes": 1730973,
+      "role": "current_v1"
+    },
+    {
+      "drive_id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+      "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+      "bytes": 1730322,
+      "role": "current_v2"
+    },
+    {
+      "drive_id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+      "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+      "bytes": 1732795,
+      "role": "current_v3"
+    },
+    {
+      "drive_id": "1a4vS6o7yXaCS-EPU18nGvXsUelc3bnwn",
+      "sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
+      "bytes": 2006202,
+      "role": "confirmed_first_original"
+    },
+    {
+      "drive_id": "1dMcZn4qws47UuxRsAJDLxYY1RO0HdKZF",
+      "sha256": "74899b51caf9d15ba4055572d30b89479d3209e2baa748130a20bdd1309f8fad",
+      "bytes": 328756,
+      "role": "transparent_repair_overlay"
+    },
+    {
+      "drive_id": "14eZPr5_u_brLLZzMv0u3VPg0fOMtJO4A",
+      "sha256": "01faebaaee47f8c42cd4aad96225fe23bf610655e5b457877a1b91c0197c9748",
+      "bytes": 1952186,
+      "role": "imagegen_material_not_frozen_photo"
+    },
+    {
+      "drive_id": "1TLIWNC3E5H7apD_Er7uVvjhWGctl6nqL",
+      "sha256": "9d473dbd19b688f8a143f90effe576c926841aa7d34753d6d5efb394c11966df",
+      "bytes": 1743730,
+      "role": "failed_glyph_mask_preview"
+    },
+    {
+      "drive_id": "1sYdyYYpIDfoINLbMELi3ODdpqfLwCMUE",
+      "sha256": "5845727b910bec294a27faa3f471bf3d41aba72bfd7b7776e42f4f866b1132f8",
+      "bytes": 1805811,
+      "role": "historical_rejected_v1"
+    },
+    {
+      "drive_id": "1RZMu9PerLQM8H1mVPZzM4sTYxY1AMLN4",
+      "sha256": "deb61c6039643dea4c46082c85ca78012349aae1f4967ffdeeafd245bdca5103",
+      "bytes": 1813341,
+      "role": "historical_rejected_v2"
+    },
+    {
+      "drive_id": "1jBx1Gf5fVhHIq2g0PSMrXjNAeBWiuQwg",
+      "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a",
+      "bytes": 1821889,
+      "role": "historical_rejected_v3"
+    },
+    {
+      "drive_id": "1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu",
+      "sha256": "57c21466512a79cbb25c75db1d6a1748b595c3bc2d00c85ba51615557f74f925",
+      "bytes": 2503482,
+      "role": "calibration_P"
+    },
+    {
+      "drive_id": "1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO",
+      "sha256": "deb1a5909bcc6ca8cb9119b3efabd5f65ccdef0dcf00f60e6b215806a44b2cf4",
+      "bytes": 2693258,
+      "role": "calibration_N"
+    },
+    {
+      "drive_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+      "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+      "bytes": 646432,
+      "role": "reference_upper_ad_only"
+    },
+    {
+      "drive_id": "1ceZuyHDkMTzeW5qw0-j-qtfaZlD6PvZn",
+      "sha256": "f83a8b20b2b97c2e53bd40b85124023d53fea0c397ad8ac90dae7382eaeb823e",
+      "bytes": 6001,
+      "role": "v3_wordmark_svg"
+    }
+  ],
+  "result_ref": {
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/fresh_entry_recovery/RESULT.json",
+    "sha256": "682310a00e31a2c5c06b31f9653834089ed582fce898d5b20a194d8073621476"
+  },
+  "actual_native_check_outputs": [
+    {
+      "execution_id": "exec-51aba2b5-23ec-4ce8-a88f-0f7731e5cee0",
+      "actual_stdout": {
+        "command": [
+          "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-B",
+          "scripts/verify_visual_memory.py",
+          "--vpd-state",
+          "--status-card"
+        ],
+        "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-03\\chazuo-fresh-entry-recovery-20261003\\work\\fresh-repo",
+        "exit_code": 1,
+        "stdout": "{\"status\": \"VPD_STATE_BLOCKED\", \"reason\": \"[Errno 2] No such file or directory: 'C:\\\\\\\\Users\\\\\\\\Administrator\\\\\\\\Documents\\\\\\\\Codex\\\\\\\\2026-10-03\\\\\\\\chazuo-fresh-entry-recovery-20261003\\\\\\\\work\\\\\\\\fresh-repo\\\\\\\\.liu-visual-private\\\\\\\\source_recovery_20261003\\\\\\\\photography-local-reconstruction-final.png'\"}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "execution_id": "exec-5bffd542-ed37-49a4-b747-8fb358c6c88b",
+      "actual_stdout": {
+        "command": [
+          "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-B",
+          "scripts/vpd_restore_correct_source_exports.py",
+          "--bundle",
+          ".liu-visual-private/drive-restore-bundle.json"
+        ],
+        "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-03\\chazuo-fresh-entry-recovery-20261003\\work\\fresh-repo",
+        "exit_code": 0,
+        "stdout": "{\"result\": \"PASS\", \"restored\": [{\"drive_id\": \"1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA\", \"path\": \".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png\", \"sha256\": \"7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618\", \"bytes\": 1735549}, {\"drive_id\": \"1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE\", \"path\": \".liu-visual-private/correct_source_typography/v1/poster.png\", \"sha256\": \"a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96\", \"bytes\": 1730973}, {\"drive_id\": \"1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ\", \"path\": \".liu-visual-private/correct_source_typography/v2/poster.png\", \"sha256\": \"c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4\", \"bytes\": 1730322}, {\"drive_id\": \"1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-\", \"path\": \".liu-visual-private/correct_source_typography/v3/poster.png\", \"sha256\": \"0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826\", \"bytes\": 1732795}], \"business_state_writes\": 0, \"new_design_versions\": 0}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "execution_id": "exec-9ac4176c-f258-45e4-ab05-d480fd8882f9",
+      "actual_stdout": {
+        "command": [
+          "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-B",
+          "scripts/verify_visual_memory.py",
+          "--vpd-state",
+          "--status-card"
+        ],
+        "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-03\\chazuo-fresh-entry-recovery-20261003\\work\\fresh-repo",
+        "exit_code": 0,
+        "stdout": "{\n  \"״̬\": \"������������״̬���ͨ��\",\n  \"��鷶Χ\": \"������ʷ������Ԥ����֤��һ���ԣ���֤���Ӿ�������Զ�˷���\",\n  \"��Ŀ��\": \"���û�ԭ����׼�ĺ�����ʵ��������ɸ����Ӿ�����������Ʒ��֤�Ӿ��߼���Ǩ����������������ͬ���干��ͬһ����������\",\n  \"����\": \"continuity/vpd/MAINLINE_LOCK_20261001.md\",\n  \"��ǰ�׶�\": \"CORRECT_SOURCE_TYPOGRAPHY_INDEPENDENT_WORKER\",\n  \"�׶�״̬\": \"VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL\",\n  \"ʵ�����ɳ���\": 0,\n  \"���˽���\": \"PENDING\",\n  \"��ǰ��ͼ��Ȩ\": 0,\n  \"��ǰ���޶�\": 276,\n  \"��ǰ����\": 298,\n  \"Ψһ��һ����\": \"LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW\",\n  \"��ǰ����\": \"VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01\",\n  \"��ǰFigma��Ȩ\": 0,\n  \"��ʽ��ư汾\": \"3/3����ǰͬ�������죩\",\n  \"�޶�����\": \"2/2����ǰͬ�������죩\",\n  \"��Ӱ����\": \"���������Ͽ�7fd7777f��Ӱ��ֻ��������ʸ�������ֲ�\",\n  \"�ֲ������޲�����\": \"1/1\",\n  \"�޲���ѡ���˽���\": \"ACCEPTED\",\n  \"�޲��׶�\": \"APPROVED_FROZEN\",\n  \"���������˽���\": \"REJECTED\",\n  \"��ʧ�ܰ汾Ԥ��\": \"3/3��2/2������δ����\",\n  \"worker�ɸ�����\": false\n}\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "original_completed_baseline_excludes_later_scope_only_closing_context": true
+}
