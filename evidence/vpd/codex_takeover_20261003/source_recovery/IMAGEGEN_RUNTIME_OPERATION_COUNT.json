@@ -1,0 +1,38 @@
+{
+  "source_kind": "EXACT_ACTUAL_ROOT_RUNTIME_CALL",
+  "root_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "root_runtime": "C:\\Users\\Administrator\\.codex\\sessions\\2026\\10\\03\\rollout-2026-10-03T10-50-43-01a0ffab-c9b7-7c40-b55b-e51535c156dd.jsonl",
+  "count_scope": "Direct image_gen tool calls in this root runtime; excludes quoted audit/search code",
+  "actual_imagegen_call_count": 1,
+  "raw_actual_call_rows": [
+    {
+      "line_number": 3757,
+      "row": {
+        "timestamp": "2026-10-03T10:32:03.358Z",
+        "ordinal": 3756,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call",
+          "id": "ctc_0c7d7d06de60acdc016ac0d99dd71887d0860ac996553ab221",
+          "status": "completed",
+          "call_id": "call_so8H3aT5XoqV9UeWClEoFSH9",
+          "name": "exec",
+          "input": "// @exec: {\"yield_time_ms\": 120000, \"max_output_tokens\": 700}\nconst r=await tools.image_gen__imagegen({prompt:load(\"source_imagegen_prompt\"),referenced_image_paths:[\"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/browser_reconcile_20261003/CHATGPT_GENERATED_IMAGE_1_e7af9c9e.png\"],transparent_background:false});store(\"source_imagegen_result\",r);\nif(r&&typeof r===\"object\"){text({keys:Object.keys(r),metadata:Object.fromEntries(Object.entries(r).filter(([k,v])=>!k.includes(\"image_url\")&&!(typeof v===\"string\"&&v.length>1500)))});}else text(String(r).slice(0,1200));\n",
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a10144-4b50-7173-8612-3e9da246e3cd",
+            "create_time": 1791023512.870691
+          }
+        }
+      }
+    }
+  ],
+  "returned_material_sha256": "01faebaaee47f8c42cd4aad96225fe23bf610655e5b457877a1b91c0197c9748",
+  "builtin_saved_output_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0ffab-c9b7-7c40-b55b-e51535c156dd\\exec-7a87201b-9c37-4c34-a477-dcdc9f66107c.png",
+  "builtin_saved_output_sha256": "01faebaaee47f8c42cd4aad96225fe23bf610655e5b457877a1b91c0197c9748",
+  "request_ref": {
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/IMAGEGEN_REQUEST.json",
+    "sha256": "0aae273776b41e80ff53321edc5ac3fe1bd18bd63fa844aa88f635899278a84e"
+  },
+  "tool_model_version": "NOT_EXPOSED",
+  "prompt_copy_cryptographic_binding": "Store/load prompt code and plaintext request preserved; encrypted tool internals not exposed"
+}

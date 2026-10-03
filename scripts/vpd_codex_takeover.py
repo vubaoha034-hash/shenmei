@@ -70,7 +70,7 @@ def main():
     if prior and args.versions>prior['budget']['formal_versions_used']+1: raise ValueError('NON_SERIAL_VERSION')
     now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()
     take={**(prior or {}),'task_id':TASK,'status':args.status,'next_required_action':args.next,'authorization':ref(BASE+'EXECUTION_AUTHORIZATION.json'),'photo_protection':ref(BASE+'PHOTO_PROTECTION.json'),'receipt':ref(args.receipt),'budget':{'formal_versions_max':3,'formal_versions_used':args.versions,'revisions_max':2,'revisions_used':args.revisions,'photo_generations':0,'paid_compute_usd':0,'training':0,'automations':0,'second_style':0},'human_verdict':receipt.get('human_verdict','PENDING'),'candidate_promoted':False,'state_writer':'ROOT_EXECUTOR_ONLY'}
-    for key in ['human_feedback', 'source_identity_correction']:
+    for key in ['human_feedback', 'source_identity_correction', 'source_recovery']:
         if receipt.get(key):take[key]=receipt[key]
     entry='REUSE_FINAL.md' if (ROOT/BASE/'REUSE_FINAL.md').exists() else 'REUSE.md'
     if (ROOT/BASE/entry).exists():
@@ -85,6 +85,8 @@ def main():
     lock['execution_boundary']['legacy_zero_figma_budget_scope']='SUPERSEDED_FOR_THIS_EXPLICIT_USER_BOUNDED_TASK_ONLY'
     lock['execution_boundary']['photo_repair_loop_closed']=True
     lock['render_allowed']=False
+    if take.get('source_recovery'):
+        lock['execution_boundary']['source_recovery_tool_trial'] = copy.deepcopy(take['source_recovery'])
     # Correct a current projection that accidentally used image SHA as JSON-receipt SHA.
     for d in [lock,cp]:
         rr=d['candidate88_external_review_r4']['revision']
@@ -100,6 +102,8 @@ def main():
     cp['incomplete']=['本轮设计未通过内部审美审核，等待刘先生验收失败成品','长期视觉蒸馏及迁移收益未验证'] if args.status.endswith('DELIVERED_AI_FAIL_HUMAN_PENDING') else ['最终成品刘先生真人验收','长期视觉蒸馏及迁移收益未验证']
     if args.status.endswith('REJECTED_SOURCE_MISMATCH'):
         cp['incomplete']=['当前三版作品已被刘先生否定；R4作为认可第一张的绑定已撤回','已找回第一张真实原件，尚未取得其无字摄影层；先解决源文件保护缺口','字标和整体设计未完成，长期视觉收益未验证']
+        if take.get('source_recovery', {}).get('phase') == 'HUMAN_REVIEW_REQUIRED':
+            cp['incomplete']=['局部背景重建候选等待刘先生摄影保护验收；不冒充无字摄影原件','原三版海报仍否决；后续字标及完整设计未完成','视觉蒸馏收益及迁移能力未验证']
     adapter['task_lock']={**adapter['task_lock'],**lr,'revision':lock['revision']}; adapter['ledger_tails']=tail
     adapter['current_mainline']={'task_id':TASK,'status':args.status,'current_visual_unit':'FROZEN_R4_PHOTO_NEW_WORDMARK_TYPOGRAPHY','evidence':{'execution':take['receipt'],'human_verdict':lock['candidate88_human_final_review']},'next_required_action':args.next,'codex_takeover':copy.deepcopy(take)}
     if args.status.endswith('REJECTED_SOURCE_MISMATCH'):

@@ -313,8 +313,54 @@ def _validate_codex_takeover(root, lock, cp, adapter):
     if state == 'REJECTED_SOURCE_MISMATCH':
         feedback = _receipt(root, take.get('human_feedback'))
         correction = _receipt(root, take.get('source_identity_correction'))
+        recovery = take.get('source_recovery')
+        recovery_action = 'RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE'
+        if recovery:
+            authority_recovery = _receipt(root, recovery.get('authorization'))
+            require(authority_recovery.get('schema_version') == 'vpd-source-recovery-continuation-authorization/v1'
+                    and authority_recovery.get('source', {}).get('kind') == 'CURRENT_HUMAN_USER_MESSAGE'
+                    and authority_recovery['source'].get('verbatim')
+                    and authority_recovery.get('task_id') == TAKEOVER_TASK
+                    and authority_recovery.get('scope', {}).get('formal_poster_budget_reset') is False
+                    and authority_recovery['scope'].get('source_photo_regeneration') is False,
+                    'SOURCE_RECOVERY_AUTHORITY_REQUIRED')
+            require(recovery == receipt.get('source_recovery') == boundary.get('source_recovery_tool_trial')
+                    and recovery.get('source_sha256') == 'e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29'
+                    and recovery.get('imagegen_edit_calls_max') == 1
+                    and type(recovery.get('imagegen_edit_calls_used')) is int
+                    and 0 <= recovery['imagegen_edit_calls_used'] <= 1
+                    and recovery.get('formal_poster_versions_added') == 0
+                    and recovery.get('is_recovered_hidden_original') is False,
+                    'SOURCE_RECOVERY_SCOPE_CONFLICT')
+            if recovery.get('phase') == 'HUMAN_REVIEW_REQUIRED':
+                recovery_action = 'LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION'
+                delivered = _receipt(root, recovery.get('delivery_manifest'))
+                source_review = _receipt(root, recovery.get('pixel_review'))
+                source_audit = _receipt(root, source_review.get('isolation_audit'))
+                protection_recovery = _receipt(root, delivered.get('pixel_protection'))
+                require(delivered.get('kind') == 'LOCAL_BACKGROUND_RECONSTRUCTION_NOT_TEXTLESS_ORIGINAL'
+                        and delivered.get('hidden_original_recovered') is False
+                        and delivered.get('formal_poster_versions_added') == 0
+                        and delivered.get('source', {}).get('sha256') == recovery['source_sha256']
+                        and delivered.get('output', {}).get('dimensions') == [1536, 1024]
+                        and source_review.get('review_unit') == 'SOURCE_RECONSTRUCTION_ONLY'
+                        and source_review.get('verdict') in ['AI_PASS', 'AI_FAIL']
+                        and source_review.get('version') == 0
+                        and source_review.get('export', {}).get('sha256') == delivered['output']['sha256']
+                        and source_audit.get('verified') is True
+                        and source_audit.get('attachments_verified') == ['P', 'N', 'R', 'S', 'T']
+                        and source_audit.get('actual_model') == 'gpt-6.1-sol'
+                        and source_audit.get('actual_reasoning_effort') == 'max'
+                        and source_audit.get('tool_scope_violations') == []
+                        and protection_recovery.get('protected_pixels_changed') == 0
+                        and protection_recovery.get('protected_max_channel_difference') == 0,
+                        'SOURCE_RECOVERY_ACTUAL_DELIVERY_REQUIRED')
+                require(recovery.get('human_verdict') == 'PENDING', 'SOURCE_RECOVERY_HUMAN_ACCEPTANCE_REQUIRED')
+            else:
+                require(recovery.get('phase') in ['PREPARING', 'EDIT_IN_PROGRESS', 'TOOL_BLOCKED'],
+                        'SOURCE_RECOVERY_PHASE_UNKNOWN')
         require(versions == 3 and revisions == 2 and review['verdict'] == 'AI_FAIL' and
-                take['next_required_action'] == 'RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE'
+                take['next_required_action'] == recovery_action
                 and receipt.get('human_verdict') == 'REJECTED'
                 and receipt.get('human_feedback') == take['human_feedback']
                 and receipt.get('source_identity_correction') == take['source_identity_correction'],

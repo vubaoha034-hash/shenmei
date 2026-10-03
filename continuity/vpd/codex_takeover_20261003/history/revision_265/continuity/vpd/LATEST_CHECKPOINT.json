@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 288,
-  "recorded_at": "2026-10-03T19:12:42.296396+08:00",
+  "sequence": 287,
+  "recorded_at": "2026-10-03T18:30:18.869378+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW",
+  "current_focus": "CONFIRMED_FIRST_IMAGE_LOCAL_REPAIR_PREPARING",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,12 +357,12 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "局部背景重建候选等待刘先生摄影保护验收；不冒充无字摄影原件",
-    "原三版海报仍否决；后续字标及完整设计未完成",
-    "视觉蒸馏收益及迁移能力未验证"
+    "当前三版作品已被刘先生否定；R4作为认可第一张的绑定已撤回",
+    "已找回第一张真实原件，尚未取得其无字摄影层；先解决源文件保护缺口",
+    "字标和整体设计未完成，长期视觉收益未验证"
   ],
   "blocked": [],
-  "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+  "next_required_action": "RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -433,8 +433,8 @@
   "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "310dcf31b33054e2e8ee4dfdaeb0ad07e3cff1e87fc4899d80d2f7fbfd525cc6",
-    "revision": 266
+    "sha256": "716cba5f75ac21818967e7407778219c968a412168e973ddff16fbec08912d62",
+    "revision": 265
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-266-20261003",
-      "event_hash": "6bffad34d3fd68d70b33d11f87e4430ed7eaf999027b67e415ba900d0d3828a5"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-265-20261003",
+      "event_hash": "f9c5806c584fef04fbae72a8c7a5c6bf5ee46c152fca93cf8fd4441458c4186e"
     }
   },
   "typography_repair": {
@@ -971,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW",
-  "updated_at": "2026-10-03T19:12:42.296396+08:00",
+  "current_stage": "CONFIRMED_FIRST_IMAGE_LOCAL_REPAIR_PREPARING",
+  "updated_at": "2026-10-03T18:30:18.869378+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DELIVERY_RECEIPT.json",
-    "sha256": "f1d71362bb17678f8627043ee5d228c9647a5924d4da333d86eebd7a917f7300"
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/PREPARATION_RECEIPT.json",
+    "sha256": "7f9a01b8a51268d66857408e3538d14bf097a47a7b2204b2e090b9c7c45b1081"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2654,7 +2654,7 @@
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
     "status": "VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH",
-    "next_required_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+    "next_required_action": "RECOVER_TEXT_FREE_SOURCE_OF_CONFIRMED_FIRST_IMAGE",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2664,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DELIVERY_RECEIPT.json",
-      "sha256": "f1d71362bb17678f8627043ee5d228c9647a5924d4da333d86eebd7a917f7300"
+      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/PREPARATION_RECEIPT.json",
+      "sha256": "7f9a01b8a51268d66857408e3538d14bf097a47a7b2204b2e090b9c7c45b1081"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2682,8 +2682,8 @@
     "candidate_promoted": false,
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
-      "path": "continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_REUSE.md",
-      "sha256": "d90c7b95bc8eba0f0f62dad7f3de04c804715115e6f7411777effa1f07b89c2c"
+      "path": "continuity/vpd/codex_takeover_20261003/REVIEW_FIRST_REUSE.md",
+      "sha256": "2718168cb29330e7b442b052b63f836a84f8fcdbb7565b3190aba4da31f93592"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2699,25 +2699,12 @@
         "sha256": "d3853a895f1fc75537e3de33260a1655bde82529606bdfe7beeb61bcf861a8db"
       },
       "source_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
-      "phase": "HUMAN_REVIEW_REQUIRED",
+      "phase": "PREPARING",
       "imagegen_edit_calls_max": 1,
-      "imagegen_edit_calls_used": 1,
+      "imagegen_edit_calls_used": 0,
       "formal_poster_versions_added": 0,
       "is_recovered_hidden_original": false,
-      "human_verdict": "PENDING",
-      "delivery_manifest": {
-        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DELIVERY_MANIFEST.json",
-        "sha256": "28dc4f69e88267b0451088ae3b88b2b4f319d660973840b26dfcde48a313d903"
-      },
-      "pixel_review": {
-        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/pixel_review/PIXEL_REVIEW.json",
-        "sha256": "c88cb4900c8c3fdc0565e6b0e336400fda95a3a01ee450861b1fb8c3fcd51b59"
-      },
-      "ai_verdict": "AI_PASS_SOURCE_RECONSTRUCTION_ONLY",
-      "professional_audit": {
-        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/PROFESSIONAL_AUDIT.txt",
-        "sha256": "5c6eaa01887851cd6c7079aef09c8872fcd0d2901d1a1c69b24588c9a340faa9"
-      }
+      "human_verdict": "PENDING"
     }
   }
 }

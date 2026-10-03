@@ -357,6 +357,14 @@ def status_card(lock, cp):
             if take['status'] == 'VPD_CODEX_CHAZUO_REJECTED_SOURCE_MISMATCH':
                 card.update(摄影保护='仅证实历史R4数值保真；认可第一张绑定已纠正，无字源待恢复',
                             当前阶段='CONFIRMED_FIRST_IMAGE_SOURCE_RECOVERY_REQUIRED')
+            if take.get('source_recovery'):
+                recovery = take['source_recovery']
+                card.update(局部背景修补调用=f"{recovery['imagegen_edit_calls_used']}/{recovery['imagegen_edit_calls_max']}",
+                            修补候选真人结论=recovery.get('human_verdict', 'PENDING'),
+                            修补阶段=recovery['phase'])
+                if recovery['phase'] == 'HUMAN_REVIEW_REQUIRED':
+                    card.update(当前阶段='LOCAL_BACKGROUND_RECONSTRUCTION_HUMAN_REVIEW',
+                                摄影保护='声明文字邻域外RGB零变化；邻域为重建，非隐藏原件恢复')
         return card
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',

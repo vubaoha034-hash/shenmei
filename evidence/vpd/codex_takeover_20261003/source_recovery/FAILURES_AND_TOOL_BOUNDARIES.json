@@ -1,0 +1,33 @@
+{
+  "failed_operations": [
+    {
+      "operation": "first Figma asset download",
+      "failure": "HTTP202 with zero bytes",
+      "disposition": "empty response rejected; no success claimed; subsequent actual HTTP200 signature/SHA verified",
+      "evidence": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FIGMA_DOWNLOAD_PENDING_202.json",
+        "sha256": "124652e028edbb9254c6101d2a4d47705102a1ae03b79df7402d72f2ee9aa953"
+      }
+    },
+    {
+      "operation": "tight glyph-region composition",
+      "failure": "visible dark glyph silhouettes and small residual letters; native Figma mask preview unsuitable",
+      "disposition": "failed PNG and code/mask baseline retained; same sole generation material used for bounded neighborhood alpha composition",
+      "failed_png_sha256": "9d473dbd19b688f8a143f90effe576c926841aa7d34753d6d5efb394c11966df",
+      "figma_node": "283:6"
+    },
+    {
+      "operation": "source runtime count collection initial filter",
+      "failure": "latest turn_context was an internal context refresh; literal search also matched the audit script itself",
+      "disposition": "no count-success artifact emitted; corrected to actual top-level direct imagegen calls, preserved real call row3757/call_so8H3aT5XoqV9UeWClEoFSH9"
+    },
+    {
+      "operation": "Opera gallery2 output save",
+      "failure": "plugin filePath rejected the configured workspace",
+      "disposition": "no repeated save attempts; no gallery2 pixels or unbound file claimed as source"
+    }
+  ],
+  "repeated_generation_retries": 0,
+  "formal_poster_versions_added": 0,
+  "semantic_hidden_original_restore_claimed": false
+}

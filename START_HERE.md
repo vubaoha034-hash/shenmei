@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->
+最新摄影恢复入口：先读当前原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_REUSE.md`。已制作原认可第一张的局部去字背景重建候选，原件、透明修补层和精确PNG均有Figma节点与身份回读；隔离审稿AI实际看五图后仅通过“摄影修补可送真人验收”。不是无字摄影原件，也不是新海报完成。旧三版海报否决、3版/2修订上限保留；本次一次必要修补工具操作单独记账。当前唯一下一动作由任务锁确定，真人反馈前不自动继续出图。
+<!-- END_FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->
+
 <!-- INDEPENDENT_REVIEW_SKILL_ENTRY_20261003 -->
 多角色与实际审核skill入口：读取原生任务锁及下方原件纠偏后，读 `continuity/vpd/codex_takeover_20261003/REVIEW_FIRST_REUSE.md`。已实际完成独立五图像素审核及真人结论隐藏后的核对；官方design-critique固定版本与项目必要适配可复用，仍是实验方法。摄影成功与文字失败分别保留，当前作品仍为AI_FAIL/真人REJECTED，唯一下一动作及既有预算不扩大。
 <!-- END_INDEPENDENT_REVIEW_SKILL_ENTRY_20261003 -->
