@@ -4,10 +4,12 @@ The worker supplies evidence, never business state or authorization. This is
 repository consistency, not an operating-system capability sandbox or taste oracle.
 """
 from .vpd_task_lock import read, require, check_ref
+import copy
 
 SOURCE = '7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618'
 UNIT = 'CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1'
 TASK = 'VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01'
+ENVELOPES = [[64,56,504,304],[800,72,1504,440]]
 
 def load(root, ref):
     check_ref(root, ref)
@@ -31,7 +33,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             and authorization['scope']['old_formal_budget_reset'] is False,
             'EXPLICIT_SAME_TASK_CONTINUATION_REQUIRED')
     require(worker['task_id'] == TASK and worker['roles']['business_state_writer'] == 'ROOT_ONLY'
-            and worker['roles']['reviewer'] == 'FRESH_FORK_NONE_READ_ONLY_PIXEL_WORKER'
+            and worker['roles']['reviewer'] == 'FRESH_READ_ONLY_PIXEL_WORKER'
             and worker['worker_permissions'] == {
                 'read_declared_review_images':True, 'write_business_state':False,
                 'change_mainline':False, 'change_goal':False, 'change_reference':False,
@@ -87,14 +89,16 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         require(version['number'] == number, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
         technical = load(root, version['technical_check'])
         require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
+                and technical['export'] == version['export'] and technical['overlay_envelopes'] == ENVELOPES
                 and technical['protected_pixels_changed'] == 0
                 and technical['protected_max_channel_difference'] == 0
                 and technical['source_layer_unchanged'] is True,
                 'ACCEPTED_PHOTOGRAPHY_CHANGED')
-        if version.get('pixel_review'): validate_review(root, version, number)
+        compare_pixels(root,technical)
+        if version.get('pixel_review'): validate_review(root, version, number, unit['review_inputs'])
     current = unit['versions'][-1]
     if unit['phase'] == 'AWAITING_PIXEL_REVIEW': return
-    verdict = validate_review(root, current, used)['verdict']
+    verdict = validate_review(root, current, used, unit['review_inputs'])['verdict']
     require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and used<3)
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
             or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
@@ -103,7 +107,25 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         require(archive['readback_result']=='PASS' and archive['poster_sha256']==current['export']['sha256']
                 and archive['raw_bytes_equal_local'] is True, 'DRIVE_RAW_READBACK_REQUIRED')
 
-def validate_review(root, version, number):
+def compare_pixels(root,technical):
+    from .vpd_locked_mainline_state import _png_rgb_rows
+    source=technical['frozen_source']; export=technical['export']
+    check_ref(root,source); check_ref(root,export)
+    changed=0; compared=0; maximum=0
+    for y,(a,b) in enumerate(zip(_png_rgb_rows(root,source),_png_rgb_rows(root,export))):
+        omitted=sorted((x0,x1) for x0,y0,x1,y1 in ENVELOPES if y0<=y<y1)
+        start=0; intervals=[]
+        for x0,x1 in omitted: intervals.append((start,x0)); start=x1
+        intervals.append((start,1536))
+        for x0,x1 in intervals:
+            aa,bb=a[x0*3:x1*3],b[x0*3:x1*3]; compared+=x1-x0
+            if aa!=bb:
+                changed+=sum(aa[p:p+3]!=bb[p:p+3] for p in range(0,len(aa),3))
+                maximum=max(maximum,max(abs(x-z) for x,z in zip(aa,bb)))
+    require(changed==0 and maximum==0 and compared==technical['protected_pixels_compared'],
+            'APPROVED_PHOTO_ACTUAL_PIXELS_CHANGED')
+
+def validate_review(root, version, number, expected_inputs):
     review=load(root,version['pixel_review']); ids=['P','N','R','S','T']
     require(review['task_id']==TASK and review['work_unit_id']==UNIT and review['version']==number
             and review['human_verdict']=='HIDDEN_PENDING' and review['personal_fit'] is None
@@ -114,7 +136,13 @@ def validate_review(root, version, number):
     audit=load(root,review['isolation_audit']); evidence=load(root,audit['evidence'])
     raw=load(root,evidence['raw_tool_read_audit']); spawn=load(root,evidence['spawn_receipt'])
     bindings={b['neutral_id']:b['sha256'] for b in review['input_bindings']}
-    require(audit['verified'] is True and audit['fork_turns']=='none' and audit['history_inherited'] is False
+    inputs=load(root,expected_inputs)
+    expected={b['neutral_id']:b['sha256'] for b in inputs['input_bindings']}
+    require(bindings==dict(expected,T=version['export']['sha256']) and expected['S']==SOURCE
+            and expected['R']=='87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167',
+            'WORKER_REFERENCE_BINDING_CHANGED')
+    carrier=audit['carrier']; fork=('NOT_APPLICABLE_NEW_THREAD' if carrier=='FRESH_PROJECTLESS_CODEX_WORKER' else 'none')
+    require(audit['verified'] is True and audit['fork_turns']==fork and audit['history_inherited'] is False
             and audit['source_project_context_read'] is False and audit['fresh_agent'] is True
             and audit['completed'] is True and audit['tool_scope_violations']==[]
             and audit['attachments_verified']==ids and audit['actual_model']=='gpt-6.1-sol'
@@ -126,10 +154,26 @@ def validate_review(root, version, number):
             and all(r['tool']=='view_image' for r in evidence['tool_reads'])
             and raw['tool_reads']==evidence['tool_reads'] and raw['extra_tool_reads']==[]
             and raw['source_project_context_reads']==[]
+            and raw['actual_image_view_markers']==5 and len(raw['tool_calls'])>0
+            and all(c['name']=='exec' and c['called_tools'] and set(c['called_tools'])=={'view_image'}
+                    for c in raw['tool_calls'])
+            and carrier in ['FRESH_FORK_NONE_PIXEL_AGENT','FRESH_PROJECTLESS_CODEX_WORKER']
             and spawn['thread_id']==evidence['thread_id']==raw['thread_id']
-            and spawn['fork_turns']=='none' and spawn['history_inherited'] is False
+            and spawn['fork_turns']==fork and spawn['history_inherited'] is False
             and spawn['actual_model']=='gpt-6.1-sol' and spawn['actual_reasoning_effort']=='max'
+            and spawn['root_spawn_call_ids']
             and spawn['initial_prompt_sha256']==audit['initial_prompt_sha256']==evidence['initial_prompt_sha256'],
             'WORKER_EXECUTION_OR_ISOLATION_UNVERIFIED')
-    load(root,audit['carrier_amendment']); load(root,evidence['reviewer_output'])
+    amendment=load(root,audit['carrier_amendment']); load(root,evidence['reviewer_output'])
+    require(amendment['scope']=='CURRENT_CORRECT_SOURCE_FORMAL_WORKER_REVIEW'
+            and amendment['work_unit_id']==UNIT and amendment['attachments_required']==ids,
+            'WORKER_CARRIER_AMENDMENT_REQUIRED')
+    if carrier=='FRESH_PROJECTLESS_CODEX_WORKER':
+        creation=spawn.get('projectless_creation')
+        require(creation and creation['new_thread'] is True and creation['creator_history_inherited'] is False
+                and creation['target']['type']=='projectless' and creation['thread_id']==spawn['thread_id']
+                and creation['actual_returned_thread_id']==spawn['thread_id']
+                and creation['actual_creation_result_sha256']
+                and creation['root_creation_call_ids']==spawn['root_spawn_call_ids'],
+                'WORKER_CREATION_EVIDENCE_REQUIRED')
     return review

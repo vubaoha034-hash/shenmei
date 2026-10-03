@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 294,
-  "recorded_at": "2026-10-03T21:30:01.239819+08:00",
+  "sequence": 292,
+  "recorded_at": "2026-10-03T20:46:05.000959+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "认可摄影上文字系统第一次修订；独立worker实际否决V1；主线与旧失败记录保留",
+  "current_focus": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -361,7 +361,7 @@
     "原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证"
   ],
   "blocked": [],
-  "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+  "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -429,11 +429,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "38d9e03187e3dbca655ffe4089f433f5354b2b9dea5fc1a4b7176c6e4a327141",
-    "revision": 272
+    "sha256": "2951b169cfa883a7f400d5955d9b43be2e9d55f269db3fc711e406674530d43c",
+    "revision": 270
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -454,8 +454,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-272-20261003",
-      "event_hash": "3dd87ec382e86e25a4283a90526269760d8a24c4c48d401ad3cc6296ee53a378"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-270-20261003",
+      "event_hash": "cad42aeff62ed2bc4743152de0788d145e6ee7322dc8b8de3d5fbaecc92907c3"
     }
   },
   "typography_repair": {
@@ -970,8 +970,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "认可摄影上文字系统第一次修订；独立worker实际否决V1；主线与旧失败记录保留",
-  "updated_at": "2026-10-03T21:30:01.239819+08:00",
+  "current_stage": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
+  "updated_at": "2026-10-03T20:46:05.000959+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1920,8 +1920,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/NATIVE_REVIEW_RECEIPT.json",
-    "sha256": "73f0719597e066a40797622fb19ed70be63a1cd2b49cf50c69f1802b37e8a6b8"
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
+    "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2652,8 +2652,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
-    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
+    "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2663,8 +2663,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/NATIVE_REVIEW_RECEIPT.json",
-      "sha256": "73f0719597e066a40797622fb19ed70be63a1cd2b49cf50c69f1802b37e8a6b8"
+      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
+      "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2682,7 +2682,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "e7a8a1e2be3f5a4004549168b389b8cd1c9d2421593deba93b3d761c0c618067"
+      "sha256": "5d1012f6e21a2af6340f0df15feaad28dfcbce725a62e62f6a3a0cea93e653c0"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2741,14 +2741,14 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "REVISION_REQUIRED",
+      "phase": "AUTHORIZED",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
       },
       "worker_contract": {
-        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
-        "sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28"
+        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
+        "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
       },
       "source_approval": {
         "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
@@ -2772,7 +2772,7 @@
       },
       "budget": {
         "formal_versions_max": 3,
-        "formal_versions_used": 1,
+        "formal_versions_used": 0,
         "revisions_max": 2,
         "revisions_used": 0,
         "photo_generations": 0,
@@ -2783,50 +2783,9 @@
         "parallel_alternatives": 0,
         "hidden_variants": 0
       },
-      "versions": [
-        {
-          "number": 1,
-          "export": {
-            "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
-            "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96"
-          },
-          "technical_check": {
-            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/TECHNICAL_CHECK.json",
-            "sha256": "e67aa8c84a89a24153b31b1211c2cf58defc627ad76cfb0a5ef7d855fd394b6e"
-          },
-          "pixel_review": {
-            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/PIXEL_REVIEW.json",
-            "sha256": "12f401759d8d0ea3d7b818d237327324b6a667db44544b9a59340e2f26fa7568"
-          },
-          "drive_archive": {
-            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/DRIVE_ARCHIVE.json",
-            "sha256": "8a28874645b57aa77953ab80598a3ab6b998e9b889569365d2b54cc7d0e2e1e8"
-          },
-          "figma": {
-            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
-            "frame_id": "286:2",
-            "photo_node": "286:3",
-            "overlay_node": "286:4",
-            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=286-2"
-          },
-          "assets": {
-            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/provenance.json",
-            "sha256": "f906e7c58712b6d5cd8f0a3e04a75c5ee4b7fdc9c0c08a7688626c7e4ab16afe"
-          },
-          "verdict": "AI_FAIL",
-          "preserved": true
-        }
-      ],
+      "versions": [],
       "poster_human_verdict": "PENDING",
-      "old_cycle_human_verdict": "REJECTED",
-      "review_inputs": {
-        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json",
-        "sha256": "e26b131c8132425149179881b266dd156e61175ee6518a060cc8b21fb65a1921"
-      },
-      "carrier_amendment": {
-        "path": "continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
-        "sha256": "f5b5941512d15fc4ac5b73ec4dae5313cb098df6d6c5fa5ba801278f86a01df9"
-      }
+      "old_cycle_human_verdict": "REJECTED"
     }
   }
 }

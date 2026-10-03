@@ -1,0 +1,46 @@
+{
+  "schema_version": "vpd-formal-worker-review-carrier-amendment/v1",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "work_unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+  "scope": "CURRENT_CORRECT_SOURCE_FORMAL_WORKER_REVIEW",
+  "attachments_required": [
+    "P",
+    "N",
+    "R",
+    "S",
+    "T"
+  ],
+  "input_roles": {
+    "P": "Historical typography/layout approved, photography rejected",
+    "N": "Historical full design rejected",
+    "R": "Frozen original reference, upper advertisement only",
+    "S": "Latest human-approved clean local photography reconstruction 7fd7777f, no branding verdict",
+    "T": "Current complete poster; target human and prior AI verdict hidden"
+  },
+  "allowed_carriers": [
+    "FRESH_FORK_NONE_PIXEL_AGENT",
+    "FRESH_PROJECTLESS_CODEX_WORKER"
+  ],
+  "creator_history_inherited": false,
+  "reviewer_repo_reads_allowed": false,
+  "previous_four_image_and_source_five_image_protocols_preserved": true,
+  "source": {
+    "kind": "CURRENT_HUMAN_USER_MESSAGE",
+    "authorization_ref": {
+      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
+      "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
+    },
+    "scope": "User explicitly requested independent worker; worker cannot change mainline"
+  },
+  "actual_recovery_trigger": {
+    "tool": "collaboration.spawn_agent",
+    "requested_task": "independent_worker_governance_audit",
+    "result": "collab spawn failed: agent thread limit reached",
+    "prior_cli_failure": {
+      "path": "evidence/vpd/codex_takeover_20261003/CLI_CARRIER_FAILURE.json",
+      "sha256": "34bc437f172760c7e4c88eb826e2929dcd41d7244ab5cab2aa7137f6f48da5e0"
+    }
+  },
+  "projectless_verification": "Actual create_thread call and returned unique thread; one runtime turn_context; five view_image results only; no creator history or other reads; no fake fork-none spawn",
+  "root_state_writer_only": true
+}

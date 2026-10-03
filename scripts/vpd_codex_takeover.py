@@ -47,7 +47,7 @@ def write_transaction(updates):
             if tmp.exists():tmp.unlink()
 
 def main():
-    a=argparse.ArgumentParser(); a.add_argument('--receipt',required=True); a.add_argument('--status',required=True); a.add_argument('--next',required=True); a.add_argument('--focus',required=True); a.add_argument('--versions',type=int,default=0); a.add_argument('--revisions',type=int,default=0); args=a.parse_args()
+    a=argparse.ArgumentParser(); a.add_argument('--receipt',required=True); a.add_argument('--status',required=True); a.add_argument('--next',required=True); a.add_argument('--focus',required=True); a.add_argument('--versions',type=int,default=0); a.add_argument('--revisions',type=int,default=0); a.add_argument('--actor',choices=['ROOT_EXECUTOR']); args=a.parse_args()
     if not 0<=args.versions<=3 or not 0<=args.revisions<=2: raise ValueError('BUDGET_EXCEEDED')
     current_branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()
     if current_branch!=BRANCH: raise ValueError('BRANCH_DRIFT')
@@ -74,6 +74,8 @@ def main():
         if receipt.get(key):take[key]=receipt[key]
     unit = take.get('worker_continuation')
     if unit:
+        if args.actor != 'ROOT_EXECUTOR' or os.environ.get('CODEX_THREAD_ID') != '01a0ffab-c9b7-7c40-b55b-e51535c156dd':
+            raise ValueError('WORKER_STATE_WRITE_NOT_AUTHORIZED')
         old_unit = (prior or {}).get('worker_continuation')
         if old_unit:
             if old_unit['unit_id'] != unit['unit_id']: raise ValueError('WORKER_CANNOT_CHANGE_UNIT')
@@ -130,6 +132,12 @@ def main():
     for rel in [LOCK,CP,ADAPTER]:
         p=ROOT/BASE/'history'/('revision_'+str(lock['revision']-1))/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(evidence_bytes(ROOT/rel))
     write_transaction({ROOT/LOCK:encoded(lock),ROOT/CP:encoded(cp),ROOT/ADAPTER:encoded(adapter),ROOT/ledger:new_ledger})
+    try:
+        from visual_memory.vpd_locked_mainline_state import validate_locked_mainline
+        validate_locked_mainline(ROOT)
+    except BaseException:
+        write_transaction(originals)
+        raise
     print(json.dumps({'revision':lock['revision'],'checkpoint':cp['sequence'],'next':args.next,'remote_parent':remote},ensure_ascii=False))
 
 if __name__=='__main__':

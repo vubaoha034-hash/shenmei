@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 270,
+  "revision": 272,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CORRECT_SOURCE_WORDMARK_TYPOGRAPHY_WITH_INDEPENDENT_WORKER",
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
+  "current_stage": "认可摄影上文字系统第一次修订；独立worker实际否决V1；主线与旧失败记录保留",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
   "p6_allowed": false,
-  "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
+  "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -143,7 +143,7 @@
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
     "current_image_generation_authorization": 0,
-    "current_figma_canvas_authorization": 3,
+    "current_figma_canvas_authorization": 2,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
@@ -215,16 +215,17 @@
       }
     },
     "independent_worker_contract": {
-      "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
-      "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
+      "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
+      "sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28"
     }
   },
   "completed_this_revision": [
-    "保存刘先生对摄影修补候选的真人认可，冻结精确7fd7777f完整底图",
-    "保存独立worker及无权改主线边界；原三版失败预算及历史完整保留",
-    "按同一未完成任务续办字标文字；本次主执行者有界自限、不进入新主线阶段"
+    "V1真实完整海报已制作、Figma导出、Drive回读字节一致",
+    "新项目外worker真实单一GPT-6.1 Sol/Max上下文读取五图；AI_FAIL结论原样保留",
+    "同一方向据具体文字问题进入第一次修订；摄影冻结",
+    "实现审查发现的创建返回身份与源像素弱校验已修复；不冒充真人成品认可"
   ],
-  "updated_at": "2026-10-03T20:46:05.000959+08:00",
+  "updated_at": "2026-10-03T21:30:01.239819+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2519,8 +2520,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
-    "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
+    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/NATIVE_REVIEW_RECEIPT.json",
+    "sha256": "73f0719597e066a40797622fb19ed70be63a1cd2b49cf50c69f1802b37e8a6b8"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3162,8 +3163,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AUTHORIZED",
-    "next_required_action": "CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -3173,8 +3174,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_AUTHORIZED_RECEIPT.json",
-      "sha256": "10581705f705475e3600ae16d19855ff8fe03f51d9c2467deb5ef7db546a6eae"
+      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/NATIVE_REVIEW_RECEIPT.json",
+      "sha256": "73f0719597e066a40797622fb19ed70be63a1cd2b49cf50c69f1802b37e8a6b8"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3192,7 +3193,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "5d1012f6e21a2af6340f0df15feaad28dfcbce725a62e62f6a3a0cea93e653c0"
+      "sha256": "e7a8a1e2be3f5a4004549168b389b8cd1c9d2421593deba93b3d761c0c618067"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -3251,14 +3252,14 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "AUTHORIZED",
+      "phase": "REVISION_REQUIRED",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
       },
       "worker_contract": {
-        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT.json",
-        "sha256": "a5f63612824f456c314262b62bca842b7e50a01f0791b51d6e91e94c6364e734"
+        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
+        "sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28"
       },
       "source_approval": {
         "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
@@ -3282,7 +3283,7 @@
       },
       "budget": {
         "formal_versions_max": 3,
-        "formal_versions_used": 0,
+        "formal_versions_used": 1,
         "revisions_max": 2,
         "revisions_used": 0,
         "photo_generations": 0,
@@ -3293,9 +3294,50 @@
         "parallel_alternatives": 0,
         "hidden_variants": 0
       },
-      "versions": [],
+      "versions": [
+        {
+          "number": 1,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
+            "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/TECHNICAL_CHECK.json",
+            "sha256": "e67aa8c84a89a24153b31b1211c2cf58defc627ad76cfb0a5ef7d855fd394b6e"
+          },
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "12f401759d8d0ea3d7b818d237327324b6a667db44544b9a59340e2f26fa7568"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/DRIVE_ARCHIVE.json",
+            "sha256": "8a28874645b57aa77953ab80598a3ab6b998e9b889569365d2b54cc7d0e2e1e8"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "286:2",
+            "photo_node": "286:3",
+            "overlay_node": "286:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=286-2"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/provenance.json",
+            "sha256": "f906e7c58712b6d5cd8f0a3e04a75c5ee4b7fdc9c0c08a7688626c7e4ab16afe"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true
+        }
+      ],
       "poster_human_verdict": "PENDING",
-      "old_cycle_human_verdict": "REJECTED"
+      "old_cycle_human_verdict": "REJECTED",
+      "review_inputs": {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json",
+        "sha256": "e26b131c8132425149179881b266dd156e61175ee6518a060cc8b21fb65a1921"
+      },
+      "carrier_amendment": {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
+        "sha256": "f5b5941512d15fc4ac5b73ec4dae5313cb098df6d6c5fa5ba801278f86a01df9"
+      }
     }
   },
   "current_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
