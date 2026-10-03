@@ -1,0 +1,85 @@
+{
+  "schema_version": "project-user-instruction-amendment/v1",
+  "instruction_id": "UNIFIED-MODEL-PREFERENCE-AND-MAINLINE-PRESERVATION-20261003-01",
+  "project_id": "visual-aesthetic-vpd",
+  "source": {
+    "type": "CURRENT_EXPLICIT_USER_MESSAGE",
+    "project": "统一指挥",
+    "submitted_at": "2026-10-03T07:49:50+08:00",
+    "conversation_url": null,
+    "conversation_url_status": "NOT_OBSERVED",
+    "necessary_quotes": [
+      "尽量用  GPT  6.1 sol  max格式。因为这个工作的更稳定。好吧。所有项目都一样。",
+      "而后你作为一个审核者，不要轻易去改变我的项目的主线任务。除非我让你改变。"
+    ]
+  },
+  "recorded_at": "2026-10-03T00:01:11.910Z",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "source_head": "ecca511c16576d5d086d50fd3d094049221c2eed",
+  "amendment_scope": [
+    "FUTURE_EXECUTION_MODEL_PREFERENCE",
+    "UNIFIED_COORDINATOR_MAINLINE_CHANGE_AUTHORITY"
+  ],
+  "execution_preference": {
+    "preferred_model_id": "gpt-6.1-sol",
+    "preferred_display_name": "GPT-6.1 Sol",
+    "preferred_reasoning_effort": "max",
+    "availability_policy": "PREFER_WHEN_AVAILABLE",
+    "override_older_model_and_effort_defaults": true,
+    "model_preference_alone_switches_chat_work": false,
+    "actual_model_and_effort_must_be_observed": true,
+    "unavailable_case": "如实记录实际设置与不可用原因；不宣称偏好已经成为运行配置。"
+  },
+  "coordinator_boundary": {
+    "role": "总审核员、总调度员",
+    "mainline_change_requires_explicit_user_instruction": true,
+    "reviewer_opinion_alone_authorizes_mainline_change": false,
+    "failed_test_alone_authorizes_coordinator_mainline_change": false,
+    "continue_existing_authorized_serial_steps": true,
+    "previously_authorized_bounded_native_revision_scope_preserved": true,
+    "scope_not_expanded": true
+  },
+  "preserved_current_focus": {
+    "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "status": "VPD_CANDIDATE_88_HUMAN_FINAL_FAIL_PHOTO_PROTECTED_TYPOGRAPHY_WORDMARK_REDESIGN_REQUIRED",
+    "next_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
+  },
+  "source_authorities": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "git_blob": "747dc6b90a29eb3250871aa9a7810c5b63e7232f"
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "git_blob": "882fedf956a98629d9d38265ba2d0911e2219fd8"
+    },
+    {
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "git_blob": "3b387984d98d360223e68df994a517cfeff16a5e"
+    },
+    {
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "git_blob": "22d8f96ef19367d7accc23d501397e0872bb079e"
+    }
+  ],
+  "validation": {
+    "original_entrypoint_recovered_exactly_after_removing_new_section": true,
+    "current_task_state_files_modified": false,
+    "mainline_contracts_modified": false,
+    "candidate_or_version_changed": false,
+    "artifact_generation_count": 0,
+    "chat_dispatch_count": 0,
+    "automation_resumed": false,
+    "gate_status_or_acceptance_promoted": false,
+    "required_native_business_validators": "NOT_RUN_NO_BUSINESS_EXECUTION_OR_NATIVE_STATE_TRANSITION_IN_THIS_INSTRUCTION_ONLY_CHANGE",
+    "full_historical_chat_coverage": "PARTIAL"
+  },
+  "runtime_rollout": {
+    "preference_instruction_persisted_when_commit_and_readback_succeed": true,
+    "all_five_live_model_switches_verified": false,
+    "automatic_platform_enforcement": false
+  },
+  "entrypoint": "START_HERE.md",
+  "settlement": "USER_INSTRUCTION_RECORDED_WITH_EXISTING_NATIVE_TASK_AND_NEXT_ACTION_PRESERVED"
+}
