@@ -1,0 +1,195 @@
+{
+  "schema_version": "vpd-professional-audit-persistence-supplement/v1",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "result": "PERSISTENCE_AND_CURRENT_ENTRY_RECOVERY_VERIFIED_AESTHETIC_AI_FAIL",
+  "read_only": true,
+  "files_or_business_state_written": false,
+  "figma_nodes_modified": false,
+  "extends": {
+    "path": "evidence/vpd/codex_takeover_20261003/PROFESSIONAL_AUDIT.json",
+    "sha256": "01a596ed7e7146a113251447da1bc145990851d530f62026e61d3012de923635",
+    "original_report_preserved": true,
+    "original_aesthetic_conclusion_unchanged": true
+  },
+  "auditor_runtime": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "actual_model": "gpt-6.1-sol",
+    "actual_reasoning_effort": "max",
+    "identity_verified_from": "CODEX_THREAD_ID及该显式文件session_meta/turn_context",
+    "aesthetic_cold_review_claimed": false,
+    "completed_rollout_sha256": null,
+    "final_binding_requirement": "主执行者应在本回合完成后，从上述显式文件原样提取最终JSON并计算完整rollout SHA；运行中的快照SHA不能冒充最终SHA。"
+  },
+  "first_persistence_failure": {
+    "remote_commit": "51baee3bfeb9b3dcbb6cd76ec2c15f7b89858c4d",
+    "result": "FAIL",
+    "actual_failure": "EVIDENCE_HASH_MISMATCH:evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+    "cause": "首次入库将尚未跟踪的CRLF证据规范化为LF，锁内仍绑定原始CRLF字节SHA。",
+    "declared_receipt_sha256": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9",
+    "failed_repository_receipt_sha256": "32667f9e2c1e6d407b35177c873e07cb2f88e8a5ad4e4885e5826f243fc7788f",
+    "failure_preserved": {
+      "path": "evidence/vpd/codex_takeover_20261003/FRESH_ENTRY_RECOVERY_FAILED_51.json",
+      "sha256": "8c91b99013e5f21dc1bb5a64e69e1e90043bd75fb10cd1154062db555f9331ef"
+    },
+    "actual_runtime_verified": {
+      "thread_id": "01a10099-4c51-7a72-89ed-ee414dfc926b",
+      "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T15-10-08-01a10099-4c51-7a72-89ed-ee414dfc926b.jsonl",
+      "sha256": "44cedf1f5787b8f43519f97a5ebb8ad0c847a822401cdc50af70cd8fe3d17c15",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "effort": "max"
+    },
+    "interpretation": "首次六个Git blob回读匹配证明保存一致，未证明内部SHA引用有效；真实失败没有被成功保存声明覆盖。"
+  },
+  "byte_preservation_repair": {
+    "result": "VERIFIED",
+    "scope": [
+      "continuity/vpd/codex_takeover_20261003/** -text",
+      "evidence/vpd/codex_takeover_20261003/** -text"
+    ],
+    "modified_existing_files": 62,
+    "independent_exact_comparison": "62个文件逐一比较，仅CRLF/LF差异；修复回执中每对修复前后SHA均重算匹配。",
+    "guard_rules_loosened": false,
+    "unchanged_git_blobs_verified": [
+      "visual_memory/vpd_task_lock.py",
+      "visual_memory/vpd_p6_composition_state.py",
+      "scripts/vpd_collect_agent_review.py",
+      "scripts/vpd_codex_takeover.py",
+      "scripts/vpd_pixel_review.py",
+      "scripts/vpd_export_photo_safe.py",
+      "scripts/vpd_download_bound_asset.py",
+      "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "continuity/vpd/LATEST_CHECKPOINT.json",
+      "PROJECT_CONTROL_ADAPTER.json",
+      "continuity/vpd/state_ledger/commercial_design_pipeline.jsonl"
+    ],
+    "historical_human_evidence_outside_scope": "继续采用原Git规范字节处理，未因本修复改变。",
+    "repair_receipt": {
+      "path": "evidence/vpd/codex_takeover_20261003/EVIDENCE_BYTE_PRESERVATION_FIX.json",
+      "sha256": "2488a31b8a667d5c0ac46020ea395c4524a274738ec2818eaeb9dfea42e52499"
+    }
+  },
+  "official_remote_verification": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "verified_commit": "51cc7557bfa9e68667e7e650b3ead05c21e89891",
+    "parent": "51baee3bfeb9b3dcbb6cd76ec2c15f7b89858c4d",
+    "tree": "aeaedc51e2bbfb1b14ea229b8ad7cfa27e14ee94",
+    "local_author_commit": "b13d35086ea8578493392ab9fdd66160e822c80e",
+    "local_remote_tree_equal": true,
+    "current_branch_ref_verified": true,
+    "verification_carrier": "独立官方GitHub GET及固定提交文件回读",
+    "nested_reference_instances_checked": 35,
+    "unique_referenced_repository_files_checked": 32,
+    "all_checked_sha256_references_match": true,
+    "checkpoint_and_adapter_lock_sha_match": true,
+    "key_restored_bindings": {
+      "canonical_delivery_receipt": "c3d091b7e62861a9c58fd0d549ef2914d656204c5d0f0e6eb1720572bb359ba9",
+      "corrected_pixel_review": "1cf939dbc8eb059df530a0ab55f9fa82c5a5b7eb5ff68cfd5ed0f58414ebcc26",
+      "reuse_final": "506e2054b1862caeaa9cec9360ec63c916227c02532c12bc0dfeb4a607d1b93f",
+      "delivery_asset_manifest": "b50ff60867e909437c4c0355931da06201e694a819ed0e0a1e7a3c68498c7520",
+      "canonical_input_provenance": "d76f6834cef3c0ddec97050129ef557a28f6d1d902e4a7d09aabf50cb1135c52",
+      "canonical_holdout_comparison": "66d486bc389366d781dd64bb4c66d1e6b0d2369cbdbdaa61f7a015effce7a327"
+    }
+  },
+  "fresh_entry_recovery": {
+    "result": "PASS_WITH_LIMITATIONS",
+    "workspace": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-fresh-recovery-fixed-20261003",
+    "head": "51cc7557bfa9e68667e7e650b3ead05c21e89891",
+    "new_clone_setup": "实际完成的Git clone命令退出0并报告Cloning；私有像素不在提交树中。",
+    "actual_fresh_spawn_verified": {
+      "call_id": "call_X6IKrYmfIeEGaOYHiVTABRXV",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "effort": "max"
+    },
+    "actual_completed_runtime": {
+      "thread_id": "01a100ab-d77b-7aa3-875b-52d1335a5cb5",
+      "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T15-30-24-01a100ab-d77b-7aa3-875b-52d1335a5cb5.jsonl",
+      "sha256": "e57cc65255f13b81c48df91e1f5e872fbe8498f298767f845109074a7939cf4d",
+      "turn_context_count": 1,
+      "actual_image_view_items": 2,
+      "first_repository_reads_include_START_HERE": true,
+      "saved_report_equals_actual_completed_answer": true
+    },
+    "saved_report": {
+      "path": "evidence/vpd/codex_takeover_20261003/FRESH_ENTRY_RECOVERY_VERIFIED.json",
+      "sha256": "d1d1fa119cdfe41875a240e04061dfb721fb817b94973382e13df6e2957db9e8"
+    },
+    "actual_restored_assets_independently_rehashed": [
+      {
+        "node": "259:3",
+        "path": ".liu-visual-private/source-r4.png",
+        "bytes": 1797503,
+        "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+        "dimensions": [1536, 1024],
+        "format": "PNG RGB 8bit"
+      },
+      {
+        "node": "261:2",
+        "path": ".liu-visual-private/versions/v3/poster.png",
+        "bytes": 1821889,
+        "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a",
+        "dimensions": [1536, 1024],
+        "format": "PNG RGB 8bit"
+      }
+    ],
+    "method": "官方rawImages原始字节下载；未用export重新渲染。",
+    "independent_native_validate_state": {
+      "result": "PASS",
+      "lock_revision": 261,
+      "checkpoint": 283,
+      "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+      "formal_versions_used": 3,
+      "revisions_used": 2,
+      "candidate_promoted": false
+    },
+    "scope_limit": "此新克隆实际恢复及查看R4和V3；没有声称已恢复V1、V2或完整四图审稿包。该恢复代理的CLI远端查询失败，由本审查者的官方远端回读补足固定提交核验。"
+  },
+  "editable_source_and_font_readiness": {
+    "official_live_structure_verified": {
+      "source": "259:2 FRAME，1536×1024",
+      "photography": "259:3 FRAME，锁定，原图image fill、单位变换、零滤镜",
+      "wordmark": "259:46 FRAME → 259:47 GROUP → 16个闭合VECTOR",
+      "copy": "259:64 FRAME → 259:65/66 TEXT，一杯茶，／慢下来"
+    },
+    "preserved_type_probe_error": "UNEXPECTED_SOURCE_TYPES：恢复代理预设摄影为RECTANGLE；实际只读诊断及本审查者官方回读均确认其为FRAME，未改设计。",
+    "font_snapshots": {
+      "auditor_live_read": "两TEXT曾实际返回hasMissingFont=true。",
+      "auditor_catalog_read": "Noto Serif SC / Medium实际列为可用。",
+      "writer_readiness_run": "加载现有fontName及variationSettings.wght=500成功；其该次调用前后hasMissingFont均为false。",
+      "difference_root_cause": "UNKNOWN",
+      "permanent_font_absence_or_permanent_readiness_claimed": false
+    },
+    "font_receipt": {
+      "path": "evidence/vpd/codex_takeover_20261003/COLD_FONT_READINESS.json",
+      "sha256": "1594312501e629972281d4a83a040c17a12c3117799704d1d62872e3ae982468",
+      "actual_root_tool_output_call_id": "call_3QfSlbwH2iHcuzv3j72vE83B",
+      "raw_tool_result_matches_receipt_fields": true,
+      "before_after_text_font_size_position_dimensions_equal": true,
+      "created_node_ids": [],
+      "mutated_node_ids": []
+    },
+    "future_edit_condition": "每次冷进入先发现目录，再加载节点实际当前字体及variationSettings；加载失败如实记录环境阻塞，不替换字体或转曲。",
+    "entry_note_pointer_verified": "START_HERE.md已指向ENTRY_RECOVERY_NOTES.md，保留错误、字体快照差异及加载条件。",
+    "write_permission_probe_performed": false
+  },
+  "conclusion": {
+    "bounded_production_completed": true,
+    "current_artifacts_and_native_state_recoverable": true,
+    "aesthetic_verdict": "AI_FAIL",
+    "human_verdict": "PENDING",
+    "personal_fit": null,
+    "new_unresolved_technical_blockers_at_checked_snapshot": [],
+    "promotion_allowed": false,
+    "fourth_version_authorized": false,
+    "unique_next_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
+    "retained_limits": [
+      "审稿prompt副本SHA仍不能绑定加密spawn明文，NOT_VERIFIABLE声明保留。",
+      "摄影保护是固定源及保护区数值RGB保真；隐藏背景恢复和任意ICC转换未证明。",
+      "流程跑通、源结构及当前恢复已有证据；视觉提升、时间节省、迁移及长期系统完成未证明。"
+    ],
+    "pending_writer_seal": "本补充报告、fresh恢复回执、字体回执和新增入口说明的最终原生receipt绑定及后续远端提交，尚不属于本报告已核实的51cc7557快照。"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "vpd-final-delivery-validation-boundaries/v1",
+  "checked_at": "2026-10-03T07:49:00.374048+00:00",
+  "source_and_delivery_sha_unchanged": {
+    "source": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+    "delivery": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a"
+  },
+  "actual_implementation_tests": {
+    "result": "PASS",
+    "passed": 23,
+    "elapsed_seconds": 16.55,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests/visual_memory/test_vpd_isolated_pixel_review.py tests/visual_memory/test_vpd_bound_asset_download.py -q",
+    "scope": "Exact unique image binding despite asynchronous completion order, duplicate rejection, isolation/model proofs, HTTP202/PNG/SHA failures and bounded recovery"
+  },
+  "new_code_changes_after_targeted_tests": false,
+  "bounded_metadata_persistence_fix": "Scoped .gitattributes; actual new remote clone test passed. No repeat implementation tests needed for byte-preserving metadata.",
+  "independent_new_context_recovery": {
+    "report": "FRESH_ENTRY_RECOVERY_VERIFIED.json",
+    "overall": "PASS_WITH_LIMITATIONS",
+    "actual_native_exit_code": 0,
+    "actual_image_views": 2,
+    "protected_pixels_changed": 0,
+    "lock_revision": 261,
+    "checkpoint": 283,
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max"
+  },
+  "independent_remote_recheck": "Professional supplement covers 51cc7557 actual remote bytes and complete current receipt references; first51failure retained.",
+  "font_loading": "Existing Noto Serif SC Medium wght500 loaded successfully; existing characters/font/size/xy/wh unchanged; no canvas mutation, new export or formal version. Different cold missingFont snapshots retained.",
+  "aesthetic_result": "AI_FAIL",
+  "visual_benefit": "UNVERIFIED",
+  "human_verdict": "PENDING",
+  "time_savings": "NOT_MEASURED",
+  "editable_vectors_and_text": "ACTUAL_SOURCE_READBACK_VERIFIED; font runtime preparation required",
+  "formal_versions_used": 3,
+  "revisions_used": 2,
+  "fourth_design_authorization": false,
+  "system_or_second_style_complete": false,
+  "native_final_append": "Main writer will append existing lock/checkpoint/ledger once using immutable final receipt, then run actual current guard and separately read final remote contents. This statement is not a prospective success claim."
+}

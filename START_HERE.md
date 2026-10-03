@@ -2,6 +2,7 @@
 
 <!-- CODEX_BOUNDED_CHAZUO_DELIVERY_20261003 -->
 本轮已明确授权Codex制作茶作成品及Figma写入，取代该任务旧零额度/Chat-only限制；历史限制仍保留原范围。按下文读取当前任务锁后，若 `codex_takeover.task_id` 为 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`，继续读 `continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md`：真实成品、源节点、精确PNG恢复、独立审稿、依赖和失败边界均在此。三版/两修订已用尽，当前动作以任务锁为准，不按历史下一步再出图。
+保存与冷进入补充：接着读 `continuity/vpd/codex_takeover_20261003/ENTRY_RECOVERY_NOTES.md`。其中保留首次新克隆的真实哈希失败、限定字节保存修复、全新上下文的实际PNG恢复验证、源节点真实类型与冷环境字体加载条件；这些工程验证不把AI_FAIL改为通过。最终审查与恢复证据以最新原生receipt引用为准。
 <!-- END_CODEX_BOUNDED_CHAZUO_DELIVERY_20261003 -->
 
 <!-- UNIFIED_USER_INSTRUCTION_20261003 -->

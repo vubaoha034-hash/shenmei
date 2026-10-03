@@ -1,0 +1,280 @@
+{
+  "overall": "PASS_WITH_LIMITATIONS",
+  "workspace": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-fresh-recovery-fixed-20261003",
+  "head": "51cc7557bfa9e68667e7e650b3ead05c21e89891",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "thread_id": "01a100ab-d77b-7aa3-875b-52d1335a5cb5",
+  "thread_id_source": "实际 CODEX_THREAD_ID 环境变量",
+  "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T15-30-24-01a100ab-d77b-7aa3-875b-52d1335a5cb5.jsonl",
+  "runtime_scope": "仅按自身 thread_id 找到 rollout 文件名，未读取任何 session 正文；实际模型与强度由主执行者核对，不宣称已切换。",
+  "read_paths": [
+    "START_HERE.md",
+    "AGENTS.md",
+    "PROJECT_CONTROL_ADAPTER.json",
+    "VPD_PROJECT_ROADMAP.md",
+    "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "continuity/vpd/LATEST_CHECKPOINT.json",
+    "continuity/vpd/MAINLINE_LOCK_20261001.md",
+    "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+    "continuity/vpd/codex_takeover_20261003/REUSE_FINAL.md",
+    "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
+    "continuity/vpd/codex_takeover_20261003/PHOTO_PROTECTION.json",
+    "evidence/vpd/codex_takeover_20261003/DELIVERY_ASSET_MANIFEST.json",
+    "evidence/vpd/codex_takeover_20261003/v3/CANONICAL_DELIVERY_RECEIPT.json",
+    "evidence/vpd/codex_takeover_20261003/v3/TECHNICAL_CHECK.json",
+    "evidence/vpd/codex_takeover_20261003/v3/EXPORT_FIDELITY.json",
+    "evidence/vpd/codex_takeover_20261003/v3_corrected/PIXEL_REVIEW.json",
+    "evidence/vpd/codex_takeover_20261003/PROOF_LIMITATIONS.json",
+    "scripts/vpd_download_bound_asset.py",
+    ".git/config",
+    ".liu-visual-private/source-r4.png",
+    ".liu-visual-private/versions/v3/poster.png"
+  ],
+  "tool_guidance_read": [
+    "C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/SKILL.md",
+    "C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/plugin-api-standalone.index.md",
+    "C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/gotchas.md",
+    "C:/Users/Administrator/.codex/plugins/cache/openai-curated-remote/figma/15.0.0/skills/figma-use/references/plugin-api-standalone.d.ts"
+  ],
+  "restoration": {
+    "method": "官方 figma_download_assets.rawImages，未使用 export 重渲染",
+    "original": {
+      "node": "259:3",
+      "path": ".liu-visual-private/source-r4.png",
+      "sha256": "7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed",
+      "size_bytes": 1797503,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "download_attempts": 1,
+      "pixels_actually_viewed": true,
+      "pixel_evidence": "白色斑点陶杯、金黄茶汤、右侧干茶盘、前景鲜叶与木盘，绿树林虚化背景；左上白弧线及右上深绿色文字色板已烘焙在原件内。"
+    },
+    "final": {
+      "node": "261:2",
+      "path": ".liu-visual-private/versions/v3/poster.png",
+      "sha256": "078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a",
+      "size_bytes": 1821889,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "download_attempts": 1,
+      "pixels_actually_viewed": true,
+      "pixel_evidence": "同一摄影主体；右上硬矩形内是大型米白“茶作”字标及两行“一杯茶，／慢下来”；左上出现无文字的深绿色短矩形。"
+    },
+    "image_view_count": 2,
+    "fresh_rgb_comparison": {
+      "method": "只读标准库 PNG 解码，逐像素比较恢复文件",
+      "protected_pixels_compared": 1356936,
+      "protected_pixels_changed": 0,
+      "overlay_envelopes": [
+        [
+          920,
+          94,
+          1536,
+          409
+        ],
+        [
+          32,
+          28,
+          224,
+          142
+        ]
+      ],
+      "exit_code": 0
+    }
+  },
+  "commands": [
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch --show-current",
+      "exit_code": 0
+    },
+    {
+      "command": "git check-ignore -- .liu-visual-private/asset-url-photo.json .liu-visual-private/asset-url-final.json .liu-visual-private/source-r4.png .liu-visual-private/versions/v3/poster.png",
+      "exit_code": 0
+    },
+    {
+      "command": "python -B scripts/vpd_download_bound_asset.py --url-file .liu-visual-private/asset-url-photo.json --sha256 7d84d35523afcb2d7599c438fc946801608e85c5489a5cde08d55f13eea4c9ed --dest .liu-visual-private/source-r4.png",
+      "exit_code": 0
+    },
+    {
+      "command": "python -B scripts/vpd_download_bound_asset.py --url-file .liu-visual-private/asset-url-final.json --sha256 078ec5aea6f9f0356a3528274588a0d75bb1533d30d9f86eedd93aaa3984f04a --dest .liu-visual-private/versions/v3/poster.png",
+      "exit_code": 0
+    },
+    {
+      "command": "python -B scripts/verify_visual_memory.py --vpd-state --status-card",
+      "exit_code": 0,
+      "note": "初次输出存在编码乱码"
+    },
+    {
+      "command": "python -B -X utf8 scripts/verify_visual_memory.py --vpd-state --status-card",
+      "exit_code": 0,
+      "note": "为核实输出而明确使用 UTF-8；状态检查通过"
+    },
+    {
+      "command": "git ls-remote origin refs/heads/visual-program-distillation-v2-photography-design-20260814",
+      "exit_code": 1
+    },
+    {
+      "command": "git config --show-origin --get-regexp '^(http\\..*sslBackend|remote\\.origin\\.(url|fetch))$'",
+      "exit_code": 0,
+      "note": "远端失败后唯一一次只读配置诊断"
+    },
+    {
+      "command": "PNG 头、SHA 与保护区 RGB 比较的只读 Python stdin 程序",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --untracked-files=all",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "current_state": {
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "status": "VPD_CODEX_CHAZUO_DELIVERED_AI_FAIL_HUMAN_PENDING",
+    "lock_revision": 261,
+    "checkpoint": 283,
+    "production": "三版完整成品制作完成",
+    "ai_judgment": "三版原审及最终 V3 纠正正校准后的冷审均 AI_FAIL",
+    "human_acceptance": "本轮最终成品 PENDING；历史真人正向仅覆盖摄影",
+    "candidate_promoted": false,
+    "long_term_system_complete": false,
+    "unique_next_action": "LIU_XIANSHENG_REVIEW_FINAL_CHAZUO_POSTER_AND_FAILED_REVIEW",
+    "next_action_meaning": "将最终第三版及失败意见交刘先生验收",
+    "budget": {
+      "formal_versions": "3/3",
+      "revisions": "2/2",
+      "remaining": 0,
+      "current_image_authorization": 0,
+      "current_figma_write_authorization": 0,
+      "photo_generations": 0,
+      "paid_compute_usd": 0,
+      "training": 0,
+      "automations": 0,
+      "second_style": 0
+    }
+  },
+  "access_verification": {
+    "editable_source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=259-2",
+    "result": "通过官方工具实际只读核实",
+    "page": "251:2",
+    "frame": {
+      "id": "259:2",
+      "type": "FRAME",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "photography": {
+      "id": "259:3",
+      "actual_type": "FRAME",
+      "locked": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "relative_transform": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "image_hash": "9e4c31ad3736a2fe49ba30d35697e6972156245c"
+    },
+    "wordmark": {
+      "id": "259:46",
+      "vector_count": 16,
+      "all_paths_closed": true
+    },
+    "texts": [
+      {
+        "id": "259:65",
+        "type": "TEXT",
+        "characters": "一杯茶，"
+      },
+      {
+        "id": "259:66",
+        "type": "TEXT",
+        "characters": "慢下来"
+      }
+    ],
+    "font": "Noto Serif SC Medium，字号 32",
+    "write_permission_tested": false,
+    "created_nodes": [],
+    "mutated_nodes": [],
+    "preserved_error": "首次只读查询预设摄影节点为 RECTANGLE，返回 UNEXPECTED_SOURCE_TYPES；一次只读诊断核实其实际为 FRAME，未修改设计。"
+  },
+  "protection": {
+    "scope": "保留原始 R4 摄影、构图、材质、光影、色彩、尺度和裁切；仅已声明两处设计覆盖区域允许可逆设计层。",
+    "prohibited": "重新生成、重拍、修复隐藏背景、重新调色、裁切、重采样、覆盖原件或修改历史节点。",
+    "clean_textless_source": "未找到",
+    "hidden_photography": "UNKNOWN_NOT_RECOVERED"
+  },
+  "modification_scope": {
+    "written_files": [
+      ".liu-visual-private/asset-url-photo.json",
+      ".liu-visual-private/asset-url-final.json",
+      ".liu-visual-private/source-r4.png",
+      ".liu-visual-private/versions/v3/poster.png"
+    ],
+    "all_written_files_gitignored": true,
+    "tracked_files_changed": false,
+    "task_lock_checkpoint_ledger_changed": false,
+    "figma_nodes_changed": false,
+    "commits_or_remote_writes": false,
+    "other_clones_or_session_bodies_read": false
+  },
+  "limitations": [
+    "远端最新 HEAD 未核实：git ls-remote 的真实错误为 schannel AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)。只读配置诊断确认 origin 为指定仓库；未修改配置或重试。",
+    "本次实际恢复与查看仅包含原始 R4 和当前最终 V3；未恢复 V1、V2 或完整四图审稿包。",
+    "状态检查证明身份、预算及证据一致性，不能证明审美通过、真人认可、模型绑定或远端发布。",
+    "可编辑源的原生结构与读取访问已核实；未通过写操作验证编辑权限。",
+    "摄影保护是固定原件与已声明区域之外的数值 RGB 保护；不证明隐藏摄影恢复或任意 ICC 色彩转换。",
+    "流程改善有证据；视觉收益、时间节省、迁移、第二风格及长期系统完成仍未证实。"
+  ],
+  "actual_runtime_binding": {
+    "report_extracted_from_actual_final_answer": true,
+    "thread_id": "01a100ab-d77b-7aa3-875b-52d1335a5cb5",
+    "rollout_snapshot_sha256": "e57cc65255f13b81c48df91e1f5e872fbe8498f298767f845109074a7939cf4d",
+    "turn_contexts": [
+      {
+        "model": "gpt-6.1-sol",
+        "effort": "max"
+      }
+    ],
+    "session_source": {
+      "subagent": {
+        "thread_spawn": {
+          "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+          "depth": 1,
+          "agent_path": "/root/fresh_entry_recovery_fixed",
+          "agent_nickname": "Nietzsche",
+          "agent_role": null
+        }
+      }
+    },
+    "actual_image_view_markers": 2,
+    "aesthetic_cold_review_claimed": false,
+    "actual_image_view_paths": [
+      "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-fresh-recovery-fixed-20261003/.liu-visual-private/source-r4.png",
+      "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-fresh-recovery-fixed-20261003/.liu-visual-private/versions/v3/poster.png"
+    ],
+    "image_proof_method": "Actual event_msg item_completed ImageView records, not transcript string placeholders"
+  }
+}
