@@ -1,0 +1,82 @@
+{
+  "result": "ENGINEERING_RECOVERY_RETEST_PASSED",
+  "first_round_preserved": {
+    "snapshot": "34690110e9feb5014d9584c3522d71c1ab435c93",
+    "native_check": "exit 1；EVIDENCE_HASH_MISMATCH:visual_memory/vpd_locked_mainline_state.py；仅CRLF/LF字节差",
+    "candidate_download": "HTTP403两次；第二次正文error code:1010",
+    "original_download": "未尝试；两图均未看像素"
+  },
+  "current_snapshot": {
+    "remote_and_head": "9569ab2b93c7f6c0a1433446a284aa16ad8071fc",
+    "lock_revision": 268,
+    "checkpoint_sequence": 290,
+    "native_check_command": "python -B scripts/verify_visual_memory.py --vpd-state --status-card",
+    "native_check_exit": 0
+  },
+  "entry_verified": "START_HERE → adapter → 原生锁/检查点 → Drive入口/清单",
+  "download_change": "仅添加User-Agent: VPD-Authorized-Asset-Readback/1.0；刷新同两文件官方认证file_uri防过期",
+  "candidate": {
+    "id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+    "attempts": 1,
+    "http": 200,
+    "bytes": 1735549,
+    "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "manifest_match": true,
+    "pixels_viewed": true,
+    "visible_identity": "茶碗、茶叶盘及森林背景，上部无旧字"
+  },
+  "original": {
+    "id": "1a4vS6o7yXaCS-EPU18nGvXsUelc3bnwn",
+    "attempts": 1,
+    "http": 200,
+    "bytes": 2006202,
+    "sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "manifest_match": true,
+    "pixels_viewed": true,
+    "visible_identity": "同场景含茶作字标与一杯茶等旧文案"
+  },
+  "pixel_read_method": "Pillow完整解码＋两次view_image(detail=original)",
+  "private_files": [
+    ".liu-visual-private/fresh_drive_entry_recovery/candidate.png",
+    ".liu-visual-private/fresh_drive_entry_recovery/original.png"
+  ],
+  "next_action": "LIU_XIANSHENG_REVIEW_LOCAL_BACKGROUND_RECONSTRUCTION",
+  "human": {
+    "old_posters": "REJECTED",
+    "reconstruction": "PENDING"
+  },
+  "poster_complete": false,
+  "promoted": false,
+  "budget": {
+    "versions": "3/3",
+    "revisions": "2/2",
+    "repair_edit_calls": "1/1",
+    "new_allowance": 0
+  },
+  "runtime": {
+    "thread_id": "01a1018f-5a82-73a0-8018-d91f9c3e7d44",
+    "agent_path": "/root/fresh_drive_entry_recovery",
+    "model": "gpt-6.1-sol",
+    "effort": "max",
+    "verified_from": "显式rollout文件的session_meta与最新turn_context"
+  },
+  "rollout": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T19-38-54-01a1018f-5a82-73a0-8018-d91f9c3e7d44.jsonl",
+  "limits": [
+    "同一子任务工程复测，未证明新宿主或新审美冷审",
+    "不宣称已证明User-Agent因果",
+    "未切换代理/IP/下载源或伪装浏览器",
+    "未修改业务状态、Figma或代码",
+    "未生成、合成或审美自评",
+    "认证临时引用未写入公共证据"
+  ]
+}

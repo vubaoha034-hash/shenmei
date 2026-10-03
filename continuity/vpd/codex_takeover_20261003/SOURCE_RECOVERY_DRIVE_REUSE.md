@@ -21,6 +21,18 @@ ChatGPT 真实读取步骤：加载 google-drive skill；先按 Drive ID 调 `ge
 
 本机可用 bundled Python urllib/Pillow 读取下载原件，或复用仓库已有的受身份绑定下载脚本；另一宿主必须先发现其实际运行环境。Figma 的 283:5 仍是精确最终 PNG，278:2 是原件，283:2 是锁定原件283:3＋透明层283:4。实际方法、成熟审核 skill 版本、蒙版、保护检查、失败边界和独立评测继续读 `SOURCE_RECOVERY_REUSE.md`；后者是先前 Figma 归档快照，当前主存储以本 Drive 入口和原生锁为准。
 
+实际下载调用设置公开标明工具身份的请求头，`url` 只能使用这次官方 fetch 返回的认证引用：
+
+```python
+req = urllib.request.Request(url, headers={"User-Agent": "VPD-Authorized-Asset-Readback/1.0"})
+with urllib.request.urlopen(req, timeout=40) as response:
+    png_bytes = response.read()
+```
+
+新读取上下文最初恢复到了正确状态，但发现提交后代码SHA因CRLF/LF失配，且默认urllib下载遇到403/1010；均未算作通过。已修正Git原字节引用，在同一子任务自己的工程失败上下文中，用上述已实测请求方式有界复测成功：原生检查exit0，Drive原件与候选均HTTP200、完整SHA/尺寸吻合并实际看图。证据为 `source_recovery/FRESH_ENTRY_DRIVE_BLOCKED.json`、`GIT_CODE_BINDING_REPAIR.json`、`FRESH_ENTRY_DRIVE_VERIFIED.json` 和 `FRESH_ENTRY_DRIVE_RUNTIME.json`。复测是读取工程验证，未冒充新的审美冷审或另一个宿主；刷新引用与请求头同时涉及实际请求，不宣称已经证明User-Agent的单独因果。
+
+保存有SHA引用的代码改动时，先暂存相应代码，使Git规范原字节可核对，再冻结当前回执引用。提交后重新跑原生状态检查，不能用提交前通过替代提交后校验。失败快照3469011、修复提交9569ab2均保留，没有放宽检查规则。
+
 保护结论仍仅为文字邻域外1,259,404个RGB像素完全相同；约19.93%邻域涉及局部背景重建。不是找回原字后隐藏摄影，也不是新海报或真人认可。原第一张的生成模型、seed与完整生成配方仍未确认。不要把本次去字请求当作成功摄影生成规则。
 
 后续已授权任务产生或修改实际图片时，沿用此归档方式：新版本另存，写 Drive ID / revision ID / SHA / 原图、作品和审核对应关系，下载回读；再由唯一主执行者写同一原生任务锁、检查点与账本。没有触发任务时不会自动运行，不恢复定时任务。

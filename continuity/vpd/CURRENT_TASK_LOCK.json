@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 268,
+  "revision": 269,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -200,15 +200,24 @@
         "path": "continuity/vpd/codex_takeover_20261003/DRIVE_ARCHIVE_AUTHORIZATION.json",
         "sha256": "827904b869f935e1722e480a004b028c09f07ff7b2ad94a970a36e9628293e3a"
       },
-      "primary_pixel_storage": "GOOGLE_DRIVE"
+      "primary_pixel_storage": "GOOGLE_DRIVE",
+      "fresh_drive_recovery": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_VERIFIED.json",
+        "sha256": "776f92a2f1bb7cf0293a596bdc935b7a6c6609fae72077e2586a8c3a368e1d23"
+      },
+      "fresh_drive_runtime": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
+        "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
+      }
     }
   },
   "completed_this_revision": [
-    "新的Drive入口冷读检验发现保存后代码SHA引用失配，失败快照与旧回执保留",
-    "仅修正当前原生回执对Git代码原字节的绑定；检查规则及八份图片全部未改",
-    "Drive两图恢复仍在独立检验；当前唯一动作继续为刘先生摄影修补验收"
+    "八份图片实际存入私人Drive并绑定文件/版本ID、SHA和HTTP200原字节回读，Figma源保留",
+    "独立像素审稿及专业审查仅允许摄影修补送真人验收，完整海报仍未完成",
+    "新读取上下文恢复Drive入口，首轮SHA失配和下载403失败保留；针对具体原因有界复测后原生检查及两图实际下载/看图均通过",
+    "实际方法、依赖、成熟skill版本、失败边界和唯一真人摄影验收下一动作已在同一仓库入口保存"
   ],
-  "updated_at": "2026-10-03T19:44:41.359037+08:00",
+  "updated_at": "2026-10-03T19:56:41.949374+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2503,8 +2512,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_REPAIRED_RECEIPT.json",
-    "sha256": "93a706f193d5f1e3e6039fce41869cdb31beac08f91bac7220a9efc92fbdfa51"
+    "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+    "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3157,8 +3166,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_DRIVE_ARCHIVE_REPAIRED_RECEIPT.json",
-      "sha256": "93a706f193d5f1e3e6039fce41869cdb31beac08f91bac7220a9efc92fbdfa51"
+      "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+      "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3176,7 +3185,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md",
-      "sha256": "26787043900ec63b690af714786c8673a2e4600a2a50bbd0bb03c1a4c0d749c2"
+      "sha256": "0b8423aa6a5cd37219e31298e1bcbdba5df7b43e27552d0952a5b8713c789b6b"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -3219,7 +3228,15 @@
         "path": "continuity/vpd/codex_takeover_20261003/DRIVE_ARCHIVE_AUTHORIZATION.json",
         "sha256": "827904b869f935e1722e480a004b028c09f07ff7b2ad94a970a36e9628293e3a"
       },
-      "primary_pixel_storage": "GOOGLE_DRIVE"
+      "primary_pixel_storage": "GOOGLE_DRIVE",
+      "fresh_drive_recovery": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_VERIFIED.json",
+        "sha256": "776f92a2f1bb7cf0293a596bdc935b7a6c6609fae72077e2586a8c3a368e1d23"
+      },
+      "fresh_drive_runtime": {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
+        "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
+      }
     }
   },
   "current_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
