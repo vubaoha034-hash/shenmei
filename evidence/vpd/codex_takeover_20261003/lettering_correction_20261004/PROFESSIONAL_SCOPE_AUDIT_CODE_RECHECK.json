@@ -1,0 +1,34 @@
+{
+  "schema_version": "vpd-professional-scope-fix-recheck/v1",
+  "result": "PASS",
+  "scope": "仅复核此前遗漏的三组反馈谓词，不是审美评测或完整原生状态验收。",
+  "actual_source": {
+    "path": "visual_memory/vpd_correct_source_worker.py",
+    "sha256": "2a7a76f0c3993ef7c3e7d85d8aa7f91ca2faade69d27365e92dd59282528188a",
+    "verified_lines": [60, 68, 69]
+  },
+  "tests": {
+    "method": "执行实际源码反馈分支AST，使用内存夹具；身份组分别修改TASK与UNIT。",
+    "valid_scoped_v3_fixture": "ACCEPTED",
+    "wrong_task_id": "REJECTED",
+    "wrong_work_unit_id": "REJECTED",
+    "mainline_change_authorized_true": "REJECTED",
+    "prior_blind_ai_review_unchanged_false": "REJECTED",
+    "negative_case_error": "ACTUAL_SCOPED_POSTER_REJECTION_REQUIRED",
+    "execution_exit_code": 0,
+    "output_chunk_id": "d730b5"
+  },
+  "resolved": [
+    "反馈必须精确匹配当前TASK及UNIT。",
+    "反馈必须明确没有主线变更授权。",
+    "反馈必须明确历史盲审保持不变。"
+  ],
+  "blocked_in_this_code_scope": [],
+  "prior_failure_report_superseded": false,
+  "native_state_read": false,
+  "native_finalization_verified": false,
+  "business_state_writes": 0,
+  "filesystem_writes": 0,
+  "artwork_created": 0,
+  "figma_writes": 0
+}

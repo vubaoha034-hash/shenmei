@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 299,
-  "recorded_at": "2026-10-03T23:49:12.850712+08:00",
+  "sequence": 300,
+  "recorded_at": "2026-10-04T06:12:17.097929+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "真实V3海报、冷审失败和全新恢复证据已结算；等待刘先生整图验收",
+  "current_focus": "CURRENT_CHAZUO_HUMAN_REJECTED_LETTERING_METHOD_CORRECTION",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,11 +357,12 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "完整海报真人验收仍待完成；摄影修补候选已获真人认可",
-    "原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证"
+    "V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回",
+    "三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败",
+    "已认可摄影继续冻结；字标设计及整体蒸馏、内容和画幅迁移尚未完成"
   ],
   "blocked": [],
-  "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW",
+  "next_required_action": "CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -429,11 +430,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_HUMAN_REJECTED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "6183fa2dc291eedf75c53c1f3b08fa6f8608f825762443c587136fa63d8f21e9",
-    "revision": 277
+    "sha256": "3cc3c101396c2be12676bba94e03363f519e0c8c03d9474cb633c9118e51b6aa",
+    "revision": 278
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -454,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-277-20261003",
-      "event_hash": "b9c2e2705c800c4af61315938751235647b1367fc48c6a589114cd112caa86f2"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-278-20261003",
+      "event_hash": "2468567ab21772c815517120eb3e6759671bcbf8bd02e7c6fa356cac099eda5a"
     }
   },
   "typography_repair": {
@@ -970,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "真实V3海报、冷审失败和全新恢复证据已结算；等待刘先生整图验收",
-  "updated_at": "2026-10-03T23:49:12.850712+08:00",
+  "current_stage": "CURRENT_CHAZUO_HUMAN_REJECTED_LETTERING_METHOD_CORRECTION",
+  "updated_at": "2026-10-04T06:12:17.097929+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1920,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-    "sha256": "003a7d1d7b4f4da01f05035c75c62817fa7275cfca545f15445631ae590cf682"
+    "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/NATIVE_REJECTION_RECEIPT.json",
+    "sha256": "497adf237616b4d22923005fcc40d721d9e587d461548c5795e3524003eff449"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2652,8 +2653,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_FAIL",
-    "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_HUMAN_REJECTED",
+    "next_required_action": "CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2663,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/NATIVE_FINAL_HANDOFF_RECEIPT.json",
-      "sha256": "003a7d1d7b4f4da01f05035c75c62817fa7275cfca545f15445631ae590cf682"
+      "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/NATIVE_REJECTION_RECEIPT.json",
+      "sha256": "497adf237616b4d22923005fcc40d721d9e587d461548c5795e3524003eff449"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2682,7 +2683,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "81a1a737b9bc8c76694f71a6925f186af0617896952f03b40b83e8bfcaee8dbf"
+      "sha256": "519839452df2f22c9f6bd8c17b159c661b29a8204947f4376bb6619ea276d957"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2741,7 +2742,7 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "DELIVERED_AI_FAIL",
+      "phase": "HUMAN_REJECTED",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -2881,7 +2882,7 @@
           }
         }
       ],
-      "poster_human_verdict": "PENDING",
+      "poster_human_verdict": "REJECTED",
       "old_cycle_human_verdict": "REJECTED",
       "review_inputs": {
         "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json",
@@ -2890,7 +2891,12 @@
       "carrier_amendment": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
         "sha256": "f5b5941512d15fc4ac5b73ec4dae5313cb098df6d6c5fa5ba801278f86a01df9"
-      }
+      },
+      "poster_human_feedback": {
+        "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
+        "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
+      },
+      "human_review_request_withdrawn": true
     }
   }
 }

@@ -1,0 +1,66 @@
+{
+  "schema_version": "vpd-professional-scope-audit/v1",
+  "result": "FIX_REQUIRED_BEFORE_FINALIZATION",
+  "scope": "真人否定V3后的实现与叙述审查；不是审美评测或项目外冷审。",
+  "verified": {
+    "rejection_targets_version": 3,
+    "target_sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+    "photography_remains_frozen": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "budget": "正式版本3/3，修订2/2；既有硬约束未放宽。",
+    "worker_authority_unchanged": true,
+    "historical_v1_v2_v3_review_bytes_equal_HEAD": true,
+    "narrative": "入口及ROOT_DIAGNOSIS明确撤回失败V3的验收请求，不将专业资料、可编辑矢量或技术恢复声称为视觉改善，不虚构总体评测准确率。"
+  },
+  "findings": [
+    {
+      "id": "NATIVE_STATE_NOT_YET_UPDATED",
+      "evidence": "实际读取CURRENT_TASK_LOCK revision277，phase仍为DELIVERED_AI_FAIL，poster_human_verdict仍为PENDING；修改中的入口已写真人REJECTED。",
+      "required_action": "由ROOT通过原生事务落账并校验，随后核销这项暂时不一致。不能提前宣称状态纠正已经完成。"
+    },
+    {
+      "id": "FEEDBACK_IDENTITY_FIELDS_NOT_VALIDATED",
+      "file": "visual_memory/vpd_correct_source_worker.py",
+      "lines": [59, 67],
+      "evidence": "真实新分支AST内存测试中，将反馈task_id及work_unit_id改为OTHER，分支仍接受。",
+      "required_action": "新增feedback.task_id == TASK及feedback.work_unit_id == UNIT。",
+      "qualification": "实际HUMAN_REJECTION.json身份字段正确；此问题是验证门遗漏，不是已发生跨任务落账。"
+    },
+    {
+      "id": "FEEDBACK_AUTHORIZATION_FLAGS_NOT_VALIDATED",
+      "file": "visual_memory/vpd_correct_source_worker.py",
+      "lines": [59, 67],
+      "evidence": "将反馈mainline_change_authorized改为true，新分支仍接受。",
+      "required_action": "明确要求mainline_change_authorized is False；同时建议校验prior_blind_ai_review_unchanged is True。",
+      "qualification": "现有主线与worker权限硬约束仍保留；不能把本反例描述成允许实际修改主线。"
+    }
+  ],
+  "actual_tests": {
+    "method": "只执行真实源码中的反馈分支和预算检查AST；所有输入修改仅在内存中。",
+    "valid_v3_branch": "PASS",
+    "rejected_cases": [
+      "错误版本",
+      "错误目标SHA",
+      "撤回摄影认可",
+      "声称扩预算",
+      "未撤回验收请求",
+      "phase冲突",
+      "正式版本上限改为4"
+    ],
+    "full_native_validation_run": false,
+    "aesthetic_tests_run": false
+  },
+  "evidence_sha256": {
+    "HUMAN_REJECTION.json": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e",
+    "ROOT_DIAGNOSIS.md": "1ea65a365cce430f407a05782fc776f006dd61ea5ebfe2d88d6fffa26d37e8d7",
+    "vpd_correct_source_worker.py": "1c796351c37a1b6eb76e099d1fcbd97853217c0dd6e60d9984c573ee52d23915"
+  },
+  "limits": [
+    "专业案例的外部访问与像素阅读记录未在本次短审重新核验。",
+    "上述结论基于实际读取快照；不替代随后ROOT原生落账及完整验证。"
+  ],
+  "business_state_writes": 0,
+  "filesystem_writes": 0,
+  "artwork_created": 0,
+  "figma_writes": 0,
+  "cold_reviewer_thread_read": false
+}

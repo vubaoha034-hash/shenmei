@@ -50,8 +50,27 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     require(approval['source_kind'] == 'CURRENT_HUMAN_USER_MESSAGE' and approval['verbatim']
             and approval['target_sha256'] == SOURCE and approval['human_verdict'] == 'ACCEPTED'
             and approval['scope'] == 'LOCAL_BACKGROUND_RECONSTRUCTION_PHOTOGRAPHY_ONLY'
-            and unit['frozen_source']['sha256'] == SOURCE
-            and unit['poster_human_verdict'] == 'PENDING', 'SCOPED_HUMAN_APPROVAL_REQUIRED')
+            and unit['frozen_source']['sha256'] == SOURCE,
+            'SCOPED_HUMAN_APPROVAL_REQUIRED')
+    require(unit['poster_human_verdict'] in ['PENDING','REJECTED'],
+            'POSTER_HUMAN_VERDICT_UNSUPPORTED')
+    if unit['poster_human_verdict'] == 'REJECTED':
+        feedback = load(root, unit['poster_human_feedback'])
+        require(unit['phase'] == 'HUMAN_REJECTED'
+                and feedback['task_id'] == TASK and feedback['work_unit_id'] == UNIT
+                and feedback['source_kind'] == 'CURRENT_HUMAN_USER_MESSAGE'
+                and feedback['verbatim'] and feedback['human_verdict'] == 'REJECTED'
+                and feedback['scope'] == 'CURRENT_COMPLETE_POSTER_TYPOGRAPHY_AND_DESIGN'
+                and feedback['version'] == len(unit['versions']) == 3
+                and feedback['target_export'] == unit['versions'][-1]['export']
+                and feedback['photography_approval_retracted'] is False
+                and feedback['budget_expansion_authorized'] is False
+                and feedback['mainline_change_authorized'] is False
+                and feedback['prior_blind_ai_review_unchanged'] is True
+                and unit['human_review_request_withdrawn'] is True,
+                'ACTUAL_SCOPED_POSTER_REJECTION_REQUIRED')
+    else:
+        require(unit['phase'] != 'HUMAN_REJECTED', 'POSTER_HUMAN_VERDICT_CONFLICT')
     recovery = take['source_recovery']
     require(recovery == receipt['source_recovery'] == lock['execution_boundary']['source_recovery_tool_trial']
             and recovery['phase'] == 'APPROVED_FROZEN' and recovery['human_verdict'] == 'ACCEPTED'
@@ -79,6 +98,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         'REVISION_REQUIRED':'REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE',
         'DELIVERED_AI_PASS':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER',
         'DELIVERED_AI_FAIL':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW',
+        'HUMAN_REJECTED':'CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE',
         'TECHNICAL_BLOCKED':'REPAIR_OBSERVED_CORRECT_SOURCE_TECHNICAL_BLOCKER'}
     require(unit['phase'] in actions and take['next_required_action'] == actions[unit['phase']]
             and take['status'] == 'VPD_CODEX_CHAZUO_CORRECT_SOURCE_'+unit['phase'],
@@ -101,8 +121,9 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     verdict = validate_review(root, current, used, unit['review_inputs'])['verdict']
     require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and used<3)
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
+            or (unit['phase']=='HUMAN_REJECTED' and verdict=='AI_FAIL' and used==3)
             or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
-    if unit['phase'].startswith('DELIVERED_'):
+    if unit['phase'].startswith('DELIVERED_') or unit['phase']=='HUMAN_REJECTED':
         archive=load(root,current['drive_archive'])
         require(archive['readback_result']=='PASS' and archive['poster_sha256']==current['export']['sha256']
                 and archive['raw_bytes_equal_local'] is True, 'DRIVE_RAW_READBACK_REQUIRED')

@@ -1,7 +1,7 @@
 # START HERE — 强制执行入口
 
 <!-- INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->
-最新真人反馈与 worker 入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md`。7fd7777f…摄影修补已获认可；正确摄影上本次三版海报均已真实制作与冷审，均为AI_FAIL，V3与源文件已存Drive/Figma。当前只待刘先生查看失败成品与审稿作整图验收，整图真人PENDING；不得继续第四版或进入迁移。worker 无权改变主线，只有刘先生明确同意才可变更；根执行者唯一写业务状态。旧三版否决及用尽预算保留，续办计数显式记录，不清零历史。下方历史“待摄影验收”及旧下一动作不覆盖当前原生任务锁。
+最新真人反馈与 worker 入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md`。2026-10-04刘先生已否定V3文字与完整设计，当前真人REJECTED；此前“请真人验收失败成品”的下一动作已撤回。三版冷审均AI_FAIL，失败成品与源文件继续保留在Drive/Figma，7fd7777f…摄影认可不撤回。三版两修订已用尽，不自动增加第四版；唯一下一动作是明确同一任务新增正式版本范围，不是再次请求验收V3。实际专业案例核查与根因在 `evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/ROOT_DIAGNOSIS.md`。worker 无权改变主线，根执行者唯一写业务状态。下方历史PENDING、待摄影验收及旧下一动作不覆盖当前原生锁。
 <!-- END_INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->
 
 <!-- CHAZUO_DRIVE_PRIMARY_ARCHIVE_ENTRY_20261003 -->

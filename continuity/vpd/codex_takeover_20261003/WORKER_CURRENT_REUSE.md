@@ -1,16 +1,18 @@
 # 茶作当前成果与独立 worker 调用入口
 
-当前说明优先于下方历史过程，实际状态仍只由原生任务锁决定。正确摄影上本次一初版、两修订均真实制作、导出、保存与独立复审，三版都为 AI_FAIL，预算3/3、修订2/2。不能继续第四版、内容迁移、画幅迁移或第二风格。唯一下一动作是刘先生查看 V3 与失败审稿作整图验收。摄影已认可，整图真人结论 PENDING。
+当前说明优先于下方历史过程，实际状态仍只由原生任务锁决定。2026-10-04刘先生已否定V3文字与完整设计，V3真人结论REJECTED；已撤回“请真人验收失败成品”的请求。正确摄影上本次一初版、两修订均真实制作与冷审，三版都AI_FAIL，预算3/3、修订2/2。V1/V2未虚构单独真人结论；旧三版否决另行保留。摄影认可继续有效。唯一下一动作是明确同一任务新增正式版本范围（CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE），不重新验收V3、不清零计数、不自动继续第四版或迁移。
+
+本次批评的逐字记录、V3冷审与真人失败对账在 `evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json`；实际官方案例像素核查、根因与同一方向纠偏依据在该目录 `ROOT_DIAGNOSIS.md`、`PROFESSIONAL_CASE_METHODS.md`、`CASE_PIXEL_READS.json`。这是专业方法研究与失败处置，没有新增作品，也没有视觉改善可宣称。FontTools与design-critique的工具能力不能冒充中文品牌字标制作能力。
 
 | 版本 | Drive完整原件 | Figma同文件：frame / photo / vector | 完整PNG SHA-256 | 冷审 |
 |---|---|---|---|---|
 | V1 | [原件](https://drive.google.com/file/d/1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE/view) | 286:2 / 286:3 / 286:4 | a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96 | AI_FAIL |
 | V2 | [原件](https://drive.google.com/file/d/1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ/view) | 287:2 / 287:3 / 287:4 | c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4 | AI_FAIL |
-| V3交付 | [完整PNG](https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view) | [290:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2) / 290:3 / 290:4 | 0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826 | AI_FAIL |
+| V3失败归档 | [完整PNG](https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view) | [290:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2) / 290:3 / 290:4 | 0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826 | AI_FAIL / 真人REJECTED |
 
 V3 [字标SVG](https://drive.google.com/file/d/1ceZuyHDkMTzeW5qw0-j-qtfaZlD6PvZn/view)，SHA f83a8b20b2b97c2e53bd40b85124023d53fea0c397ad8ac90dae7382eaeb823e。Figma file key uyDxOoN1iNDPpEHTKSUWg1，page251:2，V3有9个可编辑VECTOR（2字标+7标题），0原生TEXT，不能宣称可直接打字。Unicode标题源、轮廓加工脚本、许可、来源及修改依据在 `evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/`、`assets_v2/`、`assets_v3/`。每版像素审稿与隔离证据在同目录 `v1/pixel_review/`、`v2/pixel_review/`、`v3/pixel_review/`，技术/Drive/专业审查也分别保留。
 
-V3冷审认为字标仍接近常规宋体、独特结构弱；标题气质与自然摄影不协调；品牌、标题、产品重心分散。工程检查不改写审美结论。流程改善已验证，视觉收益未验证；节时收益未测量，整图真人认可待定，整体蒸馏及迁移能力尚未验证。
+V3冷审认为字标仍接近常规宋体、独特结构弱；标题气质与自然摄影不协调；品牌、标题、产品重心分散。刘先生此次否定与此前AI_FAIL一致，只报告这个实际对账，不虚构准确率。工程检查不改写审美结论。视觉收益未验证，节时收益未测量，整图已被否定，整体蒸馏及迁移能力尚未验证。
 
 实际采用的成熟方法：
 
@@ -28,7 +30,7 @@ Drive是图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。
 
 将已认可摄影（ID1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA）及V1–V3实际fetch结果写入私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`，再运行 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本从原生锁/Drive回执绑定路径和SHA，先验证所有输入及私有路径，再恢复缺失PNG并读回；业务状态写入0、新增版本0。冲突报错。专业审查发现的路径逃逸已修复并留前后证据；不宣称OS沙盒隔离。
 
-校准P/N真实Drive归档在CALIBRATION_DRIVE_ARCHIVE.json：P 1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu（仅文字认可，摄影否决），N 1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO（整体否决）。参考R 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC，SHA87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167，只用上半广告。S为7fd摄影，T本版成品，T真人/旧AI结论隐藏。P/N不是最高水平标准。历史一例隐去真人否决的检验对账一致，只报告实际一例；新三版未真人对账，不虚构准确率。
+校准P/N真实Drive归档在CALIBRATION_DRIVE_ARCHIVE.json：P 1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu（仅文字认可，摄影否决），N 1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO（整体否决）。参考R 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC，SHA87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167，只用上半广告。S为7fd摄影，T本版成品，审稿当时T真人/旧AI结论隐藏。P/N不是最高水平标准。历史一例隐去真人否决的检验与当前V3各有实际失败对账；保留原盲审，不把后来的真人反馈填回旧审稿或虚构总体准确率。
 
 新的读取上下文恢复结果以最新原生receipt引用为准，不能用本机缓存成功冒充全新恢复。以下保留调用协议与过程，V1描述是历史定位而非当前唯一动作。
 

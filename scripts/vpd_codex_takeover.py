@@ -126,6 +126,11 @@ def main():
     if unit:
         adapter['current_mainline']['current_visual_unit']='HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY'
         cp['incomplete']=['完整海报真人验收仍待完成；摄影修补候选已获真人认可','原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证']
+        if unit['poster_human_verdict'] == 'REJECTED':
+            cp['incomplete']=['V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回',
+                '三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败',
+                '已认可摄影继续冻结；字标设计及整体蒸馏、内容和画幅迁移尚未完成']
+            adapter['current_mainline']['evidence']['latest_poster_human_feedback']=unit['poster_human_feedback']
     fresh_remote=remote_head()
     if fresh_remote!=remote:raise ValueError('REMOTE_ADVANCED_DURING_PREPARATION')
     if any(p.read_bytes()!=v for p,v in originals.items()):raise ValueError('LOCAL_CONCURRENT_STATE_WRITE')
