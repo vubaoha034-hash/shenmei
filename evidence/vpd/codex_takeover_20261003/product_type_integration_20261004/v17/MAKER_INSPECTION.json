@@ -1,0 +1,35 @@
+{
+  "schema": "vpd-v17-maker-pixel-inspection/v1",
+  "purpose": "Maker inspection only; not an independent art review.",
+  "actual_view_image_calls": 8,
+  "pixels_actually_seen": [
+    "P-approved-typography.png",
+    "R-current-reference.jpg (upper horizontal ad only as design reference)",
+    "photography-local-reconstruction-final.png",
+    "v16/poster.png",
+    "v17/headline-generated-01.png",
+    "v17/alpha128-technical-inspection.png",
+    "v17/headline-render.png",
+    "v17/preview.png"
+  ],
+  "actual_text_readback": {
+    "brand": "茶作",
+    "headline": "一杯茶，慢下来",
+    "headline_lines": [
+      "一杯茶，",
+      "慢下来"
+    ]
+  },
+  "observations": [
+    "Raw image preview showed glow; source pixel (400,300) is RGBA(192,187,174,0). Actual alpha128 technical view has separated readable lettering without a glow cloud becoming a solid stroke.",
+    "Complete 1536x1024 technical preview was viewed after vectorisation and placement. The compact two-line phrase sits above the cup/leaf/tray transition; source mask removes no strokes.",
+    "The source artwork still has expressive long strokes; no aesthetic acceptance is inferred from accurate words, source tracing or product protection."
+  ],
+  "limits": [
+    "Preview keeps V16 brand pixels within [104,96,400,256] and uses the frozen S photo elsewhere before the new SVG overlay.",
+    "Source alpha128 and vector spline approximations are not a lossless source-image reproduction.",
+    "Figma import, official export, Drive persistence and fresh independent art review remain Root work."
+  ],
+  "aesthetic_verdict": null,
+  "human_acceptance_claimed": false
+}

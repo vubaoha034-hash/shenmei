@@ -1,0 +1,37 @@
+{
+  "schema": "vpd-v17-asset-build-attempts/v1",
+  "imagegen_calls": 1,
+  "typography_asset_sources": 1,
+  "layout_scales_tried": 1,
+  "layout_positions_tried": 1,
+  "affine": "matrix(0.285 0 0 0.285 596.784964375 351.83298908238123)",
+  "attempts": [
+    {
+      "number": 1,
+      "actual_tool_chunk": "95bfb9",
+      "exit_code": 1,
+      "executed_script_sha256": "1561d98535f03be5ee55f75b916e465b715c277130d6d6519962888e6ec2853d",
+      "failure": "PART_RGBA_DIFFERS_FROM_WHOLE",
+      "cause": "Character-count transport splitting separated adjacent contours, and its recomposited RGBA differed from the full SVG.",
+      "preserved_script": ".liu-visual-private/correct_source_typography/v17/build_headline_asset_failed_transport_v1.py",
+      "before_final_svg_or_preview_writes": true
+    },
+    {
+      "number": 2,
+      "actual_tool_chunk": "21d5c9",
+      "exit_code": 0,
+      "executed_script_sha256": "c7dd24d565a497bbc01999a25348ba5b27b47cd9ee5d27a0a890bf6468c24063",
+      "correction": "Transport-only upper/lower line grouping; same original source, trace, 27 nonempty d/transform attributes and whole-phrase affine.",
+      "parts_RGBA_equal_to_whole": true,
+      "formal_asset_writes": 1
+    }
+  ],
+  "post_creation_metadata_amendment": "Clarified generated-lettering licence boundary and recorded actually observed Node/Sharp/librsvg versions. No artwork/geometry/scale/placement changed after success.",
+  "renderer_observation": {
+    "actual_tool_chunk": "0e9259",
+    "Node": "v24.19.0",
+    "Sharp": "0.35.4",
+    "librsvg": "2.62.91"
+  },
+  "reproduction_boundary": "This is a fixed-source bounded maker adapter, not a general installer or transaction-safe publishing system. It refuses existing outputs. Public SVG/Figma reuse does not require re-running it."
+}

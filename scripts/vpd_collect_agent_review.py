@@ -62,8 +62,11 @@ def main():
   returned=[j['payload'] for j in rows(root) if j.get('type')=='response_item' and j.get('payload',{}).get('type')=='custom_tool_call_output' and j['payload'].get('call_id')==creation_calls[0]['call_id']]
   assert len(returned)==1,'Exact completed creation result missing'
   returned_threads=[v for v in decoded_objects(returned[0]['output']) if v.get('threadId')]
-  assert len(returned_threads)==1 and returned_threads[0]['threadId']==child_meta['id'],'Actual returned worker threadId differs from runtime identity'
-  creation['actual_returned_thread_id']=returned_threads[0]['threadId']
+  matched_threads=[v for v in returned_threads if v['threadId']==child_meta['id']]
+  assert len(matched_threads)==1,'Actual unique created worker threadId differs from runtime identity'
+  creation['other_returned_thread_ids_in_same_exec']=sorted({v['threadId'] for v in returned_threads if v['threadId']!=child_meta['id']})
+  creation['creation_binding_rule']='Exactly one returned object matching the actual child identity, within the already proven unique projectless create_thread call; unrelated stop/message returns are recorded separately.'
+  creation['actual_returned_thread_id']=matched_threads[0]['threadId']
   creation['actual_creation_result_sha256']=hashlib.sha256(json.dumps(returned[0]['output'],ensure_ascii=False,sort_keys=True).encode()).hexdigest()
  else: assert spawns and all(q.get('fork_turns')=='none' for q,_ in spawns),'Fork-none spawn not proven'
  prompt_sha=sha(ROOT/args.prompt)

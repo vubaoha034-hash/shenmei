@@ -1,0 +1,93 @@
+{
+  "schema": "vpd-v17-builtin-imagegen-execution/v1",
+  "version_allocation": 17,
+  "authorization": "Parent-delegated single V17 text asset under continuous same-direction repair; business registration is Root-only.",
+  "pre_call_native_read": {
+    "revision": 308,
+    "phase": "REVISION_REQUIRED",
+    "latest_number": 16,
+    "latest_verdict": "AI_FAIL"
+  },
+  "pre_call_native_check": {
+    "command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+    "actual_session_id": 15867,
+    "final_chunk_id": "fcc39d",
+    "exit_code": 0,
+    "observation": "Returned before the single imagegen call; duplicate check was completed, not cancelled. Root native308 receipt is also available."
+  },
+  "tool": "image_gen.imagegen (tools.image_gen__imagegen)",
+  "backend_model": "NOT_EXPOSED",
+  "model_switch_claimed": false,
+  "started": {
+    "current_time": "2026-10-04 07:56:34 UTC"
+  },
+  "completed": {
+    "current_time": "2026-10-04 07:57:08 UTC"
+  },
+  "actual_arguments": {
+    "prompt_file": "IMAGEGEN_PROMPT.txt",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      ".liu-visual-private/product-type-integration-20261004/P-approved-typography.png",
+      ".liu-visual-private/product-type-integration-20261004/R-current-reference.jpg",
+      ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
+    ]
+  },
+  "reference_intent": "P typography gesture only, R upper ad shared product/text space only, S geometry only; none is a photo edit target.",
+  "result": {
+    "fields": [
+      "image_url",
+      "output_hint"
+    ],
+    "image_url_is_data_url": true,
+    "base64_excluded_from_public_evidence": true,
+    "original_saved_path": "C:/Users/Administrator/.codex/generated_images/01a105e4-426c-79d0-ba3a-e7fd58d18a7e/exec-1e176661-e8c3-486d-a593-63d2c0f1a773.png",
+    "workspace_copy": ".liu-visual-private/correct_source_typography/v17/headline-generated-01.png",
+    "source_sha256": "57f469ed142b64b037827cd3df616b22c0435c70a2bad547278591ee7c31ad7a",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1247059,
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "alpha0_pixels": 1280255,
+    "alpha1_to_127_pixels": 136172,
+    "alpha128_to_254_pixels": 156437,
+    "nonzero_alpha_bbox": [
+      65,
+      166,
+      1448,
+      936
+    ],
+    "alpha128_bbox": [
+      99,
+      169,
+      1440,
+      852
+    ]
+  },
+  "operations": {
+    "built_in_imagegen_calls": 1,
+    "generated_typography_assets": 1,
+    "photo_generations": 0,
+    "photo_edits": 0,
+    "hidden_variants": 0,
+    "parallel_alternatives": 0,
+    "paid_cli_api_fallback": 0,
+    "Figma_writes": 0,
+    "Drive_writes": 0,
+    "Git_writes": 0,
+    "business_state_writes": 0,
+    "training": 0,
+    "automations": 0
+  },
+  "limitations": [
+    "Raw viewer showed a strong glow, including RGB values on alpha-zero pixels. Fixed alpha128 was actually viewed and excludes that non-lettering area; source raster remains unchanged.",
+    "Alpha128 threshold, VTracer approximation and a constant ivory vector fill change raster appearance. No lossless or exact source-raster claim.",
+    "Complete private preview is a maker composition; formal Figma export, external archive and independent cold review are Root actions. No aesthetic pass claimed."
+  ]
+}

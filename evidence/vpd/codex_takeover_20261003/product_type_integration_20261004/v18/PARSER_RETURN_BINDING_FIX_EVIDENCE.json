@@ -1,0 +1,43 @@
+{
+  "result": "PASS_REAL_MIXED_RETURN_AND_NEGATIVE_TRANSPORT_CONTROLS",
+  "baseline_commit": "efe70012ce9ad349e5edf92ce837ddd061b749f9",
+  "baseline_git_blob_sha": "e60a4a492b0d39b6f45fe237fea3f9a07896fe42",
+  "modified_collector_sha256": "c2a58cf2a1aee794e399688146739de011edc4e77f90587577e02caa91e55831",
+  "real_creation_call_id": "call_OfYHICULAoKJojMghHZjKzDg",
+  "real_returned_thread_ids": [
+    "01a1061a-4f4d-7542-873c-02d9a24b651d",
+    "01a1061c-7593-7483-aa23-240accdabf9e"
+  ],
+  "real_correct_review_target": "2357e745eeaed1faf26bce0fc4680810dfceea04fbd9bf9463b84b6c970feaee",
+  "real_collection_exit_code": 0,
+  "actual_single_context_and_five_pixel_reads_required": true,
+  "initial_failure_1": {
+    "exit_code": 1,
+    "error": "KeyError thread_id; raw camelCase tool result now preserved with separate project-format normalization"
+  },
+  "initial_failure_2": {
+    "exit_code": 1,
+    "error": "Actual returned worker threadId differs from runtime identity; actual same exec contained old stop response and new create response"
+  },
+  "guard_change": "Unique projectless creation call remains mandatory. Exactly one returned object must match actual child identity. Other thread IDs are recorded and do not become review contexts. No model/view/source/target/freshness rule removed.",
+  "negative_tests": [
+    {
+      "case": "NO_MATCH",
+      "synthetic_transport_control_fixture": true,
+      "exit_code": 1,
+      "rejection": "Actual unique created worker threadId differs from runtime identity",
+      "output_files_written": 0
+    },
+    {
+      "case": "DUPLICATE_MATCH",
+      "synthetic_transport_control_fixture": true,
+      "exit_code": 1,
+      "rejection": "Actual unique created worker threadId differs from runtime identity",
+      "output_files_written": 0
+    }
+  ],
+  "existing_real_pixel_review_files_unchanged": true,
+  "synthetic_controls_are_not_visual_reviews": true,
+  "business_state_writes": 0,
+  "recorded_at": "2026-10-04T09:15:42.840914+00:00"
+}

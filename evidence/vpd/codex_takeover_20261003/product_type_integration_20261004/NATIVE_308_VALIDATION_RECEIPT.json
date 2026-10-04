@@ -1,0 +1,32 @@
+{
+  "schema": "vpd-actual-native-validation-evidence/v1",
+  "root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "completed_tool_call_id": "call_73laeF3KSVL2cgSvt9dzdGAn",
+  "stdout_chunk_id": "1ec415",
+  "actual_exit_code": 0,
+  "actual_native_stdout": {
+    "revision": 308,
+    "checkpoint": 330,
+    "next": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "remote_parent": "989691fa89e5bdf6ef6ef1f4623e9b0a8e0fe539"
+  },
+  "actual_tool_output_sha256": "a3789b23bb1447e4118b5d00386a1371496c37cc1a6f1bc32ff65125c51555c9",
+  "validator": "scripts/vpd_codex_takeover.py calls validate_locked_mainline(ROOT) before successful return; source/product RGB guard included",
+  "validated_state_file_refs": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "sha256": "620b471ff46e6086336615a1ba5ba92962a7ff40a278b49b3ecdfff7cf2227b9"
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "sha256": "9aef21d60fea68a3fef77c27070604124cc9903a77d5fddd6682f04477b9bab7"
+    },
+    {
+      "path": "PROJECT_CONTROL_ADAPTER.json",
+      "sha256": "15ef66e2f0c4f206f4b436513a83be6891a24653095c9397edf0094e6dcd1fbf"
+    }
+  ],
+  "published_same_tree_commit": "efe70012ce9ad349e5edf92ce837ddd061b749f9",
+  "tree": "2e02b78b796d269c77895c4b8d6cbb0104f7b277",
+  "reuse_scope": "Same source/state/code bytes; no new visual or business validation; repeat read-only full scan may reuse this result"
+}

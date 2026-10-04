@@ -1,0 +1,142 @@
+{
+  "schema": "vpd-v18-builder-modes-check/v1",
+  "checks": {
+    "mode": "verify-only",
+    "parent_harness_writes": 0,
+    "post_creation_verify_exit": 0,
+    "verify_only_all_bound_file_bytes_and_mtimes_unchanged": true,
+    "existing_output_write_exit": 1,
+    "existing_output_refusal": "OUTPUT_ALREADY_EXISTS",
+    "existing_output_refusal_all_bound_file_bytes_and_mtimes_unchanged": true,
+    "bound_files_count": 20,
+    "builder_summary": {
+      "mode": "verify-only",
+      "action": "verified-existing",
+      "writes": 0,
+      "paths": 27,
+      "affine": "matrix(0.24 0 0 0.24 401.7667811927463 343.4383065956895)",
+      "bbox": [
+        425,
+        384,
+        748,
+        548
+      ],
+      "cup_center_x": 535,
+      "mask_intersection_pixels": 0,
+      "core_pixels": 162052,
+      "core_RGB_differences": 0,
+      "part_character_lengths": [
+        26024,
+        30714
+      ],
+      "preview": {
+        "path": ".liu-visual-private/correct_source_typography/v18/preview.png",
+        "sha256": "5af686f0b59ed28fea87dc6ca227daf6abf4c97aeafbec539b17c863904f9eb3",
+        "bytes": 2040180
+      },
+      "headline": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v18/headline.svg",
+        "sha256": "466538676e1a6395e0167f5765306e26ae05ea34d168856bbfd2617c2d630aa6",
+        "bytes": 55781
+      },
+      "renderer_alpha_difference": {
+        "pixels_clipped_alpha_lower": 2,
+        "pixels_clipped_alpha_higher": 1,
+        "lower_maximum_alpha_delta": 1,
+        "higher_maximum_alpha_delta": 2,
+        "difference_bbox_exclusive": [
+          519,
+          471,
+          552,
+          511
+        ],
+        "actual_coordinates": [
+          {
+            "x": 519,
+            "y": 471,
+            "unclipped_alpha": 243,
+            "clipped_alpha": 242,
+            "signed_delta": -1
+          },
+          {
+            "x": 522,
+            "y": 471,
+            "unclipped_alpha": 15,
+            "clipped_alpha": 14,
+            "signed_delta": -1
+          },
+          {
+            "x": 551,
+            "y": 510,
+            "unclipped_alpha": 189,
+            "clipped_alpha": 191,
+            "signed_delta": 2
+          }
+        ],
+        "interpretation": "These renderer alpha differences are above the product mask. Geometric lettering/mask intersection is checked separately; alpha equality is not claimed."
+      }
+    },
+    "input_bindings": {
+      "whole": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/headline.svg",
+        "sha256": "d4f79dc0dc1ae7c277abfa46c173e0823f36fdecc375af250e65758d86e02e42",
+        "bytes": 55780
+      },
+      "part1": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/headline-part-1.svg",
+        "sha256": "3365da4e3b8ea5c4da443119738e698ed4459b7754d55752eed22bb447687003",
+        "bytes": 26037
+      },
+      "part2": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/headline-part-2.svg",
+        "sha256": "3759afcdc59163a49a9a57e55a00146987ee3991e08b4cda9327b507f7573e05",
+        "bytes": 30727
+      },
+      "brand": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "bytes": 39038
+      },
+      "mask": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/foreground-protection.svg",
+        "sha256": "b567253a07b4689f2869b5013d07cb625705d09f4e525f64e6878ab6c8f482e4",
+        "bytes": 759
+      },
+      "trace": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/upstream-alpha128-trace.svg",
+        "sha256": "2f02f6f795bfc43842cfdf493485f5750265f6b5a06ca6da36d55cb6a223c5c2",
+        "bytes": 57249
+      },
+      "previous_provenance": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v17/LETTERING_PROVENANCE.json",
+        "sha256": "661f60936b4cab773e68c0da2093aa6a8bb4aa56475db8e7e8a86138fef95de0",
+        "bytes": 12761
+      },
+      "alpha": {
+        "path": ".liu-visual-private/correct_source_typography/v17/headline-generated-01.png",
+        "sha256": "57f469ed142b64b037827cd3df616b22c0435c70a2bad547278591ee7c31ad7a",
+        "bytes": 1247059
+      },
+      "poster17": {
+        "path": ".liu-visual-private/correct_source_typography/v17/poster.png",
+        "sha256": "7037751665c04f6f5d3a5aa59cdb4da7148b9d88769e70e790c612ae100f437d",
+        "bytes": 1739999
+      },
+      "photo": {
+        "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+        "bytes": 1735549
+      }
+    }
+  },
+  "missing_explicit_mode": {
+    "observed_shell_exit_code": 1,
+    "parser_error": "one of the arguments --verify-only --write is required"
+  },
+  "write_once": {
+    "observed_exit_code": 0,
+    "generated_asset_files": 9
+  },
+  "scope_limit": "Serial fixed local files only. Concurrent creation and multi-file atomic rollback are not tested or claimed.",
+  "business_state_writes": 0
+}
