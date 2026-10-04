@@ -66,6 +66,15 @@ V25 = {'binding_call': 'call_KFLsFIhOQqATXkOLlFGYOKF8',
        'download_output': '2c2e064293701dc70a470d3c5001a20bd14b0886917430659ba42c2fa2cc2281',
        'download_tool': {'path': '.liu-visual-private/correct_source_typography/v25/figma-download-tool-result.json',
                          'sha256': '4d34534fe8704d95deb217e8c5eee7eb556cf5eeab6f9e2bae6088c46d54791f'}}
+V26 = {'binding_call': 'call_fQ1b7XEsDxHgxgKpWcpZoGqF',
+       'binding_input': '97f40c1b9aa1a163a105a544094e67d43c68d213b98c887127d787f22cbccc0a',
+       'binding_output': '706400de1f1bde3c1d0339337cc2ef30a3c661d9d5449788231ff6960887ee85',
+       'script': 'eb59226bc9846d46af5941f82106d1bd5eb6962ab65b424bb22693d75f1d08f2',
+       'download_call': 'call_W0slq1jKHi4LO8JFsr3c8WV8',
+       'download_input': '5176f33c42ba287324c8999d120249eecebe6ab4bcc37836923d6903a107ad10',
+       'download_output': '45d2d49e0f15df72666f68914250928136ad4e3287113a63028339475ca37bc4',
+       'download_tool': {'path': '.liu-visual-private/correct_source_typography/v26/figma-download-tool-result.json',
+                         'sha256': 'f8520effc61b265e132065d34e9a00937aea389ab4f76fdc034af07ec32e8c8b'}}
 
 
 def f32(value):
@@ -109,6 +118,8 @@ def runtime_proof(root, evidence):
         return runtime_proof_v23(root, evidence, 24)
     if evidence.get('formal_version') == 25:
         return runtime_proof_v23(root, evidence, 25)
+    if evidence.get('formal_version') == 26:
+        return runtime_proof_v23(root, evidence, 26)
     g.require(evidence.get('schema') == 'vpd-figma-binding-runtime-evidence/v1'
               and evidence.get('formal_version') == 22, 'ACTUAL_RUNTIME_EVIDENCE_REQUIRED')
     host = Path(evidence['root_rollout_host_path']).resolve()
@@ -179,8 +190,8 @@ def runtime_proof(root, evidence):
 
 def runtime_proof_v23(root, evidence, version=23):
     """Two individually inspected direct literals/immediate downloads; no prefix or wait."""
-    g.require(version in (23, 24, 25), 'INSPECTED_DIRECT_COLLECTOR_REQUIRED')
-    profile = {23: V23, 24: V24, 25: V25}[version]
+    g.require(version in (23, 24, 25, 26), 'INSPECTED_DIRECT_COLLECTOR_REQUIRED')
+    profile = {23: V23, 24: V24, 25: V25, 26: V26}[version]
     g.require(evidence.get('schema') == 'vpd-figma-binding-runtime-evidence/v1'
               and evidence.get('formal_version') == version
               and evidence.get('binding_call_id') == profile['binding_call']
@@ -241,6 +252,12 @@ def runtime_proof_v23(root, evidence, version=23):
                    'store("v25BoundOfficialDownload",result);text(result);')
         g.require(download_input.startswith('text(await tools.write_stdin(')
                   and download_input.endswith(literal + '\n'), 'V25_ACTUAL_LITERAL_DOWNLOAD_FLOW_CHANGED')
+    if version == 26:
+        literal = ('const result=await tools.mcp__codex_apps__figma_download_assets('
+                   '{fileKey:"uyDxOoN1iNDPpEHTKSUWg1",nodeId:"391:2"});'
+                   'store("v26BoundOfficialDownload",result);text(result);\n')
+        g.require(calls[profile['download_call']]['payload']['input'] == literal,
+                  'V26_ACTUAL_LITERAL_DOWNLOAD_FLOW_CHANGED')
     return actual, tool_result(outputs[profile['download_call']]), {
         'session_id': metadata['id'], 'binding_call_id': profile['binding_call'],
         'binding_input_sha256': profile['binding_input'], 'binding_output_sha256': profile['binding_output'],
@@ -316,8 +333,8 @@ def compare_curves(expected, actual, anchor_budget, decimal_export=False):
 
 
 def native_capture(root, capture, registration, version=22):
-    g.require(version in (22, 23, 24, 25), 'INSPECTED_NATIVE_VERSION_REQUIRED')
-    prefix = {22: '366', 23: '373', 24: '384', 25: '388'}[version]
+    g.require(version in (22, 23, 24, 25, 26), 'INSPECTED_NATIVE_VERSION_REQUIRED')
+    prefix = {22: '366', 23: '373', 24: '384', 25: '388', 26: '391'}[version]
     def node_id(suffix):
         return prefix + ':' + str(suffix)
     g.require(fontTools.__version__ == '4.63.0', 'FONTTOOLS_GEOMETRY_RUNTIME_CHANGED')
@@ -333,14 +350,16 @@ def native_capture(root, capture, registration, version=22):
                   and nodes[node_id(41)]['children'] == [node_id(i) for i in range(34, 41)]
                   and [nodes[node_id(41)][k] for k in ('x', 'y', 'width', 'height')] == [612, 419, 623, 262],
                   'V24_REGISTERED_COMPOUND_GROUP_CHANGED')
-    if version == 25:
+    if version in (25, 26):
+        group_box = ([625, 419, 610, 208.00003051757812] if version == 25
+                     else [535, 402, 743.0169677734375, 133.51461791992188])
         g.require(set(nodes) == {node_id(i) for i in (*range(2, 14), *range(23, 32))}
                   and nodes[node_id(23)]['children'] == [node_id(31)]
                   and nodes[node_id(31)]['type'] == 'GROUP'
                   and nodes[node_id(31)]['children'] == [node_id(i) for i in range(24, 31)]
                   and [nodes[node_id(31)][k] for k in ('x', 'y', 'width', 'height')]
-                      == [625, 419, 610, 208.00003051757812], 'V25_REGISTERED_COMPOUND_GROUP_CHANGED')
-    headline_frame = node_id(23 if version == 25 else 33)
+                      == group_box, f'V{version}_REGISTERED_COMPOUND_GROUP_CHANGED')
+    headline_frame = node_id(23 if version in (25, 26) else 33)
     required_frames = {node_id(i) for i in (2, 3, 4, 5)} | {headline_frame}
     g.require({n['id'] for n in rows if n['type'] == 'FRAME'} == required_frames, 'UNREGISTERED_FRAME_OR_PHOTOGRAPHIC_COPY')
     traversed = []
@@ -459,8 +478,8 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
     """Recompute real provenance, graph, paths/styles/order, and export identities."""
     _, _, registration = g.replay(root, registration_ref)
     version = registration['formal_version']
-    g.require(version in (22, 23, 24, 25), 'INSPECTED_V22_COLLECTOR_REQUIRED')
-    prefix = {22: '366', 23: '373', 24: '384', 25: '388'}[version]
+    g.require(version in (22, 23, 24, 25, 26), 'INSPECTED_V22_COLLECTOR_REQUIRED')
+    prefix = {22: '366', 23: '373', 24: '384', 25: '388', 26: '391'}[version]
     if version == 23:
         new = g.svg_tree(g.checked_bytes(root, registration['layers'][1]['svg']))
         original = g.svg_tree(g.checked_bytes(root, {'path': g.SERIES + 'v22/headline.svg',
@@ -508,7 +527,7 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
                   == {'figma-raw.png', 'figma-source-0.png', 'figma-vector-0.svg', 'figma-vector-1.svg'},
                   'OFFICIAL_DOWNLOAD_READBACK_REQUIRED')
     g.require(tool_download == json_file(root, DOWNLOAD_TOOL_RESULT if version == 22 else
-                                        {23: V23, 24: V24, 25: V25}[version]['download_tool']),
+                                        {23: V23, 24: V24, 25: V25, 26: V26}[version]['download_tool']),
               'OFFICIAL_DOWNLOAD_NOT_ACTUAL_TOOL_RETURN')
     metadata = json.loads(next(x['text'] for x in tool_download['content'] if x['type'] == 'text'))
     g.require(metadata['export']['nodeId'] == actual['frameId'] and metadata['export']['format'] == 'png'
@@ -533,7 +552,7 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
         g.require(file_format == 'svg' and len(payload) in [x['sizeBytes'] for x in metadata['svgAssets']],
                   'UNBOUND_OFFICIAL_SVG')
         paths = svg_paths(payload, allow_official_wrapper=True)
-        if version in (24, 25):
+        if version in (24, 25, 26):
             # Both real exports have seven paths: use the ordered registered
             # node/path identities, then verify their viewport and all curves.
             roles = [role for role in ('brand', 'headline') if [p['id'] for p in paths]
@@ -547,12 +566,13 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
                       'headline': (['475.837', '258', '0 0 475.837 258'] if version == 22
                                    else ['379.932', '206', '0 0 379.932 206'] if version == 23
                                    else ['623', '262', '0 0 623 262'] if version == 24
-                                   else ['610', '208', '0 0 610 208'])}[role]
+                                   else ['610', '208', '0 0 610 208'] if version == 25
+                                   else ['743.017', '133.515', '0 0 743.017 133.515'])}[role]
         wrapper = ET.fromstring(payload)
         g.require([wrapper.get(k) for k in ('width', 'height', 'viewBox')] == dimensions,
                   'OFFICIAL_SVG_VIEWPORT_CHANGED')
         seen_roles.add(role)
-        origin = transforms[prefix + (':6' if role == 'brand' else ':31' if version == 25 else ':41' if version == 24 else ':34')]
+        origin = transforms[prefix + (':6' if role == 'brand' else ':31' if version in (25, 26) else ':41' if version == 24 else ':34')]
         for saved, observed in zip(paths, native[role]):
             g.require(saved['id'] == observed['id'] and saved['opacity'] == 1
                       and saved['winding'] == observed['winding'], 'OFFICIAL_SVG_GLYPH_CONTENT_CHANGED')
@@ -576,4 +596,6 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
                             if version == 23 else
                             'Only the inspected V24 direct collector invocation is accepted; V25 and later fail closed.'
                             if version == 24 else
-                            'Only the inspected V25 direct collector invocation is accepted; V26 and later fail closed.']}
+                            'Only the inspected V25 direct collector invocation is accepted; V26 and later fail closed.'
+                            if version == 25 else
+                            'Only the inspected V26 direct collector invocation is accepted; V27 and later fail closed.']}

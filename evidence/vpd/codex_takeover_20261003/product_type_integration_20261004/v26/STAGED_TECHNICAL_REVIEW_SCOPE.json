@@ -1,0 +1,19 @@
+{
+  "schema": "vpd-root-staged-review-scope/v1",
+  "formal_version": 26,
+  "root_only_business_writer": true,
+  "fixed_published_parent": "658efc6d613217f0ea4b7c1d79e1f31807fc5258",
+  "prior_full_native_state_pass": "../v25/NATIVE_326_VALIDATION_RECEIPT.json",
+  "staged_preflight_failure": "EVIDENCE_HASH_MISMATCH:visual_memory/vpd_registered_type_composite.py",
+  "cause": "Root-authorized minimal V26 adapter changes current shared composite and Figma-binding code; published V25 receipt still pins prior code until Root registers V26. Historical four version full returns remain tested separately.",
+  "user_authority": "User explicitly authorized necessary code, tests, independent professional review, evidence preservation and native consistency repair; continuous same-direction repair is preserved in CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json. Latest user requests continuation.",
+  "allowed_review_writes_only": [
+    "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V26_TECHNICAL.json",
+    "evidence/vpd/codex_takeover_20261003/audit/REGISTERED_TYPE_GUARD_FRESH_REVIEW_V26.json",
+    "private bounded technical review fixtures"
+  ],
+  "not_allowed": ["Business state writes by worker", "Further artwork changes", "Changing prior verdicts", "Claiming staged preflight PASS", "Relaxing pixel or coordinate tolerances"],
+  "interpretation": "Necessary scoped review evidence for an authorized patch may be saved despite expected staged-reference mismatch. This does not authorize other production or state writes. Root must refresh exact evidence references through the existing native transaction and obtain actual full-validator exit0 before external pixel review.",
+  "full_state_still_pending": true,
+  "aesthetic_pass_claimed": false
+}

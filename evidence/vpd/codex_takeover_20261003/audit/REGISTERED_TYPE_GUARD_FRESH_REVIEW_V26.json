@@ -1,0 +1,494 @@
+{
+  "schema": "vpd-registered-type-guard-fresh-review/v1",
+  "version": 26,
+  "result": "PASS_WITH_LIMITATIONS",
+  "checked_utc": "2026-10-04T20:02:44.010670+00:00",
+  "reviewer_runtime": {
+    "path": ".liu-visual-private/guard-v26-fresh-review/reviewer-observed-turn-context.json",
+    "sha256": "2eb24cce010c3814ee63c70e66759408013f35c5c6751fc62775d3e075b8cb79"
+  },
+  "reviewer_role": "/root/fresh_v26_professional_audit",
+  "technical_independent": true,
+  "blind": false,
+  "formal_aesthetic_review": false,
+  "code": [
+    {
+      "path": "visual_memory/vpd_registered_type_composite.py",
+      "sha256": "8592bd34433123968ef5b015fa699a3951fb1ac433bc60b03a9f8eeba0727800"
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_figma_binding.py",
+      "sha256": "5e110fd65067f514d81c8724d8e5017d89830d5b2828ce6b49ab1b67dd5d6802"
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+      "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v25.py",
+      "sha256": "0b4f33ae6f6c1aa4be585a4cdb5745398127ed9918880dc4d3031779a5394440"
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v26.py",
+      "sha256": "cf10cace120bc2d369a633583895152924bcbd868ad8c9e8dc4bbba6803bb3d5"
+    },
+    {
+      "path": "scripts/vpd_probe_registered_type_figma_binding_v26.py",
+      "sha256": "f4b00d6f8f2dfaa8e9a40599a8c04af3e8c32b11386a547475191156f6811376"
+    },
+    {
+      "path": "scripts/vpd_probe_registered_type_edited_lineage_v26.py",
+      "sha256": "d4dcb89328e07e6a8749841ca5fc88620341295d07d2dc8469b02fa4eab08444"
+    }
+  ],
+  "test_program": {
+    "path": ".liu-visual-private/guard-v26-fresh-review/independent_review.py",
+    "sha256": "e66e40c16edcdd9589b8ffc981c50c4c03fc98d0a547dd5db1c2f62c411cd615"
+  },
+  "cases": [
+    {
+      "actual": null,
+      "case": "actual26_factory_and_complete_registration_replay_equal",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/actual26-full-composite.json",
+        "sha256": "9a19b49593b623f710b46c1c85865dc66e6245b2dae3ae5e30a18537e73d72a4"
+      },
+      "case": "actual26_full1572864_pixels_sourceover_162052core0RGB",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/actual26-complete-binding.json",
+        "sha256": "5cff674520e9dc0746cbbc4d05e74d392c7251009cc6a3d26c2d5576b216401a"
+      },
+      "case": "actual26_runtime_body_rawPNG_twoSVGs_complete_binding_equal_Root",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      },
+      "case": "old22_registration_RGB_RGBA_alpha_fullcompare_fullbinding_equal",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      },
+      "case": "old23_registration_RGB_RGBA_alpha_fullcompare_fullbinding_equal",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      },
+      "case": "old24_registration_RGB_RGBA_alpha_fullcompare_fullbinding_equal",
+      "result": "PASS"
+    },
+    {
+      "actual": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      },
+      "case": "old25_registration_RGB_RGBA_alpha_fullcompare_fullbinding_equal",
+      "result": "PASS"
+    },
+    {
+      "actual": "EDIT_FINAL_SVG_REPLAY_MISMATCH",
+      "case": "actual26_SVG_last_C_endpoint_y_plus1",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/actual26-svg-last-C-endpoint-y-plus1.svg",
+        "sha256": "e6d105ace665f11eb4527fa8fb42ff404a718fe96e77a18d5de7b10c8ee2d6fe"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "ACTUAL_V26_RUNTIME_EVIDENCE_REQUIRED",
+      "case": "fake_runtime_bool_cannot_replace_actual_caller",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/fake-runtime-attestation.json",
+        "sha256": "8af24f79745da6c0103ba581aba6384c9a41ae1a4e9b2a0186858879896968c5"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "EXCERPT_DOES_NOT_MATCH_REAL_HOST_RUNTIME",
+      "case": "fabricated_fullcarrier_excerpt_cannot_replace_actual_host_output",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/fake-full-carrier-evidence.json",
+        "sha256": "2fc1e01c48cf39294d8cf51bcbfcb7522e86eca062d2cd9b98569fd83fb27c1c"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "OFFICIAL_DOWNLOAD_READBACK_REQUIRED",
+      "case": "missing_one_of_four_official_original_assets",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/incomplete-official-download-readback.json",
+        "sha256": "a38dbba5bdae4083b90493b06de5091adbb6bd9a712f93af2927115f364b28c1"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED",
+      "case": "one_RGB_channel_unit",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/native-one_RGB_channel_unit.json",
+        "sha256": "f87a7f1d7abd9bde921166b4b498f3487eca6d91fd684cd8d4938f4b96c6dbf7"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED",
+      "case": "unregistered_vector_alpha",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/native-unregistered_vector_alpha.json",
+        "sha256": "53413748f19f7df3deb14011154236e75658eac84ab14a5b72e6e31470eb05c9"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "EDIT_LINEAGE_V24_ONLY",
+      "case": "uninspected_future27_fails_closed",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/future27-registration.json",
+        "sha256": "55b6c2da6a4fbe802b7f0ddc84b851ac15ae8cb251c91b7d4801944868b27232"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "FIGMA_GLYPH_CONTROL_COORDINATE_CHANGED",
+      "case": "native_shape_beyond_four_operand_ULPs",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/native-shape-beyond-four-operand-ULPs.json",
+        "sha256": "49b53c2e4ffaa9b3b7d959286a384b09691965ec6fdad288482f2b5fb22280bc"
+      },
+      "result": "REJECTED"
+    },
+    {
+      "actual": "UNEXPLAINED_COMPOSITE_PIXEL_CHANGE",
+      "case": "core_alpha0_one_RGB_unit_no_tolerance",
+      "fixture": {
+        "path": ".liu-visual-private/guard-v26-fresh-review/core-alpha0-single-RGB-unit.png",
+        "sha256": "5869528ccf3969d0ca212340ae99cb8ab60fad21409b6ffb66d3e09e4f44aa36"
+      },
+      "result": "REJECTED"
+    }
+  ],
+  "independent_case_count": 16,
+  "actualtests": {
+    "actual_command": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe -X utf8 -B .liu-visual-private/guard-v26-fresh-review/independent_review.py",
+    "start_chunk_id": "781e5f",
+    "session_id": 59499,
+    "completion_chunk_id": "f081a9",
+    "exit_code": 0,
+    "seconds": 83.813,
+    "actual_case_count": 16,
+    "private_complete_results": {
+      "path": ".liu-visual-private/guard-v26-fresh-review/independent-review-results.json",
+      "sha256": "527a6ee9cff6638c30b5f4d37ba02414870929833d6f9e0888889f3f50670bb5"
+    },
+    "command_evidence": {
+      "path": ".liu-visual-private/guard-v26-fresh-review/audit-command-evidence.json",
+      "sha256": "c42363b912194f16b937b14e0723a63fb756cfc4457324ed4da3ff7869ee9eb6"
+    }
+  },
+  "old_complete_return_comparisons": {
+    "22": {
+      "all_complete_returns_equal": true,
+      "comparisons": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      }
+    },
+    "23": {
+      "all_complete_returns_equal": true,
+      "comparisons": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      }
+    },
+    "24": {
+      "all_complete_returns_equal": true,
+      "comparisons": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      }
+    },
+    "25": {
+      "all_complete_returns_equal": true,
+      "comparisons": {
+        "complete_actual_binding": true,
+        "complete_compare_pixels": true,
+        "expected_RGB": true,
+        "factory_registration": true,
+        "overlay_RGBA": true,
+        "overlay_alpha": true,
+        "registration": true
+      }
+    }
+  },
+  "old_baseline": {
+    "path": ".liu-visual-private/guard-v26-proposal/OLD_22_23_24_25_BASELINE.json",
+    "sha256": "c4d1a50f0e1de5c7b69ba16805b2999147cb5c7503d6acb7cd95461eedd0dd4b"
+  },
+  "registered_type_composite_check": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/REGISTERED_TYPE_COMPOSITE_CHECK.json",
+    "sha256": "f0b0fc22e3b59d40c9050e17a87b8a1d2ba2023e4fee16e1178f9ffa9425f210"
+  },
+  "registered_type_figma_binding": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/REGISTERED_TYPE_FIGMA_BINDING_CHECK.json",
+    "sha256": "b6e5f33484f2f17bdfde5879d4f6724d195d7cda80d466ef9851d4750c870fa4"
+  },
+  "actual_binding": {
+    "aesthetic_pass_claimed": false,
+    "capture": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/FIGMA_NATIVE_CAPTURE.json",
+      "sha256": "f9b1f89c87405fc9b98ff39ec29058978f9e73fd17ace99646eb22e616d85e12"
+    },
+    "download_readback": {
+      "path": ".liu-visual-private/correct_source_typography/v26/figma-download-readback.json",
+      "sha256": "78282ff4d0963968e05a9dbd1f61366917f53972c777b6d7bf8c9f40d12e44e4"
+    },
+    "formal_version": 26,
+    "frame_id": "391:2",
+    "geometry": {
+      "brand": {
+        "coordinates_compared": 4928,
+        "max_absolute_coordinate_difference": 0.0012787703136609707,
+        "max_shape_coordinate_difference": 1.0092204973943808e-05,
+        "paths": 7
+      },
+      "headline": {
+        "coordinates_compared": 2594,
+        "max_absolute_coordinate_difference": 1.260311887563148e-05,
+        "max_shape_coordinate_difference": 9.218749937645043e-06,
+        "paths": 7
+      }
+    },
+    "limitations": [
+      "Figma native PNG and registered Sharp/Pillow final are different renderers; raw equality is not required.",
+      "Actual local host runtime log is required; portable replay without that local tool evidence is unsupported.",
+      "Only the inspected V26 direct collector invocation is accepted; V27 and later fail closed."
+    ],
+    "native_png_equals_registered_final_required": false,
+    "node_count": 21,
+    "photo_node_id": "391:3",
+    "raw_figma_export": {
+      "path": ".liu-visual-private/correct_source_typography/v26/figma-raw.png",
+      "sha256": "317e5e1ce631e4d01d10f6fb6abf3dd10a372fdb7c14588e2d5cd16d7f3d24a0"
+    },
+    "registered_path_fill_RGB_tolerance": 0,
+    "registration": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/REGISTERED_TYPE_COMPOSITE.json",
+      "sha256": "e12c838f23ba20df7b46a08af0a58280190984496b6a96a3db34fd81472de690"
+    },
+    "result": "PASS_ACTUAL_BINDING_WITH_RENDERER_LIMITATIONS",
+    "runtime": {
+      "binding_call_id": "call_fQ1b7XEsDxHgxgKpWcpZoGqF",
+      "binding_input_sha256": "97f40c1b9aa1a163a105a544094e67d43c68d213b98c887127d787f22cbccc0a",
+      "binding_output_sha256": "706400de1f1bde3c1d0339337cc2ef30a3c661d9d5449788231ff6960887ee85",
+      "download_call_id": "call_W0slq1jKHi4LO8JFsr3c8WV8",
+      "download_input_sha256": "5176f33c42ba287324c8999d120249eecebe6ab4bcc37836923d6903a107ad10",
+      "download_output_sha256": "45d2d49e0f15df72666f68914250928136ad4e3287113a63028339475ca37bc4",
+      "download_result_transport": "IMMEDIATE_FULL_ACTUAL_RESULT_NO_WAIT",
+      "session_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd"
+    },
+    "runtime_evidence": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/FIGMA_BINDING_RUNTIME_EVIDENCE.json",
+      "sha256": "1ed0f9b21a43233930da14cf7ea135da879f8ab1433cf05487de331f1b599563"
+    },
+    "schema": "vpd-actual-registered-type-figma-check/v1",
+    "source": {
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    },
+    "vector_count": 14
+  },
+  "independent_pixel_recomposition": {
+    "aesthetic_pass_claimed": false,
+    "alpha_positive_expected": {
+      "max_channel_difference": 0,
+      "pixels": 0
+    },
+    "alpha_zero_source": {
+      "max_channel_difference": 0,
+      "pixels": 0
+    },
+    "core_alpha_positive_expected": {
+      "max_channel_difference": 0,
+      "pixels": 0
+    },
+    "core_alpha_positive_pixels": 0,
+    "core_alpha_zero_pixels": 162052,
+    "core_alpha_zero_source": {
+      "max_channel_difference": 0,
+      "pixels": 0
+    },
+    "core_pixels": 162052,
+    "figma_authenticity_verified_offline": false,
+    "figma_difference_semantics": "Stored 8-bit RGB channels; raw Figma color metadata recorded separately; no ICC perceptual equivalence claimed.",
+    "figma_raw": {
+      "path": ".liu-visual-private/correct_source_typography/v26/figma-raw.png",
+      "sha256": "317e5e1ce631e4d01d10f6fb6abf3dd10a372fdb7c14588e2d5cd16d7f3d24a0"
+    },
+    "figma_raw_bytes_equal_final": false,
+    "figma_raw_color_metadata": {
+      "gamma": 0.45455,
+      "srgb": 0
+    },
+    "figma_raw_to_final": {
+      "max_channel_difference": 42,
+      "pixels": 7666
+    },
+    "final": {
+      "path": ".liu-visual-private/correct_source_typography/v26/poster.png",
+      "sha256": "2019e4a1e413b169d72bc4e15826d6af2be2780663745125b4fa5afa9faf23c9"
+    },
+    "formal_version": 26,
+    "registration": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/REGISTERED_TYPE_COMPOSITE.json",
+      "sha256": "e12c838f23ba20df7b46a08af0a58280190984496b6a96a3db34fd81472de690"
+    },
+    "schema": "vpd-registered-type-composite-check/v1",
+    "source": {
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    },
+    "whole_frame_expected": {
+      "max_channel_difference": 0,
+      "pixels": 0
+    }
+  },
+  "already_completed_guard_probe": {
+    "audit": {
+      "path": "evidence/vpd/codex_takeover_20261003/audit/REGISTERED_TYPE_FIGMA_BINDING_V26_TESTS.json",
+      "sha256": "b22603c640d5bd306ca8998b25924967e260347439c69b6f0a3c3cf9b773aa14"
+    },
+    "cases": 15,
+    "code": {
+      "path": "visual_memory/vpd_registered_type_figma_binding.py",
+      "sha256": "5e110fd65067f514d81c8724d8e5017d89830d5b2828ce6b49ab1b67dd5d6802"
+    },
+    "probe": {
+      "path": "scripts/vpd_probe_registered_type_figma_binding_v26.py",
+      "sha256": "f4b00d6f8f2dfaa8e9a40599a8c04af3e8c32b11386a547475191156f6811376"
+    },
+    "reviewer_repeated_entire_probe": false,
+    "preserved_initial_failure": {
+      "completion_chunk": "97da53",
+      "exit_code": 1,
+      "error": "WRONG_NEGATIVE:actual_native_last_C_endpoint_one_unit:FIGMA_GLYPH_TOPOLOGY_CHANGED",
+      "repair": "Probe error classification only: changed closing endpoint adds an implicit lineTo; validator correctly rejects topology.",
+      "preserved": {
+        "path": ".liu-visual-private/composite-guard-probe/figma-binding-v26/first-failed-probe.json",
+        "sha256": "f605e3e81e4083628ed3916be8202a6872d7009c5fc2e1752c38d2c3d0d3273e"
+      }
+    }
+  },
+  "precision": "Native topology/order exact; four operand float32 ULPs for shape. Frozen brand anchor includes existing half page ULP only. Official decimal export retains .0005 anchor/.001 centered-shape plus ULP budgets. RGB and alpha zero tolerance.",
+  "production_and_guard_exact_bytes_and_mtimes_unchanged": true,
+  "actual_command_evidence": {
+    "path": ".liu-visual-private/guard-v26-fresh-review/audit-command-evidence.json",
+    "sha256": "c42363b912194f16b937b14e0723a63fb756cfc4457324ed4da3ff7869ee9eb6"
+  },
+  "reviewer_harness_diagnostics": [
+    {
+      "actual_chunk_id": "c277ac",
+      "exit_code": 1,
+      "observed": "Reviewer harness matched a Windows path in serialized JSON rather than raw returned text; maker and creation hashes passed before that assertion.",
+      "correction": "830378 exit0 examined raw small text leaves and confirmed actual call/output SHA and returned file equals the preserved V24 PNG. Final independent production_proof uses raw text leaves and passed in f081a9."
+    },
+    {
+      "actual_chunk_id": "304662",
+      "exit_code": 1,
+      "observed": "Exploratory receipt reader assumed every receipt had a probe field. It printed current seven code seals and the successful binding-probe receipt before KeyError.",
+      "correction": "No guard or production code changed. Review used the actual available fields and independently ran its own16 cases."
+    }
+  ],
+  "staged_native_state": {
+    "actual_command": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe -X utf8 -B scripts/verify_visual_memory.py --vpd-state --status-card",
+    "actual_chunk_id": "75775a",
+    "actual_exit_code": 1,
+    "actual_result": {
+      "status": "VPD_STATE_BLOCKED",
+      "reason": "EVIDENCE_HASH_MISMATCH:visual_memory/vpd_registered_type_composite.py"
+    },
+    "scope_authority": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/STAGED_TECHNICAL_REVIEW_SCOPE.json",
+      "sha256": "d192ab39aa1b96b3056c52a17679d7516ab59082ccf447e67e5594ee4243dcf4"
+    },
+    "prior_native326_receipt": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/NATIVE_326_VALIDATION_RECEIPT.json",
+      "sha256": "18398d589321985c638135a17f642355db2c297f6c1a6dac54cbd12a82f8e3f3"
+    },
+    "current_full_native_state_pass_claimed": false,
+    "pending_owner": "Root",
+    "pending_action": "Refresh current exact refs through the native transaction and obtain actual full-validator exit0 before formal aesthetic cold review."
+  },
+  "limits": [
+    "Independent technical review with source/history access; not a blind review, projectless five-image aesthetic gate, or human professional credential.",
+    "Actual Figma binding requires the inspected local host events and exact caller/output/script fingerprints. Different machines without those host records cannot rerun this proof.",
+    "Figma native PNG and registered Sharp/Pillow final differ at 7666 pixels, maximum stored-channel difference42. Both originals are retained; no RGB equality or ICC perceptual equivalence is claimed.",
+    "Source extraction uses alpha128/VTracer spline and Skia float32 operations. Cubic cleanup has sampled error checks, not a global continuous error bound or lossless source-alpha claim.",
+    "Current full native-state preflight remains BLOCKED pending Root reference/receipt transaction. No full-validator PASS or business advance is claimed by this worker.",
+    "Latest HEAD fresh-context, new-clone and cross-machine reuse have not been executed for V26; the earlier V9 recovery test does not establish these.",
+    "Engineering checks, editable curves, framework use and dependency maturity do not establish aesthetic improvement, time savings, human acceptance, or transfer of the whole distillation system."
+  ],
+  "limitations": [
+    "Independent technical review with source/history access; not a blind review, projectless five-image aesthetic gate, or human professional credential.",
+    "Actual Figma binding requires the inspected local host events and exact caller/output/script fingerprints. Different machines without those host records cannot rerun this proof.",
+    "Figma native PNG and registered Sharp/Pillow final differ at 7666 pixels, maximum stored-channel difference42. Both originals are retained; no RGB equality or ICC perceptual equivalence is claimed.",
+    "Source extraction uses alpha128/VTracer spline and Skia float32 operations. Cubic cleanup has sampled error checks, not a global continuous error bound or lossless source-alpha claim.",
+    "Current full native-state preflight remains BLOCKED pending Root reference/receipt transaction. No full-validator PASS or business advance is claimed by this worker.",
+    "Latest HEAD fresh-context, new-clone and cross-machine reuse have not been executed for V26; the earlier V9 recovery test does not establish these.",
+    "Engineering checks, editable curves, framework use and dependency maturity do not establish aesthetic improvement, time savings, human acceptance, or transfer of the whole distillation system."
+  ],
+  "business_state_writes": 0,
+  "Figma_Drive_Git_writes": 0,
+  "source_or_guard_code_edits": 0,
+  "new_generations": 0,
+  "aesthetic_pass_claimed": false,
+  "human_approval_claimed": false
+}

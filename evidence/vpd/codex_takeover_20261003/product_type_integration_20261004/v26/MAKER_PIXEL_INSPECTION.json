@@ -1,0 +1,86 @@
+{
+  "schema": "vpd-v26-maker-pixel-correctness-inspection/v1",
+  "formal_version": 26,
+  "creator_not_independent_reviewer": true,
+  "files_actually_viewed": [
+    {
+      "path": ".liu-visual-private/correct_source_typography/v26/preview.png",
+      "sha256": "2e246283406e66fd87bc4c6189e08dff76d7acbebb0748681a74719de426e76a",
+      "bytes": 2039356
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v26/cup-leaf-inspection.png",
+      "sha256": "4006231e0300ebb4137233f424925ea3d5d8d0d2899ee3210070c1833960187b",
+      "bytes": 304537
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v26/headline-render.png",
+      "sha256": "5d116b7180a307a37d64efa781187d06a2c232851b7f892d25490a97d3738bcb",
+      "bytes": 35768
+    }
+  ],
+  "view_method": "view_image detail=original; full preview, original-size product crop, complete transparent glyph layer",
+  "text_readback": {
+    "brand": "茶作",
+    "headline_lines": [
+      "一杯茶，慢下来"
+    ],
+    "combined_headline": "一杯茶，慢下来",
+    "required_copy_seen": true
+  },
+  "visible_correctness_observations": {
+    "一": "One complete natural variable-width horizontal stroke; no clipped left endpoint in the full preview.",
+    "杯": "木 and 不 structures, both downward stems, falling/side strokes are complete. The lower endings sit above the cup outer-right rim.",
+    "茶": "Grass head, 人 shoulder, lower stem and separate dots are clear; the shoulder retains a curved variable-width sweep.",
+    "，": "One visible connected comma after 茶, before 慢.",
+    "慢": "忄 and 曼 are present, the upper and lower existing counters remain open; no leaf-exclusion cut crosses a required stroke.",
+    "下": "Natural top horizontal, complete vertical and right falling dot; the vertical stops before the bright water band.",
+    "来": "Complete central vertical, two horizontals, two upper dots and spreading lower branches.",
+    "brand": "Inherited seven-path original wordmark is readable and remains at285/198 width205.",
+    "products": "Cup rim, tea surface, cup wall, original fresh leaf tips/veins and platter remain recognizable in full preview. No photograph was patched back."
+  },
+  "geometry_readback": {
+    "source_paths": 17,
+    "source_contours_bound_once": 21,
+    "after_contours": 21,
+    "compound_glyph_paths": 7,
+    "rendered_alpha_bbox_exclusive": [
+      535,
+      402,
+      1278,
+      536
+    ],
+    "fixed_envelope": [
+      288,
+      400,
+      1328,
+      720
+    ],
+    "counter_contour_count": 4,
+    "exclusion_removed_area_numerical_range": [
+      -0.0002383544051554054,
+      0.00017060655954992399
+    ],
+    "exclusion_note": "Only tiny Skia floating-point area differences; no visible exclusion crop or discontinuity observed."
+  },
+  "photograph_source": {
+    "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+    "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+  },
+  "brand": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/brand.svg",
+    "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff"
+  },
+  "alpha_zero_source_RGB_differences": 0,
+  "photograph_byte_change": false,
+  "product_pixels_unmodified_by_hidden_patch_or_layer": true,
+  "image_text_relation_independently_validated": false,
+  "aesthetic_verdict": null,
+  "human_verdict": null,
+  "aesthetic_pass_claimed": false,
+  "limits": [
+    "Maker checks copy and visible continuity only. It does not give an aesthetic pass.",
+    "The one-line organization places the phrase in the product upper field; actual integration quality still requires fresh external review.",
+    "Inspection crop is partial; full preview and transparent layer provide the entire phrase."
+  ]
+}
