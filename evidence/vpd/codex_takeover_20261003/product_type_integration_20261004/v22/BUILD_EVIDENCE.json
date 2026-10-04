@@ -1,0 +1,84 @@
+{
+  "schema": "vpd-v22-minimal-build-evidence/v1",
+  "actual_write": {
+    "tool_chunk": "685587",
+    "exit_code": 0,
+    "writes": 8,
+    "root_gate": {
+      "revision": 318,
+      "phase": "REVISION_REQUIRED",
+      "last_version": 21,
+      "verdict": "AI_FAIL",
+      "lock_sha256": "896afa25cf2728923f721a0272df72b30b48f5696aae487696361ced8bbf7851"
+    },
+    "headline": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/headline.svg",
+      "sha256": "e9feab432466d4f1a7188fdeff746ab6773a538ff59d1f2c3fa477aa3de6d14d",
+      "bytes": 37480
+    },
+    "preview": {
+      "path": ".liu-visual-private/correct_source_typography/v22/preview.png",
+      "sha256": "7941a97e9033c76a5d3b408485fcf541b28a64cc02d43b72b609aa28db0bdfff",
+      "bytes": 2022949
+    },
+    "provenance": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/LETTERING_PROVENANCE.json",
+      "sha256": "a0347f590446723993b74fa711be39474f5c84295cf2909ad99178fcc7a33142",
+      "bytes": 14406
+    }
+  },
+  "verify_tool_chunk": "e34f0d",
+  "checks": [
+    {
+      "label": "verify-only-existing",
+      "exit_code": 0,
+      "writes": 0,
+      "action": "verified-existing",
+      "paths": 17,
+      "source_d_and_translate_preserved": true
+    },
+    {
+      "label": "wrong-photo-path",
+      "exit_code": 1,
+      "rejection": "AssertionError: SOURCE_PHOTO_PATH_IDENTITY_MISMATCH"
+    },
+    {
+      "label": "wrong-lettering-path",
+      "exit_code": 1,
+      "rejection": "AssertionError: SOURCE_LETTERING_PATH_IDENTITY_MISMATCH"
+    },
+    {
+      "label": "existing-write-rejected",
+      "exit_code": 1,
+      "rejection": "AssertionError: OUTPUT_ALREADY_EXISTS"
+    },
+    {
+      "label": "wrong-photo-hash-in-memory",
+      "exit_code": 1,
+      "rejection": "AssertionError: FIXED_SOURCE_CHANGED:photo"
+    },
+    {
+      "label": "wrong-generated_phrase-hash-in-memory",
+      "exit_code": 1,
+      "rejection": "AssertionError: FIXED_SOURCE_CHANGED:generated_phrase"
+    }
+  ],
+  "snapshot_targets": 18,
+  "SHA_and_mtime_unchanged": true,
+  "wrong_hash_boundary": "Wrong bytes supplied in subprocess memory to the canonical read; actual photo/generated files never altered.",
+  "preservation": {
+    "raw_PNG_retained": true,
+    "source_photo_unchanged": true,
+    "upstream_nonempty_paths": 17,
+    "retained_paths": 17,
+    "nonempty_omission": 0,
+    "source_d_and_translate_preserved": true
+  },
+  "strict_composition": "S + registered original brand SVG + registered full-frame headline SVG. Old core-zero recovery/foreground masking not used.",
+  "worker_imagegen_calls": 0,
+  "worker_Figma_Drive_Git_writes": 0,
+  "worker_business_state_writes": 0,
+  "fullpreview_files": 1,
+  "alternate_artwork_candidates": 0,
+  "aesthetic_verdict": null
+}

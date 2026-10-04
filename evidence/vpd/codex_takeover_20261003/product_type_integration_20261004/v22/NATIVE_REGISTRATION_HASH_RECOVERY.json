@@ -1,0 +1,17 @@
+{
+  "actual_first_native_chunk": "3dc1c6",
+  "actual_exit_code": 1,
+  "error": "EVIDENCE_HASH_MISMATCH:visual_memory/vpd_task_lock.py",
+  "actual_rollback_lock": 318,
+  "actual_rollback_checkpoint": 340,
+  "cause": "Root receipt packer used raw bytes for preexisting CRLF text; native digest already normalizes supported text to LF",
+  "repair": "Use existing vpd_task_lock.digest for artifact_refs; no validator/code/image/historical receipt changes",
+  "corrected_refs": [
+    {
+      "path": "visual_memory/vpd_task_lock.py",
+      "raw_sha256": "8acafdfab63314fca84f6d4e6a635dd9564bdb5835be9be773fc6dc51d70ce36",
+      "native_canonical_sha256": "94af2eb3f2b96802404a3b787356a1ce5215b1485416be12435ef925cfe5c2e5"
+    }
+  ],
+  "original_draft_sha256": "12902ffd8fad949ce8930f711ef61dc557ccca9310a9b11912b4a8de60efc700"
+}

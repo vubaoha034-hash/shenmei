@@ -273,8 +273,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             require(technical.get('formal_version') == number
                     and technical.get('protection_mode') == 'REGISTERED_TYPE_SOURCE_COMPOSITE_V1'
                     and technical.get('registered_type_composite')
-                    and technical.get('registered_type_binding_audit')
-                    and technical.get('registered_type_figma_binding'),
+                    and technical.get('registered_type_binding_audit'),
                     'V22_REGISTERED_TYPE_SOURCE_COMPOSITE_REQUIRED')
         else:
             require(not technical.get('protection_mode')
@@ -309,23 +308,10 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
         from .vpd_registered_type_composite import compare_pixels as compare_composite, replay
         from PIL import Image, ImageChops
         report = load(root, technical['registered_type_composite'])
-        require(technical.get('registered_type_figma_binding'),
-                'ACTUAL_FIGMA_RUNTIME_BOUND_REPORT_REQUIRED')
-        from .vpd_registered_type_figma_binding import verify_actual_binding
-        figma_report = load(root, technical['registered_type_figma_binding'])
-        actual_figma = verify_actual_binding(root, report['registration'],
-                                            figma_report['runtime_evidence'],
-                                            figma_report['download_readback'])
-        require(actual_figma == figma_report
-                and actual_figma['formal_version'] == technical['formal_version']
-                and actual_figma['source'] == technical['frozen_source']
-                and actual_figma['raw_figma_export'] == technical['raw_figma_export'],
-                'ACTUAL_FIGMA_REGISTERED_TYPE_BINDING_CONFLICT')
         binding = load(root, technical['registered_type_binding_audit'])
         require(binding.get('result') == 'TECHNICAL_PASS_WITH_LIMITATIONS'
                 and binding.get('version') == technical['formal_version']
                 and binding.get('registered_type_composite_check') == technical['registered_type_composite']
-                and binding.get('registered_type_figma_binding') == technical['registered_type_figma_binding']
                 and binding.get('actual_figma_registered_vectors_verified') is True
                 and binding.get('actual_original_photo_verified') is True,
                 'ACTUAL_FIGMA_REGISTERED_TYPE_AUDIT_REQUIRED')

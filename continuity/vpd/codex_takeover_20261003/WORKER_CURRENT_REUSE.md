@@ -33,6 +33,7 @@
 | V19 | [完整PNG](https://drive.google.com/file/d/1yhnl8FIxlPpmGR0V6dg4F7LJngSzlEwp/view) | [359:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=359-2) | AI_FAIL；真人PENDING |
 | V20 | [完整PNG](https://drive.google.com/file/d/1OteRk6R5QoK7bId9HO8dAVkYN3ar26U6/view) | [362:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=362-2) | AI_FAIL；真人PENDING |
 | V21 | [完整PNG](https://drive.google.com/file/d/1vvEQqZkxpL1QkSRaKcUY55niJNnRXLdt/view) | [364:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=364-2) | AI_FAIL；真人PENDING |
+| V22 | [完整PNG](https://drive.google.com/file/d/1ggyCK9T6CZPjFsSAoTa-zYtAbAQ0GTFc/view) | [366:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=366-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -44,7 +45,7 @@ V9资产：[字标SVG](https://drive.google.com/file/d/1hgIzKY63zIpxVJgYA590aPfi
 
 ## 实际方法与依赖
 
-- [Anthropic官方design-critique](https://github.com/anthropics/knowledge-work-plugins/blob/d3ee81913e5e179273313345847a2a4f42449bd2/design/skills/design-critique/SKILL.md)，提交d3ee81913e5e179273313345847a2a4f42449bd2，Apache-2.0；上游 `skills/design-critique/upstream/SKILL.md` 不改，`skills/chazuo-independent-art-review/SKILL.md`为项目适配。实际brief调用第一印象、层级、间距、画面区域证据和最多三项修复，排除网页UX项。属于独立审稿框架，不是中文字标创作技能，也不代表真人设计师资历。通过项目入口和保存的brief实际调用，未宣称安装进运行器的全局技能发现目录。
+- [Anthropic官方design-critique](https://github.com/anthropics/knowledge-work-plugins/blob/d3ee81913e5e179273313345847a2a4f42449bd2/design/skills/design-critique/SKILL.md)，提交d3ee81913e5e179273313345847a2a4f42449bd2，Apache-2.0；上游 `skills/design-critique/upstream/SKILL.md` 不改，`skills/chazuo-independent-art-review/SKILL.md`为项目适配。实际brief调用第一印象、层级、间距、画面区域证据和最多三项修复，排除网页UX项。属于独立审稿框架，不是中文字标创作技能，也不代表真人设计师资历。固定上游经必要元数据/相对链接适配，已安装于Codex用户技能目录；当前实际available-skills清单可发现，文件SHA与安装清单一致。独立审稿实际使用保存的静态海报brief调用核心，具体发现与调用范围见V22/SKILL_DISCOVERY_AND_ACTUAL_USE.json。
 - [VTracer官方](https://github.com/visioncortex/vtracer)、[固定Python包0.6.15](https://pypi.org/project/vtracer/0.6.15/)，MIT，核心不改。实际读README、Python绑定、Rust转换/配置/SVG实现、许可、Cargo.lock、依赖及示例。有界合成试用是工具演示；V4/V6/V9都在真实生成文字alpha上实际调用，分别保存原始输出与路径处理。V9保留7字标轮廓，公开原始trace可检查；转换器不设计字形。V4仍AI_FAIL，不能晋升“审美提升技能”。来源、wheel/sdist完整SHA、真实试用/制作在 `evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/vectorization/` 与 `v4/`。Python发行版本0.6.15与SVG生成器标识0.6.12分别记录，不能混同。WindowsCRLF与独立LF追踪字节不同，实际path属性相同；不改写历史raw trace。
 - [Glyphs官方路径教程](https://glyphsapp.com/learn/drawing-good-paths)及[Figma矢量编辑](https://help.figma.com/hc/en-us/articles/360039957634-Edit-vector-layers)：实际读控制柄、极值、内外曲线、局部节点、闭合步骤并查看示范像素/动画指定帧。Figma [YouTube教程](https://www.youtube.com/watch?v=5x2uHUB_pzw)仅取得频道、标题、描述，未取字幕或完整观看。具体来源/阅读范围在 `continuous_typography_20261004/tutorials/TUTORIAL_METHODS.md`；方法适配不复制教程字形或作品。方正喜茶/汉仪大白兔官方案例研究在 `lettering_correction_20261004/PROFESSIONAL_CASE_METHODS.md`，只学习材料、端点、负形共享步骤；不复制商业轮廓。
 - V1–V3用固定MIT FontTools4.63.0与OFL1.1 Adobe Source Han Serif2.003局部处理轮廓，真实失败保留；固定版本/字体恢复SHA见 `skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json`。V4用内置imagegen制作一份文字资产（非摄影），原PNG、提示和调用证据留存；底层生图模型名称工具未暴露，记录NOT_EXPOSED。V5字标由独立制作worker从“茶”的艹/人/木、“作”的亻/乍原创15闭合笔画构造，没有导入字体或照描参考轮廓；几何、来源、运行脚本在 `continuous_typography_20261004/v5/wordmark/`。FontTools BoundsPen只测曲线界限，不加载字体；Node/sharp渲染技术预览不计新生图。V5标题沿用V4轮廓缩小、上移，整图仍须新的正式冷审。
@@ -112,3 +113,11 @@ V20已制作真实细笔主句46原创filled cubic paths/7字标点组，品牌�
 V21真实采用固定Adobe Source Han Serif SC Regular 2.003完整OFL1.1源字体，通过FontTools4.63.0提取7完整compound glyph/26源轮廓，0字形修改，两行“一杯茶，／慢下来”；V9品牌七路径原字节不变，仅等比位置调整。Figma364:2实际15VECTOR/1mask/0TEXT，源摄影7fd7777f/图像hash074a11ff/变换滤镜不改，框外1421312与固定核心162052 RGB0。Drive完整PNG1vvEQqZkxpL1QkSRaKcUY55niJNnRXLdt/SVG14JhrS1GgO9Wg19PXLlndV9ccStGkI4Jb实际HTTP200逐字节一致；无需核心额外回填。项目外新Sol/Max229555ms五正确原图独立冷审AI_FAIL，整体字群印刷语气、右重及产品邻近未形成可见关系。冷审把品牌y198误写成y4，Root保留原意见与失败结果并另列事实局限，不据错误位置移动品牌。专业技术TECHNICAL_PASS_WITH_LIMITATIONS；Root生产回执formal_version误留20，精确旧字节与20→21修复均保存并由技术审查回读确认；当前修复不改制作调用/作品/冷审，原生下一次引用已刷新。成熟字体方案的视觉收益未得到验证，DEEP预测与实际失败分别保留，不能包装成改进。
 
 Root另查摄影源冻结与成品产品核心RGB零差异是否存在人为扩大约束，交全新只读Astra/high挑战核对原始真人授权和原生合同；在结论和必要实现复验前，不改现有保护规则、不制作下一版。挑战不是项目外冷审替代，不授权worker改主线。后继唯一动作仍是同方向依据实际证据修订；请只执行最新原生锁，不把此历史待审说明当新状态。
+
+
+V22已实际完成同一方向新主句字形：一次内置透明文字图像工具，后端NOT_EXPOSED；alpha128与未改VTracer0.6.15提取全部17非空轮廓，一次整体等比变换，V9品牌7路径不改。实际Figma366:2含31节点/24VECTOR/0TEXT/0mask；原摄影7fd和原图像hash不改。完整海报062a5253…与headline SVG、生成原RGBA都已Drive原字节HTTP200回读一致。具体调用、许可依赖、恢复入口、源图/成品/SVG身份及可编辑边界在 `evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/REUSE_METHOD.md`。
+
+V22限定技术保护纠偏：全新Astra/high核对原始真人冻结的是摄影源而非禁止前景文字；Root仅将此前自行添加的“核心成品RGB必须等于源”改为“固定同一摄影源+已登记文字真实alpha精确source-over”，不更改主线、照片、尺寸、文案或历史V1–V21保护。固定162052核心全部仍检查（10283实际文字覆盖、151769未覆盖），全幅/alpha0/alpha正及核心都RGB差0；框外1429556差0。实际Figma完整几何、层级、样式和来源/原生导出与工具runtime绑定重算通过，原生导出与登记合成输出8431像素、最大34RGB差别如实保留，是两个渲染器，不能称原生导出逐像素相同。首次独立挑战发现五个自述bool可冒充证据的真实FAIL保留；修复后另一全新Astra/high实际挑战23反例全拒绝，旧V1–V21保护仍通过。该技术挑战不是项目外审美冷审，完整原生任务检查与新五图冷审分别执行后才按结果推进。
+
+
+V22新的项目外独立五图审稿实际结果：AI_FAIL。唯一作品062a5253…、P/N/R/S/T身份、真实Sol/Max单turn_context、5个成功ImageView及无仓库/历史读取，均由原生collector回读实际runtime保存到 `product_type_integration_20261004/v22/pixel_review/`。技术/程序/可编辑性与该视觉判断分开；AI_PASS只允许交刘先生验收，真人PENDING，节时和视觉收益尚未验证。后续只读取最新任务锁，不自动扩大下一项目或风格。

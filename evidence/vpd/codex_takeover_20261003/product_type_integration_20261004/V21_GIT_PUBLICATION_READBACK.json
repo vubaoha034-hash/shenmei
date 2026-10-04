@@ -1,0 +1,48 @@
+{
+  "schema": "vpd-fixed-commit-publication-readback/v1",
+  "commit": "e27b8291dc863309c9771078e56db97543998b68",
+  "parent": "12843a3c9594243e5e0ad4398758046f2649fc2f",
+  "tree": "07105b70bd4ed63454190d17d2763aaa46697790",
+  "local_unpublished_backup": "e419b50 / codex-v21-local-publication-backup-20261004",
+  "publishing": "Official GitHub tree/commit/ref APIs; force false. Verified TLS openssl git fetch; soft convergence only after identical tree/parent and tracked clean checks.",
+  "actual_cloud_readback_chunk": "1b534f",
+  "actual_local_blob_comparison_chunk": "e55bc8",
+  "readback": [
+    {
+      "path": "START_HERE.md",
+      "cloud_blob": "c3573c8a3f3273b56d1b7f552f34af9815f1c1ba",
+      "local_blob": "c3573c8a3f3273b56d1b7f552f34af9815f1c1ba",
+      "match": true
+    },
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "cloud_blob": "557254d8b78a4e4951cc60bc2d6c360822c7a8fe",
+      "local_blob": "557254d8b78a4e4951cc60bc2d6c360822c7a8fe",
+      "match": true
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "cloud_blob": "66beedf6f066cf660cf28b2a9b0e31c36bea54a5",
+      "local_blob": "66beedf6f066cf660cf28b2a9b0e31c36bea54a5",
+      "match": true
+    },
+    {
+      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "cloud_blob": "71c1b3531339f19d61f11719b45715d2ed63e067",
+      "local_blob": "71c1b3531339f19d61f11719b45715d2ed63e067",
+      "match": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/pixel_review/PIXEL_REVIEW.json",
+      "cloud_blob": "4dbc330d68ba0565d73ac11b175fc8694a9ee2a4",
+      "local_blob": "4dbc330d68ba0565d73ac11b175fc8694a9ee2a4",
+      "match": true
+    }
+  ],
+  "content_read_scope": "Fixed-commit API first two lines plus complete Git blob identity comparison; fresh complete repository-entry recovery still required after final AI_PASS.",
+  "limitations": [
+    "Actual direct git push failed missing credential prompt; no publish inferred from local commit. API route later succeeded.",
+    "One fixed-parent ledger API fetch transport failed, one identical bounded retry succeeded; no ledger content invented.",
+    "This publishes native318 and actual V21 failure, not V22 or a visual success."
+  ]
+}

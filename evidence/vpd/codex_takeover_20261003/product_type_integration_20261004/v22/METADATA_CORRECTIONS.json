@@ -1,0 +1,52 @@
+{
+  "formal_version": 22,
+  "kind": "Root correction of inherited V21 metadata, not new visual version",
+  "corrections": [
+    {
+      "before": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/PHOTO_PROTECTION_BEFORE_METADATA_CORRECTION.json",
+        "sha256": "34eb8a1a39af19b08d5b05524942761813bbf4de0d5b5a53ab2bc08820bde993"
+      },
+      "after": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/PHOTO_PROTECTION.json",
+        "sha256": "9b0f707c5027b4595e19373b12c3ca456690768a600fe97fe6a4b7c9f171f73d"
+      },
+      "fields": {
+        "product_foreground_preserved": {
+          "before": "SVG clip removes text only; source photo layer immutable. Product-core protection requires actual exported pixels, not author description.",
+          "after": "Immutable source photography under independently registered glyph alpha; no clipping mask or product-core/photo paste. Final must equal exact registered source-over composition."
+        }
+      }
+    },
+    {
+      "before": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/AUTHORIZED_REQUEST_BEFORE_METADATA_CORRECTION.json",
+        "sha256": "55c9c77d8c57fca4cc2e24e1b28cd806b5019cb5c7b039981ffb014ec9ba7dc5"
+      },
+      "after": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/AUTHORIZED_REQUEST.json",
+        "sha256": "edd7e9f37dc93ddded5672db30140d4b4a72f6ff581d33640ac2181ee2039e9d"
+      },
+      "fields": {
+        "imagegen_calls_authorized": {
+          "before": 0,
+          "after": 1
+        },
+        "preserve_other_headline_characters": {
+          "before": true,
+          "after": false
+        }
+      }
+    }
+  ],
+  "actual_artwork_changed": false,
+  "historical_versions_changed": false,
+  "source_photography_changed": false,
+  "actual_tool_calls_unchanged": {
+    "imagegen": 1,
+    "figma_import": 1,
+    "photo_generation": 0
+  },
+  "authority": "Current human continuous repair authorization plus original complete-poster/tool authorization; necessary lettering operation within same direction",
+  "corrected_utc": "2026-10-04T12:33:44.516030+00:00"
+}

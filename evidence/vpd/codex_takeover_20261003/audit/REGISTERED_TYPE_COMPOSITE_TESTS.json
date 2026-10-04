@@ -1,0 +1,181 @@
+{
+ "schema": "vpd-registered-type-composite-actual-tests/v1",
+ "verdict": "PASS_OFFLINE_CONTROLS_ONLY_ROOT_INTEGRATION_AND_FIGMA_REVIEW_PENDING",
+ "command": "\"C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B scripts/vpd_probe_registered_type_composite.py --write-evidence",
+ "exit_code": 0,
+ "runtime": {
+  "python": "3.12.14",
+  "pillow": "12.3.0",
+  "node": "v24.19.0",
+  "sharp": "0.35.4",
+  "rsvg": "2.62.91"
+ },
+ "vtracer": "0.6.15; actual original alpha128 replay",
+ "renderer_helper": {
+  "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v18/build_headline_asset.py",
+  "sha256": "24102f462f379255c29be0209cd63f91d3e862f80956a96b012471eccc18e8e5"
+ },
+ "guard_sha256": "43fde4da1d25124f8140d309a6be33cfc4f4ee2ff1c65fb1691bb29be419cec9",
+ "probe_sha256": "4b5910e7bae9f85ad7ecb49916750f72ad914f2de587f95b12323e627e0d0c7a",
+ "source": {
+  "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+  "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+ },
+ "fixed_core": {
+  "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/FIXED_PRODUCT_CORE_MAP.json",
+  "sha256": "6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f"
+ },
+ "tests": [
+  {
+   "test": "real_S_and_V21_font_source_over",
+   "result": "PASS",
+   "core_covered_pixels": 0,
+   "full_frame_difference": {
+    "pixels": 0,
+    "max_channel_difference": 0
+   },
+   "actual_V21_Figma_raw_to_control": {
+    "pixels": 10100,
+    "max_channel_difference": 36
+   },
+   "actual_V21_Figma_raw_bytes_equal_control": false,
+   "actual_V21_Figma_raw_color_metadata": {
+    "srgb": 0,
+    "gamma": 0.45455
+   }
+  },
+  {
+   "test": "real_S_V17_alpha128_retrace_foreground",
+   "result": "PASS",
+   "retained_nonempty_paths": 27,
+   "core_covered_pixels": 25477,
+   "full_frame_difference": {
+    "pixels": 0,
+    "max_channel_difference": 0
+   }
+  },
+  {
+   "test": "changed_source_byte",
+   "result": "REJECTED",
+   "actual": "REFERENCE_SHA_MISMATCH:.liu-visual-private/composite-guard-probe/source-bytes-countercase.png"
+  },
+  {
+   "test": "core_covered_one_channel_change",
+   "result": "REJECTED",
+   "actual": "UNEXPLAINED_COMPOSITE_PIXEL_CHANGE"
+  },
+  {
+   "test": "core_uncovered_one_channel_change",
+   "result": "REJECTED",
+   "actual": "UNEXPLAINED_COMPOSITE_PIXEL_CHANGE"
+  },
+  {
+   "test": "unregistered_alpha",
+   "result": "REJECTED",
+   "actual": "REGISTERED_LAYER_REPLAY_MISMATCH"
+  },
+  {
+   "test": "changed_registered_layer_order",
+   "result": "REJECTED",
+   "actual": "REGISTERED_LAYER_REPLAY_MISMATCH"
+  },
+  {
+   "test": "changed_registered_geometry",
+   "result": "REJECTED",
+   "actual": "REGISTERED_LAYER_REPLAY_MISMATCH"
+  },
+  {
+   "test": "forbidden_image",
+   "result": "REJECTED",
+   "actual": "SVG_ELEMENT_FORBIDDEN:image"
+  },
+  {
+   "test": "forbidden_filter",
+   "result": "REJECTED",
+   "actual": "SVG_ELEMENT_FORBIDDEN:filter"
+  },
+  {
+   "test": "forbidden_external_URL",
+   "result": "REJECTED",
+   "actual": "SVG_FILL_FORBIDDEN"
+  },
+  {
+   "test": "forbidden_shape_patch",
+   "result": "REJECTED",
+   "actual": "SVG_ELEMENT_FORBIDDEN:rect"
+  },
+  {
+   "test": "large_path_patch_disguised_as_glyph",
+   "result": "REJECTED",
+   "actual": "TRACE_GLYPH_COMMANDS_CHANGED"
+  },
+  {
+   "test": "photograph_as_generated_alpha",
+   "result": "REJECTED",
+   "actual": "GENERATED_ALPHA_PNG_REQUIRED"
+  },
+  {
+   "test": "opaque_RGBA_photograph_as_lettering",
+   "result": "REJECTED",
+   "actual": "TRANSPARENT_LETTERING_ALPHA_REQUIRED"
+  },
+  {
+   "test": "original_alpha_shifted_without_trace_change",
+   "result": "REJECTED",
+   "actual": "GENERATED_ALPHA_TRACE_MISMATCH"
+  },
+  {
+   "test": "frozen_V21_actual_old_guard_regression",
+   "result": "PASS",
+   "final_sha256": "f2f9c1af2725a6d4c41ae6141c726d3ea15a5670a3bab8761dea7e18630ea184",
+   "core_pixels": 162052
+  }
+ ],
+ "private_control_refs": [
+  {
+   "path": ".liu-visual-private/composite-guard-probe/font-registration.json",
+   "sha256": "cb9c1bd454c3570900198d686fe81aef1764e748f4c462c506684c4ebe1e22c9"
+  },
+  {
+   "path": ".liu-visual-private/composite-guard-probe/font-composite.png",
+   "sha256": "19dec13939728ad5d82ed0a72dd5368b42260d014241e0525cd3c448ce0162f1"
+  },
+  {
+   "path": ".liu-visual-private/composite-guard-probe/trace-registration.json",
+   "sha256": "5a2d285e5eb03d47aaeb5ccb6e04045f3df4404b3831e73e2bbf964683a8f94d"
+  },
+  {
+   "path": ".liu-visual-private/composite-guard-probe/trace-foreground-composite.png",
+   "sha256": "838e1df3262d407d18fc2ba97a8957b43faff1f3bc9b0126fa46073006ed8286"
+  }
+ ],
+ "elapsed_seconds": 31.469,
+ "initial_actual_failures": [
+  {
+   "exit_code": 1,
+   "cause": "Sharp rejected ns0:svg; use default SVG namespace; failed font-control.svg retained privately."
+  },
+  {
+   "exit_code": 1,
+   "cause": "Raw Figma has sRGB metadata; record raw metadata separately; final source-profile equality stays enforced."
+  },
+  {
+   "exit_code": 1,
+   "cause": "Actual tool alpha max254; require min0/max>=128 for alpha128 rather than invented max255."
+  }
+ ],
+ "frozen_S_brand_core_helper_sha_and_mtime_unchanged": true,
+ "business_state_writes": 0,
+ "existing_guard_writes": 0,
+ "new_photography_or_design_outputs": 0,
+ "paid_compute_usd": 0,
+ "actual_Figma_binding_collected": false,
+ "aesthetic_pass_claimed": false,
+ "limitations": [
+  "Registration trust is Root frozen references; semantic generated-copy identity needs real image/tool review.",
+  "No authenticity proof for maker Figma/transcript declarations; real read-only node/style/path capture plus independent review is still required.",
+  "Prospective module only; not integrated into existing production state validator by this worker.",
+  "Existing cached machine/runtime paths are pinned; cross-machine dependency discovery is not implemented.",
+  "Private controls remove old clips for legitimate foreground text; historical originals remain frozen."
+ ]
+}

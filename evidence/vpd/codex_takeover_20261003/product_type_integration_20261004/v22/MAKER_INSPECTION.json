@@ -1,0 +1,49 @@
+{
+  "schema": "vpd-v22-maker-pixel-inspection/v1",
+  "role": "Production maker; not cold reviewer",
+  "actual_views": [
+    {
+      "file": ".liu-visual-private/correct_source_typography/v22/headline-generated-01.png",
+      "method": "view_image original"
+    },
+    {
+      "file": ".liu-visual-private/correct_source_typography/v22/headline-alpha128.png",
+      "method": "Same fixed-threshold RGB raster displayed from memory before write; alpha>=128 black, lower alpha white"
+    },
+    {
+      "file": ".liu-visual-private/correct_source_typography/v22/preview.png",
+      "method": "view_image original",
+      "sha256": "7941a97e9033c76a5d3b408485fcf541b28a64cc02d43b72b609aa28db0bdfff"
+    },
+    {
+      "file": ".liu-visual-private/correct_source_typography/v22/headline-render.png",
+      "method": "view_image original"
+    }
+  ],
+  "actual_reading": {
+    "brand": "茶作",
+    "sentence": "一杯茶，慢下来",
+    "lines": [
+      "一杯茶，",
+      "慢下来"
+    ]
+  },
+  "observations": [
+    "Raw source includes glow. The actual alpha128 silhouette is clearly legible; fixed threshold discards subthreshold glow and some antialiased edges.",
+    "Whole-phrase placement is uniform and retains all source paths. The upper 一 stroke stays visibly above the right cup rim; actual cup contact was not achieved.",
+    "The lower row visibly overlays the tray upper edge, dried tea and part of the fresh leaf. No leaf mask or photo foreground raster was added; no leaf-before-letter depth effect is claimed.",
+    "The new glyphs have broad rounded brush forms and a tight row gap. Their stroke weight remains stronger than the slender reference, and bright stream highlights weaken contrast behind parts of the upper 茶.",
+    "慢 keeps readable 日/罒 and lower 又; 杯 retains 木/不; 下 and 来 remain complete. Original brand glyphs are unchanged."
+  ],
+  "actual_headline_bbox": [
+    717,
+    456,
+    1193,
+    714
+  ],
+  "artwork_edits_after_inspection": 0,
+  "one_fullpreview_inspected": true,
+  "aesthetic_pass_claimed": false,
+  "human_approval_claimed": false,
+  "formal_independent_review": null
+}
