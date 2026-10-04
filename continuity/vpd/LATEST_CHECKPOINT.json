@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 336,
-  "recorded_at": "2026-10-04T18:08:33.213690+08:00",
+  "sequence": 338,
+  "recorded_at": "2026-10-04T18:51:27.706640+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "CHAZUO_V19_AI_FAIL_NEW_SENTENCE_FORM_AND_PRODUCT_READING_BAND_REQUIRED",
+  "current_focus": "CHAZUO_V20_REAL_PIXEL_FAIL_DEEP_DIAGNOSIS_REQUIRED",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -433,8 +433,8 @@
   "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "6d066d71d69d2ffd8432651642acebfc478d4693719b4a64fa6ed8e6eb9995d8",
-    "revision": 314
+    "sha256": "84335df35926e748e10c69b7d370ed139c1f7e6ca3cbf1ae72057ee46c954d6a",
+    "revision": 316
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-314-20261003",
-      "event_hash": "be8a2488c3442d16f2e135ca5e5fbfe332d8e40a235c153da81504b125d7f144"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-316-20261003",
+      "event_hash": "2ac05d470dedff2333c2abde73113a4dad790ac3cc03ec418859843bc2101d74"
     }
   },
   "typography_repair": {
@@ -971,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "CHAZUO_V19_AI_FAIL_NEW_SENTENCE_FORM_AND_PRODUCT_READING_BAND_REQUIRED",
-  "updated_at": "2026-10-04T18:08:33.213690+08:00",
+  "current_stage": "CHAZUO_V20_REAL_PIXEL_FAIL_DEEP_DIAGNOSIS_REQUIRED",
+  "updated_at": "2026-10-04T18:51:27.706640+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_FAILED_REVIEW_RECEIPT.json",
-    "sha256": "70838d63116fc0ddf203972c073bf2d74e88e45293e5ab52de5f0f26584197d0"
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/NATIVE_FAILED_REVIEW_RECEIPT.json",
+    "sha256": "3bf9fde6e7c79adf552837b0f41d6eb436a30a1f7b0b8bccb037c8645458585d"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2664,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_FAILED_REVIEW_RECEIPT.json",
-      "sha256": "70838d63116fc0ddf203972c073bf2d74e88e45293e5ab52de5f0f26584197d0"
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/NATIVE_FAILED_REVIEW_RECEIPT.json",
+      "sha256": "3bf9fde6e7c79adf552837b0f41d6eb436a30a1f7b0b8bccb037c8645458585d"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2683,7 +2683,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "f920021dfc97f2f02b8a51cc1a1d5501adc05d02290de1d50a7bb0bc93eb1a00"
+      "sha256": "a883dcb6001118d954492d4c437e605550c80a41ac2ef0397257bc678fb84d67"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2773,9 +2773,9 @@
       },
       "budget": {
         "formal_versions_max": null,
-        "formal_versions_used": 19,
+        "formal_versions_used": 20,
         "revisions_max": null,
-        "revisions_used": 18,
+        "revisions_used": 19,
         "photo_generations": 0,
         "paid_compute_usd": 0,
         "training": 0,
@@ -3557,6 +3557,50 @@
             "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V19_TECHNICAL.json",
             "sha256": "62c3f436e13f0d88266ad4ebcb75d8f9259f2b2b1ab333ee81e86b2fc842bd84"
           }
+        },
+        {
+          "number": 20,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v20/poster.png",
+            "sha256": "dbbcecc2de8a07034430c0d60c219d59e8ea15b622d7f66d2835b4b0fe53ce83"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/TECHNICAL_CHECK.json",
+            "sha256": "89eab56c4de939935d88b2b8de326478a8874e02e945ee27aa6726b907507ddf"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/PHOTO_PROTECTION.json",
+            "sha256": "84f769d06667d507da837ce049e7fb32765efcd046cee5d07428d0e7524745c6"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/ASSET_PROVENANCE.json",
+            "sha256": "eca2baf3a7b628e3b3d934b111efe9e065c8c352f1648fb32a9babc14d080bf4"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "362:2",
+            "photo_node": "362:3",
+            "overlay_node": "362:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=362-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "727929a81f515a867851102362d9c566d6e018d2d1dbcabb2e253e22597b3ef9"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/DRIVE_ARCHIVE.json",
+            "sha256": "1f4c5a68ffafbe72eaec8c11220e9926d57bf953b306b1a84747e80065ba259e"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "35fcb5333f4ef70c8ea96244ac2e728d6e18251fb091af303d779738e02c3968"
+          },
+          "professional_technical_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V20_TECHNICAL.json",
+            "sha256": "381adbaa9110afc103b6786c0bf025a27e945b3f0aac18dbb279be5c94cb3ad7"
+          }
         }
       ],
       "poster_human_verdict": "PENDING",
@@ -3592,8 +3636,8 @@
       "acceptance_request_withdrawn": false,
       "poster_human_feedback_scope": "PRIOR_V3_REJECTION_PRESERVED_NOT_V9_VERDICT",
       "professional_technical_review": {
-        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V19_TECHNICAL.json",
-        "sha256": "62c3f436e13f0d88266ad4ebcb75d8f9259f2b2b1ab333ee81e86b2fc842bd84"
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V20_TECHNICAL.json",
+        "sha256": "381adbaa9110afc103b6786c0bf025a27e945b3f0aac18dbb279be5c94cb3ad7"
       },
       "fresh_repository_recovery": {
         "result": "PASS",

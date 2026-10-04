@@ -1,0 +1,43 @@
+{
+  "schema": "vpd-actual-native-validation-evidence/v1",
+  "root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "completed_tool_call_id": "call_Plk42WuBJMhEdMzxtbXqRSrI",
+  "stdout_chunk_id": "4a380a",
+  "actual_exit_code": 0,
+  "actual_native_stdout": {
+    "revision": 316,
+    "checkpoint": 338,
+    "next": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "remote_parent": "c8929eeaead073b7f5752b159ecf100dbad3303f"
+  },
+  "actual_tool_output_sha256": "4556a10dd0c304b61244a8d98ddbcfe6ede072ea6b9f5b8777247b12b24e0ae3",
+  "validated_state_and_code_refs": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "sha256": "84335df35926e748e10c69b7d370ed139c1f7e6ca3cbf1ae72057ee46c954d6a"
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "sha256": "73620d15448f641e0de7b96e753ac28fa12cce642b11a02c714bef254aadbcbd"
+    },
+    {
+      "path": "PROJECT_CONTROL_ADAPTER.json",
+      "sha256": "b541eee890ea6c7136ac546d25051dea1e9cf699daaa9497af71f47cd0335c39"
+    },
+    {
+      "path": "scripts/vpd_codex_takeover.py",
+      "sha256": "e462e80dadda38691a98dffb67be557cfb0102f401d94933fe9445164722476a"
+    },
+    {
+      "path": "scripts/vpd_collect_agent_review.py",
+      "sha256": "cc1f2f738eace53c5242bcebf4cd85a1d16749805d966ab762373603edf6d643"
+    },
+    {
+      "path": "visual_memory/vpd_correct_source_worker.py",
+      "sha256": "ac769d67104c5e58420061011afc58047030f8ae1fce41bc5c52038f8a1380fb"
+    }
+  ],
+  "validator": "Actual complete vpd_codex_takeover.py validate_locked_mainline, including source/product RGB and fresh actual pixel-review carrier binding",
+  "reuse_scope": "Same source/state/code bytes at this successful snapshot; not aesthetic pass or cross-machine installation proof",
+  "remote_parent_at_validation": "c8929eeaead073b7f5752b159ecf100dbad3303f"
+}

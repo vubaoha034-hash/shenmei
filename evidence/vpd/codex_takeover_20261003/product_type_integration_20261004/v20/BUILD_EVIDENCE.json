@@ -1,0 +1,99 @@
+{
+  "schema": "v20-actual-builder-call-evidence/v1",
+  "write_call": {
+    "chunk_id": "f2d0be",
+    "exit_code": 0,
+    "wall_time_seconds": 2.7930185,
+    "result": {
+      "mode": "write",
+      "action": "wrote-new",
+      "writes": 7,
+      "paths": 46,
+      "svg_chars": 13261,
+      "bbox": [
+        348,
+        438,
+        1175,
+        602
+      ],
+      "core_pixels": 162052,
+      "core_RGB_differences": 0,
+      "fixed_mask_RGB_differences": 0,
+      "protected_outside_RGB_differences": 0,
+      "true_product_occluded_alpha_pixels": 0,
+      "headline": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/headline.svg",
+        "sha256": "1662a7cf06cd87817dfefa75b4a2936421eaa3afe266207e4c0f3ad84b9baa55",
+        "bytes": 13289
+      },
+      "preview": {
+        "path": ".liu-visual-private/correct_source_typography/v20/preview.png",
+        "sha256": "a8fe95144fc1a768019a297675500267f51ceb37f8a8ee8b9a9739195297f891",
+        "bytes": 2033866
+      },
+      "manifest": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v20/MANIFEST.json",
+        "sha256": "18b16ebe55c1fb483c7fd18d5ffe4108c4c7fc0427176b8533dbc4eaa2ba8efd",
+        "bytes": 9335
+      },
+      "root_gate": {
+        "revision": 314,
+        "phase": "REVISION_REQUIRED",
+        "last_version": 19,
+        "verdict": "AI_FAIL",
+        "lock_sha256": "6d066d71d69d2ffd8432651642acebfc478d4693719b4a64fa6ed8e6eb9995d8"
+      }
+    }
+  },
+  "minimal_boundaries": {
+    "exit_code": 0,
+    "chunk_id": "1135a1",
+    "cases": [
+      {
+        "case": "verify_existing",
+        "exit_code": 0,
+        "observed": true,
+        "marker": "\"writes\": 0"
+      },
+      {
+        "case": "explicit_mode_required",
+        "exit_code": 2,
+        "observed": true,
+        "marker": "one of the arguments"
+      },
+      {
+        "case": "existing_output_rejected",
+        "exit_code": 1,
+        "observed": true,
+        "marker": "OUTPUT_ALREADY_EXISTS"
+      },
+      {
+        "case": "wrong_photo_path_rejected",
+        "exit_code": 1,
+        "observed": true,
+        "marker": "SOURCE_PHOTO_PATH_IDENTITY_MISMATCH"
+      },
+      {
+        "case": "wrong_photo_bytes_rejected_in_memory",
+        "exit_code": null,
+        "observed": true,
+        "marker": "FIXED_SOURCE_CHANGED:photo"
+      }
+    ],
+    "tested_targets": 8,
+    "target_bytes_and_mtime_unchanged": true,
+    "python_filesystem_write_audit": true,
+    "observed_python_filesystem_write_attempts": [],
+    "audit_boundary": "Python filesystem writes rejected; reused Node SVG renderer returns buffers through stdout. No claim of OS-wide file interception."
+  },
+  "preserved_initial_harness_failure": {
+    "chunk_id": "e2a6b1",
+    "exit_code": 1,
+    "actual_error": "UnicodeDecodeError in Windows subprocess stderr reader, followed by NoneType concatenation.",
+    "repair": "Test harness captures bytes and decodes with replacement for diagnostics; the builder and assets were unchanged.",
+    "is_design_or_builder_failure": false
+  },
+  "new_preview_files_during_boundary_tests": 0,
+  "new_imagegen_calls": 0,
+  "business_state_writes_by_worker": 0
+}
