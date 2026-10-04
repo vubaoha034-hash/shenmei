@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 326,
-    "sha256": "ccf0776ce8bb2dda282a684093c67caf846da17617b985704c14f9a84a4f8816",
+    "revision": 325,
+    "sha256": "e1b3967b57107181857740eef26918150534af6a5659c0676c34093001f85978",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -901,7 +901,7 @@
     "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock.",
     "current_bounded_delivery_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "4ddbfb105c3de98be5471943d1d27bcb6f7d0a23e7f2a79f8dbc8accc12975eb"
+      "sha256": "a7b4857574c4dc045d33865ea03a8d61e5565d74f5edb4f5c088fd322dd56d0c"
     }
   },
   "figma_upload_route_guard": {
@@ -986,12 +986,12 @@
   },
   "current_mainline": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
     "current_visual_unit": "HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY",
     "evidence": {
       "execution": {
-        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/NATIVE_FAILED_REVIEW_RECEIPT.json",
-        "sha256": "e6c57c4676d45b2787a81dcbe3786859f32ba3498ace19dbb914f086a45fb1ef"
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/NATIVE_AWAITING_REVIEW_RECEIPT.json",
+        "sha256": "f3b961cca7b1942c67ead795ae931102c29383987382ce8e119a36d670d4a94b"
       },
       "human_verdict": {
         "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
@@ -1010,11 +1010,11 @@
         "sha256": "2d4fba40b1436ba19ecedaa87395a4b1e9e23c327863b16e1e14bfe659284549"
       }
     },
-    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
     "codex_takeover": {
       "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
-      "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
+      "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
         "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -1024,8 +1024,8 @@
         "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
       },
       "receipt": {
-        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/NATIVE_FAILED_REVIEW_RECEIPT.json",
-        "sha256": "e6c57c4676d45b2787a81dcbe3786859f32ba3498ace19dbb914f086a45fb1ef"
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/NATIVE_AWAITING_REVIEW_RECEIPT.json",
+        "sha256": "f3b961cca7b1942c67ead795ae931102c29383987382ce8e119a36d670d4a94b"
       },
       "budget": {
         "formal_versions_max": 3,
@@ -1043,7 +1043,7 @@
       "state_writer": "ROOT_EXECUTOR_ONLY",
       "reuse_entry": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-        "sha256": "4ddbfb105c3de98be5471943d1d27bcb6f7d0a23e7f2a79f8dbc8accc12975eb"
+        "sha256": "a7b4857574c4dc045d33865ea03a8d61e5565d74f5edb4f5c088fd322dd56d0c"
       },
       "human_feedback": {
         "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -1102,7 +1102,7 @@
       },
       "worker_continuation": {
         "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-        "phase": "REVISION_REQUIRED",
+        "phase": "AWAITING_PIXEL_REVIEW",
         "authorization": {
           "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
           "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -2163,23 +2163,11 @@
               "overlay_node": "388:4",
               "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=388-2"
             },
-            "verdict": "AI_FAIL",
+            "verdict": "PENDING",
             "preserved": true,
             "professional_technical_review": {
               "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V25_TECHNICAL.json",
               "sha256": "85814d53b53261862db9ffc06dd68c48e1a04c5736f7e9d818368673d6fabd95"
-            },
-            "pixel_review": {
-              "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/pixel_review/PIXEL_REVIEW.json",
-              "sha256": "60cf01d9bc908c6a3f5359fbccbcc006877b1cdb1eb47edc868bc9d4855a7c28"
-            },
-            "drive_archive": {
-              "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/DRIVE_ARCHIVE.json",
-              "sha256": "1d661c0104cc9e80b8a0c34cd0505d3fd3ad7e2d0e34e5387a5723e67e135929"
-            },
-            "asset_drive_archive": {
-              "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/ASSET_DRIVE_ARCHIVE.json",
-              "sha256": "a44eb45572c28bc1e8c16de7f3ad6f1f7fa1989c7fb622728f56fb6c62dd1720"
             }
           }
         ],
@@ -2283,8 +2271,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-326-20261003",
-      "event_hash": "b22f454c39bd033bf36879b7c1eaa9ca9ad38496595450d4336fc1b067967c17"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-325-20261003",
+      "event_hash": "c43ca809cf5d90e2036a26779af9925f90a480c250efd1c7bdd4aff1447e5504"
     }
   },
   "mature_workflow_audit": {

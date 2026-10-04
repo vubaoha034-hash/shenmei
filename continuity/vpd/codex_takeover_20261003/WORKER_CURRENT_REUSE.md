@@ -36,6 +36,7 @@
 | V22 | [完整PNG](https://drive.google.com/file/d/1ggyCK9T6CZPjFsSAoTa-zYtAbAQ0GTFc/view) | [366:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=366-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V23 | [完整PNG](https://drive.google.com/file/d/1lizdEuUcCxePGS6uUly7pzmpxiFdhuK4/view) | [373:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=373-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V24 | [完整PNG](https://drive.google.com/file/d/1nYivrRDZU3aZySfapBbeHLiX8RWLFomd/view) | [384:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=384-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
+| V25 | [完整PNG](https://drive.google.com/file/d/1IXXnS6o4OOUus-tEVY0qLZp6UMnQf1wH/view) | [388:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=388-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -135,3 +136,9 @@ V24实际一次透明源素材、一次完整描摹、逐原轮廓before绑定�
 
 
 V24项目外Sol/Max冷审及另一个fork-none Astra/high补充挑战均实际读取五张原图，均AI_FAIL。共同有效问题：一杯茶读序断裂、茶与慢密集横笔过近、下/来长笔与鲜叶/干茶/盘沿争抢。formal审稿品牌y≈7是错误，实际品牌已285,198,width205；补充审稿品牌移入建议不能改变冻结品牌，所谓未见逗号只作为辨读问题，实际逗号路径存在。原话及事实核对全部保留，补充挑战不代替正式审核。精确坐标仍由技术检查，下一版正式brief去除创作者添加的目测数值边界指令，用实际字形/物体区域证据，质量标准不降低。唯一下一动作：同方向V25只精修主句读序、行间距、局部收笔与产品轮廓避让，0新摄影；流程、可编辑性和摄影保护已验证，视觉与节时收益未验证。
+
+
+V25同方向只改主句读序、行间与收笔；复用V24唯一透明生成原件与17路径21轮廓trace，零新生图/生产描摹/摄影。七主句复合曲线40作者轮廓，字腔/节点依据与局部慢忄修正及失败历史保留。摄影7fd与V9品牌dd8e/285,198宽205未改；完整登记海报e2f1f5d4…、Figma388:2/14VECTOR及三Drive新原件HTTP200全字节回读已保存。全幅/162052核心78覆盖+161974未覆盖均0RGB；原生Figma另存，7917像素/max41RGB渲染差如实保留。精确绑定守卫4operandULP/0RGB不放松，旧22/23/24完整返回不变。专业技术审查不能代替审美，新项目外五原图冷审未完成前PENDING；源、代码、成熟方法和准确调用从 `evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v25/REUSE_METHOD.md` 进入。
+
+
+V25新的项目外Sol/Max仅按P→N→R→S→T各一次实际读取五原图，真实模型/隔离工具范围及输入图像原字节传输均核对，正式审美AI_FAIL。原结论及具体区域证据在本版 `pixel_review/PIXEL_REVIEW.json`；精确摄影/曲线保护由技术检查，AI不替代刘先生。同方向下一版只按本版有效像素意见修复并重新冷审，摄影与V9品牌冻结，失败版本完整保留。

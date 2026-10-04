@@ -50,6 +50,8 @@ VERSIONS = {'python': '3.12.14', 'pillow': '12.3.0', 'node': 'v24.19.0',
 PLACEMENT = {'x': 285, 'y': 198, 'width': 205}
 EDIT_KERNEL = {'path': 'visual_memory/vpd_registered_type_edited_lineage.py',
                'sha256': 'a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd'}
+EDIT_ADAPTER_V25 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v25.py',
+                    'sha256': '0b4f33ae6f6c1aa4be585a4cdb5745398127ed9918880dc4d3031779a5394440'}
 
 
 def require(ok, message):
@@ -138,20 +140,27 @@ def renderer(root):
     return namespace['render']
 
 
-def edited_kernel(root):
-    filename = str(Path(root) / EDIT_KERNEL['path'])
+def edited_kernel(root, formal_version=24):
+    require(type(formal_version) is int and formal_version in (24, 25), 'INSPECTED_EDIT_VERSION_REQUIRED')
+    reference = EDIT_ADAPTER_V25 if formal_version == 25 else EDIT_KERNEL
+    filename = str(Path(root) / reference['path'])
     namespace = {'__file__': filename, '__name__': '_trusted_v24_edit_kernel'}
-    exec(compile(checked_bytes(root, EDIT_KERNEL), filename, 'exec'), namespace)
+    exec(compile(checked_bytes(root, reference), filename, 'exec'), namespace)
     return namespace
 
 
-def edited_lineage(root):
-    """Construct only the sealed actual V24 profile; authoring data grants no pass."""
+def edited_lineage(root, formal_version=24):
+    """Construct a sealed actual profile; default V24 is retained byte-for-byte."""
+    if formal_version == 25:
+        return edited_kernel(root, 25)['expected_lineage'](root, EDIT_ADAPTER_V25)
+    require(formal_version == 24, 'INSPECTED_EDIT_VERSION_REQUIRED')
     return edited_kernel(root)['expected_lineage'](EDIT_KERNEL)
 
 
 def check_lineage(root, tree, lineage, formal_version=None):
     if lineage['kind'] == 'alpha128-vtracer-edited/v1':
+        if formal_version == 25:
+            return edited_kernel(root, 25)['validate'](root, tree, lineage, formal_version, EDIT_ADAPTER_V25)
         return edited_kernel(root)['validate'](root, tree, lineage, formal_version, EDIT_KERNEL)
     paths = list(tree.iter(NS + 'path'))
     checked_bytes(root, lineage['provenance'])

@@ -1,0 +1,41 @@
+{
+  "schema": "vpd-v25-maker-pixel-inspection/v1",
+  "formal_version": 25,
+  "role": "MAKER_NOT_INDEPENDENT_REVIEW",
+  "method": "actual view_image(detail=original)",
+  "final_images_actually_seen": [
+    {
+      "path": ".liu-visual-private/correct_source_typography/v25/preview.png",
+      "sha256": "7c56fc4bfe26c2cf53460e21716f67345505d5100925aaeba642505f76f19652",
+      "bytes": 2036259
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v25/cup-leaf-inspection.png",
+      "sha256": "3f2a94d643c8d8c127c0ccf9480b201ad318864ad0b9fe61e2b4a5e166d129ce",
+      "bytes": 301383
+    }
+  ],
+  "transparent_image_actually_seen_before_local_repair": {
+    "path": ".liu-visual-private/correct_source_typography/v25/geometry-corrections/02-slow-stem-safety/headline-render.png",
+    "sha256": "fecc3a24d5f8bb7da8ad0724b92735815a66f9ac0996a2412139caf7cd5ff755",
+    "bytes": 33387
+  },
+  "literal_copy_seen": "一杯茶，慢下来",
+  "fixed_brand": "茶作 at frozen285/198 width205",
+  "observations": [
+    "The one stroke 一 is at the reading height of 杯. Cup wood and right vertical endings are shorter.",
+    "Tea lower contour ends above the slow row, leaving visible line air.",
+    "The comma is visible and connected. Slow radical now has a continuous stroke outside the leaf envelope.",
+    "Down and come feet finish above the tea heap and platter rather than extending to the platter edge."
+  ],
+  "limitations": [
+    "The lower row remains over some stream bokeh; its local white contrast is weaker than the dark upper field. Independent pixel review is still required.",
+    "The fixed leaf exclusion removes133.43190070017954px2 of the slow glyph, mainly remaining contour ends; numerical checks do not prove visual or semantic quality."
+  ],
+  "local_geometry_repairs": 1,
+  "single_layout_preserved": true,
+  "new_generation": 0,
+  "new_production_trace": 0,
+  "aesthetic_pass_claimed": false,
+  "human_acceptance_claimed": false
+}
