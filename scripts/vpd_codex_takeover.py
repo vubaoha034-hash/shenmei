@@ -92,22 +92,8 @@ def main():
             raise ValueError('WORKER_STATE_WRITE_NOT_AUTHORIZED')
         old_unit = (prior or {}).get('worker_continuation')
         if old_unit:
-            if old_unit['unit_id'] != unit['unit_id']: raise ValueError('WORKER_CANNOT_CHANGE_UNIT')
-            old_used, used = old_unit['budget']['formal_versions_used'], unit['budget']['formal_versions_used']
-            if not old_used <= used <= old_used + 1: raise ValueError('CONTINUATION_BUDGET_ROLLBACK_OR_SKIP')
-            if used > old_used:
-                if old_unit['phase'] not in ['AUTHORIZED','REVISION_REQUIRED']:
-                    raise ValueError('PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
-                if old_used and (not old_unit['versions'][-1].get('pixel_review') or
-                                 old_unit['versions'][-1].get('verdict') != 'AI_FAIL'):
-                    raise ValueError('PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
-                if old_used:
-                    from visual_memory.vpd_correct_source_worker import load as load_evidence
-                    prior_review=load_evidence(ROOT,old_unit['versions'][-1]['pixel_review'])
-                    if prior_review['verdict'] != 'AI_FAIL':
-                        raise ValueError('AI_PASS_STOPS_SERIAL_REPAIR')
-                if unit['versions'][:old_used] != old_unit['versions']:
-                    raise ValueError('HISTORICAL_VERSION_EVIDENCE_REWRITTEN')
+            from visual_memory.vpd_correct_source_worker import validate_serial_transition
+            validate_serial_transition(ROOT, old_unit, unit)
     entry='REUSE_FINAL.md' if (ROOT/BASE/'REUSE_FINAL.md').exists() else 'REUSE.md'
     if (ROOT/BASE/entry).exists():
         take['reuse_entry']=ref(BASE+entry)
@@ -162,6 +148,9 @@ def main():
                 '成品真人认可及整体蒸馏、迁移能力尚未验证']
         if unit.get('poster_human_feedback'):
             adapter['current_mainline']['evidence']['latest_poster_human_feedback']=unit['poster_human_feedback']
+        if unit.get('current_scoped_human_feedback'):
+            adapter['current_mainline']['evidence']['latest_scoped_human_product_type_feedback']=copy.deepcopy(unit['current_scoped_human_feedback'])
+            cp['latest_scoped_human_product_type_feedback']=copy.deepcopy(unit['current_scoped_human_feedback'])
         if unit['poster_human_verdict'] == 'REJECTED' and not unit.get('repair_authorization'):
             cp['incomplete']=['V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回',
                 '三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败',

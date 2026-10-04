@@ -1,0 +1,406 @@
+{
+  "schema": "vpd-human-resumption-guard-tests/v1",
+  "result": "PASS",
+  "tests": [
+    {
+      "name": "AI_PASS_phase_resumption_without_request_refused",
+      "passed": true,
+      "expected_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "actual_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "result": null
+    },
+    {
+      "name": "AI_PASS_next_version_without_request_refused",
+      "passed": true,
+      "expected_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "actual_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "result": null
+    },
+    {
+      "name": "wrong_target_export_sha",
+      "passed": true,
+      "expected_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "actual_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "result": null
+    },
+    {
+      "name": "wrong_target_export_path",
+      "passed": true,
+      "expected_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "actual_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "result": null
+    },
+    {
+      "name": "wrong_target_version_existing",
+      "passed": true,
+      "expected_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "actual_error": "HUMAN_REVISION_TARGET_EXPORT_MISMATCH",
+      "result": null
+    },
+    {
+      "name": "wrong_target_version_future",
+      "passed": true,
+      "expected_error": "HUMAN_REVISION_TARGET_VERSION_INVALID",
+      "actual_error": "HUMAN_REVISION_TARGET_VERSION_INVALID",
+      "result": null
+    },
+    {
+      "name": "target_version_bool",
+      "passed": true,
+      "expected_error": "HUMAN_REVISION_TARGET_VERSION_INVALID",
+      "actual_error": "HUMAN_REVISION_TARGET_VERSION_INVALID",
+      "result": null
+    },
+    {
+      "name": "wrong_task",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "wrong_unit",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "wrong_source_kind",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "empty_verbatim",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "wrong_scope",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "whole_frame_permission",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "final_acceptance_invalid_True",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "final_acceptance_invalid_0",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "photo_acceptance_retracted_invalid_True",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "photo_acceptance_retracted_invalid_0",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "mainline_change_authorized_invalid_True",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "mainline_change_authorized_invalid_0",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "old_budget_reset_invalid_True",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "old_budget_reset_invalid_0",
+      "passed": true,
+      "expected_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "actual_error": "ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "request_file_wrong_real_sha_refused",
+      "passed": true,
+      "expected_error": "EVIDENCE_HASH_MISMATCH",
+      "actual_error": "EVIDENCE_HASH_MISMATCH:requests/20.json",
+      "result": null
+    },
+    {
+      "name": "matching_real_sha_request_helper_allows",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": true
+    },
+    {
+      "name": "matching_request_AI_PASS_phase_resumption_allows",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": [
+        9
+      ]
+    },
+    {
+      "name": "matching_request_AI_PASS_serial_version10_allows",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": [
+        9
+      ]
+    },
+    {
+      "name": "request_cannot_relabel_as_poster_rejected",
+      "passed": true,
+      "expected_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "actual_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "result": null
+    },
+    {
+      "name": "historical_AI_PASS_record_immutable",
+      "passed": true,
+      "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+      "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+      "result": null
+    },
+    {
+      "name": "historical_request_reference_immutable",
+      "passed": true,
+      "expected_error": "HISTORICAL_HUMAN_REVISION_REQUEST_REWRITTEN",
+      "actual_error": "HISTORICAL_HUMAN_REVISION_REQUEST_REWRITTEN",
+      "result": null
+    },
+    {
+      "name": "count_rollback_refused",
+      "passed": true,
+      "expected_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "actual_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "result": null
+    },
+    {
+      "name": "version_skip_refused",
+      "passed": true,
+      "expected_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "actual_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "result": null
+    },
+    {
+      "name": "revision_count_reset_refused",
+      "passed": true,
+      "expected_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "actual_error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+      "result": null
+    },
+    {
+      "name": "prior_v9_request_does_not_authorize_after_v10_AI_PASS",
+      "passed": true,
+      "expected_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "actual_error": "AI_PASS_STOPS_SERIAL_REPAIR",
+      "result": null
+    },
+    {
+      "name": "legacy_AI_FAIL_serial_repair_control_allows",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": []
+    },
+    {
+      "name": "new_area_same_target_version9_refused",
+      "passed": true,
+      "expected_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "actual_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "result": null
+    },
+    {
+      "name": "new_area_older_version8_refused",
+      "passed": true,
+      "expected_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "actual_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "result": null
+    },
+    {
+      "name": "new_area_without_request_refused",
+      "passed": true,
+      "expected_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "actual_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "result": null
+    },
+    {
+      "name": "new_area_after_target_version10_allows",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": null
+    },
+    {
+      "name": "whole_frame_envelope_refused",
+      "passed": true,
+      "expected_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "actual_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "result": null
+    },
+    {
+      "name": "cup_region_y551_area_refused",
+      "passed": true,
+      "expected_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "actual_error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+      "result": null
+    },
+    {
+      "name": "three_envelopes_still_refused",
+      "passed": true,
+      "expected_error": "DECLARED_OVERLAY_BOUNDS_REQUIRED",
+      "actual_error": "DECLARED_OVERLAY_BOUNDS_REQUIRED",
+      "result": null
+    },
+    {
+      "name": "old_two_areas_unchanged_control",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": null
+    },
+    {
+      "name": "outside0diff_real_png_inside_new_area_control",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": null
+    },
+    {
+      "name": "outside0diff_real_png_cup_region_change_refused",
+      "passed": true,
+      "expected_error": "APPROVED_PHOTO_ACTUAL_PIXELS_CHANGED",
+      "actual_error": "APPROVED_PHOTO_ACTUAL_PIXELS_CHANGED",
+      "result": null
+    },
+    {
+      "name": "overlapping_envelopes_union_real_png_control",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": null
+    },
+    {
+      "name": "helpers_do_not_mutate_old_unit",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": true
+    },
+    {
+      "name": "actual_root_saved_human_request_positive_control",
+      "passed": true,
+      "expected_error": null,
+      "actual_error": null,
+      "result": true
+    }
+  ],
+  "count": 46,
+  "temporary_fixture_files_deleted": true,
+  "repository_business_authority_sha_unchanged": true,
+  "before_authority_sha256": {
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\CURRENT_TASK_LOCK.json": "8efe52e5d01da491ffd80d7a196df7dcfb0fa8b9050c3d0bfda2ac4e922c9ac9",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\LATEST_CHECKPOINT.json": "0c8d8479c9b40d37bf06b04032a587221cea02790550136c3d091974734984ee",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\PROJECT_CONTROL_ADAPTER.json": "9bb29a8eba1223c077de55f5350c6051b7a5587659641d91107881d4a2f5f96c",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\state_ledger\\commercial_design_pipeline.jsonl": "65161b48cec07cba1aa4be42b16790e8d4e2985c938be3eada941c27c3e850b6"
+  },
+  "after_authority_sha256": {
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\CURRENT_TASK_LOCK.json": "8efe52e5d01da491ffd80d7a196df7dcfb0fa8b9050c3d0bfda2ac4e922c9ac9",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\LATEST_CHECKPOINT.json": "0c8d8479c9b40d37bf06b04032a587221cea02790550136c3d091974734984ee",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\PROJECT_CONTROL_ADAPTER.json": "9bb29a8eba1223c077de55f5350c6051b7a5587659641d91107881d4a2f5f96c",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\continuity\\vpd\\state_ledger\\commercial_design_pipeline.jsonl": "65161b48cec07cba1aa4be42b16790e8d4e2985c938be3eada941c27c3e850b6"
+  },
+  "writer_shared_helper": "validate_serial_transition",
+  "validator_shared_request_helper": "validate_human_revision_requests",
+  "AST": "PASS",
+  "request_actual_sha256": "2d4fba40b1436ba19ecedaa87395a4b1e9e23c327863b16e1e14bfe659284549",
+  "native_writer_main_executed": false,
+  "business_state_writes": 0,
+  "artwork_writes": 0,
+  "cold_review_result_reads": 0,
+  "final_patch_preflight": {
+    "tool_result": {
+      "chunk_id": "92c214",
+      "wall_time_seconds": 0.3854834,
+      "exit_code": 0,
+      "original_token_count": 175,
+      "output": "{\"result\": \"PASS\", \"current_revision\": 293, \"real_native_phase_resumption_preflight\": \"PASS\", \"old_phase\": \"DELIVERED_AI_PASS\", \"proposed_phase\": \"REVISION_REQUIRED\", \"versions_used\": 9, \"revisions_used\": 8, \"poster_human_verdict\": \"PENDING\", \"historical_versions_equal\": true, \"current_alias_mismatch_refused\": \"CURRENT_SCOPED_HUMAN_FEEDBACK_REFERENCE_CONFLICT\", \"new_adapter_checkpoint_projection_source_verified\": true, \"AST\": \"PASS\", \"code_sha256\": {\"visual_memory/vpd_correct_source_worker.py\": \"96180bd63ff70fe4df1fc6e611b1ea65b7741d0710032bd657afcb5d6e49bfe8\", \"scripts/vpd_codex_takeover.py\": \"e462e80dadda38691a98dffb67be557cfb0102f401d94933fe9445164722476a\"}, \"business_state_writes\": 0}\r\n"
+    },
+    "result": "PASS",
+    "current_revision": 293,
+    "real_native_phase_resumption_preflight": "PASS",
+    "old_phase": "DELIVERED_AI_PASS",
+    "proposed_phase": "REVISION_REQUIRED",
+    "versions_used": 9,
+    "revisions_used": 8,
+    "poster_human_verdict": "PENDING",
+    "historical_versions_equal": true,
+    "current_alias_mismatch_refused": "CURRENT_SCOPED_HUMAN_FEEDBACK_REFERENCE_CONFLICT",
+    "new_adapter_checkpoint_projection_source_verified": true,
+    "AST": "PASS",
+    "code_sha256": {
+      "visual_memory/vpd_correct_source_worker.py": "96180bd63ff70fe4df1fc6e611b1ea65b7741d0710032bd657afcb5d6e49bfe8",
+      "scripts/vpd_codex_takeover.py": "e462e80dadda38691a98dffb67be557cfb0102f401d94933fe9445164722476a"
+    },
+    "business_state_writes": 0
+  },
+  "actor": {
+    "role": "INDEPENDENT_IMPLEMENTATION_REPAIR_TESTER",
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl"
+  },
+  "initial_test_tool_call": {
+    "chunk_id": "ddc878",
+    "exit_code": 0,
+    "wall_time_seconds": 2.0085098
+  },
+  "observed_test_harness_failure": {
+    "tool_result": {
+      "chunk_id": "1d62b4",
+      "wall_time_seconds": 0.4766143,
+      "exit_code": 1,
+      "original_token_count": 28,
+      "output": "Traceback (most recent call last):\r\n  File \"<string>\", line 31, in <module>\r\nKeyError: 'formal_versions_used'\r\n"
+    },
+    "meaning": "Print/report code used nonexistent top-level budget key after helper assertions; corrected report to unit.budget and reran. This was not a guard PASS."
+  },
+  "limitations": [
+    "Fixture tests and actual native phase-transition helper preflight only; native writer.main and full native receipt transaction were not executed by this worker.",
+    "Technical implementation PASS does not establish aesthetic or human acceptance.",
+    "Root is the sole business-state author; historical V9 AI_PASS and existing human rejection history were not rewritten."
+  ]
+}

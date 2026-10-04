@@ -1,0 +1,525 @@
+{
+  "schema": "vpd-professional-technical-audit/v1",
+  "version": 12,
+  "result": "TECHNICAL_PASS_WITH_LIMITATIONS",
+  "scope": "V12局部变化、输出前守卫必要探针、实际Figma与Drive素材访问；不含审美或原生业务状态验收。",
+  "reviewer": {
+    "role": "INDEPENDENT_PROFESSIONAL_IMPLEMENTATION_REVIEW",
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "inherited_project_context": true,
+    "fresh_blind_aesthetic_reviewer": false
+  },
+  "recorded_at_utc": "2026-10-04T05:12:33.154Z",
+  "actual_image_view": {
+    "tool": "view_image",
+    "path": ".liu-visual-private/correct_source_typography/v12/poster.png",
+    "sha256": "06857acf89ceab410134d919d93c96b80a29eec0b89ab3acd63e0fb72d774e0c",
+    "bytes": 1735532,
+    "size": [
+      1536,
+      1024
+    ],
+    "actual_pixels_seen": true,
+    "manual_copy_read": "一杯茶，慢下来",
+    "manual_brand_read": "茶作",
+    "unicode_codepoints": [
+      "U+4E00",
+      "U+676F",
+      "U+8336",
+      "U+FF0C",
+      "U+6162",
+      "U+4E0B",
+      "U+6765"
+    ],
+    "limitation": "人工读实际完整像素及源字符映射；0 TEXT意味着没有原生Unicode文本对象。可读性收益及视觉整合未判定。"
+  },
+  "independent_delta": {
+    "tool_chunk": "1bda6f",
+    "method": "Pillow RGB转数组，V11/V12逐像素比较，另对冻结S重算保护区",
+    "final_sha256": "06857acf89ceab410134d919d93c96b80a29eec0b89ab3acd63e0fb72d774e0c",
+    "source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "v11_sha256": "4f112b3596da33f35f2fa81f1f13858e9043b070abc8bf4f275c36895564e5fc",
+    "changed_pixels": 1602,
+    "changed_bbox_exclusive": [
+      599,
+      480,
+      707,
+      531
+    ],
+    "outside_tea_roi_changes": 0,
+    "protected_pixels": 1413440,
+    "protected_rgb_differences": 0,
+    "max_protected_delta": 0,
+    "brand_pixels_equal": true,
+    "envelopes": [
+      [
+        104,
+        96,
+        400,
+        256
+      ],
+      [
+        336,
+        400,
+        1160,
+        536
+      ]
+    ],
+    "tea_roi_exclusive": [
+      599,
+      480,
+      707,
+      531
+    ],
+    "interpretation": "1,602个变化全部在茶字ROI，ROI外完全相同；摄影保护区RGB零差。这只证明局部制作和保真，不证明审美改善。"
+  },
+  "supplied_svg": {
+    "count": 19,
+    "changed_indices": [
+      7,
+      9
+    ],
+    "unchanged_attributes_count": 17,
+    "svg_sha256": "fb8e4106184083a2a6e6eea88cbccc2f08ea8dc9c5a1d3bd50d7404c264ff89e",
+    "brand_svg_equal": true,
+    "svg_path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v12/headline.svg",
+    "svg_bytes": 55118,
+    "meaning": "只改路径7和9的d，另17条全部属性逐字一致。标题仍19路径，品牌SVG字节沿用V11。",
+    "transport_verified": {
+      "first10_master_attributes_equal_actual_script": true,
+      "actual_script_sha256": "5d6f43bdee93535ca38137095a46aecc0589704fd528b7a1eb8e4a2c8666d9d8"
+    },
+    "native_all19_geometric_identity_claimed": false
+  },
+  "builder_tests": {
+    "file": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v12/build_headline.py",
+    "sha256": "a2e27cb123ab5ee1d1c625830ef704f9509cf4a8153fa1fe56c25ef8e80f81ff",
+    "tool_chunk": "1bda6f",
+    "actual_wrong_source": {
+      "result": "REJECTED",
+      "error": "FIXED_INPUT_SHA_MISMATCH:S",
+      "source_substitution": "V11 full poster bytes instead of S; expected fixed S hash unchanged",
+      "physical_writes": 0
+    },
+    "actual_existing_outputs": {
+      "result": "REJECTED",
+      "error": "V12_OUTPUT_EXISTS_NO_OVERWRITE",
+      "existing_targets": [
+        "headline.svg",
+        "PROVENANCE.json"
+      ],
+      "physical_writes": 0
+    },
+    "actual_verify_only": {
+      "exit_code": 0,
+      "response": {
+        "mode": "zero_write_verification",
+        "writes": 0,
+        "svg_sha256": "fb8e4106184083a2a6e6eea88cbccc2f08ea8dc9c5a1d3bd50d7404c264ff89e",
+        "global_bbox": [
+          345,
+          407,
+          1146,
+          531
+        ],
+        "tea_bbox": [
+          571,
+          428,
+          707,
+          531
+        ],
+        "changed_pixel_bbox": [
+          598,
+          480,
+          707,
+          531
+        ],
+        "shared_core_leaf_opaque_pixels": 46,
+        "output": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v12\\headline.svg",
+        "provenance": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v12\\PROVENANCE.json"
+      },
+      "physical_writes": 0
+    },
+    "original_and_current_snapshots_unchanged": true,
+    "snapshots": {
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v12\\build_headline.py": {
+        "sha256": "a2e27cb123ab5ee1d1c625830ef704f9509cf4a8153fa1fe56c25ef8e80f81ff",
+        "bytes": 14132,
+        "mtime_ns": 1791089842510170600
+      },
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v12\\headline.svg": {
+        "sha256": "fb8e4106184083a2a6e6eea88cbccc2f08ea8dc9c5a1d3bd50d7404c264ff89e",
+        "bytes": 55118,
+        "mtime_ns": 1791089911047439400
+      },
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v12\\PROVENANCE.json": {
+        "sha256": "0134f958aff23bd572d3d6a887539abc6cee15125f5e80c7e4329e731cbb8f2b",
+        "bytes": 13218,
+        "mtime_ns": 1791089990042771200
+      },
+      ".liu-visual-private\\correct_source_typography\\v12\\poster.png": {
+        "sha256": "06857acf89ceab410134d919d93c96b80a29eec0b89ab3acd63e0fb72d774e0c",
+        "bytes": 1735532,
+        "mtime_ns": 1791090108211753700
+      },
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v11\\headline.svg": {
+        "sha256": "67db67ebbdf1d61176efd826e3ec2b737a1be2fc0c39ddfae6bb7fdb8b4198ee",
+        "bytes": 58248,
+        "mtime_ns": 1791087388784675300
+      },
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v11\\brand.svg": {
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "bytes": 39038,
+        "mtime_ns": 1791088230453891000
+      },
+      "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v11\\build_headline.py": {
+        "sha256": "ff6def73826e290afe3301f4e79085559032794543350c387183000a61267caa",
+        "bytes": 10037,
+        "mtime_ns": 1791087515122860000
+      },
+      ".liu-visual-private\\correct_source_typography\\v11\\poster.png": {
+        "sha256": "4f112b3596da33f35f2fa81f1f13858e9043b070abc8bf4f275c36895564e5fc",
+        "bytes": 1735666,
+        "mtime_ns": 1791088150657742300
+      }
+    },
+    "assertions_enabled": true,
+    "tested_invocation": "bundled Python -X utf8 -B; actual --verify-only; preflight invoked from non-main runpy for zero-write negative source/target probes",
+    "wrong_source_fixture_method": "仅内存替换ROOT路径解析，把S定位到实际V11完整海报文件；七项固定expected SHA保持原样，真正读取错误源字节，未改任何源文件。",
+    "seven_fixed_inputs": "headline、brand、S、V11_full、P、R、SHANYEJI，实际本机校验及依赖发现通过。",
+    "observed_dependency_versions": {
+      "python": "3.12.14",
+      "Pillow": "12.3.0",
+      "fontTools": "4.63.0",
+      "node": "v24.19.0",
+      "sharp": "0.35.4",
+      "rsvg": "2.62.91"
+    },
+    "new_behavior_confirmed": "依赖、输入、轮廓及内存栅格校验均在输出前，已有输出被拒绝；保存SVG由--verify-only真正重算且逐字节匹配。",
+    "mechanical_connectivity": {
+      "shared_alpha_at_least128_pixels": 46,
+      "claim_limit": "两修改路径在栅格阈值下有实际覆盖交集；不用于证明直觉认字或美术收益。"
+    },
+    "bounded_reuse_limits": [
+      "文件落盘仍用exists/assert后write_bytes/write_text；没有排他创建或双文件事务。没有测试并发目标创建、I/O中断，不能宣称此类情境也不会覆盖/部分落盘。",
+      "主要守卫使用assert，当前实际普通解释器启用；没有声称Python -O下仍执行这些守卫。",
+      "运行时版本与路径固定，本机实测成功；未做清洁机器依赖安装或新上下文恢复。",
+      "报告不读取PROVENANCE中的作者自评，也不把其actual_view_image_inputs字段作为本审查实际看图证据。"
+    ]
+  },
+  "independent_figma": {
+    "tool": "official use_figma with figma-use; read-only",
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "actual_native_readback": {
+      "readOnly": true,
+      "createdNodeIds": [],
+      "mutatedNodeIds": [],
+      "frame": {
+        "id": "333:2",
+        "width": 1536,
+        "height": 1024
+      },
+      "counts": {
+        "vector": 26,
+        "boolean": 0,
+        "text": 0
+      },
+      "photo": {
+        "id": "333:3",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "fills": [
+          {
+            "type": "IMAGE",
+            "visible": true,
+            "opacity": 1,
+            "blendMode": "NORMAL",
+            "scaleMode": "FILL",
+            "scalingFactor": 0.5,
+            "rotation": 0,
+            "filters": {
+              "exposure": 0,
+              "contrast": 0,
+              "saturation": 0,
+              "temperature": 0,
+              "tint": 0,
+              "highlights": 0,
+              "shadows": 0
+            },
+            "imageTransform": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "imageHash": "074a11ff4345752bae19150e799d9cae49518b8b"
+          }
+        ],
+        "relativeTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      "brand": {
+        "id": "333:5",
+        "x": 112,
+        "y": 104,
+        "width": 275,
+        "height": 134.0762481689453,
+        "literalPathsEqualV11": true
+      },
+      "title": {
+        "id": "333:14",
+        "x": 343,
+        "y": 405,
+        "width": 805,
+        "height": 127
+      },
+      "parts": [
+        {
+          "id": "333:38",
+          "x": 0,
+          "y": 0,
+          "width": 805,
+          "height": 127,
+          "vectorNames": [
+            "v10-derived-01",
+            "v10-derived-02",
+            "v10-derived-03",
+            "v10-derived-04",
+            "v10-derived-05",
+            "v10-derived-06",
+            "v10-derived-07",
+            "v10-derived-08",
+            "v10-derived-09",
+            "v10-derived-10"
+          ]
+        },
+        {
+          "id": "333:27",
+          "x": 0,
+          "y": 0,
+          "width": 805,
+          "height": 127,
+          "vectorNames": [
+            "v10-derived-11",
+            "v10-derived-12",
+            "v10-derived-13",
+            "v10-derived-14",
+            "v10-derived-15",
+            "v10-derived-16",
+            "v10-derived-17",
+            "v10-derived-18",
+            "v10-derived-19"
+          ]
+        }
+      ]
+    },
+    "delivery_asset_download": {
+      "tool": "official download_assets frame333:2, temporaryURLs memory only",
+      "result": "PASS",
+      "downloads": [
+        {
+          "asset": "source",
+          "http_status": 200,
+          "bytes": 1735549,
+          "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+          "mime_type": "image/png",
+          "matches_local_bytes": true
+        },
+        {
+          "asset": "raw_export",
+          "http_status": 200,
+          "bytes": 2047555,
+          "sha256": "78f4211215703ad42ca670ddafcbec860f1c422b8e9f2fcb1da9cf1eb70c09c9",
+          "mime_type": "image/png",
+          "matches_local_bytes": true
+        }
+      ],
+      "final_sha256": "06857acf89ceab410134d919d93c96b80a29eec0b89ab3acd63e0fb72d774e0c",
+      "final_bytes": 1735532,
+      "protection": {
+        "envelopes": [
+          [
+            104,
+            96,
+            400,
+            256
+          ],
+          [
+            336,
+            400,
+            1160,
+            536
+          ]
+        ],
+        "protected_pixels": 1413440,
+        "raw_changed_pixels": 1152,
+        "raw_max_channel_delta": 1,
+        "final_changed_pixels": 0,
+        "final_max_channel_delta": 0,
+        "design_inside_envelopes_equals_raw": true
+      },
+      "physical_writes": 0
+    },
+    "native_editability": "实际读取26 VECTOR / 0 BOOLEAN_OPERATION / 0 TEXT，品牌7路径保留；标题10+9分组可编辑。",
+    "unchanged_photo_fill": "074a11ff4345752bae19150e799d9cae49518b8b，filters全0，imageTransform/relativeTransform恒等，locked=true。",
+    "native_normalization_boundary": "继承V11原生导入微段/共线命令规范化与浮点限制。本版未扩测全部19条控制点几何；源17条保留、完整PNG的局部1602px差分提供当前局部证据。",
+    "created_nodes": 0,
+    "mutated_nodes": 0
+  },
+  "production_runtime": {
+    "manifest": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v12/CREATION_RUNTIME_EVIDENCE.json",
+      "sha256": "daeaf94cbfc5ac6b74c0a5ab56ed2cdb357d58acdcfbe7a8e3d291a64dfa7763"
+    },
+    "private_excerpt_path": ".liu-visual-private/v12-production-call-payloads-private.json",
+    "independently_verified": {
+      "result": "PASS",
+      "private_excerpt_sha256": "a86d9b322f972e6daffaa72925085af477e6bb7c71488f9b8347182b1bbb00ef",
+      "exact_rows": [
+        {
+          "call_id": "call_EHQHjdK5pNKzEnveWi2yU1Gm",
+          "kind": "input",
+          "sha256": "0d32e42b8fed39d8797cd3e5c5cb7fbc1156e474273131b541ee2bd939a89971",
+          "match": true
+        },
+        {
+          "call_id": "call_EHQHjdK5pNKzEnveWi2yU1Gm",
+          "kind": "output",
+          "sha256": "04932ee02cc078edee2d20530bba86e0050db47dc060674ec257cffb4c71767f",
+          "match": true
+        }
+      ],
+      "imported_first10_attributes_equal_master": true,
+      "script_sha256": "5d6f43bdee93535ca38137095a46aecc0589704fd528b7a1eb8e4a2c8666d9d8",
+      "physical_writes": 0
+    },
+    "original_figma_call_count_verified": 1,
+    "production_versions_observed": 1,
+    "schema_retry_in_this_v12_production": false,
+    "imagegen_in_verified_production_call": 0,
+    "actual_model_effort_boundary": "Manifest记录Root gpt-6.1-sol/xhigh；实际独立绑定该生产call的input/output原始两行SHA。本轮没有读取整体Root运行或worker turn_context，未以requested effort充当actual。"
+  },
+  "independent_drive": {
+    "method": "实际官方metadata+raw base64 fetch；内存解码并重算SHA256，对本地原字节绑定",
+    "poster": {
+      "drive_id": "1bHspC7jItrlU-8QG0k_YLgduCO5XHWV8",
+      "sha256": "06857acf89ceab410134d919d93c96b80a29eec0b89ab3acd63e0fb72d774e0c",
+      "bytes": 1735532,
+      "matches_actual_local_bytes": true,
+      "method": "ACTUAL_OFFICIAL_RAW_FETCH_BASE64_IN_MEMORY",
+      "physical_writes": 0
+    },
+    "headline": {
+      "drive_id": "1ZtvY6Ivj-sqvXLzwxgW_AC3xEhhrnuTZ",
+      "sha256": "fb8e4106184083a2a6e6eea88cbccc2f08ea8dc9c5a1d3bd50d7404c264ff89e",
+      "bytes": 55118,
+      "matches_actual_local_bytes": true,
+      "method": "ACTUAL_OFFICIAL_RAW_FETCH_BASE64_IN_MEMORY",
+      "physical_writes": 0
+    },
+    "poster_metadata": {
+      "id": "1bHspC7jItrlU-8QG0k_YLgduCO5XHWV8",
+      "title": "VPD_CHAZUO_CORRECT_SOURCE_V12_LEAF_LETTERFORM_20261004.png",
+      "mime_type": "image/png",
+      "size": "1735532",
+      "url": null,
+      "file_or_folder": "file",
+      "created_time": null,
+      "modified_time": "2026-10-04T05:04:18.244Z",
+      "parent_ids": [
+        "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+      ],
+      "drive_id": null,
+      "current_user_can_share": null,
+      "has_augmented_permissions": null,
+      "shared": null,
+      "permissions": null,
+      "source_visibility_status": "access_not_verified"
+    },
+    "headline_metadata": {
+      "id": "1ZtvY6Ivj-sqvXLzwxgW_AC3xEhhrnuTZ",
+      "title": "VPD_CHAZUO_V12_LEAF_LETTERFORM_HEADLINE_MASTER.svg",
+      "mime_type": "image/svg+xml",
+      "size": "55118",
+      "url": null,
+      "file_or_folder": "file",
+      "created_time": null,
+      "modified_time": null,
+      "parent_ids": [
+        "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+      ],
+      "drive_id": null,
+      "current_user_can_share": null,
+      "has_augmented_permissions": null,
+      "shared": null,
+      "permissions": null,
+      "source_visibility_status": "access_not_verified"
+    },
+    "originals_verified": 2,
+    "connected_access": "PASS",
+    "public_or_anonymous_access": "NOT_TESTED",
+    "brand": "仅沿用旧归档，本轮未虚报再次上传/fetch。",
+    "root_archives": {
+      "poster_sha256": "c59aad3894ec8b9d7b13dd3c1036d838e4d1e3e9914a89f9b49fc5c69325f05d",
+      "assets_sha256": "34d4711535284369a464d8122608411d7bc9fd9e40a16bb72313e686c3bcffd7"
+    },
+    "root_receipt_not_used_as_substitute_for_independent_raw_read": true
+  },
+  "reuse_entry": {
+    "available": "固定headline.svg、Figma333:2、Drive两原件已经本审查实际读取；使用这些原件无需重跑builder。",
+    "verify_only_current_host": "PASS_ZERO_OUTPUT_WRITES",
+    "builder_new_creation": "限未有输出、非优化Python、串行单作者。本轮没有运行实际写入模式。",
+    "all_history_integrity": "只核对已列V11与V12八个相关文件SHA/mtime；没有全仓或所有旧版完整性复审。",
+    "source_origin": "从已存V11标题保留17属性，人工构造两条茶字路径；本版没有新增字体文件/图像生成。既有字体衍生与字标来源边界继续保留，不能把继承字形改称从零原创。",
+    "aesthetic_improvement": "NOT_VERIFIED",
+    "formal_cold_review_or_human_acceptance": "NOT_REVIEWED"
+  },
+  "audit_execution_notes": [
+    {
+      "tool_chunk": "7600f7",
+      "result": "AUDITOR_ASSERTION_FAILURE_ZERO_WRITES",
+      "cause": "初次复用V11像素检查代码保留了V11 final预期SHA。未将它记为V12资产失败。"
+    },
+    {
+      "tool_chunk": "d2439e",
+      "result": "PASS",
+      "correction": "仅将预期SHA明确改为已绑定V12 SHA后重跑；官方source/raw两项HTTP200和真实最终保护区重算通过。"
+    }
+  ],
+  "not_performed": [
+    "未读取V12冷审正文、冷审thread/session、pixel_review或作者自評。",
+    "未读取Root整体混合日志，只读取专属两行生产摘录。",
+    "未重复V11全部19原生路径几何认证。",
+    "未改原生业务或声称当前设计通过审美。",
+    "未重跑历史写入builder或进行Git/全新上下文恢复验收。"
+  ],
+  "writes": {
+    "business_state": 0,
+    "source_code": 0,
+    "source_assets": 0,
+    "artwork": 0,
+    "figma": 0,
+    "drive": 0,
+    "git": 0,
+    "new_audit_file_only": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V12_TECHNICAL.json",
+    "historical_reports_overwritten": 0
+  }
+}

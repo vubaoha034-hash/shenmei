@@ -1,0 +1,22 @@
+const page = await figma.getNodeByIdAsync('251:2');
+await figma.setCurrentPageAsync(page);
+if (page.children.some(n => n.name === 'CHAZUO_V10_产品与文案横向对应')) throw new Error('V10_EXISTS_DO_NOT_CREATE_ANOTHER');
+const old = await figma.getNodeByIdAsync('317:2');
+if (!old || old.width !== 1536 || old.height !== 1024 || old.findAllWithCriteria({types:['TEXT']}).length) throw new Error('BASELINE_CHANGED');
+const f = old.clone();
+f.name = 'CHAZUO_V10_产品与文案横向对应'; f.x = 31728; f.y = 0;
+const photo = f.children.find(n => n.name === 'PHOTO_APPROVED_7FD_FROZEN_CLONE');
+const overlay = f.children.find(n => n.name === 'V9_新字标与两行光学收束');
+if (!photo || !overlay || photo.fills[0].imageHash !== '074a11ff4345752bae19150e799d9cae49518b8b') throw new Error('SOURCE_CHANGED_STOP');
+const title = overlay.children.find(n => n.name === '一杯茶，慢下来_V9_两行光学左边界');
+const brand = overlay.children.find(n => n.name === '茶作_V9_实际认可笔势参考创作');
+if (!title || !brand || title.children.length !== 19) throw new Error('EXPECTED_NATIVE_CURVES_MISSING');
+const lower = title.children.filter(n => n.y > 100);
+if (lower.length !== 9) throw new Error('EXACT_LOWER_STROKES_REQUIRED');
+for (const n of lower) { n.x += 400; n.y -= 100; }
+title.resize(704,104); title.x=350; title.y=432;
+title.name='一杯茶，慢下来_V10_杯与茶叶盘上方连续文案';
+overlay.name='V10_保留字标_只重排主文案';
+photo.locked=true; f.exportSettings=[{format:'PNG',constraint:{type:'SCALE',value:1}}];
+const all=[f,...f.findAll()];
+return {formal_version:10,file_key:'uyDxOoN1iNDPpEHTKSUWg1',frame_id:f.id,photo_node:photo.id,overlay_node:overlay.id,brand_node:brand.id,title_node:title.id,source_url:'https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id='+f.id.replace(':','-'),createdNodeIds:all.map(n=>n.id),mutatedNodeIds:[f.id,overlay.id,title.id,...lower.map(n=>n.id)],preserved_historical_frame:'317:2',photo_image_hash:photo.fills[0].imageHash,photo_filters:photo.fills[0].filters,source_layer_unchanged:true,dimensions:[f.width,f.height],editable_vector_count:all.filter(n=>n.type==='VECTOR').length,boolean_count:all.filter(n=>n.type==='BOOLEAN_OPERATION').length,text_count:all.filter(n=>n.type==='TEXT').length,headline:{x:title.x,y:title.y,width:title.width,height:title.height,lower_stroke_translation:[400,-100],children:title.children.map(n=>({id:n.id,x:n.x,y:n.y,width:n.width,height:n.height}))},brand:{x:brand.x,y:brand.y,width:brand.width,height:brand.height},primary_change:'EXISTING_HEADLINE_REFLOW_ONLY',photo_generation:false,imagegen_calls:0};

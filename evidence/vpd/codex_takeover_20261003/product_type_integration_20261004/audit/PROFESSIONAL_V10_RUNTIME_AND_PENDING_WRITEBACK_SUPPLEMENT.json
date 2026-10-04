@@ -1,0 +1,260 @@
+{
+  "schema": "vpd-professional-runtime-and-pending-writeback-supplement/v1",
+  "version": 10,
+  "result": "IMPLEMENTATION_FIX_PASS",
+  "actor": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "role": "BOUNDED_INDEPENDENT_IMPLEMENTATION_RETEST"
+  },
+  "original_report": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V10_TECHNICAL.json",
+    "sha256": "bf72e06a028006d298c6949754cff76a10a8b6e486e8b71b58d2578c2d23eeaa",
+    "actual_sha256_after_supplement_check": "bf72e06a028006d298c6949754cff76a10a8b6e486e8b71b58d2578c2d23eeaa",
+    "overwritten": false
+  },
+  "defect": {
+    "description": "Earlier unconditional versions-prefix equality incorrectly treated latest PENDING version as immutable reviewed history, blocking legitimate same-count review completion.",
+    "prior_failed_native_writer": "ROOT_REPORTED_ACTUAL_HISTORICAL_VERSION_EVIDENCE_REWRITTEN_NO_AUTHORITY_WRITE",
+    "independent_prepatch_source_read_chunk": "454485",
+    "coverage_gap": "Previous 46 passing fixtures did not cover PENDING latest review writeback. Those results remain preserved and do not prove this omitted behavior.",
+    "first_single_case_run": {
+      "chunk": "c27d82",
+      "result": "PASS_AFTER_ROOT_PATCH",
+      "code_sha256": "819429de1aaaf776a05fdba6be8c89acc9e58ad5b050afe5a29021de7cb541d2"
+    },
+    "no_fabricated_independent_prepatch_failure": true
+  },
+  "fixed_rule_observed": {
+    "old_phase": "AWAITING_PIXEL_REVIEW",
+    "old_latest_verdict": "PENDING",
+    "same_used_count_required": true,
+    "prior_versions_strictly_equal": true,
+    "latest_addable_fields": [
+      "pixel_review",
+      "drive_archive",
+      "asset_drive_archive",
+      "professional_technical_review"
+    ],
+    "latest_verdict_values": [
+      "PENDING",
+      "AI_PASS",
+      "AI_FAIL"
+    ],
+    "existing_review_evidence_fields_cannot_be_overwritten": true,
+    "other_latest_body_immutable": true,
+    "increment_all_previous_versions_immutable": true,
+    "postreview_latest_immutable": true
+  },
+  "actual_retests": {
+    "schema": "vpd-pending-review-writeback-regression-tests/v1",
+    "result": "PASS",
+    "count": 16,
+    "tests": [
+      {
+        "name": "pending_to_AI_FAIL_actual_review_field_writeback_allows",
+        "passed": true,
+        "expected_error": null,
+        "actual_error": null,
+        "result": [
+          9
+        ],
+        "inputs_unmodified": true
+      },
+      {
+        "name": "pending_to_AI_FAIL_all_four_new_evidence_fields_allows",
+        "passed": true,
+        "expected_error": null,
+        "actual_error": null,
+        "result": [
+          9
+        ],
+        "inputs_unmodified": true
+      },
+      {
+        "name": "pending_to_AI_PASS_review_field_writeback_allows",
+        "passed": true,
+        "expected_error": null,
+        "actual_error": null,
+        "result": [
+          9
+        ],
+        "inputs_unmodified": true
+      },
+      {
+        "name": "pending_writeback_wrong_export_sha256_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "pending_writeback_wrong_export_path_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "old_V9_verdict_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "old_V9_review_reference_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "latest_nonreview_body_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "latest_unapproved_field_addition_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "postreview_latest_pixel_review_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "postreview_latest_verdict_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "existing_pending_evidence_reference_rewrite_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "unsupported_latest_verdict_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "nonawaiting_pending_mutation_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      },
+      {
+        "name": "reviewed_AI_FAIL_next_version_with_preserved_history_allows",
+        "passed": true,
+        "expected_error": null,
+        "actual_error": null,
+        "result": [
+          9
+        ],
+        "inputs_unmodified": true
+      },
+      {
+        "name": "increment_cannot_rewrite_preceding_latest_review_refused",
+        "passed": true,
+        "expected_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "actual_error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+        "result": null,
+        "inputs_unmodified": true
+      }
+    ],
+    "code_sha256": "819429de1aaaf776a05fdba6be8c89acc9e58ad5b050afe5a29021de7cb541d2",
+    "native_writer_executed": false,
+    "business_state_writes": 0,
+    "real_cold_review_reads": 0,
+    "inputs_are_synthetic_real_sha_temp_fixtures": true,
+    "execution_tool_chunk": "7ca6bc",
+    "exit_code": 0,
+    "temporary_fixtures_deleted": true,
+    "full_native_writer_or_receipt_validator_executed": false
+  },
+  "production_runtime_bytebinding": {
+    "result": "PASS_EXACT_TWO_CALL_INPUT_AND_OUTPUT_SHA_MATCHES",
+    "excerpt": {
+      "path": ".liu-visual-private/v10-production-call-payloads-private.json",
+      "sha256": "3a7a020b35f8d5e20cbf75b90f1934aefb35f8fc499f7c447da816d2f9763510",
+      "rows": 4,
+      "allowed_root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+      "contains_only_two_calls_and_two_outputs": true,
+      "raw_contents_or_temporary_urls_copied_into_public_report": false
+    },
+    "input_hash_encoding": "UTF-8 exact payload.input string",
+    "output_hash_encoding": "UTF-8 json.dumps(payload.output, ensure_ascii=False, sort_keys=True) with default separators",
+    "calls": [
+      {
+        "call_id": "call_bOOhxogR0S2dPvtiz9SQgwUH",
+        "input_sha256": "44258ff6aa15abce61be0a29fb9461644f90c1c6427e3fba8be7929466ebcdba",
+        "input_matches_manifest": true,
+        "output_sha256": "9f3ac3a1129445525c2a2290867a5964df2d5ee63e24b531faad365170e334be",
+        "output_matches_manifest": true,
+        "name": "exec"
+      },
+      {
+        "call_id": "call_LVdiRkJ2DJDCnPjBfGr2r5NY",
+        "input_sha256": "426548786719614083bd6956893d173901f5220a1f6be46f99a9d72538ee2050",
+        "input_matches_manifest": true,
+        "output_sha256": "d4e19ea69491da4feeebfe044e4378d97188ec0412073caab3e76a0c97a66b91",
+        "output_matches_manifest": true,
+        "name": "exec"
+      }
+    ],
+    "repair_literal": {
+      "repair_embedded_literal_sha256": "4bad28ee435a06646f6f1ffcbfb826c64e41ba88774a9515a89c097a3ca608b8",
+      "repair_file_sha256": "fc45d80c9f2a0af93cc921ccb8832aab5b8042825ec3b7f0240db00d9e3bd14d",
+      "actual_code_bytes": 2381,
+      "file_bytes": 2382,
+      "actual_code_equal_file_except_terminal_newline": true,
+      "removed_terminal_newline_bytes": 1,
+      "first_script_disk_load_boundary": "First input dynamically reads initial file; its historical bytes are not present in the outer input literal.",
+      "previous_report_sha256_unchanged": "bf72e06a028006d298c6949754cff76a10a8b6e486e8b71b58d2578c2d23eeaa"
+    },
+    "limitation": "核验范围为Root明确提供的4条原始response_item摘录，未扫描混合Root session；最初源从磁盘动态载入的边界仍保留。"
+  },
+  "aesthetic_boundary": {
+    "V10_AI_FAIL": "ROOT_REPORTED_AND_NOT_REINTERPRETED",
+    "independent_cold_results_read": false,
+    "independent_cold_runtime_read": false,
+    "technical_fix_is_not_aesthetic_success": true
+  },
+  "write_accounting": {
+    "business_state_writes": 0,
+    "code_edits": 0,
+    "artwork_writes": 0,
+    "figma_writes": 0,
+    "drive_writes": 0,
+    "git_mutations": 0,
+    "old_report_overwrites": 0,
+    "allowed_new_audit_report": 1
+  },
+  "remaining": "Root执行与验证原生事务；本审查仅对当前源码helper及指定制作摘录作实际测试和核hash。"
+}

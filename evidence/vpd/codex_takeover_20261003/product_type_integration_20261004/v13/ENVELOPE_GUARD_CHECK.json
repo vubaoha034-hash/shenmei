@@ -1,0 +1,49 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "three_v13",
+      "expected_accept": true,
+      "actual_accept": true,
+      "error": null
+    },
+    {
+      "case": "old_v12_three",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "DECLARED_OVERLAY_BOUNDS_REQUIRED"
+    },
+    {
+      "case": "no_human_three",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "DECLARED_OVERLAY_BOUNDS_REQUIRED"
+    },
+    {
+      "case": "four",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "DECLARED_OVERLAY_BOUNDS_REQUIRED"
+    },
+    {
+      "case": "whole_photo",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "outside_allowed",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "old_two",
+      "expected_accept": true,
+      "actual_accept": true,
+      "error": null
+    }
+  ],
+  "scope": "THREE_SEPARATE_AUTHORIZED_TEXT_BLOCKS_ONLY_EXISTING_ALLOWED_AREAS_UNCHANGED",
+  "native_full_human_request_validation_still_required": true
+}

@@ -11,6 +11,7 @@ UNIT = 'CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1'
 TASK = 'VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01'
 ENVELOPES = [[64,56,504,304],[800,72,1504,440]]
 CONTINUOUS_TYPE_AREAS = [[64,56,504,304],[832,72,1504,624]]
+HUMAN_BACKGROUND_TYPE_AREA = [300,380,1350,550]
 
 def available_canvas_slots(unit):
     if unit.get('repair_authorization'):
@@ -20,6 +21,111 @@ def available_canvas_slots(unit):
 def load(root, ref):
     check_ref(root, ref)
     return read(root, ref['path'])
+
+def validate_human_revision_requests(root, unit):
+    """Bind each human resumption to one preserved AI-pass export."""
+    refs = unit.get('human_revision_requests', [])
+    require(isinstance(refs, list), 'HUMAN_REVISION_REQUEST_LIST_REQUIRED')
+    requests = {}
+    for ref in refs:
+        request = load(root, ref)
+        require(isinstance(request, dict) and unit['unit_id'] == UNIT
+                and request.get('task_id') == TASK and request.get('unit_id') == UNIT
+                and request.get('source_kind') == 'CURRENT_HUMAN_USER_MESSAGE'
+                and isinstance(request.get('verbatim'), str) and request['verbatim'].strip()
+                and request.get('scope') == 'SAME_DIRECTION_PRODUCT_TYPE_RELATIONSHIP_REFINEMENT'
+                and all(request.get(k) is False for k in ['final_acceptance',
+                    'photo_acceptance_retracted', 'mainline_change_authorized', 'old_budget_reset'])
+                and isinstance(request.get('permitted_background_type_area'), list)
+                and all(type(v) is int for v in request['permitted_background_type_area'])
+                and request['permitted_background_type_area'] == HUMAN_BACKGROUND_TYPE_AREA,
+                'ACTUAL_SCOPED_HUMAN_REVISION_REQUIRED')
+        number = request.get('target_version')
+        require(type(number) is int and 1 <= number <= len(unit['versions'])
+                and number not in requests, 'HUMAN_REVISION_TARGET_VERSION_INVALID')
+        version = unit['versions'][number-1]
+        require(version['number'] == number and version.get('verdict') == 'AI_PASS'
+                and request.get('target_export') == version['export'],
+                'HUMAN_REVISION_TARGET_EXPORT_MISMATCH')
+        requests[number] = request
+    if unit.get('current_scoped_human_feedback'):
+        require(bool(refs) and unit['current_scoped_human_feedback'] == refs[-1],
+                'CURRENT_SCOPED_HUMAN_FEEDBACK_REFERENCE_CONFLICT')
+    return requests
+
+def has_scoped_human_revision_request(root, unit, number):
+    return number in validate_human_revision_requests(root, unit)
+
+def review_allows_revision(verdict, number, human_requests):
+    return verdict == 'AI_FAIL' or (verdict == 'AI_PASS' and number in human_requests)
+
+def validate_serial_transition(root, old_unit, unit):
+    """Writer preflight; shared human evidence checks also run in the validator."""
+    require(old_unit['unit_id'] == unit['unit_id'], 'WORKER_CANNOT_CHANGE_UNIT')
+    old_used = old_unit['budget']['formal_versions_used']
+    used = unit['budget']['formal_versions_used']
+    require(type(used) is int and old_used <= used <= old_used+1
+            and unit['budget']['revisions_used'] == max(0, used-1)
+            and len(old_unit['versions']) == old_used and len(unit['versions']) == used,
+            'CONTINUATION_BUDGET_ROLLBACK_OR_SKIP')
+    completing_current_review = (used == old_used and old_used > 0
+        and old_unit['phase'] == 'AWAITING_PIXEL_REVIEW'
+        and old_unit['versions'][-1].get('verdict') == 'PENDING')
+    preserved_count = old_used - 1 if completing_current_review else old_used
+    require(unit['versions'][:preserved_count] == old_unit['versions'][:preserved_count],
+            'HISTORICAL_VERSION_EVIDENCE_REWRITTEN')
+    if completing_current_review:
+        review_fields = {'verdict', 'pixel_review', 'drive_archive',
+            'asset_drive_archive', 'professional_technical_review'}
+        prior_version, current_version = old_unit['versions'][-1], unit['versions'][-1]
+        require({k:v for k,v in prior_version.items() if k not in review_fields}
+                == {k:v for k,v in current_version.items() if k not in review_fields}
+                and current_version.get('verdict') in ['PENDING','AI_PASS','AI_FAIL']
+                and all(current_version.get(k) == v for k,v in prior_version.items()
+                    if k in review_fields and k != 'verdict'),
+                'HISTORICAL_VERSION_EVIDENCE_REWRITTEN')
+    old_refs = old_unit.get('human_revision_requests', [])
+    new_refs = unit.get('human_revision_requests', [])
+    require(isinstance(old_refs, list) and isinstance(new_refs, list)
+            and new_refs[:len(old_refs)] == old_refs,
+            'HISTORICAL_HUMAN_REVISION_REQUEST_REWRITTEN')
+    requests = validate_human_revision_requests(root, unit)
+    active = unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED','AWAITING_PIXEL_REVIEW']
+    if old_used and used == old_used and active and old_unit['versions'][-1].get('verdict') == 'AI_PASS':
+        require(unit['phase'] == 'REVISION_REQUIRED' and old_used in requests
+                and unit['poster_human_verdict'] == 'PENDING', 'AI_PASS_STOPS_SERIAL_REPAIR')
+    if used > old_used:
+        require(old_unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'],
+                'PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
+        if old_used:
+            version = old_unit['versions'][-1]
+            require(version.get('pixel_review'), 'PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
+            reviewed = load(root, version['pixel_review'])
+            require(reviewed.get('task_id') == TASK and reviewed.get('work_unit_id') == UNIT
+                    and reviewed.get('version') == old_used and reviewed.get('export') == version['export']
+                    and reviewed.get('verdict') == version.get('verdict'),
+                    'VERSION_REVIEW_VERDICT_CONFLICT')
+            require(review_allows_revision(reviewed['verdict'], old_used, requests),
+                    'AI_PASS_STOPS_SERIAL_REPAIR')
+            if reviewed['verdict'] == 'AI_PASS':
+                require(unit['poster_human_verdict'] == 'PENDING',
+                        'HUMAN_REVISION_IS_NOT_POSTER_REJECTION')
+    return requests
+
+def validate_overlay_envelopes(number, envelopes, human_requests):
+    # V13 splits the already authorized headline into two phrase blocks.
+    # Keep each block bounded separately; permitted photography areas stay fixed.
+    limit = 3 if number >= 13 and any(target < number for target in human_requests) else 2
+    require(isinstance(envelopes, list) and 1 <= len(envelopes) <= limit
+            and all(isinstance(r, list) and len(r)==4 and all(type(v) is int for v in r)
+                and 0<=r[0]<r[2]<=1536 and 0<=r[1]<r[3]<=1024 for r in envelopes),
+            'DECLARED_OVERLAY_BOUNDS_REQUIRED')
+    areas = CONTINUOUS_TYPE_AREAS
+    if any(target < number for target in human_requests):
+        areas = areas + [HUMAN_BACKGROUND_TYPE_AREA]
+    require(all(any(a[0]<=r[0]<r[2]<=a[2] and a[1]<=r[1]<r[3]<=a[3]
+                    for a in areas) for r in envelopes),
+            'PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE')
 
 def validate_continuation(root, lock, cp, adapter, receipt):
     take = lock['codex_takeover']; unit = take['worker_continuation']
@@ -120,6 +226,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             and receipt['next_required_action'] == take['next_required_action'], 'CONTINUATION_RECEIPT_CONFLICT')
     require(receipt.get('artifact_refs'), 'CONTINUATION_ARTIFACT_REQUIRED')
     for ref in receipt['artifact_refs']: check_ref(root, ref)
+    human_requests = validate_human_revision_requests(root, unit)
     actions = {'AUTHORIZED':'CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1',
         'AWAITING_PIXEL_REVIEW':'REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS',
         'REVISION_REQUIRED':'REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE',
@@ -143,12 +250,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
                     and protection['source_file_overwrite_allowed'] is False,
                     'SERIAL_PHOTO_PROTECTION_REQUIRED')
             envelopes = protection['visible_design_overlay_envelopes']
-            require(1<=len(envelopes)<=2 and all(len(r)==4 and all(type(v) is int for v in r)
-                    and 0<=r[0]<r[2]<=1536 and 0<=r[1]<r[3]<=1024 for r in envelopes),
-                    'DECLARED_OVERLAY_BOUNDS_REQUIRED')
-            require(all(any(a[0]<=r[0]<r[2]<=a[2] and a[1]<=r[1]<r[3]<=a[3]
-                            for a in CONTINUOUS_TYPE_AREAS) for r in envelopes),
-                    'PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE')
+            validate_overlay_envelopes(number, envelopes, human_requests)
         require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
                 and technical['export'] == version['export'] and technical['overlay_envelopes'] == envelopes
                 and technical['protected_pixels_changed'] == 0
@@ -162,11 +264,13 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             reviewed = validate_review(root, version, number, unit['review_inputs'])
             require(version.get('verdict') == reviewed['verdict'], 'VERSION_REVIEW_VERDICT_CONFLICT')
             if number < used:
-                require(reviewed['verdict']=='AI_FAIL', 'AI_PASS_STOPS_SERIAL_REPAIR')
+                require(review_allows_revision(reviewed['verdict'], number, human_requests),
+                        'AI_PASS_STOPS_SERIAL_REPAIR')
     current = unit['versions'][-1]
     if unit['phase'] == 'AWAITING_PIXEL_REVIEW': return
     verdict = validate_review(root, current, used, unit['review_inputs'])['verdict']
-    require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and (continuous or used<3))
+    require((unit['phase']=='REVISION_REQUIRED' and (continuous or used<3)
+             and review_allows_revision(verdict, used, human_requests))
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
             or (unit['phase']=='HUMAN_REJECTED' and verdict=='AI_FAIL' and used==3)
             or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
@@ -183,7 +287,9 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
     for y,(a,b) in enumerate(zip(_png_rgb_rows(root,source),_png_rgb_rows(root,export))):
         omitted=sorted((x0,x1) for x0,y0,x1,y1 in envelopes if y0<=y<y1)
         start=0; intervals=[]
-        for x0,x1 in omitted: intervals.append((start,x0)); start=x1
+        for x0,x1 in omitted:
+            if start < x0: intervals.append((start,x0))
+            start=max(start,x1)
         intervals.append((start,1536))
         for x0,x1 in intervals:
             aa,bb=a[x0*3:x1*3],b[x0*3:x1*3]; compared+=x1-x0

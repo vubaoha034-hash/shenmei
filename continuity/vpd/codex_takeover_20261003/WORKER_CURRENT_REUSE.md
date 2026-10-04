@@ -4,6 +4,10 @@
 
 2026-10-04最新真人授权在 `CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json`：同一方向串行制作、修复及独立像素复审，直到 INDEPENDENT_AI_PASS。旧三版/两修订停止上限被取代，累计计数与失败不清零；主线、摄影保护、真人最终验收不变。无第二风格、模型训练、付费算力或自动任务。worker只审核/研究/制作资产，根执行者唯一更新业务状态。AI_PASS仅允许交付刘先生审核，不能宣称真人认可。
 
+<!-- PRODUCT_TYPE_HUMAN_FEEDBACK_20261004 -->
+2026-10-04最新真人反馈：V9相比前版明显改善，但产品与文字的关系仍有较大差距；这不是完整海报最终验收。原话与V9实际SHA绑定见 `evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/HUMAN_PRODUCT_TYPE_FEEDBACK.json`。V9原AI_PASS原样保留；按既有持续修订授权恢复同一方向串行修订，先只改主文案与杯、茶盘的空间对应。实际Drive三图回读、四图独立诊断与官方专业方法见同目录。新正式版必须重新冷审；摄影和已改善字标保留。旧“等待验收”步骤不覆盖新锁。
+<!-- END_PRODUCT_TYPE_HUMAN_FEEDBACK_20261004 -->
+
 ## 当前实际成果
 
 | 正式版本 | Drive完整原件 | Figma源节点 | 实际审核 |
@@ -16,7 +20,11 @@
 | V6 | [完整PNG](https://drive.google.com/file/d/1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk/view) | [302:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=302-2) | AI_FAIL |
 | V7 | [完整PNG](https://drive.google.com/file/d/13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2/view) | [306:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=306-2) | AI_FAIL |
 | V8 | [完整PNG](https://drive.google.com/file/d/1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE/view) | [313:81](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=313-81) | AI_FAIL |
-| V9 | [完整PNG](https://drive.google.com/file/d/1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX/view) | [317:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=317-2) | AI_PASS / 真人PENDING |
+| V9 | [完整PNG](https://drive.google.com/file/d/1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX/view) | [317:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=317-2) | AI_PASS / 真人PENDING；新反馈要求同方向改进 |
+| V10 | [完整PNG](https://drive.google.com/file/d/1ehs8f_aQlWhOBzo34ubo0G5yNXu7SnMP/view) | [324:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=324-2) | AI_FAIL / TECHNICAL_PASS；真人PENDING |
+| V11 | [完整PNG](https://drive.google.com/file/d/1R68vklIBwqbQci5H-N90XDx3ARqVIjGA/view) | [327:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=327-2) | AI_FAIL；真人PENDING |
+| V12 | [完整PNG](https://drive.google.com/file/d/1bHspC7jItrlU-8QG0k_YLgduCO5XHWV8/view) | [333:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=333-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
+| V13 | [完整PNG](https://drive.google.com/file/d/1HofvSCU7VDGjEa9jWQPFUixzbYvx1ZoW/view) | [335:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=335-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -32,7 +40,7 @@ V9资产：[字标SVG](https://drive.google.com/file/d/1hgIzKY63zIpxVJgYA590aPfi
 - [VTracer官方](https://github.com/visioncortex/vtracer)、[固定Python包0.6.15](https://pypi.org/project/vtracer/0.6.15/)，MIT，核心不改。实际读README、Python绑定、Rust转换/配置/SVG实现、许可、Cargo.lock、依赖及示例。有界合成试用是工具演示；V4/V6/V9都在真实生成文字alpha上实际调用，分别保存原始输出与路径处理。V9保留7字标轮廓，公开原始trace可检查；转换器不设计字形。V4仍AI_FAIL，不能晋升“审美提升技能”。来源、wheel/sdist完整SHA、真实试用/制作在 `evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/vectorization/` 与 `v4/`。Python发行版本0.6.15与SVG生成器标识0.6.12分别记录，不能混同。WindowsCRLF与独立LF追踪字节不同，实际path属性相同；不改写历史raw trace。
 - [Glyphs官方路径教程](https://glyphsapp.com/learn/drawing-good-paths)及[Figma矢量编辑](https://help.figma.com/hc/en-us/articles/360039957634-Edit-vector-layers)：实际读控制柄、极值、内外曲线、局部节点、闭合步骤并查看示范像素/动画指定帧。Figma [YouTube教程](https://www.youtube.com/watch?v=5x2uHUB_pzw)仅取得频道、标题、描述，未取字幕或完整观看。具体来源/阅读范围在 `continuous_typography_20261004/tutorials/TUTORIAL_METHODS.md`；方法适配不复制教程字形或作品。方正喜茶/汉仪大白兔官方案例研究在 `lettering_correction_20261004/PROFESSIONAL_CASE_METHODS.md`，只学习材料、端点、负形共享步骤；不复制商业轮廓。
 - V1–V3用固定MIT FontTools4.63.0与OFL1.1 Adobe Source Han Serif2.003局部处理轮廓，真实失败保留；固定版本/字体恢复SHA见 `skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json`。V4用内置imagegen制作一份文字资产（非摄影），原PNG、提示和调用证据留存；底层生图模型名称工具未暴露，记录NOT_EXPOSED。V5字标由独立制作worker从“茶”的艹/人/木、“作”的亻/乍原创15闭合笔画构造，没有导入字体或照描参考轮廓；几何、来源、运行脚本在 `continuous_typography_20261004/v5/wordmark/`。FontTools BoundsPen只测曲线界限，不加载字体；Node/sharp渲染技术预览不计新生图。V5标题沿用V4轮廓缩小、上移，整图仍须新的正式冷审。
-- 本机实际root及正式冷审gpt-6.1-sol / max，运行证据读取真实turn_context，不靠prompt名字。Python3.12.14 / Pillow12.3.0 / Node24.19.0 / sharp0.35.4 / FontTools4.63.0。bundled路径用load_workspace_dependencies查询；FontTools来自已有hermes venv，制作脚本显式加载并保存provenance。新机使用现有SVG/Figma源无需字体/VTracer；重新运行对应制作才需依赖。V9原创建v1被独立实际反例指出trace来源守卫缺口，原代码保留build_wordmark_asset_creation_v1.py。当前build_wordmark_asset.py加入固定trace SHA及原alpha重算全部21path属性，提供--verify-only零写入，反例已复审拒绝；原成品/原制作provenance不回写假称旧制作已有guard。V9源码绑定修复见CREATION_AND_REUSE_REPAIR.json及独立FIRST/TECHNICAL报告。
+- V9历史root实际gpt-6.1-sol/max；当前Root实际gpt-6.1-sol/xhigh，正式冷审实际gpt-6.1-sol/max，均从真实turn_context核验，不靠prompt名字。Python3.12.14 / Pillow12.3.0 / Node24.19.0 / sharp0.35.4 / FontTools4.63.0。bundled路径用load_workspace_dependencies查询；FontTools来自已有hermes venv，制作脚本显式加载并保存provenance。新机使用现有SVG/Figma源无需字体/VTracer；重新运行对应制作才需依赖。V9原创建v1被独立实际反例指出trace来源守卫缺口，原代码保留build_wordmark_asset_creation_v1.py。当前build_wordmark_asset.py加入固定trace SHA及原alpha重算全部21path属性，提供--verify-only零写入，反例已复审拒绝；原成品/原制作provenance不回写假称旧制作已有guard。V9源码绑定修复见CREATION_AND_REUSE_REPAIR.json及独立FIRST/TECHNICAL报告。
 
 V5旧字标构造器存在写入先于源校验的问题，保留失败证据，不直接重跑。只使用 `scripts/vpd_verify_original_wordmark.py`：先验证固定摄影7fd、参考87、V4成品fe与历史manifest，再用固定受信代码在内存复现，拒绝任何--output-dir，字节与mtime不改。依赖FontTools4.63.0（当前Hermes路径）、Node24.19.0、Sharp0.35.4、Python3.12.14；未验证跨机器自动发现，不是任意不可信代码沙箱。需恢复的V5/V7历史PNG预览在 `continuous_typography_20261004/PREVIEW_DRIVE_RECOVERY.json`，V8预览在本版ASSET_DRIVE_ARCHIVE。按实际ID原字节fetch，校验固定SHA后只写Git忽略的manifest原路径，冲突不覆盖。使用当前SVG/Figma成果无需这些旧复现依赖。V5/V7/V8数值字标精修未获审美通过，不能称稳定有效设计技能。
 
@@ -50,7 +58,7 @@ P/N校准不等于最高标准。参考R Drive 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC
 
 ## Drive原件与全新读取上下文恢复
 
-Drive为图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。逐版DRIVE_ARCHIVE.json保存ID、revision、SHA、真实元数据/原字节匹配；字体/字标对应各版WORDMARK_DRIVE_ARCHIVE或ASSET_DRIVE_ARCHIVE。上传成功不等于保存验证：实际connected fetch `download_raw_file=true,include_base64=true` 解码后与本地原字节对比。私有文件、raw base64、签名URL不进Git；未公开分享不冒充匿名可访问。
+Drive为图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。逐版DRIVE_ARCHIVE.json保存ID、revision、SHA、真实元数据/原字节匹配；字体/字标对应各版WORDMARK_DRIVE_ARCHIVE或ASSET_DRIVE_ARCHIVE。上传成功不等于保存验证：实际connected fetch取原字节对比；V10/V11已验证 `download_raw_file=true,include_base64=false` 的file_uri原件stream，HTTP200后逐字节比较。此方式不需大段inline base64；历史base64恢复工具仍保留。私有文件、raw base64、签名URL不进Git；未公开分享不冒充匿名可访问。
 
 全新克隆将摄影S及当前锁所有versions中的Drive完整PNG实际fetch结果写入项目私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`；再 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本由原生锁与Drive回执确定私有路径/SHA，先验证全包再恢复并回读；业务状态写0、新版0。需要所有既有正式版本是因为当前守卫实际逐版比对照片保护，不能只下载最新版却宣称全状态可恢复。source若冲突、路径越界或SHA不匹配明确失败。
 
@@ -66,3 +74,11 @@ Figma当前资产可通过连接插件download_assets获取，temporaryURL须即
 摄影保护、准确文案、实际Drive原字节保存、独立五图审核与可编辑曲线流程已验证。V1–V8都AI_FAIL，V3真人否决；V9全新冷审实际AI_PASS，五图读取/范围隔离/实际gpt-6.1-sol/max已验证；仅允许进入真人交付审核。反复制作耗时明显，节省时间未验证；流程改善已验证，视觉收益未验证。真人认可P仅文字系统、当前7fd仅摄影，整张成品真人认可仍待定。
 
 单张完整成品不证明整个审美蒸馏系统、内容迁移、画幅迁移或第二风格完成。教程阅读、安装数量、节点数和测试通过数量都不能证明好设计；“自动学习”仅研究→适配→运行→比较→保存经验，没有权重训练或无人触发持续运行。
+
+V10主文案位置对应试验实际AI_FAIL（新项目外五图，Sol/Max，423090ms），工程TECHNICAL_PASS和Drive原字节回读已验证。摄影1,447,552保护像素差0，品牌7路径和标题38原生路径保留；第一次容器SCALE约束技术失误与修复均记录，2工具操作/1正式版本。审稿中距离估算有实际PNG bbox反证，原FAIL不改写；不对同图反复评分挑PASS。此为当时V11的动作，已执行且仍失败，不能当当前下一步。证据在 `product_type_integration_20261004/v10/`。
+
+V11实际新项目外五图冷审AI_FAIL，Sol/Max、328773ms。十九主文案轮廓控制点变形和留白仍未建立充分产品关系；不把作者的弧势/斜势说明当已获视觉证明。主文案字形资产见v11/headline.svg；Figma两组原样传输没有额外舍入，作者构造本身round(v,6)/.6f。原一次性build_headline.py存在输出前校验不足，不作为直接重跑入口；使用固定SVG/Figma，精度与复用边界见REUSE_BOUNDARY_CORRECTION.json。摄影1413440保护像素差0，Drive PNG/SVG原件回读一致。其后已执行V12单笔叶形实验且失败；不再重复“放近、轻弯”盲试。原生锁是唯一动作来源。
+
+V12仅茶字两个路径改变，实际整图与V11只有1602像素局部差异；其余像素完全相同。但新的独立五图Sol/Max冷审仍AI_FAIL，305265ms；没有确认单笔叶形语义足以改善整体。Root不将其晋升为稳定审美技能。独立技术TECHNICAL_PASS_WITH_LIMITATIONS：17轮廓属性保留、摄影保护及Drive2原字节匹配、新builder普通Python串行verify-only零写和错源/已有输出拒绝实跑；并发/双文件事务未验证，不作泛用安装器。其后已执行V13两段文案实验且仍失败；保留字形实验及历史失败，不沿用旧AI结论。
+
+V13实际两段原字形缩放排布（19路径属性完整保留，组尺度0.82/0.7），两个成功Figma操作为一个正式版本。1463936摄影保护像素差0；Drive PNG与SVG原字节回读一致；新五图Sol/Max冷审AI_FAIL，232454ms。具体失败：品牌、两段句子、产品形成分散注意区；两段阅读拉断；只在杯与盘上方摆字，杯口、盘沿与鲜叶仍未组织共同结构。独立技术报告与可复用固定SVG/Figma边界保留，未把空间接近认作融合。接续交由专门制作worker完成同一方向连续文字与产品轮廓关系，摄影和已改善品牌保留；不要从本段历史描述替代最新锁。

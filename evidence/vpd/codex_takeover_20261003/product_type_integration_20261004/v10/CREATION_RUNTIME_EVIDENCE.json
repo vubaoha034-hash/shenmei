@@ -1,0 +1,39 @@
+{
+  "root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "formal_version": 10,
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "xhigh",
+  "actual_figma_mutation_operations": 2,
+  "actual_new_imagegen_operations": 0,
+  "actual_photo_generations": 0,
+  "exact_calls": [
+    {
+      "role": "V10_INITIAL_NATIVE_COMPOSITION",
+      "call_id": "call_bOOhxogR0S2dPvtiz9SQgwUH",
+      "timestamp": "2026-10-04T03:51:41.721Z",
+      "input_sha256": "44258ff6aa15abce61be0a29fb9461644f90c1c6427e3fba8be7929466ebcdba",
+      "actual_completed_tool_output_sha256": "9f3ac3a1129445525c2a2290867a5964df2d5ee63e24b531faad365170e334be"
+    },
+    {
+      "role": "V10_BOUNDED_IMPLEMENTATION_REPAIR",
+      "call_id": "call_LVdiRkJ2DJDCnPjBfGr2r5NY",
+      "timestamp": "2026-10-04T03:53:09.818Z",
+      "input_sha256": "426548786719614083bd6956893d173901f5220a1f6be46f99a9d72538ee2050",
+      "actual_completed_tool_output_sha256": "d4e19ea69491da4feeebfe044e4378d97188ec0412073caab3e76a0c97a66b91"
+    }
+  ],
+  "initial_script": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v10/FIGMA_ASSEMBLY_INITIAL_SCALE_CONSTRAINT.js",
+    "sha256": "c36d3730f3a0eda99ee82f100ac73cc0ac058bf3d955c5fa072740cbf384eb31"
+  },
+  "successful_repair_script": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v10/FIGMA_OPERATIONAL_REPAIR.js",
+    "sha256": "fc45d80c9f2a0af93cc921ccb8832aab5b8042825ec3b7f0240db00d9e3bd14d"
+  },
+  "corrected_future_reuse_script": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v10/FIGMA_ASSEMBLY.js",
+    "sha256": "9e8755b6b508c2e1d77e574615dba7136482954925f941b5727330e26e1f4485"
+  },
+  "binding_boundary": "Initial outer call reads source from disk; raw tool result records actual nodes and unexpected scaling. Repair literal is present in outer call. Hashes/actual node readback/real exports jointly establish production; corrected reuse source was not claimed to have been the original failed invocation.",
+  "recorded_at": "2026-10-04T03:59:34.914739+00:00"
+}

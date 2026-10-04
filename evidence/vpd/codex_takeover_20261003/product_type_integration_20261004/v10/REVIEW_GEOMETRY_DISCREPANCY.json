@@ -1,0 +1,40 @@
+{
+  "version": 10,
+  "export": {
+    "path": ".liu-visual-private/correct_source_typography/v10/poster.png",
+    "sha256": "c8920a12cdc06beef2da972b3eb9317a02f73dd48516036197bb1ff028b17c7f"
+  },
+  "original_review": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v10/pixel_review/PIXEL_REVIEW.json",
+    "sha256": "f334aa0dff7e4f232f49376a5adedbe90e7e7baea4bf24ebbbcb7d453ea4bf34"
+  },
+  "issue": "Reviewer said headline to cup gap about one fifth of image height; actual type bounding region is adjacent to cup, not a 200px gap.",
+  "actual_measured_ink": [
+    {
+      "region": "all_headline",
+      "actual_high_difference_ink_bbox": [
+        351,
+        433,
+        1026,
+        533
+      ],
+      "method": "Actual PNG difference >3 channel levels within known lettering region; excludes one-level Figma source rounding, not semantic object segmentation"
+    },
+    {
+      "region": "cup_phrase",
+      "actual_high_difference_ink_bbox": [
+        351,
+        433,
+        665,
+        525
+      ],
+      "method": "Actual PNG difference >3 channel levels within known lettering region; excludes one-level Figma source rounding, not semantic object segmentation"
+    }
+  ],
+  "cup_rim_top_y_approx": 553,
+  "cup_rim_coordinate_method": "Root actual source-pixel viewing approximate; not automatic segmentation",
+  "verdict_overridden": false,
+  "formal_result_preserved": "AI_FAIL",
+  "remaining_valid_problem": "Position correspondence exists, but product contour participation and text transition remain weak. Continue one actual semantic/contour refinement rather than unchanged rerating until pass.",
+  "limits": "Bounding boxes are technical evidence; they do not establish good aesthetics or invalidate the rest of the judgment."
+}
