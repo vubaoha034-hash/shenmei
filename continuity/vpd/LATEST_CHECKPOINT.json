@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 300,
-  "recorded_at": "2026-10-04T06:12:17.097929+08:00",
+  "sequence": 314,
+  "recorded_at": "2026-10-04T10:14:19.213446+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "CURRENT_CHAZUO_HUMAN_REJECTED_LETTERING_METHOD_CORRECTION",
+  "current_focus": "V9_INTERNAL_AI_PASS_AWAITING_LIU_HUMAN_REVIEW",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -357,12 +357,11 @@
     "bounded_mainline_method_samples_and_limits_delivered_20261002"
   ],
   "incomplete": [
-    "V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回",
-    "三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败",
-    "已认可摄影继续冻结；字标设计及整体蒸馏、内容和画幅迁移尚未完成"
+    "完整海报真人验收仍待完成；摄影修补候选已获真人认可",
+    "原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证"
   ],
   "blocked": [],
-  "next_required_action": "CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE",
+  "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -430,11 +429,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_HUMAN_REJECTED",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_PASS",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "3cc3c101396c2be12676bba94e03363f519e0c8c03d9474cb633c9118e51b6aa",
-    "revision": 278
+    "sha256": "fa1d30482b2317bd77a8585f78ea0a9eedc027631618a6e2ea38443235f2379d",
+    "revision": 292
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +454,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-278-20261003",
-      "event_hash": "2468567ab21772c815517120eb3e6759671bcbf8bd02e7c6fa356cac099eda5a"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-292-20261003",
+      "event_hash": "3b70496a15efce4adb2a8805fca4706739005c2d4888e6b46933d6c45b6440db"
     }
   },
   "typography_repair": {
@@ -971,8 +970,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "CURRENT_CHAZUO_HUMAN_REJECTED_LETTERING_METHOD_CORRECTION",
-  "updated_at": "2026-10-04T06:12:17.097929+08:00",
+  "current_stage": "V9_INTERNAL_AI_PASS_AWAITING_LIU_HUMAN_REVIEW",
+  "updated_at": "2026-10-04T10:14:19.213446+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1920,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/NATIVE_REJECTION_RECEIPT.json",
-    "sha256": "497adf237616b4d22923005fcc40d721d9e587d461548c5795e3524003eff449"
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/NATIVE_INTERNAL_PASS_HANDOFF_RECEIPT.json",
+    "sha256": "d472212dfff29b4efd23e520823162f075fbf285ddd305261ebbcc44d3431d04"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2653,8 +2652,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_HUMAN_REJECTED",
-    "next_required_action": "CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_PASS",
+    "next_required_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2664,8 +2663,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/NATIVE_REJECTION_RECEIPT.json",
-      "sha256": "497adf237616b4d22923005fcc40d721d9e587d461548c5795e3524003eff449"
+      "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/NATIVE_INTERNAL_PASS_HANDOFF_RECEIPT.json",
+      "sha256": "d472212dfff29b4efd23e520823162f075fbf285ddd305261ebbcc44d3431d04"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2683,7 +2682,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "519839452df2f22c9f6bd8c17b159c661b29a8204947f4376bb6619ea276d957"
+      "sha256": "86b3e28f5ac074493fde5919621eaa7cb2d5b1f1e89a33285590961853b910e5"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2742,7 +2741,7 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "HUMAN_REJECTED",
+      "phase": "DELIVERED_AI_PASS",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -2772,17 +2771,18 @@
         "local_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
       },
       "budget": {
-        "formal_versions_max": 3,
-        "formal_versions_used": 3,
-        "revisions_max": 2,
-        "revisions_used": 2,
+        "formal_versions_max": null,
+        "formal_versions_used": 9,
+        "revisions_max": null,
+        "revisions_used": 8,
         "photo_generations": 0,
         "paid_compute_usd": 0,
         "training": 0,
         "automations": 0,
         "second_style": 0,
         "parallel_alternatives": 0,
-        "hidden_variants": 0
+        "hidden_variants": 0,
+        "stop_condition": "INDEPENDENT_AI_PASS"
       },
       "versions": [
         {
@@ -2880,9 +2880,249 @@
             "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json",
             "sha256": "8dbaea7f1adbc9ad9b0e00cccacb1e624722b0ba4e79b4893ea38283a52127d1"
           }
+        },
+        {
+          "number": 4,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v4/poster.png",
+            "sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/TECHNICAL_CHECK.json",
+            "sha256": "badc3acb151c055df5a6ee60f23147f1793774661bc305a69781dc3953ff4dee"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/PHOTO_PROTECTION.json",
+            "sha256": "fb2bf634e2e449f32f63ce4bbd100ff291362aa36dff0d9fedbbff9008d758b2"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/LETTERING_PROVENANCE.json",
+            "sha256": "f32450b4068347e01c6c95fac9fb3c03e8c486bb3d3d34711944343fdcece478"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "296:2",
+            "photo_node": "296:3",
+            "overlay_node": "296:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=296-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "bd295b9105b586a4ad7be628b5078afbbb64c96b086277eb86b950b3f9ad9ba0"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/DRIVE_ARCHIVE.json",
+            "sha256": "b604eb320e772f65b5e1e347bf1aa5b3bc9070c8c3c5c4c0fdcc4635c1dda697"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "4943832f2b3a529085cdaf0fe39ebd270a62f6aef2805bd1d164e75e61b0ccb0"
+          }
+        },
+        {
+          "number": 5,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v5/poster.png",
+            "sha256": "30740547dcfd504cacdcdf01f046e5b71e394e883c73081fd531c1efdc291d11"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/TECHNICAL_CHECK.json",
+            "sha256": "fc23a3d07eff7cbd0ac2a5177dc3cd9984c4b29322a62faba1b10f1c30bd2dab"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/PHOTO_PROTECTION.json",
+            "sha256": "bb0e7891a234616b67f43ada4ab62569b78db4efc4da5e065a0d7153674cea2e"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/ASSET_PROVENANCE.json",
+            "sha256": "9b34035e41334ce74dd9858625847e88a6da99d7dcee65c6cf6e77ed8aaf0b14"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "299:2",
+            "photo_node": "299:3",
+            "overlay_node": "299:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=299-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "070d4128819a7dd27e647417de6696890f27506faf73339f855a9f70261c6082"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/DRIVE_ARCHIVE.json",
+            "sha256": "79a30d4e4104639d52ef0b2c6ec3039e86445cc663fb33361d940becb552091b"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "fc8962761cf2dc9ef1f88ca6bb40e7dd0215c23724fee742166ffe914ee72351"
+          }
+        },
+        {
+          "number": 6,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v6/poster.png",
+            "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/TECHNICAL_CHECK.json",
+            "sha256": "d0f505206a470173db7adab3d96e517cec915c4a1275c0a89ecf2264f51c6354"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/PHOTO_PROTECTION.json",
+            "sha256": "78bc77d2cbcedd538848735f3124d36c2537382cd8d81e64d388d6062b0e65d5"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/LETTERING_PROVENANCE.json",
+            "sha256": "cc47ecca4ad1c4c0d9fd9bf015c6931ff0814057dd9b6877387e51f32eb19b91"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "302:2",
+            "photo_node": "302:3",
+            "overlay_node": "302:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=302-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "57223213e7ceb2a33120eae4a9f35123ab2487335e76dea0a6d368afaab598c2"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/DRIVE_ARCHIVE.json",
+            "sha256": "8fea2a29a5e8c30608c263e9387144edfdcd26804a1ec875f7b8b3e40952a203"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "aafc7098260a9a248e7ef72f6a46d28a8afcc0f52e214ac86d79133e4c2f3941"
+          }
+        },
+        {
+          "number": 7,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v7/poster.png",
+            "sha256": "2c5153c62e27874093bdf7ac13a0274d91130487d77fda886da214fdb22fe86d"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/TECHNICAL_CHECK.json",
+            "sha256": "a4bb2ab28471362571e97dcbaa70111e968c13b9c36a7b7621b160fb246f0477"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/PHOTO_PROTECTION.json",
+            "sha256": "78ac074f091f2d470713df8ccb10ace1a06641806409e0c9b1cbd8dfb8091faf"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/ASSET_PROVENANCE.json",
+            "sha256": "c7b7648d06b7e0ffab45968fe14efe2da86c71dcf2afb3f417e76d3139ff67ca"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "306:2",
+            "photo_node": "306:3",
+            "overlay_node": "306:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=306-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "20c174798a95eefa138b821670089d67aaedc0df12bde62f15c733834c627635"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/DRIVE_ARCHIVE.json",
+            "sha256": "803d928987e0c884f90cc0767f78922d6614cbeaa4a7760b20e94ab91dd56e51"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "1d84274b0df5ee2b74b8d14ed7c2366c8633951cad87fcfe407a54712f519162"
+          }
+        },
+        {
+          "number": 8,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v8/poster.png",
+            "sha256": "9c99fd1124a399d86761d201b033686d94bdf44f0232e81766b67d88e5e100ff"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/TECHNICAL_CHECK.json",
+            "sha256": "f953eaf8da473d02abb84ae660d719f42854e28e3ac5de0cf8944c58322ffeb9"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/PHOTO_PROTECTION.json",
+            "sha256": "d61f10cc158d0f702df99695f681385e2fa807f9bcee20059072eeb4cd2e9006"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/ASSET_PROVENANCE.json",
+            "sha256": "f87b242449960cea85b7fb53eb7b8b60cbace1514ec7417b56662fbcda13c8f0"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "313:81",
+            "photo_node": "313:82",
+            "overlay_node": "313:83",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=313-81"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "11a63e38d3d52b44fdd9bb5744523d2c044863c4dc3a1ce451f5c72bba4056ef"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/DRIVE_ARCHIVE.json",
+            "sha256": "d43fb7eea56a8b408f87b27ac8d487a75edcfea12a617e613eb177e9abaeade8"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "936078a8c16e25a05c333bad989a206882c12ea725b212a4edc4a2ead8583b35"
+          }
+        },
+        {
+          "number": 9,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v9/poster.png",
+            "sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/TECHNICAL_CHECK.json",
+            "sha256": "7c5bb2b1eabd9870e60aa4ae82f9d254120080e47b5b4f0badc8655565bb9092"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/PHOTO_PROTECTION.json",
+            "sha256": "92867b9728e8cb03efc5d5805a1305a1fcb2e02abe0117abe6566536aa924762"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/ASSET_PROVENANCE.json",
+            "sha256": "bb11aac3ab22b52f7f63f3782b8eedcb48e49368d033ee66eddcdfc805752a54"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "317:2",
+            "photo_node": "317:3",
+            "overlay_node": "317:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=317-2"
+          },
+          "verdict": "AI_PASS",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "6aacbec04e50ac31826451850aae679c904179eb07b5014037608700bdbe8d35"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/DRIVE_ARCHIVE.json",
+            "sha256": "d841c516f9d8ec98746387dc7da7408cd93b07a2e15d4eb128393e476cb2b229"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "1f0801fe1f9573ff3af26a2037225907da99b71b35bf8f6a1e1bdd72331d9b6b"
+          }
         }
       ],
-      "poster_human_verdict": "REJECTED",
+      "poster_human_verdict": "PENDING",
       "old_cycle_human_verdict": "REJECTED",
       "review_inputs": {
         "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json",
@@ -2896,7 +3136,28 @@
         "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
         "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
       },
-      "human_review_request_withdrawn": true
+      "human_review_request_withdrawn": true,
+      "repair_authorization": {
+        "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+        "sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848"
+      },
+      "poster_human_feedback_history": [
+        {
+          "version": 3,
+          "human_verdict": "REJECTED",
+          "feedback": {
+            "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
+            "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
+          }
+        }
+      ],
+      "current_human_review_version": 9,
+      "acceptance_request_withdrawn": false,
+      "poster_human_feedback_scope": "PRIOR_V3_REJECTION_PRESERVED_NOT_V9_VERDICT",
+      "professional_technical_review": {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/audit/PROFESSIONAL_V9_TECHNICAL_01a0ffcf.json",
+        "sha256": "7b549f7aa4abc7728f830303e93d4420cdca1201355c4fb4156d5d42121122c7"
+      }
     }
   }
 }

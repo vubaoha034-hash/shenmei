@@ -1,0 +1,177 @@
+{
+  "schema": "vpd-professional-continuous-v4-technical-audit/v1",
+  "version": 4,
+  "technical_verdict": "TECHNICAL_PASS",
+  "implementation_verdict": "PASS_FOR_TESTED_FIX",
+  "formal_delivery_complete": false,
+  "aesthetic_verdict": "NOT_PERFORMED",
+  "auditor": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl"
+  },
+  "initial_failure_preserved": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/audit/PROFESSIONAL_IMPLEMENTATION_INITIAL_REPAIR_REQUIRED_01a0ffcf.json",
+    "sha256": "06e2c36900f16feb3f3a98b4294b53975d9ac43de1874e656f3a6a843e945c9c",
+    "bytes": 5809,
+    "method": "从本人实际final_answer原文提取，排他创建，未覆写"
+  },
+  "guard_retest": {
+    "scope": "实际源码AST预检及判词绑定分支执行，使用受控证据返回；未执行业务交易",
+    "writer_inline_fail_actual_pass": "REJECTED:AI_PASS_STOPS_SERIAL_REPAIR",
+    "writer_actual_fail_control": "ACCEPTED",
+    "validator_inline_fail_actual_pass": "REJECTED:VERSION_REVIEW_VERDICT_CONFLICT",
+    "validator_prior_inline_pass_actual_pass": "REJECTED:AI_PASS_STOPS_SERIAL_REPAIR",
+    "validator_actual_fail_control": "ACCEPTED",
+    "resolved_finding": "CONTINUOUS_PRIOR_REVIEW_VERDICT_BINDING",
+    "writer_sha256": "b2ec3b9ca8b4e5c1ecef16973b7da3afee58956c32a65139f8915de21bc17403",
+    "validator_sha256": "f9a9bb6353f4efd8b9f2715cd9f4b72a37c5aebdc1c789443b36dd196b5052bd",
+    "actual_evidence_chunk": "376439",
+    "failed_test_attempt_preserved": "45815a：AST选择器StopIteration，修正选择器后重跑；未算作通过"
+  },
+  "actual_pixel_and_byte_checks": {
+    "actual_view_image": [
+      ".liu-visual-private/correct_source_typography/v4/poster.png",
+      ".liu-visual-private/correct_source_typography/v4/lettering-generated-01.png"
+    ],
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "poster_sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a",
+    "frozen_source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "protected_pixels_compared": 1325704,
+    "final_protected_pixels_changed": 0,
+    "final_protected_max_channel_difference": 0,
+    "raw_figma_protected_pixels_changed": 1152,
+    "raw_figma_protected_max_channel_difference": 1,
+    "design_region_pixels_compared": 247160,
+    "final_vs_raw_design_pixels_changed": 0,
+    "conclusion": "正式PNG通过机械保真合成保护摄影；不能声称raw Figma渲染原本逐像素零差。",
+    "profile_limit": "冻结源及正式PNG均无显式颜色profile块；raw含sRGB/gAMA。本次证明RGB样本保真，不宣称独立色彩管理认证。",
+    "actual_evidence_chunk": "3f93c1"
+  },
+  "official_figma_readback": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame": "296:2",
+    "photo": "296:3",
+    "overlay": "296:4",
+    "editable_vector_count": 31,
+    "native_text_count": 0,
+    "vector_paths_nonempty": true,
+    "photo_image_hash": "074a11ff4345752bae19150e799d9cae49518b8b",
+    "photo_filters": "全部0",
+    "photo_transform": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "raw_source_download": {
+      "http_status": 200,
+      "bytes": 1735549,
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "equal_local_frozen_source_bytes": true
+    },
+    "editability_limit": "可编辑轮廓、位置及填色；0 TEXT，不能直接按Unicode打字替换。31 VECTOR不是31个字符。",
+    "freeze_limit": "摄影节点当前未锁定；冻结由合同、身份绑定和像素检查维护，不声称OS或Figma权限隔离。"
+  },
+  "lettering_and_method": {
+    "actual_visible_text_reading": {
+      "brand": "茶作",
+      "copy": "一杯茶，慢下来",
+      "matches_required_text": true
+    },
+    "metadata_codepoints": {
+      "brand": [
+        "U+8336",
+        "U+4F5C"
+      ],
+      "copy": [
+        "U+4E00",
+        "U+676F",
+        "U+8336",
+        "U+FF0C",
+        "U+6162",
+        "U+4E0B",
+        "U+6765"
+      ]
+    },
+    "source_asset_sha256": "ea5ed605ee40dde5b2c110f81617502acbf5661b52d0f7d048c3d932e2e8cd91",
+    "source_asset_mode": "RGBA",
+    "source_alpha_range": [
+      0,
+      254
+    ],
+    "origin": "内置imagegen文字资产，经alpha阈值128描摹、分组、比例放置及填色",
+    "font_license_distinction": "本版本地转换未使用字体软件；不是前版Source Han Serif/OFL字体轮廓加工。VTracer固定发行版许可为MIT。",
+    "imagegen_backend_model": "NOT_EXPOSED",
+    "exact_creation_call_bindings": {
+      "manifest": "continuous_typography_20261004/v4/CREATION_RUNTIME_EVIDENCE.json",
+      "manifest_sha256": "a26530eee9f7e144cea21c7c0a85cc231cc8ba0a51ce5cf3838cd9ba93c494f2",
+      "actual_input_output_hashes_match": true,
+      "calls": [
+        "call_pm5Db4KkGBOgOIZmEkw98efb",
+        "call_Dbif3e014o4VKCh27gMUtSyp",
+        "call_cLvVVBH2BmeRlx8EfoplhLfF",
+        "call_8CDypPTtZUFXOCSijXta2IMU"
+      ],
+      "evidence_chunk": "85337b",
+      "generation_receipt_limit": "生成启动对应输出为notify，不能将该输出单独视为生成完成回执；实际最终位图已独立查看并核验SHA。"
+    },
+    "vtracer_reproduction": {
+      "actual_readonly_native_conversion_runs": 3,
+      "path_count": 52,
+      "saved_trace_bytes": 57556,
+      "saved_trace_sha256": "a6572c60eee2dfce05790e5439dc6887ba1973b9b7a344547e93897f36aff00e",
+      "independent_lf_bytes": 57500,
+      "independent_lf_sha256": "e10ddd5049308242cd6aa2f38328c31a5aca8153a7a8834fcbf5f019015fc942",
+      "saved_crlf_count": 56,
+      "saved_normalized_lf_equals_independent_conversion": true,
+      "all_path_attributes_equal": true,
+      "original_svg_modified": false,
+      "evidence_chunks": [
+        "376439",
+        "e7a3cf",
+        "e91a3b"
+      ]
+    },
+    "public_brand_headline_overlay_hashes_verified": true,
+    "aesthetic_improvement_proven": false
+  },
+  "official_drive_verification": {
+    "file_id": "1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr",
+    "mime_type": "image/png",
+    "parent_id": "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O",
+    "independently_fetched_raw_bytes": 1725513,
+    "actual_raw_sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a",
+    "matches_local_poster": true,
+    "method": "官方metadata与raw base64获取，在内存解码和SHA256核验",
+    "asset_archive_limit": "ASSET_DRIVE_ARCHIVE.json已核读；其三项远端字节匹配为Root回执，本次未重复独立fetch。",
+    "new_sharing_or_upload_actions": 0
+  },
+  "entry_and_delivery_pending": [
+    "本次原生快照281/303处于AWAITING_PIXEL_REVIEW；未核销之后的V4 Drive原生最终绑定。",
+    "当前WORKER_CURRENT_REUSE仍主要列V1–V3历史，需要增加V4实际成果及VTracer获取、安装、alpha-mask重跑入口。",
+    "未执行空克隆恢复试验；现有恢复脚本只恢复原生已经声明drive_archive的版本，不能把本机缓存成功当作全新恢复。",
+    "技术通过不构成正式冷审通过或真人认可。"
+  ],
+  "scope_deviation": {
+    "occurred": true,
+    "description": "按关键词窄筛Root制作日志时，混合exec返回了冷审结论及部分观察摘要；意外看到该片段。",
+    "affected_call": "call_BJVObKw7Q30gvf2j6lWHfsXT",
+    "direct_cold_thread_or_pixel_review_directory_reads": 0,
+    "corrective_action": "改为仅核验四个明确制作call_id及其哈希。",
+    "used_for_technical_or_aesthetic_judgment": false,
+    "claim_of_complete_blindness": false
+  },
+  "business_state_writes": 0,
+  "figma_mutations": 0,
+  "design_versions_created": 0,
+  "audit_evidence_files_created": 1
+}

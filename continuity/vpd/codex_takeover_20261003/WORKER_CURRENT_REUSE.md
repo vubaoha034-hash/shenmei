@@ -1,51 +1,65 @@
 # 茶作当前成果与独立 worker 调用入口
 
-当前说明优先于下方历史过程，实际状态仍只由原生任务锁决定。2026-10-04刘先生已否定V3文字与完整设计，V3真人结论REJECTED；已撤回“请真人验收失败成品”的请求。正确摄影上本次一初版、两修订均真实制作与冷审，三版都AI_FAIL，预算3/3、修订2/2。V1/V2未虚构单独真人结论；旧三版否决另行保留。摄影认可继续有效。唯一下一动作是明确同一任务新增正式版本范围（CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE），不重新验收V3、不清零计数、不自动继续第四版或迁移。
+本文件解释如何使用成果，唯一业务状态始终是 `continuity/vpd/CURRENT_TASK_LOCK.json`。先固定指定分支实际最新提交，读 START_HERE.md、AGENTS.md、PROJECT_CONTROL_ADAPTER.json、VPD_PROJECT_ROADMAP.md、CURRENT_TASK_LOCK.json、LATEST_CHECKPOINT.json；后读本文件及锁引用证据。不要从历史文档的“当前下一步”接续。
 
-本次批评的逐字记录、V3冷审与真人失败对账在 `evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json`；实际官方案例像素核查、根因与同一方向纠偏依据在该目录 `ROOT_DIAGNOSIS.md`、`PROFESSIONAL_CASE_METHODS.md`、`CASE_PIXEL_READS.json`。这是专业方法研究与失败处置，没有新增作品，也没有视觉改善可宣称。FontTools与design-critique的工具能力不能冒充中文品牌字标制作能力。
+2026-10-04最新真人授权在 `CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json`：同一方向串行制作、修复及独立像素复审，直到 INDEPENDENT_AI_PASS。旧三版/两修订停止上限被取代，累计计数与失败不清零；主线、摄影保护、真人最终验收不变。无第二风格、模型训练、付费算力或自动任务。worker只审核/研究/制作资产，根执行者唯一更新业务状态。AI_PASS仅允许交付刘先生审核，不能宣称真人认可。
 
-| 版本 | Drive完整原件 | Figma同文件：frame / photo / vector | 完整PNG SHA-256 | 冷审 |
-|---|---|---|---|---|
-| V1 | [原件](https://drive.google.com/file/d/1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE/view) | 286:2 / 286:3 / 286:4 | a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96 | AI_FAIL |
-| V2 | [原件](https://drive.google.com/file/d/1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ/view) | 287:2 / 287:3 / 287:4 | c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4 | AI_FAIL |
-| V3失败归档 | [完整PNG](https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view) | [290:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2) / 290:3 / 290:4 | 0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826 | AI_FAIL / 真人REJECTED |
+## 当前实际成果
 
-V3 [字标SVG](https://drive.google.com/file/d/1ceZuyHDkMTzeW5qw0-j-qtfaZlD6PvZn/view)，SHA f83a8b20b2b97c2e53bd40b85124023d53fea0c397ad8ac90dae7382eaeb823e。Figma file key uyDxOoN1iNDPpEHTKSUWg1，page251:2，V3有9个可编辑VECTOR（2字标+7标题），0原生TEXT，不能宣称可直接打字。Unicode标题源、轮廓加工脚本、许可、来源及修改依据在 `evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/`、`assets_v2/`、`assets_v3/`。每版像素审稿与隔离证据在同目录 `v1/pixel_review/`、`v2/pixel_review/`、`v3/pixel_review/`，技术/Drive/专业审查也分别保留。
+| 正式版本 | Drive完整原件 | Figma源节点 | 实际审核 |
+|---|---|---|---|
+| V1 | [完整PNG](https://drive.google.com/file/d/1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE/view) | [286:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=286-2) | AI_FAIL |
+| V2 | [完整PNG](https://drive.google.com/file/d/1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ/view) | [287:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=287-2) | AI_FAIL |
+| V3 | [完整PNG](https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view) | [290:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2) | AI_FAIL / 真人REJECTED |
+| V4 | [完整PNG](https://drive.google.com/file/d/1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr/view) | [296:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=296-2) | AI_FAIL |
+| V5 | [完整PNG](https://drive.google.com/file/d/1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih/view) | [299:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=299-2) | AI_FAIL |
+| V6 | [完整PNG](https://drive.google.com/file/d/1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk/view) | [302:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=302-2) | AI_FAIL |
+| V7 | [完整PNG](https://drive.google.com/file/d/13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2/view) | [306:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=306-2) | AI_FAIL |
+| V8 | [完整PNG](https://drive.google.com/file/d/1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE/view) | [313:81](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=313-81) | AI_FAIL |
+| V9 | [完整PNG](https://drive.google.com/file/d/1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX/view) | [317:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=317-2) | AI_PASS / 真人PENDING |
 
-V3冷审认为字标仍接近常规宋体、独特结构弱；标题气质与自然摄影不协调；品牌、标题、产品重心分散。刘先生此次否定与此前AI_FAIL一致，只报告这个实际对账，不虚构准确率。工程检查不改写审美结论。视觉收益未验证，节时收益未测量，整图已被否定，整体蒸馏及迁移能力尚未验证。
+同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
-实际采用的成熟方法：
+冻结摄影7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618：[Drive原件](https://drive.google.com/file/d/1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA/view)，Figma uyDxOoN1iNDPpEHTKSUWg1 / 283:5。这是刘先生后来认可的局部去字背景重建，不能叫作找回了隐藏无字原件。原第一张e7af9c9e…及其原字节/透明修补层另按 SOURCE_RECOVERY_DRIVE_REUSE.md 恢复。完整原始生成输入不足，单张成功不能推断已获得可重复生成好底图的规则。
 
-- [Anthropic官方design-critique](https://github.com/anthropics/knowledge-work-plugins/blob/d3ee81913e5e179273313345847a2a4f42449bd2/design/skills/design-critique/SKILL.md)，提交d3ee81913e5e179273313345847a2a4f42449bd2，Apache-2.0。上游 `skills/design-critique/upstream/` 与项目thin wrapper `skills/chazuo-independent-art-review/SKILL.md`。实际三次brief调用第一印象、层级、间距、区域证据和优先问题，排除网页UX项；不能冒充中文品牌字标技能。
-- [FontTools](https://github.com/fonttools/fonttools/tree/978d9edccb60ea0e5fbad7015cb11817c3532328)4.63.0，提交978d9edccb60ea0e5fbad7015cb11817c3532328，MIT；[Adobe Source Han Serif](https://github.com/adobe-fonts/source-han-serif/tree/7889f11bf31170b5d092a083b357c8c8130f89e0)2.003，提交7889f11bf31170b5d092a083b357c8c8130f89e0，OFL1.1。V3基于许可轮廓作局部Bézier加工，字体软件未改写，字标不是100%原创。没有找到经本项目验证有效的自动中文品牌字标技能；这些是专业工具与实验方法。
-- 实际 Python3.12.14 / FontTools4.63.0 / Node24.19.0 / sharp0.35.4，模块位置、SHA及真实执行见各版provenance。用load_workspace_dependencies查询bundled runtime；本机FontTools来自已有hermes venv site-packages，新环境先检测。许可字体原件位于 `evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf`，SHA78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117。
-- 本次矢量制作没有调用生图；此前一次局部摄影修补用内置image_gen编辑，底层模型名未暴露。没有重生摄影、训练、付费算力或定时任务。好底图的完整原始生成输入仍不足，不能从单一样本虚构可重现生图规则。`.skill-evolution/vpd-correct-source-worker/`仅一次工程观察，无审美规则晋升或权重训练。
-- 稳定 `scripts/vpd_export_photo_safe.py` 保真导出：raw Figma保护区有1152像素最大1级RGB舍入差；正式PNG保留既定文字区域的raw像素，其他1,204,672像素复制冻结源，实测差0。不能声称raw Figma本来零差。
+固定1536×1024、3:2；品牌“茶作”，文案“一杯茶，慢下来”。不重新生成、改色或改构图摄影。Figma逐版克隆已认可摄影节点，矢量独立覆盖；`scripts/vpd_export_photo_safe.py`仅补偿raw导出保护区1152像素最大1级RGB舍入，输出在声明文字区域保留raw像素，其他像素复制冻结源。每版PHOTO_PROTECTION/PHOTO_SAFE_EXPORT/TECHNICAL_CHECK与实际PNG绑定，不能把技术通过当设计通过。
 
-### 全新克隆恢复真实像素
+V9资产：[字标SVG](https://drive.google.com/file/d/1hgIzKY63zIpxVJgYA590aPfi2mnixhhO/view)、[标题SVG](https://drive.google.com/file/d/1pkNbk738Ugh99lnBREBdxDY6LZdDERGE/view)、[字标生成原alpha](https://drive.google.com/file/d/1WF-pHhKwUokh0o90U5IL34sButsfP9cg/view)。原摄影、P/N校准与R对应固定ID/SHA，不把P摄影换成基准。V9 brand节点317:81，标题317:5，photo317:3，overlay317:4；45个VECTOR、19个可编辑SUBTRACT、0个原生TEXT。字形来自一次内置图像工具对实际P笔势的参考创作，非商用字体替换，后端模型名NOT_EXPOSED；原alpha未改，上游VTracer0.6.15 alpha128后保留7大轮廓，去6个至多20源像素²的孤立小点。保留V8标题路径构造及主次落位，代码将下行9个原布尔轮廓左移42.826735973px至共同左界。Figma clone有小浮点变化：上行30400px实际ROI里3像素变、max RGB15；不宣称标题几何/像素完全不变，摄影保护区仍差0。完整制作用v9/FIGMA_ASSEMBLY.js，来源与依赖/字形处理用v9/LETTERING_PROVENANCE.json和ASSET_PROVENANCE.json；不称P完全未接触的检验。
 
-字体二进制被Git忽略，不随克隆分发。重新制作文字时，从 `evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json` 的OTF条目获取固定提交raw URL，下载并核验24,543,332 bytes及上述78aa…完整SHA，再放回其声明的字体缓存路径；许可随仓库保留。全新读取worker已仅凭该清单实际下载HTTP200并核验原字节，未安装软件、未修改tracked文件。使用现有SVG/Figma矢量不需要字体安装；重跑制作脚本需要该许可原件和实际FontTools依赖。具体证据见最新回执中的fresh_entry_recovery结果，不把本机字体缓存冒充Git交付。
+## 实际方法与依赖
 
-Drive是图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。用连接Drive的fetch(url=原件地址,download_raw_file=true,include_base64=true)获取真实b64_string。signed download_url曾403，不盲目重试；实际raw base64回读均字节匹配。每版DRIVE_ARCHIVE.json含ID、revision、SHA与元数据，字标在WORDMARK_DRIVE_ARCHIVE.json。不得提交签名URL/base64。
+- [Anthropic官方design-critique](https://github.com/anthropics/knowledge-work-plugins/blob/d3ee81913e5e179273313345847a2a4f42449bd2/design/skills/design-critique/SKILL.md)，提交d3ee81913e5e179273313345847a2a4f42449bd2，Apache-2.0；上游 `skills/design-critique/upstream/SKILL.md` 不改，`skills/chazuo-independent-art-review/SKILL.md`为项目适配。实际brief调用第一印象、层级、间距、画面区域证据和最多三项修复，排除网页UX项。属于独立审稿框架，不是中文字标创作技能，也不代表真人设计师资历。通过项目入口和保存的brief实际调用，未宣称安装进运行器的全局技能发现目录。
+- [VTracer官方](https://github.com/visioncortex/vtracer)、[固定Python包0.6.15](https://pypi.org/project/vtracer/0.6.15/)，MIT，核心不改。实际读README、Python绑定、Rust转换/配置/SVG实现、许可、Cargo.lock、依赖及示例。有界合成试用是工具演示；V4/V6/V9都在真实生成文字alpha上实际调用，分别保存原始输出与路径处理。V9保留7字标轮廓，公开原始trace可检查；转换器不设计字形。V4仍AI_FAIL，不能晋升“审美提升技能”。来源、wheel/sdist完整SHA、真实试用/制作在 `evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/vectorization/` 与 `v4/`。Python发行版本0.6.15与SVG生成器标识0.6.12分别记录，不能混同。WindowsCRLF与独立LF追踪字节不同，实际path属性相同；不改写历史raw trace。
+- [Glyphs官方路径教程](https://glyphsapp.com/learn/drawing-good-paths)及[Figma矢量编辑](https://help.figma.com/hc/en-us/articles/360039957634-Edit-vector-layers)：实际读控制柄、极值、内外曲线、局部节点、闭合步骤并查看示范像素/动画指定帧。Figma [YouTube教程](https://www.youtube.com/watch?v=5x2uHUB_pzw)仅取得频道、标题、描述，未取字幕或完整观看。具体来源/阅读范围在 `continuous_typography_20261004/tutorials/TUTORIAL_METHODS.md`；方法适配不复制教程字形或作品。方正喜茶/汉仪大白兔官方案例研究在 `lettering_correction_20261004/PROFESSIONAL_CASE_METHODS.md`，只学习材料、端点、负形共享步骤；不复制商业轮廓。
+- V1–V3用固定MIT FontTools4.63.0与OFL1.1 Adobe Source Han Serif2.003局部处理轮廓，真实失败保留；固定版本/字体恢复SHA见 `skill_research/fonttools_bounded_probe_v1/FONTTOOLS_FONT_SOURCE_MANIFEST.json`。V4用内置imagegen制作一份文字资产（非摄影），原PNG、提示和调用证据留存；底层生图模型名称工具未暴露，记录NOT_EXPOSED。V5字标由独立制作worker从“茶”的艹/人/木、“作”的亻/乍原创15闭合笔画构造，没有导入字体或照描参考轮廓；几何、来源、运行脚本在 `continuous_typography_20261004/v5/wordmark/`。FontTools BoundsPen只测曲线界限，不加载字体；Node/sharp渲染技术预览不计新生图。V5标题沿用V4轮廓缩小、上移，整图仍须新的正式冷审。
+- 本机实际root及正式冷审gpt-6.1-sol / max，运行证据读取真实turn_context，不靠prompt名字。Python3.12.14 / Pillow12.3.0 / Node24.19.0 / sharp0.35.4 / FontTools4.63.0。bundled路径用load_workspace_dependencies查询；FontTools来自已有hermes venv，制作脚本显式加载并保存provenance。新机使用现有SVG/Figma源无需字体/VTracer；重新运行对应制作才需依赖。V9原创建v1被独立实际反例指出trace来源守卫缺口，原代码保留build_wordmark_asset_creation_v1.py。当前build_wordmark_asset.py加入固定trace SHA及原alpha重算全部21path属性，提供--verify-only零写入，反例已复审拒绝；原成品/原制作provenance不回写假称旧制作已有guard。V9源码绑定修复见CREATION_AND_REUSE_REPAIR.json及独立FIRST/TECHNICAL报告。
 
-将已认可摄影（ID1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA）及V1–V3实际fetch结果写入私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`，再运行 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本从原生锁/Drive回执绑定路径和SHA，先验证所有输入及私有路径，再恢复缺失PNG并读回；业务状态写入0、新增版本0。冲突报错。专业审查发现的路径逃逸已修复并留前后证据；不宣称OS沙盒隔离。
+V5旧字标构造器存在写入先于源校验的问题，保留失败证据，不直接重跑。只使用 `scripts/vpd_verify_original_wordmark.py`：先验证固定摄影7fd、参考87、V4成品fe与历史manifest，再用固定受信代码在内存复现，拒绝任何--output-dir，字节与mtime不改。依赖FontTools4.63.0（当前Hermes路径）、Node24.19.0、Sharp0.35.4、Python3.12.14；未验证跨机器自动发现，不是任意不可信代码沙箱。需恢复的V5/V7历史PNG预览在 `continuous_typography_20261004/PREVIEW_DRIVE_RECOVERY.json`，V8预览在本版ASSET_DRIVE_ARCHIVE。按实际ID原字节fetch，校验固定SHA后只写Git忽略的manifest原路径，冲突不覆盖。使用当前SVG/Figma成果无需这些旧复现依赖。V5/V7/V8数值字标精修未获审美通过，不能称稳定有效设计技能。
 
-校准P/N真实Drive归档在CALIBRATION_DRIVE_ARCHIVE.json：P 1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu（仅文字认可，摄影否决），N 1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO（整体否决）。参考R 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC，SHA87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167，只用上半广告。S为7fd摄影，T本版成品，审稿当时T真人/旧AI结论隐藏。P/N不是最高水平标准。历史一例隐去真人否决的检验与当前V3各有实际失败对账；保留原盲审，不把后来的真人反馈填回旧审稿或虚构总体准确率。
+固定VTracer恢复：`vectorization/acquire_vtracer.py`按PyPI固定0.6.15下载wheel与sdist并验SHA（不安装）。cp312/win_amd64 wheel SHA b0f08b66734e41872d4ac343ed6d08870b3235346def3e112e10b3b2443e619e，842765 bytes；在项目私有 `.liu-visual-private/dependencies/vtracer_0_6_15_cp312/site-packages`用Python `-m pip install --no-index --no-deps --target <project-private-site-packages> <verified-wheel>`，再实际import核验。没有全局安装、付费依赖或模型训练。保留LICENSE-VTRACER-MIT.txt。不同OS/Python不能冒用此wheel；选对应固定版本真实发行并记录差异。wrapper仅alpha mask/路径写出，不能设计品牌。
 
-新的读取上下文恢复结果以最新原生receipt引用为准，不能用本机缓存成功冒充全新恢复。以下保留调用协议与过程，V1描述是历史定位而非当前唯一动作。
+## 实际独立审核与专业审查
 
-先固定分支最新提交，读取 START_HERE.md、原生 CURRENT_TASK_LOCK.json、LATEST_CHECKPOINT.json、PROJECT_CONTROL_ADAPTER.json。唯一权威仍是原生任务锁；本文件只解释如何调用成果。
+正式像素审稿每版使用全新项目外Codex task（projectless），无创作聊天/仓库上下文继承，非继承历史子代理冒充冷审。协议：INDEPENDENT_WORKER_CONTRACT_V2.json + WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json。P仅文字/层级历史认可、摄影否决；N整图否决；R指定reference.jpg上半广告；S已认可7fd摄影；T匿名新成品，检验时真人与旧AI结论隐藏。看五图只允许view_image各一次，无仓库/session/web读取；精确摄影保护独立技术处理，单凭看图写UNKNOWN。
 
-刘先生已认可局部背景重建摄影（7fd7777f…）：Drive 1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA；Figma uyDxOoN1iNDPpEHTKSUWg1 / 283:5。完整原字节、透明层和原第一张仍按 SOURCE_RECOVERY_DRIVE_REUSE.md 恢复。不是无字隐藏原件恢复。
+P/N校准不等于最高标准。参考R Drive 11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC，SHA87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167；P 1QPZuDYcha0RGI-tGAnZSFvaQiHdFSBtu，N 1tAA78AyYpjiaKKYiG1uJyjt3TOZw0jwO，真实归档在CALIBRATION_DRIVE_ARCHIVE.json。历史R4旧AI通过、真人设计否决已保存；后来隔离隐藏真人结果的冷审实际判AI_FAIL，与设计否决一致。后续另一真实有限检验也AI_FAIL/真人REJECTED，V3同样一致；各样本绑定见HOLDOUT_COMPARISON_CANONICAL.json、skill_review_20261003/HOLDOUT_COMPARISON.json和V3真人回执。摄影身份纠偏与旧误放行保留，不因为新V9 AI_PASS而删除。样本有限，不能虚构准确率或证明误放行已经消除。
 
-最新用户授权：独立 worker 审核，不通过就在同方向修复复审；通过后保存、内部验收并推进已授权下一项。worker 不能改主线，除非刘先生明确同意。当前调用 INDEPENDENT_WORKER_CONTRACT_V2.json 及 WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json；旧合同和审核路线保留为历史。主执行者是唯一状态写作者。审稿只看 P/N/R/S/T 五图：P认可文字但否决摄影、N否决设计、R指定参考上半广告、S已认可7fd摄影、T本版成品。target真人及旧AI结论隐藏。
+运行：保存本版WORKER_PROMPT/WORKER_CREATION/REVIEW_PACKET_BINDINGS。调用 `scripts/vpd_collect_agent_review.py` 指定实际root/child运行文件、packet、target、version、prompt，加入 `--supplemental-source --formal-work-unit CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1 --carrier-amendment continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json --projectless-worker-creation <本版WORKER_CREATION.json>`。collector验证真实创建调用/返回threadId、运行模型强度、五次ImageView、读取范围和本版SHA，再保存原话、审稿、隔离证据。看不到原图/隔离未验证不可判PASS。改图后新建全新审稿任务，不能沿用旧结论。
 
-当前真实载体为新建的项目外 Codex task（projectless），没有继承创作聊天或仓库上下文。不能称它为 fork-none 子代理；其 fork_turns 为 NOT_APPLICABLE_NEW_THREAD。子代理线程数量已达上限、旧CLI TLS失败均有实际记录。保存 WORKER_CREATION.json 后调用 scripts/vpd_collect_agent_review.py，加 --supplemental-source --formal-work-unit CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1 --carrier-amendment continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json --projectless-worker-creation 对应本版文件，并指定实际新task运行文件。collector核验实际create_thread调用及返回threadId、单一真实model/effort、五次view_image结果、无额外工具读取和本版SHA。缺看图或隔离证据不能通过。现有子代理只作独立实现审查，不能冒充本版冷审。
+实现专业审查与正式像素冷审是不同角色。warm只读实现worker核验源保护、可运行性、工具/许可、Drive、复用，不能代替正式冷审。发现的整图保护包围框、跳过前版审稿、伪造inline失败三项守卫缺口已实际负例验证并修复；初始失败与复审保留 `continuous_typography_20261004/audit/`。实现worker曾窄关键字误读Root混合工具输出内的V4冷审摘要，已记录作用域偏差，不宣称完全盲审，不用于美学判定；正式冷审独立性另核验。工程收益/可编辑性与审美收益分别报告。
 
-当前 work_unit 是原茶作未完成字标与文字编排在已认可正确摄影上的续办。旧三版/两修订仍为用尽、AI_FAIL、真人 REJECTED，不清零。本次同方向最多一初版加两修订为主执行者自限；不新增品类、画幅或第二风格，不再生成摄影。精确文案“一杯茶，慢下来”，1536×1024。当前版本及唯一动作只从 worker_continuation 与顶层任务锁读取。审核意见不是新授权。
+## Drive原件与全新读取上下文恢复
 
-AI_PASS 只允许内部交付，整张海报真人结论须单独记录。达到最终成品真人审查门或真实阻塞才停；不要求用户每步重复继续。图片存原 Drive 项目目录并逐次回读，Figma保留可编辑来源，Git保存代码/证据/原生状态。执行环境实际模型从 turn_context 核验，不凭提示名称。
+Drive为图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。逐版DRIVE_ARCHIVE.json保存ID、revision、SHA、真实元数据/原字节匹配；字体/字标对应各版WORDMARK_DRIVE_ARCHIVE或ASSET_DRIVE_ARCHIVE。上传成功不等于保存验证：实际connected fetch `download_raw_file=true,include_base64=true` 解码后与本地原字节对比。私有文件、raw base64、签名URL不进Git；未公开分享不冒充匿名可访问。
 
-V1当前实际成品：Drive 1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE，SHA a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96；Figma同文件286:2 / 照片286:3 / 矢量286:4。独立worker 01a101e6-416a-7590-bac0-f9cf39f9efa7 实际判AI_FAIL，证据在 evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/；修订在同一方向进行，准确最新版以原生锁的versions为准。
+全新克隆将摄影S及当前锁所有versions中的Drive完整PNG实际fetch结果写入项目私有bundle：`{"entries":[{"drive_id":"实际ID","raw_base64":"实际fetch的b64_string"}]}`。运行 `python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json`；再 `python -B scripts/verify_visual_memory.py --vpd-state --status-card`。脚本由原生锁与Drive回执确定私有路径/SHA，先验证全包再恢复并回读；业务状态写0、新版0。需要所有既有正式版本是因为当前守卫实际逐版比对照片保护，不能只下载最新版却宣称全状态可恢复。source若冲突、路径越界或SHA不匹配明确失败。
 
-本轮writer还核验实际CODEX_THREAD_ID，仅本root有业务写入权。以后换主执行上下文，先依照当前锁登记主执行者交接、核实新的实际root身份并更新writer授权绑定，不能把子worker升级为状态写作者。读取、素材下载、复用SVG无需业务写入权。没有新真人指令不得变更主线。
+Figma当前资产可通过连接插件download_assets获取，temporaryURL须即时下载，不能写Git。默认urllib曾HTTP202空响应，已用Mozilla/5.0 User-Agent和PNG签名/尺寸/SHA核验恢复；curl.exe Schannel凭据错误不靠关TLS解决。rawsource读取必须匹配7fd。现成SVG与Figma节点为主要可编辑成果，0TEXT不得宣称直接输入文字编辑；曲线可编辑/改文案须重新制作与复审。
+
+新读取上下文验证必须仅从仓库入口恢复真实状态和原件，记录固定提交、真实检查、看图与可访问源证据。用本机缓存或复述聊天不算新克隆恢复。结果由最新原生receipt引用定位。业务写入换root上下文前必须按锁登记主执行者交接并核实新root身份；普通素材读取/下载无需成为状态写作者。
+
+## 收益与失败边界
+
+摄影保护、准确文案、实际Drive原字节保存、独立五图审核与可编辑曲线流程已验证。V1–V8都AI_FAIL，V3真人否决；V9全新冷审实际AI_PASS，五图读取/范围隔离/实际gpt-6.1-sol/max已验证；仅允许进入真人交付审核。反复制作耗时明显，节省时间未验证；流程改善已验证，视觉收益未验证。真人认可P仅文字系统、当前7fd仅摄影，整张成品真人认可仍待定。
+
+单张完整成品不证明整个审美蒸馏系统、内容迁移、画幅迁移或第二风格完成。教程阅读、安装数量、节点数和测试通过数量都不能证明好设计；“自动学习”仅研究→适配→运行→比较→保存经验，没有权重训练或无人触发持续运行。

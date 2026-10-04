@@ -1,0 +1,41 @@
+{
+  "schema": "vpd-actual-v9-production-runtime/v1",
+  "root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "max",
+  "exact_calls": [
+    {
+      "role": "ACTUAL_BUILT_IN_WORDMARK_IMAGEGEN",
+      "call_id": "call_OchwhpvpKUr1Wg0CmZhe1slu",
+      "timestamp": "2026-10-04T01:44:43.504Z",
+      "input_sha256": "7573f8ee61914f0a9d5cea663da6fccfb2d7cf784e69aa047ffb9e7c3bc6c603",
+      "actual_tool_output_sha256": "acebc15e32e989d6f4aa076d6bdf5a9d1aef57dc9c51814e9bcf523e4ed09520",
+      "completion_output_present": true
+    },
+    {
+      "role": "ACTUAL_FIGMA_V9_COMPOSITION",
+      "call_id": "call_weXNrsVVE9IRAY9tsJNhUM2I",
+      "timestamp": "2026-10-04T01:49:04.867Z",
+      "input_sha256": "3469fde738ab8587f211e3cb78bad331f4a43e30f1c483412502b54bb8cd3407",
+      "actual_tool_output_sha256": "ce897d9d3cf89a324837f5dae71ad3f1089360381594c6901aaa775ff42a8470",
+      "completion_output_present": true
+    }
+  ],
+  "actual_new_imagegen_calls": 1,
+  "actual_photo_generation_calls": 0,
+  "backend_model": "NOT_EXPOSED",
+  "operative_script": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/FIGMA_ASSEMBLY.js",
+    "sha256": "cdce6de5a3d802d76e1b2d7d8a3c2f2d4b739ba9d30e7cbdc494969a75b13ac6"
+  },
+  "imagegen_prompt": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/WORDMARK_IMAGEGEN_PROMPT.txt",
+    "sha256": "f25d8f4995bba581de91f2330fe99a3ad1dbe9975c7658191935486312f4dc9a"
+  },
+  "generated_source": {
+    "path": ".liu-visual-private/correct_source_typography/v9/wordmark-generated-01.png",
+    "sha256": "98c03d0c04199840b1f25452ecbc42ebbda254f8c4855898094c60341c2b05f1"
+  },
+  "dynamic_binding_boundary": "Outer call loads prompt or SVG through functions store. Outer hash does not directly bind an expanded inner literal; actual artifact, invocation, generated file and Figma nodes/exports jointly recorded.",
+  "recorded_at": "2026-10-04T01:57:13.708814+00:00"
+}

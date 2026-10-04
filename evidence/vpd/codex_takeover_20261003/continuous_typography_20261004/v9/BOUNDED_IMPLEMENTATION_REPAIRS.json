@@ -1,0 +1,20 @@
+{
+  "formal_version": 9,
+  "formal_versions_added_by_repairs": 0,
+  "events": [
+    {
+      "operation": "download_assets for photo317:3 and headline317:5",
+      "actual_error": "Two Transport send errors for child-node read calls",
+      "recovery": "Successful parent317:2 response already contained exact same source image and both SVG assets. Read those URLs with verified TLS; identify each SVG using actual width/viewBox instead of filename guess.",
+      "result": "HTTP200 source7fd777 exact; actual headline width320 height202.009 and brand width275 height134.076; no duplicate Figma mutation or extra formal version"
+    },
+    {
+      "operation": "native receipt preparation and writer scheduling",
+      "actual_sequence": "Writer process was launched after preparer yielded a running session rather than waiting for its exit. Both subsequently exited0; preparer completed receipt before writer consumed it. This is a scheduling deviation, not independent validation.",
+      "repair_rule": "Future dependent writer calls must start only after preparer returns exit0.",
+      "result": "Actual revision291/checkpoint313 state update completed; no rolled-back/overwritten business state"
+    }
+  ],
+  "photography_regenerated": false,
+  "historical_artwork_overwritten": false
+}

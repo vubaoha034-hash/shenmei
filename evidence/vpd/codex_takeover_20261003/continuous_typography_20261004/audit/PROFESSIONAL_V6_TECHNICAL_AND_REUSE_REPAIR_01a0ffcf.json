@@ -1,0 +1,649 @@
+{
+  "schema": "vpd-professional-v6-technical-reuse-audit/v1",
+  "version": 6,
+  "checked_at": "2026-10-04 00:47:59 UTC",
+  "verdict": "TECHNICAL_PASS",
+  "scope": "新安全只读字标入口修复复审及 V6 技术、来源和素材持久化复核；不构成正式冷审或真人设计验收。",
+  "auditor": {
+    "role": "independent_professional_technical_auditor",
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "runtime_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl"
+  },
+  "repo": "vubaoha034-hash/shenmei",
+  "prior_report_preserved": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/audit/PROFESSIONAL_V5_TECHNICAL_FIRST_01a0ffcf.json",
+    "sha256": "8e24fa163608383b5ca7cb5f4a1c15ec5128954bf58f1a8ba34ff4b413f7dc2e",
+    "verdict": "REPAIR_REQUIRED_WITH_EXTERNAL_VERIFICATION_PENDING",
+    "not_overwritten": true
+  },
+  "safe_reuse_entry": {
+    "finding_id": "V5_ASSET_PRECHECK_AFTER_OVERWRITE",
+    "status": "RESOLVED_FOR_NEW_READ_ONLY_ENTRY",
+    "entry": "scripts/vpd_verify_original_wordmark.py",
+    "sha256": "62377573dfc4d8b4c4de24a6223c17fa13205611839f90895f158beddc32e92c",
+    "actual_tool_result_chunk": "490ffd",
+    "actual_cases": [
+      {
+        "scenario": "wrong_photo",
+        "returncode": 2,
+        "code": "SOURCE_SHA_MISMATCH",
+        "expected_matched": true,
+        "preflight_complete": false,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "4a13b04caf608069cec5375676b16c303b630209871974107c64bf88b6638c7c",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "wrong_reference",
+        "returncode": 2,
+        "code": "SOURCE_SHA_MISMATCH",
+        "expected_matched": true,
+        "preflight_complete": false,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "2c3d528c5732f932b0c4d07db1df9f8cdbfc72d00fa60e6a03261ee1450a2c32",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "wrong_v4",
+        "returncode": 2,
+        "code": "SOURCE_SHA_MISMATCH",
+        "expected_matched": true,
+        "preflight_complete": false,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "ab204c7a121e61d5b4eda4fd14c3356da3e31012a429fc655dc0986a9568f77a",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "existing_directory",
+        "returncode": 2,
+        "code": "EXISTING_OUTPUT_REJECTED",
+        "expected_matched": true,
+        "preflight_complete": true,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "baade4a0ea1ccd3dbb5e8022a47b6f11d22f343090c8efb530481dd3874cf9df",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "existing_provenance",
+        "returncode": 2,
+        "code": "EXISTING_OUTPUT_REJECTED",
+        "expected_matched": true,
+        "preflight_complete": true,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "028db4783c5df46508f1ff95e87bf94449465aba3bd26b6872ee4aa92b6f8aed",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "new_output",
+        "returncode": 2,
+        "code": "READ_ONLY_ENTRY_POINT",
+        "expected_matched": true,
+        "preflight_complete": true,
+        "reconstruction_started": false,
+        "captured_memory_writes": 0,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "b698b51a450c3c411706d0ce7d72402b8a67e26e07ed8c985db803109e21525b",
+        "stderr_bytes": 0,
+        "result": "rejected",
+        "paths_matched": 0,
+        "historical_identity": null
+      },
+      {
+        "scenario": "legal_readonly",
+        "returncode": 0,
+        "code": null,
+        "expected_matched": true,
+        "preflight_complete": true,
+        "reconstruction_started": true,
+        "captured_memory_writes": 5,
+        "disk_writes": 0,
+        "history_nine_byte_and_mtime_unchanged": true,
+        "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be",
+        "stderr_bytes": 0,
+        "result": "verified_original_geometry_only",
+        "paths_matched": 15,
+        "historical_identity": "01a101c6-fa5b-7dd3-9df5-f318b704810f"
+      }
+    ],
+    "history_files_checked": 9,
+    "nine_byte_and_mtime_equal_to_pre_repair_baseline": true,
+    "nine_byte_and_mtime_equal_after_every_case": true,
+    "new_output_absent": true,
+    "legacy_disk_builder_executions": 0,
+    "source_preflight_before_replay": true,
+    "historical_builder_and_manifest_sha_pinned": true,
+    "memory_replay_only": true,
+    "original_identity_reproduced_in_memory_only": "01a101c6-fa5b-7dd3-9df5-f318b704810f",
+    "limits": [
+      "旧 builder 保留原字节作为历史证据，直接执行仍有覆盖危险，不能用作新复用入口。",
+      "限制命名空间及 MemoryPath 是固定 SHA 代码的能力缩减，并非操作系统沙箱。",
+      "入口验证固定 V5 原件；不是通用字标生成或磁盘导出工具。",
+      "依赖固定本机 Node、Sharp、FontTools 路径和版本，冷机器需要先恢复依赖及三个绑定源，当前未完成跨机便携性验证。"
+    ]
+  },
+  "actual_visual_inspection": {
+    "poster_viewed": true,
+    "generated_lettering_png_viewed": true,
+    "observed_brand": "茶作",
+    "observed_headline_lines": [
+      "一杯茶，",
+      "慢下来"
+    ],
+    "unicode_intent": {
+      "brand": [
+        "U+8336",
+        "U+4F5C"
+      ],
+      "headline": [
+        "U+4E00",
+        "U+676F",
+        "U+8336",
+        "U+FF0C",
+        "U+6162",
+        "U+4E0B",
+        "U+6765"
+      ]
+    },
+    "limits": "字形以矢量轮廓保存，0 TEXT；上述文字为实际看图转录和制作意图核对，不宣称矢量数据具有 Unicode 文本语义或可直接文本替换。",
+    "aesthetic_verdict": null
+  },
+  "photography_and_png": {
+    "poster": {
+      "path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\correct_source_typography\\v6\\poster.png",
+      "bytes": 1729644,
+      "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "icc_profile_present": false
+    },
+    "source": {
+      "path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\source_recovery_20261003\\photography-local-reconstruction-final.png",
+      "bytes": 1735549,
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ],
+      "icc_profile_present": false
+    },
+    "envelopes": [
+      [
+        1008,
+        96,
+        1408,
+        536
+      ]
+    ],
+    "protected_final_vs_source": {
+      "pixels": 1396864,
+      "changed": 0,
+      "max_channel_delta": 0
+    },
+    "protected_raw_vs_source": {
+      "pixels": 1396864,
+      "changed": 1152,
+      "max_channel_delta": 1
+    },
+    "design_final_vs_raw": {
+      "pixels": 176000,
+      "changed": 0,
+      "max_channel_delta": 0
+    },
+    "actual_tool_result_chunk": "875546",
+    "transparent_fidelity_statement": "最终 PNG 保护区采用源 RGB 恢复；原生 Figma 原始渲染有 1152 像素最大通道差 1。文字区域与原始 Figma 导出一致。",
+    "profile_limit": "源和最终 PNG 无 ICC/sRGB/gAMA 标签，原始 Figma PNG 有 sRGB/gAMA；核验限于解码 RGB 数值及原件字节，不宣称跨色彩管理环境绝对视觉相同。"
+  },
+  "figma_independent_current_readback": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page": "251:2",
+    "frame": {
+      "id": "302:2",
+      "type": "FRAME",
+      "width": 1536,
+      "height": 1024,
+      "parent": "251:2"
+    },
+    "photo": {
+      "id": "302:3",
+      "type": "FRAME",
+      "parent": "302:2",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "opacity": 1,
+      "visible": true,
+      "rotation": 0,
+      "relativeTransform": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "fills": [
+        {
+          "type": "IMAGE",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "scaleMode": "FILL",
+          "scalingFactor": 0.5,
+          "rotation": 0,
+          "filters": {
+            "exposure": 0,
+            "contrast": 0,
+            "saturation": 0,
+            "temperature": 0,
+            "tint": 0,
+            "highlights": 0,
+            "shadows": 0
+          },
+          "imageTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "imageHash": "074a11ff4345752bae19150e799d9cae49518b8b"
+        }
+      ],
+      "effects": []
+    },
+    "overlay": {
+      "id": "302:4",
+      "type": "FRAME",
+      "parent": "302:2",
+      "locked": false
+    },
+    "counts": {
+      "FRAME": 5,
+      "GROUP": 2,
+      "VECTOR": 26
+    },
+    "all_26_vectors_unlocked_visible_and_nonempty": true,
+    "editable_geometry": true,
+    "native_text_editing": false,
+    "original_source_download": {
+      "provider": "Figma official download_assets rawImages",
+      "node": "302:3",
+      "http_status": 200,
+      "bytes": 1735549,
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "local_source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "byte_identical_to_local_frozen_photo": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "tls_verification": "Python urllib default verified TLS",
+      "disk_writes": 0
+    },
+    "current_official_frame_download": {
+      "provider": "independent current Figma download_assets frame302:2",
+      "http_status": 200,
+      "bytes": 2042089,
+      "sha256": "a40d6fe1ce2ead5485ac9644fbda370be7e9b0de47d7602e8f4846d463af8b99",
+      "byte_equal_local_raw": true,
+      "all_pixels_current_vs_local_raw": {
+        "pixels": 1572864,
+        "changed": 0,
+        "max_channel_delta": 0
+      },
+      "design_region_current_vs_final": {
+        "pixels": 176000,
+        "changed": 0,
+        "max_channel_delta": 0
+      },
+      "disk_writes": 0
+    },
+    "limitations": "核验直接访问与路径可编辑属性，无节点编辑试验。",
+    "created_nodes": 0,
+    "mutated_nodes": 0
+  },
+  "actual_production_provenance": {
+    "public_evidence_path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/CREATION_RUNTIME_EVIDENCE.json",
+    "public_evidence_sha256": "aafe323a52fa143dca7c0094315a0842f9c392ef4c6a5fe1be5694f6a68fb373",
+    "explicit_runtime_read": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T10-50-43-01a0ffab-c9b7-7c40-b55b-e51535c156dd.jsonl",
+    "exact_calls": [
+      {
+        "role": "ACTUAL_BUILT_IN_LETTERING_GENERATION",
+        "call_id": "call_HOFKXPJRiFLuIUKomRGJ0wrP",
+        "timestamp": "2026-10-04T00:20:56.800Z",
+        "input_sha256": "bccba0894945bacff516d5b5bb9e434dffbd04cd96f719a1c648595ad835dc8a",
+        "input_binding_match": true,
+        "output_sha256": "be46756fe422bb5935ce6135a2a694e5702f8292a1ed167b63d1fa3ad4814967",
+        "output_binding_match": true,
+        "output_hash_serialization": "json.dumps(output,ensure_ascii=False,sort_keys=True); default separators",
+        "actual_model": "gpt-6.1-sol",
+        "actual_effort": "max",
+        "actual_alpha_mask_exit0": null
+      },
+      {
+        "role": "ACTUAL_ALPHA_MASK_VTRACER_PRODUCTION",
+        "call_id": "call_ExuSbxoHQ6h0D9d5yN1YjSB8",
+        "timestamp": "2026-10-04T00:22:32.837Z",
+        "input_sha256": "192e068097bf93fe769a7465c504886a1406e36d3ac8e6473a00b7eca4a49d10",
+        "input_binding_match": true,
+        "output_sha256": "2568f4d753eec65dbdbf5aaca4ca8ec703cc479c63b02095b052bcf8295b622f",
+        "output_binding_match": true,
+        "output_hash_serialization": "json.dumps(output,ensure_ascii=False,sort_keys=True); default separators",
+        "actual_model": "gpt-6.1-sol",
+        "actual_effort": "max",
+        "actual_alpha_mask_exit0": true
+      },
+      {
+        "role": "ACTUAL_FIGMA_V6_COMPLETE_ASSEMBLY",
+        "call_id": "call_uJKFP0dP78Kuq3MP2ly3Z9by",
+        "timestamp": "2026-10-04T00:26:04.177Z",
+        "input_sha256": "44ecb762aa05a2928aa8797a9e3e78b0e1987b00762f2191189996798b110ba2",
+        "input_binding_match": true,
+        "output_sha256": "3789ce43c13c097d36e7820aad9f7302ce9e3691be745ee1a8491bdb4d456dc7",
+        "output_binding_match": true,
+        "output_hash_serialization": "json.dumps(output,ensure_ascii=False,sort_keys=True); default separators",
+        "actual_model": "gpt-6.1-sol",
+        "actual_effort": "max",
+        "actual_alpha_mask_exit0": null
+      }
+    ],
+    "generation_verified": 1,
+    "generation_backend": "NOT_EXPOSED",
+    "origin": "内置 imagegen 字形资产经 alpha-mask VTracer 转成曲线，不是 V5 数值构造字标，也不是已证明的人工原创字体设计。",
+    "font_software_used": null,
+    "vtracer_in_memory_control": {
+      "wrapper_sha256": "d2e26ba99f8e39ede838b5e03033d252f9dd1a9f680c218b2e2e600e92985896",
+      "parameters": {
+        "colormode": "binary",
+        "mode": "spline",
+        "filter_speckle": 0,
+        "corner_threshold": 60,
+        "length_threshold": 4,
+        "max_iterations": 10,
+        "splice_threshold": 45,
+        "path_precision": 3
+      },
+      "native_module_file": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer\\__init__.py",
+      "native_return_bytes": 39811,
+      "native_return_sha256": "a791cdb6f385057405101a7d1f7ff231d0d147674f777f486c8b3183054d7df0",
+      "saved_bytes": 39841,
+      "saved_sha256": "91509dea5b20b9c74efae9f29e95344938357856d363ea7a560e2f6abe523288",
+      "saved_crlf_count": 30,
+      "direct_byte_equal": false,
+      "normalized_lf_equal": true,
+      "all_path_attributes_equal": true,
+      "paths": 26,
+      "disk_writes": 0
+    },
+    "generator_alpha": {
+      "zero": 1336597,
+      "partial": 236267,
+      "opaque": 0,
+      "threshold128_foreground": 152025
+    },
+    "generated_asset_limit": "原 PNG 有 236267 个部分透明像素、0 个完全不透明像素，含软边；无辉光平涂的提示词并未逐字满足。最终用 alpha>=128 提取轮廓并统一实色填充，原生成 PNG 直接复用须保留此边界。",
+    "originality_claim_limit": "确认实际生成/向量化/导入调用及已存素材，不能由提示词或轮廓数证明独创性、审美收益或商标可注册性。",
+    "generation_byte_binding_limit": "imagegen 原调用输出仅记录 image_url/output_hint 键，实际源 PNG 的返回图像数据没有出现在这条原始 runtime 回执；确认该调用完成及后续存取素材一致，不将摘要输出 hash 称为源 PNG 返回值的直接字节绑定。",
+    "runtime_output_hash_recheck_note": "初次直接序列化列表与声明 hash 不同；按真实 json.dumps(output, ensure_ascii=False, sort_keys=True) 重算三条均匹配，无修改原回执。",
+    "dependency_boundary": "此前 VTracer MIT 来源审查保留；本次实际转换依赖私有 cp312 wheel。没有 font-derived/OFL 字形来源的替代宣称。"
+  },
+  "drive_independent_raw_persistence": {
+    "method": "四个精确 fileId 官方 metadata + fetch(download_raw_file=true,include_base64=true)，内存解码并独立 SHA-256。",
+    "entries": [
+      {
+        "role": "poster",
+        "id": "1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk",
+        "bytes": 1729644,
+        "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+        "expectedSha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+        "exact_bytes_match": true,
+        "mime_type": "image/png",
+        "parent_ids": [
+          "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+        ],
+        "body_head_hex": "89504e470d0a1a0a",
+        "base64_printed": false,
+        "disk_writes": 0
+      },
+      {
+        "role": "generated_png",
+        "id": "12Lvfp1EtLnq6gIxZIdIdoq6LJqa6IVUC",
+        "bytes": 1180526,
+        "sha256": "ea69caec4f515577f02a12a4b035cad4e47564977121581c1756fd3b00f326ce",
+        "expectedSha256": "ea69caec4f515577f02a12a4b035cad4e47564977121581c1756fd3b00f326ce",
+        "exact_bytes_match": true,
+        "mime_type": "image/png",
+        "parent_ids": [
+          "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+        ],
+        "body_head_hex": "89504e470d0a1a0a",
+        "base64_printed": false,
+        "disk_writes": 0
+      },
+      {
+        "role": "brand_svg",
+        "id": "1bvXWJwaodonRvQZh7sbsJ6TcJOWlhBps",
+        "bytes": 12460,
+        "sha256": "c5f371cc005871f03c72f2b0e7d5d54f3d231c6fe436ab2071c90af8bfd8f8b2",
+        "expectedSha256": "c5f371cc005871f03c72f2b0e7d5d54f3d231c6fe436ab2071c90af8bfd8f8b2",
+        "exact_bytes_match": true,
+        "mime_type": "image/svg+xml",
+        "parent_ids": [
+          "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+        ],
+        "body_head_hex": "3c73766720786d6c",
+        "base64_printed": false,
+        "disk_writes": 0
+      },
+      {
+        "role": "headline_svg",
+        "id": "1ytu6p8inJR-TzGYupBzIHlHjv1Ak9KjQ",
+        "bytes": 27468,
+        "sha256": "a68befbd33c22f8ac5690e41a7041040e9b03a3e1ce861ec8b55bf5f3db96096",
+        "expectedSha256": "a68befbd33c22f8ac5690e41a7041040e9b03a3e1ce861ec8b55bf5f3db96096",
+        "exact_bytes_match": true,
+        "mime_type": "image/svg+xml",
+        "parent_ids": [
+          "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O"
+        ],
+        "body_head_hex": "3c73766720786d6c",
+        "base64_printed": false,
+        "disk_writes": 0
+      }
+    ],
+    "all_four_byte_hashes_match_local": true,
+    "expected_folder": "1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O",
+    "all_four_in_same_authorized_folder": true,
+    "drive_archive_file_sha256": "8fea2a29a5e8c30608c263e9387144edfdcd26804a1ec875f7b8b3e40952a203",
+    "asset_archive_file_sha256": "aafc7098260a9a248e7ef72f6a46d28a8afcc0f52e214ac86d79133e4c2f3941",
+    "permissions_limit": "本次 metadata 的 shared、headRevisionId 未返回有效值；确认连接账号实际能读取原字节，不据此独立确认公开分享或具体 revision ID。",
+    "provider_base64_or_signed_urls_in_report": false,
+    "disk_writes": 0
+  },
+  "verified_tls_fallback_review": {
+    "writer_sha256": "4a5d1e5cd7b8dd488b5dc41e949f48a384e2a3fabf507f149f0645c83d17d70a",
+    "scope": "仅新增 remote_head 的 Python 公共官方 API fallback。",
+    "actual_tool_result_chunk": "97254f",
+    "tests": [
+      {
+        "scenario": "valid",
+        "rejected": false,
+        "expected_matched": true,
+        "error": null,
+        "sha": "adc0fe750c53559c380df159bf721c484cfcd1ae",
+        "request_audit": {
+          "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+          "timeout": 20,
+          "verify_mode_is_required": true,
+          "check_hostname": true,
+          "authorization_header_present": false
+        }
+      },
+      {
+        "scenario": "wrong_ref",
+        "rejected": true,
+        "expected_matched": true,
+        "error": "REMOTE_REF_UNVERIFIED",
+        "sha": null,
+        "request_audit": {
+          "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+          "timeout": 20,
+          "verify_mode_is_required": true,
+          "check_hostname": true,
+          "authorization_header_present": false
+        }
+      },
+      {
+        "scenario": "wrong_object_type",
+        "rejected": true,
+        "expected_matched": true,
+        "error": "REMOTE_REF_UNVERIFIED",
+        "sha": null,
+        "request_audit": {
+          "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+          "timeout": 20,
+          "verify_mode_is_required": true,
+          "check_hostname": true,
+          "authorization_header_present": false
+        }
+      },
+      {
+        "scenario": "bad_sha",
+        "rejected": true,
+        "expected_matched": true,
+        "error": "REMOTE_REF_UNVERIFIED",
+        "sha": null,
+        "request_audit": {
+          "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+          "timeout": 20,
+          "verify_mode_is_required": true,
+          "check_hostname": true,
+          "authorization_header_present": false
+        }
+      },
+      {
+        "scenario": "wrong_status",
+        "rejected": true,
+        "expected_matched": true,
+        "error": "REMOTE_REF_HTTP_FAILED",
+        "sha": null,
+        "request_audit": {
+          "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+          "timeout": 20,
+          "verify_mode_is_required": true,
+          "check_hostname": true,
+          "authorization_header_present": false
+        }
+      }
+    ],
+    "live": {
+      "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+      "tls_verify_required": true,
+      "hostname_verification": true,
+      "timeout": 20,
+      "sha": "adc0fe750c53559c380df159bf721c484cfcd1ae",
+      "success": true
+    },
+    "preserved_failures": "两个既有 transport 的失败未改写；独立 live 测试前两个 transport 使用内存故障注入，不能称为实际重新运行其失败。",
+    "transaction_main_invocations": 0,
+    "credentials_read": 0,
+    "older_guard_tests_repeated": 0,
+    "claim_limit": "不将此项技术读取或已覆盖工程 guard 称为审美改进；不以一次公开 ref GET 证明完整最新交付已经提交。"
+  },
+  "remaining_unverified": [
+    "V6 后续原生交付绑定、最新提交和远端关键回执回读由主执行者处理，本次未读取 V6 新原生状态。",
+    "未做新空克隆从入口完成 V6 源素材和生成依赖的端到端恢复测试。",
+    "正式独立冷审与真人认可均未在本报告评判。"
+  ],
+  "blocking_findings": [],
+  "business_state_writes": 0,
+  "artwork_writes": 0,
+  "figma_node_writes": 0,
+  "cold_reviewer_thread_reads": 0,
+  "cold_reviewer_session_reads": 0,
+  "pixel_review_directory_reads": 0,
+  "cold_aesthetic_verdict_claimed": false,
+  "human_approval_claimed": false
+}
+

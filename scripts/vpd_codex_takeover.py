@@ -24,9 +24,23 @@ def remote_head():
         return subprocess.check_output(['gh','api','repos/vubaoha034-hash/shenmei/git/ref/heads/'+BRANCH,'--jq','.object.sha'],cwd=ROOT,text=True).strip()
     except subprocess.CalledProcessError:
         # A different transport, with TLS verification retained; one bounded fallback.
-        raw=subprocess.check_output(['git','-c','http.sslBackend=openssl','ls-remote','https://github.com/vubaoha034-hash/shenmei.git','refs/heads/'+BRANCH],cwd=ROOT,text=True).split()
-        if len(raw)!=2 or raw[1]!='refs/heads/'+BRANCH:raise ValueError('REMOTE_REF_UNVERIFIED')
-        return raw[0]
+        try:
+            raw=subprocess.check_output(['git','-c','http.sslBackend=openssl','ls-remote','https://github.com/vubaoha034-hash/shenmei.git','refs/heads/'+BRANCH],cwd=ROOT,text=True).split()
+            if len(raw)!=2 or raw[1]!='refs/heads/'+BRANCH:raise ValueError('REMOTE_REF_UNVERIFIED')
+            return raw[0]
+        except subprocess.CalledProcessError:
+            # Public official API through Python's verified TLS, one bounded
+            # fallback when the Git/Go transports fail before any write.
+            import urllib.request, ssl, re
+            url='https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/'+BRANCH
+            request=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/vnd.github+json'})
+            with urllib.request.urlopen(request,timeout=20,context=ssl.create_default_context()) as response:
+                if response.status!=200:raise ValueError('REMOTE_REF_HTTP_FAILED')
+                value=json.load(response)
+            sha=value.get('object',{}).get('sha','')
+            if value.get('ref')!='refs/heads/'+BRANCH or value.get('object',{}).get('type')!='commit' or not re.fullmatch(r'[0-9a-f]{40}',sha):
+                raise ValueError('REMOTE_REF_UNVERIFIED')
+            return sha
 
 def encoded(value):
     return (json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
@@ -81,6 +95,19 @@ def main():
             if old_unit['unit_id'] != unit['unit_id']: raise ValueError('WORKER_CANNOT_CHANGE_UNIT')
             old_used, used = old_unit['budget']['formal_versions_used'], unit['budget']['formal_versions_used']
             if not old_used <= used <= old_used + 1: raise ValueError('CONTINUATION_BUDGET_ROLLBACK_OR_SKIP')
+            if used > old_used:
+                if old_unit['phase'] not in ['AUTHORIZED','REVISION_REQUIRED']:
+                    raise ValueError('PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
+                if old_used and (not old_unit['versions'][-1].get('pixel_review') or
+                                 old_unit['versions'][-1].get('verdict') != 'AI_FAIL'):
+                    raise ValueError('PRIOR_PIXEL_REVIEW_REQUIRED_BEFORE_NEXT_VERSION')
+                if old_used:
+                    from visual_memory.vpd_correct_source_worker import load as load_evidence
+                    prior_review=load_evidence(ROOT,old_unit['versions'][-1]['pixel_review'])
+                    if prior_review['verdict'] != 'AI_FAIL':
+                        raise ValueError('AI_PASS_STOPS_SERIAL_REPAIR')
+                if unit['versions'][:old_used] != old_unit['versions']:
+                    raise ValueError('HISTORICAL_VERSION_EVIDENCE_REWRITTEN')
     entry='REUSE_FINAL.md' if (ROOT/BASE/'REUSE_FINAL.md').exists() else 'REUSE.md'
     if (ROOT/BASE/entry).exists():
         take['reuse_entry']=ref(BASE+entry)
@@ -89,8 +116,11 @@ def main():
     lock['execution_boundary']['current_image_generation_authorization']=0
     lock['execution_boundary']['current_figma_canvas_authorization']=3-args.versions
     if unit:
-        lock['execution_boundary']['current_figma_canvas_authorization']=unit['budget']['formal_versions_max']-unit['budget']['formal_versions_used']
+        from visual_memory.vpd_correct_source_worker import available_canvas_slots
+        lock['execution_boundary']['current_figma_canvas_authorization']=available_canvas_slots(unit)
         lock['execution_boundary']['independent_worker_contract']=unit['worker_contract']
+        if unit.get('repair_authorization'):
+            lock['execution_boundary']['wordmark_only_generation_authorization']=unit['repair_authorization']
     lock['execution_boundary']['current_image_generation_authorization_scope']=TASK
     lock['execution_boundary']['successor_execution_authorized']=True
     lock['execution_boundary']['bounded_typography_design_versions_authorization']=take['authorization']
@@ -126,7 +156,13 @@ def main():
     if unit:
         adapter['current_mainline']['current_visual_unit']='HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY'
         cp['incomplete']=['完整海报真人验收仍待完成；摄影修补候选已获真人认可','原三版否决记录保留；整体蒸馏、内容及画幅迁移尚未验证']
-        if unit['poster_human_verdict'] == 'REJECTED':
+        if unit.get('repair_authorization') and unit['phase'] not in ['DELIVERED_AI_PASS']:
+            cp['incomplete']=['同一方向持续制作、独立像素审稿与修复，直到独立AI_PASS；不送失败成品要求真人验收',
+                '已认可摄影继续冻结；全部历史失败与版本计数保留',
+                '成品真人认可及整体蒸馏、迁移能力尚未验证']
+        if unit.get('poster_human_feedback'):
+            adapter['current_mainline']['evidence']['latest_poster_human_feedback']=unit['poster_human_feedback']
+        if unit['poster_human_verdict'] == 'REJECTED' and not unit.get('repair_authorization'):
             cp['incomplete']=['V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回',
                 '三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败',
                 '已认可摄影继续冻结；字标设计及整体蒸馏、内容和画幅迁移尚未完成']

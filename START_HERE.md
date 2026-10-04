@@ -1,15 +1,15 @@
 # START HERE — 强制执行入口
 
 <!-- INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->
-最新真人反馈与 worker 入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md`。2026-10-04刘先生已否定V3文字与完整设计，当前真人REJECTED；此前“请真人验收失败成品”的下一动作已撤回。三版冷审均AI_FAIL，失败成品与源文件继续保留在Drive/Figma，7fd7777f…摄影认可不撤回。三版两修订已用尽，不自动增加第四版；唯一下一动作是明确同一任务新增正式版本范围，不是再次请求验收V3。实际专业案例核查与根因在 `evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/ROOT_DIAGNOSIS.md`。worker 无权改变主线，根执行者唯一写业务状态。下方历史PENDING、待摄影验收及旧下一动作不覆盖当前原生锁。
+最新授权与 worker 入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md`。2026-10-04刘先生明确授权同一方向持续制作、独立审核和修复，直到内部审核通过；本次授权取代三版两修订停止上限，保留累计版本、全部失败、主线、摄影保护与真人最终验收。授权原话见 `continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json`。V3真人REJECTED及V1–V3真实AI_FAIL不改写；冻结7fd7777f摄影认可不撤回。worker不能改主线，根执行者唯一写业务状态。下方三版耗尽、等待追加范围或旧验收下一动作均为历史，不覆盖当前原生锁。
 <!-- END_INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->
 
 <!-- CHAZUO_DRIVE_PRIMARY_ARCHIVE_ENTRY_20261003 -->
-最新图片调用入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md`。按刘先生最新要求，原件、当前摄影修补候选、透明层、素材、失败预览及旧三版已存入Drive，绑定实际文件ID、revision ID和完整SHA并逐个原字节回读。Drive为图片主存储，Figma源文件保留。当前只待摄影修补真人验收，旧海报否决与版本预算保留。
+历史摄影归档阶段（2026-10-03）：`continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_DRIVE_REUSE.md`保留原件、局部摄影修补、透明层、素材及旧三版的Drive文件ID、revision与SHA。摄影7fd7777f后来已获真人认可；不再等待这个历史摄影验收。当前成品、审核与唯一下一动作先从原生锁和WORKER_CURRENT_REUSE.md读取；Drive为图片主存储，Figma源文件保留。
 <!-- END_CHAZUO_DRIVE_PRIMARY_ARCHIVE_ENTRY_20261003 -->
 
 <!-- FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->
-最新摄影恢复入口：先读当前原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_REUSE.md`。已制作原认可第一张的局部去字背景重建候选，原件、透明修补层和精确PNG均有Figma节点与身份回读；隔离审稿AI实际看五图后仅通过“摄影修补可送真人验收”。不是无字摄影原件，也不是新海报完成。旧三版海报否决、3版/2修订上限保留；本次一次必要修补工具操作单独记账。当前唯一下一动作由任务锁确定，真人反馈前不自动继续出图。
+历史摄影恢复阶段（2026-10-03）：`continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_REUSE.md`记录第一张局部去字背景重建及一次修补工具操作；不是找回隐藏无字原件。摄影7fd7777f已获真人认可并冻结。旧三版海报否决保留；持续同方向文字制作权限已在当前授权覆盖，后续只从原生锁接续，不执行历史等待步骤。
 <!-- END_FIRST_PHOTO_LOCAL_RECOVERY_ENTRY_20261003 -->
 
 <!-- INDEPENDENT_REVIEW_SKILL_ENTRY_20261003 -->

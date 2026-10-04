@@ -271,14 +271,15 @@ def _validate_codex_takeover(root, lock, cp, adapter):
                 'historical_figma_protected_nodes_modified']), 'PHOTO_PROTECTION_CHANGED')
     versions, revisions = _takeover_budget(take.get('budget'))
     boundary = lock['execution_boundary']
+    from .vpd_correct_source_worker import available_canvas_slots
+    canvas_slots = (available_canvas_slots(take['worker_continuation'])
+                    if take.get('worker_continuation') else 3 - versions)
     require(lock['render_allowed'] is False and
             boundary['current_image_generation_authorization'] ==
             boundary['current_image_generation_count_max'] == 0 and
             type(boundary['current_figma_canvas_authorization']) is int and
             boundary['current_figma_canvas_authorization'] ==
-                (take['worker_continuation']['budget']['formal_versions_max'] -
-                 take['worker_continuation']['budget']['formal_versions_used']
-                 if take.get('worker_continuation') else 3 - versions) and
+                canvas_slots and
             boundary['current_image_generation_authorization_scope'] == TAKEOVER_TASK and
             boundary.get('bounded_typography_design_versions_authorization') == take['authorization']
             and boundary.get('successor_execution_authorized') is True,
@@ -881,7 +882,8 @@ def validate_locked_request(root, request, lock):
                         request.get('authorization') == unit['authorization'] and
                         request.get('frozen_source_sha256') == unit['frozen_source']['sha256'] and
                         type(request.get('formal_version')) is int and
-                        request['formal_version'] == unit['budget']['formal_versions_used'] + 1 <= 3,
+                        request['formal_version'] == unit['budget']['formal_versions_used'] + 1
+                        and (bool(unit.get('repair_authorization')) or request['formal_version']<=3),
                         'CORRECT_SOURCE_REQUEST_SCOPE_OR_BUDGET_CONFLICT')
             return lock
         if request.get('figma_write') or request.get('wordmark_image_tool'):

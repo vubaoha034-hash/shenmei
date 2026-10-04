@@ -1,0 +1,86 @@
+{
+  "root_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "root_runtime_path": "C:\\Users\\Administrator\\.codex\\sessions\\2026\\10\\03\\rollout-2026-10-03T10-50-43-01a0ffab-c9b7-7c40-b55b-e51535c156dd.jsonl",
+  "formal_version": 4,
+  "operations": [
+    {
+      "role": "LETTERING_GENERATION",
+      "timestamp": "2026-10-03T22:47:42.462Z",
+      "call_id": "call_pm5Db4KkGBOgOIZmEkw98efb",
+      "actual_root_configuration": {
+        "model": "gpt-6.1-sol",
+        "effort": "max",
+        "timestamp": "2026-10-03T22:41:07.716Z"
+      },
+      "input_sha256": "20af22cde2022dbdba49bc86adb63519fbbe5ad5f49bdfafcebcf87937bad301",
+      "tool_output_present": true,
+      "output_sha256": "242c2bf8769d6387949975f536b03eeaf7069d69b926fca301c10ad96c92dfdd"
+    },
+    {
+      "role": "VTRACER_PRODUCTION_ALPHA_MASK",
+      "timestamp": "2026-10-03T22:49:52.940Z",
+      "call_id": "call_Dbif3e014o4VKCh27gMUtSyp",
+      "actual_root_configuration": {
+        "model": "gpt-6.1-sol",
+        "effort": "max",
+        "timestamp": "2026-10-03T22:41:07.716Z"
+      },
+      "input_sha256": "7ae018f894a0a30616464f345be227f6250815df1e93957b58f7bb0c074045b6",
+      "tool_output_present": true,
+      "output_sha256": "6723ff35f57b7beb08b4a5c361afb772d70854a809a5b6551629dd4501d11f53"
+    },
+    {
+      "role": "FIGMA_WORDMARK_IMPORT",
+      "timestamp": "2026-10-03T22:55:34.074Z",
+      "call_id": "call_cLvVVBH2BmeRlx8EfoplhLfF",
+      "actual_root_configuration": {
+        "model": "gpt-6.1-sol",
+        "effort": "max",
+        "timestamp": "2026-10-03T22:41:07.716Z"
+      },
+      "input_sha256": "aff296f82704bc4959f3db1e3a6f719fcabc5715394b5e8d3a4a853bd9995e05",
+      "tool_output_present": true,
+      "output_sha256": "546610f8cd7322efd1e32829976edf8cb489534fa4612c9ba1971444ec4567b7"
+    },
+    {
+      "role": "FIGMA_HEADLINE_IMPORT",
+      "timestamp": "2026-10-03T22:56:05.021Z",
+      "call_id": "call_8CDypPTtZUFXOCSijXta2IMU",
+      "actual_root_configuration": {
+        "model": "gpt-6.1-sol",
+        "effort": "max",
+        "timestamp": "2026-10-03T22:41:07.716Z"
+      },
+      "input_sha256": "955de6e48d0d7f7ca5fc048b49ba9f26bcec8cbe2b0f1d990a80f36929252196",
+      "tool_output_present": true,
+      "output_sha256": "935ec545636bebcd95f182d9aa7fcef8f34936ad5efea22f18091b98289741c0"
+    }
+  ],
+  "imagegen_backend_model": "NOT_EXPOSED",
+  "upstream_vectorizer": "VTracer Python0.6.15 / SVG generator0.6.12 MIT",
+  "reviewer_logs_excluded": true,
+  "raw_runtime_private_not_committed": true,
+  "generation_call_receipt_note": "launch call yielded; final bitmap separately preserved by actual path and SHA, not inferred from launch success",
+  "prompt": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/LETTERING_PROMPT.txt",
+    "sha256": "b9b4fffcb1ac68a6833bd6ca701d6434d76f16a9d2e40ed5cbd87121c1ffec22"
+  },
+  "actual_generated_bitmap": {
+    "path": ".liu-visual-private/correct_source_typography/v4/lettering-generated-01.png",
+    "sha256": "ea5ed605ee40dde5b2c110f81617502acbf5661b52d0f7d048c3d932e2e8cd91"
+  },
+  "necessary_tool_failures": [
+    {
+      "stage": "FIGMA_COMBINED_SVG_IMPORT",
+      "failure": "CONNECTOR_CODE_MAX_LENGTH_50000",
+      "mutation_performed": false,
+      "recovery": "split original brand/headline SVG imports; no alternative design"
+    },
+    {
+      "stage": "FIRST_ASSET_DOWNLOAD",
+      "failure": "default User-Agent returned pending empty body; curl Schannel credentials failure",
+      "delivery_success_claimed": false,
+      "recovery": "reuse project-established Mozilla User-Agent; HTTP200 actual PNG and source SHA verified"
+    }
+  ]
+}

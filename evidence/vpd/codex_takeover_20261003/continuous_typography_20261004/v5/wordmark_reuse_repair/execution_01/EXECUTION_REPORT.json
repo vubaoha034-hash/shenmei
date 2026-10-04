@@ -1,0 +1,281 @@
+{
+  "scope": "Technical reuse verification only; no aesthetic or independent professional acceptance claim.",
+  "entry_point": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+  "entry_sha256": "62377573dfc4d8b4c4de24a6223c17fa13205611839f90895f158beddc32e92c",
+  "controls_script_sha256": "f7a46c5156a2bd8182a597b1c6085569d84017fcf9033d787a874e5a3b5790f0",
+  "scenarios_executed": 11,
+  "negative_controls": 6,
+  "valid_controls_with_different_caller_ids": 5,
+  "all_historical_bytes_and_mtimes_unchanged_after_every_scenario": true,
+  "historical_identity_unchanged": "01a101c6-fa5b-7dd3-9df5-f318b704810f",
+  "no_image_generated_or_rendered": true,
+  "no_business_state_modified_by_entry_or_controls": true,
+  "original_files": [
+    {
+      "file": "build_wordmark.py",
+      "bytes": 12811,
+      "sha256": "f52af4a809ecba1ac21b82eeba1d1a6f7e76e9498b4334d6eb7b520118a1d60d",
+      "mtime_ns": 1791069981839960300
+    },
+    {
+      "file": "chazuo-wordmark.png",
+      "bytes": 5489,
+      "sha256": "c63fdceb0b7b75c4ffa70821f2634e444a4c042500b1fad322d2a9b737696efe",
+      "mtime_ns": 1791069993751000000
+    },
+    {
+      "file": "chazuo-wordmark.svg",
+      "bytes": 3964,
+      "sha256": "923b4c2fa57fb903ec6234ddc145c3ff476b63fad8289bd36ce892f92da55b74",
+      "mtime_ns": 1791069983539080600
+    },
+    {
+      "file": "construction.json",
+      "bytes": 52862,
+      "sha256": "e0446ebddfc65144641473404df704d6426f9b7fb046052d7707a2a576e5c699",
+      "mtime_ns": 1791069983546303500
+    },
+    {
+      "file": "figma-vector-paths.json",
+      "bytes": 4527,
+      "sha256": "d5aca14a509f87717cd979ff1a8174565dea0a648532a085ee58625cb92089bd",
+      "mtime_ns": 1791069983540586700
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 1248,
+      "sha256": "1ee9619693a13a87852108c1a42be4026bceba1c85d48c0cc766b7fd71929b0d",
+      "mtime_ns": 1791069993760766900
+    },
+    {
+      "file": "method_basis.json",
+      "bytes": 1326,
+      "sha256": "e0b56e186037324a29e3eef35e2daea879f5d92cd40e5f346e877903f3364a72",
+      "mtime_ns": 1791069983547362200
+    },
+    {
+      "file": "provenance.json",
+      "bytes": 2540,
+      "sha256": "34ea3ce4197d0f8ea109cf284ce2aa11846257b03f29a4069b690e848ce6c663",
+      "mtime_ns": 1791069993756763300
+    },
+    {
+      "file": "render_wordmark.cjs",
+      "bytes": 1426,
+      "sha256": "fe772365366598b02483aba4772cc68c20637f001310f65e6e291e3244e942fe",
+      "mtime_ns": 1791069854921862400
+    }
+  ],
+  "results": [
+    {
+      "scenario": "wrong_photo",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--photo-path",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark_reuse_repair\\execution_01\\wrong-source.bin"
+      ],
+      "returncode": 2,
+      "code": "SOURCE_SHA_MISMATCH",
+      "preflight_complete": false,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-wrong_photo",
+      "stdout_sha256": "4a13b04caf608069cec5375676b16c303b630209871974107c64bf88b6638c7c"
+    },
+    {
+      "scenario": "wrong_reference",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--reference-path",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark_reuse_repair\\execution_01\\wrong-source.bin"
+      ],
+      "returncode": 2,
+      "code": "SOURCE_SHA_MISMATCH",
+      "preflight_complete": false,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-wrong_reference",
+      "stdout_sha256": "2c3d528c5732f932b0c4d07db1df9f8cdbfc72d00fa60e6a03261ee1450a2c32"
+    },
+    {
+      "scenario": "wrong_v4",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--v4-path",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark_reuse_repair\\execution_01\\wrong-source.bin"
+      ],
+      "returncode": 2,
+      "code": "SOURCE_SHA_MISMATCH",
+      "preflight_complete": false,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-wrong_v4",
+      "stdout_sha256": "ab204c7a121e61d5b4eda4fd14c3356da3e31012a429fc655dc0986a9568f77a"
+    },
+    {
+      "scenario": "existing_bound_output_directory",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--output-dir",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark"
+      ],
+      "returncode": 2,
+      "code": "EXISTING_OUTPUT_REJECTED",
+      "preflight_complete": true,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-existing_bound_output_directory",
+      "stdout_sha256": "baade4a0ea1ccd3dbb5e8022a47b6f11d22f343090c8efb530481dd3874cf9df"
+    },
+    {
+      "scenario": "existing_bound_provenance_file",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--output-dir",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark\\provenance.json"
+      ],
+      "returncode": 2,
+      "code": "EXISTING_OUTPUT_REJECTED",
+      "preflight_complete": true,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-existing_bound_provenance_file",
+      "stdout_sha256": "028db4783c5df46508f1ff95e87bf94449465aba3bd26b6872ee4aa92b6f8aed"
+    },
+    {
+      "scenario": "new_output_directory_not_created",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003",
+        "--output-dir",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\wordmark_reuse_repair\\execution_01\\must-not-exist"
+      ],
+      "returncode": 2,
+      "code": "READ_ONLY_ENTRY_POINT",
+      "preflight_complete": true,
+      "reconstruction_started": false,
+      "captured_write_count": 0,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-new_output_directory_not_created",
+      "stdout_sha256": "b698b51a450c3c411706d0ce7d72402b8a67e26e07ed8c985db803109e21525b"
+    },
+    {
+      "scenario": "legal_control_1",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003"
+      ],
+      "returncode": 0,
+      "code": null,
+      "preflight_complete": true,
+      "reconstruction_started": true,
+      "captured_write_count": 5,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-legal_control_1",
+      "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be"
+    },
+    {
+      "scenario": "legal_control_2",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003"
+      ],
+      "returncode": 0,
+      "code": null,
+      "preflight_complete": true,
+      "reconstruction_started": true,
+      "captured_write_count": 5,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-legal_control_2",
+      "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be"
+    },
+    {
+      "scenario": "legal_control_3",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003"
+      ],
+      "returncode": 0,
+      "code": null,
+      "preflight_complete": true,
+      "reconstruction_started": true,
+      "captured_write_count": 5,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-legal_control_3",
+      "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be"
+    },
+    {
+      "scenario": "legal_control_4",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003"
+      ],
+      "returncode": 0,
+      "code": null,
+      "preflight_complete": true,
+      "reconstruction_started": true,
+      "captured_write_count": 5,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-legal_control_4",
+      "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be"
+    },
+    {
+      "scenario": "legal_control_5",
+      "command": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\scripts\\vpd_verify_original_wordmark.py",
+        "--repo",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003"
+      ],
+      "returncode": 0,
+      "code": null,
+      "preflight_complete": true,
+      "reconstruction_started": true,
+      "captured_write_count": 5,
+      "all_nine_historical_files_byte_and_mtime_identical": true,
+      "caller_thread_fixture": "read-only-control-legal_control_5",
+      "stdout_sha256": "faa99a248fc9ffc40b22d78c7540fcb30be5881d2e758d43eafe749d2c7e75be"
+    }
+  ]
+}

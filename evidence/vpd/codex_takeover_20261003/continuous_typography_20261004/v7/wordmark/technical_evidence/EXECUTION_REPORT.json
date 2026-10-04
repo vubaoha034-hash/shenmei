@@ -1,0 +1,81 @@
+{
+  "scope": "SingleV7asset technical export only; no aesthetic or professional acceptance claim",
+  "results": [
+    {
+      "scenario": "wrong_source",
+      "command": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\wordmark\\build_wordmark.py",
+        "--photo-path",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\reference.jpg"
+      ],
+      "returncode": 2,
+      "report": {
+        "result": "rejected",
+        "code": "SOURCE_SHA_MISMATCH",
+        "detail": "photography override",
+        "preflight_complete": false,
+        "geometry_started": false,
+        "directory_created": false,
+        "files_created": 0
+      }
+    },
+    {
+      "scenario": "one_legal_export",
+      "command": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\wordmark\\build_wordmark.py"
+      ],
+      "returncode": 0,
+      "report": {
+        "result": "exported_one_original_wordmark",
+        "preflight_complete": true,
+        "geometry_started": true,
+        "directory_created": true,
+        "files_created": 7,
+        "directory": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\wordmark\\artwork",
+        "dimensions": [
+          360,
+          150
+        ],
+        "ink_bounds_px": [
+          9,
+          7,
+          349,
+          144
+        ],
+        "editable_contours": 16,
+        "svg_sha256": "bad8d81a50e3d0dad2bd58fa7216972f54377b4db79a102099e96ed938395810",
+        "png_sha256": "b0a8d2a440f32211a1a0a762bc6134c9e6d58972c0d9b75c3e671ac90a0e137f",
+        "manifest_sha256": "d3215edc1688e2a76720b23cc4fd8eaa83af262d1e99794c30fa2f74da553285",
+        "aesthetic_acceptance_claimed": false
+      }
+    },
+    {
+      "scenario": "existing_output_refused",
+      "command": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\wordmark\\build_wordmark.py"
+      ],
+      "returncode": 2,
+      "report": {
+        "result": "rejected",
+        "code": "OUTPUT_EXISTS",
+        "detail": "Refusing any overwrite: C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\wordmark\\artwork",
+        "preflight_complete": false,
+        "geometry_started": false,
+        "directory_created": false,
+        "files_created": 0
+      }
+    }
+  ],
+  "manifest_members_verified": 6,
+  "editable_closed_paths_verified": 16,
+  "bound_sources_preserved": true,
+  "no_existing_output_changed_by_negative_case": true,
+  "one_formal_svg_and_one_transparent_png": true,
+  "builder_sha256": "1951472219043bed7361f4bc1567cf9473fc6f9569a5a5efb29da7d0a6522b04"
+}

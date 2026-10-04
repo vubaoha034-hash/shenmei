@@ -1,0 +1,38 @@
+{
+  "schema_version": "vpd-v9-creation-reuse-source-binding-repair/v1",
+  "formal_version": 9,
+  "new_design_versions": 0,
+  "artwork_changed": false,
+  "historical_creation_code": "build_wordmark_asset_creation_v1.py",
+  "current_reuse_code": "build_wordmark_asset.py",
+  "initial_defect": "v1 checked PNG/P/S hashes but accepted a modified upstream trace while still reporting the original PNG source. Independent actual in-memory main counterexample saved separately.",
+  "initial_audit": "../audit/PROFESSIONAL_V9_TRACE_BINDING_FIRST_01a0ffcf.json",
+  "repair": [
+    "Pin actual original trace SHA8f1c84e9551f1e911c32414162a486cecff4d94f6ea92887b95c91c5cefe4f56 before any write.",
+    "Recompute the real bound generated PNG alpha128 through unchanged VTracer0.6.15; compare every21 upstream path attributes including empty paths before any write.",
+    "Expose --verify-only with zero physical writes. Preserve v1 actual creation code, generated image, delivered SVGs, provenance and cold-reviewed PNG unchanged."
+  ],
+  "actual_dependency_repair": {
+    "first_run": "PIL import after FontTools-site append selected unreadable Hermes defusedxml and raised PermissionError; exit1 before writes.",
+    "fix": "Import PIL using the original bundled interpreter environment before adding the FontTools-only search path.",
+    "actual_followup": "exit0; original alpha replay PASS_ALL_PATH_ATTRIBUTES_EQUAL;21paths; physical_writes0"
+  },
+  "independent_recheck_report": "../audit/PROFESSIONAL_V9_TECHNICAL_01a0ffcf.json",
+  "independent_observed_rechecks": [
+    "Real CLI verify-only exit0,21 attributes agree,0 writes.",
+    "Original malformed trace rejected TRACE_IDENTITY_MISMATCH_BEFORE_ANY_WRITE,0 attempted writes.",
+    "In-memory rebinding of the malformed trace hash still rejected TRACE_NOT_DERIVED_FROM_BOUND_GENERATED_ALPHA,0 attempted writes."
+  ],
+  "figma_clone_precision_boundary": {
+    "actual_path_command_numeric_difference": 0,
+    "boolean_size_max_difference_px": 0.0009613037,
+    "dy_max_difference_px": 0.0006027222,
+    "lower_local_dx_error_max_px": 0.0005230904,
+    "upper_render_ROI_pixels_compared": 30400,
+    "upper_render_ROI_pixels_changed": 3,
+    "upper_render_max_RGB_difference": 15,
+    "statement": "Cloned headline retains path construction but is not geometrically or raster byte-identical. These changes remain inside declared design overlays; protected photography pixels changed0."
+  },
+  "native_and_git_saving": "FOLLOWED_SEPARATELY_NOT_CLAIMED_BY_REUSE_REPAIR",
+  "aesthetic_verdict_changed_by_repair": false
+}

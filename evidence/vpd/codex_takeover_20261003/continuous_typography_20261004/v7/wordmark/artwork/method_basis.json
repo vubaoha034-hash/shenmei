@@ -1,0 +1,18 @@
+{
+  "primary_method_sources": [
+    {
+      "url": "https://glyphsapp.com/learn/drawing-good-paths",
+      "applied": "Explicit corner nodes and separate smooth cubic surfaces; contours close without texture fragments."
+    },
+    {
+      "url": "https://handbook.glyphsapp.com/drawing-paths/",
+      "applied": "Original on-curve nodes/off-curve cubic handles, with editable stroke components."
+    },
+    {
+      "url": "https://developers.figma.com/docs/plugins/api/properties/VectorPath-data/",
+      "applied": "Only supported absoluteM/L/C/Z path strings with NONZERO fill information."
+    }
+  ],
+  "actual_tools": "Python and fontTools BoundsPen calculate geometry; Sharp rasterizes the same SVG only in memory. This maker did not call Figma or Glyphs desktop.",
+  "sources_of_character_shape": "Original controls in this builder, using the stated Chinese character skeleton. No font outline files loaded and no older wordmark geometry read."
+}

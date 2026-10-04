@@ -1,0 +1,36 @@
+{
+  "schema_version": "vpd-v7-figma-bounded-repair/v1",
+  "formal_version": 7,
+  "formal_design_version_count": 1,
+  "earlier_versions_modified": false,
+  "operations": [
+    {
+      "problem": "Outline stroke was returned under the page; absolute inverse reparenting placed the cut at x=-27281.373.",
+      "evidence": "FIGMA_WEIGHT_METHOD_PROBE.json",
+      "status": "FAILED_PROBE_RETAINED",
+      "recovery": "Local cut coordinates restored. Probe boolean changed from81.189×24.903 to78.458×22.500.",
+      "actual_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"createdNodeIds\":[],\"mutatedNodeIds\":[\"306:36\"],\"target\":{\"id\":\"306:20\",\"x\":0,\"y\":38.97265601158142,\"width\":81.18946075439453,\"height\":24.90323257446289},\"cut\":{\"id\":\"306:36\",\"x\":-1.373046875,\"y\":37.77265524864197,\"width\":83.76264953613281,\"height\":27.30319595336914},\"operation\":{\"id\":\"306:37\",\"x\":1.5302734375,\"y\":40.17344284057617,\"width\":78.45771026611328,\"height\":22.499670028686523}}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "problem": "Automatic GROUP bounds rebased child coordinates during stroke expansion.",
+      "status": "PROBE_NOT_ADOPTED",
+      "recovery": "All nineteen original V6 headline paths moved using captured coordinates into a fixed FRAME before outline/subtract."
+    },
+    {
+      "problem": "Removing an emptied GROUP raised node-does-not-exist.",
+      "status": "TRANSACTION_ROLLED_BACK_SAFE_TO_RETRY",
+      "error_debug_uuid": "129cfacd-fa8b-4d64-b86e-e07a7e5e5045",
+      "recovery": "Captured group ID before moves, queried whether it remained before remove; actual successful assembly preserved."
+    }
+  ],
+  "adopted_geometry": "Native Figma outlineStroke(center2.4px,ROUND)+subtract yields inward1.2px, fixed parent prevents rebase.",
+  "created_image_variants": 0
+}

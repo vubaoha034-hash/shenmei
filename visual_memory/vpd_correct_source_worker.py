@@ -10,6 +10,12 @@ SOURCE = '7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618'
 UNIT = 'CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1'
 TASK = 'VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01'
 ENVELOPES = [[64,56,504,304],[800,72,1504,440]]
+CONTINUOUS_TYPE_AREAS = [[64,56,504,304],[832,72,1504,624]]
+
+def available_canvas_slots(unit):
+    if unit.get('repair_authorization'):
+        return int(unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'])
+    return unit['budget']['formal_versions_max'] - unit['budget']['formal_versions_used']
 
 def load(root, ref):
     check_ref(root, ref)
@@ -26,6 +32,22 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     require(prior['human_verdict'] == 'REJECTED' and prior['budget'] ==
             {'formal_versions_used':3,'revisions_used':2}, 'OLD_FAILED_CYCLE_REWRITTEN')
     authorization = load(root, unit['authorization'])
+    continuous = bool(unit.get('repair_authorization'))
+    if continuous:
+        repair = load(root, unit['repair_authorization'])
+        require(repair['task_id'] == TASK and repair['unit_id'] == UNIT
+                and repair['source']['kind'] == 'CURRENT_HUMAN_USER_MESSAGE'
+                and repair['source']['verbatim']
+                and repair['scope'] == 'SAME_DIRECTION_SERIAL_TYPOGRAPHY_UNTIL_INDEPENDENT_AI_PASS'
+                and repair['preserved_mainline'] == lock['mainline_lock']
+                and repair['frozen_source_sha256'] == SOURCE
+                and repair['brand'] == '茶作' and repair['copy'] == '一杯茶，慢下来'
+                and repair['dimensions'] == [1536,1024]
+                and repair['mainline_change'] is False and repair['photo_generation'] is False
+                and repair['paid_compute'] is False and repair['training'] is False
+                and repair['automations'] is False and repair['second_style'] is False
+                and repair['old_budget_reset'] is False,
+                'CONTINUOUS_REPAIR_EXPLICIT_AUTHORIZATION_REQUIRED')
     worker = load(root, unit['worker_contract'])
     require(authorization['task_id'] == TASK and authorization['unit_id'] == UNIT and
             authorization['source']['kind'] == 'CURRENT_HUMAN_USER_MESSAGE' and
@@ -56,8 +78,10 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             'POSTER_HUMAN_VERDICT_UNSUPPORTED')
     if unit['poster_human_verdict'] == 'REJECTED':
         feedback = load(root, unit['poster_human_feedback'])
-        require(unit['phase'] == 'HUMAN_REJECTED'
-                and feedback['task_id'] == TASK and feedback['work_unit_id'] == UNIT
+        require(unit['phase'] == 'HUMAN_REJECTED' or
+                (continuous and unit['phase']=='REVISION_REQUIRED'),
+                'POSTER_REJECTION_ACTION_CONFLICT')
+        require(feedback['task_id'] == TASK and feedback['work_unit_id'] == UNIT
                 and feedback['source_kind'] == 'CURRENT_HUMAN_USER_MESSAGE'
                 and feedback['verbatim'] and feedback['human_verdict'] == 'REJECTED'
                 and feedback['scope'] == 'CURRENT_COMPLETE_POSTER_TYPOGRAPHY_AND_DESIGN'
@@ -81,8 +105,11 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     require(delivered['output']['sha256'] == SOURCE and delivered['hidden_original_recovered'] is False,
             'APPROVED_SOURCE_IDENTITY_CHANGED')
     budget = unit['budget']; used = budget['formal_versions_used']
-    require(type(used) is int and 0 <= used <= 3 and budget['revisions_used'] == max(0,used-1)
-            and budget['formal_versions_max'] == 3 and budget['revisions_max'] == 2
+    require(type(used) is int and used >= 0 and budget['revisions_used'] == max(0,used-1)
+            and ((continuous and budget['formal_versions_max'] is None and
+                  budget['revisions_max'] is None and budget['stop_condition']=='INDEPENDENT_AI_PASS')
+                 or (not continuous and used<=3 and budget['formal_versions_max']==3
+                     and budget['revisions_max']==2))
             and all(budget[k] == 0 for k in ['photo_generations','paid_compute_usd','training',
                 'automations','second_style','parallel_alternatives','hidden_variants'])
             and authorization['operational_ceiling']['formal_versions_max'] == 3
@@ -108,18 +135,38 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     for number, version in enumerate(unit['versions'],1):
         require(version['number'] == number, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
         technical = load(root, version['technical_check'])
+        envelopes = ENVELOPES
+        if number > 3:
+            protection = load(root, version['photo_protection'])
+            require(continuous and protection['source']['sha256'] == SOURCE
+                    and protection['photo_regeneration_allowed'] is False
+                    and protection['source_file_overwrite_allowed'] is False,
+                    'SERIAL_PHOTO_PROTECTION_REQUIRED')
+            envelopes = protection['visible_design_overlay_envelopes']
+            require(1<=len(envelopes)<=2 and all(len(r)==4 and all(type(v) is int for v in r)
+                    and 0<=r[0]<r[2]<=1536 and 0<=r[1]<r[3]<=1024 for r in envelopes),
+                    'DECLARED_OVERLAY_BOUNDS_REQUIRED')
+            require(all(any(a[0]<=r[0]<r[2]<=a[2] and a[1]<=r[1]<r[3]<=a[3]
+                            for a in CONTINUOUS_TYPE_AREAS) for r in envelopes),
+                    'PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE')
         require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
-                and technical['export'] == version['export'] and technical['overlay_envelopes'] == ENVELOPES
+                and technical['export'] == version['export'] and technical['overlay_envelopes'] == envelopes
                 and technical['protected_pixels_changed'] == 0
                 and technical['protected_max_channel_difference'] == 0
                 and technical['source_layer_unchanged'] is True,
                 'ACCEPTED_PHOTOGRAPHY_CHANGED')
-        compare_pixels(root,technical)
-        if version.get('pixel_review'): validate_review(root, version, number, unit['review_inputs'])
+        compare_pixels(root,technical,envelopes)
+        if number < used or unit['phase'] != 'AWAITING_PIXEL_REVIEW':
+            require(version.get('pixel_review'), 'PRIOR_PIXEL_REVIEW_REQUIRED')
+        if version.get('pixel_review'):
+            reviewed = validate_review(root, version, number, unit['review_inputs'])
+            require(version.get('verdict') == reviewed['verdict'], 'VERSION_REVIEW_VERDICT_CONFLICT')
+            if number < used:
+                require(reviewed['verdict']=='AI_FAIL', 'AI_PASS_STOPS_SERIAL_REPAIR')
     current = unit['versions'][-1]
     if unit['phase'] == 'AWAITING_PIXEL_REVIEW': return
     verdict = validate_review(root, current, used, unit['review_inputs'])['verdict']
-    require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and used<3)
+    require((unit['phase']=='REVISION_REQUIRED' and verdict=='AI_FAIL' and (continuous or used<3))
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
             or (unit['phase']=='HUMAN_REJECTED' and verdict=='AI_FAIL' and used==3)
             or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
@@ -128,13 +175,13 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         require(archive['readback_result']=='PASS' and archive['poster_sha256']==current['export']['sha256']
                 and archive['raw_bytes_equal_local'] is True, 'DRIVE_RAW_READBACK_REQUIRED')
 
-def compare_pixels(root,technical):
+def compare_pixels(root,technical,envelopes=ENVELOPES):
     from .vpd_locked_mainline_state import _png_rgb_rows
     source=technical['frozen_source']; export=technical['export']
     check_ref(root,source); check_ref(root,export)
     changed=0; compared=0; maximum=0
     for y,(a,b) in enumerate(zip(_png_rgb_rows(root,source),_png_rgb_rows(root,export))):
-        omitted=sorted((x0,x1) for x0,y0,x1,y1 in ENVELOPES if y0<=y<y1)
+        omitted=sorted((x0,x1) for x0,y0,x1,y1 in envelopes if y0<=y<y1)
         start=0; intervals=[]
         for x0,x1 in omitted: intervals.append((start,x0)); start=x1
         intervals.append((start,1536))

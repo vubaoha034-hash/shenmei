@@ -375,6 +375,11 @@ def status_card(lock, cp):
                             旧失败版本预算='3/3；2/2；保留未清零',
                             摄影保护='冻结真人认可7fd7777f摄影；只新增独立矢量与文字层',
                             worker可改主线=False)
+                if unit.get('repair_authorization'):
+                    card.update(正式设计版本=f"已{unit['budget']['formal_versions_used']}版（串行修复直到独立AI通过）",
+                                修订次数=f"已{unit['budget']['revisions_used']}次",
+                                持续修复授权=unit['repair_authorization'],
+                                内部停止条件='INDEPENDENT_AI_PASS，随后真人验收')
         return card
     if lock.get('next_required_action') == 'COORDINATE_ONE_NEW_CHAZUO_IMAGE_AND_COMPOSITION_CANDIDATE_WITH_VISIBLE_REQUIRED_INPUTS':
         return {'status':'VPD_STATE_VALID_HUMAN_REJECT_NEW_IMAGE_ROUTE_PENDING',

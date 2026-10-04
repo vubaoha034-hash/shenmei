@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-professional-trace-binding-counterexample/v1",
+  "version": 9,
+  "verdict": "REPAIR_REQUIRED",
+  "observed_before_repair": true,
+  "original_builder_sha256": "dc34933738dc8fe9a85fd55f1512216caa0dba4c322da7d35e38f6d5e875689a",
+  "finding": {
+    "severity": "BLOCKING_REUSE_SOURCE_GUARD",
+    "file": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/build_wordmark_asset.py",
+    "original_line": 27,
+    "description": "v1校验原PNG/P/S，却没有校验输入trace SHA或重算来源；7大路径+6小路径数量不能证明trace来自该生成原件。"
+  },
+  "actual_counterexample": {
+    "scope": "execute real V9 main with only output existence simulated absent and all destination writes captured in memory; wrong trace comes solely from altered one source contour translate+1000; original PNG/P/S unchanged",
+    "legal_control": {
+      "accepted": true,
+      "error": null,
+      "trace_input_sha256": "8f1c84e9551f1e911c32414162a486cecff4d94f6ea92887b95c91c5cefe4f56",
+      "captured_writes": [
+        {
+          "file": "brand.svg",
+          "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+          "byte_equal_actual_saved": true
+        },
+        {
+          "file": "upstream-alpha-trace.svg",
+          "sha256": "8f1c84e9551f1e911c32414162a486cecff4d94f6ea92887b95c91c5cefe4f56",
+          "byte_equal_actual_saved": true
+        },
+        {
+          "file": "LETTERING_PROVENANCE.json",
+          "sha256": "446d652c651e21cdf3013f69935958b2f70f86bb7e65fa7c611da94859987f58",
+          "byte_equal_actual_saved": true
+        }
+      ],
+      "reported_source_sha256": "98c03d0c04199840b1f25452ecbc42ebbda254f8c4855898094c60341c2b05f1",
+      "physical_disk_writes": 0
+    },
+    "wrong_trace_counterexample": {
+      "accepted": true,
+      "error": null,
+      "trace_input_sha256": "abefbcf35520f6b45843ed212ec42675999d5dd38946cce1e8a72d4903e91c93",
+      "captured_writes": [
+        {
+          "file": "brand.svg",
+          "sha256": "269b69a4904421500a7c775775039127802b041eb84623bd540535f521c14ccc",
+          "byte_equal_actual_saved": false
+        },
+        {
+          "file": "upstream-alpha-trace.svg",
+          "sha256": "abefbcf35520f6b45843ed212ec42675999d5dd38946cce1e8a72d4903e91c93",
+          "byte_equal_actual_saved": false
+        },
+        {
+          "file": "LETTERING_PROVENANCE.json",
+          "sha256": "b78d186bd3d09df2a2068a76bf27affa13bbbe357ca2e75bbffcdb5d73c292ad",
+          "byte_equal_actual_saved": false
+        }
+      ],
+      "reported_source_sha256": "98c03d0c04199840b1f25452ecbc42ebbda254f8c4855898094c60341c2b05f1",
+      "physical_disk_writes": 0
+    },
+    "current_saved_files_bytes_mtime_unchanged": true,
+    "root_cold_logs_read": 0
+  },
+  "actual_tool_chunk_id": "5c71ec",
+  "current_artwork_modified": false,
+  "business_state_writes": 0,
+  "physical_fixture_writes": 0,
+  "cold_review_reads": 0,
+  "auditor_thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+  "auditor_runtime": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+  "later_repairs_not_attributed_to_original_creation": true
+}

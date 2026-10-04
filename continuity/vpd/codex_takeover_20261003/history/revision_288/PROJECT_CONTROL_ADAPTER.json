@@ -1,0 +1,2059 @@
+{
+  "schema_version": "upcp-project-adapter/v1",
+  "project_id": "visual-aesthetic-vpd",
+  "repository": "vubaoha034-hash/shenmei",
+  "canonical_branch": "visual-program-distillation-v2-photography-design-20260814",
+  "governance_source": {
+    "repository": "vubaoha034-hash/skills",
+    "skill_path": "universal-project-control-plane/SKILL.md",
+    "compatibility_contract": "upcp-governance/v1",
+    "last_verified_commit": "72ad9d53d27ba7260a7a5694079b4acdf8154c6f"
+  },
+  "business_entrypoints": [
+    {
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "priority": 0,
+      "purpose": "Current user-locked mainline; unique current task stays in CURRENT_TASK_LOCK.json."
+    },
+    {
+      "path": "VPD_PROJECT_ROADMAP.md",
+      "priority": 0,
+      "purpose": "VPD-only full task workflow; read with current task lock, not as a competing current-state authority"
+    },
+    {
+      "path": "continuity/vpd/MAINLINE_EXECUTION_PLAN_20260921.md",
+      "priority": 0.1,
+      "purpose": "Preserved historical plan; current sequence is MAINLINE_LOCK_20261001.md."
+    },
+    {
+      "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+      "priority": 0.5,
+      "purpose": "mandatory current-project visual master protection, dimension-scoped freeze, local-delta-only repair, anti-regression rollback, and solved-route reuse guard"
+    },
+    "AGENTS.md",
+    "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+    "VISUAL_PROGRAM_DISTILLATION_V1.md",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_AUTHORIZATION_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUNTIME_VISUAL_ANCHOR_BINDING_MANIFEST_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H1_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H2_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H3_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/H4_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_PAYLOAD_FREEZE_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_V1.txt",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_DRIVE_HANDOFF_UPLOAD_BLOCKED_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PRE_FREEZE_UNBOUND_DIAGNOSTIC_OUTPUTS_RECORD_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT1_PROTOCOL_INVALID_SETTLEMENT_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_IDENTITY_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_PREFLIGHT_CHECKLIST_V1.json",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
+    "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_CREATION_RECEIPT_V1.json",
+    "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+    "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+    "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+    "schemas/commercial-design-provenance-receipt.v1.schema.json",
+    "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+    "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_POST_SETTLEMENT_ISOLATION_PLAN_20260825.md",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_DRIVE_HANDOFF_UPLOAD_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_PLAN_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F1_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F2_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/F3_CONTROLLER_PAYLOAD.json",
+    "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+    "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+    "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+    "VPD_CODEX_HANDOFF_20260819.md",
+    "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
+    "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
+    "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
+    "VPD_OPENAI_WIF_SETUP_20260819.md",
+    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
+    "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
+    "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+    "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
+    "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md"
+  ],
+  "state_authorities": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "priority": 1,
+      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+      "priority": 2,
+      "purpose": "current project-goal authority restoring system-level VPD validation and classifying Photo/Figma as downstream production after visual-direction acceptance"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+      "priority": 3,
+      "purpose": "current system-level H1/H2/H3/H4 holdout transfer plan; designed but not payload-frozen or executed"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
+      "priority": 4,
+      "purpose": "fail-closed runtime-anchor authority result and exact user authorization required before holdout payload freeze"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+      "priority": 5,
+      "purpose": "machine-readable H1-H4 communication jobs, operators, exclusions, held constants and changed variables"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+      "priority": 6,
+      "purpose": "fresh blind, reference-aware, mechanism-contract and human-pixel evaluation authority"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
+      "priority": 7,
+      "purpose": "current immutable Attempt-2 human final settlement: FAMILY validation FAIL with strong positive mechanism evidence and no Commercial/Golden/Scale promotion"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_POST_SETTLEMENT_ISOLATION_PLAN_20260825.md",
+      "priority": 8,
+      "purpose": "preserved post-settlement isolation rationale superseded only in execution architecture by the current forward-only pipeline hardening contract"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json",
+      "priority": 9,
+      "purpose": "current Attempt-2 freeze authority binding V1.1 Candidate, local policy, predeclared matrices, three new payload hashes, zero-reference route and non-execution boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_DRIVE_HANDOFF_UPLOAD_RECEIPT_V1.json",
+      "priority": 10,
+      "purpose": "Drive upload and readback proof for the current Attempt-2 ChatGPT render handoff"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "priority": 11,
+      "purpose": "current exactly-once F1 -> F2 -> F3 ChatGPT product-UI render handoff; no runtime references, hidden variants or pre-review retries"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_PLAN_V1.json",
+      "priority": 12,
+      "purpose": "current Attempt-2 controlled FAMILY experiment design and causal-attribution boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
+      "priority": 13,
+      "purpose": "machine-readable held constants, changed variables, prohibited leakage, surface stressors and attribution limits for Attempt 2"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
+      "priority": 14,
+      "purpose": "pre-render frozen surface-divergence values and causal interpretation for F1/F2/F3"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+      "priority": 15,
+      "purpose": "mandatory future human pixel review with independent realism and FAMILY mechanism score channels"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+      "priority": 16,
+      "purpose": "current candidate identity, immutable V1 lineage, Capsule-local policy binding and non-promotion boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+      "priority": 17,
+      "purpose": "current schema-valid Shanyeji Style Capsule V1.1 Candidate; CONTROLLED_VALIDATION_REQUIRED and not durable, Golden or Scale-ready"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+      "priority": 18,
+      "purpose": "Capsule-local Attempt-2 design controls for operator isolation, anti-shortcut exclusions, divergence, aspect reflow, motif omission, mechanism sufficiency and separate realism scoring"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+      "priority": 19,
+      "purpose": "exact remote-input, immutable-baseline, Attempt-1 evidence, candidate artifact and no-global-change binding"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+      "priority": 20,
+      "purpose": "auditable R1-R12 field-level delta from immutable V1 to the new candidate with future retest criteria"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "priority": 21,
+      "purpose": "current immutable Attempt-1 human-authorized settlement: technical generation PASS, formal FAMILY validation FAIL, Capsule refinement required"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+      "priority": 22,
+      "purpose": "current Capsule-local requirements authority for a future V1.1 candidate; requirements only, not a Capsule or generation payload"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
+      "priority": 23,
+      "purpose": "exact V1/payload/output/artifact/ledger/checkpoint binding for the Attempt-1 FAIL settlement"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+      "priority": 24,
+      "purpose": "preserved Attempt-1 controlled FAMILY plan and operator intent; no longer the current next-action authority"
+    },
+    {
+      "path": "VPD_CODEX_HANDOFF_20260819.md",
+      "priority": 25,
+      "purpose": "current real route restored after Anti-Rollback test clarification: ChatGPT runtime-infrastructure expansion is paused; Codex is the next execution actor and must continue from the existing strict adapter/frozen payloads without reopening Actions/WIF as mandatory gates"
+    },
+    {
+      "path": "VPD_RUNTIME_EXECUTION_ROUTE_CORRECTION_20260819.md",
+      "priority": 26,
+      "purpose": "GitHub Actions and WIF are optional infrastructure, not VPD gates; strict exact-payload adapter is preserved and execution runtime remains neutral"
+    },
+    {
+      "path": "VPD_RUNTIME_RENDERER_BINDING_REPAIR_RESULT_20260819.md",
+      "priority": 27,
+      "purpose": "strict zero-reference explicit renderer adapter is implemented and dry-run bound to the frozen T1/T2/T3 payloads; live provider rendering is not yet validated"
+    },
+    {
+      "path": "VPD_OPENAI_WIF_AUTH_PROBE_RESULT_20260819.md",
+      "priority": 28,
+      "purpose": "historical/optional infrastructure evidence: the GitHub Actions WIF probe found its configuration missing; this does not block another valid private execution runtime"
+    },
+    {
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1_PREFLIGHT_RESULT.md",
+      "priority": 29,
+      "purpose": "historical evidence that a prior ChatGPT conversation failed the purity preflight and required a fresh/isolated execution boundary"
+    },
+    {
+      "path": "VPD_RUNTIME_EXECUTION_AUDIT_20260819.md",
+      "priority": 30,
+      "purpose": "runtime diagnosis; stops redundant redistillation and Drive-grounded R4.1 as the next route"
+    },
+    {
+      "path": "V3_A_HUMAN_MACRO_REJECTION_ROUTE_RESET_20260819.md",
+      "priority": 31,
+      "purpose": "human macro rejection and permanent stop of selective R3A refinement of the rejected artifact"
+    },
+    {
+      "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
+      "priority": 32,
+      "purpose": "preserved evidence that V3 family mechanisms survived macro-layout change, while absolute final quality remained not ready"
+    },
+    {
+      "path": "V3_A_R4_1_DRIVE_GROUNDED_RECOMPOSE_RESUME_20260819.md",
+      "priority": 33,
+      "purpose": "preserved Anti-Rollback test-incident artifact only: its apparent R4.1 route authorization was later explicitly clarified by the user as test input, not a real durable project authorization"
+    },
+    {
+      "path": "V3_A_R4_1_CHATGPT_RENDER_BINDING_FAILURE_20260819.md",
+      "priority": 34,
+      "purpose": "preserved technical consequence of the Anti-Rollback test incident; not current route authority and not permission to execute R4.1"
+    },
+    {
+      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "priority": 35,
+      "purpose": "preserved forward-only Photo/Figma pipeline hardening receipt; downstream production capability, not the highest current VPD objective"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 36,
+      "purpose": "preserved downstream photo-only payload and CHATGPT_ONLY render contract"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 37,
+      "purpose": "preserved downstream editable typography and composition contract activated after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 38,
+      "purpose": "preserved downstream six-gate policy for future formal commercial output classification"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 39,
+      "purpose": "preserved downstream photo render, Figma composition and final export provenance receipt schema"
+    }
+  ],
+  "task_model": "TASK_REGISTRY",
+  "task_authorities": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "priority": 1,
+      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+      "priority": 2,
+      "purpose": "current system-level holdout task authority for exactly H1/H2/H3/H4"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+      "priority": 3,
+      "purpose": "current machine-readable holdout challenge and operator-isolation design"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
+      "priority": 4,
+      "purpose": "current blocking runtime-anchor authorization result and exact next action"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+      "priority": 5,
+      "purpose": "future holdout evaluation-channel and set-level verdict contract"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json",
+      "priority": 6,
+      "purpose": "active goal correction and prohibited single-poster optimization boundary"
+    },
+    {
+      "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
+      "priority": 7,
+      "purpose": "core system architecture: compiler and visual anchors feed the strong visual model; production tools follow accepted direction"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/VPD_SHANYEJI_ATTEMPT2_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "priority": 8,
+      "purpose": "historical consumed Attempt-2 render handoff; retained for provenance and must not be executed as the current route"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_PAYLOAD_FREEZE_RECEIPT_V1.json",
+      "priority": 9,
+      "purpose": "exact payload and experiment freeze binding for the current Attempt-2 route"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+      "priority": 10,
+      "purpose": "mandatory review authority after exactly-once Attempt-2 generation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_CONTROLLED_FAMILY_VALIDATION_PLAN_V1.json",
+      "priority": 11,
+      "purpose": "Attempt-2 tier intent, constants, causal variables and validation boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
+      "priority": 12,
+      "purpose": "machine-readable operator-isolation contract for F1/F2/F3"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
+      "priority": 13,
+      "purpose": "predeclared surface-divergence contract to compare against future actual pixels"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+      "priority": 14,
+      "purpose": "only next-task design authority for an Attempt-2 controlled validation; it is not a frozen payload and authorizes no generation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+      "priority": 15,
+      "purpose": "candidate identity, maturity and execution boundary for designing and freezing a separate future Attempt-2 experiment"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE.json",
+      "priority": 16,
+      "purpose": "schema-valid candidate grammar input for future Attempt-2 design only; no payload exists yet"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/STYLE_CAPSULE_V1_1_CANDIDATE_CREATION_RECEIPT.json",
+      "priority": 17,
+      "purpose": "candidate creation completion and immutable input binding"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_REFINEMENT_DELTA_V1.json",
+      "priority": 18,
+      "purpose": "field-level rationale and future retest criteria; not a renderer prompt or payload"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/STYLE_CAPSULE_V1_1_REFINEMENT_REQUIREMENTS_V1.json",
+      "priority": 19,
+      "purpose": "consumed authority that produced the V1.1 Candidate; retained for audit and must not be mistaken for the candidate or a payload"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_SETTLEMENT_RECEIPT_V1.json",
+      "priority": 20,
+      "purpose": "settlement completion and immutable evidence binding; prohibits retry or in-place mutation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "priority": 21,
+      "purpose": "formal settled verdict and user authority chain"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+      "priority": 22,
+      "purpose": "preserved Attempt-1 plan used to interpret operator-isolation failures"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/VPD_SHANYEJI_CHATGPT_RENDER_HANDOFF_V1.txt",
+      "priority": 23,
+      "purpose": "consumed Attempt-1 render handoff retained for provenance; must not be executed again"
+    },
+    {
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+      "priority": 24,
+      "purpose": "preserved separate historical Formal V1 diagnostic authority; its frozen T1/T2/T3 payloads are untouched and are not reusable as the current controlled FAMILY experiment"
+    },
+    {
+      "path": "evidence/vpd/pipeline_hardening_v1/PIPELINE_HARDENING_IMPLEMENTATION_RECEIPT_V1.json",
+      "priority": 25,
+      "purpose": "completed downstream-production pipeline hardening receipt; not the current system-validation task"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 26,
+      "purpose": "downstream production photo-only input contract after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 27,
+      "purpose": "downstream production editable composition contract after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 28,
+      "purpose": "downstream future formal-commercial gate contract"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 29,
+      "purpose": "downstream production provenance receipt shape"
+    },
+    {
+      "path": "VPD_PHOTO_FIGMA_PIPELINE_HARDENING_V1_IMPLEMENTATION_NOTE.md",
+      "priority": 30,
+      "purpose": "preserved downstream migration note; its formerly stated next action is superseded by the system-goal correction"
+    }
+  ],
+  "acceptance_authorities": [
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "priority": 1,
+      "purpose": "Single current task identity/state lock; overrides only task dispatch and current state, preserves immutable domain evidence."
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_EVALUATION_PROTOCOL_V1.json",
+      "priority": 2,
+      "purpose": "current system-level acceptance authority across blind pixels, reference-aware family, mechanism contract and human review"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/HOLDOUT_CHALLENGE_MATRIX.json",
+      "priority": 3,
+      "purpose": "exact H1-H4 held/change/exclusion and H4 reflow acceptance design"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_POLICY_RECONCILIATION_V1.json",
+      "priority": 4,
+      "purpose": "runtime visual-anchor authorization gate; missing authority prevents payload freeze"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_VALIDATION_PLAN_V1.json",
+      "priority": 5,
+      "purpose": "system-level family-transfer and non-copy set-pass boundary"
+    },
+    {
+      "path": "VISUAL_PROGRAM_DISTILLATION_V1.md",
+      "priority": 6,
+      "purpose": "core VPD architecture and human-final-aesthetic-authority boundary"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+      "priority": 7,
+      "purpose": "future Attempt-2 human verdict authority with no compensation between technical realism and FAMILY mechanisms"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_OPERATOR_ISOLATION_MATRIX.json",
+      "priority": 8,
+      "purpose": "hard held/change/leakage contract for causal validation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_SURFACE_DIVERGENCE_MATRIX.json",
+      "priority": 9,
+      "purpose": "predeclared actual-vs-intended surface divergence review authority"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_LOCAL_CONTROLLED_VALIDATION_POLICY_V1.json",
+      "priority": 10,
+      "purpose": "future Attempt-2 formal FAMILY evaluation contract; separates technical realism from family mechanisms and requires operator isolation, divergence and mechanism explanation"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/style_capsule_v1_1_candidate/CAPSULE_V1_1_CANDIDATE_IDENTITY.json",
+      "priority": 11,
+      "purpose": "candidate non-promotion boundary: controlled validation required, not durable, Commercial, Golden or Scale-ready"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_HUMAN_PIXEL_REVIEW_SETTLEMENT_V1.json",
+      "priority": 12,
+      "purpose": "final Attempt-1 technical/family/promotion settlement under human authority"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/ATTEMPT1_FAILURE_EVIDENCE_REGISTRY_V1.json",
+      "priority": 13,
+      "purpose": "bounded negative evidence and inference limits for Capsule-local refinement"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/HUMAN_PIXEL_REVIEW_PROTOCOL_V1.json",
+      "priority": 14,
+      "purpose": "mandatory external human pixel review separating technical validity, family-transfer quality and absolute commercial aesthetic quality"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_generation_v1/CONTROLLED_FAMILY_GENERATION_PLAN_V1.json",
+      "priority": 15,
+      "purpose": "controlled constants, progressive operator challenges, tentative attribution limits and non-promotion boundary"
+    },
+    {
+      "path": "AESTHETIC_SKILL_DESIGN_CHARTER.md",
+      "priority": 16,
+      "purpose": "aesthetic skill-design governance and anti-rule-warehouse constraints"
+    },
+    {
+      "path": "VPD_DISTILLATION_ONLY_RUNTIME_TEST_V1.md",
+      "priority": 17,
+      "purpose": "preserved acceptance authority for the separate old Formal V1 experiment only"
+    },
+    {
+      "path": "V3_A_FAMILY_TRANSFER_HUMAN_VALIDATION_RESULT.md",
+      "priority": 18,
+      "purpose": "preserved family-transfer evidence baseline"
+    },
+    {
+      "path": "contracts/vpd/COMMERCIAL_DESIGN_GATE_POLICY_V1.json",
+      "priority": 19,
+      "purpose": "downstream formal-commercial six-gate acceptance authority after visual-direction acceptance"
+    },
+    {
+      "path": "contracts/vpd/FIGMA_COMPOSITION_CONTRACT_V1.json",
+      "priority": 20,
+      "purpose": "downstream editable typography and composition evidence authority"
+    },
+    {
+      "path": "contracts/vpd/PHOTO_ONLY_RENDER_CONTRACT_V1.json",
+      "priority": 21,
+      "purpose": "downstream photo-only source-generation acceptance authority"
+    },
+    {
+      "path": "schemas/commercial-design-provenance-receipt.v1.schema.json",
+      "priority": 22,
+      "purpose": "downstream production receipt syntax and stage-binding authority"
+    },
+    {
+      "path": "evidence/vpd/shanyeji/controlled_family_attempt2/ATTEMPT2_HUMAN_FINAL_SETTLEMENT_20260825.json",
+      "priority": 23,
+      "purpose": "historical Attempt-2 final human verdict retained without reclassification or promotion"
+    }
+  ],
+  "change_authorities": [
+    {
+      "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
+      "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace",
+      "priority": 0,
+      "purpose": "CURRENT user-authorized locked mainline and scoped state reconciliation; old change authorities are historical unless invoked."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST01_FAIL_20260916.json",
+      "sha256": "ad0de8caa9850a70c74070c18c7267ccb8968d6d4d892d6047c6fdafe8509f3f",
+      "priority": 0,
+      "purpose": "Sandbox Test 01 negative evidence: TYP-M01 failed glyph recognition and is not eligible for rule promotion."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_PLAN_V1.json",
+      "sha256": "10e0d7141662cf718451efe23035a48576e0343569ff508f54786345de69d5ab",
+      "priority": 0,
+      "purpose": "Current sandbox authority. Research methods are not rules; execute only TYP-M01 next and require human pixel review before any promotion."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_CREATION_METHODS_RESEARCH_20260916.md",
+      "sha256": "83a7d203aa016270f5a67855644f0795bbd6b3895cb1c962eee332ba8bf7ad27",
+      "priority": 1,
+      "purpose": "Typography creation research record; non-authoritative and prohibited from automatic rule promotion."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v7/CHAZUO_V6_HIFI_HUMAN_REJECTION_20260916.json",
+      "sha256": "f5eaf4cb6d1659771281072bea5f7caf03b9f3ec5563b0038157138f72e5f78a",
+      "priority": 0,
+      "purpose": "Current human authority: Chazuo V6 high-fidelity Figma vector-only surface route failed and is stopped; prepare one bounded hybrid texture-finish probe before any T2 or P6."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_PER_CONTOUR_BEZIER_REFINEMENT_20260915.json",
+      "sha256": "53d528d26e5ac7c5da8558004ff2a61d829d545a5ee48d64c1e2ac69c618c0ce",
+      "priority": 0,
+      "purpose": "Current V6 per-contour Bezier edge-refinement evidence; human title re-review remains mandatory before T2 or P6."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_CONTOUR_CLEANUP_20260915.json",
+      "sha256": "e6696bc065e3f03b38647406eba848158c9472b60c47300ecca81dac0915c581",
+      "priority": 0,
+      "purpose": "Current V6 Figma contour-cleanup evidence; green tea-leaf design is preserved and human title re-review remains mandatory."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_DOUFANG_ENDPOINT_OPTICAL_FIX_20260915.json",
+      "sha256": "8cea376253a791aec23a0d8b92625952a6d22d710c06239ae2edd5113a7756a4",
+      "priority": 0,
+      "purpose": "Current V6 Doufang endpoint optical-fix evidence; both titles still require human re-review before T2 or P6."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/V6_FIGMA_VECTOR_RECONSTRUCTION_20260915.json",
+      "sha256": "eb579f21012630bb54037e679b1a881ba1abb88c476bf34dffb2e8e834129c22",
+      "priority": 0,
+      "purpose": "Current V6 editable Figma vector reconstruction evidence; human title review remains mandatory before T2 or P6."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/NONCALLIGRAPHIC_SEMANTIC_WORDMARK_V6_EXECUTION_20260915.json",
+      "sha256": "f5f90b409065db079306bace8b7da4beb2952e3bfea9142431e24c0cc4234e25",
+      "priority": 0,
+      "purpose": "Current V6 directional-positive execution and Figma downstream vector reconstruction authority; photography and P6 remain frozen."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v6/V5_HUMAN_SELECTION_AND_NONCALLIGRAPHIC_V6_PLAN_20260914.json",
+      "sha256": "8f83e2a12505863c192a9e1861875f781d8d3fa7a3754628a093c4e68d5c7153",
+      "priority": 0,
+      "purpose": "Human V5 B/D seed selection, explicit far-below-Shanyeji non-pass verdict, and V6 non-calligraphic structural reconstruction plan."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v5/GENERATIVE_CUSTOM_WORDMARK_V5_EXECUTION_20260914.json",
+      "sha256": "b815a14bc96ceea64d14278ab8fdf31f5289ccd643d2512ba0f3e9773851a18b",
+      "priority": 0,
+      "purpose": "Current V5 generative custom-wordmark execution evidence; typography only, no photography or P6 mutation."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v5/WORDMARK_V4_HUMAN_NONE_AND_GENERATIVE_V5_PLAN_20260914.json",
+      "sha256": "06cab021a525003300631a15d39506a2cb0e325e1606c81fbd68ab791daa6ac6",
+      "priority": 0,
+      "purpose": "Current human V4 NONE verdict and bounded V5 generative custom-wordmark plan. Preserves all image-direction gains while changing only title ideation medium."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v4/STRUCTURAL_WORDMARK_V4_EXECUTION_20260914.json",
+      "sha256": "2a23b534045aaec40021131cb504addbe6c9f60086d246af5f2036416bf51b36",
+      "priority": 0,
+      "purpose": "Current V4 3x2 structural wordmark execution; six visible unpolished directions frozen for human selection with all prior gains preserved."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v4/WORDMARK_V3_HUMAN_DIRECTIONAL_FAIL_AND_V4_PLAN_20260914.json",
+      "sha256": "dba8dcef08d6f2f625d81a758599b566e877427ef54cc5d42f130579718af4d9",
+      "priority": 0,
+      "purpose": "Current human V3 directional-improvement-but-fail verdict and V4 structural exploration plan. Preserves image and typography gains while changing only whole-word structure."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v3/SEMANTIC_ANCHOR_WORDMARK_V3_EXECUTION_20260914.json",
+      "sha256": "9b3af657d85ff2da729b66c3a148988715e8d9afd6fd0689e801a0fc2362ad86",
+      "priority": 0,
+      "purpose": "Current semantic-anchor Wordmark V3 execution; outputs frozen for human review with photography/P6 preserved."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v3/WORDMARK_V2_HUMAN_FAIL_AND_V3_PLAN_20260914.json",
+      "sha256": "f93f970536ada978914b471fcd0855b0656a2ccdb66b385509d5c84b6cbe89ba",
+      "priority": 0,
+      "purpose": "Current human V2 FAIL and semantic-anchor V3 preparation. Preserves photography and V2 coherence gains while changing only the typography layer."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_V2_EXECUTION_20260914.json",
+      "sha256": "b56c3d52f138a5515c5e60156929cf792b7110e8d1dcef0c401d82512bdcfb5f",
+      "priority": 0,
+      "purpose": "Current wordmark-first V2 execution receipt; candidates frozen for human review with prior image improvements preserved."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v2/T1_TECHNICAL_RETRY_HUMAN_FINAL_SETTLEMENT_20260914.json",
+      "sha256": "a4dc8c2ede13fd248f3d70ba2e68d78eb4a404950af8cadad9ff44e9c2ef1fcf",
+      "priority": 0,
+      "purpose": "Current human T1 final settlement: stop the failed typography compiler, preserve image improvements, and move only typography into wordmark-first V2."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v2/WORDMARK_SYSTEM_REPAIR_V2_PLAN.json",
+      "sha256": "181b592e65e71a2a6e4c26778ed8f0c58efee67f0bf339a359ac405a475b341a",
+      "priority": 0,
+      "purpose": "Prepared bounded wordmark-first V2 typography experiment; no photo or whole-project reset."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_TECHNICAL_RETRY_RECEIPT_20260914.json",
+      "sha256": "1cfa7cc1509ece5565c74d9e90f27800ad8146af20545e0812b9bbae8bfa2b1e",
+      "priority": 0,
+      "purpose": "User-authorized single Candidate2 technical correctness retry completed; human re-review pending, T2/P6 closed."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_HUMAN_BLIND_VERDICT_TECHNICAL_RETRY_20260914.json",
+      "sha256": "8e1df7d2cbe8d3c94eaca3e70e78551ed1a7901d22f94b5c5a0aec8fd2dc2a89",
+      "priority": 0,
+      "purpose": "B design-sense advantage with glyph correctness FAIL; never a formal PASS."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v1/T1_TITLE_BENCH_EXECUTION_20260914.json",
+      "sha256": "78a87b67ecd11cc52d184f6d26c2d2e874c4780b881f4236c3a91ca1c4a57981",
+      "priority": 0,
+      "purpose": "Executed T1 title-only A/B bench with frozen correction budget and Drive blind-review commitment; no human verdict yet."
+    },
+    {
+      "path": "evidence/vpd/p1_typography_repair_v1/TYPOGRAPHY_ONLY_DISTILLATION_REPAIR_BENCH_V1.json",
+      "sha256": "b2410bc541f0d25df32114682ca415469761524aa06aeba186e76daf00b878ee",
+      "priority": 0,
+      "purpose": "Frozen P1 title-only typography repair bench: strong ordinary baseline versus distilled authored lettering before any poster reintegration."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_HUMAN_SET_VERDICT_TYPOGRAPHY_FAIL_20260914.json",
+      "sha256": "bf3c32154325912afa00c06286fc6202c3e9e628eb16319e0f16adfa0c7e0abf",
+      "priority": 0,
+      "purpose": "Current human P6 set FAIL: retain usable base photography and return typography distillation to a bounded P1 repair bench."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FINAL_PIXEL_EDITABILITY_VALIDATION_20260914.json",
+      "sha256": "d0a8f97d1fa2f845c0c4cb2fe37246defecbc20efb6024c7246192c1365d8543",
+      "priority": 0,
+      "purpose": "P6 final multi-scale pixel and editability validation; assistant FAIL/HOLD recommendation with human-final authority preserved."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_SINGLE_CORRECTION_PASS_EXECUTION_20260914.json",
+      "sha256": "7ca4d5ab22be9348c2e76369b6c120467dcd4decad2834f4cf8077b3a615fff3",
+      "priority": 0,
+      "purpose": "Exact execution record for the one authorized equal-budget P6 correction pass; no aesthetic pass claim."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_EQUAL_BUDGET_COMPOSITION_REVIEW_ROUND1_20260914.json",
+      "sha256": "3f83c52bfb867832560aec17c2bd87a331435b2b08ca121619a117aa6508b983",
+      "priority": 0,
+      "purpose": "Round-1 equal-budget integrated-frame review authorizing exactly one correction pass per poster."
+    },
+    {
+      "path": "evidence/vpd/p6_equal_budget_integrated_design_v1/P6_FORMAL_PHOTO_BINDINGS_LATE_READBACK_RESOLUTION_20260914.json",
+      "sha256": "b8c95ac18e9602e6395d5a58723c2f0db78da5168369c777ed936980eec4ea38",
+      "priority": 0,
+      "purpose": "Direct Figma readback resolution closing the stale P6 relay-placement blocker without reupload."
+    },
+    {
+      "path": "evidence/vpd/project_roadmap_v1/TYPOGRAPHY_WORKFLOW_CORRECTION.json",
+      "priority": 0,
+      "purpose": "Current user correction restores early typography planning, before-final-acceptance Figma design and symmetric comparisons; no old experiment mutation"
+    },
+    {
+      "path": "evidence/vpd/project_roadmap_v1/TASK_LOCK_REVIEW_AND_WORKFLOW_DECISION.json",
+      "priority": 0,
+      "purpose": "Current user-authorized full workflow and completion of task-lock state-readback review; no rendering or visual acceptance"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1SKmCHFgOxOXfdx7U7wtxFeenN8c6zLf9",
+      "title": "VPD_CODEX_PHOTO_FIGMA_PIPELINE_HARDENING_V1.txt",
+      "scope": "SYSTEM_CONTRACT_HARDENING_ONLY",
+      "status": "CONSUMED_FOR_CURRENT_CHANGE"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1HRjbFI9_8yWbtEPjPQ0ebKvlRPXjlklc",
+      "title": "VPD_CODEX_SYSTEM_GOAL_DRIFT_CORRECTION_AND_HOLDOUT_VALIDATION_V1.txt",
+      "scope": "SYSTEM_GOAL_DRIFT_CORRECTION_AND_HOLDOUT_VALIDATION_DESIGN_ONLY",
+      "status": "CURRENT_CHANGE_AUTHORITY"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1mlpl6fWHPMC11nUUeXsu-34GkAI1iZzo",
+      "title": "VPD_CODEX_HOLDOUT_RUNTIME_AUTHORIZATION_AND_PAYLOAD_FREEZE_V1.txt",
+      "scope": "HOLDOUT_RUNTIME_AUTHORIZATION_PAYLOAD_FREEZE_AND_HANDOFF",
+      "status": "CURRENT_CHANGE_AUTHORITY"
+    },
+    {
+      "authority_class": "USER_PROVIDED_DRIVE_TASK",
+      "drive_file_id": "1o4cyCBq8iXLmaV3qNBOKvFDmvj6DJ1vW",
+      "title": "VPD_CODEX_FORMAL_RENDER_ATTEMPT2_RECOVERY_SHORT_V1.txt",
+      "scope": "FORMAL_RENDER_ATTEMPT1_INVALID_SETTLEMENT_AND_ATTEMPT2_HANDOFF_ONLY",
+      "status": "CURRENT_CHANGE_AUTHORITY"
+    },
+    {
+      "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
+      "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca",
+      "purpose": "User-authorized P2 bounded reconciliation closeout and non-rendering P3 preparation; no visual acceptance or replay"
+    }
+  ],
+  "continuity": {
+    "checkpoint_path": "continuity/vpd/LATEST_CHECKPOINT.json",
+    "ledger_mode": "PER_STREAM_FILES",
+    "ledger_path": null,
+    "ledger_root": "continuity/vpd/state_ledger",
+    "hash_chain_required": true,
+    "write_through_required": true
+  },
+  "rules": {
+    "no_silent_mutation": true,
+    "anti_rollback": true,
+    "missing_state_is_unknown": true,
+    "continue_means_next_incomplete_gate": true,
+    "governance_never_overrides_business_rules": true,
+    "state_conflict_fails_closed": true
+  },
+  "forward_commercial_pipeline": {
+    "architecture": "COMPLETE_POSTER_GENERATION -> HUMAN_WHOLE_REVIEW -> OPTIONAL_EDITABLE_PRODUCTION",
+    "status": "DEFERRED_UNTIL_MAINLINE_WHOLE_VISUAL_ACCEPTANCE",
+    "role": "DOWNSTREAM_PRODUCTION_PIPELINE_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
+    "activation_gate": "GENERATED_VISUAL_DIRECTION_ACCEPTED_FOR_PRODUCTION",
+    "image_generation_policy": "CHATGPT_ONLY",
+    "figma_design_surface": "OPTIONAL_EDITABLE_PRODUCTION_WHEN_REQUIRED",
+    "historical_attempts_reclassified": false,
+    "highest_active_project_objective": false,
+    "next_required_action": "FOLLOW_MAINLINE_LOCK_NO_INDEPENDENT_DISPATCH",
+    "timing_clarification": {
+      "authority": {
+        "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+        "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+      },
+      "whole_poster_review": "BEFORE_OPTIONAL_EDITABLE_PRODUCTION",
+      "final_poster_acceptance_requires_actual_integrated_pixels": true,
+      "figma_is_not_required_for_current_generation_test": true,
+      "historical_timing_preserved_in": "continuity/vpd/history/mainline_lock_20261001/PROJECT_CONTROL_ADAPTER.json"
+    }
+  },
+  "vpd_system_goal_authority": {
+    "objective": "REFERENCE_PIXELS -> VISUAL_DISTILLATION_COMPILER -> STYLE_CAPSULE_OR_VISUAL_PROGRAM -> STRONG_VISUAL_MODEL -> NEW_FAMILY_OR_TRANSFER_OUTPUTS -> HUMAN_PIXEL_REVIEW -> DOWNSTREAM_PRODUCTION_AFTER_VISUAL_DIRECTION_ACCEPTANCE",
+    "active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "checkpoint": "VPD_MAINLINE_BOUNDED_DELIVERY_COMPLETE_WITH_KNOWN_LIMITATIONS",
+    "challenge_ids": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "visual_anchor_runtime_policy": "AUTHORIZED_FOR_THIS_HOLDOUT_RUN",
+    "runtime_authorization_receipt": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VISUAL_ANCHOR_RUNTIME_AUTHORIZATION_RECEIPT_V1.json",
+      "sha256": "ae974abae7655eb1a0adff7bd53d4cf1f6b4d077b4f736a4cbfa1bc855bbdf45"
+    },
+    "runtime_binding_manifest": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUNTIME_VISUAL_ANCHOR_BINDING_MANIFEST_V1.json",
+      "sha256": "d8880a328524c26eee16df2cddf8914e4338b04ea193736a76c480ec3602825c"
+    },
+    "payload_freeze_receipt": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/SYSTEM_LEVEL_HOLDOUT_PAYLOAD_FREEZE_RECEIPT_V1.json",
+      "sha256": "32255718f315deb3a4dbebee9d3aa5eb6a14b0469b9cdce73363b6f433786867"
+    },
+    "payload_ids_frozen": [
+      "SHY-SYS-HOLDOUT-V1-H1",
+      "SHY-SYS-HOLDOUT-V1-H2",
+      "SHY-SYS-HOLDOUT-V1-H3",
+      "SHY-SYS-HOLDOUT-V1-H4"
+    ],
+    "formal_outputs_generated": "FOUR_SHARED_RETURN_RECORDS_RECOVERED_PIXELS_UNVERIFIED",
+    "style_capsule_v1_1_candidate_promoted": false,
+    "formal_render_attempt2_identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT2",
+    "formal_render_attempt1_classification": "PROTOCOL_INVALID / INVALID_FOR_FORMAL_HOLDOUT_VERDICT / NO_CAPSULE_INFERENCE",
+    "formal_render_attempt2_preflight": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT2_PREFLIGHT_CHECKLIST_V1.json",
+      "sha256": "311a644859b761d00cb0b9c41152203d0aba48226c97e8b883ee7efa419172d2"
+    },
+    "formal_render_attempt2_handoff": {
+      "path": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/VPD_SHANYEJI_SYSTEM_LEVEL_HOLDOUT_CHATGPT_RENDER_HANDOFF_ATTEMPT2_V1.txt",
+      "sha256": "ee5cf9cadbbbc114acf434b7bc7a5f0442a8704d6b736fe6e7229d9f51c34198"
+    },
+    "next_required_action": "MAINLINE_DELIVERY_COMPLETE_STOP",
+    "formal_outputs_verified": null,
+    "render_allowed": false,
+    "current_state_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "formal_render_attempt2_classification": "INVALID_FOR_FORMAL_HOLDOUT_VERDICT",
+    "reconciliation": {
+      "path": "evidence/vpd/attempt2_evidence_reconciliation_v1/RECONCILIATION_CLOSEOUT.json",
+      "sha256": "38e1617eb3cea25bab805ce350d61c3c79f28e2a4ad2cc3fe6180a6e09c4ccca"
+    },
+    "legacy_holdout_fields_scope": "HISTORICAL_NOT_CURRENT_EXECUTION_AUTHORITY",
+    "current_mainline_contract": {
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+    },
+    "current_generation_reference": {
+      "drive_file_id": "11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC",
+      "drive_view_url": "https://drive.google.com/file/d/11HpNmepnqlyZNs4uzUTjjEbP8LWwPutC/view",
+      "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+      "original_dimensions": [
+        1080,
+        1439
+      ],
+      "interpretation": "UPPER_HORIZONTAL_AD_ONLY; LOWER_MOCKUP_EXCLUDED",
+      "pixel_binding_required": true
+    }
+  },
+  "task_lock": {
+    "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "revision": 288,
+    "sha256": "849a2f0c57ff8eff630d057e41354a4dd97d8ffbd9d71cc567cd26f3e3502be1",
+    "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+    "historical_documents_are_not_current_instructions": true
+  },
+  "task_registry_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+  "workflow": {
+    "path": "VPD_PROJECT_ROADMAP.md",
+    "sha256": "2abced161c0c4bcd4e71ba2b3e5571cb74cfe8053344e6a0aa41e6a714d887b5",
+    "version": "1.1 + mainline-lock 1.0",
+    "current_progress_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "read_after": "task_lock",
+    "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock.",
+    "current_bounded_delivery_entry": {
+      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "sha256": "ba79b543826bbf6e945ad905378d661eb6745c20b6ad7fda1a7d87f7f6b13eef"
+    }
+  },
+  "figma_upload_route_guard": {
+    "status": "MANDATORY",
+    "path": "evidence/vpd/figma_upload_relay/VPD_FIGMA_UPLOAD_ROUTE_REGRESSION_GUARD_20260921.json",
+    "rule": "For VPD Figma raster binding, use the established encrypted GitHub Actions Figma Upload Relay V1 after upload_assets minting; do not default to direct chat-runtime HTTP POST. Local/manual fallback is permitted only after a relay-specific verified failure.",
+    "readback_required": true
+  },
+  "typography_repair": {
+    "status": "PAUSED_LOCAL_EVIDENCE_NOT_CURRENT_MAINLINE",
+    "next_required_action": null
+  },
+  "concept02_binding": {
+    "status": "PASS_READBACK_CONFIRMED",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "frame_id": "197:2",
+    "raster_node_id": "197:3",
+    "image_hash": "ed2119fd27ec6bdef468f81ede96607aad6673c0",
+    "receipt": "evidence/vpd/figma_upload_relay/receipts/P1-CHAZUO-CONCEPT02-197-3-20260921-02.json",
+    "source_sha256": "b4b7fdd825baaa83c751409d84702275c60da810d9f1ee5db44aabe79ea9299f"
+  },
+  "concept02_editable_reconstruction": {
+    "status": "EXECUTED_WAITING_HUMAN_WHOLE_POSTER_REVIEW",
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "reference_frame_id": "197:2",
+    "production_frame_id": "201:2",
+    "clean_photo_node_id": "201:3",
+    "wordmark_vector_id": "203:2",
+    "editable_layer_count": 16,
+    "geometry_audit": "PASS",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_FIGMA_RECONSTRUCTION_20260921.json"
+  },
+  "concept02_human_review": {
+    "overall_design": "PASS",
+    "wordmark": "PASS",
+    "photo_base": "FAIL_AI_FEEL",
+    "repair_node_id": "201:3",
+    "preserve_frame_id": "201:2",
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_EDITABLE_RECONSTRUCTION_HUMAN_REVIEW_PHOTO_FAIL_20260921.json",
+    "freeze_guard": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "frozen_nodes": [
+      "201:4",
+      "201:5",
+      "203:2",
+      "203:13",
+      "203:14",
+      "203:15",
+      "203:16",
+      "203:17",
+      "203:18",
+      "203:19",
+      "203:22",
+      "203:23",
+      "203:24",
+      "203:25",
+      "203:26"
+    ],
+    "only_open_node_id": "201:3"
+  },
+  "execution_guards": {
+    "visual_master_freeze": {
+      "status": "MANDATORY",
+      "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+      "required_on_resume": true,
+      "pixel_asset_over_prompt": true,
+      "dimension_scoped_freeze": true,
+      "local_delta_only": true,
+      "rollback_on_regression": true,
+      "solved_route_reuse": true
+    }
+  },
+  "concept02_photo_repair01": {
+    "baseline_frame_id": "201:2",
+    "candidate_frame_id": "205:2",
+    "candidate_photo_node_id": "205:3",
+    "candidate_image_hash": "b2efd9591c1c2430e6c17a7194681b358b2c9c9a",
+    "frozen_layer_diff_count": 0,
+    "auto_promote": false,
+    "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/CHAZUO_CONCEPT02_PHOTO_REALISM_REPAIR01_CANDIDATE_20260921.json",
+    "status": "PAUSED_PRESERVED_LOCAL_QUALITY_EVIDENCE",
+    "current_mainline": false
+  },
+  "current_mainline": {
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+    "current_visual_unit": "HUMAN_APPROVED_CORRECT_FIRST_PHOTO_WORDMARK_AND_TYPOGRAPHY",
+    "evidence": {
+      "execution": {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/NATIVE_AI_FAIL_RECEIPT.json",
+        "sha256": "f956bee304e199e83b54d31cc5eb72dacadbe7ea502dd6ebe8e001ee33319385"
+      },
+      "human_verdict": {
+        "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
+        "sha256": "a535b6cf5c7bb66d9ff5f0c244db46d2f17b7b160f670b9ba9919ba7b5a57bf2",
+        "verdict": "HUMAN_FAIL_DESIGN_SYSTEM_NOT_READY",
+        "photo_protected": true,
+        "design_failed": true,
+        "next_legal_action": "DEFINE_ONE_TYPOGRAPHY_WORDMARK_SUCCESSOR_ON_FROZEN_FIRST_IMAGE_PHOTO"
+      },
+      "latest_poster_human_feedback": {
+        "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
+        "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
+      }
+    },
+    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "codex_takeover": {
+      "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+      "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+      "authorization": {
+        "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
+        "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
+      },
+      "photo_protection": {
+        "path": "continuity/vpd/codex_takeover_20261003/PHOTO_PROTECTION.json",
+        "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
+      },
+      "receipt": {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/NATIVE_AI_FAIL_RECEIPT.json",
+        "sha256": "f956bee304e199e83b54d31cc5eb72dacadbe7ea502dd6ebe8e001ee33319385"
+      },
+      "budget": {
+        "formal_versions_max": 3,
+        "formal_versions_used": 3,
+        "revisions_max": 2,
+        "revisions_used": 2,
+        "photo_generations": 0,
+        "paid_compute_usd": 0,
+        "training": 0,
+        "automations": 0,
+        "second_style": 0
+      },
+      "human_verdict": "REJECTED",
+      "candidate_promoted": false,
+      "state_writer": "ROOT_EXECUTOR_ONLY",
+      "reuse_entry": {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+        "sha256": "ba79b543826bbf6e945ad905378d661eb6745c20b6ad7fda1a7d87f7f6b13eef"
+      },
+      "human_feedback": {
+        "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
+        "sha256": "8cb1f2dc3abfc0f7ef96b5e33a5dc91da746c113509ecb45f6b1544cdb138a7a"
+      },
+      "source_identity_correction": {
+        "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/SOURCE_IDENTITY_CORRECTION.json",
+        "sha256": "754019dee5228d9de19e4b9056361844fefc42e805d5c84e99d36d8aae658005"
+      },
+      "source_recovery": {
+        "authorization": {
+          "path": "continuity/vpd/codex_takeover_20261003/SOURCE_RECOVERY_CONTINUE_AUTHORIZATION.json",
+          "sha256": "d3853a895f1fc75537e3de33260a1655bde82529606bdfe7beeb61bcf861a8db"
+        },
+        "source_sha256": "e7af9c9e88ff9dd38357a570305c4b5d40e98678d14c174957d4bdf2e7bdfd29",
+        "phase": "APPROVED_FROZEN",
+        "imagegen_edit_calls_max": 1,
+        "imagegen_edit_calls_used": 1,
+        "formal_poster_versions_added": 0,
+        "is_recovered_hidden_original": false,
+        "human_verdict": "ACCEPTED",
+        "delivery_manifest": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DELIVERY_MANIFEST.json",
+          "sha256": "28dc4f69e88267b0451088ae3b88b2b4f319d660973840b26dfcde48a313d903"
+        },
+        "pixel_review": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/pixel_review/PIXEL_REVIEW.json",
+          "sha256": "c88cb4900c8c3fdc0565e6b0e336400fda95a3a01ee450861b1fb8c3fcd51b59"
+        },
+        "ai_verdict": "AI_PASS_SOURCE_RECONSTRUCTION_ONLY",
+        "professional_audit": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/PROFESSIONAL_AUDIT.txt",
+          "sha256": "5c6eaa01887851cd6c7079aef09c8872fcd0d2901d1a1c69b24588c9a340faa9"
+        },
+        "drive_archive": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DRIVE_ARCHIVE_MANIFEST.json",
+          "sha256": "4e0649c492a8ea341ddaf40632f894e2d9aefc04188911954fa2b34d70ef9a43"
+        },
+        "drive_archive_authorization": {
+          "path": "continuity/vpd/codex_takeover_20261003/DRIVE_ARCHIVE_AUTHORIZATION.json",
+          "sha256": "827904b869f935e1722e480a004b028c09f07ff7b2ad94a970a36e9628293e3a"
+        },
+        "primary_pixel_storage": "GOOGLE_DRIVE",
+        "fresh_drive_recovery": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_VERIFIED.json",
+          "sha256": "776f92a2f1bb7cf0293a596bdc935b7a6c6609fae72077e2586a8c3a368e1d23"
+        },
+        "fresh_drive_runtime": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/FRESH_ENTRY_DRIVE_RUNTIME.json",
+          "sha256": "0be60dc959e2972e97a74aa3846a2c69609be513a41227563d2b69e6f5128c55"
+        },
+        "human_approval": {
+          "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+          "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
+        }
+      },
+      "worker_continuation": {
+        "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+        "phase": "REVISION_REQUIRED",
+        "authorization": {
+          "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
+          "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
+        },
+        "worker_contract": {
+          "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
+          "sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28"
+        },
+        "source_approval": {
+          "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+          "sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06"
+        },
+        "prior_failed_cycle_receipt": {
+          "path": "evidence/vpd/codex_takeover_20261003/source_recovery/NATIVE_FINAL_HANDOFF_RECEIPT.json",
+          "sha256": "d2952a23f90d0a0f58b8a7d68245dd7d597b0c189a3bc9ed3b7fc341144366c5"
+        },
+        "brand": "茶作",
+        "copy": "一杯茶，慢下来",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "frozen_source": {
+          "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+          "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+          "figma_node": "283:5",
+          "local_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
+        },
+        "budget": {
+          "formal_versions_max": null,
+          "formal_versions_used": 7,
+          "revisions_max": null,
+          "revisions_used": 6,
+          "photo_generations": 0,
+          "paid_compute_usd": 0,
+          "training": 0,
+          "automations": 0,
+          "second_style": 0,
+          "parallel_alternatives": 0,
+          "hidden_variants": 0,
+          "stop_condition": "INDEPENDENT_AI_PASS"
+        },
+        "versions": [
+          {
+            "number": 1,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
+              "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/TECHNICAL_CHECK.json",
+              "sha256": "e67aa8c84a89a24153b31b1211c2cf58defc627ad76cfb0a5ef7d855fd394b6e"
+            },
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "12f401759d8d0ea3d7b818d237327324b6a667db44544b9a59340e2f26fa7568"
+            },
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/DRIVE_ARCHIVE.json",
+              "sha256": "8a28874645b57aa77953ab80598a3ab6b998e9b889569365d2b54cc7d0e2e1e8"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "286:2",
+              "photo_node": "286:3",
+              "overlay_node": "286:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=286-2"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v1/provenance.json",
+              "sha256": "f906e7c58712b6d5cd8f0a3e04a75c5ee4b7fdc9c0c08a7688626c7e4ab16afe"
+            },
+            "verdict": "AI_FAIL",
+            "preserved": true
+          },
+          {
+            "number": 2,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v2/poster.png",
+              "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v2/TECHNICAL_FINAL_CHECK.json",
+              "sha256": "a09bb9a39ad1c29c3369c787e7206e36ebfd052d4a2c6ff62865226c00d7c999"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "287:2",
+              "photo_node": "287:3",
+              "overlay_node": "287:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=287-2"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v2/provenance.json",
+              "sha256": "ea9b535b8075598c3c5e431325768c620d781c83c4aefc5271c1bc6e3e6f2252"
+            },
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v2/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "2da431ebde0174b67bb7d2d68e50f8ee2dd1395f00308b5349a6bdc6b9215806"
+            },
+            "verdict": "AI_FAIL",
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v2/DRIVE_ARCHIVE.json",
+              "sha256": "fdbc8fb4b6a79ed35b36fa40a4493c4d7463f3ae344e81bca1f2695e5b6e6014"
+            }
+          },
+          {
+            "number": 3,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+              "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/TECHNICAL_FINAL_CHECK.json",
+              "sha256": "dd449bc193e6cc0c71738ce3c155dc023cee064da2bf7fa29b6c65d855a096bb"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "290:2",
+              "photo_node": "290:3",
+              "overlay_node": "290:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=290-2"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/assets_v3/provenance.json",
+              "sha256": "ebd5876a7e9edda69034ef3db7bba00e1dc4ac07009da66af6d01e2398e40437"
+            },
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "19e9183d815d9a3e9df19f5413badcb9403cc6a8ce7944f8ecbdb9aee08cfea3"
+            },
+            "verdict": "AI_FAIL",
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json",
+              "sha256": "8dbaea7f1adbc9ad9b0e00cccacb1e624722b0ba4e79b4893ea38283a52127d1"
+            }
+          },
+          {
+            "number": 4,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v4/poster.png",
+              "sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/TECHNICAL_CHECK.json",
+              "sha256": "badc3acb151c055df5a6ee60f23147f1793774661bc305a69781dc3953ff4dee"
+            },
+            "photo_protection": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/PHOTO_PROTECTION.json",
+              "sha256": "fb2bf634e2e449f32f63ce4bbd100ff291362aa36dff0d9fedbbff9008d758b2"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/LETTERING_PROVENANCE.json",
+              "sha256": "f32450b4068347e01c6c95fac9fb3c03e8c486bb3d3d34711944343fdcece478"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "296:2",
+              "photo_node": "296:3",
+              "overlay_node": "296:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=296-2"
+            },
+            "verdict": "AI_FAIL",
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "bd295b9105b586a4ad7be628b5078afbbb64c96b086277eb86b950b3f9ad9ba0"
+            },
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/DRIVE_ARCHIVE.json",
+              "sha256": "b604eb320e772f65b5e1e347bf1aa5b3bc9070c8c3c5c4c0fdcc4635c1dda697"
+            },
+            "asset_drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/ASSET_DRIVE_ARCHIVE.json",
+              "sha256": "4943832f2b3a529085cdaf0fe39ebd270a62f6aef2805bd1d164e75e61b0ccb0"
+            }
+          },
+          {
+            "number": 5,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v5/poster.png",
+              "sha256": "30740547dcfd504cacdcdf01f046e5b71e394e883c73081fd531c1efdc291d11"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/TECHNICAL_CHECK.json",
+              "sha256": "fc23a3d07eff7cbd0ac2a5177dc3cd9984c4b29322a62faba1b10f1c30bd2dab"
+            },
+            "photo_protection": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/PHOTO_PROTECTION.json",
+              "sha256": "bb0e7891a234616b67f43ada4ab62569b78db4efc4da5e065a0d7153674cea2e"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/ASSET_PROVENANCE.json",
+              "sha256": "9b34035e41334ce74dd9858625847e88a6da99d7dcee65c6cf6e77ed8aaf0b14"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "299:2",
+              "photo_node": "299:3",
+              "overlay_node": "299:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=299-2"
+            },
+            "verdict": "AI_FAIL",
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "070d4128819a7dd27e647417de6696890f27506faf73339f855a9f70261c6082"
+            },
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/DRIVE_ARCHIVE.json",
+              "sha256": "79a30d4e4104639d52ef0b2c6ec3039e86445cc663fb33361d940becb552091b"
+            },
+            "asset_drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/ASSET_DRIVE_ARCHIVE.json",
+              "sha256": "fc8962761cf2dc9ef1f88ca6bb40e7dd0215c23724fee742166ffe914ee72351"
+            }
+          },
+          {
+            "number": 6,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v6/poster.png",
+              "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/TECHNICAL_CHECK.json",
+              "sha256": "d0f505206a470173db7adab3d96e517cec915c4a1275c0a89ecf2264f51c6354"
+            },
+            "photo_protection": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/PHOTO_PROTECTION.json",
+              "sha256": "78bc77d2cbcedd538848735f3124d36c2537382cd8d81e64d388d6062b0e65d5"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/LETTERING_PROVENANCE.json",
+              "sha256": "cc47ecca4ad1c4c0d9fd9bf015c6931ff0814057dd9b6877387e51f32eb19b91"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "302:2",
+              "photo_node": "302:3",
+              "overlay_node": "302:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=302-2"
+            },
+            "verdict": "AI_FAIL",
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "57223213e7ceb2a33120eae4a9f35123ab2487335e76dea0a6d368afaab598c2"
+            },
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/DRIVE_ARCHIVE.json",
+              "sha256": "8fea2a29a5e8c30608c263e9387144edfdcd26804a1ec875f7b8b3e40952a203"
+            },
+            "asset_drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/ASSET_DRIVE_ARCHIVE.json",
+              "sha256": "aafc7098260a9a248e7ef72f6a46d28a8afcc0f52e214ac86d79133e4c2f3941"
+            }
+          },
+          {
+            "number": 7,
+            "export": {
+              "path": ".liu-visual-private/correct_source_typography/v7/poster.png",
+              "sha256": "2c5153c62e27874093bdf7ac13a0274d91130487d77fda886da214fdb22fe86d"
+            },
+            "technical_check": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/TECHNICAL_CHECK.json",
+              "sha256": "a4bb2ab28471362571e97dcbaa70111e968c13b9c36a7b7621b160fb246f0477"
+            },
+            "photo_protection": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/PHOTO_PROTECTION.json",
+              "sha256": "78ac074f091f2d470713df8ccb10ace1a06641806409e0c9b1cbd8dfb8091faf"
+            },
+            "assets": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/ASSET_PROVENANCE.json",
+              "sha256": "c7b7648d06b7e0ffab45968fe14efe2da86c71dcf2afb3f417e76d3139ff67ca"
+            },
+            "figma": {
+              "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+              "frame_id": "306:2",
+              "photo_node": "306:3",
+              "overlay_node": "306:4",
+              "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=306-2"
+            },
+            "verdict": "AI_FAIL",
+            "preserved": true,
+            "pixel_review": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/pixel_review/PIXEL_REVIEW.json",
+              "sha256": "20c174798a95eefa138b821670089d67aaedc0df12bde62f15c733834c627635"
+            },
+            "drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/DRIVE_ARCHIVE.json",
+              "sha256": "803d928987e0c884f90cc0767f78922d6614cbeaa4a7760b20e94ab91dd56e51"
+            },
+            "asset_drive_archive": {
+              "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/ASSET_DRIVE_ARCHIVE.json",
+              "sha256": "1d84274b0df5ee2b74b8d14ed7c2366c8633951cad87fcfe407a54712f519162"
+            }
+          }
+        ],
+        "poster_human_verdict": "PENDING",
+        "old_cycle_human_verdict": "REJECTED",
+        "review_inputs": {
+          "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/REVIEW_INPUTS_FROZEN.json",
+          "sha256": "e26b131c8132425149179881b266dd156e61175ee6518a060cc8b21fb65a1921"
+        },
+        "carrier_amendment": {
+          "path": "continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
+          "sha256": "f5b5941512d15fc4ac5b73ec4dae5313cb098df6d6c5fa5ba801278f86a01df9"
+        },
+        "poster_human_feedback": {
+          "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
+          "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
+        },
+        "human_review_request_withdrawn": true,
+        "repair_authorization": {
+          "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+          "sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848"
+        },
+        "poster_human_feedback_history": [
+          {
+            "version": 3,
+            "human_verdict": "REJECTED",
+            "feedback": {
+              "path": "evidence/vpd/codex_takeover_20261003/lettering_correction_20261004/HUMAN_REJECTION.json",
+              "sha256": "922a16f8344b148046de7e5b5842ceec18c983aa3af4a56872628f0ee7c5e10e"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "preserved_prior_current_mainline": {
+    "status": "SYSTEM_LEVEL_HOLDOUT_ATTEMPT4_H1_EXPLICIT_ASPECT_BINDING_READY",
+    "task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
+    "next_required_action": "EXECUTE_ATTEMPT4_H1_IN_FRESH_ISOLATED_CHAT_WITH_EXPLICIT_ASPECT_BINDING",
+    "attempt3_settlement": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT3_H1_PROTOCOL_FAILURE_SETTLEMENT_20260921.json",
+    "attempt4_identity": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_IDENTITY_20260921.json",
+    "attempt4_plan": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/FORMAL_RENDER_ATTEMPT4_INVOCATION_REPAIR_PLAN_20260921.json",
+    "h1_run_file": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/RUN_ATTEMPT4_H1_FRESH_CHAT_20260921.txt",
+    "explicit_aspect_control_required": true,
+    "natural_language_aspect_only_prohibited": true,
+    "current_chat_render_eligible": false
+  },
+  "mainline_plan": {
+    "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+    "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
+  },
+  "scheduling_hold": {
+    "scope": "MAINLINE_SAVED_RESOURCE_EXECUTION_NOT_REQUESTED",
+    "deferred_attempt": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
+    "prior_preparation_preserved": true,
+    "legacy_scheduling_hold": {
+      "path": "continuity/vpd/history/mainline_lock_20261001/continuity/vpd/CURRENT_TASK_LOCK.json",
+      "sha256": "2916b03688bc764c01ec7de9024d113200a6360a5c63efe8787264fceed5bd19"
+    },
+    "full_state_validator_required_before_resource_execution": true
+  },
+  "ledger_tails": {
+    "commercial_design_pipeline": {
+      "event_id": "EVT-VPD-CODEX-CHAZUO-288-20261003",
+      "event_hash": "e0d2552a2121bad44743f68c86c18833133185712d190547e0f8517402dcc74f"
+    }
+  },
+  "mature_workflow_audit": {
+    "status": "FIRST_CANDIDATE_REPRO_CARD_COMPLETE_ENVIRONMENT_NOT_READY",
+    "candidate": "SDXL_DIFFUSERS_IPADAPTER_INSTANTSTYLE_STYLE_ONLY",
+    "card_path": "evidence/vpd/mature_workflow_audit_v1/INSTANTSTYLE_IPADAPTER_REPRODUCIBILITY_CARD_20260921.md",
+    "card_git_blob_sha": "766e91c02c6e17f3216afb2c84ff45735043b006",
+    "no_training": true,
+    "current_generation_budget": 0,
+    "current_training_budget": 0,
+    "current_paid_compute_budget": 0,
+    "current_figma_write_budget": 0,
+    "method_compatibility": "PASS_FOR_BOUNDED_REPRODUCTION_CANDIDATE",
+    "execution_environment": "NOT_READY",
+    "next": "P1_SELECT_AND_VERIFY_GPU_EXECUTION_ENVIRONMENT_READ_ONLY_NO_GENERATION",
+    "role": "HISTORICAL_RESEARCH_NOT_CURRENT_DISPATCH"
+  },
+  "gpu_environment_audit": {
+    "status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE",
+    "provider": "RunPod",
+    "cloud_tier": "Secure Cloud",
+    "gpu": "NVIDIA A40",
+    "gpu_count": 1,
+    "vram_gb": 48,
+    "proposed_container_image": "runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu",
+    "current_public_compute_price_usd_per_hour": 0.49,
+    "proposed_auto_terminate_hours": 2,
+    "proposed_total_authorization_cap_usd": 2,
+    "paid_authorization_usd": 0,
+    "environment_card_path": "evidence/vpd/mature_workflow_audit_v1/RUNPOD_SECURE_A40_ENVIRONMENT_CARD_20260921.md",
+    "environment_card_git_blob_sha": "5fba8ad088a0c39212702b4e4c3deea5653b8f9e",
+    "actual_pod_created": false,
+    "actual_runtime_verified": false,
+    "next": null
+  },
+  "primary_renderer_policy": {
+    "status": "ACTIVE",
+    "primary_renderer": "CHATGPT_IMAGES",
+    "external_models_role": "RESEARCH_EVIDENCE_OPTIONAL_FUTURE_BASELINE_ONLY",
+    "correction_record": "evidence/vpd/mainline_corrections/CHATGPT_IMAGES_PRIMARY_RENDERER_CORRECTION_20260921.md",
+    "same_renderer_ab_priority": true,
+    "current_generation_budget": 0,
+    "current_external_compute_budget_usd": 0,
+    "runpod_status": "RESEARCH_ONLY_NOT_CURRENT_ROUTE_NOT_PROVISIONED"
+  },
+  "native_chatgpt_images_ab": {
+    "status": "STAGE1_INVALID_EXECUTION_CLOSED",
+    "renderer": "CHATGPT_IMAGES",
+    "mapping_card": {
+      "path": "evidence/vpd/mature_workflow_audit_v1/CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md",
+      "git_blob_sha": "a93c5de8627b5a427d73dc2c312b46344759dd8c"
+    },
+    "freeze_pack": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TASK_AND_AB_FREEZE_20260921.json",
+      "git_blob_sha": "abeb8c942cd47d834292721613381ee8255e9aef"
+    },
+    "task_id": "VPD-NATIVE-AB-STAGE1-RICE-GRANARY",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "routes": [
+      "REFERENCE_NATIVE_BASELINE",
+      "REFERENCE_PLUS_COMPACT_VPD"
+    ],
+    "requested_aspect": "3:4 PORTRAIT",
+    "output_count_if_authorized": 2,
+    "current_generation_authorization": 2,
+    "stage2_locked": true,
+    "route_A_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_FRESH_CHAT_20260921.txt",
+    "route_B_runner": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_B_FRESH_CHAT_20260921.txt",
+    "authorization_receipt": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_TWO_IMAGE_AUTHORIZATION_20260921.json",
+      "git_blob_sha": "a0748a55523e3b52096e5bc2e53fcad2ddb06c69"
+    },
+    "route_A": "TECHNICALLY_INVALID_INITIAL_AND_RETRY",
+    "route_B": "NOT_EXECUTED_STAGE1_CLOSED",
+    "current_chat_render_eligible": false,
+    "next": "P3_PREPARE_MINIMAL_STATELESS_CHATGPT_IMAGES_RENDER_TICKET_NO_GENERATION",
+    "route_A_provenance": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_OUTPUT_PROVENANCE_20260922.json",
+      "gen_id": "a859fcf1-e8c8-4a7e-bb20-0f0bba0e06c4",
+      "output_sha256": "8e05f4cc4ca8317998c53350d657f9fbbd644a76b406700596e1bcb96e92880d",
+      "output_dimensions": [
+        1086,
+        1448
+      ],
+      "output_drive_file_id": "1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm",
+      "reference_sha256_verified": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "retry_count": 0,
+      "evaluation_executed": false,
+      "figma_executed": false
+    },
+    "route_A_review": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_REVIEW_20260922.json",
+      "git_blob_sha": "f99d11dfe3b76e56bac24f2be43ba62b1c757189"
+    },
+    "route_A_drive_url": "https://drive.google.com/file/d/1mOt0T4vS7KaJeR0PP0pCg5dq6dG5DdHm/view",
+    "route_B_runner_git_blob_sha": "bdb7cd0f3454ad4bfea3ca0bc467dc2459fadc52",
+    "route_A_retry_binding_packet": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_BINDING_PACKET_20260922.json",
+      "git_blob_sha": "4a4c53057df507f1211dd83763e00386690b337d",
+      "prompt_sha256": "3854723b0afdfd4d015f844ab305be5dd27efa357a6b2f3a8936bbad8c885c9c"
+    },
+    "route_A_retry_runner": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/RUN_STAGE1_ROUTE_A_TECHNICAL_RETRY_FRESH_CHAT_20260922.txt",
+      "git_blob_sha": "f16b1ade2019cd6892caf14f33e1a7475f55d43a"
+    },
+    "route_A_retry_generation_authorization": 1,
+    "route_B_generation_authorization_reserved": 0,
+    "route_A_retry_authorization_receipt": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_AUTHORIZATION_20260922.json",
+      "git_blob_sha": "1da7d32966cae498e7fd68145c049bdb5d922eaa"
+    },
+    "route_A_retry": "TECHNICALLY_INVALID_WRONG_SUBJECT_WRONG_ASPECT_PROHIBITED_TEXT",
+    "route_A_retry_review": {
+      "path": "evidence/vpd/chatgpt_images_native_ab_v1/STAGE1_ROUTE_A_TECHNICAL_RETRY_REVIEW_20260922.json",
+      "git_blob_sha": "ed4d1766f5bc3ea37f03856c371032b0a73e6eab"
+    },
+    "route_A_retry_drive_url": "https://drive.google.com/file/d/1qDx9TPHupVmLFYSsuJq-fE5Rqt_dJEtk/view?usp=drivesdk",
+    "route_A_retry_sha256": "49496a7fff47ce6db82d8d136ac1b921624490a05ed7ec9e28cd30cc5ff4d76c",
+    "route_A_retry_dimensions": [
+      1536,
+      1024
+    ],
+    "formal_ab_comparison_allowed": false,
+    "stage1_closed": true
+  },
+  "generator_drive_handoff": {
+    "status": "MANDATORY",
+    "path": "continuity/vpd/GENERATOR_DRIVE_HANDOFF_V1.md",
+    "git_blob_sha": "bfa3693eafc67674d4a75ad28ce8e6a0dae9a63c",
+    "private_drive_link_return": true,
+    "user_reupload_not_required": true
+  },
+  "stateless_render_v1": {
+    "status": "TECHNICAL_PASS_ARCHIVED",
+    "ticket_id": "VPD-STATELESS-RENDER-SMOKE-V1-RICE-GRANARY",
+    "ticket": {
+      "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_RENDER_TICKET_RICE_GRANARY_20260922.json",
+      "git_blob_sha": "b8a40fd9a62116704e8a6164b2cf969077e4e18c"
+    },
+    "copy_to_fresh_chat": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
+      "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
+    },
+    "renderer": "CHATGPT_IMAGES",
+    "reference_count": 1,
+    "reference_drive_file_id": "1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "requested_aspect": "3:4 PORTRAIT",
+    "current_generation_authorization": 0,
+    "retry_budget": 0,
+    "drive_handoff_required": true,
+    "generator_reads_project_repo": false,
+    "stage1_ab_relation": "SEPARATE_TECHNICAL_SMOKE_AFTER_STAGE1_CLOSED",
+    "next": "COMPLETE",
+    "authorization_source": "user message: 允许无状态测试 1 张",
+    "invalid_controller_generation": {
+      "gen_id": "f1a2ec35-e440-4e96-a2ec-8970cd38508c",
+      "runtime_file_id": "file_00000000832481fdb3bec95108d5d2a7",
+      "classification": "OPERATOR_EXECUTION_ERROR_NOT_FORMAL_EVIDENCE",
+      "consumes_budget": false
+    },
+    "controller_generator_guard": {
+      "path": "evidence/vpd/stateless_render_v1/CONTROLLER_GENERATOR_SEPARATION_CORRECTION_20260922.json",
+      "git_blob_sha": "3b2b25bd894f44296340118a90ccfcee37033684"
+    },
+    "fresh_chat_ticket": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_20260922.txt",
+      "git_blob_sha": "1dcfede1707a6d933e30158e5c42c48e219e3b09"
+    },
+    "current_chat_render_eligible": false,
+    "reference_binding_mode": "CURRENT_CONVERSATION_ATTACHMENT_REQUIRED",
+    "drive_connector_reference_binding": false,
+    "drive_role": "OUTPUT_ARCHIVE_AND_RETURN_ONLY",
+    "direct_attachment_correction": {
+      "path": "evidence/vpd/stateless_render_v1/DIRECT_ATTACHMENT_REFERENCE_BINDING_CORRECTION_20260922.json",
+      "git_blob_sha": "dd710bef1d240bf09bc842d0b2d37a4b940dd498"
+    },
+    "direct_attachment_ticket": {
+      "path": "evidence/vpd/stateless_render_v1/MINIMAL_STATELESS_DIRECT_ATTACHMENT_TICKET_RICE_GRANARY_20260922.json",
+      "git_blob_sha": "dc6a2d9667c3d21eb9c570269c6eaec6115add52"
+    },
+    "direct_attachment_copy": {
+      "path": "evidence/vpd/stateless_render_v1/COPY_THIS_TO_FRESH_CHAT_RICE_GRANARY_DIRECT_ATTACHMENT_20260922.txt",
+      "git_blob_sha": "99c30cf2f2ab0dca1658ca1ba8502965fdbe8f91"
+    },
+    "reference_filename": "R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+    "preferred_attachment_source": "CHATGPT_LIBRARY",
+    "fallback_attachment_source": "DIRECT_DEVICE_UPLOAD",
+    "chatgpt_library_reference": {
+      "path": "/VPD_REFERENCES/R1C-APPROVED-SHANYEJI-CANONICAL.jpg",
+      "file_id": "file_0000000059a081fda1ba635ca2ceb5de",
+      "library_file_id": "libfile_45e5855018888191b4fdf74dbde1c55a",
+      "bytes": 142983,
+      "binding_record": {
+        "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_BINDING_RECORD_20260922.json",
+        "git_blob_sha": "72749e47ca0a62775b098e6934c7c5efad2fe435"
+      }
+    },
+    "library_route_user_approved": true,
+    "library_route_approval": {
+      "path": "evidence/vpd/stateless_render_v1/CHATGPT_LIBRARY_REFERENCE_ROUTE_USER_APPROVAL_20260922.json",
+      "git_commit": "36391117c36bbd316557eb3d44c5e00497143e48"
+    },
+    "bulk_library_migration_authorized": false,
+    "smoke_result": {
+      "path": "evidence/vpd/stateless_render_v1/STATELESS_LIBRARY_SMOKE_RESULT_20260922.json",
+      "git_blob_sha": "5157e0e8ea0590facc33da0fe6df92682cf8c4e4"
+    },
+    "output_sha256": "7b68629dda54ec22c210345359a8e5a0184465b88ef54aeebbfb517a4a940ac1",
+    "output_dimensions": [
+      1086,
+      1448
+    ],
+    "output_drive_file_id": "1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj",
+    "output_drive_url": "https://drive.google.com/file/d/1zxTHFxd-hOVQteRHZZ9ZhAmhY0ROslaj/view?usp=drivesdk",
+    "conclusion": "LIBRARY_ATTACHMENT_PATH_SUPPORTED_BY_ONE_VALID_SAMPLE",
+    "proves_vpd_value": false
+  },
+  "library_native_ab_v1": {
+    "status": "BLIND_REVIEW_COMPLETE_B_SUPPORTED_AS_CANDIDATE",
+    "experiment_id": "VPD-LIBRARY-NATIVE-AB-V1-RICE-GRANARY",
+    "prep": {
+      "path": "evidence/vpd/library_native_ab_v1/LIBRARY_BOUND_NATIVE_AB_PREP_20260922.json",
+      "git_blob_sha": "dab667ecb4902ebd690d7546d1b3bbcabc8092e5"
+    },
+    "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "proposed_images": 2,
+    "authorized_images": 2,
+    "retry_budget": 0,
+    "route_A": {
+      "sha256": "9783209903ab8bfaebc2c1e08cc7e7adb1ee904d7dd4e6229fdc037a25c9f741",
+      "dimensions": [
+        1152,
+        1536
+      ],
+      "drive_file_id": "1nUjKLqSxHOdQICYHA2I3fVFICqhwcdlI",
+      "drive_url": "https://drive.google.com/file/d/1nUjKLqSxHOdQICYHA2I3fVFICqhwcdlI/view?usp=drivesdk",
+      "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
+    },
+    "route_B": {
+      "sha256": "3350ecf4fca3e7bbff16b9a864a468243d077a6ef8628376d0b52c0c3bf7bc67",
+      "dimensions": [
+        1152,
+        1536
+      ],
+      "drive_file_id": "1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K",
+      "drive_url": "https://drive.google.com/file/d/1ulIcxljINx8u5cL3NBuMxBxW7lSDZZ2K/view?usp=drivesdk",
+      "correctness": "PASS_WITH_MINOR_FOREST_SCENERY_VIOLATION"
+    },
+    "next": "PREPARE_SECOND_NEW_CONTENT_LIBRARY_BOUND_AB_NO_GENERATION",
+    "user_authorization": "允许 Library A/B 两张",
+    "actual_generated_images_spent": 2,
+    "formal_valid_images": 0,
+    "controller_execution_error": {
+      "path": "evidence/vpd/library_native_ab_v1/CONTROLLER_EXECUTION_ERROR_20260922.json",
+      "git_blob_sha": "53c6906415fce8e2034257bcc1676092fac15461"
+    },
+    "accidental_outputs": [
+      {
+        "gen_id": "b6d674be-4176-496b-aedd-c30d80112ebc",
+        "runtime_file_id": "file_00000000485c81f58c84a4f90d035ccf"
+      },
+      {
+        "gen_id": "6fb75e49-75c5-4892-8b27-67e4063de853",
+        "runtime_file_id": "file_00000000025481fda1bf078ad12e35fb"
+      }
+    ],
+    "automatic_retry_authorized": false,
+    "current_chat_render_eligible": false,
+    "replacement_authorized_images": 2,
+    "replacement_route_A_authorized": 1,
+    "replacement_route_B_authorized": 1,
+    "replacement_retry_budget": 0,
+    "route_A_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_A_TO_FRESH_CHAT_20260922.txt",
+    "route_B_ticket": "evidence/vpd/library_native_ab_v1/COPY_ROUTE_B_TO_FRESH_CHAT_20260922.txt",
+    "replacement_formal_valid_images": 2,
+    "visual_review": {
+      "path": "evidence/vpd/library_native_ab_v1/REPLACEMENT_PAIR_VISUAL_REVIEW_20260922.json",
+      "git_blob_sha": "d6a0e279bfb6602acfd8dda7e99650960eb6409c"
+    },
+    "qualitative_signal": "B_SUPPORTED_BY_KNOWN_LABEL_REVIEW_AND_INDEPENDENT_BLIND_REVIEW",
+    "blind_review": {
+      "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR1",
+      "mapping_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_MAPPING_20260922.json",
+      "mapping_git_blob_sha": "a0462d8315cc07b6229b53683439d90030f46410",
+      "evaluator_prompt_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_EVALUATOR_PROMPT_20260922.txt",
+      "evaluator_prompt_git_blob_sha": "fda4f00bbde4685f9d072f6e172cfa10d4f5d3d6",
+      "feedback_path": "evidence/vpd/library_native_ab_v1/USER_PREFERENCE_B_WITH_PRIMING_CAVEAT_20260922.json",
+      "feedback_git_blob_sha": "a2308508b9f0ca6b44acc8d30f9fd21234c10902",
+      "library_X_path": "/VPD_BLIND_REVIEW/PAIR1_X.jpg",
+      "library_Y_path": "/VPD_BLIND_REVIEW/PAIR1_Y.jpg",
+      "evaluator_must_not_know_route_mapping": true,
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v1/BLIND_PAIR1_RESULT_20260923.json",
+      "result_git_blob_sha": "09c777f4816a53f61a5221095192aeb3ff41a033",
+      "winner_blind_label": "X",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
+    },
+    "execution_isolation_provenance": "NOT_INDEPENDENTLY_VERIFIED_FROM_FRESH_CHAT_HANDOFFS",
+    "style_capsule_promotion_allowed": false,
+    "user_preference": "B",
+    "user_preference_blind": false,
+    "user_priming_caveat": true,
+    "integration_decision": "CANDIDATE_ONLY_PENDING_SECOND_NEW_CONTENT_REPLICATION",
+    "compact_vpd_candidate": {
+      "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+      "path": "evidence/vpd/library_native_ab_v1/COMPACT_VPD_6_CONTROL_CANDIDATE_R1_20260923.json",
+      "git_blob_sha": "2f3935df0fcc70a9dc7a7f956ad3c0ee9b7e0c04",
+      "status": "CANDIDATE_ACCEPTED_FOR_REPLICATION_NOT_PROMOTED"
+    },
+    "stable_baseline_replacement_allowed": false
+  },
+  "library_native_ab_v2": {
+    "status": "PAIR2_BLIND_COMPLETE_B_WINS",
+    "experiment_id": "VPD-LIBRARY-NATIVE-AB-V2-TOFU-WORKSHOP",
+    "freeze": {
+      "path": "evidence/vpd/library_native_ab_v2/SECOND_CONTENT_TOFU_AB_FREEZE_20260923.json",
+      "git_blob_sha": "51254c0ae9a7999241b347d821a64fc1468478ba"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_A_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "ddb10c42a6c6e6dd6d0df600b0c011dc11b00d87"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/library_native_ab_v2/COPY_ROUTE_B_TO_FRESH_CHAT_20260923.txt",
+      "git_blob_sha": "085d7f4862560a96b3ac16568667527e08d2a75c"
+    },
+    "blind_evaluator_prompt": {
+      "path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_frozen": true
+    },
+    "reference_source": "CHATGPT_LIBRARY_ATTACHMENT",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "content": "TRADITIONAL_TOFU_WORKSHOP",
+    "proposed_images": 2,
+    "authorized_images": 2,
+    "retry_budget": 0,
+    "current_chat_render_eligible": false,
+    "next": "PRODUCTION_VALIDATION_PREP",
+    "execution_status": "COMPLETED_EXTERNALLY_AND_RETURNED_BY_USER",
+    "output_receipt": {
+      "path": "evidence/vpd/library_native_ab_v2/PAIR2_OUTPUT_RECEIPT_20260923.json",
+      "git_blob_sha": "7fcec5e7c96f8d9a90c4b713ff1f1bc3298d0d3a"
+    },
+    "route_A": {
+      "sha256": "43b20778ba663fa01627e4150a65a177891073b39d34c471c7d6320c6d38eb6c",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1dxwZpEkU5e3dH6da8NNekBs829BQi8rH",
+      "drive_url": "https://drive.google.com/file/d/1dxwZpEkU5e3dH6da8NNekBs829BQi8rH/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "route_B": {
+      "sha256": "9f894b7049d711a5e6fd82e44c39f821dd00e0ba730e157dbcee69f1f5fb6d17",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mime_type": "image/png",
+      "drive_file_id": "1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd",
+      "drive_url": "https://drive.google.com/file/d/1ql9qKyiO8c2P-rzNAx1xzWiWPLSCIitd/view?usp=drivesdk",
+      "correctness": "PASS"
+    },
+    "blind_review": {
+      "pair_id": "VPD-LIBRARY-NATIVE-AB-BLIND-PAIR2",
+      "mapping_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_MAPPING_20260923.json",
+      "mapping_git_blob_sha": "d074a8fb7ff6bb5bef41547c610f0a414e3e8dc9",
+      "evaluator_prompt_path": "evidence/vpd/library_native_ab_v2/BLIND_EVALUATOR_PROMPT_PREMAPPING_20260923.txt",
+      "evaluator_prompt_git_blob_sha": "93e82156a001c04b7ef1adb7c50c0f132efd92aa",
+      "pre_mapping_prompt_frozen": true,
+      "library_X_path": "/VPD_BLIND_REVIEW/PAIR2_X.png",
+      "library_Y_path": "/VPD_BLIND_REVIEW/PAIR2_Y.png",
+      "evaluator_must_not_know_route_mapping": true,
+      "result_status": "COMPLETE",
+      "result_path": "evidence/vpd/library_native_ab_v2/PAIR2_BLIND_RESULT_20260923.json",
+      "result_git_blob_sha": "1f81f8a474fb7231bf88ef3e206eb459b3691f0a",
+      "winner_blind_label": "Y",
+      "revealed_route": "B",
+      "confidence": "MEDIUM"
+    },
+    "known_label_aesthetic_review_performed": false,
+    "style_capsule_promotion_allowed": false,
+    "stable_baseline_replacement_allowed": false
+  },
+  "compact_vpd_6_control_candidate": {
+    "id": "COMPACT_VPD_6_CONTROL_CANDIDATE_R1",
+    "status": "REPLICATED_FIRST_FAMILY_MECHANISM_CANDIDATE_READY_FOR_PRODUCTION_INTEGRATION_TEST",
+    "blind_replication_summary": {
+      "pair1": {
+        "content": "WORKING_RICE_GRANARY",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "pair2": {
+        "content": "TRADITIONAL_TOFU_WORKSHOP",
+        "winner_route": "B",
+        "confidence": "MEDIUM"
+      },
+      "consistent_direction": true
+    },
+    "settlement": {
+      "path": "evidence/vpd/library_native_ab_v2/COMPACT_VPD_REPLICATION_SETTLEMENT_20260923.json",
+      "git_blob_sha": "e7c7510115060cfd998dfb081a20156abf68ce18"
+    },
+    "controls_changed": false,
+    "add_more_rules": false,
+    "stable_baseline_replacement_allowed": false,
+    "style_capsule_promotion_allowed": false,
+    "local_equal_budget_figma_test_allowed": true
+  },
+  "cross_aspect_photo_only_ab": {
+    "status": "RELATIVE_ROUTE_B_WIN_HUMAN_ABSOLUTE_QUALITY_FAIL_AI_FEEL",
+    "experiment_id": "VPD-COMPACT-CROSS-ASPECT-9X16-PHOTO-ONLY-AB-V1",
+    "result": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_EXECUTION_AND_BLIND_RESULT_20260925.json",
+      "sha256": "beb74fb40857601cd9585e868ce88d246e8d96060e54998b1133129d7ff51f6e"
+    },
+    "blind_outcome": "ROUTE_B_WINS_MEDIUM",
+    "correctness": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "aspect_reflow": {
+      "A": "PASS",
+      "B": "PASS"
+    },
+    "budget": {
+      "proposed_images": 2,
+      "authorized_images": 2,
+      "route_A_images": 1,
+      "route_B_images": 1,
+      "retry_budget": 0,
+      "no_third_image": true,
+      "consumed_images": 2,
+      "remaining_images": 0
+    },
+    "next_required_action": "WAIT_FOR_USER_AUTHORIZATION_P4_SHARED_BASE_REALISM_REPAIR_AB_TWO_IMAGES",
+    "human_absolute_quality": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_HUMAN_ABSOLUTE_QUALITY_VERDICT_20260925.json",
+      "sha256": "4403cb620e769806b6e338566d5a2bfb38008f6eb4d6c4207cdcd0f817e9bad6",
+      "set_verdict": "FAIL_BOTH_OBVIOUS_AI_LOOK"
+    },
+    "ai_feel_diagnosis": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
+      "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "p4_quality_gate": "FAIL"
+  },
+  "p5_gate": {
+    "status": "BLOCKED_P4_GOLDEN_GATE_FAIL_BOTH",
+    "mechanism_evidence": "RELATIVE_SIGNAL_PRESERVED",
+    "absolute_visual_quality": "FAIL_BOTH_OBVIOUS_AI_LOOK",
+    "complete_design_sample_acceptance": "NOT_SATISFIED",
+    "second_style_execution_allowed": false,
+    "next_required_action": "REVIEW_P4_GOLDEN_GATE_FAIL_AND_DEFINE_NEXT_NON_GENERATIVE_REALISM_REPAIR_STRATEGY"
+  },
+  "p4_shared_base_realism_repair": {
+    "status": "EXECUTION_COMPLETE_ABSOLUTE_REALISM_FAIL_BOTH",
+    "diagnosis": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/CROSS_ASPECT_9_16_AI_FEEL_DIAGNOSIS_AND_SHARED_BASE_REPAIR_PREP_20260925.json",
+      "sha256": "4fdbccae82f04f21cb02f3f778c4c1fd51aa89c3994f6a085fca8587d3a28ed0"
+    },
+    "prep": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_PREP_20260925.json",
+      "sha256": "dd7469dc22b609d090c05077cf165de9851a05caf2f74c9a015975c0b8b6d67f"
+    },
+    "route_A_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_A_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "02ea68e3df052d10b391af9ce75e6d3144ebd2cb317dfe56c0a96a07bc8489f8"
+    },
+    "route_B_ticket": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/COPY_GOLDEN_GATED_REALISM_REPAIR_ROUTE_B_9_16_TO_FRESH_CHAT_20260925.txt",
+      "sha256": "d19436f0dd9691a40d4d62ff812fb0cb137be7ea511a7eca29770ef9a1c7b317"
+    },
+    "evaluator_prompt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/GOLDEN_GATED_REALISM_REPAIR_EVALUATOR_PROMPT_20260925.txt",
+      "sha256": "69c14bf0cb9cc041cd4cda90d8f22e3bec41e53ad871f5dd6b9d893066aaca02"
+    },
+    "proposed_images": 2,
+    "authorized_images": 2,
+    "route_A_images": 1,
+    "route_B_images": 1,
+    "retry_budget": 0,
+    "no_third_image": true,
+    "authorization": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_AUTHORIZATION_20260925.json",
+      "sha256": "482bf4f77ab672bf5148fe079f46e1b16c7dc854fd2e28a6a11609353848e165"
+    },
+    "result": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_RESULT_20260925.json",
+      "sha256": "3b775fbae4a19102a46f435e2edadc81be8c1aa7c82b38fd4e4666084e32ee97"
+    },
+    "evaluator_receipt": {
+      "path": "evidence/vpd/cross_aspect_photo_only_ab_v1/P4_GOLDEN_GATED_SHARED_BASE_REALISM_REPAIR_EVALUATOR_RECEIPT_20260925.json",
+      "sha256": "6609071ec3e65824c14b1b2bc12f3fffd21a33e84c7337ad58e9dd7a3e70ba6b"
+    },
+    "consumed_images": 2,
+    "remaining_images": 0,
+    "mapping_status": "SEALED_NOT_REVEALED",
+    "relative_comparison_allowed": false,
+    "absolute_realism_gate": {
+      "X": "FAIL",
+      "Y": "FAIL",
+      "confidence": "HIGH"
+    }
+  },
+  "visual_master_freeze_guard": {
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
+  },
+  "photographic_realism_golden": {
+    "status": "ACTIVE_ACTUAL_PIXEL_REGRESSION_ANCHOR",
+    "baseline": {
+      "path": "evidence/vpd/visual_regression_golden_v1/MUSHROOM_PHOTOGRAPHIC_REALISM_GOLDEN_BASELINE_20260925.json",
+      "sha256": "087338a6b68e6fc46293f67d7c185bd2ec913a21ab8c81d10cda4a588db51d5a"
+    },
+    "regression_gate": {
+      "path": "evidence/vpd/visual_regression_golden_v1/PHOTOGRAPHY_REALISM_GOLDEN_REGRESSION_GATE_V1.json",
+      "sha256": "8521c45b372365c8f80cc59c331541c968255e5628528e8bf4d14c03cd5f9e75"
+    },
+    "runtime_generation_anchor_unchanged": true
+  },
+  "standing_authorization_policy": {
+    "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
+    "sha256": "5cc42e813e7bee38f57bf533d94dc0380ce620d734f5dbbfeb3e092dbb55ce08",
+    "status": "ACTIVE",
+    "semantics": "AUTO_AUTHORIZE_UNIQUE_FROZEN_SUCCESSOR_ONLY__NO_BUDGET_OR_STAGE_EXPANSION",
+    "operational_amendment": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/OPERATIONAL_CONTINUATION.json",
+      "sha256": "ee57aed56fbe5496ee04abb311997c375f5aab1d58a1cb37e535a4718be492fd"
+    }
+  },
+  "baseline_preservation": {
+    "path": "continuity/vpd/VISUAL_MASTER_FREEZE_GUARD_V1.json",
+    "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
+  },
+  "preserved_mainline_projection_before_20261001": {
+    "snapshot": {
+      "path": "continuity/vpd/history/mainline_lock_20261001/PROJECT_CONTROL_ADAPTER.json",
+      "sha256": "17034ab5c40c6efa2e70c16309388e3bed7fdafcb18878c95e94839b97d89147"
+    },
+    "status": "HISTORICAL_ONLY_NOT_CURRENT_DISPATCH"
+  },
+  "mainline_lock": {
+    "id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+    "version": "1.0",
+    "locked": true,
+    "plan": {
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed"
+    },
+    "contract": {
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9"
+    },
+    "authority": {
+      "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
+      "sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace"
+    },
+    "preservation": {
+      "path": "continuity/vpd/history/mainline_lock_20261001/PRESERVATION_MANIFEST.json",
+      "sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd"
+    },
+    "enforcement_scope": "REPOSITORY_INSTRUCTIONS_AND_COOPERATING_STATE_CHECKS_NOT_HOST_GLOBAL_LOCK"
+  },
+  "coordinator_return_route": {
+    "requested_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
+    "prior_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abdae86-15e8-83ea-ad97-7030bbf4cfb9",
+    "callback_binding_status": "VERIFIED_ACTIVE_CURRENT_COORDINATOR",
+    "expected_callback_id": "VPD-COORDINATOR-ROUTE-ACK-20261002-01",
+    "target_verification": "VERIFIED_BY_ACTUAL_RECIPIENT_MESSAGE",
+    "route_repair": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/ROUTE_REPAIR.json",
+      "sha256": "0a816d084d11c04562ca66e29c341e0da9aaa023466bc11967ababf45012ff7c"
+    },
+    "active_callback_url": "https://chatgpt.com/g/g-p-6a41dcaf979c8191ba864f600efb359d/c/6abef4bd-81ac-83ea-ae1f-6d74fb9f4e9f",
+    "last_processed_callback_id": "VPD-COORDINATOR-ROUTE-ACK-RETRY-20261002-01",
+    "callback_receipt": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/RETRY_CALLBACK_RECEIPT.json",
+      "sha256": "10ffd27fb4a3ca778362631934688547a85355a8b39db42bbae155ba842bdab3"
+    },
+    "pending_callback": false,
+    "next_transport_action": "NONE_CURRENT_ROUTE_TEST_COMPLETE",
+    "prior_callback_receipt": {
+      "path": "continuity/vpd/coordinator_route_repair_20261002/CALLBACK_RECEIPT.json",
+      "sha256": "36afc364fefbb9c62599de1b667a87c46e126f2716eda448ab35302f81bb921a"
+    },
+    "callback_tests_processed": 2
+  }
+}
