@@ -32,6 +32,7 @@
 | V18 | [完整PNG](https://drive.google.com/file/d/1ghN-vHZ_bidYG2_CkHwt52CuwsGKmwma/view) | [354:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=354-2) | AI_FAIL；真人PENDING |
 | V19 | [完整PNG](https://drive.google.com/file/d/1yhnl8FIxlPpmGR0V6dg4F7LJngSzlEwp/view) | [359:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=359-2) | AI_FAIL；真人PENDING |
 | V20 | [完整PNG](https://drive.google.com/file/d/1OteRk6R5QoK7bId9HO8dAVkYN3ar26U6/view) | [362:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=362-2) | AI_FAIL；真人PENDING |
+| V21 | [完整PNG](https://drive.google.com/file/d/1vvEQqZkxpL1QkSRaKcUY55niJNnRXLdt/view) | [364:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=364-2) | AI_FAIL；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -107,3 +108,7 @@ V19只将V18整句affine下移18px，真实杯前景遮字523px、慢底单笔46
 V20已制作真实细笔主句46原创filled cubic paths/7字标点组，品牌原字形及产品mask不改，零图像生成/零字体导入。Figma362:2实查54VECTOR/1mask/0TEXT；Drive完整PNG与headline SVG HTTP200逐字节匹配。框外1383894及固定产品核心162052 RGB差0；真实319核心最大1级渲染舍入机械回填记录保留。全新项目外Sol/Max263947ms五图冷审AI_FAIL：杯、慢、下来笔形收笔与底线不统一；杯口/叶尖/盘沿未形成明确负形；品牌入口与主句缺组织。此次冷审附实际T像素区域，定位证据可核对，但流程改进不证明视觉收益。不得把技术通过、没有遮字或完成图当审美通过。
 
 2026-10-04用户增加adaptive-orchestrator调度指令；实际找到全局C:/Users/Administrator/.agents/skills/adaptive-orchestrator/SKILL.md，原入口、四参考与两个脚本实际读取，version_check CURRENT，route实际DEEP。两种不同失败方法触发全新Astra/xhigh只读深度诊断，既有Sol/Max制作角色继续有限方法研究；Root核定唯一制作决策后执行，禁止并行候选和业务状态覆盖。当前工具不支持agent_type，已读deep-expert TOML并通过显式模型/fork-none通用子代理传递行为；不宣称custom配置或独立sandbox已应用。全局skill不修改、没有许可声明不复制成公开安装包，原项目外冷审路线不替换。后续只读最新任务锁，不执行本段历史待诊断动作。
+
+V21真实采用固定Adobe Source Han Serif SC Regular 2.003完整OFL1.1源字体，通过FontTools4.63.0提取7完整compound glyph/26源轮廓，0字形修改，两行“一杯茶，／慢下来”；V9品牌七路径原字节不变，仅等比位置调整。Figma364:2实际15VECTOR/1mask/0TEXT，源摄影7fd7777f/图像hash074a11ff/变换滤镜不改，框外1421312与固定核心162052 RGB0。Drive完整PNG1vvEQqZkxpL1QkSRaKcUY55niJNnRXLdt/SVG14JhrS1GgO9Wg19PXLlndV9ccStGkI4Jb实际HTTP200逐字节一致；无需核心额外回填。项目外新Sol/Max229555ms五正确原图独立冷审AI_FAIL，整体字群印刷语气、右重及产品邻近未形成可见关系。冷审把品牌y198误写成y4，Root保留原意见与失败结果并另列事实局限，不据错误位置移动品牌。专业技术TECHNICAL_PASS_WITH_LIMITATIONS；Root生产回执formal_version误留20，精确旧字节与20→21修复均保存并由技术审查回读确认；当前修复不改制作调用/作品/冷审，原生下一次引用已刷新。成熟字体方案的视觉收益未得到验证，DEEP预测与实际失败分别保留，不能包装成改进。
+
+Root另查摄影源冻结与成品产品核心RGB零差异是否存在人为扩大约束，交全新只读Astra/high挑战核对原始真人授权和原生合同；在结论和必要实现复验前，不改现有保护规则、不制作下一版。挑战不是项目外冷审替代，不授权worker改主线。后继唯一动作仍是同方向依据实际证据修订；请只执行最新原生锁，不把此历史待审说明当新状态。

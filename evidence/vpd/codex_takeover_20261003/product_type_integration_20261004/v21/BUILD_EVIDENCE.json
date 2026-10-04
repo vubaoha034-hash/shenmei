@@ -1,0 +1,184 @@
+{
+  "schema": "vpd-v21-minimal-builder-evidence/v1",
+  "write_invocations": [
+    {
+      "tool_chunk": "78cf9d",
+      "exit_code": 1,
+      "result": "Import failed before main/output creation: adding the existing FontTools site path before bundled Pillow exposed an unreadable optional defusedxml module. Corrected import order; no design change."
+    },
+    {
+      "tool_chunk": "a3e6bc",
+      "exit_code": 0,
+      "result": {
+        "mode": "write",
+        "action": "wrote-new",
+        "writes": 7,
+        "svg_chars": 5246,
+        "compound_paths": 7,
+        "source_contours": 26,
+        "bbox": [
+          994,
+          355,
+          1483,
+          623
+        ],
+        "core_pixels": 162052,
+        "core_RGB_differences": 0,
+        "full_mask_RGB_differences": 0,
+        "outside_RGB_differences": 0,
+        "glyph_mask_loss": [
+          {
+            "cid": "cid09511",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid20810",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid33872",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid58986",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid18201",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid09524",
+            "pixels": 0,
+            "components_equal": true
+          },
+          {
+            "cid": "cid20797",
+            "pixels": 0,
+            "components_equal": true
+          }
+        ],
+        "headline": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/headline.svg",
+          "sha256": "aac96d057a5aac35fac54fb309bdd108aa93bad0a052f66ffe41fcc99aa2fc31",
+          "bytes": 5274
+        },
+        "preview": {
+          "path": ".liu-visual-private/correct_source_typography/v21/preview.png",
+          "sha256": "1bf303ec7eea51fa5e7414d5d3cbe92311f646a685b6bc4cf9ff3b70ed0db023",
+          "bytes": 2035071
+        },
+        "manifest": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/MANIFEST.json",
+          "sha256": "06c09a72f0f260aa16d4ce0bd4c9e95f6328c5a263ac0ce9c45765a85db90dc9",
+          "bytes": 30489
+        },
+        "root_gate": {
+          "revision": 316,
+          "phase": "REVISION_REQUIRED",
+          "last_version": 20,
+          "verdict": "AI_FAIL",
+          "lock_sha256": "84335df35926e748e10c69b7d370ed139c1f7e6ca3cbf1ae72057ee46c954d6a"
+        }
+      }
+    }
+  ],
+  "verification_tool_chunk": "c2a484",
+  "checks": [
+    {
+      "label": "verify-only-existing",
+      "exit_code": 0,
+      "writes": 0,
+      "action": "verified-existing"
+    },
+    {
+      "label": "wrong-source-path",
+      "exit_code": 1,
+      "rejection": "AssertionError: SOURCE_PHOTO_PATH_IDENTITY_MISMATCH"
+    },
+    {
+      "label": "existing-artwork-write-rejected",
+      "exit_code": 1,
+      "rejection": "AssertionError: OUTPUT_ALREADY_EXISTS"
+    },
+    {
+      "label": "wrong-source-hash-in-memory",
+      "exit_code": 1,
+      "rejection": "AssertionError: FIXED_SOURCE_CHANGED:photo"
+    }
+  ],
+  "snapshot_targets": 14,
+  "all_snapshot_SHA_and_mtime_unchanged": true,
+  "wrong_hash_test_boundary": "Subprocess supplies wrong bytes to the read-only photo input in memory; real source file never changed.",
+  "leaf_white_region": {
+    "tested_white_region": [
+      994,
+      555,
+      1015,
+      623
+    ],
+    "fixed_mask_nonzero_pixels_in_region": 368,
+    "fixed_mask_bbox_inside_region": [
+      994,
+      574,
+      1006,
+      623
+    ],
+    "interpretation": "Actual product mask enters the lower-left blank of the first lower glyph; glyph alpha/mask intersection remains zero. This is a position observation, not fusion certification."
+  },
+  "glyph_components": [
+    {
+      "CID": "cid09511",
+      "before": 1,
+      "after": 1,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid20810",
+      "before": 3,
+      "after": 3,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid33872",
+      "before": 5,
+      "after": 5,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid58986",
+      "before": 1,
+      "after": 1,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid18201",
+      "before": 6,
+      "after": 6,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid09524",
+      "before": 1,
+      "after": 1,
+      "maskloss": 0
+    },
+    {
+      "CID": "cid20797",
+      "before": 3,
+      "after": 3,
+      "maskloss": 0
+    }
+  ],
+  "new_imagegen_calls": 0,
+  "private_fullpreview_files": 1,
+  "artwork_candidates": 1,
+  "business_state_writes": 0,
+  "Figma_Drive_Git_writes": 0,
+  "aesthetic_verdict": null
+}
