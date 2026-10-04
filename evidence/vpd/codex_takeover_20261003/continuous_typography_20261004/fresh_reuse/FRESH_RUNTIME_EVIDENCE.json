@@ -1,0 +1,1338 @@
+{
+  "schema_version": "vpd-repository-only-fresh-context-runtime-evidence/v1",
+  "recorded_at": "2026-10-04T02:47:39.346770+00:00",
+  "thread_id": "01a104be-a21b-7893-919a-e9e36b0c8c46",
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004",
+  "source": "vscode",
+  "new_projectless_thread_verified": true,
+  "forked_from_id": null,
+  "one_fresh_turn_context": true,
+  "completed": true,
+  "initial_prompt_ref": {
+    "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/fresh_reuse/FRESH_WORKER_PROMPT.txt",
+    "sha256": "08f9b8bf11735f3057a645a8024a19b1b49004b74ca489f69ef69097c1c8265d"
+  },
+  "initial_prompt_plaintext_byte_binding": "NOT_VERIFIABLE_PROMPT_NOT_EXPOSED_IN_CHILD_MESSAGE_RECORDS",
+  "observable_user_inputs": [
+    {
+      "sha256": "e9eca7e6149e8cf7e01619a61ca773c2c0a7e20269dd6bdd833a48c22e6c9eac",
+      "characters": 2526,
+      "contains_only_observable_environment_context": true
+    }
+  ],
+  "actual_creator_call_id": "call_toWrKSS8crzIsMh9wZhkKspL",
+  "actual_creator_input_sha256": "d94bfdfc516b49c82106c6ed0dc93729d22528c006d338c08093c8a2d9e7cba8",
+  "actual_returned_thread_id": "01a104be-a21b-7893-919a-e9e36b0c8c46",
+  "actual_creation_response_sha256": "0c70cd4ce6fd2dba0fd2f2046e666a43a2390ad8055b681e4bbd6ca4711e45ab",
+  "creation_input": "const root=load(\"repoRoot\"),sha=load(\"v9GitCloudCommit\"),reads=load(\"v9RemoteReadRows\").map(r=>r.value);\nawait tools.apply_patch(\"*** Begin Patch\\n*** Add File: \"+root+\"/.liu-visual-private/v9-github-independent-readback.json\\n\"+JSON.stringify({cloud_commit:sha,local_commit:\"1686bfda1dfe5bfa1e2903e3e5616b6e41f0ff5c\",tree:\"316df1495d5513dd7318f7bf24f07857bbc78dbe\",reads},null,2).split(\"\\n\").map(x=>\"+\"+x).join(\"\\n\")+\"\\n*** End Patch\");\ntext(await tools.apply_patch(\"*** Begin Patch\\n*** Add File: \"+root+\"/.liu-visual-private/converge-v9-cloud.py\\n+from pathlib import Path\\n+import json,subprocess\\n+r=Path.cwd();v=json.loads((r/'.liu-visual-private/v9-github-independent-readback.json').read_text(encoding='utf-8'))\\n+def git(*a):return subprocess.check_output(['git',*a],cwd=r,text=True).strip()\\n+assert git('rev-parse','HEAD')==v['local_commit']\\n+assert not git('status','--porcelain')\\n+assert git('rev-parse',v['local_commit']+'^{tree}')==git('rev-parse',v['cloud_commit']+'^{tree}')==v['tree']\\n+for x in v['reads']:assert git('rev-parse',v['local_commit']+':'+x['path'])==x['sha'],x['path']\\n+subprocess.run(['git','diff','--exit-code',v['local_commit'],v['cloud_commit']],cwd=r,check=True)\\n+assert git('rev-parse','codex/v9-local-publication-snapshot-20261004')==v['local_commit']\\n+subprocess.run(['git','reset','--soft',v['cloud_commit']],cwd=r,check=True)\\n+assert git('rev-parse','HEAD')==v['cloud_commit'] and not git('status','--porcelain')\\n+print(json.dumps({'remote_commit':v['cloud_commit'],'same_tree':v['tree'],'independent_fixed_remote_blob_reads_match':len(v['reads']),'local_creation_commit_preserved':'codex/v9-local-publication-snapshot-20261004','worktree_and_index_unchanged':True,'clean':True}))\\n*** End Patch\"));\ntext(await tools.exec_command({cmd:\"& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 -B .liu-visual-private/converge-v9-cloud.py\",workdir:root,max_output_tokens:1600}));\nconst prompt=`你是全新的只读恢复验证 worker。请仅凭权威仓库入口检验 ChatGPT/Codex 能否恢复当前工作、找到并实际使用成品；不要读取任何此前任务聊天、别的session、原执行者工作目录或图片缓存。不要制作新作品、上传文件、修改业务状态/主线或引用创作者预期结果。根执行者才有业务状态写入权。\\n仓库 https://github.com/vubaoha034-hash/shenmei ，分支 visual-program-distillation-v2-photography-design-20260814，固定核验提交 ${sha}。在你自己的工作目录中新建空目录，实际从远端克隆到那里，核验HEAD等于固定提交；不复制现有本机仓库。若Git网络失败，允许一次官方固定提交源码下载恢复，明确标注snapshot与未验证Git clone，不能伪称完整克隆。TLS不得关闭。\\n从START_HERE.md开始，按入口读取AGENTS.md、PROJECT_CONTROL_ADAPTER.json、VPD_PROJECT_ROADMAP.md、原生任务锁与检查点、必要合同、当前复用入口和证据。自己从锁推导真正当前版本、结论、真人状态、预算和唯一下一动作，不按历史下一步继续。执行入口原有状态检查，缺少图片时从仓库固定Drive回执推导所有需要的文件身份，使用连接的Drive fetch真实原字节，按原生恢复脚本保存到克隆的Git忽略私有目录，再运行检查。不得用演示数据或另一任务缓存。\\n实际view_image看恢复的当前完整海报和冻结摄影；实际通过连接Figma读取仓库指定当前源节点及可编辑性；验证仓库当前SVG资产可读取并给准确路径及SHA。只验证使用/恢复，不再审美评级。所有失败与恢复路径如实记录；检查需要依赖时可用load_workspace_dependencies，不装付费服务、不生成图。允许为该验证写你自己的私有下载缓存及报告，禁止写任何项目原生锁/检查点/账本。\\n保存严格JSON报告到你自己的工作目录 FRESH_REPOSITORY_ENTRY_REUSE_REPORT.json。包含实际固定commit、actual_model/effort的可观察配置（无法核对则NOT_VERIFIED）、实际远端来源与clone/snapshot、所读入口、推导状态、所有Drive原字节恢复与SHA/数量、原生检查实际exit/result、实际像素观看、Figma实际访问与节点/可编辑性、SVG可用性、依赖与限制、business_state_writes=0、artwork_generations=0、结果PASS或带准确缺失项的失败、报告路径。最终返回简洁严格JSON与报告准确绝对路径。`;\nstore(\"v9FreshEntryPrompt\",prompt);\nconst r=await tools.mcp__codex_app__create_thread({model:\"gpt-6.1-sol\",thinking:\"max\",title:\"仓库入口全新恢复验证\",target:{type:\"projectless\",directoryName:\"chazuo-fresh-repository-reuse-20261004\"},prompt});\nstore(\"v9FreshEntryCreation\",r);text(r);\n",
+  "actual_image_views": [
+    {
+      "path": "C:/Users/Administrator/Documents/Codex/2026-10-04/chazuo-fresh-repository-reuse-20261004/fresh_remote/.liu-visual-private/correct_source_typography/v9/poster.png",
+      "sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23",
+      "timestamp": "2026-10-04T02:36:21.146Z"
+    },
+    {
+      "path": "C:/Users/Administrator/Documents/Codex/2026-10-04/chazuo-fresh-repository-reuse-20261004/fresh_remote/.liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "timestamp": "2026-10-04T02:36:21.150Z"
+    }
+  ],
+  "actual_tool_calls": [
+    {
+      "call_id": "call_4uzalbt98b1U63xg1CRkwe3u",
+      "name": "exec",
+      "input_sha256": "67c120d2d8fc99a78614c06237c5f6a6b49eaa5ebed0d24c96837bdf9d9d768f",
+      "called_tools": [
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_4FtUW3PwOznXeFqsdY34rGLq",
+      "name": "exec",
+      "input_sha256": "f83f1aa634ca22866dfb8f3b688679ac3e5fc7e9652343ee9a8373d95986a34a",
+      "called_tools": [
+        "exec_command",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_xNs0dKBYGKopSaDxziWnHwQX",
+      "name": "exec",
+      "input_sha256": "f6f035f73977801c41dc2422358a679a3b6aaa1e3bc47b269e1396e3e5ed5882",
+      "called_tools": [
+        "exec_command",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_SVh81CysxzATVUocaryliF6O",
+      "name": "exec",
+      "input_sha256": "a59bc861930f84f1898320a1444597371f62b4a534a78e2b92a6f31e5ad4a265",
+      "called_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_53RkTTIUcHXTg5f7tkq37T9m",
+      "name": "exec",
+      "input_sha256": "8e42bef4f591cde5bcb5e3ebaec6789eda0423007c3223b967b54841206a4b18",
+      "called_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_Jm4rOSUOCQjPqUZwvXag7uFO",
+      "name": "exec",
+      "input_sha256": "65b18f7fe033dca3f6f798db49b4740df3466be8a9ce913fed6cc73a18275cae",
+      "called_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_AoPp8n9Pou669Gns6zv6POQ3",
+      "name": "exec",
+      "input_sha256": "37518f63a1dcfbd25f1187346205e295fbd40b01d2a6c6da4362423ccdaeffaf",
+      "called_tools": [
+        "exec_command",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_QMw9pFzaGdYyJYbRbh1B0onc",
+      "name": "exec",
+      "input_sha256": "c45566eb27b9e52c13c354e7f3dea2f9e4b6a730f524b11a35a33661459376ff",
+      "called_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_DaKoNqoQHUXrbddV4txDZPCc",
+      "name": "exec",
+      "input_sha256": "41ea24c70e1d772b7e04aa8cda2c50c738ae2caf22fc284ceceb338562eb9ee2",
+      "called_tools": [
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_obfbqxe595oSKwfeBXVoJjjQ",
+      "name": "exec",
+      "input_sha256": "675dd56ed68507d9f5f2af88f7c1f748c59c4c02117735378cb11cec8e2b5369",
+      "called_tools": [
+        "exec_command",
+        "mcp__codex_apps__google_drive_get_file_metadata"
+      ]
+    },
+    {
+      "call_id": "call_4kXtnGvmjvLaBkQQAvM03ClU",
+      "name": "exec",
+      "input_sha256": "acc10a1d64abe46733ca16e1d1738b37f78c1630353c9dd69e409d95ad74671a",
+      "called_tools": [
+        "mcp__codex_apps__google_drive_fetch",
+        "mcp__codex_apps__google_drive_get_file_metadata"
+      ]
+    },
+    {
+      "call_id": "call_dDLprfIO7ZZvjpZA1pdzVKKe",
+      "name": "exec",
+      "input_sha256": "e057faceb2c500b2af358ab96a1809ff7e48ea2d5e94fe2ff93d55350b9e60c2",
+      "called_tools": [
+        "mcp__codex_apps__google_drive_fetch",
+        "mcp__codex_apps__figma_use_figma"
+      ]
+    },
+    {
+      "call_id": "call_o9EQhGmk9CmZkvhiEwqcqr3Z",
+      "name": "exec",
+      "input_sha256": "1bc503e467829cc6cb61041cc7474bcc5fbef1d1c610e98f0a3b06467aaee09a",
+      "called_tools": [
+        "apply_patch",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_Ju3kXEjYAkgqaBWWzv9VrKII",
+      "name": "exec",
+      "input_sha256": "2e1afdc55f7dc226c3ca0e28e237fec9ab566b83952c8fe998980b8cb5d3355e",
+      "called_tools": [
+        "exec_command",
+        "view_image",
+        "view_image"
+      ]
+    },
+    {
+      "call_id": "call_77UTTrwiTUSQgnt3E8p2w424",
+      "name": "exec",
+      "input_sha256": "5fec23983e80ec7bf03007c70b447be1944f18c209c8c4769ab09c971ce6f54e",
+      "called_tools": [
+        "exec_command",
+        "write_stdin",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_edzyChZ61XNCOZ6DVBlN4G9z",
+      "name": "exec",
+      "input_sha256": "bc7ae108bdb162652db39d07efdbe5fdb013eaaffc5990e3ece1ef2455dc5720",
+      "called_tools": [
+        "mcp__codex_apps__google_drive_list_file_revisions",
+        "exec_command",
+        "write_stdin"
+      ]
+    },
+    {
+      "call_id": "call_H9gUM3XdOqWMZTUU6RlCAOhI",
+      "name": "exec",
+      "input_sha256": "f2e099d85a7eaebdbe42e07d93e74bee4669712efd3a453460446dab2957c60d",
+      "called_tools": [
+        "mcp__codex_app__load_workspace_dependencies",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_1wkEplkMId1dKLBteC8Vr0Jo",
+      "name": "exec",
+      "input_sha256": "4eedf81d2d98ff416012e0127ff07d0e0d10cb9de8fe91e68192de7c74c3338e",
+      "called_tools": [
+        "exec_command",
+        "exec_command",
+        "apply_patch",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_nCGcVFZWjmoM7egcnQU87IzX",
+      "name": "exec",
+      "input_sha256": "c8fc2114a455a4b7146389cf8b01189aba4097552348292bd948cb8d45099358",
+      "called_tools": [
+        "exec_command",
+        "write_stdin"
+      ]
+    },
+    {
+      "call_id": "call_nPzhHZHbSR6uWuF21wNjBznd",
+      "name": "exec",
+      "input_sha256": "a96697c91e3c484bb6ae07c7a258f0eb9a6e45fc64a2bf6c8a323ce0e365a6dc",
+      "called_tools": [
+        "apply_patch",
+        "apply_patch",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_5nbiQzxaendSNDC1l2lAQjoS",
+      "name": "exec",
+      "input_sha256": "dd7d3ccfc770cd7c4fea9d2283ca1ded8a18e1991eb3890392eac7e83c3b9616",
+      "called_tools": [
+        "apply_patch",
+        "exec_command",
+        "exec_command"
+      ]
+    },
+    {
+      "call_id": "call_FzOR6sA6PYjlCBCPfTsC0jiP",
+      "name": "exec",
+      "input_sha256": "4810a4af1f91bfd0947a7e7098718b9362d9f7141c21d9e69185dd7a15342f8c",
+      "called_tools": [
+        "exec_command",
+        "clock__curr_time",
+        "apply_patch"
+      ]
+    },
+    {
+      "call_id": "call_nu9cgqDZqkp0vUieUftqpckV",
+      "name": "exec",
+      "input_sha256": "97b8f1d8617235b1b2877064bf337da85bf85949a83a7ee8cebb673c3a88dc48",
+      "called_tools": [
+        "exec_command"
+      ]
+    }
+  ],
+  "raw_child_runtime_sha256": "f3a29f208c3e74202baf81b6915a0df7ec2e52f7a0143955280f6672dea2e85b",
+  "command_markers": [
+    {
+      "timestamp": "2026-10-04T02:29:41.020Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-84c91af7-72f5-42b3-8c8c-55e21005e307",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:30:06.326Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-117fb98f-0232-404f-a5f8-bc0f1979b58d",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:30:06.886Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-f349e493-ac84-4690-84da-a544ada9fa56",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:11.329Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-c2d582e8-5956-4d74-b867-46576841c771",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:38.680Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-329ecaa4-d346-4870-8432-2e4c0a5cbeff",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:40.409Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-e3a43caa-6981-4bd2-b072-d2fb53c19ee8",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:41.602Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-8167a78a-12ae-42f9-922c-306373355ebf",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:59.457Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-97145069-35b7-440d-880c-6a6a140b4a36",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:30:59.501Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-da0a0cf8-f14c-4765-b298-a7275ad41e6e",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:00.084Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-8f45df1a-d7d1-481f-bedb-2693539666cf",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:20.250Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-aee3cf74-b734-4a7a-9e40-b4037494f660",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:20.305Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-beebc36c-3ba2-4117-9578-f87e12ae3a24",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:20.313Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-914bfcac-d6af-45a1-9d7e-bf03ae2b371e",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:20.935Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-f6f4d027-689b-486e-89b3-0ed8f341b813",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:21.738Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-ee6f1db5-5763-4f52-9038-15febe989c31",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:41.826Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-95e5a5c8-9d03-46b6-97f6-3d7cd49cb3e3",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:41.853Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-6aaf3309-a032-4ebd-96ae-60606f4dc27b",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:42.697Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-83e33cd9-3026-47f2-a31f-bbce47ffd2aa",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:31:43.303Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-9ab2fd38-c2f3-48d5-93c1-ceb64ef1d81e",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:07.655Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-b4e38148-e8b3-462f-bae8-fa12ddf92634",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:07.697Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-b22f1e14-d457-42ed-987e-dba5f223de74",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:08.341Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-9cc835fc-664e-4a1f-a820-f20b244f6771",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:36.461Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-5dc52b29-3a99-4944-af98-9ebfc20f5bcb",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:36.525Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-9d393ce8-0779-4b92-93e5-afa4935a8d1d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:37.204Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-6780b747-c233-4115-bad9-c142dfc5e7a7",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:32:43.759Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-44602987-725f-4599-adbc-9fe1fd0c45ce",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:33:17.496Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-0792344a-ed2a-4e89-a58b-537e48499e00",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:33:18.122Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-878fdf4b-ef3a-4121-a522-2a251eec0e01",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:33:57.491Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-09d70f71-d6cb-4433-aad2-4fae40501128",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:35:54.539Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-4c6c0b76-d236-41cc-9f01-de2b73beb46e",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:37:09.114Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-0f62d408-1c3a-4011-9355-367d469d8a37",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:37:14.941Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-681fd38f-12f5-4751-9fdd-06d47055a08d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:37:21.252Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-f14f59a7-9f1f-4fce-956d-a057efc697e8",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:37:43.406Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-93a12e68-93ad-4221-b85b-40dcdf5f2c41",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:38:29.134Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-46959f46-93e5-4211-95cb-d59a20f721ea",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:38:31.268Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-43e831a9-9a39-4cac-a6a2-bb36d1ef4e05",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:39:41.480Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-bbbce4ba-3a9b-49f4-88f6-e785a94bc62d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:39:43.400Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-d215acd4-3d32-42d1-990e-8bd7a800a8af",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:40:46.330Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-5dfbb7bb-336e-4b86-8028-df42138b4603",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:41:12.490Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-57b3be5e-01e3-451f-a94d-78a3100e37ad",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:42:34.262Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-49b7d74b-8482-4190-9cf2-19b08b8aca65",
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "timestamp": "2026-10-04T02:42:34.925Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-8c4a9706-2d2b-42a9-8651-8ac12c21af6d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:43:31.236Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-f4c6cf7e-082a-4633-88cb-2c9584884c0d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:43:31.838Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-8ba62b44-bd11-4bcd-8085-c2c0c209870d",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:46:05.969Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-e2a83cf5-f5e2-42c9-bea0-bfd04de80a64",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:46:06.549Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-4a67e265-183c-461a-bec7-22d1f8c11270",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:46:07.196Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-2d6faaea-c1bd-4342-a2aa-8b8000777863",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "timestamp": "2026-10-04T02:46:59.005Z",
+      "keys": [
+        "type",
+        "id",
+        "process_id",
+        "command",
+        "cwd",
+        "parsed_cmd",
+        "source",
+        "status",
+        "stdout",
+        "stderr",
+        "aggregated_output",
+        "exit_code",
+        "duration",
+        "formatted_output"
+      ],
+      "item_id": "exec-e59a7af8-cd29-48c9-963d-c3c8fb62ccc8",
+      "status": "completed",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Repository-only recovery verifier, not another aesthetic review. No Root cache or Root session referenced by actual tool inputs. Own session read for configuration; own clone/cache/report permitted. This is a concrete run audit, not an arbitrary-code sandbox proof.",
+  "final_message": {
+    "result": "PASS",
+    "scope": "RECOVERY_AND_REUSE_ONLY",
+    "commit": "d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e",
+    "actual_model": "gpt-6.1-sol",
+    "actual_effort": "max",
+    "current_version": 9,
+    "human_verdict": "PENDING",
+    "restored_png_count": 10,
+    "native_check_exit_code": 0,
+    "figma_and_svg_verified": true,
+    "business_state_writes": 0,
+    "artwork_generations": 0,
+    "report_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\outputs\\FRESH_REPOSITORY_ENTRY_REUSE_REPORT.json"
+  }
+}

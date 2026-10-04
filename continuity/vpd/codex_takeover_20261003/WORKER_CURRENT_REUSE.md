@@ -56,7 +56,10 @@ Drive为图片主存储，私有项目目录1wV_R9VcJQ9z4sOynHtHczkSP9z3KpK9O。
 
 Figma当前资产可通过连接插件download_assets获取，temporaryURL须即时下载，不能写Git。默认urllib曾HTTP202空响应，已用Mozilla/5.0 User-Agent和PNG签名/尺寸/SHA核验恢复；curl.exe Schannel凭据错误不靠关TLS解决。rawsource读取必须匹配7fd。现成SVG与Figma节点为主要可编辑成果，0TEXT不得宣称直接输入文字编辑；曲线可编辑/改文案须重新制作与复审。
 
-新读取上下文验证必须仅从仓库入口恢复真实状态和原件，记录固定提交、真实检查、看图与可访问源证据。用本机缓存或复述聊天不算新克隆恢复。结果由最新原生receipt引用定位。业务写入换root上下文前必须按锁登记主执行者交接并核实新root身份；普通素材读取/下载无需成为状态写作者。
+新读取上下文验证必须仅从仓库入口恢复真实状态和原件，记录固定提交、真实检查、看图与可访问源证据。
+
+本轮全新项目外恢复验证已实际PASS：worker 01a104be-a21b-7893-919a-e9e36b0c8c46只收到仓库/分支/固定提交d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e，实际在空工作目录从远端Git clone完整指定分支历史，按入口推导V9/AI_PASS/真人PENDING/唯一真人验收动作；从连接Drive取回S+V1–V9十份原字节，恢复和SHA/revision均核验；原生检查exit0，实际view_image观看两图，读取Figma317:2及两份SVG。gpt-6.1-sol/max从真实turn_context核验。报告及运行读取范围证据在 `evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/fresh_reuse/`。它只写自己的私有缓存/报告，业务状态写0、出图0、Figma写0，不是另一场审美审核。默认Hermes Python3.11/Pillow辅助清点发生DLL加载失败，标准库PNG清点恢复；现有SVG/Figma复用不要求重跑制作依赖，跨机自动制作兼容性未验证。此验证固定在d53提交；后续归档提交只追加本证明及原生接续记录，不改变V9/S像素、正式版本计数、AI/真人状态或唯一下一动作。
+用本机缓存或复述聊天不算新克隆恢复。结果由最新原生receipt引用定位。业务写入换root上下文前必须按锁登记主执行者交接并核实新root身份；普通素材读取/下载无需成为状态写作者。
 
 ## 收益与失败边界
 

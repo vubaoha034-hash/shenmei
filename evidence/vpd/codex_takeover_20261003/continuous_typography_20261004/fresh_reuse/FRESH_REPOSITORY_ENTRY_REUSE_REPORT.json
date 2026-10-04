@@ -1,0 +1,1221 @@
+{
+  "schema_version": "fresh-repository-entry-reuse-report/v1",
+  "result": "PASS",
+  "scope": "REPOSITORY_ENTRY_RECOVERY_AND_EXISTING_ARTIFACT_REUSE_ONLY",
+  "report_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\outputs\\FRESH_REPOSITORY_ENTRY_REUSE_REPORT.json",
+  "recorded_at": "2026-10-04T10:46:07.000+08:00",
+  "requested_fixed_commit": "d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e",
+  "actual_fixed_commit": "d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e",
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "max",
+  "observable_configuration": {
+    "scope": "CURRENT_WORKER_TURN_CONTEXT_ONLY_NO_MESSAGES_OR_OTHER_SESSIONS",
+    "session_file": "C:\\Users\\Administrator\\.codex\\sessions\\2026\\10\\04\\rollout-2026-10-04T10-29-24-01a104be-a21b-7893-919a-e9e36b0c8c46.jsonl",
+    "observations": [
+      {
+        "timestamp": "2026-10-04T02:29:28.881Z",
+        "model": "gpt-6.1-sol",
+        "effort": "max",
+        "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004",
+        "turn_id": "01a104be-a82d-7e12-8174-4587a9271f4e"
+      }
+    ],
+    "source": "CURRENT_WORKER_ACTUAL_TURN_CONTEXT",
+    "backend_routing_not_independently_observed": true
+  },
+  "remote_source": {
+    "url": "https://github.com/vubaoha034-hash/shenmei.git",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "cloned_branch_tip": "d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e",
+    "method": "GIT_CLONE",
+    "clone_verified": true,
+    "clone_command": "git clone --no-checkout --single-branch --branch visual-program-distillation-v2-photography-design-20260814 https://github.com/vubaoha034-hash/shenmei.git fresh_remote",
+    "clone_exit_code": 0,
+    "clone_output": "Cloning into 'fresh_remote'...",
+    "checkout_command": "git checkout --detach d53e856cc2b0e5f3564710b3d7f6d2e444e25b2e",
+    "checkout_exit_code": 0,
+    "target_directory": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote",
+    "target_initialized_from_remote": true,
+    "local_existing_repository_copied": false,
+    "snapshot_used": false,
+    "snapshot_fallback_attempts": 0,
+    "git_history_present": true,
+    "is_shallow": false,
+    "single_branch": true,
+    "tls_disabled": false,
+    "tls_evidence": {
+      "per_url_ssl_verify_override": {
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "git_ssl_no_verify_env": null,
+      "transport_options_disabling_tls_used": false
+    },
+    "note": "Actual remote Git clone of the designated branch with full history for that branch; this is not a source snapshot."
+  },
+  "isolation": {
+    "prior_task_chat_reads": 0,
+    "other_session_reads": 0,
+    "creator_workdir_reads": 0,
+    "other_task_image_cache_reads": 0,
+    "local_repository_copy_reads": 0,
+    "business_state_sources": "FRESH_REMOTE_FIXED_COMMIT_ONLY",
+    "current_worker_session_access": "Only this worker's own turn_context configuration; no chat/message bodies or other session files.",
+    "asset_sources": "Connected Drive raw fetch at exact IDs derived from native lock and fixed repository receipts.",
+    "artwork_aesthetic_judgment_performed": false,
+    "creator_expected_result_used_as_verification": false
+  },
+  "entry_reading": {
+    "order": [
+      "START_HERE.md",
+      "AGENTS.md",
+      "PROJECT_CONTROL_ADAPTER.json task_lock/workflow",
+      "VPD_PROJECT_ROADMAP.md",
+      "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "continuity/vpd/LATEST_CHECKPOINT.json",
+      "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "current referenced contracts and evidence"
+    ],
+    "read_entries": [
+      {
+        "path": "START_HERE.md",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\START_HERE.md",
+        "worktree_sha256": "f53a51301eca11c6e0f3438ac92cc900c0b0065dd34fac71241113221e0e1547",
+        "bytes": 17964
+      },
+      {
+        "path": "AGENTS.md",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\AGENTS.md",
+        "worktree_sha256": "5d7c94c174c4382a0fcada987238cb69dfdf8a28cd6b5a87474c62edb0ed90b0",
+        "bytes": 14341
+      },
+      {
+        "path": "PROJECT_CONTROL_ADAPTER.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\PROJECT_CONTROL_ADAPTER.json",
+        "worktree_sha256": "afdd3cee37a405a228b1d0b69f2f3be38d8f8dc6aa8f18b7ac65623ee6349688",
+        "bytes": 112349
+      },
+      {
+        "path": "VPD_PROJECT_ROADMAP.md",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\VPD_PROJECT_ROADMAP.md",
+        "worktree_sha256": "f4da36a30fb2e1419522f1737fbe734e8279983460e3d77db78599398eae0f9c",
+        "bytes": 20273
+      },
+      {
+        "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\CURRENT_TASK_LOCK.json",
+        "worktree_sha256": "61961bf06b70e5c443a0e920a0f3b8faf7755bd25affb1f0c5c58ffebd35979a",
+        "bytes": 175834
+      },
+      {
+        "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\LATEST_CHECKPOINT.json",
+        "worktree_sha256": "dbec296ddd18128411351fcf38089f2eca0143009fd9f79fbfc62ac10c1e2a58",
+        "bytes": 156532
+      },
+      {
+        "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\MAINLINE_LOCK_20261001.md",
+        "worktree_sha256": "59021edda7561df99b916f58421c7b3ed853f647f9c21ece3366e15c11be922f",
+        "bytes": 9236
+      },
+      {
+        "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\MAINLINE_CONTRACT_20261001.json",
+        "worktree_sha256": "f94495162db56db91f0a431699d22b7d839e94f6afc59de6d49fee5f1893ac85",
+        "bytes": 8936
+      },
+      {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\codex_takeover_20261003\\WORKER_CURRENT_REUSE.md",
+        "worktree_sha256": "86b3e28f5ac074493fde5919621eaa7cb2d5b1f1e89a33285590961853b910e5",
+        "bytes": 16243
+      },
+      {
+        "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\codex_takeover_20261003\\CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+        "worktree_sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848",
+        "bytes": 2755
+      },
+      {
+        "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\codex_takeover_20261003\\INDEPENDENT_WORKER_CONTRACT_V2.json",
+        "worktree_sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28",
+        "bytes": 3927
+      },
+      {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\codex_takeover_20261003\\WORKER_CONTINUATION_AUTHORIZATION.json",
+        "worktree_sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3",
+        "bytes": 2734
+      },
+      {
+        "path": "continuity/vpd/codex_takeover_20261003/WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\continuity\\vpd\\codex_takeover_20261003\\WORKER_FORMAL_REVIEW_CARRIER_AMENDMENT.json",
+        "worktree_sha256": "f5b5941512d15fc4ac5b73ec4dae5313cb098df6d6c5fa5ba801278f86a01df9",
+        "bytes": 1969
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/HUMAN_PHOTOGRAPHY_APPROVAL.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\correct_source_typography\\HUMAN_PHOTOGRAPHY_APPROVAL.json",
+        "worktree_sha256": "abd1c0040cf0533df38c5e1f7f858c981c2c4b16bd04bebb9814d9bf8d585b06",
+        "bytes": 919
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/source_recovery/DRIVE_ARCHIVE_MANIFEST.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\source_recovery\\DRIVE_ARCHIVE_MANIFEST.json",
+        "worktree_sha256": "4e0649c492a8ea341ddaf40632f894e2d9aefc04188911954fa2b34d70ef9a43",
+        "bytes": 12430
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/NATIVE_INTERNAL_PASS_HANDOFF_RECEIPT.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\NATIVE_INTERNAL_PASS_HANDOFF_RECEIPT.json",
+        "worktree_sha256": "d472212dfff29b4efd23e520823162f075fbf285ddd305261ebbcc44d3431d04",
+        "bytes": 89317
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/ASSET_PROVENANCE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\ASSET_PROVENANCE.json",
+        "worktree_sha256": "bb11aac3ab22b52f7f63f3782b8eedcb48e49368d033ee66eddcdfc805752a54",
+        "bytes": 1935
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/ASSET_DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\ASSET_DRIVE_ARCHIVE.json",
+        "worktree_sha256": "1f0801fe1f9573ff3af26a2037225907da99b71b35bf8f6a1e1bdd72331d9b6b",
+        "bytes": 3515
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/pixel_review/PIXEL_REVIEW.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\pixel_review\\PIXEL_REVIEW.json",
+        "worktree_sha256": "6aacbec04e50ac31826451850aae679c904179eb07b5014037608700bdbe8d35",
+        "bytes": 6890
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/TECHNICAL_CHECK.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\TECHNICAL_CHECK.json",
+        "worktree_sha256": "7c5bb2b1eabd9870e60aa4ae82f9d254120080e47b5b4f0badc8655565bb9092",
+        "bytes": 1875
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/PHOTO_SAFE_EXPORT.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\PHOTO_SAFE_EXPORT.json",
+        "worktree_sha256": "2053c9b6cd112f8df20cf6082a1279bfecbb91cbf0c21d781686bc5e6286ccba",
+        "bytes": 1122
+      },
+      {
+        "path": "scripts/verify_visual_memory.py",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\scripts\\verify_visual_memory.py",
+        "worktree_sha256": "37fdbf420651efe5c73afad6841d2df6229c4c47e04dfc8cee061d2a8f544856",
+        "bytes": 2055
+      },
+      {
+        "path": "scripts/vpd_restore_correct_source_exports.py",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\scripts\\vpd_restore_correct_source_exports.py",
+        "worktree_sha256": "98503e3549e37838e8b9eb7875dd5877399ecaa3c5304f842f69841011903c8b",
+        "bytes": 3804
+      },
+      {
+        "path": "visual_memory/vpd_task_lock.py",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\visual_memory\\vpd_task_lock.py",
+        "worktree_sha256": "6f170b60e6d7bf6aceab318a42e4390f9215b5f8e4068ce9b3f19c20fe3e61ef",
+        "bytes": 28138
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v1/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\correct_source_typography\\v1\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "8a28874645b57aa77953ab80598a3ab6b998e9b889569365d2b54cc7d0e2e1e8",
+        "bytes": 1096
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v2/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\correct_source_typography\\v2\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "fdbc8fb4b6a79ed35b36fa40a4493c4d7463f3ae344e81bca1f2695e5b6e6014",
+        "bytes": 963
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/correct_source_typography/v3/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\correct_source_typography\\v3\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "8dbaea7f1adbc9ad9b0e00cccacb1e624722b0ba4e79b4893ea38283a52127d1",
+        "bytes": 963
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v4/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v4\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "b604eb320e772f65b5e1e347bf1aa5b3bc9070c8c3c5c4c0fdcc4635c1dda697",
+        "bytes": 1044
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v5/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v5\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "79a30d4e4104639d52ef0b2c6ec3039e86445cc663fb33361d940becb552091b",
+        "bytes": 971
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v6/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v6\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "8fea2a29a5e8c30608c263e9387144edfdcd26804a1ec875f7b8b3e40952a203",
+        "bytes": 971
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v7/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v7\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "803d928987e0c884f90cc0767f78922d6614cbeaa4a7760b20e94ab91dd56e51",
+        "bytes": 1333
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v8/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v8\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "d43fb7eea56a8b408f87b27ac8d487a75edcfea12a617e613eb177e9abaeade8",
+        "bytes": 1333
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/v9/DRIVE_ARCHIVE.json",
+        "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\DRIVE_ARCHIVE.json",
+        "worktree_sha256": "d841c516f9d8ec98746387dc7da7408cd93b07a2e15d4eb128393e476cb2b229",
+        "bytes": 1311
+      }
+    ],
+    "projection_note": "Large adapter, lock, checkpoint and handoff JSON were parsed fully and current fields were inspected in bounded projections after full-text display truncation. Historical next-step prose was not executed.",
+    "skills_used": [
+      "google-drive:google-drive",
+      "figma:figma-use"
+    ],
+    "repository_learning_rule": "Read rules/CONTINUAL_LEARNING_TRIGGER_RULE.md once; this task only records its own validation report. No skill, native ledger or learning state was modified."
+  },
+  "derived_current_state": {
+    "native_lock_revision": 292,
+    "native_checkpoint_sequence": 314,
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "V9_INTERNAL_AI_PASS_AWAITING_LIU_HUMAN_REVIEW",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_PASS",
+    "unique_next_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER",
+    "work_unit": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+    "phase": "DELIVERED_AI_PASS",
+    "current_version": 9,
+    "recorded_ai_verdict": "AI_PASS",
+    "recorded_pixel_review_verdict": "AI_PASS",
+    "recorded_pixel_review_target_sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23",
+    "current_poster_human_verdict": "PENDING",
+    "old_cycle_human_verdict": "REJECTED",
+    "old_cycle_budget": {
+      "formal_versions_max": 3,
+      "formal_versions_used": 3,
+      "revisions_max": 2,
+      "revisions_used": 2,
+      "photo_generations": 0,
+      "paid_compute_usd": 0,
+      "training": 0,
+      "automations": 0,
+      "second_style": 0
+    },
+    "current_budget": {
+      "formal_versions_max": null,
+      "formal_versions_used": 9,
+      "revisions_max": null,
+      "revisions_used": 8,
+      "photo_generations": 0,
+      "paid_compute_usd": 0,
+      "training": 0,
+      "automations": 0,
+      "second_style": 0,
+      "parallel_alternatives": 0,
+      "hidden_variants": 0,
+      "stop_condition": "INDEPENDENT_AI_PASS"
+    },
+    "image_authorization": 0,
+    "figma_canvas_authorization": 0,
+    "source": {
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+      "figma_node": "283:5",
+      "local_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png"
+    },
+    "candidate_promoted": false,
+    "system_validation_complete": false,
+    "state_writer": "ROOT_EXECUTOR_ONLY",
+    "checkpoint_current_focus": "V9_INTERNAL_AI_PASS_AWAITING_LIU_HUMAN_REVIEW",
+    "checkpoint_next_action": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER",
+    "current_version_history": [
+      {
+        "version": 1,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 2,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 3,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "REJECTED"
+      },
+      {
+        "version": 4,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 5,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 6,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 7,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 8,
+        "recorded_ai_verdict": "AI_FAIL",
+        "human_verdict": "NO_CURRENT_HUMAN_ACCEPTANCE_CLAIM"
+      },
+      {
+        "version": 9,
+        "recorded_ai_verdict": "AI_PASS",
+        "human_verdict": "PENDING"
+      }
+    ],
+    "photography_human_verdict": "ACCEPTED_PHOTOGRAPHY_ONLY",
+    "photography_is_hidden_original_recovery": false,
+    "superseded_budget_handling": "Old 3 versions/2 revisions is preserved as exhausted history; the current same-direction continuation has cumulative 9 versions/8 revisions, no numeric cap, and has reached its independent-AI-pass stop condition.",
+    "budget_interpretation": "No current generation or Figma canvas write authorization remains; the sole current next action is Liu's review of V9. No content/aspect/second-style work or project promotion is authorized by this validation.",
+    "aesthetic_conclusion_source": "Recorded native lock and saved pixel-review evidence only; this worker gives no new aesthetic verdict."
+  },
+  "drive_original_byte_recovery": {
+    "tool": "mcp__codex_apps__google_drive_fetch",
+    "download_raw_file": true,
+    "include_base64": true,
+    "legacy_base64_reason": "Explicit repository-native restore compatibility requires the actual raw-base64 bundle; it was saved only in this clone's Git-ignored private directory.",
+    "required_count": 10,
+    "actual_restored_count": 10,
+    "total_restored_bytes": 17316832,
+    "original_pngs_only": true,
+    "thumbnails_used": false,
+    "demo_data_used": false,
+    "all_sha256_match": true,
+    "all_revision_ids_match": true,
+    "files": [
+      {
+        "role": "frozen_photography",
+        "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+        "url": "https://drive.google.com/file/d/1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA/view?usp=drivesdk",
+        "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+        "bytes": 1735549,
+        "revision": "0B77e9PhW2gVeVStXMkVzemdjTTBmd21kM0RFci96U3IyeUpnPQ",
+        "metadata": {
+          "id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+          "name": "CHAZUO_FIRST_PHOTO_LOCAL_RECONSTRUCTION_HUMAN_PENDING_7fd7777f_1536x1024_20261003.png",
+          "mime_type": "image/png",
+          "size": 1735549,
+          "modified_time": "2026-10-03T11:26:43.568Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+          "mime_type": "image/png",
+          "returned_size": 1735549,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeVStXMkVzemdjTTBmd21kM0RFci96U3IyeUpnPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\source_recovery_20261003\\photography-local-reconstruction-final.png",
+          "bytes": 1735549,
+          "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 3,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v1",
+        "drive_id": "1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE",
+        "url": "https://drive.google.com/file/d/1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
+        "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96",
+        "bytes": 1730973,
+        "revision": "0B77e9PhW2gVebTJnSXN5Tjh5UU1XZ1lqTWQ2WUlZTThvNVlnPQ",
+        "metadata": {
+          "id": "1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE",
+          "name": "CHAZUO_APPROVED_PHOTO_TYPOGRAPHY_R1_V1_a3f2dac9.png",
+          "mime_type": "image/png",
+          "size": 1730973,
+          "modified_time": "2026-10-03T13:17:21.448Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE",
+          "mime_type": "image/png",
+          "returned_size": 1730973,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVebTJnSXN5Tjh5UU1XZ1lqTWQ2WUlZTThvNVlnPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v1\\poster.png",
+          "bytes": 1730973,
+          "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v2",
+        "drive_id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+        "url": "https://drive.google.com/file/d/1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v2/poster.png",
+        "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+        "bytes": 1730322,
+        "revision": "0B77e9PhW2gVeQ0NPZUJxUlJOc3RXekRJU0FqeXJmbzJYcjBJPQ",
+        "metadata": {
+          "id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+          "name": "CHAZUO_APPROVED_PHOTO_TYPOGRAPHY_R1_V2_c92aa90e.png",
+          "mime_type": "image/png",
+          "size": 1730322,
+          "modified_time": "2026-10-03T13:46:41.124Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+          "mime_type": "image/png",
+          "returned_size": 1730322,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeQ0NPZUJxUlJOc3RXekRJU0FqeXJmbzJYcjBJPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v2/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v2\\poster.png",
+          "bytes": 1730322,
+          "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v3",
+        "drive_id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+        "url": "https://drive.google.com/file/d/1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+        "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+        "bytes": 1732795,
+        "revision": "0B77e9PhW2gVedFhPUytrYTdialZISzRIQUEya0JDcFdSd2JrPQ",
+        "metadata": {
+          "id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+          "name": "CHAZUO_APPROVED_PHOTO_TYPOGRAPHY_R1_V3_0d2dbf64.png",
+          "mime_type": "image/png",
+          "size": 1732795,
+          "modified_time": "2026-10-03T14:24:32.494Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+          "mime_type": "image/png",
+          "returned_size": 1732795,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVedFhPUytrYTdialZISzRIQUEya0JDcFdSd2JrPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v3\\poster.png",
+          "bytes": 1732795,
+          "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v4",
+        "drive_id": "1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr",
+        "url": "https://drive.google.com/file/d/1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v4/poster.png",
+        "sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a",
+        "bytes": 1725513,
+        "revision": "0B77e9PhW2gVebFRrSW5mSEh0NVUzazY1MmxDL3lzMzRpMWZNPQ",
+        "metadata": {
+          "id": "1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr",
+          "name": "CHAZUO_CORRECT_SOURCE_V4_1536x1024_INTERNAL_REVIEW_PENDING.png",
+          "mime_type": "image/png",
+          "size": 1725513,
+          "modified_time": "2026-10-03T23:03:00.595Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr",
+          "mime_type": "image/png",
+          "returned_size": 1725513,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVebFRrSW5mSEh0NVUzazY1MmxDL3lzMzRpMWZNPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v4/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v4\\poster.png",
+          "bytes": 1725513,
+          "sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v5",
+        "drive_id": "1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih",
+        "url": "https://drive.google.com/file/d/1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v5/poster.png",
+        "sha256": "30740547dcfd504cacdcdf01f046e5b71e394e883c73081fd531c1efdc291d11",
+        "bytes": 1731106,
+        "revision": "0B77e9PhW2gVeNzVRd0JJUVgwOVZIMGtHZ2JqMzE2WEhMbzFZPQ",
+        "metadata": {
+          "id": "1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih",
+          "name": "VPD_CHAZUO_CORRECT_SOURCE_V5_20261004.png",
+          "mime_type": "image/png",
+          "size": 1731106,
+          "modified_time": "2026-10-03T23:37:58.815Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih",
+          "mime_type": "image/png",
+          "returned_size": 1731106,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeNzVRd0JJUVgwOVZIMGtHZ2JqMzE2WEhMbzFZPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v5/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v5\\poster.png",
+          "bytes": 1731106,
+          "sha256": "30740547dcfd504cacdcdf01f046e5b71e394e883c73081fd531c1efdc291d11",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v6",
+        "drive_id": "1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk",
+        "url": "https://drive.google.com/file/d/1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk/view?usp=drivesdk",
+        "path": ".liu-visual-private/correct_source_typography/v6/poster.png",
+        "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+        "bytes": 1729644,
+        "revision": "0B77e9PhW2gVeVGhtaVV4aUJaUFA2dm05MnN4NGN0S040QStjPQ",
+        "metadata": {
+          "id": "1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk",
+          "name": "VPD_CHAZUO_CORRECT_SOURCE_V6_20261004.png",
+          "mime_type": "image/png",
+          "size": 1729644,
+          "modified_time": "2026-10-04T00:29:35.909Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk",
+          "mime_type": "image/png",
+          "returned_size": 1729644,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeVGhtaVV4aUJaUFA2dm05MnN4NGN0S040QStjPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v6/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v6\\poster.png",
+          "bytes": 1729644,
+          "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v7",
+        "drive_id": "13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2",
+        "url": "https://drive.google.com/file/d/13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2/view",
+        "path": ".liu-visual-private/correct_source_typography/v7/poster.png",
+        "sha256": "2c5153c62e27874093bdf7ac13a0274d91130487d77fda886da214fdb22fe86d",
+        "bytes": 1729894,
+        "revision": "0B77e9PhW2gVeVlpZRjQyd1dMaWJyeGE2SndsN3VGL25pU0xNPQ",
+        "metadata": {
+          "id": "13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2",
+          "name": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_R1_V7_20261004.png",
+          "mime_type": "image/png",
+          "size": 1729894,
+          "modified_time": "2026-10-04T01:00:24.788Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2",
+          "mime_type": "image/png",
+          "returned_size": 1729894,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeVlpZRjQyd1dMaWJyeGE2SndsN3VGL25pU0xNPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v7/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v7\\poster.png",
+          "bytes": 1729894,
+          "sha256": "2c5153c62e27874093bdf7ac13a0274d91130487d77fda886da214fdb22fe86d",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v8",
+        "drive_id": "1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE",
+        "url": "https://drive.google.com/file/d/1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE/view",
+        "path": ".liu-visual-private/correct_source_typography/v8/poster.png",
+        "sha256": "9c99fd1124a399d86761d201b033686d94bdf44f0232e81766b67d88e5e100ff",
+        "bytes": 1733312,
+        "revision": "0B77e9PhW2gVeOTZiUkljMUE5Qk83bVlGWFNqVlErMnBVZUZZPQ",
+        "metadata": {
+          "id": "1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE",
+          "name": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_R1_V8_20261004.png",
+          "mime_type": "image/png",
+          "size": 1733312,
+          "modified_time": "2026-10-04T01:26:07.073Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE",
+          "mime_type": "image/png",
+          "returned_size": 1733312,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVeOTZiUkljMUE5Qk83bVlGWFNqVlErMnBVZUZZPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v8/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v8\\poster.png",
+          "bytes": 1733312,
+          "sha256": "9c99fd1124a399d86761d201b033686d94bdf44f0232e81766b67d88e5e100ff",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      },
+      {
+        "role": "poster_v9",
+        "drive_id": "1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX",
+        "url": "https://drive.google.com/file/d/1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX/view",
+        "path": ".liu-visual-private/correct_source_typography/v9/poster.png",
+        "sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23",
+        "bytes": 1737724,
+        "revision": "0B77e9PhW2gVebnIwYzF6dGpURXJjVjI0VVdDcTJWaGp4SEhBPQ",
+        "metadata": {
+          "id": "1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX",
+          "name": "VPD_CHAZUO_CORRECT_SOURCE_V9_20261004.png",
+          "mime_type": "image/png",
+          "size": 1737724,
+          "modified_time": "2026-10-04T01:54:22.352Z"
+        },
+        "raw_fetch": {
+          "tool": "mcp__codex_apps__google_drive_fetch",
+          "download_raw_file": true,
+          "include_base64": true,
+          "id": "1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX",
+          "mime_type": "image/png",
+          "returned_size": 1737724,
+          "base64_received": true,
+          "bytes_and_sha_validated_by_native_restore": true
+        },
+        "actual_revision_id": "0B77e9PhW2gVebnIwYzF6dGpURXJjVjI0VVdDcTJWaGp4SEhBPQ",
+        "revision_matches_fixed_archive": true,
+        "revision_count": 1,
+        "actual_local": {
+          "path": ".liu-visual-private/correct_source_typography/v9/poster.png",
+          "absolute_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v9\\poster.png",
+          "bytes": 1737724,
+          "sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23",
+          "dimensions": [
+            1536,
+            1024
+          ],
+          "mode": "RGB",
+          "format": "PNG",
+          "bit_depth": 8,
+          "chunk_count": 29,
+          "all_chunk_crc_valid": true
+        }
+      }
+    ],
+    "restore": {
+      "command": "python -B scripts/vpd_restore_correct_source_exports.py --bundle .liu-visual-private/drive-restore-bundle.json",
+      "exit_code": 0,
+      "result": {
+        "result": "PASS",
+        "restored": [
+          {
+            "drive_id": "1ZU-jfc_3JZqNlKn56PSpMyBLjwYnqIIA",
+            "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+            "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+            "bytes": 1735549
+          },
+          {
+            "drive_id": "1CoBStVipE6iysm2eeg9aa-wF8Eg8VPzE",
+            "path": ".liu-visual-private/correct_source_typography/v1/poster.png",
+            "sha256": "a3f2dac976dbd99fc5a0867df625ffe1548f46f75655eb6dc6ed2c78b9cc3e96",
+            "bytes": 1730973
+          },
+          {
+            "drive_id": "1dsAgR4S_TENd5FTdo6QNeIylaFR9PfLZ",
+            "path": ".liu-visual-private/correct_source_typography/v2/poster.png",
+            "sha256": "c92aa90e87c867503a3a53ab869dc079bbec9de44f7a31a07103bb692f26cae4",
+            "bytes": 1730322
+          },
+          {
+            "drive_id": "1j249tXSd8KFJKFonBdFsng4aUJpg_xZ-",
+            "path": ".liu-visual-private/correct_source_typography/v3/poster.png",
+            "sha256": "0d2dbf6421f505f95b4ed9aaafd7648b28bbbefb9a01bfd85a856a57d9bd8826",
+            "bytes": 1732795
+          },
+          {
+            "drive_id": "1C-zbGqGwS3XVkaC3n5BntgWaWfOFPxAr",
+            "path": ".liu-visual-private/correct_source_typography/v4/poster.png",
+            "sha256": "fe382983910d02308ef211594314baa0002a5d9b931eaad49b9353789c75478a",
+            "bytes": 1725513
+          },
+          {
+            "drive_id": "1SupwbW3tMvChK-56ocsjMrHOQBBOL5Ih",
+            "path": ".liu-visual-private/correct_source_typography/v5/poster.png",
+            "sha256": "30740547dcfd504cacdcdf01f046e5b71e394e883c73081fd531c1efdc291d11",
+            "bytes": 1731106
+          },
+          {
+            "drive_id": "1lGIJhUqrLZ8n9VaIVv2kjFWEUDdt1XSk",
+            "path": ".liu-visual-private/correct_source_typography/v6/poster.png",
+            "sha256": "150d778dedd39e170943617b062df153ca3096c91b46cf475ab450ee889bfdd2",
+            "bytes": 1729644
+          },
+          {
+            "drive_id": "13r2pZ1LOqj946dmwvC6bnyn2gD-_Kqh2",
+            "path": ".liu-visual-private/correct_source_typography/v7/poster.png",
+            "sha256": "2c5153c62e27874093bdf7ac13a0274d91130487d77fda886da214fdb22fe86d",
+            "bytes": 1729894
+          },
+          {
+            "drive_id": "1s9dVADyH2CmZdddsluHQvQ6EbF_eOAWE",
+            "path": ".liu-visual-private/correct_source_typography/v8/poster.png",
+            "sha256": "9c99fd1124a399d86761d201b033686d94bdf44f0232e81766b67d88e5e100ff",
+            "bytes": 1733312
+          },
+          {
+            "drive_id": "1OFIlAO30IZYSgKfZvXTNVlwEJZJDC4FX",
+            "path": ".liu-visual-private/correct_source_typography/v9/poster.png",
+            "sha256": "d1d0bb6d285e9f02ed713710cf21a32684b7f1273c6837642d333276da974a23",
+            "bytes": 1737724
+          }
+        ],
+        "business_state_writes": 0,
+        "new_design_versions": 0
+      },
+      "bundle_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\drive-restore-bundle.json",
+      "source": "Actual connected-Drive raw b64_string fields, identity validated before native restore.",
+      "business_state_writes": 0,
+      "new_design_versions": 0
+    },
+    "native_required_image_scope": "Frozen S photography plus all V1–V9 complete poster exports required by current state/photo-protection guards. Other historical source, alpha or tutorial assets are not required to use the saved SVG/Figma outcomes."
+  },
+  "native_checks": {
+    "initial": {
+      "exit_code": 1,
+      "status": "VPD_STATE_BLOCKED",
+      "reason": "No such file or directory: .liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "log_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\work\\initial_native_check.log"
+    },
+    "after_original_byte_restore": {
+      "exit_code": 0,
+      "result": "Native state check passed; its first Windows stdout display was garbled.",
+      "command": "python -B scripts/verify_visual_memory.py --vpd-state --status-card"
+    },
+    "final_utf8_capture": {
+      "argv": [
+        "C:\\Users\\Administrator\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "-B",
+        "scripts/verify_visual_memory.py",
+        "--vpd-state",
+        "--status-card"
+      ],
+      "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote",
+      "exit_code": 0,
+      "elapsed_seconds": 58.578,
+      "result": {
+        "状态": "主线已锁定，状态检查通过",
+        "检查范围": "任务、历史保留、预算与证据一致性；不证明视觉质量或远端发布",
+        "主目标": "从用户原先批准的海报真实像素蒸馏可复用视觉程序，用新作品验证视觉逻辑、迁移能力和质量；不同家族共用同一个蒸馏器。",
+        "主线": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+        "当前阶段": "CORRECT_SOURCE_TYPOGRAPHY_INDEPENDENT_WORKER",
+        "阶段状态": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_DELIVERED_AI_PASS",
+        "实际生成尝试": 0,
+        "真人结论": "PENDING",
+        "当前出图授权": 0,
+        "当前锁修订": 292,
+        "当前检查点": 314,
+        "唯一下一动作": "LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_COMPLETE_POSTER",
+        "当前任务": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+        "当前Figma授权": 0,
+        "正式设计版本": "已9版（串行修复直到独立AI通过）",
+        "修订次数": "已8次",
+        "摄影保护": "冻结真人认可7fd7777f摄影；只新增独立矢量与文字层",
+        "局部背景修补调用": "1/1",
+        "修补候选真人结论": "ACCEPTED",
+        "修补阶段": "APPROVED_FROZEN",
+        "旧三版真人结论": "REJECTED",
+        "旧失败版本预算": "3/3；2/2；保留未清零",
+        "worker可改主线": false,
+        "持续修复授权": {
+          "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+          "sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848"
+        },
+        "内部停止条件": "INDEPENDENT_AI_PASS，随后真人验收"
+      },
+      "stderr": "",
+      "output_encoding": "utf-8",
+      "business_state_writes": 0
+    },
+    "final_result": "PASS",
+    "checkpoint_and_lock_agree": true,
+    "raw_stdout_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\work\\final_native_stdout.json",
+    "scope": "Actual original state validator; no synthetic/demo data or replacement validator was substituted."
+  },
+  "actual_pixel_viewing": {
+    "count": 2,
+    "tool": "view_image",
+    "files": [
+      {
+        "role": "current_complete_poster_v9",
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\correct_source_typography\\v9\\poster.png",
+        "tool": "view_image",
+        "detail": "original",
+        "successful": true,
+        "observation": "实际看到1536×1024完整海报：林地溪流背景，左下陶瓷杯和右侧茶叶盘；左上“茶作”，右上两行“一杯茶，/慢下来”。仅核验文件可观看，不给审美评分。"
+      },
+      {
+        "role": "frozen_photography",
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private\\source_recovery_20261003\\photography-local-reconstruction-final.png",
+        "tool": "view_image",
+        "detail": "original",
+        "successful": true,
+        "observation": "实际看到1536×1024同一茶杯/茶叶盘/林地溪流摄影，无上述品牌和标题字样。仅核验实际像素可观看。"
+      }
+    ],
+    "aesthetic_rating": false
+  },
+  "figma_actual_access": {
+    "tool": "mcp__codex_apps__figma_use_figma",
+    "connected_access_succeeded": true,
+    "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=317-2",
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "editor_type": "figma",
+    "page": {
+      "id": "251:2",
+      "name": "VPD Codex Chazuo 20261003"
+    },
+    "frame": {
+      "id": "317:2",
+      "name": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_R1_V9",
+      "width": 1536,
+      "height": 1024,
+      "locked": false
+    },
+    "nodes_by_type": {
+      "FRAME": 5,
+      "BOOLEAN_OPERATION": 19,
+      "VECTOR": 45,
+      "GROUP": 1
+    },
+    "vectors_unlocked": 45,
+    "booleans_subtract_unlocked": 19,
+    "vector_path_data_length": 383343,
+    "photo_node": {
+      "id": "317:3",
+      "type": "FRAME",
+      "name": "PHOTO_APPROVED_7FD_FROZEN_CLONE",
+      "locked": true,
+      "visible": true,
+      "width": 1536,
+      "height": 1024,
+      "imageFillCount": 1,
+      "children": []
+    },
+    "brand_node": "317:81",
+    "headline_node": "317:5",
+    "frozen_source": {
+      "id": "283:5",
+      "type": "FRAME",
+      "name": "FIRST_PHOTO_RECONSTRUCTION_REVIEW_PNG_EXACT_BYTES",
+      "locked": false,
+      "visible": true,
+      "width": 1536,
+      "height": 1024,
+      "imageFillCount": 1,
+      "children": []
+    },
+    "mutated_node_ids": [],
+    "created_node_ids": [],
+    "write_permission": "NOT_TESTED_READ_ONLY",
+    "editable_curve_structure_verified": true,
+    "editable_native_text_count": 0,
+    "editable_geometry_evidence": "Actual unlocked VECTOR vectorPaths/vectorNetwork and unlocked SUBTRACT child geometry were read from the current frame.",
+    "direct_text_entry_editability": false,
+    "file_write_permission": "NOT_VERIFIED_READ_ONLY_NO_MUTATION_TEST",
+    "raw_read_evidence_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\work\\figma_actual_read.json",
+    "created_nodes": 0,
+    "mutated_nodes": 0
+  },
+  "svg_availability": {
+    "result": "PASS",
+    "read_and_xml_parsed": true,
+    "files": [
+      {
+        "asset": "brand",
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "expected_sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "sha_matches": true,
+        "bytes": 39038,
+        "svg_tag": "{http://www.w3.org/2000/svg}svg",
+        "width": "1476.99928125",
+        "height": "720.1109613692784",
+        "viewBox": "0 0 1476.99928125 720.1109613692784",
+        "path_count": 7,
+        "git_blob_sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "git_blob_bytes": 39038,
+        "xml_parse": "PASS"
+      },
+      {
+        "asset": "headline",
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\evidence\\vpd\\codex_takeover_20261003\\continuous_typography_20261004\\v9\\headline.svg",
+        "sha256": "d1cf87fda27b3b7729a827c7c15136690f7992d784857f6d1213240343631e3e",
+        "expected_sha256": "d1cf87fda27b3b7729a827c7c15136690f7992d784857f6d1213240343631e3e",
+        "sha_matches": true,
+        "bytes": 45788,
+        "svg_tag": "{http://www.w3.org/2000/svg}svg",
+        "width": "320",
+        "height": "202.009",
+        "viewBox": "0 0 320 202.009",
+        "path_count": 19,
+        "git_blob_sha256": "d1cf87fda27b3b7729a827c7c15136690f7992d784857f6d1213240343631e3e",
+        "git_blob_bytes": 45788,
+        "xml_parse": "PASS"
+      }
+    ],
+    "creation_or_rendering_rerun": false
+  },
+  "dependencies": {
+    "actual_python_for_native_commands": {
+      "version": "3.11.15 (main, Jun  2 2026, 22:29:49) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\Administrator\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe"
+    },
+    "installed_pillow_metadata": {
+      "version": "12.2.0",
+      "location": "C:\\Users\\Administrator\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\PIL\\__init__.py"
+    },
+    "bundled_runtime_discovered_with_load_workspace_dependencies": {
+      "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "pillow": "12.3.0"
+    },
+    "bundled_python_image_native_extension_tested": false,
+    "auxiliary_image_inventory_fallback": "Optional PIL.Image import in the default runtime failed; private inventory was rebuilt using standard-library PNG signature/IHDR/chunk-CRC reads. Actual PNG viewing succeeded through view_image.",
+    "packages_installed": 0,
+    "paid_services_used": 0,
+    "fonttools_vtracer_or_font_required_for_current_saved_svg_figma_reuse": false,
+    "production_recreation_dependency_compatibility": "NOT_TESTED; this validation uses existing deliverables, not their artwork-creation scripts."
+  },
+  "failures_and_recovery": [
+    {
+      "action": "Initial workspace entry probe",
+      "exit_code": 1,
+      "reason": "rg found no existing entry files in this worker directory.",
+      "resolution": "A fresh remote repository was initialized at fresh_remote."
+    },
+    {
+      "action": "New-Item work,fresh_remote",
+      "exit_code": 1,
+      "reason": "The worker's generated work directory already existed.",
+      "resolution": "git clone initialized its own fresh_remote target; no existing repository was copied."
+    },
+    {
+      "action": "Initial native state check",
+      "exit_code": 1,
+      "reason": "Missing frozen photography in the fresh clone's ignored private directory.",
+      "resolution": "Derived exact source and all V1–V9 identities from native lock/Drive receipts, fetched original bytes through connected Drive and restored with the native script."
+    },
+    {
+      "action": "Large authority text display",
+      "reason": "Tool output limits truncated large adapter/lock/checkpoint/handoff displays.",
+      "resolution": "Inspected bounded current JSON projections; original JSON was parsed by the native checker and private report collector."
+    },
+    {
+      "action": "First successful after-restore native stdout display",
+      "exit_code": 0,
+      "reason": "Windows native stdout character decoding garbled Chinese output.",
+      "resolution": "Re-executed the same native command in a UTF-8 subprocess capture; exit 0 and complete strict-JSON status card saved."
+    },
+    {
+      "action": "Environment model/effort probe",
+      "reason": "CODEX_MODEL and CODEX_REASONING_EFFORT were not exposed as environment variables.",
+      "resolution": "Read only this worker's matching current turn_context; gpt-6.1-sol/max verified."
+    },
+    {
+      "action": "Optional private image-inventory collector with PIL.Image",
+      "exit_code": 1,
+      "reason": "ImportError: DLL load failed while importing _imaging: access denied in default Hermes Python 3.11 runtime.",
+      "resolution": "Replaced only the worker's private report collector with standard-library PNG signature/IHDR/chunk-CRC inspection; exit 0. Native project checker and view_image had already succeeded."
+    },
+    {
+      "action": "Git TLS configuration probe",
+      "exit_code": 1,
+      "reason": "No per-URL http.sslVerify override was configured; GIT_SSL_NO_VERIFY is absent.",
+      "resolution": "No TLS disabling options were used; the remote clone succeeded with Git's default TLS verification."
+    }
+  ],
+  "write_audit": {
+    "business_state_writes": 0,
+    "artwork_generations": 0,
+    "artwork_edits": 0,
+    "uploads": 0,
+    "figma_node_writes": 0,
+    "project_mainline_changes": 0,
+    "private_writes_only": true,
+    "private_write_locations": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\work",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\fresh_remote\\.liu-visual-private",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-04\\chazuo-fresh-repository-reuse-20261004\\outputs"
+    ],
+    "git_status": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "git_diff": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "ignored_recovered_paths": {
+      "exit_code": 0,
+      "stdout": ".gitignore:4:.liu-visual-private/\t.liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v1/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v2/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v3/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v4/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v5/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v6/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v7/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v8/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/correct_source_typography/v9/poster.png\n.gitignore:4:.liu-visual-private/\t.liu-visual-private/drive-restore-bundle.json\n",
+      "stderr": ""
+    },
+    "note": "Only this fresh clone's ignored download bundle/PNG cache and this worker's own scripts/evidence/report were written."
+  },
+  "business_state_writes": 0,
+  "artwork_generations": 0,
+  "limitations": [
+    "PASS applies to repository-entry recovery and existing artifact reuse. It gives no new aesthetic rating, human approval, system completion or candidate promotion.",
+    "Current full-poster human review remains PENDING; the older REJECTED verdict belongs to prior failed work.",
+    "Figma curve editability is structurally verified; actual file write permissions and write operations were not tested because the task is read-only. There are no native TEXT nodes.",
+    "Recovery used the authenticated connected Drive account; anonymous/public file access is not claimed.",
+    "The current worker model/effort is the observed turn_context configuration; backend routing beyond that configuration is not independently exposed.",
+    "A default-runtime Pillow native DLL failed only in the auxiliary inventory step; standard-library inspection and actual view_image resolved all required verification without installing dependencies."
+  ],
+  "missing_required_items": []
+}
