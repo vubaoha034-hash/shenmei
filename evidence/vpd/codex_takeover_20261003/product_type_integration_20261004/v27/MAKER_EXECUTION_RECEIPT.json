@@ -1,0 +1,897 @@
+{
+  "schema": "vpd-v27-maker-execution-and-zero-write-receipt/v1",
+  "formal_version": 27,
+  "created_utc": "2026-10-04 20:59:19 UTC",
+  "scope": {
+    "worker": "/root/headline_glyph_maker_v27",
+    "role": "unique typography maker, not reviewer",
+    "authorized_public_directory": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27",
+    "authorized_private_directory": ".liu-visual-private/correct_source_typography/v27",
+    "explicit_parent_go": "GO_V27",
+    "authorization_native_revision": 328,
+    "authorization_lock_sha256": "738a8f335c8f4f9cdb945965fdc24b41cec3b2447605663f536264fbddc7b7bf",
+    "business_state_writes": 0,
+    "Figma_Drive_Git_writes": 0,
+    "root_owned_files_excluded": [
+      "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/STAGED_TECHNICAL_REVIEW_SCOPE.json",
+      "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/FIGMA_ASSEMBLY.js"
+    ]
+  },
+  "production_execution": [
+    {
+      "chunk": "f38edc",
+      "exit_code": 0,
+      "action": "author original single V27 manifest and notes",
+      "writes": 2
+    },
+    {
+      "chunk": "bcd713",
+      "exit_code": 1,
+      "action": "first builder attempt",
+      "production_writes": 0,
+      "error": "floating area subtraction guard was too strict",
+      "preserved_failure": "technical-interface-history/00-before-rounded-area-repair/FAILURE.json"
+    },
+    {
+      "chunk": "65ad12",
+      "exit_code": 0,
+      "action": "first complete V27 output",
+      "writes": 7,
+      "first_preview_sha256": "3403ce920fbd8f161ac4d549517fec2f4db143abc90721d2e744db97bc1ea3f4"
+    },
+    {
+      "chunk": "e28ed9",
+      "exit_code": 0,
+      "action": "preserve first complete preview/source before one declared terminal taper",
+      "preserved_files": 11,
+      "preservation_record": "geometry-corrections/01-before-tea-terminal-taper/PRESERVATION.json",
+      "preservation_record_sha256": "3889191d6eca48783ac36a054ee1db282d117de846bc4605da1f8881e8af5c84"
+    },
+    {
+      "chunk": "84329d",
+      "exit_code": 0,
+      "action": "apply only Tea contour path8/contour0 tapered terminal to manifest/notes",
+      "writes": 2,
+      "all_glyph_placements_unchanged": true
+    },
+    {
+      "chunk": "d1a0f8",
+      "exit_code": 1,
+      "action": "local refinement output wrapper failed before mutation",
+      "production_writes": 0,
+      "error": "KeyError: contour_edits; actual manifest uses edits",
+      "correction": "Use actual edits/path_index/contour_index/after_contours fields; producer geometry and builder code unchanged by this wrapper correction."
+    },
+    {
+      "chunk": "68cfe2",
+      "exit_code": 0,
+      "action": "read actual manifest interface fields",
+      "writes": 0
+    },
+    {
+      "chunk": "c186f0",
+      "exit_code": 0,
+      "action": "calculate final output; require every first output byte equal its preserved copy; compare all poses/source bindings; require only Tea path8/contour0 after changed; replace the seven current output files; exact readback",
+      "writes": 7,
+      "only_changed_contour": [
+        "茶",
+        8,
+        0
+      ],
+      "all_placements_unchanged": true
+    }
+  ],
+  "verification": {
+    "maker": {
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/make_glyph_program.py",
+        "--verify-only"
+      ],
+      "started_utc": "2026-10-04T21:03:10.324054+00:00",
+      "finished_utc": "2026-10-04T21:03:12.111109+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "action": "verified-existing",
+        "formal_version": 27,
+        "writes": 0,
+        "root_write_gate": null,
+        "manifest": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/V27_GLYPH_EDIT_MANIFEST.json",
+          "sha256": "4347f8ef9245ad8db980f9a37c6e7374f4e40fe0df35815c9c22c4053ae20d69",
+          "bytes": 193015
+        },
+        "notes": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/SOURCE_REAUTHORING_NOTES.json",
+          "sha256": "91ecc73602f7aea21dc619ff7fd9cc7171dfc2e3d0b2851cb1f4f4059b799c65",
+          "bytes": 78660
+        },
+        "source_contours": 21,
+        "authored_closed_contours": 21,
+        "aesthetic_pass_claimed": false
+      },
+      "stderr": "",
+      "writes": 0,
+      "audit_chunk": "daca0f"
+    },
+    "builder": {
+      "argv": [
+        "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/build_headline_asset.py",
+        "--verify-only"
+      ],
+      "started_utc": "2026-10-04T21:03:12.111109+00:00",
+      "finished_utc": "2026-10-04T21:03:14.278958+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "action": "verified-existing",
+        "writes": 0,
+        "formal_version": 27,
+        "root_write_gate": null,
+        "headline": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/headline.svg",
+          "sha256": "b8c0a6a0dbd31225c164535789eeee66042ee7bc8ccfa003df18083fd64b28a4",
+          "bytes": 28889
+        },
+        "brand": {
+          "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/brand.svg",
+          "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+          "bytes": 39038
+        },
+        "preview": {
+          "path": ".liu-visual-private/correct_source_typography/v27/preview.png",
+          "sha256": "4c7448ef8d7a2fa6aff5194190f607bda77b6c93551ecd9f5d84d47b5bb06e52",
+          "bytes": 2037754
+        },
+        "alpha_bbox": [
+          331,
+          403,
+          1327,
+          687
+        ],
+        "glyphs": [
+          {
+            "char": "一",
+            "source_contours": 1,
+            "pre_area": 1227.490647301449,
+            "post_area": 1227.4906238754193,
+            "removed_area": 2.3426029656548053e-05,
+            "bounds": [
+              331,
+              515,
+              444.8922424316406,
+              554.600830078125
+            ],
+            "output_contours": 1
+          },
+          {
+            "char": "杯",
+            "source_contours": 3,
+            "pre_area": 4310.901098395324,
+            "post_area": 4310.9011889025,
+            "removed_area": -9.050717562786303e-05,
+            "bounds": [
+              457,
+              403,
+              577.4579467773438,
+              535.310791015625
+            ],
+            "output_contours": 3
+          },
+          {
+            "char": "茶",
+            "source_contours": 5,
+            "pre_area": 6056.123919586644,
+            "post_area": 6056.123919808208,
+            "removed_area": -2.215638232883066e-07,
+            "bounds": [
+              625,
+              407,
+              843.52001953125,
+              591.8170776367188
+            ],
+            "output_contours": 5
+          },
+          {
+            "char": "，",
+            "source_contours": 1,
+            "pre_area": 286.22017005533144,
+            "post_area": 286.22017005533144,
+            "removed_area": 0,
+            "bounds": [
+              876,
+              539,
+              895.00537109375,
+              569.7142333984375
+            ],
+            "output_contours": 1
+          },
+          {
+            "char": "慢",
+            "source_contours": 8,
+            "pre_area": 4683.898174061984,
+            "post_area": 4683.897923409562,
+            "removed_area": 0.000250652421527775,
+            "bounds": [
+              1018,
+              548,
+              1144.5030517578125,
+              660.3195190429688
+            ],
+            "output_contours": 8
+          },
+          {
+            "char": "下",
+            "source_contours": 1,
+            "pre_area": 1621.6587212633258,
+            "post_area": 1621.6578006945438,
+            "removed_area": 0.0009205687820212916,
+            "bounds": [
+              1155,
+              581,
+              1243,
+              669.29638671875
+            ],
+            "output_contours": 1
+          },
+          {
+            "char": "来",
+            "source_contours": 2,
+            "pre_area": 1613.1114586368176,
+            "post_area": 1613.1114308793049,
+            "removed_area": 2.7757512725656852e-05,
+            "bounds": [
+              1251,
+              605,
+              1326.384765625,
+              686.2042846679688
+            ],
+            "output_contours": 2
+          }
+        ],
+        "aesthetic_pass_claimed": false
+      },
+      "stderr": "",
+      "writes": 0,
+      "audit_chunk": "daca0f"
+    },
+    "before_snapshot_chunk": "daca0f:Python-before",
+    "after_snapshot_chunk": "daca0f:Python-after",
+    "worker_file_count": 30,
+    "frozen_source_count": 13,
+    "strict_worker_snapshot_bytes_size_mtime_equal": true,
+    "strict_frozen_snapshot_bytes_size_mtime_equal": true,
+    "unchanged_worker_files": [
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "bytes": 39038,
+        "mtime_ns": "1791147254754740600"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/build_headline_asset.py",
+        "sha256": "c018f3254df4f0436068f6922300711551ae6051a9dcab015129206860f91f4f",
+        "bytes": 13376,
+        "mtime_ns": "1791146706266992500"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/BUILD_REPORT.json",
+        "sha256": "9753fcf730ba59a89ec1cdfd8a1ea48d745e07767823b9636b3c9eaae586f3e3",
+        "bytes": 8001,
+        "mtime_ns": "1791147254756739000"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "bytes": 39038,
+        "mtime_ns": "1791146871383957100"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/build_headline_asset.py",
+        "sha256": "c018f3254df4f0436068f6922300711551ae6051a9dcab015129206860f91f4f",
+        "bytes": 13376,
+        "mtime_ns": "1791146871377618400"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/BUILD_REPORT.json",
+        "sha256": "2c1347f049e09fef35afde8cbc1804ce6a81076a5af2496bc25574fd1ad42fbd",
+        "bytes": 8004,
+        "mtime_ns": "1791146871386189300"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/headline.svg",
+        "sha256": "397d7677bc99e2118e2885fb2bd2d9621abf35a7b2de99708e326085a60dfece",
+        "bytes": 28963,
+        "mtime_ns": "1791146871382957400"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/LETTERING_PROVENANCE.json",
+        "sha256": "fc6f1c95d7a541655eab786d4a1678183b5d4b14dcef847aed3038b940f9862f",
+        "bytes": 5957,
+        "mtime_ns": "1791146871388200100"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/make_glyph_program.py",
+        "sha256": "513cd08fea74b0ddc76ae0ffe4cd8cb121df41ffe0bcd29f6de7ad73e6afba2c",
+        "bytes": 14056,
+        "mtime_ns": "1791146871376111200"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/PRESERVATION.json",
+        "sha256": "3889191d6eca48783ac36a054ee1db282d117de846bc4605da1f8881e8af5c84",
+        "bytes": 3556,
+        "mtime_ns": "1791146871403994100"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/SOURCE_REAUTHORING_NOTES.json",
+        "sha256": "03075d39a5533f501cc699e5aa62155b11ee0e31b890e088887ce5871099c225",
+        "bytes": 78673,
+        "mtime_ns": "1791146871381537100"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/geometry-corrections/01-before-tea-terminal-taper/V27_GLYPH_EDIT_MANIFEST.json",
+        "sha256": "ccfd06eb39ce461458f5b6f6764362be651a1c675108be31a8fe050b6d690e67",
+        "bytes": 193015,
+        "mtime_ns": "1791146871380024700"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/headline.svg",
+        "sha256": "b8c0a6a0dbd31225c164535789eeee66042ee7bc8ccfa003df18083fd64b28a4",
+        "bytes": 28889,
+        "mtime_ns": "1791147254752743000"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/LETTERING_PROVENANCE.json",
+        "sha256": "b3564547ad39547d67786859e4029c22bb4b461120a37ac58a031b6c63459d4a",
+        "bytes": 5957,
+        "mtime_ns": "1791147254758740400"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/make_glyph_program.py",
+        "sha256": "2bf7d13d1e47f9fe56a4eea8463043eb01531c504c8c0ee5a5dfb163ace778a8",
+        "bytes": 14056,
+        "mtime_ns": "1791146959668476000"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/PROFESSIONAL_METHOD_READBACK.md",
+        "sha256": "8ae4434b01e861333151151e024f56c16deb1392ee7c8e27b591b2f6eef1807e",
+        "bytes": 2869,
+        "mtime_ns": "1791146717296635200"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/SOURCE_REAUTHORING_NOTES.json",
+        "sha256": "91ecc73602f7aea21dc619ff7fd9cc7171dfc2e3d0b2851cb1f4f4059b799c65",
+        "bytes": 78660,
+        "mtime_ns": "1791147003302516900"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/build_headline_asset.py",
+        "sha256": "04a55c42b27ade3eee47866547de4b5ff2dd689435a9bf112b9616a7a6271cd2",
+        "bytes": 12160,
+        "mtime_ns": "1791146665532117700"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/FAILURE.json",
+        "sha256": "6a2ab88c611a124502f6fc406926d8f5b2accbbb547e9dafc084fe2852192c20",
+        "bytes": 1306,
+        "mtime_ns": "1791146665540298000"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/make_glyph_program.py",
+        "sha256": "4407bfdb8a066f61381e02de6044e3332868beb41dc3710d39524d2d549808cc",
+        "bytes": 13995,
+        "mtime_ns": "1791146665530688100"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/PROFESSIONAL_METHOD_READBACK.md",
+        "sha256": "355d396930c5f164b31cbe327ea0986e10b683fb52349d05891097ace53de1ea",
+        "bytes": 2870,
+        "mtime_ns": "1791146665538289900"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/SOURCE_REAUTHORING_NOTES.json",
+        "sha256": "fbf89b4db9799cc45ab0bd7d3ffc29274484a0743accfe4f756681dbe7638a7a",
+        "bytes": 78612,
+        "mtime_ns": "1791146665536131000"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/technical-interface-history/00-before-rounded-area-repair/V27_GLYPH_EDIT_MANIFEST.json",
+        "sha256": "ccfd06eb39ce461458f5b6f6764362be651a1c675108be31a8fe050b6d690e67",
+        "bytes": 193015,
+        "mtime_ns": "1791146665534129500"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/V27_GLYPH_EDIT_MANIFEST.json",
+        "sha256": "4347f8ef9245ad8db980f9a37c6e7374f4e40fe0df35815c9c22c4053ae20d69",
+        "bytes": 193015,
+        "mtime_ns": "1791147003294673200"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/cup-leaf-inspection.png",
+        "sha256": "0faa516f09d5755f70e715013f4bb5c78801213e9ae1fd16ff089f04fdc3e326",
+        "bytes": 462340,
+        "mtime_ns": "1791147254765740500"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/geometry-corrections/01-before-tea-terminal-taper/cup-leaf-inspection.png",
+        "sha256": "5f349277804256027eb35c04d0a0bed768e5695cba827d68c02c34c6b8cb043e",
+        "bytes": 460847,
+        "mtime_ns": "1791146871400993900"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/geometry-corrections/01-before-tea-terminal-taper/headline-render.png",
+        "sha256": "87c0172271a800373bff96e10f6e84f6fcefbbcdecb60030cbdbbe79b3981ffe",
+        "bytes": 41166,
+        "mtime_ns": "1791146871390196900"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/geometry-corrections/01-before-tea-terminal-taper/preview.png",
+        "sha256": "3403ce920fbd8f161ac4d549517fec2f4db143abc90721d2e744db97bc1ea3f4",
+        "bytes": 2036181,
+        "mtime_ns": "1791146871393996100"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/headline-render.png",
+        "sha256": "ae527a9247ef6b259b50a91e3dd5db34b49fc94834d2090df4a8507bc8b7fb19",
+        "bytes": 41005,
+        "mtime_ns": "1791147254760740100"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/preview.png",
+        "sha256": "4c7448ef8d7a2fa6aff5194190f607bda77b6c93551ecd9f5d84d47b5bb06e52",
+        "bytes": 2037754,
+        "mtime_ns": "1791147254763740200"
+      }
+    ],
+    "unchanged_frozen_sources": [
+      {
+        "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+        "bytes": 1735549,
+        "mtime_ns": "1791024466709027800",
+        "label": "photograph",
+        "expected_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+        "bytes": 39038,
+        "mtime_ns": "1791112023392404600",
+        "label": "brand",
+        "expected_sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff"
+      },
+      {
+        "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+        "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd",
+        "bytes": 18709,
+        "mtime_ns": "1791130290515001700",
+        "label": "edited_kernel",
+        "expected_sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v24/headline-generated-01.png",
+        "sha256": "34b9b720d7d39b85c48d36220d2d53e4261d4ee88a5c27056fa796a52c39f774",
+        "bytes": 383223,
+        "mtime_ns": "1791127659679924100",
+        "label": "generated_png",
+        "expected_sha256": "34b9b720d7d39b85c48d36220d2d53e4261d4ee88a5c27056fa796a52c39f774"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/upstream-alpha128-trace.svg",
+        "sha256": "46344044630cd58081d3ce1520b34dc8665b574fcdf0f35179a208a818b47571",
+        "bytes": 37932,
+        "mtime_ns": "1791127913743055300",
+        "label": "trace_svg",
+        "expected_sha256": "46344044630cd58081d3ce1520b34dc8665b574fcdf0f35179a208a818b47571"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/IMAGEGEN_EXECUTION.json",
+        "sha256": "d4865c9e43454f230047e05b5c831c00ba7696f5f52df64e7e840d47ab36ffb0",
+        "bytes": 1698,
+        "mtime_ns": "1791127738439597900",
+        "label": "generation_evidence",
+        "expected_sha256": "d4865c9e43454f230047e05b5c831c00ba7696f5f52df64e7e840d47ab36ffb0"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/SOURCE_TRACE.json",
+        "sha256": "0052bbf8ef4472e05d54eac79695b7a3eadf8fe687b7f842a75983fd9bf05378",
+        "bytes": 3960,
+        "mtime_ns": "1791127913745053800",
+        "label": "provenance",
+        "expected_sha256": "0052bbf8ef4472e05d54eac79695b7a3eadf8fe687b7f842a75983fd9bf05378"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/TRACE_COMMANDS.json",
+        "sha256": "e95467a5af1a3ee19eac5dced61ccf94e616f185e3cb0565cadb86b40a497a63",
+        "bytes": 306211,
+        "mtime_ns": "1791127913744055400",
+        "label": "source_commands",
+        "expected_sha256": "e95467a5af1a3ee19eac5dced61ccf94e616f185e3cb0565cadb86b40a497a63"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/ART_DIRECTION.json",
+        "sha256": "5fa2a8203ca957d1732fc2c02477faf41d27015813135e87879409c2438ed945",
+        "bytes": 7037,
+        "mtime_ns": "1791126868771322500",
+        "label": "art_direction",
+        "expected_sha256": "5fa2a8203ca957d1732fc2c02477faf41d27015813135e87879409c2438ed945"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/trace_source_once.py",
+        "sha256": "45f7eb01e6863601bd9e4ffe0c8d07bb851f0809d7566afefbf8b415996d52a7",
+        "bytes": 11287,
+        "mtime_ns": "1791127909763159100",
+        "label": "trace_builder",
+        "expected_sha256": "45f7eb01e6863601bd9e4ffe0c8d07bb851f0809d7566afefbf8b415996d52a7"
+      },
+      {
+        "path": "visual_memory/vpd_registered_type_composite.py",
+        "sha256": "8592bd34433123968ef5b015fa699a3951fb1ac433bc60b03a9f8eeba0727800",
+        "bytes": 18770,
+        "mtime_ns": "1791141548596054500",
+        "label": "composite_module",
+        "expected_sha256": "8592bd34433123968ef5b015fa699a3951fb1ac433bc60b03a9f8eeba0727800"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/make_glyph_program.py",
+        "sha256": "514e370da517fdb47981d02e4e11a914a68087bcd7c4c251cf18773212578b80",
+        "bytes": 18520,
+        "mtime_ns": "1791140779229956000",
+        "label": "v26_maker",
+        "expected_sha256": "514e370da517fdb47981d02e4e11a914a68087bcd7c4c251cf18773212578b80"
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v26/build_headline_asset.py",
+        "sha256": "7ef28b93afd0e1ff2fc89e5d336849030ddb70b2b9041c7aba6aa9b6e9bc08f4",
+        "bytes": 12421,
+        "mtime_ns": "1791140973920572400",
+        "label": "v26_builder",
+        "expected_sha256": "7ef28b93afd0e1ff2fc89e5d336849030ddb70b2b9041c7aba6aa9b6e9bc08f4"
+      }
+    ],
+    "receipt_writes_occur_only_after_zero_write_verifications": true,
+    "initial_separate_cli_verifications": {
+      "maker": {
+        "command": "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 -B 'evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/make_glyph_program.py' --verify-only",
+        "chunk": "16738d",
+        "exit_code": 0,
+        "stdout": {
+          "action": "verified-existing",
+          "formal_version": 27,
+          "writes": 0,
+          "root_write_gate": null,
+          "manifest": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/V27_GLYPH_EDIT_MANIFEST.json",
+            "sha256": "4347f8ef9245ad8db980f9a37c6e7374f4e40fe0df35815c9c22c4053ae20d69",
+            "bytes": 193015
+          },
+          "notes": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/SOURCE_REAUTHORING_NOTES.json",
+            "sha256": "91ecc73602f7aea21dc619ff7fd9cc7171dfc2e3d0b2851cb1f4f4059b799c65",
+            "bytes": 78660
+          },
+          "source_contours": 21,
+          "authored_closed_contours": 21,
+          "aesthetic_pass_claimed": false
+        },
+        "writes": 0
+      },
+      "builder": {
+        "command": "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 -B 'evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/build_headline_asset.py' --verify-only",
+        "chunk": "006d05",
+        "exit_code": 0,
+        "stdout": {
+          "action": "verified-existing",
+          "writes": 0,
+          "formal_version": 27,
+          "root_write_gate": null,
+          "headline": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/headline.svg",
+            "sha256": "b8c0a6a0dbd31225c164535789eeee66042ee7bc8ccfa003df18083fd64b28a4",
+            "bytes": 28889
+          },
+          "brand": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/brand.svg",
+            "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+            "bytes": 39038
+          },
+          "preview": {
+            "path": ".liu-visual-private/correct_source_typography/v27/preview.png",
+            "sha256": "4c7448ef8d7a2fa6aff5194190f607bda77b6c93551ecd9f5d84d47b5bb06e52",
+            "bytes": 2037754
+          },
+          "alpha_bbox": [
+            331,
+            403,
+            1327,
+            687
+          ],
+          "glyphs": [
+            {
+              "char": "一",
+              "source_contours": 1,
+              "pre_area": 1227.490647301449,
+              "post_area": 1227.4906238754193,
+              "removed_area": 2.3426029656548053e-05,
+              "bounds": [
+                331,
+                515,
+                444.8922424316406,
+                554.600830078125
+              ],
+              "output_contours": 1
+            },
+            {
+              "char": "杯",
+              "source_contours": 3,
+              "pre_area": 4310.901098395324,
+              "post_area": 4310.9011889025,
+              "removed_area": -9.050717562786303e-05,
+              "bounds": [
+                457,
+                403,
+                577.4579467773438,
+                535.310791015625
+              ],
+              "output_contours": 3
+            },
+            {
+              "char": "茶",
+              "source_contours": 5,
+              "pre_area": 6056.123919586644,
+              "post_area": 6056.123919808208,
+              "removed_area": -2.215638232883066e-07,
+              "bounds": [
+                625,
+                407,
+                843.52001953125,
+                591.8170776367188
+              ],
+              "output_contours": 5
+            },
+            {
+              "char": "，",
+              "source_contours": 1,
+              "pre_area": 286.22017005533144,
+              "post_area": 286.22017005533144,
+              "removed_area": 0,
+              "bounds": [
+                876,
+                539,
+                895.00537109375,
+                569.7142333984375
+              ],
+              "output_contours": 1
+            },
+            {
+              "char": "慢",
+              "source_contours": 8,
+              "pre_area": 4683.898174061984,
+              "post_area": 4683.897923409562,
+              "removed_area": 0.000250652421527775,
+              "bounds": [
+                1018,
+                548,
+                1144.5030517578125,
+                660.3195190429688
+              ],
+              "output_contours": 8
+            },
+            {
+              "char": "下",
+              "source_contours": 1,
+              "pre_area": 1621.6587212633258,
+              "post_area": 1621.6578006945438,
+              "removed_area": 0.0009205687820212916,
+              "bounds": [
+                1155,
+                581,
+                1243,
+                669.29638671875
+              ],
+              "output_contours": 1
+            },
+            {
+              "char": "来",
+              "source_contours": 2,
+              "pre_area": 1613.1114586368176,
+              "post_area": 1613.1114308793049,
+              "removed_area": 2.7757512725656852e-05,
+              "bounds": [
+                1251,
+                605,
+                1326.384765625,
+                686.2042846679688
+              ],
+              "output_contours": 2
+            }
+          ],
+          "aesthetic_pass_claimed": false
+        },
+        "writes": 0
+      }
+    },
+    "mtime_ns_encoding": "base10 strings; comparisons performed in Python before JSON serialization",
+    "root_owned_same_directory_files_excluded_from_author_scope": [
+      "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/STAGED_TECHNICAL_REVIEW_SCOPE.json",
+      "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/FIGMA_ASSEMBLY.js"
+    ],
+    "initial_b10275_d1e703_mtime_values_not_authoritative": "JavaScript parsed large mtime_ns integers with rounding; the exact Python daca0f re-audit supersedes those values. Their asset SHA/size observations remain valid."
+  },
+  "runtime_readback": {
+    "chunk_id": "cc30e4",
+    "exit_code": 0,
+    "writes": 0,
+    "runtime_model_evidence": {
+      "thread_id": "01a10896-5bd0-7571-a301-be911a71bdd1",
+      "session_file": "C:\\Users\\Administrator\\.codex\\sessions\\2026\\10\\05\\rollout-2026-10-05T04-23-54-01a10896-5bd0-7571-a301-be911a71bdd1.jsonl",
+      "selected_actual_turn_context": {
+        "line": 367,
+        "raw_line_sha256": "dd4c065989ee74f22b341b81f2f0a6374684802b3f704f223f78d0ca2d8ad9cc",
+        "timestamp": "2026-10-04T20:52:29.374Z",
+        "turn_id": "01a10896-5c60-79e3-9bbf-bf047f11f71f",
+        "model": "gpt-6.1-sol",
+        "effort": "max"
+      },
+      "prompt_name_used_as_evidence": false
+    },
+    "runtime": {
+      "python_executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "Pillow": "12.3.0",
+      "FontTools": "4.63.0",
+      "pathops_version": "0.9.2",
+      "pathops_module": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages\\pathops\\__init__.py",
+      "renderer_version_values": {
+        "VERSIONS": {
+          "python": "3.12.14",
+          "pillow": "12.3.0",
+          "node": "v24.19.0",
+          "sharp": "0.35.4",
+          "rsvg": "2.62.91"
+        }
+      }
+    },
+    "final_identity": {
+      "maker": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/make_glyph_program.py",
+        "sha256": "2bf7d13d1e47f9fe56a4eea8463043eb01531c504c8c0ee5a5dfb163ace778a8",
+        "bytes": 14056
+      },
+      "builder": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/build_headline_asset.py",
+        "sha256": "c018f3254df4f0436068f6922300711551ae6051a9dcab015129206860f91f4f",
+        "bytes": 13376
+      },
+      "manifest": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/V27_GLYPH_EDIT_MANIFEST.json",
+        "sha256": "4347f8ef9245ad8db980f9a37c6e7374f4e40fe0df35815c9c22c4053ae20d69",
+        "bytes": 193015
+      },
+      "method_sources": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/PROFESSIONAL_METHOD_READBACK.md",
+        "sha256": "8ae4434b01e861333151151e024f56c16deb1392ee7c8e27b591b2f6eef1807e",
+        "bytes": 2869
+      },
+      "glyphs": [
+        {
+          "char": "一",
+          "source_contours": 1,
+          "output_contours": 1
+        },
+        {
+          "char": "杯",
+          "source_contours": 3,
+          "output_contours": 3
+        },
+        {
+          "char": "茶",
+          "source_contours": 5,
+          "output_contours": 5
+        },
+        {
+          "char": "，",
+          "source_contours": 1,
+          "output_contours": 1
+        },
+        {
+          "char": "慢",
+          "source_contours": 8,
+          "output_contours": 8
+        },
+        {
+          "char": "下",
+          "source_contours": 1,
+          "output_contours": 1
+        },
+        {
+          "char": "来",
+          "source_contours": 2,
+          "output_contours": 2
+        }
+      ],
+      "alpha_bbox": [
+        331,
+        403,
+        1327,
+        687
+      ],
+      "source_generation_version": 24,
+      "source_trace": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/upstream-alpha128-trace.svg",
+        "sha256": "46344044630cd58081d3ce1520b34dc8665b574fcdf0f35179a208a818b47571",
+        "bytes": 37932
+      },
+      "seven_paths": 7,
+      "kernel_compatibility": {
+        "outer_formal_version": 27,
+        "actual_saved_manifest_version": 27,
+        "in_memory_kernel_manifest_version": 24,
+        "operation": "deepcopy manifest; set only formal_version to24 in memory; call unchanged fixed replay_edit_program",
+        "original_kernel": {
+          "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+          "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+        },
+        "original_kernel_report_formal_version": 24,
+        "raw_kernel_report_sha256": "c964c316a5039ccebbe19ce5ff74a7e7e7dd6e0b3b18fe8f720c390ad67a1004",
+        "source_trace_verification": "Kernel recomputes the fixed alpha128 source trace in memory and checks V24 attributes/commands; no new production trace is written.",
+        "new_generation_or_production_trace_claimed": false
+      }
+    },
+    "aesthetic_pass_claimed": false
+  },
+  "final_pixel_reads": {
+    "tool": "view_image",
+    "detail": "original",
+    "complete_preview": ".liu-visual-private/correct_source_typography/v27/preview.png",
+    "transparent_headline": ".liu-visual-private/correct_source_typography/v27/headline-render.png",
+    "inspection_only_crop": ".liu-visual-private/correct_source_typography/v27/cup-leaf-inspection.png",
+    "all_three_actually_observed_after_final_rebuild": true,
+    "no_pixel_files_written_by_view": true
+  },
+  "actual_limits": [
+    "Adobe teaching text and selected PDF text were read; Adobe demonstration pixels/video were not accessible and are not claimed viewed.",
+    "The Tea path8/contour0 is an explicit local glyph component reauthoring, not a lossless original-alpha transform.",
+    "The second phrase crosses original bokeh and covers some original dry-tea pixels by ordinary source-over. The photograph itself and alpha-zero RGB are unchanged.",
+    "Product relation, copy readability and rhythm remain subjects for a fresh independent pixel review. Maker execution and technical verification are not an aesthetic verdict."
+  ],
+  "new_imagegen_calls": 0,
+  "new_production_traces": 0,
+  "new_font_outlines": 0,
+  "new_photograph_generations": 0,
+  "photo_retouch_filter_patchback_mask_layers": 0,
+  "aesthetic_pass_claimed": false,
+  "human_acceptance_claimed": false,
+  "independent_review": null,
+  "receipt_precision_correction": {
+    "failed_readback_chunk": "b41f88",
+    "failed_readback_exit_code": 1,
+    "diagnostic_chunk": "d9dba9",
+    "diagnostic_exit_code": 0,
+    "cause": "mtime_ns integers exceed JavaScript safe integer range; stored JSON values rounded by 100-200ns; actual source and asset content hashes and sizes all matched",
+    "actual_asset_or_source_changes": 0,
+    "exact_reaudit_chunk": "daca0f",
+    "exact_reaudit_exit_code": 0,
+    "both_verify_command_writes": 0,
+    "exact_before_after_in_Python": true,
+    "failed_receipt_originals_preserved": [
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/receipt-corrections/01-nanosecond-json-precision/MAKER_EXECUTION_RECEIPT.json",
+        "sha256": "c8ff07f610d1e943220c033b1750f3c95e6641a1e534e8b2cae5883b825e63c2",
+        "bytes": 29512
+      },
+      {
+        "path": ".liu-visual-private/correct_source_typography/v27/receipt-corrections/01-nanosecond-json-precision/FINAL_FREEZE_RECEIPT.json",
+        "sha256": "574865a0e540426dc9f88ff974982f6976e483d23cc9b2c3b6320070f7acb6ce",
+        "bytes": 14464
+      }
+    ],
+    "correction_scope": "Only the two execution/freeze JSON receipts; no producer source, manifest, SVG or preview edits."
+  }
+}

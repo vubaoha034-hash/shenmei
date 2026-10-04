@@ -38,6 +38,7 @@
 | V24 | [完整PNG](https://drive.google.com/file/d/1nYivrRDZU3aZySfapBbeHLiX8RWLFomd/view) | [384:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=384-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V25 | [完整PNG](https://drive.google.com/file/d/1IXXnS6o4OOUus-tEVY0qLZp6UMnQf1wH/view) | [388:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=388-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V26 | [完整PNG](https://drive.google.com/file/d/1mF0kYK5Ya22nbzsIY0ElgebMG-n0X4sx/view) | [391:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=391-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
+| V27 | [完整PNG](https://drive.google.com/file/d/1jN8ow06WVOP42wM_e3me7RdLZV159EXS/view) | [395:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=395-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -149,3 +150,9 @@ V26恢复原素材自然书写曲线并组织一条主句；复用V24唯一原�
 
 
 V26新的项目外Sol/Max仅按P→N→R→S→T各一次实际读取五原图，真实模型/隔离工具范围及输入图像原字节传输均核对，正式审美AI_FAIL。原结论及具体区域证据在本版 `pixel_review/PIXEL_REVIEW.json`；精确摄影/曲线保护由技术检查，AI不替代刘先生。同方向下一版只按本版有效像素意见修复并重新冷审，摄影与V9品牌冻结，失败版本完整保留。
+
+
+V27保留自然书写曲线并以杯口弧线、茶字落笔及两组文字组织杯叶盘关系；复用V24唯一原件与17路径21轮廓描摹，零新生图/生产描摹/摄影。21原轮廓全部绑定，有界清理后7复合主句。摄影7fd与V9branddd8e/285,198宽205保留；完整登记PNG2a1d…、Figma395:2及三Drive原件全字节回读已保存。全幅登记0RGB；1374核心覆盖按登记结果，160678未覆盖核心按源均0RGB，原生导出8463px/max33差另存。旧22/23/24/25/26完整返回不变，专业技术不代替审美；新项目外五原图冷审PENDING。准确调用从 evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/REUSE_METHOD.md 进入。
+
+
+V27新的项目外Sol/Max仅按P→N→R→S→T各一次实际读取五原图，真实模型/隔离工具范围及输入图像原字节传输均核对，正式审美AI_FAIL。原结论及具体区域证据在本版 `pixel_review/PIXEL_REVIEW.json`；精确摄影/曲线保护由技术检查，AI不替代刘先生。同方向下一版只按本版有效像素意见修复并重新冷审，摄影与V9品牌冻结，失败版本完整保留。

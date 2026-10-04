@@ -1,0 +1,65 @@
+{
+  "schema": "vpd-actual-registered-type-figma-check/v1",
+  "result": "PASS_ACTUAL_BINDING_WITH_RENDERER_LIMITATIONS",
+  "formal_version": 27,
+  "registration": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/REGISTERED_TYPE_COMPOSITE.json",
+    "sha256": "9731239ab66be63b194d1d99d3c2d9af26115fcf3a914a0e17f7af06788f6076"
+  },
+  "runtime_evidence": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/FIGMA_BINDING_RUNTIME_EVIDENCE.json",
+    "sha256": "a092c3e2694746f939e80c04ae7b9d81224e32ba4638b294c76cd47d6d62af4e"
+  },
+  "download_readback": {
+    "path": ".liu-visual-private/correct_source_typography/v27/figma-download-readback.json",
+    "sha256": "63b5e1f30704410fee270cbacfe2b67b457a028b1873314195bc336b1d956dac"
+  },
+  "runtime": {
+    "session_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "binding_call_id": "call_4D3Wt6FsE4HAn5njG20yfc8Q",
+    "binding_input_sha256": "3336e71e26b409b12e913ddc741fc88603d35cc53521d82186c2136cedad0eda",
+    "binding_output_sha256": "7bc834bd1c034f18e98cc7755b0700b92c95e25211ade632791bd5f798215a4b",
+    "download_call_id": "call_i7FGKFUmXe0xuz4Tb2sB8Arm",
+    "download_input_sha256": "7320bf35cebacf6f2a325ea3d54b073acaf34b00f880b79c6593d9026bf0c9e0",
+    "download_output_sha256": "02caaea2fc6d023b72d7f4fae6cd962754efe3a74b29d57db87574ba79ca3116",
+    "download_result_transport": "IMMEDIATE_FULL_ACTUAL_RESULT_NO_WAIT"
+  },
+  "capture": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v27/FIGMA_NATIVE_CAPTURE.json",
+    "sha256": "fa29a3c7b96c2dca9aa7ad93797aef71618e2512694f7ff6b95cdcd7f6eaeedd"
+  },
+  "frame_id": "395:2",
+  "photo_node_id": "395:3",
+  "source": {
+    "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+    "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+  },
+  "raw_figma_export": {
+    "path": ".liu-visual-private/correct_source_typography/v27/figma-raw.png",
+    "sha256": "e3ba0f70d9710f9be4727875206d439e50a549848bd45b49da4ed8290d2e0dc2"
+  },
+  "node_count": 21,
+  "vector_count": 14,
+  "geometry": {
+    "brand": {
+      "paths": 7,
+      "coordinates_compared": 4928,
+      "max_absolute_coordinate_difference": 0.0012787703136609707,
+      "max_shape_coordinate_difference": 1.0092204973943808e-05
+    },
+    "headline": {
+      "paths": 7,
+      "coordinates_compared": 2580,
+      "max_absolute_coordinate_difference": 1.581375124715123e-05,
+      "max_shape_coordinate_difference": 8.715057447261643e-06
+    }
+  },
+  "registered_path_fill_RGB_tolerance": 0,
+  "native_png_equals_registered_final_required": false,
+  "aesthetic_pass_claimed": false,
+  "limitations": [
+    "Figma native PNG and registered Sharp/Pillow final are different renderers; raw equality is not required.",
+    "Actual local host runtime log is required; portable replay without that local tool evidence is unsupported.",
+    "Only the inspected V27 direct collector invocation is accepted; V28 and later fail closed."
+  ]
+}
