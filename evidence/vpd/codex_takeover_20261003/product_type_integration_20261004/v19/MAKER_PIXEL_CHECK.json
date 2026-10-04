@@ -1,0 +1,92 @@
+{
+  "schema": "vpd-v19-maker-pixel-check/v1",
+  "role": "ASSET_MAKER_NOT_INDEPENDENT_REVIEWER",
+  "source_pixel_views_this_turn": [
+    {
+      "label": "S",
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    },
+    {
+      "label": "R",
+      "path": ".liu-visual-private/product-type-integration-20261004/R-current-reference.jpg",
+      "scope": "Upper 1080x720 advertisement only"
+    },
+    {
+      "label": "P",
+      "path": ".liu-visual-private/product-type-integration-20261004/P-approved-typography.png",
+      "scope": "Typography/layout accepted; photography not accepted"
+    },
+    {
+      "label": "T18",
+      "path": ".liu-visual-private/correct_source_typography/v18/poster.png",
+      "sha256": "2357e745eeaed1faf26bce0fc4680810dfceea04fbd9bf9463b84b6c970feaee"
+    }
+  ],
+  "candidate_prewrite_inspection": {
+    "filesystem_writes": 0,
+    "composed_canvas": [
+      1536,
+      1024
+    ],
+    "displayed_complete_canvas": [
+      768,
+      512
+    ],
+    "displayed_format": "JPEG quality42 in memory",
+    "geometric_values_tried": 1,
+    "formal_outputs_created": 0
+  },
+  "actual_original_png_view": {
+    "path": ".liu-visual-private/correct_source_typography/v19/preview.png",
+    "sha256": "6528d2a780f512ab1dec04475ea3abe80d0c5ecadddfd3fbb7df86fb24ce7d87",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "tool": "view_image",
+    "detail": "original"
+  },
+  "copy_readback": "一杯茶，慢下来",
+  "brand_readback": "茶作",
+  "observations": [
+    "The full original PNG is readable as 一杯茶，慢下来; 慢 retains its recognizable inner structure after the lower strokes are occluded.",
+    "The real cup rim now removes a curved region from the bottom of 慢, including its left vertical end and the lower outward stroke; 下 loses only a small terminal edge.",
+    "The cup and tea remain fully visible; the foreground photographic rim provides the title's lower boundary.",
+    "The original lower stroke from source contour 66 loses 46.2207495% of its alpha coverage. This is a material local occlusion, not a claim that only negligible strokes are clipped.",
+    "Source contours 71 and 74 are entirely invisible after the fixed clip; their original d/translate attributes remain in the SVG."
+  ],
+  "true_product_occlusion": {
+    "pixels": 523,
+    "whole_phrase_nonzero_alpha_pixel_fraction": 0.04593763724198507,
+    "whole_phrase_alpha_coverage_fraction": 0.04319102786138248,
+    "bbox_exclusive": [
+      542,
+      550,
+      642,
+      566
+    ],
+    "separated_from_outside_mask_AA": {
+      "lower_pixels": 2,
+      "lower_max_delta": 1,
+      "higher_pixels": 1,
+      "higher_max_delta": 2
+    }
+  },
+  "products_core_pixels": 162052,
+  "product_core_RGB_differences": 0,
+  "retained_source_svg_paths": 27,
+  "no_visible_occlusion_claimed": false,
+  "alternative_geometric_values_tried": 0,
+  "creator_legibility_blocker_observed": false,
+  "aesthetic_boundary": "Creator legibility and pixel observations only. Complete visual quality and image/text relationship require a fresh independent cold review of the official Figma export.",
+  "formal_aesthetic_verdict": null,
+  "human_acceptance": null,
+  "remaining_root_work": [
+    "Official Figma import/readback/export",
+    "Source/core checks on final export",
+    "Drive original archive/readback",
+    "Fresh project-external pixel review",
+    "Root-only native state registration"
+  ]
+}

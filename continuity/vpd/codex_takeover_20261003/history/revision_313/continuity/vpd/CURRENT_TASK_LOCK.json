@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 314,
+  "revision": 313,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "CHAZUO_V19_AI_FAIL_NEW_SENTENCE_FORM_AND_PRODUCT_READING_BAND_REQUIRED",
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
+  "current_stage": "CHAZUO_V19_CUP_FOREGROUND_OCCLUSION_AWAITING_COLD_REVIEW",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
   "p6_allowed": false,
-  "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+  "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -143,7 +143,7 @@
     "do_not_claim_universal_independent_distillation": true,
     "candidate_promotion_Golden_Scale_blocked": true,
     "current_image_generation_authorization": 0,
-    "current_figma_canvas_authorization": 1,
+    "current_figma_canvas_authorization": 0,
     "second_style_execution_allowed": false,
     "no_new_visual_rules_for_cross_aspect": true,
     "current_image_generation_authorization_scope": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
@@ -224,11 +224,11 @@
     }
   },
   "completed_this_revision": [
-    "V19实际正确五图项目外Sol/Max232468ms审稿AI_FAIL，真实AI位置措辞局限另记录，不改其结论",
-    "摄影保护/Figma原source/Drive两原件和可编辑曲线通过独立技术实查；真实523px遮挡不足以证明审美收益",
-    "停止同一轮廓微位移方案，后继唯一同方向主句字形及产品共享构图方法由新专业制作worker实图研究；0新摄影/0付费/0第二风格"
+    "V19同方向只更改单一整句affine下移18px，27字形属性不改，实杯前景遮523px且慢底笔46.22%损失/两微轮廓全遮如实记录",
+    "Figma359:2实际36矢量/2mask，框外1464960和固定162052产品核心RGB0，品牌/摄影冻结；Drive海报/SVG两原件全字节匹配",
+    "新项目外Sol/Max正确19五图审稿已启动，制作/技术保护与审美待定分开；首个源标题ID前检失败无克隆，修复与三尝试两成功均留证"
   ],
-  "updated_at": "2026-10-04T18:08:33.213690+08:00",
+  "updated_at": "2026-10-04T17:46:09.449062+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2523,8 +2523,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_FAILED_REVIEW_RECEIPT.json",
-    "sha256": "70838d63116fc0ddf203972c073bf2d74e88e45293e5ab52de5f0f26584197d0"
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_AWAITING_REVIEW_RECEIPT.json",
+    "sha256": "eae6c54f4b50d85bf1cb7512f0b98072dfa5ebc43aecaf691865dced44ea6788"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3166,8 +3166,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
-    "next_required_action": "REVISE_CORRECT_SOURCE_CHAZUO_TYPOGRAPHY_FROM_WORKER_EVIDENCE",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_AWAITING_PIXEL_REVIEW",
+    "next_required_action": "REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -3177,8 +3177,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_FAILED_REVIEW_RECEIPT.json",
-      "sha256": "70838d63116fc0ddf203972c073bf2d74e88e45293e5ab52de5f0f26584197d0"
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/NATIVE_AWAITING_REVIEW_RECEIPT.json",
+      "sha256": "eae6c54f4b50d85bf1cb7512f0b98072dfa5ebc43aecaf691865dced44ea6788"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3196,7 +3196,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "f920021dfc97f2f02b8a51cc1a1d5501adc05d02290de1d50a7bb0bc93eb1a00"
+      "sha256": "8c01c7a0130edbdf627a4320dc3fc3b69ab466279d73fa05d30f32bc2e8be878"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -3255,7 +3255,7 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "REVISION_REQUIRED",
+      "phase": "AWAITING_PIXEL_REVIEW",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -4052,24 +4052,8 @@
             "overlay_node": "359:4",
             "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=359-2"
           },
-          "verdict": "AI_FAIL",
-          "preserved": true,
-          "pixel_review": {
-            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/pixel_review/PIXEL_REVIEW.json",
-            "sha256": "b075313d9ea1b0aba91c2d0ed010bef4846584fe33a4881db33567dd689300ad"
-          },
-          "drive_archive": {
-            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/DRIVE_ARCHIVE.json",
-            "sha256": "e5bfe5446b2688ef7a41e6aa31c3225d006324614e358f02305c4caadcd985fb"
-          },
-          "asset_drive_archive": {
-            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/ASSET_DRIVE_ARCHIVE.json",
-            "sha256": "3099b514707d55af366a368e7100aacfbcb323fab2a0c9041099a95fe8d81fce"
-          },
-          "professional_technical_review": {
-            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V19_TECHNICAL.json",
-            "sha256": "62c3f436e13f0d88266ad4ebcb75d8f9259f2b2b1ab333ee81e86b2fc842bd84"
-          }
+          "verdict": "PENDING",
+          "preserved": true
         }
       ],
       "poster_human_verdict": "PENDING",
@@ -4105,8 +4089,8 @@
       "acceptance_request_withdrawn": false,
       "poster_human_feedback_scope": "PRIOR_V3_REJECTION_PRESERVED_NOT_V9_VERDICT",
       "professional_technical_review": {
-        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V19_TECHNICAL.json",
-        "sha256": "62c3f436e13f0d88266ad4ebcb75d8f9259f2b2b1ab333ee81e86b2fc842bd84"
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V18_TECHNICAL.json",
+        "sha256": "876b67fbb5f1cd00fd6a6f666236e4870eba3ba4e4782a6a7c10a3def7616e1a"
       },
       "fresh_repository_recovery": {
         "result": "PASS",

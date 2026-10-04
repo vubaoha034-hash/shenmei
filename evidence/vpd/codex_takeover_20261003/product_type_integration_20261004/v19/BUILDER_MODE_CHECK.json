@@ -1,0 +1,69 @@
+{
+  "schema": "vpd-v19-bounded-builder-mode-check/v1",
+  "role": "CREATOR_IMPLEMENTATION_CHECK_NOT_AESTHETIC_REVIEW",
+  "actual_checks": {
+    "mode": "verify-only",
+    "harness_writes": 0,
+    "post_creation_verify_exit": 0,
+    "verify_only_bound_file_SHA_and_mtime_unchanged": true,
+    "existing_output_write_exit": 1,
+    "existing_output_refusal": "OUTPUT_ALREADY_EXISTS",
+    "missing_mode_exit": 2,
+    "missing_mode_refusal": "one of the arguments --verify-only --write is required",
+    "all_three_controls_bound_file_SHA_and_mtime_unchanged": true,
+    "bound_files_count": 21,
+    "builder_summary": {
+      "mode": "verify-only",
+      "action": "verified-existing",
+      "writes": 0,
+      "paths": 27,
+      "affine": "matrix(0.24 0 0 0.24 401.7667811927463 361.4383065956895)",
+      "bbox": [
+        425,
+        402,
+        748,
+        565
+      ],
+      "unclipped_bbox": [
+        425,
+        402,
+        748,
+        566
+      ],
+      "true_occlusion": {
+        "nonzero_pixels": 523,
+        "maximum_alpha_delta": 255,
+        "alpha_coverage_equivalent_pixels": 402.93333333333334,
+        "bbox_exclusive": [
+          542,
+          550,
+          642,
+          566
+        ]
+      },
+      "core_pixels": 162052,
+      "core_RGB_differences": 0,
+      "part_character_lengths": [
+        26024,
+        30714
+      ],
+      "headline": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v19/headline.svg",
+        "sha256": "8e94bbebac6cb9d6495473659b7435a15d63473f9c9d5bd038b14dbabb89cdee",
+        "bytes": 55781
+      },
+      "preview": {
+        "path": ".liu-visual-private/correct_source_typography/v19/preview.png",
+        "sha256": "6528d2a780f512ab1dec04475ea3abe80d0c5ecadddfd3fbb7df86fb24ce7d87",
+        "bytes": 2039005
+      },
+      "parts_RGBA_equal_to_whole": true,
+      "unclipped_parts_RGBA_equal_to_whole": true
+    }
+  },
+  "original_once_write": {
+    "exit_code": 0,
+    "generated_asset_files": 9
+  },
+  "scope_limit": "Serial bounded creation/readback of these fixed local files. No concurrent creation or multi-file rollback transaction is claimed."
+}

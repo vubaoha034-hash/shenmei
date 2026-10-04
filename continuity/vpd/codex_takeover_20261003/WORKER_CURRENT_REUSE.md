@@ -30,6 +30,7 @@
 | V16 | [完整PNG](https://drive.google.com/file/d/13sGgi7VJMxx56kOz4a8Ck7ve7HRmxsbU/view) | [347:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=347-2) | AI_FAIL；真人PENDING |
 | V17 | [完整PNG](https://drive.google.com/file/d/1oZD7IPKibdPDnzwV70xXkuY95vTiUv_V/view) | [351:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=351-2) | AI_FAIL；真人PENDING |
 | V18 | [完整PNG](https://drive.google.com/file/d/1ghN-vHZ_bidYG2_CkHwt52CuwsGKmwma/view) | [354:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=354-2) | AI_FAIL；真人PENDING |
+| V19 | [完整PNG](https://drive.google.com/file/d/1yhnl8FIxlPpmGR0V6dg4F7LJngSzlEwp/view) | [359:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=359-2) | AI_FAIL；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -99,3 +100,5 @@ V17实际fork-none Sol/Max一次内置透明文字生图（后台具体图像模
 V18全部27个V17字形属性和品牌/mask原字节保留；只一个整体0.24affine，杯字轴535/句底548对应实杯轴535/杯口552。制作与Root实际生成0、两成功Figma操作一个正式版；摄影1467024框外及162052产品核心RGB0、品牌与V17一致。DrivePNG/SVG原字节和Figma原source独立读取匹配，可编辑36VECTOR/2mask/0TEXT。第一审稿包Root模板替换错误仍指V16，实际五图旧16审稿+最后INVALID_PACKET_BINDING全保留且作废，另全新18正确五图Sol/Max405815ms审稿AI_FAIL，隔离核验通过：共同轴线、空间接近仍没有杯口/叶片限定文字负形，尖笔节奏仍偏急；不降低标准、不把几何当视觉收益。collector原len(allthreadIds)==1误拒绝同exec旧stop+新create返回；只改唯一exact actual child匹配，其他返回ID留证，单一create/1ctx/Max/5实际图/target/hash规则未放宽；复用首次格式KeyError及身份聚合失败真实保留待补审。后继唯一19验证固定杯口前景遮字、用实际弧线形成句下缘负形，原轮廓/摄影/品牌不改，禁止批量微调；具体权限/动作依原生锁。
 
 V18保存时，首轮原生guard还捕获actual_returned_thread_id错误沿用了同exec旧stop首条返回，实际事务回滚至311/333且无新增业务事件。最终collector同时修复匹配与回写字段，共4行必要适配；真实生产validate_review已exit0、五图目标与AI_FAIL不变，两个无匹配/重复匹配负向传输控制拒绝且真实review文件不变。首次收集与原生失败、未应用draft及修复证据保存；不以程序修复声称审美提高。
+
+V19只将V18整句affine下移18px，真实杯前景遮字523px、慢底单笔46.22%覆盖损失及两微轮廓全遮如实保留，不宣称27路径保留意味着字形完全未裁。全部字形属性/品牌/mask原字节不改。Figma359:2可编辑36VECTOR/2mask/0TEXT，首次源标题前检ID误映射354:44无克隆，实际读取354:54后两成功导入、一正式版三尝试。摄影1464960框外及162052产品核心RGB0，Drive PNG/SVG原件HTTP200全字节匹配。新的项目外五图Sol/Max232468ms审稿AI_FAIL；严守隔离，冷审实际像素身份核验通过。审稿右侧标题/干茶盘邻近的方位陈述不准，Root按实际bbox明确保留REVIEW_EVIDENCE_LIMITATIONS，不把所有AI陈述当真，不改失败结论为通过。连续多版的轴线/缩放/浅遮挡并未证明整体产品文字关系改善；后继同方向主句【字形气质与共享构图制作方法】须实看R/S/T重新设计，不能重复微位移、改摄影或已有品牌。不降低标准、不把失败版送真人或关闭无关主线。原生锁唯一下一动作是根据worker证据修订，制作worker不能改主线。
