@@ -35,6 +35,7 @@
 | V21 | [完整PNG](https://drive.google.com/file/d/1vvEQqZkxpL1QkSRaKcUY55niJNnRXLdt/view) | [364:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=364-2) | AI_FAIL；真人PENDING |
 | V22 | [完整PNG](https://drive.google.com/file/d/1ggyCK9T6CZPjFsSAoTa-zYtAbAQ0GTFc/view) | [366:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=366-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V23 | [完整PNG](https://drive.google.com/file/d/1lizdEuUcCxePGS6uUly7pzmpxiFdhuK4/view) | [373:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=373-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
+| V24 | [完整PNG](https://drive.google.com/file/d/1nYivrRDZU3aZySfapBbeHLiX8RWLFomd/view) | [384:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=384-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -128,3 +129,9 @@ V23实际复用V22原17主句路径与V9品牌；只有整组等比缩放和平�
 
 
 V23新项目外五图审稿：AI_FAIL，原件9a2b30f2…，真实Sol/Max、P→N→R→S→T五次原图字节传输、未继承仓库/创作历史见本版pixel_review及ACTUAL_COLD_PIXEL_TRANSPORT_READBACK.json。有效优先问题是主句圆钝同重、杯口与鲜叶轮廓被压盖，不能再只整体缩移。审稿错误描述品牌y≈0；实际品牌仍[285,198,490,298]，这条错误不能驱动移品牌，原始AI_FAIL照实保留，见REVIEW_EVIDENCE_LIMITATIONS.json。五次独立顺序读取未消除该错误，不能宣称评测可靠性提高。Drive原件及字层已实际原字节回读并移入既有项目档案。唯一下一动作是同方向V24实际重做主句骨架及负空间，摄影与V9字标保留；由独立指导的ART_DIRECTION落实制作，再复审。程序、可编辑性、视觉与真人验收分别判断；未证明节时或视觉收益。
+
+
+V24实际一次透明源素材、一次完整描摹、逐原轮廓before绑定的真实手绘重画及原生曲线差集，七个主句复合字形，不再把整组缩放旧字形说成骨架设计。摄影7fd和V9品牌dd8e/285,198宽205未改，完整源图原字节/Figma384:2/21节点14VECTOR、完整海报c6774445…及Drive四原件全字节回读已保存。全幅登记合成及162052核心全部核验0差；原生Figma PNG另存Drive，8234像素/max42渲染差如实保留。源码、许可、成熟技能调用和局限从 `evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v24/REUSE_METHOD.md` 进入。独立专业技术与代码审查不能替代审美，新项目外五图冷审未完成前为PENDING。
+
+
+V24项目外Sol/Max冷审及另一个fork-none Astra/high补充挑战均实际读取五张原图，均AI_FAIL。共同有效问题：一杯茶读序断裂、茶与慢密集横笔过近、下/来长笔与鲜叶/干茶/盘沿争抢。formal审稿品牌y≈7是错误，实际品牌已285,198,width205；补充审稿品牌移入建议不能改变冻结品牌，所谓未见逗号只作为辨读问题，实际逗号路径存在。原话及事实核对全部保留，补充挑战不代替正式审核。精确坐标仍由技术检查，下一版正式brief去除创作者添加的目测数值边界指令，用实际字形/物体区域证据，质量标准不降低。唯一下一动作：同方向V25只精修主句读序、行间距、局部收笔与产品轮廓避让，0新摄影；流程、可编辑性和摄影保护已验证，视觉与节时收益未验证。

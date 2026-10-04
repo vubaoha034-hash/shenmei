@@ -1,0 +1,72 @@
+{
+  "schema": "vpd-scoped-art-direction/v1",
+  "target_version": 24,
+  "role": "FRESH_ART_DIRECTION_AI_NOT_FORMAL_REVIEW",
+  "actual_turn_context": {
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "thread_id": "01a10771-c023-7881-a002-068e01aea40b",
+    "evidence": "local session JSONL turn_context payload read; not inferred from prompt"
+  },
+  "aesthetic_verdict": null,
+  "human_verdict": null,
+  "formal_assets_created": 0,
+  "business_state_written": false,
+  "prior_ai_review_text_read": false,
+  "images_actually_viewed": [
+    {"path": ".liu-visual-private/correct_source_typography/v23/poster.png", "sha256": "9a2b30f2220357dd7a345e7e503b122a8eb21cdc01f7009084ee85e9e40cb0aa", "method": "view_image original", "scope": "complete current poster"},
+    {"path": ".liu-visual-private/correct_source_typography/v23/packet/P.png", "sha256": "57c21466512a79cbb25c75db1d6a1748b595c3bc2d00c85ba51615557f74f925", "method": "view_image original", "scope": "wordmark and hierarchy only; photography excluded"},
+    {"path": ".liu-visual-private/product-type-integration-20261004/R-current-reference.jpg", "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167", "method": "view_image original", "scope": "upper advertisement y 0 to about 718 only; lower wall excluded"},
+    {"path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png", "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618", "method": "view_image original", "scope": "frozen photography and object contours"}
+  ],
+  "human_feedback_path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/HUMAN_PRODUCT_TYPE_FEEDBACK.json",
+  "diagnosis": "Near-equal stroke weight, rounded ends and dense regular glyphs form a white pasted block. Overlap obscures the cup rim and leaf veins but does not change glyph skeleton, terminals or negative space in response to objects.",
+  "single_main_change": "Redraw headline letterforms with narrow upright skeletons and differentiated weight, then organize individual glyph contours around the cup rim and original leaf cluster.",
+  "direction_count": 1,
+  "high_leverage_variable_count": 6,
+  "variables": ["stroke skeleton and weight", "individual glyph proportions", "spacing and staggered line feet", "cup-contour stroke termination", "leaf-contour negative space", "registered source-over layer order"],
+  "canvas": [1536, 1024],
+  "copy": "一杯茶，慢下来",
+  "headline_target_bbox": [612, 419, 1235, 681],
+  "glyph_target_ink_boxes": {
+    "一": [612, 526, 700, 539],
+    "杯": [712, 431, 839, 608],
+    "茶": [858, 419, 1008, 525],
+    "，": [1023, 541, 1038, 569],
+    "慢": [851, 539, 968, 646],
+    "下": [1011, 572, 1094, 681],
+    "来": [1116, 554, 1235, 681]
+  },
+  "stroke_width_targets_px": {"vertical": [8, 11], "horizontal": [4, 6], "diagonal_body": [7, 10], "terminal": [2, 3]},
+  "key_contour_edits": [
+    "杯: 木 vertical near x742 descends then bends slightly right in its final 35 px to about [759,605], outside the cup rim; left falling stroke ends near [700,541].",
+    "慢: retain long 忄, compact 曼 above the leaf, end lower right stroke near [950,610], do not cross the leaf veins.",
+    "下: horizontal begins [1011,577], vertical near x1052 ends y679; retain the real upper leaf tip in the gap before 下.",
+    "茶: right terminal ends near [1005,518] with a slight upward movement; a typographic stroke, no leaf icon."
+  ],
+  "negative_space": {
+    "kind": "typographic exclusion envelopes, not claimed exact segmentation",
+    "cup_air": "M 318 590 C 329 563 437 542 542 545 C 650 544 743 561 757 587 C 765 611 734 633 714 668 C 690 729 668 797 625 822 C 563 845 448 829 405 787 C 365 743 341 659 318 590 Z",
+    "leaf_air": "M 806 660 C 836 638 845 611 870 586 C 884 610 876 630 871 640 C 921 626 970 600 1008 565 C 1006 604 976 635 950 652 C 974 683 988 726 996 765 C 944 744 902 717 875 705 C 844 692 821 678 806 660 Z",
+    "operation": "F_i = G_i - union(CUP_AIR, LEAF_AIR); output ordinary closed compound path fill contours",
+    "flattening_chord_error_px_if_needed": 0.25,
+    "repair_if_glyph_identity_lost": "Edit local glyph skeleton/nodes/terminals and recompute; no missing required stroke, global sentence shift or photo patch-back."
+  },
+  "material_plan": {
+    "new_transparent_headline_generation_count": 1,
+    "new_photography_count": 0,
+    "workflow": ["one transparent headline asset for new skeleton and weight", "trace once and preserve raw trace", "real local vector edits to glyph skeletons, inner/outer contours and terminals", "assemble individual glyphs to targets", "boolean exclusion in documented source", "register final svg/g/path only and source-over original photo"],
+    "must_record_separately": ["generated original", "unmodified trace", "edited final paths", "source code and geometric parameters", "SHA256 bindings"],
+    "existing_methods_reused": ["frozen photo and V9 seven-path wordmark", "trace technology", "SVG whitelist validation", "registered typography layers", "source-over replay and photographic identity checks"],
+    "generation_performed_by_this_worker": false
+  },
+  "preserved": {"photo_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618", "wordmark_version": 9, "wordmark_paths": 7, "wordmark_position_and_width": [285, 198, 205], "direction": "same", "ratio": "3:2"},
+  "prohibited": ["new photograph", "second style", "parallel or batch candidates", "paid API or training", "automatic tasks", "photo core patch-back", "hidden photo layer", "clipPath or mask", "ordinary font with pasted decorative leaves", "claiming transformed old 17 paths are newly authored skeletons"],
+  "method_reference_read": "evidence/vpd/codex_takeover_20261003/continuous_typography_20261004/tutorials/TUTORIAL_METHODS.md",
+  "new_web_research": false,
+  "technical_state_evidence_reused": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/NATIVE_321_VALIDATION_RECEIPT.json",
+  "technical_state_evidence": {"revision": 321, "checkpoint": 343, "chunk": "ac2c80", "exit_code": 0, "result": "PASS", "authority": "Root remains only business writer"},
+  "limitations": ["Numerical values are implementation targets, not taste blockers.", "The proposed glyphs and exclusion envelopes have not been rendered; visual improvement is unproven.", "Image generation is not guaranteed to supply accurate geometry; subsequent real vector edits are necessary.", "No reference glyphs or tutorial images are licensed or copied as production assets.", "Default Hermes Python validator invocation failed to import PIL DLL; this is not a business-state verdict.", "No long-term skill promotion or learning-state write is claimed."],
+  "worker_bundled_validator_result": {"exit_code": 0, "chunk": "c14cb0", "revision": 321, "checkpoint": 343, "note": "Console Chinese encoding was garbled; this is technical state verification, not visual review."},
+  "implementation_details": "ART_DIRECTION.md"
+}

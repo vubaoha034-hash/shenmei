@@ -48,6 +48,8 @@ RUNTIME = Path('C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runti
 VERSIONS = {'python': '3.12.14', 'pillow': '12.3.0', 'node': 'v24.19.0',
             'sharp': '0.35.4', 'rsvg': '2.62.91'}
 PLACEMENT = {'x': 285, 'y': 198, 'width': 205}
+EDIT_KERNEL = {'path': 'visual_memory/vpd_registered_type_edited_lineage.py',
+               'sha256': 'a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd'}
 
 
 def require(ok, message):
@@ -136,7 +138,21 @@ def renderer(root):
     return namespace['render']
 
 
-def check_lineage(root, tree, lineage):
+def edited_kernel(root):
+    filename = str(Path(root) / EDIT_KERNEL['path'])
+    namespace = {'__file__': filename, '__name__': '_trusted_v24_edit_kernel'}
+    exec(compile(checked_bytes(root, EDIT_KERNEL), filename, 'exec'), namespace)
+    return namespace
+
+
+def edited_lineage(root):
+    """Construct only the sealed actual V24 profile; authoring data grants no pass."""
+    return edited_kernel(root)['expected_lineage'](EDIT_KERNEL)
+
+
+def check_lineage(root, tree, lineage, formal_version=None):
+    if lineage['kind'] == 'alpha128-vtracer-edited/v1':
+        return edited_kernel(root)['validate'](root, tree, lineage, formal_version, EDIT_KERNEL)
     paths = list(tree.iter(NS + 'path'))
     checked_bytes(root, lineage['provenance'])
     if lineage['kind'] == 'source-han-serif-2.003':
@@ -192,7 +208,7 @@ def register(root, formal_version, headline_ref, lineage):
     headline = svg_tree(checked_bytes(root, headline_ref))
     require([headline.get(k) for k in ('width', 'height', 'viewBox')] == ['1536', '1024', '0 0 1536 1024'],
             'HEADLINE_CANVAS_CHANGED')
-    check_lineage(root, headline, lineage)
+    check_lineage(root, headline, lineage, formal_version)
     render = renderer(root)
     layers = []
     for role, reference, raw in [('brand', BRAND, brand_canvas(checked_bytes(root, BRAND))),

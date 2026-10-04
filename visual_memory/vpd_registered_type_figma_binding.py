@@ -48,6 +48,15 @@ V23 = {'binding_call': 'call_tCCbrp4HOJyWbziY3WEZJ3zZ',
        'download_output': '5de1c79f920477e2bb2247d2fa13761ef747a1481d9a2909e8c40a2b0dc7c474',
        'download_tool': {'path': '.liu-visual-private/correct_source_typography/v23/figma-download-tool-result.json',
                          'sha256': '0f4087cfeac2d6df2ceaf9a2e865bc7ee371821bb6e4a128477c1abe75d4df20'}}
+V24 = {'binding_call': 'call_MGST85que1frWIYg3AXCGhr5',
+       'binding_input': 'e7ec1b440b788481a0fa2f5f63b771394b48339ea58e78b3507f2486ca9245ac',
+       'binding_output': '64ff43cbb51cf6951fd5e40c555f5192488270884467a7226b1bd4e227d6ec22',
+       'script': 'cc03e8584d7263f587d63bc7bdcc01e10a3dc41c1d565095a1c19c88140d2937',
+       'download_call': 'call_WfxLnhX9NR3ls10pnvJdJWNM',
+       'download_input': '5319c8237491f242b326b541a1ecca49b036aa3c5d6b0c1501d1032bb0f97ffc',
+       'download_output': '3aaa67660e8213a00b8e5cb023df210c7021839329cd3ee26fddd8747aac0a42',
+       'download_tool': {'path': '.liu-visual-private/correct_source_typography/v24/figma-download-tool-result.json',
+                         'sha256': 'befccda57e8b16675e91615de1a676225e665f9b1ebc08726982a4329dc82893'}}
 
 
 def f32(value):
@@ -87,6 +96,8 @@ def tool_result(event):
 def runtime_proof(root, evidence):
     if evidence.get('formal_version') == 23:
         return runtime_proof_v23(root, evidence)
+    if evidence.get('formal_version') == 24:
+        return runtime_proof_v23(root, evidence, 24)
     g.require(evidence.get('schema') == 'vpd-figma-binding-runtime-evidence/v1'
               and evidence.get('formal_version') == 22, 'ACTUAL_RUNTIME_EVIDENCE_REQUIRED')
     host = Path(evidence['root_rollout_host_path']).resolve()
@@ -155,18 +166,20 @@ def runtime_proof(root, evidence):
                               'download_call_id': DOWNLOAD_CALL, 'download_wait_call_id': DOWNLOAD_WAIT}
 
 
-def runtime_proof_v23(root, evidence):
-    """The inspected V23 direct literal and immediate download, without a prefix or wait."""
+def runtime_proof_v23(root, evidence, version=23):
+    """Two individually inspected direct literals/immediate downloads; no prefix or wait."""
+    g.require(version in (23, 24), 'INSPECTED_DIRECT_COLLECTOR_REQUIRED')
+    profile = V23 if version == 23 else V24
     g.require(evidence.get('schema') == 'vpd-figma-binding-runtime-evidence/v1'
-              and evidence.get('formal_version') == 23
-              and evidence.get('binding_call_id') == V23['binding_call']
-              and evidence.get('download_call_id') == V23['download_call']
+              and evidence.get('formal_version') == version
+              and evidence.get('binding_call_id') == profile['binding_call']
+              and evidence.get('download_call_id') == profile['download_call']
               and evidence.get('download_result_transport') == 'IMMEDIATE_FULL_ACTUAL_RESULT_NO_WAIT',
-              'ACTUAL_V23_RUNTIME_EVIDENCE_REQUIRED')
+              f'ACTUAL_V{version}_RUNTIME_EVIDENCE_REQUIRED')
     host = Path(evidence['root_rollout_host_path']).resolve()
     g.require(host.is_relative_to(Path('C:/Users/Administrator/.codex/sessions').resolve())
               and host.suffix == '.jsonl', 'ACTUAL_HOST_RUNTIME_REQUIRED')
-    ids = {V23['binding_call'], V23['download_call']}
+    ids = {profile['binding_call'], profile['download_call']}
     calls, outputs, metadata = {}, {}, None
     with host.open(encoding='utf-8') as stream:
         for line in stream:
@@ -186,21 +199,21 @@ def runtime_proof_v23(root, evidence):
     g.require(metadata and Path(metadata['cwd']).resolve() in (Path(root).resolve(), Path(root).resolve().parent)
               and set(calls) == ids and set(outputs) == ids, 'COMPLETE_REAL_RUNTIME_REQUIRED')
     for role in ('binding', 'download'):
-        call, output = calls[V23[role + '_call']], outputs[V23[role + '_call']]
+        call, output = calls[profile[role + '_call']], outputs[profile[role + '_call']]
         g.require(call['payload']['name'] == 'exec'
-                  and g.sha(call['payload']['input'].encode('utf-8')) == V23[role + '_input']
+                  and g.sha(call['payload']['input'].encode('utf-8')) == profile[role + '_input']
                   == evidence[role + '_call_input_sha256'], 'INSPECTED_ACTUAL_COLLECTOR_INVOCATION_REQUIRED')
         g.require(g.sha(json.dumps(output['payload']['output'], ensure_ascii=False, sort_keys=True).encode('utf-8'))
-                  == V23[role + '_output'] == evidence[role + '_output_sha256'], 'ACTUAL_BINDING_OUTPUT_CONFLICT')
-    binding, returned = calls[V23['binding_call']], outputs[V23['binding_call']]
+                  == profile[role + '_output'] == evidence[role + '_output_sha256'], 'ACTUAL_BINDING_OUTPUT_CONFLICT')
+    binding, returned = calls[profile['binding_call']], outputs[profile['binding_call']]
     g.require(binding['timestamp'] == evidence['binding_call_timestamp'], 'ACTUAL_BINDING_CALL_IDENTITY_CONFLICT')
     g.require(json_file(root, evidence['private_exact_runtime_excerpt'])
-              == [binding, returned, calls[V23['download_call']], outputs[V23['download_call']]],
+              == [binding, returned, calls[profile['download_call']], outputs[profile['download_call']]],
               'EXCERPT_DOES_NOT_MATCH_REAL_HOST_RUNTIME')
     text = binding['payload']['input']
     g.require(text.startswith('const script='), 'COLLECTOR_SCRIPT_FLOW_CHANGED')
     script, _ = json.JSONDecoder().raw_decode(text[len('const script='):])
-    g.require(evidence['actual_script']['sha256'] == V23['script']
+    g.require(evidence['actual_script']['sha256'] == profile['script']
               and script.encode('utf-8') == g.checked_bytes(root, evidence['actual_script']),
               'ACTUAL_COLLECTOR_SCRIPT_CHANGED')
     mcp = tool_result(returned)
@@ -208,11 +221,11 @@ def runtime_proof_v23(root, evidence):
     g.require(len(result) == 1, 'SINGLE_ACTUAL_BINDING_RESULT_REQUIRED')
     actual = json.loads(result[0])
     g.require(actual == json_file(root, evidence['actual_result']), 'SELF_REPORTED_BINDING_NOT_ACTUAL_TOOL_RESULT')
-    return actual, tool_result(outputs[V23['download_call']]), {
-        'session_id': metadata['id'], 'binding_call_id': V23['binding_call'],
-        'binding_input_sha256': V23['binding_input'], 'binding_output_sha256': V23['binding_output'],
-        'download_call_id': V23['download_call'], 'download_input_sha256': V23['download_input'],
-        'download_output_sha256': V23['download_output'],
+    return actual, tool_result(outputs[profile['download_call']]), {
+        'session_id': metadata['id'], 'binding_call_id': profile['binding_call'],
+        'binding_input_sha256': profile['binding_input'], 'binding_output_sha256': profile['binding_output'],
+        'download_call_id': profile['download_call'], 'download_input_sha256': profile['download_input'],
+        'download_output_sha256': profile['download_output'],
         'download_result_transport': 'IMMEDIATE_FULL_ACTUAL_RESULT_NO_WAIT'}
 
 
@@ -283,8 +296,8 @@ def compare_curves(expected, actual, anchor_budget, decimal_export=False):
 
 
 def native_capture(root, capture, registration, version=22):
-    g.require(version in (22, 23), 'INSPECTED_NATIVE_VERSION_REQUIRED')
-    prefix = '366' if version == 22 else '373'
+    g.require(version in (22, 23, 24), 'INSPECTED_NATIVE_VERSION_REQUIRED')
+    prefix = {22: '366', 23: '373', 24: '384'}[version]
     def node_id(suffix):
         return prefix + ':' + str(suffix)
     g.require(fontTools.__version__ == '4.63.0', 'FONTTOOLS_GEOMETRY_RUNTIME_CHANGED')
@@ -293,6 +306,13 @@ def native_capture(root, capture, registration, version=22):
     rows = capture['nodes']
     nodes = {n['id']: n for n in rows}
     g.require(len(nodes) == len(rows), 'DUPLICATE_CAPTURE_NODE')
+    if version == 24:
+        g.require(set(nodes) == {node_id(i) for i in (*range(2, 14), *range(33, 42))}
+                  and nodes[node_id(33)]['children'] == [node_id(41)]
+                  and nodes[node_id(41)]['type'] == 'GROUP'
+                  and nodes[node_id(41)]['children'] == [node_id(i) for i in range(34, 41)]
+                  and [nodes[node_id(41)][k] for k in ('x', 'y', 'width', 'height')] == [612, 419, 623, 262],
+                  'V24_REGISTERED_COMPOUND_GROUP_CHANGED')
     required_frames = {node_id(i) for i in (2, 3, 4, 5, 33)}
     g.require({n['id'] for n in rows if n['type'] == 'FRAME'} == required_frames, 'UNREGISTERED_FRAME_OR_PHOTOGRAPHIC_COPY')
     traversed = []
@@ -411,8 +431,8 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
     """Recompute real provenance, graph, paths/styles/order, and export identities."""
     _, _, registration = g.replay(root, registration_ref)
     version = registration['formal_version']
-    g.require(version in (22, 23), 'INSPECTED_V22_COLLECTOR_REQUIRED')
-    prefix = '366' if version == 22 else '373'
+    g.require(version in (22, 23, 24), 'INSPECTED_V22_COLLECTOR_REQUIRED')
+    prefix = {22: '366', 23: '373', 24: '384'}[version]
     if version == 23:
         new = g.svg_tree(g.checked_bytes(root, registration['layers'][1]['svg']))
         original = g.svg_tree(g.checked_bytes(root, {'path': g.SERIES + 'v22/headline.svg',
@@ -459,7 +479,8 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
         g.require(isinstance(readback, list) and {x['name'] for x in readback}
                   == {'figma-raw.png', 'figma-source-0.png', 'figma-vector-0.svg', 'figma-vector-1.svg'},
                   'OFFICIAL_DOWNLOAD_READBACK_REQUIRED')
-    g.require(tool_download == json_file(root, DOWNLOAD_TOOL_RESULT if version == 22 else V23['download_tool']),
+    g.require(tool_download == json_file(root, DOWNLOAD_TOOL_RESULT if version == 22 else
+                                        (V23 if version == 23 else V24)['download_tool']),
               'OFFICIAL_DOWNLOAD_NOT_ACTUAL_TOOL_RETURN')
     metadata = json.loads(next(x['text'] for x in tool_download['content'] if x['type'] == 'text'))
     g.require(metadata['export']['nodeId'] == actual['frameId'] and metadata['export']['format'] == 'png'
@@ -484,16 +505,25 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
         g.require(file_format == 'svg' and len(payload) in [x['sizeBytes'] for x in metadata['svgAssets']],
                   'UNBOUND_OFFICIAL_SVG')
         paths = svg_paths(payload, allow_official_wrapper=True)
-        role = 'brand' if len(paths) == 7 else 'headline'
+        if version == 24:
+            # Both real exports have seven paths: use the ordered registered
+            # node/path identities, then verify their viewport and all curves.
+            roles = [role for role in ('brand', 'headline') if [p['id'] for p in paths]
+                     == [p['id'] for p in native[role]]]
+            g.require(len(roles) == 1, 'OFFICIAL_SVG_ROLE_OR_PATH_COUNT_CONFLICT')
+            role = roles[0]
+        else:
+            role = 'brand' if len(paths) == 7 else 'headline'
         g.require(role not in seen_roles and len(paths) == len(native[role]), 'OFFICIAL_SVG_ROLE_OR_PATH_COUNT_CONFLICT')
         dimensions = {'brand': ['205', '99.9478', '0 0 205 99.9478'],
                       'headline': (['475.837', '258', '0 0 475.837 258'] if version == 22
-                                   else ['379.932', '206', '0 0 379.932 206'])}[role]
+                                   else ['379.932', '206', '0 0 379.932 206'] if version == 23
+                                   else ['623', '262', '0 0 623 262'])}[role]
         wrapper = ET.fromstring(payload)
         g.require([wrapper.get(k) for k in ('width', 'height', 'viewBox')] == dimensions,
                   'OFFICIAL_SVG_VIEWPORT_CHANGED')
         seen_roles.add(role)
-        origin = transforms[prefix + (':6' if role == 'brand' else ':34')]
+        origin = transforms[prefix + (':6' if role == 'brand' else ':34' if version != 24 else ':41')]
         for saved, observed in zip(paths, native[role]):
             g.require(saved['id'] == observed['id'] and saved['opacity'] == 1
                       and saved['winding'] == observed['winding'], 'OFFICIAL_SVG_GLYPH_CONTENT_CHANGED')
@@ -513,4 +543,6 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
                             'Actual local host runtime log is required; portable replay without that local tool evidence is unsupported.',
                             'Only the inspected V22 collector invocation is accepted; future collectors need an explicit bounded update.'
                             if version == 22 else
-                            'Only the inspected V23 direct collector invocation is accepted; V24 and later fail closed.']}
+                            'Only the inspected V23 direct collector invocation is accepted; V24 and later fail closed.'
+                            if version == 23 else
+                            'Only the inspected V24 direct collector invocation is accepted; V25 and later fail closed.']}

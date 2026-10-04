@@ -17,9 +17,11 @@ from visual_memory import vpd_registered_type_figma_binding as b
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--write-evidence', action='store_true')
-    parser.add_argument('--version', type=int, choices=(22, 23), default=22)
+    parser.add_argument('--version', type=int, choices=(22, 23, 24), default=22)
     args = parser.parse_args()
     version = args.version
+    if version == 24:
+        return probe_v24(args.write_evidence)
     prefix = '366' if version == 22 else '373'
     def ident(suffix):
         return prefix + ':' + str(suffix)
@@ -174,8 +176,8 @@ def main():
             mutant[field] = old_evidence[field]
             reject(name, lambda mr=save('failed-' + name, mutant): run(runtime=mr), expected)
         mutant = copy.deepcopy(registration)
-        mutant['formal_version'] = 24
-        reject('future-v24-fails-closed', lambda: b.verify_actual_binding(ROOT, save('failed-future-v24', mutant),
+        mutant['formal_version'] = 25
+        reject('future-v25-fails-closed', lambda: b.verify_actual_binding(ROOT, save('failed-future-v25', mutant),
                                                                       runtime_ref, download_ref), 'INSPECTED_V22_COLLECTOR_REQUIRED')
         old_download_ref = g.ref(ROOT, ROOT / '.liu-visual-private/correct_source_typography/v22/figma-download-readback.json')
         unchanged = b.verify_actual_binding(ROOT, g.ref(ROOT, old_folder / 'REGISTERED_TYPE_COMPOSITE.json'),
@@ -213,6 +215,127 @@ def main():
         public.write_bytes(encoded)
     print(json.dumps({'result': report['result'], 'cases': len(checks), 'elapsed_seconds': elapsed,
                       'failures': [x for x in checks if not x['pass']]}, ensure_ascii=True))
+    return report['exit_code']
+
+
+def probe_v24(write_evidence):
+    """Bounded actual V24 controls; all countercases are private failed fixtures."""
+    started = time.monotonic()
+    private = ROOT / '.liu-visual-private/composite-guard-probe/figma-binding-v24-prospective'
+    private.mkdir(parents=True, exist_ok=True)
+    folder = ROOT / g.SERIES / 'v24'
+    registration_ref = g.ref(ROOT, folder / 'REGISTERED_TYPE_COMPOSITE.json')
+    runtime_ref = g.ref(ROOT, folder / 'FIGMA_BINDING_RUNTIME_EVIDENCE.json')
+    download_ref = g.ref(ROOT, ROOT / '.liu-visual-private/correct_source_typography/v24/figma-download-readback.json')
+    evidence = b.json_file(ROOT, runtime_ref)
+    registration = b.json_file(ROOT, registration_ref)
+    capture = b.json_file(ROOT, evidence['actual_capture'])
+    checks = []
+
+    def save(name, value):
+        path = private / (name + '.json')
+        path.write_text(json.dumps(value, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+        return g.ref(ROOT, path)
+
+    def reject(name, operation, expected):
+        try:
+            operation()
+        except (ValueError, KeyError, FileNotFoundError) as error:
+            checks.append({'case': name, 'pass': expected in str(error), 'rejected': str(error)})
+        else:
+            checks.append({'case': name, 'pass': False, 'rejected': None})
+
+    def run(runtime=runtime_ref, download=download_ref):
+        return b.verify_actual_binding(ROOT, registration_ref, runtime, download)
+
+    actual = run()
+    save('actual-positive-recomputed', actual)
+    checks.append({'case': 'actual_v24_21_nodes_14_vectors_source_native_png_two_7path_SVGs',
+                   'pass': actual['node_count'] == 21 and actual['vector_count'] == 14
+                   and all(s['paths'] == 7 for s in actual['geometry'].values())})
+    baseline = b.json_file(ROOT, g.ref(ROOT, private / 'sealed-22-23-before-adaptation.json'))
+    for version in (22, 23):
+        f = ROOT / g.SERIES / f'v{version}'
+        old_runtime = g.ref(ROOT, f / 'FIGMA_BINDING_RUNTIME_EVIDENCE.json')
+        old = b.verify_actual_binding(ROOT, g.ref(ROOT, f / 'REGISTERED_TYPE_COMPOSITE.json'), old_runtime,
+            g.ref(ROOT, ROOT / f'.liu-visual-private/correct_source_typography/v{version}/figma-download-readback.json'))
+        checks.append({'case': f'v{version}_entire_return_unchanged', 'pass': old == baseline[str(version)]})
+    old_ref = g.ref(ROOT, ROOT / g.SERIES / 'v23/FIGMA_BINDING_RUNTIME_EVIDENCE.json')
+    old_evidence = b.json_file(ROOT, old_ref)
+    reject('v23_runtime_reuse', lambda: run(runtime=old_ref), 'ACTUAL_RUNTIME_VERSION_CONFLICT')
+    fake = copy.deepcopy(old_evidence); fake['formal_version'] = 24
+    reject('v23_runtime_relabelled24', lambda: run(runtime=save('failed-v23-relabelled', fake)), 'ACTUAL_V24_RUNTIME_EVIDENCE_REQUIRED')
+    for name, field, error in [('v23_capture_reuse', 'actual_capture', 'ACTUAL_CAPTURE_BODY_FINGERPRINT_CONFLICT'),
+                               ('v23_native_png_reuse', 'actual_native_export_ref', 'ACTUAL_ORIGINAL_IMAGE_OR_FRAME_EXPORT_CHANGED')]:
+        fake = copy.deepcopy(evidence); fake[field] = old_evidence[field]
+        reject(name, lambda ref=save('failed-' + name, fake): run(runtime=ref), error)
+    fake = {'formal_version': 24, 'actual_figma_registered_vectors_verified': True,
+            'actual_original_photo_verified': True, 'raw_figma_export': g.SOURCE, 'countercase_only': True}
+    reject('five_boolean_forgery', lambda: run(runtime=save('failed-five-booleans', fake)), 'ACTUAL_V24_RUNTIME_EVIDENCE_REQUIRED')
+    fake = copy.deepcopy(evidence); fake['root_rollout_host_path'] = str(private / 'missing.jsonl')
+    reject('missing_actual_host', lambda: run(runtime=save('failed-host', fake)), 'ACTUAL_HOST_RUNTIME_REQUIRED')
+    excerpt = b.json_file(ROOT, evidence['private_exact_runtime_excerpt'])
+    excerpt[-1]['timestamp'] = '2000-01-01T00:00:00Z'
+    fake = copy.deepcopy(evidence); fake['private_exact_runtime_excerpt'] = save('failed-excerpt', excerpt)
+    reject('forged_runtime_excerpt', lambda: run(runtime=save('failed-excerpt-evidence', fake)), 'EXCERPT_DOES_NOT_MATCH_REAL_HOST_RUNTIME')
+    exports = b.json_file(ROOT, download_ref)
+    duplicate = copy.deepcopy(exports)
+    duplicate[3] = dict(duplicate[2], name='figma-vector-1.svg')
+    reject('two_7path_SVGs_cannot_both_be_brand', lambda: run(download=save('failed-two-brand-SVGs', duplicate)),
+           'OFFICIAL_SVG_ROLE_OR_PATH_COUNT_CONFLICT')
+
+    def native_case(name, mutate, expected):
+        value = copy.deepcopy(capture); nodes = {n['id']: n for n in value['nodes']}
+        mutate(nodes); save('failed-native-' + name, value)
+        reject(name, lambda: b.native_capture(ROOT, value, registration, 24), expected)
+
+    native_case('photo_filter_nonzero', lambda n: n['384:3']['fills'][0]['filters'].update(contrast=.001),
+                'ORIGINAL_PHOTOGRAPHIC_FILL_CHANGED')
+    native_case('hidden_photo_fill', lambda n: n['384:33']['fills'].append(dict(n['384:3']['fills'][0], visible=False)),
+                'HIDDEN_OR_DUPLICATE_PHOTOGRAPHIC_FILL')
+    native_case('glyph_RGB_one_unit', lambda n: n['384:35']['fills'][0]['color'].update(r=b.f32(244/255)),
+                'REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED')
+    native_case('glyph_alpha_unregistered', lambda n: n['384:35']['fills'][0].update(opacity=.999),
+                'REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED')
+
+    def shift(nodes):
+        q, p = nodes['384:35'], nodes['384:41']
+        q['x'] += 1; q['relativeTransform'][0][2] += 1
+        q['absoluteTransform'][0][2] = b.f32(p['absoluteTransform'][0][2] + q['x'] - p['x'])
+    native_case('coherent_glyph_shift1px', shift, 'FIGMA_GLYPH_ANCHOR_CHANGED')
+    fake = copy.deepcopy(registration); fake['formal_version'] = 25
+    reject('future25_fails_closed', lambda: b.verify_actual_binding(ROOT, save('failed-future25', fake), runtime_ref, download_ref),
+           'EDIT_LINEAGE_V24_ONLY')
+    check = g.compare_pixels(ROOT, registration_ref,
+        g.ref(ROOT, ROOT / '.liu-visual-private/correct_source_typography/v24/poster.png'), actual['raw_figma_export'])
+    checks.append({'case': 'actual24_full_frame_core1061_source_over_and_raw_difference',
+        'pass': check['whole_frame_expected']['pixels'] == 0 and check['core_pixels'] == 162052
+        and check['core_alpha_positive_pixels'] == 1061 and not check['figma_raw_bytes_equal_final'],
+        'raw_difference': check['figma_raw_to_final']})
+    passed = all(c['pass'] for c in checks)
+    report = {'schema': 'vpd-registered-type-figma-binding-tests/v1', 'formal_version': 24,
+        'result': 'PASS' if passed else 'FAIL', 'exit_code': 0 if passed else 1,
+        'actual_command': str(g.RUNTIME / 'python/python.exe') + ' scripts/vpd_probe_registered_type_figma_binding.py --version 24 --write-evidence',
+        'elapsed_seconds': round(time.monotonic() - started, 3), 'cases': len(checks), 'checks': checks,
+        'code': g.ref(ROOT, ROOT / 'visual_memory/vpd_registered_type_figma_binding.py'), 'probe': g.ref(ROOT, Path(__file__)),
+        'registration': registration_ref, 'runtime': runtime_ref, 'download_readback': download_ref,
+        'baseline': g.ref(ROOT, private / 'sealed-22-23-before-adaptation.json'),
+        'positive_geometry': actual['geometry'], 'native_png_sha256': actual['raw_figma_export']['sha256'],
+        'source_sha256': g.SOURCE['sha256'], 'dependencies': dict(g.VERSIONS, fonttools=font_version()),
+        'precision': 'Same exact topology/order, four operand float32 ULPs; frozen brand translation half page ULP. Official export 3-decimal coordinate bounds retained; RGB and alpha zero tolerance.',
+        'limitations': ['Actual host log and fixed invocation/output hashes are the trust boundary; no OS attestation.',
+            'Native PNG and registered final use distinct renderers; actual difference retained, no aesthetic PASS.',
+            'Failed fixtures only in this private probe; no source/design/cache/Root guard/business/history writes.',
+            'V25+ remains unsupported; old22/23 returned dictionaries and frozen audits preserved.']}
+    save('complete-probe-report', report)
+    if write_evidence:
+        public = ROOT / 'evidence/vpd/codex_takeover_20261003/audit/REGISTERED_TYPE_FIGMA_BINDING_V24_TESTS.json'
+        encoded = (json.dumps(report, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf-8')
+        g.require(len(encoded) <= 6144, 'BOUNDED_PUBLIC_EVIDENCE_EXCEEDED')
+        with public.open('xb') as stream:
+            stream.write(encoded)
+    print(json.dumps({'result': report['result'], 'cases': len(checks), 'seconds': report['elapsed_seconds'],
+                      'failures': [c for c in checks if not c['pass']]}))
     return report['exit_code']
 
 

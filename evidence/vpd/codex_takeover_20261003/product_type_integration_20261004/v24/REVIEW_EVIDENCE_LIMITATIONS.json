@@ -1,0 +1,30 @@
+{
+  "formal_version": 24,
+  "original_verdict_preserved": "AI_FAIL",
+  "actual_target_sha256": "c677444525f6e677661a981e873bd2f1fd87d1a3a16817d5030b2f4af6f53fee",
+  "actual_transported_original_images": "ACTUAL_COLD_PIXEL_TRANSPORT_READBACK.json",
+  "reviewer_actual_model": "gpt-6.1-sol",
+  "reviewer_actual_effort": "max",
+  "factual_conflict": {
+    "reviewer_claim": "Brand begins near y=7 and priority asks to move it to285,198 width205",
+    "actual_frozen_brand": [285, 198, 205, 99.94774627685547],
+    "actual_headline_bbox": [612, 419, 1235, 681],
+    "source": "FIGMA_SOURCE_READBACK.json, complete actual capture/runtime/curve binding and actual delivered pixels",
+    "unreliable_review_bounds": "Brand [280,0,500,120] and headline starts near195; these do not match T global positions",
+    "invalid_priority_not_implemented": "Moving brand to its already-correct frozen location",
+    "wrong_reference_or_target_bytes": false
+  },
+  "retained_visual_findings_requiring_independent_challenge": [
+    "Long strokes and staggered weights may disrupt the slow theme",
+    "Cup-rim near-contact and tea/leaf overlap may still lack stable shared space",
+    "Bright bokeh contrast and reading relation require actual image judgment"
+  ],
+  "prior_same_factual_failure": "../v23/REVIEW_EVIDENCE_LIMITATIONS.json",
+  "neutral_fixed_coordinate_requirement_did_not_resolve_failure": true,
+  "evaluation_reliability_improvement_claimed": false,
+  "response": "Preserve original formal AI_FAIL; do not move frozen brand. A fresh fork-none different-model supplemental pixel challenge receives only P/N/R/S/T and neutral requirements, no prior review or creator score. It is not the project-external formal-review replacement.",
+  "prospective_brief_repair": "Remove creator-added approximate numerical bounds and aesthetic-review layer-coordinate checking; use actual glyph/object/region anchors, leave exact geometry to unchanged technical checks. Keep original five-image formal route, concrete evidence and aesthetic standard.",
+  "mainline_changed": false,
+  "standard_lowered": false,
+  "aesthetic_or_human_pass_claimed": false
+}

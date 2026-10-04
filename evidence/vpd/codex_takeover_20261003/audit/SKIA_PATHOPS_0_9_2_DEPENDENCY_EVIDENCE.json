@@ -1,0 +1,111 @@
+{
+  "schema": "vpd-private-pathops-dependency-evidence/v1",
+  "package": "skia-pathops",
+  "version": "0.9.2",
+  "upstream_commit": "c11e91f442462d1efc1a45d76c76ae9e74aa0de4",
+  "primary_sources": [
+    "https://pypi.org/project/skia-pathops/0.9.2/",
+    "https://api.github.com/repos/fonttools/skia-pathops/git/trees/c11e91f442462d1efc1a45d76c76ae9e74aa0de4?recursive=1",
+    "https://raw.githubusercontent.com/fonttools/skia-pathops/c11e91f442462d1efc1a45d76c76ae9e74aa0de4/LICENSE"
+  ],
+  "license": "BSD-3-Clause; full upstream and bundled wheel notices retained unchanged",
+  "wheel": {
+    "url": "https://files.pythonhosted.org/packages/ff/96/bd1bfaf5335242a86d8af940ff2124861e9bc6a5520cf96fda374fd10945/skia_pathops-0.9.2-cp310-abi3-win_amd64.whl",
+    "bytes": 1782901,
+    "sha256": "9ae72d801b5f4c5dbb937fb25476a12fa2da70860f28dd637da2b529dbd8271c",
+    "tag": "cp310-abi3-win_amd64",
+    "requires_python": ">=3.10"
+  },
+  "runtime_dependencies": [],
+  "actual_install": {
+    "command": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe -m pip install --no-index --no-deps --no-cache-dir --no-compile --target .liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/site-packages .liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/skia_pathops-0.9.2-cp310-abi3-win_amd64.whl",
+    "chunk": "1902b2",
+    "exit_code": 0,
+    "built_from_source": false
+  },
+  "actual_probe": {
+    "command": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe scripts/vpd_probe_registered_type_edited_lineage.py --dependency-only --write-evidence",
+    "exit_code": 0,
+    "geometry": {
+      "pathops": "0.9.2",
+      "python": "3.12.14",
+      "intersection_area": 25,
+      "union_area": 175,
+      "hole_area": 84,
+      "hole_center_excluded": true,
+      "arch_area": 60,
+      "curved_difference_area": 30,
+      "curved_bounds": [
+        5.0,
+        0.0,
+        10.0,
+        7.5
+      ],
+      "cubic_retained": true,
+      "repeat_segments_equal": true
+    }
+  },
+  "read_before_install": [
+    "full LICENSE and README",
+    "operations.py union/difference wrappers",
+    "_pathops.pyx path/op signatures and behavior",
+    "official geometry tests"
+  ],
+  "downloaded_inputs": [
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/pypi-0.9.2.json",
+      "sha256": "2c332500e845e8a7ac446beec7188fade60d6d92cc37e5f0bcaa97153c4476ce"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-tree.json",
+      "sha256": "df4932b9ce4bb82044107e04ea73b7a671c3dad40dda952e22eb2330a4da47c3"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/LICENSE",
+      "sha256": "110244b02140866ee37d17fa7449436a377ec3b85a481fbb208f4c87964382de"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/README.md",
+      "sha256": "9211b8b06e6f28a9e24ab7499fa9dd6ceb341da45d5cdad23e0e4e97b8a5c47e"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/src/python/pathops/operations.py",
+      "sha256": "94910fa2f893e020bc7526a9cf1924342c6c5c3609eee7699f1562e5bb895d5d"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/src/python/pathops/_pathops.pyx",
+      "sha256": "e4a623ac30eb6c489ee6966cc90025188e695501494bdc5409a2284680af8b14"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/tests/operations_test.py",
+      "sha256": "94630468dc46486f279c42345b697deced985f341fa6ad9e90c20efe7d2d9ace"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/upstream-source/tests/pathops_test.py",
+      "sha256": "143a3387b21013fcf902ab1321d55d376d8e68e929a5ceeef2f41c76720ec620"
+    },
+    {
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/skia_pathops-0.9.2-cp310-abi3-win_amd64.whl",
+      "sha256": "9ae72d801b5f4c5dbb937fb25476a12fa2da70860f28dd637da2b529dbd8271c"
+    }
+  ],
+  "installed_bound_files": {
+    "pathops/__init__.py": "4a5c51dbc66a8c643c0ac183f9b8808c8c73c260ea0c403072be8917743446ce",
+    "pathops/_pathops.pyd": "31378f0d26e850eeb73249b73c0e208836bc0b6e004551fafed3e69dfdbc38aa",
+    "pathops/_version.py": "62185f19724d16d672544bbc62ec156c2a79bf2baf3c6942a19a8485f1dd712f",
+    "pathops/operations.py": "2ccd482ae0d04da22b020de64b852b71cefddc5efbf5800d1e6f552b0edb4b7a",
+    "pathops/skia.dll": "b22fa4d5f9b9293b7221ca3b1802e4983f06f769340fc8f1ce79f81bb1aac819"
+  },
+  "retained_failures": [
+    "initial GitHub web open InternalError",
+    "first urllib GitHub API TLS EOF; authorized-UA retry succeeded without disabling TLS",
+    "README.rst HTTP404; actual README.md fetched"
+  ],
+  "limitations": [
+    "PyPI publisher-commit attestation observed; no independent Sigstore verification performed",
+    "Skia uses float32 coordinates; small signed area roundoff is recorded",
+    "Library arithmetic is not typography recognition or aesthetic approval"
+  ],
+  "paid_calls": 0,
+  "business_state_writes": 0
+}
