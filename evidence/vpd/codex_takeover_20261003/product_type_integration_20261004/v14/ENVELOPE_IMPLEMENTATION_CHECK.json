@@ -1,0 +1,65 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "v14_product_crossing",
+      "expected_accept": true,
+      "actual_accept": true,
+      "error": null
+    },
+    {
+      "case": "v13_cannot_cross",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "no_human_cannot_cross",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "whole_photo_reject",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "below_bounded_region",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+    },
+    {
+      "case": "four_boxes_reject",
+      "expected_accept": false,
+      "actual_accept": false,
+      "error": "DECLARED_OVERLAY_BOUNDS_REQUIRED"
+    },
+    {
+      "case": "v13_unchanged_three",
+      "expected_accept": true,
+      "actual_accept": true,
+      "error": null
+    }
+  ],
+  "existing_human_authorization": {
+    "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
+    "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
+  },
+  "scoped_refinement": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/HUMAN_PRODUCT_TYPE_FEEDBACK.json",
+    "sha256": "2d4fba40b1436ba19ecedaa87395a4b1e9e23c327863b16e1e14bfe659284549"
+  },
+  "implementation_region": [
+    288,
+    400,
+    1328,
+    720
+  ],
+  "region_was_selected_by": "ROOT_PRODUCTION_NOT_USER_COORDINATE_INSTRUCTION",
+  "scope": "Only V14+ after actual scoped human refinement. Fixed photo source and every protected RGB outside actual text boxes stay required. No imagegen, new style or photo change authorization.",
+  "reason": "Earlier Root background-only y550 bound blocked authorized product/type spatial refinement. Product foreground clips lettering only; exact actual protection checked independently.",
+  "not_a_second_task_system": true
+}

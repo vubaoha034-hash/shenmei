@@ -1,0 +1,112 @@
+{
+  "schema": "vpd-product-core-guard-fix-review/v1",
+  "version": 14,
+  "result": "PASS_SCOPED_CORE_GUARD_FIX",
+  "scope": "仅首次V14自动核心guard遗漏的有界复审；不复做美术、远端素材、全原生状态或未来版本审查。",
+  "reviewer": {
+    "thread_id": "01a0ffcf-4878-7823-add4-8d7a12cd1e95",
+    "rollout_path": "C:/Users/Administrator/.codex/sessions/2026/10/03/rollout-2026-10-03T11-29-29-01a0ffcf-4878-7823-add4-8d7a12cd1e95.jsonl",
+    "role": "INDEPENDENT_PROFESSIONAL_IMPLEMENTATION_REVIEW",
+    "historical_context": true,
+    "cold_aesthetic_reviewer": false
+  },
+  "recorded_at_utc": "2026-10-04T06:27:47.977Z",
+  "actual_test_tool": {
+    "tool": "bundled Python -X utf8 -B; actual shared compare_pixels and selected actual validate_continuation AST gate",
+    "completion_chunk": "c2aa72",
+    "exit_code": 0
+  },
+  "first_report": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V14_TECHNICAL.json",
+    "sha256": "a51630694b62b7f57571eee19cea64cbf6c31fe2f5577b5260b3e0e1c8e4db0b",
+    "unchanged": true,
+    "original_delivery_result": "PASS",
+    "original_automatic_core_guard_result": "REPAIR_REQUIRED"
+  },
+  "repaired_source": {
+    "path": "visual_memory/vpd_correct_source_worker.py",
+    "sha256": "ac769d67104c5e58420061011afc58047030f8ae1fce41bc5c52038f8a1380fb",
+    "author_of_code_changes": "ROOT",
+    "auditor_source_writes": 0
+  },
+  "independent_fixed_core_map": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/FIXED_PRODUCT_CORE_MAP.json",
+    "sha256": "6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f",
+    "bytes": 7805,
+    "mask_sha256": "b567253a07b4689f2869b5013d07cb625705d09f4e525f64e6878ab6c8f482e4",
+    "actual_sharp_mask_rederivation_rle_equal": true,
+    "rows": 271,
+    "core_pixels": 162052,
+    "rle_pixel_sum": 162052,
+    "no_photography_pixel_values": true
+  },
+  "tests": {
+    "final_positive_control": {
+      "result": "PASS",
+      "export_sha256": "805aea7d33d0637b05421c034797d53f2b6368604f6e08e8e414f1f20e1a11a2",
+      "core_count": 162052
+    },
+    "original_469_pixel_countercase": {
+      "result": "REJECTED",
+      "error": "APPROVED_PRODUCT_CORE_ACTUAL_PIXELS_CHANGED",
+      "observed_core_differences": 469,
+      "same_countercase_as_first_report": true,
+      "memory_only_decoder_substitution": true
+    },
+    "missing_reference_current14_gate": {
+      "result": "REJECTED",
+      "error": "PRODUCT_CORE_CHECK_REQUIRED",
+      "method": "Actual AST gate node from validate_continuation, number14; not full native state validation"
+    },
+    "old13_gate_not_newly_required": true
+  },
+  "independent_derivation": {
+    "mask_actual_bytes_sha256": "b567253a07b4689f2869b5013d07cb625705d09f4e525f64e6878ab6c8f482e4",
+    "implementation": "实际读取固定mask，调用保存builder的Sharp渲染函数；Pillow MinFilter7侵蚀3px，筛alpha==255；重新按每行连续x区间生成RLE。",
+    "comparison": "重新生成全部271行与固定map逐项一致，像素总数与RLE长度和均162052。",
+    "pixel_or_photography_data_written": false,
+    "uncertain_photographic_edges_certified": false
+  },
+  "binding_observed": {
+    "fixed_map_reference_is_code_constant": true,
+    "map_sha256": "6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f",
+    "map_source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "fixed_mask_reference_verified_by_check_ref": true,
+    "technical_core_report_reference_verified_by_check_ref": true,
+    "report_export_sha_bound_to_actual_final_export": true,
+    "report_source_sha_bound_to_frozen_SOURCE": true,
+    "reported_core_count_and_zero_difference_required": true,
+    "actual_core_rgb_rows_recompared": true,
+    "identity_declarations_are_not_substitutes_for_pixel_comparison": true
+  },
+  "countercase_method": {
+    "before": "从真实V14 raw和S内存重构框外保真初稿，核心469像素最大1级RGB差；首次旧outside-only comparator接受。",
+    "after": "同样初稿行仅在内存替换export解码，真实source、refs/check_ref保持；新增核心比较实际拒绝；finally恢复原解码函数。",
+    "actual_png_or_state_mutated": false,
+    "full_native_validator_bypass_claimed": false
+  },
+  "resolution": {
+    "original_automatic_core_gap": "RESOLVED_FOR_TESTED_SCOPE",
+    "same_original_countercase_rejected": true,
+    "actual_final_delivery_remains_pass": true,
+    "repaired_entry_status": "固定S、mask/map及报告绑定下，当前V14核心验证可运行且正向控制通过。",
+    "first_report_retained_not_rewritten": true
+  },
+  "limitations": [
+    "number14缺ref检验执行的是原函数中实际AST门，未执行完整validate_continuation；避免读取冷审和过渡业务状态。",
+    "本报告没有运行全原生状态检查或证明Root代码引用事务已落账。Root声明暂时EVIDENCE_HASH_MISMATCH属于代码引用待回写，本角色不据此晋升或否定成品。",
+    "保护的是固定保守轮廓侵蚀后的162052核心；不认证不确定照片边缘或完整产品分割。",
+    "不证明审美收益、真人认可、未来新遮罩正确性、干净环境安装或OS权限隔离。",
+    "首次报告的builder普通Python、并发及多文件事务边界仍保留；此次不再扩测。"
+  ],
+  "writes": {
+    "new_audit_only": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PRODUCT_CORE_GUARD_FIX_REVIEW.json",
+    "business_state": 0,
+    "code": 0,
+    "assets": 0,
+    "figma": 0,
+    "drive": 0,
+    "git": 0,
+    "historical_reports_overwritten": 0
+  }
+}

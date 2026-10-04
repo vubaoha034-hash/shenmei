@@ -25,6 +25,7 @@
 | V11 | [完整PNG](https://drive.google.com/file/d/1R68vklIBwqbQci5H-N90XDx3ARqVIjGA/view) | [327:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=327-2) | AI_FAIL；真人PENDING |
 | V12 | [完整PNG](https://drive.google.com/file/d/1bHspC7jItrlU-8QG0k_YLgduCO5XHWV8/view) | [333:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=333-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
 | V13 | [完整PNG](https://drive.google.com/file/d/1HofvSCU7VDGjEa9jWQPFUixzbYvx1ZoW/view) | [335:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=335-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
+| V14 | [完整PNG](https://drive.google.com/file/d/1cK36vF89s6uc0JHS2dND5-zbKIX5oJQF/view) | [338:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=338-2) | AI_FAIL / TECHNICAL_PASS_WITH_GUARD_REPAIR_REQUIRED；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -82,3 +83,5 @@ V11实际新项目外五图冷审AI_FAIL，Sol/Max、328773ms。十九主文案�
 V12仅茶字两个路径改变，实际整图与V11只有1602像素局部差异；其余像素完全相同。但新的独立五图Sol/Max冷审仍AI_FAIL，305265ms；没有确认单笔叶形语义足以改善整体。Root不将其晋升为稳定审美技能。独立技术TECHNICAL_PASS_WITH_LIMITATIONS：17轮廓属性保留、摄影保护及Drive2原字节匹配、新builder普通Python串行verify-only零写和错源/已有输出拒绝实跑；并发/双文件事务未验证，不作泛用安装器。其后已执行V13两段文案实验且仍失败；保留字形实验及历史失败，不沿用旧AI结论。
 
 V13实际两段原字形缩放排布（19路径属性完整保留，组尺度0.82/0.7），两个成功Figma操作为一个正式版本。1463936摄影保护像素差0；Drive PNG与SVG原字节回读一致；新五图Sol/Max冷审AI_FAIL，232454ms。具体失败：品牌、两段句子、产品形成分散注意区；两段阅读拉断；只在杯与盘上方摆字，杯口、盘沿与鲜叶仍未组织共同结构。独立技术报告与可复用固定SVG/Figma边界保留，未把空间接近认作融合。接续交由专门制作worker完成同一方向连续文字与产品轮廓关系，摄影和已改善品牌保留；不要从本段历史描述替代最新锁。
+
+V14真实连续句与杯叶盘前景穿插，18源d保留但逐字非等比，重构一；28矢量和2native遮罩。框外1283584及162052声明产品核心RGB差0，469核心单级舍入机械补偿原记录保留。新五图Sol/Max冷审362000ms仍AI_FAIL：杯口切线与不连续留白，整句字高起伏/右侧弱对比，品牌与主句双岛。官方遮罩方法实际调用但未证明图文关系成立。独立技术成品/Drive PASS，另发现outside-only自动检查漏掉产品核心；Root已用固定mask派生坐标及真实RGB补上该检查，首次发现及修复反例证据分别保存。后继唯一V15收敛节奏/跨度与产品轮廓负空间，不重做摄影、不生图、不批量候选；以原生锁读取当前步骤。

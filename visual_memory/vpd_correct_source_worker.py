@@ -12,6 +12,14 @@ TASK = 'VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01'
 ENVELOPES = [[64,56,504,304],[800,72,1504,440]]
 CONTINUOUS_TYPE_AREAS = [[64,56,504,304],[832,72,1504,624]]
 HUMAN_BACKGROUND_TYPE_AREA = [300,380,1350,550]
+# Root implementation of the authorized full poster refinement: text may
+# intersect the product foreground, while the immutable photo layer is kept.
+# This is a bounded production choice, not a coordinate instruction from Liu.
+PRODUCT_INTERLEAVED_TYPE_AREA = [288,400,1328,720]
+PRODUCT_CORE_MAP = {
+    'path': 'evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/FIXED_PRODUCT_CORE_MAP.json',
+    'sha256': '6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f',
+}
 
 def available_canvas_slots(unit):
     if unit.get('repair_authorization'):
@@ -123,6 +131,8 @@ def validate_overlay_envelopes(number, envelopes, human_requests):
     areas = CONTINUOUS_TYPE_AREAS
     if any(target < number for target in human_requests):
         areas = areas + [HUMAN_BACKGROUND_TYPE_AREA]
+        if number >= 14:
+            areas = areas + [PRODUCT_INTERLEAVED_TYPE_AREA]
     require(all(any(a[0]<=r[0]<r[2]<=a[2] and a[1]<=r[1]<r[3]<=a[3]
                     for a in areas) for r in envelopes),
             'PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE')
@@ -257,6 +267,8 @@ def validate_continuation(root, lock, cp, adapter, receipt):
                 and technical['protected_max_channel_difference'] == 0
                 and technical['source_layer_unchanged'] is True,
                 'ACCEPTED_PHOTOGRAPHY_CHANGED')
+        if number >= 14:
+            require(technical.get('product_foreground_core'), 'PRODUCT_CORE_CHECK_REQUIRED')
         compare_pixels(root,technical,envelopes)
         if number < used or unit['phase'] != 'AWAITING_PIXEL_REVIEW':
             require(version.get('pixel_review'), 'PRIOR_PIXEL_REVIEW_REQUIRED')
@@ -283,7 +295,22 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
     from .vpd_locked_mainline_state import _png_rgb_rows
     source=technical['frozen_source']; export=technical['export']
     check_ref(root,source); check_ref(root,export)
+    core_rows = {}
+    if technical.get('product_foreground_core'):
+        report = load(root, technical['product_foreground_core'])
+        core = load(root, PRODUCT_CORE_MAP)
+        check_ref(root, core['mask_asset'])
+        require(core['source_sha256'] == source['sha256'] == SOURCE
+                and core['dimensions'] == [1536,1024] and core['pixels'] == 162052
+                and report['mask_asset_sha256'] == core['mask_asset']['sha256']
+                and report['final_png_sha256'] == export['sha256']
+                and report['source_sha256'] == SOURCE
+                and report['product_core_pixels_compared'] == core['pixels']
+                and report['product_core_rgb_differences_final'] == 0,
+                'PRODUCT_CORE_IDENTITY_CONFLICT')
+        core_rows = dict(core['rows'])
     changed=0; compared=0; maximum=0
+    core_changed=0; core_compared=0
     for y,(a,b) in enumerate(zip(_png_rgb_rows(root,source),_png_rgb_rows(root,export))):
         omitted=sorted((x0,x1) for x0,y0,x1,y1 in envelopes if y0<=y<y1)
         start=0; intervals=[]
@@ -296,8 +323,15 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
             if aa!=bb:
                 changed+=sum(aa[p:p+3]!=bb[p:p+3] for p in range(0,len(aa),3))
                 maximum=max(maximum,max(abs(x-z) for x,z in zip(aa,bb)))
+        for x0,x1 in core_rows.get(y, []):
+            aa,bb=a[x0*3:x1*3],b[x0*3:x1*3]
+            core_compared+=x1-x0
+            core_changed+=sum(aa[p:p+3]!=bb[p:p+3] for p in range(0,len(aa),3))
     require(changed==0 and maximum==0 and compared==technical['protected_pixels_compared'],
             'APPROVED_PHOTO_ACTUAL_PIXELS_CHANGED')
+    if core_rows:
+        require(core_changed == 0 and core_compared == 162052,
+                'APPROVED_PRODUCT_CORE_ACTUAL_PIXELS_CHANGED')
 
 def validate_review(root, version, number, expected_inputs):
     review=load(root,version['pixel_review']); ids=['P','N','R','S','T']

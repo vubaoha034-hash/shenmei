@@ -1,0 +1,29 @@
+{
+  "active_reuse_script_sha256": "764e8421768bcf97e1dfa5df6cf7fdecac545baa78ade52e74b9c9fcd266d281",
+  "actual_executed_creation_script_sha256": "1313219b70ecd9c0fbcd4cd5ff30e67c52b179b6ec55eefcfac9a8cbd851831c",
+  "private_preview_path": ".liu-visual-private/correct_source_typography/v14/preview.png",
+  "private_preview_sha256": "b4fc0f0360593ce3e64806839d667396ecea2a401a3fb6a62621c37f74a17fa5",
+  "headline_sha256": "0bf136ea73f15688d2cf44638ec0cbe131b9f8dc66d7142458a3df107e4d07e7",
+  "overwrite_and_source_guards": [
+    {
+      "check": "Existing production outputs are rejected before any write",
+      "result": "PASS",
+      "observed_rejection": "V14_OUTPUT_EXISTS_NO_OVERWRITE",
+      "method": "Actual active builder preflight(False) invoked; its assertion exited before normal write phase."
+    },
+    {
+      "check": "Wrong fixed-source digest is rejected before any write",
+      "result": "PASS",
+      "observed_rejection": "FIXED_SOURCE_CHANGED:source",
+      "method": "Zero-write in-memory expected-SHA fault injection in active builder; source file itself was never changed."
+    },
+    {
+      "check": "Both guard tests leave all saved assets, preview and scripts byte-identical",
+      "result": "PASS",
+      "writes": 0
+    }
+  ],
+  "active_verify_only_execution": "PASS_ACTUAL_COMMAND_0_WRITES",
+  "normal_production_rerun": false,
+  "public_png_absent": true
+}
