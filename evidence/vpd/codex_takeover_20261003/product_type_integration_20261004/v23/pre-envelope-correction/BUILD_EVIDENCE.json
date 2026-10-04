@@ -1,0 +1,100 @@
+{
+  "schema": "vpd-v23-minimal-build-evidence/v1",
+  "adaptive_orchestrator": {
+    "skill": "C:/Users/Administrator/.agents/skills/adaptive-orchestrator/SKILL.md",
+    "version_check": "CURRENT",
+    "role": "Existing sole production worker after Root-frozen decision; independent aesthetic review remains Root-owned",
+    "new_child_agents": 0
+  },
+  "prior_v22_readonly_check": {
+    "exit_code": 0,
+    "files": 72,
+    "SHA_mtime_unchanged": true
+  },
+  "before_write": {
+    "tool_chunk": "e41400",
+    "exit_code": 0,
+    "writes": 0,
+    "action": "verified-before-write",
+    "headline": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/headline.svg",
+      "sha256": "bfd171d8b17b42a1c37fb04761b1649b818a3e8c9b068db6c30c7128173d0685",
+      "bytes": 37499
+    }
+  },
+  "actual_write": {
+    "tool_chunk": "4f2b00",
+    "exit_code": 0,
+    "writes": 6,
+    "root_gate": {
+      "revision": 320,
+      "phase": "REVISION_REQUIRED",
+      "last_version": 22,
+      "verdict": "AI_FAIL",
+      "lock_sha256": "671a604954abf1d11c5912518e89894f545a73df873dcd2a282f442b9e2aa39d"
+    },
+    "headline": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/headline.svg",
+      "sha256": "bfd171d8b17b42a1c37fb04761b1649b818a3e8c9b068db6c30c7128173d0685",
+      "bytes": 37499
+    },
+    "preview": {
+      "path": ".liu-visual-private/correct_source_typography/v23/preview.png",
+      "sha256": "b9a324e98e5c29dff14ad9b228901496fbe4a494a9fd4a4af677108124d82e87",
+      "bytes": 2025630
+    },
+    "provenance": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/LETTERING_PROVENANCE.json",
+      "sha256": "df5d87c6969ce10eff8ec523d7a656163d4752a9b8cb585cefa073ae104b2c3d",
+      "bytes": 15601
+    }
+  },
+  "final_verify_tool_chunk": "46d3a0",
+  "checks": [
+    {
+      "label": "verify-only-existing",
+      "exit_code": 0,
+      "writes": 0,
+      "action": "verified-existing",
+      "path_attributes_preserved": true
+    },
+    {
+      "label": "wrong-source-photo-path",
+      "exit_code": 1,
+      "rejection": "AssertionError: SOURCE_PHOTO_PATH_IDENTITY_MISMATCH"
+    },
+    {
+      "label": "wrong-source-headline-path",
+      "exit_code": 1,
+      "rejection": "AssertionError: SOURCE_HEADLINE_PATH_IDENTITY_MISMATCH"
+    },
+    {
+      "label": "existing-output-write-rejected",
+      "exit_code": 1,
+      "rejection": "AssertionError: OUTPUT_ALREADY_EXISTS"
+    },
+    {
+      "label": "wrong-photo-hash-in-memory",
+      "exit_code": 1,
+      "rejection": "AssertionError: FIXED_SOURCE_CHANGED:photo"
+    },
+    {
+      "label": "wrong-headline22-hash-in-memory",
+      "exit_code": 1,
+      "rejection": "AssertionError: FIXED_SOURCE_CHANGED:headline22"
+    }
+  ],
+  "snapshot_targets": 16,
+  "SHA_and_mtime_unchanged": true,
+  "wrong_hash_boundary": "Wrong bytes supplied in subprocess memory; no real source modified.",
+  "one_design_decision": true,
+  "whole_group_placement_operations": 1,
+  "builder_calculation_invocations": 3,
+  "calculation_boundary": "Preflight, exclusive write, and read-only existing-output verification of exactly the same fixed placement; no alternatives viewed or selected.",
+  "private_fullpreview_files": 1,
+  "new_imagegen_calls": 0,
+  "new_vectorization_calls": 0,
+  "worker_business_state_writes": 0,
+  "worker_Figma_Drive_Git_writes": 0,
+  "aesthetic_verdict": null
+}

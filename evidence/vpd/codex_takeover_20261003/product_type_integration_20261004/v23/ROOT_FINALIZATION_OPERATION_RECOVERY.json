@@ -1,0 +1,11 @@
+{
+  "formal_version": 23,
+  "scope": "Root helper execution only; no new artwork or aesthetic candidate",
+  "issues": [
+    {"actual_chunk": "46e79e", "actual_exit_code": 1, "failure": "Python archive helper embedded JSON null as a Python name before writes", "bounded_fix": "Parse the same exact metadata via json.loads", "actual_success_chunk": "0a14f4", "actual_success_exit_code": 0},
+    {"failure": "One functions.exec JavaScript syntax error while preparing the helper patch; no tool execution or filesystem write", "bounded_fix": "Corrected bracket in JSON.stringify arguments", "effect_on_artwork": "none"},
+    {"actual_chunk": "115dad", "actual_exit_code": 1, "failure": "Earlier provenance helper import path absent before writes", "bounded_fix": "Added repository import path; actual saved provenance subsequently validated", "actual_success_chunk": "a76f09", "actual_success_exit_code": 0}
+  ],
+  "aesthetic_pass_claimed": false,
+  "history_not_overwritten": true
+}

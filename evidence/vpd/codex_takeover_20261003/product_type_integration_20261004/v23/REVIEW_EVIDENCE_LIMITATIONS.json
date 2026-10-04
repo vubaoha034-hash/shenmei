@@ -1,0 +1,26 @@
+{
+  "formal_version": 23,
+  "original_review_retained_unchanged": "pixel_review/PIXEL_REVIEW.json",
+  "original_verdict": "AI_FAIL",
+  "original_verdict_not_overridden": true,
+  "actual_transport_proof": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/ACTUAL_COLD_PIXEL_TRANSPORT_READBACK.json",
+    "sha256": "7de40799e534b3a894267d0262a045c8642037936a008bfe9a540de52ced9060"
+  },
+  "supported_target_findings": [
+    "Headline intersects actual cup rim and fresh leaf/tray",
+    "Glyph coverage obscures some product contours; spatial overlap alone does not prove mature relationship",
+    "Two-row gap and light stream highlight near 茶 weaken clarity"
+  ],
+  "unsupported_claims": [
+    {
+      "review_claim": "Brand approx[280,0,500,118], almost touches top; move down64px",
+      "actual_evidence": "Brand placement285,198,width205,height99.9477447; pixels approx[285,198,490,298]; full actual Figma/runtime/source-over and actual view; no top-edge clipping",
+      "action": "Do not move preserved brand in response to this false premise"
+    }
+  ],
+  "evaluation_boundary": "Five actual image bytes confirmed and isolation collector passed; aesthetic model remains fallible. Both V22 and V23 mislocated the same brand despite changing from batch to five ordered views. No claim that sequential transport fixes evaluator reliability; unsupported geometric observation is excluded from implementation, original fail kept.",
+  "reference_metadata_observation": "R decoded original size1080×1439; keep exact SHA/upper-ad scope, do not infer1440 from prior textual metadata.",
+  "human_verdict": "PENDING",
+  "next_primary_design_change": "Fresh independent art-direction diagnosis of actual pixels, then one genuine headline/glyph-and-contour repair; no blind same-group movement or brand regression"
+}

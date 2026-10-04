@@ -1,0 +1,80 @@
+{
+  "schema": "vpd-registered-type-composite/v1",
+  "formal_version": 23,
+  "copy": "一杯茶，慢下来",
+  "brand": "茶作",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "source": {
+    "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+    "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+  },
+  "renderer_helper": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v18/build_headline_asset.py",
+    "sha256": "24102f462f379255c29be0209cd63f91d3e862f80956a96b012471eccc18e8e5"
+  },
+  "renderer": {
+    "python": "3.12.14",
+    "pillow": "12.3.0",
+    "node": "v24.19.0",
+    "sharp": "0.35.4",
+    "rsvg": "2.62.91"
+  },
+  "brand_placement": {
+    "x": 285,
+    "y": 198,
+    "width": 205
+  },
+  "layer_order": [
+    "brand",
+    "headline"
+  ],
+  "layers": [
+    {
+      "role": "brand",
+      "svg": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/brand.svg",
+        "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff"
+      },
+      "semantic_sha256": "d262de66603be75c839ecddad9e3b644963048ec7b8754a1b7ca2034fc05090e",
+      "rgba_sha256": "f19aecfb51923d990719d2e506d99a5902abe2e796b7c41e91a6e66118aff51a",
+      "alpha_sha256": "cf81475bfe223eeb45cae9e9921cb54db49a0fc73c856387d3e30fba70ca6cd2"
+    },
+    {
+      "role": "headline",
+      "svg": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/headline.svg",
+        "sha256": "75e6b9a03b35afeeb577d7d9232efb2dbdb35de5f1cf5a5f999eaf09a5791a10"
+      },
+      "semantic_sha256": "d6a8fabfd000f50325c39e31c02963d91d8ce56296ad1d9a70717d7b0dda61fe",
+      "rgba_sha256": "940d30e254313de6931994b2143f27ed1777bcdbcf605a923573c334574f2835",
+      "alpha_sha256": "9619145633b055d76869d83c026a1f60d471cc9e457f40f705a46a1c1f7f8c41"
+    }
+  ],
+  "headline_lineage": {
+    "kind": "alpha128-vtracer",
+    "generated_png": {
+      "path": ".liu-visual-private/correct_source_typography/v22/headline-generated-01.png",
+      "sha256": "fcb4b5097ae1610dfd84ba6eb49fef7853d254d0c405c5e47600f35095064d2c"
+    },
+    "trace_svg": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/upstream-alpha128-trace.svg",
+      "sha256": "1c1d0af28c3534426432441ff8944be0ea5f8ae33736c225740c65541017ff6c"
+    },
+    "generation_evidence": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v22/IMAGEGEN_EXECUTION.json",
+      "sha256": "810f4dad695cf39a591a2b1e8e1e50ebcea69b72eea6d7d240d297d203b338ad"
+    },
+    "provenance": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/LETTERING_PROVENANCE.json",
+      "sha256": "ba1a6adf17d54b21e7347f837ae58ab09de54b472f6e3dff766f2b08974547e6"
+    }
+  },
+  "core_map": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/FIXED_PRODUCT_CORE_MAP.json",
+    "sha256": "6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f"
+  },
+  "composite": "Pillow12.3.0 RGBA source-over in stored 8-bit channels; brand then headline; opaque RGB output"
+}

@@ -1,0 +1,385 @@
+{
+  "schema": "vpd-registered-type-guard-fresh-review/v1",
+  "formal_version": 23,
+  "result": "PASS_WITH_LIMITATIONS",
+  "checked_utc": "2026-10-04T14:44:44.942370+00:00",
+  "code_sha256": "444b5c469a0c6d6014b1aa6dc8737686c6e279e986073c56910ce764516e56b1",
+  "code": {
+    "path": "visual_memory/vpd_registered_type_figma_binding.py",
+    "sha256": "444b5c469a0c6d6014b1aa6dc8737686c6e279e986073c56910ce764516e56b1"
+  },
+  "base_git_commit": "e4dbb77aed75b35866b14adb3c4782f129fa842d",
+  "fixed_code_before_and_after": true,
+  "working_tree_code_review": true,
+  "reviewer": {
+    "actual_model": "gpt-6-astra",
+    "actual_reasoning_effort": "high",
+    "actual_session_id": "01a1074f-ed87-7813-bdda-88f068d0f636",
+    "actual_turn_context_read_independently": true,
+    "reference": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/FRESH_TECHNICAL_ROLE_RUNTIME.json",
+      "sha256": "66d4bef2c31df002c3d8454e809d50812629dc80d9b4903b98ab8d41f977fd31"
+    }
+  },
+  "method": "Independent script on actual V23 assets, host events and official original files; failed fixtures confined to reviewer private directory. Author conclusions not used.",
+  "case_count": 57,
+  "cases": [
+    {
+      "case": "V23_actual_runtime_complete_curves_and_four_downloads",
+      "pass": true
+    },
+    {
+      "case": "actual_binding_exactly_equals_Root_saved_report",
+      "pass": true
+    },
+    {
+      "case": "wrong_runtime_version",
+      "pass": true,
+      "rejection": "ACTUAL_RUNTIME_VERSION_CONFLICT"
+    },
+    {
+      "case": "wrong_runtime_call",
+      "pass": true,
+      "rejection": "ACTUAL_V23_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "case": "wrong_runtime_output",
+      "pass": true,
+      "rejection": "ACTUAL_BINDING_OUTPUT_CONFLICT"
+    },
+    {
+      "case": "source_as_export",
+      "pass": true,
+      "rejection": "ACTUAL_ORIGINAL_IMAGE_OR_FRAME_EXPORT_CHANGED"
+    },
+    {
+      "case": "V22_export_as_V23",
+      "pass": true,
+      "rejection": "ACTUAL_ORIGINAL_IMAGE_OR_FRAME_EXPORT_CHANGED"
+    },
+    {
+      "case": "V22_runtime_into_V23",
+      "pass": true,
+      "rejection": "ACTUAL_RUNTIME_VERSION_CONFLICT"
+    },
+    {
+      "case": "V22_capture_into_V23",
+      "pass": true,
+      "rejection": "ACTUAL_CAPTURE_BODY_FINGERPRINT_CONFLICT"
+    },
+    {
+      "case": "V22_download_into_V23",
+      "pass": true,
+      "rejection": "OFFICIAL_DOWNLOAD_READBACK_REQUIRED"
+    },
+    {
+      "case": "rehashed_missing_node",
+      "pass": true,
+      "rejection": "ACTUAL_CAPTURE_BODY_FINGERPRINT_CONFLICT"
+    },
+    {
+      "case": "missing_download",
+      "pass": true,
+      "rejection": "OFFICIAL_DOWNLOAD_READBACK_REQUIRED"
+    },
+    {
+      "case": "duplicate_download",
+      "pass": true,
+      "rejection": "OFFICIAL_DOWNLOAD_READBACK_REQUIRED"
+    },
+    {
+      "case": "hidden_layer",
+      "pass": true,
+      "rejection": "FIGMA_EFFECT_STYLE_VISIBILITY_OR_MASK_CHANGED"
+    },
+    {
+      "case": "layer_opacity",
+      "pass": true,
+      "rejection": "FIGMA_EFFECT_STYLE_VISIBILITY_OR_MASK_CHANGED"
+    },
+    {
+      "case": "photo_filter",
+      "pass": true,
+      "rejection": "ORIGINAL_PHOTOGRAPHIC_FILL_CHANGED"
+    },
+    {
+      "case": "photo_hash",
+      "pass": true,
+      "rejection": "ORIGINAL_PHOTOGRAPHIC_FILL_CHANGED"
+    },
+    {
+      "case": "photo_fill_opacity",
+      "pass": true,
+      "rejection": "ORIGINAL_PHOTOGRAPHIC_FILL_CHANGED"
+    },
+    {
+      "case": "photo_crop",
+      "pass": true,
+      "rejection": "ORIGINAL_PHOTOGRAPHIC_FILL_CHANGED"
+    },
+    {
+      "case": "hidden_photo_duplicate",
+      "pass": true,
+      "rejection": "HIDDEN_OR_DUPLICATE_PHOTOGRAPHIC_FILL"
+    },
+    {
+      "case": "vector_fill_1RGB",
+      "pass": true,
+      "rejection": "REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED"
+    },
+    {
+      "case": "vector_fill_alpha",
+      "pass": true,
+      "rejection": "REGISTERED_VECTOR_COLOR_OR_ALPHA_CHANGED"
+    },
+    {
+      "case": "vector_winding",
+      "pass": true,
+      "rejection": "REGISTERED_GLYPH_ORDER_OR_WINDING_CHANGED"
+    },
+    {
+      "case": "vector_effect",
+      "pass": true,
+      "rejection": "FIGMA_EFFECT_STYLE_VISIBILITY_OR_MASK_CHANGED"
+    },
+    {
+      "case": "vector_clip",
+      "pass": true,
+      "rejection": "FIGMA_CLIPPING_CHANGED"
+    },
+    {
+      "case": "brand_placement",
+      "pass": true,
+      "rejection": "FROZEN_BRAND_PLACEMENT_CHANGED"
+    },
+    {
+      "case": "vector_control_1px",
+      "pass": true,
+      "rejection": "FIGMA_GLYPH_CONTROL_COORDINATE_CHANGED"
+    },
+    {
+      "case": "layer_order",
+      "pass": true,
+      "rejection": "REGISTERED_LAYER_ORDER_CHANGED"
+    },
+    {
+      "case": "coherent_vector_anchor_1px",
+      "pass": true,
+      "rejection": "FIGMA_GLYPH_ANCHOR_CHANGED"
+    },
+    {
+      "case": "core_alpha_False_one_RGB",
+      "pass": true,
+      "rejection": "UNEXPLAINED_COMPOSITE_PIXEL_CHANGE"
+    },
+    {
+      "case": "core_alpha_True_one_RGB",
+      "pass": true,
+      "rejection": "UNEXPLAINED_COMPOSITE_PIXEL_CHANGE"
+    },
+    {
+      "case": "SVG_forbidden_<filter",
+      "pass": true,
+      "rejection": "SVG_ELEMENT_FORBIDDEN:filter"
+    },
+    {
+      "case": "SVG_forbidden_<image",
+      "pass": true,
+      "rejection": "SVG_ELEMENT_FORBIDDEN:image"
+    },
+    {
+      "case": "SVG_forbidden_<rect",
+      "pass": true,
+      "rejection": "SVG_ELEMENT_FORBIDDEN:rect"
+    },
+    {
+      "case": "V22_real_binding_regression",
+      "pass": true
+    },
+    {
+      "case": "V22_composite_regression",
+      "pass": true
+    },
+    {
+      "case": "V1_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V2_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V3_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V4_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V5_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V6_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V7_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V8_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V9_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V10_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V11_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V12_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V13_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V14_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V15_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V16_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V17_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V18_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V19_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V20_historical_photo_guard",
+      "pass": true
+    },
+    {
+      "case": "V21_historical_photo_guard",
+      "pass": true
+    }
+  ],
+  "preserved_implementation": [
+    {
+      "path": "visual_memory/vpd_registered_type_composite.py",
+      "sha256": "43fde4da1d25124f8140d309a6be33cfc4f4ee2ff1c65fb1691bb29be419cec9",
+      "unchanged_from_base_commit": true
+    },
+    {
+      "path": "visual_memory/vpd_correct_source_worker.py",
+      "sha256": "60e3c371a4c00ecd30fc5c76732d8cdb9a25e9b796d76161dcfe7862221568b7",
+      "unchanged_from_base_commit": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v18/build_headline_asset.py",
+      "sha256": "24102f462f379255c29be0209cd63f91d3e862f80956a96b012471eccc18e8e5",
+      "unchanged_from_base_commit": true
+    }
+  ],
+  "independent_source_over": {
+    "whole_frame": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "alpha_zero_source": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "positive_core_expected": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "zero_core_source": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "core_pixels": 162052,
+    "positive_core_pixels": 8328,
+    "zero_core_pixels": 153724,
+    "native_to_final": {
+      "pixels": 7275,
+      "max_channel_difference": 39
+    },
+    "headline_bbox": [
+      610,
+      514,
+      990,
+      720
+    ],
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "source_sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+    "all_17_path_attributes_equal_v22": true,
+    "brand_bytes_equal_v22": true,
+    "trace_bytes_equal_v22": true,
+    "drive_originals_equal": {
+      "poster": true,
+      "headline": true
+    },
+    "vtracer_source_inputs_sha_verified": {
+      "vtracer_wrapper": true,
+      "vtracer_binary": true,
+      "vtracer_wheel": true,
+      "vtracer_license": true
+    },
+    "vtracer_installed_equals_wheel": {
+      "vtracer_wrapper": true,
+      "vtracer_binary": true
+    },
+    "vtracer_license_is_MIT": true
+  },
+  "actual_binding_recompute_equals_saved": true,
+  "actual_binding_report": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/REGISTERED_TYPE_FIGMA_BINDING_CHECK.json",
+    "sha256": "d0161bdff8fde9ade6656f415ef2fb1415fc3923ae9c681925ae149aca218478"
+  },
+  "private_test_script": {
+    "path": ".liu-visual-private/fresh-challenge-v23/challenge.py",
+    "sha256": "85e491e08a115ca0e639eae4e5f0a7eeaed64d570b6ecf22a6870bcb1b297832"
+  },
+  "private_test_results": {
+    "path": ".liu-visual-private/fresh-challenge-v23/challenge-results.json",
+    "sha256": "c1e0ff2dbe695f80f8a26bc62ab2a3e1e4e1b3d89753e0b082a6607e582ba006"
+  },
+  "elapsed_seconds": 270.125,
+  "limitations": [
+    "Technical acceptance is not aesthetic improvement, project-external blind review, personal taste scoring, human approval or project completion.",
+    "Full native project-state validation is not part of this scoped audit; Root must run it subsequently. These passing technical checks do not constitute full-state PASS.",
+    "Actual Figma native PNG differs from fixed Sharp/Pillow delivery at 7275 pixels, max stored-channel difference 39; no native equality or perceptual ICC equivalence claimed.",
+    "Only inspected V22/V23 collectors and this local host runtime are supported; local transcript trust is not operating-system attestation.",
+    "This is an independent technical subagent in the existing project context, not the separate five-image cold aesthetic review.",
+    "Independent Drive metadata and original-byte cache comparison succeeded. A new official headline fetch returned a 37499-byte file reference, but its temporary URL download failed (PowerShell authentication/TLS; Python HTTP403). Root earlier HTTP200 original downloads are reused and not claimed as this auditor's network success.",
+    "Editable output consists of vector paths, not native TEXT. V22 generated lettering was alpha-thresholded and traced, not losslessly converted; backend font/glyph mechanism is not exposed."
+  ],
+  "business_state_writes": 0,
+  "figma_drive_mutations": 0,
+  "git_commits": 0
+}

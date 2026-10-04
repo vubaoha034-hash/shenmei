@@ -1,0 +1,108 @@
+{
+  "schema": "vpd-v23-maker-pixel-inspection/v1",
+  "role": "Production maker; not cold reviewer",
+  "actual_views": [
+    ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+    ".liu-visual-private/product-type-integration-20261004/R-current-reference.jpg",
+    ".liu-visual-private/correct_source_typography/v22/poster.png",
+    ".liu-visual-private/correct_source_typography/v22/headline-generated-01.png",
+    ".liu-visual-private/correct_source_typography/v23/preview.png",
+    ".liu-visual-private/correct_source_typography/v23/headline-render.png"
+  ],
+  "method": "view_image original detail; R upper advertisement only",
+  "preview_sha256": "a94694c70379ee67d3b7bad1771e24019e30dc3e9b69dce932c97cc3ff2f2f14",
+  "actual_reading": {
+    "brand": "茶作",
+    "sentence": "一杯茶，慢下来",
+    "lines": [
+      "一杯茶，",
+      "慢下来"
+    ]
+  },
+  "actual_headline_bbox": [
+    610,
+    514,
+    990,
+    720
+  ],
+  "actual_one_stroke_bbox": [
+    610,
+    559,
+    705,
+    585
+  ],
+  "actual_rows": {
+    "upper": [
+      610,
+      514,
+      954,
+      622
+    ],
+    "lower": [
+      736,
+      622,
+      990,
+      720
+    ]
+  },
+  "observations": [
+    "The actual 一 stroke now overlays the ceramic inner-rim/mouth region in the right half of the cup. Its warm-white shape locally has weak contrast against the bright ceramic; cup contact is observed, not aesthetic certification.",
+    "The bottom of 杯's 木 approaches/overlays the right cup lip. The unchanged two-line group links this cup region to the fresh-leaf/left-tray region.",
+    "The lower row overlays fresh leaves and part of the tray's left upper region. No foreground leaf mask or photo raster layer was added, and leaf-before-text occlusion is not claimed.",
+    "All frozen words remain readable. The original broad rounded stroke character, tight row gap and substantial rightward offset of the lower row remain; the upper 茶 also meets a bright stream highlight.",
+    "After the first placement inspection, Root authorized only an exact 1px upward technical correction because the previous alpha bbox ended at y=721 outside the y<=720 envelope. The corrected full preview and transparent lettering were actually viewed; copy and full glyph structures remain readable. No style, path, scale, row-relation, brand or photograph change, alternate candidate, generation or retracing was made."
+  ],
+  "all_original_path_attributes_preserved": true,
+  "source_photo_unchanged": true,
+  "brand_glyph_bytes_and_placement_unchanged": true,
+  "aesthetic_pass_claimed": false,
+  "human_approval_claimed": false,
+  "formal_independent_review": null,
+  "prior_inspection_history": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/pre-envelope-correction/MAKER_INSPECTION.json",
+    "sha256": "d9ff367ff5389a7b81ff95467922f9d842f84e72972a16164816539a416118f7"
+  },
+  "post_correction_actual_views": [
+    {
+      "path": ".liu-visual-private/correct_source_typography/v23/preview.png",
+      "sha256": "a94694c70379ee67d3b7bad1771e24019e30dc3e9b69dce932c97cc3ff2f2f14",
+      "bytes": 2025656
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v23/headline-render.png",
+      "sha256": "0456ddc4a4b8edd20714fe94b0d0c7fbf6fe65de85e38d041e2bc47b859bd766",
+      "bytes": 33735
+    }
+  ],
+  "pre_registration_envelope_correction": {
+    "reason": "Technical adaptation to PRODUCT_INTERLEAVED_TYPE_AREA y<=720; not a new style or aesthetic candidate.",
+    "root_authorization": "Translate the entire unchanged 17-path phrase upward exactly 1px before formal V23 registration and cold review.",
+    "formal_V23_registered_at_correction": false,
+    "formal_V23_cold_reviewed_at_correction": false,
+    "delta_xy": [
+      0,
+      -1
+    ],
+    "previous_matrix": "matrix(0.3488013255394301 0 0 0.3488013255394301 524.3160869265243 432.0762262905397)",
+    "previous_alpha_bbox_exclusive": [
+      610,
+      515,
+      990,
+      721
+    ],
+    "previous_headline_sha256": "bfd171d8b17b42a1c37fb04761b1649b818a3e8c9b068db6c30c7128173d0685",
+    "snapshot_path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v23/pre-envelope-correction/PRE_ENVELOPE_SNAPSHOT.json",
+    "snapshot_sha256": "9c62f4c6b952277cfb0c1db3e36868caca9e7b305fc38ece34db3ddfd8d5d06f",
+    "PNG_history_directory": ".liu-visual-private/correct_source_typography/v23/pre-envelope-correction",
+    "new_style_or_candidate": false,
+    "source_paths_scale_brand_photo_changed": false
+  },
+  "authorized_headline_envelope": [
+    288,
+    400,
+    1328,
+    720
+  ],
+  "alpha_bbox_within_authorized_envelope": true,
+  "correction_scope": "Formal V23 not registered or cold reviewed at correction; technical fit only, no aesthetic verdict."
+}
