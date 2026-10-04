@@ -1,0 +1,55 @@
+{
+  "root_thread": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+  "formal_version": 16,
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "xhigh",
+  "actual_figma_mutation_attempts": 3,
+  "successful_figma_mutation_operations": 2,
+  "actual_new_imagegen_operations": 0,
+  "actual_photo_generations": 0,
+  "exact_calls": [
+    {
+      "role": "V16_PART_1_FIRST_FAILED",
+      "call_id": "call_l1qXTRkM8C5MogThWL5IybdZ",
+      "timestamp": "2026-10-04T07:09:05.921Z",
+      "input_sha256": "51453d452bd5871cf74720ee4050faf7ea1027df14431113a78752f25219499a",
+      "actual_completed_tool_output_sha256": "01434a6306d1faee868d25a36a3ca6ac95661e4f088471ab5f73bad3fbb5981b"
+    },
+    {
+      "role": "V16_PART_1_RECOVERED",
+      "call_id": "call_SE9qDV1bQgd204TuMkCIWw7v",
+      "timestamp": "2026-10-04T07:29:44.340Z",
+      "input_sha256": "73e3de30ae5211335c66bb49be818d57c671ec13c8f3375e887da5c5cfc11f7a",
+      "actual_completed_tool_output_sha256": "e08541bf28f8ef71045294a6643a3274858d3373cafb96b9535aea126784380d"
+    },
+    {
+      "role": "V16_PART_2",
+      "call_id": "call_cM5qurgQp6mKhZdLAT8NkLtY",
+      "timestamp": "2026-10-04T07:30:23.060Z",
+      "input_sha256": "b0a165836f1c3c534d3701004aa3b9954ae67a83f3fac68d8198ba80058f7b3c",
+      "actual_completed_tool_output_sha256": "9727fb8314fc4d54276abd8a655db284563204eed7c78089c728e49c4873acef"
+    }
+  ],
+  "successful_scripts": [
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/FIGMA_ASSEMBLY_PART_1.js",
+      "sha256": "542beebed007d025aaf880bc5aed4fe44d21e8ecab29d2c776e05c0890a2f851"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/FIGMA_ASSEMBLY_PART_2.js",
+      "sha256": "39059aa938552069481bfcdf55f88626b491c12bbe594f1606a1835afe635d2f"
+    }
+  ],
+  "failed_script": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/FIGMA_ASSEMBLY_PART_1_FAILED.js",
+    "sha256": "4b94729532e9c976ad2e3bd52b7511c805c2e8430a028ab7fc479846c4398418"
+  },
+  "failed_attempt_boundary": "Original raw MCP error not captured before Root threw; two actual read-only checks found only original V15 and no V16 frame. Corrected stale title ID341:38 to341:44. No stranded clone or additional formal alternative found.",
+  "private_exact_call_excerpt": {
+    "path": ".liu-visual-private/v16-production-call-payloads-private.json",
+    "sha256": "d847527d5b0ec1f7e27f29683a9e344869d6fdf47613a701be04b74c7139abc1"
+  },
+  "source_paths": 19,
+  "mechanism": "Two literal fullviewport SVG imports;14 V15 source d retained,4 paths rebuilt and cup path edited; fixed product mask preserved. One formal V16.",
+  "recorded_at": "2026-10-04T07:36:52.848569+00:00"
+}

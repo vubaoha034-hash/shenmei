@@ -26,6 +26,8 @@
 | V12 | [完整PNG](https://drive.google.com/file/d/1bHspC7jItrlU-8QG0k_YLgduCO5XHWV8/view) | [333:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=333-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
 | V13 | [完整PNG](https://drive.google.com/file/d/1HofvSCU7VDGjEa9jWQPFUixzbYvx1ZoW/view) | [335:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=335-2) | AI_FAIL / TECHNICAL_PASS_WITH_LIMITATIONS；真人PENDING |
 | V14 | [完整PNG](https://drive.google.com/file/d/1cK36vF89s6uc0JHS2dND5-zbKIX5oJQF/view) | [338:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=338-2) | AI_FAIL / TECHNICAL_PASS_WITH_GUARD_REPAIR_REQUIRED；真人PENDING |
+| V15 | [完整PNG](https://drive.google.com/file/d/10NbxHViDfTV7IwAfEQtVGxnjwRK3RTRP/view) | [341:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=341-2) | AI_FAIL；真人PENDING |
+| V16 | [完整PNG](https://drive.google.com/file/d/13sGgi7VJMxx56kOz4a8Ck7ve7HRmxsbU/view) | [347:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=347-2) | AI_FAIL；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -85,3 +87,7 @@ V12仅茶字两个路径改变，实际整图与V11只有1602像素局部差异�
 V13实际两段原字形缩放排布（19路径属性完整保留，组尺度0.82/0.7），两个成功Figma操作为一个正式版本。1463936摄影保护像素差0；Drive PNG与SVG原字节回读一致；新五图Sol/Max冷审AI_FAIL，232454ms。具体失败：品牌、两段句子、产品形成分散注意区；两段阅读拉断；只在杯与盘上方摆字，杯口、盘沿与鲜叶仍未组织共同结构。独立技术报告与可复用固定SVG/Figma边界保留，未把空间接近认作融合。接续交由专门制作worker完成同一方向连续文字与产品轮廓关系，摄影和已改善品牌保留；不要从本段历史描述替代最新锁。
 
 V14真实连续句与杯叶盘前景穿插，18源d保留但逐字非等比，重构一；28矢量和2native遮罩。框外1283584及162052声明产品核心RGB差0，469核心单级舍入机械补偿原记录保留。新五图Sol/Max冷审362000ms仍AI_FAIL：杯口切线与不连续留白，整句字高起伏/右侧弱对比，品牌与主句双岛。官方遮罩方法实际调用但未证明图文关系成立。独立技术成品/Drive PASS，另发现outside-only自动检查漏掉产品核心；Root已用固定mask派生坐标及真实RGB补上该检查，首次发现及修复反例证据分别保存。后继唯一V15收敛节奏/跨度与产品轮廓负空间，不重做摄影、不生图、不批量候选；以原生锁读取当前步骤。
+
+V15真实两行紧凑字群，16个V14源d保留，path5恢复V12一、path9/19收短，连续杯口留白；保护mask保留但未遮字，不称穿插深度。摄影1486336框外及162052声明产品核心RGB差0，字标与V14实际RGB一致。新五图Sol/Max冷审216667ms仍AI_FAIL：文本仍独立于产品，未由字形/下缘/叶盘空间组织共同构图。清楚、缩小及空间邻近都未证明融合；不会降低标准放行。Root启用一个fork-none新制作上下文，必要文字工具与正式成品分开记账，单一V16重做本方向主文案关系，摄影和品牌保留。初次Drive上传auto_review拒绝目的地未当前核验；实际官方profile及folder/S owner一致且private，原目的地原official方法上传随后成功，两份原字节HTTP200一致，详细检查与失败保留DRIVE_OWNERSHIP_RECOVERY.json，无绕过。当前唯一下一步仍从原生锁读取。
+
+V16新fork-none Sol/Max制作上下文实际四输入+一预览；重画4路径/改杯1路径，其余14个V15源d保留。首次Figma旧标题ID导致失败已留证，实际两次画布读取确认无残留，正确341:44映射后两成功导入完成347:2，一正式版三导入尝试。摄影框外1286848及固定core162052 RGB差0，品牌V15一致；Figma/raw/source和Drive PNG/SVG实际原字节读取匹配。五图新项目外Sol/Max冷审275941ms AI_FAIL：大茶抢产品、句后下降/间隔不稳、产品邻接与覆盖只部分成立。不会晋升或放宽标准；下一版改变整句字形制作方法，禁止只重复旧路径尺度/位移。无摄影生成，未证明视觉收益/节时/真人认可。唯一下一动作依原生锁。

@@ -1,15 +1,15 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 326,
-  "recorded_at": "2026-10-04T14:26:20.236239+08:00",
+  "sequence": 330,
+  "recorded_at": "2026-10-04T15:49:19.190804+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
   "active_task_ids": [
     "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01"
   ],
-  "current_focus": "V14真实冷审失败，保留产品保护和全部历史，唯一V15专业文字修订",
+  "current_focus": "CHAZUO_V16_FAILED_V17_NEW_LETTERING_METHOD",
   "completed": [
     "p3b_doufang_no_reference_pair_complete_directional_benefit",
     "p4_chazuo_pair_complete_repeated_directional_benefit",
@@ -433,8 +433,8 @@
   "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REVISION_REQUIRED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "51e34e3c553a9030cc729cbaad2784ff88fe2bfc9695ba49473847ca7100586d",
-    "revision": 304
+    "sha256": "620b471ff46e6086336615a1ba5ba92962a7ff40a278b49b3ecdfff7cf2227b9",
+    "revision": 308
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-304-20261003",
-      "event_hash": "863f0f073f199e614f0bda3d4e94e17022752b9d493302e1afa93fbf08fc658a"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-308-20261003",
+      "event_hash": "04d09a20b85de595253e2238474fa55fb839562a64dfbb7ad89b098737affb28"
     }
   },
   "typography_repair": {
@@ -971,8 +971,8 @@
     "figma_executed": false,
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
-  "current_stage": "V14真实冷审失败，保留产品保护和全部历史，唯一V15专业文字修订",
-  "updated_at": "2026-10-04T14:26:20.236239+08:00",
+  "current_stage": "CHAZUO_V16_FAILED_V17_NEW_LETTERING_METHOD",
+  "updated_at": "2026-10-04T15:49:19.190804+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v14/NATIVE_FAILED_REVIEW_RECEIPT.json",
-    "sha256": "ddf8e8634e29ac53bea3694f15ecd77d551376034848624508c21f8aa0cf7903"
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/NATIVE_FAILED_REVIEW_RECEIPT.json",
+    "sha256": "c6f3cb47b9d8924b4bf48edcd44a5561b1e6c46cb9ea7e7a8ed91beaf4a25cfb"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2664,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v14/NATIVE_FAILED_REVIEW_RECEIPT.json",
-      "sha256": "ddf8e8634e29ac53bea3694f15ecd77d551376034848624508c21f8aa0cf7903"
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/NATIVE_FAILED_REVIEW_RECEIPT.json",
+      "sha256": "c6f3cb47b9d8924b4bf48edcd44a5561b1e6c46cb9ea7e7a8ed91beaf4a25cfb"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2683,7 +2683,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "1fd7a33f2c24476f3897d1311e7ad609eaddb4574429771ead754112e182a412"
+      "sha256": "e81b6a660eef96abe760ffe547e9ea3961f277c977165019b870b62129992d63"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2773,9 +2773,9 @@
       },
       "budget": {
         "formal_versions_max": null,
-        "formal_versions_used": 14,
+        "formal_versions_used": 16,
         "revisions_max": null,
-        "revisions_used": 13,
+        "revisions_used": 15,
         "photo_generations": 0,
         "paid_compute_usd": 0,
         "training": 0,
@@ -3337,6 +3337,94 @@
             "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V14_TECHNICAL.json",
             "sha256": "a51630694b62b7f57571eee19cea64cbf6c31fe2f5577b5260b3e0e1c8e4db0b"
           }
+        },
+        {
+          "number": 15,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v15/poster.png",
+            "sha256": "9f94b42f6fa92122ed56a0e6a78364b125bdba19da956b4d2345ca961097d714"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/TECHNICAL_CHECK.json",
+            "sha256": "998ab9bbd812a1692e01bee1732822f30e28680fabf235c898424a94bf63cbee"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/PHOTO_PROTECTION.json",
+            "sha256": "d97ad020661e7fbf70bed18e2d7106346ae0120943be091d13aaf797497e3ab3"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/ASSET_PROVENANCE.json",
+            "sha256": "04632ad708c2f04b9da44a45d2ee7335d642822a11efd5768a47ff128e7a8b83"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "341:2",
+            "photo_node": "341:3",
+            "overlay_node": "341:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=341-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "930da9f01fbdc1a5ab45804a13689b35aaf05796d1b9197b2d258a094caeaed8"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/DRIVE_ARCHIVE.json",
+            "sha256": "3f0c316bb1cd9ae634acfc900fddb433ad08829b439991bc51f972f9e24100d8"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v15/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "4ccf88d573c842a6018f96301fa1b69317498ee6649d7bb5c5898a8c65b633dc"
+          },
+          "professional_technical_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V15_TECHNICAL.json",
+            "sha256": "e2d0516a4eae7c08fc1d2708680b32cfb19b37416f92cce3612fd981014a2e8b"
+          }
+        },
+        {
+          "number": 16,
+          "export": {
+            "path": ".liu-visual-private/correct_source_typography/v16/poster.png",
+            "sha256": "db4b7e602c3c9d967b178e62c2234b6e4401ca1fc2325fef43bb9ac0d1474261"
+          },
+          "technical_check": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/TECHNICAL_CHECK.json",
+            "sha256": "e90416432286be1d23e11380b02cc162862c256366f887106d11d307ab1a05a9"
+          },
+          "photo_protection": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/PHOTO_PROTECTION.json",
+            "sha256": "11bba35768a2b5b81d7f15c46108287cd34b6f29e7d92758c35e3f2f49278769"
+          },
+          "assets": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/ASSET_PROVENANCE.json",
+            "sha256": "79a45a1344155c9ee4eb46a68f7c66e6c1780e68a5f3d8866dde0686100ca270"
+          },
+          "figma": {
+            "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+            "frame_id": "347:2",
+            "photo_node": "347:3",
+            "overlay_node": "347:4",
+            "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=347-2"
+          },
+          "verdict": "AI_FAIL",
+          "preserved": true,
+          "pixel_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/pixel_review/PIXEL_REVIEW.json",
+            "sha256": "e7ac549630e3891f826881bd2dc76f7ff59490aaadbbada7cd4f1ebff7e64dfa"
+          },
+          "drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/DRIVE_ARCHIVE.json",
+            "sha256": "fae61addf110db62629156193377b140d15bfe09c0a4472df196629fc4c2ff44"
+          },
+          "asset_drive_archive": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v16/ASSET_DRIVE_ARCHIVE.json",
+            "sha256": "abc9e6d6b5138787ee803890bbe440b60c7c14e2116117fab078ef96d253762f"
+          },
+          "professional_technical_review": {
+            "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V16_TECHNICAL.json",
+            "sha256": "6a046bbd4b0ef0e15837c1c764f72633319ba282ae99c1e6a71d7708c8ea23dc"
+          }
         }
       ],
       "poster_human_verdict": "PENDING",
@@ -3372,8 +3460,8 @@
       "acceptance_request_withdrawn": false,
       "poster_human_feedback_scope": "PRIOR_V3_REJECTION_PRESERVED_NOT_V9_VERDICT",
       "professional_technical_review": {
-        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V14_TECHNICAL.json",
-        "sha256": "a51630694b62b7f57571eee19cea64cbf6c31fe2f5577b5260b3e0e1c8e4db0b"
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V16_TECHNICAL.json",
+        "sha256": "6a046bbd4b0ef0e15837c1c764f72633319ba282ae99c1e6a71d7708c8ea23dc"
       },
       "fresh_repository_recovery": {
         "result": "PASS",
