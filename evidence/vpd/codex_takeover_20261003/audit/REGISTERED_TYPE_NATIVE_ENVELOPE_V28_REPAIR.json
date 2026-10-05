@@ -1,0 +1,209 @@
+{
+  "schema": "vpd-v28-native-envelope-authorized-scoped-repair/v1",
+  "formal_version": 28,
+  "result": "PASS_SCOPED_REPAIR_ONLY_ROOT_NATIVE_RETRY_REQUIRED",
+  "code_before": {
+    "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/vpd_correct_source_worker.before.py",
+    "sha256": "60e3c371a4c00ecd30fc5c76732d8cdb9a25e9b796d76161dcfe7862221568b7",
+    "bytes": 29858
+  },
+  "code_after": {
+    "path": "visual_memory/vpd_correct_source_worker.py",
+    "sha256": "a95078e84f65ba31db00672d5990c2dd7bb530748cbe4dc327d7d9af1dd23051",
+    "bytes": 31821
+  },
+  "exact_authorization": {
+    "path": "continuity/vpd/codex_takeover_20261003/COPY_LAYOUT_AUTHORIZATION_AMENDMENT_20261005.json",
+    "sha256": "2f78640ae85343fc89c0835a75be7a78564ed9c5e94d679b35aa3326414f0738"
+  },
+  "native_unit_field_required": "copy_layout_authorization_amendment",
+  "only_authorized_overlay_envelopes": [
+    [
+      285,
+      198,
+      490,
+      298
+    ],
+    [
+      380,
+      354,
+      1349,
+      663
+    ]
+  ],
+  "authorization_flow": "validate_continuation verifies exact unit amendment path/SHA via load/check_ref and current human/Root/source/history scope, then passes a verified boolean. Only integer version28 plus flag is True accepts the two exact ordered boxes. Default missing authorization and other versions run the unchanged old area predicate.",
+  "actual_prior_native_failure": {
+    "initial_chunk": "bf368a",
+    "session_id": 60590,
+    "final_chunk": "dbf830",
+    "exit_code": 1,
+    "code": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE",
+    "provenance": "Actual chunks/exit/stack supplied by Root in the authorized repair task; original predicate is independently reproduced by this scoped probe.",
+    "preserved_receipt": {
+      "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/ROOT_NATIVE331_FAILURE_AND_ROLLBACK.json",
+      "sha256": "4c77cc73a12c1f695474b6bee68d5bc4d4c687ffb53959be02d1a378c6169cb6",
+      "bytes": 1941
+    }
+  },
+  "atomic_rollback": {
+    "reported_by_root": true,
+    "independently_read_revision": 330,
+    "independently_read_checkpoint": 352,
+    "native_pending_projection_installed": false,
+    "native_state_untouched_by_role": true
+  },
+  "actual_scoped_probe": {
+    "command": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe -X utf8 -B -u .liu-visual-private/guard-v28-proposal/native-envelope-repair/probe_scoped_repair.py --actual",
+    "chunk": "6974d8",
+    "exit_code": 0,
+    "seconds": 0.5740773,
+    "result": {
+      "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/SCOPED_PROBE_RESULT.json",
+      "sha256": "9861aaa8ddb770eb63e87b76dc4321a4d07c1637dfc4ababffda22f8b4cddb1a",
+      "bytes": 5030
+    },
+    "probe": {
+      "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/probe_scoped_repair.py",
+      "sha256": "183a7ca14bef3e58d55bf348918527077ab32f4d40fd9cdd3b12a95c118013fa",
+      "bytes": 12679
+    },
+    "cases": 14,
+    "checks": [
+      {
+        "case": "old1_27_area_default_and_existing_native_functions_preserved",
+        "result": "PASS",
+        "evidence": "Original area AST remains after removing only the new28 branch; all other functions, transition, pixel/core checks and old area constants are identical AST/values."
+      },
+      {
+        "case": "actual_old27_envelopes_return_equal_default_and_flag",
+        "result": "PASS",
+        "envelopes": [
+          [
+            285,
+            198,
+            490,
+            298
+          ],
+          [
+            331,
+            403,
+            1327,
+            687
+          ]
+        ],
+        "original_return": null,
+        "current_return": null
+      },
+      {
+        "case": "original28_failure_reproduced",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+      },
+      {
+        "case": "current28_missing_authorization_default_rejected",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+      },
+      {
+        "case": "actual28_exact_authorized_two_sealed_boxes_accepted",
+        "result": "PASS",
+        "envelopes": [
+          [
+            285,
+            198,
+            490,
+            298
+          ],
+          [
+            380,
+            354,
+            1349,
+            663
+          ]
+        ],
+        "amendment": {
+          "path": "continuity/vpd/codex_takeover_20261003/COPY_LAYOUT_AUTHORIZATION_AMENDMENT_20261005.json",
+          "sha256": "2f78640ae85343fc89c0835a75be7a78564ed9c5e94d679b35aa3326414f0738"
+        }
+      },
+      {
+        "case": "wrong_amendment_sha",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_EXACT_LAYOUT_AUTHORIZATION_REQUIRED"
+      },
+      {
+        "case": "wrong_amendment_path",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_EXACT_LAYOUT_AUTHORIZATION_REQUIRED"
+      },
+      {
+        "case": "whole_canvas_rejected",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_REGISTERED_ENVELOPE_CHANGED"
+      },
+      {
+        "case": "headline_bbox_one_pixel_changed",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_REGISTERED_ENVELOPE_CHANGED"
+      },
+      {
+        "case": "brand_bbox_one_pixel_changed",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_REGISTERED_ENVELOPE_CHANGED"
+      },
+      {
+        "case": "missing_brand_box_rejected",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_REGISTERED_ENVELOPE_CHANGED"
+      },
+      {
+        "case": "box_role_order_changed",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "V28_REGISTERED_ENVELOPE_CHANGED"
+      },
+      {
+        "case": "flag_does_not_extend_old27",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+      },
+      {
+        "case": "flag_does_not_extend_future29",
+        "result": "REJECTED_AS_REQUIRED",
+        "code": "PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE"
+      }
+    ]
+  },
+  "preservation": {
+    "old1_27_area_predicate_AST_and_default_preserved": true,
+    "old27_actual_return_preserved": true,
+    "transition_and_all_other_native_functions_AST_preserved": true,
+    "strict_registration_source_alpha_full_frame_core_checks_unchanged_AST": true,
+    "old_registered_guard_default24_and_adapters_unchanged_bytes": true,
+    "selected_immutable_and_native_files": 24,
+    "complete_sha_size_mtime_before_after_equal": true,
+    "before": {
+      "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/IMMUTABLE_AND_NATIVE_BEFORE.json",
+      "sha256": "c5a9fbaca6406b0c8151f3814016a36b9047fea6d1f23a7d37d06d6c18640622",
+      "bytes": 7689
+    },
+    "after": {
+      "path": ".liu-visual-private/guard-v28-proposal/native-envelope-repair/IMMUTABLE_AND_NATIVE_AFTER.json",
+      "sha256": "c5a9fbaca6406b0c8151f3814016a36b9047fea6d1f23a7d37d06d6c18640622",
+      "bytes": 7689
+    }
+  },
+  "local_preparation_failure_preserved": {
+    "chunk": "0527d5",
+    "exit_code": 1,
+    "assertion": "ROOT_ACTUAL_NATIVE_FAILURE_EVENT_NOT_FOUND",
+    "scope": "Initial private receipt preparation attempted to locate the native call in the earlier Figma host log; no matching native event was found. Abandoned extra log attestation; retain Root actual report and independently read rollback state. No shared code/native/asset writes."
+  },
+  "root_next_step": "Fresh reviewer independently verifies this one entry and updates existing professional reports with old history retained. Root binds the exact amendment field, refreshes draft code/evidence refs, then executes the one actual native330->331/checkpoint353 closed28 transaction. No transition logic changed; no new pending/332 transaction required by this repair.",
+  "limitations": [
+    "This role performed only a scoped gate probe, not a real native transaction or repeated renderer/historical suite.",
+    "The original Root failure tool event was supplied by Root; the earlier Figma host log was not treated as an independent native-call attestation.",
+    "Only one existing worker file, private bounded tests/evidence and this new public audit were written. Production assets, old evidence, business/native state and V29 shared code remain untouched.",
+    "No aesthetic or human acceptance claimed."
+  ],
+  "aesthetic_pass_claimed": false
+}

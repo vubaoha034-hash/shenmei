@@ -39,6 +39,7 @@
 | V25 | [完整PNG](https://drive.google.com/file/d/1IXXnS6o4OOUus-tEVY0qLZp6UMnQf1wH/view) | [388:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=388-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V26 | [完整PNG](https://drive.google.com/file/d/1mF0kYK5Ya22nbzsIY0ElgebMG-n0X4sx/view) | [391:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=391-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V27 | [完整PNG](https://drive.google.com/file/d/1jN8ow06WVOP42wM_e3me7RdLZV159EXS/view) | [395:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=395-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
+| V28 | [完整PNG](https://drive.google.com/file/d/178A_tVfPUW12leyIf4nRyV5kdokWcNJK/view?usp=drivesdk) | [398:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=398-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -156,3 +157,9 @@ V27保留自然书写曲线并以杯口弧线、茶字落笔及两组文字组�
 
 
 V27新的项目外Sol/Max仅按P→N→R→S→T各一次实际读取五原图，真实模型/隔离工具范围及输入图像原字节传输均核对，正式审美AI_FAIL。原结论及具体区域证据在本版 `pixel_review/PIXEL_REVIEW.json`；精确摄影/曲线保护由技术检查，AI不替代刘先生。同方向下一版只按本版有效像素意见修复并重新冷审，摄影与V9品牌冻结，失败版本完整保留。
+
+
+V28仅绑定本版实际封存字形与摄影/品牌源；本版机制：Restore natural source One, common reading cells, smaller baseline-stable later phrase; author only the closed contextual Tea right-na component ending into the original S leaf.。完整登记PNG c76e13fe04aadc270ed2c0505b8a275500cd1e3df8915fddd78094f2405da205，Figma 398:2，三Drive原件全字节回读已保存。核心覆盖76，未覆盖161976；原生差异见本版登记检查。历史结果保留，技术不代替审美，五原图冷审PENDING。实际调用从 evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v28/REUSE_METHOD.md 进入。
+
+
+V28 新项目外 Sol/Max 五原图真实冷审 AI_FAIL，隔离和原始像素字节均已核对。主问题为长句尺度分裂、杯茶过重和无效拖尾；原始审稿有顶部贴边的不准确观察，详见本版 REVIEW_LIMITATIONS_AND_NEXT_DESIGN.md，保留原结论并记录分歧。用户已允许改变文案与排版，并明确本次比较的是山野集，Root刚才误认山葵炙。山野集Drive1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ，9a29fbdc…原件已实际HTTP200回读并看图，与仓库旧母图相同，并非缺图。此前山野／慢饮双行稿仅保留私有实验，尚无29正式海报；当前唯一下一步按山野集实际原图与独立诊断重定一个文字系统，再制作并重新冷审。历史版本与原审核参考绑定不回写，后续参考须前瞻绑定；摄影及茶作品牌保持。不能因技术成功推导视觉改善。

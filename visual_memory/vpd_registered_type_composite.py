@@ -57,6 +57,9 @@ EDIT_ADAPTER_V26 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v2
 EDIT_ADAPTER_V27 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v27.py',
                     'sha256': '1777f321dafbbcdeaae53b00ef3f74aef9bdb4818618fa8d86875e2d0059b8eb'}
 
+EDIT_ADAPTER_V28 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v28.py',
+ 'sha256': 'ebf1c8c8e8f7d699c8ead8e81f81f0435eff01ecbd9abbbd40ed0eafc443595c'}
+
 
 def require(ok, message):
     if not ok:
@@ -145,8 +148,8 @@ def renderer(root):
 
 
 def edited_kernel(root, formal_version=24):
-    require(type(formal_version) is int and formal_version in (24, 25, 26, 27), 'INSPECTED_EDIT_VERSION_REQUIRED')
-    reference = EDIT_ADAPTER_V27 if formal_version == 27 else EDIT_ADAPTER_V26 if formal_version == 26 else EDIT_ADAPTER_V25 if formal_version == 25 else EDIT_KERNEL
+    require(type(formal_version) is int and formal_version in (24, 25, 26, 27, 28), 'INSPECTED_EDIT_VERSION_REQUIRED')
+    reference = EDIT_ADAPTER_V28 if formal_version == 28 else EDIT_ADAPTER_V27 if formal_version == 27 else EDIT_ADAPTER_V26 if formal_version == 26 else EDIT_ADAPTER_V25 if formal_version == 25 else EDIT_KERNEL
     filename = str(Path(root) / reference['path'])
     namespace = {'__file__': filename, '__name__': '_trusted_v24_edit_kernel'}
     exec(compile(checked_bytes(root, reference), filename, 'exec'), namespace)
@@ -155,6 +158,8 @@ def edited_kernel(root, formal_version=24):
 
 def edited_lineage(root, formal_version=24):
     """Construct a sealed actual profile; default V24 is retained byte-for-byte."""
+    if formal_version == 28:
+        return edited_kernel(root, 28)['expected_lineage'](root, EDIT_ADAPTER_V28)
     if formal_version == 27:
         return edited_kernel(root, 27)['expected_lineage'](root, EDIT_ADAPTER_V27)
     if formal_version == 26:
@@ -167,6 +172,8 @@ def edited_lineage(root, formal_version=24):
 
 def check_lineage(root, tree, lineage, formal_version=None):
     if lineage['kind'] == 'alpha128-vtracer-edited/v1':
+        if formal_version == 28:
+            return edited_kernel(root, 28)['validate'](root, tree, lineage, formal_version, EDIT_ADAPTER_V28)
         if formal_version == 27:
             return edited_kernel(root, 27)['validate'](root, tree, lineage, formal_version, EDIT_ADAPTER_V27)
         if formal_version == 26:

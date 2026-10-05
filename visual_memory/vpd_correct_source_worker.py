@@ -20,6 +20,11 @@ PRODUCT_CORE_MAP = {
     'path': 'evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/FIXED_PRODUCT_CORE_MAP.json',
     'sha256': '6f17681f217db23c0ccbb2a30ac01878581d1ee867800169156cb66b60b3092f',
 }
+V28_LAYOUT_AMENDMENT = {
+    'path': 'continuity/vpd/codex_takeover_20261003/COPY_LAYOUT_AUTHORIZATION_AMENDMENT_20261005.json',
+    'sha256': '2f78640ae85343fc89c0835a75be7a78564ed9c5e94d679b35aa3326414f0738',
+}
+V28_AUTHORIZED_OVERLAY_ENVELOPES = [[285,198,490,298],[380,354,1349,663]]
 
 def available_canvas_slots(unit):
     if unit.get('repair_authorization'):
@@ -120,7 +125,7 @@ def validate_serial_transition(root, old_unit, unit):
                         'HUMAN_REVISION_IS_NOT_POSTER_REJECTION')
     return requests
 
-def validate_overlay_envelopes(number, envelopes, human_requests):
+def validate_overlay_envelopes(number, envelopes, human_requests, v28_layout_authorized=False):
     # V13 splits the already authorized headline into two phrase blocks.
     # Keep each block bounded separately; permitted photography areas stay fixed.
     limit = 3 if number >= 13 and any(target < number for target in human_requests) else 2
@@ -128,6 +133,10 @@ def validate_overlay_envelopes(number, envelopes, human_requests):
             and all(isinstance(r, list) and len(r)==4 and all(type(v) is int for v in r)
                 and 0<=r[0]<r[2]<=1536 and 0<=r[1]<r[3]<=1024 for r in envelopes),
             'DECLARED_OVERLAY_BOUNDS_REQUIRED')
+    if type(number) is int and number == 28 and v28_layout_authorized is True:
+        require(envelopes == V28_AUTHORIZED_OVERLAY_ENVELOPES,
+                'V28_REGISTERED_ENVELOPE_CHANGED')
+        return
     areas = CONTINUOUS_TYPE_AREAS
     if any(target < number for target in human_requests):
         areas = areas + [HUMAN_BACKGROUND_TYPE_AREA]
@@ -136,6 +145,28 @@ def validate_overlay_envelopes(number, envelopes, human_requests):
     require(all(any(a[0]<=r[0]<r[2]<=a[2] and a[1]<=r[1]<r[3]<=a[3]
                     for a in areas) for r in envelopes),
             'PHOTOGRAPHY_PROTECTION_CANNOT_BE_ERASED_BY_ENVELOPE')
+
+def validate_v28_layout_amendment(root, unit):
+    reference = unit.get('copy_layout_authorization_amendment')
+    if reference is None:
+        return False
+    require(reference == V28_LAYOUT_AMENDMENT, 'V28_EXACT_LAYOUT_AUTHORIZATION_REQUIRED')
+    amendment = load(root, reference)
+    scope = amendment['scope']; preservation = amendment['preservation']
+    require(amendment['schema'] == 'vpd-scoped-human-typography-amendment/v1'
+            and amendment['task_id'] == TASK and amendment['unit_id'] == UNIT
+            and amendment['source']['kind'] == 'CURRENT_HUMAN_USER_MESSAGE'
+            and amendment['source']['verbatim']
+            and scope['copy_layout_change'] is True and scope['brand'] == '茶作'
+            and scope['source_photography_sha256'] == SOURCE
+            and scope['dimensions'] == [1536,1024]
+            and scope['business_state_writer'] == 'ROOT_ONLY'
+            and scope['independent_worker_may_change_mainline'] is False
+            and preservation['historical_copy_and_versions_not_rewritten'] is True
+            and preservation['v28_already_sealed_copy'] == '一杯茶，慢下来'
+            and preservation['v28_already_sealed_files_not_changed'] is True,
+            'V28_EXACT_LAYOUT_AUTHORIZATION_REQUIRED')
+    return True
 
 def validate_continuation(root, lock, cp, adapter, receipt):
     take = lock['codex_takeover']; unit = take['worker_continuation']
@@ -236,6 +267,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
             and receipt['next_required_action'] == take['next_required_action'], 'CONTINUATION_RECEIPT_CONFLICT')
     require(receipt.get('artifact_refs'), 'CONTINUATION_ARTIFACT_REQUIRED')
     for ref in receipt['artifact_refs']: check_ref(root, ref)
+    v28_layout_authorized = validate_v28_layout_amendment(root, unit)
     human_requests = validate_human_revision_requests(root, unit)
     actions = {'AUTHORIZED':'CREATE_CORRECT_SOURCE_CHAZUO_POSTER_VERSION_1',
         'AWAITING_PIXEL_REVIEW':'REVIEW_CORRECT_SOURCE_CHAZUO_POSTER_PIXELS',
@@ -260,7 +292,8 @@ def validate_continuation(root, lock, cp, adapter, receipt):
                     and protection['source_file_overwrite_allowed'] is False,
                     'SERIAL_PHOTO_PROTECTION_REQUIRED')
             envelopes = protection['visible_design_overlay_envelopes']
-            validate_overlay_envelopes(number, envelopes, human_requests)
+            validate_overlay_envelopes(number, envelopes, human_requests,
+                                       v28_layout_authorized=v28_layout_authorized)
         require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
                 and technical['export'] == version['export'] and technical['overlay_envelopes'] == envelopes
                 and technical['protected_pixels_changed'] == 0

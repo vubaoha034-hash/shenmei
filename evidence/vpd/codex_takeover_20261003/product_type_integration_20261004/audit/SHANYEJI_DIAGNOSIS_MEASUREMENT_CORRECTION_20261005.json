@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "bounded_measurement_correction",
+  "date": "2026-10-05",
+  "role": "AI design diagnostic agent",
+  "final_design_review": false,
+  "original_report_rewritten": false,
+  "scope": "Correct source measurements and their dependent claims; no new aesthetic direction or new maker review.",
+  "original_reports": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/SHANYEJI_REFERENCE_DESIGN_DIAGNOSIS_20261005.md",
+      "sha256": "9bbcc4f699c77f2d661dae6827d5e21170669c7deee22a8c97491fa67af12956",
+      "bytes": 6004
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/shanyeji-correction-20261005/INDEPENDENT_PIXEL_DIAGNOSIS.md",
+      "sha256": "aaa3b4bd00261b39345ec060a5b057b9faa0946ccaee689896aa94a7abde0563",
+      "bytes": 2786
+    }
+  ],
+  "acknowledgement": "原报告目视坐标出现严重错误，并把不可靠的坐标用于解释布局。此次保留原文为历史证据，取消错误事实及依赖它的判断。",
+  "source_evidence": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v28/FIGMA_SOURCE_READBACK.json",
+      "sha256": "e019cfd294b211a43b2930984b87b55f0eccc059f14faffc4eb2ea0782c56867",
+      "bytes": 1897,
+      "read_method": "Get-Content -Raw and ConvertFrom-Json",
+      "evidence_class": "sealed Figma source readback file; no fresh live Figma call",
+      "used_fields": [
+        "dimensions",
+        "brand",
+        "headline_group",
+        "brand_node",
+        "headline_group_id",
+        "file_key",
+        "frame_id"
+      ],
+      "brand_node": "398:5",
+      "headline_group_node": "398:31",
+      "frame_id": "398:2",
+      "file_key": "uyDxOoN1iNDPpEHTKSUWg1"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v28/headline.svg",
+      "sha256": "c8a62fba20faf0d73620487e07a9f0f4a77fad060a18f967a6e96582cf96623a",
+      "bytes": 29057,
+      "read_method": "ReadAllText and XML parsing",
+      "svg_width": 1536,
+      "svg_height": 1024,
+      "viewBox": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "path_count": 7,
+      "fills": [
+        "#F5F2E6"
+      ]
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v21/brand.svg",
+      "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+      "bytes": 39038,
+      "read_method": "Get-Content -Raw followed by complete ReadAllText and XML parsing",
+      "svg_width": 1476.99928125,
+      "svg_height": 720.1109613692784,
+      "viewBox": [
+        0,
+        0,
+        1476.99928125,
+        720.1109613692784
+      ],
+      "path_count": 7,
+      "group_transform": "translate(-180.00021875,-99.88903863072163)",
+      "fills": [
+        "#F5F2E6"
+      ],
+      "placement_authority": "v28 FIGMA_SOURCE_READBACK.json.brand; intrinsic SVG canvas is not poster placement"
+    }
+  ],
+  "path_correction": {
+    "initially_requested_private_headline": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v28/headline.svg",
+    "private_headline_status": "NOT_FOUND on exact path reads",
+    "authoritative_headline_path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v28/headline.svg",
+    "resolution": "Root corrected the path to the public v28 artifact; no other headline version was read.",
+    "source_discovery": "A filename-only rg inventory located v28 paths after the initial exact reads failed; no contents of correction-history paths were read."
+  },
+  "directly_verified_file_geometry": {
+    "canvas": [
+      1536,
+      1024
+    ],
+    "brand": {
+      "x": 285,
+      "y": 198,
+      "width": 205,
+      "height": 99.94774627685547,
+      "vector_bbox": [
+        285,
+        198,
+        490,
+        297.94774627685547
+      ],
+      "rounded_bbox": [
+        285,
+        198,
+        490,
+        298
+      ]
+    },
+    "headline_group": {
+      "x": 380,
+      "y": 354,
+      "width": 968.6055908203125,
+      "height": 309,
+      "vector_bbox": [
+        380,
+        354,
+        1348.6055908203125,
+        663
+      ]
+    },
+    "vertical_gap": {
+      "value": 56.05225372314453,
+      "units": "px",
+      "formula": "354 - (198 + 99.94774627685547)",
+      "rounded_value": 56
+    },
+    "headline_to_brand_width_ratio_vector": 4.724905321074695,
+    "headline_to_brand_height_ratio_vector": 3.0916154841958052,
+    "title_canvas_width_fraction_vector": 0.6306025981903076
+  },
+  "root_reported_raster_alpha": {
+    "headline_bbox": [
+      380,
+      354,
+      1349,
+      663
+    ],
+    "headline_width": 969,
+    "headline_height": 309,
+    "headline_to_brand_width_ratio": 4.726829268292683,
+    "convention": "left/top inclusive; right/bottom exclusive",
+    "provenance": "Root's actual raster alpha measurement supplied in task",
+    "independent_raster_reverification": false,
+    "corroboration": "Consistent with directly read Figma group geometry to subpixel rounding.",
+    "limitation": "Independent in-memory raster attempts failed because bundled @resvg/resvg-js and cairosvg were absent. No dependency installation, broad dependency search or generated image was performed."
+  },
+  "specific_errors": [
+    {
+      "id": "brand_location",
+      "original_claim": "T 茶作约 x 285–480、y 40–145；过于靠上。",
+      "correction": "Figma brand x=285,y=198,w=205,h=99.94774627685547；右边缘490，底边约297.948。",
+      "dependent_claim_status": "CANCELLED",
+      "affected_claim": "字标靠近画布顶端导致脱节。"
+    },
+    {
+      "id": "headline_bounds",
+      "original_claim": "口号约 x 90–1370、y 320–595，横贯整幅。",
+      "correction": "Figma headline_group x=380,y=354,w=968.6055908203125,h=309；Root raster alpha bbox=[380,354,1349,663]。",
+      "dependent_claim_status": "CANCELLED",
+      "affected_claim": "口号以近乎整幅宽度形成横向文字挡板。实际标题宽约画布63.1%。"
+    },
+    {
+      "id": "vertical_gap",
+      "original_claim": "字标与口号约170 px空段，未形成信息组。",
+      "correction": "Vector gap=56.05225372314453 px；按整数边界为56 px。",
+      "dependent_claim_status": "CANCELLED",
+      "affected_claim": "以170 px间隔为依据的字标、口号明显脱节判断。"
+    },
+    {
+      "id": "relative_size",
+      "original_claim": "口号高度约字标两倍、宽度超过六倍。",
+      "correction": "Vector width ratio=4.724905321074695；Root alpha width ratio=4.726829268292683；vector height ratio=3.0916154841958052。",
+      "dependent_claim_status": "RETAINED_WITH_CORRECTED_BASIS",
+      "affected_claim": "通用口号的文字尺度显著大于品牌字标，但先读什么仍属于视觉判断，不是比例即可证明的客观定论。"
+    },
+    {
+      "id": "cup_overlap",
+      "original_claim": "茶字下伸进入杯口 y550–595，巨大口号压到产品上缘。",
+      "correction": "标题最低边界实际为y663；本次未对标题alpha与摄影杯口进行空间相交复核。",
+      "dependent_claim_status": "WITHDRAWN_PENDING_DIRECT_SPATIAL_EVIDENCE",
+      "affected_claim": "准确杯口接触带和具体笔画碰到杯口的事实声明。整体bbox与主体高度交叠不能单独证明笔画遮挡产品。"
+    }
+  ],
+  "qualitative_disposition": {
+    "retained": [
+      {
+        "claim": "茶作当前自然字形可以作为可用方向。",
+        "basis": "原三图直接观察的审美建议；本次几何纠正不自动否定字形方向。",
+        "status": "subjective AI design judgment, not final approval"
+      },
+      {
+        "claim": "通用口号的尺度显著大于品牌，品牌文字优先级值得重新评估。",
+        "basis": "标题相对品牌宽约4.73倍、高约3.09倍。",
+        "status": "retained with corrected measurements"
+      },
+      {
+        "claim": "两个书写层使用相同米白色，没有色彩角色差异。",
+        "basis": "实际读取的headline.svg与brand.svg fill均为#F5F2E6。",
+        "status": "direct source-file corroboration; same color alone is not a defect"
+      },
+      {
+        "claim": "山野集只能提供图文角色与材料语气参考，不应复制品牌、字形或线圈作为茶作原创。",
+        "basis": "原任务的身份与原创性约束。",
+        "status": "unchanged"
+      },
+      {
+        "claim": "摄影技术保护状态UNKNOWN。",
+        "basis": "没有做S/T像素差分、图层或遮罩比较；读回中source_layer_unchanged字段不是本次独立技术证明。",
+        "status": "unchanged"
+      }
+    ],
+    "cancelled_or_withdrawn": [
+      "字标在y40–145，过于靠近顶部。",
+      "字标与口号之间约170 px空白，并据此判定其脱节。",
+      "口号从x90横贯近乎整幅，形成横向文字挡板。",
+      "以原目视y550–595作为已核实的茶字与杯口接触带。",
+      "仅因缺少第三层文字即可判定海报不完整；说明层是设计选择，不能用文字层数自动证明完整性。"
+    ],
+    "original_recommendations_status": "原报告的7变量与下一版建议仅保留为当时建议。本次不扩展、重写或重新批准它们；涉及错误几何依据的改动理由不得再引用。",
+    "not_reassessed": [
+      "新maker方案",
+      "其他旧审稿",
+      "M母参考的目视坐标",
+      "任何新图"
+    ]
+  },
+  "actual_runtime": {
+    "system_declared_identity": "Codex based on GPT-6",
+    "exact_model_id": "UNKNOWN",
+    "reasoning_effort": "UNKNOWN",
+    "model_override_called_by_this_agent": false,
+    "verification_probe": "collaboration.list_agents metadata query",
+    "probe_result": "No model ID or reasoning effort fields were returned; no other agent's plan or evaluation was used.",
+    "verified_auxiliary_runtime": {
+      "node_version": "v24.19.0",
+      "python_executable": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+      "python_version": "NOT_QUERIED"
+    },
+    "limitation": "Selectable model names and parent routing intent are not proof of the actual active model."
+  },
+  "read_and_write_limits": {
+    "new_image_views": 0,
+    "network_calls": 0,
+    "figma_calls": 0,
+    "drive_calls": 0,
+    "generation_calls": 0,
+    "git_operations": 0,
+    "dependency_installs": 0,
+    "business_state_writes": 0,
+    "original_report_writes": 0,
+    "writes": [
+      "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/SHANYEJI_DIAGNOSIS_MEASUREMENT_CORRECTION_20261005.json",
+      "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/shanyeji-correction-20261005/MEASUREMENT_CORRECTION_20261005.json"
+    ]
+  }
+}

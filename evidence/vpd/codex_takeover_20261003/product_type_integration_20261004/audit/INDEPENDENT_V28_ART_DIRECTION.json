@@ -1,0 +1,65 @@
+{
+  "schema": "vpd-independent-ai-art-direction/v1",
+  "formal_version_intended": 28,
+  "checked_utc": "2026-10-04T22:37:36.908750+00:00",
+  "role": "INDEPENDENT_AI_ART_DIRECTOR_NOT_FORMAL_COLD_REVIEW",
+  "actual_model": "gpt-6.1-sol",
+  "actual_effort": "max",
+  "fork_context": "none",
+  "agent_path": "/root/v28_independent_art_direction",
+  "thread_id": "01a108f6-93c9-7d23-9d36-3b495ae1f55f",
+  "runtime_host": "C:\\Users\\Administrator\\.codex\\sessions\\2026\\10\\05\\rollout-2026-10-05T06-08-59-01a108f6-93c9-7d23-9d36-3b495ae1f55f.jsonl",
+  "actual_original_pixels": [
+    {
+      "path": ".liu-visual-private/product-type-integration-20261004/R-current-reference.jpg",
+      "sha256": "87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167",
+      "bytes": 646432,
+      "call_id": "call_SxENwOplpSbDvCX9baapML2L",
+      "detail": "original"
+    },
+    {
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "bytes": 1735549,
+      "call_id": "call_SxENwOplpSbDvCX9baapML2L",
+      "detail": "original"
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v27/poster.png",
+      "sha256": "2a1d3077b0133fb383a957bbbf7bec3b84d9d2a4240b12fd9065db01b7a3f98d",
+      "bytes": 1800565,
+      "call_id": "call_SxENwOplpSbDvCX9baapML2L",
+      "detail": "original"
+    },
+    {
+      "path": ".liu-visual-private/correct_source_typography/v24/headline-generated-01.png",
+      "sha256": "34b9b720d7d39b85c48d36220d2d53e4261d4ee88a5c27056fa796a52c39f774",
+      "bytes": 383223,
+      "call_id": "call_ScyLXfnv5d62YnZvQJLnK84q",
+      "detail": "original"
+    }
+  ],
+  "original_verbatim_direction": "唯一方案：让S里的鲜叶接完“茶”字下部木的右捺，形成“文字起笔—真实茶叶收笔”的连续结构。\n\n已实际用 `view_image(original)` 看R、S、T及v24。R上半的两行白字跨入盘右缘，将产品和短句聚成一组；S的杯口、鲜叶、盘沿已有清楚的横向联系；T的长“一”和“茶”拖笔悬在产品上方，交接仍不明确。这是独立AI美术判断，不是正式冷审。\n\n1536×1024不变。首截“一杯茶，”从约x420/y360开始，宽550；“杯”字高约190，底端留在杯口上方。“慢下来。”放在约x1020/y455，宽330、高120，降低其白色面积。保留v24的自然出锋和粗细变化，不统一压瘦或逐字旋转。\n\n局部重作“茶”下部：木的右捺从约x785/y605向右下收窄，到现有鲜叶左上收窄处约x830/y665交接；白笔到此结束，原叶片延至约x987/y758，承担捺的后半段。文字透明蒙版沿叶缘退让，形成共享轮廓。保留完整草头、人部及木的竖、左撇，保证仍先读成“茶”。\n\n保留S摄影7fd的全部像素关系与V9品牌dd8e（x285/y198、宽205）。删去T拱形长“一”和额外拖带；不再添加独立叶饰、蒸汽或盘沿描边。\n\n方法可追溯至项目[产品结构与字形规则 §6–7](/C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md)。本方案尚未制作；交接是否连续、绿叶能否被读作字笔，须以V28原大与缩图像素验证，不能据此宣称通过。",
+  "method": {
+    "path": "generation/RESTAURANT_POSTER_IMAGE_RULES_V1.md",
+    "sha256": "8a787de572fcff94b0de7e75f8b516874af755c68dc52acff9aca997933e9bf9",
+    "sections": [
+      6,
+      7
+    ]
+  },
+  "root_boundary_corrections": [
+    "Frozen copy is exactly 一杯茶，慢下来. Original art-direction accidental final period is not authorized and is removed before execution.",
+    "Retreat means the letter own source-bound closed vector contour, not photographic masks or photo alteration.",
+    "Approximate coordinates require actual source leaf-edge inspection before construction.",
+    "Brand dd8e x285/y198/width205 and photography7fd remain frozen.",
+    "If photograph supplies a terminal stroke, describe the glyph as source-specific contextual lettering, not a portable standalone complete glyph."
+  ],
+  "result": "ONE_DIRECTION_SELECTED_FOR_ACTUAL_TRIAL_NOT_AESTHETIC_PASS",
+  "limitations": [
+    "AI art direction is not a human professional credential.",
+    "It is an isolated collaboration subagent, not the project-external formal cold review carrier.",
+    "Original R/S/T27/V24 pixels were seen; V28 had not been produced or seen at this review.",
+    "No new external mature skill was installed by this art-direction step."
+  ]
+}
