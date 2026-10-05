@@ -1,0 +1,83 @@
+{
+  "independent": true,
+  "fork_context": "none",
+  "review_type": "SOURCE_AND_CONSISTENCY_NEGATIVE_CONTROL_NOT_TEA_AESTHETIC_REVIEW",
+  "time_utc": "2026-10-05T09:24:09.981274+00:00",
+  "delivery_negative_control": {
+    "result": "ACCEPTED",
+    "description": "Missing PNG plus fake Drive/Figma target, Tea scope and extra Tea AI_PASS; actual_pixels_seen is a deliberately false fixture declaration, no images or remote tools used."
+  },
+  "source_hashes": {
+    "visual_memory/vpd_reference_typography_study.py": "86aef57b244a3f64405374145eb46a2dd3b8574578219dde4cf72e13bbe28fb8",
+    "visual_memory/vpd_correct_source_worker.py": "b7622dbbfe87b3d99c53d4b97420790f67430b4c5b7c6834fbf43455ae801a3f",
+    "visual_memory/vpd_locked_mainline_state.py": "993951b3f54757540135dc6613f25cf49ba171656aea96e7f8f43e1d1ef5759e",
+    "scripts/vpd_codex_takeover.py": "ce74d2774adb701098d3de052e650e05921470f20f2050baf383a2ae0e1c48ef"
+  },
+  "verdict": "FAIL",
+  "reviewed_head": "65e51a7f6008c59cd9702a26526a9d5888557f66",
+  "reviewed_revision": 334,
+  "independent_review_author": true,
+  "implementation_authorship": false,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "location": "visual_memory/vpd_locked_mainline_state.py:880-891",
+      "observed": "Actual request validator accepts file_key=OTHER_FILE; also accepts node_id=402:3, photo_change=true,new_tea_poster=true when study_only=true. No remote calls performed.",
+      "fix": "Bind canonical file, dedicated study page/new-page operation and explicit allowed node scope. Reject photography/Tea-write fields and unexpected mutation targets; preserve protected poster/source identities. Treat this as cooperative request consistency, not an OS/Figma permission boundary.",
+      "negative_controls": [
+        "wrong file",
+        "protected Tea frame/photo node",
+        "create-page request carrying existing-node target",
+        "wrong source hash",
+        "wordmark tool",
+        "formal_version"
+      ]
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH",
+      "location": "visual_memory/vpd_reference_typography_study.py:36-52",
+      "observed": "Real validate_study accepts the saved synthetic delivery fixture with nonexistent PNG, all-zero hash matched in review, fake Drive ID, Tea-final scope and new_tea_poster=true; review carries tea_verdict=AI_PASS.",
+      "fix": "Check actual export bytes and PNG dimensions; require explicit literal-study scope and no Tea acceptance; bind saved Figma/Drive readback and independent reviewer evidence to actual export. Do not treat actual_pixels_seen Boolean as native runtime proof.",
+      "negative_controls": [
+        "missing export",
+        "wrong export SHA",
+        "wrong dimensions",
+        "Tea scope or acceptance",
+        "absent actual review record",
+        "wrong reference/export binding"
+      ]
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "location": "scripts/vpd_codex_takeover.py:108-109 / revision334 execution_boundary",
+      "observed": "wordmark_only_generation_authorization still references continuous poster repair while ACTIVE request validator rejects wordmark_image_tool. Native projection therefore publishes a stale active authorization.",
+      "fix": "Remove stale active wordmark authorization for study phases; expose only current study Figma scope.",
+      "negative_controls": [
+        "native projection contains no active wordmark grant in ACTIVE/DELIVERED"
+      ]
+    }
+  ],
+  "positive_controls": {
+    "same_task": true,
+    "mainline_lock_unchanged": true,
+    "mainline_progress_unchanged": true,
+    "all_29_versions_unchanged": true,
+    "frozen_source_and_source_recovery_unchanged": true,
+    "resume_poster_rejected": "REFERENCE_STUDY_CANNOT_RESUME_POSTER_WITHOUT_NEW_AUTHORIZATION",
+    "increase_version_rejected": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP",
+    "rewrite_v29_rejected": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN",
+    "wordmark_and_formal_v30_requests_rejected": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+  },
+  "limitations": [
+    "No Figma/Drive tools called; request results are consistency-validator execution only.",
+    "No native full-state validation repeated; parent was running full writer validation.",
+    "No photography/aesthetic pixel review performed; this is not formal Tea review or substitute for projectless cold review.",
+    "Version check reports MAINTENANCE_REQUIRED for CLI/desktop changes; no global routing or skill mutation performed.",
+    "Concurrent parent may revise files; this FAIL applies only to exact source_hashes in this report.",
+    "State snapshots and version records were compared against current HEAD; no remote publication readback performed."
+  ],
+  "learning_scope": "Observed repo-specific defects; parent owns once-per-task learning review; no formal rules or skill writes by challenger"
+}

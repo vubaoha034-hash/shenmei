@@ -886,8 +886,8 @@
   },
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "revision": 336,
-    "sha256": "c4d2c5d13661c29eda576797d7c493a5529ba8bf66db43c20cc9da6fa2244d66",
+    "revision": 334,
+    "sha256": "0c6dd6396e1238e686f31701f9f6896210ef55e7a55d54bdab18be7e95111a00",
     "validator": "python scripts/verify_visual_memory.py --vpd-state --status-card",
     "historical_documents_are_not_current_instructions": true
   },
@@ -901,7 +901,7 @@
     "purpose": "Full project workflow and fresh-chat continuation; current state stays in the existing unique task lock.",
     "current_bounded_delivery_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "2df282963be1411e0d5e27afe927dbd5a562f4a108b777b86a9ce7f61917e38f"
+      "sha256": "05c45de4fd61a820279f251ea00806c45b061d8e78fbdef4f4d54ba07eb276a7"
     }
   },
   "figma_upload_route_guard": {
@@ -986,12 +986,12 @@
   },
   "current_mainline": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ARCHIVE_BLOCKED",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ACTIVE",
     "current_visual_unit": "SHANYEJI_REFERENCE_WHOLE_TYPOGRAPHY_STUDY_ONLY",
     "evidence": {
       "execution": {
-        "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_STUDY_DELIVERY_RECEIPT.json",
-        "sha256": "dc3c12174aa1496fa585da73f397703a0e95519022a386f20c135317a94816dc"
+        "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_AUTHORIZED_RECEIPT.json",
+        "sha256": "d61260a39cad6c750ec910a6bd138b7a180b1c43157b7d2109736b189191bf98"
       },
       "human_verdict": {
         "path": "evidence/vpd/candidate88_human_final_review_20261003/HUMAN_AESTHETIC_VERDICT_01.json",
@@ -1016,107 +1016,14 @@
         },
         "typography_human_verdict": "REJECTED",
         "human_acceptance": "PENDING",
-        "artifacts": [
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/ACTUAL_TOOL_EXECUTION.json",
-            "sha256": "4ce96cc65a38db1ffa1c440b1b1cca7cd0c4957a00c6fe775574a4da9100905c"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/ASSET_IDENTITY_AND_LIMITS.json",
-            "sha256": "1a2898106d6fa0077665b44cd51e5929a42e6201d3569b2b4a94bc582eadcfc1"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_FIRST_REVIEW.json",
-            "sha256": "61193717adef5a33acdea90f911449144896cbbdc074e90e75c29ffdd39c60bb"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_SECOND_REVIEW.json",
-            "sha256": "5b453e71112fe6e52eccd744862eade41d3a3c906bd5d580e8dc8af5454fb8ee"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_THIRD_REVIEW.json",
-            "sha256": "2efd69455868d86c63b10dda1e646b0b4ddf506657d785aa441f492341d65c8a"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/CLI_REAL_INSPECT_RECEIPT.md",
-            "sha256": "4385a6a5143fb4a1bc4e750f6eb7ce3f579d1829d4fd89d9ac44a858ea53d085"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json",
-            "sha256": "cdad6a01535821fbf7dcf585e1857e95194315665f23d56763416cdfb1e09fb6"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DRIVE_ARCHIVE_BLOCKER.json",
-            "sha256": "2e11c439dbca6b41d1557ede4386083272cfa5acb3ab3e2f17feae77abd0dbfe"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/FIGMA_READONLY_REUSE.js",
-            "sha256": "896bc22af7cb25c0eda709c5b0aa43e1f9c9d3e5058fb37bd8cf7a50b250ffe7"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/FIGMA_S2_READBACK.json",
-            "sha256": "e84d41b50a02469f8966d72fe0f761946f608a025539b08dec01cf5f27e71f05"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
-            "sha256": "5819cd860347bcbc183e690d1725656f32e1d223b77ce9cf980ab0d03a822399"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/IMMUTABLE_RECEIPT_REPAIR.json",
-            "sha256": "4fbc37361f288855009af7648251d7158bd6d73d2715306220a4d3e02e1004f4"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/METHODS_AND_REUSE.md",
-            "sha256": "37db026af7ca438030ee4a85941122ac7765d474e71241d4e697a5946411c243"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/TUTORIAL_SOURCES.json",
-            "sha256": "9027fc346a832e3478d7ce43a2f865003a8024b501014f9b5d3e4498e95fc064"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/README.md",
-            "sha256": "143ecbacbaeb94dce8a78b305952cd3cec7f5816973e49837645e6ec7a45df0a"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/reconstruct_typography.py",
-            "sha256": "badccb256bb95a95e25106d8d70d3058d9ddc4f9be49fb9892776d6b6dc3d55b"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/soft_foreground_trial.py",
-            "sha256": "55a0c90d24b24827fe8afdf104396f55b55f8ce2baa474339284debc4eb8baa8"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s1_pixel_review/ISOLATION_AUDIT.json",
-            "sha256": "9fb71c9679149a7e2af007fa68e43aa78dda37c4a13c058bd8a3a7151724e124"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s1_pixel_review/PIXEL_REVIEW.json",
-            "sha256": "4fc041bee0e03095ac15d0d37005c4c052befd3e1620c470fc4a4178230258e6"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/ISOLATION_AUDIT.json",
-            "sha256": "b6161449943658736e9e314418c5d8e8ff92a657f5561ff8b1f631307916ef41"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
-            "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
-          }
-        ],
-        "delivery": {
-          "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json",
-          "sha256": "cdad6a01535821fbf7dcf585e1857e95194315665f23d56763416cdfb1e09fb6"
-        },
-        "review": {
-          "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
-          "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
-        }
+        "artifacts": []
       }
     },
-    "next_required_action": "AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION",
+    "next_required_action": "RECONSTRUCT_SHANYEJI_WHOLE_TYPOGRAPHY_IN_FIGMA",
     "codex_takeover": {
       "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ARCHIVE_BLOCKED",
-      "next_required_action": "AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION",
+      "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ACTIVE",
+      "next_required_action": "RECONSTRUCT_SHANYEJI_WHOLE_TYPOGRAPHY_IN_FIGMA",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
         "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -1126,8 +1033,8 @@
         "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
       },
       "receipt": {
-        "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_STUDY_DELIVERY_RECEIPT.json",
-        "sha256": "dc3c12174aa1496fa585da73f397703a0e95519022a386f20c135317a94816dc"
+        "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_AUTHORIZED_RECEIPT.json",
+        "sha256": "d61260a39cad6c750ec910a6bd138b7a180b1c43157b7d2109736b189191bf98"
       },
       "budget": {
         "formal_versions_max": 3,
@@ -1145,7 +1052,7 @@
       "state_writer": "ROOT_EXECUTOR_ONLY",
       "reuse_entry": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-        "sha256": "2df282963be1411e0d5e27afe927dbd5a562f4a108b777b86a9ce7f61917e38f"
+        "sha256": "05c45de4fd61a820279f251ea00806c45b061d8e78fbdef4f4d54ba07eb276a7"
       },
       "human_feedback": {
         "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -1204,7 +1111,7 @@
       },
       "worker_continuation": {
         "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-        "phase": "REFERENCE_STUDY_ARCHIVE_BLOCKED",
+        "phase": "REFERENCE_STUDY_ACTIVE",
         "authorization": {
           "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
           "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -2554,100 +2461,7 @@
           },
           "typography_human_verdict": "REJECTED",
           "human_acceptance": "PENDING",
-          "artifacts": [
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/ACTUAL_TOOL_EXECUTION.json",
-              "sha256": "4ce96cc65a38db1ffa1c440b1b1cca7cd0c4957a00c6fe775574a4da9100905c"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/ASSET_IDENTITY_AND_LIMITS.json",
-              "sha256": "1a2898106d6fa0077665b44cd51e5929a42e6201d3569b2b4a94bc582eadcfc1"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_FIRST_REVIEW.json",
-              "sha256": "61193717adef5a33acdea90f911449144896cbbdc074e90e75c29ffdd39c60bb"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_SECOND_REVIEW.json",
-              "sha256": "5b453e71112fe6e52eccd744862eade41d3a3c906bd5d580e8dc8af5454fb8ee"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/AUTHORITY_THIRD_REVIEW.json",
-              "sha256": "2efd69455868d86c63b10dda1e646b0b4ddf506657d785aa441f492341d65c8a"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/CLI_REAL_INSPECT_RECEIPT.md",
-              "sha256": "4385a6a5143fb4a1bc4e750f6eb7ce3f579d1829d4fd89d9ac44a858ea53d085"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json",
-              "sha256": "cdad6a01535821fbf7dcf585e1857e95194315665f23d56763416cdfb1e09fb6"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DRIVE_ARCHIVE_BLOCKER.json",
-              "sha256": "2e11c439dbca6b41d1557ede4386083272cfa5acb3ab3e2f17feae77abd0dbfe"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/FIGMA_READONLY_REUSE.js",
-              "sha256": "896bc22af7cb25c0eda709c5b0aa43e1f9c9d3e5058fb37bd8cf7a50b250ffe7"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/FIGMA_S2_READBACK.json",
-              "sha256": "e84d41b50a02469f8966d72fe0f761946f608a025539b08dec01cf5f27e71f05"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
-              "sha256": "5819cd860347bcbc183e690d1725656f32e1d223b77ce9cf980ab0d03a822399"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/IMMUTABLE_RECEIPT_REPAIR.json",
-              "sha256": "4fbc37361f288855009af7648251d7158bd6d73d2715306220a4d3e02e1004f4"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/METHODS_AND_REUSE.md",
-              "sha256": "37db026af7ca438030ee4a85941122ac7765d474e71241d4e697a5946411c243"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/TUTORIAL_SOURCES.json",
-              "sha256": "9027fc346a832e3478d7ce43a2f865003a8024b501014f9b5d3e4498e95fc064"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/README.md",
-              "sha256": "143ecbacbaeb94dce8a78b305952cd3cec7f5816973e49837645e6ec7a45df0a"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/reconstruct_typography.py",
-              "sha256": "badccb256bb95a95e25106d8d70d3058d9ddc4f9be49fb9892776d6b6dc3d55b"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/production_sources/soft_foreground_trial.py",
-              "sha256": "55a0c90d24b24827fe8afdf104396f55b55f8ce2baa474339284debc4eb8baa8"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s1_pixel_review/ISOLATION_AUDIT.json",
-              "sha256": "9fb71c9679149a7e2af007fa68e43aa78dda37c4a13c058bd8a3a7151724e124"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s1_pixel_review/PIXEL_REVIEW.json",
-              "sha256": "4fc041bee0e03095ac15d0d37005c4c052befd3e1620c470fc4a4178230258e6"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/ISOLATION_AUDIT.json",
-              "sha256": "b6161449943658736e9e314418c5d8e8ff92a657f5561ff8b1f631307916ef41"
-            },
-            {
-              "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
-              "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
-            }
-          ],
-          "delivery": {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json",
-            "sha256": "cdad6a01535821fbf7dcf585e1857e95194315665f23d56763416cdfb1e09fb6"
-          },
-          "review": {
-            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
-            "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
-          }
+          "artifacts": []
         }
       }
     }
@@ -2680,8 +2494,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-336-20261003",
-      "event_hash": "97e6b8955d5e0a298d9c5f93565ae10d690bb70364547c1e4ed8410648658e3e"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-334-20261003",
+      "event_hash": "d7105c19e3d1ddc4ca4eeedd9601c89ac446b233ee61effed16d71045eb07761"
     }
   },
   "mature_workflow_audit": {

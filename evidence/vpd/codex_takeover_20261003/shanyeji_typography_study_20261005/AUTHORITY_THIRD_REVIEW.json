@@ -1,0 +1,190 @@
+{
+  "verdict": "PASS",
+  "scope": "BOUNDED_SOURCE_AUTHORITY_AND_EVIDENCE_CONSISTENCY_REVIEW",
+  "time_utc": "2026-10-05T10:30:57.282275+00:00",
+  "independent_of_implementation": true,
+  "implementation_authorship": false,
+  "same_reviewer_context": true,
+  "fresh_cold_pixel_review": false,
+  "reviewed_native_revision": 335,
+  "source_hashes": {
+    "visual_memory/vpd_reference_typography_study.py": "750b1bc7ac1fa1714ba94de8cfb14f04b14cd6b7603fb5122c2953070c595553",
+    "visual_memory/vpd_correct_source_worker.py": "5ce85b816c4177852041d5366fd80ead06a9c1783ffdc53e8e50d3e84de3965d",
+    "visual_memory/vpd_locked_mainline_state.py": "17d6929c55fa76ddcb8b1612d33da6c5d20ac25e8855be204883823f0a7b6c3b",
+    "scripts/vpd_codex_takeover.py": "61e6ab74b4cd1ca2b91116baa7a45ae937cc6dc9fea3eeada48eb78d1a791e26",
+    "scripts/vpd_collect_reference_study_review.py": "403f44ceaf3332b5febd91f8b02d98bcb9d0bc4b102c9dc0aed4d5f11dd900ba",
+    "scripts/vpd_shanyeji_typography_study.py": "aa417dce468db08904efd266c9a5e383adcc8c55de77885862295a5c89e1a27a"
+  },
+  "actual_positive_case": "Constructed REFERENCE_STUDY_ARCHIVE_BLOCKED from native335 using the real S2 DELIVERY_MANIFEST, actual960x1280 PNG, Figma readback, s2 review and isolation audit; validate_study accepted. Business state was not changed.",
+  "negative_controls": [
+    {
+      "case": "actual_s2_archive_blocked",
+      "result": "ACCEPTED",
+      "expected": "ACCEPTED",
+      "matched": true,
+      "error": null
+    },
+    {
+      "case": "unrelated_audit",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+    },
+    {
+      "case": "wrong_audit_scope",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+    },
+    {
+      "case": "wrong_reviewer",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+    },
+    {
+      "case": "wrong_figma_export",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+    },
+    {
+      "case": "forged_drive_status",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_ACTUAL_ARCHIVE_BLOCKER_REQUIRED"
+    },
+    {
+      "case": "tea_acceptance",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+    },
+    {
+      "case": "wrong_export_sha",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "EVIDENCE_HASH_MISMATCH:.liu-visual-private/shanyeji_typography_study_20261005/FIGMA_TYPE_STUDY_S2.png"
+    },
+    {
+      "case": "request_wrongfile",
+      "result": "REJECTED",
+      "expected": "REJECTED",
+      "matched": true,
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "synthetic_unicode_forbidden_tool_trace",
+      "expected_verified": false,
+      "actual_verified": false,
+      "matched": true,
+      "exit_code": 0,
+      "stdout": "{\"reviewer\": \"01a10b86-f992-7ad0-9eb8-971f3ef200f1\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 1, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n",
+      "stderr": "",
+      "actual_tool_execution": false
+    }
+  ],
+  "collector_final_controls": [
+    {
+      "name": "actual_s2_final",
+      "exit_code": 0,
+      "verified": true,
+      "expected_verified": true,
+      "matched": true,
+      "tool_scope_violations": [],
+      "stdout": "{\"reviewer\": \"01a10b86-f992-7ad0-9eb8-971f3ef200f1\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 1, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": true}\n",
+      "stderr": "",
+      "actually_executed_mutated_JS": false
+    },
+    {
+      "name": "synthetic_constructor_final",
+      "exit_code": 0,
+      "verified": false,
+      "expected_verified": false,
+      "matched": true,
+      "tool_scope_violations": [
+        "UNEXPECTED_TOOL"
+      ],
+      "stdout": "{\"reviewer\": \"01a10b86-f992-7ad0-9eb8-971f3ef200f1\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 1, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n",
+      "stderr": "",
+      "actually_executed_mutated_JS": false
+    },
+    {
+      "name": "synthetic_unicode_final",
+      "exit_code": 0,
+      "verified": false,
+      "expected_verified": false,
+      "matched": true,
+      "tool_scope_violations": [
+        "UNEXPECTED_TOOL"
+      ],
+      "stdout": "{\"reviewer\": \"01a10b86-f992-7ad0-9eb8-971f3ef200f1\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 1, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n",
+      "stderr": "",
+      "actually_executed_mutated_JS": false
+    }
+  ],
+  "preserved_failures": [
+    "FIRST_SOURCE_REVIEW.json",
+    "SECOND_SOURCE_REVIEW.json",
+    "THIRD_COLLECTOR_CHECKS.json"
+  ],
+  "collector_repair": "The earlier constructor trace was accepted by a705526d collector. Current403f44ce collector pins complete previously inspected S1/S2 wrapper hashes, rejects both Unicode and constructor synthetic additions, and replays the actual S2 trace as verified. Both allowed wrapper bodies were independently read; they only read and display the two designated images.",
+  "actual_runtime_evidence": {
+    "child_runtime_sha256": "20fd1c66d4bb75c36e13a8cb66cbf34fce6057d399adb68163299f500f26427e",
+    "reviewer_thread_id": "01a10b86-f992-7ad0-9eb8-971f3ef200f1",
+    "model": "gpt-6.1-sol",
+    "effort": "max",
+    "one_turn_context": true,
+    "parent_spawn_fork_none": true,
+    "image_reads": 2,
+    "actual_tool_code_sha256": "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "actual_s2_replay_directory": "third-fixtures/collector-actual_s2_final"
+  },
+  "cli_inspect": {
+    "command": "bundled python -B scripts/vpd_shanyeji_typography_study.py inspect",
+    "exit_code": 0,
+    "status": "STRUCTURAL_INTEGRITY_PASS_ONLY",
+    "production_run": false,
+    "clean_svg_paths": 241,
+    "outside_text_support_nonzero": 0,
+    "alpha_nonzero": 95775,
+    "alpha_intermediate": 51790,
+    "transparent_probes": [
+      0,
+      0,
+      0
+    ],
+    "source_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "no_trace_or_soft_ink_production_run": true
+  },
+  "honest_artifact_limits": [
+    "S2 visible ink is one approximate raster paint. The editable241-vector group is hidden; effective visible vectors are0. This limitation is disclosed in ASSET_IDENTITY_AND_LIMITS; fidelity review does not establish vector-only reconstruction.",
+    "No original font, alpha, SVG or exact original import bytes claimed recovered.",
+    "No Tea version added, Tea AI-pass, human acceptance, transfer success or remote public accessibility established by this review."
+  ],
+  "archive_evidence": {
+    "current_status": "BLOCKED_AUTO_REVIEW",
+    "destination_approval": "PENDING",
+    "directly_observed_rejection_call_id": "call_cdOhZHGQDhr8UNrkEKUYKtjO",
+    "second_rejection_reason": "Destination ownership/visibility not verified and specific authorization missing.",
+    "first_rejection": "Manifest and Root report two; first was not separately located in bounded tail scan. Do not describe both as independently observed."
+  },
+  "limitations": [
+    "This is same-reviewer source re-review, not a fresh cold aesthetic review.",
+    "Synthetic trace mutations were never executed as JavaScript; only collector validation was executed against marked fixtures.",
+    "Parent spawn task-message content is encrypted in the observed raw record. Fork-none metadata and actual image/tool scope were verified, but absence of semantic author-feedback leakage inside the encrypted prompt is not independently established.",
+    "Collector trusts native local trace records and current on-disk image bytes. Fixed wrapper allowlist is an input consistency guard, not operating-system permissions or a general JavaScript sandbox.",
+    "No Figma/Drive remote calls made by this reviewer; Figma protection claim rests on saved bounded noncryptographic fingerprint evidence.",
+    "No repeated full native state test; Root retains the full writer/validator check responsibility.",
+    "CLI inspect actually ran; new CLI trace/soft-ink and fresh-machine production were not tested.",
+    "Public production-source recovery publication was announced but is outside this completed code and inspect review."
+  ],
+  "reproduction": "bundled python -B .liu-visual-private/shanyeji_typography_study_20261005/authority-review/third_negative_controls.py --run-id unique_name"
+}

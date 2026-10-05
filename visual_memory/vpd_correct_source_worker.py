@@ -56,6 +56,8 @@ def review_inputs_for_version(root, version, number, fallback):
     return reference
 
 def available_canvas_slots(unit):
+    if unit['phase'] in ['REFERENCE_STUDY_ACTIVE', 'REFERENCE_STUDY_DELIVERED', 'REFERENCE_STUDY_ARCHIVE_BLOCKED']:
+        return int(unit['phase'] == 'REFERENCE_STUDY_ACTIVE')
     if unit.get('repair_authorization'):
         return int(unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'])
     return unit['budget']['formal_versions_max'] - unit['budget']['formal_versions_used']
@@ -132,6 +134,14 @@ def validate_serial_transition(root, old_unit, unit):
             and new_refs[:len(old_refs)] == old_refs,
             'HISTORICAL_HUMAN_REVISION_REQUEST_REWRITTEN')
     requests = validate_human_revision_requests(root, unit)
+    from .vpd_reference_typography_study import PHASES, validate_study
+    if unit['phase'] in PHASES:
+        require(used == old_used == 29 and old_unit['phase'] in
+                ['DELIVERED_AI_PASS', 'REFERENCE_STUDY_ACTIVE', 'REFERENCE_STUDY_DELIVERED', 'REFERENCE_STUDY_ARCHIVE_BLOCKED'],
+                'REFERENCE_STUDY_NOT_POSTER_RESUMPTION')
+        validate_study(root, unit)
+    elif old_unit['phase'] in PHASES:
+        require(False, 'REFERENCE_STUDY_CANNOT_RESUME_POSTER_WITHOUT_NEW_AUTHORIZATION')
     active = unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED','AWAITING_PIXEL_REVIEW']
     if old_used and used == old_used and active and old_unit['versions'][-1].get('verdict') == 'AI_PASS':
         require(unit['phase'] == 'REVISION_REQUIRED' and old_used in requests
@@ -312,6 +322,12 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         'DELIVERED_AI_FAIL':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW',
         'HUMAN_REJECTED':'CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE',
         'TECHNICAL_BLOCKED':'REPAIR_OBSERVED_CORRECT_SOURCE_TECHNICAL_BLOCKER'}
+    from .vpd_reference_typography_study import PHASES, validate_study
+    actions.update(REFERENCE_STUDY_ACTIVE='RECONSTRUCT_SHANYEJI_WHOLE_TYPOGRAPHY_IN_FIGMA',
+                   REFERENCE_STUDY_DELIVERED='LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY',
+                   REFERENCE_STUDY_ARCHIVE_BLOCKED='AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION')
+    if unit['phase'] in PHASES:
+        validate_study(root, unit)
     require(unit['phase'] in actions and take['next_required_action'] == actions[unit['phase']]
             and take['status'] == 'VPD_CODEX_CHAZUO_CORRECT_SOURCE_'+unit['phase'],
             'WORKER_CONTINUATION_ACTION_CONFLICT')
@@ -370,7 +386,8 @@ def validate_continuation(root, lock, cp, adapter, receipt):
              and review_allows_revision(verdict, used, human_requests))
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
             or (unit['phase']=='HUMAN_REJECTED' and verdict=='AI_FAIL' and used==3)
-            or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
+            or (unit['phase']=='DELIVERED_AI_PASS' and verdict=='AI_PASS')
+            or (unit['phase'] in PHASES and verdict=='AI_PASS'), 'WORKER_VERDICT_ACTION_CONFLICT')
     if unit['phase'].startswith('DELIVERED_') or unit['phase']=='HUMAN_REJECTED':
         archive=load(root,current['drive_archive'])
         require(archive['readback_result']=='PASS' and archive['poster_sha256']==current['export']['sha256']

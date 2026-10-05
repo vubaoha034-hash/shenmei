@@ -877,6 +877,25 @@ def validate_locked_request(root, request, lock):
             require(request.get('actor') == 'ROOT_EXECUTOR' and
                     request.get('work_unit_id') == unit['unit_id'], 'WORKER_STATE_WRITE_NOT_AUTHORIZED')
             if request.get('figma_write') or request.get('wordmark_image_tool'):
+                if unit['phase'] == 'REFERENCE_STUDY_ACTIVE':
+                    from .vpd_reference_typography_study import validate_study, REFERENCE
+                    study = validate_study(root, unit)
+                    require(request.get('figma_write') is True
+                            and not request.get('wordmark_image_tool')
+                            and request.get('task_id') == take['task_id']
+                            and request.get('authorization') == study['authorization']
+                            and request.get('reference_sha256') == REFERENCE
+                            and request.get('study_only') is True
+                            and request.get('file_key') == 'uyDxOoN1iNDPpEHTKSUWg1'
+                            and request.get('new_study_page_name') == 'SHANYEJI Whole Typography Study 20261005'
+                            and request.get('existing_node_mutations') == []
+                            and request.get('protected_poster_node') == '402:2'
+                            and request.get('protected_photo_sha256') == unit['frozen_source']['sha256']
+                            and not any(request.get(k) for k in ['node_id', 'node_ids',
+                                'photo_change', 'new_tea_poster', 'tea_verdict', 'final_acceptance'])
+                            and 'formal_version' not in request,
+                            'REFERENCE_STUDY_WRITE_SCOPE_CONFLICT')
+                    return lock
                 require(unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'] and
                         request.get('task_id') == take['task_id'] and
                         request.get('authorization') == unit['authorization'] and

@@ -107,6 +107,9 @@ def main():
         lock['execution_boundary']['independent_worker_contract']=unit['worker_contract']
         if unit.get('repair_authorization'):
             lock['execution_boundary']['wordmark_only_generation_authorization']=unit['repair_authorization']
+        if unit['phase'] in ['REFERENCE_STUDY_ACTIVE', 'REFERENCE_STUDY_DELIVERED', 'REFERENCE_STUDY_ARCHIVE_BLOCKED']:
+            lock['execution_boundary'].pop('wordmark_only_generation_authorization', None)
+            lock['execution_boundary']['current_figma_authorization_scope']='NEW_SHANYEJI_TYPOGRAPHY_STUDY_PAGE_ONLY'
     lock['execution_boundary']['current_image_generation_authorization_scope']=TASK
     lock['execution_boundary']['successor_execution_authorized']=True
     lock['execution_boundary']['bounded_typography_design_versions_authorization']=take['authorization']
@@ -151,6 +154,13 @@ def main():
         if unit.get('current_scoped_human_feedback'):
             adapter['current_mainline']['evidence']['latest_scoped_human_product_type_feedback']=copy.deepcopy(unit['current_scoped_human_feedback'])
             cp['latest_scoped_human_product_type_feedback']=copy.deepcopy(unit['current_scoped_human_feedback'])
+        if unit.get('reference_typography_study'):
+            study = unit['reference_typography_study']
+            adapter['current_mainline']['current_visual_unit']='SHANYEJI_REFERENCE_WHOLE_TYPOGRAPHY_STUDY_ONLY'
+            adapter['current_mainline']['evidence']['latest_reference_typography_study']=copy.deepcopy(study)
+            cp['incomplete']=['V29文字被真人否定；原AI_PASS记录保留，不作真人认可',
+                '只做山野集整套文字临摹与Figma对照；茶作及已认可摄影暂停修改',
+                '临摹研究真人验收、茶作文字迁移与整体蒸馏收益仍未验证']
         if unit['poster_human_verdict'] == 'REJECTED' and not unit.get('repair_authorization'):
             cp['incomplete']=['V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回',
                 '三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败',

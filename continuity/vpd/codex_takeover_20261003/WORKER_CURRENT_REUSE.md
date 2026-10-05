@@ -1,5 +1,20 @@
 # 茶作当前成果与独立 worker 调用入口
 
+<!-- SHANYEJI_REFERENCE_STUDY_CURRENT_20261005 -->
+2026-10-05当前范围：刘先生否决V29文字，明确要求先停底图/海报，只研究“山野集”整体文字并在Figma临摹。唯一状态以原生锁为准。当前29个正式茶作版本及历史AI_PASS保留；V29文字真人REJECTED，整体真人PENDING，摄影7fd7777f认可/冻结不变。没有V30，没有新摄影或文字生图。
+
+真实成果在新Figma页412:2：[S1纯矢量412:5](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=412-5)，[S2文字研究416:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=416-2)。参考是Drive 1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ / SHA9a29fbdc… / 960×1280，不是旧“山葵炙”。S2本地完整PNG为`.liu-visual-private/shanyeji_typography_study_20261005/FIGMA_TYPE_STUDY_S2.png`，SHA200619e4…。S2有241条可编辑曲线，但隐藏组416:3，显示的是近似RGBA文字墨层416:271；不是原字体、原alpha或完全一致的纯矢量。编辑时可切到曲线组，纹理不会自动重建。
+
+成果/字节身份/真实依赖/实际教程/失败都由 `evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json`、`ASSET_IDENTITY_AND_LIMITS.json`、`METHODS_AND_REUSE.md`、`ACTUAL_TOOL_EXECUTION.json`定位；调用 `scripts/vpd_shanyeji_typography_study.py inspect` 只读核验，重新制作必须使用新的私有输出目录。先读Figma官方figma-use，再用同目录FIGMA_READONLY_REUSE.js只读源节点；不得切换可见性或修改摄影来做读取测试。
+
+S1实际隔离两图像素审稿FAIL；S2新的fork-none、gpt-6.1-sol/max审稿REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS，具体灰暗橙字、杂色细边和小字残缺见`s2_pixel_review/PIXEL_REVIEW.json`及ISOLATION_AUDIT。这是参考形态复建结论，不是茶作新AI_PASS，不替代正式项目外五图冷审，不代表真人认可，也没有解决历史误放行问题。原字体/透明纹理/高分辨率设计源未知，不能承诺一模一样或迁移已验证。
+
+Drive新归档两次遭自动审批拒绝，现有目录元数据未返回归属/可见性证明；已提出该明确目录的授权问题，未绕过，未取得文件ID。当前唯一下一动作是`AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION`，见DRIVE_ARCHIVE_BLOCKER.json。授权未答复不能按时间自动批准。完成归档后再交刘先生审核文字研究，不恢复茶作制作、不改主线。
+
+新读取上下文测试定位：本目录证据的`fresh_entry/FRESH_ENTRY_REPORT.json`；只有该真实报告保存后才可宣称入口验证完成。测试针对当前仓库工作树入口及真实Figma只读复用，不等于另一个机器上的完整制作复现。以下为保留的历史成果与方法；其旧“当前下一动作”不能覆盖当前锁。
+<!-- END_SHANYEJI_REFERENCE_STUDY_CURRENT_20261005 -->
+
+
 本文件解释如何使用成果，唯一业务状态始终是 `continuity/vpd/CURRENT_TASK_LOCK.json`。先固定指定分支实际最新提交，读 START_HERE.md、AGENTS.md、PROJECT_CONTROL_ADAPTER.json、VPD_PROJECT_ROADMAP.md、CURRENT_TASK_LOCK.json、LATEST_CHECKPOINT.json；后读本文件及锁引用证据。不要从历史文档的“当前下一步”接续。
 
 2026-10-04最新真人授权在 `CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json`：同一方向串行制作、修复及独立像素复审，直到 INDEPENDENT_AI_PASS。旧三版/两修订停止上限被取代，累计计数与失败不清零；主线、摄影保护、真人最终验收不变。无第二风格、模型训练、付费算力或自动任务。worker只审核/研究/制作资产，根执行者唯一更新业务状态。AI_PASS仅允许交付刘先生审核，不能宣称真人认可。

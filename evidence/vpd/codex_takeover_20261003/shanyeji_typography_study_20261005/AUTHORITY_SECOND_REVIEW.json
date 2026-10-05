@@ -1,0 +1,155 @@
+{
+  "time": "2026-10-05T09:33:07.223878+00:00",
+  "revision": 335,
+  "native_wordmark_grant_present": false,
+  "native_figma_scope": "NEW_SHANYEJI_TYPOGRAPHY_STUDY_PAGE_ONLY",
+  "checks": [
+    {
+      "case": "valid_new_study_request",
+      "result": "ACCEPTED"
+    },
+    {
+      "case": "wrong_file",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "overwrite_tea_photo",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "existing_node_mutation",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "wrong_photo_hash",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "tea_acceptance",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "wordmark_tool",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "formal_v30",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "case": "first_missing_export_fixture",
+      "result": "REJECTED",
+      "error": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\Administrator\\\\OneDrive\\\\文档\\\\足球\\\\shenmei-vpd-codex-20261003\\\\.liu-visual-private\\\\shanyeji_typography_study_20261005\\\\authority-review\\\\MISSING.png'"
+    },
+    {
+      "case": "resume_poster",
+      "result": "REJECTED",
+      "error": "REFERENCE_STUDY_CANNOT_RESUME_POSTER_WITHOUT_NEW_AUTHORIZATION"
+    },
+    {
+      "case": "increase_v30",
+      "result": "REJECTED",
+      "error": "CONTINUATION_BUDGET_ROLLBACK_OR_SKIP"
+    },
+    {
+      "case": "rewrite_v29",
+      "result": "REJECTED",
+      "error": "HISTORICAL_VERSION_EVIDENCE_REWRITTEN"
+    },
+    {
+      "case": "history334_receipt_ref",
+      "result": "ACCEPTED"
+    },
+    {
+      "case": "history334_auth_ref",
+      "result": "ACCEPTED"
+    }
+  ],
+  "first_auth_sha": "5819cd860347bcbc183e690d1725656f32e1d223b77ce9cf980ab0d03a822399",
+  "first_receipt_sha": "d61260a39cad6c750ec910a6bd138b7a180b1c43157b7d2109736b189191bf98",
+  "source_hashes": {
+    "visual_memory/vpd_reference_typography_study.py": "821f24c16e7ff294a4c98e731e85fe1a92110ad773788540aa0d65d370de7c77",
+    "visual_memory/vpd_correct_source_worker.py": "b7622dbbfe87b3d99c53d4b97420790f67430b4c5b7c6834fbf43455ae801a3f",
+    "visual_memory/vpd_locked_mainline_state.py": "17d6929c55fa76ddcb8b1612d33da6c5d20ac25e8855be204883823f0a7b6c3b",
+    "scripts/vpd_codex_takeover.py": "7370c9d634279f5f0d9d80b34e589bb747a07da2076a4c58e00e6a1ac3278dbf"
+  },
+  "verdict": "FAIL",
+  "independent": true,
+  "implementation_authorship": false,
+  "scope": "CURRENT_SOURCE_CONSISTENCY_ONLY_NOT_REAL_DELIVERY_OR_TEA_REVIEW",
+  "delivery_checks": {
+    "fixtures_only": true,
+    "real_remote_execution": false,
+    "source_sha": "821f24c16e7ff294a4c98e731e85fe1a92110ad773788540aa0d65d370de7c77",
+    "cases": [
+      {
+        "case": "schema_positive",
+        "result": "ACCEPTED"
+      },
+      {
+        "case": "unrelated_isolation_audit",
+        "result": "ACCEPTED"
+      },
+      {
+        "case": "mismatched_figma_export",
+        "result": "ACCEPTED"
+      },
+      {
+        "case": "tea_scope",
+        "result": "REJECTED",
+        "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+      },
+      {
+        "case": "tea_acceptance",
+        "result": "REJECTED",
+        "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+      },
+      {
+        "case": "wrong_dimensions",
+        "result": "REJECTED",
+        "error": "REFERENCE_STUDY_ACTUAL_PNG_REQUIRED"
+      },
+      {
+        "case": "audit_fork_all",
+        "result": "REJECTED",
+        "error": "REFERENCE_STUDY_REVIEW_BINDING_CONFLICT"
+      }
+    ]
+  },
+  "remaining_findings": [
+    {
+      "id": "R1",
+      "location": "visual_memory/vpd_reference_typography_study.py:73-75",
+      "observed": "Isolation audit of different reference/export is accepted: reference_sha256=1*64 and study_export_sha256=0*64. audit counts, model strings and verified Boolean do not bind the reviewed pixels to this study.",
+      "fix": "Require audit scope, reference SHA and export SHA equal the actual study; bind its reviewer identity to the review. Real execution still needs independent inspection of native evidence."
+    },
+    {
+      "id": "R2",
+      "location": "visual_memory/vpd_reference_typography_study.py:58-63",
+      "observed": "Figma readback declaring export_sha256=0*64 is accepted while local study PNG has another real SHA. Frame identity and vector count alone do not establish that the reviewed PNG was its actual export.",
+      "fix": "Require the Figma readback export identity equal actual delivery.export; bind its downloaded file/check_ref when available."
+    }
+  ],
+  "fixed_findings": [
+    "Original request-target mutation bypass rejected",
+    "Original missing-PNG delivery rejected",
+    "Tea scope and Tea-pass claims rejected",
+    "Wrong dimensions and fork-all audit rejected",
+    "Old active wordmark authorization removed in native335",
+    "Initial auth and receipt bytes match history334 refs"
+  ],
+  "limitations": [
+    "All DELIVERED cases are explicitly synthetic schema fixtures, including white PNGs, never design or pixel-review evidence.",
+    "No Figma/Drive execution or verification performed.",
+    "No repeated full-state validation; parent owns currently running writer validation.",
+    "Default Python failed Pillow DLL import; final delivery fixtures ran using official bundled Python successfully.",
+    "No reusable PASS from former reviews; exact source_hashes recorded."
+  ]
+}

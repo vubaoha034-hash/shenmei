@@ -1,0 +1,87 @@
+{
+  "schema": "vpd-reference-typography-pixel-review/v1",
+  "scope": "SHANYEJI_WHOLE_TYPOGRAPHY_REFERENCE_RECONSTRUCTION_ONLY",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "6f23f8fb6a3e1c027d279940af2cd9d87381383c547a2132db932aa60fe29f5b",
+  "actual_pixels_seen": true,
+  "human_acceptance": "PENDING",
+  "verdict": "REFERENCE_FIDELITY_FAIL",
+  "observations": [
+    {
+      "region": "整体文字布局",
+      "evidence": "T保留了四组顶部英文、中央主标及印章、两行Mountain market、中文副标题、橙色手写句、底部品牌及两侧署名。各组位置、大小层级和主要间距与R视觉上基本吻合。",
+      "impact": "构图复建接近原件，但不能据此判定局部字形和纹理通过。"
+    },
+    {
+      "region": "顶部四组英文",
+      "evidence": "文字内容、换行和对齐基本保留。T的O、A以及直线笔画边缘出现明显锯齿和细小缺口；R中的轮廓更平顺，字内空隙边缘也较柔和。",
+      "impact": "正文结构完整，轮廓呈现仍有可见差距。"
+    },
+    {
+      "region": "李家班印章",
+      "evidence": "三个相叠橙色圆形及黑色字的位置、大轮廓接近R。T橙色更均一、偏亮，黑字边缘呈硬切口和颗粒缺损。",
+      "impact": "保留了识别特征，但印章色感和细笔画质感尚未忠实复现。"
+    },
+    {
+      "region": "山野集主标与字内纹理",
+      "evidence": "山形峰顶、各字块轮廓及主要内部开口与R高度接近。T白色字块内的暗孔呈硬边块状，部分颗粒成为醒目的尖角缺口；R所见颗粒更细碎，边缘包含较柔和的杂色过渡。",
+      "impact": "主标辨识和外形接近，当前纹理却更像经过硬阈值处理的镂空字，改变了原件的印刷质感。"
+    },
+    {
+      "region": "主标橙线",
+      "evidence": "左侧短弧、中央大回环、跨字长曲线和右侧回环均保留，主要遮挡关系视觉上接近R。T线条呈均一橙色，边缘和交接处较硬，未复现R中可见的细微色调与边缘变化。",
+      "impact": "未见明显整段漏线；线条细纹理及遮挡交界仍不足以支持原样复建通过。"
+    },
+    {
+      "region": "Mountain market与中文副标题",
+      "evidence": "两行英文及中文副标题的位置和文本组宽度接近R。Mountain market在T中更偏黄、更亮，R呈较沉的灰橄榄色；T两组文字的细笔画均有明显颗粒断口。",
+      "impact": "英文颜色差距直接可见，小字号轮廓也需要修复。"
+    },
+    {
+      "region": "橙色手写句",
+      "evidence": "T保留了手写句的两段排列、字间留白与主要笔势。细笔画边缘出现密集锯齿，局部收笔成为短小颗粒；R的收笔与笔画过渡较连续。",
+      "impact": "整体笔势接近，局部连贯性和手写细节仍有损失。"
+    },
+    {
+      "region": "底部品牌、中文句及两侧署名",
+      "evidence": "中央中文品牌字、竖向小印记、WANCE、下方中文句，以及左右WANCE和DESIGN均可见。T中央英文与中文边缘有颗粒缺口，两侧细署名的笔画呈较明显的断续感。",
+      "impact": "主要署名系统已覆盖，但小字和细线质量尚未达到R的呈现。"
+    },
+    {
+      "region": "右下最底部微小标记",
+      "evidence": "R右下最底部可见一个很小的圆角标记，T相应位置未见。",
+      "impact": "存在待确认的完整性缺口；仅凭这两张图无法确定其属于品牌图形还是附属水印。"
+    }
+  ],
+  "priority_issues": [
+    {
+      "priority": 1,
+      "issue": "修复全套文字的硬切边、锯齿与细笔画断口，尤其是顶部英文、Mountain market、手写句和底部小字。"
+    },
+    {
+      "priority": 1,
+      "issue": "重新校准主标字内颗粒的形态与边缘过渡，避免把细纹理转成粗硬镂空。"
+    },
+    {
+      "priority": 2,
+      "issue": "校准Mountain market的灰橄榄色，并复核印章、手写句与橙线的色感。"
+    },
+    {
+      "priority": 2,
+      "issue": "细查橙线与白字交界的遮挡和纹理，并确认右下微小标记是否属于应复建内容。"
+    }
+  ],
+  "unverified": [
+    "仅实际查看指定的两张完整图，共两次view_image；未查看裁切图或其他文件。",
+    "SHA256为任务提供的标识，未独立计算；技术身份不作为视觉通过证据。",
+    "未进行逐像素差分、精确位置测量或色差统计。",
+    "JPEG无法提供原始字体、矢量轮廓和alpha；无法确认所有细颗粒的原始设计意图。",
+    "摄影不在本次审核范围；未授予真人认可，也不宣称完美像素一致。"
+  ],
+  "reviewer_thread_id": "01a10b73-765f-7c52-a52b-a84524ccc7cb",
+  "isolation_audit": {
+    "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s1_pixel_review/ISOLATION_AUDIT.json",
+    "sha256": "9fb71c9679149a7e2af007fa68e43aa78dda37c4a13c058bd8a3a7151724e124"
+  },
+  "reviewed_utc": null
+}

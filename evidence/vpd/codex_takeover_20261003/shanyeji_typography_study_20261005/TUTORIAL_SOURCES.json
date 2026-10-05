@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "study_date": "2026-10-05",
+  "task": "Exact reconstruction study of the SHANYEJI typography system in Figma",
+  "scope": "Bounded tutorial research only; no Figma, business state, existing asset or long-term skill edits",
+  "reliable_tutorial_count": 3,
+  "video_watched_count": 0,
+  "video_status": "Embedded videos were not played. Only the accessible written procedures were read.",
+  "reference": {
+    "absolute_path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+    "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "width_px": 960,
+    "height_px": 1280,
+    "visually_inspected": true
+  },
+  "sources": [
+    {
+      "id": "figma_vector_networks",
+      "title": "Vector networks",
+      "author": "Figma",
+      "url": "https://help.figma.com/hc/en-us/articles/360040450213-Vector-networks",
+      "source_type": "Official written procedure",
+      "read_status": "Read accessible article body",
+      "read_sections": [
+        "Create vector networks using the Pen tool",
+        "Add caps to endpoints"
+      ],
+      "read_content": "P selects Pen. Click places points, dragging controls curves, returning to a point closes a path, Escape leaves it open. Open paths can use different endpoint caps.",
+      "adopted_detail": "Closed filled paths for each custom white glyph; separate open curves for orange loops and short accents.",
+      "limits": "No Chinese glyph construction or SHANYEJI process. No automatic distress reconstruction.",
+      "license_status": "No explicit asset redistribution permission obtained",
+      "use": "Method reference and own summary only; no tutorial assets reused",
+      "video_watched": false
+    },
+    {
+      "id": "figma_vector_edit",
+      "title": "Edit vector layers",
+      "author": "Figma",
+      "url": "https://help.figma.com/hc/en-us/articles/360039957634-Edit-vector-layers",
+      "source_type": "Official written procedure",
+      "read_status": "Read accessible article body",
+      "read_sections": [
+        "Enter vector edit mode",
+        "Edit vector networks",
+        "Create strokes with variable widths",
+        "Cut vector paths",
+        "Create curved paths with bézier handles",
+        "Handle mirroring options",
+        "Erase parts of vector paths or shapes",
+        "Select points and paths with the Lasso tool",
+        "Edit multiple points using bounding boxes",
+        "Add fills to closed regions",
+        "Round the corners of a shape"
+      ],
+      "read_content": "Enter exposes points and paths. Bend adds Bézier handles with independent or mirrored controls. Cut splits geometry. Eraser removes regions and adds editable points. Paint changes closed-region fills.",
+      "adopted_detail": "Keep sharp mountain corners, refine orange-curve handles, and cut irregular voids or edges with editable geometry.",
+      "limits": "Text Outline was not verified here. Dense distressed grain would be laborious as individual points. Article describes editing tools rather than a specific lettering design.",
+      "license_status": "No explicit asset redistribution permission obtained",
+      "use": "Method reference and own summary only; no tutorial assets reused",
+      "video_watched": false
+    },
+    {
+      "id": "figma_booleans",
+      "title": "Boolean operations",
+      "author": "Figma",
+      "url": "https://help.figma.com/hc/en-us/articles/360039957534-Boolean-operations",
+      "source_type": "Official written procedure",
+      "read_status": "Read accessible article body",
+      "read_sections": [
+        "Types of boolean operations",
+        "Apply a boolean operation",
+        "Edit a boolean group"
+      ],
+      "read_content": "Union merges outer geometry; Subtract removes overlap from the bottom object; Intersect retains shared regions; Exclude removes shared regions. Select two or more supported layers. Boolean groups preserve modifiable children.",
+      "adopted_detail": "Union stroke pieces within a glyph. Subtract triangular counters and distressed voids. Keep the orange path independent to retain overlap order.",
+      "limits": "Geometry operations do not infer glyph anatomy, distress distribution, or the original designer's actual construction method.",
+      "license_status": "No explicit asset redistribution permission obtained",
+      "use": "Method reference and own summary only; no tutorial assets reused",
+      "video_watched": false
+    }
+  ],
+  "overlay_method": {
+    "status": "Task-specific inference, not attributed as an author-taught SHANYEJI method",
+    "procedure": "Lock the same-size reference below reconstruction; compare outer silhouettes, counters, orange overlaps, and text hierarchy at matching coordinates; separate clean geometry from distress while assessing shape.",
+    "validated_in_figma": false
+  },
+  "feasibility": {
+    "custom_glyphs": "Supported by closed vector geometry, Bézier control and boolean operations; exact similarity still requires construction and comparison evidence",
+    "orange_line": "Supported by open vector paths and Bézier handles; exact overlaps require visual matching",
+    "distress": "Can use editable subtracted voids for finite shapes; dense grain requires tracing/extraction or a verified raster texture layer. Neither was implemented in this research.",
+    "plain_typing_sufficient": false,
+    "reason": "Weight and spacing cannot create the reference's mountain silhouette, individual stroke connections, triangular counters and fixed distress pattern.",
+    "unknowns": [
+      "Original typeface identities",
+      "Original vector paths",
+      "Original source file",
+      "Original distress construction method",
+      "Exact high-resolution geometry beyond the JPEG evidence"
+    ]
+  },
+  "validation_reuse": {
+    "commit": "65e51a7f6008c59cd9702a26526a9d5888557f66",
+    "head_checked_read_only": true,
+    "native_state_check": "Root confirmed native333 PASS on the same commit; no state edits by this agent"
+  },
+  "learning": "Ordinary bounded research result; no new validated durable tactic or defect. No long-term skill changes."
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_WHOLE_TYPOGRAPHY_REFERENCE_RECONSTRUCTION_ONLY",
+  "verified": true,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10b73-765f-7c52-a52b-a84524ccc7cb",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "6f23f8fb6a3e1c027d279940af2cd9d87381383c547a2132db932aa60fe29f5b",
+  "tool_scope_violations": [],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_dy9XWBR7989k2W5prndH8XSm",
+      "input_sha256": "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/shanyeji_typography_study_20261005/FIGMA_TYPOGRAPHY_412_5.png",
+      "sha256": "6f23f8fb6a3e1c027d279940af2cd9d87381383c547a2132db932aa60fe29f5b"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_OgmGFHyo2u3jIRFwFzAyE2GT",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/shanyeji_fidelity_pixel_review",
+    "agent_nickname": "Galileo",
+    "agent_role": null
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "8982eccbb096863dcc430ad8ad3a34faf7a345e85f8a4e9175fbdfc5eca62b9a",
+  "limitations": [
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution."
+  ],
+  "checked_utc": "2026-10-05T10:25:01.115563+00:00",
+  "review_final_utc": null
+}

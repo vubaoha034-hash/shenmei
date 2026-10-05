@@ -1,0 +1,104 @@
+{
+  "schema": "vpd-study-actual-tool-execution/v1",
+  "checked_utc": "2026-10-05T10:23:02.339224+00:00",
+  "imagegen_calls": 0,
+  "business_writer": "ROOT_ONLY",
+  "new_poster_versions": 0,
+  "root_actual_model": "gpt-6.1-sol",
+  "root_actual_reasoning_effort": "xhigh",
+  "requested_preference": "gpt-6.1-sol/max",
+  "root_switched_to_max": false,
+  "maker_and_pixel_reviewers_actual": "gpt-6.1-sol/max",
+  "official_figma_uploads": [
+    {
+      "path": ".liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "bytes": 142983,
+      "http_status": 200,
+      "result": {
+        "success": true,
+        "imageHash": "407d2c50398b3680e0bead4a394bb5c3346ac3ec",
+        "sizeBytes": 142983,
+        "contentType": "image/jpeg",
+        "placedOnNodeId": "413:2"
+      }
+    },
+    {
+      "path": ".liu-visual-private/shanyeji_typography_study_20261005/reconstruction/02_full_final_vector_detail/SHANYEJI_typography_contours.svg",
+      "sha256": "257854cd3b80de51be044ec6e5c0db65ab7144d701fac080cd6f9bac32649f36",
+      "bytes": 326745,
+      "http_status": 200,
+      "result": {
+        "success": true,
+        "imageHash": "944bc34d37421b47bc87425e529ceb9fbfcbffe5",
+        "sizeBytes": 326745,
+        "contentType": "image/svg+xml",
+        "placedOnNodeId": "413:3"
+      }
+    },
+    {
+      "path": ".liu-visual-private/shanyeji_typography_study_20261005/reconstruction/03_soft_foreground_trial/SHANYEJI_soft_foreground_all.png",
+      "sha256": "0c4fb7f9499edc7949f326d70000fc745dbd956a9f7813ddf84df4db6a4f5337",
+      "bytes": 303685,
+      "http_status": 200,
+      "result": {
+        "success": true,
+        "imageHash": "189ae792ef00444fa55690eb4415c1c5f4c296ec",
+        "sizeBytes": 303685,
+        "contentType": "image/png",
+        "placedOnNodeId": "416:271"
+      }
+    }
+  ],
+  "figma_exports": [
+    {
+      "node_id": "412:5",
+      "path": ".liu-visual-private/shanyeji_typography_study_20261005/FIGMA_TYPOGRAPHY_412_5.png",
+      "sha256": "6f23f8fb6a3e1c027d279940af2cd9d87381383c547a2132db932aa60fe29f5b",
+      "bytes": 50023,
+      "dimensions": [
+        960,
+        1280
+      ],
+      "format": "PNG",
+      "reported_provider_size": 50023,
+      "provider_size_equal": true
+    },
+    {
+      "node_id": "416:2",
+      "path": ".liu-visual-private/shanyeji_typography_study_20261005/FIGMA_TYPE_STUDY_S2.png",
+      "sha256": "200619e4ed960f0442b931532c5b595ceb7e5e77360e72e3c5e3b16ec4c31d26",
+      "bytes": 290066,
+      "dimensions": [
+        960,
+        1280
+      ],
+      "format": "PNG",
+      "reported_provider_size": 290066,
+      "provider_size_equal": true
+    }
+  ],
+  "collector": {
+    "source": {
+      "path": "scripts/vpd_collect_reference_study_review.py",
+      "sha256": "403f44ceaf3332b5febd91f8b02d98bcb9d0bc4b102c9dc0aed4d5f11dd900ba"
+    },
+    "actual_run_exit": 0,
+    "actual_runtime_reviewer_id": "01a10b86-f992-7ad0-9eb8-971f3ef200f1",
+    "actual_inputs_seen": 2,
+    "actual_fork_none_verified": true,
+    "first_cli_adaptation_exit": 1,
+    "first_error": "args variable shadowed by tool arguments; fixed CLI namespace, retried once in new directory",
+    "no_new_review_for_collector_repeat": true,
+    "unicode_identifier_negative_control_fix": "Reject JS Unicode/hex escape; actual unchanged S2 trace re-collected once, exit0, two views verified",
+    "exact_view_wrapper_hashes": [
+      "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52",
+      "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130"
+    ],
+    "unknown_wrapper_is_verified": false,
+    "limitations": [
+      "Parent prompt content may be encrypted in runtime log; recorded fork-none + tool input scope not proof of all provider prompt tokens",
+      "Known-wrapper allowlist is scoped to this study; changed/new input wrapper requires explicit review and repinning"
+    ]
+  }
+}
