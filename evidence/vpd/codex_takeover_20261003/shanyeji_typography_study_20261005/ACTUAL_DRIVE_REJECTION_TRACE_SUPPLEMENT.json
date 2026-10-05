@@ -1,0 +1,23 @@
+{
+  "schema": "vpd-actual-drive-refusal-trace/v1",
+  "checked_utc": "2026-10-05T10:49:43.077589+00:00",
+  "source": "Actual parent runtime tool-output records only; no reasoning text selected",
+  "actual_records": [
+    {
+      "recorded_at": "2026-10-05T09:45:16.751Z",
+      "call_id": "call_W6wa9hF7OSpBUXbfGUZAIceZ",
+      "actual_rejection_text": [
+        "This action was rejected due to unacceptable risk.\nReason: 该操作会把包含私有项目参考与重建成果的PNG上传到未明确验证归属的Google Drive目的地；虽有将图片存入Drive的概括授权，但未明确授权该具体敏感文件发往该具体目的地。\nDo not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval."
+      ]
+    },
+    {
+      "recorded_at": "2026-10-05T09:46:29.755Z",
+      "call_id": "call_cdOhZHGQDhr8UNrkEKUYKtjO",
+      "actual_rejection_text": [
+        "This action was rejected due to unacceptable risk.\nReason: 虽已指定项目归档文件夹，但元数据仍显示目的地归属和可见性未验证；上传私有研究PNG的敏感出站仍缺少对该具体目的地的可信授权。\nDo not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval."
+      ]
+    }
+  ],
+  "actual_rejections": 2,
+  "does_not_rewrite_independent_review_limitations": true
+}
