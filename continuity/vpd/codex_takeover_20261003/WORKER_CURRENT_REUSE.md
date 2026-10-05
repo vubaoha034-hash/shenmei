@@ -40,6 +40,7 @@
 | V26 | [完整PNG](https://drive.google.com/file/d/1mF0kYK5Ya22nbzsIY0ElgebMG-n0X4sx/view) | [391:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=391-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V27 | [完整PNG](https://drive.google.com/file/d/1jN8ow06WVOP42wM_e3me7RdLZV159EXS/view) | [395:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=395-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
 | V28 | [完整PNG](https://drive.google.com/file/d/178A_tVfPUW12leyIf4nRyV5kdokWcNJK/view?usp=drivesdk) | [398:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=398-2) | AI_FAIL；技术PASS_WITH_LIMITATIONS；真人PENDING |
+| V29 | [完整PNG](https://drive.google.com/file/d/1HOlv9dQhBLWery2pDFIok_QLAblLsypt/view?usp=drivesdk) | [402:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=402-2) | AI_PASS；技术PASS_WITH_LIMITATIONS；真人PENDING |
 
 同一 work_unit `CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1`，任务 `VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01`。V1–V8真实AI_FAIL；V3真人REJECTED独立保留。当前正式版本、AI结论、唯一下一动作和真人状态以原生锁为准，未看到PASS证据不得称“合格成品”。旧错误摄影绑定的三版全部保留REJECTED，不能与正确摄影续办的版本混淆。
 
@@ -163,3 +164,14 @@ V28仅绑定本版实际封存字形与摄影/品牌源；本版机制：Restore
 
 
 V28 新项目外 Sol/Max 五原图真实冷审 AI_FAIL，隔离和原始像素字节均已核对。主问题为长句尺度分裂、杯茶过重和无效拖尾；原始审稿有顶部贴边的不准确观察，详见本版 REVIEW_LIMITATIONS_AND_NEXT_DESIGN.md，保留原结论并记录分歧。用户已允许改变文案与排版，并明确本次比较的是山野集，Root刚才误认山葵炙。山野集Drive1fG2OQ7IphZfGnH1csu1qZKYCsyAMDOAZ，9a29fbdc…原件已实际HTTP200回读并看图，与仓库旧母图相同，并非缺图。此前山野／慢饮双行稿仅保留私有实验，尚无29正式海报；当前唯一下一步按山野集实际原图与独立诊断重定一个文字系统，再制作并重新冷审。历史版本与原审核参考绑定不回写，后续参考须前瞻绑定；摄影及茶作品牌保持。不能因技术成功推导视觉改善。
+
+
+V29 当前交付入口为 `evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REUSE_METHOD.md`。只以原生锁决定下一动作，旧段落中的历史动作不执行。本版已完成1536×1024茶作完整海报，冻结摄影7fd不改；品牌原7路径仅整体等比放大移位，辅助文案使用未修改Adobe Source Han Serif SC Regular 2.003完整字形，35个字体路径。准确文案、参考山野集9a29、源身份前瞻绑定于ROOT_FROZEN_INPUT_CONTRACT.json；V1–V28及unit默认旧文案/旧参考不回写。原参考并未缺失，此前选错比较对象及把图文关系压缩为笔画接触产品是执行者的问题。
+
+V29 真正项目外全新Sol/Max任务逐一读取P/N/R/S/T五张原图，295839ms，AI_PASS；完整意见与实际原字节传输、隔离边界见pixel_review与ACTUAL_COLD_PIXEL_TRANSPORT_READBACK.json。专业实现审查TECHNICAL_PASS_WITH_LIMITATIONS，真实两个29.0绕过和修复复审保留。AI认为字标可读、层级与杯盘动线成立，仍指出作字内白、小字对比和参考专属性差距；不等于刘先生认可。另一个隐藏编号的V28/V29四图补充对照B_STRONGER，字图关系/接近参考为MIXED；首次路径错误UNABLE_TO_COMPARE和第二turn恢复原审稿均保留，不称该补充对照为项目外冷审。审稿对V28贴顶的错误观察明确排除，不据它证明收益。仅报告这对图片中的局部视觉改进，节时、泛化、迁移及真人认可未验证。
+
+当前Figma402:2有42个独立可编辑VECTOR、0TEXT；原生PNG与登记完整PNG存在10018像素/max33RGB渲染差，两者分别Drive保存。全幅登记source-over重算0RGB，框外1437534和固定产品核心162052均0差。最终、字标、文字系统SVG、原生PNG与未使用透明素材五份Drive原件已HTTP200原字节回读。Root实际Sol/xhigh；制作/审稿实际Sol/Max。最终排版0生图/0生产描摹；本轮另一次四字透明资产生图与描摹NOT_USED完整保留，工具后台具体模型NOT_EXPOSED，不能称本轮总生图为0。
+
+最近站酷专业教程已实际读取编号正文；B站/抖音只取得目录或索引文字，无法播放，已观看视频0。阅读范围、未复制作者字形、适用与未验证边界在v29/tutorial-learning/。教程研究不能归因预先制作的V29改善；后续发现真实缺口才针对性学习，不每轮全量研究。成熟design-critique仅用于审稿框架，FontTools/Source Han Serif用于原字形提取与编排；未找到可声称成熟且适用的中文品牌成品生成skill。摄影成功输入/seed/后台模型仍不全，保存的好照片不是已获得重复生图规则。
+
+AI_PASS后的唯一下一动作是刘先生审核V29完整成品。不得自行制作V30、转第二风格、扩大额度或把整个蒸馏系统标为完成。提交后本版全新读取上下文恢复结果按实际回执保存，未运行前不能宣称已验证。

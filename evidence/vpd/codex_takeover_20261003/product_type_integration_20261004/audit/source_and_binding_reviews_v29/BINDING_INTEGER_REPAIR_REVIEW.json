@@ -1,0 +1,175 @@
+{
+  "schema": "independent-finite-v29-runtime-integer-repair-review/v1",
+  "result": "PASS_TECHNICAL_BINDING_AFTER_INTEGER_REPAIR_WITH_LIMITATIONS",
+  "started_utc": "2026-10-05T06:36:29.724559+00:00",
+  "ended_utc": "2026-10-05T06:37:07.852551+00:00",
+  "elapsed_seconds": 38.125,
+  "original_FAIL_preserved": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/BINDING_INDEPENDENT_AUDIT.json",
+    "sha256": "d71dbdc851bad75a83ccf2334d7e2d7cbdc43b6e07df43e7170f55da7dbb12e4"
+  },
+  "before_source": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/binding-frozen-vpd_registered_type_figma_binding_v29.py",
+    "sha256": "e266306bdfff0f75e818adad5025d11463453b8e439762fbf6f2edc88f79a986"
+  },
+  "actual_repaired_source": {
+    "path": "visual_memory/vpd_registered_type_figma_binding_v29.py",
+    "sha256": "ed30d97c30b8a8cc3e2d775b359e29de26bb5e0a0dd7ac32305fb521966a5886"
+  },
+  "actual_diff": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/ROOT_BINDING_INTEGER_REPAIR.diff",
+    "sha256": "f17c3459654f98849373f729ee43c920c669fd1ffe77e55914935b180cf95820"
+  },
+  "AST_only_change": "Added exact integer type gate to the first runtime_proof require condition; whole remaining module AST equals original.",
+  "unchanged_source_refs": {
+    "visual_memory/vpd_registered_type_figma_binding.py": {
+      "path": "visual_memory/vpd_registered_type_figma_binding.py",
+      "sha256": "fbf1a7c94e4e1462d159749c6c25855be61d174ae130ca29e680b5ee74fb1412"
+    },
+    "visual_memory/vpd_registered_type_composite.py": {
+      "path": "visual_memory/vpd_registered_type_composite.py",
+      "sha256": "ee5540dfbec735c2ea51b380fd3a933a8aa79d6dcf9e91cde12e61917c601489"
+    },
+    "visual_memory/vpd_correct_source_worker.py": {
+      "path": "visual_memory/vpd_correct_source_worker.py",
+      "sha256": "667909c879cdfad2bcbee0445c6b5418a60165b1a689ef9e0e7851f275ca1d49"
+    },
+    "visual_memory/vpd_registered_type_font_layout_v29.py": {
+      "path": "visual_memory/vpd_registered_type_font_layout_v29.py",
+      "sha256": "fbed1c79e47735d24256c8bd63d594c62a355ec8ec30d79d143e3369466fee50"
+    }
+  },
+  "negative_controls": [
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "29.0",
+      "value_type": "float",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "29.0",
+      "value_type": "float",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "'29'",
+      "value_type": "str",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "'29'",
+      "value_type": "str",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "True",
+      "value_type": "bool",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "True",
+      "value_type": "bool",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "False",
+      "value_type": "bool",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "False",
+      "value_type": "bool",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "30",
+      "value_type": "int",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "30",
+      "value_type": "int",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "None",
+      "value_type": "NoneType",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "None",
+      "value_type": "NoneType",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    },
+    {
+      "entry": "direct finite29 runtime_proof",
+      "formal_version_repr": "-1",
+      "value_type": "int",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof"
+    },
+    {
+      "entry": "public runtime_proof",
+      "formal_version_repr": "-1",
+      "value_type": "int",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED"
+    }
+  ],
+  "actual_integer29_runtime_complete_return_unchanged": true,
+  "actual_integrated_binding_complete_return_unchanged": true,
+  "actual_binding_check": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_FIGMA_BINDING_CHECK.json",
+    "sha256": "8186917762b3e94316c872adf996e763f15aa90a52d679ae89f417583d67106c"
+  },
+  "actual_runtime": {
+    "actual_host_read": true,
+    "root_model": "gpt-6.1-sol",
+    "root_effort": "xhigh",
+    "creation_mutation_calls": 2,
+    "capture_read_calls": 16,
+    "download_tool_calls": 1,
+    "code_carrier": "FILE_READ_AND_USE_WITH_ACTUAL_YIELD_WAIT_AND_SAVED_BOUNDED_MCP_RETURNS",
+    "direct_literal_claimed": false,
+    "failed_fullbody_clamp_not_complete": true
+  },
+  "required_remaining_fixes": [],
+  "scope": "Rechecks direct/public version boundary and actual integrated29 return after one gate repair; original full42-curve/six-original/pixel/old-dispatch evidence remains applicable because no other AST or source changed. No aesthetic verdict."
+}

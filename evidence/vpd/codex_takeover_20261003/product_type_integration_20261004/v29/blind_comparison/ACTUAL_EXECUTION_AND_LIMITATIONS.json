@@ -1,0 +1,119 @@
+{
+  "schema": "vpd-actual-supplemental-blind-pair-audit/v1",
+  "agent": "/root/v29_blind_visual_comparison",
+  "actual_child_thread": "01a10adb-07dc-78f3-9f36-28b7966a61b4",
+  "contexts": [
+    {
+      "line": 8,
+      "actual_model": "gpt-6.1-sol",
+      "actual_effort": "max"
+    },
+    {
+      "line": 40,
+      "actual_model": "gpt-6.1-sol",
+      "actual_effort": "max"
+    }
+  ],
+  "calls": [
+    {
+      "line": 11,
+      "name": "exec",
+      "call_id": "call_XWFuyVO9h0ztVkbkjHYrFZ4a",
+      "arguments": "const r = await tools.view_image({ path: \"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/v29-blind-comparison/R.jpg\", detail: \"original\" }); image(r.image_url, \"original\");\n"
+    },
+    {
+      "line": 18,
+      "name": "exec",
+      "call_id": "call_WW58GEAZdoGgvRVwaBSng8X6",
+      "arguments": "const r = await tools.view_image({ path: \"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/v29-blind-comparison/S.png\", detail: \"original\" }); image(r.image_url, \"original\");\n"
+    },
+    {
+      "line": 23,
+      "name": "exec",
+      "call_id": "call_87F06ta2qp1gRRqPUeuEKuQC",
+      "arguments": "const r = await tools.view_image({ path: \"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/v29-blind-comparison/A.png\", detail: \"original\" }); image(r.image_url, \"original\");\n"
+    },
+    {
+      "line": 28,
+      "name": "exec",
+      "call_id": "call_A0TAmTtq2apCU4GEFGpgSfqq",
+      "arguments": "const r = await tools.view_image({ path: \"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/v29-blind-comparison/B.png\", detail: \"original\" }); image(r.image_url, \"original\");\n"
+    },
+    {
+      "line": 43,
+      "name": "exec",
+      "call_id": "call_WP5rKnri6MYo4q0vZlUOKBWj",
+      "arguments": "const r = await tools.view_image({ path: \"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/v29-blind-comparison/B.png\", detail: \"original\" }); image(r.image_url, \"original\");\n"
+    }
+  ],
+  "four_original_images": [
+    {
+      "line": 14,
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "bytes": 142983,
+      "detail": "original"
+    },
+    {
+      "line": 21,
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "bytes": 1735549,
+      "detail": "original"
+    },
+    {
+      "line": 26,
+      "sha256": "c76e13fe04aadc270ed2c0505b8a275500cd1e3df8915fddd78094f2405da205",
+      "bytes": 1801347,
+      "detail": "original"
+    },
+    {
+      "line": 46,
+      "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4",
+      "bytes": 1808415,
+      "detail": "original"
+    }
+  ],
+  "source_bindings": {
+    "schema": "vpd-supplemental-blind-serial-pair-bindings/v1",
+    "rows": [
+      {
+        "neutral_id": "R",
+        "path": ".liu-visual-private/v29-blind-comparison/R.jpg",
+        "source_path": ".liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+        "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+      },
+      {
+        "neutral_id": "S",
+        "path": ".liu-visual-private/v29-blind-comparison/S.png",
+        "source_path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+        "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+      },
+      {
+        "neutral_id": "A",
+        "path": ".liu-visual-private/v29-blind-comparison/A.png",
+        "source_path": ".liu-visual-private/correct_source_typography/v28/poster.png",
+        "sha256": "c76e13fe04aadc270ed2c0505b8a275500cd1e3df8915fddd78094f2405da205"
+      },
+      {
+        "neutral_id": "B",
+        "path": ".liu-visual-private/v29-blind-comparison/B.png",
+        "source_path": ".liu-visual-private/correct_source_typography/v29/poster.png",
+        "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4"
+      }
+    ],
+    "A_formal_version": 28,
+    "B_formal_version": 29,
+    "formal_projectless_review_unchanged": true,
+    "new_formal_versions": 0
+  },
+  "first_turn_path_failure_preserved": true,
+  "second_turn_authorized_only_one_corrected_B_read": true,
+  "formal_projectless_review_replaced": false,
+  "original_projectless_AI_PASS_unchanged": true,
+  "limitations": [
+    "Two turns, not a single-turn projectless cold review. No creator score, expected verdict or human test verdict supplied.",
+    "Reviewer describes A brand as tight to top edge; actual V28 brand x285,y198,width205 contradicts this. Keep original observation but exclude that claim from gain evidence.",
+    "Pair supports B stronger brand recognition/read order/product space; image-text relation and closeness to R are MIXED. No time savings, human acceptance or transfer capability inferred.",
+    "V29 predates latest tutorial research; no causal improvement attributed to newly read tutorials."
+  ],
+  "recorded_at": "2026-10-05T07:28:23.163633+00:00"
+}

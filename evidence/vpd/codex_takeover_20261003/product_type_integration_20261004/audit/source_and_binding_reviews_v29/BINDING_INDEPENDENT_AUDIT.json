@@ -1,0 +1,519 @@
+{
+  "schema": "independent-v29-font-binding-challenge/v1",
+  "started_utc": "2026-10-05T06:31:55.715087+00:00",
+  "result": "FAIL_TECHNICAL_BINDING_GAP",
+  "findings": [
+    {
+      "label": "direct finite29 runtime proof formal_version 29.0",
+      "severity": "bounded validation gap",
+      "actual_result": "accepted"
+    }
+  ],
+  "negative_controls": [
+    {
+      "label": "public runtime_proof formal_version 30",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "int",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version 29.0",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "float",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version '29'",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "str",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version True",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "bool",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version False",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "bool",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version None",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "NoneType",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime_proof formal_version -1",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "ACTUAL_RUNTIME_EVIDENCE_REQUIRED",
+      "value_type": "int",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime evidence altered root_model",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime evidence altered root_effort",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime evidence altered code_carrier",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "public runtime evidence altered actual_native_export_ref",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: fixed actual V29 runtime proof",
+      "guard_scope": "real public API"
+    },
+    {
+      "label": "direct finite29 verifier registration 30",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: finite actual V29 binding only; unknown30/default rejected",
+      "guard_scope": "real finite29 API, private actual bytes"
+    },
+    {
+      "label": "direct finite29 verifier registration 29.0",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: finite actual V29 binding only; unknown30/default rejected",
+      "guard_scope": "real finite29 API, private actual bytes"
+    },
+    {
+      "label": "direct finite29 verifier registration '29'",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: finite actual V29 binding only; unknown30/default rejected",
+      "guard_scope": "real finite29 API, private actual bytes"
+    },
+    {
+      "label": "direct finite29 verifier registration True",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: finite actual V29 binding only; unknown30/default rejected",
+      "guard_scope": "real finite29 API, private actual bytes"
+    },
+    {
+      "label": "direct finite29 verifier registration None",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "REQUIRED_ACTUAL_DATA: finite actual V29 binding only; unknown30/default rejected",
+      "guard_scope": "real finite29 API, private actual bytes"
+    },
+    {
+      "label": "direct finite29 runtime proof formal_version 29.0",
+      "accepted": true,
+      "guard_scope": "direct finite29 helper API, original authentic other inputs",
+      "return_keys": [
+        "actual_host_read",
+        "capture_read_calls",
+        "code_carrier",
+        "creation_mutation_calls",
+        "direct_literal_claimed",
+        "download_tool_calls",
+        "failed_fullbody_clamp_not_complete",
+        "root_effort",
+        "root_model"
+      ]
+    },
+    {
+      "label": "font removed Y reflection",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "font X reflection",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "font uniform scale",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "font shear",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "font rotation",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "brand Y reflection",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_NATIVE_TRANSFORM_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "native font curve shape changed",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "FIGMA_GLYPH_TOPOLOGY_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "native font fill changed",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_EXACT_FOUR_REGISTERED_FILLS_REQUIRED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "original photo saturation changed",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_ORIGINAL_PHOTO_FILL_CHANGED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "brand/title painter order swapped",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_COMPLETE_ORDERED_LAYER_SUBTREE_REQUIRED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "font group child order swapped",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_COMPLETE_ORDERED_LAYER_SUBTREE_REQUIRED",
+      "guard_scope": "isolated inner geometry guards; only CAPTURE equality bypassed"
+    },
+    {
+      "label": "official downloaded figma-source-0.png one-byte tamper",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_OFFICIAL_PNG_RUNTIME_MISMATCH",
+      "guard_scope": "real complete six-original geometry API"
+    },
+    {
+      "label": "official downloaded figma-raw.png one-byte tamper",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_OFFICIAL_PNG_RUNTIME_MISMATCH",
+      "guard_scope": "real complete six-original geometry API"
+    },
+    {
+      "label": "official headline SVG altered fill",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_OFFICIAL_BYTES_LENGTH_CHANGED",
+      "guard_scope": "real API; original metadata catches altered byte length before inner SVG guards"
+    },
+    {
+      "label": "official headline SVG altered curve",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_OFFICIAL_BYTES_LENGTH_CHANGED",
+      "guard_scope": "real API; original metadata catches altered byte length before inner SVG guards"
+    },
+    {
+      "label": "official headline SVG altered viewport",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "V29_OFFICIAL_ROLE_VIEWPORT_CHANGED",
+      "guard_scope": "real API; original metadata catches altered byte length before inner SVG guards"
+    }
+  ],
+  "legacy_dispatch": {
+    "all_old_module_AST_equal_after_removing_two_integer29_branches": true,
+    "actual_new_branches": {
+      "runtime_proof": "if type(evidence.get('formal_version')) is int and evidence['formal_version'] == 29:\n    from visual_memory.vpd_registered_type_figma_binding_v29 import runtime_proof as v29_runtime\n    return v29_runtime(root, evidence)",
+      "verify_actual_binding": "if type(version) is int and version == 29:\n    from visual_memory.vpd_registered_type_figma_binding_v29 import verify_actual_binding as v29_binding\n    return v29_binding(root, registration_ref, runtime_evidence_ref, download_readback_ref)"
+    },
+    "actual_historical_bindings": [
+      {
+        "version": 22,
+        "complete_binding_return_equal": true,
+        "prior_independent_return": {
+          "path": ".liu-visual-private/v29-font-source-fresh-challenger/legacy/v22-returns.json",
+          "sha256": "1ad25f35d57a2419d83613d5f8af95f8d474cb74425d9c20f68bc5bce9336ccb"
+        }
+      },
+      {
+        "version": 28,
+        "complete_binding_return_equal": true,
+        "prior_independent_return": {
+          "path": ".liu-visual-private/v29-font-source-fresh-challenger/legacy/v28-returns.json",
+          "sha256": "228f5331e142bb13372137557ae275a8f085fab78519a6fdb0e6ee7c44d9e095"
+        }
+      }
+    ]
+  },
+  "scope": "Technical source/actual local runtime/native vectors/official downloads/pixels. No aesthetic verdict.",
+  "source_refs": {
+    "visual_memory/vpd_registered_type_figma_binding.py": {
+      "path": "visual_memory/vpd_registered_type_figma_binding.py",
+      "sha256": "fbf1a7c94e4e1462d159749c6c25855be61d174ae130ca29e680b5ee74fb1412"
+    },
+    "visual_memory/vpd_registered_type_figma_binding_v29.py": {
+      "path": "visual_memory/vpd_registered_type_figma_binding_v29.py",
+      "sha256": "e266306bdfff0f75e818adad5025d11463453b8e439762fbf6f2edc88f79a986"
+    },
+    "visual_memory/vpd_registered_type_composite.py": {
+      "path": "visual_memory/vpd_registered_type_composite.py",
+      "sha256": "ee5540dfbec735c2ea51b380fd3a933a8aa79d6dcf9e91cde12e61917c601489"
+    },
+    "visual_memory/vpd_correct_source_worker.py": {
+      "path": "visual_memory/vpd_correct_source_worker.py",
+      "sha256": "667909c879cdfad2bcbee0445c6b5418a60165b1a689ef9e0e7851f275ca1d49"
+    },
+    "visual_memory/vpd_registered_type_font_layout_v29.py": {
+      "path": "visual_memory/vpd_registered_type_font_layout_v29.py",
+      "sha256": "fbed1c79e47735d24256c8bd63d594c62a355ec8ec30d79d143e3369466fee50"
+    }
+  },
+  "prior_source_review": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/SOURCE_REPAIR_REVIEW.json",
+    "sha256": "4ac5621cfc901823f69f4334ad0a3ba1b6739318b7939c899076fdaf51f23098"
+  },
+  "input_refs": {
+    "registration": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_COMPOSITE.json",
+      "sha256": "c8aacd383af72d220a0a37d5d426e829bebc733ad7cbe1a59e6a01833bdbdd04"
+    },
+    "runtime_evidence": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/FIGMA_BINDING_RUNTIME_EVIDENCE.json",
+      "sha256": "413a0e4ea0727355deaa866340db55d1f70faca135d6e96a8092a726d19f73a6"
+    },
+    "capture": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/FIGMA_NATIVE_CAPTURE.json",
+      "sha256": "3754482f93034d7cf46842376fad0c0055517de5a2bb97c22a9bbb0fa1e39847"
+    },
+    "runtime_binding_result": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/FIGMA_RUNTIME_BINDING_RESULT.json",
+      "sha256": "5c9d1fce4cb13b97df17c8ed325c228dd91fbb22216b52b5e54e63c92e51c19d"
+    },
+    "creation_runtime_evidence": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/CREATION_RUNTIME_EVIDENCE.json",
+      "sha256": "9dd9e897c709f99a8660218206e56f710c7bd62bf66c35f2a666314c45d48c2b"
+    },
+    "official_full_MCP_download": {
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-download-tool-result.json",
+      "sha256": "b2e0cde4e70b695f7c6271ab3289127b76d827903bfe8315d8c7e7fb89bd4cc1"
+    },
+    "original_HTTP_receipt": {
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-official-raw-download-readback.json",
+      "sha256": "9a6dd79b2f3b9b1b5146f0ca5d469ef30c4168d86589173c8ff819417bbe55a8"
+    },
+    "role_download_readback": {
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-download-readback.json",
+      "sha256": "ac50dbfa9068c32af7c856487714629decbba089dd39a352c3a3ede573bb039b"
+    },
+    "actual_binding_check": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_FIGMA_BINDING_CHECK.json",
+      "sha256": "8186917762b3e94316c872adf996e763f15aa90a52d679ae89f417583d67106c"
+    },
+    "actual_composite_check": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_COMPOSITE_CHECK.json",
+      "sha256": "5fee36b9d67fa6fe64151cde8c647d48b594993f759f8635545f20a88792c70f"
+    },
+    "frozen_input_contract": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/ROOT_FROZEN_INPUT_CONTRACT.json",
+      "sha256": "868ba406085d69bf4919420e551977e690e6817789e651c49d113ab40c7bb2e5"
+    }
+  },
+  "elapsed_seconds": 47.39100000000326,
+  "actual_binding_return_ref": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/BINDING_RECOMPUTED_ACTUAL_RETURN.json",
+    "sha256": "0df51db0632a07a8a5c025427c48e5c77f44fce21b7894e58846f6ae4d5f6cdd"
+  },
+  "actual_binding_complete_return_equal": true,
+  "actual_runtime": {
+    "actual_host_read": true,
+    "root_model": "gpt-6.1-sol",
+    "root_effort": "xhigh",
+    "creation_mutation_calls": 2,
+    "capture_read_calls": 16,
+    "download_tool_calls": 1,
+    "code_carrier": "FILE_READ_AND_USE_WITH_ACTUAL_YIELD_WAIT_AND_SAVED_BOUNDED_MCP_RETURNS",
+    "direct_literal_claimed": false,
+    "failed_fullbody_clamp_not_complete": true
+  },
+  "actual_composite_return_ref": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/COMPOSITE_RECOMPUTED_ACTUAL_RETURN.json",
+    "sha256": "f41c9951d46700a7ef183353eba2240b7560a5e6dbb3912387206dc1038704e5"
+  },
+  "actual_composite_complete_return_equal": true,
+  "actual_pixel_comparison": {
+    "schema": "vpd-registered-type-composite-check/v1",
+    "formal_version": 29,
+    "registration": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_COMPOSITE.json",
+      "sha256": "c8aacd383af72d220a0a37d5d426e829bebc733ad7cbe1a59e6a01833bdbdd04"
+    },
+    "source": {
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+    },
+    "final": {
+      "path": ".liu-visual-private/correct_source_typography/v29/poster.png",
+      "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4"
+    },
+    "whole_frame_expected": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "alpha_zero_source": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "alpha_positive_expected": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "core_pixels": 162052,
+    "core_alpha_zero_pixels": 162052,
+    "core_alpha_positive_pixels": 0,
+    "core_alpha_zero_source": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "core_alpha_positive_expected": {
+      "pixels": 0,
+      "max_channel_difference": 0
+    },
+    "figma_authenticity_verified_offline": false,
+    "aesthetic_pass_claimed": false,
+    "figma_raw": {
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-raw.png",
+      "sha256": "c070121c5fddf588bcbd103aacd2934f4428912baa228525a8518335cb833a5b"
+    },
+    "figma_raw_to_final": {
+      "pixels": 10018,
+      "max_channel_difference": 33
+    },
+    "figma_raw_color_metadata": {
+      "srgb": 0,
+      "gamma": 0.45455
+    },
+    "figma_difference_semantics": "Stored 8-bit RGB channels; raw Figma color metadata recorded separately; no ICC perceptual equivalence claimed.",
+    "figma_raw_bytes_equal_final": false
+  },
+  "decoded_pixels": {
+    "expected_RGB_sha256": "03cbde45f655405e4ad06728f2f5d143fdd92f0f8c86b1f4e62a098d9f9ba74b",
+    "overlay_RGBA_sha256": "568294f138b6e2a883ed411a7002ac1fd076a23af30ee2f71f3e4e3dd266ccb7",
+    "overlay_alpha_sha256": "0e670c3717590ac25b1f2f1242b920b123fde23bdabfdbd760f11c9d8e29d28a",
+    "overlay_alpha_bbox": [
+      140,
+      100,
+      530,
+      447
+    ]
+  },
+  "official_original_photo_byte_equal": true,
+  "independent_raw_curve_recompute": {
+    "paths": 42,
+    "coordinates_compared": 8854,
+    "max_absolute_coordinate_difference": 1.8707275444285187e-05,
+    "max_shape_coordinate_difference": 1.5006025975594639e-05,
+    "mirrored_font_vector_count": 35,
+    "non_font_vector_count": 7,
+    "fills": [
+      "#BE9861",
+      "#C1C6B1",
+      "#E5E4D4",
+      "#F5F2E6"
+    ],
+    "group_semantics": "GROUP child coordinates already use containing FRAME coordinates; GROUP translation is not accumulated twice.",
+    "source_font_paths": {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/headline.svg",
+      "sha256": "91fd53825b9bf8cacd48aa69753dedab6c13d90676d3f8096e1e83545a0b6a31"
+    }
+  },
+  "actual_official_assets": [
+    {
+      "name": "figma-raw.png",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-raw.png",
+      "sha256": "c070121c5fddf588bcbd103aacd2934f4428912baa228525a8518335cb833a5b",
+      "bytes": 2058457,
+      "http_status": 200,
+      "role": "raw"
+    },
+    {
+      "name": "figma-source-0.png",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-source-0.png",
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "bytes": 1735549,
+      "http_status": 200,
+      "role": "source"
+    },
+    {
+      "name": "figma-vector-0.svg",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-vector-0.svg",
+      "sha256": "ca30a9f143649fbbea08b82c8adc1454ded39797c883a058e1cffe061d2aa5c9",
+      "bytes": 14455,
+      "http_status": 200,
+      "role": "description"
+    },
+    {
+      "name": "figma-vector-1.svg",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-vector-1.svg",
+      "sha256": "e3def9120c280adb72f367084298ab417475e7733fa6acb2995ab375ebdc2ce0",
+      "bytes": 39463,
+      "http_status": 200,
+      "role": "brand"
+    },
+    {
+      "name": "figma-vector-2.svg",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-vector-2.svg",
+      "sha256": "b0ceb57e1f3f59a493e3ccdc901c5687d5a5aaeb55906da2d8823cbf410f85d6",
+      "bytes": 6823,
+      "http_status": 200,
+      "role": "english_hint"
+    },
+    {
+      "name": "figma-vector-3.svg",
+      "path": ".liu-visual-private/correct_source_typography/v29/figma-vector-3.svg",
+      "sha256": "0794abaf22a0189c4f02b24de13765353e28f76fabf7cee01783f2483224d259",
+      "bytes": 5695,
+      "http_status": 200,
+      "role": "headline"
+    }
+  ],
+  "source_snapshot_unchanged": true,
+  "ended_utc": "2026-10-05T06:32:43.103451+00:00"
+}

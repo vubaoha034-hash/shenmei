@@ -1,0 +1,59 @@
+{
+  "schema": "vpd-actual-registered-type-figma-check/v1",
+  "result": "PASS_ACTUAL_BINDING_WITH_RENDERER_LIMITATIONS",
+  "formal_version": 29,
+  "registration": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_COMPOSITE.json",
+    "sha256": "c8aacd383af72d220a0a37d5d426e829bebc733ad7cbe1a59e6a01833bdbdd04"
+  },
+  "runtime_evidence": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/FIGMA_BINDING_RUNTIME_EVIDENCE.json",
+    "sha256": "413a0e4ea0727355deaa866340db55d1f70faca135d6e96a8092a726d19f73a6"
+  },
+  "download_readback": {
+    "path": ".liu-visual-private/correct_source_typography/v29/figma-download-readback.json",
+    "sha256": "ac50dbfa9068c32af7c856487714629decbba089dd39a352c3a3ede573bb039b"
+  },
+  "runtime": {
+    "actual_host_read": true,
+    "root_model": "gpt-6.1-sol",
+    "root_effort": "xhigh",
+    "creation_mutation_calls": 2,
+    "capture_read_calls": 16,
+    "download_tool_calls": 1,
+    "code_carrier": "FILE_READ_AND_USE_WITH_ACTUAL_YIELD_WAIT_AND_SAVED_BOUNDED_MCP_RETURNS",
+    "direct_literal_claimed": false,
+    "failed_fullbody_clamp_not_complete": true
+  },
+  "capture": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/FIGMA_NATIVE_CAPTURE.json",
+    "sha256": "3754482f93034d7cf46842376fad0c0055517de5a2bb97c22a9bbb0fa1e39847"
+  },
+  "frame_id": "402:2",
+  "photo_node_id": "402:3",
+  "source": {
+    "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+    "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618"
+  },
+  "raw_figma_export": {
+    "path": ".liu-visual-private/correct_source_typography/v29/figma-raw.png",
+    "sha256": "c070121c5fddf588bcbd103aacd2934f4428912baa228525a8518335cb833a5b"
+  },
+  "node_count": 52,
+  "vector_count": 42,
+  "geometry": {
+    "paths": 42,
+    "coordinates_compared": 8854,
+    "max_absolute_coordinate_difference": 1.8707275444285187e-05,
+    "max_shape_coordinate_difference": 1.5006025975594639e-05
+  },
+  "registered_path_fill_RGB_tolerance": 0,
+  "native_png_equals_registered_final_required": false,
+  "aesthetic_pass_claimed": false,
+  "limitations": [
+    "Figma native PNG and registered Sharp/Pillow final use different renderers.",
+    "Actual local host, yielded waits and saved bounded returns are required.",
+    "Complete chunk data was saved within real MCP batch loops; host output is metadata.",
+    "Only this actual font-layout V29 profile is accepted; V30 and later fail closed."
+  ]
+}

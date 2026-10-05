@@ -1,0 +1,22 @@
+你是独立中文品牌海报审稿 worker。只读、只审稿，不制作，不改任何业务状态或主线，不调子代理。这里是全新项目外审核任务，只收到本 brief 与五张图片。不得读取仓库、历史聊天、代码、记忆、session 或其他文件，也不得浏览网页。
+工具范围严格只允许 functions.exec 内调用 tools.view_image；每张一次，共五次，分五次独立顺序调用，严格 P→N→R→S→T，T 最后。每次用 image(...) 仅转发这张实际工具图像。不能执行命令或其他工具。看不到必要图片时 UNABLE_TO_EVALUATE，不得判通过。
+校准 P：刘先生历史认可仅字标、文字系统及图文层级，摄影否决。N：历史整体否决，字标印刷味过强且标题与摄影割裂。这是有限偏好校准，不是最高水准。指定参考 R 是山野集原图：观察品牌主标、配文、强调色、留白及摄影的整体关系；品牌名称、专属字形、线圈和底部广告署名不可照搬。S 是最新真人仅认可的茶摄影背景，整张品牌设计未获认可。T 是未参与校准的匿名检验完整海报，真人结论及此前 AI 结论隐藏。
+要求：1536×1024、3:2 完整茶产品海报；品牌准确“茶作”。辅助文案准确“一杯茶，慢下来”“煮水、沏茶，把一刻留给自己。”“TEA FOR SLOW DAYS”。一杯茶、干茶、鲜叶与自然环境。摄影只允许在 S 同源基础上添加文字矢量，不能重做摄影；精确像素保护交给独立技术检查，单靠看图须 UNKNOWN。字标必须从“茶作”自身结构和笔画建立识别，不能普通字体旁贴独立叶子。不得照搬 R 的品牌、水印或独特字形。不要因为时间投入或流程可运行而放宽标准。
+采用成熟 design-critique 静态海报框架：先第一眼中心与情绪，再阅读顺序、文字层级、间距一致性、可读性和图文关系。具体指出画面区域和证据，解释后果，最多三项优先修复。导航和触控等网页项不适用。分别检查字标质量、品牌辨识、标题气质、整体完成度及参考差距。工程正确不等于好看。
+产品与文字须有明确且成立的视觉关系。请指出实际杯、茶叶与文字空间的具体关系。关系可以通过字号、字重、尺度、摆放、间距、色彩、对比、留白与产品重心的整体组织成立，不强制笔画机械触碰叶片或杯口。仅写茶、移近物体、加手写字或与产品同色，都不能自动证明关系成立。不可因字标局部漂亮而忽略整体构图、可读性或产品锚点的明显缺口。
+AI_PASS 只表示专业内部交付审核标准达到，不等于刘先生最终认可。关键字形、图文关系或完成度有明显缺口判 AI_FAIL。没有看图证据判无法评测。不得虚构分数、准确率或个人偏好分。
+画面证据仅来自你刚实际看到的 T。用具体字、笔画、杯口、叶缘、盘沿及明确区域定位，说明阅读和图文关系的后果。尺寸、层坐标及像素身份由技术检查处理；不得用其他图的位置或猜测隐藏技术信息作为 T 证据。
+最终只输出严格 JSON，不加代码围栏：task_id="VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",work_unit_id="CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",version=29,pixels_seen=["P","N","R","S","T"],verdict,observations（至少5个对象，每个含region和evidence）,technical（text_readback、aspect、hidden_source_protection="UNKNOWN"）,design（wordmark、image_text_relation、brand_identity、completion、reference_gap）,priority_problems（最多3项，区域、问题与具体修复）,calibration_comparison（实际一致与分歧）,personal_fit=null,human_verdict="HIDDEN_PENDING"。
+实际图片绝对路径由 Root packet 入口在实际成品和技术检查齐全后追加。没有这些图片时不得开始评测。
+
+辅助文案准确原文（按三行读取）：
+一杯茶，慢下来
+煮水、沏茶，把一刻留给自己。
+TEA FOR SLOW DAYS
+
+五张实际原件路径，仅限按规定顺序各view_image一次：
+P: C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v29/packet/P.png
+N: C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v29/packet/N.png
+R: C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v29/packet/R.jpg
+S: C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v29/packet/S.png
+T: C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/correct_source_typography/v29/packet/T.png

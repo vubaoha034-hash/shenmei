@@ -1,0 +1,2357 @@
+{
+  "schema": "vpd-professional-v29-source-technical-audit/v1",
+  "formal_version": 29,
+  "role": "INDEPENDENT_PRODUCTION_SOURCE_TECHNICAL_AUDITOR",
+  "completed_source_subset_utc": "2026-10-05T04:52:21.926815+00:00",
+  "overall_status": "INCONCLUSIVE",
+  "overall_scope": "字体、品牌矢量和认可摄影的本地制作链已独立实测；本段不是项目外冷审，不给最终审美通过。缺少v29真实Figma节点/导出运行证据，不能据本段判完整技术通过。",
+  "scope_status": {
+    "exact_source_identity_and_geometry": "PASS",
+    "independent_current_font_and_raster_probe": "PASS",
+    "source_photography_pixel_preservation": "PASS",
+    "historical_original_maker_host_tool_call": "PASS_FOR_ORIGINAL_LOCAL_MAKER_CALL",
+    "native_figma_node_and_runtime": "UNKNOWN",
+    "final_aesthetic_cold_review": "NOT_EVALUATED",
+    "human_final_acceptance": "NOT_EVALUATED"
+  },
+  "final_AI_PASS_claimed": false,
+  "complete_technical_PASS_claimed": false,
+  "review_independence": {
+    "did_not_read_old_reviews_or_target_verdicts": true,
+    "read_project_entrypoints_for_instruction_only": [
+      "START_HERE.md",
+      "AGENTS.md",
+      "AESTHETIC_SKILL_DESIGN_CHARTER.md"
+    ],
+    "read_actual_frozen_contract_and_all_public_production_files": true,
+    "read_source_provenance_only_for_indirect_font_license_dependency": "v21/ASSET_PROVENANCE.json; font_foundation/font_license/font_upstream_commit fields only used",
+    "did_not_import_or_execute_maker_scripts": true,
+    "no_recursive_agents": true,
+    "no_business_state_shared_code_Git_Figma_or_Drive_writes": true,
+    "allowed_outputs": [
+      ".liu-visual-private/v29-source-prof-audit/",
+      "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/audit/PROFESSIONAL_V29_SOURCE_TECHNICAL.json"
+    ]
+  },
+  "auditor_host_inference_context": {
+    "host_thread_id": "01a10a5a-225c-7f21-b806-6ae21326082d",
+    "host_turn_id": "01a10a5a-2303-7481-943f-e9d0f53be422",
+    "observed_model": "gpt-6.1-sol",
+    "observed_effort": "max",
+    "basis": "Own CODEX_THREAD_ID exact session match; only last turn_context model/effort/collaboration_mode fields read, no creative reasoning or other conversation bodies.",
+    "session_path": "C:/Users/Administrator/.codex/sessions/2026/10/05/rollout-2026-10-05T12-37-21-01a10a5a-225c-7f21-b806-6ae21326082d.jsonl",
+    "does_not_retroactively_bind_maker_inference": true
+  },
+  "path_correction": {
+    "first_requested_path": ".private/shanyeji-v29-production/poster.png",
+    "first_view_result": "File not found; no image viewed through that path.",
+    "actual_producer_path": ".liu-visual-private/shanyeji-v29-production/poster.png",
+    "correction_authorized_by_parent": true,
+    "audit_private_directory": ".liu-visual-private/v29-source-prof-audit",
+    "incorrect_private_directory_created": false
+  },
+  "actual_image_observation": [
+    {
+      "role": "M",
+      "path": ".liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "view_tool": "tools.view_image",
+      "detail": "original",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "pixels_viewed": true
+    },
+    {
+      "role": "S",
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "view_tool": "tools.view_image",
+      "detail": "original",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "pixels_viewed": true
+    },
+    {
+      "role": "actual_v29_trial",
+      "path": ".liu-visual-private/shanyeji-v29-production/poster.png",
+      "view_tool": "tools.view_image",
+      "detail": "original",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "pixels_viewed": true
+    }
+  ],
+  "frozen_contract": {
+    "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\ROOT_FROZEN_INPUT_CONTRACT.json",
+    "bytes": 9986,
+    "sha256": "868ba406085d69bf4919420e551977e690e6817789e651c49d113ab40c7bb2e5"
+  },
+  "frozen_source_identity_measurements": [
+    {
+      "role": "reference",
+      "path": ".liu-visual-private\\product-type-integration-20261004\\SHANYEJI-canonical-readback-20261005.jpg",
+      "bytes": 142983,
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "role": "photography",
+      "path": ".liu-visual-private\\source_recovery_20261003\\photography-local-reconstruction-final.png",
+      "bytes": 1735549,
+      "sha256": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "role": "brand_source",
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v21\\brand.svg",
+      "bytes": 39038,
+      "sha256": "dd8e9e899393dc36eb3f5b1652bdbb740787d41a108ea6aa1eae05cb1368b1ff",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "role": "font",
+      "path": "evidence\\vpd\\codex_takeover_20261003\\skill_research\\fonttools_bounded_probe_v1\\upstream\\adobe-fonts\\source-han-serif\\OTF\\SimplifiedChinese\\SourceHanSerifSC-Regular.otf",
+      "bytes": 24543332,
+      "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "role": "brand_layer",
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\brand.svg",
+      "bytes": 39149,
+      "sha256": "e9338ca1f4bb1016e24d524c21113481e405a3be1f4d6de0cb46e9d6833b3054",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "role": "headline_layer",
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\headline.svg",
+      "bytes": 19079,
+      "sha256": "91fd53825b9bf8cacd48aa69753dedab6c13d90676d3f8096e1e83545a0b6a31",
+      "hash_matches": true,
+      "bytes_match": true
+    }
+  ],
+  "public_production_files_fully_read": [
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\brand-source-evidence.json",
+      "bytes": 40623,
+      "sha256": "d84e8f8430278cf8755e38079029a4a52b425f1e656993704503e50aaa7e1907",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\brand.svg",
+      "bytes": 39149,
+      "sha256": "e9338ca1f4bb1016e24d524c21113481e405a3be1f4d6de0cb46e9d6833b3054",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\build_v29.py",
+      "bytes": 23944,
+      "sha256": "6388262373a6800904f64965a5057b4d803bb079f4dc36887fb75c11ef88b470",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\finalize_receipt.py",
+      "bytes": 3841,
+      "sha256": "04a40a30c7290af0b98d5a6a8e2da1abe24cb1d3508f9a7a06d7cbf3c3ee6472",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\font-license-OFL1.1.txt",
+      "bytes": 4463,
+      "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\glyph-evidence.json",
+      "bytes": 240771,
+      "sha256": "58b840b3425ef203e2e8a8f7668469489f2894d698f471e2b1f7cd2bf55651fd",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\headline.svg",
+      "bytes": 19079,
+      "sha256": "91fd53825b9bf8cacd48aa69753dedab6c13d90676d3f8096e1e83545a0b6a31",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\manifest.json",
+      "bytes": 9228,
+      "sha256": "ddd537a708423293c8b8c8db9528a20ff54126a7068c2a513a3d061c5c375c65",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\method-sources.json",
+      "bytes": 2865,
+      "sha256": "a0497d36d558477eaeb24ed8ee4eafbe24ff085580f6911e5def2c18bd0456de",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\pixel-protection.json",
+      "bytes": 1165,
+      "sha256": "151bf026a7c0e4c8e6b9b92897aa4b6fa2d76af7f36b0df8809f423aa8f21a78",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\render_svg.cjs",
+      "bytes": 1655,
+      "sha256": "af42bd985d921862b15b53451fbc821af5199776fbbfbb3d588e59230f525ff6",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\renderer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\renderer-stdout.json",
+      "bytes": 2077,
+      "sha256": "6395790bcd69b2370bed0fb4bd9692fb3fb0a936a88314dfb355cb5c96c288cb",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\runtime-and-invocation.json",
+      "bytes": 5370,
+      "sha256": "14612a9db91837394a4c72508836ce8243cfe465680de70f6314c94eaff81608",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\typography.svg",
+      "bytes": 58068,
+      "sha256": "9ef3735e41972c5ccce30889d0f0570ce9e1299b715b42a621b83cadecf738c5",
+      "whole_file_decoded_and_parsed": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\worker-call-evidence.json",
+      "bytes": 2762,
+      "sha256": "958330da603a6c7a15d1b94ddaa111776451cfc002e8a4f9b542a68e2cca1754",
+      "whole_file_decoded_and_parsed": true
+    }
+  ],
+  "public_contract_hash_checks": [
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\brand-source-evidence.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\brand.svg",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\build_v29.py",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\finalize_receipt.py",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\font-license-OFL1.1.txt",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\glyph-evidence.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\headline.svg",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\manifest.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\method-sources.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\pixel-protection.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\render_svg.cjs",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\renderer-stderr.txt",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\renderer-stdout.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\runtime-and-invocation.json",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\typography.svg",
+      "hash_matches": true,
+      "bytes_match": true
+    },
+    {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\worker-call-evidence.json",
+      "hash_matches": true,
+      "bytes_match": true
+    }
+  ],
+  "original_producer_private_asset_checks": [
+    {
+      "asset": "brand.svg",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "headline.svg",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "typography.svg",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "glyph-evidence.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "pixel-protection.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "brand-source-evidence.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "method-sources.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "runtime-and-invocation.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "poster.png",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "brand-render.png",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "headline-render.png",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "typography-overlay.png",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "renderer-stdout.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "renderer-stderr.txt",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "font-license-OFL1.1.txt",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "build_v29.py",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "render_svg.cjs",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "worker-call-evidence.json",
+      "hash_match": true,
+      "bytes_match": true
+    },
+    {
+      "asset": "finalize_receipt.py",
+      "hash_match": true,
+      "bytes_match": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "brand_preservation",
+      "status": "PASS",
+      "basis": "实际逐路径/逐属性及整段SVG字符串对比、实际独立渲染",
+      "finding": "7条继承茶作路径的d、fill、原局部transform及全部attrs原样保留。原SVG内部整段字节文本保留，唯一新增外层是整体均匀缩放和平移；没有单独重新摆放其中叶形/轮廓。",
+      "evidence": {
+        "source_compound_path_count": 7,
+        "output_path_count": 7,
+        "source_inner_verbatim_in_brand": true,
+        "source_inner_verbatim_in_combined": true,
+        "only_added_outer_matrix": [
+          0.230196455961,
+          0.0,
+          0.0,
+          0.230196455961,
+          140.0,
+          100.0
+        ],
+        "independent_expected_matrix": [
+          0.23019645596052996,
+          0,
+          0,
+          0.23019645596052996,
+          140,
+          100
+        ],
+        "outer_matrix_matches": true,
+        "uniform_transform": true,
+        "path_records": [
+          {
+            "id": "original-alpha-contour-0",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "2487ff5b07ff80cd1cca1d038f33448b6d255c8058ba808f73cbf63804ffcdc3",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(635.32421875,105.5234375)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-1",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "053d622522fe43a1bc929fea56910653cc4ceb2703eec1455e82b851bdefdde4",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(1144,184)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-2",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "b6ad3732c0e8920a4f6e057afa700a9fef94d99face708f0ffa116ebc74e66a5",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(1315.9375,111.375)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-4",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "53d2aafa281f507860faee4bd60695a88494c13b31efd975a9babfecd1c2ee3f",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(556.95703125,380.96484375)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-6",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "7faa74b1bdbf77c96a176cb1de5f27c93891e1d574c3b7772dfc22ba5673c7f1",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(1398.5,471.4375)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-14",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "37c17bbd2bf9da5ecae56839253da960cfec70b195c95b03b59a54a09ac32c3e",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(654.106689453125,544.209228515625)",
+            "source_transform_retained": true
+          },
+          {
+            "id": "original-alpha-contour-15",
+            "all_attrs_identical": true,
+            "combined_attrs_identical": true,
+            "original_d_sha256": "05f2e5c47ae559d5e4925da749991e342e9f991f8d901cc1bd4a67dbcc5406aa",
+            "evidence_d_matches": true,
+            "evidence_d_hash_matches": true,
+            "source_transform": "translate(476,543)",
+            "source_transform_retained": true
+          }
+        ],
+        "brand_creation_claim": false,
+        "upstream_original_wordmark_genealogy": "UNKNOWN; inherited source path, not established by preservation checks"
+      },
+      "limit": "保留原字标不证明原字标上游设计/授权谱系，也不宣称本轮重新创作该字标。"
+    },
+    {
+      "id": "font_original_outline",
+      "status": "PASS",
+      "basis": "actual TTFont/CFF extraction, direct SVGPathPen and independent RecordingPen comparison",
+      "finding": "实际字体为Source Han Serif SC Regular，Version 2.003，UPEM1000，SHA78aa7a...。30个唯一源字形含空格；38个文字实例含3空格，35条非空路径的原始d、cmap、glyphID、hmtx、边界、轮廓数及记录hash匹配。",
+      "limit": "这是常规宋体辅助排印。只记录外层统一em缩放、Y轴反转和平移及advance/optical spacing；未使用GSUB/GPOS，未把常规字体冒称定制字标。"
+    },
+    {
+      "id": "copy_fill_affine",
+      "status": "PASS",
+      "basis": "冻结contract与源码AST常量及35条实际路径比较",
+      "finding": "一杯茶，慢下来 / 煮水、沏茶，把一刻留给自己。 / TEA FOR SLOW DAYS 均按冻结文本排列。品牌7条+辅助35条=42条，只有4个规定fill。每条辅助路径外层仿射、fill及来源信息均可追溯。",
+      "measured_fills": [
+        "#BE9861",
+        "#C1C6B1",
+        "#E5E4D4",
+        "#F5F2E6"
+      ],
+      "line_measurements": [
+        {
+          "role": "headline",
+          "copy": "一杯茶，慢下来",
+          "glyph_instances": 7,
+          "nonempty_path_count": 7,
+          "measured_vector_ink_bounds_px": [
+            140.0,
+            303.0,
+            529.5600000000001,
+            364.97999999999996
+          ],
+          "baseline_px": 353.28,
+          "recorded_bounds_match": true,
+          "supporting_regular_font_claim_correct": true
+        },
+        {
+          "role": "description",
+          "copy": "煮水、沏茶，把一刻留给自己。",
+          "glyph_instances": 14,
+          "nonempty_path_count": 14,
+          "measured_vector_ink_bounds_px": [
+            140.0,
+            391.0,
+            414.586,
+            413.88
+          ],
+          "baseline_px": 409.59,
+          "recorded_bounds_match": true,
+          "supporting_regular_font_claim_correct": true
+        },
+        {
+          "role": "english_hint",
+          "copy": "TEA FOR SLOW DAYS",
+          "glyph_instances": 17,
+          "nonempty_path_count": 14,
+          "measured_vector_ink_bounds_px": [
+            140.0,
+            433.0,
+            348.1379999999999,
+            446.69800000000004
+          ],
+          "baseline_px": 446.41,
+          "recorded_bounds_match": true,
+          "supporting_regular_font_claim_correct": true
+        }
+      ],
+      "limit": "数值是实际矢量边界重算；没有从目视估计字距或字高，也不以这些数值证明好看。"
+    },
+    {
+      "id": "reconstruction_and_photo_protection",
+      "status": "PASS",
+      "basis": "实际一次独立重提/重算/重渲染/重合成",
+      "finding": "5组RGBA渲染比较均为0差异，独立重合成与真实试稿RGB差异0。认可S在重提文字alpha=0处的RGB改动0；y455至1024下部873,984像素改动0；目视选择杯/茶盘核心矩形321,750像素改动0。",
+      "evidence": {
+        "source_mode": "RGB",
+        "poster_mode": "RGB",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "source_rgb_sha256": "ef0eea557ff82ebe0a6433d350bb5dca7e1ef5b5f35e91b9cd92f22da863a84f",
+        "poster_rgb_sha256": "03cbde45f655405e4ad06728f2f5d143fdd92f0f8c86b1f4e62a098d9f9ba74b",
+        "actual_text_alpha_bbox_px_exclusive": [
+          140,
+          100,
+          530,
+          447
+        ],
+        "alpha_nonzero_pixels": 22023,
+        "actual_changed_rgb_pixels": 22022,
+        "changed_pixels_with_zero_reextracted_alpha": 0,
+        "independent_recomposite_changed_rgb_pixels_vs_actual_poster": 0,
+        "regions": [
+          {
+            "role": "contract_protected_lower",
+            "box_px_exclusive": [
+              0,
+              455,
+              1536,
+              1024
+            ],
+            "region_selection_basis": "contract",
+            "pixel_count": 873984,
+            "changed_rgb_pixels": 0,
+            "source_rgb_sha256": "ea7e7e04ccc8391837ee1c81d08649068821d1a97f55d99b32d4d6c81d24a6c6",
+            "poster_rgb_sha256": "ea7e7e04ccc8391837ee1c81d08649068821d1a97f55d99b32d4d6c81d24a6c6"
+          },
+          {
+            "role": "visually_selected_cup_tray_core_rectangle",
+            "box_px_exclusive": [
+              310,
+              540,
+              1300,
+              865
+            ],
+            "region_selection_basis": "auditor visual selection",
+            "pixel_count": 321750,
+            "changed_rgb_pixels": 0,
+            "source_rgb_sha256": "100b0e3d1a1644aa6f80c17a70a4d5aeb9cc81d180f884f1e2907bdda2be9211",
+            "poster_rgb_sha256": "100b0e3d1a1644aa6f80c17a70a4d5aeb9cc81d180f884f1e2907bdda2be9211"
+          }
+        ],
+        "matches_published_pixel_claims": true,
+        "source_file_unmodified_by_audit": true,
+        "poster_file": {
+          "path": ".liu-visual-private\\shanyeji-v29-production\\poster.png",
+          "bytes": 1808415,
+          "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4"
+        }
+      },
+      "limit": "产品core矩形由目视选择，区内像素差异为实际计算；不是语义分割mask。此结论以认可S为基线，不追认S之前的生成/摄影历史。"
+    },
+    {
+      "id": "source_runnability_and_calls",
+      "status": "PASS",
+      "basis": "实际Python compile、Node --check、当前独立执行，加原maker真实宿主metadata/turn_context/原始e62b09工具call/result。",
+      "finding": "原maker唯一private目录内真实执行exit0、实际stdout的poster SHA与当前文件一致，35辅助path及零摄影保护差异也与独立重提复现一致。制作宿主turn_context实际为gpt-6.1-sol/max。public原maker仍不能原位运行；新增薄恢复入口固定复制未改字节的两份脚本，拒绝已有poster的--run。",
+      "evidence": {
+        "python_compile_pass": true,
+        "node_syntax_check_exit_code": 0,
+        "node_syntax_stderr": "",
+        "source_copy_matches_contract": true,
+        "source_layout_matches_contract": true,
+        "producer_required_indirect_provenance": {
+          "path": "evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v21\\ASSET_PROVENANCE.json",
+          "bytes": 3817,
+          "sha256": "8a7ee2bb2d750dc6243351bdf783ea71ae04eb2ded4b7bc52b1c530a93a179ba"
+        },
+        "indirect_dependency_fields": {
+          "font_foundation": {
+            "path": "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf",
+            "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+            "bytes": 24543332
+          },
+          "font_license": {
+            "path": "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/LICENSE.txt",
+            "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+            "bytes": 4463
+          },
+          "font_upstream_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0"
+        },
+        "producer_directory_guard": "build_v29.py and render_svg.cjs explicitly require .liu-visual-private/shanyeji-v29-production",
+        "archived_public_script_runs_in_place": false,
+        "portability_limit": "Public recipe is a preserved directory-bound source. Direct invocation from font-layout-production will fail its output-directory assertion. Existing original placement and absolute installed runtime paths are required."
+      },
+      "limit": "PASS只覆盖原本地制作call与当前独立复现；恢复wrapper只做静态范围/编译核验，未声称已在新checkout完整重建。原始maker null推理字段保留，独立取证不改写它。",
+      "host_evidence": {
+        "status": "PASS_FOR_ORIGINAL_LOCAL_MAKER_CALL",
+        "path": ".liu-visual-private/v29-source-prof-audit/maker-host-execution-evidence.json",
+        "sha256": "92571dc5f8d9b74b4a0d669c093eebb71eac1692a50e65a48046a14343266e9b",
+        "bytes": 7197,
+        "session_meta": {
+          "id": "01a10a43-8af6-70c3-abc8-7ad25b6c8ffd",
+          "timestamp": "2026-10-05T04:12:41.080Z",
+          "source": {
+            "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+            "depth": 1,
+            "agent_path": "/root/shanyeji_v29_typography_maker",
+            "agent_nickname": "Pauli",
+            "agent_role": null
+          }
+        },
+        "turn_context_at_actual_call": {
+          "turn_id": "01a10a43-8c46-7690-bc1d-10b3da9f22a9",
+          "model": "gpt-6.1-sol",
+          "effort": "max",
+          "collaboration_mode": {
+            "mode": "default",
+            "settings": {
+              "model": "gpt-6.1-sol",
+              "reasoning_effort": "max",
+              "developer_instructions": null
+            }
+          },
+          "timestamp": "2026-10-05T04:12:44.156Z"
+        },
+        "call_id": "call_tNgQrmlXAGqtvuqmYDtystr9",
+        "raw_exec_chunk_id": "e62b09",
+        "actual_original_exec_exit_code": 0,
+        "actual_original_poster_sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4",
+        "actual_stdout_geometry_matches_independent_measurement": true,
+        "original_call_line": 128,
+        "original_result_line": 132,
+        "basis": "Exact related original host metadata and custom_tool_call/input plus custom_tool_call_output/result; not maker-authored finalize receipt.",
+        "limits": [
+          "Does not change null inference fields in the historical maker manifest; this audit separately observed host context.",
+          "The original stdout manifest hash predates finalize_receipt.py; current final manifest must not be confused with that original intermediate hash.",
+          "No Figma node/runtime or aesthetic verdict is inferred."
+        ]
+      }
+    },
+    {
+      "id": "reference_asset_copy_and_physical_source",
+      "status": "PASS",
+      "basis": "M/S/actual_v29原尺寸目视+全部SVG源形状归因+摄影实际像素比较",
+      "finding": "M的山野集字形、山形、橙色绕线、李家班标签及WANCE/万策页脚署名未出现在试稿。v29只把短文案与字标集中组织的机制用于茶作；全部新增路径能归因到继承茶作源及真实思源宋体。认可S中杯、茶汤、茶盘、茶叶与台面结构保留，未增加实物改造。",
+      "limit": "未发现照搬为本段目视/源归因结论，不是外部原创性或商标/版权权属鉴定。"
+    }
+  ],
+  "font_source_details": {
+    "actual_name_table": {
+      "1": [
+        "Source Han Serif SC",
+        "思源宋体"
+      ],
+      "2": [
+        "Regular"
+      ],
+      "4": [
+        "Source Han Serif SC",
+        "思源宋体"
+      ],
+      "5": [
+        "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0"
+      ],
+      "6": [
+        "SourceHanSerifSC-Regular"
+      ]
+    },
+    "font_file": {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\skill_research\\fonttools_bounded_probe_v1\\upstream\\adobe-fonts\\source-han-serif\\OTF\\SimplifiedChinese\\SourceHanSerifSC-Regular.otf",
+      "bytes": 24543332,
+      "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117"
+    },
+    "units_per_em": 1000,
+    "cff_otf": true,
+    "header_checks": {
+      "evidence_font_identity_matches_actual_contract_font": true,
+      "evidence_upem_matches_actual": true,
+      "evidence_version_matches_actual": true,
+      "all_evidence_source_d_hashes_match_independently_extracted_d": true
+    },
+    "unique_glyph_source_checks": [
+      {
+        "character": "一",
+        "unicode": "U+4E00",
+        "actual_cmap_glyph_name": "cid09511",
+        "actual_glyph_id": 9511,
+        "source_d_sha256": "b2985959007a2f3073bdc5268c195e2ce5aa8d3f455cf00945f4afdf5ba27c93",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "杯",
+        "unicode": "U+676F",
+        "actual_cmap_glyph_name": "cid20810",
+        "actual_glyph_id": 20810,
+        "source_d_sha256": "cbce27f51d31118633ef69d7ed74bdabca85cf7b6db80171f4c37557df1b7480",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "茶",
+        "unicode": "U+8336",
+        "actual_cmap_glyph_name": "cid33872",
+        "actual_glyph_id": 33872,
+        "source_d_sha256": "bc743f866d697009aa56d30072ba40123e4cc2c4bab419e0569aa6bf19dd4c86",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "，",
+        "unicode": "U+FF0C",
+        "actual_cmap_glyph_name": "cid58986",
+        "actual_glyph_id": 58986,
+        "source_d_sha256": "fa6e302bace4eb4dbc269335afc9223f9a5e57db18f60210cc2dc3a8b0143b91",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "慢",
+        "unicode": "U+6162",
+        "actual_cmap_glyph_name": "cid18201",
+        "actual_glyph_id": 18201,
+        "source_d_sha256": "cd90114c7f62e012f0b76679018066c26b9546307692751ebe9033e689ec9ccb",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "下",
+        "unicode": "U+4E0B",
+        "actual_cmap_glyph_name": "cid09524",
+        "actual_glyph_id": 9524,
+        "source_d_sha256": "a6b94e99ab3cc21d35bf581fb3288a2fa598ffbeced0fbb537293a111a56f0d1",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "来",
+        "unicode": "U+6765",
+        "actual_cmap_glyph_name": "cid20797",
+        "actual_glyph_id": 20797,
+        "source_d_sha256": "d23fe1abd62bd02dde953399ce11b479d1a63c4063def8037d47af0a6dc9ff39",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "煮",
+        "unicode": "U+716E",
+        "actual_cmap_glyph_name": "cid25219",
+        "actual_glyph_id": 25219,
+        "source_d_sha256": "b818d4cddbc2419cd82e881de4cb8d70d1bfdc78dc643425fe2693c860372f21",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "水",
+        "unicode": "U+6C34",
+        "actual_cmap_glyph_name": "cid22927",
+        "actual_glyph_id": 22927,
+        "source_d_sha256": "6daf874da70fb56648349c94d4dfbfe48c7129cd742f0d3af8287b49c1d80c5b",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "、",
+        "unicode": "U+3001",
+        "actual_cmap_glyph_name": "cid01404",
+        "actual_glyph_id": 1404,
+        "source_d_sha256": "78f6e521c570dd39b8c68364c3e126ccd01d7963b7e1a0e3a76f60881a3cc660",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "沏",
+        "unicode": "U+6C8F",
+        "actual_cmap_glyph_name": "cid23061",
+        "actual_glyph_id": 23061,
+        "source_d_sha256": "5989385c4b7e1dd821fdd300a808c56306b862e0ef15d6bef75561b9444ebd21",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "把",
+        "unicode": "U+628A",
+        "actual_cmap_glyph_name": "cid18734",
+        "actual_glyph_id": 18734,
+        "source_d_sha256": "76a63634840ee7bcd265cd90f6b5ba43aa61e4570670204f7e43f5fa3d8e12a6",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "刻",
+        "unicode": "U+523B",
+        "actual_cmap_glyph_name": "cid11222",
+        "actual_glyph_id": 11222,
+        "source_d_sha256": "e6b0a07071cd75d0abf4ceef866985ddf54f0f79ce2c4e928ec874b67caef2ad",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "留",
+        "unicode": "U+7559",
+        "actual_cmap_glyph_name": "cid27015",
+        "actual_glyph_id": 27015,
+        "source_d_sha256": "fb3170828ffa152f7402f3eddb65660e4fb82fbc29d7e8e70c6d257060f2a739",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "给",
+        "unicode": "U+7ED9",
+        "actual_cmap_glyph_name": "cid31614",
+        "actual_glyph_id": 31614,
+        "source_d_sha256": "246341de76edac1ac11821148abca088f41c5a14073bbf148c920fa6d177bc7e",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "自",
+        "unicode": "U+81EA",
+        "actual_cmap_glyph_name": "cid33151",
+        "actual_glyph_id": 33151,
+        "source_d_sha256": "d7382e97f82b2b17c40887b0180f65842934254fabf3320e8cb9c42448006976",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "己",
+        "unicode": "U+5DF1",
+        "actual_cmap_glyph_name": "cid16684",
+        "actual_glyph_id": 16684,
+        "source_d_sha256": "41525eb5cb1298190d090d64fab3512bfe39df64ecc5316614a4d7ce2783bbbf",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "。",
+        "unicode": "U+3002",
+        "actual_cmap_glyph_name": "cid01405",
+        "actual_glyph_id": 1405,
+        "source_d_sha256": "f008f663518416e8b2b8e68790523e32930afd08074240720e80348d27b16a1d",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "T",
+        "unicode": "U+0054",
+        "actual_cmap_glyph_name": "cid00053",
+        "actual_glyph_id": 53,
+        "source_d_sha256": "c08c10dc28ee8d7fdc47acf989b32532e3e95a042b58a46f9a5ccaee21eac460",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "E",
+        "unicode": "U+0045",
+        "actual_cmap_glyph_name": "cid00038",
+        "actual_glyph_id": 38,
+        "source_d_sha256": "aa8c4ea03e67eae65cb931beb47dc120c0edfb7aa25c7bc96eed45cbfb9fec08",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "A",
+        "unicode": "U+0041",
+        "actual_cmap_glyph_name": "cid00034",
+        "actual_glyph_id": 34,
+        "source_d_sha256": "99f9d5686b45e6d22048eadecadc0370659c8844ca3824766d6cae576cf9d90b",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": " ",
+        "unicode": "U+0020",
+        "actual_cmap_glyph_name": "cid00001",
+        "actual_glyph_id": 1,
+        "source_d_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "F",
+        "unicode": "U+0046",
+        "actual_cmap_glyph_name": "cid00039",
+        "actual_glyph_id": 39,
+        "source_d_sha256": "25532b558e837edccdd27efb751db0afb0bf7f48a4a78497e71efb4963abb625",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "O",
+        "unicode": "U+004F",
+        "actual_cmap_glyph_name": "cid00048",
+        "actual_glyph_id": 48,
+        "source_d_sha256": "209f70e724f48a9d6c8b0551601096a5b0ba3c4f1e17523e43df85b03b9bf44d",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "R",
+        "unicode": "U+0052",
+        "actual_cmap_glyph_name": "cid00051",
+        "actual_glyph_id": 51,
+        "source_d_sha256": "52b56e80ba8e0fb9d81bf898c9692c6c307333f7addbda799363b05fc19dddb9",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "S",
+        "unicode": "U+0053",
+        "actual_cmap_glyph_name": "cid00052",
+        "actual_glyph_id": 52,
+        "source_d_sha256": "1f2324167cabebac1779774aed4bed1b4f25cf748ef8bec820c3b13ce480e2b9",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "L",
+        "unicode": "U+004C",
+        "actual_cmap_glyph_name": "cid00045",
+        "actual_glyph_id": 45,
+        "source_d_sha256": "2e1f8cff6b2aad31d80364a13b42fecf2ff9585db712ff21a9f7c1717432d3de",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "W",
+        "unicode": "U+0057",
+        "actual_cmap_glyph_name": "cid00056",
+        "actual_glyph_id": 56,
+        "source_d_sha256": "a5fe4b0822d957712a7a01f196bfa750d883e5ba81823f64fb446e84dc17f16e",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "D",
+        "unicode": "U+0044",
+        "actual_cmap_glyph_name": "cid00037",
+        "actual_glyph_id": 37,
+        "source_d_sha256": "7f98f98669d8dd06182ec9b44fb31a8e8c33eac16e6fd652a67fc0a10606a82d",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      },
+      {
+        "character": "Y",
+        "unicode": "U+0059",
+        "actual_cmap_glyph_name": "cid00058",
+        "actual_glyph_id": 58,
+        "source_d_sha256": "6712b36cc307916fc6c46cb8b5a7358c6f1d48a2f1f1fd9c88ef010920ca7608",
+        "d_evidence_matches": true,
+        "direct_and_recording_replay_match": true,
+        "recording_operations_match": true,
+        "recording_hash_match": true,
+        "unicode_codepoint_match": true,
+        "cmap_and_id_match": true,
+        "advance_match": true,
+        "bounds_match": true,
+        "contour_count_match": true,
+        "no_components": true,
+        "no_outline_modification_declared": true
+      }
+    ],
+    "all_instances": [
+      {
+        "role": "headline",
+        "index": 0,
+        "character": "一",
+        "path_id": "headline-u4e00-00",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 1,
+        "character": "杯",
+        "path_id": "headline-u676f-01",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 2,
+        "character": "茶",
+        "path_id": "headline-u8336-02",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 3,
+        "character": "，",
+        "path_id": "headline-uff0c-03",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 4,
+        "character": "慢",
+        "path_id": "headline-u6162-04",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 5,
+        "character": "下",
+        "path_id": "headline-u4e0b-05",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "headline",
+        "index": 6,
+        "character": "来",
+        "path_id": "headline-u6765-06",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 0,
+        "character": "煮",
+        "path_id": "description-u716e-00",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 1,
+        "character": "水",
+        "path_id": "description-u6c34-01",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 2,
+        "character": "、",
+        "path_id": "description-u3001-02",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 3,
+        "character": "沏",
+        "path_id": "description-u6c8f-03",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 4,
+        "character": "茶",
+        "path_id": "description-u8336-04",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 5,
+        "character": "，",
+        "path_id": "description-uff0c-05",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 6,
+        "character": "把",
+        "path_id": "description-u628a-06",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 7,
+        "character": "一",
+        "path_id": "description-u4e00-07",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 8,
+        "character": "刻",
+        "path_id": "description-u523b-08",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 9,
+        "character": "留",
+        "path_id": "description-u7559-09",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 10,
+        "character": "给",
+        "path_id": "description-u7ed9-10",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 11,
+        "character": "自",
+        "path_id": "description-u81ea-11",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 12,
+        "character": "己",
+        "path_id": "description-u5df1-12",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "description",
+        "index": 13,
+        "character": "。",
+        "path_id": "description-u3002-13",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 0,
+        "character": "T",
+        "path_id": "english_hint-u0054-00",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 1,
+        "character": "E",
+        "path_id": "english_hint-u0045-01",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 2,
+        "character": "A",
+        "path_id": "english_hint-u0041-02",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 3,
+        "character": " ",
+        "path_id": null,
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 4,
+        "character": "F",
+        "path_id": "english_hint-u0046-04",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 5,
+        "character": "O",
+        "path_id": "english_hint-u004f-05",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 6,
+        "character": "R",
+        "path_id": "english_hint-u0052-06",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 7,
+        "character": " ",
+        "path_id": null,
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 8,
+        "character": "S",
+        "path_id": "english_hint-u0053-08",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 9,
+        "character": "L",
+        "path_id": "english_hint-u004c-09",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 10,
+        "character": "O",
+        "path_id": "english_hint-u004f-10",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 11,
+        "character": "W",
+        "path_id": "english_hint-u0057-11",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 12,
+        "character": " ",
+        "path_id": null,
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 13,
+        "character": "D",
+        "path_id": "english_hint-u0044-13",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 14,
+        "character": "A",
+        "path_id": "english_hint-u0041-14",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 15,
+        "character": "Y",
+        "path_id": "english_hint-u0059-15",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      },
+      {
+        "role": "english_hint",
+        "index": 16,
+        "character": "S",
+        "path_id": "english_hint-u0053-16",
+        "actual_original_d_fill_and_affine_match": true,
+        "evidence_character_and_cmap_match": true,
+        "evidence_affine_match": true,
+        "evidence_ink_bounds_match": true,
+        "evidence_advances_match": true,
+        "outline_modified_false": true,
+        "source_hash_matches": true
+      }
+    ],
+    "line_measurements": [
+      {
+        "role": "headline",
+        "copy": "一杯茶，慢下来",
+        "glyph_instances": 7,
+        "nonempty_path_count": 7,
+        "measured_vector_ink_bounds_px": [
+          140.0,
+          303.0,
+          529.5600000000001,
+          364.97999999999996
+        ],
+        "baseline_px": 353.28,
+        "recorded_bounds_match": true,
+        "supporting_regular_font_claim_correct": true
+      },
+      {
+        "role": "description",
+        "copy": "煮水、沏茶，把一刻留给自己。",
+        "glyph_instances": 14,
+        "nonempty_path_count": 14,
+        "measured_vector_ink_bounds_px": [
+          140.0,
+          391.0,
+          414.586,
+          413.88
+        ],
+        "baseline_px": 409.59,
+        "recorded_bounds_match": true,
+        "supporting_regular_font_claim_correct": true
+      },
+      {
+        "role": "english_hint",
+        "copy": "TEA FOR SLOW DAYS",
+        "glyph_instances": 17,
+        "nonempty_path_count": 14,
+        "measured_vector_ink_bounds_px": [
+          140.0,
+          433.0,
+          348.1379999999999,
+          446.69800000000004
+        ],
+        "baseline_px": 446.41,
+        "recorded_bounds_match": true,
+        "supporting_regular_font_claim_correct": true
+      }
+    ]
+  },
+  "svg_structure": [
+    {
+      "name": "brand.svg",
+      "path_count": 7,
+      "tags": [
+        "g",
+        "path",
+        "svg",
+        "title"
+      ],
+      "forbidden_present": [],
+      "fills": [
+        "#F5F2E6"
+      ],
+      "canvas": [
+        "1536",
+        "1024",
+        "0 0 1536 1024"
+      ],
+      "external_resource_attrs": []
+    },
+    {
+      "name": "headline.svg",
+      "path_count": 35,
+      "tags": [
+        "g",
+        "path",
+        "svg",
+        "title"
+      ],
+      "forbidden_present": [],
+      "fills": [
+        "#BE9861",
+        "#C1C6B1",
+        "#E5E4D4"
+      ],
+      "canvas": [
+        "1536",
+        "1024",
+        "0 0 1536 1024"
+      ],
+      "external_resource_attrs": []
+    },
+    {
+      "name": "typography.svg",
+      "path_count": 42,
+      "tags": [
+        "g",
+        "path",
+        "svg",
+        "title"
+      ],
+      "forbidden_present": [],
+      "fills": [
+        "#BE9861",
+        "#C1C6B1",
+        "#E5E4D4",
+        "#F5F2E6"
+      ],
+      "canvas": [
+        "1536",
+        "1024",
+        "0 0 1536 1024"
+      ],
+      "external_resource_attrs": []
+    }
+  ],
+  "render_comparisons": [
+    {
+      "independent_output": "public-brand-render.png",
+      "producer_output": "brand-render.png",
+      "changed_rgba_pixels": 0,
+      "independent_decoded_rgba_sha256": "f163096492a115f71cc91aa93d83c212141ab084eb061192e852d8052a705b46",
+      "producer_decoded_rgba_sha256": "f163096492a115f71cc91aa93d83c212141ab084eb061192e852d8052a705b46",
+      "actual_alpha_bbox_px_exclusive": [
+        140,
+        100,
+        480,
+        266
+      ]
+    },
+    {
+      "independent_output": "public-headline-render.png",
+      "producer_output": "headline-render.png",
+      "changed_rgba_pixels": 0,
+      "independent_decoded_rgba_sha256": "661d077cd72b7b75aece591f00309268785555549206dded3640a3aa0ce6caf7",
+      "producer_decoded_rgba_sha256": "661d077cd72b7b75aece591f00309268785555549206dded3640a3aa0ce6caf7",
+      "actual_alpha_bbox_px_exclusive": [
+        140,
+        303,
+        530,
+        447
+      ]
+    },
+    {
+      "independent_output": "public-typography-overlay.png",
+      "producer_output": "typography-overlay.png",
+      "changed_rgba_pixels": 0,
+      "independent_decoded_rgba_sha256": "568294f138b6e2a883ed411a7002ac1fd076a23af30ee2f71f3e4e3dd266ccb7",
+      "producer_decoded_rgba_sha256": "568294f138b6e2a883ed411a7002ac1fd076a23af30ee2f71f3e4e3dd266ccb7",
+      "actual_alpha_bbox_px_exclusive": [
+        140,
+        100,
+        530,
+        447
+      ]
+    },
+    {
+      "independent_output": "reextracted-headline-render.png",
+      "producer_output": "headline-render.png",
+      "changed_rgba_pixels": 0,
+      "independent_decoded_rgba_sha256": "661d077cd72b7b75aece591f00309268785555549206dded3640a3aa0ce6caf7",
+      "producer_decoded_rgba_sha256": "661d077cd72b7b75aece591f00309268785555549206dded3640a3aa0ce6caf7",
+      "actual_alpha_bbox_px_exclusive": [
+        140,
+        303,
+        530,
+        447
+      ]
+    },
+    {
+      "independent_output": "reextracted-typography-overlay.png",
+      "producer_output": "typography-overlay.png",
+      "changed_rgba_pixels": 0,
+      "independent_decoded_rgba_sha256": "568294f138b6e2a883ed411a7002ac1fd076a23af30ee2f71f3e4e3dd266ccb7",
+      "producer_decoded_rgba_sha256": "568294f138b6e2a883ed411a7002ac1fd076a23af30ee2f71f3e4e3dd266ccb7",
+      "actual_alpha_bbox_px_exclusive": [
+        140,
+        100,
+        530,
+        447
+      ]
+    }
+  ],
+  "actual_independent_invocation": {
+    "argv": [
+      "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\v29-source-prof-audit\\independent_render.cjs",
+      "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\v29-source-prof-audit",
+      "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production",
+      "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp"
+    ],
+    "exit_code": 0,
+    "runtime": {
+      "executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "version": "v24.19.0",
+      "sharpModule": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+      "versions": {
+        "aom": "3.14.1",
+        "archive": "3.8.9",
+        "cairo": "1.18.4",
+        "cgif": "0.5.3",
+        "exif": "0.6.26",
+        "expat": "2.8.3",
+        "ffi": "3.8.0",
+        "fontconfig": "2.18.3",
+        "freetype": "2.14.3",
+        "fribidi": "1.0.16",
+        "glib": "2.89.4",
+        "harfbuzz": "14.3.1",
+        "heif": "1.23.2",
+        "highway": "1.4.0",
+        "imagequant": "2.4.1",
+        "lcms": "2.19.1",
+        "mozjpeg": "0826579",
+        "pango": "1.58.2",
+        "pixman": "0.46.4",
+        "png": "1.6.58",
+        "proxy-libintl": "0.5",
+        "rsvg": "2.62.91",
+        "tiff": "4.7.2",
+        "uhdr": "2.0.2",
+        "vips": "8.18.6",
+        "webp": "1.6.0",
+        "xml2": "2.15.3",
+        "zlib-ng": "2.3.3",
+        "sharp": "0.35.4"
+      },
+      "renders": [
+        {
+          "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\brand.svg",
+          "output": "public-brand-render.png",
+          "info": {
+            "format": "png",
+            "width": 1536,
+            "height": 1024,
+            "channels": 4,
+            "premultiplied": false,
+            "hasAlpha": true,
+            "size": 18610
+          }
+        },
+        {
+          "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\headline.svg",
+          "output": "public-headline-render.png",
+          "info": {
+            "format": "png",
+            "width": 1536,
+            "height": 1024,
+            "channels": 4,
+            "premultiplied": false,
+            "hasAlpha": true,
+            "size": 22346
+          }
+        },
+        {
+          "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\evidence\\vpd\\codex_takeover_20261003\\product_type_integration_20261004\\v29\\font-layout-production\\typography.svg",
+          "output": "public-typography-overlay.png",
+          "info": {
+            "format": "png",
+            "width": 1536,
+            "height": 1024,
+            "channels": 4,
+            "premultiplied": false,
+            "hasAlpha": true,
+            "size": 35021
+          }
+        },
+        {
+          "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\v29-source-prof-audit\\reextracted-headline.svg",
+          "output": "reextracted-headline-render.png",
+          "info": {
+            "format": "png",
+            "width": 1536,
+            "height": 1024,
+            "channels": 4,
+            "premultiplied": false,
+            "hasAlpha": true,
+            "size": 22346
+          }
+        },
+        {
+          "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\v29-source-prof-audit\\reextracted-typography.svg",
+          "output": "reextracted-typography-overlay.png",
+          "info": {
+            "format": "png",
+            "width": 1536,
+            "height": 1024,
+            "channels": 4,
+            "premultiplied": false,
+            "hasAlpha": true,
+            "size": 35021
+          }
+        }
+      ],
+      "photograph_read_count": 0
+    }
+  },
+  "font_license_and_dependencies": {
+    "python_executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "Pillow": {
+      "version": "12.3.0",
+      "module": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\PIL\\__init__.py",
+      "license_expression": "MIT-CMU",
+      "license": null
+    },
+    "FontTools": {
+      "version": "4.63.0",
+      "module": "C:\\Users\\Administrator\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\fontTools\\__init__.py",
+      "license": "MIT"
+    },
+    "sharp": {
+      "version": "0.35.4",
+      "license": "Apache-2.0",
+      "package_identity": {
+        "path": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\package.json",
+        "bytes": 8115,
+        "sha256": "27b5a6c6e1e1f27c527b09a963c932979403837d0f5f013ab5bdfb4a0ef2269a"
+      }
+    },
+    "font_license": {
+      "path": "evidence\\vpd\\codex_takeover_20261003\\skill_research\\fonttools_bounded_probe_v1\\upstream\\adobe-fonts\\source-han-serif\\LICENSE.txt",
+      "bytes": 4463,
+      "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903"
+    },
+    "font_license_copy_equal": true,
+    "license_copy_hash_matches": true,
+    "no_package_install_by_auditor": true
+  },
+  "mature_method_adoption": {
+    "FontTools": {
+      "status": "ACTUALLY_EXECUTED",
+      "scope": "实际TTFont读取cmap/name/head/CFF/hmtx；RecordingPen记录/replay和SVGPathPen原始d；BoundsPen实际边界",
+      "limit": "FontTools是字体数据工具；这些API没有承担自动排版、原生Figma编辑或审美判定。",
+      "primary_sources_consulted_by_this_auditor": [
+        "https://fonttools.readthedocs.io/en/latest/ttLib/ttFont.html",
+        "https://fonttools.readthedocs.io/en/latest/pens/recordingPen.html",
+        "https://fonttools.readthedocs.io/en/latest/pens/svgPathPen.html"
+      ]
+    },
+    "official_font": {
+      "status": "ACTUAL_LOCAL_BINARY_AND_LICENSE_VERIFIED",
+      "repository": "https://github.com/adobe-fonts/source-han-serif",
+      "declared_upstream_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "license": "SIL OFL1.1；本地许可副本与vendored许可SHA/字节一致",
+      "official_license_source_consulted": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "limit": "不对字标权属作法律判定；本段未做远端字体二进制重新下载与逐字节比较。"
+    },
+    "design_diagnostic_framework": {
+      "status": "NOT_PROVEN_AS_FORMAL_PRODUCTION_EXECUTION",
+      "scope": "本审计实际使用层级、信息组、字形归因、图文/产品关系与可读性目视描述，配合真实源/像素核验。",
+      "limit": "这批production源码/receipt没有正式design-critique或其他诊断框架调用证据；不冒称上游完整执行、不生成美学分数、不以规则或测试数量判断好看。"
+    }
+  },
+  "production_visual_observations": [
+    {
+      "basis": "original-size direct view",
+      "observation": "茶作笔画形成上方主字标；常规宋体文案在其下左对齐成一个信息组。M的居中字标、橙色绕线与设计公司署名没有转移。",
+      "numeric_claim": null
+    },
+    {
+      "basis": "measured vector and raster boundaries",
+      "observation": "字群alpha实边界[140,100,530,447]，与下部产品区域分离；主句矢量宽389.56px，高61.98px，说明行/英文行分级较小。",
+      "numeric_claim_is_eye_estimate": false
+    },
+    {
+      "basis": "original-size direct view",
+      "observation": "说明文字和英文为较小的辅助层，是否在最终使用尺寸仍足够舒适、是否有足够视觉张力，交给独立冷审与真人验收。",
+      "numeric_claim": null
+    }
+  ],
+  "historical_maker_host_evidence": {
+    "status": "PASS_FOR_ORIGINAL_LOCAL_MAKER_CALL",
+    "path": ".liu-visual-private/v29-source-prof-audit/maker-host-execution-evidence.json",
+    "sha256": "92571dc5f8d9b74b4a0d669c093eebb71eac1692a50e65a48046a14343266e9b",
+    "bytes": 7197,
+    "session_meta": {
+      "id": "01a10a43-8af6-70c3-abc8-7ad25b6c8ffd",
+      "timestamp": "2026-10-05T04:12:41.080Z",
+      "source": {
+        "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+        "depth": 1,
+        "agent_path": "/root/shanyeji_v29_typography_maker",
+        "agent_nickname": "Pauli",
+        "agent_role": null
+      }
+    },
+    "turn_context_at_actual_call": {
+      "turn_id": "01a10a43-8c46-7690-bc1d-10b3da9f22a9",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "collaboration_mode": {
+        "mode": "default",
+        "settings": {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "max",
+          "developer_instructions": null
+        }
+      },
+      "timestamp": "2026-10-05T04:12:44.156Z"
+    },
+    "call_id": "call_tNgQrmlXAGqtvuqmYDtystr9",
+    "raw_exec_chunk_id": "e62b09",
+    "actual_original_exec_exit_code": 0,
+    "actual_original_poster_sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4",
+    "actual_stdout_geometry_matches_independent_measurement": true,
+    "original_call_line": 128,
+    "original_result_line": 132,
+    "basis": "Exact related original host metadata and custom_tool_call/input plus custom_tool_call_output/result; not maker-authored finalize receipt.",
+    "limits": [
+      "Does not change null inference fields in the historical maker manifest; this audit separately observed host context.",
+      "The original stdout manifest hash predates finalize_receipt.py; current final manifest must not be confused with that original intermediate hash.",
+      "No Figma node/runtime or aesthetic verdict is inferred."
+    ]
+  },
+  "figma_native_runtime": {
+    "status": "UNKNOWN",
+    "actual_v29_node_ids": null,
+    "runtime_import_verified": false,
+    "actual_native_export_verified": false,
+    "limit": "42条SVG path不等于42个真实Figma VECTOR节点；SVG路径编辑也不等于TEXT实时重排。"
+  },
+  "remaining": [
+    "在v29真实Figma导入后记录节点类型/ID/实际运行与导出，并核验该导出文字和认可摄影像素；本段不会预先宣称该步骤通过。",
+    "独立项目外冷审仍须看真实最终导出；本报告不替代审美通过或真人最终验收。",
+    "若验收要求全新checkout重建，须先恢复认可摄影、字体、reference及v21 provenance/license，再实际运行薄入口；本段没有进行该完整环境恢复。"
+  ],
+  "private_probe_evidence": [
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent_source_audit.py",
+      "sha256": "5927184acf799bf8f0e11bd4b88fd72fac5d09e9012be163f7bc081ea7c03eab",
+      "bytes": 25025
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent_render.cjs",
+      "sha256": "547ad0d486222d56904f5cc7c1447b3bcc765f81d55b09757eb43497eaf508ee",
+      "bytes": 1441
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent-measurements.json",
+      "sha256": "6706d1970b14700528d3e945f8fa3377364146a4e0d521707f3388051267677b",
+      "bytes": 71129
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent-render-stdout.json",
+      "sha256": "dbad95277bd93382d6cf37f204a83863a5eb754ded9a106a40ad8f870367c2f3",
+      "bytes": 3335
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent-render-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/reextracted-headline.svg",
+      "sha256": "60f5393f54effe9d342279bddc0068536f4d7957cbee93460f179fb8e234172c",
+      "bytes": 19065
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/reextracted-typography.svg",
+      "sha256": "98124813a0245e7cbce46ec0f146d077827999d3bf51132d3212d6fbb97b68fc",
+      "bytes": 58057
+    },
+    {
+      "path": ".liu-visual-private/v29-source-prof-audit/independent-recomposite.png",
+      "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4",
+      "bytes": 1808415
+    }
+  ],
+  "thin_recovery_entry_review": {
+    "path": "scripts/vpd_prepare_v29_font_recipe.py",
+    "bytes": 2424,
+    "sha256": "bb5c39580a4332b0ba04dcd647ccbce8107b0410761d92ad726720091e6c980b",
+    "status": "PASS_FOR_STATIC_THIN_RECOVERY_SCOPE",
+    "actual_python_compile_pass": true,
+    "reads_frozen_recipe_hashes": true,
+    "copies_only_build_v29_py_and_render_svg_cjs": true,
+    "destination": "repo/.liu-visual-private/shanyeji-v29-production/",
+    "existing_recipe_mismatch_rejected": true,
+    "existing_poster_rejected_before_subprocess_execution": true,
+    "original_public_producer_bytes_unchanged": true,
+    "run_flag_executed_by_this_auditor": false,
+    "default_invocation_executed_by_this_auditor": false,
+    "parent_reported_default_run": {
+      "chunk_id": "613fa3",
+      "exit_code": 0,
+      "executed": false,
+      "artwork_overwritten": false,
+      "basis": "Parent message; not independently replayed or treated as this auditor tool result"
+    },
+    "limits": [
+      "Fresh-checkout full --run has not been executed by this auditor.",
+      "The original directory assertion and absolute FontTools/Node/sharp environment paths remain in the unchanged source.",
+      "The maker also requires v21/ASSET_PROVENANCE.json and its referenced font-license file; the wrapper preflights four contract inputs, while maker checks its font and declared license digests."
+    ]
+  },
+  "checks": [
+    {
+      "name": "frozen_source_SHA_and_byte_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "7_brand_original_all_attrs_d_and_uniform_placement",
+      "status": "PASS"
+    },
+    {
+      "name": "actual_font_2_003_78aa7_and_35_original_paths",
+      "status": "PASS"
+    },
+    {
+      "name": "copy_four_fills_and_recorded_affines",
+      "status": "PASS"
+    },
+    {
+      "name": "independent_reextraction_and_five_zero_difference_renders",
+      "status": "PASS"
+    },
+    {
+      "name": "RGB_outside_text_alpha_and_product_regions",
+      "status": "PASS"
+    },
+    {
+      "name": "original_maker_host_call_e62b09",
+      "status": "PASS_FOR_ORIGINAL_LOCAL_MAKER_CALL"
+    },
+    {
+      "name": "thin_recovery_entry_compile_and_static_boundary",
+      "status": "PASS_FOR_STATIC_THIN_RECOVERY_SCOPE"
+    },
+    {
+      "name": "fresh_checkout_full_recipe_run",
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "name": "native_v29_Figma_node_and_runtime",
+      "status": "UNKNOWN"
+    },
+    {
+      "name": "external_cold_aesthetic_review",
+      "status": "NOT_EVALUATED"
+    }
+  ],
+  "finalized_utc": "2026-10-05T04:58:25.899636+00:00"
+}

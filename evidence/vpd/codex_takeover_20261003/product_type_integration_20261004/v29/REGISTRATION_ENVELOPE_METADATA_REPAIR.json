@@ -1,0 +1,71 @@
+{
+  "schema": "vpd-v29-envelope-metadata-repair/v1",
+  "formal_version": 29,
+  "original_metadata_rejection": "V29_REGISTERED_ENVELOPE_CHANGED",
+  "original_records": [
+    {
+      "original": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/PHOTO_PROTECTION.json",
+        "sha256": "94d37675b4d7746977b2b7f28d3472df919f8e384c0a354ad3a2aa486d3f21fe"
+      },
+      "preserved_original": {
+        "path": ".liu-visual-private/correct_source_typography/v29/PHOTO_PROTECTION.json.pre-envelope-repair",
+        "sha256": "94d37675b4d7746977b2b7f28d3472df919f8e384c0a354ad3a2aa486d3f21fe"
+      }
+    },
+    {
+      "original": {
+        "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/PHOTO_SAFE_EXPORT.json",
+        "sha256": "437c0f3e13f3a9e164e9f6499310d56d3cefa0af096165d20108ab78f770a9e1"
+      },
+      "preserved_original": {
+        "path": ".liu-visual-private/correct_source_typography/v29/PHOTO_SAFE_EXPORT.json.pre-envelope-repair",
+        "sha256": "437c0f3e13f3a9e164e9f6499310d56d3cefa0af096165d20108ab78f770a9e1"
+      }
+    }
+  ],
+  "correction": "Use previously frozen typography alpha union; do not change validator or design.",
+  "fixed_contract": {
+    "path": "visual_memory/vpd_registered_type_font_layout_v29.py",
+    "sha256": "fbed1c79e47735d24256c8bd63d594c62a355ec8ec30d79d143e3369466fee50"
+  },
+  "input_contract": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/ROOT_FROZEN_INPUT_CONTRACT.json",
+    "sha256": "868ba406085d69bf4919420e551977e690e6817789e651c49d113ab40c7bb2e5"
+  },
+  "new_envelopes": [
+    [
+      140,
+      100,
+      530,
+      447
+    ]
+  ],
+  "current_metadata": [
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/PHOTO_PROTECTION.json",
+      "sha256": "2f31a84bc466c9193cabf827c51834635b3400ae2f78e380022e2f1c773e6d44"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/PHOTO_SAFE_EXPORT.json",
+      "sha256": "93297e22d4623044c49a60870aa9f48d98d9b270952549aa489981e6f66881d2"
+    }
+  ],
+  "registration_unchanged": {
+    "path": "evidence/vpd/codex_takeover_20261003/product_type_integration_20261004/v29/REGISTERED_TYPE_COMPOSITE.json",
+    "sha256": "c8aacd383af72d220a0a37d5d426e829bebc733ad7cbe1a59e6a01833bdbdd04"
+  },
+  "poster_unchanged": {
+    "path": ".liu-visual-private/correct_source_typography/v29/poster.png",
+    "sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4"
+  },
+  "protected_pixels_compared": 1437534,
+  "protected_differences": {
+    "pixels": 0,
+    "max_channel_difference": 0
+  },
+  "scope": "METADATA_ONLY; NO_SVG_PNG_OR_FIGMA_MUTATION",
+  "native_state_written": false,
+  "aesthetic_pass_claimed": false,
+  "checked_utc": "2026-10-05T05:57:38.897026+00:00"
+}

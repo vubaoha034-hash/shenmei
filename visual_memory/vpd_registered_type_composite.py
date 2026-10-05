@@ -59,6 +59,9 @@ EDIT_ADAPTER_V27 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v2
 
 EDIT_ADAPTER_V28 = {'path': 'visual_memory/vpd_registered_type_edited_lineage_v28.py',
  'sha256': 'ebf1c8c8e8f7d699c8ead8e81f81f0435eff01ecbd9abbbd40ed0eafc443595c'}
+FONT_LAYOUT_ADAPTER_V29 = {'path': 'visual_memory/vpd_registered_type_font_layout_v29.py',
+ 'sha256': 'fbed1c79e47735d24256c8bd63d594c62a355ec8ec30d79d143e3369466fee50'}
+V29_PALETTE = ('#F5F2E6', '#E5E4D4', '#C1C6B1', '#BE9861')
 
 
 def require(ok, message):
@@ -84,14 +87,19 @@ def checked_bytes(root, reference):
     return raw
 
 
-def svg_tree(raw):
+def svg_tree(raw, formal_version=None):
     """Finite path geometry only; no CSS, images, URLs, shapes, clips or filters."""
+    require(formal_version is None or (type(formal_version) is int and 1 <= formal_version <= 29),
+            'INSPECTED_SVG_VERSION_REQUIRED')
     require(b'<!' not in raw and b'<?' not in raw, 'SVG_DECLARATION_FORBIDDEN')
     root = ET.fromstring(raw)
     allowed = {'svg': {'width', 'height', 'viewBox', 'fill', 'version'},
                'g': {'id', 'transform', 'opacity'},
                'path': {'id', 'd', 'transform', 'fill', 'fill-rule', 'opacity', 'fill-opacity'},
                'title': set(), 'desc': set()}
+    fills = V29_PALETTE if type(formal_version) is int and formal_version == 29 else ('#F5F2E6',)
+    if type(formal_version) is int and formal_version == 29:
+        allowed['path'] |= {'data-character', 'data-source-glyph'}
     for node in root.iter():
         tag = node.tag.removeprefix(NS)
         require(node.tag.startswith(NS) and tag in allowed, 'SVG_ELEMENT_FORBIDDEN:' + tag)
@@ -118,11 +126,11 @@ def svg_tree(raw):
                 require(value.strip() and re.fullmatch(r'[MmLlHhVvCcSsQqTtAaZz0-9eE+.,\s-]+', value),
                         'SVG_PATH_COMMAND_INVALID')
             elif key == 'fill':
-                require(value == 'none' if tag == 'svg' else value == '#F5F2E6', 'SVG_FILL_FORBIDDEN')
+                require(value == 'none' if tag == 'svg' else value in fills, 'SVG_FILL_FORBIDDEN')
             elif key == 'fill-rule':
                 require(value in ('nonzero', 'evenodd'), 'SVG_FILL_RULE_INVALID')
         if tag == 'path':
-            require(node.get('d') and node.get('fill') == '#F5F2E6' and not len(node), 'FILLED_GLYPH_REQUIRED')
+            require(node.get('d') and node.get('fill') in fills and not len(node), 'FILLED_GLYPH_REQUIRED')
     require(root.tag == NS + 'svg', 'SVG_ROOT_REQUIRED')
     return root
 
@@ -170,7 +178,23 @@ def edited_lineage(root, formal_version=24):
     return edited_kernel(root)['expected_lineage'](EDIT_KERNEL)
 
 
+def font_layout_kernel(root):
+    filename = str(Path(root) / FONT_LAYOUT_ADAPTER_V29['path'])
+    namespace = {'__file__': filename, '__name__': '_trusted_v29_font_layout_source'}
+    exec(compile(checked_bytes(root, FONT_LAYOUT_ADAPTER_V29), filename, 'exec'), namespace)
+    return namespace
+
+
+def font_layout_lineage(root, formal_version=29):
+    require(type(formal_version) is int and formal_version == 29, 'FONT_LAYOUT_V29_ONLY')
+    return font_layout_kernel(root)['expected_lineage'](root, FONT_LAYOUT_ADAPTER_V29)
+
+
 def check_lineage(root, tree, lineage, formal_version=None):
+    require(formal_version is None or (type(formal_version) is int and 1 <= formal_version <= 29),
+            'INSPECTED_LINEAGE_VERSION_REQUIRED')
+    if formal_version == 29 or lineage['kind'] == 'source-han-serif-font-layout/v29':
+        return font_layout_kernel(root)['validate'](root, tree, lineage, formal_version, FONT_LAYOUT_ADAPTER_V29)
     if lineage['kind'] == 'alpha128-vtracer-edited/v1':
         if formal_version == 28:
             return edited_kernel(root, 28)['validate'](root, tree, lineage, formal_version, EDIT_ADAPTER_V28)
@@ -231,26 +255,41 @@ def brand_canvas(raw):
 
 def register(root, formal_version, headline_ref, lineage):
     """In-memory registration. Root must review and freeze its returned bytes/ref."""
-    require(type(formal_version) is int and formal_version >= 22, 'PROSPECTIVE_V22_REQUIRED')
+    require(type(formal_version) is int and 22 <= formal_version <= 29, 'PROSPECTIVE_V22_REQUIRED')
     checked_bytes(root, SOURCE)
-    headline = svg_tree(checked_bytes(root, headline_ref))
+    profile = font_layout_kernel(root)['contract'](root) if formal_version == 29 else None
+    if profile is not None:
+        require(all(headline_ref.get(k) == profile['headline_layer'][k] for k in ('path', 'sha256'))
+                and profile['palette'] == list(V29_PALETTE), 'V29_REGISTERED_SOURCE_LAYER_REQUIRED')
+    headline = svg_tree(checked_bytes(root, headline_ref), formal_version=formal_version)
     require([headline.get(k) for k in ('width', 'height', 'viewBox')] == ['1536', '1024', '0 0 1536 1024'],
             'HEADLINE_CANVAS_CHANGED')
     check_lineage(root, headline, lineage, formal_version)
     render = renderer(root)
     layers = []
-    for role, reference, raw in [('brand', BRAND, brand_canvas(checked_bytes(root, BRAND))),
+    brand_ref = BRAND if profile is None else profile['brand_layer']
+    brand_raw = brand_canvas(checked_bytes(root, BRAND)) if profile is None else checked_bytes(root, brand_ref)
+    for role, reference, raw in [('brand', brand_ref, brand_raw),
                                 ('headline', headline_ref, ET.tostring(headline))]:
         image = render(raw)
         require(image.size == SIZE and image.mode == 'RGBA' and image.getchannel('A').getbbox(),
                 'REGISTERED_LETTERING_EMPTY_OR_WRONG_SIZE')
-        layers.append({'role': role, 'svg': reference, 'semantic_sha256': semantic_sha(svg_tree(raw)),
+        layers.append({'role': role, 'svg': reference, 'semantic_sha256': semantic_sha(svg_tree(raw, formal_version=formal_version)),
                        'rgba_sha256': sha(image.tobytes()), 'alpha_sha256': sha(image.getchannel('A').tobytes())})
-    return {'schema': SCHEMA, 'formal_version': formal_version, 'copy': COPY, 'brand': '茶作',
+    result = {'schema': SCHEMA, 'formal_version': formal_version, 'copy': COPY if profile is None else profile['copy'], 'brand': '茶作',
             'dimensions': list(SIZE), 'source': SOURCE, 'renderer_helper': HELPER, 'renderer': VERSIONS,
-            'brand_placement': PLACEMENT, 'layer_order': ['brand', 'headline'], 'layers': layers,
+            'brand_placement': PLACEMENT if profile is None else profile['brand_placement'], 'layer_order': ['brand', 'headline'], 'layers': layers,
             'headline_lineage': lineage, 'core_map': CORE,
             'composite': 'Pillow12.3.0 RGBA source-over in stored 8-bit channels; brand then headline; opaque RGB output'}
+    if profile is not None:
+        result.update(input_contract=lineage['input_contract'], copy_roles=profile['copy_roles'])
+    return result
+
+
+def registered_layer_raw(root, layer, formal_version):
+    require(type(formal_version) is int and 22 <= formal_version <= 29, 'INSPECTED_LAYER_VERSION_REQUIRED')
+    raw = checked_bytes(root, layer['svg'])
+    return raw if formal_version == 29 else brand_canvas(raw) if layer['role'] == 'brand' else raw
 
 
 def replay(root, registration_ref):
@@ -262,15 +301,13 @@ def replay(root, registration_ref):
     render = renderer(root)
     overlay = Image.new('RGBA', SIZE)
     for layer in registration['layers']:
-        raw = checked_bytes(root, layer['svg'])
-        overlay.alpha_composite(render(brand_canvas(raw) if layer['role'] == 'brand' else raw))
+        overlay.alpha_composite(render(registered_layer_raw(root, layer, registration['formal_version'])))
     source = Image.open(io.BytesIO(checked_bytes(root, SOURCE))).convert('RGBA')
     require(source.size == SIZE and source.getchannel('A').getextrema() == (255, 255), 'SOURCE_SIZE_OR_ALPHA_CHANGED')
     expected = source.copy()
     # Sequential source-over is intentional; do not collapse layers (rounding differs).
     for layer in registration['layers']:
-        raw = checked_bytes(root, layer['svg'])
-        expected.alpha_composite(render(brand_canvas(raw) if layer['role'] == 'brand' else raw))
+        expected.alpha_composite(render(registered_layer_raw(root, layer, registration['formal_version'])))
     return expected.convert('RGB'), overlay, registration
 
 

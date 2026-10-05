@@ -1,0 +1,62 @@
+{
+  "schema": "v29-production-method-sources/v1",
+  "consulted_utc": "2026-10-05T04:24:19.442776+00:00",
+  "official_sources": [
+    {
+      "url": "https://fonttools.readthedocs.io/en/latest/ttLib/ttFont.html",
+      "method_used": "Read the actual OpenType font, cmap, glyph set, hmtx and name table."
+    },
+    {
+      "url": "https://fonttools.readthedocs.io/en/latest/pens/recordingPen.html",
+      "method_used": "Record original glyph.draw operations and replay them to the SVG pen."
+    },
+    {
+      "url": "https://fonttools.readthedocs.io/en/latest/pens/svgPathPen.html",
+      "method_used": "Generate original SVG d commands; apply y inversion and uniform em scale in an outer affine."
+    },
+    {
+      "url": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "method_used": "OFL 1.1 license reference; local license is hashed and copied unchanged."
+    }
+  ],
+  "font_upstream": {
+    "repository": "https://github.com/adobe-fonts/source-han-serif",
+    "commit_from_existing_provenance": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+    "release_version_from_actual_font_name_table": [
+      "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0"
+    ]
+  },
+  "license": {
+    "path": "evidence/vpd/codex_takeover_20261003/skill_research/fonttools_bounded_probe_v1/upstream/adobe-fonts/source-han-serif/LICENSE.txt",
+    "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+    "bytes": 4463,
+    "copy": "font-license-OFL1.1.txt",
+    "font_binary_modified": false
+  },
+  "recipe": "Read/verify exact source identities; preserve seven complete brand paths; use original cmap glyph outlines; optical spacing by advances/position only; rasterize vector layers with existing sharp/librsvg; paste RGBA text onto copied source RGB with Pillow.",
+  "reference_transfer": {
+    "reference_brand": "山野集",
+    "migrated": [
+      "wordmark dominates supporting text",
+      "short copy below wordmark",
+      "tight related information group",
+      "natural light primary type",
+      "small muted accent"
+    ],
+    "composition": "Single left-aligned information group at x140, y100–447 above the product.",
+    "not_transferred_assets": [
+      "山野集商标字形",
+      "山形",
+      "橙色绕线",
+      "广告署名",
+      "参考原文"
+    ]
+  },
+  "limits": [
+    "The SVG output is editable path geometry, without live text reflow.",
+    "No GSUB/GPOS shaping is claimed; all used per-character cmap mappings and spacing are recorded.",
+    "The wordmark is inherited geometry; its original source genealogy is outside this production scope.",
+    "Runtime model and reasoning strength are not observable through the tools available to this worker.",
+    "Engineering identity and pixel checks do not establish visual or human approval."
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "schema": "independent-v29-source-repair-review/v1",
+  "result": "PASS_SOURCE_ONLY_AFTER_INTEGER_RECORD_REPAIR",
+  "original_source_review_failure": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/INDEPENDENT_SOURCE_AUDIT.json",
+    "sha256": "c4c9275675a843252d9679f8ddec29a28a699f624ec29526fbf1c11ce55544f1"
+  },
+  "original_confirmed_finding": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/CONFIRMED_SOURCE_FINDING.json",
+    "sha256": "9d57156e8692239dac3f12f8c308c893f6c6126609abd1f58069dcea41b95f87"
+  },
+  "full_original_head_compatibility_run": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/ORIGINAL_ENGINEERING_RUN.json",
+    "sha256": "bc4f8833dc73d6e493ab9bc9e4b35b37bde56de9eeecb807ae3cf8eb1b6aea72"
+  },
+  "new_worker_sha256": "667909c879cdfad2bcbee0445c6b5418a60165b1a689ef9e0e7851f275ca1d49",
+  "original_worker_sha256": "6d7c7c9ef5d64eafa93ae686c35d471e7428b6b578ddf6f751045d3f4411acaf",
+  "unchanged_other_source_shas": {
+    "visual_memory/vpd_registered_type_composite.py": "ee5540dfbec735c2ea51b380fd3a933a8aa79d6dcf9e91cde12e61917c601489",
+    "visual_memory/vpd_registered_type_font_layout_v29.py": "fbed1c79e47735d24256c8bd63d594c62a355ec8ec30d79d143e3369466fee50",
+    "visual_memory/vpd_registered_type_figma_binding.py": "af04b424c8e8b992fee74d54e2b28f6d29d46404f7041b829c76a32c1e125cae"
+  },
+  "actual_changed_function_ast": [
+    "version_input_contract"
+  ],
+  "actual_exact_diff": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/ROOT_INTEGER_REPAIR.diff",
+    "sha256": "1b4db5e04a6b48b9fe239e6c9beb0f41c094b9380284d528bdff0ebf02810c2a"
+  },
+  "repair": {
+    "type_guard_of_version_record_number": "Actual integer29 required in only29 branch",
+    "source_boundary_finding_closed": true,
+    "historical1_28_behavior_unchanged": true,
+    "required_fixes_remaining": []
+  },
+  "tests": [
+    {
+      "label": "actual integer29 correct prospective profile",
+      "accepted": true,
+      "same_complete_contract": true
+    },
+    {
+      "label": "version.number 29.0",
+      "type": "float",
+      "before": {
+        "accepted": true,
+        "returned_formal_version": 29
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number '29'",
+      "type": "str",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number True",
+      "type": "bool",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number False",
+      "type": "bool",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number 30",
+      "type": "int",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number None",
+      "type": "NoneType",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "version.number -1",
+      "type": "int",
+      "before": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      },
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument 30",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument 29.0",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument '29'",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument True",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument False",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument None",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument 0",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "formal argument -1",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "INSPECTED_FORMAL_VERSION_REQUIRED"
+      }
+    },
+    {
+      "label": "invalid prospective copy",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_PROSPECTIVE_COPY_REQUIRED"
+      }
+    },
+    {
+      "label": "invalid prospective input_contract",
+      "unchanged": true,
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "review_inputs_for_version rejects float record before downstream I/O",
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    },
+    {
+      "label": "validate_review rejects float record before downstream I/O",
+      "after": {
+        "accepted": false,
+        "exception": "TaskLockError",
+        "message": "V29_ROOT_FROZEN_INPUT_REQUIRED"
+      }
+    }
+  ],
+  "legacy_prospective_route_rechecks": [
+    {
+      "version": 1,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 2,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 3,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 4,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 5,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 6,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 7,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 8,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 9,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 10,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 11,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 12,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 13,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 14,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 15,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 16,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 17,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 18,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 19,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 20,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 21,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 22,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 23,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 24,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 25,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 26,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 27,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    },
+    {
+      "version": 28,
+      "actual_and_invalid_optional_records_keep_early_none_return": true,
+      "actual_historical_review_input_fallback_unchanged": true
+    }
+  ],
+  "actual_inference_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "host_runtime_proof": {
+    "path": ".liu-visual-private/v29-font-source-fresh-challenger/HOST_RUNTIME_MODEL_PROOF.json",
+    "sha256": "d8366e0f25ca8131d4f457758fcbe23aed87c52bcd88a13079363ef515d69896"
+  },
+  "tool_execution": {
+    "python_executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "argv": [
+      "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      ".liu-visual-private/v29-font-source-fresh-challenger/source_repair_review.py"
+    ],
+    "bytecode_writes_disabled": true,
+    "render_replays_rerun_after_fix": 0,
+    "production_register_calls": 0
+  },
+  "scope": "Source contract/font/brand/copy/layout integrity and known HEAD compatibility only.",
+  "previous_complete_evidence_reused": "Original 28 actual legacy checks and58 source negative controls retain exact raw files. g/font helper/b hashes unchanged; only worker version_input_contract AST changes.",
+  "excluded": [
+    "runtime29 actual Figma collector/binding (not implemented in reviewed b SHA)",
+    "native29 state finalization",
+    "new29 actual five-original cold review",
+    "final aesthetic/human acceptance"
+  ],
+  "aesthetic_pass_claimed": false,
+  "limitations": [
+    "This source-only code verdict cannot authorize runtime29 proof, aesthetic approval, human approval, or project promotion."
+  ],
+  "end_utc": "2026-10-05T05:49:10.381086+00:00",
+  "elapsed_seconds": 1.0
+}

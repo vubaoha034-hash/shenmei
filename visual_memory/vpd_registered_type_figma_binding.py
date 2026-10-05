@@ -158,6 +158,9 @@ def tool_result(event):
 
 
 def runtime_proof(root, evidence):
+    if type(evidence.get('formal_version')) is int and evidence['formal_version'] == 29:
+        from visual_memory.vpd_registered_type_figma_binding_v29 import runtime_proof as v29_runtime
+        return v29_runtime(root, evidence)
     if evidence.get('formal_version') == 23:
         return runtime_proof_v23(root, evidence)
     if evidence.get('formal_version') == 24:
@@ -537,6 +540,9 @@ def verify_actual_binding(root, registration_ref, runtime_evidence_ref, download
     """Recompute real provenance, graph, paths/styles/order, and export identities."""
     _, _, registration = g.replay(root, registration_ref)
     version = registration['formal_version']
+    if type(version) is int and version == 29:
+        from visual_memory.vpd_registered_type_figma_binding_v29 import verify_actual_binding as v29_binding
+        return v29_binding(root, registration_ref, runtime_evidence_ref, download_readback_ref)
     g.require(version in (22, 23, 24, 25, 26, 27, 28), 'INSPECTED_V22_COLLECTOR_REQUIRED')
     prefix = {22: '366', 23: '373', 24: '384', 25: '388', 26: '391', 27: '395', 28: V28_NATIVE['prefix']}[version]
     if version == 23:

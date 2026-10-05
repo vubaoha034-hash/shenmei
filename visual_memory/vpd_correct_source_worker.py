@@ -25,6 +25,35 @@ V28_LAYOUT_AMENDMENT = {
     'sha256': '2f78640ae85343fc89c0835a75be7a78564ed9c5e94d679b35aa3326414f0738',
 }
 V28_AUTHORIZED_OVERLAY_ENVELOPES = [[285,198,490,298],[380,354,1349,663]]
+V29_AUTHORIZED_OVERLAY_ENVELOPES = [[140,100,530,447]]
+
+def version_input_contract(root, version, number):
+    """Only29 may override copy/reference; historical unit fields remain intact."""
+    require(type(number) is int and 1 <= number <= 29, 'INSPECTED_FORMAL_VERSION_REQUIRED')
+    if number != 29:
+        return None
+    from .vpd_registered_type_composite import font_layout_kernel
+    kernel = font_layout_kernel(root)
+    require(type(version.get('number')) is int and version.get('number') == 29
+            and version.get('input_contract') == kernel['ROOT_INPUT'],
+            'V29_ROOT_FROZEN_INPUT_REQUIRED')
+    contract = kernel['contract'](root)
+    require(version.get('copy') == contract['copy'], 'V29_PROSPECTIVE_COPY_REQUIRED')
+    return contract
+
+def review_inputs_for_version(root, version, number, fallback):
+    contract = version_input_contract(root, version, number)
+    if contract is None:
+        return fallback
+    reference = version.get('review_inputs')
+    require(isinstance(reference, dict) and reference.get('path') and reference.get('sha256'),
+            'REQUIRED_ACTUAL_DATA:V29_REVIEW_INPUTS')
+    new, old = load(root, reference), load(root, fallback)
+    bindings = {item['neutral_id']: item['sha256'] for item in new['input_bindings']}
+    prior = {item['neutral_id']: item['sha256'] for item in old['input_bindings']}
+    require(set(bindings) == {'P','N','R','S'} and bindings == dict(prior, R=contract['reference']['sha256']),
+            'V29_PROSPECTIVE_REVIEW_INPUTS_REQUIRED')
+    return reference
 
 def available_canvas_slots(unit):
     if unit.get('repair_authorization'):
@@ -77,7 +106,7 @@ def validate_serial_transition(root, old_unit, unit):
     require(old_unit['unit_id'] == unit['unit_id'], 'WORKER_CANNOT_CHANGE_UNIT')
     old_used = old_unit['budget']['formal_versions_used']
     used = unit['budget']['formal_versions_used']
-    require(type(used) is int and old_used <= used <= old_used+1
+    require(type(used) is int and old_used <= used <= min(old_used+1, 29)
             and unit['budget']['revisions_used'] == max(0, used-1)
             and len(old_unit['versions']) == old_used and len(unit['versions']) == used,
             'CONTINUATION_BUDGET_ROLLBACK_OR_SKIP')
@@ -125,9 +154,16 @@ def validate_serial_transition(root, old_unit, unit):
                         'HUMAN_REVISION_IS_NOT_POSTER_REJECTION')
     return requests
 
-def validate_overlay_envelopes(number, envelopes, human_requests, v28_layout_authorized=False):
+def validate_overlay_envelopes(number, envelopes, human_requests, v28_layout_authorized=False, v29_contract=None):
     # V13 splits the already authorized headline into two phrase blocks.
     # Keep each block bounded separately; permitted photography areas stay fixed.
+    require(type(number) is int and 1 <= number <= 29, 'INSPECTED_FORMAL_VERSION_REQUIRED')
+    if number == 29:
+        require(v29_contract is not None and v29_contract['formal_version'] == 29
+                and [v29_contract['typography_alpha_bbox']] == V29_AUTHORIZED_OVERLAY_ENVELOPES
+                and envelopes == V29_AUTHORIZED_OVERLAY_ENVELOPES,
+                'V29_REGISTERED_ENVELOPE_CHANGED')
+        return
     limit = 3 if number >= 13 and any(target < number for target in human_requests) else 2
     require(isinstance(envelopes, list) and 1 <= len(envelopes) <= limit
             and all(isinstance(r, list) and len(r)==4 and all(type(v) is int for v in r)
@@ -252,7 +288,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     require(delivered['output']['sha256'] == SOURCE and delivered['hidden_original_recovered'] is False,
             'APPROVED_SOURCE_IDENTITY_CHANGED')
     budget = unit['budget']; used = budget['formal_versions_used']
-    require(type(used) is int and used >= 0 and budget['revisions_used'] == max(0,used-1)
+    require(type(used) is int and 0 <= used <= 29 and budget['revisions_used'] == max(0,used-1)
             and ((continuous and budget['formal_versions_max'] is None and
                   budget['revisions_max'] is None and budget['stop_condition']=='INDEPENDENT_AI_PASS')
                  or (not continuous and used<=3 and budget['formal_versions_max']==3
@@ -283,7 +319,10 @@ def validate_continuation(root, lock, cp, adapter, receipt):
     require(used > 0 and len(unit['versions']) == used, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
     for number, version in enumerate(unit['versions'],1):
         require(version['number'] == number, 'SERIAL_VERSION_EVIDENCE_REQUIRED')
+        input_contract = version_input_contract(root, version, number)
         technical = load(root, version['technical_check'])
+        if input_contract is not None:
+            require(technical.get('input_contract') == version['input_contract'], 'V29_TECHNICAL_INPUT_CONTRACT_REQUIRED')
         envelopes = ENVELOPES
         if number > 3:
             protection = load(root, version['photo_protection'])
@@ -293,7 +332,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
                     'SERIAL_PHOTO_PROTECTION_REQUIRED')
             envelopes = protection['visible_design_overlay_envelopes']
             validate_overlay_envelopes(number, envelopes, human_requests,
-                                       v28_layout_authorized=v28_layout_authorized)
+                                       v28_layout_authorized=v28_layout_authorized, v29_contract=input_contract)
         require(technical['frozen_source']['sha256'] == SOURCE and technical['dimensions'] == [1536,1024]
                 and technical['export'] == version['export'] and technical['overlay_envelopes'] == envelopes
                 and technical['protected_pixels_changed'] == 0
@@ -317,14 +356,16 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         if number < used or unit['phase'] != 'AWAITING_PIXEL_REVIEW':
             require(version.get('pixel_review'), 'PRIOR_PIXEL_REVIEW_REQUIRED')
         if version.get('pixel_review'):
-            reviewed = validate_review(root, version, number, unit['review_inputs'])
+            reviewed = validate_review(root, version, number,
+                review_inputs_for_version(root, version, number, unit['review_inputs']))
             require(version.get('verdict') == reviewed['verdict'], 'VERSION_REVIEW_VERDICT_CONFLICT')
             if number < used:
                 require(review_allows_revision(reviewed['verdict'], number, human_requests),
                         'AI_PASS_STOPS_SERIAL_REPAIR')
     current = unit['versions'][-1]
     if unit['phase'] == 'AWAITING_PIXEL_REVIEW': return
-    verdict = validate_review(root, current, used, unit['review_inputs'])['verdict']
+    verdict = validate_review(root, current, used,
+        review_inputs_for_version(root, current, used, unit['review_inputs']))['verdict']
     require((unit['phase']=='REVISION_REQUIRED' and (continuous or used<3)
              and review_allows_revision(verdict, used, human_requests))
             or (unit['phase']=='DELIVERED_AI_FAIL' and verdict=='AI_FAIL')
@@ -338,7 +379,7 @@ def validate_continuation(root, lock, cp, adapter, receipt):
 def compare_pixels(root,technical,envelopes=ENVELOPES):
     if technical.get('protection_mode') == 'REGISTERED_TYPE_SOURCE_COMPOSITE_V1':
         require(type(technical.get('formal_version')) is int
-                and technical['formal_version'] >= 22, 'PROSPECTIVE_V22_REQUIRED')
+                and 22 <= technical['formal_version'] <= 29, 'PROSPECTIVE_V22_REQUIRED')
         from .vpd_registered_type_composite import compare_pixels as compare_composite, replay
         from PIL import Image, ImageChops
         report = load(root, technical['registered_type_composite'])
@@ -367,7 +408,9 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
         require(actual == report and actual['formal_version'] == technical['formal_version']
                 and actual['source'] == technical['frozen_source'],
                 'REGISTERED_TYPE_COMPOSITE_REPORT_CONFLICT')
-        _, overlay, _ = replay(root, report['registration'])
+        _, overlay, registration = replay(root, report['registration'])
+        if technical['formal_version'] == 29:
+            require(technical.get('input_contract') == registration['input_contract'], 'V29_REGISTERED_INPUT_CONTRACT_CONFLICT')
         outside = Image.new('L', (1536,1024), 255)
         for x0,y0,x1,y1 in envelopes:
             outside.paste(0, (x0,y0,x1,y1))
@@ -427,6 +470,9 @@ def compare_pixels(root,technical,envelopes=ENVELOPES):
                 'APPROVED_PRODUCT_CORE_ACTUAL_PIXELS_CHANGED')
 
 def validate_review(root, version, number, expected_inputs):
+    contract = version_input_contract(root, version, number)
+    if contract is not None:
+        require(expected_inputs == version.get('review_inputs'), 'V29_PROSPECTIVE_REVIEW_INPUTS_REQUIRED')
     review=load(root,version['pixel_review']); ids=['P','N','R','S','T']
     require(review['task_id']==TASK and review['work_unit_id']==UNIT and review['version']==number
             and review['human_verdict']=='HIDDEN_PENDING' and review['personal_fit'] is None
@@ -439,8 +485,10 @@ def validate_review(root, version, number, expected_inputs):
     bindings={b['neutral_id']:b['sha256'] for b in review['input_bindings']}
     inputs=load(root,expected_inputs)
     expected={b['neutral_id']:b['sha256'] for b in inputs['input_bindings']}
+    reference_sha = (contract['reference']['sha256'] if contract is not None else
+                     '87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167')
     require(bindings==dict(expected,T=version['export']['sha256']) and expected['S']==SOURCE
-            and expected['R']=='87a28f5cd4b5d15b01e6536206127c357043a904b3c0dab3bfa0c50080782167',
+            and expected['R']==reference_sha,
             'WORKER_REFERENCE_BINDING_CHANGED')
     carrier=audit['carrier']; fork=('NOT_APPLICABLE_NEW_THREAD' if carrier=='FRESH_PROJECTLESS_CODEX_WORKER' else 'none')
     require(audit['verified'] is True and audit['fork_turns']==fork and audit['history_inherited'] is False

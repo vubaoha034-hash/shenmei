@@ -1,0 +1,65 @@
+{
+  "schema": "v29-maker-observed-tool-execution/v1",
+  "recorded_utc": "2026-10-05T04:26:44.772847+00:00",
+  "role": "MAKER_ONLY",
+  "production_exec_tool_result": {
+    "tool": "exec_command",
+    "chunk_id": "e62b09",
+    "exit_code": 0,
+    "command": "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 '.liu-visual-private/shanyeji-v29-production/build_v29.py'",
+    "observed_poster_sha256": "9ef3fb9bcdbf2b6188e95b90d4abe9e6b12ab2c237acf544e73b9c8ab65b7fe4",
+    "observed_auxiliary_path_count": 35,
+    "observed_alpha_bounds": [
+      140,
+      100,
+      530,
+      447
+    ],
+    "observed_outside_alpha_changed_pixels": 0,
+    "observed_lower_protected_changed_pixels": 0,
+    "warning": "Pillow 12.3.0 warned that getdata is deprecated; production completed with exit code 0."
+  },
+  "actual_image_tool_calls": [
+    {
+      "tool": "view_image",
+      "detail": "original",
+      "path": ".liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "pixels_returned_and_viewed": true
+    },
+    {
+      "tool": "view_image",
+      "detail": "original",
+      "path": ".liu-visual-private/source_recovery_20261003/photography-local-reconstruction-final.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "pixels_returned_and_viewed": true
+    },
+    {
+      "tool": "view_image",
+      "detail": "original",
+      "path": ".liu-visual-private/shanyeji-v29-production/poster.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "pixels_returned_and_viewed": true
+    }
+  ],
+  "technical_observation": "All four text roles rendered in the one specified information group above y447; no source photograph regeneration or second composition was performed. SVG source/path and raw-pixel protection checks are in the manifest.",
+  "aesthetic_evaluation_performed": false,
+  "human_approval_claimed": false,
+  "formal_freeze_performed": false,
+  "existing_dependency_preflight": "Default bundled Python lacked FontTools on sys.path; existing hermes package directory was appended after loading bundled Pillow. Default shell Node lacked sharp; bundled absolute Node and sharp paths succeeded.",
+  "finalization_call_error": {
+    "exec_chunk_id": "0ef841",
+    "exit_code": 1,
+    "error": "PowerShell rejected nested inline quote escaping before Python execution; no artifact changed. This separate UTF-8 script replaces that inline command."
+  },
+  "write_scope": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\shanyeji-v29-production"
+}
