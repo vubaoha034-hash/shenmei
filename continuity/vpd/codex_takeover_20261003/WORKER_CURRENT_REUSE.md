@@ -9,7 +9,7 @@
 
 S1实际隔离两图像素审稿FAIL；S2新的fork-none、gpt-6.1-sol/max审稿REFERENCE_FIDELITY_PASS_WITH_LIMITATIONS，具体灰暗橙字、杂色细边和小字残缺见`s2_pixel_review/PIXEL_REVIEW.json`及ISOLATION_AUDIT。这是参考形态复建结论，不是茶作新AI_PASS，不替代正式项目外五图冷审，不代表真人认可，也没有解决历史误放行问题。原字体/透明纹理/高分辨率设计源未知，不能承诺一模一样或迁移已验证。
 
-Drive新归档两次遭自动审批拒绝，现有目录元数据未返回归属/可见性证明；已提出该明确目录的授权问题，未绕过，未取得文件ID。当前唯一下一动作是`AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION`，见DRIVE_ARCHIVE_BLOCKER.json。授权未答复不能按时间自动批准。完成归档后再交刘先生审核文字研究，不恢复茶作制作、不改主线。
+刘先生已明确回复“是确认。”，许可PNG/SVG保存到既有目录并继承权限。两份实际上传及原字节回读完成：[S2完整PNG](https://drive.google.com/file/d/1Yf5-usJV-dawGNP-uaPooxdRUVCm6NCj/view)，[清洁曲线SVG](https://drive.google.com/file/d/1vevAlJaGqJc3TwxN2bY8TTOjjTZn_J2q/view)。当前成果入口是`evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST_DRIVE_ARCHIVED.json`，原DELIVERY_MANIFEST/DRIVE_ARCHIVE_BLOCKER及两次拒绝证据保留为历史。SVG保留轮廓；S2的软墨层在PNG/Figma中，不把SVG称作S2完整软纹理。当前唯一下一动作是`LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY`。这次确认仅是归档授权，文字研究真人审美仍PENDING；不恢复茶作制作、不改主线。
 
 新读取上下文测试定位：本目录证据的`fresh_entry/FRESH_ENTRY_REPORT.json`；只有该真实报告保存后才可宣称入口验证完成。测试针对当前仓库工作树入口及真实Figma只读复用，不等于另一个机器上的完整制作复现。以下为保留的历史成果与方法；其旧“当前下一动作”不能覆盖当前锁。
 <!-- END_SHANYEJI_REFERENCE_STUDY_CURRENT_20261005 -->

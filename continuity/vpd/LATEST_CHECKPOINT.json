@@ -1,8 +1,8 @@
 {
   "schema_version": "upcp-latest-checkpoint/v1",
   "project_id": "visual-aesthetic-vpd",
-  "sequence": 358,
-  "recorded_at": "2026-10-05T18:32:19.259860+08:00",
+  "sequence": 359,
+  "recorded_at": "2026-10-05T19:43:32.068923+08:00",
   "task_model": "TASK_REGISTRY",
   "highest_accepted_checkpoint": "VPD_FORMAL_RENDER_ATTEMPT1_INVALID_ATTEMPT2_READY_FOR_CHATGPT_RENDER",
   "highest_accepted_checkpoint_scope": "Historical preparation checkpoint only; no candidate promotion or stable universal independent-distillation claim.",
@@ -362,7 +362,7 @@
     "临摹研究真人验收、茶作文字迁移与整体蒸馏收益仍未验证"
   ],
   "blocked": [],
-  "next_required_action": "AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION",
+  "next_required_action": "LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY",
   "p6": {
     "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
     "page_id": "12:2",
@@ -430,11 +430,11 @@
     "mean_delta": 0.6,
     "verdict": "PASS_REPEATED_DIRECTIONAL_EVIDENCE_ONLY"
   },
-  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ARCHIVE_BLOCKED",
+  "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_DELIVERED",
   "task_lock": {
     "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
-    "sha256": "c4d2c5d13661c29eda576797d7c493a5529ba8bf66db43c20cc9da6fa2244d66",
-    "revision": 336
+    "sha256": "be6893476500b67876b118e740865142ec3be1ae598a6dfd21cdc49adb386156",
+    "revision": 337
   },
   "history_snapshot": {
     "path": "continuity/vpd/history/stage1_20261001/CHECKPOINT_220_BEFORE_R4_SETTLEMENT.json",
@@ -455,8 +455,8 @@
   },
   "ledger_tails": {
     "commercial_design_pipeline": {
-      "event_id": "EVT-VPD-CODEX-CHAZUO-336-20261003",
-      "event_hash": "97e6b8955d5e0a298d9c5f93565ae10d690bb70364547c1e4ed8410648658e3e"
+      "event_id": "EVT-VPD-CODEX-CHAZUO-337-20261003",
+      "event_hash": "70cb66a95fe6d0b9c157cd36d43fd53820d3da67eca1140556298fddf1664c34"
     }
   },
   "typography_repair": {
@@ -972,7 +972,7 @@
     "next": "STOP_GENERATOR_CHAT_AND_SETTLE_PROTOCOL_FAILURE_SEPARATELY"
   },
   "current_stage": "SHANYEJI_WHOLE_TYPOGRAPHY_REFERENCE_STUDY",
-  "updated_at": "2026-10-05T18:32:19.259860+08:00",
+  "updated_at": "2026-10-05T19:43:32.068923+08:00",
   "formal_render_attempt4": {
     "status": "PREPARED_H1_NOT_EXECUTED",
     "identity": "SHANYEJI_SYSTEM_LEVEL_HOLDOUT_TRANSFER_RENDER_ATTEMPT4",
@@ -1921,8 +1921,8 @@
     "runtime_generation_anchor_unchanged": true
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_STUDY_DELIVERY_RECEIPT.json",
-    "sha256": "dc3c12174aa1496fa585da73f397703a0e95519022a386f20c135317a94816dc"
+    "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_DRIVE_ARCHIVED_RECEIPT.json",
+    "sha256": "68be60b2845db5ca78feaab818e047f8d87cc7233c7788630b962547eb651152"
   },
   "standing_authorization_policy": {
     "path": "continuity/vpd/STANDING_AUTHORIZATION_POLICY.json",
@@ -2653,8 +2653,8 @@
   },
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
-    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_ARCHIVE_BLOCKED",
-    "next_required_action": "AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION",
+    "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_DELIVERED",
+    "next_required_action": "LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -2664,8 +2664,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_STUDY_DELIVERY_RECEIPT.json",
-      "sha256": "dc3c12174aa1496fa585da73f397703a0e95519022a386f20c135317a94816dc"
+      "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_DRIVE_ARCHIVED_RECEIPT.json",
+      "sha256": "68be60b2845db5ca78feaab818e047f8d87cc7233c7788630b962547eb651152"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -2683,7 +2683,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "2df282963be1411e0d5e27afe927dbd5a562f4a108b777b86a9ce7f61917e38f"
+      "sha256": "5615c52b8acd34723e811d438b8cd64703b3b02c3693021eca39641ee80eb371"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -2742,7 +2742,7 @@
     },
     "worker_continuation": {
       "unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
-      "phase": "REFERENCE_STUDY_ARCHIVE_BLOCKED",
+      "phase": "REFERENCE_STUDY_DELIVERED",
       "authorization": {
         "path": "continuity/vpd/codex_takeover_20261003/WORKER_CONTINUATION_AUTHORIZATION.json",
         "sha256": "153759c769ec76321a061532cf75940e7265c858b9dd32c28c7b41144e3803b3"
@@ -4176,11 +4176,27 @@
           {
             "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
             "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DRIVE_DESTINATION_HUMAN_CONFIRMATION.json",
+            "sha256": "5c5bbae9ee28283de1340d40d979f66e7ffaa485c68f8bea571a66d708bf1b2f"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DRIVE_PNG_READBACK_CONFIRMED.json",
+            "sha256": "4ca5809876789514d93f5dd7e66364416afccbecd04431f61141ae09076f4471"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DRIVE_SVG_READBACK_CONFIRMED.json",
+            "sha256": "b59e775063f51dad60ba7f8189cce3eeac1d8aadf5b0c237eed9f222419e8a1d"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST_DRIVE_ARCHIVED.json",
+            "sha256": "974fb80e659010aea4fd871dd3cba6be256193a0d749173de38bfaa8070a0ea2"
           }
         ],
         "delivery": {
-          "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST.json",
-          "sha256": "cdad6a01535821fbf7dcf585e1857e95194315665f23d56763416cdfb1e09fb6"
+          "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/DELIVERY_MANIFEST_DRIVE_ARCHIVED.json",
+          "sha256": "974fb80e659010aea4fd871dd3cba6be256193a0d749173de38bfaa8070a0ea2"
         },
         "review": {
           "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
