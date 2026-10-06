@@ -1,0 +1,122 @@
+{
+  "schema_version": "visual-workflow-release/v0.1.4",
+  "version": "0.1.4",
+  "recorded_at": "2026-10-06T22:26:33.897Z",
+  "status": "PUBLISHED_ENGINEERING_CHECKS_PASS_REAL_TEXT_REGRESSION_NOT_EXECUTED",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "code_commit": "bf8172c994b523aa15803738ca4c2e1f0b715ba6",
+  "site": {
+    "url": "https://liu-visual-workflow-20261006.deemoliul.chatgpt.site",
+    "site_version": 7,
+    "source_commit": "1634e34268402260093a6dd8224c48a0b1059bf4",
+    "deployment_id": "appgdep_6ac5750728348191b836f45339547ab7",
+    "deployment_status": "succeeded",
+    "plugin_id": "plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c",
+    "new_plugin_created": false
+  },
+  "contract": {
+    "final_canvas_policy": "EXACT_REFERENCE_DIMENSIONS",
+    "finalization_mode": "MASKED_LOCAL_EDIT_OR_DETERMINISTIC_COMPOSITE",
+    "whole_canvas_generative_edit_as_final": false,
+    "outside_edit_regions_policy": "BIT_IDENTICAL",
+    "generative_output_role": "GUIDE_ONLY",
+    "on_exact_composite_unavailable": "STOP / DETERMINISTIC_COMPOSITE_REQUIRED",
+    "reference_pixels_required": true,
+    "current_context_reference_required": true,
+    "text_to_image_allowed": false
+  },
+  "validation": {
+    "js_tests": 67,
+    "python_tests": 12,
+    "total": 79,
+    "failed": 0,
+    "skipped": 0,
+    "build": "PASS",
+    "logs": [
+      "color-profile-full-test.log",
+      "color-profile-build.log"
+    ],
+    "hosted_locator_only": "BLOCKED / STOP; no ordinary generation prompt",
+    "real_jpeg_engineering_smoke": {
+      "source_dimensions": [
+        709,
+        1536
+      ],
+      "source_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+      "final_dimensions": [
+        709,
+        1536
+      ],
+      "outside_mask_changed_pixels": 0,
+      "scope": "Engineering single-pixel local patch only; not text replacement or visual acceptance"
+    },
+    "wrong_size_probe": "941x1672 synthetic guide rejected; not a measured user result",
+    "source_readback": "30 source files byte-identical at code commit; v0.1.3 core unchanged"
+  },
+  "v013_real_regression": {
+    "verdict": "PARTIAL_IMPROVEMENT_BUT_STRUCTURE_LOCK_FAIL",
+    "source_kind": "CURRENT_USER_REPORTED_OPERA_NEON_REAL_ATTACHMENT_REGRESSION",
+    "independently_viewed_here": false,
+    "original_dimensions": [
+      709,
+      1536
+    ],
+    "output_dimensions": [
+      941,
+      1672
+    ],
+    "attachment_edit_ui": "Edited the provided image",
+    "preserved_reported": [
+      "boat/cabin",
+      "two_people",
+      "sunset",
+      "water",
+      "gold_black_palette",
+      "approximate_information_architecture",
+      "new_main_title"
+    ],
+    "failed": [
+      "canvas_and_aspect_ratio",
+      "exact_crop_and_outer_black_area",
+      "main_title_geometry_and_whitespace"
+    ],
+    "pass": false
+  },
+  "v014_real_text_regression": {
+    "status": "NOT_EXECUTED",
+    "pass": false,
+    "required": "Actual new-chat original attachment; declared binary text-only masks; original-pixel deterministic composite; exact dimensions; outside-mask zero diff; actual pixel review of photo/two_people/cabin/sunset/water/crop/layout",
+    "coverage": "Cooperating executor contract and executable finalizer; not host-wide image-tool enforcement"
+  },
+  "catalog_refresh": {
+    "status": "BLOCKED_NOT_COMPLETED",
+    "opera": "Browser not connected",
+    "fallback": "Cloud browser signed out; no account authentication attempted",
+    "exposed_catalog": "Still older schema; live negative probe reaches deployed v0.1.4 server",
+    "next_entry": "Reconnect existing plugin; use REGRESSION_REQUEST_014.md in a fresh chat with actual original attachment"
+  },
+  "native_unchanged": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "native_lock_sha256": "4eee3b6aec2ee8979bc96f3e1193636caa986b16d779bd8bdd15263e1652428f",
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "s7_human": "PENDING",
+    "business_state_written": false
+  },
+  "retained_failures": {
+    "test_failures": 0,
+    "environment": [
+      "Earlier source credential expiry renewed; publication succeeded afterwards",
+      "Skill YAML validation helper unavailable at previous path; PyYAML metadata check passed",
+      "Opera disconnected and cloud browser signed out; catalog refresh not completed"
+    ],
+    "records": "Earlier evidence logs and candidate records retained without rewrite"
+  },
+  "regression_entry": "plugins/visual-aesthetic-workflow/v0.1.4/REGRESSION_REQUEST_014.md",
+  "finalizer": "plugins/visual-aesthetic-workflow/v0.1.4/scripts/exact_composite.py"
+}
