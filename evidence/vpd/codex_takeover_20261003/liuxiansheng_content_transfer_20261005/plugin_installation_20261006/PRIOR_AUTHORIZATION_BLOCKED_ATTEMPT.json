@@ -1,0 +1,52 @@
+{
+  "schema": "actual-browser-plugin-installation-attempt/v1",
+  "recorded_at_utc": "2026-10-06T09:04:16.500333+00:00",
+  "authorization": "User explicitly requested using @dev-6ab32747a960819180d4f438d8d739cf to install the plugin.",
+  "browser_plugin": "Opera Neon",
+  "plugin_name": "刘先生·视觉设计工作流",
+  "plugin_id": "plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c",
+  "actual_details_url": "https://chatgpt.com/plugins/plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c?directoryTab=personal",
+  "observed_directory": "个人 / 由你创建",
+  "observed_before": "Not in installed sidebar; named Install button visible in actual account.",
+  "actions": [
+    {
+      "page": 29,
+      "uid": "130_18",
+      "action": "Click specific named install button",
+      "result": "OAuth choose-account popup opened as page31; parent install button restored."
+    },
+    {
+      "page": 29,
+      "uid": "134_8",
+      "action": "Click installation on details page",
+      "result": "OAuth choose-account popup opened as page32."
+    }
+  ],
+  "current_authentication_screen": {
+    "page": 32,
+    "origin": "https://auth.openai.com",
+    "path": "/choose-an-account",
+    "title": "使用 ChatGPT 登录 刘先生·视觉设计工作流",
+    "available_existing_accounts": 1,
+    "personal_data_requested": [
+      "name",
+      "email"
+    ],
+    "credentials_or_OAuth_codes_saved": false
+  },
+  "blocked_action": {
+    "uid": "137_7",
+    "action": "Choose existing account and continue OAuth",
+    "result": "AUTO_REVIEW_REJECTED",
+    "reason": "Installation authorization did not explicitly authorize disclosure of current account name and email to this application.",
+    "bypassed": false
+  },
+  "installed_verified": false,
+  "connected_verified": false,
+  "hosted_workflow_calls_succeeded": 0,
+  "feedback_saved_via_plugin": false,
+  "next_dependency": "Explicit human authorization for sharing current account name and email with this application for sign-in and identity checking.",
+  "native_task_state_changed": false,
+  "new_artwork_or_paid_resources": false,
+  "earlier_connection_diagnosis_correction": "Two other Opera browser connectors were unavailable; user-specified Opera Neon list_pages actually succeeds. The earlier blanket browser-unavailable conclusion was too broad."
+}

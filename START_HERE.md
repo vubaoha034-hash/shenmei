@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- LIU_PLUGIN_ACTUALLY_CONNECTED_20261006 -->
+刘先生·视觉设计工作流已在本ChatGPT账户实际安装并连接，至少一次真实get_current_workflow调用及原始tool结果绑定已通过独立核对。先读本分支最新原生锁和当前receipt，再读 plugins/visual-aesthetic-workflow/CONNECTION_VERIFICATION.json 与 evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/README.md。旧S7_FINAL_REUSE.md、CURRENT_RELEASE.json及HTTP401记录按原哈希冻结，表示当时未验证，不覆盖本次已授权安装与真实运行。此连接记录不改变作品、主线、真人门、版本预算或唯一下一动作。实际入口https://chatgpt.com/plugins/plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c?directoryTab=personal，选择“在聊天中试用”或新聊天@选中插件后调用get_current_workflow；生产反馈写入/回读及当前Codex会话直接工具发现仍未验证。
+<!-- END_LIU_PLUGIN_ACTUALLY_CONNECTED_20261006 -->
+
 <!-- INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->
 最新授权与 worker 入口：先读原生任务锁，再读 `continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md`。2026-10-04刘先生明确授权同一方向持续制作、独立审核和修复，直到内部审核通过；本次授权取代三版两修订停止上限，保留累计版本、全部失败、主线、摄影保护与真人最终验收。授权原话见 `continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json`。V3真人REJECTED及V1–V3真实AI_FAIL不改写；冻结7fd7777f摄影认可不撤回。worker不能改主线，根执行者唯一写业务状态。下方三版耗尽、等待追加范围或旧验收下一动作均为历史，不覆盖当前原生锁。
 <!-- END_INDEPENDENT_WORKER_CURRENT_ENTRY_20261003 -->

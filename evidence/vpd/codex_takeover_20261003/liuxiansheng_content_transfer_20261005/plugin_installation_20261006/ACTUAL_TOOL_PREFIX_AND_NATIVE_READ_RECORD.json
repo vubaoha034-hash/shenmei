@@ -1,0 +1,117 @@
+{
+  "input_SHA256": "e300b69407fc284b31b01367cc07c5518752f6909d0acfae523395dcd8832ba2",
+  "capture_source": "Root observed HTTP200 browser response excerpt; child reviewed saved bytes only",
+  "input_bytes": 4838,
+  "actual_tool_invocation_message": {
+    "id": "91b8c0cc-c9e1-4be2-a025-6ac42b133769",
+    "author": {
+      "role": "assistant",
+      "name": null,
+      "metadata": {}
+    },
+    "create_time": 1791279223.127667,
+    "update_time": 1791279223.127667,
+    "content": {
+      "content_type": "code",
+      "language": "python3",
+      "response_format_name": null,
+      "text": "{\"path\":\"/\\u5218\\u5148\\u751f\\u00b7\\u89c6\\u89c9\\u8bbe\\u8ba1\\u5de5\\u4f5c\\u6d41/link_6ac4c007fd6881919033d63620867164/get_current_workflow\",\"args\":{}}"
+    },
+    "status": "finished_successfully",
+    "end_turn": false,
+    "weight": 1,
+    "metadata": {
+      "citations": [],
+      "content_references": [],
+      "resolved_model_slug": "gpt-5-6-thinking",
+      "tool_invoking_message": "正在运行应用请求",
+      "tool_invoked_message": "已收到应用响应",
+      "hide_inline_actions": true,
+      "disable_turn_actions": true,
+      "chime_version": 1,
+      "reasoning_titles": [
+        "读取当前视觉设计工作流"
+      ],
+      "reasoning_title": "读取当前视觉设计工作流",
+      "tool_icons": [
+        "api_tool"
+      ],
+      "connector_tool_payload": "{}",
+      "classifier_response": "default",
+      "reasoning_start_time": 1791279220.0705914,
+      "cot_version": "v5",
+      "request_id": "a73c8824-65a8-42c3-8998-8054ce2f36eb",
+      "message_type": "next",
+      "turn_exchange_id": "a99477e7-1aa5-41df-bab8-fd8cc651c06e",
+      "working_turn_id": "a99477e7-1aa5-41df-bab8-fd8cc651c06e",
+      "model_slug": "gpt-5-6-thinking",
+      "default_model_slug": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "parent_id": "4d866da4-9343-447b-bc68-a1a008178753",
+      "model_switcher_deny": [],
+      "can_save": false
+    },
+    "recipient": "api_tool.call_tool",
+    "channel": null
+  },
+  "actual_tool_response_prefix": "{\"id\":\"9a404c36-be8d-4661-bc1c-c4b27c024773\",\"author\":{\"role\":\"tool\",\"name\":\"api_tool.call_tool\",\"metadata\":{}},\"create_time\":1791279227.271094,\"update_time\":1791279261.445154,\"content\":{\"content_type\":\"code\",\"language\":\"json\",\"response_format_name\":null,\"text\":\"{\\\"source\\\":{\\\"repository\\\":\\\"vubaoha034-hash/shenmei\\\",\\\"branch\\\":\\\"visual-program-distillation-v2-photography-design-20260814\\\",\\\"commit\\\":\\\"c19970b76cb2e30b037c55016ceb5f54b29a887c\\\",\\\"native_lock_sha256\\\":\\\"1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9\\\",\\\"lock_revision\\\":353,\\\"checkpoint_sequence\\\":375},\\\"task_id\\\":\\\"VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01\\\",\\\"stage\\\":\\\"LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT\\\",\\\"next_required_action\\\":\\\"LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER\\\"",
+  "prefix_characters": 798,
+  "independently_decoded_complete_binding_fields": {
+    "source": {
+      "repository": "vubaoha034-hash/shenmei",
+      "branch": "visual-program-distillation-v2-photography-design-20260814",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "native_lock_sha256": "1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9",
+      "lock_revision": 353,
+      "checkpoint_sequence": 375
+    },
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "native_blobs": [
+    {
+      "path": "PROJECT_CONTROL_ADAPTER.json",
+      "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "sha256": "c538cecde24b0e829adc2828bbfae486ff18af707281c3c24e9c19a64f8f78e0",
+      "bytes": 386774
+    },
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "sha256": "1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9",
+      "bytes": 332608
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "sha256": "9b626b7e277e38500b71854f9994cfeb5a55a4bae3323bde947c639b37721632",
+      "bytes": 314537
+    }
+  ],
+  "public_evidence_bounded_inventory": {
+    "expected_directory": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006",
+    "exists_at_bounded_check": true,
+    "files": [
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/ACTUAL_TOOL_PROOF.json",
+        "sha256": "e300b69407fc284b31b01367cc07c5518752f6909d0acfae523395dcd8832ba2",
+        "bytes": 4838
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/ACTUAL_UI_INSTALLATION.json",
+        "sha256": "b66e5e5e2a0a9eb3404ebbbd4949fd72636a71b4670b346d75c0b41fe0e1d419",
+        "bytes": 3534
+      },
+      {
+        "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/README.md",
+        "sha256": "0d8e4bb0374151f320a6c473c4338eb8d40185d61970cfd4b65b2acdfea7d112",
+        "bytes": 2813
+      }
+    ],
+    "assessment": "File inventory is present; contents require separately authorized bounded review before any public-claim verdict."
+  }
+}

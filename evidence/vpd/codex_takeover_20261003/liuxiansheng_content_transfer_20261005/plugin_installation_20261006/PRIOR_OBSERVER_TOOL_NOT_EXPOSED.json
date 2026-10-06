@@ -1,0 +1,61 @@
+{
+  "schema": "bounded-independent-plugin-installation-verification/v1",
+  "observer": "/root/s7_fresh_repository_entry_test",
+  "observed_at_utc": "2026-10-06 09:36:40 UTC",
+  "verdict": "NOT_VERIFIED_PROJECT_TOOL_NOT_EXPOSED_IN_THIS_OBSERVER_SESSION",
+  "scope": "One actual tool catalog check. Direct hosted read-only call possible only if the project's get_current_workflow is actually exposed.",
+  "actual_evidence": {
+    "tool_catalog_record": "TOOL_CATALOG_OBSERVATION.json",
+    "tool_catalog_entry_count": 698,
+    "get_current_workflow_matches": [],
+    "related_project_tool_matches": [],
+    "directory_checks": 1,
+    "direct_get_current_workflow_calls": 0,
+    "raw_get_current_workflow_result": "ABSENT; tool not exposed, no call performed",
+    "tool_catalog_record_sha256": "702cd172d4d8e40417d5f6a12295010aaaa3ddffe7478fc7372bdce3d4b913d3"
+  },
+  "tool_call_input": null,
+  "execution_model_evidence": {
+    "model": "NOT_EXPOSED_TO_THIS_CATALOG_CHECK",
+    "reasoning_effort": "NOT_EXPOSED",
+    "limit": "No model/runtime setting inferred from parent role, browser AI self-description or task wording."
+  },
+  "expected_repository_baseline": {
+    "repository": "vubaoha034-hash/shenmei",
+    "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+    "native_revision": 353,
+    "checkpoint_sequence": 375,
+    "current_S7_sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762",
+    "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+    "verification_status": "Expected previously published baseline only; no newly returned get_current_workflow version/artwork/reference verified in this task"
+  },
+  "reported_context": {
+    "source": "Delegating Root; not independently inspected by this observer",
+    "installation_UI": "Root reports existing plugin installed in sidebar and connected account after user-approved OAuth/profile sharing",
+    "test_chat": "Root reports a separate ChatGPT test conversation self-described two get_current_workflow calls; no underlying call body/result is supplied to this observer",
+    "interpretation": "Installation UI reports and AI final self-description do not establish a direct hosted workflow execution result."
+  },
+  "facts_and_limits": [
+    "No matching project tools are exposed in this observer's current catalog; global installation and another ChatGPT session's tool exposure are not determined.",
+    "No workflow call was attempted or succeeded here, so returned native revision, checkpoint, S7 and reference cannot be verified from a live result.",
+    "Root-reported installed/connected UI may coexist with absent tools in this Codex child session. Absence here is not proof installation failed.",
+    "The earlier service-token401 remains a historical probe. It is not a new post-OAuth authenticated-user failure or proof of the current connected session outcome.",
+    "No browser UI, other chat/runtime, production HTTP, refresh loop, model audit, pixel review, source change or native writer was used."
+  ],
+  "privacy": {
+    "profile_name_email_avatar_token_OAuth_parameters_saved": false
+  },
+  "actions": {
+    "business_public_source_writes": 0,
+    "browser_UI_actions": 0,
+    "network_hosted_MCP_HTTP_calls": 0,
+    "feedback_writes": 0,
+    "other_chat_messages": 0,
+    "subagents_spawned": 0,
+    "full_validators_tests_pixels": 0,
+    "write_scope": ".liu-visual-private/plugin_installation_20261006/independent/",
+    "stop_after_record": true
+  },
+  "next_evidence": "Await Root's necessary actual underlying tool result if it obtains one; do not treat AI self-description as execution evidence or recheck the directory automatically.",
+  "sealed_at_utc": "2026-10-06T09:37:50.853690+00:00"
+}

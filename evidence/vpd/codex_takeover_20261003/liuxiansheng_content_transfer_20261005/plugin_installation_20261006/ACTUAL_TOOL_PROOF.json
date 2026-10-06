@@ -1,0 +1,92 @@
+{
+  "schema": "liu-plugin-actual-browser-tool-proof/v1",
+  "evidence_kind": "OBSERVED_EXISTING_CHATGPT_HTTP_RESPONSE_BODY_EXCERPT_NOT_ASSISTANT_SELF_REPORT",
+  "observed_response_url": "https://chatgpt.com/backend-api/conversations/6ac4c047-1148-83ea-b408-5f39d5d50ab7?num_turns=10&include_has_versions=true",
+  "http_status": 200,
+  "network_request_id": 477,
+  "conversation_id": "6ac4c047-1148-83ea-b408-5f39d5d50ab7",
+  "title": "插件验收核验",
+  "actual_chatgpt_configuration": {
+    "model_slug": "gpt-5-6-thinking",
+    "thinking_effort": "max",
+    "source": "actual stored invocation metadata"
+  },
+  "actual_tool_invocation_message": {
+    "id": "91b8c0cc-c9e1-4be2-a025-6ac42b133769",
+    "author": {
+      "role": "assistant",
+      "name": null,
+      "metadata": {}
+    },
+    "create_time": 1791279223.127667,
+    "update_time": 1791279223.127667,
+    "content": {
+      "content_type": "code",
+      "language": "python3",
+      "response_format_name": null,
+      "text": "{\"path\":\"/\\u5218\\u5148\\u751f\\u00b7\\u89c6\\u89c9\\u8bbe\\u8ba1\\u5de5\\u4f5c\\u6d41/link_6ac4c007fd6881919033d63620867164/get_current_workflow\",\"args\":{}}"
+    },
+    "status": "finished_successfully",
+    "end_turn": false,
+    "weight": 1,
+    "metadata": {
+      "citations": [],
+      "content_references": [],
+      "resolved_model_slug": "gpt-5-6-thinking",
+      "tool_invoking_message": "正在运行应用请求",
+      "tool_invoked_message": "已收到应用响应",
+      "hide_inline_actions": true,
+      "disable_turn_actions": true,
+      "chime_version": 1,
+      "reasoning_titles": [
+        "读取当前视觉设计工作流"
+      ],
+      "reasoning_title": "读取当前视觉设计工作流",
+      "tool_icons": [
+        "api_tool"
+      ],
+      "connector_tool_payload": "{}",
+      "classifier_response": "default",
+      "reasoning_start_time": 1791279220.0705914,
+      "cot_version": "v5",
+      "request_id": "a73c8824-65a8-42c3-8998-8054ce2f36eb",
+      "message_type": "next",
+      "turn_exchange_id": "a99477e7-1aa5-41df-bab8-fd8cc651c06e",
+      "working_turn_id": "a99477e7-1aa5-41df-bab8-fd8cc651c06e",
+      "model_slug": "gpt-5-6-thinking",
+      "default_model_slug": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "parent_id": "4d866da4-9343-447b-bc68-a1a008178753",
+      "model_switcher_deny": [],
+      "can_save": false
+    },
+    "recipient": "api_tool.call_tool",
+    "channel": null
+  },
+  "actual_tool_response_message_id": "9a404c36-be8d-4661-bc1c-c4b27c024773",
+  "actual_tool_response_author": {
+    "role": "tool",
+    "name": "api_tool.call_tool"
+  },
+  "actual_tool_response_prefix": "{\"id\":\"9a404c36-be8d-4661-bc1c-c4b27c024773\",\"author\":{\"role\":\"tool\",\"name\":\"api_tool.call_tool\",\"metadata\":{}},\"create_time\":1791279227.271094,\"update_time\":1791279261.445154,\"content\":{\"content_type\":\"code\",\"language\":\"json\",\"response_format_name\":null,\"text\":\"{\\\"source\\\":{\\\"repository\\\":\\\"vubaoha034-hash/shenmei\\\",\\\"branch\\\":\\\"visual-program-distillation-v2-photography-design-20260814\\\",\\\"commit\\\":\\\"c19970b76cb2e30b037c55016ceb5f54b29a887c\\\",\\\"native_lock_sha256\\\":\\\"1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9\\\",\\\"lock_revision\\\":353,\\\"checkpoint_sequence\\\":375},\\\"task_id\\\":\\\"VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01\\\",\\\"stage\\\":\\\"LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT\\\",\\\"next_required_action\\\":\\\"LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER\\\"",
+  "decoded_complete_binding_fields": {
+    "source": {
+      "repository": "vubaoha034-hash/shenmei",
+      "branch": "visual-program-distillation-v2-photography-design-20260814",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "native_lock_sha256": "1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9",
+      "lock_revision": 353,
+      "checkpoint_sequence": 375
+    },
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "limitations": [
+    "Browser network inspector truncated inline response body at roughly10000 characters; no complete full-response JSON was saved.",
+    "One actual invocation and matching raw tool-response binding prefix are verified; assistant claim of a second invocation is not used as evidence.",
+    "Codex Root and existing child catalogs did not expose the new four tools during this turn; ChatGPT browser invocation is the verified runtime.",
+    "A separate same-origin direct read attempt returned401 and no messages; no token extraction, cookie replay or auth bypass was attempted."
+  ],
+  "verified_actual_readonly_calls_minimum": 1
+}

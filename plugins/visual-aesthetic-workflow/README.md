@@ -1,3 +1,5 @@
+> 当前实际安装状态（2026-10-06）：**已安装、已连接、只读调用已核验**。以CONNECTION_VERIFICATION.json及当前原生回执绑定的安装证据为准；源码部署为0.1.1。下方保留原0.1.0基线说明，不能用其旧版限制覆盖新运行证据。实际调用方式及范围见 ../../evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/README.md。
+
 # Visual aesthetic workflow MCP core
 
 Experimental version **0.1.0**. This package wraps the existing native Shanyeji → Liu typography experiment. It reads actual authoritative GitHub state, prepares a seven-variable production/review handoff, and validates human feedback for append-only intake. It does not generate an image, edit Figma, fetch Drive pixels, run an independent reviewer, train a model, schedule work or update business acceptance.

@@ -1,0 +1,19 @@
+{
+  "schema": "native-entry-freeze-installation-binding-repair/v1",
+  "actual_failure_tool_chunk": "765993",
+  "actual_exit_code": 1,
+  "failure": "EVIDENCE_HASH_MISMATCH:continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+  "cause": "Root attempted to update current connection wording inside an already immutable transfer.artifacts entry; original serial guard correctly rejected before native writes.",
+  "state_after_rejection": {
+    "revision": 353,
+    "checkpoint": 375
+  },
+  "repair": "Restore frozen S7 entry exact HEAD bytes; add current connection supplement to START_HERE plus current native receipt. Preserve transfer artifact prefix and all source versions. No validator change.",
+  "restored_entry": {
+    "path": "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+    "sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9"
+  },
+  "frozen_worker_continuation_unchanged": true,
+  "retry_limit": 1,
+  "no_artwork_or_business_promotion": true
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "supplemental-actual-plugin-tool-evidence-review/v1",
+  "recorded_at_utc": "2026-10-06T09:44:26.405559+00:00",
+  "verdict": "PASS_RECORDED_READONLY_TOOL_PREFIX_NATIVE_BINDING_WITH_LIMITATIONS",
+  "scope": "File-only review of Root-captured actual HTTP200 tool invocation/response prefix and current HEAD native3. This observer executed no browser or plugin call.",
+  "checks": {
+    "supplied_actual_capture_HTTP200": true,
+    "actual_assistant_call_message_and_exact_readonly_path": true,
+    "actual_tool_author_and_response_id_in_raw_prefix": true,
+    "raw_prefix_complete_fields_independently_decode_to_recorded_fields": true,
+    "actual_metadata_model_and_effort_match_record": true,
+    "returned_commit_repository_branch_match_HEAD": true,
+    "returned353_375_and_lock_SHA_match_native3": true,
+    "returned_task_stage_and_next_match_native": true,
+    "only_minimum1_call_claimed": true,
+    "old_catalog_unverified_report_remains_sealed": true,
+    "public_actual_tool_copy_byte_exact_to_reviewed_private_input": true,
+    "public_UI_selected_lines_support_installed_connected": true,
+    "public_UI_profile_and_credentials_redacted": true,
+    "public_README_scope_limits_match_recorded_evidence": true
+  },
+  "failed_checks": [],
+  "actual_input": {
+    "path": ".liu-visual-private/plugin_installation_20261006/ACTUAL_TOOL_PROOF.json",
+    "sha256": "e300b69407fc284b31b01367cc07c5518752f6909d0acfae523395dcd8832ba2",
+    "bytes": 4838,
+    "private_read_copy": "ACTUAL_TOOL_PROOF_READ_COPY.json"
+  },
+  "raw_read_record": "ACTUAL_TOOL_PREFIX_AND_NATIVE_READ_RECORD.json",
+  "runtime": {
+    "environment": "ChatGPT browser conversation captured by Root",
+    "actual_call_recipient": "api_tool.call_tool",
+    "actual_path": "/刘先生·视觉设计工作流/link_6ac4c007fd6881919033d63620867164/get_current_workflow",
+    "actual_args": {},
+    "actual_invocation_message_id": "91b8c0cc-c9e1-4be2-a025-6ac42b133769",
+    "actual_tool_response_message_id": "9a404c36-be8d-4661-bc1c-c4b27c024773",
+    "actual_metadata_model_slug": "gpt-5-6-thinking",
+    "actual_metadata_thinking_effort": "max",
+    "not_claimed": "Sol/Max runtime, external cold review or a direct call by this Codex observer"
+  },
+  "verified_returned_fields": {
+    "source": {
+      "repository": "vubaoha034-hash/shenmei",
+      "branch": "visual-program-distillation-v2-photography-design-20260814",
+      "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+      "native_lock_sha256": "1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9",
+      "lock_revision": 353,
+      "checkpoint_sequence": 375
+    },
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "minimum_actual_readonly_call_evidence": 1,
+  "second_call": "UNVERIFIED; assistant self-description excluded",
+  "response_completeness": {
+    "complete_full_HTTP_response_saved": false,
+    "inspector_inline_body_truncation_reported": true,
+    "raw_tool_message_prefix_characters": 798,
+    "complete_prefix_binding_fields_verified": [
+      "source",
+      "task_id",
+      "stage",
+      "next_required_action"
+    ],
+    "not_in_saved_prefix": [
+      "S7 artwork object/SHA",
+      "reference object/SHA",
+      "acceptance/count fields",
+      "full tool message metadata/parent linkage",
+      "second actual invocation/result"
+    ],
+    "fragment_decode_method": "Only the missing outer string delimiter was appended to parse the saved string fragment; individual already-complete fields decoded with raw_decode. This is never a reconstructed complete provider response."
+  },
+  "native_source": {
+    "HEAD": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+    "files": [
+      {
+        "path": "PROJECT_CONTROL_ADAPTER.json",
+        "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+        "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+        "sha256": "c538cecde24b0e829adc2828bbfae486ff18af707281c3c24e9c19a64f8f78e0",
+        "bytes": 386774
+      },
+      {
+        "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+        "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+        "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+        "sha256": "1b4531bcf5b760c0a686c5c39aa5884801c51998d4096aa2d1583b5dceed6bf9",
+        "bytes": 332608
+      },
+      {
+        "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+        "method": "Actual HEAD Git blob; no CRLF worktree substitution",
+        "commit": "c19970b76cb2e30b037c55016ceb5f54b29a887c",
+        "sha256": "9b626b7e277e38500b71854f9994cfeb5a55a4bae3323bde947c639b37721632",
+        "bytes": 314537
+      }
+    ],
+    "revision": 353,
+    "checkpoint": 375,
+    "raw_stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "native_current_S7": "Existing native binding only; not a newly observed tool-response artwork field"
+  },
+  "installation_connection_scope": {
+    "reported_UI": "Root reports installed sidebar and connected account; this file-only observer did not inspect browser UI.",
+    "actual_readonly": "Recorded assistant api_tool.call_tool invocation and tool-authored non-error native binding prefix support at least1 actual readonly get_current_workflow response in the captured ChatGPT conversation.",
+    "global_or_Codex_tool_exposure": "No new catalog check; old report remains true for that observer session/time.",
+    "public_evidence": {
+      "status": "SAVED_DRAFT_UI_AND_READONLY_SCOPE_SUPPORTED_WITH_LIMITATIONS",
+      "read_record": "PUBLIC_INSTALLATION_DRAFT_READ_RECORD.json",
+      "read_record_SHA256": "6975b3534289b83acad0547cae85a5bf83a5117ed382232d7a19acffd0a69834",
+      "public_delivery_completeness": "NOT_VERIFIED; README final CONNECTION_VERIFICATION/current receipt reference was not present in the initial3-file inventory"
+    },
+    "old_HTTP401": "Historical service-token/direct-read failures are preserved in their own scope. This evidence does not convert them to successes or imply the captured browser call failed."
+  },
+  "not_verified": [
+    "Second get_current_workflow call",
+    "Complete returned S7/reference projection",
+    "Feedback save/read or durable production persistence",
+    "OAuth/token details or global installation state",
+    "Sol/Max model execution",
+    "New image/photography/Figma, pixel/taste/cold review, universal system acceptance"
+  ],
+  "privacy": {
+    "profile_name_email_avatar_token_OAuth_parameters_saved": false,
+    "network_headers_saved": false
+  },
+  "actions": {
+    "business_public_source_writes": 0,
+    "browser_UI_actions": 0,
+    "network_plugin_HTTP_calls": 0,
+    "other_chat_messages": 0,
+    "feedback_writes": 0,
+    "subagents": 0,
+    "tests_validators_pixels": 0,
+    "private_write_scope": ".liu-visual-private/plugin_installation_20261006/independent",
+    "stop_after_record": true
+  },
+  "prior_report": {
+    "path": "INDEPENDENT_INSTALLATION_VERIFICATION.json",
+    "sha256": "e01495d31e0c5adc48317beaceb051ba46895d5ef3450a0412cf9ef21165df89",
+    "rewritten": false
+  },
+  "sealed_at_utc": "2026-10-06T09:46:32.725260+00:00"
+}
