@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "verified": false,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10c48-9065-7be1-b8ba-6536a5266f1a",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "4308614a881bda8e6ddb276b0c53599ccbbbb983e14acb33d9c0016b1b0cfaac",
+  "tool_scope_violations": [
+    "UNEXPECTED_TOOL"
+  ],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_fQBuV14Z0qdT50vqbthGioYa",
+      "input_sha256": "6905dbcf715c4ecf5b07f834a6bfe15b45a6999d2791f018329cbc65a476672c"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_RrkqnvMDL2TXfVzuIJPjmpxT",
+      "input_sha256": "3410e6fe698fae9ef3e412a8614a5cbf0729e86e912c58d4481c740491e63ca6"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S2.png",
+      "sha256": "4308614a881bda8e6ddb276b0c53599ccbbbb983e14acb33d9c0016b1b0cfaac"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_mkAjRJ1JkOzv5NPnfBtw8hPT",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/liuxiansheng_transfer_s2_pixel_review",
+    "agent_nickname": "Chandrasekhar",
+    "agent_role": null
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "5973e8e809382c08dc436b0419f92d058fc0a82dd1fd20422ad614fd2f1dcf45",
+  "checked_utc": "2026-10-05T13:50:14.720079+00:00",
+  "reviewed_wrapper_sha256_allowlist": [
+    "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+  ],
+  "limitations": [
+    "Parent logged prompt may be encrypted; fork-none and observed tool scope do not prove every provider-internal prompt token.",
+    "Wrapper checks are a bounded reviewed-code allowlist, not a JavaScript security parser.",
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution."
+  ]
+}

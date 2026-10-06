@@ -1,0 +1,178 @@
+{
+  "schema": "s4-worker-technical-attempts/v1",
+  "scope": "Current worker preflight only. Root complete-history failures remain in Root evidence and are not reset.",
+  "prior_failures_preserved": [
+    {
+      "phase": "Initial VPD state preflight",
+      "result": "BLOCKED",
+      "exit_code": 1,
+      "output": "{\"status\": \"VPD_STATE_BLOCKED\", \"reason\": \"EVIDENCE_HASH_MISMATCH:continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md\"}",
+      "asset_writes": 0
+    },
+    {
+      "phase": "VPD state preflight after observed revision change",
+      "result": "BLOCKED",
+      "exit_code": 1,
+      "output": "{\"status\": \"VPD_STATE_BLOCKED\", \"reason\": \"EVIDENCE_HASH_MISMATCH:continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md\"}",
+      "asset_writes": 0
+    },
+    {
+      "phase": "Broad implementation-file discovery in old private directory",
+      "result": "READ_PERMISSION_ERRORS",
+      "output": "rg access denied in old VTracer and old skia-pathops package directories. No attempts to modify ACLs, package members or original checkout.",
+      "asset_writes": 0
+    },
+    {
+      "phase": "Read presumed Pathops API stub in new checkout",
+      "result": "MISSING_FILE",
+      "exit_code": 1,
+      "path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/site-packages/pathops/_pathops.pyi",
+      "resolution": "Used actual __init__.py/operations.py and direct read-only API docs from fresh Python import; package unmodified."
+    }
+  ],
+  "router_check": {
+    "result": "MAINTENANCE_REQUIRED",
+    "reason": [
+      "codex_version_changed",
+      "model_or_effort_changed",
+      "desktop_version_changed"
+    ],
+    "package_updates": 0,
+    "new_agents": 0,
+    "project_writes": 0
+  },
+  "pipeline_runs": [
+    {
+      "stage": "prepare-inputs.cjs",
+      "attempt": 1,
+      "exit_code": 0,
+      "cream_components": 11,
+      "orange_components": 6,
+      "grain_holes": 61,
+      "grain_pixels": 464,
+      "bridge_pixels": 3576
+    },
+    {
+      "stage": "build-wordmark.py",
+      "attempt": 1,
+      "exit_code": 1,
+      "error": "RuntimeError: Unexpected quadratic sequence",
+      "source_line": 151,
+      "calling_line": 164,
+      "source_snapshot": "build-wordmark.attempt-01.py",
+      "vtracer_generation_calls": 2,
+      "final_svg_written": false,
+      "trace_manifest": "TRACE_GENERATION.json",
+      "diagnosis": "Expanded Skia round-cap paths emit qCurveTo sequences with 9 points as well as 2 points; serializer assumed exactly 2."
+    },
+    {
+      "stage": "pathops decomposition API diagnostic",
+      "exit_code": 1,
+      "error": "TypeError: Expected tuple, got list",
+      "probe_argument_type": "list",
+      "resolved_argument_type": "tuple",
+      "successful_tuple_result": [
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      ],
+      "upstream_modified": false
+    },
+    {
+      "stage": "build-wordmark.py",
+      "attempt": 2,
+      "exit_code": 0,
+      "svg_sha256": "7b07cd5dacea05523c36a3f441bc88cc0a86a1343b9b4a8d4fbd20c98c240704",
+      "svg_bytes": 31614,
+      "current_run_trace_calls": 0,
+      "total_trace_calls": 2,
+      "render_exit_code": 0,
+      "functional_result": "FAIL_HIDDEN_ORANGE_OLD_LINE_FISSURES",
+      "viewed_960_hidden_480": true,
+      "preserved": "technical-failures/bridge-01/"
+    },
+    {
+      "stage": "mixed-edge technical correction",
+      "attempt": 3,
+      "exit_code": 0,
+      "measured_edge_pixels": 796,
+      "recovered_pixels": 4287,
+      "new_recovery_vs_prior": 711,
+      "original_grain_preserved_mask_pixels": 464,
+      "original_grain_preserved_components": 61,
+      "new_bridge_trace_calls": 1,
+      "total_trace_calls": 3,
+      "svg_sha256": "f59155725031c7b7c9f79871030a7f77afdc1e1d312ab2ebbbc08a5695601e20",
+      "svg_bytes": 27490,
+      "render_exit_code": 0,
+      "functional_result": "LONG_FISSURES_REMOVED_BUT_PURE_ORANGE_BOTTOM_INTERSECTION_AND_LEFT_EDGE_REMAIN",
+      "viewed_960_hidden": true,
+      "preserved": "technical-failures/bridge-02/",
+      "remaining_not_grain": [
+        [
+          869,
+          690
+        ],
+        [
+          861,
+          690
+        ],
+        [
+          876,
+          690
+        ],
+        [
+          870,
+          698
+        ],
+        [
+          765,
+          704
+        ],
+        [
+          768,
+          706
+        ]
+      ]
+    },
+    {
+      "stage": "sheng-base expert-local correction",
+      "attempt": 4,
+      "exit_code": 0,
+      "total_trace_calls": 4,
+      "new_bridge_trace_calls": 1,
+      "Q_inferred_recovery_pixels": 238,
+      "bottom_left_recovery_pixels_vs_bridge02": 68,
+      "total_inferred_recovery_pixels": 4593,
+      "original_grain_components_excluded": 61,
+      "original_grain_pixels_excluded": 464,
+      "svg_sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9",
+      "svg_bytes": 26910,
+      "actual_viewed_full_hidden_480": true,
+      "functional_status": "OLD_LINE_DEFECTS_RESOLVED_PENDING_ROOT_AND_INDEPENDENT_REVIEW",
+      "grain_anchor_rgb_changes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "native_guard_release": "PREWRITE_GUARD_RELEASE.json"
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "stage": "copy_frozen_spec",
+    "result": {
+      "chunk_id": "5574b9",
+      "wall_time_seconds": 1.00651,
+      "exit_code": 0,
+      "original_token_count": 60,
+      "output": "{\r\n  \"Path\": \"C:\\\\Users\\\\Administrator\\\\OneDrive\\\\文档\\\\足球\\\\shenmei-vpd-resume-20261006\\\\.liu-visual-private\\\\s4_professional_audit\\\\FROZEN_SPEC.json\",\r\n  \"Hash\": \"565928390D0E063E144505E7CF8FE34083491BB2F0D99FCA3685A1B7CB492B95\"\r\n}\r\n"
+    }
+  },
+  {
+    "stage": "prepare_inputs",
+    "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\prepare-inputs.cjs' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+    "result": {
+      "chunk_id": "c89fff",
+      "wall_time_seconds": 1.2985175,
+      "exit_code": 0,
+      "original_token_count": 41,
+      "output": "{\"cream\":[246,478,963,747],\"cream_components\":11,\"orange_components\":6,\"grain_holes\":61,\"grain_pixels\":464,\"bridge_additions\":4593,\"colors\":[\"#fdf4e5\",\"#f77c26\"]}\n"
+    }
+  },
+  {
+    "stage": "build_wordmark",
+    "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' -X utf8 -B '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\build-wordmark.py' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+    "result": {
+      "chunk_id": "013dc3",
+      "wall_time_seconds": 1.3806533,
+      "exit_code": 0,
+      "original_token_count": 74,
+      "output": "{\"status\": \"IMPLEMENTED_PENDING_INDEPENDENT_PIXEL_REVIEW\", \"svg_bytes\": 26910, \"sha256\": \"0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9\", \"source_paths\": 48, \"cream_final_bounds\": [224.04736328125, 431.52166748046875, 791.2897338867188, 600.790771484375], \"path_count\": 5}\r\n"
+    }
+  },
+  {
+    "stage": "render_preview",
+    "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\render-preview.cjs' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+    "result": {
+      "chunk_id": "ffb8f6",
+      "wall_time_seconds": 1.010894,
+      "exit_code": 0,
+      "original_token_count": 204,
+      "output": "{\"status\":\"RENDERED_NOT_AESTHETIC_REVIEW\",\"all_alpha\":{\"alpha_nonzero_bbox_xyxy\":[220,431,802,611],\"nonzero_pixels\":47980,\"opaque_pixels\":42336,\"transparent_pixels\":1180820},\"cream_alpha\":{\"alpha_nonzero_bbox_xyxy\":[224,431,792,601],\"nonzero_pixels\":45514,\"opaque_pixels\":41245,\"transparent_pixels\":1183286},\"files\":[{\"path\":\"S4_WORDMARK_TRANSPARENT_RENDER.png\",\"sha256\":\"ed56f06a21a62ad27a9bb457a0f40e40ea3f3797b30da50c13ee5a5f8176cde9\"},{\"path\":\"S4_WORDMARK_TECHNICAL_PREVIEW.png\",\"sha256\":\"fac3cf4d0512701bf7d14a72e471f52c0bba98848f87e76b4f310e89b5206e7e\"},{\"path\":\"S4_ORANGE_HIDDEN_TECHNICAL_PREVIEW.png\",\"sha256\":\"19d3e17105f3671a191b6dd6f4ce0de576cd46e0b7fc682a433b19814bb458a8\"},{\"path\":\"S4_WORDMARK_480PX_TECHNICAL_PREVIEW.png\",\"sha256\":\"86429819d4de4b9e793b25b00ad430c85ff91ec0ba9d989b694643adb091c648\"}]}\n"
+    }
+  }
+]

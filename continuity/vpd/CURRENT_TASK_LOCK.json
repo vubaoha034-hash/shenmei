@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 337,
+  "revision": 344,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -128,10 +128,10 @@
       "post_upload_requirement": "INDEPENDENT_FIGMA_READBACK_AND_FRAME_SCREENSHOT"
     }
   },
-  "current_stage": "SHANYEJI_WHOLE_TYPOGRAPHY_REFERENCE_STUDY",
+  "current_stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
   "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_DELIVERED",
   "p6_allowed": false,
-  "next_required_action": "LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY",
+  "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
   "execution_boundary": {
     "do_not_rerender_tofu_or_tea_A_B_for_taste": true,
     "do_not_relock_photo_nodes": true,
@@ -218,15 +218,16 @@
       "path": "continuity/vpd/codex_takeover_20261003/INDEPENDENT_WORKER_CONTRACT_V2.json",
       "sha256": "c680a7c9e351efbc2869b30217d50a56504f925f02a5090e37272b146c3f4a28"
     },
-    "current_figma_authorization_scope": "NEW_SHANYEJI_TYPOGRAPHY_STUDY_PAGE_ONLY"
+    "current_figma_authorization_scope": "LIUXIANSHENG_CONTENT_TRANSFER_AUTHORIZED_PAGE_ONLY",
+    "typography_guide_generation_authorization": 0
   },
   "completed_this_revision": [
-    "刘先生明确确认既有Drive目录；仅归档授权，不是文字研究真人认可",
-    "S2完整PNG与clean SVG实际上传并从原始stream回读，两个SHA/字节完全匹配",
-    "原两次拒绝及失败版本不改；摄影、Figma、29茶作版本和独立审稿结论不改",
-    "唯一下一动作交刘先生审核山野集文字研究；不恢复茶作制作"
+    "S4真实Figma文字成品与图稿/字标来源绑定；12TEXT、6VECTOR、0IMAGE；不改已认可摄影及旧作品",
+    "新隔离Sol/Max两图实际像素审核PASS_WITH_LIMITATIONS；主字塑形/纹理/底部署名限制保留，真人仍PENDING",
+    "PNG/字标/第2图稿Drive原字节回读一致；独立制作脚本复现报告保存；S1至S3失败及正式计数4/guide2保留",
+    "唯一下一动作交刘先生审核此文字成品；不晋升主线、不恢复茶作、不扩风格"
   ],
-  "updated_at": "2026-10-05T19:43:32.068923+08:00",
+  "updated_at": "2026-10-06T09:47:11.323979+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2521,8 +2522,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_DRIVE_ARCHIVED_RECEIPT.json",
-    "sha256": "68be60b2845db5ca78feaab818e047f8d87cc7233c7788630b962547eb651152"
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S4_ENTRY_FIXED_DELIVERY_RECEIPT.json",
+    "sha256": "138f4ad25798ddc5e9c1897428b94f4c886a5d6c1bbbaa1e3efb0cb52b71e4c8"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3165,7 +3166,7 @@
   "codex_takeover": {
     "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
     "status": "VPD_CODEX_CHAZUO_CORRECT_SOURCE_REFERENCE_STUDY_DELIVERED",
-    "next_required_action": "LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
     "authorization": {
       "path": "continuity/vpd/codex_takeover_20261003/EXECUTION_AUTHORIZATION.json",
       "sha256": "5688706a1db90440e2a54617dc3d0f09b4ddda78e39d090b61557e11e7a8a018"
@@ -3175,8 +3176,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/NATIVE_DRIVE_ARCHIVED_RECEIPT.json",
-      "sha256": "68be60b2845db5ca78feaab818e047f8d87cc7233c7788630b962547eb651152"
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S4_ENTRY_FIXED_DELIVERY_RECEIPT.json",
+      "sha256": "138f4ad25798ddc5e9c1897428b94f4c886a5d6c1bbbaa1e3efb0cb52b71e4c8"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -3194,7 +3195,7 @@
     "state_writer": "ROOT_EXECUTOR_ONLY",
     "reuse_entry": {
       "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
-      "sha256": "5615c52b8acd34723e811d438b8cd64703b3b02c3693021eca39641ee80eb371"
+      "sha256": "52ef6aee84c575b92f5d22d1b565405818c50d069fb8a23d576d6234e55565f3"
     },
     "human_feedback": {
       "path": "evidence/vpd/codex_takeover_20261003/reference_reconcile/HUMAN_FEEDBACK.json",
@@ -4712,6 +4713,585 @@
         "review": {
           "path": "evidence/vpd/codex_takeover_20261003/shanyeji_typography_study_20261005/s2_pixel_review/PIXEL_REVIEW.json",
           "sha256": "0cfe8a7f068ef6171903750d256f54a3133c8d9a74e68cceded975c02fb4c2d0"
+        }
+      },
+      "content_transfer_experiment": {
+        "authorization": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+          "sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31"
+        },
+        "copy_manifest": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+          "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a"
+        },
+        "human_acceptance": "PENDING",
+        "artifacts": [
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+            "sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+            "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S1_EXPORT_IDENTITY.json",
+            "sha256": "6bd01376d764d7eab0ee9490de4f7745cb4b4836b4defdaf4bdaca97ba3a046a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_READBACK_S1.json",
+            "sha256": "743c8ae709a1fe3ed922e9bbd9fe13756a32b96ca2f00afaf37f3903d5b0457a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/PROTECTED_ARTWORK_READBACK_S1.json",
+            "sha256": "2a51497bf4077acf53e86f955fdcc7a2917ae32a7f9d7a173386584268af55ac"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S1_REVIEW_CALL_MANIFEST.json",
+            "sha256": "756e59a73f48b73f66275b3d1912420f6ecfaa3620e03686131d382d9790f1ec"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s1_final_review/PIXEL_REVIEW.json",
+            "sha256": "51cec34c39df98d5f69819e272348e28fa5843a7c4010e6cc5ccb23d1ebd9001"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s1_final_review/ISOLATION_AUDIT.json",
+            "sha256": "3d33460b7e81ca26073cbcf5d7d4085762b5569d386fb1741a3074de47ca4987"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_READBACK_S1.json",
+            "sha256": "b29ed6468083f0ec55b5d7bb4b85b2ae7578746c50000b3ae1cde759b39d0dd1"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_WORDMARK_READBACK_S1.json",
+            "sha256": "6e01b354e4aaf74fe4742f8af73b6059035e9ca90d43ab7f973ab5972ca23439"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S2_EXPORT_IDENTITY.json",
+            "sha256": "0f4ec14d92e31325375cb77fa64159093e77f402d1505419cf1e6df8aef7205c"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_READBACK_S2.json",
+            "sha256": "ca53cc676f0cb614d32ddc2f0bf8c9eed268955c7d5f3bbdcdf1b1dd336f7f5a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S2_LOSSLESS_VECTOR_TRANSPORT.json",
+            "sha256": "94ccd3ec7c87b40a2173e82430def369aa73ae022cfe0931e29be94ec9562787"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S2_REVIEW_CALL_MANIFEST.json",
+            "sha256": "35b98899568add0f4f3ff2534e2dfdb90138c9ad13e3df7aceabecd7715c3d16"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s2_method_verified_review/PIXEL_REVIEW.json",
+            "sha256": "4217f42ef396493e97a18afd7c825819491249d6886ba97b3e8cb52f6f441e91"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s2_method_verified_review/ISOLATION_AUDIT.json",
+            "sha256": "da7e8517f2e662459482b2af66024fbe83b234d7ed1a07603fa8a07c59faa774"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_READBACK_S2.json",
+            "sha256": "885b7fa5c647f59c78224315f2ea0744fb54024686646d9360358c63b5a294b2"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_WORDMARK_READBACK_S2.json",
+            "sha256": "6ef1ac26fccc279b9f17244d64fc8ea15c2cc9211749ee87bebfb3f1380fc944"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+            "sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/REFERENCE_TEXT_EXTRACTION.json",
+            "sha256": "e627a8c37d5dd77749f4fea78450baf414dc19dbcceadfcb65c736990dcc64f4"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/IMAGE_GUIDE_PROMPT.txt",
+            "sha256": "433f42cf2022e13939c0d6b212d28df7b6f410f3b35c6c1d02c024981e0aeb17"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/IMAGE_GUIDE_GENERATION_RECEIPT.json",
+            "sha256": "0bd88528026354181f50c5f81c25dd95a51a0a60c01726228d7afd0092adf110"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_READBACK_S3.json",
+            "sha256": "22c453c72dfea6cb0abc3011df049deb3200b639a5c90e20de96e093b448bdb7"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S3_EXPORT_IDENTITY.json",
+            "sha256": "38cec1d9e997e72adc317a5ce4860ace57537327c2cabbd566ec92590b2bd7e5"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_READBACK_S3.json",
+            "sha256": "0741df386ef6c45369ff2cc26b3b12cebc65fcdcbc150b4238a2ac35c63d1471"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_WORDMARK_READBACK_S3.json",
+            "sha256": "9a8afadf0fe85ffffdb23c26375c6bbea7d847ce66d5268ea94f333fe4f9a510"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_GUIDE_READBACK_S3.json",
+            "sha256": "bcaf89362016993cba3431bc8fb03c7a5d12a287ab515d888ae699947f66388a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S3_REVIEW_CALL_MANIFEST.json",
+            "sha256": "c906e25b2ee99b1ba4e4ba65be6c37395f7d5fcd62950bf1dd39cb0fcafbd400"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_verified_review/PIXEL_REVIEW.json",
+            "sha256": "bcc10a83798ba95729ae8e2ff36e879c56ec03951a833c3b9c8cf87d5e6431dc"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_verified_review/ISOLATION_AUDIT.json",
+            "sha256": "ca9b56e85b395e25738f892e812b5f4b4f9fa62fe44c59d697c1913d33ed7084"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/PROFESSIONAL_IMPLEMENTATION_REVIEW.json",
+            "sha256": "5e8764f2fdd9887eaa54f530360799a3656a775dde78e0a0185f73564e5b9f14"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/ACCESSIBILITY_CHECK_S3.json",
+            "sha256": "31801e1fbeed48434ffcab69f3ab32d2e50ce4e58b29e4436b9481c80c653673"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST.json",
+            "sha256": "42f10388ddb62728cf980b3017f2af0da41877d6a53eae493486a90c908aebf5"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/METHODS_AND_REUSE.md",
+            "sha256": "5ca7ad303bf5f5c5597d2a65fe5f8b115aeb4ea10e65c42ec087025719700592"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/prepare-trace-inputs.cjs",
+            "sha256": "5e75894bf504f6da1770c43346b489cbe3ad2cc90c28341cf5f9e37a6a208f14"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/trace-guide.py",
+            "sha256": "fb570cc1064d2eba33b63561b9595cd65f23b9dafd8b73532d3b9b335a2eaff6"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/render-trace-and-check.cjs",
+            "sha256": "f78166b992b4f1d001ce0a2b8917ad17192bc4c3dbe6d4da9f7b48ea17de81dd"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/FIGMA_ASSEMBLY_S3.js",
+            "sha256": "7b09483733ac4d83cfa22b7e66f5125656b792d681a47f9c30718553d9b780cf"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/LICENSE-VTracer.txt",
+            "sha256": "6610faa5e6be5342bacc3e9907e42cec525aedb6ad83ab7043f84d97f1006cc3"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/PROVENANCE.json",
+            "sha256": "a0ecbec7dc3e291a0cc2fc9bc4c7c9b7f61c30c8b0bd70e7e0e320c93a126214"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/TRACE_INPUT_EVIDENCE.json",
+            "sha256": "9a6af04f5c70847fac9bd291b309b4eec75cb4c3ec1ba0a2f46c89bbeff605de"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter/TRACE_PIXEL_EVIDENCE.json",
+            "sha256": "6e37292a136e2ba06e5d355b69dc86ceb9ae1eba1a7e0f29b06967fadd9e053e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_ALLOCATION_GUIDE_PROBES_INDEPENDENT_FIXED.json",
+            "sha256": "e817bed1ea6bbec4c68e894c7a5ded2fafc9d6010cec0d310450266086cea600"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_RENDERING_MODE_PROBE.json",
+            "sha256": "227b22082b60515ac0b557d89c8f50e48048444a187457d3933b4a164434526a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/CARRIER_PROBE_RESULTS_V2.json",
+            "sha256": "4c47a8e897f766e623d752d96650fe7a6cf0101a0d63b390c214c3495ef56a72"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/CONTINUOUS_METHOD_REPAIR_ALLOCATION.json",
+            "sha256": "6be40055c5830a931670d1a2a6ba75147b2d669a114033a478400e8f697dbe75"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/IMAGE_GUIDE_REPAIR_PROMPT_S4.txt",
+            "sha256": "e9fe5a61786d1e39305cbf876c72907dc8ea84cc35cad81949349a4a6c803e38"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/ROOT_ACTUAL_VTRACER_REPLAY.json",
+            "sha256": "c96df398e29b8d0e96f034d76e14ac4fcb12883ee2cb70d4cfe501526e3de8da"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/VTRACER_ACTUAL_REPLAY.json",
+            "sha256": "1915d531cde77afcde7dd27ef223b1fca04701eb7b8df7980edc88a91b242424"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/VTRACER_DIRECT_EXEC_REPLAY.json",
+            "sha256": "43eacb880463fc90d53939c382e893952eecd2fedc6363c40398bb080e4447c0"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S3_PIXEL_FIDELITY_INDEPENDENT.json",
+            "sha256": "982fff80014a4830c06544b28acc5859f5126519b1bc08dd7497bd8d4b7ae393"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/GUIDE_ACTUAL_EVIDENCE_CHECK.json",
+            "sha256": "0f0ee87f7afb310dcdcd6cd0bd49dac6ea35ebe4a108ecc4feefb20dc003a196"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_S3_INDEPENDENT_READBACK.json",
+            "sha256": "c20c3206ce4bc7fb726ecf6c26108ab168e8dbc916df37f6c06b0973f84eb5ed"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/PROTECTED_TEA_AFTER_S3_INDEPENDENT_READBACK.json",
+            "sha256": "22a422dfad14531546566fcd623467ef530d594eca2443121a2084ae8922f001"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_fresh_entry_baseline/FRESH_ENTRY_REPORT.json",
+            "sha256": "083ebb4ebfabecf72bb35098a90633dd06ec5d3c5ff69dcc183bd67aaab0c8de"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_fresh_entry_baseline/FIGMA_ACTUAL_READBACK.json",
+            "sha256": "7a05c7b76e1ff9e73a281d2331d0fe8f792d2e264ed43d279b215ab4c7b20433"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_fresh_entry_baseline/FIGMA_RUNTIME_FONT_LOAD.json",
+            "sha256": "b936c2485cc29d14d2d49d41ff45ef6b8ac1745e1c693dc7ecdd338b0e55d49c"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/IMAGE_GUIDE_GENERATION_RECEIPT_S4.json",
+            "sha256": "6b5d6c0021a9467b7554d9bb1df79b4b25c857a8c61a49ce9198238c40411f89"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_DEPENDENCY_RECOVERY_S4.json",
+            "sha256": "a3af1a369e7743fa16e98fd96e3f6cbc17471570a53892e5ca4f44f12fc170ae"
+          },
+          {
+            "path": "scripts/vpd_with_verified_vtracer.py",
+            "sha256": "dd497ce779c2ad9c4341de04086636c0a95099eb8ac0b594e1402aee975bf6dc"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_SCOPE_GUARD_INDEPENDENT.json",
+            "sha256": "b59507a018a390be186b971ca8c4ff5b8c4e75812e95e606763d0d728889ed4e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_VTRACER_LOCATION_INDEPENDENT.json",
+            "sha256": "7062e46138fd31033bc4d4d0fafb3842384f1bb9f4949958890e7d1279c44d7e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_SEALED_RECOVERY_INDEPENDENT.json",
+            "sha256": "33960b8eff4bdde11b7fcaa1de0adec26b95bcf24a653ad2b6e396abfe3c774d"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_CHECKOUT_RESTORATION.json",
+            "sha256": "9f91acbce3982dac061067db609a7d66b22a8106c579a395f007ee1197c285f3"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/GUIDE_PRELIMINARY_PIXEL_REVIEW_S4.json",
+            "sha256": "21101e19b08ed48042df23b8b4d069a32090c0eaa8f947fb51c921241b5bfb8a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/GUIDE_PRELIMINARY_SCOPE_AUDIT_S4.json",
+            "sha256": "618ca626d1305ff38ed51212aa839461a32b102cf40a901177729cddcda32e92"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_GUIDE_READBACK_S4.json",
+            "sha256": "261ecd7f657acb2365171a450ca5471d2c9e745e45e92ff970cc02c5dc77af74"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_WRITE_GUARD_S4.json",
+            "sha256": "90b6279833ed3fa8783bb46fa2c11fd4eef2aa8df240852a82ea93c29e63142f"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_READBACK_S4.json",
+            "sha256": "311b230eb030e6a0b4130a82ed169117b71b7394d5c95b6d7fb43e609798f444"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FIGMA_PHOTO_PROTECTION_S4.json",
+            "sha256": "37ad70db013955be0cdda33788d13faa0e466e520f21ee84e9d6764e12f8ea5c"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/PROFESSIONAL_LETTERING_DIAGNOSIS_S4.json",
+            "sha256": "1d13f1ea532e4d3b14bd3cdb731d824341a141de2a0b24915e2bf2ffd13b66e8"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_REVIEW_CALL_MANIFEST.json",
+            "sha256": "da0e3f112252f24dfecea099ce01a8d9cf8c65fcc02107ddbf77400b6d2d7524"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/PIXEL_REVIEW.json",
+            "sha256": "aac47a7b209030672bb9a40815293a48c4c68175d9a606bd6ddae5a314fb3306"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/ISOLATION_AUDIT.json",
+            "sha256": "805d836dadcb4a0b60a88a1107ef8728442772d489192e9dbefa737e5d005441"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/UNCHANGED_CORE_AUDIT.json",
+            "sha256": "41871f7dd4063cfb53e58c315da6ce67b3a7097728638099541580aaa9143bec"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_READBACK_S4.json",
+            "sha256": "6302f27807e4602c69a3e18093d6160e2d53e500676ffd96f436053f807e20e4"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DRIVE_WORDMARK_READBACK_S4.json",
+            "sha256": "64bca5900b222cc041d3c521cdccbecfdf27bd338aa9bbd20a3feb748672d47d"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/ACCESSIBILITY_CHECK_S4.json",
+            "sha256": "d54c9cc154062d912e434d822624bde9985f65c78618cfccceae8e506f4f83e1"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/PROFESSIONAL_IMPLEMENTATION_REVIEW_S4.json",
+            "sha256": "d2c6f6a6461665c8195af5451d7f95917570f44c7bc15cbb38bf6698db6defc3"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S4.json",
+            "sha256": "8ab2d77958758bb40f44a1c46e817a2cdfdc2d7f685a7b8f7d08178ea2d5d001"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/METHODS_AND_REUSE_S4.md",
+            "sha256": "c53a153acc3f4a209c699455379d6664d9e1fa33605bb015b8bb8364fe4ee75d"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_V29_INPUT_RESTORATION.json",
+            "sha256": "d1b6ca6506bc6c7c194449e474f0673afd3cee37f8666556e45bf17bf404daad"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_NATIVE_RECOVERY_PREFLIGHT.json",
+            "sha256": "087a1fc433709d585fcc8e2433bf365fedbc598babba57694801473f112bde49"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/build-wordmark.attempt-01.py",
+            "sha256": "552478c0e7199d252afbbe6fc6e8262db75a3b22bf5f3ab764ecbf956e5fb86c"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/build-wordmark.py",
+            "sha256": "ff4c3b1d7eb03a18fa0a9cb1bf0b1dbc473ac574903c2831adea05e1f05e012a"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/FIGMA_ASSEMBLY_S4.js",
+            "sha256": "e6ae58cc0e6aa17e8b115e02047e9ea9e8b62c0bc8e2ee91a183ab325794122d"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/FROZEN_SPEC.json",
+            "sha256": "565928390d0e063e144505e7cf8fe34083491bb2f0d99fca3685a1b7cb492b95"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/GRAIN_SOURCE_EVIDENCE.json",
+            "sha256": "25a5f8516c4f3410b1154d1ab88204a76ad96713fe0bf42f25adb747eba5b890"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/LICENSE-skia-pathops-LICENSE.txt",
+            "sha256": "7539634cf77bd05c14bac1e44c5c44c91737b72c4aaebdbd70745fe1309782f5"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/LICENSE-VTracer-LICENSE.txt",
+            "sha256": "6610faa5e6be5342bacc3e9907e42cec525aedb6ad83ab7043f84d97f1006cc3"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/LOCAL_PIXEL_CHECK.json",
+            "sha256": "6086cf50e491d701d2d3aa4a7c3b9b451d5d91a94dd897b36a41f117ad03eb32"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/prepare-inputs.cjs",
+            "sha256": "c2ffe13bd1a8465c0825bdff58b615c9cb82e699e87c22a65a415ff64fb147d7"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/PROVENANCE.json",
+            "sha256": "91a9bcb043f1cf65b6a7930e18a1f476fc0dd42f5ff257ba37b8dc949813a014"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/render-preview.cjs",
+            "sha256": "14471ec5b84ed8d481ceed878ed51908d7ae9cd61bfe181bfe6a343dad7d55d2"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/REUSE_METHOD.json",
+            "sha256": "52c7d19d2ff5c18322f052da6bfbef7af4e42ca31495e33dc8fc2c20edd89313"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/S4_WORDMARK.svg",
+            "sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/SOURCE_EXTRACTION.json",
+            "sha256": "ba0761a70f8ffb325e0f81ce8cfd37057090d733c09e66b7d2cc16c4db302a6f"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/G_CREAM_SOURCE_TRACE.svg",
+            "sha256": "e1ab9190aec0575a389d371ff7a5dbf09387c895083d5b9aa82eaa5ac14b8755"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/LOCAL_BRIDGE_TRACE.svg",
+            "sha256": "943db4333145c9abfc2ca2f628094b32dc5729d0b690ea48acdea8ad3da0f639"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/PROVENANCE.json",
+            "sha256": "985a11a16f527e803674bfc521d421151f4c99f764f9007ebb91e874fedba3f1"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/S4_WORDMARK.svg",
+            "sha256": "7b07cd5dacea05523c36a3f441bc88cc0a86a1343b9b4a8d4fbd20c98c240704"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/SOURCE_EXTRACTION.json",
+            "sha256": "3ea1129b260f475afd4ee0902d883173a3d92bc2dfd19581ebf431fa4f26b2bd"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/TECHNICAL_RENDER.json",
+            "sha256": "69efb6d56727aca11acb4117ad2d3a35aca94f2125169f19f64d63cd34ef9426"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-01/TRACE_GENERATION.json",
+            "sha256": "76a9063e1de5fda495841035d4f57fd656b04bf6a3953c5f827567bae4c1e322"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/G_CREAM_SOURCE_TRACE.svg",
+            "sha256": "e1ab9190aec0575a389d371ff7a5dbf09387c895083d5b9aa82eaa5ac14b8755"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/LOCAL_BRIDGE_TRACE.svg",
+            "sha256": "13e5f9aacca8b4dfa82b1219bc78b4b6a46bbe3e6466283316c9aa4646b2452e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/PROVENANCE.json",
+            "sha256": "917650970e5f001e08f3d02a1ac55206a56575c2097dbccfea705ad97884faf9"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/S4_WORDMARK.svg",
+            "sha256": "f59155725031c7b7c9f79871030a7f77afdc1e1d312ab2ebbbc08a5695601e20"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/SOURCE_EXTRACTION.json",
+            "sha256": "c467f62edb9b606ef6e5b62ca92bfd3319348ddc4dc42feb61cdfd11742091e8"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/TECHNICAL_RENDER.json",
+            "sha256": "ee21a6670ff5ff0e522f64f74fcec2f0cd62eb47bf5fee7a9644a7123fc4480c"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/technical-failures/bridge-02/TRACE_GENERATION.json",
+            "sha256": "5fa4a226606fab235192eb098c65c93e10cc1979cd4017733ff937b6506411c3"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/TECHNICAL_ATTEMPTS.json",
+            "sha256": "0af4e52672206583d1c955f22f624b61f74cf3ac762886bb9511f2cc99e0c723"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/TECHNICAL_RENDER.json",
+            "sha256": "29480067602f6d206fc4161ea4012cda56d894c888d980659f285be9a267035e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/TRACE_GENERATION.json",
+            "sha256": "ae6d3d5624ae3fc526469d2b88e0114579504bedb8b19e8138dd3b3c856f6337"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_PROFESSIONAL_RUNTIME_READBACK.json",
+            "sha256": "dea9b6a1bdf5a4c63e94372b8b33324ea0f2d9d5658d7d7138406905329430a1"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_professional_replay/audit_inspect.py",
+            "sha256": "b589b4a92a6f22e37ec136f755c25e86bb6d4dc6fa9868ac6766a18c2b48be7e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_professional_replay/MEASUREMENTS.json",
+            "sha256": "b1c33f21453bdb66cc02beab21dfb88eceeafe97a42cead82dd14565aba315a8"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_professional_replay/RAW_EXECUTION.json",
+            "sha256": "66618d25f41d04f2680782f413641159822505f9a346eba983db449b75c41620"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_professional_replay/TECHNICAL_RENDER.json",
+            "sha256": "29480067602f6d206fc4161ea4012cda56d894c888d980659f285be9a267035e"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_professional_replay/PROVENANCE.json",
+            "sha256": "c3c1ce704e2b53801c47d3f19a327e34dc330edfb6c0680b8f527edcafafbf02"
+          },
+          {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_NATIVE_ENTRY_BINDING_REPAIR.json",
+            "sha256": "f38df313f9aa311208719181d4aa318f819c9e5416e7df9806056f6c6864b972"
+          }
+        ],
+        "attempts": [
+          {
+            "kind": "PRIMARY",
+            "export": {
+              "path": ".liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S1.png",
+              "sha256": "39cc3fcdefbcd319b5038529af5b1921af975946171fbf6dc5d3c376940b974d"
+            }
+          },
+          {
+            "kind": "TARGETED_REPAIR",
+            "export": {
+              "path": ".liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S2.png",
+              "sha256": "4308614a881bda8e6ddb276b0c53599ccbbbb983e14acb33d9c0016b1b0cfaac"
+            },
+            "repair_basis": {
+              "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s1_final_review/PIXEL_REVIEW.json",
+              "sha256": "51cec34c39df98d5f69819e272348e28fa5843a7c4010e6cc5ccb23d1ebd9001"
+            }
+          },
+          {
+            "kind": "TARGETED_REPAIR",
+            "export": {
+              "path": ".liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S3.png",
+              "sha256": "65450794a8e6f8459a8672c942ac8f5f47760c03f9b371b7b32fbb0a3218008d"
+            },
+            "repair_basis": {
+              "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s2_method_verified_review/PIXEL_REVIEW.json",
+              "sha256": "4217f42ef396493e97a18afd7c825819491249d6886ba97b3e8cb52f6f441e91"
+            }
+          },
+          {
+            "kind": "TARGETED_REPAIR",
+            "export": {
+              "path": ".liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S4.png",
+              "sha256": "ddb621ebf7e230279a1358b1b93ab9fcd55705b7e6ca99af8649aa3295ab1ca4"
+            },
+            "repair_basis": {
+              "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_verified_review/PIXEL_REVIEW.json",
+              "sha256": "bcc10a83798ba95729ae8e2ff36e879c56ec03951a833c3b9c8cf87d5e6431dc"
+            }
+          }
+        ],
+        "final_repair_allocation": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+          "sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7"
+        },
+        "image_guide": {
+          "authorization": {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+            "sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7"
+          },
+          "calls_used": 1,
+          "phase": "GENERATED",
+          "export": {
+            "path": ".liu-visual-private/liuxiansheng_transfer_20261005/IMAGE_GUIDE_S3.png",
+            "sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f"
+          }
+        },
+        "delivery": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S4.json",
+          "sha256": "8ab2d77958758bb40f44a1c46e817a2cdfdc2d7f685a7b8f7d08178ea2d5d001"
+        },
+        "review": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/PIXEL_REVIEW.json",
+          "sha256": "aac47a7b209030672bb9a40815293a48c4c68175d9a606bd6ddae5a314fb3306"
+        },
+        "supplemental_repair_allocation": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/CONTINUOUS_METHOD_REPAIR_ALLOCATION.json",
+          "sha256": "6be40055c5830a931670d1a2a6ba75147b2d669a114033a478400e8f697dbe75"
+        },
+        "supplemental_image_guide": {
+          "authorization": {
+            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/CONTINUOUS_METHOD_REPAIR_ALLOCATION.json",
+            "sha256": "6be40055c5830a931670d1a2a6ba75147b2d669a114033a478400e8f697dbe75"
+          },
+          "calls_used": 1,
+          "phase": "GENERATED",
+          "export": {
+            "path": ".liu-visual-private/liuxiansheng_transfer_20261005/IMAGE_GUIDE_S4.png",
+            "sha256": "9ef09dd1814343a938445227ce9a8906f0eb1ae4531a857baaba0720606aa558"
+          }
         }
       }
     }

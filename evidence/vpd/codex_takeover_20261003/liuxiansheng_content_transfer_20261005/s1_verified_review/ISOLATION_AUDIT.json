@@ -1,0 +1,109 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "verified": false,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10c26-de9e-7152-b00d-484acaf61539",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "39cc3fcdefbcd319b5038529af5b1921af975946171fbf6dc5d3c376940b974d",
+  "tool_scope_violations": [
+    "UNEXPECTED_TOOL"
+  ],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_dizRCHhbbKbJF3IgyMhfCuA6",
+      "input_sha256": "4b612df9ae4f8442308b94d52aaf6dc5000f232427777fd280efa8292b05cf6c"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_iekWs6JzjB90PPJZTc9CN67E",
+      "input_sha256": "5ce0fb8568dde50d9e9b04a11cc6add4eda3d285655d43ae5118711114dae6db"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_Lom7EB8wrA3len4M6I0eL0ua",
+      "input_sha256": "4f339f1c52c352dd8392d774cfe6734f8c4d0132a73c0656fcb84b634dbc1426"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_yCHmgAnd8CP2GN74qd4vo3Vi",
+      "input_sha256": "c9edb903161e6a6e66da707e3c60b1297898a992062599389a692d8995ca0b36"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_9W1VWaicCCY2dDdbTUHcink2",
+      "input_sha256": "b0615cfa4556752e34a130c61fb5cc773a7efe913983d973e4cb75aaf7da9c3f"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_VJW6vF2ZU1jjTs0dKykT4K69",
+      "input_sha256": "dd7c023405a12fc033f254cece802085c6860c45ca81086f55b4e6be690ff16a"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_mMSQKCoxxw4fFBIv3OCBvX99",
+      "input_sha256": "10d692e25618092f00f25d980f5ba9c649d7f64414bace8d97eb3bc89e7d53c7"
+    },
+    {
+      "name": "wait",
+      "call_id": "call_mFU9xotQFsl7pCu0XDQ8EQnB",
+      "input_sha256": "aac5ceaacc9af4b719eeecf5b48fce519e39cf74eb2612e81b00a2fb2f74d262"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_DTOCKbWuxsNr6X0zC1gSD8oK",
+      "input_sha256": "730bb102b0b8e80c99b5632ec21d792e37e02e2d889dacc50a5bb6ac802afb5c"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S1.png",
+      "sha256": "39cc3fcdefbcd319b5038529af5b1921af975946171fbf6dc5d3c376940b974d"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_IlqwOoKiZCFqXZbToBaTOny7",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/liuxiansheng_transfer_s1_pixel_review",
+    "agent_nickname": "Hume",
+    "agent_role": "default"
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "cb6873895d0740d6e0cad351fdc091a5d36c2ce019f83f958c9853887f4c18e8",
+  "checked_utc": "2026-10-05T13:25:25.058666+00:00",
+  "reviewed_wrapper_sha256_allowlist": [
+    "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+  ],
+  "limitations": [
+    "Parent logged prompt may be encrypted; fork-none and observed tool scope do not prove every provider-internal prompt token.",
+    "Wrapper checks are a bounded reviewed-code allowlist, not a JavaScript security parser.",
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution."
+  ]
+}

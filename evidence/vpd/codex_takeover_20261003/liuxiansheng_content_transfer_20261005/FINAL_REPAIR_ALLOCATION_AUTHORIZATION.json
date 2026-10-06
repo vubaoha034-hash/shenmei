@@ -1,0 +1,43 @@
+{
+  "schema_version": "vpd-content-transfer-final-repair-allocation/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "work_unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+  "authorization": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+    "sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31"
+  },
+  "copy_manifest": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+    "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a"
+  },
+  "attempt_budget": {
+    "primary_max": 1,
+    "targeted_repairs_max": 2,
+    "total_max": 3
+  },
+  "real_current_task_actor": "ROOT_ONLY",
+  "new_tea_version": false,
+  "mainline_change": false,
+  "second_style": false,
+  "photo_change": false,
+  "paid_compute": false,
+  "model_training": false,
+  "automation": false,
+  "budget_reset": false,
+  "human_acceptance": "PENDING",
+  "source_kind": "CURRENT_HUMAN_METHOD_STEERING_AND_PERSISTING_BOUNDED_AUTHORIZATION",
+  "user_method_literal": "我发现靠你自己很难完成，要不这样。首先提取文字，而后让image来模拟生成文字，而后你再用figma完整的复制制作下来。",
+  "prior_user_bounded_literal": "本轮围绕同一个设计方向串行执行：初版一次，最多两轮根据评测进行的修订，共最多三个正式设计版本。各版保留，不隐藏失败结果，不并行生成备选，不挑选大量候选中的最好一张。必要工具操作与正式版本次数分开记录。",
+  "prior_user_continue_literal": "你可以一直做，做到自己审核通过为止。明白我的意思吗？但是不要再拿垃圾来敷衍我。还有，如果一直错，自己应该不停优化，学习。",
+  "interpretation": "原1+1为执行者主动收窄分配而非用户禁令。本文件恢复用户已允许的第三版，保留原授权和S1/S2失败，不清零、不无限扩大。本次最新明确方法改为image设计文字样稿→Figma重建；最多一次必要image工具调用与正式S3分开计数。",
+  "guide_generation": {
+    "tool": "image_gen.imagegen",
+    "max_calls": 1,
+    "typography_only": true,
+    "transparent_background": true,
+    "photo_generation": false
+  },
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "recorded_at": "2026-10-05T13:45:56Z"
+}

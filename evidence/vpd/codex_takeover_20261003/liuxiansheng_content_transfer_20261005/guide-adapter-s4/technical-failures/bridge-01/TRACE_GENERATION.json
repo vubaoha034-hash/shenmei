@@ -1,0 +1,42 @@
+{
+  "tool": "VTracer",
+  "version": "0.6.15",
+  "generation_calls_completed": 2,
+  "captured_after_first_builder_failure": true,
+  "rows": [
+    {
+      "label": "G_CREAM_VISIBLE_SOURCE",
+      "input": "CREAM_SOURCE_TRACE_INPUT.png",
+      "input_sha256": "66a6d12347441bf7dc5b6dee1a9739ad50abc4c4c358a7fd565441c0e6b48fc0",
+      "output": "G_CREAM_SOURCE_TRACE.svg",
+      "output_sha256": "e1ab9190aec0575a389d371ff7a5dbf09387c895083d5b9aa82eaa5ac14b8755",
+      "params": {
+        "colormode": "binary",
+        "mode": "spline",
+        "filter_speckle": 0,
+        "corner_threshold": 60,
+        "length_threshold": 4.0,
+        "max_iterations": 10,
+        "splice_threshold": 45,
+        "path_precision": 2
+      }
+    },
+    {
+      "label": "INFERRED_LOCAL_BRIDGES",
+      "input": "BRIDGE_ADDITIONS_TRACE_INPUT.png",
+      "input_sha256": "71322450b52f291a4b1ffefe6d40c9bf0856bb66092d01cf704dbc5811541be4",
+      "output": "LOCAL_BRIDGE_TRACE.svg",
+      "output_sha256": "943db4333145c9abfc2ca2f628094b32dc5729d0b690ea48acdea8ad3da0f639",
+      "params": {
+        "colormode": "binary",
+        "mode": "spline",
+        "filter_speckle": 0,
+        "corner_threshold": 60,
+        "length_threshold": 4.0,
+        "max_iterations": 10,
+        "splice_threshold": 45,
+        "path_precision": 2
+      }
+    }
+  ]
+}

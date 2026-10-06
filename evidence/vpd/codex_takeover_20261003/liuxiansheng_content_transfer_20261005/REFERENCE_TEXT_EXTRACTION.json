@@ -1,0 +1,46 @@
+{
+  "schema": "vpd-reference-actual-text-style-extraction/v1",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "actual_pixels_seen": true,
+  "dimensions": [
+    960,
+    1280
+  ],
+  "confirmed_text": {
+    "top_columns": [
+      "WOK\nHEI",
+      "ORIGINAL\nTASTE",
+      "WILD\nAROMA",
+      "OLD FARM\nRECIPES"
+    ],
+    "main_wordmark": "山野集",
+    "side_seal": "李家班",
+    "english_submark": "Mountain\nmarket",
+    "gold_caption": "常德饮食文化代表名片",
+    "footer_brand": "万策 WANCE",
+    "footer_statement": "专注餐饮品牌健康成长",
+    "corners": [
+      "WANCE",
+      "DESIGN"
+    ]
+  },
+  "uncertain_text": [
+    {
+      "region": "Orange handwritten sentence",
+      "status": "原件手写细节不能可靠逐字确认；不虚构逐字OCR；只提取位置、笔势、色彩，目标完全使用新文案"
+    }
+  ],
+  "style_relations": [
+    "首字较短且英文嵌下方空位，后两字较高",
+    "暖白粗钝不规则块面配细小侵蚀纹理；切口服务整体外轮廓",
+    "细橙线覆盖部分字面并穿过负形，保留大回环",
+    "顶部四组两行粗体英文，米金中文副标题，橙色手写句，底部重署名"
+  ],
+  "target_copy": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+    "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a"
+  },
+  "route": "EXTRACT_REFERENCE_STYLE_AND_COPY_THEN_IMAGE_GUIDE_THEN_NATIVE_FIGMA_RECONSTRUCTION",
+  "not_original_font_recovery": true,
+  "photo_generation": false
+}

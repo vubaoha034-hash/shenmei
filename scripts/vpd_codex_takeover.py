@@ -103,13 +103,20 @@ def main():
     lock['execution_boundary']['current_figma_canvas_authorization']=3-args.versions
     if unit:
         from visual_memory.vpd_correct_source_worker import available_canvas_slots
-        lock['execution_boundary']['current_figma_canvas_authorization']=available_canvas_slots(unit)
+        lock['execution_boundary']['current_figma_canvas_authorization']=available_canvas_slots(unit, ROOT)
+        from visual_memory.vpd_reference_typography_study import available_guide_calls
+        if 'content_transfer_experiment' in unit and 'image_guide' in unit['content_transfer_experiment']:
+            lock['execution_boundary']['typography_guide_generation_authorization']=available_guide_calls(unit, ROOT)
+        else:
+            lock['execution_boundary'].pop('typography_guide_generation_authorization', None)
         lock['execution_boundary']['independent_worker_contract']=unit['worker_contract']
         if unit.get('repair_authorization'):
             lock['execution_boundary']['wordmark_only_generation_authorization']=unit['repair_authorization']
         if unit['phase'] in ['REFERENCE_STUDY_ACTIVE', 'REFERENCE_STUDY_DELIVERED', 'REFERENCE_STUDY_ARCHIVE_BLOCKED']:
             lock['execution_boundary'].pop('wordmark_only_generation_authorization', None)
-            lock['execution_boundary']['current_figma_authorization_scope']='NEW_SHANYEJI_TYPOGRAPHY_STUDY_PAGE_ONLY'
+            lock['execution_boundary']['current_figma_authorization_scope']=(
+                'LIUXIANSHENG_CONTENT_TRANSFER_AUTHORIZED_PAGE_ONLY'
+                if 'content_transfer_experiment' in unit else 'NEW_SHANYEJI_TYPOGRAPHY_STUDY_PAGE_ONLY')
     lock['execution_boundary']['current_image_generation_authorization_scope']=TASK
     lock['execution_boundary']['successor_execution_authorized']=True
     lock['execution_boundary']['bounded_typography_design_versions_authorization']=take['authorization']
@@ -161,6 +168,13 @@ def main():
             cp['incomplete']=['V29文字被真人否定；原AI_PASS记录保留，不作真人认可',
                 '只做山野集整套文字临摹与Figma对照；茶作及已认可摄影暂停修改',
                 '临摹研究真人验收、茶作文字迁移与整体蒸馏收益仍未验证']
+        if 'content_transfer_experiment' in unit:
+            transfer = unit['content_transfer_experiment']
+            adapter['current_mainline']['current_visual_unit']='LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT'
+            adapter['current_mainline']['evidence']['current_content_transfer_experiment']=copy.deepcopy(transfer)
+            cp['incomplete']=['刘先生新文案字体迁移实验的独立审稿与真人验收以当前证据为准',
+                '原S2研究真人验收仍为PENDING；茶作V29及已认可摄影继续冻结，正式计数29/28不变',
+                '本地迁移实验不作茶作AI_PASS、主线晋升或整体蒸馏收益证明']
         if unit['poster_human_verdict'] == 'REJECTED' and not unit.get('repair_authorization'):
             cp['incomplete']=['V3文字及完整设计已被刘先生否定；失败成品验收请求已撤回',
                 '三版两修订已用尽；继续制作须明确同一任务新增正式版本范围，不能清零或隐瞒既有失败',

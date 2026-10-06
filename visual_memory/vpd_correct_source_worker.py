@@ -55,8 +55,13 @@ def review_inputs_for_version(root, version, number, fallback):
             'V29_PROSPECTIVE_REVIEW_INPUTS_REQUIRED')
     return reference
 
-def available_canvas_slots(unit):
+def available_canvas_slots(unit, root=None):
     if unit['phase'] in ['REFERENCE_STUDY_ACTIVE', 'REFERENCE_STUDY_DELIVERED', 'REFERENCE_STUDY_ARCHIVE_BLOCKED']:
+        if 'content_transfer_experiment' in unit:
+            from .vpd_reference_typography_study import transfer_attempts, transfer_attempt_limit
+            transfer = unit['content_transfer_experiment']
+            attempts = transfer_attempts(transfer, root)
+            return transfer_attempt_limit(transfer, root) - len(attempts) if unit['phase'] == 'REFERENCE_STUDY_ACTIVE' else 0
         return int(unit['phase'] == 'REFERENCE_STUDY_ACTIVE')
     if unit.get('repair_authorization'):
         return int(unit['phase'] in ['AUTHORIZED','REVISION_REQUIRED'])
@@ -118,6 +123,13 @@ def validate_serial_transition(root, old_unit, unit):
     preserved_count = old_used - 1 if completing_current_review else old_used
     require(unit['versions'][:preserved_count] == old_unit['versions'][:preserved_count],
             'HISTORICAL_VERSION_EVIDENCE_REWRITTEN')
+    if 'content_transfer_experiment' in old_unit or 'content_transfer_experiment' in unit:
+        require(unit.get('reference_typography_study') == old_unit.get('reference_typography_study')
+                and used == old_used == 29 and unit['budget'] == old_unit['budget'],
+                'CONTENT_TRANSFER_CANNOT_REWRITE_STUDY_OR_TEA_BUDGET')
+        from .vpd_reference_typography_study import validate_transfer_transition
+        validate_transfer_transition(old_unit.get('content_transfer_experiment'),
+                                     unit.get('content_transfer_experiment'))
     if completing_current_review:
         review_fields = {'verdict', 'pixel_review', 'drive_archive',
             'asset_drive_archive', 'professional_technical_review'}
@@ -322,10 +334,8 @@ def validate_continuation(root, lock, cp, adapter, receipt):
         'DELIVERED_AI_FAIL':'LIU_XIANSHENG_REVIEW_CORRECT_SOURCE_POSTER_AND_FAILED_REVIEW',
         'HUMAN_REJECTED':'CONFIRM_ADDITIONAL_SAME_TASK_DESIGN_VERSION_SCOPE',
         'TECHNICAL_BLOCKED':'REPAIR_OBSERVED_CORRECT_SOURCE_TECHNICAL_BLOCKER'}
-    from .vpd_reference_typography_study import PHASES, validate_study
-    actions.update(REFERENCE_STUDY_ACTIVE='RECONSTRUCT_SHANYEJI_WHOLE_TYPOGRAPHY_IN_FIGMA',
-                   REFERENCE_STUDY_DELIVERED='LIU_REVIEW_SHANYEJI_TYPOGRAPHY_REFERENCE_STUDY',
-                   REFERENCE_STUDY_ARCHIVE_BLOCKED='AUTHORIZE_SHANYEJI_STUDY_DRIVE_DESTINATION')
+    from .vpd_reference_typography_study import PHASES, validate_study, study_actions
+    actions.update(study_actions(unit))
     if unit['phase'] in PHASES:
         validate_study(root, unit)
     require(unit['phase'] in actions and take['next_required_action'] == actions[unit['phase']]

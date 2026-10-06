@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-content-transfer-continuous-method-repair-allocation/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "work_unit_id": "CHAZUO_APPROVED_SOURCE_TYPOGRAPHY_20261003_R1",
+  "authorization": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+    "sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31"
+  },
+  "copy_manifest": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+    "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a"
+  },
+  "final_repair_allocation": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+    "sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7"
+  },
+  "continuous_repair_authorization": {
+    "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+    "sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848"
+  },
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "attempt_budget": {
+    "base_attempts": 3,
+    "total_max": 4
+  },
+  "guide_generation": {
+    "tool": "image_gen.imagegen",
+    "base_guide_calls": 1,
+    "max_calls": 1,
+    "guide_total_max": 2,
+    "typography_only": true,
+    "transparent_background": true,
+    "photo_generation": false
+  },
+  "real_current_task_actor": "ROOT_ONLY",
+  "human_acceptance": "PENDING",
+  "new_tea_version": false,
+  "mainline_change": false,
+  "second_style": false,
+  "photo_change": false,
+  "paid_compute": false,
+  "model_training": false,
+  "automation": false,
+  "budget_reset": false,
+  "source_kind": "EXISTING_EXPLICIT_HUMAN_CONTINUOUS_AUTHORIZATION_AND_CURRENT_METHOD_STEERING",
+  "user_method_literal": "我发现靠你自己很难完成，要不这样。首先提取文字，而后让image来模拟生成文字，而后你再用figma完整的复制制作下来。",
+  "recorded_at": "2026-10-05T15:07:00.827546+00:00",
+  "actual_prior_fail": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s3_verified_review/PIXEL_REVIEW.json",
+    "sha256": "bcc10a83798ba95729ae8e2ff36e879c56ec03951a833c3b9c8cf87d5e6431dc"
+  },
+  "actual_prior_guide": {
+    "path": ".liu-visual-private/liuxiansheng_transfer_20261005/IMAGE_GUIDE_S3.png",
+    "sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f"
+  },
+  "diagnosis": "S3真实像素确认橙线共构成立，但圆胀块面、切面/颗粒不足及辅助体量过重；新增一次同方向图稿修订，先收紧字标体量/端部切面/真透明侵蚀，再重建。前3版及guide1保留，不并行挑选、不清零。",
+  "allocation_is_not_human_stop_condition": true
+}

@@ -1,3 +1,24 @@
+<!-- LIUXIANSHENG_CONTENT_TRANSFER_S4_CURRENT_20261006 -->
+2026-10-06最新实际成品：S4文字迁移442:2，主标442:8；独立隔离两图审核CONTENT_TRANSFER_PASS_WITH_LIMITATIONS，真人PENDING。范围是山野集整体文字→刘先生，摄影暂停；原S1/S2/S3全部FAIL保留，累计正式迁移4版、图稿2次，不清零。保护茶作V29真人文字REJECTED、摄影7fd7777f认可及原S2研究，29/28茶作计数不变。
+
+先读原生锁；当前唯一下一动作应为LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER，不恢复茶作或继续第二风格。准确调用入口是 evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S4.json 和 METHODS_AND_REUSE_S4.md。[PNG原件](https://drive.google.com/file/d/1V_7Vlv4wJj_LZz6nGXlMxZ2hCxhXX5kD/view?usp=drivesdk)、[Figma源442:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=442-2)、[字标SVG](https://drive.google.com/file/d/162fcRt3WK_NvnDXjaxBECeDg_KE0xLtG/view?usp=drivesdk)，原字节已回读匹配。认证可访问已核验，匿名公开未核验，原权限不变。
+
+12个TEXT可直接改字；主标5个VECTOR是从真实图稿恢复并作明确局部字形修订，换名字需重做复审。参考9a29fbdc…、图稿9ef09dd1…、成品ddb621eb…、SVG0f0a43f7…，并非逐像素临摹或原字体。设计审稿指出塑形节奏、颗粒密度、右橙环及底部署名仍有差距；AI通过只允许真人审稿。流程/编辑性/原件恢复已验证，时间节省、成熟品牌质量、整体蒸馏及真人认可未验证。专业制作报告及新读取测试以同目录PROFESSIONAL_IMPLEMENTATION_REVIEW_S4.json、s4_fresh_entry/FRESH_ENTRY_REPORT.json实际证据为准，文件不存在不得宣称完成。
+
+唯一活动执行副本 shenmei-vpd-resume-20261006，旧 shenmei-vpd-codex-20261003 冻结；同一仓库/分支/任务，Root唯一状态writer。下方S3与所有旧“下一动作”只作历史，不覆盖当前锁。
+<!-- END_LIUXIANSHENG_CONTENT_TRANSFER_S4_CURRENT_20261006 -->
+
+<!-- LIUXIANSHENG_CONTENT_TRANSFER_CURRENT_20261005 -->
+2026-10-05接续纠正：S3未通过，当前按仍有效的CONTINUOUS_REPAIR_AUTHORIZATION_20261004继续同一方向，Root先前自设三版/一次guide分配不作为真人停止条件。新增有界一次图稿修订分配 `CONTINUOUS_METHOD_REPAIR_ALLOCATION.json`，累计将最多四版/两次guide，旧失败、计数和授权保持；不得把本段分配再冒称用户停止上限。具体执行/验收下一动作只读原生锁。先调整生成稿的切面、纹理与主次体量，独立看图后再Figma重建。S3成果和恢复测试是旧版基线，不作最新版本通过证据。
+当前范围是山野集同一文字气质的“刘先生”内容迁移试验。S1=424:2/PNG39cc3fc…、S2=429:2/PNG4308614a…、S3=435:2/PNG65450794…均完成真实Figma制作及新隔离像素审核，三版均CONTENT_TRANSFER_FAIL。S3主字与橙线的共构成立，但圆胀字形、切面/颗粒不足和辅助层级偏重未达到参考；不将流程通过冒称审美通过。三版PNG/字标SVG及S3生成图稿均已Drive归档并实际原字节回读。
+
+最新真人顺序“提取→image模拟文字→Figma复制”已实际跑完：一次内置image_gen.imagegen透明文字图稿1086×1448/SHAe4c9ba5f…；未改VTracer0.6.15恢复主标20条路径；Figma原生12个辅助TEXT与20个VECTOR、无IMAGE。源页412:2，[S3完整源435:2](https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=435-2)，字标435:8。原1+1为Root主动收窄；FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json使用第三版最后修订，保留全部失败与计数。当前已用三版、一次图稿，不自动重放制作或扩Tea/摄影。
+
+ChatGPT准确复用入口是 `evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/METHODS_AND_REUSE.md` 和DELIVERY_MANIFEST.json。其实际引用包括文案提取、COPY_MANIFEST、提示词、源代码、字标来源、Drive回读、s3_verified_review及专业审查；[S3原件](https://drive.google.com/file/d/19HJIyPjjzNV_4yBzGN4zbngjp6Xx4T7P/view)、[生成图稿](https://drive.google.com/file/d/1mZn0nQeclp1ty75-4z2QloLO_tyfxDxC/view)、[字标SVG](https://drive.google.com/file/d/1l5eS4O8-KWVA1uVTT4RZpJis3603AHYl/view)。辅助TEXT可直接改字；主标是恢复曲线，换字需重做并复审。图稿至Figma存在辅助字体和纹理近似差异，不能称完整逐像素复制。内置生图底层model未公开，记录NOT_EXPOSED，不冒认CLI默认型号；Root实际Sol/xhigh，冷审实际Sol/Max及fork-none已从nativecontext与工具调用核验。
+
+摄影冻结7fd7777f、茶作正式29版/28修订及旧山野集S2(416:2)全部保留。旧研究humanPENDING不变，本迁移humanPENDING，不恢复茶作，不作主线晋升。下方历史段落的旧下一动作不能覆盖当前锁。
+<!-- END_LIUXIANSHENG_CONTENT_TRANSFER_CURRENT_20261005 -->
+
 # 茶作当前成果与独立 worker 调用入口
 
 <!-- SHANYEJI_REFERENCE_STUDY_CURRENT_20261005 -->
@@ -192,3 +213,6 @@ V29 真正项目外全新Sol/Max任务逐一读取P/N/R/S/T五张原图，295839
 AI_PASS后的唯一下一动作是刘先生审核V29完整成品。不得自行制作V30、转第二风格、扩大额度或把整个蒸馏系统标为完成。提交后本版全新读取上下文恢复结果按实际回执保存，未运行前不能宣称已验证。
 
 V29 发布后全新仓库读取上下文已实际恢复：固定1d856a967af7a163fcca14bb32b5a850ff775827的3212个Git blob身份一致；Drive完整PNG原字节/原像素与品牌SVG已取回，Figma402:2只读源调用52节点42矢量、摄影原字节与capture SHA均一致。原始报告及Root实际工具/模型/像素传输核验在本版 fresh_repository_recovery/FRESH_RECOVERY_REPORT.json 与 ROOT_ACTUAL_RECOVERY_AUDIT.json。新缓存完整原生检查真实BLOCKED于Git忽略摄影/历史私有原件，未批量恢复；这不等于当前Root原生全检查失败。恢复两turn含一次限制报告阶段的中断，非项目外审美冷审；worker未自查模型，Root实际核对两turn均Sol/Max，原报告未知字段不改。只验证当前成果实际可复用，不宣称跨机器制作、全状态通过、节时或真人认可。唯一下一步仍为刘先生审核V29完整原件，业务主线不变。
+<!-- OWNED_CHECKOUT_RECOVERY_20261006 -->
+本轮继续同一“刘先生”文字迁移，任务/分支/摄影保护不变。S4导引稿已真实生成并在Drive回读一致，累计guide调用2；它只是导引，不是成品通过。旧私有依赖目录发生权限错误，原生写入三次回滚，失败日志与实际耗用保留。Root唯一执行副本迁至同workspace的 `shenmei-vpd-resume-20261006`，旧 `shenmei-vpd-codex-20261003` 冻结业务写入；这是同一原生任务的Git工作副本恢复，不是第二套状态系统。固定VTracer/Pathops wheel在新副本原相对路径恢复，sealed成员SHA与1437个当前receipt顶层引用实际预检通过。使用干净bundled Python直接运行项目入口；不要预加载旧 verified_restore 适配，因为sealed导入路径检查要求原相对目录。完整原生检查及当前唯一下一动作仍从锁读取，不把此预检当审美通过。
+<!-- END_OWNED_CHECKOUT_RECOVERY_20261006 -->

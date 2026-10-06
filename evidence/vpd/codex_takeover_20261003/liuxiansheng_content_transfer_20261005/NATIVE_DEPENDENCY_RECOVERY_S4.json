@@ -1,0 +1,19 @@
+{
+  "schema": "vpd-native-dependency-recovery/v1",
+  "actual_failed_native_log": {
+    "path": ".liu-visual-private/liuxiansheng_transfer_20261005/S4_AUTHORIZED_NATIVE_WRITE.txt",
+    "sha256": "cec72a0288188dfadc6eb5ede63761933059184a4a31adee4adc1e5c5549a60a"
+  },
+  "transaction_rolled_back_to": 342,
+  "cause_observed": "PermissionError importing original VTracer __init__.py; old package ACL inspection also denied",
+  "restoration": "Same fixed SHA wheel copied to new workspace dependency; original package and ACLs unchanged",
+  "wheel_sha256": "b0f08b66734e41872d4ac343ed6d08870b3235346def3e112e10b3b2443e619e",
+  "actual_module_import_verified": true,
+  "all_restored_wheel_members_equal": true,
+  "wrapper": {
+    "path": "scripts/vpd_with_verified_vtracer.py",
+    "sha256": "dd497ce779c2ad9c4341de04086636c0a95099eb8ac0b594e1402aee975bf6dc"
+  },
+  "full_validator_replay": "PENDING",
+  "count_reset": false
+}

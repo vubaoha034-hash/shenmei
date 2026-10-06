@@ -1,0 +1,244 @@
+{
+  "schema": "independent-final-allocation-guide-controls/v1",
+  "evidence_class": "ACTUAL_SOURCE_HELPERS_WITH_SYNTHETIC_IN_MEMORY_TRANSFERS_AND_PNG_FIXTURES",
+  "source_hashes": {
+    "scripts/vpd_codex_takeover.py": "e9b9cac69b0bfc9a80cf0cdcd001c5bdc1e6ec28174ec01c819bf4f476791638",
+    "visual_memory/vpd_reference_typography_study.py": "4a8db45fdea646bb2c635cdd14412fb4a0b45ab6d4c85a1f73e08bb8d4bf6d46",
+    "visual_memory/vpd_correct_source_worker.py": "cfe486ebf2048bf15cb2e3ab5dbf8aed72cb81455098c0422cd64af5ce7dc1c1",
+    "visual_memory/vpd_locked_mainline_state.py": "45474602f76df58dc37a9aa2c999bb1a2552dd4aece90952d9b114c86207a00b"
+  },
+  "source_stable_during_test": true,
+  "native_revision": 340,
+  "native_writer_invoked": false,
+  "figma_write_invoked": false,
+  "image_generation_tool_invoked": false,
+  "grant": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+    "sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7"
+  },
+  "actual_previous_fail_review": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s2_verified_review/PIXEL_REVIEW.json",
+    "sha256": "2505007931ee98f2ffe643f37b491f40ea8e0ad81a85ae25562b5e066f54e843"
+  },
+  "pass_count": 31,
+  "test_count": 31,
+  "results": [
+    {
+      "name": "default_total_max_2",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": 2
+    },
+    {
+      "name": "immutable_explicit_grant_total_max_3",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": 3
+    },
+    {
+      "name": "default_exhausted_canvas_slots_zero",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": 0
+    },
+    {
+      "name": "explicit_third_canvas_slot_one",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": 1
+    },
+    {
+      "name": "default_third_request_rejected",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_ATTEMPT_BUDGET_EXHAUSTED",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_ATTEMPT_BUDGET_EXHAUSTED"
+    },
+    {
+      "name": "figma_before_real_guide_rejected",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_REQUIRED_BEFORE_FINAL_FIGMA",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_REQUIRED_BEFORE_FINAL_FIGMA"
+    },
+    {
+      "name": "guide_write_one_authorized_call",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": null
+    },
+    {
+      "name": "figma_after_nonblank_transparent_fixture_metadata",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": null
+    },
+    {
+      "name": "third_repair_cannot_reuse_stale_s1_fail",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_ACTUAL_REPAIR_BASIS_REQUIRED",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_ACTUAL_REPAIR_BASIS_REQUIRED"
+    },
+    {
+      "name": "explicit_fourth_request_rejected",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_ATTEMPT_BUDGET_EXHAUSTED",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_ATTEMPT_BUDGET_EXHAUSTED"
+    },
+    {
+      "name": "after_third_canvas_slots_zero",
+      "observed": "ACCEPTED",
+      "passed": true,
+      "expected_rejection": null,
+      "value": 0
+    },
+    {
+      "name": "image_call_after_used_rejected",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_photo_generation",
+      "observed": "TaskLockError",
+      "detail": "RENDER_NOT_AUTHORIZED",
+      "passed": true,
+      "expected_rejection": "RENDER_NOT_AUTHORIZED"
+    },
+    {
+      "name": "guide_scope_reject_photo_change",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_render",
+      "observed": "TaskLockError",
+      "detail": "RENDER_NOT_AUTHORIZED",
+      "passed": true,
+      "expected_rejection": "RENDER_NOT_AUTHORIZED"
+    },
+    {
+      "name": "guide_scope_reject_paid_compute",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_second_style",
+      "observed": "TaskLockError",
+      "detail": "RENDER_NOT_AUTHORIZED",
+      "passed": true,
+      "expected_rejection": "RENDER_NOT_AUTHORIZED"
+    },
+    {
+      "name": "guide_scope_reject_new_tea_version",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_figma_write",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_typography_guide",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_transparent_background",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "guide_scope_reject_method_authorization",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "figma_reject_actor",
+      "observed": "TaskLockError",
+      "detail": "WORKER_STATE_WRITE_NOT_AUTHORIZED",
+      "passed": true,
+      "expected_rejection": "WORKER_STATE_WRITE_NOT_AUTHORIZED"
+    },
+    {
+      "name": "figma_reject_attempt_count",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_ATTEMPT_STATE_MISMATCH",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_ATTEMPT_STATE_MISMATCH"
+    },
+    {
+      "name": "figma_reject_existing_node_mutations",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_WRITE_SCOPE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_WRITE_SCOPE_CONFLICT"
+    },
+    {
+      "name": "fully_empty_transparent_guide_must_reject",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_TRANSPARENT_GUIDE_PNG_REQUIRED",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_TRANSPARENT_GUIDE_PNG_REQUIRED"
+    },
+    {
+      "name": "generated_guide_cannot_keep_prior_error",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_STATE_CONFLICT",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_STATE_CONFLICT"
+    },
+    {
+      "name": "failed_guide_phase_cannot_be_rewritten_as_generated",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_TERMINAL_STATE_REWRITTEN",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_TERMINAL_STATE_REWRITTEN"
+    },
+    {
+      "name": "guide_used_counter_cannot_reset",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_HISTORY_REWRITTEN",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_HISTORY_REWRITTEN"
+    },
+    {
+      "name": "allocation_cannot_be_removed_after_registration",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_FINAL_ALLOCATION_REWRITTEN",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_FINAL_ALLOCATION_REWRITTEN"
+    },
+    {
+      "name": "prior_attempts_cannot_be_cleared",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_HISTORY_REWRITTEN",
+      "passed": true,
+      "expected_rejection": "CONTENT_TRANSFER_HISTORY_REWRITTEN"
+    }
+  ]
+}

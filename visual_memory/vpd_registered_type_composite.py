@@ -224,7 +224,12 @@ def check_lineage(root, tree, lineage, formal_version=None):
     sys.path.insert(0, str(dependency))
     try:
         import vtracer
-        require(importlib.metadata.version('vtracer') == '0.6.15', 'VTRACER_VERSION_CHANGED')
+        # Bind metadata to the module actually used for the pixel replay.
+        # An unreadable stale installation earlier on sys.path can otherwise
+        # supply empty metadata even after the same fixed wheel was restored.
+        distribution = Path(vtracer.__file__).resolve().parent.parent / 'vtracer-0.6.15.dist-info'
+        require(importlib.metadata.PathDistribution(distribution).version == '0.6.15',
+                'VTRACER_VERSION_CHANGED')
         binary = generated.getchannel('A').point(lambda v: 0 if v >= 128 else 255).convert('RGB')
         buffer = io.BytesIO()
         binary.save(buffer, format='PNG')

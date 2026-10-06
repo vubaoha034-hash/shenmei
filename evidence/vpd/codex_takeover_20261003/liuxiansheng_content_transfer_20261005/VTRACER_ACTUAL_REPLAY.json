@@ -1,0 +1,54 @@
+{
+  "schema": "independent-vtracer-actual-replay/v1",
+  "checked_at": "2026-10-05T14:51:35.024874+00:00",
+  "status": "FAIL",
+  "scope": "One replay of the unchanged actual adapter and existing trace inputs; own private output only",
+  "expected_source_svg_sha256": "b9dfbbc199666a5b2e1a46066e1b7d73e59b73dcaa0ef6cb814627779444976c",
+  "copied_files": [
+    {
+      "name": "trace-guide.py",
+      "sha256": "fb570cc1064d2eba33b63561b9595cd65f23b9dafd8b73532d3b9b335a2eaff6",
+      "byte_equal_to_source": true
+    },
+    {
+      "name": "CREAM_TRACE_INPUT.png",
+      "sha256": "4d50e450913bd6bb7ae4ae11c309edb626a908bc77158e265a45e2419bfff8a6",
+      "byte_equal_to_source": true
+    },
+    {
+      "name": "ORANGE_TRACE_INPUT.png",
+      "sha256": "4e008c6da53edfd35f64ba9c7673d1ca0ed731f06f720fcd819a16aca031a705",
+      "byte_equal_to_source": true
+    },
+    {
+      "name": "TRACE_INPUT_EVIDENCE.json",
+      "sha256": "9a6af04f5c70847fac9bd291b309b4eec75cb4c3ec1ba0a2f46c89bbeff605de",
+      "byte_equal_to_source": true
+    }
+  ],
+  "checks": {
+    "inputs_and_adapter_exact_copies": true,
+    "actual_script_exit_zero": false,
+    "actual_upstream_version_0_6_15": false,
+    "original_svg_matches_final_s3_source": true
+  },
+  "actual_command": [
+    "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\liuxiansheng_transfer_20261005\\implementation_review\\vtracer_replay\\trace-guide.py"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\liuxiansheng_transfer_20261005\\implementation_review\\vtracer_replay\\trace-guide.py\", line 10, in <module>\n    if VERSION!='0.6.15': raise RuntimeError('Wrong VTracer version: '+VERSION)\n                                             ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\nTypeError: can only concatenate str (not \"NoneType\") to str\n",
+  "actual_upstream_import": {
+    "version": null,
+    "module": null
+  },
+  "original_svg_sha256": "b9dfbbc199666a5b2e1a46066e1b7d73e59b73dcaa0ef6cb814627779444976c",
+  "limits": [
+    "The real independent replay attempt failed before tracing: imported module path and distribution version were null; adapter exited 1 at its version guard. Successful upstream execution and byte-identical output were not verified.",
+    "No new guide, Figma node, business-state write, package install or aesthetic conclusion. Original final report remains unchanged."
+  ]
+}

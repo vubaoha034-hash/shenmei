@@ -1,0 +1,152 @@
+{
+  "status": "VECTOR_RECONSTRUCTION_PENDING_PIXEL_REVIEW",
+  "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\liuxiansheng_transfer_20261005\\IMAGE_GUIDE_S3.png",
+  "source_sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f",
+  "source_canvas": [
+    1086,
+    1448
+  ],
+  "trace_scope": "Only native guide main 刘先生 cream silhouettes and visible orange ribbon in ROI202/465/803x317. No helper text or seal traced.",
+  "upstream": {
+    "tool": "VTracer",
+    "version": "0.6.15",
+    "module": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer\\__init__.py",
+    "license": "MIT",
+    "license_source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\source\\vtracer-0.6.15\\LICENSE",
+    "license_sha256": "81ee739f355765c110fc89feff14ffffce829901f96ba811fd0b65a41a8636c7",
+    "modified": false
+  },
+  "thin_adapter": "prepare-trace-inputs.cjs + trace-guide.py; alpha/color gate and connected-component dust rejection only",
+  "parameters": {
+    "colormode": "binary",
+    "mode": "spline",
+    "filter_speckle": 12,
+    "corner_threshold": 60,
+    "length_threshold": 4,
+    "max_iterations": 10,
+    "splice_threshold": 45,
+    "path_precision": 2
+  },
+  "cream": {
+    "pixels": 100403,
+    "bounds": {
+      "x": 214,
+      "y": 476,
+      "width": 775,
+      "height": 288
+    },
+    "median_rgb": [
+      253,
+      246,
+      232
+    ],
+    "flat_vector_color": "#fdf6e8",
+    "retained_component_areas": [
+      15479,
+      13755,
+      13536,
+      11606,
+      11246,
+      10981,
+      8129,
+      7259,
+      3521,
+      2794,
+      1798,
+      299
+    ],
+    "rejected_components": 5,
+    "rejected_pixels": 10
+  },
+  "orange": {
+    "pixels": 10335,
+    "bounds": {
+      "x": 210,
+      "y": 501,
+      "width": 781,
+      "height": 251
+    },
+    "median_rgb": [
+      253,
+      126,
+      7
+    ],
+    "flat_vector_color": "#fd7e07",
+    "retained_component_areas": [
+      4098,
+      3627,
+      778,
+      521,
+      364,
+      360,
+      295,
+      266,
+      26
+    ],
+    "rejected_components": 1,
+    "rejected_pixels": 1
+  },
+  "layers": {
+    "cream_paths": 12,
+    "orange_visible_paths": 8
+  },
+  "output": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\liuxiansheng_transfer_20261005\\image-guide-reconstruction\\IMAGE_GUIDE_S3_WORDMARK_TRACE.svg",
+  "output_bytes": 32913,
+  "output_sha256": "b9dfbbc199666a5b2e1a46066e1b7d73e59b73dcaa0ef6cb814627779444976c",
+  "target_canvas_conversion": {
+    "matrix": [
+      0.8839779005524862,
+      0,
+      0,
+      0.8839779005524862,
+      0,
+      0
+    ],
+    "canvas": [
+      960,
+      1280
+    ]
+  },
+  "limitations": [
+    "Flattened each sampled foreground class to its actual selected-pixel median RGB; source gradients and low-alpha edge haze are not preserved.",
+    "Traced only visible orange fragments; no hidden portions beneath cream were inferred. Cream remains source-visible geometry, so occlusion is preserved in rendered output.",
+    "Connected color speckles below the recorded area gates and VTracer speckle filter are omitted; no claim of perfect pixel identity.",
+    "Vector curves are recovered from generated raster; these are not hand-authored original glyphs or font outlines.",
+    "No Figma, business-state, upstream package or original guide writes. Independent cold pixel review remains required."
+  ],
+  "actual_preview_view_required": false,
+  "preview_files": [
+    "TRACE_PREVIEW_TRANSPARENT.png",
+    "TRACE_PREVIEW_FOREST_ROI.png"
+  ],
+  "silhouette_metrics": {
+    "method": "Binary alpha silhouette comparison to recorded guide-derived class masks, not full RGBA identity",
+    "source_sha256_after": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f",
+    "vector_dimensions": {
+      "width": 1086,
+      "height": 1448
+    },
+    "svg_bytes": 32913,
+    "raster_embeds": 0,
+    "cream": {
+      "target_pixels": 100403,
+      "vector_pixels": 102810,
+      "intersection_pixels": 100227,
+      "union_pixels": 102986,
+      "iou": 0.9732099508671082
+    },
+    "orange": {
+      "target_pixels": 10335,
+      "vector_pixels": 11118,
+      "intersection_pixels": 10126,
+      "union_pixels": 11327,
+      "iou": 0.8939701597951797
+    },
+    "limits": "These IoUs compare tracing to the gated visible input masks, not to low-alpha haze or the whole guide. Independent guide/export review remains."
+  },
+  "actual_preview_viewed": true,
+  "actual_preview_view_evidence": [
+    "tools.view_image TRACE_PREVIEW_TRANSPARENT.png full1086x1448",
+    "tools.view_image TRACE_PREVIEW_FOREST_ROI.png 826x317 vector-only preview"
+  ]
+}

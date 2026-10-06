@@ -1,0 +1,20 @@
+{
+  "schema": "vpd-mutable-reuse-entry-historical-binding-repair/v1",
+  "recorded_utc": "2026-10-06T01:47:06.028569+00:00",
+  "actual_failure": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_codex_takeover.py\", line 200, in <module>\n    main()\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_codex_takeover.py\", line 191, in main\n    validate_locked_mainline(ROOT)\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_locked_mainline_state.py\", line 137, in validate_locked_mainline\n    _validate_human_final(root, lock, cp, adapter)\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_locked_mainline_state.py\", line 200, in _validate_human_final\n    _validate_codex_takeover(root, lock, cp, adapter)\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_locked_mainline_state.py\", line 302, in _validate_codex_takeover\n    validate_continuation(root, lock, cp, adapter, receipt)\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_correct_source_worker.py\", line 327, in validate_continuation\n    for ref in receipt['artifact_refs']: check_ref(root, ref)\n                                         ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_task_lock.py\", line 113, in check_ref\n    require(digest(path(root, ref['path'])) == ref['sha256'], 'EVIDENCE_HASH_MISMATCH:' + ref['path'])\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\visual_memory\\vpd_task_lock.py\", line 21, in require\n    raise TaskLockError(code)\nvisual_memory.vpd_task_lock.TaskLockError: EVIDENCE_HASH_MISMATCH:continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md\n",
+  "failed_candidate_receipt": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S4_DELIVERY_RECEIPT.json",
+    "sha256": "d2b9817d38622aa0d31dbc49b1fde763e37d055c9e0b3259b74540fd9133a2af"
+  },
+  "native_transaction_rolled_back_to_revision": 343,
+  "checkpoint_sequence": 365,
+  "cause": "Historical artifact_refs contained mutable current entry. Updating latest S4 entry invalidated that old immutable fingerprint.",
+  "repair": "Preserve exact pre-S4 entry as a new immutable snapshot with identical SHA; repoint only this historical top-level artifact reference. Current reuse_entry retains new S4 SHA.",
+  "historical_entry_snapshot": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S4_ENTRY_BASELINE.md",
+    "sha256": "b2284886f46d0dd7a33c635bdaeee1c0554a6cd6aea352ab3dc5d8f0d2f0d818"
+  },
+  "validator_changed": false,
+  "artwork_changed": false,
+  "human_verdict_changed": false
+}

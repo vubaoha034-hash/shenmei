@@ -1,0 +1,81 @@
+{
+  "source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\liuxiansheng_transfer_20261005\\IMAGE_GUIDE_S3.png",
+  "source_sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f",
+  "source_viewed": "view_image actual original before adaptation",
+  "canvas": {
+    "width": 1086,
+    "height": 1448
+  },
+  "roi": {
+    "x": 202,
+    "y": 465,
+    "width": 803,
+    "height": 317
+  },
+  "mask_rules": {
+    "cream": "alpha>=200,r>=232,g>=224,205<=b<=246,abs(r-g)<=25,g-b<=50",
+    "orange": "alpha>=192,r>=235,70<=g<=182,b<=64,r-g>=70,g-b>=25",
+    "connected_component_neighbors": 8,
+    "cream_min_component_area": 150,
+    "orange_min_component_area": 25
+  },
+  "cream": {
+    "pixels": 100403,
+    "bounds": {
+      "x": 214,
+      "y": 476,
+      "width": 775,
+      "height": 288
+    },
+    "median_rgb": [
+      253,
+      246,
+      232
+    ],
+    "flat_vector_color": "#fdf6e8",
+    "retained_component_areas": [
+      15479,
+      13755,
+      13536,
+      11606,
+      11246,
+      10981,
+      8129,
+      7259,
+      3521,
+      2794,
+      1798,
+      299
+    ],
+    "rejected_components": 5,
+    "rejected_pixels": 10
+  },
+  "orange": {
+    "pixels": 10335,
+    "bounds": {
+      "x": 210,
+      "y": 501,
+      "width": 781,
+      "height": 251
+    },
+    "median_rgb": [
+      253,
+      126,
+      7
+    ],
+    "flat_vector_color": "#fd7e07",
+    "retained_component_areas": [
+      4098,
+      3627,
+      778,
+      521,
+      364,
+      360,
+      295,
+      266,
+      26
+    ],
+    "rejected_components": 1,
+    "rejected_pixels": 1
+  }
+}

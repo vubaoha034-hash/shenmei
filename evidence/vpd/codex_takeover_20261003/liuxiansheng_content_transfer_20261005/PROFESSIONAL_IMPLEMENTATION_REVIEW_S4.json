@@ -1,0 +1,833 @@
+{
+  "schema": "s4-independent-professional-implementation-audit/v1",
+  "created_utc": "2026-10-06T01:41:59.212338+00:00",
+  "audit_scope": "山野集整体文字系统参考到刘先生的 S4 文字实验，技术制作审查；摄影暂停且保护。只在自己的私有审查目录写入。",
+  "result": "TECHNICAL_REPRODUCTION_PASS_WITH_DECLARED_LIMITATIONS",
+  "aesthetic_verdict": null,
+  "human_acceptance": null,
+  "business_state_changed": false,
+  "creator_reviewer_results_used": false,
+  "prior_review_artifacts_read": false,
+  "creator_aesthetic_self_scores_read": false,
+  "creator_LOCAL_PIXEL_CHECK_read": false,
+  "root_entry_historical_state_prose_not_used_for_conclusion": true,
+  "runtime_identity": {
+    "canonical_agent_task": "/root/s4_professional_implementation_audit",
+    "observed_CODEX_THREAD_ID": "01a10ed8-c3fe-7f30-9bd0-443ed8296419",
+    "observed_CODEX_SESSION_ID_environment": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "native_session_path_found_by_exact_thread_id": "C:/Users/Administrator/.codex/sessions/2026/10/06/rollout-2026-10-06T09-34-09-01a10ed8-c3fe-7f30-9bd0-443ed8296419.jsonl",
+    "native_session_contents_not_read": true,
+    "actual_model": null,
+    "actual_reasoning_effort": null,
+    "model_and_effort_not_inferred_from_prompt": true,
+    "python": {
+      "executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "executable_sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+      "PIL_required_for_pipeline": false
+    },
+    "node_sharp": {
+      "package_version": "0.35.4",
+      "dependency_path_is_absolute_host_path": true
+    },
+    "adaptive_router_check": "MAINTENANCE_REQUIRED",
+    "router_changed": false,
+    "recursive_delegation": false
+  },
+  "bounded_execution": {
+    "complete_pipeline_runs": 1,
+    "parameter_or_path_repairs": 0,
+    "failed_pipeline_attempts": 0,
+    "prepare_runs": 1,
+    "builder_runs": 1,
+    "render_runs": 1,
+    "reuse_traces": false,
+    "vtracer_generation_calls": 2,
+    "all_three_pipeline_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "pipeline_reported_wall_seconds_sum": 3.6900648,
+    "steps": [
+      {
+        "stage": "copy_frozen_spec",
+        "command": null,
+        "exit_code": 0,
+        "wall_time_seconds": 1.00651,
+        "native_chunk_id": "5574b9",
+        "stdout_stderr": "{\r\n  \"Path\": \"C:\\\\Users\\\\Administrator\\\\OneDrive\\\\文档\\\\足球\\\\shenmei-vpd-resume-20261006\\\\.liu-visual-private\\\\s4_professional_audit\\\\FROZEN_SPEC.json\",\r\n  \"Hash\": \"565928390D0E063E144505E7CF8FE34083491BB2F0D99FCA3685A1B7CB492B95\"\r\n}\r\n",
+        "stdout_stderr_sha256_utf8": "2cd36d03f1c9955258317925ebe3aea67e5cd35b34ed3bfaccc84fc409acc4e7"
+      },
+      {
+        "stage": "prepare_inputs",
+        "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\prepare-inputs.cjs' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+        "exit_code": 0,
+        "wall_time_seconds": 1.2985175,
+        "native_chunk_id": "c89fff",
+        "stdout_stderr": "{\"cream\":[246,478,963,747],\"cream_components\":11,\"orange_components\":6,\"grain_holes\":61,\"grain_pixels\":464,\"bridge_additions\":4593,\"colors\":[\"#fdf4e5\",\"#f77c26\"]}\n",
+        "stdout_stderr_sha256_utf8": "cf8e4cc6eb91f6a7227af6ac8730781e7ca739f076bf624f39e33df3b4970974"
+      },
+      {
+        "stage": "build_wordmark",
+        "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' -X utf8 -B '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\build-wordmark.py' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+        "exit_code": 0,
+        "wall_time_seconds": 1.3806533,
+        "native_chunk_id": "013dc3",
+        "stdout_stderr": "{\"status\": \"IMPLEMENTED_PENDING_INDEPENDENT_PIXEL_REVIEW\", \"svg_bytes\": 26910, \"sha256\": \"0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9\", \"source_paths\": 48, \"cream_final_bounds\": [224.04736328125, 431.52166748046875, 791.2897338867188, 600.790771484375], \"path_count\": 5}\r\n",
+        "stdout_stderr_sha256_utf8": "e67f62ed82e1b39b32ac2f20480fb7b8e92d3aef4f31ee2565064ff6d4914dfc"
+      },
+      {
+        "stage": "render_preview",
+        "command": "& 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' '.\\evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\render-preview.cjs' --root 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006' --output-dir 'C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s4_professional_audit'",
+        "exit_code": 0,
+        "wall_time_seconds": 1.010894,
+        "native_chunk_id": "ffb8f6",
+        "stdout_stderr": "{\"status\":\"RENDERED_NOT_AESTHETIC_REVIEW\",\"all_alpha\":{\"alpha_nonzero_bbox_xyxy\":[220,431,802,611],\"nonzero_pixels\":47980,\"opaque_pixels\":42336,\"transparent_pixels\":1180820},\"cream_alpha\":{\"alpha_nonzero_bbox_xyxy\":[224,431,792,601],\"nonzero_pixels\":45514,\"opaque_pixels\":41245,\"transparent_pixels\":1183286},\"files\":[{\"path\":\"S4_WORDMARK_TRANSPARENT_RENDER.png\",\"sha256\":\"ed56f06a21a62ad27a9bb457a0f40e40ea3f3797b30da50c13ee5a5f8176cde9\"},{\"path\":\"S4_WORDMARK_TECHNICAL_PREVIEW.png\",\"sha256\":\"fac3cf4d0512701bf7d14a72e471f52c0bba98848f87e76b4f310e89b5206e7e\"},{\"path\":\"S4_ORANGE_HIDDEN_TECHNICAL_PREVIEW.png\",\"sha256\":\"19d3e17105f3671a191b6dd6f4ce0de576cd46e0b7fc682a433b19814bb458a8\"},{\"path\":\"S4_WORDMARK_480PX_TECHNICAL_PREVIEW.png\",\"sha256\":\"86429819d4de4b9e793b25b00ad430c85ff91ec0ba9d989b694643adb091c648\"}]}\n",
+        "stdout_stderr_sha256_utf8": "33e495a1b3f1ff1463c3b944cc5861bc35a66f52ab13832b6bda0a3c833bd323"
+      }
+    ],
+    "helper_measurements_command": "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 -B '.liu-visual-private/s4_professional_audit/audit_inspect.py' ROOT OUTPUT_DIR",
+    "helper_measurements_exit_code": 0,
+    "no_downloads_or_version_changes": true,
+    "image_generation_calls_by_auditor": 0,
+    "figma_writes_by_auditor": 0,
+    "full_historical_validator_reruns": 0,
+    "write_scope": ".liu-visual-private/s4_professional_audit/"
+  },
+  "actual_image_viewing": {
+    "tool": "view_image",
+    "detail": "original",
+    "viewed": [
+      {
+        "role": "G 导向图",
+        "path": ".liu-visual-private\\liuxiansheng_transfer_20261005\\IMAGE_GUIDE_S4.png",
+        "sha256": "9ef09dd1814343a938445227ce9a8906f0eb1ae4531a857baaba0720606aa558",
+        "bytes": 666539,
+        "dimensions": [
+          1086,
+          1448
+        ]
+      },
+      {
+        "role": "T Figma 成品导出",
+        "path": ".liu-visual-private\\liuxiansheng_transfer_20261005\\FIGMA_COMPLETE_S4.png",
+        "sha256": "ddb621ebf7e230279a1358b1b93ab9fcd55705b7e6ca99af8649aa3295ab1ca4",
+        "bytes": 62055,
+        "dimensions": [
+          960,
+          1280
+        ]
+      },
+      {
+        "role": "R 山野集参考",
+        "path": ".liu-visual-private\\product-type-integration-20261004\\SHANYEJI-canonical-readback-20261005.jpg",
+        "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+        "bytes": 142983
+      },
+      {
+        "role": "独立重建的 480px 同候选技术预览",
+        "path": ".liu-visual-private\\s4_professional_audit\\S4_WORDMARK_480PX_TECHNICAL_PREVIEW.png",
+        "sha256": "86429819d4de4b9e793b25b00ad430c85ff91ec0ba9d989b694643adb091c648",
+        "bytes": 20646
+      },
+      {
+        "role": "独立重建的隐藏橙线同候选技术预览",
+        "path": ".liu-visual-private\\s4_professional_audit\\S4_ORANGE_HIDDEN_TECHNICAL_PREVIEW.png",
+        "sha256": "19d3e17105f3671a191b6dd6f4ce0de576cd46e0b7fc682a433b19814bb458a8",
+        "bytes": 44744
+      }
+    ],
+    "bounded_visual_observations": [
+      "T 中文案可辨识，480px 字标预览可读为刘先生。",
+      "隐藏橙线后没有与原粗橙线同宽的贯穿裂隙；先的下部开放三角区和生的横画间隙仍可见。",
+      "G 的透明边缘、颜色与纹理比重建矢量复杂，重建不是逐像素复刻。",
+      "这些观察仅支持可读性、断裂等制作问题；不对整体审美或真人验收下结论。"
+    ]
+  },
+  "checks": [
+    {
+      "id": "SVG_REPRODUCTION",
+      "result": "PASS",
+      "evidence": {
+        "reproduced": {
+          "path": ".liu-visual-private\\s4_professional_audit\\S4_WORDMARK.svg",
+          "sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9",
+          "bytes": 26910
+        },
+        "public_svg_equal_bytes": true,
+        "expected_sha_equal": true,
+        "canvas": {
+          "width": "960",
+          "height": "1280",
+          "viewBox": "0 0 960 1280"
+        },
+        "path_count": 5,
+        "path_ids": [
+          "ORANGE_BACK_MAIN",
+          "ORANGE_BACK_LEFT_ARC",
+          "S4_G_CREAM_WITH_EXPERT_LOCAL_REVISIONS",
+          "ORANGE_FRONT_MAIN",
+          "ORANGE_FRONT_RIGHT_TAIL"
+        ],
+        "each_path_ends_closed": true,
+        "image_count": 0,
+        "text_count": 0,
+        "foreignObject_count": 0,
+        "external_or_data_payload": false,
+        "embedded_assembly_svg_equals_reproduced_after_whitespace_trim": true,
+        "seal_path_count": 1
+      },
+      "conclusion": "从 G 独立生成的 SVG 与 public SVG 完全同字节：0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9，26910B，960x1280，5条闭合路径，0 image/foreignObject/data URI。"
+    },
+    {
+      "id": "EXACT_CONTENT_AND_NATIVE_TEXT",
+      "result": "PASS_FOR_RECORDED_SNAPSHOT",
+      "evidence": {
+        "dimension_match": true,
+        "text_count": 12,
+        "expected_native_text_count": 12,
+        "candidate_texts_exact_match": true,
+        "required_anchors_present": true,
+        "fonts": [
+          {
+            "id": "442:4",
+            "characters": "LIVE\nWILD",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:5",
+            "characters": "STAY\nWEIRD",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:6",
+            "characters": "FREE\nSOUL",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:7",
+            "characters": "NO FIXED\nADDRESS",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:19",
+            "characters": "不住山",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Ma Shan Zheng",
+              "style": "Regular"
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:20",
+            "characters": "Mister\nLiu",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:22",
+            "characters": "疯疯癫癫 · 自在人间",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Noto Serif SC",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:23",
+            "characters": "山人不住山  心里有青山",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Ma Shan Zheng",
+              "style": "Regular"
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:25",
+            "characters": "自由闲人",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Noto Sans SC",
+              "style": "Bold",
+              "variationSettings": {
+                "wght": 700
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:26",
+            "characters": "不赶路，不合群，偶尔认真。",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Noto Sans SC",
+              "style": "Regular",
+              "variationSettings": {
+                "wght": 400
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:27",
+            "characters": "FREE SPIRIT",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Regular",
+              "variationSettings": {
+                "wght": 400,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          },
+          {
+            "id": "442:28",
+            "characters": "MOUNTAINS WITHIN",
+            "visible": true,
+            "locked": false,
+            "hasMissingFont": false,
+            "font": {
+              "family": "Inter",
+              "style": "Regular",
+              "variationSettings": {
+                "wght": 400,
+                "slnt": 0
+              }
+            },
+            "segment_characters_equal": true
+          }
+        ],
+        "all_native_text_unlocked_visible_fonts_present": true,
+        "live_readback_performed_by_auditor": false
+      },
+      "conclusion": "12条原生 TEXT 的字符及顺序与 COPY_MANIFEST 精确一致；每条记录可见、未锁定、无缺失字体，分段字符合并一致。未在 Figma 中改字做破坏性验证。"
+    },
+    {
+      "id": "FIGMA_VECTOR_STRUCTURE",
+      "result": "PASS_FOR_RECORDED_SNAPSHOT_AND_ASSEMBLY_SOURCE",
+      "evidence": {
+        "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+        "page_id": "412:2",
+        "frame_id": "442:2",
+        "frame_name": "LIUXIANSHENG_CONTENT_TRANSFER_S4_FACETED_GUIDE_REPAIR",
+        "canvas": [
+          960,
+          1280
+        ],
+        "wordmark_vector_count": 5,
+        "total_vectors": 6,
+        "seal_vectors_inferred_from_total": 1,
+        "image_paints": 0,
+        "export_sha_matches_T": true,
+        "export_dimensions_matches_T": true,
+        "created_node_ids": [
+          "442:2",
+          "442:3",
+          "442:4",
+          "442:5",
+          "442:6",
+          "442:7",
+          "442:8",
+          "442:9",
+          "442:10",
+          "442:11",
+          "442:12",
+          "442:13",
+          "442:14",
+          "442:15",
+          "442:16",
+          "442:17",
+          "442:18",
+          "442:19",
+          "442:20",
+          "442:21",
+          "442:22",
+          "442:23",
+          "442:24",
+          "442:25",
+          "442:26",
+          "442:27",
+          "442:28"
+        ],
+        "declared_mutated_existing_ids": [],
+        "declared_mutation_list_is_not_a_general_mutation_log": true
+      },
+      "conclusion": "回读与源码一致：主字标5个VECTOR加印章1个VECTOR，12个TEXT，0图像填充；T实际SHA及PNG尺寸绑定回读。5个字标向量是1条含三个字的奶油复合路径加4条橙色装饰线，并非三个可直接键入替换的字体字符。"
+    },
+    {
+      "id": "SOURCE_VERSUS_INFERENCE",
+      "result": "PASS_WITH_EXPLICIT_APPROXIMATION",
+      "evidence": {
+        "final_public_provenance": {
+          "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\PROVENANCE.json",
+          "sha256": "91a9bcb043f1cf65b6a7930e18a1f476fc0dd42f5ff257ba37b8dc949813a014",
+          "bytes": 39137
+        },
+        "public_metadata_changed_after_initial_read": true,
+        "initial_public_provenance_sha256": null,
+        "pipeline_source_not_replayed_after_metadata_refresh": true,
+        "own": {
+          "path": ".liu-visual-private\\s4_professional_audit\\PROVENANCE.json",
+          "sha256": "c3c1ce704e2b53801c47d3f19a327e34dc330edfb6c0680b8f527edcafafbf02",
+          "bytes": 37545
+        },
+        "own_source_extraction": {
+          "path": ".liu-visual-private\\s4_professional_audit\\SOURCE_EXTRACTION.json",
+          "sha256": "ba0761a70f8ffb325e0f81ce8cfd37057090d733c09e66b7d2cc16c4db302a6f",
+          "bytes": 59369
+        },
+        "public_source_extraction_byte_equal": true,
+        "own_traces": [
+          {
+            "label": "G_CREAM_VISIBLE_SOURCE",
+            "input": "CREAM_SOURCE_TRACE_INPUT.png",
+            "input_sha256": "66a6d12347441bf7dc5b6dee1a9739ad50abc4c4c358a7fd565441c0e6b48fc0",
+            "output": "G_CREAM_SOURCE_TRACE.svg",
+            "output_sha256": "e1ab9190aec0575a389d371ff7a5dbf09387c895083d5b9aa82eaa5ac14b8755",
+            "params": {
+              "colormode": "binary",
+              "mode": "spline",
+              "filter_speckle": 0,
+              "corner_threshold": 60,
+              "length_threshold": 4.0,
+              "max_iterations": 10,
+              "splice_threshold": 45,
+              "path_precision": 2
+            },
+            "reused_verified_trace": false,
+            "generation_origin": "CURRENT_BUILDER_RUN"
+          },
+          {
+            "label": "INFERRED_LOCAL_BRIDGES",
+            "input": "BRIDGE_ADDITIONS_TRACE_INPUT.png",
+            "input_sha256": "8470751f78029d87cc2c1fa2c629eaed0287cd7c00766e564b5876936e180b71",
+            "output": "LOCAL_BRIDGE_TRACE.svg",
+            "output_sha256": "c257f0be698d6904c6cc1b58560dda91721145c0c86878909b991d724ea4b617",
+            "params": {
+              "colormode": "binary",
+              "mode": "spline",
+              "filter_speckle": 0,
+              "corner_threshold": 60,
+              "length_threshold": 4.0,
+              "max_iterations": 10,
+              "splice_threshold": 45,
+              "path_precision": 2
+            },
+            "reused_verified_trace": false,
+            "generation_origin": "CURRENT_BUILDER_RUN"
+          }
+        ],
+        "trace_generation_calls_this_audit": 2,
+        "trace_generation_calls_recorded_creator_chain": 4,
+        "mapping": {
+          "source_bbox": [
+            246,
+            478,
+            963,
+            747
+          ],
+          "target_bbox_reference": [
+            224,
+            431,
+            791,
+            601
+          ],
+          "matrix": [
+            0.7907949790794979,
+            0,
+            0,
+            0.6319702602230484,
+            29.46443514644352,
+            128.91821561338293
+          ],
+          "nonuniform": true,
+          "post_edit_recenter": false
+        },
+        "source_visible_cream_components": 11,
+        "inferred_bridge_pixels": 4593,
+        "bridge_fact_pixels": 4593,
+        "bridge_pixels_outside_frozen_windows": 0,
+        "bridge_overlapping_actual_grain_pixels": 0,
+        "actual_grain_components": 61,
+        "actual_grain_pixels": 464,
+        "final_grain_record_matches_own_source_positions": true,
+        "mixed_edge_pixels": 812,
+        "existing_source_cream_trace_overlap": {
+          "classification": "TRACE_JOIN_OVERLAP_EXISTING_G_CREAM_NOT_NEW_RESTORATION",
+          "radius_source_px": 2,
+          "pixels": 1359,
+          "box": [
+            591,
+            540,
+            938,
+            715
+          ]
+        },
+        "sheng_crossing_inferred_pixels": 238,
+        "expert_cut_count": 17,
+        "expert_window_intersection_count": 3,
+        "expert_single_component_replacement": "LIU_SHORT_KNIFE",
+        "final_vector_grain_hole_count_not_claimed": true
+      },
+      "conclusion": "实际G奶油色遮罩、源内部纹理位置与推断补白分开记录。推断新增4593源像素，未越出7个冻结窗口、与464个已记录内部纹理源像素重叠为0。另有17处局部切削、3处窗口相交、一处刘短刀部件重建和4条重新构建的橙色中心线；不能将全部白色面积称作原始G像素。"
+    },
+    {
+      "id": "MATURE_UPSTREAM_EXECUTION",
+      "result": "PASS_FOR_FIXED_LOCAL_DISTRIBUTIONS",
+      "evidence": [
+        {
+          "tool": "VTracer",
+          "site_packages": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages",
+          "metadata": {
+            "path": ".liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer-0.6.15.dist-info\\METADATA",
+            "sha256": "4def5f870b264ac9ada75b6b308f8c12b049e499d2972edffa3596efa2333f22",
+            "bytes": 4399
+          },
+          "record": {
+            "path": ".liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer-0.6.15.dist-info\\RECORD",
+            "sha256": "c7c3c128d19d37ae4ae73eba7a2806e6401ca83c119a55d22c93d8602bf33aab",
+            "bytes": 802
+          },
+          "record_hashed_members_checked": 9,
+          "record_unhashed_rows": [
+            "vtracer-0.6.15.dist-info/RECORD"
+          ],
+          "record_failures": [],
+          "native_extensions": [
+            {
+              "path": ".liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer\\vtracer.cp312-win_amd64.pyd",
+              "sha256": "59e2053fca8666479e7163eec45d8b15143435c7a8d14f6dbd26eec9716bfe66",
+              "bytes": 1914880
+            }
+          ],
+          "license_files": [
+            {
+              "path": ".liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer-0.6.15.dist-info\\licenses\\LICENSE",
+              "sha256": "6610faa5e6be5342bacc3e9907e42cec525aedb6ad83ab7043f84d97f1006cc3",
+              "bytes": 1082
+            }
+          ],
+          "license_copy_matches": true
+        },
+        {
+          "tool": "skia-pathops",
+          "site_packages": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages",
+          "metadata": {
+            "path": ".liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages\\skia_pathops-0.9.2.dist-info\\METADATA",
+            "sha256": "1266318b76573e729bde19d11556695007eec06dee6d227ffd9ad1b270358929",
+            "bytes": 2603
+          },
+          "record": {
+            "path": ".liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages\\skia_pathops-0.9.2.dist-info\\RECORD",
+            "sha256": "01686a12237da82e86f7a5a8203de52e3fe976738b1ae7a1d8c8c8a047b38d2e",
+            "bytes": 804
+          },
+          "record_hashed_members_checked": 9,
+          "record_unhashed_rows": [
+            "skia_pathops-0.9.2.dist-info/RECORD"
+          ],
+          "record_failures": [],
+          "native_extensions": [
+            {
+              "path": ".liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages\\pathops\\_pathops.pyd",
+              "sha256": "31378f0d26e850eeb73249b73c0e208836bc0b6e004551fafed3e69dfdbc38aa",
+              "bytes": 282624
+            }
+          ],
+          "license_files": [
+            {
+              "path": ".liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\site-packages\\skia_pathops-0.9.2.dist-info\\licenses\\LICENSE",
+              "sha256": "7539634cf77bd05c14bac1e44c5c44c91737b72c4aaebdbd70745fe1309782f5",
+              "bytes": 1502
+            }
+          ],
+          "license_copy_matches": true
+        }
+      ],
+      "conclusion": "本次未复用trace，实际执行VTracer 0.6.15的两个二值spline生成调用及skia-pathops 0.9.2的路径布尔、变换、描边扩展和二次曲线拆分。两包各9个RECORD带哈希成员全部匹配，0异常；未修改依赖或下载新版本。RECORD一致只能证明与本地分发记录一致，非供应链远端签名证明。"
+    },
+    {
+      "id": "PHOTOGRAPHY_AND_OLD_NODE_PROTECTION",
+      "result": "SUPPORTED_WITH_SNAPSHOT_BOUNDARY",
+      "evidence": {
+        "old_node_ids": [
+          "416:2",
+          "424:2",
+          "429:2",
+          "435:2"
+        ],
+        "old_subtree_selected_property_fingerprints_equal": true,
+        "protected_photo_selected_snapshot_equal": true,
+        "protected_photo_frame_id": "402:2",
+        "photo_node_id": "402:3",
+        "photo_node_locked": true,
+        "photo_image_hash_same": true,
+        "protected_raw_source_sha_recorded": "7fd7777fed21100cb6b47bc305701476054263565e73246ac469d065aa080618",
+        "raw_protected_photo_bytes_verified_by_auditor": false,
+        "scope_limit": "Recorded selected properties and FNV-1a-32 snapshots; no independent fresh Figma read or protected-photo pixel export in this audit. Existing page gains a child frame; mutatedExistingNodeIds is declarative and does not enumerate page navigation/child-list edits."
+      },
+      "conclusion": "四个旧文字/研究子树选定属性FNV-1a-32、序列长度及节点数在记录前后相等；402:2海报及402:3锁定摄影节点选定属性、IMAGE填充imageHash和变换前后相等。独立审查未读取实时Figma或重新导出冻结摄影，不能将这些子集证据扩大成所有历史节点/所有像素的永久保证。"
+    }
+  ],
+  "editing_contract": {
+    "ordinary_copy": "12个原生 TEXT，可在字体可用的 Figma 环境中修改字符。",
+    "wordmark": "轮廓可选点/变形编辑，未建立可输入替换的字体；换字需要新的字形设计、源导向及轮廓重建。",
+    "seal": "印章外轮廓为1个VECTOR，内部不住山为独立TEXT。",
+    "page_mutation_boundary": "新frame追加到既有page并切换当前page；mutatedExistingNodeIds=[]是声明字段，不是捕获全部UI/父page子列表变更的通用mutation日志。"
+  },
+  "licenses": {
+    "VTracer": {
+      "version": "0.6.15",
+      "license": "MIT",
+      "license_sha256": "6610faa5e6be5342bacc3e9907e42cec525aedb6ad83ab7043f84d97f1006cc3",
+      "notice_retained": true
+    },
+    "skia_pathops": {
+      "version": "0.9.2",
+      "license": "BSD-3-Clause",
+      "license_sha256": "7539634cf77bd05c14bac1e44c5c44c91737b72c4aaebdbd70745fe1309782f5",
+      "notice_retained": true
+    },
+    "font_families_recorded": [
+      "Inter",
+      "Noto Sans SC",
+      "Noto Serif SC",
+      "Ma Shan Zheng"
+    ],
+    "font_licenses_independently_verified": false,
+    "font_license_limit": "本轮只有实际字体加载/回读可用证据，没有具体字体license核验；加载成功不能当商业许可核验。",
+    "image_and_reference_rights_not_inferred_from_software_license": true
+  },
+  "generation_receipt_boundary": {
+    "receipt_read": "IMAGE_GUIDE_GENERATION_RECEIPT_S4.json",
+    "receipt_states_tool": "image_gen.imagegen",
+    "receipt_states_calls_this_operation": 1,
+    "underlying_image_model": "NOT_EXPOSED_BY_BUILTIN_TOOL",
+    "guide_file_identity_independently_measured": true,
+    "native_original_imagegen_call_not_replayed_by_auditor": true,
+    "tool_call_history_not_independently_authenticated_by_local_json": true
+  },
+  "metadata_refresh": {
+    "initial_provenance_read_before_root_refresh": true,
+    "initial_provenance_hash_not_captured": true,
+    "final_public_provenance_sha256": "91a9bcb043f1cf65b6a7930e18a1f476fc0dd42f5ff257ba37b8dc949813a014",
+    "final_technical_failure_history_read": true,
+    "creator_total_trace_calls_preserved": 4,
+    "own_independent_trace_calls": 2,
+    "pipeline_not_repeated_for_metadata_refresh": true
+  },
+  "real_limits_and_unresolved_issues": [
+    "Figma结构和保护结论限定到已保存回读；本审查没有新一次实时Figma读回、字体改字往返或冻结摄影原始像素导出。",
+    "源奶油/橙色阈值提取将部分透明度、阴影、边缘颜色混合及纹理二值化；样条拟合与小数路径布尔继续近似边界。",
+    "61组件/464像素是原始二值遮罩位置计数，不是最终矢量孔数；小孔可能被样条或非均匀缩放合并/省略，不声称全部孔逐像素保留。",
+    "横向0.7907949790794979与纵向0.6319702602230484为非均匀映射；它是有记录的比例调整，不是保持源宽高比的机械追踪。",
+    "许可仅核验固定VTracer与skia-pathops分发包及许可副本；普通字体具体许可、图像与品牌参考权利未独立核验。",
+    "可复现结论限当前Windows x64/Python 3.12及固定private依赖和G/R输入；Node sharp路径绝对写死，public薄适配包独立冷克隆不能靠源码自动取回private图像/依赖。",
+    "源脚本中的actual_view_image字段是静态写入，不能单独证明调用者看过像素；本审查有单独实际view_image动作。",
+    "变更旧节点的空ID列表和all_wordmark_curves_custom标记为源码声明；应以具体原生TEXT/VECTOR结构及源追踪/局部修订记录解释，不夸大为每条曲线手工原创。",
+    "未运行完整历史validator、不修改业务状态或认可摄影；技术运行成功不构成审美通过或真人通过。"
+  ],
+  "supporting_artifacts": {
+    "measurements": {
+      "path": ".liu-visual-private\\s4_professional_audit\\MEASUREMENTS.json",
+      "sha256": "b1c33f21453bdb66cc02beab21dfb88eceeafe97a42cead82dd14565aba315a8",
+      "bytes": 23297
+    },
+    "native_execution_transcript": {
+      "path": ".liu-visual-private\\s4_professional_audit\\RAW_EXECUTION.json",
+      "sha256": "66618d25f41d04f2680782f413641159822505f9a346eba983db449b75c41620",
+      "bytes": 3902
+    },
+    "reproduced_svg": {
+      "path": ".liu-visual-private\\s4_professional_audit\\S4_WORDMARK.svg",
+      "sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9",
+      "bytes": 26910
+    },
+    "own_provenance": {
+      "path": ".liu-visual-private\\s4_professional_audit\\PROVENANCE.json",
+      "sha256": "c3c1ce704e2b53801c47d3f19a327e34dc330edfb6c0680b8f527edcafafbf02",
+      "bytes": 37545
+    },
+    "source_extraction": {
+      "path": ".liu-visual-private\\s4_professional_audit\\SOURCE_EXTRACTION.json",
+      "sha256": "ba0761a70f8ffb325e0f81ce8cfd37057090d733c09e66b7d2cc16c4db302a6f",
+      "bytes": 59369
+    },
+    "frozen_spec": {
+      "path": ".liu-visual-private\\s4_professional_audit\\FROZEN_SPEC.json",
+      "sha256": "565928390d0e063e144505e7cf8fe34083491bb2f0d99fca3685a1b7cb492b95",
+      "bytes": 10828
+    },
+    "render_receipt": {
+      "path": ".liu-visual-private\\s4_professional_audit\\TECHNICAL_RENDER.json",
+      "sha256": "29480067602f6d206fc4161ea4012cda56d894c888d980659f285be9a267035e",
+      "bytes": 2221
+    }
+  },
+  "input_sha_manifest": {
+    "public_inputs": [
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\COPY_MANIFEST.json",
+        "sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+        "bytes": 982
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\FIGMA_WRITE_GUARD_S4.json",
+        "sha256": "90b6279833ed3fa8783bb46fa2c11fd4eef2aa8df240852a82ea93c29e63142f",
+        "bytes": 1916
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\FIGMA_READBACK_S4.json",
+        "sha256": "311b230eb030e6a0b4130a82ed169117b71b7394d5c95b6d7fb43e609798f444",
+        "bytes": 14426
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\FIGMA_PHOTO_PROTECTION_S4.json",
+        "sha256": "37ad70db013955be0cdda33788d13faa0e466e520f21ee84e9d6764e12f8ea5c",
+        "bytes": 2800
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\IMAGE_GUIDE_GENERATION_RECEIPT_S4.json",
+        "sha256": "6b5d6c0021a9467b7554d9bb1df79b4b25c857a8c61a49ce9198238c40411f89",
+        "bytes": 2213
+      }
+    ],
+    "public_adapter_files": [
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\prepare-inputs.cjs",
+        "sha256": "c2ffe13bd1a8465c0825bdff58b615c9cb82e699e87c22a65a415ff64fb147d7",
+        "bytes": 16045
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\build-wordmark.py",
+        "sha256": "ff4c3b1d7eb03a18fa0a9cb1bf0b1dbc473ac574903c2831adea05e1f05e012a",
+        "bytes": 18176
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\render-preview.cjs",
+        "sha256": "14471ec5b84ed8d481ceed878ed51908d7ae9cd61bfe181bfe6a343dad7d55d2",
+        "bytes": 4417
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\FIGMA_ASSEMBLY_S4.js",
+        "sha256": "e6ae58cc0e6aa17e8b115e02047e9ea9e8b62c0bc8e2ee91a183ab325794122d",
+        "bytes": 32840
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\FROZEN_SPEC.json",
+        "sha256": "565928390d0e063e144505e7cf8fe34083491bb2f0d99fca3685a1b7cb492b95",
+        "bytes": 10828
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\S4_WORDMARK.svg",
+        "sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9",
+        "bytes": 26910
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\PROVENANCE.json",
+        "sha256": "91a9bcb043f1cf65b6a7930e18a1f476fc0dd42f5ff257ba37b8dc949813a014",
+        "bytes": 39137
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\SOURCE_EXTRACTION.json",
+        "sha256": "ba0761a70f8ffb325e0f81ce8cfd37057090d733c09e66b7d2cc16c4db302a6f",
+        "bytes": 59369
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\LICENSE-VTracer-LICENSE.txt",
+        "sha256": "6610faa5e6be5342bacc3e9907e42cec525aedb6ad83ab7043f84d97f1006cc3",
+        "bytes": 1082
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\LICENSE-skia-pathops-LICENSE.txt",
+        "sha256": "7539634cf77bd05c14bac1e44c5c44c91737b72c4aaebdbd70745fe1309782f5",
+        "bytes": 1502
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\TECHNICAL_ATTEMPTS.json",
+        "sha256": "0af4e52672206583d1c955f22f624b61f74cf3ac762886bb9511f2cc99e0c723",
+        "bytes": 5382
+      },
+      {
+        "path": "evidence\\vpd\\codex_takeover_20261003\\liuxiansheng_content_transfer_20261005\\guide-adapter-s4\\GRAIN_SOURCE_EVIDENCE.json",
+        "sha256": "25a5f8516c4f3410b1154d1ab88204a76ad96713fe0bf42f25adb747eba5b890",
+        "bytes": 50756
+      }
+    ]
+  }
+}

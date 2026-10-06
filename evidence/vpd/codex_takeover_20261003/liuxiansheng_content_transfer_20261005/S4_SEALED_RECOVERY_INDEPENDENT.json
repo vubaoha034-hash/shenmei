@@ -1,0 +1,209 @@
+{
+  "schema_version": "vpd-independent-sealed-dependency-layout-recovery-review/v1",
+  "recorded_at": "2026-10-06T00:41:55.750551+00:00",
+  "reviewer_task": "/root/s4_guard_audit",
+  "verdict": "ACCEPTABLE_RECOVERY_PLAN_WITH_REQUIRED_PREFLIGHT",
+  "actual_new_checkout_created": false,
+  "actual_new_checkout_import_tested": false,
+  "full_historical_validator_runs": 0,
+  "business_state_writes": 0,
+  "source_code_writes": 0,
+  "upstream_package_writes": 0,
+  "acl_changes": 0,
+  "scope": "Read-only sealed source/adapters and fixed-wheel bytes; prospective single execution checkout recovery",
+  "source_hashes": {
+    "visual_memory/vpd_registered_type_composite.py": "ff622ca04c4fefd74a185645aba55eb5b315e28dc179db65ea8ce63fd5ab9006",
+    "visual_memory/vpd_registered_type_edited_lineage.py": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd",
+    "scripts/verify_visual_memory.py": "37fdbf420651efe5c73afad6841d2df6229c4c47e04dfc8cee061d2a8f544856"
+  },
+  "sealed_source_checks": [
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+      "expected_sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd",
+      "actual_sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd",
+      "matches_pinned_source": true,
+      "adapter_base_binding": null
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v25.py",
+      "expected_sha256": "0b4f33ae6f6c1aa4be585a4cdb5745398127ed9918880dc4d3031779a5394440",
+      "actual_sha256": "0b4f33ae6f6c1aa4be585a4cdb5745398127ed9918880dc4d3031779a5394440",
+      "matches_pinned_source": true,
+      "adapter_base_binding": {
+        "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+        "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+      }
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v26.py",
+      "expected_sha256": "cf10cace120bc2d369a633583895152924bcbd868ad8c9e8dc4bbba6803bb3d5",
+      "actual_sha256": "cf10cace120bc2d369a633583895152924bcbd868ad8c9e8dc4bbba6803bb3d5",
+      "matches_pinned_source": true,
+      "adapter_base_binding": {
+        "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+        "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+      }
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v27.py",
+      "expected_sha256": "1777f321dafbbcdeaae53b00ef3f74aef9bdb4818618fa8d86875e2d0059b8eb",
+      "actual_sha256": "1777f321dafbbcdeaae53b00ef3f74aef9bdb4818618fa8d86875e2d0059b8eb",
+      "matches_pinned_source": true,
+      "adapter_base_binding": {
+        "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+        "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+      }
+    },
+    {
+      "path": "visual_memory/vpd_registered_type_edited_lineage_v28.py",
+      "expected_sha256": "ebf1c8c8e8f7d699c8ead8e81f81f0435eff01ecbd9abbbd40ed0eafc443595c",
+      "actual_sha256": "ebf1c8c8e8f7d699c8ead8e81f81f0435eff01ecbd9abbbd40ed0eafc443595c",
+      "matches_pinned_source": true,
+      "adapter_base_binding": {
+        "path": "visual_memory/vpd_registered_type_edited_lineage.py",
+        "sha256": "a29d62e9888613594414c408233282fc3b29c5e724d576eaebc7c1bf81d014cd"
+      }
+    }
+  ],
+  "fixed_wheel_reconstruction_proofs": [
+    {
+      "package": "vtracer",
+      "required_site_packages_relative_path": ".liu-visual-private/dependencies/vtracer_0_6_15_cp312/site-packages",
+      "wheel_path": ".liu-visual-private/dependencies/vtracer_0_6_15_cp312/vtracer-0.6.15-cp312-cp312-win_amd64.whl",
+      "wheel_sha256": "b0f08b66734e41872d4ac343ed6d08870b3235346def3e112e10b3b2443e619e",
+      "required_version": "0.6.15",
+      "actual_wheel_metadata_version": "0.6.15",
+      "sealed_member_count": 2,
+      "sealed_members": [
+        {
+          "member": "vtracer/__init__.py",
+          "sealed_sha256": "3e697358d7fb4a880b60fc279864b6f30e619807c183f2b54ccbd81c5d78d2f2",
+          "wheel_member_sha256": "3e697358d7fb4a880b60fc279864b6f30e619807c183f2b54ccbd81c5d78d2f2",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        },
+        {
+          "member": "vtracer/vtracer.cp312-win_amd64.pyd",
+          "sealed_sha256": "59e2053fca8666479e7163eec45d8b15143435c7a8d14f6dbd26eec9716bfe66",
+          "wheel_member_sha256": "59e2053fca8666479e7163eec45d8b15143435c7a8d14f6dbd26eec9716bfe66",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        }
+      ],
+      "reconstructible_from_fixed_wheel": true,
+      "wheel_extracted_by_auditor": false
+    },
+    {
+      "package": "pathops",
+      "required_site_packages_relative_path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/site-packages",
+      "wheel_path": ".liu-visual-private/dependencies/skia_pathops_0_9_2_abi3/skia_pathops-0.9.2-cp310-abi3-win_amd64.whl",
+      "wheel_sha256": "9ae72d801b5f4c5dbb937fb25476a12fa2da70860f28dd637da2b529dbd8271c",
+      "required_version": "0.9.2",
+      "actual_wheel_metadata_version": "0.9.2",
+      "sealed_member_count": 5,
+      "sealed_members": [
+        {
+          "member": "pathops/__init__.py",
+          "sealed_sha256": "4a5c51dbc66a8c643c0ac183f9b8808c8c73c260ea0c403072be8917743446ce",
+          "wheel_member_sha256": "4a5c51dbc66a8c643c0ac183f9b8808c8c73c260ea0c403072be8917743446ce",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        },
+        {
+          "member": "pathops/_pathops.pyd",
+          "sealed_sha256": "31378f0d26e850eeb73249b73c0e208836bc0b6e004551fafed3e69dfdbc38aa",
+          "wheel_member_sha256": "31378f0d26e850eeb73249b73c0e208836bc0b6e004551fafed3e69dfdbc38aa",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        },
+        {
+          "member": "pathops/_version.py",
+          "sealed_sha256": "62185f19724d16d672544bbc62ec156c2a79bf2baf3c6942a19a8485f1dd712f",
+          "wheel_member_sha256": "62185f19724d16d672544bbc62ec156c2a79bf2baf3c6942a19a8485f1dd712f",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        },
+        {
+          "member": "pathops/operations.py",
+          "sealed_sha256": "2ccd482ae0d04da22b020de64b852b71cefddc5efbf5800d1e6f552b0edb4b7a",
+          "wheel_member_sha256": "2ccd482ae0d04da22b020de64b852b71cefddc5efbf5800d1e6f552b0edb4b7a",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        },
+        {
+          "member": "pathops/skia.dll",
+          "sealed_sha256": "b22fa4d5f9b9293b7221ca3b1802e4983f06f769340fc8f1ce79f81bb1aac819",
+          "wheel_member_sha256": "b22fa4d5f9b9293b7221ca3b1802e4983f06f769340fc8f1ce79f81bb1aac819",
+          "matches_sealed_sha": true,
+          "old_expected_path_read": {
+            "readable": false,
+            "error_type": "PermissionError",
+            "errno": 13,
+            "winerror": null
+          }
+        }
+      ],
+      "reconstructible_from_fixed_wheel": true,
+      "wheel_extracted_by_auditor": false
+    }
+  ],
+  "actual_python_version": "3.12.14",
+  "sealed_runtime_version_requirement": {
+    "python": "3.12.14",
+    "pathops": "0.9.2"
+  },
+  "load_bound_logic": "def load_bound(root, name, directory, files):\n    directory = (Path(root) / directory / 'site-packages').resolve()\n    for filename, digest in files.items():\n        require(sha((directory / filename).read_bytes()) == digest, 'EDIT_DEPENDENCY_CHANGED:' + filename)\n    for module_name, module in tuple(sys.modules.items()):\n        if module_name == name or module_name.startswith(name + '.'):\n            require(hasattr(module, '__file__') and Path(module.__file__).resolve().is_relative_to(directory / name), 'EDIT_DEPENDENCY_WRONG_IMPORT:' + module_name)\n    sys.path.insert(0, str(directory))\n    try:\n        return __import__(name)\n    finally:\n        sys.path.remove(str(directory))",
+  "path_reasoning": [
+    "Both dependency locations are relative to the root argument. Reconstructing the same relative paths under a new real checkout root satisfies the unchanged byte reads and path identity checks.",
+    "Every sealed VTracer member (2) and Pathops member (5) is reproduced exactly by the corresponding fixed wheel; both wheel hashes and metadata versions match the sealed requirements.",
+    "The V24 kernel and V25-V28 adapters remain at their pinned raw SHA. Each adapter continues to compile the checked V24 source and compare exact original profiles/replayed SVG semantics.",
+    "The original validator derives REPO_ROOT from its own file. Running that file inside the new checkout targets the new root without editing the validator or sealed kernels."
+  ],
+  "required_execution_sequence": [
+    "Freeze the old checkout as read-only history; stop every old business writer. Snapshot the current source/evidence/state hashes and real consumed tool calls before copying.",
+    "Create one new actual checkout within the allowed workspace. Preserve the same task identity, mainline, current revision/history and real tool-consumption ledger; Root is the only business writer.",
+    "Copy current source and the full reachable real evidence/private input closure as exact bytes. Do not rely on links/junctions to old private evidence: checked path resolution must remain inside the new root.",
+    "Do not copy the inaccessible old installed package directories, their ACLs, local bytecode caches or stale import state. Rebuild both exact original site-packages paths from the checked fixed wheels, verifying all members and the seven sealed SHA entries.",
+    "Start a fresh bundled Python process with -s -X utf8 -B, cwd at the new checkout. Run the original validator entrypoint directly. Do not use the old verified_restore preloading wrapper and do not mutate sys.modules to conceal a wrong module path.",
+    "Preflight actual VTracer and Pathops imports under their exact expected new paths, versions and raw member hashes. Then run the unchanged complete historical/native validator and require its genuine result.",
+    "Treat the new checkout as the sole execution location after handoff; retain the old checkout and its failures as frozen history. Do not run two independent state writers or invent a second authoritative task system."
+  ],
+  "simpler_alternative_within_current_constraints": null,
+  "alternative_reason": "The sealed function reads the old expected files directly before import. Merely changing sys.path or restoring to a different directory cannot satisfy those reads. Replacing/renaming old installed package directories would modify the checkout designated frozen; patching the sealed loader, faking __file__, symlinking around path bounds or skipping history is outside the accepted constraints.",
+  "limits": [
+    "This is a recovery-layout judgment, not proof that a new checkout has passed. Its readable copy/evidence closure and actual imports remain untested until Root performs the migration/preflight.",
+    "All remaining source/evidence/renderer/native-state assertions stay active. Any missing/unreadable private input or byte mismatch must remain a real blocker rather than being declared passed.",
+    "No aesthetic acceptance or new image/Figma artifact is inferred from dependency reconstruction.",
+    "The actual second imagegen consumption must survive the rollback and relocation; restoring old state bytes alone is not a budget reset."
+  ]
+}

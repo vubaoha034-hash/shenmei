@@ -1,0 +1,118 @@
+{
+  "schema_version": "vpd-independent-verified-vtracer-location-repair-review/v1",
+  "recorded_at": "2026-10-06T00:35:55.537596+00:00",
+  "reviewer_task": "/root/s4_guard_audit",
+  "verdict": "PASS",
+  "review_scope": "Fixed upstream dependency location repair only; not native state, new delivery, pixel acceptance or aesthetic approval",
+  "sourceSHA": "ff622ca04c4fefd74a185645aba55eb5b315e28dc179db65ea8ce63fd5ab9006",
+  "source_hashes": {
+    "visual_memory/vpd_registered_type_composite.py": "ff622ca04c4fefd74a185645aba55eb5b315e28dc179db65ea8ce63fd5ab9006",
+    "scripts/vpd_with_verified_vtracer.py": "dd497ce779c2ad9c4341de04086636c0a95099eb8ac0b594e1402aee975bf6dc"
+  },
+  "conclusion": "Reading PathDistribution.version from the actual imported VTracer module site-packages fixes a demonstrated stale sys.path metadata selection defect. It keeps the strict 0.6.15 assertion and all other executable validator semantics unchanged.",
+  "actual_reproduction": {
+    "wheel_sha256": "b0f08b66734e41872d4ac343ed6d08870b3235346def3e112e10b3b2443e619e",
+    "restored_wheel_member_count": 10,
+    "all_restored_wheel_members_equal": true,
+    "actual_loaded_module": {
+      "path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_verified_restore_20261006\\site-packages\\vtracer\\__init__.py",
+      "sha256": "3e697358d7fb4a880b60fc279864b6f30e619807c183f2b54ccbd81c5d78d2f2"
+    },
+    "actual_loaded_extension": {
+      "path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_verified_restore_20261006\\site-packages\\vtracer\\vtracer.cp312-win_amd64.pyd",
+      "sha256": "59e2053fca8666479e7163eec45d8b15143435c7a8d14f6dbd26eec9716bfe66"
+    },
+    "baseline_global_metadata_version": "0.6.15",
+    "stale_metadata_read_error": {
+      "readable": false,
+      "error_type": "PermissionError",
+      "errno": 13,
+      "winerror": null,
+      "message": "[Errno 13] Permission denied: 'C:\\\\Users\\\\Administrator\\\\OneDrive\\\\文档\\\\足球\\\\shenmei-vpd-codex-20261003\\\\.liu-visual-private\\\\dependencies\\\\vtracer_0_6_15_cp312\\\\site-packages\\\\vtracer-0.6.15.dist-info\\\\METADATA'"
+    },
+    "global_lookup_with_old_path_first": {
+      "selected_distribution_path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\site-packages\\vtracer-0.6.15.dist-info",
+      "version": null,
+      "strict_0_6_15_assertion_passes": false
+    },
+    "lookup_bound_to_actual_loaded_module": {
+      "distribution_path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-codex-20261003\\.liu-visual-private\\dependencies\\vtracer_verified_restore_20261006\\site-packages\\vtracer-0.6.15.dist-info",
+      "metadata_sha256": "4def5f870b264ac9ada75b6b308f8c12b049e499d2972edffa3596efa2333f22",
+      "version_before_stale_insert": "0.6.15",
+      "version_after_stale_insert": "0.6.15",
+      "strict_0_6_15_assertion_passes": true
+    },
+    "negative_version_checks": [
+      {
+        "check": "wrong_version_despite_0_6_15_directory_name",
+        "parsed_version": "0.6.16",
+        "result": "PASS",
+        "rejection": "VTRACER_VERSION_CHANGED"
+      },
+      {
+        "check": "missing_metadata",
+        "parsed_version": null,
+        "result": "PASS",
+        "rejection": "VTRACER_VERSION_CHANGED"
+      }
+    ],
+    "total_checks_passed": 11
+  },
+  "unchanged_validator_evidence": {
+    "schema_version": "vpd-vtracer-validator-version-location-diff-audit/v1",
+    "baseline_git_commit": "fa53e2149bd2d787cfce8911b092517938ccacbc",
+    "baseline_git_bytes_sha256": "ee5540dfbec735c2ea51b380fd3a933a8aa79d6dcf9e91cde12e61917c601489",
+    "source_path": "visual_memory/vpd_registered_type_composite.py",
+    "candidate_worktree_sha256": "ff622ca04c4fefd74a185645aba55eb5b315e28dc179db65ea8ce63fd5ab9006",
+    "version_location_replacements": 1,
+    "entire_other_validator_ast_unchanged": true,
+    "strict_required_version": "0.6.15",
+    "pixel_replay_algorithm_and_path_comparisons_unchanged": true,
+    "business_state_writes": 0,
+    "full_history_validation_runs": 0
+  },
+  "acceptance_conditions": [
+    "Use the verified restore entrypoint, with the exact pinned wheel b0f08b66734e41872d4ac343ed6d08870b3235346def3e112e10b3b2443e619e and matching restored source/binary/metadata members.",
+    "Keep the actual loaded module and extension in the verified restored site-packages; the metadata check is bound to that module directory.",
+    "Keep required version 0.6.15, transparent PNG checks, original VTracer conversion parameters, full trace-attribute comparison and retained SVG path-command comparison unchanged.",
+    "Root remains the only business-state writer and must preserve the real second imagegen consumption despite the native transaction rollback."
+  ],
+  "limits": [
+    "No full historical validator or native 343 transaction was run by this auditor. These probes establish dependency identity and version-resolution correctness only.",
+    "The existing pixel replay and comparisons are statically proven unchanged against baseline Git commit fa53e2149bd2d787cfce8911b092517938ccacbc; this scoped review did not rerun those pixels.",
+    "The direct metadata API reads actual Version metadata, rather than trusting the dist-info directory name: a synthetic wrong Version and a missing metadata case both failed the retained strict assertion.",
+    "This fixed sibling dist-info layout is appropriate to the pinned upstream wheel. The conclusion does not claim universal distribution discovery behavior outside this dependency layout.",
+    "No aesthetic judgment, new image generation, Figma write, upstream package alteration, ACL change or business-state modification occurred."
+  ],
+  "writes": {
+    "business_state_writes": 0,
+    "source_code_writes": 0,
+    "upstream_package_writes": 0,
+    "acl_changes": 0,
+    "imagegen_calls": 0,
+    "figma_writes": 0,
+    "private_output_directory": ".liu-visual-private/s4_guard_audit"
+  },
+  "evidence": [
+    {
+      "path": ".liu-visual-private/s4_guard_audit/VTRACER_METADATA_PROBE.py",
+      "sha256": "3e41f5a3c3e65d06d97278d698d8a447d7d0ccfad899378c4f2801f5e617cab8"
+    },
+    {
+      "path": ".liu-visual-private/s4_guard_audit/VTRACER_METADATA_PROBE_REPORT.json",
+      "sha256": "81f125ccb7db51cd5607562637d6c92bf597773697909258c0103f2f2c7ad23d"
+    },
+    {
+      "path": ".liu-visual-private/s4_guard_audit/VTRACER_DIFF_CHECK.py",
+      "sha256": "db3aa65fd018b600e5e194e70795661a5886b8364a377b5ef5fb65125580dae6"
+    },
+    {
+      "path": ".liu-visual-private/s4_guard_audit/VTRACER_DIFF_CHECK_REPORT.json",
+      "sha256": "74d0832615d85ef18a6f01540da0e8393cd68235a45651b9d729f32b2108cfe8"
+    },
+    {
+      "path": ".liu-visual-private/s4_guard_audit/VTRACER_ACTUAL_RUNS.json",
+      "sha256": "c8b50a8d604780f33fcc5aa0554140fa266f139f1df3ffeb27e126b9a41dd753"
+    }
+  ]
+}

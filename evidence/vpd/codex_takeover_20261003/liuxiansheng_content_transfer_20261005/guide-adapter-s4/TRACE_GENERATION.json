@@ -1,0 +1,45 @@
+{
+  "tool": "VTracer",
+  "version": "0.6.15",
+  "generation_calls_completed": 4,
+  "captured_after_first_builder_failure": true,
+  "rows": [
+    {
+      "label": "G_CREAM_VISIBLE_SOURCE",
+      "input": "CREAM_SOURCE_TRACE_INPUT.png",
+      "input_sha256": "66a6d12347441bf7dc5b6dee1a9739ad50abc4c4c358a7fd565441c0e6b48fc0",
+      "output": "G_CREAM_SOURCE_TRACE.svg",
+      "output_sha256": "e1ab9190aec0575a389d371ff7a5dbf09387c895083d5b9aa82eaa5ac14b8755",
+      "params": {
+        "colormode": "binary",
+        "mode": "spline",
+        "filter_speckle": 0,
+        "corner_threshold": 60,
+        "length_threshold": 4.0,
+        "max_iterations": 10,
+        "splice_threshold": 45,
+        "path_precision": 2
+      },
+      "generation_origin": "BUILDER_ATTEMPT_01"
+    },
+    {
+      "label": "INFERRED_LOCAL_BRIDGES",
+      "input": "BRIDGE_ADDITIONS_TRACE_INPUT.png",
+      "input_sha256": "8470751f78029d87cc2c1fa2c629eaed0287cd7c00766e564b5876936e180b71",
+      "output": "LOCAL_BRIDGE_TRACE.svg",
+      "output_sha256": "c257f0be698d6904c6cc1b58560dda91721145c0c86878909b991d724ea4b617",
+      "params": {
+        "colormode": "binary",
+        "mode": "spline",
+        "filter_speckle": 0,
+        "corner_threshold": 60,
+        "length_threshold": 4.0,
+        "max_iterations": 10,
+        "splice_threshold": 45,
+        "path_precision": 2
+      },
+      "generation_origin": "SHENG_BASE_LOCAL_TECHNICAL_REPAIR_01"
+    }
+  ],
+  "latest_bridge_scope": "Seven windows/radius8; base left770 to758 only; direct support-masked Q recovery; 61grain excluded; same actual edge<=3 and existing-cream overlap2"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "independent-final-guide-rendering-mode-control/v1",
+  "evidence_class": "ACTUAL_SOURCE_HELPER_WITH_SYNTHETIC_IN_MEMORY_DELIVERY_NOT_RUNTIME",
+  "native_revision_observed": 341,
+  "source_hashes": {
+    "scripts/vpd_codex_takeover.py": "e9b9cac69b0bfc9a80cf0cdcd001c5bdc1e6ec28174ec01c819bf4f476791638",
+    "visual_memory/vpd_reference_typography_study.py": "bd88359ca220b69faab4940fd3bb1c55f79fa155c670e40e637cb5bbcc5ff68a",
+    "visual_memory/vpd_correct_source_worker.py": "cfe486ebf2048bf15cb2e3ab5dbf8aed72cb81455098c0422cd64af5ce7dc1c1",
+    "visual_memory/vpd_locked_mainline_state.py": "45474602f76df58dc37a9aa2c999bb1a2552dd4aece90952d9b114c86207a00b"
+  },
+  "source_stable_during_test": true,
+  "native_writer_invoked": false,
+  "figma_tool_invoked": false,
+  "image_generation_tool_invoked": false,
+  "pass_count": 3,
+  "test_count": 3,
+  "results": [
+    {
+      "name": "s2_old_mode_preserved",
+      "observed": "ACCEPTED",
+      "expected_rejection": null,
+      "passed": true
+    },
+    {
+      "name": "s3_legacy_mode_cannot_bypass_guide_binding",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_FINAL_GUIDE_RENDERING_MODE_REQUIRED",
+      "expected_rejection": "CONTENT_TRANSFER_FINAL_GUIDE_RENDERING_MODE_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "s3_guide_mode_missing_actual_source_binding_rejected",
+      "observed": "TaskLockError",
+      "detail": "CONTENT_TRANSFER_GUIDE_RECONSTRUCTION_BINDING_CONFLICT",
+      "expected_rejection": "CONTENT_TRANSFER_GUIDE_RECONSTRUCTION_BINDING_CONFLICT",
+      "passed": true
+    }
+  ]
+}

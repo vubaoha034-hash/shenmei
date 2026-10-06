@@ -1,0 +1,53 @@
+{
+  "schema": "independent-actual-guide-evidence-check/v1",
+  "verdict": "PASS_WITH_LIMITATIONS",
+  "checks": {
+    "actual_png_rgba_1086x1448": true,
+    "actual_transparent_and_nonempty": true,
+    "actual_guide_matches_receipt": true,
+    "project_copy_equal_actual_tool_file": true,
+    "actual_prompt_and_reference_hashes_match": true,
+    "one_actual_observed_imagegen_wrapper_since_method_authorization": true,
+    "receipt_tool_model_truth_boundary": true
+  },
+  "actual_dimensions": [
+    1086,
+    1448
+  ],
+  "actual_mode": "RGBA",
+  "actual_alpha_extrema": [
+    0,
+    255
+  ],
+  "actual_alpha_counts": {
+    "transparent": 1181651,
+    "nonzero": 390877,
+    "opaque": 2828,
+    "partial": 388049
+  },
+  "actual_alpha_bounds": [
+    17,
+    0,
+    1086,
+    1448
+  ],
+  "actual_guide_sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f",
+  "original_tool_file_sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f",
+  "actual_selected_generation_calls": [
+    {
+      "timestamp": "2026-10-05T14:14:02.900Z",
+      "name": "exec",
+      "call_id": "call_eQ9vXW5ZC3HPBxwiHUB8t09D",
+      "input_sha256": "a8f7e52b38221ce9a9b41643b431cf16a5df0f9d199c0b3089681fa19de0e047",
+      "body": "// @exec: {\"yield_time_ms\": 120000, \"max_output_tokens\": 1200}\nconst prompt=load(\"liu-image-prompt\");\nif(typeof prompt!==\"string\" || !prompt.includes(\"刘先生\")) throw new Error(\"Missing saved exact prompt\");\nconst promise=tools.image_gen__imagegen({prompt,referenced_image_paths:[\"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg\"],transparent_background:true});\nawait yield_control();\nconst r=await promise;store(\"liu-image-guide-result\",r);generatedImage(r);\nif(r && typeof r===\"object\")text({returned_keys:Object.keys(r)});\n"
+    }
+  ],
+  "guide_pixels_seen_in_independent_view_image": true,
+  "technical_visual_observation": "Typography, orange ribbon and seal ornaments only; no photographic content observed. Liu wordmark and supplied ordinary-copy roles visibly present. No aesthetic pass inferred.",
+  "pixel_fidelity_to_final_figma": "PENDING_ACTUAL_FINAL_FRAME",
+  "underlying_image_model": "NOT_EXPOSED_BY_BUILTIN_TOOL",
+  "limits": [
+    "The selected native wrapper is actual observed execution input; any load() string arguments remain opaque in that input. Underlying provider model version is not exposed.",
+    "This real guide is a raster reference. Editable Figma reconstruction is verified separately; this PNG alone cannot satisfy editability."
+  ]
+}

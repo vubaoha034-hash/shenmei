@@ -1,0 +1,29 @@
+{
+  "schema": "vpd-frozen-evidence-git-format-note/v1",
+  "check_scope": "Staged publication bytes; no aesthetic or runtime criteria changed",
+  "default_diff_check": "Reports CRLF-as-trailing-whitespace in byte-frozen evidence; output was oversized and is not interpreted as source defects",
+  "preserved_crlf_check": {
+    "exit_code": 2,
+    "warnings": [
+      "METHODS_AND_REUSE_S4.md:new blank line at EOF",
+      "guide-adapter-s4/build-wordmark.attempt-01.py:new blank line at EOF",
+      "s4_professional_replay/audit_inspect.py:new blank line at EOF"
+    ]
+  },
+  "decision": "Preserve already-bound evidence/source identities rather than normalize historical CRLF or EOF. Formatting warnings retained; no claim that this global formatting check passed.",
+  "changed_runtime_source_only_diff_check": {
+    "exit_code": 0,
+    "paths": [
+      "scripts/vpd_codex_takeover.py",
+      "scripts/vpd_collect_content_transfer_review.py",
+      "scripts/vpd_with_verified_vtracer.py",
+      "visual_memory/vpd_correct_source_worker.py",
+      "visual_memory/vpd_locked_mainline_state.py",
+      "visual_memory/vpd_reference_typography_study.py",
+      "visual_memory/vpd_registered_type_composite.py"
+    ]
+  },
+  "native_validation_exit_code": 0,
+  "native_revision": 344,
+  "checked_utc": "2026-10-06T01:54:01.854Z"
+}

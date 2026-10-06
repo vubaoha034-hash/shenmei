@@ -1,0 +1,290 @@
+{
+  "schema_version": "vpd-independent-supplemental-allocation-guard-audit/v1",
+  "recorded_at": "2026-10-06T00:31:10.517535+00:00",
+  "reviewer_task": "/root/s4_guard_audit",
+  "verdict": "PASS_WITH_INTEGRATION_LIMITATIONS",
+  "scope_guard_verdict": "PASS",
+  "evidence_class": "PRIVATE_METADATA_GUARD_AUDIT_NOT_NATIVE_S4_OR_VISUAL_ACCEPTANCE",
+  "sourceSHA": "8fc4fde74865a74a445b28284d25e13ae7b42750a2d0d5e8ec858fa0a5dff7ba",
+  "source_sha256": "8fc4fde74865a74a445b28284d25e13ae7b42750a2d0d5e8ec858fa0a5dff7ba",
+  "source_hashes": {
+    "visual_memory/vpd_reference_typography_study.py": "8fc4fde74865a74a445b28284d25e13ae7b42750a2d0d5e8ec858fa0a5dff7ba",
+    "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/CONTINUOUS_METHOD_REPAIR_ALLOCATION.json": "6be40055c5830a931670d1a2a6ba75147b2d669a114033a478400e8f697dbe75",
+    "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31",
+    "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+    "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7",
+    "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848",
+    ".liu-visual-private/liuxiansheng_content_transfer_20261005/native-tests/check_supplemental_allocation.py": "93b1f1032fb465700c799470577005fc76803db24b00237a508b5ce8ebdfc9aa",
+    "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_DELIVERY_RECEIPT.json": "16cdd195f94a669b4b6f66b9922e05122d5320757848a3c62bd6eb8d41560aa1",
+    "continuity/vpd/MAINLINE_LOCK_20261001.md": "59021edda7561df99b916f58421c7b3ed853f647f9c21ece3366e15c11be922f",
+    "continuity/vpd/MAINLINE_CONTRACT_20261001.json": "f94495162db56db91f0a431699d22b7d839e94f6afc59de6d49fee5f1893ac85",
+    "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json": "9dff34e7bbba152e5a994be820b28b40843a8a8083d280dbcbc9f43e40e8f664",
+    "continuity/vpd/history/mainline_lock_20261001/PRESERVATION_MANIFEST.json": "20b1b541b0d4425018bd44b2f16ebb3ae389df5999f8b61ea85633177813020f"
+  },
+  "authorization_chain_sha_checks": [
+    {
+      "owner": "supplemental.authorization",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+      "expected_sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31",
+      "actual_sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31",
+      "result": "PASS"
+    },
+    {
+      "owner": "supplemental.copy_manifest",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+      "expected_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "actual_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "result": "PASS"
+    },
+    {
+      "owner": "supplemental.final_repair_allocation",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/FINAL_REPAIR_ALLOCATION_AUTHORIZATION.json",
+      "expected_sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7",
+      "actual_sha256": "5e4cebea7d18f68dd2ff8b6e277a11e5303f004983fd33c4bf5faca196ff9bc7",
+      "result": "PASS"
+    },
+    {
+      "owner": "supplemental.continuous_repair_authorization",
+      "path": "continuity/vpd/codex_takeover_20261003/CONTINUOUS_REPAIR_AUTHORIZATION_20261004.json",
+      "expected_sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848",
+      "actual_sha256": "73a521078dbea5b6b819bc4b8640d42e268d5621dbecbb9af2949b6a1aabe848",
+      "result": "PASS"
+    },
+    {
+      "owner": "final.authorization",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/HUMAN_SCOPE_AUTHORIZATION.json",
+      "expected_sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31",
+      "actual_sha256": "e98487d43893ed5655a9ebd1be2e00cf28d6a15ad374179cca46eba3a949cf31",
+      "result": "PASS"
+    },
+    {
+      "owner": "final.copy_manifest",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+      "expected_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "actual_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "result": "PASS"
+    },
+    {
+      "owner": "human.copy_manifest",
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/COPY_MANIFEST.json",
+      "expected_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "actual_sha256": "a94dfbcbe831a34ca17c3069c57109d0bfdf6cc667b65f26b8e4a80cc6654f3a",
+      "result": "PASS"
+    },
+    {
+      "owner": "continuous.preserved_mainline.plan",
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "expected_sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed",
+      "actual_sha256": "59021edda7561df99b916f58421c7b3ed853f647f9c21ece3366e15c11be922f",
+      "lf_content_sha256": "7c3e375279f08efd53900e9fb5434bfa1fdbb8e356ec80f74014e21340c68aed",
+      "result": "LF_CONTENT_MATCH_RAW_BYTES_DIFFER"
+    },
+    {
+      "owner": "continuous.preserved_mainline.contract",
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "expected_sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9",
+      "actual_sha256": "f94495162db56db91f0a431699d22b7d839e94f6afc59de6d49fee5f1893ac85",
+      "lf_content_sha256": "6e7249fc74c93e82c5fd3d3bf9f0cf23ef4e5282ce611af674a648f8c3d764e9",
+      "result": "LF_CONTENT_MATCH_RAW_BYTES_DIFFER"
+    },
+    {
+      "owner": "continuous.preserved_mainline.authority",
+      "path": "continuity/vpd/MAINLINE_SAVE_AUTHORITY_20261001.json",
+      "expected_sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace",
+      "actual_sha256": "9dff34e7bbba152e5a994be820b28b40843a8a8083d280dbcbc9f43e40e8f664",
+      "lf_content_sha256": "21fbd4bea083271ffdbef8d263792c1f46db8a1b589e2d3275f53c05a0e70ace",
+      "result": "LF_CONTENT_MATCH_RAW_BYTES_DIFFER"
+    },
+    {
+      "owner": "continuous.preserved_mainline.preservation",
+      "path": "continuity/vpd/history/mainline_lock_20261001/PRESERVATION_MANIFEST.json",
+      "expected_sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd",
+      "actual_sha256": "20b1b541b0d4425018bd44b2f16ebb3ae389df5999f8b61ea85633177813020f",
+      "lf_content_sha256": "452ac488a44bd7c5af6f2422709f18c8521aa26d8fb0663715f428a7fab5acfd",
+      "result": "LF_CONTENT_MATCH_RAW_BYTES_DIFFER"
+    }
+  ],
+  "authorization_chain_byte_identity_limits": "The seven direct supplemental/human/copy/final/continuous refs match raw SHA exactly. Four preserved-mainline refs match LF content SHA only in this CRLF worktree; no byte rewrite or authorization-hash rewrite was performed.",
+  "scope_conclusions": [
+    "The pinned explicit continuous same-direction authorization plus the current method steering permit one supplemental serial allocation; no fresh user acceptance is inferred.",
+    "Supplemental allocation raises the content-transfer total from 3 to 4 attempts and adds at most 1 guide call; guide total is 2. It preserves fixed reference, copy manifest, work unit and task identity.",
+    "validate_transfer_transition requires the three prior attempts and artifacts as an unchanged prefix and preserves consumed guide1 authorization, count and terminal export/phase/error.",
+    "PNG bytes are SHA-bound, actual format must be PNG, alpha minimum must be below 255 and alpha maximum above 0. Pure opaque and empty transparent synthetic PNGs were actually rejected.",
+    "Guide requests preserve the protected Tea poster 402:2 and frozen photo SHA, forbid photography, new Tea versions, mainline change, second style, paid compute, training, automation and hidden variants.",
+    "Formal Tea 29 / revisions 28 and final human acceptance PENDING are preserved. Supplementary transfer does not become Tea acceptance or a mainline amendment."
+  ],
+  "actual_tests": {
+    "unmodified_requested_checker": {
+      "result": "PASS",
+      "exit_code": 0,
+      "checks_passed": 6,
+      "execution_note": "Actually executed with the official bundled Python; lock was observed back at revision 342 immediately afterward. This is not a revision 343 state claim."
+    },
+    "fixed_receipt_checker": {
+      "result": "PASS",
+      "exit_code": 0,
+      "checks_passed": 6,
+      "fixture_source": {
+        "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_DELIVERY_RECEIPT.json",
+        "sha256": "16cdd195f94a669b4b6f66b9922e05122d5320757848a3c62bd6eb8d41560aa1",
+        "selection": "worker_continuation",
+        "represents_current_lock": false
+      },
+      "private_copy_changes": [
+        "repository ROOT depth adjusted",
+        "old unit selected from named delivery receipt",
+        "private output filename adjusted"
+      ]
+    },
+    "additional_guard_probes": {
+      "result": "PASS",
+      "exit_code": 0,
+      "checks_passed": 7,
+      "checks": [
+        {
+          "check": "prior_attempt_export_rewrite_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_HISTORY_REWRITTEN"
+        },
+        {
+          "check": "prior_attempt_removal_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_HISTORY_REWRITTEN"
+        },
+        {
+          "check": "prior_guide_export_rewrite_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_GUIDE_HISTORY_REWRITTEN"
+        },
+        {
+          "check": "prior_guide_counter_reset_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_GUIDE_HISTORY_REWRITTEN"
+        },
+        {
+          "check": "two_supplemental_guide_calls_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_GUIDE_STATE_CONFLICT"
+        },
+        {
+          "check": "opaque_synthetic_png_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_TRANSPARENT_GUIDE_PNG_REQUIRED"
+        },
+        {
+          "check": "fully_transparent_synthetic_png_rejected",
+          "result": "PASS",
+          "rejection": "CONTENT_TRANSFER_TRANSPARENT_GUIDE_PNG_REQUIRED"
+        }
+      ]
+    },
+    "current_state_metadata_checks": {
+      "result": "PASS",
+      "exit_code": 0,
+      "checks_passed": 7,
+      "lock": {
+        "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+        "sha256": "5cf63cde0abcb48e9b507b21fad0c0020aae8c1f019ac047dca16cdb9921ef46",
+        "revision_fields": {
+          "revision": 342
+        }
+      },
+      "phase": "REFERENCE_STUDY_DELIVERED",
+      "supplemental_native_status": "ABSENT_IN_CAPTURED_NATIVE_STATE",
+      "checks": [
+        {
+          "check": "three_old_attempts_preserved_exactly",
+          "result": "PASS"
+        },
+        {
+          "check": "old_guide1_preserved_exactly",
+          "result": "PASS"
+        },
+        {
+          "check": "old_final_allocation_ref_preserved_exactly",
+          "result": "PASS"
+        },
+        {
+          "check": "authorization_and_copy_preserved",
+          "result": "PASS"
+        },
+        {
+          "check": "tea29_and_revision28_unchanged",
+          "result": "PASS"
+        },
+        {
+          "check": "frozen_photography_unchanged",
+          "result": "PASS"
+        },
+        {
+          "check": "human_final_acceptance_pending",
+          "result": "PASS"
+        }
+      ]
+    },
+    "execution_record": {
+      "path": ".liu-visual-private/s4_guard_audit/ACTUAL_TEST_RUNS.json",
+      "sha256": "d6d45efb17ae60ab83bc8d6962d3befc73f09e57cb1185d6a7521158b6c172a0"
+    }
+  },
+  "fixture_guide_metadata": {
+    "format": "PNG",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "export": {
+      "path": ".liu-visual-private/liuxiansheng_transfer_20261005/IMAGE_GUIDE_S3.png",
+      "sha256": "e4c9ba5f928cd63e8c7feb8ff0480ff142e0953e02ca7e8b5c8acf1a6f763f6f"
+    },
+    "role": "PRE_EXISTING_GUIDE_METADATA_FIXTURE_NOT_NEW_IMAGE_CALL"
+  },
+  "current_state_integration_limits": {
+    "captured_revision": 342,
+    "captured_supplemental_ref": null,
+    "captured_supplemental_guide": null,
+    "parent_runtime_report": {
+      "source": "Root message to this audit agent, not an independently inspected native tool receipt",
+      "native_343_transaction_rolled_back_to_342": true,
+      "second_actual_imagegen_result_already_returned": true,
+      "actual_tool_consumption_must_be_preserved": true,
+      "native_result_persistence_and_accounting_pending_at_capture": true
+    },
+    "interpretation": "Hypothetical fixture calls_used=0 is not remaining runtime authority after a real second guide call. Root must persist its actual consumed call and repair native integration before claiming S4 state completion."
+  },
+  "limitations": [
+    "This audit made no imagegen call, no Figma write, no business-state mutation and no aesthetic judgment.",
+    "The passing generated supplemental guide in the copied checker deliberately reuses the old SHA-bound guide PNG; it does not prove a second real guide call, a new canvas, or a new delivery.",
+    "The alpha guard proves nonopaque nonempty PNG bytes. It does not verify transparency coverage, checkerboard-free appearance, lettering fidelity or any visual quality.",
+    "Same-direction visual adherence and frozen Figma/photo bytes require separate actual readback and pixel evidence; the metadata guard alone cannot prove them.",
+    "Captured current native state is revision 342 with no supplemental reference. A later revision 343 must be rechecked using CHECK_CURRENT_STATE.py after the Root transaction succeeds.",
+    "The full historical native validator was not run by this auditor; Root reported a dependency PermissionError and rollback. Guard PASS does not establish full integration PASS.",
+    "Four preserved-mainline worktree files have different raw byte SHA due to CRLF serialization. Their CRLF-to-LF content SHA exactly matches the saved refs; this audit does not claim raw byte equality or override the repository byte-reference policy.",
+    "System python failed due to missing Pillow and unreliable current-directory handling. Passing executions use the official bundled interpreter with -B; scoped state and private probes also use -X utf8.",
+    "adaptive-orchestrator version_check reported MAINTENANCE_REQUIRED; the existing router was left unchanged and no subagent was created by this auditor."
+  ],
+  "writes": {
+    "business_state_writes": 0,
+    "source_code_writes": 0,
+    "task_lock_writes": 0,
+    "figma_writes": 0,
+    "imagegen_calls": 0,
+    "private_output_directory": ".liu-visual-private/s4_guard_audit",
+    "original_checker_side_effect": "One successful unmodified execution wrote its own private SUPPLEMENTAL_GUARD_CODE_CHECK_REPORT.json as specified by that checker."
+  },
+  "aesthetic_judgment_performed": false,
+  "supporting_reports": [
+    {
+      "path": ".liu-visual-private/s4_guard_audit/FIXED_RECEIPT_AUDIT_DETAILS.json",
+      "sha256": "393f8a4bd1feda060f11146351be68b333370edc0827d8c9ddd7f1c86cb39895"
+    },
+    {
+      "path": ".liu-visual-private/s4_guard_audit/CURRENT_STATE_CHECK.json",
+      "sha256": "8525bbc1aff6ea6d381a4454e34fb88c0ae5e5212e7ebde5aba628c1f5d61664"
+    }
+  ]
+}

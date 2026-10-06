@@ -1,0 +1,122 @@
+{
+  "schema": "vpd-reference-typography-pixel-review/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "reference_path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S1.png",
+  "study_export_sha256": "39cc3fcdefbcd319b5038529af5b1921af975946171fbf6dc5d3c376940b974d",
+  "image_dimensions": {
+    "reference": [
+      960,
+      1280
+    ],
+    "study_export": [
+      960,
+      1280
+    ]
+  },
+  "actual_pixels_seen": true,
+  "actual_image_view_count": 2,
+  "image_view_evidence": "本线程分别直接调用 tools.view_image 并 image 输出两张完整图；没有用路径或文字描述代替看图。",
+  "reviewer_thread_id": "01a10c26-de9e-7152-b00d-484acaf61539",
+  "reviewer_task": "/root/liuxiansheng_transfer_s1_pixel_review",
+  "checked_at": "2026-10-05T13:06:34Z",
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "model_identity_evidence": "本线程 native turn_context：2026-10-05T13:00:40.267Z，payload.model=gpt-6.1-sol，payload.effort=max；thread ID 来自本线程 CODEX_THREAD_ID。",
+  "reviewer_role": "独立 AI 视觉审稿",
+  "verdict": "CONTENT_TRANSFER_FAIL",
+  "human_acceptance": "PENDING",
+  "verdict_reason": "文案换入完成，基本配色和大层级成立；但核心字标仍呈连续、顺滑的书写笔画，参考中厚重山石块面、错落负形与细颗粒破损的构字气质没有充分迁移。穿绕线和辅助文字也未形成同样紧密的字标整体，当前不足以认定达到相近视觉感觉。",
+  "evaluation_boundary": {
+    "assessed": [
+      "中文字形",
+      "字标大小",
+      "布局",
+      "负形",
+      "文字颜色",
+      "橙线穿绕关系",
+      "品牌辨识",
+      "排版完成度"
+    ],
+    "excluded": [
+      "深绿画布或参考摄影的审美优劣",
+      "景深",
+      "茶作评价",
+      "源文件技术可编辑性推断",
+      "最终真人认可"
+    ],
+    "method": "借用 design-critique 的视觉层级、区域证据和最多三项优先建议；静态海报不评触点或交互 UX。"
+  },
+  "typography_findings": [
+    {
+      "id": "F1",
+      "region": "中央暖白主字标，T 约 x246–835、y458–628",
+      "evidence": "刘的两条交叉斜笔、先的连续长横与下方两条腿、生的三条宽横均以大面积平滑实心笔画连接；只有少量小楔形切口。三个字下沿接近同一水平，笔画书写顺序一眼可循。",
+      "reference_gap": "R 的山有明确山峰状外轮廓和三角负形，野、集由尺寸不一的厚块和较大的断开空间构成，白面遍布细碎斑点，轮廓更钝、更不规则。T 的字形虽清楚、厚实，却更接近粗笔书写，缺少这种块面构造和表面密度。",
+      "implication": "刘先生能被立即读出，但品牌的独有形态主要依赖文字内容；最重要的参考气质尚未进入字形本体。",
+      "assessment": "主要不通过项"
+    },
+    {
+      "id": "F2",
+      "region": "中央橙线与字标交接，T 约 x233–821、y472–647",
+      "evidence": "左部曲线在刘右侧形成约 y550–647 的长下垂环；中段越过先的上方后向生的左下走；右部上环和右边弧都被宽白笔画遮断。最醒目的线段在字外和字间，字内可见的穿出点较少。",
+      "reference_gap": "R 左环、中央弧和右环与较碎的白色块面互相补形；T 的长环围着连续竖笔下垂，线条主要承担外部串联，白色大横遮住中段，尚未形成同样丰富、可追踪的内外节奏。",
+      "implication": "橙线让三字相连，方向成立；但装饰感强于字标结构感，刘旁的长环还把视线拉到字标下缘之外。",
+      "assessment": "需重排穿绕节点"
+    },
+    {
+      "id": "F3",
+      "region": "主字标左下英文与中下副文案，T 约 x224–624、y641–742",
+      "evidence": "Mister / Liu 两行全部位于三字底部以下；中文副标题又在约 y716。主字标、英文、中文形成三个连续向下的台阶，英文位于左侧且与居中的中文不构成一个紧凑底边。",
+      "reference_gap": "R 第一字山较矮，Mountain / market 占据它下面、其余两字旁边的空位；这块英文参与主字标的整体轮廓。T 三字深度接近，英文被挤到字标全体下方，中央文字组合因此更松、更向下延长。",
+      "implication": "整体主次仍可辨，但换内容后的空间分配没有按刘先生的字形重新平衡，辅助文字像单独附加。",
+      "assessment": "布局完成度不足"
+    },
+    {
+      "id": "F4",
+      "region": "顶部四组英文、中央配色及下方橙色句子",
+      "evidence": "顶部四组粗体英文均为两行、分布平衡；暖白主字标对深绿画布清晰。橙色山人不住山、心里有青山与上方橙线同色，细一层的米金中文副标题保留了阅读层级。",
+      "reference_gap": "主要配色角色和从主字标到副标题、手写句子的次序已经接近 R；T 白面与橙色都更均一，色彩相近本身没有补足字形的材质和负形差距。",
+      "implication": "这是可保留的基础，失败不来自文字看不清或配色失序。",
+      "assessment": "成立但不足以使整体通过"
+    }
+  ],
+  "priority_repairs": [
+    {
+      "priority": 1,
+      "target": "重新塑造刘先生的块面和负形",
+      "action": "在保持可读的前提下，减少长而顺滑的书写笔段，增加有意设计的断开与宽窄变化，让三字外轮廓、内孔和高低关系各有特点；同时把少量孤立切口改为更一致的细颗粒破损。",
+      "acceptance_evidence": "去掉橙线后，三个字仍能仅凭构字与白面质感呈现厚重、野拙、山石感，而不是靠橙线与颜色提示参考。"
+    },
+    {
+      "priority": 2,
+      "target": "围绕新负形重画橙线穿绕",
+      "action": "收短刘旁的下垂环，将转折与出入点放在具体负形或块面断口中；控制先、生的宽横遮住长线段的长度，让每次消失和出现都有清楚的节奏。",
+      "acceptance_evidence": "完整画面中能追踪线的路径，线与白字互相补形；最醒目的线段不再只落在字外。"
+    },
+    {
+      "priority": 3,
+      "target": "重组主字标底部的英文与副标题",
+      "action": "给左部字形或字间留出可容纳英文的空间，或将英文并入更紧凑的主标底边；再按新的整体轮廓安排中文副标题和橙色句子的垂直间隔。",
+      "acceptance_evidence": "主字标与英文作为一个整体被读出，中文副标题的中心和间距明确，不形成松散的三层追加。"
+    }
+  ],
+  "technical_aesthetic_separation": {
+    "visible_content": "刘先生、疯疯癫癫及山人不住山等新文案在 T 中可见；英文、竖徽、主副标题和底部署名也已换成新内容。",
+    "technical_status": "只读导出像素，没有检查 Figma 对象、曲线、字体或源文件；不能凭图证明可编辑性或遮罩实现方式。",
+    "aesthetic_status": "CONTENT_TRANSFER_FAIL：字形本体和穿绕、排版关系的差距足以影响目标视觉感觉，文案正确与技术可编辑性不能替代此项判断。"
+  },
+  "limitations": [
+    "只评指定两张 960×1280 完整图，坐标为近似画面位置。",
+    "AI 独立审稿不能代替真人接受；human_acceptance 保持 PENDING。"
+  ],
+  "report_paths": {
+    "json": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/s1_pixel_review/PIXEL_REVIEW.json",
+    "markdown": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/s1_pixel_review/PIXEL_REVIEW.md"
+  },
+  "isolation_audit": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s1_cold_review/ISOLATION_AUDIT.json",
+    "sha256": "f1cb0f00e69fd7476cef01b0f2a87e334f87f449dae9e9438e51ba2622226bcf"
+  }
+}

@@ -272,8 +272,13 @@ def _validate_codex_takeover(root, lock, cp, adapter):
     versions, revisions = _takeover_budget(take.get('budget'))
     boundary = lock['execution_boundary']
     from .vpd_correct_source_worker import available_canvas_slots
-    canvas_slots = (available_canvas_slots(take['worker_continuation'])
+    canvas_slots = (available_canvas_slots(take['worker_continuation'], root)
                     if take.get('worker_continuation') else 3 - versions)
+    from .vpd_reference_typography_study import available_guide_calls
+    guide_calls = available_guide_calls(take['worker_continuation'], root) if take.get('worker_continuation') else 0
+    require(type(boundary.get('typography_guide_generation_authorization', 0)) is int
+            and boundary.get('typography_guide_generation_authorization', 0) == guide_calls,
+            'CONTENT_TRANSFER_GUIDE_AUTHORIZATION_MIRROR_CONFLICT')
     require(lock['render_allowed'] is False and
             boundary['current_image_generation_authorization'] ==
             boundary['current_image_generation_count_max'] == 0 and
@@ -878,8 +883,36 @@ def validate_locked_request(root, request, lock):
                     request.get('work_unit_id') == unit['unit_id'], 'WORKER_STATE_WRITE_NOT_AUTHORIZED')
             if request.get('figma_write') or request.get('wordmark_image_tool'):
                 if unit['phase'] == 'REFERENCE_STUDY_ACTIVE':
-                    from .vpd_reference_typography_study import validate_study, REFERENCE
+                    from .vpd_reference_typography_study import (validate_study, REFERENCE,
+                        validate_transfer_write, validate_typography_guide_write)
                     study = validate_study(root, unit)
+                    if 'content_transfer_experiment' in unit:
+                        if request.get('wordmark_image_tool'):
+                            validate_typography_guide_write(root, unit, study, request)
+                            return lock
+                        auth = read(root, study['authorization']['path'])
+                        page = auth['allowed_figma_page']
+                        require(request.get('figma_write') is True
+                                and not request.get('wordmark_image_tool')
+                                and request.get('task_id') == take['task_id']
+                                and request.get('authorization') == study['authorization']
+                                and request.get('copy_manifest') == study['copy_manifest']
+                                and request.get('reference_sha256') == REFERENCE
+                                and request.get('study_only') is True
+                                and request.get('file_key') == page['file_key']
+                                and request.get('page_id') == page['page_id']
+                                and isinstance(request.get('new_frame_name'), str)
+                                and request['new_frame_name'].startswith('LIUXIANSHENG_CONTENT_TRANSFER')
+                                and request.get('existing_node_mutations') == []
+                                and request.get('protected_poster_node') == '402:2'
+                                and request.get('protected_photo_sha256') == unit['frozen_source']['sha256']
+                                and not any(request.get(k) for k in ['node_id', 'node_ids',
+                                    'photo_change', 'new_tea_poster', 'new_tea_version',
+                                    'tea_verdict', 'final_acceptance'])
+                                and 'formal_version' not in request,
+                                'CONTENT_TRANSFER_WRITE_SCOPE_CONFLICT')
+                        validate_transfer_write(root, study, request)
+                        return lock
                     require(request.get('figma_write') is True
                             and not request.get('wordmark_image_tool')
                             and request.get('task_id') == take['task_id']

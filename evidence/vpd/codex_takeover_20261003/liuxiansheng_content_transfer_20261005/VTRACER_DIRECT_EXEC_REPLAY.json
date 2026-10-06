@@ -1,0 +1,19 @@
+{
+  "schema": "independent-vtracer-direct-exec-replay/v1",
+  "status": "FAIL",
+  "execution_boundary": "exec_command directly launched bundled Python via PowerShell; no Python subprocess wrapper",
+  "actual_command": "& 'C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -X utf8 -B 'C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-codex-20261003/.liu-visual-private/liuxiansheng_transfer_20261005/implementation_review/vtracer_replay/trace-guide.py'",
+  "sandbox_permissions": "require_escalated",
+  "actual_exit_code": 1,
+  "tool_output_chunk_id": "4773c8",
+  "actual_error": "trace-guide.py line 10: TypeError: can only concatenate str (not NoneType) to str, while constructing Wrong VTracer version from VERSION",
+  "checks": [
+    {"check": "Single direct execution of unchanged copied adapter", "status": "PASS"},
+    {"check": "Version guard successfully confirms 0.6.15", "status": "FAIL", "detail": "VERSION is None at the actual guard; direct launch reproduces the first failure."},
+    {"check": "Successful trace and byte-identical S3 SVG output", "status": "NOT_VERIFIED", "detail": "Execution exited before tracing; no successful replay is claimed."}
+  ],
+  "expected_s3_source_svg_sha256": "b9dfbbc199666a5b2e1a46066e1b7d73e59b73dcaa0ef6cb814627779444976c",
+  "prior_failed_attempt_preserved": "VTRACER_ACTUAL_REPLAY.json",
+  "limits": ["This observed reviewer execution does not establish the cause of the runtime discrepancy with Root's reported successful execution.", "No installation, source or final-report modification, Figma write, business-state write, new guide, or additional attempt."],
+  "next": "Stop at the observed execution boundary."
+}
