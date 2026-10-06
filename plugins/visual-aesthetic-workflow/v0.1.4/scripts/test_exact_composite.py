@@ -100,6 +100,20 @@ class CompositeTests(unittest.TestCase):
         self.assertIn('LOSSLESS_ORIGINAL_SAMPLE_MODE_REQUIRED', result['failures'])
         self.assertFalse(result['final_eligible'])
 
+    def test_same_samples_with_changed_color_profile_are_not_final(self):
+        provenance, _ = exact.compose(self.ref, self.out, self.plan, self.patches)
+        image = Image.open(self.out).copy()
+        image.save(self.out, icc_profile=b'SYNTHETIC_CHANGED_COLOR_PROFILE')
+        result = exact.validate(self.ref, self.out, self.plan, provenance)
+        self.assertEqual(result['outside_mask_changed_pixels'], 0)
+        self.assertIn('ORIGINAL_COLOR_PROFILE_AND_ORIENTATION_REQUIRED', result['failures'])
+        self.assertFalse(result['final_eligible'])
+
+    def test_patch_and_mask_sources_cannot_be_overwritten(self):
+        for path in [self.patch, self.mask]:
+            with self.assertRaisesRegex(ValueError, 'source files cannot be overwritten'):
+                exact.compose(self.ref, path, self.plan, self.patches)
+
     def test_visual_review_must_bind_actual_result_and_all_seven_checks(self):
         provenance, _ = exact.compose(self.ref, self.out, self.plan, self.patches)
         review = {'reference_sha256': exact.digest(self.ref), 'output_sha256': exact.digest(self.out), 'actual_pixels_viewed': True, 'mask_scope_text_only': True, 'evidence_locator': 'SYNTHETIC_TEST_NOT_REAL_VISUAL_ACCEPTANCE', 'checks': {k: True for k in exact.SEMANTICS}}

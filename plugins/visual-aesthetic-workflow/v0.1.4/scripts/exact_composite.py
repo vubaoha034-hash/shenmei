@@ -81,13 +81,15 @@ def load_masks(c, size):
     return masks, union
 
 def validate(reference_path, candidate_path, plan, provenance=None, review=None, candidate_role='DETERMINISTIC_COMPOSITE'):
-    original, _ = read_original(reference_path)
+    original, original_info = read_original(reference_path)
     c = load_contract(plan, reference_path, original)
     _, union = load_masks(c, original.size)
     with Image.open(candidate_path) as image:
         image.load()
         result = image.copy()
         fmt = image.format
+        candidate_profile = image.info.get('icc_profile')
+        candidate_orientation = image.getexif().get(274, 1)
     reasons = []
     dimensions_equal = result.size == original.size
     ratio_equal = result.width * original.height == original.width * result.height
@@ -97,6 +99,8 @@ def validate(reference_path, candidate_path, plan, provenance=None, review=None,
         reasons.append('EXACT_ASPECT_RATIO_REQUIRED')
     if fmt != 'PNG' or result.mode != original.mode:
         reasons.append('LOSSLESS_ORIGINAL_SAMPLE_MODE_REQUIRED')
+    if candidate_profile != original_info.get('icc_profile') or candidate_orientation != original.getexif().get(274, 1):
+        reasons.append('ORIGINAL_COLOR_PROFILE_AND_ORIENTATION_REQUIRED')
     if candidate_role != 'DETERMINISTIC_COMPOSITE':
         reasons.append('GENERATIVE_GUIDE_CANNOT_BE_FINAL')
     changed = None
@@ -130,6 +134,9 @@ def compose(reference_path, output_path, plan, patches):
     ids = [p.get('region_id') for p in patches]
     if len(set(ids)) != len(ids) or set(ids) != {r['id'] for r, _ in masks}:
         raise ValueError('STOP: each editable mask must have exactly one bound local patch')
+    input_paths = [r['mask_source'] for r, _ in masks] + [p['path'] for p in patches]
+    if any(Path(path).resolve() == Path(output_path).resolve() for path in input_paths):
+        raise ValueError('STOP: mask and patch source files cannot be overwritten')
     result = original.copy()
     for r, mask in masks:
         patch = next(p for p in patches if p['region_id'] == r['id'])
