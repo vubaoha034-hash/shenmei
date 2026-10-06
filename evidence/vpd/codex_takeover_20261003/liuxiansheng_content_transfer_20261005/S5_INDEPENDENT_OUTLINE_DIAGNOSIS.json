@@ -1,0 +1,304 @@
+{
+  "schema": "s5-local-outline-diagnosis/v1",
+  "created_utc": "2026-10-06T03:22:15.778179+00:00",
+  "status": "DIAGNOSIS_RESOLVED_IMPLEMENTATION_PENDING",
+  "scope": "Only two new human complaints: knife-cut edge and severed Xian stroke. No formal candidate, Figma, generation, state or router edits.",
+  "execution": {
+    "role": "DEEP",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "observability": "Assigned role configuration; no independent provider billing verification",
+    "head": "4d128f7b44dc43163f021b5717f5e003ca70a323",
+    "lock_revision": 344,
+    "checkpoint_revision": 366,
+    "human": "PENDING",
+    "root_sole_business_writer": true,
+    "state_validation": "Parent confirms full state pass at same HEAD. Local default-python attempt failed missing PIL; bundled retry interrupted on parent instruction. Neither is a new state verdict.",
+    "router_version_check": "MAINTENANCE_REQUIRED fingerprint signal recorded; no maintenance, write or recursive delegation undertaken."
+  },
+  "evidence": [
+    {
+      "path": ".liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S4.png",
+      "sha256": "ddb621ebf7e230279a1358b1b93ab9fcd55705b7e6ca99af8649aa3295ab1ca4",
+      "canvas": [
+        960,
+        1280
+      ],
+      "actual_pixels_viewed": true
+    },
+    {
+      "path": ".liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "canvas": [
+        960,
+        1280
+      ],
+      "actual_pixels_viewed": true
+    },
+    {
+      "path": ".liu-visual-private/liuxiansheng_transfer_20261005/IMAGE_GUIDE_S4.png",
+      "sha256": "9ef09dd1814343a938445227ce9a8906f0eb1ae4531a857baaba0720606aa558",
+      "canvas": [
+        1086,
+        1448
+      ],
+      "actual_pixels_viewed": true
+    },
+    {
+      "path": ".liu-visual-private/s4_vector_implementation/S4_ORANGE_HIDDEN_TECHNICAL_PREVIEW.png",
+      "sha256": "19d3e17105f3671a191b6dd6f4ce0de576cd46e0b7fc682a433b19814bb458a8",
+      "canvas": [
+        960,
+        1280
+      ],
+      "actual_pixels_viewed": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/PROVENANCE.json",
+      "sha256": "91a9bcb043f1cf65b6a7930e18a1f476fc0dd42f5ff257ba37b8dc949813a014",
+      "read_as": "implementation_raw_evidence_not_review_verdict"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/build-wordmark.py",
+      "sha256": "ff4c3b1d7eb03a18fa0a9cb1bf0b1dbc473ac574903c2831adea05e1f05e012a",
+      "read_as": "implementation_raw_evidence_not_review_verdict"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/prepare-inputs.cjs",
+      "sha256": "c2ffe13bd1a8465c0825bdff58b615c9cb82e699e87c22a65a415ff64fb147d7",
+      "read_as": "implementation_raw_evidence_not_review_verdict"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/FROZEN_SPEC.json",
+      "sha256": "565928390d0e063e144505e7cf8fe34083491bb2f0d99fca3685a1b7cb492b95",
+      "read_as": "implementation_raw_evidence_not_review_verdict"
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/guide-adapter-s4/S4_WORDMARK.svg",
+      "sha256": "0f0a43f7547ded5afa46f36de391dd4ac536c1d7018facabad988248da78d2b9",
+      "read_as": "implementation_raw_evidence_not_review_verdict"
+    }
+  ],
+  "pixels_observed": [
+    "S4 whole image 960x1280: three cream glyphs and thin orange line retained; strongly planar terminals on Liu cross feet, Liu long vertical bottom, Xian lower-left foot and Sheng bottom-left end.",
+    "S4 orange-hidden crop: Xian upper short horizontal right terminal is detached by a nearly vertical dark hairline. The main vertical and second horizontal are continuous.",
+    "Guide 1086x1448: same upper horizontal is uninterrupted around source x660; lower left leg is already separated from the horizontal by a curved negative-space channel.",
+    "Canonical reference at actual 960x1280: outer edges show small uneven curves and softened corners while retaining broad, heavy, sometimes flat planes. It is neither uniformly round nor a set of crisp straight cuts."
+  ],
+  "diagnosis": {
+    "xian_break": {
+      "confidence": "HIGH",
+      "stroke": "上方短横右端（先字牛部第一横的最右小端），不是下方儿部两腿间的开口",
+      "final_roi_xyxy": [
+        548,
+        453,
+        567,
+        481
+      ],
+      "source_window_xyxy": [
+        660,
+        515,
+        691,
+        565
+      ],
+      "cause": "XIAN_UPPER_BAR_END replaces cream inside a window beginning x660, but retained polygon starts at x661 at y518 and x662 at y554. Difference(window) then union(retained) removes a 1–2 source-pixel vertical ribbon between body and terminal.",
+      "pixel_sample": {
+        "final_y467_x548_to556_rgb": [
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            109,
+            123,
+            109
+          ],
+          [
+            110,
+            123,
+            109
+          ],
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            252,
+            244,
+            229
+          ],
+          [
+            252,
+            244,
+            229
+          ]
+        ],
+        "guide_y535_x658_to665": "All 8 pixels are high-alpha cream (alpha249–252); no gap in source."
+      },
+      "not_caused_by": [
+        "orange occlusion: break survives hidden-orange preview and lies above the crossing",
+        "font-required counter: vertical slash crosses one intended horizontal bar",
+        "generation: source guide has continuous cream here",
+        "mere export aliasing: window/polygon geometry creates the ribbon before rasterization"
+      ]
+    },
+    "knife_edges": {
+      "confidence": "HIGH for mechanism; MEDIUM for exact taste-optimal correction",
+      "primary_cause": "Explicit source-coordinate polyline subtraction/intersection/replacement replaces organic source terminals with mathematically straight diagonal planes and sharp corners. The builder poly() uses lineTo for every edge. There are 17 cuts, 3 intersections, and a four-point short-knife reconstruction.",
+      "amplifiers": [
+        "Thresholding A>=200 and flattening RGB removes partial-alpha edge modulation and source shade.",
+        "VTracer spline approximation plus anisotropic mapping compresses the already binary silhouette."
+      ],
+      "counterevidence": "Some source edges were smooth and inflated; reverting every cut to the guide would also revert successful S4 shape changes. Straight planes exist in the reference too; absence of every straight line is not the objective.",
+      "not_supported": "No evidence that adding random noise, more holes, or a new image-generation call is necessary. Interior hole counts cannot judge exterior edge quality."
+    },
+    "negative_spaces_to_preserve": [
+      "先的下部左右腿之间三角开口，及左下撇顶与中横下缘间源图已有的窄弧形间隙。",
+      "先的上横与中横之间两侧开口；生的各横间开口。",
+      "橙线在字前/字后的既有穿插层次；不能以填满任何深色区域作为修复策略。"
+    ]
+  },
+  "minimum_implementation_spec": {
+    "owner": "PRIMARY via parent; use a sibling local candidate and new scoped spec, preserve S4 original/FROZEN_SPEC",
+    "step_1_seam_only": {
+      "operation": "XIAN_UPPER_BAR_END polygon",
+      "old": [
+        [
+          661,
+          518
+        ],
+        [
+          677,
+          526
+        ],
+        [
+          677,
+          548
+        ],
+        [
+          662,
+          554
+        ]
+      ],
+      "proposed": [
+        [
+          658,
+          518
+        ],
+        [
+          677,
+          526
+        ],
+        [
+          677,
+          548
+        ],
+        [
+          658,
+          554
+        ]
+      ],
+      "window_unchanged": [
+        660,
+        515,
+        691,
+        565
+      ],
+      "reason": "Left edge extends 2 source px past the replacement-window boundary, ensuring a shared boundary after intersection. Preserve terminal right x677, height, rest of glyph and orange.",
+      "expected_change": "A thin cream join at final x551–553/y456–480. No layout or orange change.",
+      "verification_condition": "Check actual union/raster continuity at top/middle/bottom of joint; if join is incomplete, revise only this joint to match traced source contour, not global dilation."
+    },
+    "step_2_edge_only": {
+      "method": "On synthetic cut-derived terminal contours, substitute short shallow quadratic/cubic transitions for abrupt corner joins and perfectly straight exposed cut faces. Keep the cut face direction and S4 mass, do not restore entire guide glyph or globally blur/round/jitter.",
+      "initial_highest_visibility_operations": [
+        "LIU_LEFT_CROSS_FOOT",
+        "LIU_RIGHT_CROSS_FOOT",
+        "LIU_LONG_KNIFE_BOTTOM",
+        "XIAN_LEFT_LOWER_FOOT",
+        "SHENG_BOTTOM_LEFT_END",
+        "LIU_SHORT_KNIFE"
+      ],
+      "same_scope_secondary_operations": "Inspect remaining explicit cut/intersection footprints only if they still have plainly detached cap / knife-edge appearance; no source-traced contour rewrite outside these footprints.",
+      "starting_scale_final_pixels": {
+        "corner_transition_radius": [
+          1.5,
+          2.5
+        ],
+        "shallow_cut_face_normal_deviation": [
+          0.6,
+          1.2
+        ],
+        "max_local_silhouette_deviation": 2.5
+      },
+      "parameter_status": "Starting local editing envelope requiring pixel review, not an aesthetic validator or a claim that these exact values must win.",
+      "example": "XIAN_LEFT_LOWER_FOOT long diagonal corresponding to source (527,698)→(568,719): preserve general slope and footprint, make a slight continuous bow and transition at ends instead of a ruler-straight edge ending in acute protruding corners.",
+      "source_guidance": "Use existing guide edge curvature only for nearby terminal tangent/shoulder continuity. Do not import guide orange thickness or blanket rounded shape.",
+      "retain": [
+        "S4 bbox/mapping/body mass/spacing",
+        "cream and orange colors",
+        "existing actual grain positions",
+        "all four orange paths, 2.8px width, layer order",
+        "supporting typography/layout/background",
+        "all photography and references"
+      ]
+    },
+    "no_new_generation_decision": "No new image generation is required to fix the proven seam or its synthetic hard-edge cause. Deterministic local vector correction is sufficient to test these hypotheses. Whether the resulting edge feels right remains an actual-pixel judgment, not guaranteed by source analysis.",
+    "stop_condition": "One sibling local repair, full and 480px pixel review against S4 and canonical reference. If any frozen dimension regresses or the two complaints persist, keep reasoning open; return raw failed pixels to DEEP. Do not launch another style or formal production until parent accepts this local repair."
+  },
+  "falsifiable_predictions": [
+    "Changing only the two left x-coordinates of XIAN_UPPER_BAR_END will remove the dark hairline and detached cap without moving orange or any neighboring glyph. Failure falsifies the proposed join implementation and requires actual contour inspection.",
+    "The complaint about edges should visibly improve after softening only artificial cut-face joins; changing grain count alone should leave the ruler-straight silhouettes visibly unchanged.",
+    "Removing all cut operations should make source-like rounded terminals return but also change S4 shape/mass; this is evidence against broad rollback as the minimal solution.",
+    "The Xian lower-left leg channel should remain visible after upper-horizontal repair; if it disappears, repair scope escaped the diagnosed defect."
+  ],
+  "remaining_uncertainty": [
+    "Human feedback names Xian without marking a location. The upper-bar split is an unambiguous defect matching the description; user could additionally dislike the existing lower-leg separation. Do not fill the latter without pixel review showing a readability issue.",
+    "Taste-optimal edge curvature cannot be selected by raw counts. Proposed scale must be evaluated at 100% and 480px against reference.",
+    "No new candidate rendered, imported, or independently reviewed in this assignment."
+  ],
+  "handoff": {
+    "PRIMARY": "Implement seam spec first, then local terminal curve softening within same S4 skeleton. No full retrace or generative resynthesis.",
+    "FAST": "Hash baseline inputs; record SVG diff confined to permitted cream edits; verify orange unchanged; render hidden-orange and full-composite 100%/480px; confirm seam closure with actual crops and unchanged pixels outside declared local masks. Do not use contour/hole counts as taste pass.",
+    "PARENT": "Own new feedback/state transaction and independent actual-pixel acceptance; preserve all earlier results and human final gate."
+  },
+  "diagnostic_previews": [
+    {
+      "path": ".liu-visual-private/s5_outline_diagnosis/GUIDE_XIAN_DETAIL.png",
+      "sha256": "12e3bfcd21b6451176c0ac57f6f1a37925a4dbf42ef807e4b5afed6bf5af24fa",
+      "kind": "Unmodified-source crop magnified 3x nearest-neighbor; guide crop composited over neutral green for visibility, not candidate"
+    },
+    {
+      "path": ".liu-visual-private/s5_outline_diagnosis/REFERENCE_WORDMARK.png",
+      "sha256": "799b1f8cf81f0b4dffafc95050a234632edf851305f9ce7b48f2f98ce79e91ea",
+      "kind": "Unmodified-source crop magnified 3x nearest-neighbor; guide crop composited over neutral green for visibility, not candidate"
+    },
+    {
+      "path": ".liu-visual-private/s5_outline_diagnosis/S4_HIDDEN_XIAN_DETAIL.png",
+      "sha256": "26ab14bcd17147f9cf1d9b918431e26dae196ccb56a6e7f598b808a24b600c99",
+      "kind": "Unmodified-source crop magnified 3x nearest-neighbor; guide crop composited over neutral green for visibility, not candidate"
+    },
+    {
+      "path": ".liu-visual-private/s5_outline_diagnosis/S4_XIAN_DETAIL.png",
+      "sha256": "d3776e990bb1b3fa3ff87dd48ad7faccb98dd8bda5c57629b26e160534d059f7",
+      "kind": "Unmodified-source crop magnified 3x nearest-neighbor; guide crop composited over neutral green for visibility, not candidate"
+    }
+  ],
+  "writes": "Only this REPORT.json and four diagnosis crops in .liu-visual-private/s5_outline_diagnosis. No formal candidate."
+}

@@ -1,0 +1,11 @@
+const page=await figma.getNodeByIdAsync("251:2");
+if(!page||page.type!=="PAGE") throw new Error("Missing protected photo page");
+await figma.setCurrentPageAsync(page);
+const frame=await figma.getNodeByIdAsync("402:2");
+const photo=await figma.getNodeByIdAsync("402:3");
+if(!frame||!photo||photo.parent.id!==frame.id) throw new Error("Missing protected photo");
+const types={};let count=0;function walk(n){count++;types[n.type]=(types[n.type]||0)+1;if("children" in n)for(const c of n.children)walk(c);}walk(frame);
+const imagePaint=photo.fills.find(p=>p.type==="IMAGE");
+const im=imagePaint?figma.getImageByHash(imagePaint.imageHash):null;
+const imageSize=im?await im.getSizeAsync():null;
+return {read_only:true,createdNodeIds:[],mutatedNodeIds:[],file_key:"uyDxOoN1iNDPpEHTKSUWg1",page_id:page.id,frame_id:frame.id,node_count:count,types,photo:{id:photo.id,type:photo.type,parent:photo.parent.id,name:photo.name,locked:photo.locked,visible:photo.visible,x:photo.x,y:photo.y,width:photo.width,height:photo.height,relativeTransform:photo.relativeTransform,fills:photo.fills},imageSize};

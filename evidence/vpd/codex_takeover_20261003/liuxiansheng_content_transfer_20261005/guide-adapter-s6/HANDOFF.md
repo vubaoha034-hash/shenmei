@@ -1,0 +1,11 @@
+S6 — sole frozen expert-envelope implementation; pending cold review.
+
+SVG: S6_WORDMARK.svg; SHA256 dee8e8141b81a9f44be9fae77935a7ae97ce28a97b9a3205c95f974bcc049586; 20147 bytes; five paths; transparent/no bitmap/font embeds.
+
+Difference from S5: whole14stroke envelopes are DEEP-authored from actual G landmarks, replacing all old cut/window/microcurve mechanisms. Same mapping/mass region and orange preserved. Envelope union occurs before one grain subtraction. Actual G weak-alpha selection follows frozen A<245,2..40px8-connected,3sourcepx internal/orange-exclusion method.217selected weak components1616pixels; union with61original holes464pixels gives1892maskpixels; clipping to expert solid yields1627.5sourcearea/161grain contours. This is a contrast design transform of weak source alpha into transparent vector holes, not recovered original transparent texture.
+
+Actual technical evidence: full960x1280, hidden-orange and480 previews viewed; cream Xian and Sheng each are one connected alpha>=128 component14825/15158px; Xian legs and Sheng horizontal gaps contain actual alpha0 samples recorded in LOCAL_PIXEL_CHECK.json. Analytic stroke overlaps all positive. Cream bounds [222.70,431.70,790.76,598.69], rendered cream [222,431,791,599]; exact S5 bbox not claimed. All four orange path group bytes copied verbatim from S5; 2.8px stroke construction/color unchanged.
+
+One formal asset chain, one builder/one trace call, no geometry retries or failed runs. No image generation/network/Figma/Drive/business-state edits. S4/S5 unchanged. R/G4/S5 actually viewed before implementation. Original S5 independent FAIL is retained by Root; this new vector has no aesthetic PASS.
+
+Rebuild: python -Xutf8 -B -s build-wordmark.py --root <checkout> --output-dir <restored-folder>; node render-preview.cjs --root <checkout> --output-dir <restored-folder>. Restore SOURCE.json-bound input bytes, expert paths/method, original exact G4 in checkout and fixed VTracer0.6.15/skia-pathops0.9.2 native dependencies. Thin vector_adapter reuses existing SVG pen/parser; packages unmodified. Do not rerun previous S4/S5 cuts or local_curves. S5_WORDMARK.svg here is explicitly baseline/input for orange, never another formal S6 candidate. Technical preview is not a complete poster; Root performs native assembly with existing12TEXT and commissions new two-image cold review.

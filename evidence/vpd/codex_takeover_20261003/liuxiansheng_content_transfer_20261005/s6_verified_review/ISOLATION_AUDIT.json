@@ -1,0 +1,84 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "verified": true,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10f6a-d789-7aa0-9c1e-46a45f4c097a",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "f07bfcb49d5cf7d66cdb57da5209a1737a3443b04cc98b516f3735a446314c89",
+  "tool_scope_violations": [],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_E20UH2ezm4n7j7Vb9RNNRK1y",
+      "input_sha256": "6062ddbac2df007572e209f6c14eca7b5dc3d14ade59f56672e0472639ae20c4"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_qxbWpkZwwsXNgD4sdrz4LoBG",
+      "input_sha256": "91688341b76b8877cd7e8794f7d5ac3a96c78cfa500c0e068ff3e5635b34ec67"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S6.png",
+      "sha256": "f07bfcb49d5cf7d66cdb57da5209a1737a3443b04cc98b516f3735a446314c89"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_714864BNptJXwsl8XmCYNMzd",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/s6_fresh_cold_pixel_review",
+    "agent_nickname": "Pasteur",
+    "agent_role": "default"
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "de3f33aff5eff6e85a0e9037a707440bb37cff0a7fd51a72251584e41723d857",
+  "checked_utc": "2026-10-06T04:18:23.861465+00:00",
+  "reviewed_wrapper_sha256_allowlist": [
+    "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+  ],
+  "limitations": [
+    "Parent logged prompt may be encrypted; fork-none and observed tool scope do not prove every provider-internal prompt token.",
+    "Wrapper checks are a bounded reviewed-code allowlist, not a JavaScript security parser.",
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution.",
+    "Root inspected each exact observed call body; this allowlist cannot authorize any unobserved future call. Original Tea project-external audit remains required for Tea."
+  ],
+  "carrier": "CONTENT_TRANSFER_FRESH_TWO_IMAGE_SUBAGENT",
+  "original_project_external_tea_review_route_replaced": false,
+  "reviewed_call_manifest": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S6_REVIEW_CALL_MANIFEST.json",
+    "sha256": "8827bb2e8aedb610724f84dc95d3690b8cb501a5c09fd83ba221ba0749f5f405"
+  },
+  "unchanged_core_sha256": "403f44ceaf3332b5febd91f8b02d98bcb9d0bc4b102c9dc0aed4d5f11dd900ba",
+  "native_final_exact_match": true,
+  "native_final_raw_exact_match": false,
+  "identity_enrichment_applied": true,
+  "native_final_compared_equality": true
+}

@@ -1,0 +1,15 @@
+S7 final exact-grid technical recovery — pending independent cold review.
+
+Formal SVG: S7_WORDMARK.svg, SHA b721b2a7d6c9ee875ec22e756f1ab9b3446ba7ec2a25660f41e8a6a9ed284add,236022bytes,5cream+4orange paths. Transparent PNG382fec8d…,greenpreview3f84eb35…,hidden2758dc49…,480preview7b8c1acf… . PNGs are technical derivatives, not final poster exports.
+
+One formal S7 asset with3technical attempts: first oldsequentialUNION interrupted after tier1trace; next disjointcompound aggregation completed but actual five VTracer polygon traces lost1pxgrain and overlapped; DEEP exact-grid addendum frozen, then1fallbackbuilder completed with0newtraces. Total5historicalVTracer calls,0guidecalls,0visualparametersearch. Failed input/output/source/render preserved in technical-failures/polygon-refuted/. Do not use failedSVG or oldpolygonbuilder for production.
+
+Frozen visual spec b3dde0c… unchanged; addendum164c770… and exact helperc8e5c233… implement mask rows as WINDING unitrectangles, each tier intersected once with finalsolid. Base=solid DIFFERENCE raw_all exactsource cells. No clippedaggregate UNION/reassembly.6decimal SVGcoordinates. Five named numericpath revisions only;9S6pathstrings exact. Four orange paths/two groups exactS6 bytes, draworder/color/width unchanged.12TEXT,handwritingP2,layout,photography untouched.
+
+Reference R9a29fbdc…,264actual8x8donors1:1,73x24grid fixed modulo assignment; no rotations,resampling or randomness. FixedJPEGbrightness tiers→creamopacity1/.92/.8/.6/.35/0, deepest omitted; no backgroundpaint. Originalalpha is UNKNOWN. Repeateddonortiles and JPEG brightness are designtranslation, not originalprintplate recovery. Existing5maskPNG/sourceindex hashes exact; no newmaskthresholds/morphology.
+
+Actual geometry: tierareas2603.799/1375.874/826.862/320.998/129.251,base39423.533,solid44680.317; partitionerror.000271455; all10pairintersections0. ActualSVG→sharp:38827onepx-erodedinteriorpixels have expectedalpha255/235/204/153/89/0 exactly,maxerror0. Of42766fullysolidcoveredpixels,12outercurved-boundarysamples differalpha2..10dueantialias; recorded rather than silently repaired. Xian/Shengalpha128 each onecomponent15002/14969pixels.7specifiednegativegap samplesallalpha0. LOCAL_PIXEL_CHECK contains actualdensity/area/brightness/componentstats; none is tastepass.
+
+Actual100%/480preview viewed. Finegradedwear is visible; gridrepeat/seam, remainingroundness and handwritingP2 are for newindependentactualpixel judgment. No selfaestheticPASS, noFigma/Drive/network/businesswrites. Root owns nativeimport/fullposterexport+freshcoldreview after itsbusinessauthorizationvalidator.
+
+Rebuild uses build-wordmark-pixel-grid.py (public build-wordmark.py identical canonicalfallback), restored SOURCE-bound masks/spec/helper/S6baseline, fixedskia-pathops0.9.2 and PIL/numpy; render-preview.cjs uses sharp. License/source/dependencybindings included. Actualexecutedscript was build-wordmark-pixel-grid.py. Render-alpha/check-final-pixels diagnostic scripts currently use originalprivate output path; productionbuilder/render support explicit --root/--output-dir. Do not claim thesePNGderivatives are a nativeFigma verification.

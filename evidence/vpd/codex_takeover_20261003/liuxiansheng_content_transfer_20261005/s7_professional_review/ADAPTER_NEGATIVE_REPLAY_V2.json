@@ -1,0 +1,53 @@
+{
+  "adapter_sha256": "ef3ce3a82fdcf066c81bca417e9bf9048f977259f2e2b7a0b062c3023c7359f7",
+  "source_child_sha256": "bde93eae043114989516bd5aa2f6aa81212877a73ec18b2d791a9d1ab7941b88",
+  "business_state_modified": false,
+  "cases": [
+    {
+      "case": "actual_selected_evidence_control",
+      "returncode": 0,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n{\"verified\": true, \"actual_verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"raw_judgement_unchanged\": true, \"actual_images\": 2, \"adapter_sha256\": \"ef3ce3a82fdcf066c81bca417e9bf9048f977259f2e2b7a0b062c3023c7359f7\"}\n",
+      "stderr": "",
+      "fixture_only": true,
+      "output_verified": true
+    },
+    {
+      "case": "no_pixel_payloads_with_markers_retained",
+      "returncode": 0,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n{\"verified\": true, \"actual_verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"raw_judgement_unchanged\": true, \"actual_images\": 2, \"adapter_sha256\": \"ef3ce3a82fdcf066c81bca417e9bf9048f977259f2e2b7a0b062c3023c7359f7\"}\n",
+      "stderr": "",
+      "fixture_only": true,
+      "output_verified": true
+    },
+    {
+      "case": "no_image_markers",
+      "returncode": 1,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 56, in <module>\n    assert {x['sha256'] for x in audit['actual_image_reads']}=={raw['reference_sha256'],raw['study_export_sha256']} and len(audit['actual_image_reads'])==2\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "fixture_only": true,
+      "output_verified": false
+    },
+    {
+      "case": "extra_tool",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 15, in <module>\n    assert len(calls)==2\n           ^^^^^^^^^^^^^\nAssertionError\n",
+      "fixture_only": true
+    },
+    {
+      "case": "no_successful_spawn",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 40, in <module>\n    success=[x for x in dispatch if x['succeeded']];assert len(success)==1 and all(x['succeeded'] or x['actual_output']=='collab spawn failed: agent thread limit reached' for x in dispatch)\n                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "fixture_only": true
+    },
+    {
+      "case": "judgement_divergence",
+      "returncode": 1,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_FAIL\", \"verified_before_transport_check\": false}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 58, in <module>\n    assert review['verdict']==raw['verdict'] and review['regional_evidence']==raw['regional_evidence'] and review['priority_issues']==raw['priority_issues'] and review['limitations']==raw['limitations']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "fixture_only": true,
+      "output_verified": false
+    }
+  ]
+}

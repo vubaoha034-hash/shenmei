@@ -1,3 +1,15 @@
+<!-- LIUXIANSHENG_CONTENT_TRANSFER_S7_CURRENT_20261006 -->
+最新实际交付S7：山野集整体文字→刘先生，Figma page412:2/frame453:10/字标453:37，960×1280。新隔离Sol/Max两图实际像素审核CONTENT_TRANSFER_PASS_WITH_LIMITATIONS，真人PENDING。用户S4总体正向并指出刀切边缘/先断缝；S5、S6真实FAIL保留，S7复核通过且仍有P2限制。累计文字迁移7版/图稿2次，本轮零生图；茶作29/28和受保护摄影7fd7777f…不变，摄影继续暂停。
+
+先读原生锁。唯一下一动作LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER：交刘先生审核S7，不恢复茶作、不擅自扩风格。准确调用 evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S7.json、METHODS_AND_REUSE_S7.md。PNG原件Drive1svX-5kyxGBA-hEKg6iq_xMaxcwYU0Ubt（ed03ba67…），字标SVG15COp7aWZ7sKWKDinV3KasEQ38lVzt0e5（b721b2a7…），11冻结源输入包1QPaUkMUZZ8VJOs1ab8A3RqG89KBW8THq（535cae9b…），全部原字节回读一致。Figma12TEXT可改字，主标9VECTOR只可改曲线；换名字需重做和复审。
+
+唯一有效S7评测s7_final_verified_review，先看RAW_NATIVE_PIXEL_REVIEW和ISOLATION_AUDIT。Root信封字段遗漏、失败spawn及两个保存适配缺口的失败baseline均保留，实际图片payload和完整原判词现已核验，规范化报告不冒充原审稿逐字一致。原茶作项目外五图冷审载体未被替换。专业审核在s7_professional_review/FINAL_PROFESSIONAL_REVIEW.json，新读取上下文证据在s7_fresh_entry/FRESH_ENTRY_REPORT.json；未实际存在不声称完成。
+
+ChatGPT私有插件“刘先生·视觉设计工作流”已发布：https://liu-visual-workflow-20261006.deemoliul.chatgpt.site（MCP /mcp）。入口plugins/visual-aesthetic-workflow/SKILL.md、README.md。安装建议卡已提供；安装/连接未核验，实际生产探测HTTP401，不能声称MCP握手或反馈落库成功。需在Plugins→Personal→Created by you连接，然后只读get_current_workflow验证；compile_transfer_plan只编译草案，save_human_feedback/get_human_feedback为追加反馈，不替代Root原生状态。插件不自带生图/Figma/Drive/冷审、不改主线、不训练或无人触发后台运行。官方Sites0.1.75工作流未改；项目薄适配0.1.0实验状态。
+
+已验证：保存/恢复、可编辑源、细磨损转换修复、独立像素送审门槛。时间节省、整个视觉蒸馏系统、第二风格、成熟品牌质量和刘先生最终认可未验证。仅当前活动副本shenmei-vpd-resume-20261006，Root唯一writer；下方旧入口只作历史，不覆盖原生锁。
+<!-- END_LIUXIANSHENG_CONTENT_TRANSFER_S7_CURRENT_20261006 -->
+
 <!-- LIUXIANSHENG_CONTENT_TRANSFER_S4_CURRENT_20261006 -->
 2026-10-06最新实际成品：S4文字迁移442:2，主标442:8；独立隔离两图审核CONTENT_TRANSFER_PASS_WITH_LIMITATIONS，真人PENDING。范围是山野集整体文字→刘先生，摄影暂停；原S1/S2/S3全部FAIL保留，累计正式迁移4版、图稿2次，不清零。保护茶作V29真人文字REJECTED、摄影7fd7777f认可及原S2研究，29/28茶作计数不变。
 

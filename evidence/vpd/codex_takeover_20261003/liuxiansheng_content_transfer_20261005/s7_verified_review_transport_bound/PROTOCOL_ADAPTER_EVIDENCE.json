@@ -1,0 +1,41 @@
+{
+  "schema": "vpd-observed-review-envelope-normalization/v1",
+  "raw_native_review_sha256": "36578ee0f8ddf1d0aff15773565431a5dc7c3554c8280df52fb5518808827af3",
+  "normalizations": [
+    "Add required schema/scope fields from frozen scope",
+    "R:true,T:true pixel flags to boolean true",
+    "Select sole successful actual spawn after two failed capacity calls; failure outputs retained"
+  ],
+  "aesthetic_decision_changed": false,
+  "original_runtime_rewritten": false,
+  "upstream_core_file_modified": false,
+  "upstream_core_sha256": "403f44ceaf3332b5febd91f8b02d98bcb9d0bc4b102c9dc0aed4d5f11dd900ba",
+  "adapter_sha256": "b6ae9309f903f4b262dbe183632f7e07cdcaeb28cf32964ec53237f2f471eea1",
+  "actual_dispatch_calls": [
+    {
+      "call_id": "call_ni233lOLVjgIMrwRcQJ3dTFN",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max",
+      "actual_output": "collab spawn failed: agent thread limit reached",
+      "succeeded": false
+    },
+    {
+      "call_id": "call_iKplqlESc9HUcN3ThgKAWrj6",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max",
+      "actual_output": "collab spawn failed: agent thread limit reached",
+      "succeeded": false
+    },
+    {
+      "call_id": "call_aS1R8sBwbvkJdX4OFTD1XjiF",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max",
+      "actual_output": "{\"task_name\":\"/root/s7_fresh_cold_pixel_review\"}",
+      "succeeded": true
+    }
+  ],
+  "checked_at": "2026-10-06T04:57:47.202198+00:00"
+}

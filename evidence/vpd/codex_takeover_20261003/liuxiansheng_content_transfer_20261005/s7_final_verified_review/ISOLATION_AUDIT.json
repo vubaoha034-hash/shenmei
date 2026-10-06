@@ -1,0 +1,148 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "verified": true,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10f8d-32a6-7df3-b75b-3f9ec325f3f8",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762",
+  "tool_scope_violations": [],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_rmEu879w98gWF2Komvc03IKS",
+      "input_sha256": "1d8b068178989922b801e6bed6c8e056af04d7d3ada1fcc0dec08a075770c2b5"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_qiJfbaTPebjXPFujP2qEQeF2",
+      "input_sha256": "464a30816b1369b1ecdfee6b8c8d3be4b1b90f2a1cf06a681201347698bbd8d1"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S7.png",
+      "sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_aS1R8sBwbvkJdX4OFTD1XjiF",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/s7_fresh_cold_pixel_review",
+    "agent_nickname": "Feynman",
+    "agent_role": "default"
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "bde93eae043114989516bd5aa2f6aa81212877a73ec18b2d791a9d1ab7941b88",
+  "checked_utc": "2026-10-06T04:59:27.378815+00:00",
+  "reviewed_wrapper_sha256_allowlist": [
+    "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+  ],
+  "limitations": [
+    "Parent logged prompt may be encrypted; fork-none and observed tool scope do not prove every provider-internal prompt token.",
+    "Wrapper checks are a bounded reviewed-code allowlist, not a JavaScript security parser.",
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution.",
+    "Raw reviewer omitted required envelope fields. Explicit adapter normalizes envelope only; actual runtime and full raw judgement retained. Native final is not byte-equal to normalized report."
+  ],
+  "carrier": "CONTENT_TRANSFER_FRESH_TWO_IMAGE_SUBAGENT",
+  "original_project_external_tea_review_route_replaced": false,
+  "reviewed_call_manifest": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S7_REVIEW_CALL_MANIFEST.json",
+    "sha256": "46e9eacb74373a54a0409895e3f97356d82f9abb0f3f75e9a42f8e2e48757610"
+  },
+  "native_final_exact_match": false,
+  "native_final_raw_exact_match": false,
+  "native_judgement_and_evidence_exact_match": true,
+  "actual_input_image_payloads": [
+    {
+      "call_id": "call_rmEu879w98gWF2Komvc03IKS",
+      "input_image_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "bytes": 142983,
+      "dimensions": [
+        960,
+        1280
+      ],
+      "format": "JPEG",
+      "detail": "high"
+    },
+    {
+      "call_id": "call_qiJfbaTPebjXPFujP2qEQeF2",
+      "input_image_sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762",
+      "bytes": 76030,
+      "dimensions": [
+        960,
+        1280
+      ],
+      "format": "PNG",
+      "detail": "high"
+    }
+  ],
+  "actual_input_image_bytes_verified": true,
+  "normalization": {
+    "schema": "vpd-observed-review-envelope-normalization/v1",
+    "raw_native_review_sha256": "36578ee0f8ddf1d0aff15773565431a5dc7c3554c8280df52fb5518808827af3",
+    "normalizations": [
+      "Add required schema/scope fields from frozen scope",
+      "R:true,T:true pixel flags to boolean true",
+      "Select sole successful actual spawn after two failed capacity calls; failure outputs retained"
+    ],
+    "aesthetic_decision_changed": false,
+    "original_runtime_rewritten": false,
+    "upstream_core_file_modified": false,
+    "upstream_core_sha256": "403f44ceaf3332b5febd91f8b02d98bcb9d0bc4b102c9dc0aed4d5f11dd900ba",
+    "adapter_sha256": "c2101d913b3ac3f5dca6f0cd1712f7c6df8742d68b1443f86befeb4591f66840",
+    "actual_dispatch_calls": [
+      {
+        "call_id": "call_ni233lOLVjgIMrwRcQJ3dTFN",
+        "fork_turns": "none",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max",
+        "actual_output": "collab spawn failed: agent thread limit reached",
+        "succeeded": false
+      },
+      {
+        "call_id": "call_iKplqlESc9HUcN3ThgKAWrj6",
+        "fork_turns": "none",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max",
+        "actual_output": "collab spawn failed: agent thread limit reached",
+        "succeeded": false
+      },
+      {
+        "call_id": "call_aS1R8sBwbvkJdX4OFTD1XjiF",
+        "fork_turns": "none",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max",
+        "actual_output": "{\"task_name\":\"/root/s7_fresh_cold_pixel_review\"}",
+        "succeeded": true
+      }
+    ],
+    "checked_at": "2026-10-06T04:59:27.384768+00:00"
+  }
+}

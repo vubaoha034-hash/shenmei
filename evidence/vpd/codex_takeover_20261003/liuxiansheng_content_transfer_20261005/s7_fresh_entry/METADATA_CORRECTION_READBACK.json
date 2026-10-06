@@ -1,0 +1,470 @@
+{
+  "schema": "vpd-s7-metadata-correction-readback/v1",
+  "checked_at": "2026-10-06T05:26:08.868733+00:00",
+  "scope": "WORKING_TREE_RECOVERY_METADATA_CORRECTION_ONLY",
+  "verdict": "PASS_SCOPED_METADATA_READBACK",
+  "native_check_status": "OBSERVED350_372_AND_HASH_MIRRORS_ONLY_FULL_VALIDATOR_NOT_REPEATED",
+  "GitHub_publication_readback": "NOT_EXECUTED",
+  "root_execution_messages_not_used_as_pass_evidence": true,
+  "checks": {
+    "only_named_metadata_changed": true,
+    "all_immutable_identity_fields_preserved": true,
+    "all_worker_invariants": true,
+    "all_previous_files_preserved": true,
+    "all_public_copies_exact": true,
+    "sealed_report_unchanged": true,
+    "all_new_ref_bindings": true,
+    "native_mirror_subset_valid": true,
+    "professional_summary_matches_actual_report": true,
+    "new_entry_current_block_valid": true
+  },
+  "native_mirror": {
+    "lock_revision_observed": 350,
+    "checkpoint_sequence_observed": 372,
+    "adapter_lock_revision_match": true,
+    "checkpoint_lock_revision_match": true,
+    "adapter_lock_sha_match": true,
+    "checkpoint_lock_sha_match": true,
+    "receipt_bound": true,
+    "350_372_observed": true
+  },
+  "native_hashes": [
+    {
+      "path": "PROJECT_CONTROL_ADAPTER.json",
+      "sha256": "60cf4908371e2bed2d241b33510a8ee526515951834c3a132f751a6c7dbd10bf"
+    },
+    {
+      "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+      "sha256": "2506c2089c8c7e97039c78e8d668d5e794dde12a333846a6c5fe3ae0467ad525"
+    },
+    {
+      "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+      "sha256": "92164e2515ed1b87b566a0e7a80761bf404ba8eb30af8145fc5ac4caa426714d"
+    }
+  ],
+  "changed_existing_fields": {
+    "recorded_at": {
+      "old": "2026-10-06T05:01:15.805988+00:00",
+      "new": "2026-10-06T05:23:46.478633+00:00"
+    },
+    "professional_scope_result": {
+      "old": "TECHNICAL_PASS_OVERALL_FAIL_BOUND_TO_S6_COLD_FAIL_S7_NOT_REVIEWED",
+      "new": "TECHNICAL_AND_PROTOCOL_PASS_COLD_PASS_WITH_LIMITATIONS_HUMAN_PENDING"
+    },
+    "fresh_entry_verification": {
+      "old": "SEE_ACTUAL_REPORT_IF_EXISTS_NOT_ASSUMED",
+      "new": "ACTUAL_WORKING_TREE_RECOVERY_WITH_LIMITATIONS_349_371_SNAPSHOT"
+    }
+  },
+  "added_metadata_fields": [
+    "fresh_entry_report",
+    "fresh_entry_evidence_index",
+    "metadata_correction",
+    "previous_uncorrected_manifest",
+    "current_reuse_entry"
+  ],
+  "immutable_fields": {
+    "scope": true,
+    "reference_sha256": true,
+    "copy_manifest": true,
+    "rendering_mode": true,
+    "image_guide": true,
+    "export": true,
+    "figma": true,
+    "figma_readback": true,
+    "drive": true,
+    "drive_readback": true,
+    "wordmark_svg": true,
+    "guide_drive_file_id": true,
+    "guide_drive_readback": true,
+    "independent_review": true,
+    "human_acceptance": true,
+    "new_tea_version": true,
+    "review_verdict": true,
+    "formal_transfer_versions": true,
+    "typography_guide_tool_calls": true,
+    "whole_visual_system_complete": true,
+    "benefits": true,
+    "limits": true,
+    "protected_photo": true,
+    "previous_failed_delivery": true,
+    "formal_version_correspondence": true,
+    "actual_tool_model": true,
+    "production_sources": true,
+    "technical_evidence": true,
+    "methods": true,
+    "access_check": true,
+    "rebuild_source_archive": true,
+    "plugin_provenance": true,
+    "handoff": true,
+    "professional_review": true,
+    "professional_evidence_index": true
+  },
+  "worker_invariants": {
+    "tea_versions_and_full_history": true,
+    "tea_budget_29_28": true,
+    "frozen_photography": true,
+    "source_recovery": true,
+    "transfer_attempts": true,
+    "transfer_review": true,
+    "transfer_human_acceptance": true,
+    "transfer_new_delivery": true,
+    "next_action": true,
+    "status": true,
+    "current_task": true,
+    "transfer_count_7_guides_2": true,
+    "human_not_promoted": true
+  },
+  "professional_match": {
+    "corrected_summary": true,
+    "actual_professional_report_byte_hash": true,
+    "actual_professional_verdict": true,
+    "actual_cold_verdict": true,
+    "human_pending": true,
+    "scope_not_whole_system_or_final_human": "S7 frozen implementation, delivery byte bindings and corrected review protocol only. Does not certify human acceptance, whole-system success, final native save or fresh-context entry recovery."
+  },
+  "previous_files_preservation": [
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S7.json",
+      "exists": true,
+      "expected_sha256": "11e66f68c6a40cbf20fdef8ddf04529d7cd6b783ec01d91540d0ba3a169696ba",
+      "actual_sha256": "11e66f68c6a40cbf20fdef8ddf04529d7cd6b783ec01d91540d0ba3a169696ba",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_DELIVERY_RECEIPT.json",
+      "exists": true,
+      "expected_sha256": "afc3fdeb075be6a7edd43766f4f6592734502a8c77bce63b282bec48aa816efb",
+      "actual_sha256": "afc3fdeb075be6a7edd43766f4f6592734502a8c77bce63b282bec48aa816efb",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "exists": true,
+      "expected_sha256": "a3c2de471afe54c0c7efb2f601464f755d41a8e7177ab9fa37fea9d2b6d49cab",
+      "actual_sha256": "a3c2de471afe54c0c7efb2f601464f755d41a8e7177ab9fa37fea9d2b6d49cab",
+      "matches": true
+    },
+    {
+      "path": "START_HERE.md",
+      "exists": true,
+      "expected_sha256": "ad5558deb1fc4bed7fb39cfa32a05ffb8814d7e9d262e6a05d22609ddeb7bc80",
+      "actual_sha256": "ad5558deb1fc4bed7fb39cfa32a05ffb8814d7e9d262e6a05d22609ddeb7bc80",
+      "matches": true
+    },
+    {
+      "path": "AGENTS.md",
+      "exists": true,
+      "expected_sha256": "5d7c94c174c4382a0fcada987238cb69dfdf8a28cd6b5a87474c62edb0ed90b0",
+      "actual_sha256": "5d7c94c174c4382a0fcada987238cb69dfdf8a28cd6b5a87474c62edb0ed90b0",
+      "matches": true
+    },
+    {
+      "path": "VPD_PROJECT_ROADMAP.md",
+      "exists": true,
+      "expected_sha256": "f4da36a30fb2e1419522f1737fbe734e8279983460e3d77db78599398eae0f9c",
+      "actual_sha256": "f4da36a30fb2e1419522f1737fbe734e8279983460e3d77db78599398eae0f9c",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/MAINLINE_LOCK_20261001.md",
+      "exists": true,
+      "expected_sha256": "59021edda7561df99b916f58421c7b3ed853f647f9c21ece3366e15c11be922f",
+      "actual_sha256": "59021edda7561df99b916f58421c7b3ed853f647f9c21ece3366e15c11be922f",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+      "exists": true,
+      "expected_sha256": "f94495162db56db91f0a431699d22b7d839e94f6afc59de6d49fee5f1893ac85",
+      "actual_sha256": "f94495162db56db91f0a431699d22b7d839e94f6afc59de6d49fee5f1893ac85",
+      "matches": true
+    }
+  ],
+  "sealed_report": {
+    "private_report_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+    "public_report_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+    "expected_original_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+    "both_reports_unchanged": true
+  },
+  "public_copy_count": 15,
+  "public_copy_byte_comparison": [
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/ASSET_AND_DEPENDENCY_EVIDENCE.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/ASSET_AND_DEPENDENCY_EVIDENCE.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "b1306e80553439f98a8b8020cbc886645bd2d6d54f53966bbc170bb4d08473cf",
+      "original_sha256": "b1306e80553439f98a8b8020cbc886645bd2d6d54f53966bbc170bb4d08473cf",
+      "public_sha256": "b1306e80553439f98a8b8020cbc886645bd2d6d54f53966bbc170bb4d08473cf",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/asset_dependency_evidence.py",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/asset_dependency_evidence.py",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "bcf88a4e0867f1204debc603cc34e0d985e765df93d709d10abf3099e6c304c7",
+      "original_sha256": "bcf88a4e0867f1204debc603cc34e0d985e765df93d709d10abf3099e6c304c7",
+      "public_sha256": "bcf88a4e0867f1204debc603cc34e0d985e765df93d709d10abf3099e6c304c7",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/FIGMA_FONT_AVAILABILITY.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FIGMA_FONT_AVAILABILITY.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "ee45228ef41691d470ff522372ae760b055fba6b13c0213f851bca366c882c96",
+      "original_sha256": "ee45228ef41691d470ff522372ae760b055fba6b13c0213f851bca366c882c96",
+      "public_sha256": "ee45228ef41691d470ff522372ae760b055fba6b13c0213f851bca366c882c96",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/FIGMA_PHOTO_READ_ONLY.js",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FIGMA_PHOTO_READ_ONLY.js",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "06a6a99f47ae765d374440e40207efe23ab875f04bc5caa0130c023c55e927d9",
+      "original_sha256": "06a6a99f47ae765d374440e40207efe23ab875f04bc5caa0130c023c55e927d9",
+      "public_sha256": "06a6a99f47ae765d374440e40207efe23ab875f04bc5caa0130c023c55e927d9",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/FIGMA_SOURCE_READ_ONLY.js",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FIGMA_SOURCE_READ_ONLY.js",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "6b8dd1d206d8691b28b944ec1746b7a40d6ec17814e8234b9b0f2368a2650449",
+      "original_sha256": "6b8dd1d206d8691b28b944ec1746b7a40d6ec17814e8234b9b0f2368a2650449",
+      "public_sha256": "6b8dd1d206d8691b28b944ec1746b7a40d6ec17814e8234b9b0f2368a2650449",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/FRESH_ENTRY_REPORT.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FRESH_ENTRY_REPORT.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "original_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "public_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/GIT_LF_REFERENCE_RECONCILIATION.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/GIT_LF_REFERENCE_RECONCILIATION.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "733bb3fc939979639ab8e9b95284f0d78ed4edc6482ec5274767a562b565b925",
+      "original_sha256": "733bb3fc939979639ab8e9b95284f0d78ed4edc6482ec5274767a562b565b925",
+      "public_sha256": "733bb3fc939979639ab8e9b95284f0d78ed4edc6482ec5274767a562b565b925",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/INDEPENDENT_TOOL_EVIDENCE.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/INDEPENDENT_TOOL_EVIDENCE.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "e89b67962e9ef8e93ccb93f1fe8a0d948995d868460386a0f3e338c0ce554b59",
+      "original_sha256": "e89b67962e9ef8e93ccb93f1fe8a0d948995d868460386a0f3e338c0ce554b59",
+      "public_sha256": "e89b67962e9ef8e93ccb93f1fe8a0d948995d868460386a0f3e338c0ce554b59",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/NATIVE_ENTRY_EVIDENCE.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/NATIVE_ENTRY_EVIDENCE.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "e65f7b9ada7f94635cd47db754df08c7c99c72fc052253fff9472be5b69e1825",
+      "original_sha256": "e65f7b9ada7f94635cd47db754df08c7c99c72fc052253fff9472be5b69e1825",
+      "public_sha256": "e65f7b9ada7f94635cd47db754df08c7c99c72fc052253fff9472be5b69e1825",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/native_entry_evidence.py",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/native_entry_evidence.py",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "266a93a54acc775d39b0f68d1f2747ac91fe65f0758a826f3722fbf80e13034b",
+      "original_sha256": "266a93a54acc775d39b0f68d1f2747ac91fe65f0758a826f3722fbf80e13034b",
+      "public_sha256": "266a93a54acc775d39b0f68d1f2747ac91fe65f0758a826f3722fbf80e13034b",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/NATIVE_REFERENCE_CHECK.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/NATIVE_REFERENCE_CHECK.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "e7aece5fa68f0aec5ad504cc1dd01ca6359d4c591d56a43515b6b022a4ae105e",
+      "original_sha256": "e7aece5fa68f0aec5ad504cc1dd01ca6359d4c591d56a43515b6b022a4ae105e",
+      "public_sha256": "e7aece5fa68f0aec5ad504cc1dd01ca6359d4c591d56a43515b6b022a4ae105e",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/PLUGIN_ACTUAL_READ_ONLY_EVIDENCE.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/PLUGIN_ACTUAL_READ_ONLY_EVIDENCE.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "0ec43c404e128bb271b84c85eca7d78cd745c5937b3b828189a1015b3dd39d32",
+      "original_sha256": "0ec43c404e128bb271b84c85eca7d78cd745c5937b3b828189a1015b3dd39d32",
+      "public_sha256": "0ec43c404e128bb271b84c85eca7d78cd745c5937b3b828189a1015b3dd39d32",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/reconcile_reference_bytes.py",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/reconcile_reference_bytes.py",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "283dfccdd33ca8647c498e71ac8f1ec9c83f78a3dd562243e5e61021564d7a7c",
+      "original_sha256": "283dfccdd33ca8647c498e71ac8f1ec9c83f78a3dd562243e5e61021564d7a7c",
+      "public_sha256": "283dfccdd33ca8647c498e71ac8f1ec9c83f78a3dd562243e5e61021564d7a7c",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/seal_recovery_report.py",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/seal_recovery_report.py",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "cd80be437e517c5258557b2f3dbf1800c92258b2d821a05a04bd13c807f4b5b5",
+      "original_sha256": "cd80be437e517c5258557b2f3dbf1800c92258b2d821a05a04bd13c807f4b5b5",
+      "public_sha256": "cd80be437e517c5258557b2f3dbf1800c92258b2d821a05a04bd13c807f4b5b5",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    },
+    {
+      "original_private_path": ".liu-visual-private/s7_fresh_entry/ZIP_INPUT_VERIFICATION.json",
+      "public_path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/ZIP_INPUT_VERIFICATION.json",
+      "original_exists": true,
+      "public_exists": true,
+      "expected_sha256": "55bd1b26e07b31df83dc84fa14cafa85e13fb6bebcae33b08bb47beda4684b40",
+      "original_sha256": "55bd1b26e07b31df83dc84fa14cafa85e13fb6bebcae33b08bb47beda4684b40",
+      "public_sha256": "55bd1b26e07b31df83dc84fa14cafa85e13fb6bebcae33b08bb47beda4684b40",
+      "exact_bytes_equal": true,
+      "index_sha_match": true
+    }
+  ],
+  "new_reference_bindings": [
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_professional_review/FINAL_PROFESSIONAL_REVIEW.json",
+      "exists": true,
+      "expected_sha256": "01e0e4902abd8fe466bd1db16efcd4cf34b1032ea263fee8ed64acba3f4d0ed1",
+      "actual_sha256": "01e0e4902abd8fe466bd1db16efcd4cf34b1032ea263fee8ed64acba3f4d0ed1",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FRESH_ENTRY_REPORT.json",
+      "exists": true,
+      "expected_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "actual_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FRESH_EVIDENCE_INDEX.json",
+      "exists": true,
+      "expected_sha256": "296d680ea38c0a1ebcc0e08bb82e6f729721a777a1e25bd45a9d1c2d5973d856",
+      "actual_sha256": "296d680ea38c0a1ebcc0e08bb82e6f729721a777a1e25bd45a9d1c2d5973d856",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S7_METADATA_CORRECTION.json",
+      "exists": true,
+      "expected_sha256": "61193f1b89adb8ad06bdfcecc6cfe76eb7fc71dc2014c5438cf9210e51c26e30",
+      "actual_sha256": "61193f1b89adb8ad06bdfcecc6cfe76eb7fc71dc2014c5438cf9210e51c26e30",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S7.json",
+      "exists": true,
+      "expected_sha256": "11e66f68c6a40cbf20fdef8ddf04529d7cd6b783ec01d91540d0ba3a169696ba",
+      "actual_sha256": "11e66f68c6a40cbf20fdef8ddf04529d7cd6b783ec01d91540d0ba3a169696ba",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+      "exists": true,
+      "expected_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "actual_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_METADATA_CORRECTED_DELIVERY_RECEIPT.json",
+      "exists": true,
+      "expected_sha256": "95c3f7a69f87a70cab26e28a4e4d007a9e5d5a5af93886f78988ccc38626e432",
+      "actual_sha256": "95c3f7a69f87a70cab26e28a4e4d007a9e5d5a5af93886f78988ccc38626e432",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+      "exists": true,
+      "expected_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "actual_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "matches": true
+    },
+    {
+      "path": "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+      "exists": true,
+      "expected_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "actual_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S7_FINAL.json",
+      "exists": true,
+      "expected_sha256": "189e39abde18bbd8c185e0eafc7ff0ad2775eb27816f517fbc8f3d7ff1ce5d12",
+      "actual_sha256": "189e39abde18bbd8c185e0eafc7ff0ad2775eb27816f517fbc8f3d7ff1ce5d12",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/FRESH_ENTRY_REPORT.json",
+      "exists": true,
+      "expected_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "actual_sha256": "dd4a6bdf4b38473fcc0ce08d1fbaffe1dae9deda6634ae253450f2874cc3f347",
+      "matches": true
+    },
+    {
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S7_METADATA_CORRECTION.json",
+      "exists": true,
+      "expected_sha256": "61193f1b89adb8ad06bdfcecc6cfe76eb7fc71dc2014c5438cf9210e51c26e30",
+      "actual_sha256": "61193f1b89adb8ad06bdfcecc6cfe76eb7fc71dc2014c5438cf9210e51c26e30",
+      "matches": true
+    }
+  ],
+  "entry_invariants": {
+    "binds_final_manifest": true,
+    "states_old349_kept": true,
+    "states_349_371_snapshot": true,
+    "next_action_unchanged": true,
+    "scope_limits_explicit": true
+  },
+  "current_unique_next_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+  "new_artwork_or_review": false,
+  "actions": {
+    "business_state_writes": 0,
+    "Drive_Figma_calls": 0,
+    "generations": 0,
+    "full_validators_or_tests": 0,
+    "builds": 0,
+    "Git_commit_or_push": 0,
+    "only_file_written": ".liu-visual-private/s7_fresh_entry/METADATA_CORRECTION_READBACK.json"
+  },
+  "not_claimed": [
+    "Full native validation",
+    "GitHub publication",
+    "New creative cold review",
+    "Plugin connection or feedback persistence",
+    "New machine recovery",
+    "Human acceptance"
+  ]
+}

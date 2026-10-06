@@ -1,0 +1,136 @@
+{
+  "schema": "s7-source-exact-grid-technical-addendum/v1",
+  "diagnosis_resolved": true,
+  "plan_frozen": true,
+  "aesthetic_pass": false,
+  "base_spec_sha256": "b3dde0c032e393ffdbdefd3e1fc0a71fbbb6dde143e35a3c43c2b902c0246812",
+  "scope": "Only binary mask to vector geometry; unchanged contours, R donors, tile map, thresholds, opacity, join protection, layer semantics and 12 TEXT. Original spec remains immutable; this addendum supersedes only its five-trace production conversion step.",
+  "failure_evidence": {
+    "report": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s7_outline_implementation\\TECHNICAL_FAILURE.json",
+    "sha256": "2a19c6ef3ef7b5716be86a84e80fcc2029d7946bb90ac8ff94991d583d8cb6c0",
+    "pixel_example": {
+      "x": 263,
+      "y": 420,
+      "mask_value": 0,
+      "eight_neighbors_all": 255,
+      "actual_svg": "M0,0 Z with translate(263,420)"
+    },
+    "tier1_paths": 4535,
+    "tier1_zero_area_paths": 4166,
+    "historical_tier1_clipped_area": 378.3142598209906,
+    "new_exact_tier1_clipped_area": 2603.79945874079
+  },
+  "source_evidence": {
+    "vtracer_archive": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\dependencies\\vtracer_0_6_15_cp312\\vtracer-0.6.15.tar.gz",
+    "vtracer_archive_sha256": "f7f39943d1fc8e9dc82f5360a40e941aaf4c9166d8df30c3f6a2da8cc21dfc52",
+    "members": [
+      "vtracer-0.6.15/cmdapp/src/python.rs:184-197",
+      "vtracer-0.6.15/cmdapp/src/converter.rs:185-203",
+      "vtracer-0.6.15/cmdapp/src/config.rs:155-164"
+    ],
+    "finding": "filter_speckle only gates cluster admission; mode Polygon still enters to_compound_path, with default length_threshold4.0. It does not guarantee occupied pixel-cell areas. Exact inner simplifier cause beyond this boundary is not claimed.",
+    "pathops_source": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\dependencies\\skia_pathops_0_9_2_abi3\\upstream-source\\src\\python\\pathops\\_pathops.pyx",
+    "pathops_source_sha256": "e4a623ac30eb6c489ee6966cc90025188e695501494bdc5409a2284680af8b14",
+    "pathops_lines": [
+      "177-186 Path fillType constructor",
+      "345-357 addPath and fillType setters"
+    ],
+    "pathops_finding": "Explicit WINDING fill is supported. addPath appends contours; no boolean approximation is necessary when aggregating disjoint pixel rectangles."
+  },
+  "helper": {
+    "path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s7_lettering_expert\\pixel_grid_geometry.py",
+    "sha256": "c8e5c2335b8390c2f9c06b80b2f9e104fbf9fed04c00f0da769ae52fe94fdf4c",
+    "function": "mask_to_winding_path(mask,origin=(0,0))"
+  },
+  "input": {
+    "tier_index": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s7_outline_implementation\\TIER_INDEX_FIELD_TECHNICAL.png",
+    "sha256": "8a642ec8837b42d1bbe1d854578f2421011f000cdd3e68adaeeac84a786ffb38",
+    "mask_sources": [
+      {
+        "tier": 1,
+        "input_sha256": "a6f4c4a51fbbe4dce93f39ff0e1293f707a7d3d9ed94eb09db9b3d4eb7846181",
+        "mask_pixels": 6668
+      },
+      {
+        "tier": 2,
+        "input_sha256": "6722ab01639ce0e78dced58eec298ffb69b70b6c8cd8d4d0fbf532d79221e073",
+        "mask_pixels": 3349
+      },
+      {
+        "tier": 3,
+        "input_sha256": "6a529992dd33f47abe817c923df6ece17fbbd1ce139c4d31efeb2043b2117621",
+        "mask_pixels": 2018
+      },
+      {
+        "tier": 4,
+        "input_sha256": "7ebc7561ca7a065edfadb09b02f9230734b909a516bffe531bc4ca46bec0b6ee",
+        "mask_pixels": 916
+      },
+      {
+        "tier": 5,
+        "input_sha256": "eb6672e1acedb1cbd1c364933dfdf7776ec31f14be608a9087a6fc3f75615652",
+        "mask_pixels": 365
+      }
+    ],
+    "validate": "Existing mask images must contain only0/255 and equal tier_index==t at [420:612,216:800], zero outside. Preserve existing protection and source assignments; no regeneration/threshold changes."
+  },
+  "geometry_algorithm": {
+    "pixel_cell": "Source pixel(x,y) represents unit cell[x,x+1]x[y,y+1], not a zero-area point at its center.",
+    "runs": "For each row y, take every maximal selected x run[x0,x1), emit Mx0,y Lx1,y Lx1,y+1 Lx0,y+1 Z. All rectangles have the same orientation and explicit Path(fillType=pathops.FillType.WINDING). Append to one path directly or viaaddPath; do not repeatedly Boolean UNION rectangles.",
+    "tiers": "For t1..5, build exact grid geometry from existing mask and perform exactly one INTERSECTION(finalsolid,raw_tier). Keep resulting five paths separate.",
+    "base": "Create exact raw_all from source tier_index>0 with the same run algorithm. Exactly one DIFFERENCE(finalsolid,raw_all) gives base. Do not combine or UNION clipped tier paths to construct base.",
+    "drawing": "Draw base at1 and tiers1..4 at.92/.80/.60/.35, all cream original color, SVG fill-rule nonzero. Tier5 remains omitted. Preserve original orange groups in original draw order.",
+    "forbidden": "No VTracer retry, no resampling/dilation/erosion, no per-component deletion, no fallback to deepening grain, no simplification or sequential UNION of resulting graded partitions."
+  },
+  "verification": {
+    "raw_area": "Each raw tier path area equals its selected pixel count exactly to1e-9; source tier masks pairwise disjoint.",
+    "expected_clipped_areas": [
+      2603.79945874079,
+      1375.873887938633,
+      826.8615241691004,
+      320.997540538851,
+      129.25074564344254
+    ],
+    "expected_solid_area": 44680.3168876617,
+    "expected_base_area": 39423.53345917556,
+    "partition_area_error_max": 0.001,
+    "pair_overlap_area_max": 0.0001,
+    "inside_pixel_center_coverage": "All44688 finalsolid-contained centers in ROI checked; every center belongs to its source-designated base/tier path. Expected errors0.",
+    "observed_partition_area_error": 0.00027145531930727884,
+    "observed_pair_overlap_areas": {
+      "1_2": 0.0,
+      "1_3": 0.0,
+      "1_4": 0.0,
+      "1_5": 0.0,
+      "2_3": 0.0,
+      "2_4": 0.0,
+      "2_5": 0.0,
+      "3_4": 0.0,
+      "3_5": 0.0,
+      "4_5": 0.0
+    },
+    "proof_path": "C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\.liu-visual-private\\s7_lettering_expert\\PIXEL_GRID_GEOMETRY_PROOF.json",
+    "proof_sha256": "2be806c59980f4695e230990fbe4df15b5e0fba27a1a08880a15b0d13f267493",
+    "final_render_checks": "PRIMARY/FAST must compare orange-hidden final PNG against tier field inside solid interiors; expected alpha8 approximately255/235/204/153/89/0. Keep original alpha128 connectivity and negative-space checks. Preserve9path semantics or explain equivalent grouping. Do not claim final Figma verification from this geometry proof."
+  },
+  "new_diagnostic_failure_retained": {
+    "initial_base_from_clipped_aggregate_partition_error": 0.00466242522088578,
+    "correction": "Base now uses raw_all exact source geometry; actual error0.00027145531930727884.",
+    "sequential_reassembly_UNION_XOR_error": 3484.3566815107624,
+    "boundary": "This extra diagnostic operation is excluded from production. Thousands of coincident clipped boundaries make that route unreliable here; no claim of universal Skia defect/root cause. Independent output partition areas, pair intersections and full interior center coverage were verified.",
+    "unresolved_risk": "SVG serialization, raster antialiasing and actual Figma import still require the assigned mechanical checks; any failure reopens DEEP."
+  },
+  "budget": {
+    "new_VTracer_calls": 0,
+    "single_fallback_builder_run": 1,
+    "new_formal_versions": 0,
+    "guide_calls": 0,
+    "candidate_search": 0
+  },
+  "dependencies": {
+    "vtracer": "0.6.15 binary remains byte unchanged; historical five traces preserved as failed evidence, not final production source",
+    "skia_pathops": "0.9.2 unchanged",
+    "numpy_PIL": "existing bundled"
+  },
+  "handoff": "PRIMARY implementation and FAST mechanical checks via Root. Root appends technical receipt, keeps original authorization/spec history, and controls Figma writes."
+}

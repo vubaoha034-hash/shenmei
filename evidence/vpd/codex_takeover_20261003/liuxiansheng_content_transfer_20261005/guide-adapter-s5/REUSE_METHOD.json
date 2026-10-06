@@ -1,0 +1,14 @@
+{
+  "schema": "s5-reuse/v1",
+  "candidate": "S5_WORDMARK.svg",
+  "upstream": "VTracer 0.6.15 + skia-pathops 0.9.2 unchanged native core",
+  "fresh_commands": [
+    "python -X utf8 -B -s build-wordmark.py --root <checkout> --output-dir <restored-directory> --reuse-traces",
+    "node render-preview.cjs --root <checkout> --output-dir <restored-directory>"
+  ],
+  "inputs": "Restore exact SOURCE.json trace/input bytes and SOURCE_EXTRACTION.json. No generation or extraction rerun needed.",
+  "thin_adapter": "local_curves.py; FROZEN_SPEC.json seam-only coordinate patch",
+  "no_native_or_business_writes": true,
+  "technical_preview_not_final_poster": true,
+  "cold_review_required": true
+}

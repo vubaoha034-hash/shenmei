@@ -1,0 +1,51 @@
+{
+  "adapter_sha256": "c2101d913b3ac3f5dca6f0cd1712f7c6df8742d68b1443f86befeb4591f66840",
+  "source_child_sha256": "bde93eae043114989516bd5aa2f6aa81212877a73ec18b2d791a9d1ab7941b88",
+  "business_state_modified": false,
+  "cases": [
+    {
+      "case": "actual_selected_evidence_control",
+      "returncode": 0,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n{\"verified\": true, \"actual_verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"raw_judgement_unchanged\": true, \"actual_images\": 2, \"adapter_sha256\": \"c2101d913b3ac3f5dca6f0cd1712f7c6df8742d68b1443f86befeb4591f66840\"}\n",
+      "stderr": "",
+      "fixture_only": true,
+      "output_verified": true
+    },
+    {
+      "case": "no_pixel_payloads_with_markers_retained",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 23, in <module>\n    assert len(images)==1,'ACTUAL_IMAGE_PAYLOAD_REQUIRED'\n           ^^^^^^^^^^^^^^\nAssertionError: ACTUAL_IMAGE_PAYLOAD_REQUIRED\n",
+      "fixture_only": true
+    },
+    {
+      "case": "replace_pixel_payload",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 27, in <module>\n    assert image_bytes==path.read_bytes(),'ACTUAL_IMAGE_BYTES_BINDING_REQUIRED'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ACTUAL_IMAGE_BYTES_BINDING_REQUIRED\n",
+      "fixture_only": true
+    },
+    {
+      "case": "extra_output_pixel_payload",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 23, in <module>\n    assert len(images)==1,'ACTUAL_IMAGE_PAYLOAD_REQUIRED'\n           ^^^^^^^^^^^^^^\nAssertionError: ACTUAL_IMAGE_PAYLOAD_REQUIRED\n",
+      "fixture_only": true
+    },
+    {
+      "case": "extra_message_pixel_payload",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 35, in <module>\n    assert count_image_blocks(rows)==2,'EXTRA_IMAGE_PAYLOAD_REJECTED'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: EXTRA_IMAGE_PAYLOAD_REJECTED\n",
+      "fixture_only": true
+    },
+    {
+      "case": "human_acceptance_divergence",
+      "returncode": 1,
+      "stdout": "{\"reviewer\": \"01a10f8d-32a6-7df3-b75b-3f9ec325f3f8\", \"actual_contexts\": [{\"model\": \"gpt-6.1-sol\", \"effort\": \"max\", \"reasoning_effort\": null}], \"tool_calls\": 2, \"declared_view_calls\": 2, \"message_image_blocks\": 0, \"verdict\": \"CONTENT_TRANSFER_PASS_WITH_LIMITATIONS\", \"verified_before_transport_check\": false}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\OneDrive\\文档\\足球\\shenmei-vpd-resume-20261006\\scripts\\vpd_collect_s7_content_transfer_review.py\", line 79, in <module>\n    assert review==expected_review,'ALL_NATIVE_JUDGEMENT_FIELDS_MUST_MATCH'\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ALL_NATIVE_JUDGEMENT_FIELDS_MUST_MATCH\n",
+      "fixture_only": true,
+      "output_verified": false
+    }
+  ]
+}

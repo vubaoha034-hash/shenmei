@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-study-review-runtime-audit/v1",
+  "scope": "SHANYEJI_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "verified": false,
+  "fork_turns": "none",
+  "history_inherited": false,
+  "actual_model": "gpt-6.1-sol",
+  "actual_reasoning_effort": "max",
+  "pixels_seen": 2,
+  "reviewer_thread_id": "01a10f4c-b5fe-7d82-9e89-c57056729cfd",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "study_export_sha256": "c503045825247dba97723a419d77f44c156797ddf3f4160e5d82aa44e85f228f",
+  "tool_scope_violations": [
+    "UNEXPECTED_TOOL"
+  ],
+  "actual_tool_calls": [
+    {
+      "name": "exec",
+      "call_id": "call_ylT2aZWlDDq1DSuoPxsOD3J4",
+      "input_sha256": "6062ddbac2df007572e209f6c14eca7b5dc3d14ade59f56672e0472639ae20c4"
+    },
+    {
+      "name": "exec",
+      "call_id": "call_PQQq4ixhJGiryb0vWGz3senS",
+      "input_sha256": "6b1e886c5c15a41d1085e25345c029fb42446802517cca276baf1b4e98ec61bf"
+    }
+  ],
+  "actual_image_reads": [
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414"
+    },
+    {
+      "path": "C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S5.png",
+      "sha256": "c503045825247dba97723a419d77f44c156797ddf3f4160e5d82aa44e85f228f"
+    }
+  ],
+  "actual_turn_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "reasoning_effort": null
+    }
+  ],
+  "actual_parent_spawn": [
+    {
+      "call_id": "call_LRNI4V4mj6vXL2UUCVHkeslc",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  ],
+  "actual_child_spawn_source": {
+    "parent_thread_id": "01a0ffab-c9b7-7c40-b55b-e51535c156dd",
+    "depth": 1,
+    "agent_path": "/root/s5_fresh_cold_pixel_review",
+    "agent_nickname": "Gauss",
+    "agent_role": "default"
+  },
+  "parent_spawn_verified": true,
+  "runtime_file_sha256": "31c6b2e077ea138520e4eebd4d1cfcc794c056c4f98a3242a439d423e2548696",
+  "checked_utc": "2026-10-06T03:46:25.881031+00:00",
+  "reviewed_wrapper_sha256_allowlist": [
+    "2bf13a520b0bb136b06a87213cbff19b0aaa0d9289d6bdff0fbbec19c1dec130",
+    "ec5ed0bd96013535a7f692229ac55998cab6cd854b9ac7c6f21c76b049d44f52"
+  ],
+  "limitations": [
+    "Parent logged prompt may be encrypted; fork-none and observed tool scope do not prove every provider-internal prompt token.",
+    "Wrapper checks are a bounded reviewed-code allowlist, not a JavaScript security parser.",
+    "Fork-none and image input scope bound to parent spawn and actual child trace; shared filesystem is not OS isolation.",
+    "Actual ImageView transport markers and current input-file bytes are matched to both declared images.",
+    "Prompt hash is not cryptographic proof of provider-internal execution."
+  ]
+}

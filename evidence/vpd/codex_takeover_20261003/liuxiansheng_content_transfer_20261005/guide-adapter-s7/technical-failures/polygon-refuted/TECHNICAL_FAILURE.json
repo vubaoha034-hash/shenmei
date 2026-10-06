@@ -1,0 +1,47 @@
+{
+  "schema": "s7-technical-falsification/v1",
+  "status": "STOPPED_DEEP_REQUIRED",
+  "actual_records": [
+    {
+      "tier": 1,
+      "mask_pixels_within_solid_alpha128": 2598,
+      "trace_total_path_count": 4535,
+      "zero_area_path_count": 4166,
+      "sum_trace_path_areas": 1135.5
+    },
+    {
+      "tier": 2,
+      "mask_pixels_within_solid_alpha128": 1373,
+      "trace_total_path_count": 2169,
+      "zero_area_path_count": 1950,
+      "sum_trace_path_areas": 637.0
+    },
+    {
+      "tier": 3,
+      "mask_pixels_within_solid_alpha128": 827,
+      "trace_total_path_count": 1242,
+      "zero_area_path_count": 1121,
+      "sum_trace_path_areas": 370.0
+    },
+    {
+      "tier": 4,
+      "mask_pixels_within_solid_alpha128": 322,
+      "trace_total_path_count": 488,
+      "zero_area_path_count": 420,
+      "sum_trace_path_areas": 290.5
+    },
+    {
+      "tier": 5,
+      "mask_pixels_within_solid_alpha128": 130,
+      "trace_total_path_count": 144,
+      "zero_area_path_count": 118,
+      "sum_trace_path_areas": 212.0
+    }
+  ],
+  "cause": "VTracer polygon emits singleton paths M0,0 Z and simplifies other tiny cells. Mutually exclusive masks may produce slightly overlapping approximate polygons. No final texture retention/alpha correctness claim.",
+  "tier_overlap_evidence": "PROVENANCE.json/tier_mutual_overlap_area",
+  "reproducer": "build-wordmark.py + fixed5input/output traces + frozen spec",
+  "no_new_parameter_search": true,
+  "no_additional_trace_calls": true,
+  "aesthetic_verdict": null
+}

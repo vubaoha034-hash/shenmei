@@ -1,0 +1,16 @@
+{
+  "schema": "s7-final-reuse/v1",
+  "canonical_builder": "build-wordmark-pixel-grid.py",
+  "commands": [
+    "python -Xutf8 -B -s build-wordmark-pixel-grid.py --root <checkout> --output-dir <restored-folder>",
+    "node render-preview.cjs --root <checkout> --output-dir <restored-folder>",
+    "node render-alpha.cjs",
+    "python -Xutf8 check-final-pixels.py"
+  ],
+  "immutable_source": "Verify SOURCE.json bindings. Restore originalbinary masks; never run failed polygon builder or re-trace.",
+  "output": "SingleS7asset, fivegradedcreampaths/fourunchangedorange paths",
+  "precision": 6,
+  "failure_history": "technical-failures/polygon-refuted/ and TECHNICAL_ATTEMPTS.json",
+  "cold_review_required": true,
+  "native_import_required": "Root only after matchingbusinessvalidator"
+}

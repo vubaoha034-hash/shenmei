@@ -1,0 +1,2 @@
+const fs=require('fs'),sharp=require('C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+const base='.liu-visual-private/s6_outline_implementation/';let s=fs.readFileSync(base+'S6_WORDMARK.svg','utf8').replace(/<g id="ORANGE_(?:BEHIND_GLYPHS|IN_FRONT_OF_GLYPHS)">[\s\S]*?<\/g>/g,'');sharp(Buffer.from(s)).png().toFile(base+'S6_CREAM_ALPHA_TECHNICAL.png');

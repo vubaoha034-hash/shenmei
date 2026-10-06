@@ -1,0 +1,19 @@
+{
+  "schema": "s5-technical-attempts/v1",
+  "formal_candidate_count": 1,
+  "attempts": [
+    {
+      "id": "runtime-01",
+      "status": "FAILED_BEFORE_PATCH",
+      "cause": "Windows default GBK failed decoding frozen spec. Unadapted copied S4 builder then recomputed exact baseline SVG 0f0a43f7; no S5 produced.",
+      "repair": "Run adapter and builder with explicit -X utf8; geometry parameters unchanged."
+    },
+    {
+      "id": "implementation-01",
+      "status": "RENDERED_PENDING_COLD_REVIEW",
+      "svg_sha256": "e5e3e540f1a296935e44aaa74053c6855907eb5563557e939d30386f8ebde5a1",
+      "geometry_retries": 0
+    }
+  ],
+  "taste_verdict": null
+}

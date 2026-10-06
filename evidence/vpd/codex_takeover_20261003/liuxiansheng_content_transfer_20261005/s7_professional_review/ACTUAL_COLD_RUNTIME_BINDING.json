@@ -1,0 +1,70 @@
+{
+  "runtime_sha256": "bde93eae043114989516bd5aa2f6aa81212877a73ec18b2d791a9d1ab7941b88",
+  "calls": [
+    {
+      "call_id": "call_rmEu879w98gWF2Komvc03IKS",
+      "name": "exec",
+      "input": "const result = await tools.view_image({path:\"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/product-type-integration-20261004/SHANYEJI-canonical-readback-20261005.jpg\"});\nimage(result.image_url);\n"
+    },
+    {
+      "call_id": "call_qiJfbaTPebjXPFujP2qEQeF2",
+      "name": "exec",
+      "input": "const result = await tools.view_image({path:\"C:/Users/Administrator/OneDrive/文档/足球/shenmei-vpd-resume-20261006/.liu-visual-private/liuxiansheng_transfer_20261005/FIGMA_COMPLETE_S7.png\"});\nimage(result.image_url);\n"
+    }
+  ],
+  "decoded_actual_pixel_payloads": [
+    {
+      "call_id": "call_rmEu879w98gWF2Komvc03IKS",
+      "sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+      "bytes": 142983
+    },
+    {
+      "call_id": "call_qiJfbaTPebjXPFujP2qEQeF2",
+      "sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762",
+      "bytes": 76030
+    }
+  ],
+  "raw_native_review_semantic_exact_match": true,
+  "all_raw_fields_except_pixel_envelope_unchanged": true,
+  "raw_field_equality": {
+    "verdict": true,
+    "regional_evidence": true,
+    "priority_issues": true,
+    "limitations": true,
+    "can_enter_liuxiansheng_review": true,
+    "human_acceptance": true,
+    "reference_sha256": true,
+    "study_export_sha256": true,
+    "sha256_source": true
+  },
+  "added_envelope_fields": [
+    "isolation_audit",
+    "raw_native_review",
+    "reviewer_thread_id",
+    "schema",
+    "scope"
+  ],
+  "actual_model_contexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": "max"
+    }
+  ],
+  "verdict": "CONTENT_TRANSFER_PASS_WITH_LIMITATIONS",
+  "priority_issues": {
+    "P1": [],
+    "P2": [
+      "参考主标的块面拆分和负形更大胆；T的“先”中腰较紧，可进一步改善上下块面的断开与承接。",
+      "部分长直边与平滑橙线仍显得规整，手作起伏可以更丰富。",
+      "主标磨损覆盖较均匀，局部短划较密；可减少均匀撒点感。",
+      "橙色手写句笔画和基线较整齐，三个“山”的轮廓明显相似，距离参考自然挥写的节奏仍有差距。"
+    ]
+  },
+  "limitations": [
+    "摄影暂缓，纯绿背景不构成本次文字研究失败。",
+    "辅助手写句的质感尚未达到参考，但不足以否定主标。",
+    "本次为两张图的视觉审稿，不能代表真人认可。"
+  ],
+  "human_acceptance": "PENDING",
+  "scope": "protocol and actual pixels binding only; no independent aesthetic rescoring"
+}

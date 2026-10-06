@@ -1,0 +1,112 @@
+{
+  "schema": "s7-exact-grid-provenance/v1",
+  "status": "IMPLEMENTED_ACTUAL_RENDER_CHECKED_PENDING_COLD_REVIEW",
+  "spec_sha256": "b3dde0c032e393ffdbdefd3e1fc0a71fbbb6dde143e35a3c43c2b902c0246812",
+  "addendum_sha256": "164c770083237914ef9676d961751823b6c87af090746e6cae9bf50e82e707ce",
+  "helper_sha256": "c8e5c2335b8390c2f9c06b80b2f9e104fbf9fed04c00f0da769ae52fe94fdf4c",
+  "tier_field_sha256": "8a642ec8837b42d1bbe1d854578f2421011f000cdd3e68adaeeac84a786ffb38",
+  "reference_sha256": "9a29fbdc7dd908017924bed270e8dfe18351519eed3fa7bc7001789f2a383414",
+  "donor_sha256": "0f90a9d054a973c53f81c0a6762909e9ebeab7ff339779e167d58648bfcb0e93",
+  "unchanged_visual_parameters": true,
+  "nine_S6_stroke_strings_unchanged": true,
+  "orange_groups_byte_equal_S6": true,
+  "upstream_skia_pathops": "0.9.2",
+  "upstream_modified": false,
+  "new_VTracer_calls": 0,
+  "historical_failed_VTracer_calls": 5,
+  "exact_grid_tier_stats": [
+    {
+      "tier": 1,
+      "mask_pixels": 6668,
+      "horizontal_runs": 5593,
+      "raw_path_area": 6668.0,
+      "clipped_area": 2603.79945874079,
+      "clipped_contours": 1595
+    },
+    {
+      "tier": 2,
+      "mask_pixels": 3349,
+      "horizontal_runs": 2788,
+      "raw_path_area": 3349.0,
+      "clipped_area": 1375.873887938633,
+      "clipped_contours": 783
+    },
+    {
+      "tier": 3,
+      "mask_pixels": 2018,
+      "horizontal_runs": 1691,
+      "raw_path_area": 2018.0,
+      "clipped_area": 826.8615241691004,
+      "clipped_contours": 447
+    },
+    {
+      "tier": 4,
+      "mask_pixels": 916,
+      "horizontal_runs": 661,
+      "raw_path_area": 916.0,
+      "clipped_area": 320.997540538851,
+      "clipped_contours": 167
+    },
+    {
+      "tier": 5,
+      "mask_pixels": 365,
+      "horizontal_runs": 220,
+      "raw_path_area": 365.0,
+      "clipped_area": 129.25074564344254,
+      "clipped_contours": 47
+    }
+  ],
+  "raw_all_stats": {
+    "mask_pixels": 13316,
+    "horizontal_runs": 6748,
+    "raw_path_area": 13316.0
+  },
+  "base_method": "solid DIFFERENCE exact raw_all, no clipped aggregate/reassembly",
+  "base_area": 39423.53345917556,
+  "solid_area": 44680.3168876617,
+  "partition_area_error": 0.00027145531930727884,
+  "ten_pair_overlap_areas": {
+    "1_2": 0.0,
+    "1_3": 0.0,
+    "1_4": 0.0,
+    "1_5": 0.0,
+    "2_3": 0.0,
+    "2_4": 0.0,
+    "2_5": 0.0,
+    "3_4": 0.0,
+    "3_5": 0.0,
+    "4_5": 0.0
+  },
+  "svg_coordinate_precision": 6,
+  "output": {
+    "file": "S7_WORDMARK.svg",
+    "sha256": "b721b2a7d6c9ee875ec22e756f1ab9b3446ba7ec2a25660f41e8a6a9ed284add",
+    "bytes": 236022,
+    "cream_paths": 5,
+    "orange_paths": 4
+  },
+  "source_alpha": "UNKNOWN; opacity is fixed design translation of reference JPEG luminance",
+  "aesthetic_verdict": null,
+  "failed_production_source": "technical-failures/polygon-refuted/",
+  "limits": [
+    "Original R donor tiles repeated1:1 deterministically; not recovered print-plate alpha.",
+    "Exact-grid fallback uses immutable prior five binary tier masks. VTracer failed output is preserved but excluded from final production.",
+    "Native Figma export and independent cold review remain Root-owned."
+  ],
+  "actual_render_checks": "LOCAL_PIXEL_CHECK.json",
+  "donor_assignment": {
+    "grid": [
+      73,
+      24
+    ],
+    "source_tile_size": 8,
+    "donors": 264,
+    "rule": "(j*73+i)%264",
+    "donors_used7times": 168,
+    "donors_used6times": 96,
+    "resampling": false,
+    "new_randomness": false
+  },
+  "technical_attempts": "TECHNICAL_ATTEMPTS.json",
+  "source_tier_index_sha256": "8a642ec8837b42d1bbe1d854578f2421011f000cdd3e68adaeeac84a786ffb38"
+}

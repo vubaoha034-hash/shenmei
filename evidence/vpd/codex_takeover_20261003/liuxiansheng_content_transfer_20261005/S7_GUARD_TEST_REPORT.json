@@ -1,0 +1,31 @@
+{
+  "schema": "vpd-s7-scoped-guard-test-evidence/v1",
+  "checked_utc": "2026-10-06T04:23:53.195292+00:00",
+  "command": "bundled Python3.12.14 -X utf8 -B -m unittest tests.test_vpd_s7_reference_method_repair -v",
+  "actual_exit_code": 0,
+  "tests": 5,
+  "elapsed_seconds": 103.158,
+  "log": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S7_GUARD_TEST_LOG.txt",
+    "sha256": "eaf30775b8960c4de7a2969b9de4dd1e58b033ed2c86dc2b1f772e2700627ec6"
+  },
+  "source": {
+    "path": "visual_memory/vpd_reference_typography_study.py",
+    "sha256": "9e77f6e2c9bcdaea880f2aaa52e96f6161c3fabb6800d59dec8acdfffad31081"
+  },
+  "test_source": {
+    "path": "tests/test_vpd_s7_reference_method_repair.py",
+    "sha256": "ee940c99c27787398f9ec667927a5f922a38cb5066148a801b8c6a2b4eea3b6d"
+  },
+  "scope": "One bounded same-direction S7 Figma write after actual S6 isolated FAIL, no scope expansion or history rewrite",
+  "evidence_boundary": "TEST_ONLY temporary hash-rebound mutation fixtures exercise predicates; real S6 base inputs read first. No production authorization, image generation, pixel judgement or business writes performed by tests.",
+  "scoped_positive_negative_checks": [
+    "Exactly one Root count6 write; count7 exhausted; attempt history and budgets untouched",
+    "Missing/wrong parent grant, wrong scope/G4/actor, acceptedhuman, empty expert refs andlargerbudget reject",
+    "Passing/missingpixels/wrongexport review reject",
+    "Inherited/wrongmodel/extraimages/wrongcallmanifest/creator agent reject",
+    "NewTea/photo/image/paid/training/auto/mainline/reset reject; exactmethod authorization required",
+    "Existinggrant andattemptprefix cannotbe rewritten"
+  ],
+  "old_guard_regression": "Previous S5 10 and S6 15 actual tests were already run. New branch is optional with unchanged default S5 expected reviewer path. No broad re-run claimed."
+}
