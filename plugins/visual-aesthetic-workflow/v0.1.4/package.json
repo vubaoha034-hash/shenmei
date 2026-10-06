@@ -1,0 +1,15 @@
+{
+  "name": "liu-visual-aesthetic-workflow",
+  "version": "0.1.4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test core.test.mjs worker.test.mjs entry.test.mjs && python3 scripts/test_exact_composite.py",
+    "db:generate": "drizzle-kit generate"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.11",
+    "drizzle-orm": "0.45.3"
+  }
+}

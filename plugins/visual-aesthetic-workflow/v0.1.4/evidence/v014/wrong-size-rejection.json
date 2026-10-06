@@ -1,0 +1,41 @@
+{
+  "schema": "exact-composite-postconditions/v1",
+  "engineering_pass": false,
+  "status": "FAIL",
+  "reference_dimensions": [
+    709,
+    1536
+  ],
+  "output_dimensions": [
+    941,
+    1672
+  ],
+  "exact_aspect_ratio": false,
+  "outside_mask_changed_pixels": null,
+  "outside_mask_tolerance": 0,
+  "lossless_png": true,
+  "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+  "output_sha256": "4c0c7c9d0e0250c6cde2e03ba681b187ef00106a8174ef27229cd366703b9b7d",
+  "mask_manifest_sha256": "2ff509b431511b4e7db717f70a59c79ed2f48eaaf651b3d94c8323103b31185f",
+  "deterministic_provenance_valid": false,
+  "semantic_preservation": {
+    "photo": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "two_people": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "cabin": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "sunset": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "water": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "crop": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+    "layout": "REQUIRES_ACTUAL_PIXEL_REVIEW"
+  },
+  "review_verification": "CARRIER_SUPPLIED_NOT_INDEPENDENTLY_VERIFIED_BY_SCRIPT",
+  "final_eligible": false,
+  "business_acceptance_changed": false,
+  "failures": [
+    "EXACT_REFERENCE_DIMENSIONS_REQUIRED",
+    "EXACT_ASPECT_RATIO_REQUIRED",
+    "GENERATIVE_GUIDE_CANNOT_BE_FINAL",
+    "OUTSIDE_MASK_DIFF_NOT_MEASURABLE",
+    "DETERMINISTIC_COMPOSITE_PROVENANCE_REQUIRED"
+  ],
+  "scope": "SYNTHETIC_WRONG_SIZE_PROBE_ON_REAL_REFERENCE_NOT_ACTUAL_V013_RESULT"
+}
