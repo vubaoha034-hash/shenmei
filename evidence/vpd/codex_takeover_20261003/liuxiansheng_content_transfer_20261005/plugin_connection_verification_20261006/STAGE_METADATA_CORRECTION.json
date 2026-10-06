@@ -1,0 +1,17 @@
+{
+  "schema": "vpd-plugin-verification-stage-metadata-correction/v1",
+  "recorded_at": "2026-10-06T06:41:30.898899+00:00",
+  "incorrect_commit": "1c0962182d668c97fce6594be9d5a4d82f99ed5b",
+  "baseline_commit": "52364691aff11efccae1ce5c22915e331adb2415",
+  "source": "Root used status-card display label as --focus, instead of actual native current_stage; native validator passed but independent Git readback caught the metadata drift.",
+  "bad_current_stage": "CORRECT_SOURCE_TYPOGRAPHY_INDEPENDENT_WORKER",
+  "restore_current_stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "restore_checkpoint_current_stage_and_current_focus": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+  "preserve": "status/next/task/mainline/worker acceptance/versions/source/photography/plugin source/private policy",
+  "failed_readback": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/PUBLICATION_READBACK_1c09621_STAGE_DIFFERENCE.json",
+    "sha256": "6ab227c0a42466c56ee321bce4054a6deb4cfb0a04e0a24ccc0a809ecb9de3ec"
+  },
+  "connection_remains": "NOT_VERIFIED_HTTP401",
+  "new_visual_or_production_calls": 0
+}
