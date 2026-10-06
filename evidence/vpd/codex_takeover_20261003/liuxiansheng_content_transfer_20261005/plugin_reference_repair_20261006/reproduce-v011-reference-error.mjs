@@ -1,0 +1,13 @@
+import {execFileSync} from 'node:child_process';
+import {writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const commit='8bf1d47144db96573f33e218122058ac975850c5';
+const {createCore}=await import(pathToFileURL(resolve('plugins/visual-aesthetic-workflow/v0.1.1/core.mjs')));
+const core=createCore({resolveHead:async()=>commit,readFile:async({commit,path})=>execFileSync('git',['show',commit+':'+path],{maxBuffer:2000000}),authorize:async who=>who.userId==='LOCAL_ENGINEERING_TEST_IDENTITY'});
+const args={expected_commit:commit,reference_sha256:'0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf',new_copy:{main_wordmark:'地图以外',english:'for liuxiansheng'}};
+const response=await core.handle({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'compile_transfer_plan',arguments:args}},{userId:'LOCAL_ENGINEERING_TEST_IDENTITY'});
+const result={schema:'vpd-local-production-source-regression-reproduction/v1',recorded_at:new Date().toISOString(),runtime:'Node '+process.version,source_version:'0.1.1',native_repository_commit:commit,args,response,local_engineering_only:true,hosted_tool_call:false,actual_native_git_blobs:true};
+if(response.status!==409 || response.body.error?.message!=='Reference SHA is not the currently bound reference')throw Error('Expected baseline rejection not reproduced');
+writeFileSync(resolve('evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_reference_repair_20261006/BASELINE_REPRODUCTION.json'),JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({baseline_reproduced:true,status:response.status,error:response.body.error.message,hosted_tool_call:false}));

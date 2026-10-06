@@ -1,0 +1,224 @@
+{
+  "schema": "vpd-plugin-real-tool-catalog-refresh/v1",
+  "page": "https://chatgpt.com/settings/plugins-settings/plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c",
+  "observed_ui_action": "刷新工具",
+  "network": {
+    "reqid": 226,
+    "method": "POST",
+    "path": "/backend-api/aip/connectors/mcp/refresh_actions",
+    "status": 200
+  },
+  "actions": [
+    {
+      "name": "get_current_workflow",
+      "description": "Read the actual latest authoritative GitHub commit, bound native state and current artwork locations. Does not retrieve pixels or manufacture acceptance.",
+      "description_model": "",
+      "is_consequential": false,
+      "title": null,
+      "is_enabled": true,
+      "params": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "return_type": {},
+      "supported_auth": [
+        {
+          "type": "OAUTH",
+          "scopes": null
+        }
+      ],
+      "is_read_only": true,
+      "is_open_world": true,
+      "is_destructive": true,
+      "oauth_scopes": null,
+      "meta": {
+        "openai/outputSchemaMissing": true
+      },
+      "templates": [],
+      "visibility": "public"
+    },
+    {
+      "name": "compile_transfer_plan",
+      "description": "Prepare a compact reference → copy → image → Figma → isolated pixel review → repair → save draft. native_task (default) requires the bound native reference SHA; user_request requires reference_source and new_copy, accepts an optional unverified SHA, and never rebinds native state. Planning grants no execution quota; the actual execution carrier checks existing user authorization within its scope.",
+      "description_model": "",
+      "is_consequential": false,
+      "title": null,
+      "is_enabled": true,
+      "params": {
+        "type": "object",
+        "properties": {
+          "expected_commit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference_scope": {
+            "type": "string",
+            "enum": [
+              "native_task",
+              "user_request"
+            ],
+            "default": "native_task"
+          },
+          "reference_source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "reference_sha256": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 64,
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "new_copy": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 20,
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "variables": {
+            "type": "object",
+            "maxProperties": 7,
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        },
+        "required": [
+          "expected_commit"
+        ],
+        "additionalProperties": false
+      },
+      "return_type": {},
+      "supported_auth": [
+        {
+          "type": "OAUTH",
+          "scopes": null
+        }
+      ],
+      "is_read_only": true,
+      "is_open_world": true,
+      "is_destructive": true,
+      "oauth_scopes": null,
+      "meta": {
+        "openai/outputSchemaMissing": true
+      },
+      "templates": [],
+      "visibility": "public"
+    },
+    {
+      "name": "save_human_feedback",
+      "description": "Save artwork-bound human feedback as append-only durable intake for Root reconciliation. Does not change the native task, review verdict or acceptance.",
+      "description_model": "",
+      "is_consequential": true,
+      "title": null,
+      "is_enabled": true,
+      "params": {
+        "type": "object",
+        "properties": {
+          "expected_commit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artwork_sha256": {
+            "type": "string",
+            "minLength": 1
+          },
+          "idempotency_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "APPROVE",
+              "REJECT",
+              "COMMENT"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          }
+        },
+        "required": [
+          "expected_commit",
+          "artwork_sha256",
+          "idempotency_key",
+          "verdict",
+          "comment"
+        ],
+        "additionalProperties": false
+      },
+      "return_type": {},
+      "supported_auth": [
+        {
+          "type": "OAUTH",
+          "scopes": null
+        }
+      ],
+      "is_read_only": false,
+      "is_open_world": true,
+      "is_destructive": false,
+      "oauth_scopes": null,
+      "meta": {
+        "openai/outputSchemaMissing": true
+      },
+      "templates": [],
+      "visibility": "public"
+    },
+    {
+      "name": "get_human_feedback",
+      "description": "Read this authenticated user’s non-authoritative feedback by exact idempotency key or stable cursor pages. These are not business state.",
+      "description_model": "",
+      "is_consequential": false,
+      "title": null,
+      "is_enabled": true,
+      "params": {
+        "type": "object",
+        "properties": {
+          "idempotency_key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{8,128}$"
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "additionalProperties": false
+      },
+      "return_type": {},
+      "supported_auth": [
+        {
+          "type": "OAUTH",
+          "scopes": null
+        }
+      ],
+      "is_read_only": true,
+      "is_open_world": false,
+      "is_destructive": true,
+      "oauth_scopes": null,
+      "meta": {
+        "openai/outputSchemaMissing": true
+      },
+      "templates": [],
+      "visibility": "public"
+    }
+  ],
+  "no_auth_headers_or_account_identifiers_saved": true
+}

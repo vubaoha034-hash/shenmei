@@ -1,0 +1,29 @@
+{
+  "schema": "vpd-local-production-source-regression-reproduction/v1",
+  "recorded_at": "2026-10-06T10:36:37.582Z",
+  "runtime": "Node v24.19.0",
+  "source_version": "0.1.1",
+  "native_repository_commit": "8bf1d47144db96573f33e218122058ac975850c5",
+  "args": {
+    "expected_commit": "8bf1d47144db96573f33e218122058ac975850c5",
+    "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+    "new_copy": {
+      "main_wordmark": "地图以外",
+      "english": "for liuxiansheng"
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "error": {
+        "code": -32010,
+        "message": "Reference SHA is not the currently bound reference"
+      }
+    }
+  },
+  "local_engineering_only": true,
+  "hosted_tool_call": false,
+  "actual_native_git_blobs": true
+}

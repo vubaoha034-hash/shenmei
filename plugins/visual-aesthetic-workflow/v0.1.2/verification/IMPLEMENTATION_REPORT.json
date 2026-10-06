@@ -1,0 +1,37 @@
+{
+  "schema": "visual-aesthetic-workflow-reference-repair-implementation/v1",
+  "candidate_version": "0.1.2",
+  "repository_head_at_implementation": "8bf1d47144db96573f33e218122058ac975850c5",
+  "write_scope": "plugins/visual-aesthetic-workflow/v0.1.2/**",
+  "test_command": "node --test core.test.mjs worker.test.mjs entry.test.mjs",
+  "test_log": "verification/test-run-01.log",
+  "tests": 56,
+  "passed": 56,
+  "failed": 0,
+  "test_exit_code": 0,
+  "build_command": "node build.mjs",
+  "build_log": "verification/build-run-01.log",
+  "build_exit_code": 0,
+  "public_tools": ["get_current_workflow", "compile_transfer_plan", "save_human_feedback", "get_human_feedback"],
+  "reference_modes": ["native_task", "user_request"],
+  "validation": [
+    "Valid native read, plan and feedback response bytes match the copied 0.1.1 core; explicit native_task equals the default mode.",
+    "Native mode rejects a different reference SHA and missing or malformed SHA.",
+    "User-request draft accepts a different canonical SHA or no SHA while marking reference verification NOT_PERFORMED.",
+    "Missing source/copy, unbounded/control-character source, malformed hashes, invalid scopes, arrays and object substitutions are rejected.",
+    "Foreign/missing authorization, stale expected HEAD, in-read HEAD advancement, native mirror tampering and evidence tampering are rejected.",
+    "User-request draft does not return old artwork, reference SHA, copy, feedback wording, review verdicts, acceptance or experience.",
+    "Native state read output remains identical before and after user-request planning on synthetic scoped-feedback and actual pinned 8bf1 fixtures.",
+    "HTTP user-request planning does not touch feedback storage; existing append-only native-artwork D1 semantics and four-tool surface remain intact.",
+    "Package version, HTTP root, core initialize and GitHub User-Agent report 0.1.2.",
+    "Tracked native lock, checkpoint, adapter, START_HERE and prior release paths show no Git diff at handoff."
+  ],
+  "limitations": [
+    "Local engineering tests are not a hosted MCP call or hosted identity verification.",
+    "No actual reference pixels were retrieved or viewed by this implementation; caller SHA is format-checked only.",
+    "No artwork was generated, reviewed, accepted or saved; request drafts do not grant quota or change native state.",
+    "No deployment or Git commit was performed by the implementation worker.",
+    "The SQLite test fixtures are local synthetic feedback records, not production human feedback.",
+    "Independent source challenge and actual hosted deployment/verification remain with the parent."
+  ]
+}

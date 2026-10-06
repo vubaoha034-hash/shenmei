@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- LIU_PLUGIN_REQUEST_REFERENCE_RUNTIME_20261006 -->
+插件新参考入口补充：先读最新原生锁，再读 `plugins/visual-aesthetic-workflow/REQUEST_REFERENCE_RUNTIME.json` 和 `plugins/visual-aesthetic-workflow/v0.1.2/SKILL.md`。同一私有插件运行0.1.2、Site第4版已发布，ChatGPT新聊天真实compile_transfer_plan已返回地图以外/for liuxiansheng请求草稿；管理页刷新工具目录已实测。旧“修改地图文字”聊天仍报告内部工具错误，未声称已恢复，失败记录保留；可用验收入口https://chatgpt.com/c/6ac4d667-64d0-83ea-a6a6-782cf1719f03。新参考用user_request及真实reference_source，不重绑山野集，不套用其绿底模板；SHA未知可省略，插件仍未看图，制作前须实际核对原件。此为调用修复，不改变主线、已认可摄影、S7真人PENDING、计数或唯一下一动作；旧CURRENT_RELEASE、连接证据与S7入口按原字节作历史保存，不覆盖此运行补充。完整证据目录见runtime pointer；工程及新聊天调用通过不作审美通过。
+<!-- END_LIU_PLUGIN_REQUEST_REFERENCE_RUNTIME_20261006 -->
+
 <!-- LIU_PLUGIN_ACTUALLY_CONNECTED_20261006 -->
 刘先生·视觉设计工作流已在本ChatGPT账户实际安装并连接，至少一次真实get_current_workflow调用及原始tool结果绑定已通过独立核对。先读本分支最新原生锁和当前receipt，再读 plugins/visual-aesthetic-workflow/CONNECTION_VERIFICATION.json 与 evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_installation_20261006/README.md。旧S7_FINAL_REUSE.md、CURRENT_RELEASE.json及HTTP401记录按原哈希冻结，表示当时未验证，不覆盖本次已授权安装与真实运行。此连接记录不改变作品、主线、真人门、版本预算或唯一下一动作。实际入口https://chatgpt.com/plugins/plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c?directoryTab=personal，选择“在聊天中试用”或新聊天@选中插件后调用get_current_workflow；生产反馈写入/回读及当前Codex会话直接工具发现仍未验证。
 <!-- END_LIU_PLUGIN_ACTUALLY_CONNECTED_20261006 -->

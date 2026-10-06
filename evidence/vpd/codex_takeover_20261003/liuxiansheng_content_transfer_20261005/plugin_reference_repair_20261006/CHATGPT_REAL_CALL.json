@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-plugin-real-chatgpt-call/v1",
+  "observed_at": "2026-10-06T11:13:11.808Z",
+  "carrier": "Opera Neon actual user-account ChatGPT UI and network",
+  "conversation_url": "https://chatgpt.com/c/6ac4d667-64d0-83ea-a6a6-782cf1719f03",
+  "request": {
+    "reqid": 1053,
+    "method": "GET",
+    "path": "/backend-api/conversations/6ac4d667-64d0-83ea-a6a6-782cf1719f03?num_turns=10&include_has_versions=true",
+    "status": 200
+  },
+  "invocation": {
+    "message_id": "a5d8222c-b626-4c76-abc2-7b4f881204f1",
+    "recipient": "api_tool.call_tool",
+    "create_time": 1791284874.954836,
+    "model_slug": "gpt-5-6-thinking",
+    "thinking_effort": "max",
+    "working_turn_id": "0a0fbdb2-ec7f-4a9e-afba-ec0e44ac3824",
+    "tool": "/刘先生·视觉设计工作流/link_6ac4c007fd6881919033d63620867164/compile_transfer_plan",
+    "arguments": {
+      "expected_commit": "8bf1d47144db96573f33e218122058ac975850c5",
+      "reference_scope": "user_request",
+      "reference_source": "sediment://file_000000005b5c82088178c780dff69ff9",
+      "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+      "new_copy": {
+        "main_wordmark": "地图以外",
+        "english": "for liuxiansheng",
+        "vertical_copy": "不是所有远方，都写在地图上",
+        "footer_copy": "离开既定路线，去看未知远方"
+      }
+    }
+  },
+  "tool_response": {
+    "message_id": "6de51ca7-2985-4520-b339-cb2444494921",
+    "author_role": "tool",
+    "author_name": "api_tool.call_tool",
+    "raw_content_prefix": "{\"status\":\"DRAFT_USER_REQUEST\",\"reference_scope\":\"user_request\",\"mainline_write\":false,\"business_state_write\":false,\"execution_authorized\":false,\"execution_authority\":\"This draft grants no quota. The actual execution carrier checks this request against existing user authorization and applicable scope. Existing authorization remains valid within its scope; do not ask for repeated approval solely because this draft grants no quota.\",\"native_context\":{\"source\":{\"repository\":\"vubaoha034-hash/shenmei\",\"branch\":\"visual-program-distillation-v2-photography-design-20260814\",\"commit\":\"8bf1d47144db96573f33e218122058ac975850c5\",\"native_lock_sha256\":\"e5acb4242048d738e619cf308b607229813ba931a2be7d1479748c152a49f091\",\"lock_revision\":354,\"checkpoint_sequence\":376},\"task_id\":\"VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01\",\"stage\":\"LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT\",\"next_required_action\":\"LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER\",\"mainline_lock_id\":\"VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001\",\"mainline_locked\":true,\"native_reference_rebound\":false},\"reference_source\":\"sediment://file_000000005b5c82088178c780dff69ff9\",\"reference_sha256\":\"0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf\",\"reference_verification\":{\"status\":\"NOT_PERFORMED\",\"sha256\":\"0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf\",\"sha256_provenance\":\"CALLER_PROVIDED_NOT_VERIFIED\",\"pixels_viewed\":false},\"proposed_copy\":{\"main_wordmark\":\"地图以外\",\"english\":\"for liuxiansheng\",\"vertical_copy\":\"不是所有远方，都写在地图上\",\"footer_copy\":\"离开既定路线，去看未知远... <truncated>",
+    "complete": false,
+    "limitation": "Network inspector truncates response body at 10000 characters. The recorded prefix is original tool output, not creator or assistant self-report; response tail, footer completion and full output hash are not verified by this prefix."
+  },
+  "verified_fields": {
+    "status": "DRAFT_USER_REQUEST",
+    "reference_scope": "user_request",
+    "main_wordmark": "地图以外",
+    "english": "for liuxiansheng",
+    "reference_verification_status": "NOT_PERFORMED",
+    "pixels_viewed": false,
+    "mainline_write": false,
+    "business_state_write": false,
+    "native_reference_rebound": false,
+    "native_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "commit": "8bf1d47144db96573f33e218122058ac975850c5"
+  },
+  "technical_call_pass": true,
+  "aesthetic_pass_claimed": false,
+  "artwork_generated": false,
+  "original_chat_recovered": false,
+  "no_credentials_or_request_headers_saved": true,
+  "new_context_boundary": {
+    "new_conversation": true,
+    "original_conversation_history_supplied": false,
+    "global_memory_enabled": true,
+    "project_external_cold_aesthetic_audit": false
+  },
+  "production_correlation": {
+    "request_id": "a32bc1b955f5ae51f95c6cdf354de317",
+    "timestamp_ms": 1791284877276,
+    "path": "/mcp",
+    "status": 200,
+    "outcome": "ok",
+    "wall_ms": 1256,
+    "limits": "Same-site request timestamp corroborates captured tool response; logs contain no business payload. No full-body hash asserted."
+  }
+}

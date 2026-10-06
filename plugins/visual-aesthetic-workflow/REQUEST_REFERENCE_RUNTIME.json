@@ -1,0 +1,36 @@
+{
+  "schema": "vpd-plugin-request-reference-runtime/v1",
+  "status": "NEW_REFERENCE_DRAFT_VERIFIED_EXISTING_CHAT_FAILURE_PRESERVED",
+  "runtime_version": "0.1.2",
+  "site_version_number": 4,
+  "source_commit": "535a61558e3154b644f60b7b643566a94f1ea86f",
+  "plugin_id": "plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c",
+  "plugin_url": "https://chatgpt.com/plugins/plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c?directoryTab=personal",
+  "site_url": "https://liu-visual-workflow-20261006.deemoliul.chatgpt.site",
+  "verified_chat": "https://chatgpt.com/c/6ac4d667-64d0-83ea-a6a6-782cf1719f03",
+  "existing_chat": "https://chatgpt.com/c/6ac4c9b4-27f0-83ea-aff8-d69452372213",
+  "existing_chat_recovered": false,
+  "entry": "plugins/visual-aesthetic-workflow/v0.1.2/SKILL.md",
+  "evidence_directory": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_reference_repair_20261006",
+  "refresh_action": "管理→刷新工具（实际POST refresh_actions 200；随后原生重新连接及OAuth允许）",
+  "call_method": "新参考调用compile_transfer_plan，reference_scope=user_request，reference_source为真实附件/Drive/URL，new_copy为准确新文案。expected_commit每次从最新原生读取获得，不沿用本次验收8bf。SHA未知可不传，严禁伪造；插件没有看图，返回NOT_PERFORMED是正常边界。",
+  "native_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+  "mainline_reference_rebound": false,
+  "photography_modified": false,
+  "artwork_generated": false,
+  "feedback_persisted_tested": false,
+  "aesthetic_improvement_verified": false,
+  "limits": [
+    "旧聊天仍发生平台工具内部错误，原因未确定，停止盲重试；新聊天真实调用通过",
+    "原始工具响应只取得10000字符网络响应前缀；关键状态、源身份、主标/英文已核验，完整输出尾部哈希未验证",
+    "新聊天未继承原聊天历史但全局记忆开启，不冒充项目外冷启动审美审核",
+    "新聊天只有原附件locator，尚未实际读取该附件像素；制作前必须读取并核对原件",
+    "插件不自带图像、Figma、Drive或审稿执行工具；不作成品或视觉收益证明"
+  ],
+  "historical_pointers_preserved": [
+    "CURRENT_RELEASE.json",
+    "CONNECTION_VERIFICATION.json",
+    "v0.1.1/**",
+    "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md"
+  ]
+}
