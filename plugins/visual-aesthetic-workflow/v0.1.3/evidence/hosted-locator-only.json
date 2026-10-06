@@ -1,0 +1,125 @@
+{
+  "status": "BLOCKED",
+  "action": "STOP",
+  "reference_scope": "user_request",
+  "operation_mode": "structure_locked_edit",
+  "reference_source": "sediment://file_locator_only",
+  "reference_sha256": "UNKNOWN",
+  "mainline_write": false,
+  "business_state_write": false,
+  "execution_authorized": false,
+  "native_context": {
+    "source": {
+      "repository": "vubaoha034-hash/shenmei",
+      "branch": "visual-program-distillation-v2-photography-design-20260814",
+      "commit": "ee5e4eb7519fcabd755ee3eddac013a2652832b4",
+      "native_lock_sha256": "4eee3b6aec2ee8979bc96f3e1193636caa986b16d779bd8bdd15263e1652428f",
+      "lock_revision": 355,
+      "checkpoint_sequence": 377
+    },
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "mainline_lock_id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+    "mainline_locked": true,
+    "native_reference_rebound": false
+  },
+  "execution_contract": {
+    "schema": "structure-locked-edit/v1",
+    "operation_mode": "structure_locked_edit",
+    "reference_pixels_required": true,
+    "current_context_reference_required": true,
+    "text_to_image_allowed": false,
+    "image_operation": "EDIT_EXISTING_IMAGE_ONLY",
+    "on_reference_unavailable": "STOP",
+    "on_reference_not_bound": "STOP",
+    "reconstruct_reference_from_description_allowed": false,
+    "fallback_allowed": false,
+    "binding_status": "NOT_BOUND",
+    "reference_binding": null,
+    "binding_verified_by_server": false,
+    "execution_carrier_must_recheck": [
+      "current_context_id",
+      "attachment_id",
+      "actual_reference_bytes_sha256",
+      "pixels_viewed",
+      "same_edit_target_consumed_by_image_tool"
+    ],
+    "hard_preserve": [
+      "original_photo_pixels_and_subject",
+      "people",
+      "crop",
+      "canvas_and_aspect_ratio",
+      "main_image_region",
+      "main_title_region",
+      "top_information_region",
+      "right_vertical_region",
+      "footer_region",
+      "whitespace",
+      "color_system",
+      "existing_decorations"
+    ],
+    "allowed_changes": [
+      "local_glyph_strokes_required_for_exact_new_characters"
+    ],
+    "prohibited_additions": [
+      "maps",
+      "routes",
+      "place_names",
+      "icons",
+      "new_people",
+      "new_decorations"
+    ]
+  },
+  "hard_preserve": [
+    "original_photo_pixels_and_subject",
+    "people",
+    "crop",
+    "canvas_and_aspect_ratio",
+    "main_image_region",
+    "main_title_region",
+    "top_information_region",
+    "right_vertical_region",
+    "footer_region",
+    "whitespace",
+    "color_system",
+    "existing_decorations"
+  ],
+  "blocked_until": [
+    "CURRENT_CONTEXT_REFERENCE_PIXELS_READ_VIEWED_AND_BOUND"
+  ],
+  "proposed_copy": {
+    "main_wordmark": "地图以外",
+    "english": "for liuxiansheng",
+    "vertical_copy": "不是所有远方，都写在地图上",
+    "footer_copy": "离开既定路线，去看未知远方"
+  },
+  "edit_directives": {
+    "replace_text_only": {
+      "main_wordmark": "地图以外",
+      "english": "for liuxiansheng",
+      "vertical_copy": "不是所有远方，都写在地图上",
+      "footer_copy": "离开既定路线，去看未知远方"
+    },
+    "allowed_changes": [
+      "local_glyph_strokes_required_for_exact_new_characters"
+    ]
+  },
+  "prompt_status": "NO_TEXT_TO_IMAGE_PROMPT",
+  "artwork_generated": false,
+  "independent_review_performed": false,
+  "workflow": [
+    {
+      "step": "reference",
+      "action": "STOP unless this context contains readable, viewed original attachment pixels bound to the same actual image-tool edit target. A sediment locator or a description is insufficient."
+    },
+    {
+      "step": "image",
+      "action": "The execution carrier MUST recheck actual bytes, context and target immediately before calling EDIT_EXISTING_IMAGE_ONLY. No text-to-image or reconstruction fallback. Preserve all hard_preserve regions; change only required local glyph strokes."
+    },
+    {
+      "step": "review",
+      "action": "Compare actual edited output with actual reference pixels. Report FAIL for missing or changed original photograph, people, cabin, sunset, water, crop or overall layout. Engineering tests are not pixel acceptance."
+    }
+  ]
+}
