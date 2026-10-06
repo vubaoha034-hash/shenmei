@@ -1,0 +1,99 @@
+{
+  "schema": "bounded-independent-plugin-connection-readback/v1",
+  "observer": "/root/s7_fresh_repository_entry_test",
+  "sealed_at_utc": "2026-10-06T06:32:56Z",
+  "result": "BLOCKED_HOSTED_PLUGIN_CONNECTION_VERIFICATION",
+  "scope": "Read-only supplied actual probe, current tool inventory, published-source baseline and bounded native constraints. No production or pixel audit.",
+  "actual_probe_read": {
+    "path": ".liu-visual-private/plugin_connection_verification_20261006/ACTUAL_HOSTED_SERVICE_READONLY_PROBE.json",
+    "sha256": "81dca9e64a1ef654469691369c0ad01150578c377bbefcbb8cbb9c048bb97f09",
+    "bytes": 1194,
+    "executed_by": "Root; independently read by this observer, not reexecuted",
+    "request_time_utc": "2026-10-06T06:20:18.554876+00:00",
+    "method": "initialize",
+    "protocol": "2025-06-18",
+    "canonical_url": "https://liu-visual-workflow-20261006.deemoliul.chatgpt.site/mcp",
+    "TLS_verification": true,
+    "forged_identity": false,
+    "http_status": 401,
+    "content_type": "text/plain; charset=utf-8",
+    "body": "Unauthorized",
+    "body_bytes": 12,
+    "body_sha256": "d089c8a9fc28e4e50223eb38c9409e362521be9380a37341304fbac7a4cd9e5f",
+    "scope": "Official Sites service-token probe; not authenticated ChatGPT plugin connection"
+  },
+  "actual_tool_inventory": {
+    "observed_at_utc": "2026-10-06T06:28:32Z",
+    "method": "ALL_TOOLS name filter",
+    "queried": ["get_current_workflow", "compile_transfer_plan", "save_human_feedback", "get_human_feedback"],
+    "matches": [],
+    "limit": "No tools exposed in this observer session; global installation/other sessions not established"
+  },
+  "published_source_read": {
+    "method": "Actual local git show of fixed5236469 blobs, reusing this observer's sealed115de/523 official GitHub readback as publication baseline; no fresh remote request in this diagnostic",
+    "commit": "52364691aff11efccae1ce5c22915e331adb2415",
+    "core": {
+      "path": "plugins/visual-aesthetic-workflow/v0.1.1/core.mjs",
+      "sha256": "dece3c584aec7634c865c482f323f80bc43a7cc210f8499d48cb19d17a228ddd",
+      "lines": [87, 92, 96, 101, 130, 132, 134, 142, 147, 153],
+      "finding": "Initialize returns JSON200 before identity/GitHub/DB tool checks. Current-workflow human-feedback projection is scoped historicalS4. Feedback intake is non-authoritative, artwork-bound, acceptance_write:false. Core preparation alone is not persistence."
+    },
+    "worker": {
+      "path": "plugins/visual-aesthetic-workflow/v0.1.1/worker.mjs",
+      "sha256": "fa7ad1d5509838bc6ed92189226fb2078f3122a683a01b936e93a8c371f157e4",
+      "lines": [79, 80, 81, 82, 85, 91, 101, 103, 106],
+      "finding": "Tool identity comes only from Sites trusted authenticated-user-id. Save must reach durable host storage; authenticated feedback read is actor-bound."
+    },
+    "native_guard": {
+      "path": "visual_memory/vpd_reference_typography_study.py",
+      "sha256": "69c3632c726dd1889bbd3435fb9ba75e6a7f2c9afcc5f51ae793f4dd1aeb940d",
+      "lines": [28, 48, 49, 50, 545, 546, 547, 548, 549, 550],
+      "finding": "Keep current humanPENDING, prior history, Tea29/28, photography and unique LIU_REVIEW action. Transfer artifacts may append."
+    },
+    "native_writer": {
+      "path": "scripts/vpd_codex_takeover.py",
+      "sha256": "e9b9cac69b0bfc9a80cf0cdcd001c5bdc1e6ec28174ec01c819bf4f476791638",
+      "lines": [64, 65, 80, 81, 87, 91, 92, 95],
+      "finding": "Existing ROOT_EXECUTOR-only transaction; retain status/next and outer3/2 envelope. Child cannot execute business writer."
+    }
+  },
+  "bounded_native_observation": {
+    "worktree_revision": 352,
+    "checkpoint_sequence": 374,
+    "lock_sha256": "766ecd25eca186196c8742789e55d1dd7a61777cc1eefa6a5eed0014f88e28a9",
+    "checkpoint_sha256": "995ec99d4252f0d77c956777ad656abf1915b3c377a0a5ff9d71052059db44fd",
+    "adapter_sha256": "9a23f131023da65e73b74017231f036c760245f1782848216c07b4d1105888c6",
+    "next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "human_acceptance": "PENDING",
+    "transfer_attempts": 7,
+    "artifacts_observed": "365 baseline to371 worktree",
+    "tea_budget": "29 versions/28 revisions",
+    "delivery_manifest": "DELIVERY_MANIFEST_S7_FINAL.json sha189e39abde18bbd8c185e0eafc7ff0ad2775eb27816f517fbc8f3d7ff1ce5d12",
+    "writer_full_validation": "Root subsequently reports actual exit0 at352/374, parent5236469 and unchanged next. Not independently run or treated as hosted plugin success by this observer.",
+    "current_worktree_publication": "NOT_VERIFIED"
+  },
+  "cause_limit": {
+    "inference": "Plain401 is consistent with access/auth rejection before the published initialize success branch. Exact denying layer is unconfirmed.",
+    "not_established": ["OAuth root cause", "Credential validity or expiry", "Valid-user failure", "Application code defect", "Installed or connected plugin", "Hosted workflow success", "Production feedback persistence"],
+    "no_token_saved": true,
+    "no_refresh_retry_or_bypass": true
+  },
+  "minimal_native_save": {
+    "method": "Root alone appends immutable SHA-bound evidence refs to current receipt artifact_refs and transfer.artifacts using the existing native writer, after its required checks actually complete. Do not replace old feedback or alter guards.",
+    "observation": "Preserve literal 我觉得很不错，而后现在验证, bound to S7 ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762. This observer received the literal from Root and did not read another task's human runtime.",
+    "verification": "Record real initialize401 and NOT_VERIFIED connection, no successful tools/list/workflow/feedback call. Root's reported version3/private-site metadata and suggestion are not individual connection proof.",
+    "preserve": ["Current status/stage/unique next", "S7 humanPENDING under current contract", "S4 scoped feedback and prior failures", "7 transfer versions/2 image guides", "Tea29/28 and protected7fd photograph", "No mainline change, image, photography, Figma write, budget reset, paid compute, training, automation or system promotion"],
+    "projection_limit": "Native observation append does not automatically change published S4 latest_human_feedback or prove a D1 feedback save.",
+    "future_success_evidence": "After actual individual connection, require real hosted get_current_workflow. If feedback storage is tested, use COMMENT with exact S7 SHA/latest returned commit/stable key, require persisted:true plus durable receipt and real get_human_feedback readback. No such calls succeeded here."
+  },
+  "execution": {
+    "network_calls": 0,
+    "full_validator_or_tests": 0,
+    "image_or_pixel_or_model_audit": 0,
+    "drive_or_figma_calls": 0,
+    "deploy_or_hosted_feedback_calls": 0,
+    "business_public_source_writes": 0,
+    "writes": "Only this sealed JSON in the authorized private independent_readback directory; an unexecuted preparation script/inventory was removed before sealing",
+    "stop_after_recording": true
+  }
+}

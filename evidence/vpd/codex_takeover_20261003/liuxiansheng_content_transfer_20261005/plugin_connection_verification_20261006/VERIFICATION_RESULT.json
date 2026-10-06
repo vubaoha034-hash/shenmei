@@ -1,0 +1,60 @@
+{
+  "schema": "vpd-private-plugin-actual-verification-result/v1",
+  "recorded_at": "2026-10-06T06:25:50.438890+00:00",
+  "native_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+  "baseline_commit": "52364691aff11efccae1ce5c22915e331adb2415",
+  "baseline_native_revision": 351,
+  "baseline_checkpoint_sequence": 373,
+  "result": "BLOCKED_AUTH_CONNECTION_NOT_VERIFIED",
+  "human_S7_positive_observation": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/HUMAN_S7_POSITIVE_FEEDBACK.json",
+    "sha256": "69c32bcd68828212a6c41232cd338410482f64d28e90d731b20741695d4fd0e1"
+  },
+  "connection_discovery": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/CONNECTION_DISCOVERY.json",
+    "sha256": "3adce08bfc0bcac492d4f1a8a7b3c990aed16576ffaf79bea9a9490003f4e77c"
+  },
+  "actual_readonly_probe": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/ACTUAL_HOSTED_SERVICE_READONLY_PROBE.json",
+    "sha256": "81dca9e64a1ef654469691369c0ad01150578c377bbefcbb8cbb9c048bb97f09"
+  },
+  "earlier_network_sandbox_failure": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/ATTEMPT1_NETWORK_SANDBOX_FAILURE.json",
+    "sha256": "765f1289c0517b3127a6a2f00d7bcc2539cdd707aaaa9750343a64d0065f7195"
+  },
+  "probe_source": {
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_connection_verification_20261006/probe_hosted_readonly.py",
+    "sha256": "6a2f41a1790f5fa992d2f4b8e5c658abd9f3c0152c482be4644c5a86935b7ca9"
+  },
+  "native_state_check": {
+    "command": "python scripts/verify_visual_memory.py --vpd-state --status-card",
+    "actual_exit_code": 0,
+    "actual_chunk": "46827f",
+    "scope": "native351/checkpoint373; current task/history/budget/evidence integrity; not aesthetics, connection, or production feedback"
+  },
+  "confirmed": {
+    "private_site_active_version3_same_plugin": true,
+    "private_access_preserved_one_owner": true,
+    "mcp_connection_settings_present": true,
+    "TLS_actual_service_initialize_HTTP401": true,
+    "no_forged_user_identity": true
+  },
+  "not_verified": {
+    "installation": true,
+    "ChatGPT_OAuth_connection": true,
+    "MCP_initialization_success": true,
+    "get_current_workflow": true,
+    "save_human_feedback": true,
+    "get_human_feedback": true,
+    "production_feedback_persistence": true
+  },
+  "actual_successful_plugin_tool_calls": 0,
+  "actual_feedback_write_calls": 0,
+  "actual_image_calls": 0,
+  "actual_figma_writes": 0,
+  "authorization_changes": 0,
+  "business_next_action_not_changed": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+  "technical_next_step": "User completes installation/connection of the existing private plugin, then actual authenticated get_current_workflow; if successful save this bound real comment and read it back. Not a new business task or automatic acceptance.",
+  "diagnosis_limit": "Plaintext401 at initialization differs from app JSON-RPC errors and is consistent with front authentication boundary; exact OAuth/provider cause not established. Official service token is not a signed-in user identity. No code/runtime pass claimed.",
+  "native_acceptance_limit": "Direct positive S7 feedback is preserved. Existing immutable S7 protocol projections remain PENDING; no guard loosened or historical verdict rewritten. This observation is not hosted feedback persistence."
+}
