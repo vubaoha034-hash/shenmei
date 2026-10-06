@@ -1,0 +1,37 @@
+{
+  "schema": "vpd-local-core-real-github-readback/v1",
+  "checked_at": "2026-10-06T05:38:24.931Z",
+  "scope": "LOCAL_RUNTIME_WITH_REAL_OFFICIAL_GITHUB_TRANSPORT; local test authorization, not hosted identity, MCP connection or feedback write",
+  "http_status": 502,
+  "github_calls": [
+    {
+      "url": "https://api.github.com/repos/vubaoha034-hash/shenmei/git/ref/heads/visual-program-distillation-v2-photography-design-20260814",
+      "status": 200,
+      "bytes": 527,
+      "sha256": "93d4cb0857f15fc59d35784ac2e4c7606042d647916fd3f55993761ccde31551"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vubaoha034-hash/shenmei/3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d/continuity/vpd/LATEST_CHECKPOINT.json",
+      "status": 200,
+      "bytes": 303993,
+      "sha256": "92164e2515ed1b87b566a0e7a80761bf404ba8eb30af8145fc5ac4caa426714d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vubaoha034-hash/shenmei/3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d/PROJECT_CONTROL_ADAPTER.json",
+      "status": 200,
+      "bytes": 365360,
+      "sha256": "60cf4908371e2bed2d241b33510a8ee526515951834c3a132f751a6c7dbd10bf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vubaoha034-hash/shenmei/3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d/continuity/vpd/CURRENT_TASK_LOCK.json",
+      "transport_error": "The operation was aborted due to timeout",
+      "cause": null
+    }
+  ],
+  "current": null,
+  "error": {
+    "code": -32603,
+    "message": "Authoritative repository read failed; no state or acceptance was changed"
+  },
+  "production_plugin_connection_verified": false
+}

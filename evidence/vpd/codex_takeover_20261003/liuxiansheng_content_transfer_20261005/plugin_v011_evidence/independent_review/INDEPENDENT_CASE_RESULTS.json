@@ -1,0 +1,270 @@
+{
+  "schema": "vpd-plugin-v011-independent-engineering-cases/v1",
+  "actual_context": "Retained prior S4 publication context; not an aesthetic cold review",
+  "current_commit": "3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d",
+  "legacy_commit": "4d128f7b44dc43163f021b5717f5e003ca70a323",
+  "total": 22,
+  "passed": 22,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "original 0.1.0 rejects actual current native 350/372",
+      "pass": true,
+      "status": 409,
+      "error": "Current reuse entry mismatch",
+      "read_count": 7
+    },
+    {
+      "name": "0.1.1 reads actual native three-file bound S7 entry",
+      "pass": true,
+      "status": 200,
+      "read_count": 16,
+      "all_reads_fixed_commit": true
+    },
+    {
+      "name": "0.1.1 retains actual legacy S4 344/366 fixed blobs",
+      "pass": true,
+      "status": 200,
+      "read_count": 14
+    },
+    {
+      "name": "S7 entry altered bytes retain old SHA and are rejected",
+      "pass": true,
+      "status": 409,
+      "error": "EVIDENCE_HASH_MISMATCH: continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+      "read_count": 8
+    },
+    {
+      "name": "coherent unknown entry with correct own SHA is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "Current reuse entry mismatch",
+      "read_count": 7
+    },
+    {
+      "name": "allowed paths with mismatched native entry projections are rejected",
+      "pass": true,
+      "status": 409,
+      "error": "Current reuse entry mismatch",
+      "read_count": 7
+    },
+    {
+      "name": "all mainline mirrors and lock hashes coherent but changed policy are rejected",
+      "pass": true,
+      "status": 409,
+      "error": "MAINLINE_TAMPER: locked policy changed; requires explicit implementation revision",
+      "read_count": 3
+    },
+    {
+      "name": "coherent authority path traversal is rejected before external read",
+      "pass": true,
+      "status": 409,
+      "error": "Invalid repository evidence path",
+      "read_count": 5
+    },
+    {
+      "name": "checkpoint native lock hash mismatch is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "STATE_BINDING_MISMATCH: native lock hash/revision",
+      "read_count": 3
+    },
+    {
+      "name": "adapter native lock hash mismatch is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "STATE_BINDING_MISMATCH: native lock hash/revision",
+      "read_count": 3
+    },
+    {
+      "name": "native project identity mismatch is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "Native task identity mismatch",
+      "read_count": 3
+    },
+    {
+      "name": "native task identity mismatch is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "Native stage/status mismatch",
+      "read_count": 3
+    },
+    {
+      "name": "native next action mismatch is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "Native next-action mismatch",
+      "read_count": 3
+    },
+    {
+      "name": "HEAD drift after exact fixed snapshot is rejected",
+      "pass": true,
+      "status": 409,
+      "error": "HEAD_CHANGED_DURING_READ: retry on latest commit",
+      "read_count": 16
+    },
+    {
+      "name": "missing identity is rejected before reading native data",
+      "pass": true,
+      "status": 401,
+      "error": "Authenticated user identity required",
+      "read_count": 0
+    },
+    {
+      "name": "unauthorized identity is rejected before reading native data",
+      "pass": true,
+      "status": 403,
+      "error": "User is not authorized for this workflow",
+      "read_count": 0
+    },
+    {
+      "name": "body identity cannot override authorization",
+      "pass": true,
+      "status": 400,
+      "error": "Unsupported argument: identity",
+      "read_count": 0
+    },
+    {
+      "name": "wrong expected commit is rejected before evidence reads",
+      "pass": true,
+      "status": 409,
+      "error": "HEAD_CHANGED: reload current workflow",
+      "read_count": 0
+    },
+    {
+      "name": "current transfer plan is non-authorizing and cannot promote acceptance",
+      "pass": true,
+      "status": 200,
+      "execution_authorized": false,
+      "status_value": "DRAFT_ROOT_SCOPE_CHECK_REQUIRED"
+    },
+    {
+      "name": "built core is source byte-identical and actually reads S7",
+      "pass": true,
+      "status": 200,
+      "core_sha256": "dece3c584aec7634c865c482f323f80bc43a7cc210f8499d48cb19d17a228ddd",
+      "worker_sha256": "fa7ad1d5509838bc6ed92189226fb2078f3122a683a01b936e93a8c371f157e4"
+    },
+    {
+      "name": "built HTTP worker imports new core with initialization and homepage 0.1.1",
+      "pass": true,
+      "status": 200,
+      "initialize_version": "0.1.1",
+      "homepage_version": "0.1.1",
+      "scope": "LOCAL_TEST_HEADER_AND_ADAPTERS_ONLY_NOT_HOSTED_AUTH"
+    },
+    {
+      "name": "built github adapter preserves immutable raw URL and reports 0.1.1 User-Agent",
+      "pass": true,
+      "scope": "MOCK_TRANSPORT_REAL_FIXED_BLOB_NO_NETWORK",
+      "calls": [
+        {
+          "url": "https://raw.githubusercontent.com/vubaoha034-hash/shenmei/3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d/continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+          "headers": {
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "liu-visual-workflow/0.1.1"
+          },
+          "cache": "no-store"
+        }
+      ]
+    }
+  ],
+  "observations": {
+    "current": {
+      "source": {
+        "repository": "vubaoha034-hash/shenmei",
+        "branch": "visual-program-distillation-v2-photography-design-20260814",
+        "commit": "3e6a5638c2af2bedcfd66d23fabf6aa7d35c957d",
+        "native_lock_sha256": "2506c2089c8c7e97039c78e8d668d5e794dde12a333846a6c5fe3ae0467ad525",
+        "lock_revision": 350,
+        "checkpoint_sequence": 372
+      },
+      "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+      "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+      "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+      "entry_path": "continuity/vpd/codex_takeover_20261003/S7_FINAL_REUSE.md",
+      "entry_text_sha256": "60795ad544f4ad7dd3334e75de3f17b68ac25e39066a1942d3357ea68fca62b9",
+      "artwork_sha256": "ed03ba67ca82da6920e49ab44f42f73f112d8c9bc25b841cb47ebcfc7a583762",
+      "acceptance": {
+        "recorded_ai_verdict": "CONTENT_TRANSFER_PASS_WITH_LIMITATIONS",
+        "cold_pixel_evidence": "RECORDED_BOUND_RUNTIME_EVIDENCE_NOT_REEXECUTED",
+        "human": "PENDING",
+        "whole_visual_system_complete": false,
+        "promotion_allowed": false,
+        "historical_ai_pass_is_not_human_acceptance": true
+      },
+      "capabilities": {
+        "github_state_read": true,
+        "image_generation": false,
+        "drive_pixels": false,
+        "figma_edit": false,
+        "independent_reviewer": false,
+        "business_state_write": false,
+        "training": false,
+        "scheduling": false
+      },
+      "evidence": {
+        "delivery": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S7_FINAL.json",
+          "sha256": "189e39abde18bbd8c185e0eafc7ff0ad2775eb27816f517fbc8f3d7ff1ce5d12"
+        },
+        "review": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_final_verified_review/PIXEL_REVIEW.json",
+          "sha256": "696c81e9324c00f7785445951de9191d9cf10100ccf47504411ca031ada5e387"
+        },
+        "isolation": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_final_verified_review/ISOLATION_AUDIT.json",
+          "sha256": "733b99cee0911ad2a409011016a0a0e1e516aad2dc27a627fc282bf7f78c888b"
+        }
+      }
+    },
+    "legacy": {
+      "source": {
+        "repository": "vubaoha034-hash/shenmei",
+        "branch": "visual-program-distillation-v2-photography-design-20260814",
+        "commit": "4d128f7b44dc43163f021b5717f5e003ca70a323",
+        "native_lock_sha256": "c1194ce16a8b2b41904da36a2542032f1285fd7f3fa9c6f5cbf79e0b2a2074c1",
+        "lock_revision": 344,
+        "checkpoint_sequence": 366
+      },
+      "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+      "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+      "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+      "entry_path": "continuity/vpd/codex_takeover_20261003/WORKER_CURRENT_REUSE.md",
+      "entry_text_sha256": "52ef6aee84c575b92f5d22d1b565405818c50d069fb8a23d576d6234e55565f3",
+      "artwork_sha256": "ddb621ebf7e230279a1358b1b93ab9fcd55705b7e6ca99af8649aa3295ab1ca4",
+      "acceptance": {
+        "recorded_ai_verdict": "CONTENT_TRANSFER_PASS_WITH_LIMITATIONS",
+        "cold_pixel_evidence": "RECORDED_BOUND_RUNTIME_EVIDENCE_NOT_REEXECUTED",
+        "human": "PENDING",
+        "whole_visual_system_complete": false,
+        "promotion_allowed": false
+      },
+      "capabilities": {
+        "github_state_read": true,
+        "image_generation": false,
+        "drive_pixels": false,
+        "figma_edit": false,
+        "independent_reviewer": false,
+        "business_state_write": false,
+        "training": false,
+        "scheduling": false
+      },
+      "evidence": {
+        "delivery": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/DELIVERY_MANIFEST_S4.json",
+          "sha256": "8ab2d77958758bb40f44a1c46e817a2cdfdc2d7f685a7b8f7d08178ea2d5d001"
+        },
+        "review": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/PIXEL_REVIEW.json",
+          "sha256": "aac47a7b209030672bb9a40815293a48c4c68175d9a606bd6ddae5a314fb3306"
+        },
+        "isolation": {
+          "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s4_verified_review/ISOLATION_AUDIT.json",
+          "sha256": "805d836dadcb4a0b60a88a1107ef8728442772d489192e9dbefa737e5d005441"
+        }
+      }
+    }
+  }
+}

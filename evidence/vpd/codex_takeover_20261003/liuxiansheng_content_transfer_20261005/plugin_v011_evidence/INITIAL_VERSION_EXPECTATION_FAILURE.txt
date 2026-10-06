@@ -1,0 +1,67 @@
+✖ MCP initialize, stateless discovery, ping and initialized notification expose no private state (4.3814ms)
+✔ no identity, unauthorized identity and caller-provided identity arguments cannot read project data (0.855ms)
+✔ actual pinned Git blobs satisfy native bindings and expose real S4 locations with scoped recorded evidence (1679.4014ms)
+✔ concurrent HEAD advancement rejects even a coherent pinned snapshot (9.0177ms)
+✔ expected commit mismatch rejects before reading native files (0.6892ms)
+✔ wrong native task-lock hash is rejected in continuity/vpd/LATEST_CHECKPOINT.json (11.1208ms)
+✔ wrong native task-lock hash is rejected in PROJECT_CONTROL_ADAPTER.json (13.4914ms)
+✔ mainline tampering is rejected even when all three mirrors and lock hashes agree (26.7911ms)
+✔ modified evidence cannot be passed by retaining its old hash (9.2833ms)
+✔ plan has seven axes and external tool gates; it cannot authorize another version (20.7011ms)
+✔ self review, mainline changes, acceptance writes and extra axes are rejected inputs (9.3162ms)
+✔ no cold image evidence prevents pass eligibility while preserving immutable recorded result (26.1091ms)
+✔ human feedback binds actual artwork, reference, commit and actor, without persistence or promotion (26.9304ms)
+✔ feedback for another artwork, invalid verdict and automatic promotion request are rejected (10.1165ms)
+✔ invalid JSON-RPC, missing protocol and unknown tools fail cleanly (0.3359ms)
+✔ runtime-neutral WebCrypto hashes original UTF-8 bytes identically to Node crypto (18.8042ms)
+✔ default authorization fails closed without an explicit owner ACL (0.4258ms)
+✔ state stage mismatch prevents dispatching a competing task (10.61ms)
+✔ bound scoped human repair wording is exposed for creation but excluded from cold reviewer handoff (41.3292ms)
+✔ scoped human feedback rejects incorrect evidence hash and artwork binding (79.0684ms)
+✔ historical human wording remains bound to S4 and cannot assess a newer artwork (30.8985ms)
+✔ cold record rejects unverified, wrong model/effort, altered image count and unmatched exact call hashes (203.5796ms)
+✔ actual published350/372 reproduces old fixed-path rejection (861.5108ms)
+✔ actual published350/372 resolves final native entry and current S7 (2143.9437ms)
+✔ actual legacy S4 commit remains supported (1447.3222ms)
+✔ entry bytes still require actual pinned SHA (728.9385ms)
+✔ matching state projections cannot admit an unrelated entry path (747.3695ms)
+✔ HEAD drift and missing identity still block data-bearing calls (1898.7078ms)
+✔ MCP request ID accepts strings and integers, rejects fractions before any storage (67.4782ms)
+✔ HTTP discovery accurately marks durable feedback as a write (0.9055ms)
+✔ body/query identity cannot substitute trusted hosting identity (2.0918ms)
+✔ cross-origin browser requests are denied (0.7332ms)
+✔ real committed native files traverse HTTP adapter; no generated acceptance (1752.2854ms)
+✔ durable local SQLite replay persists, conflicts do not overwrite, actors are scoped (4831.4511ms)
+✔ missing durable store cannot return saved (1.5076ms)
+✔ new HEAD before persistence is rejected without database mutation (0.4296ms)
+✔ all HTTP dispatch paths validate JSON-RPC, argument objects and request ids before any storage access (2.2974ms)
+✔ only four advertised public tools are callable; internal prepare cannot bypass durable save (1.8014ms)
+✔ protocol header rejects invalid/unsupported versions and matches initialize negotiation (3.5182ms)
+✔ 51 pending intakes remain recoverable by tied-timestamp cursor and exact key with actor isolation (8.619ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 39
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8088.531
+
+✖ failing tests:
+
+test at plugins\visual-aesthetic-workflow\v0.1.1\core.test.mjs:41:1
+✖ MCP initialize, stateless discovery, ping and initialized notification expose no private state (4.3814ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '0.1.1' !== '0.1.0'
+  
+      at TestContext.<anonymous> (file:///C:/Users/Administrator/OneDrive/%E6%96%87%E6%A1%A3/%E8%B6%B3%E7%90%83/shenmei-vpd-resume-20261006/plugins/visual-aesthetic-workflow/v0.1.1/core.test.mjs:45:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '0.1.1',
+    expected: '0.1.0',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

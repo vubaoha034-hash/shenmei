@@ -1,6 +1,6 @@
 {
   "schema_version": "vpd-current-task-lock/v1",
-  "revision": 351,
+  "revision": 350,
   "project_id": "visual-aesthetic-vpd",
   "parent_active_task_id": "VPD-SYSTEM-LEVEL-HOLDOUT-TRANSFER-VALIDATION-V1",
   "repository": "vubaoha034-hash/shenmei",
@@ -222,13 +222,12 @@
     "typography_guide_generation_authorization": 0
   },
   "completed_this_revision": [
-    "S7原件/矢量/摄影保护/独立像素PASS_WITH_LIMITATIONS保持，旧3e6提交164文件及168公开引用已独立远端回读",
-    "修正插件固定入口导致的真实409；原0.1.0源码/失败/发布记录保留，0.1.1封板源40测试及独立22工程反例/构建核对通过",
-    "同一私有Sites插件v3已真实发布，12源码与cfd018固定Git blob及实际构建字节一致；准确复用入口plugins/visual-aesthetic-workflow/CURRENT_RELEASE.json -> v0.1.1/SKILL.md",
-    "ChatGPT安装连接/新版本托管调用/生产反馈仍未核验；本地真实GitHub锁读取超时已保存，不冒充成功",
-    "不新增图片、Figma操作或正式版本；唯一下一动作仍为刘先生审核S7，真人PENDING，worker无主线写权"
+    "独立新上下文已恢复真实S7原件、矢量、11输入并只读核对Figma和私有插件；同机349/371快照范围及限制保留",
+    "修正交付清单遗留的S6专业状态摘要，旧清单/349回执/历史入口原字节保留；使用新最终清单与入口",
+    "没有新设计版本、生图或Figma写入；S7原像素与独立PASS_WITH_LIMITATIONS不变，真人待验收",
+    "唯一业务下一动作仍为刘先生审核S7；插件发布已验证，ChatGPT连接与生产反馈未核验"
   ],
-  "updated_at": "2026-10-06T13:49:11.023019+08:00",
+  "updated_at": "2026-10-06T13:24:29.946143+08:00",
   "workflow": {
     "version": "1.1 + mainline-lock 1.0",
     "focus_stage": "POST_P7_HUMAN_AESTHETIC_REVIEW_GATE",
@@ -2523,8 +2522,8 @@
     "sha256": "23257127794f16041a2b0038255e8a1ad932e92d5104a64c3aa63030d7faaeaa"
   },
   "latest_evidence": {
-    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_PLUGIN_V011_FINAL_RECEIPT.json",
-    "sha256": "bb61b9bd99a6387e6ae7240c466ff74c008da05ad4373dda54171a1fdba50316"
+    "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_METADATA_CORRECTED_DELIVERY_RECEIPT.json",
+    "sha256": "95c3f7a69f87a70cab26e28a4e4d007a9e5d5a5af93886f78988ccc38626e432"
   },
   "chazuo_scoped_baseline_design_successor01": {
     "task_id": "VPD-CHAZUO-SCOPED-BASELINE-DESIGN-SUCCESSOR-01",
@@ -3177,8 +3176,8 @@
       "sha256": "91b3be377da4b7e77e465eb317e049e6a1fe87450627dc0af144c112106ead92"
     },
     "receipt": {
-      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_PLUGIN_V011_FINAL_RECEIPT.json",
-      "sha256": "bb61b9bd99a6387e6ae7240c466ff74c008da05ad4373dda54171a1fdba50316"
+      "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/NATIVE_TRANSFER_S7_METADATA_CORRECTED_DELIVERY_RECEIPT.json",
+      "sha256": "95c3f7a69f87a70cab26e28a4e4d007a9e5d5a5af93886f78988ccc38626e432"
     },
     "budget": {
       "formal_versions_max": 3,
@@ -6050,142 +6049,6 @@
           {
             "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/s7_fresh_entry/ZIP_INPUT_VERIFICATION.json",
             "sha256": "55bd1b26e07b31df83dc84fa14cafa85e13fb6bebcae33b08bb47beda4684b40"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/CURRENT_RELEASE.json",
-            "sha256": "a7f77a862125a039fec08b9a51e3d3f81af3b02e7b7f01c2a1d943477f97a347"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/S7_PUBLICATION_READBACK_3e6a563.json",
-            "sha256": "a012a86c807862b1b80bf711fbe464ea76f3725eb3310470e6dc81ca86f14b81"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/.openai/hosting.json",
-            "sha256": "bd112c8d960dd2af7dfdf9010d3c4713308dae84f9615aa8cc22e4eaf457e7e2"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/baseline-core-v0.1.0.mjs",
-            "sha256": "4c51a64df0a7da97058134683780759b62af21f6c1c56f8901f7f035113034a5"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/build.mjs",
-            "sha256": "646859f26d7f45af525758079826e3743b2251981e238bcc1322bf800bad5f3f"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/core.mjs",
-            "sha256": "dece3c584aec7634c865c482f323f80bc43a7cc210f8499d48cb19d17a228ddd"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/core.test.mjs",
-            "sha256": "ca838f4454c2688cdc7b318c1ac1778c60a9b05ca63a0ebe32cdbdd81ead068e"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/entry.test.mjs",
-            "sha256": "c3eea628969da5b154e3494cf028952d02cd5989b702f73f62fa5ca586117715"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/package.json",
-            "sha256": "3c132aff62be05b96b090419f59e79e5c85ff9926b55d8b6cab03a408453cbcf"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/pnpm-lock.yaml",
-            "sha256": "7127e48f9797b2ba8762ccbabb382e494d31d31cf755683549af4b3b3989f35b"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/README.md",
-            "sha256": "7e7839ff2398c1de3d9c999118f00318fff35581daeec8f7619eee25e9a5480a"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/SKILL.md",
-            "sha256": "1d8c6dc08b7e57b9b39eccda17f50d0459b4e781e5ed04e64ed899e8e564d54d"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/worker.mjs",
-            "sha256": "fa7ad1d5509838bc6ed92189226fb2078f3122a683a01b936e93a8c371f157e4"
-          },
-          {
-            "path": "plugins/visual-aesthetic-workflow/v0.1.1/worker.test.mjs",
-            "sha256": "0c075478805a27bc21276900980e21bf03f4a258929a84dd753aac7320447402"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/ACTUAL_LOCAL_GITHUB_TIMEOUT_DIAGNOSTIC.json",
-            "sha256": "5fa7e93cc307d3f98571b22e2165ef21a38390506015464018b02733cc974c07"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/ACTUAL_LOCAL_LIVE_GITHUB_READBACK_FAILED.json",
-            "sha256": "6c196ee8c8b5c09d0258363d198ac3d5115f9a9201dafe1e554522a09264dc9d"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/ACTUAL_PUBLICATION_RECEIPT.json",
-            "sha256": "fe0049ffd1dcd6f24b2a4a437c01e052e3b7f9738b0ea8da7afbd200f40395f3"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/ACTUAL_ROOT_40_TESTS_BEFORE_METADATA_LABEL_FIX.txt",
-            "sha256": "772dffd39fc98066c72bd15dbb6db1b3ca435bb3147a882c6dc19340ab51ca08"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/FROZEN_SOURCE_MANIFEST.json",
-            "sha256": "4efbbe1c96f6c8252db42284607728b9f8b2e651546aa4ce6561e5e43fb190aa"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/BEFORE_AFTER_SOURCE_STABILITY.json",
-            "sha256": "793b69700cd52e53dea9bbc7a4994eedfa50f6465ac226f5037b606dc2bd1474"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/COMMAND_RESULTS.json",
-            "sha256": "c6d81b4c02a109dcbb53a001f2e399275dc4dbfe8c3fac8f3bf62d7af5b8c110"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/FINAL_SOURCE_MANIFEST.json",
-            "sha256": "f13b9f40fd89bd193201601362634696adfe3eaf96cc8ff1aa4490f5f98011e1"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/INDEPENDENT_CASE_RESULTS.json",
-            "sha256": "56624ef64956beb539699a4b026763f0884e518a13b79d167ab02aeef6ef7ead"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/independent_cases.mjs",
-            "sha256": "2a485305a6ba3ac842ecb17b284d4c7c3cefbeee11df5a1ce40cf81ea8bfc619"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/OLD_SOURCE_PRESERVATION.json",
-            "sha256": "42e495bcdde91f08d68a84c56d5214c574301c74495487e4dd449c28a9baafcb"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/REMOTE_NATIVE_COMPARISONS.json",
-            "sha256": "cfe5e9b68a7d49158b28fd8094b935b605c78490e4a5cd700f49307934017203"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/REPORT.json",
-            "sha256": "d7392327808f499b548bcb236b60716e6700a59a2ba73fee803dc4a1aa47accb"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/review_runner.py",
-            "sha256": "2d2fe7bb7af7f71d5101ed8c69c796f9addad371e83b597ce392ef80bdac125b"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/ROOT_FREEZE_COMPARISON.json",
-            "sha256": "471b3d3d9dca8abeffd0a02abb2d77e791f091025d44ea07dedbaf322846515e"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/RUN_SUMMARY.json",
-            "sha256": "8ca4070b9114659b400e789b99ba0947e3fe6ee0efc08c5404e65d1f54b678b2"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/SOURCE_DIFFS.json",
-            "sha256": "43ce7112bcd94aee14250490dd04303c68f952982eb5921de2764542dec78f4c"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/independent_review/write_report.py",
-            "sha256": "c06718d5f278e436cb787136a90859a4b974f7d0fef47b389f54875f91564be8"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/INITIAL_VERSION_EXPECTATION_FAILURE.txt",
-            "sha256": "e2e65c95864730003ab204f18e40011090d2e6ae406370b585d821ec3f206a7b"
-          },
-          {
-            "path": "evidence/vpd/codex_takeover_20261003/liuxiansheng_content_transfer_20261005/plugin_v011_evidence/SOURCE_PROVENANCE.json",
-            "sha256": "8278acb4882f3720ee88bf02a618608d8d43d261f24e7e513e54619cd24351e9"
           }
         ],
         "attempts": [
