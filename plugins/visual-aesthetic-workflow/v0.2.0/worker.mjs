@@ -150,7 +150,7 @@ export function createWorker(options={}) {
       const body=await response.json();
       if(!response.ok || !body?.result?.tools) return new Response(JSON.stringify(body),{status:response.status,headers:response.headers});
       const tools=body.result.tools.map(t=>{
-        if(t.name==='compile_transfer_plan') return {...t,description:t.description+' Legacy planner/structure-lock diagnostic only: it can never complete an isolated editable typography request. For that goal use start_typography_delivery.'};
+        if(t.name==='compile_transfer_plan') return {...t,description:t.description+' Legacy planner/structure-lock diagnostic only: it cannot complete an isolated editable typography request. For that goal use start_typography_delivery.'};
         if(t.name==='validate_user_request_delivery') return {...t,description:t.description+' This remains a legacy full-poster/structure-edit receipt gate and cannot substitute for the v0.2.0 isolated typography task.'};
         if(t.name==='get_current_workflow') return {...t,description:t.description+' Native workflow context only; v0.2.0 request tasks are separate and must be read with get_typography_delivery.'};
         return t;
