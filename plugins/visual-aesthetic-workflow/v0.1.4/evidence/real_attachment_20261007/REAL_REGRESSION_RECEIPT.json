@@ -1,0 +1,86 @@
+{
+  "version": "0.1.4",
+  "catalog": "REFRESHED_SCHEMA_OBSERVED",
+  "actual_attachment": true,
+  "engineering": {
+    "schema": "exact-composite-postconditions/v1",
+    "engineering_pass": true,
+    "status": "ENGINEERING_PASS_NEEDS_ACTUAL_PIXEL_REVIEW",
+    "reference_dimensions": [
+      709,
+      1536
+    ],
+    "output_dimensions": [
+      709,
+      1536
+    ],
+    "exact_aspect_ratio": true,
+    "outside_mask_changed_pixels": 0,
+    "outside_mask_tolerance": 0,
+    "lossless_png": true,
+    "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+    "output_sha256": "ec9fdccc6c2129cb16e33cdf5ea3035ab62b60b977986bf3777e6b0950f3b3d7",
+    "mask_manifest_sha256": "003f53155e53d5278ae6397e67d8cc701b3d26d2a2cda4fabb0afca1fc8e0385",
+    "deterministic_provenance_valid": true,
+    "semantic_preservation": {
+      "photo": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "two_people": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "cabin": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "sunset": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "water": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "crop": "REQUIRES_ACTUAL_PIXEL_REVIEW",
+      "layout": "REQUIRES_ACTUAL_PIXEL_REVIEW"
+    },
+    "review_verification": "CARRIER_SUPPLIED_NOT_INDEPENDENTLY_VERIFIED_BY_SCRIPT",
+    "final_eligible": false,
+    "business_acceptance_changed": false,
+    "failures": []
+  },
+  "visual_review": {
+    "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+    "output_sha256": "ec9fdccc6c2129cb16e33cdf5ea3035ab62b60b977986bf3777e6b0950f3b3d7",
+    "actual_pixels_viewed": true,
+    "mask_scope_text_only": true,
+    "evidence_locator": "regression014/map-outside-test.png; source original and full-resolution result actually viewed in this thread",
+    "checks": {
+      "photo": true,
+      "two_people": true,
+      "cabin": true,
+      "sunset": true,
+      "water": true,
+      "crop": true,
+      "layout": false
+    },
+    "overall_verdict": "FAIL",
+    "issues": [
+      "Title glyph arrangement and whitespace differ from strict original geometry despite unchanged allocated frame",
+      "Old glyph cleanup retains small texture/glint residues",
+      "Auxiliary source font unidentified; Noto Serif CJK is an explicit approximation"
+    ],
+    "independent_review": false,
+    "business_acceptance_changed": false
+  },
+  "verdict": "ENGINEERING_PASS_BUT_STRICT_STRUCTURE_LOCK_FAIL",
+  "final_eligible": false,
+  "original_unchanged": true,
+  "first_cleanup_failure_retained": "failed-cleanup-v1.png",
+  "second_cleanup_preview": "cleanup-v2-preview.png",
+  "execution": "Actual hosted compile_transfer_plan + builtin local transparent title material + Pillow frozen-original deterministic composite + reopened lossless PNG validation",
+  "remaining_failure": "Local title shape/spacing differ; old glyph removal on flattened image leaves small glints. Hidden original background under raster letters is unknown.",
+  "native_lock_revision": 355,
+  "checkpoint_sequence": 377,
+  "s7_human": "PENDING",
+  "business_state_written": false,
+  "environment_failures": [
+    "cv2 initially unavailable then successfully installed",
+    "apt package access denied; official Noto font downloaded instead",
+    "invalid multi-operation patch rejected then corrected"
+  ],
+  "native_lock_sha256": "4eee3b6aec2ee8979bc96f3e1193636caa986b16d779bd8bdd15263e1652428f",
+  "source_commit": "04f4effa2c27d3cf170e2fe5d2fe376fcb546c39",
+  "library_artifacts": {
+    "test_png": "libfile_8fc12ec693608191ba86c9ac906e56be",
+    "evidence_zip": "libfile_4f0870dd28c081919519924cbe33870d"
+  },
+  "next_required_repair": "Fix local raster glyph removal and constrain target character geometry to original title skeleton before another visual regression; no native state promotion"
+}

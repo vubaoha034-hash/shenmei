@@ -1,0 +1,24 @@
+{
+  "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+  "output_sha256": "ec9fdccc6c2129cb16e33cdf5ea3035ab62b60b977986bf3777e6b0950f3b3d7",
+  "actual_pixels_viewed": true,
+  "mask_scope_text_only": true,
+  "evidence_locator": "regression014/map-outside-test.png; source original and full-resolution result actually viewed in this thread",
+  "checks": {
+    "photo": true,
+    "two_people": true,
+    "cabin": true,
+    "sunset": true,
+    "water": true,
+    "crop": true,
+    "layout": false
+  },
+  "overall_verdict": "FAIL",
+  "issues": [
+    "Title glyph arrangement and whitespace differ from strict original geometry despite unchanged allocated frame",
+    "Old glyph cleanup retains small texture/glint residues",
+    "Auxiliary source font unidentified; Noto Serif CJK is an explicit approximation"
+  ],
+  "independent_review": false,
+  "business_acceptance_changed": false
+}
