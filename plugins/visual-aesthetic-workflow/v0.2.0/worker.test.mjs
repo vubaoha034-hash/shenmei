@@ -30,3 +30,44 @@ test('new write tools require authenticated hosting identity',async()=>{
   const r=await w.fetch(req(rpc),{});
   assert.equal(r.status,401);
 });
+
+
+const emptyTaskDB={
+  prepare(sql){
+    const ops={
+      run:async()=>({success:true}),
+      first:async()=>null,
+      all:async()=>({results:[]})
+    };
+    return {
+      ...ops,
+      bind(..._args){ return ops; }
+    };
+  }
+};
+
+test('missing typography task is an MCP tool-level error over HTTP 200, not transport 404',async()=>{
+  const w=createWorker({adapters:{resolveHead:async()=>{throw Error('no repository read expected')},readFile:async()=>{throw Error('no repository read expected')}}});
+  const rpc={jsonrpc:'2.0',id:11,method:'tools/call',params:{name:'get_typography_delivery',arguments:{}}};
+  const r=await w.fetch(req(rpc,'owner-test'),{DB:emptyTaskDB});
+  assert.equal(r.status,200);
+  const b=await r.json();
+  assert.equal(b.result.isError,true);
+  assert.equal(b.result.content[0].text,'TYPOGRAPHY_TASK_NOT_FOUND');
+  assert.equal(b.error,undefined);
+});
+
+test('recording against a missing typography task also stays inside MCP tool result',async()=>{
+  const w=createWorker({adapters:{resolveHead:async()=>{throw Error('no repository read expected')},readFile:async()=>{throw Error('no repository read expected')}}});
+  const rpc={jsonrpc:'2.0',id:12,method:'tools/call',params:{name:'record_typography_stage',arguments:{
+    task_id:'typo_00000000-0000-4000-8000-000000000000',
+    expected_revision:1,
+    stage:'REFERENCE_TEXT_EXTRACTION',
+    artifact:{artifact_type:'REFERENCE_TEXT_EXTRACTION'}
+  }}};
+  const r=await w.fetch(req(rpc,'owner-test'),{DB:emptyTaskDB});
+  assert.equal(r.status,200);
+  const b=await r.json();
+  assert.equal(b.result.isError,true);
+  assert.equal(b.result.content[0].text,'TYPOGRAPHY_TASK_NOT_FOUND');
+});

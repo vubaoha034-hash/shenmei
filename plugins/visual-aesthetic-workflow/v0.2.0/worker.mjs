@@ -9,6 +9,7 @@ const headers = {'Cache-Control':'private, no-store','Content-Type':'application
 const json = (body,status=200) => new Response(JSON.stringify(body),{status,headers});
 const toolResult = (id,value) => json({jsonrpc:'2.0',id,result:{content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,isError:false}});
 const toolError = (id,message,status=409,code=-32030) => json({jsonrpc:'2.0',id,error:{code,message}},status);
+const toolBusinessError = (id,message) => json({jsonrpc:'2.0',id,result:{content:[{type:'text',text:message}],isError:true}});
 const rowTask = row => row ? JSON.parse(row.payload) : null;
 
 async function ensureTasks(db) {
@@ -179,7 +180,7 @@ export function createWorker(options={}) {
         const args=validateGetArgs(rpc.params.arguments);
         await ensureTasks(env?.DB);
         const task=rowTask(args.task_id ? await getById(env.DB,actor,args.task_id) : await getLatest(env.DB,actor));
-        if(!task) return toolError(rpc.id,'TYPOGRAPHY_TASK_NOT_FOUND',404,-32004);
+        if(!task) return toolBusinessError(rpc.id,'TYPOGRAPHY_TASK_NOT_FOUND');
         return toolResult(rpc.id,publicTask(task));
       }
       if(name==='record_typography_stage') {
@@ -190,7 +191,8 @@ export function createWorker(options={}) {
     }catch(error){
       const invalid=/^(ARGUMENT|UNSUPPORTED|EXPECTED_COMMIT|REQUEST_KEY|REFERENCE_SOURCE_REQUIRED|REQUESTED_COPY|REQUEST_TITLE|TASK_ID_INVALID|EXPECTED_REVISION_INVALID|STAGE_INVALID|ARTIFACT_REQUIRED)/.test(error.message);
       const missing=error.message==='TYPOGRAPHY_TASK_NOT_FOUND';
-      return toolError(rpc.id,error.message,invalid?400:(missing?404:(error.status||409)),invalid?-32602:-32030);
+      if(missing) return toolBusinessError(rpc.id,error.message);
+      return toolError(rpc.id,error.message,invalid?400:(error.status||409),invalid?-32602:-32030);
     }
   }};
 }
