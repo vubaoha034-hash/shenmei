@@ -1,0 +1,43 @@
+{
+  "schema": "figma-production-attempt/v1",
+  "status": "BLOCKED_IMAGE_UPLOAD_HTTP405",
+  "complete_workflow": false,
+  "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+  "page_id": "457:2",
+  "frame_id": "457:3",
+  "source_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=457-3",
+  "dimensions": [
+    709,
+    1536
+  ],
+  "raster_layer_ids": [
+    "457:4",
+    "457:5",
+    "457:6",
+    "457:7",
+    "457:8",
+    "457:9"
+  ],
+  "editable_copy_backup_ids": [
+    "457:10",
+    "457:11",
+    "457:12",
+    "457:13",
+    "457:14"
+  ],
+  "raster_upload_attempts": 6,
+  "raster_upload_succeeded": 0,
+  "multipart_retry": {
+    "status": 405,
+    "server": "openresty/1.27.1.1"
+  },
+  "readback_all_image_fills_empty": true,
+  "figma_export_performed": false,
+  "pixel_review_performed_this_attempt": false,
+  "strict_structure_verdict": "FAIL_PREVIOUS_NOT_RESOLVED",
+  "pipeline_defect_confirmed": "v0.1.4 structure_locked_edit workflow omits Figma step and allows Python finalizer to end delivery; this differs from requested complete Figma workflow. No runtime fix published in this attempt.",
+  "resume_action": "Restore official upload_assets POST transport; populate exact six existing nodes; verify source; export actual PNG; validate original dimensions and zero outside-mask difference; if renderer alters protected samples deterministically composite exported local patches onto frozen original; review title geometry and actual pixels. Do not recreate page or re-generate approved title.",
+  "native_state_changed": false,
+  "s7_human": "PENDING",
+  "business_acceptance_changed": false
+}
