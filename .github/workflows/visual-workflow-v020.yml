@@ -17,3 +17,8 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visual-workflow-v020-dist
+          path: plugins/visual-aesthetic-workflow/v0.2.0/dist
+          if-no-files-found: error
