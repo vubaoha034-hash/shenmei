@@ -34,13 +34,15 @@ test('new write tools require authenticated hosting identity',async()=>{
 
 const emptyTaskDB={
   prepare(sql){
-    return {bind(..._args){
-      return {
-        run:async()=>({success:true}),
-        first:async()=>null,
-        all:async()=>({results:[]})
-      };
-    }};
+    const ops={
+      run:async()=>({success:true}),
+      first:async()=>null,
+      all:async()=>({results:[]})
+    };
+    return {
+      ...ops,
+      bind(..._args){ return ops; }
+    };
   }
 };
 
