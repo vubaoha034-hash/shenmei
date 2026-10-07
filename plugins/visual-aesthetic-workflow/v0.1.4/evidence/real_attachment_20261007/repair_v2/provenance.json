@@ -1,0 +1,47 @@
+{
+  "schema": "deterministic-original-pixel-composite/v1",
+  "method": "ORIGINAL_PIXEL_COPY_WITH_MASKED_LOCAL_PATCHES",
+  "reference_sha256": "0eed7f709779e4f4dab2b98a414650a8fd7a45dfbbf88e53b9abc753dd1dddaf",
+  "output_sha256": "d5005626cc23c32be8473d4efc6b8333e00c00a088375368f0736636176a7c04",
+  "mask_manifest_sha256": "ccc5ce600d5f25166fa6a505aea4a70183b4cfd1a01289cbe6c88352e9a21239",
+  "dimensions": [
+    709,
+    1536
+  ],
+  "patches": [
+    {
+      "region_id": "top",
+      "path": "/workspace/scratch/b2daa0293321/regression014/top-patch.png",
+      "sha256": "929a4750d2e419fd83a919fa333ffc274bd693e6e298a3c36452d7e1f0c778f2",
+      "role": "LOCAL_TEXT_OR_TEXTURE_CANDIDATE"
+    },
+    {
+      "region_id": "title",
+      "path": "/workspace/scratch/b2daa0293321/regression014/title-patch.png",
+      "sha256": "1a99a2cf5cbb01fa3890bdf7171fa472d0d51de119446eda1b0a7be47c09bb54",
+      "role": "LOCAL_TEXT_OR_TEXTURE_CANDIDATE"
+    },
+    {
+      "region_id": "right",
+      "path": "/workspace/scratch/b2daa0293321/regression014/right-patch.png",
+      "sha256": "e90945e9a95ed4fb061b324159274f5a8452a4db7219bb2e3d314ab2e895020f",
+      "role": "LOCAL_TEXT_OR_TEXTURE_CANDIDATE"
+    },
+    {
+      "region_id": "footer",
+      "path": "/workspace/scratch/b2daa0293321/regression014/footer-patch.png",
+      "sha256": "63e11f39e680f6ef01b4bbf3bc797f01cd5e800368ceb45210bb5227ee5f37e7",
+      "role": "LOCAL_TEXT_OR_TEXTURE_CANDIDATE"
+    },
+    {
+      "region_id": "old_glyph_residue_cleanup",
+      "path": "/workspace/scratch/b2daa0293321/regression014/repair-v2/cleanup-patch.png",
+      "sha256": "54e12deb190aaca194a179525223ad2785e3e05afba00b16872c172cf33593d5",
+      "role": "LOCAL_TEXT_OR_TEXTURE_CANDIDATE"
+    }
+  ],
+  "sample_policy": "DECODE_ONCE_COPY_ORIGINAL_RGB_OR_RGBA_NO_COLOR_TRANSFORM",
+  "encoding": "PNG_LOSSLESS",
+  "generative_output_role": "GUIDE_ONLY",
+  "host_enforced": false
+}
