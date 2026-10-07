@@ -1,0 +1,198 @@
+{
+  "status": "BLOCKED",
+  "action": "STOP",
+  "reference_scope": "user_request",
+  "operation_mode": "structure_locked_edit",
+  "reference_source": "sediment://file_0000000062288207a1395a1ec0eea618",
+  "reference_sha256": "UNKNOWN",
+  "mainline_write": false,
+  "business_state_write": false,
+  "execution_authorized": false,
+  "native_context": {
+    "source": {
+      "repository": "vubaoha034-hash/shenmei",
+      "branch": "visual-program-distillation-v2-photography-design-20260814",
+      "commit": "36eeebf3ee0629f1f9650146ddc2e32bb1713f30",
+      "native_lock_sha256": "4eee3b6aec2ee8979bc96f3e1193636caa986b16d779bd8bdd15263e1652428f",
+      "lock_revision": 355,
+      "checkpoint_sequence": 377
+    },
+    "task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "mainline_lock_id": "VPD-FULL-POSTER-REFERENCE-DISTILLATION-MAINLINE-20261001",
+    "mainline_locked": true,
+    "native_reference_rebound": false
+  },
+  "execution_contract": {
+    "delivery_requirements": {
+      "schema": "figma-structure-edit-delivery/v1",
+      "figma_source_required": true,
+      "figma_source_must_contain_bound_reference_and_local_layers": true,
+      "figma_export_required": true,
+      "python_composite_alone_completes_workflow": false,
+      "independent_pixel_review_required": true,
+      "on_figma_upload_or_export_unavailable": "STOP_WORKFLOW_INCOMPLETE",
+      "finalization": "FIGMA_PRODUCTION_THEN_EXACT_ORIGINAL_PIXEL_FINALIZATION",
+      "server_verifies_external_artifacts": false
+    },
+    "schema": "structure-locked-edit/v2",
+    "operation_mode": "structure_locked_edit",
+    "reference_pixels_required": true,
+    "current_context_reference_required": true,
+    "text_to_image_allowed": false,
+    "image_operation": "EDIT_EXISTING_IMAGE_ONLY",
+    "final_canvas_policy": "EXACT_REFERENCE_DIMENSIONS",
+    "finalization_mode": "MASKED_LOCAL_EDIT_OR_DETERMINISTIC_COMPOSITE",
+    "whole_canvas_generative_edit_as_final": false,
+    "outside_edit_regions_policy": "BIT_IDENTICAL",
+    "generative_output_role": "GUIDE_ONLY",
+    "on_exact_composite_unavailable": "STOP",
+    "exact_composite_requirement": "DETERMINISTIC_COMPOSITE_REQUIRED",
+    "reference_dimensions": null,
+    "editable_regions": [],
+    "masks_required": true,
+    "mask_validation": {
+      "status": "MISSING_OR_INVALID",
+      "reason": "REFERENCE_DIMENSIONS_REQUIRED"
+    },
+    "postconditions": {
+      "width": "EQUAL_REFERENCE_WIDTH",
+      "height": "EQUAL_REFERENCE_HEIGHT",
+      "aspect_ratio": "EXACT",
+      "outside_edit_masks_changed_pixels": 0,
+      "lossless_output_required": true,
+      "semantic_preservation": [
+        "photo",
+        "two_people",
+        "cabin",
+        "sunset",
+        "water",
+        "crop",
+        "layout"
+      ],
+      "semantic_review": "ACTUAL_PIXEL_REVIEW_REQUIRED_NOT_SERVER_ATTESTED"
+    },
+    "finalizer": {
+      "script": "scripts/exact_composite.py",
+      "source": {
+        "repository": "vubaoha034-hash/shenmei",
+        "branch": "visual-program-distillation-v2-photography-design-20260814",
+        "commit": "36eeebf3ee0629f1f9650146ddc2e32bb1713f30",
+        "path": "plugins/visual-aesthetic-workflow/v0.1.4/scripts/exact_composite.py"
+      },
+      "validator": "scripts/exact_composite.py validate",
+      "output_format": "PNG_LOSSLESS",
+      "inherit_outside_masks": "DIRECT_ORIGINAL_DECODED_PIXEL_COPY_NO_RESIZE_NO_COLOR_TRANSFORM"
+    },
+    "on_reference_unavailable": "STOP",
+    "on_reference_not_bound": "STOP",
+    "reconstruct_reference_from_description_allowed": false,
+    "fallback_allowed": false,
+    "binding_status": "NOT_BOUND",
+    "reference_binding": null,
+    "binding_verified_by_server": false,
+    "execution_carrier_must_recheck": [
+      "current_context_id",
+      "attachment_id",
+      "actual_reference_bytes_sha256",
+      "pixels_viewed",
+      "same_edit_target_consumed_by_image_tool"
+    ],
+    "hard_preserve": [
+      "original_photo_pixels_and_subject",
+      "people",
+      "crop",
+      "canvas_and_aspect_ratio",
+      "main_image_region",
+      "main_title_region",
+      "top_information_region",
+      "right_vertical_region",
+      "footer_region",
+      "whitespace",
+      "color_system",
+      "existing_decorations"
+    ],
+    "allowed_changes": [
+      "local_glyph_strokes_required_for_exact_new_characters"
+    ],
+    "prohibited_additions": [
+      "maps",
+      "routes",
+      "place_names",
+      "icons",
+      "new_people",
+      "new_decorations"
+    ]
+  },
+  "hard_preserve": [
+    "original_photo_pixels_and_subject",
+    "people",
+    "crop",
+    "canvas_and_aspect_ratio",
+    "main_image_region",
+    "main_title_region",
+    "top_information_region",
+    "right_vertical_region",
+    "footer_region",
+    "whitespace",
+    "color_system",
+    "existing_decorations"
+  ],
+  "blocked_until": [
+    "CURRENT_CONTEXT_REFERENCE_PIXELS_READ_VIEWED_AND_BOUND",
+    "ACTUAL_REFERENCE_DIMENSIONS_REQUIRED",
+    "EXPLICIT_VALID_EDIT_REGIONS_AND_BINARY_MASKS_REQUIRED",
+    "EXECUTOR_VERIFIES_CURRENT_CONTEXT_PIXELS_AND_MASK_BYTES",
+    "DETERMINISTIC_COMPOSITE_AND_ZERO_OUTSIDE_MASK_DIFF_VALIDATION_REQUIRED",
+    "ACTUAL_FINAL_PIXEL_REVIEW_REQUIRED",
+    "ACTUAL_FIGMA_SOURCE_UPLOAD_AND_EXPORT_REQUIRED",
+    "DELIVERY_EVIDENCE_VALIDATOR_AND_EXECUTOR_RECHECK_REQUIRED"
+  ],
+  "proposed_copy": {
+    "main_wordmark": "地图以外",
+    "english": "for liuxiansheng"
+  },
+  "edit_directives": {
+    "replace_text_only": {
+      "main_wordmark": "地图以外",
+      "english": "for liuxiansheng"
+    },
+    "allowed_changes": [
+      "local_glyph_strokes_required_for_exact_new_characters"
+    ]
+  },
+  "prompt_status": "NO_TEXT_TO_IMAGE_PROMPT",
+  "artwork_generated": false,
+  "independent_review_performed": false,
+  "workflow": [
+    {
+      "step": "reference",
+      "action": "STOP unless this context contains readable, viewed original attachment pixels bound to the same actual image-tool edit target. A sediment locator or a description is insufficient."
+    },
+    {
+      "step": "image",
+      "action": "Verify actual bytes, context, exact dimensions, binary masks and text-only mask scope before local EDIT_EXISTING_IMAGE_ONLY. Generative material is GUIDE_ONLY. A whole-canvas generative image may never be final, even if its dimensions match."
+    },
+    {
+      "step": "figma",
+      "action": "Build a scoped layered Figma source from the bound original and local text patches; read back image fills and exact source dimensions, then export the actual frame. Upload or export failure means STOP_WORKFLOW_INCOMPLETE. A blank frame, copy backup or pasted final PNG alone is not completed production."
+    },
+    {
+      "step": "finalize",
+      "action": "Require deterministic composite from the frozen original decoded pixels. Paste only local glyph/cleanup candidates inside the verified masks; preserve all outside pixels directly. Save lossless PNG without resize, recrop or color transform. If this finalizer is unavailable STOP: DETERMINISTIC_COMPOSITE_REQUIRED."
+    },
+    {
+      "step": "validate",
+      "action": "Run scripts/exact_composite.py validate on the saved output: exact original width/height/aspect, zero outside-mask pixel changes. Do not relax differences for JPEG encoding or color management; keep frozen pixels and lossless output. Reject GUIDE_ONLY and unbound finalization provenance."
+    },
+    {
+      "step": "review",
+      "action": "Compare actual edited output with actual reference pixels. Report FAIL for missing or changed original photograph, people, cabin, sunset, water, crop or overall layout. Engineering tests are not pixel acceptance; use the existing independent actual-pixel review carrier."
+    },
+    {
+      "step": "delivery",
+      "action": "Call validate_user_request_delivery with hash-bound Figma source/export, exact saved-final validation, export-to-final provenance and independent pixel-review evidence. Missing artifacts mean STOP. Complete caller receipts still require actual executor artifact checks before delivery; no native or human acceptance changes."
+    }
+  ]
+}
