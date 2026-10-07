@@ -1,16 +1,22 @@
 ---
 name: visual-aesthetic-workflow
-description: Continue the existing Shanyeji-reference to Liu typography transfer experiment using bound native GitHub state, compact transfer planning and artwork-bound human feedback. Requires separate image, Drive, Figma and independent pixel-review tools for production.
+description: Strict request-level typography production controller. Preserves native Shanyeji→Liu authority as read-only, while isolated typography requests must pass reference text extraction → local lettering asset → editable Figma rebuild → actual independent pixel review → isolated editable typography delivery. Full posters, structure-lock regressions and flattened Figma images cannot substitute.
 ---
 
-This is an experimental thin workflow wrapper, version 0.1.0. The authoritative repository is `vubaoha034-hash/shenmei`, branch `visual-program-distillation-v2-photography-design-20260814`. Its current native lock, checkpoint, adapter, charter, freezes and review carrier control execution. This plugin does not create a task registry or replace production skills.
+Version 0.2.0 changes the request workflow contract without changing the native task lock or S7 state.
 
-1. Call `get_current_workflow`. Use its actual latest commit and bound current entry; stop if native hashes, mirrors or mainline verification fail. Historical actions in the entry do not override `next_required_action`.
-2. Retrieve the reference and the current delivered artwork original bytes with connected Drive tools. Recompute the supplied SHA256 and view the pixels. A plugin response or Drive/Figma URL does not supply pixel evidence. The current experiment is typography only: photography is paused and its accepted source remains protected. Historical S4 human comments assess S4 only, even when returned beside a newer current delivery.
-3. Call `compile_transfer_plan` with the expected commit and current reference SHA. It compiles seven visual variables: canvas, attention geometry, image anchor, material treatment, typography behavior, color logic and variation axis. Geometry/type/material/color relationships form the stable grammar; actual characters, spacing, curve response and hierarchy provide scoped variation. Keep correctness hard constraints distinct from taste. Reuse existing mature tools/methods without rewriting upstream generation rules.
-4. The plan is a draft, not an execution authorization. Root checks the current native scope before production. Use ChatGPT's actual image tool when allocated, then connected Figma tools for custom editable contours and native supporting text. Record actual tool calls, failures, source identities and exposed model settings; do not claim an unexposed model or treat a guide as the final accepted work.
-5. Send real reference/current artwork pixels through the existing independent review carrier in a context without creator history and hidden human verdicts. Preserve actual image-byte transport, model, runtime and isolation evidence. The plugin cannot instantiate an independent reviewer. If that route or pixels are unavailable, stop at `NEEDS_INDEPENDENT_PIXEL_REVIEW`; self-review and code tests cannot promote the work. AI review never replaces Liu's acceptance.
-6. Repair only within native authorization, using valid observed evidence. Save original artwork to Drive and actual editable source to Figma, verify readbacks, and let the existing Root writer update the same native state and publish/read back GitHub. When the native next action is human review, do not start another formal version.
-7. For an explicit human rating, call the published `save_human_feedback` tool with expected commit, exact delivered artwork SHA, a stable idempotency key, `APPROVE`/`REJECT`/`COMMENT`, and the user's comment. Require `persisted:true` and its durable receipt, then verify it with `get_human_feedback`. The core-only `prepare_human_feedback` validates an intake but does not save it and is not a published workflow tool. Root reconciles this append-only **non-authoritative intake** with the native authority. Neither a feedback record nor an AI score may automatically change mainline, AI verdict or human `PENDING`.
+For an isolated typography request, do not treat a poster edit, structure-lock regression, transparent lettering image, Figma image upload, plan, or chat summary as the final delivery. The only completion path is:
 
-Recognized and rejected outcomes remain scoped evidence. One rating defaults to observation; do not blindly append visual rules or claim universal transfer, improved efficiency or training. This wrapper initiates no training, scheduled runs or paid compute. Capability and adapter details are in [README.md](README.md).
+1. REFERENCE_TEXT_EXTRACTION — actual reference pixels viewed and text/geometry evidence bound.
+2. LOCAL_LETTERING_ASSET — isolated local lettering guide bound to the reference and requested copy.
+3. FIGMA_EDITABLE_REBUILD — isolated Figma typography source with actual readback; at least one native text or editable vector node; zero image nodes in the final typography node set.
+4. ACTUAL_INDEPENDENT_TYPOGRAPHY_REVIEW — actual reference/output pixels reviewed in an independent context. FAIL returns to Figma repair.
+5. ISOLATED_TYPOGRAPHY_DELIVERY — reviewed editable Figma source delivered as isolated typography only.
+
+Call get_current_workflow to read the authoritative native context. For a new typography production request, call start_typography_delivery with that current commit and a stable request_key. Persist and resume with get_typography_delivery. Record each real stage artifact with record_typography_stage using the exact current revision. The server rejects stage skipping and substitute artifacts.
+
+Native state remains separate: the request task stores only a read-only native snapshot. It never writes CURRENT_TASK_LOCK, the S7 human state, native AI verdicts, or business acceptance. The historical compile_transfer_plan and validate_user_request_delivery tools remain available for legacy poster/structure-lock diagnostics, but they cannot complete a v0.2.0 isolated typography task.
+
+External execution still requires the actual allocated image/Figma/reviewer tools. Tool receipts must describe real calls and readbacks; the controller does not manufacture pixels, Figma nodes, or independent review. If an external capability is unavailable, stop at that gate rather than claiming completion.
+
+Human feedback intake remains append-only and non-authoritative. AI review never replaces Liu's acceptance.

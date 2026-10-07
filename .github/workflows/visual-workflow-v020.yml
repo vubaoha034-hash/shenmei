@@ -1,0 +1,19 @@
+name: visual-workflow-v020
+on:
+  pull_request:
+    paths:
+      - 'plugins/visual-aesthetic-workflow/v0.2.0/**'
+      - 'plugins/visual-aesthetic-workflow/SKILL.md'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugins/visual-aesthetic-workflow/v0.2.0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run build
