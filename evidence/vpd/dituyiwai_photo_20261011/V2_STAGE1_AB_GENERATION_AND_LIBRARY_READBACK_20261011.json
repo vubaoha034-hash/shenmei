@@ -1,0 +1,81 @@
+{
+  "schema_version": "vpd-mapoutside-ab-generation-and-library-readback/v1",
+  "recorded_at_date": "2026-10-11",
+  "experiment_id": "VPD-MAPOUTSIDE-PHOTO-V2-AB-PREFLIGHT-20261011-01",
+  "authority": "EVIDENCE_ONLY; NO_NATIVE_TASK_LOCK_WRITE; NO_QUALITY_PROMOTION",
+  "status": "TWO_ORIGINAL_PNGS_GENERATED_AND_PRESERVED_IN_CHATGPT_LIBRARY; HUMAN_BLIND_REVIEW_PENDING; STRICT_NATIVE_ASPECT_NOT_PASSED",
+  "frozen_inputs": {
+    "source_path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json",
+    "source_git_blob_sha": "ca2a4ed6cc4c24933ed2286b53446aad6196f9ee",
+    "reference_drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "reference_sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "reference_original_type": "THIRD_PARTY_PHOTOGRAPHIC_REFERENCE_NOT_OUR_GENERATION",
+    "reference_actual_pixels_previously_read": true
+  },
+  "execution": {
+    "browser": "Opera Neon connected ChatGPT web UI, separate new conversation for each arm",
+    "same_image_attached_visible_in_both_chat_composers": true,
+    "each_prompt_matches_corresponding_frozen_arm": true,
+    "separate_conversations": true,
+    "one_image_generated_per_arm": true,
+    "hidden_variants_observed": false,
+    "use_prior_R1_R5_as_generation_inputs": false,
+    "backend_exact_attachment_manifest_available": false,
+    "provider_gen_ids_available": false,
+    "caveat": "UI shows actual image attachment and final sent text, but internal model-conditioning parameters and provider request hashes are not exposed. Do not imply deterministic causal proof.",
+    "arms": {
+      "X": {
+        "arm": "A_DIRECT_REFERENCE_BASELINE",
+        "chat_url": "https://chatgpt.com/c/6acb42fc-0fac-83ec-af2c-132ab60ded2e",
+        "original_file_name": "VPD_地图以外_AB_X_20261011.png",
+        "library_file_id": "libfile_f472048b87b481919c6dd35785fb26b5",
+        "library_backing_file_id": "file_00000000cc9081fdae90b832a1ce212a",
+        "bytes": 2060330,
+        "sha256": "b0958ce70e0e55b08642d7671e8f5fe8dc2d3c4cefc104912e202c7918609268",
+        "pixel_dimensions": [
+          941,
+          1672
+        ],
+        "pixel_mode": "RGB",
+        "format": "PNG",
+        "actual_content_inspected": true
+      },
+      "Y": {
+        "arm": "B_REFERENCE_PLUS_V2_COMPACT_DELTA",
+        "chat_url": "https://chatgpt.com/c/6acb43f1-df0c-83ec-a0d6-8d627fa4ed6d",
+        "original_file_name": "VPD_地图以外_AB_Y_20261011.png",
+        "library_file_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+        "library_backing_file_id": "file_00000000cfc081fd9e8923607b3c6037",
+        "bytes": 1934752,
+        "sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+        "pixel_dimensions": [
+          941,
+          1672
+        ],
+        "pixel_mode": "RGB",
+        "format": "PNG",
+        "actual_content_inspected": true
+      }
+    }
+  },
+  "hard_checks": {
+    "chatgpt_library_upload_and_materialization": "SUCCESS_BOTH_FILES",
+    "local_sha256_recomputed_on_original_bytes": true,
+    "native_math_exact_9_16": false,
+    "native_aspect_detail": "941*16 != 1672*9; near-9:16 but original PNG is not mathematically exact 9:16",
+    "created_google_drive_files": false,
+    "independent_human_blind_verdict": "PENDING",
+    "photographic_absolute_quality_usable": "NOT_HUMAN_VALIDATED",
+    "v2_compiler_incremental_benefit": "UNPROVEN",
+    "production_promotion_allowed": false,
+    "vpd_skill_promoted": false,
+    "figma_composite_started": false
+  },
+  "preservation": {
+    "legacy_reference_and_R1_to_R5_unmodified": true,
+    "typography_master_unmodified": true,
+    "native_lock_revision_unchanged": 355,
+    "native_checkpoint_sequence_unchanged": 377
+  },
+  "next": "Obtain user's blinded absolute-quality verdict on the two actual original PNGs before exposing route mapping; treat both exact-aspect failures as a known technical limitation. Only if user finds either aesthetically usable should later production-format handling and integrated editable-Figma poster be considered. No auto rerolls."
+}
