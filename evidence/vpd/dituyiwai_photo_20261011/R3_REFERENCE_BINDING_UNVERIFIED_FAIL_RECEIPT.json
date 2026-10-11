@@ -1,0 +1,81 @@
+{
+  "schema": "vpd-photo-candidate-receipt/v1",
+  "recorded_date": "2026-10-11",
+  "project": "visual-aesthetic-vpd",
+  "scope": "DITUYIWAI_REFERENCE_GROUNDED_ORIGINAL_PHOTOGRAPHY",
+  "authority_boundary": "EVIDENCE_ONLY_NOT_A_NATIVE_TASK_LOCK_CHANGE_OR_HUMAN_APPROVAL",
+  "reference": {
+    "name": "06_确认参考A_暖色山谷山路_截图裁取_非生成.png",
+    "drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "dimensions": [
+      709,
+      1064
+    ],
+    "pixels_actually_opened_and_inspected": true,
+    "origin": "THIRD_PARTY_WEB_PHOTOGRAPHIC_REFERENCE_NOT_AI_PRODUCTION",
+    "observed_visual_facts": [
+      "soft pale peach far hills and top negative space, no direct visible sun",
+      "continuous white low-contrast valley cloud bank between hills",
+      "warm dry reddish mountain side and a descending mountain road at lower left",
+      "one very small dark vehicle on road",
+      "matte atmospheric distance rather than cinematic golden-hour hero landscape"
+    ],
+    "artist": "UNKNOWN",
+    "rights": "UNVERIFIED"
+  },
+  "parent_r2": {
+    "receipt_path": "evidence/vpd/dituyiwai_photo_20261011/R2_ORIGINAL_PHOTOGRAPHY_CANDIDATE_RECEIPT.json",
+    "status": "INTERNAL_FAIL_UNPROMOTED",
+    "imagegen_gen_id": "7b56dba7-ec43-475c-94fe-779bd3ab7307"
+  },
+  "attempt": {
+    "label": "R3",
+    "limit": "ONE_GENERATION_THIS_TURN_NO_REROLL",
+    "tool": "image_gen.text2im",
+    "generation_id": "29ecd090-8c04-402f-934a-2ccc91459dfd",
+    "explicit_reference_image_id_supplied_in_actual_tool_call": false,
+    "model_reference_binding_proven": false,
+    "generation_returned_binding_manifest": false,
+    "returned_parent_gen_id": null,
+    "returned_prompt_text": "NOT_EXPOSED",
+    "original": {
+      "file": "09_地图以外_摄影参考绑定未验证_R3_仅实验留档_20261011.png",
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "sha256": "5830fd77e2d496d9296977b3042f2e5271bf767070b0108944b7844efde6b152",
+      "drive_file_id": "1od6ki1gKdJJNd9sFd1fFu1b3eqtp5HOX",
+      "drive_url": "https://drive.google.com/file/d/1od6ki1gKdJJNd9sFd1fFu1b3eqtp5HOX/view",
+      "drive_upload": "SUCCEEDED",
+      "drive_bytes_reread_and_sha256_recalculated": true,
+      "aspect_exact_9_16": false
+    }
+  },
+  "review": {
+    "source_reference_and_generated_candidate_both_pixels_viewed": true,
+    "scope": "ASSISTANT_PRE_HUMAN_DESIGN_SCREEN_ONLY",
+    "result": "FAIL_CLOSED_SOURCE_BINDING_UNVERIFIED_AND_VISUAL_DIRECTION_NOT_MATCHED",
+    "specific_problems": [
+      "reference is pale, muted and without direct sun, while output reverted to a saturated high contrast sunburst style",
+      "actual generation call did not explicitly reference selected file ID, so conditioning must remain unverified",
+      "bright spectacle dominates subtle road/cloud scale hierarchy and matteness",
+      "returned dimensions 941x1672 are near but not exactly 9:16"
+    ],
+    "human_acceptance": "NOT_REQUESTED",
+    "whole_poster_acceptance": false,
+    "Figma_composition_not_started": true,
+    "text_original_preserved": true,
+    "old_R1_R2_unchanged": true,
+    "no_model_training_or_promotion": true
+  },
+  "next_safe_action": "Before another rendition, deliver the actual 709x1064 reference image to a reference-aware image generation interface with a verifiable input attachment or reference binding. Retain muted overcast/peach palette, tiny car and low-left curving road, no sunburst. Submit exactly one separately authorized candidate, then compare actual pixels before Figma. Do not retry this ungrounded generation automatically.",
+  "native_lock_revision_observed": 355,
+  "checkpoint_sequence_observed": 377,
+  "native_state_writes": 0,
+  "figma_writes": 0,
+  "plugin_task_writes": 0
+}
