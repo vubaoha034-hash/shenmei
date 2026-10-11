@@ -16,9 +16,23 @@
       "severity": "low",
       "source": "agent",
       "summary": "Scoped two-content evidence for reordering hierarchy rather than copying the reference composition"
+    },
+    {
+      "id": "ev_a6299fac60e7",
+      "fingerprint": "fp_c2e698ec480a",
+      "layer": "skill",
+      "kind": "tactic",
+      "source": "user",
+      "case_id": "VPD-MAPOUTSIDE-PHOTO-V2-AB-20261011-X-PREFERRED",
+      "confidence": "high",
+      "severity": "medium",
+      "summary": "用户盲评认为较短的直接参考提示词 X 比叠加八项 V2 机制的 Y 更好看（单次相对偏好）",
+      "detail": "用户原话：『我觉得x更好看，并且我们记录提词器的写法习惯』。本次随机盲评 X=直接参考摄影的335字符精简提示词，Y=参考摄影加8条V2机制与多项禁令的1417字符提示词。两路实际原始PNG已保存、SHA256确定。人审只能证实本例 X 在相对审美上胜出，不能推导绝对可用性、因果归因或所有较短提示词必然优于较长。项目级工作习惯：蒸馏分析保留细节，但最终给Image的指令优先真实原图+主体/用途+少量关键构图与光色+有限避项；减少抽象赞美词、机械枚举和重复禁令，保持必要内容正确性。证据：evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_PREFERENCE_AND_PROMPT_HABIT_20261011.json。只观察，暂不promote全局Skill。",
+      "contradicts": [],
+      "created_at": "2026-10-11T11:51:51+00:00"
     }
   ],
   "schema": 1,
   "target": "visual-distillation-compiler-v2",
-  "updated_at": "2026-10-02T01:45:33+00:00"
+  "updated_at": "2026-10-11T11:55:00+00:00"
 }
