@@ -30,6 +30,9 @@
 - **重大来源限制**：参考图本轮确已被执行者实际查看，但图像生成工具未提供参考像素绑定的可核验证据，不能声称“模型确实看到了原参考图”；下一次改进必须首先解决这一点而不是盲目复述画面。没有新的自动出图授权。
 - 独立实证回执（当前状态唯一新增参考）：[`evidence/vpd/dituyiwai_photo_20261011/R2_ORIGINAL_PHOTOGRAPHY_CANDIDATE_RECEIPT.json`](../../evidence/vpd/dituyiwai_photo_20261011/R2_ORIGINAL_PHOTOGRAPHY_CANDIDATE_RECEIPT.json)。
 
+
+**同日后续接口预检：** Adobe Firefly 确有支持显式 `referenceImage` 的图片生成工具定义，但在当前聊天实际调用 `adobe_mandatory_init` 得到 `The tool failed internally.`，因此 Adobe 路线 **连接前置失败，不得声称已接通、已绑定或可以立即生成**，没有调用其生成接口、没有使用 Firefly 点数。需要先解决可用参考图接口（或连接器故障）和额度授权才进入下一张生产，绝不重播 R1—R4 失败。
+
 **此图片证据仍是旁路工作记录，不改变原生 S7 真人 PENDING 与既有 P7 主线结果**。下一次新聊天应在读完原生状态后阅读本段新增 R2 回执，先处理摄影真实参考绑定和新候选，不倒回已完成文字。
 
 ---
