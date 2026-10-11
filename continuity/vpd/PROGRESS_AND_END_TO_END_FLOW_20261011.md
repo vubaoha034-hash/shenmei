@@ -1,5 +1,17 @@
 # 高级感 P｜当前进度与端到端制作流程（2026-10-11）
 
+## 2026-10-11：现有 V2 蒸馏编译合同首次用于《地图以外》摄影输入冻结（**还未正式出图**）
+
+- **实际恢复**：独立读取当时 GitHub HEAD `705120a1be99dc50736760cc6271938c0a630390` 下 `START_HERE.md`、`AGENTS.md`、`PROJECT_CONTROL_ADAPTER.json`、`VPD_PROJECT_ROADMAP.md`、`CURRENT_TASK_LOCK.json`、`LATEST_CHECKPOINT.json`、`VISUAL_DISTILLATION_COMPILER_CONTRACT_V2.md`、`VISUAL_PROGRAM_DISTILLATION_V1.md`、`AESTHETIC_SKILL_DESIGN_CHARTER.md` 和真实 R5 记录。原任务锁仍 revision=355、checkpoint=377、S7 等真人审核，**没有改变**。
+- **找到根因**：实际读取 GitHub 当时完整约4795树项，V2 是 `FROZEN_FOR_IMPLEMENTATION` 的规范合同+JSON Schema+已存个别 Style Capsule；未找到可直接运行并调用 ChatGPT Images 的通用 `visual-distillation-compiler-v2` 可执行程序。现有 `visual_memory/generation_bridge.py` 自述不调用 renderer。因此“已经自动运行现有 V2 编译器”不成立。当前成果明确是**人工按照原 V2 合同，从实际像素做一次结构化编译**，不是部署新 Skill、训练模型或自动调用插件。
+- **源图验证**：实际下载、读取参考A：709×1064 RGB PNG；SHA256 `fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016`；仅此一张作为正参考。并实读 R5 原件 941×1672，SHA256 `f2d797ebaf377518afc6a8c5e3d0b5c151116f2b2f54561c5ebf87ce05fe242d`，用失败对比确定原图不同机制（左下小路/极小车辆/大片乳白雾/浅桃远山/无太阳/低对比留白）。
+- **实际产物1**：[《地图以外》摄影 V2 VisualProgram 草案](../../evidence/vpd/dituyiwai_photo_20261011/V2_PHOTO_VISUAL_PROGRAM_DRAFT.json)。包括真实来源血统、摄影B1-B8、无文字设计和图文融合说明、8条按优先级排序的高杠杆视觉机制、同一参考家族可变项与不复制边界、迁移算子和质量检查。**已加载仓库现存 `schemas/visual-program.v2.schema.json`，使用当前运行中 JSON Schema 核验逻辑校验所有 required/type/enum/const/refs/arrays/props，结果 PASS；状态只为 DRAFT，真人尚未批准**。
+- **实际产物2**：[冻结 A/B 双路输入](../../evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json)。A=实际单图直参+共同内容条件；B=同单图+完全相同内容条件+冻结8个V2高杠杆机制。均限定9:16、单张无字摄影、每路n=1、不重试、不隐藏变体、禁止 Figma 写入；两路文本已落盘，防止现场微改提示词。
+- **目前仅 PREPARED，不是成功实测**：这次没有任何新 Image 生成，没有证据声称 B 比 A 好。按照 2026-09-21 已存 `CHATGPT_IMAGES_NATIVE_CONTROL_MAPPING_20260921.md` 原协议，A/B 须各用**独立干净生成聊天**，只载入同一原始参考、不得载入R1-R5或对方输出，在一致条件生成后由真人盲评。当前会话已经含有旧图，不能将本聊天内连续生成视为合法正式 A/B。
+- **下一唯一实验动作**：把现有已冻结 A/B 输入分别投送至两个真实独立新生成上下文，核对运行者、参考实际像素与文本身份/比例/输出，且生成后每路只归档一个原始作品。若平台不能公开完整 Image 参数/附件绑定凭证，标注观察限制，不将相似外观冒充可审计因果证明。此工作属当前《地图以外》摄影独立试验，不能擅自重写S7原生业务任务锁，也不能晋升Golden或Scale。
+
+---
+
 ## 2026-10-11 新纠偏：Image可以直接参考已有图片，无须更换Adobe
 
 用户正确指出：**Image 本身具备以真实图片为参考生成新图片的能力**。此前把“生成返回没有可机读参考绑定凭证”解释为“Image不能参考，需要Adobe Firefly”，属于执行者错误推论。二者须区分：参考图实际在聊天可见/上传，Image可以利用；工具是否公开独立绑定清单是另一层可观测性问题。以后**默认在 Image 内继续参考创作，不再因缺少绑定日志而强制换工具，也不把生成 metadata 的 `edit_op=null`、`parent_gen_id=null` 当成未使用参考的证明**。
