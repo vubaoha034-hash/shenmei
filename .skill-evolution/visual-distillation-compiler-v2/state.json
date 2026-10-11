@@ -29,10 +29,31 @@
       "summary": "用户盲评认为较短的直接参考提示词 X 比叠加八项 V2 机制的 Y 更好看（单次相对偏好）",
       "detail": "用户原话：『我觉得x更好看，并且我们记录提词器的写法习惯』。本次随机盲评 X=直接参考摄影的335字符精简提示词，Y=参考摄影加8条V2机制与多项禁令的1417字符提示词。两路实际原始PNG已保存、SHA256确定。人审只能证实本例 X 在相对审美上胜出，不能推导绝对可用性、因果归因或所有较短提示词必然优于较长。项目级工作习惯：蒸馏分析保留细节，但最终给Image的指令优先真实原图+主体/用途+少量关键构图与光色+有限避项；减少抽象赞美词、机械枚举和重复禁令，保持必要内容正确性。证据：evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_PREFERENCE_AND_PROMPT_HABIT_20261011.json。只观察，暂不promote全局Skill。",
       "contradicts": [],
-      "created_at": "2026-10-11T11:51:51+00:00"
+      "created_at": "2026-10-11T11:51:51+00:00",
+      "validity": "RETRACTED_AS_CURRENT_PREFERENCE_BY_USER",
+      "retracted_from_active_learning": true,
+      "superseded_by": "ev_def888ce3bc0",
+      "correction_record": "evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json",
+      "retraction_reason": "先前误把先后下载顺序当成X/Y身份；后续用户明确纠正为Y更好、X有AI味，X胜出及其强制短提示词结论不再有效。保留原始文字仅为历史审计。"
+    },
+    {
+      "id": "ev_def888ce3bc0",
+      "fingerprint": "fp_5bb1f0c768d3",
+      "layer": "skill",
+      "kind": "correction",
+      "source": "user",
+      "case_id": "VPD-MAPOUTSIDE-PHOTO-V2-AB-20261011-CORRECTED-Y-PREFERRED",
+      "confidence": "high",
+      "severity": "high",
+      "summary": "用户纠正下载次序导致的X/Y误认：实际更喜欢Y，认为X有AI味",
+      "detail": "用户原话：『我搞错了y的更好。x有ai味道。因为我下载的时候没区分xy只区分前后下载。』原记录 ev_a6299fac60e7 误以为 X 胜出，现将该样本撤回当前审美学习，不删除原历史。真实血统：X=A（335字符直接参考原图），Y=B（1417字符加入8个V2视觉机制与必要避项），相应原件sha256未改变。当前Y相对更好，X有AI味；用户尚未宣布Y达到绝对商用品质。纠错发生于前次路线已经揭盲之后，不得继续称正式有效盲评因果验证。暂不设长提示词绝对优先规则；只保留『真实参考+必要且明确的高杠杆机制，精炼但不牺牲有效信息』写法。纠错原始回执 evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json。",
+      "contradicts": [
+        "ev_a6299fac60e7"
+      ],
+      "created_at": "2026-10-11T12:02:10+00:00"
     }
   ],
   "schema": 1,
   "target": "visual-distillation-compiler-v2",
-  "updated_at": "2026-10-11T11:55:00+00:00"
+  "updated_at": "2026-10-11T12:04:23+00:00"
 }
