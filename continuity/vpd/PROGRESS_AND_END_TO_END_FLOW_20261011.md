@@ -1,5 +1,16 @@
 # 高级感 P｜当前进度与端到端制作流程（2026-10-11）
 
+## 2026-10-11 摄影 R4 冷判定：停止无绑定证明的重复生成
+
+- 新聊天续接前已实读 HEAD `73166dd7db72b049decf0f6231db10eb652b2731` 的根入口、适配器、项目路线、原生锁 355、检查点 377、R3 失败回执；`shenmei` 原生 S7 锁未动，当前用户工作重点明确为《地图以外》摄影 R1 来源纠错后的独立新候选。
+- 已打开真实参考 `06_确认参考A_暖色山谷山路_截图裁取_非生成.png`（709×1064，SHA256 `fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016`）；图上不存在显著发光太阳，天空/云层低饱和，山谷浅桃灰，左下小弯道上仅小车。
+- 一次 `image_gen.text2im` 生成 R4，`gen_id=d97a367a-53e9-426e-93ce-23ec2a71c578`；回传没有可机读参考绑定证明，`parent_gen_id=null` 且 `edit_op=null`，不由此推断源图必定参与了条件生成。生成图片 `941×1671`，SHA256 `ea408a7f6ea5d45e23cf6b68e540331cd2c04805f66151ba91c5528c4fe4901d`，上传 Drive `1kOisnRqiVBxs2137ECTzB5fGDNKMnFyD`，下载回读原始字节一致：[R4 原件，仅失败留档](https://drive.google.com/file/d/1kOisnRqiVBxs2137ECTzB5fGDNKMnFyD/view)。
+- 视觉/像素冷审：R4 仍出现直接太阳、高对比金黄色，失去参考的雾化低反差与左下道路关系；参考顶端35% ROI 的 HSV 平均饱和度24.4，R4为70.6（0—255尺度），说明预期色彩机制明显失配。这是局部量化辅助，不代替整体审美。**R4=FAIL_CLOSED；禁止晋升、禁止基于它修 Figma、禁止再盲重试同样的生图路线**。
+- 唯一进一步处理方向：**先解决显式参考绑定和原样回执**。已实际发现 Adobe Firefly 的 `image_generate` 有显式 `referenceImage` URL 参数，可使输入路径在调用中有证据；**但该插件会消耗 Firefly credits，且 referenceImage 不可与尺寸/比例参数同时指定**。在获得用户对额度消耗及比例裁切方案的许可之前，本记录不启动 Firefly 生成、不再生成 R5。
+- 详细回执：[R4_IMAGE_REFERENCE_BINDING_AND_AESTHETIC_FAIL_RECEIPT.json](../../evidence/vpd/dituyiwai_photo_20261011/R4_IMAGE_REFERENCE_BINDING_AND_AESTHETIC_FAIL_RECEIPT.json)；只增加旁路证据，不覆盖原生任务锁、R1-R3、第三方参考和已完成的旧《地图以外》文字母版。
+ 
+---
+
 ## 2026-10-11 后续摄影尝试 R3（未通过，严禁视为视觉改进）
 
 - 已真实打开 Drive 参考 A 的原始709×1064 PNG，并与已存旧 R1、R2 的实际像素比较：参考为**无可见太阳的浅桃灰远山、连续白色云海、下方左侧的山路与很小一辆车、低反差雾化空间**，不是耀眼金色日出。
