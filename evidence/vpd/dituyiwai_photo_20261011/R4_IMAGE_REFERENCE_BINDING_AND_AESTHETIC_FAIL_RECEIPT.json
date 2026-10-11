@@ -1,0 +1,93 @@
+{
+  "schema": "vpd-photo-candidate-receipt/v1",
+  "recorded_date": "2026-10-11",
+  "project": "visual-aesthetic-vpd",
+  "scope": "DITUYIWAI_REFERENCE_DRIVEN_ORIGINAL_PHOTO_R4",
+  "authority": "EVIDENCE_ONLY_NON_PROMOTION_KEEP_NATIVE_PROJECT_STATE",
+  "reference": {
+    "file_name": "06_确认参考A_暖色山谷山路_截图裁取_非生成.png",
+    "source_type": "THIRD_PARTY_ONLINE_PHOTOGRAPHIC_REFERENCE_NOT_GENERATED_ARTWORK",
+    "drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "size": [
+      709,
+      1064
+    ],
+    "read_and_viewed_real_original_pixels": true,
+    "photographer": "UNKNOWN",
+    "license": "UNKNOWN",
+    "capture_time": "UNKNOWN",
+    "expected_mechanisms": [
+      "NO_VISIBLE_DIRECT_SUN",
+      "PALE_PINK_MUTED_SKY",
+      "SOFT_WHITISH_VALLEY_CLOUDS",
+      "MATTE_DEPTH_LAYERS",
+      "ROAD_BENDS_IN_LOWER_LEFT",
+      "A_SINGLE_TINY_DARK_VEHICLE"
+    ]
+  },
+  "generation": {
+    "candidate_name": "R4",
+    "tool": "image_gen.text2im",
+    "attempts_this_round": 1,
+    "generation_id": "d97a367a-53e9-426e-93ce-23ec2a71c578",
+    "returned_edit_op": null,
+    "returned_parent_gen_id": null,
+    "provider_exposes_bound_reference_inputs": false,
+    "reference_conditioning_status": "UNVERIFIED_TOOL_RESULT_DOES_NOT_PROVE_ACTUAL_PIXEL_BINDING",
+    "prompt_returned_by_provider": "EMPTY_OR_NOT_EXPOSED",
+    "image": {
+      "source_path": "/mnt/data/a_breathtaking_ultra_detailed_cinematic_landscap.png",
+      "width": 941,
+      "height": 1671,
+      "format": "PNG",
+      "mode": "RGB",
+      "sha256": "ea408a7f6ea5d45e23cf6b68e540331cd2c04805f66151ba91c5528c4fe4901d",
+      "size_bytes": 2399000,
+      "strict_9_16": false,
+      "drive_id": "1kOisnRqiVBxs2137ECTzB5fGDNKMnFyD",
+      "drive_url": "https://drive.google.com/file/d/1kOisnRqiVBxs2137ECTzB5fGDNKMnFyD/view",
+      "upload_succeeded": true,
+      "google_drive_metadata_readback_size": 2399000,
+      "google_drive_download_readback_bytes_mounted": true
+    }
+  },
+  "audit": {
+    "status": "INTERNAL_FAIL_NOT_PROMOTED",
+    "scope": "REAL_REFERENCE_VS_NEW_OUTPUT_PIXEL_AND_VISUAL_COMPARISON",
+    "negative_findings": [
+      "Bright direct sun is visible although actual approved reference has no visible sun",
+      "Output returned to higher-contrast golden sunset, unlike the reference's muted pale-peach matte atmosphere",
+      "Road in output is on right side foreground, while reference road enters on lower left; independent composition relationships not preserved",
+      "Pixel data demonstrates significant reference/output sky saturation divergence",
+      "Returned raster does not have a mathematically exact 9:16 aspect ratio",
+      "Provider did not expose machine-verifiable reference-image binding; source influence remains unknown"
+    ],
+    "measurement": {
+      "type": "PIL_HSV_0_TO_255",
+      "roi": "TOP_35_PERCENT",
+      "reference_mean_saturation": 24.4,
+      "candidate_mean_saturation": 70.6,
+      "measurement_scope": "COLOR_STATISTIC_ONLY_NOT_AESTHETIC_VALIDATION"
+    },
+    "human_final": "PENDING_NOT_SUBMITTED_AS_READY",
+    "figma_composition_started": false,
+    "new_typography_generation": 0,
+    "protected_reference_or_legacy_asset_replaced": false
+  },
+  "next_safe_action": "STOP further free-form image_gen guesses in this branch; first choose a provider/workflow with explicitly bound reference input and verifiable request receipt. Adobe Firefly image_generate exposes referenceImage URL but consumes credits and does not allow simultaneous aspectRatio/size when referenceImage is set; obtain approval for credits/cost and clarify crop strategy before any paid provider generation. Make at most one new image only after this input route is available. Never represent third-party source as generated artwork.",
+  "native_task_lock": {
+    "revision": 355,
+    "checkpoint_sequence": 377,
+    "changed": false,
+    "original_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "related_assets": {
+    "prior_r3_evidence": "evidence/vpd/dituyiwai_photo_20261011/R3_REFERENCE_BINDING_UNVERIFIED_FAIL_RECEIPT.json",
+    "typography_completed_task_id": "typo_f904cbe7-12ef-4ce1-a6ac-37e16d7c009c",
+    "original_typography_file": "https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=14-2"
+  },
+  "no_new_followup_generation": true,
+  "no_figma_write": true,
+  "no_native_lock_edit": true
+}
