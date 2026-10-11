@@ -1,0 +1,51 @@
+{
+  "schema_version": "vpd-mapoutside-ab-browser-preflight/v1",
+  "recorded_date": "2026-10-11",
+  "experiment_id": "VPD-MAPOUTSIDE-PHOTO-V2-AB-PREFLIGHT-20261011-01",
+  "evidence_scope": "PREPARED_EXECUTION_HANDOFF_ONLY_NOT_GENERATION",
+  "source_commit": "f677646cf046fd9bfb1e2101778c2611ea8858b2",
+  "frozen_inputs": {
+    "path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json",
+    "blob_sha": "ca2a4ed6cc4c24933ed2286b53446aad6196f9ee",
+    "reference_drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "reference_sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "same_reference_both_arms": true,
+    "imagegen_required_separate_fresh_chats": true,
+    "per_arm_images_allowed": 1
+  },
+  "browser_preflight": {
+    "browser": "Connected Opera Neon graphical and per-tab connector",
+    "successful": [
+      "Signed-in ChatGPT web UI was accessible in a newly opened tab",
+      "Existing true Google Drive reference file searchable from ChatGPT file library by exact original name",
+      "Selected Google Drive reference and saw upload completion to new-chat composer in one transient tab, but no message sent",
+      "Copied exact frozen A prompt into a distinct new-chat composer and verified the rendered text, but it had no confirmed uploaded image at this point",
+      "Previous unrelated unsent personal draft was restored in a separate blank-chat composer after this attempt"
+    ],
+    "unstable": [
+      "Browser tab used for A preparation was navigated away to an unrelated repository page by concurrent browser activity before sending",
+      "Browser page list then changed/closed previously opened tabs while this task was in progress",
+      "Two independently installed browser instances were detected, with user/other projects active",
+      "Therefore stable isolation and source/prompt co-binding could not be established for both arms"
+    ],
+    "formal_A_status": "NOT_SENT_NOT_RENDERED",
+    "formal_B_status": "NOT_STARTED",
+    "imagegen_calls_this_attempt": 0,
+    "image_outputs_this_attempt": 0,
+    "final_human_review": "NOT_APPLICABLE",
+    "no_unauthorized_retry": true
+  },
+  "invariants": {
+    "native_task_lock_revision": 355,
+    "latest_checkpoint_sequence": 377,
+    "native_lock_modified": false,
+    "typography_parent_modified": false,
+    "photo_R1_to_R5_modified": false,
+    "generator_method_changed": false,
+    "figma_writes": 0,
+    "existing_frozen_AB_prompts_unchanged": true,
+    "reference_bytes_not_published_in_repo": true,
+    "no_claim_of_actual_v2_benefit": true
+  },
+  "next_required_action": "Run frozen A and B in two genuinely independent and stable ChatGPT Images chat sessions, attaching the identical original Drive reference as an actual image to each. Capture exact sent text, source attachment identity and each single native image output before returning to main project. If stable isolated sessions cannot be guaranteed, stop without consuming image budget; do not substitute same-chat generations or unbound prompts."
+}
