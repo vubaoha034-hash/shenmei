@@ -1,0 +1,67 @@
+{
+  "schema_version": "vpd-visual-review-user-correction/v1",
+  "correction_id": "VPD-MAPOUTSIDE-V2-AB-X_Y_IDENTITY_AND_PROMPT_INFERENCE_CORRECTION-20261011-01",
+  "event_date": "2026-10-11",
+  "event_time_utc": "2026-10-11T12:02:10.401Z",
+  "authority": "USER_DIRECT_CORRECTION_SUPERSEDES_PRIOR_PROVISIONAL_VERDICT",
+  "exact_new_user_message": "我搞错了y的更好。x有ai味道。因为我下载的时候没区分xy只区分前后下载。",
+  "original_user_message": "我觉得x更好看，并且我们记录提词器的写法习惯",
+  "correction_reason": "用户此前按下载前后顺序识别作品，而非按明确标记的X/Y原始文件；初次X胜出不可靠。",
+  "supersedes": {
+    "previous_observation_path": "evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_PREFERENCE_AND_PROMPT_HABIT_20261011.json",
+    "previous_evidence_id": "ev_a6299fac60e7",
+    "prior_verdict": "X_BETTER_THAN_Y",
+    "prior_conclusion": "SHORT_DIRECT_REFERENCE_PROMPT_PREFERRED_OVER_V2_LONGER_PROMPT",
+    "new_disposition": "RETRACT_AS_CURRENT_HUMAN_TASTE_EVIDENCE_KEEP_HISTORICAL_ORIGINAL_WORDING",
+    "former_prompt_habit": "SHORT_PROMPT_AS_DEFAULT_DUE_TO_ASSUMED_X_WIN",
+    "habit_disposition": "SUPERSEDED_BY_CURRENT_USER_CORRECTION;DO_NOT_PROMOTE"
+  },
+  "immutable_asset_mapping": {
+    "source_reference_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "source_reference_sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "input_freeze_path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json",
+    "generation_receipt_path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_GENERATION_AND_LIBRARY_READBACK_20261011.json",
+    "X": {
+      "route": "A_DIRECT_REFERENCE_BASELINE",
+      "original_png_sha256": "b0958ce70e0e55b08642d7671e8f5fe8dc2d3c4cefc104912e202c7918609268",
+      "file_name": "VPD_地图以外_AB_X_20261011.png",
+      "library_id": "libfile_f472048b87b481919c6dd35785fb26b5",
+      "chat": "https://chatgpt.com/c/6acb42fc-0fac-83ec-af2c-132ab60ded2e"
+    },
+    "Y": {
+      "route": "B_REFERENCE_PLUS_V2_COMPACT_DELTA",
+      "original_png_sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+      "file_name": "VPD_地图以外_AB_Y_20261011.png",
+      "library_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+      "chat": "https://chatgpt.com/c/6acb43f1-df0c-83ec-a0d6-8d627fa4ed6d"
+    }
+  },
+  "effective_human_verdict": {
+    "relative_preference": "Y_BETTER_THAN_X",
+    "disfavored": "X",
+    "user_qualitative_reason": "X有ai味道",
+    "positive_b_causal_sufficiency": "NOT_PROVEN",
+    "absolute_quality_Y": "NOT_STATED_BY_USER",
+    "commercially_usable_Y": "UNKNOWN",
+    "human_comment_record_type": "CORRECTED_AFTER_MAPPING_DISCLOSURE",
+    "formally_blind_inference_valid": "NO_BECAUSE_THE_CORRECTION_FOLLOWED_UNBLINDING",
+    "caution": "Y=B in this pair, but single sample, sampling variance and changed instructions confound causal claims. Y prettier does not prove longer prompts always better or V2 reliably superior."
+  },
+  "revised_working_prompt_habit": {
+    "status": "SCOPED_HYPOTHESIS_USER_FEEDBACK_CONFIRMED_THIS_CASE_NOT_GLOBAL_RULE",
+    "keep": "真实参考原图 + 明确的新作品任务 + 少量但足够准确的高杠杆摄影/设计机制；指令必须可成像、逻辑一致。",
+    "correct_prior_assumption": "不要因为X的误认而强制采用335字符最短提示词或一至三句上限；必要的V2机制不能为追求短而删除。",
+    "learning_interpretation": "长度不是目标；本例更有信息量的V2提示词版本Y获用户相对认可。下一次应区分信息质量、冲突程度与实际生成随机性，避免把相关性当因果。",
+    "regression_avoid": "下一轮不能把『短就一定更好』作为Skill默认策略；不要因一次偏好自动设定『复杂一定更好』的反向规则。",
+    "unchanged": "深入蒸馏仍应存在，最终提示词应精炼且充分，不把完整工程审计文字塞进绘图请求。"
+  },
+  "action_boundaries": {
+    "new_images_generated": 0,
+    "images_edited": 0,
+    "figma_writes": 0,
+    "prior_photography_deleted": false,
+    "native_task_lock_modified": false,
+    "new_skill_rule_promoted": false
+  },
+  "next": "纠正现有Skill演进状态中错误X胜出样本；留存新纠错证据且标注旧证据已失效；未来继续独立评测，不以本次已知路线的事后改口称作严格盲评通过。"
+}
