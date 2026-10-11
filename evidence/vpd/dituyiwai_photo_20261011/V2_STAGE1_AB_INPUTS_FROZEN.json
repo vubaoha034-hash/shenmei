@@ -1,0 +1,79 @@
+{
+  "schema_version": "vpd-photo-v2-ab-freeze/v1",
+  "experiment_id": "VPD-MAPOUTSIDE-PHOTO-V2-AB-PREFLIGHT-20261011-01",
+  "created_at_date": "2026-10-11",
+  "source_commit": "705120a1be99dc50736760cc6271938c0a630390",
+  "mode": "PREFLIGHT_FREEZE_ONLY_NO_FORMAL_RENDER_EXECUTION",
+  "project_native_task_status": "VPD lock revision 355/sequence 377 remains tea S7; no native lock migration",
+  "image_reference": {
+    "file_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "dimensions": [
+      709,
+      1064
+    ],
+    "source_class": "THIRD_PARTY_PHOTOGRAPHY_REFERENCE_NOT_GENERATED_BY_US",
+    "license_status": "UNKNOWN",
+    "available_in_this_chat": true
+  },
+  "program_path": "evidence/vpd/dituyiwai_photo_20261011/V2_PHOTO_VISUAL_PROGRAM_DRAFT.json",
+  "compile_method": "MODEL_EXECUTED_CONTRACT_V2_FIELD_DECOMPOSITION_AND_DETERMINISTIC_PROMPT_ASSEMBLY_NOT_AN_INSTALLED_EXECUTABLE_COMPILER",
+  "study_type": "ONE_CONTROLLED_PAIR_TO_TEST_COMPACT_V2_ADDED_VALUE_NOT_RECONSTRUCT_THE_COPYRIGHTED_PHOTO",
+  "render_conditions": {
+    "renderer": "ChatGPT Images",
+    "aspect": "9:16",
+    "output_kind": "SINGLE_WORDLESS_PHOTOGRAPH",
+    "reference_count": 1,
+    "n_per_arm": 1,
+    "hidden_variants": false,
+    "retries": 0,
+    "seed": "NOT_USER_CONTROLLABLE",
+    "each_arm_fresh_isolated_chat": true,
+    "other_visual_context": "NONE",
+    "figma_writes": 0,
+    "paid_external_compute_usd": 0
+  },
+  "arms": {
+    "A": {
+      "label": "DIRECT_REFERENCE_BASELINE",
+      "reference": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+      "prompt": "Create an original, photo-real travel image in native vertical 9:16: an isolated winding mountain road above a mist-filled highland valley, exactly one tiny dark car, and an understated feeling of departure. Use the single attached real reference photograph for photographic language, not its exact landforms. No text, logo or collage."
+    },
+    "B": {
+      "label": "V2_COMPACT_DELTA",
+      "reference": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+      "prompt": "Create an original, photo-real travel image in native vertical 9:16: an isolated winding mountain road above a mist-filled highland valley, exactly one tiny dark car, and an understated feeling of departure. Use the single attached real reference photograph for photographic language, not its exact landforms. No text, logo or collage.\nV2 distilled visual mechanisms (only these eight): (1) Calm high-key ivory sky taking approximately the upper fifth; (2) broad dusty-peach low-detail distant ridge; (3) continuous creamy white valley fog as the biggest visual mass, with only a few muted gray low hill islands; (4) a narrow pale-gray asphalt road on dry rust-colored slope, entering from the LOWER LEFT and gently bending toward the lower center, not a broad right-side road; (5) one very small dark car, secondary to landscape; (6) ambient, fully diffuse light, absolutely no visible sun or rays; (7) restrained matte stone-gray/ochre/cream palette and subdued saturation, especially in sky and fog; (8) perspective conveyed through natural haze and overlapping hill masses rather than crisp dramatic peak details. You may invent all terrain and bend shapes so this is a new scene, not a pixel copy.\nHard avoids: visible sun or sunbeams; theatrical gold/orange sky; lush dark-green trees or forests; dominant right-side highway; HDR postcard clarity or dense high-contrast foreground; extra cars/signage/buildings.",
+      "added_mechanisms": [
+        "fog_is_main_mass",
+        "road_lower_left_small",
+        "no_visible_sun_diffuse_light",
+        "empty_high_key_sky",
+        "muted_color_science",
+        "depth_by_haze_and_occlusion",
+        "tiny_car_and_scale",
+        "dry_near_slope"
+      ]
+    }
+  },
+  "qa": {
+    "source_actual_bytes_sha256_recomputed": "PASS",
+    "source_dimensions_verified": "PASS",
+    "program_valid_against_existing_v2_schema": "PASS",
+    "exact_prompts_frozen": true,
+    "A_B_same_subject_format_reference": true,
+    "formal_imagegen_reference_binding_proven": false,
+    "independent_fresh_chat_A_and_B_not_run": true,
+    "baseline_r5_can_replace_A": false,
+    "scoring": [
+      "real photographs visible and photo authenticity",
+      "native aspect correctness and actual source reference identity",
+      "blind whole-image HUMAN usable/not usable before relative preference",
+      "reference aware family fidelity and literal copy check",
+      "incremental benefit of B beyond A"
+    ],
+    "prompt_delivery_constraint": "The current image_gen tool treats prompt argument as deprecated and does not return complete input/attachment manifest. Do not claim a strict same-input causal comparison if fresh isolated invocations or request-byte observations cannot be supplied.",
+    "current_status": "FROZEN_PREPARED_BUT_NOT_RENDERED_NOT_VALIDATED",
+    "promotion_allowed": false
+  },
+  "next_required_action": "Perform exactly one real A and one real B in separate clean chats with the identical sole reference image and frozen prompts; if either input binding, prompt, native ratio, or isolation cannot be verified, record INVALID instead of pretending V2 helps. Preserve all images and user absolute verdict; do not create more rules."
+}
