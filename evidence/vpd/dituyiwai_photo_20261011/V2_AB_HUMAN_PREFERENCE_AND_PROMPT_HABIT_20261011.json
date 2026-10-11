@@ -1,0 +1,73 @@
+{
+  "schema_version": "vpd-prompt-habit-user-observation/v1",
+  "record_date": "2026-10-11",
+  "evidence_id": "VPD-MAPOUTSIDE-X-PREFERRED-COMPACT-PROMPT-20261011-01",
+  "user_feedback": {
+    "exact_quote": "我觉得x更好看，并且我们记录提词器的写法习惯",
+    "preference": "X_BETTER_THAN_Y",
+    "verdict_scope": "HUMAN_RELATIVE_VISUAL_PREFERENCE",
+    "absolute_quality_X": "UNKNOWN",
+    "absolute_quality_Y": "UNKNOWN"
+  },
+  "source": {
+    "reference_drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "reference_sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "immutable_input_path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json",
+    "generation_receipt_path": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_GENERATION_AND_LIBRARY_READBACK_20261011.json"
+  },
+  "unblind": {
+    "X": {
+      "route": "A_DIRECT_REFERENCE_BASELINE",
+      "prompt_length_characters": 335,
+      "original_png_sha256": "b0958ce70e0e55b08642d7671e8f5fe8dc2d3c4cefc104912e202c7918609268",
+      "library_file_id": "libfile_f472048b87b481919c6dd35785fb26b5",
+      "chat": "https://chatgpt.com/c/6acb42fc-0fac-83ec-af2c-132ab60ded2e"
+    },
+    "Y": {
+      "route": "B_REFERENCE_PLUS_EIGHT_V2_CONTROLS",
+      "prompt_length_characters": 1417,
+      "original_png_sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+      "library_file_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+      "chat": "https://chatgpt.com/c/6acb43f1-df0c-83ec-a0d6-8d627fa4ed6d"
+    }
+  },
+  "prompt_habit": {
+    "scope": "高级感P 项目中有真实参考图的 Image 摄影和海报创作",
+    "principle": "分析阶段可深入，最终传给 Image 的生成提示词应优先简练、清楚、有视觉重点；不要将 V2 全部分析及冗长审查规则原封不动塞进生成提示词。",
+    "suggested_structure": [
+      "原始优秀参考图作为视觉锚点，明确仅参考风格机制而非冒充已生成作品",
+      "一句话说明任务、主体、画幅与想要的整体感觉",
+      "一至两句话交代主要构图、景别关系、光线色彩，优先三至五个可见关键点",
+      "少数必要的硬性避项即可，其余可变细节交由 Image 处理",
+      "实际像素与参考核对，真人不认可则不晋升"
+    ],
+    "avoid": [
+      "堆砌高级感、电影感、史诗感等抽象词",
+      "一次性附加八项细则和长串禁止清单",
+      "把完整蒸馏 JSON 或审计报告当提示词",
+      "失败就反复追加规则",
+      "用固定字数代替视觉主次判断"
+    ],
+    "compact_prompt_example": "参考这张照片的空间层次与柔和光线，创作一张全新的竖版真实山路摄影。一条细窄公路沿山坡转弯，一辆很小的车驶向云雾；远山朦胧，画面自然安静、没有文字。",
+    "sentence_count": "通常先尝试一至三句，不设严格字数上限",
+    "classification": "USER_PREFERRED_WORKING_HABIT_NOT_VALIDATED_UNIVERSAL_SKILL_RULE"
+  },
+  "interpretation": {
+    "actual_pixels_observed": "X道路、近景与雾海的主次更明确；Y近乎一体的淡色和云雾使视觉重点偏弱。这是主观视觉判断，不是独立因果证据。",
+    "confounds": [
+      "X与Y同时改变了文字长度、视觉控制内容、禁止项数量",
+      "仅一组各一张，随机采样差异未排除",
+      "两张输出941x1672，不满足数学严格9:16",
+      "用户只说X更好看，没有说X绝对可用"
+    ],
+    "proven": "本轮真人盲评选择X，即精简直接参考路线",
+    "not_proven": "不能宣布所有长提示词都会变差，或V2蒸馏无效"
+  },
+  "no_side_effects": {
+    "new_generation": 0,
+    "figma_writes": 0,
+    "native_lock_writes": 0,
+    "prior_assets_overwritten": false
+  },
+  "next": "本项目暂以简洁可成像提示词作为创作默认写法；继续累计独立案例后再决定是否晋升通用Skill规则。若准备Figma制作，另需X绝对可用性人审。"
+}
