@@ -79,3 +79,16 @@
 **截至本次快照：**原生下一动作是将已存 S7 真实作品交刘先生审核：`LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER`。当前的“地图以外”完整作品创作方向与蘑菇真实性 Golden 应分别保留为近期讨论/质量基准；如有新的明确创作授权，先登记相应实际参考和目标，不擅自覆盖原任务锁。
 
 保存说明：本文件仅登记已核实的状态、证据边界和可复用程序。没有运行状态校验脚本，没有出图，没有操作 Figma，没有更新业务任务锁/检查点/账本，没有把聊天里未回读的交付晋升为仓库权威。
+
+## 七、2026-10-11 追加：从**已连接的线上插件**实际只读回读的现状
+
+此附录晚于本文件前面的 GitHub 代码核验。已实际调用同一私有插件的 `get_current_workflow`、`get_typography_delivery`、`get_image_first_workflow`、`get_photo_composition_workflow`。返回 `plugin_version=0.5.0`，应优先作为**当前线上插件运行版本**的证据；`plugins/visual-aesthetic-workflow/v0.3.0/` 是仓库中历史源码包，`CURRENT_RELEASE.json` 的 0.1.1 为旧历史登记，不能冒充当前运行版本。
+
+- 原生项目状态：`get_current_workflow` 在本文件首次写入后回读 commit `f877e30c4a81cacc6e5d31354878545b7b51305f`；原生锁 SHA-256 `4eee3b6aec2ee8979bc96f3e1193636caa986b16d779bd8bdd15263e1652428f`、revision `355`、checkpoint sequence `377`；原生唯一下一动作依然 `LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER`。这是插件的只读原生快照，不是新业务状态提交。
+- **《地图以外》旧参考文字任务（确实完成）**：`typo_f904cbe7-12ef-4ce1-a6ac-37e16d7c009c`；任务修订 `14`；`status=COMPLETE`，`next_required_action=NONE_COMPLETE`，`completion_claim_allowed=true`。生成透明文字母版 `dituyiwai_master_rgba_670x946.png`，SHA-256 `5b438be548d6db51e16f328416aaa293e814c4868b42f094eb8cc5326480f2e4`；已取得真人对母版的明确批准。**母版的透明效果有后处理/校正文案成分，不是一次直接输出完整 RGBA 的证明。** 原 Figma 文件 `Ul7UeikXjD9uE7qHluRfky` 节点 `14:2`，实际回读 **37 个可编辑 VECTOR、0 个原生 TEXT、0 个 IMAGE**：轮廓可编辑，但不能把矢量字说成键盘一改就行。原生导出有独立实际双 PNG 字节审计通过，**不是零像素差、不是无损完全相同**；记录 146062 个变化像素，母版与导出 SHA 不同。Figma 源：https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=14-2。这一局部**文字交付**完成不代表摄影/完整海报完成。
+- **《地图以外》新参考文字任务（未完成）**：`typo_6fad2cc2-cbea-4457-830d-ed63f339779a`，新参考名 `1000031655.jpg`，真实参考像素已检查并登记 SHA-256 `bd37054c151b1fe62d39879fbb247483da605213105eb09ffe59e06ac39dc6f4`（1149×1536）；任务修订 `1`，`status=IN_PROGRESS`，`stage=IMAGE_MASTER_REQUIRED`，唯一插件内下一动作 `RECORD_IMAGE`；未有已批准的新透明母版、没有该新参考的 Figma 成品和独立像素审核。**不得用旧任务完成状态冒充新任务完成**。
+- 线上通用文字流程的实际合同版本为 `reference-image-first-typography/v1`、`workflow_version=0.4.0`：用户上传并核验**真实参考像素** → 图片工具创作**纯文字、无摄影背景、透明 PNG** → 明确真人审查/批准 → 原 Figma 中以 TEXT/可编辑 VECTOR 复刻（不允许用整张扁平图片冒充）→ 实际读取两 PNG 进行独立分区域像素差审计和交付；原任务可按需在原 ID 原地续办，禁止重建第二个相同任务。
+- **可选摄影/完整海报合成流程**已经由同一线上插件 `0.5.0` 的只读合同实际返回，其工作流版本 `0.5.0`、schema `approved-lettering-photo-composition/v1`；它属于**完成并批准文字父任务之后的独立子任务**，不是文字任务自动延展，也不是已实际制作作品的证据。流程：确认已完成获批文字父任务/其同一 Figma 文件 → 实读用户照片原字节、真实 MIME、尺寸与哈希 → 规划构图并冻结人物/摄影保护区 → 同一 Figma 文件新建独立 frame，**一个原照片 image fill + 可编辑的文字矢量/普通 TEXT** → 实际导出 PNG/节点回读，独立检查照片保真和层次关系 → 真人批准整张海报 → 交付真实 PNG + 原生 Figma 源。这条路明确 **不得重生成用户提供的摄影原件**；插件服务端只核验提交的外部证据字段，本身不能解码原图或自主操控 Figma，不得无工具调用声称完成。只读调用 `get_photo_composition` 未给出任务 ID，返回 `COMPOSITION_ID_OR_REQUEST_KEY_REQUIRED`，**没有证据表明有摄影合成子任务完成**。
+- 线上插件的阶段与 GitHub 原生锁各管不同范围：`get_typography_delivery` 状态可以说明其 D1 隔离文字任务是否完成，但**不能覆盖**原生茶作/S7 的锁、评价、真人门、推广资格或阶段。当前核对**没有运行**真正的新作品生成、Figma 写入、母版回读或摄影合成。
+- **接管结论**：原生 S7 等真人审稿；《地图以外》旧透明字形支线已经完成；新参考字形支线等待 Image 生成新母版并经真人审核；9:16 真实摄影与成品合成还需另核对实际照片、执行与子任务证据，不把待办推断为完成。下一对话先读最新原生锁，再按明确要继续的具体 task_id 查插件，**不要重做已完成旧任务**。
+
