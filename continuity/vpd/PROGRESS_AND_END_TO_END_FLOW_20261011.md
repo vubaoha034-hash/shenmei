@@ -1,5 +1,11 @@
 # 高级感 P｜当前进度与端到端制作流程（2026-10-11）
 
+## 2026-10-11 实际 A/B 浏览器预检（未正式出图）
+
+本次依据最新HEAD `f677646cf046fd9bfb1e2101778c2611ea8858b2` 复核 V2 双路输入，确认A/B仍是未执行。已在连接的ChatGPT网页中实际检索到Google Drive原参考，并曾成功把图片上传到新聊天输入框；随后正式发送前发现共享Opera浏览器标签被其他任务导航/关闭。同时另一新聊天虽已输入A路冻结原文，却无法保证与参考图片在同一隔离请求里稳定绑定。**A未发送、B未开始、Image生成次数=0、没有新的A/B正式图片。** 已恢复操作前浏览器中存在的未发送草稿，不改变他人的正式会话。记录：[隔离执行预检与并发阻断回执](../../evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_ISOLATION_BROWSER_PREFLIGHT_20261011.json)。不再把受污染的同聊天生成冒充正式比较。下一动作维持：在稳定、独立的两个新ChatGPT会话中分别携带**同一参考原图**与已冻结的A/B原文生成各一张后，保留实际像素及验收；不能满足隔离条件就不消耗预算。原生锁355/检查点377保持不变。
+
+---
+
 ## 2026-10-11：现有 V2 蒸馏编译合同首次用于《地图以外》摄影输入冻结（**还未正式出图**）
 
 - **实际恢复**：独立读取当时 GitHub HEAD `705120a1be99dc50736760cc6271938c0a630390` 下 `START_HERE.md`、`AGENTS.md`、`PROJECT_CONTROL_ADAPTER.json`、`VPD_PROJECT_ROADMAP.md`、`CURRENT_TASK_LOCK.json`、`LATEST_CHECKPOINT.json`、`VISUAL_DISTILLATION_COMPILER_CONTRACT_V2.md`、`VISUAL_PROGRAM_DISTILLATION_V1.md`、`AESTHETIC_SKILL_DESIGN_CHARTER.md` 和真实 R5 记录。原任务锁仍 revision=355、checkpoint=377、S7 等真人审核，**没有改变**。
