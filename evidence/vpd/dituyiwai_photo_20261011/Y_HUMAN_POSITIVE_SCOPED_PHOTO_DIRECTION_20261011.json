@@ -1,0 +1,46 @@
+{
+  "schema_version": "vpd-scoped-human-photo-appreciation/v1",
+  "date": "2026-10-11",
+  "task": "《地图以外》真实参考蒸馏：优胜候选 Y 的摄影验收与局部可改进性",
+  "authority": "USER_DIRECT_QUALITATIVE_FEEDBACK_SCOPED_TO_ONE_IMAGE",
+  "user_verbatim": "我觉得很不错了。但是不知道可以更好吗",
+  "prior_authoritative_user_correction": "我搞错了y的更好。x有ai味道。因为我下载的时候没区分xy只区分前后下载。",
+  "scope": {
+    "target": "Y only",
+    "label_identity": "Y = B_REFERENCE_PLUS_V2_COMPACT_DELTA",
+    "source_reference": "第三方网络摄影参考，不属于本项目原创输出",
+    "image_original_sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+    "image_library_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+    "original_format": "941x1672 RGB PNG",
+    "origin_receipt": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_GENERATION_AND_LIBRARY_READBACK_20261011.json",
+    "corrected_review_receipt": "evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json"
+  },
+  "judgment": {
+    "positive": "Y is well-liked as a photographic direction and must be preserved unchanged as current best candidate.",
+    "unknown": "The user's statement does not explicitly freeze Y as final commercial photo or approve a finished Figma composite; not Golden/production promotion.",
+    "improvements_possible_not_proven": [
+      "Optional bounded improvement to fog variation and natural atmospheric layering without altering wide-scale composition",
+      "Optional organic texture in distant terrain; avoid artificial sharpened HDR look",
+      "Check derivative originality and downstream source rights before commercial publication: source photographer, license and shot details are unknown"
+    ],
+    "expected_gain": "Uncertain, diminishing returns; a new full-frame redraw could easily regress",
+    "priority": "Preserve Y original first, then test full image-plus-existing-lettering visual relationship on a new sibling composition. Decide afterwards whether a single localized photography retouch is necessary."
+  },
+  "downstream_conditions": {
+    "do_not_regenerate_Y_or_overwrite_original": true,
+    "do_not_use_Y_as_golden_without_new_approval": true,
+    "do_not_reopen_completed_typography": true,
+    "figma_source": "https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=14-2",
+    "text_parent_state": "COMPLETE rev14, original editable vector master to be reused",
+    "no_image_creation_authorized_by_this_record": true,
+    "reference_license_for_commercial_use": "UNKNOWN"
+  },
+  "workflow_history": {
+    "no_new_image": true,
+    "no_figma_edit": true,
+    "no_native_task_lock_change": true,
+    "observed_native_task_lock_revision": 355,
+    "observed_checkpoint_sequence": 377
+  },
+  "next_action": "Prepare at most one new full-poster Figma composite from preserved Y and completed native editable typography, only under an explicit execution authorization. Do not crop/retouch master invisibly or claim final acceptance. Compare actual export pixels; user's aesthetic judgment decides further refinement."
+}
