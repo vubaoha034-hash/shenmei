@@ -1,0 +1,91 @@
+{
+  "schema": "vpd-dituyiwai-reference-image-original-photography-receipt/v1",
+  "recorded_at_date": "2026-10-11",
+  "source_repo": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "scope": "MAP_OUTSIDE_PHOTOGRAPHY_ONLY",
+  "status": "IMAGE_GEN_ONE_CANDIDATE_ARCHIVED_NO_HUMAN_FINAL_ACCEPTANCE",
+  "origin": "user said Image itself can directly use reference pictures; corrected previous mistaken requirement to migrate to Adobe",
+  "reference": {
+    "origin": "third-party photographic reference, not our generated candidate",
+    "drive_id": "1Oya0q-KqHLF4-XzZvzJuZyg4MRL48jto",
+    "file_name": "06_确认参考A_暖色山谷山路_截图裁取_非生成.png",
+    "sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+    "width": 709,
+    "height": 1064,
+    "read_as_actual_image_bytes": true,
+    "mounted_visible_before_generation": true,
+    "conversation_file_id": "file_000000008c3882118f79a2013cf67f8b",
+    "provider_explicit_reference_binding_manifest": "NOT_EXPOSED",
+    "interpretation": "reference available to generation workflow; actual backend conditioning cannot be proved from returned metadata alone"
+  },
+  "generation": {
+    "tool": "image_gen.text2im",
+    "gen_id": "5f19abff-3a7e-4718-9f20-95413b352a74",
+    "returned_edit_op": null,
+    "returned_parent_gen_id": null,
+    "internal_prompt_text_in_tool_return": "EMPTY",
+    "only_one_generation_in_turn": true,
+    "output": {
+      "drive_id": "1XC4rfo1o5_k6uWQ-RD9FCu9y90vBUCBz",
+      "name": "11_地图以外_R5_Image参考原图_原创摄影_等待真人验收_20261011.png",
+      "url": "https://drive.google.com/file/d/1XC4rfo1o5_k6uWQ-RD9FCu9y90vBUCBz/view",
+      "sha256": "f2d797ebaf377518afc6a8c5e3d0b5c151116f2b2f54561c5ebf87ce05fe242d",
+      "width": 941,
+      "height": 1672,
+      "bytes": 2274124,
+      "png_mode": "RGB",
+      "drive_upload": "SUCCESS",
+      "drive_readback_verification": "EXACT_BYTE_MATCH_LOCAL_GENERATED_AND_CONNECTOR_REREAD"
+    },
+    "exact_9_16_derivative": {
+      "container_path": "/mnt/data/地图以外_R5_严格9比16_未验收.png",
+      "cropped_bounds": [
+        2,
+        4,
+        938,
+        1668
+      ],
+      "width": 936,
+      "height": 1664,
+      "sha256": "eddebaf7a2b19453ad0001564b6784c705a83bddfebbe3f71fdbaa8cf976a3ff",
+      "size_bytes": 2098472,
+      "operation": "CENTER_CROP_5_TOTAL_PIXELS_WIDTH_AND_8_TOTAL_PIXELS_HEIGHT_NO_COLOR_EDIT",
+      "drive_upload": "NOT_EXECUTED",
+      "sandbox_file": "VERIFIED_IN_CURRENT_RUNTIME"
+    }
+  },
+  "preliminary_screen": {
+    "type": "assistant_actual_pixel_compare",
+    "status": "REFERENCE_FIDELITY_NOT_PASSED_NO_PROMOTION",
+    "strengths": [
+      "cloud bank, distant mountain stacking and pale peach palette have been partially recovered compared with the previous over-saturated version",
+      "a small road vehicle is visible"
+    ],
+    "weaknesses": [
+      "reference composition puts road on lower left; candidate still routes road at lower right",
+      "the reference is diffuse/no visible sun; candidate has glow on left horizon",
+      "foreground green and contrast remain much stronger than quiet matte reference",
+      "photo has not been approved by the user"
+    ],
+    "measurement": {
+      "metric": "HSV mean saturation in upper 35 percent of full frame, 0-255",
+      "reference": 24.3819,
+      "candidate": 53.2669,
+      "previous_r4": 70.6,
+      "significance": "quantitative color screening only, not an aesthetic score"
+    },
+    "final_human_verdict": "NOT_RECEIVED"
+  },
+  "scope_guard": {
+    "do_not_claim_exact_style_or_image_conditional_proven": true,
+    "do_not_claim_ai_review_equals_human_acceptance": true,
+    "old_R1_R2_R3_R4_preserved": true,
+    "completed_typography_task_preserved": true,
+    "no_figma_write": true,
+    "no_native_lock_write": true,
+    "no_second_style": true,
+    "no_plugin_mutation": true
+  },
+  "next": "Show real R5 pixels to user for a scoped design verdict; if rejected, revise visual composition on this same reference using Image, not tool migration; do not perform full Figma composite until actual photography is approved."
+}
