@@ -49,9 +49,12 @@ async function runStage({job,env,db,actor,now,external}){
   const updated=ev(job,"POSTER_AUDIT",e,now);
   return {job:await saveCAS(db,actor,job,updated),next:nextAutomaticAction(updated),ran:true};
  }
- const config=adapterStatus(env);if(config.status==="BLOCKED_MISSING_CAPABILITY")return {job,next:action,ran:false,blocked:config.reason};
- const provider=createOpenAIAdapter(env);
  const owner=await ownerKey(actor);
+ if(["AWAIT_SOURCE","AWAIT_TECH_AUDIT"].includes(job.phase)&&(!env?.VISUAL_ASSETS?.get||!env?.VISUAL_ASSETS?.put))return {job,next:action,ran:false,blocked:"PRIVATE_ASSET_BUCKET_NOT_CONFIGURED"};
+ if(["AWAIT_VISUAL_PROGRAM","RENDER_READY"].includes(job.phase)){
+  const config=adapterStatus(env);if(config.status==="BLOCKED_MISSING_CAPABILITY")return {job,next:action,ran:false,blocked:config.reason};
+ }
+ const provider=["AWAIT_VISUAL_PROGRAM","RENDER_READY"].includes(job.phase)?createOpenAIAdapter(env):null;
  if(job.phase==="AWAIT_SOURCE"){
   const v=await readImmutable(env.VISUAL_ASSETS,owner,job.reference.asset_id,job.reference.sha256);
   const updated=ev(job,"SOURCE_VERIFIED",{checked_actual_bytes:true,actual_sha256:v.sha256,actual_mime:v.mime,width:v.width,height:v.height},now);
@@ -119,7 +122,7 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
    await ensure(env.DB);
    if(name==="start_visual_automation"){
     const prev=await byKey(env.DB,actor,args.request_key);
-    if(prev){assert(prev.goal===args.goal&&prev.reference?.sha256===args.reference?.sha256,"REQUEST_KEY_ALREADY_USED_FOR_DIFFERENT_SOURCE");return rpcResult(rpc.id,{job:prev,next:nextAutomaticAction(prev),replayed:true})}
+    if(prev){assert(prev.goal===args.goal&&prev.reference?.sha256===args.reference?.sha256&&prev.reference?.role===args.reference?.role&&prev.max_generation_calls===args.max_generation_calls,"REQUEST_KEY_ALREADY_USED_FOR_DIFFERENT_SOURCE");return rpcResult(rpc.id,{job:prev,next:nextAutomaticAction(prev),replayed:true})}
     const now=clock(),job=createPipeline(args,{actor_id:actor,job_id:"visual_"+crypto.randomUUID().replace(/-/g,""),now});
     await env.DB.prepare("INSERT INTO visual_image_automation_v1(actor_id,job_id,request_key,revision,payload,updated_at) VALUES(?,?,?,?,?,?)").bind(actor,job.job_id,job.request_key,job.revision,JSON.stringify(job),now).run();
     return rpcResult(rpc.id,{job,next:nextAutomaticAction(job),replayed:false});
@@ -130,6 +133,7 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
    if(name==="get_visual_upload_ticket"){
     assert(args.expected_revision===job.revision,"REVISION_CONFLICT");
     assert(job.phase==="AWAIT_SOURCE","UPLOAD_NOT_REQUIRED");
+    assert(env?.VISUAL_ASSETS?.get&&env?.VISUAL_ASSETS?.put,"PRIVATE_ASSET_BUCKET_NOT_CONFIGURED");
     const ticket=await issueTicket(env.DB,job);
     return rpcResult(rpc.id,{job_id:job.job_id,url:url.origin+"/visual-automation/upload/"+ticket.token,expires_at:ticket.expires_at,single_use:true,reference_sha256:job.reference.sha256});
    }
