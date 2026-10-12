@@ -1,0 +1,296 @@
+{
+  "schema_version": "vpd-mapoutside-r3-local-visual-correction/v1",
+  "task_id": "VPD-MAPOUTSIDE-Y-R3-ROOT-TRANSFORM-AND-SUBTITLE-REPAIR-20261012-01",
+  "observation_date": "2026-10-12",
+  "phase": "ONE_CANDIDATE_EXECUTED_AND_VERIFIED_WAIT_UNIFIED_COMMAND_INTERNAL_ACCEPTANCE",
+  "mode": "SCOPED_FIGMA_NATIVE_ARTWORK_WRITE_NOT_IMAGE_GENERATION",
+  "authority": "EVIDENCE_ONLY_DOES_NOT_MUTATE_NATIVE_TASK_LOCK_OR_USER_FINAL_ACCEPTANCE",
+  "repository": {
+    "name": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_start_head": "27020ce4879a0a63cef54433e29fa49e09a5739d",
+    "requested_observed_head": "4f9aaed06bf62baf5ba00003a83163c1d4f016d6",
+    "head_before_receipt_write": "27020ce4879a0a63cef54433e29fa49e09a5739d",
+    "head_advance_from_requested": {
+      "commits": 3,
+      "modified": [
+        "START_HERE.md",
+        "docs/刘先生 VPD 图片生成.md"
+      ],
+      "added": [
+        "evidence/vpd/dituyiwai_photo_20261011/Y_R2_AUXILIARY_TEXT_LOCAL_REVISION_RECEIPT_20261012.json"
+      ],
+      "critical_native_state_unchanged": true
+    },
+    "native_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "source_blobs": [
+      {
+        "path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+        "sha": "0d00dd8cb54d169eb584e829ac7ca65d7b303dea"
+      },
+      {
+        "path": "continuity/vpd/LATEST_CHECKPOINT.json",
+        "sha": "7ddf33f1223159101a0af873c95c3607f584a92d"
+      },
+      {
+        "path": "evidence/vpd/dituyiwai_photo_20261011/Y_FIGMA_FULL_POSTER_R1_EXECUTION_RECEIPT_20261012.json",
+        "sha": "076aa78b3a28a751ec278594600131978ca40fed"
+      },
+      {
+        "path": "evidence/vpd/dituyiwai_photo_20261011/R1_INDEPENDENT_PIXEL_AUDIT_20261012_01.md",
+        "sha": "777880522f5f3d7cedf86fd62fc16248cd6016cd"
+      },
+      {
+        "path": "evidence/vpd/dituyiwai_photo_20261011/Y_R2_AUXILIARY_TEXT_LOCAL_REVISION_RECEIPT_20261012.json",
+        "sha": "a2d2ea4e2417b18f700a64bd3da138762f351399"
+      }
+    ]
+  },
+  "specific_rejection": {
+    "r2_preserved": "Figma 71:2 and prior R2 receipt retained as failed evidence",
+    "rejected_reason": "R2 moved full lettering parent and detached an ivory source slice. The earlier R2 sublayer-only audit missed parent transforms and gave a false local-only conclusion.",
+    "readback_r1_wordmark_parent": {
+      "id": "55:4",
+      "x": 154.75,
+      "y": 255,
+      "w": 770.5,
+      "h": 1087.9000244140625
+    },
+    "readback_r2_failure": {
+      "frame_id": "71:2",
+      "wordmark_parent_id": "71:4",
+      "wordmark_parent": [
+        39,
+        454,
+        1033,
+        992
+      ],
+      "lettering_parent_child_count": 36,
+      "r2_root_child_count": 4,
+      "detached_layer_id": "71:75",
+      "patch_offset_y": 1603
+    },
+    "old_R2_is_not_a_baseline": true
+  },
+  "figma": {
+    "file_key": "Ul7UeikXjD9uE7qHluRfky",
+    "url": "https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=78-2",
+    "source_r1": {
+      "frame": "55:2",
+      "photography": "55:3",
+      "lettering": "55:4",
+      "frame_position": [
+        7424,
+        120
+      ],
+      "frame_size": [
+        1080,
+        1920
+      ]
+    },
+    "source_r2": {
+      "frame": "71:2",
+      "preserved_failed_candidate": true
+    },
+    "approved_original_typography": {
+      "frame": "14:2",
+      "approved_native_vector_groups": 37,
+      "not_written": true
+    },
+    "only_persistent_new_r3": {
+      "frame": "78:2",
+      "name": "地图以外｜Y摄影＋原R1锁定字标｜R3仅副标局部修复｜20261012",
+      "position": [
+        9916,
+        120
+      ],
+      "size": [
+        1080,
+        1920
+      ],
+      "photography": "78:3",
+      "original_lettering_clone": "78:4",
+      "new_local_patch": "79:2",
+      "only_three_root_children": true
+    },
+    "preflight_technical_note": "First cloned node 77:2 was immediately removed because the one-time strict comparator erroneously included the deliberately changed top-level R3 frame name; 77 descendant checks showed no other mismatches. Comparator corrected once; no alternate persistent visual candidate or additional image generation. Confirmed getNodeByIdAsync('77:2') returns null and exactly one persistent R3 frame exists."
+  },
+  "fixed_root_transform": {
+    "reference_r1_wordmark": {
+      "x": 154.75,
+      "y": 255,
+      "width": 770.5,
+      "height": 1087.9000244140625,
+      "rotation": 0,
+      "relativeTransform": [
+        [
+          1,
+          0,
+          154.75
+        ],
+        [
+          0,
+          1,
+          255
+        ]
+      ]
+    },
+    "new_r3_wordmark": {
+      "x": 154.75,
+      "y": 255,
+      "width": 770.5,
+      "height": 1087.9000244140625,
+      "rotation": 0,
+      "relativeTransform": [
+        [
+          1,
+          0,
+          154.75
+        ],
+        [
+          0,
+          1,
+          255
+        ]
+      ]
+    },
+    "delta_global_between_r1_and_r3_frames": [
+      2492,
+      0
+    ],
+    "recursive_core_node_count": 76,
+    "comparison_includes": "all original photo and wordmark subtree descendants, local x/y, bounds, rotation, relativeTransform and normalized absoluteTransform, fills, vectorPaths, opacity, visibility, clip, locks, original order and names",
+    "core_errors": [],
+    "max_normalized_absolute_transform_delta": 0.00048828125,
+    "tolerance": 0.0006,
+    "strict_structure_match": true,
+    "photo_fill_same_image_hash": "20a8670a4f08abae10eef2dd4dc7bfe831ad648e",
+    "photography_locked": true,
+    "original_wordmark_groups": 37,
+    "r1_export_sha_verified_same_as_historical": true
+  },
+  "only_subtitle_edit": {
+    "target_copy": "离开既定路线，去看未知远方",
+    "target": "R1 true M03 ivory subtitle directly under orange lettering, not a lower slope copy",
+    "patch_node": "79:2",
+    "patch_name": "R3_ONLY__M03_SUBTITLE_DEEP_WARM_GRAY__CLIP",
+    "r3_local_region": {
+      "x": 279,
+      "y": 1047,
+      "width": 528,
+      "height": 72
+    },
+    "clip": true,
+    "new_color_rgb": [
+      101,
+      81,
+      69
+    ],
+    "description": "One clipped overlay of 15 exact approved ivory alpha-slice vector groups. The original white glyph remains in the original 37-group typography subtree underneath, but the darker approved-glyph overlay is perfectly aligned, at the same y baseline. No second visible line is placed elsewhere.",
+    "overlay_group_count": 15,
+    "overlay_vector_count": 15,
+    "paths_same_as_original": true,
+    "per_layer_absolute_transform_difference_max": 0,
+    "alpha_and_shape_unchanged": true,
+    "orange_main_wordmark_modified": false,
+    "original_subtitle_copy_modified": false,
+    "other_small_text_modified": false,
+    "no_other_patch_nodes": true
+  },
+  "verified_native_exports": {
+    "method": "Actual Figma Plugin API exportAsync({format:'PNG',constraint:{type:'SCALE',value:1}}) on each frame; returned raw Uint8Array and computed SHA256 with verified 'abc' self-test in Figma runtime, not screenshots.",
+    "hash_self_test": "PASS ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+    "R1": {
+      "frame": "55:2",
+      "size": [
+        1080,
+        1920
+      ],
+      "bytes": 2494274,
+      "sha256": "2bcc5d0db06ab5e13b6cf7f8de949c3d92946d9a19ad22f65ed8e15c7f1a1924",
+      "historical_receipt_match": true
+    },
+    "R3": {
+      "frame": "78:2",
+      "size": [
+        1080,
+        1920
+      ],
+      "bytes": 2502086,
+      "sha256": "a293930c33c98317a3eeee888b06eab6231946daf61a3364ee85d79e7b07dafc",
+      "figma_download_assets_reported_export_same_byte_count": true
+    },
+    "originalY": {
+      "size": [
+        941,
+        1672
+      ],
+      "bytes": 1934752,
+      "sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+      "figma_image_hash": "20a8670a4f08abae10eef2dd4dc7bfe831ad648e",
+      "identity_verified_by_getImageByHash_getBytesAsync": true
+    },
+    "legacy_interpretation": "R3 PNG SHA256 coincides with R2's historical export receipt from its initial state, but the presently visible R2 has changed and is explicitly rejected. This coincident past identity does not rehabilitate current R2 or replace R3 node provenance.",
+    "export_file_in_external_container": "NOT_MATERIALIZED; native Figma API returned bytes and identity, not an external independent SHA audit; permanent re-export available from stable Figma node."
+  },
+  "visual_comparison": {
+    "actual_screenshot_tool": "Figma.get_screenshot on distinct nodes contentsOnly=true, not native export/bitwise pixel source",
+    "R1_full": {
+      "node": "55:2",
+      "preview_size": [
+        760,
+        1350
+      ]
+    },
+    "R2_rejected_full": {
+      "node": "71:2",
+      "preview_size": [
+        760,
+        1350
+      ]
+    },
+    "R3_full": {
+      "node": "78:2",
+      "preview_size": [
+        760,
+        1350
+      ]
+    },
+    "R1_mobile": {
+      "node": "55:2",
+      "preview_size": [
+        360,
+        640
+      ]
+    },
+    "R3_mobile": {
+      "node": "78:2",
+      "preview_size": [
+        360,
+        640
+      ]
+    },
+    "visible_outcome": "Main orange title now occupies exactly the original R1 place and scale. Dark warmer-gray subtitle appears precisely where the pale R1 subtitle sat, no visually repeated second subtitle on lower hillside/road. Road and small black vehicle remain unobstructed; other small text unchanged.",
+    "assessment_status": "BOUNDED_EXECUTOR_VISUAL_AND_STRUCTURE_CHECK_ONLY_NOT_INDEPENDENT_EXTERNAL_TASTE_APPROVAL",
+    "honest_unknowns": [
+      "No independent second reviewer",
+      "No container-local independent pixel-by-pixel full-frame difference of original exported PNG",
+      "No Liu human final acceptance"
+    ]
+  },
+  "mutation_limits": {
+    "new_photography": 0,
+    "image_generation": 0,
+    "figma_new_frames_persistent": 1,
+    "figma_new_file": false,
+    "old_r1_modified": false,
+    "old_r2_modified": false,
+    "approved_master_modified": false,
+    "plugin_or_site_modified": false,
+    "code_or_rules_added": false,
+    "old_58_piece_transfer_repeated": false
+  },
+  "result": "R3_ONLY_LOCAL_SUBTITLE_REPAIR_COMPLETE_AWAIT_UNIFIED_COMMAND_BOUNDED_ACCEPTANCE",
+  "next_legal_action": "STOP all writes. Unified command performs its independent review of Figma R3 node78:2 and this receipt, decides if R3 has truly improved, then and only then considers Liu's final aesthetic acceptance."
+}
