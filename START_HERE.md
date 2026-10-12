@@ -1,5 +1,11 @@
 # START HERE — 强制执行入口
 
+<!-- LIU_VPD_IMAGE_GENERATION_GUIDE_20261012 -->
+图片生成正式流程名称：**《刘先生 VPD 图片生成》**，操作说明与完整出图/审核/原件保存链：[docs/刘先生 VPD 图片生成.md](docs/%E5%88%98%E5%85%88%E7%94%9F%20VPD%20%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90.md)。新聊天在实读最新 HEAD、PROJECT_CONTROL_ADAPTER、VPD_PROJECT_ROADMAP、CURRENT_TASK_LOCK 与 LATEST_CHECKPOINT **之后**，按当次任务相关范围使用该文档。该文件不是第二个任务锁、已安装的第二 Skill 或已部署的自动化插件，不重做已完成成果。
+历史《地图以外》X胜出表述已被用户正式纠正：**Y更好、X有AI味道**。参见 evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json。2026-10-12 已另有 Figma R2 (71:2) 局部修订回执，**没有真人整体定稿**；旧聊天与过时快照不得覆盖它。
+<!-- END_LIU_VPD_IMAGE_GENERATION_GUIDE_20261012 -->
+
+
 <!-- LIU_PLUGIN_REQUEST_REFERENCE_RUNTIME_20261006 -->
 插件新参考入口补充：先读最新原生锁，再读 `plugins/visual-aesthetic-workflow/REQUEST_REFERENCE_RUNTIME.json` 和 `plugins/visual-aesthetic-workflow/v0.1.2/SKILL.md`。同一私有插件运行0.1.2、Site第4版已发布，ChatGPT新聊天真实compile_transfer_plan已返回地图以外/for liuxiansheng请求草稿；管理页刷新工具目录已实测。旧“修改地图文字”聊天仍报告内部工具错误，未声称已恢复，失败记录保留；可用验收入口https://chatgpt.com/c/6ac4d667-64d0-83ea-a6a6-782cf1719f03。新参考用user_request及真实reference_source，不重绑山野集，不套用其绿底模板；SHA未知可省略，插件仍未看图，制作前须实际核对原件。此为调用修复，不改变主线、已认可摄影、S7真人PENDING、计数或唯一下一动作；旧CURRENT_RELEASE、连接证据与S7入口按原字节作历史保存，不覆盖此运行补充。完整证据目录见runtime pointer；工程及新聊天调用通过不作审美通过。
 <!-- END_LIU_PLUGIN_REQUEST_REFERENCE_RUNTIME_20261006 -->
