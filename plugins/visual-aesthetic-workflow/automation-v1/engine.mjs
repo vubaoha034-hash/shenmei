@@ -7,7 +7,7 @@ const TXT=(x,max=4000)=>typeof x==="string"&&x.trim().length>0&&x.length<=max;
 export class PipelineError extends Error { constructor(code){super(code);this.code=code;} }
 const req=(pass,code)=>{if(!pass)throw new PipelineError(code);};
 export const STAGES=Object.freeze([
- "AWAIT_SOURCE","AWAIT_COST_APPROVAL","AWAIT_VISUAL_PROGRAM","RENDER_READY",
+ "AWAIT_SOURCE","AWAIT_COST_APPROVAL","AWAIT_VISUAL_PROGRAM","ANALYSIS_IN_FLIGHT","RENDER_READY",
  "RENDER_IN_FLIGHT","AWAIT_TECH_AUDIT","AWAIT_PHOTO_HUMAN",
  "AWAIT_FIGMA","AWAIT_POSTER_AUDIT","AWAIT_POSTER_HUMAN",
  "COMPLETE","REJECTED","RECONCILE_REQUIRED"
@@ -60,8 +60,8 @@ export function compilePrompt(program,job) {
  const suffix=" Use the attached reference for visual structure, not as the output file. Do not imitate a photographer credit or watermark.";
  return {text:start+" "+line+no+suffix,source_sha256:job.reference.sha256,controls:variables.length,avoids:avoids.length,version:"vpd-compiler-compact-v1"};
 }
-const ACTOR={SOURCE_VERIFIED:"executor",PROGRAM_COMPILED:"executor",COST_AUTHORIZED:"human",RENDER_RESERVED:"executor",RENDER_COMPLETED:"executor",TECH_AUDIT:"executor",PHOTO_HUMAN_REVIEW:"human",FIGMA_COMPOSITE:"executor",POSTER_AUDIT:"executor",POSTER_HUMAN_REVIEW:"human",BLOCK:"executor",RESUME:"executor",RECONCILE:"executor",CORRECT_HUMAN_REVIEW:"human"};
-const PHASE={SOURCE_VERIFIED:"AWAIT_SOURCE",PROGRAM_COMPILED:"AWAIT_VISUAL_PROGRAM",COST_AUTHORIZED:"AWAIT_COST_APPROVAL",RENDER_RESERVED:"RENDER_READY",RENDER_COMPLETED:"RENDER_IN_FLIGHT",TECH_AUDIT:"AWAIT_TECH_AUDIT",PHOTO_HUMAN_REVIEW:"AWAIT_PHOTO_HUMAN",FIGMA_COMPOSITE:"AWAIT_FIGMA",POSTER_AUDIT:"AWAIT_POSTER_AUDIT",POSTER_HUMAN_REVIEW:"AWAIT_POSTER_HUMAN"};
+const ACTOR={SOURCE_VERIFIED:"executor",ANALYSIS_RESERVED:"executor",PROGRAM_COMPILED:"executor",COST_AUTHORIZED:"human",RENDER_RESERVED:"executor",RENDER_COMPLETED:"executor",TECH_AUDIT:"executor",PHOTO_HUMAN_REVIEW:"human",FIGMA_COMPOSITE:"executor",POSTER_AUDIT:"executor",POSTER_HUMAN_REVIEW:"human",BLOCK:"executor",RESUME:"executor",RECONCILE:"executor",CORRECT_HUMAN_REVIEW:"human"};
+const PHASE={SOURCE_VERIFIED:"AWAIT_SOURCE",ANALYSIS_RESERVED:"AWAIT_VISUAL_PROGRAM",PROGRAM_COMPILED:"ANALYSIS_IN_FLIGHT",COST_AUTHORIZED:"AWAIT_COST_APPROVAL",RENDER_RESERVED:"RENDER_READY",RENDER_COMPLETED:"RENDER_IN_FLIGHT",TECH_AUDIT:"AWAIT_TECH_AUDIT",PHOTO_HUMAN_REVIEW:"AWAIT_PHOTO_HUMAN",FIGMA_COMPOSITE:"AWAIT_FIGMA",POSTER_AUDIT:"AWAIT_POSTER_AUDIT",POSTER_HUMAN_REVIEW:"AWAIT_POSTER_HUMAN"};
 export function advancePipeline(input,evt,ctx) {
  req(OBJ(input)&&input.schema==="visual-image-automation/v1","JOB_SCHEMA_INVALID");
  req(OBJ(evt)&&TXT(evt.id,128)&&TXT(evt.type,64)&&OBJ(evt.evidence),"EVENT_INVALID");
@@ -74,18 +74,24 @@ export function advancePipeline(input,evt,ctx) {
  req(evt.expected_revision===input.revision,"REVISION_CONFLICT");
  if(input.blocker&&!["BLOCK","RESUME"].includes(evt.type))req(false,"BLOCKER_MUST_BE_RESOLVED_EXPLICITLY");
  const j=copy(input),e=evt.evidence;
- if(!["BLOCK","RESUME","RECONCILE","CORRECT_HUMAN_REVIEW"].includes(evt.type))req(j.phase===PHASE[evt.type]||(evt.type==="RENDER_COMPLETED"&&j.phase==="RECONCILE_REQUIRED"),"STAGE_ORDER_VIOLATION_EXPECTED_"+j.phase);
+ if(!["BLOCK","RESUME","RECONCILE","CORRECT_HUMAN_REVIEW"].includes(evt.type))req(j.phase===PHASE[evt.type]||(["RENDER_COMPLETED","PROGRAM_COMPILED"].includes(evt.type)&&j.phase==="RECONCILE_REQUIRED"),"STAGE_ORDER_VIOLATION_EXPECTED_"+j.phase);
  switch(evt.type){
  case "SOURCE_VERIFIED":
    req(e.checked_actual_bytes===true&&e.actual_sha256===j.reference.sha256,"SOURCE_BYTES_UNVERIFIED");
    req(e.actual_mime===j.reference.mime&&e.width===j.reference.width&&e.height===j.reference.height,"SOURCE_FORMAT_MISMATCH");
    j.phase="AWAIT_COST_APPROVAL";break;
+ case "ANALYSIS_RESERVED":
+   req(e.reference_sha256===j.reference.sha256&&TXT(e.attempt_id,128)&&TXT(e.model,128),"ANALYSIS_BINDING_MISSING");
+   req(e.model===j.cost_authorization?.vision_model,"UNAUTHORIZED_VISION_MODEL");
+   j.analysis={attempt_id:e.attempt_id,source_sha256:e.reference_sha256,status:"IN_FLIGHT_UNCERTAIN",reserved_at:ctx.now};
+   j.phase="ANALYSIS_IN_FLIGHT";break;
  case "PROGRAM_COMPILED":
-   j.prompt=compilePrompt(e.program,j);j.program=copy(e.program);j.phase="RENDER_READY";break;
+   req(j.analysis?.attempt_id===e.analysis_attempt_id&&e.source_input_sha256===j.reference.sha256&&TXT(e.provider_response_id,256),"VISION_PROVIDER_RECEIPT_REQUIRED");
+   j.prompt=compilePrompt(e.program,j);j.program=copy(e.program);j.analysis={...j.analysis,status:"COMPLETE",provider_response_id:e.provider_response_id};j.phase="RENDER_READY";j.status="IN_PROGRESS";break;
  case "COST_AUTHORIZED":
-   req(e.explicit_user_approval===true&&e.approved_max_calls>=1&&e.approved_max_calls<=j.max_generation_calls,"COST_APPROVAL_REQUIRED");
+   req(e.explicit_user_approval===true&&e.approved_max_calls>=1&&e.approved_max_calls<=j.max_generation_calls&&e.approved_vision_calls===1&&TXT(e.vision_model,128),"COST_APPROVAL_REQUIRED");
    req(TXT(e.provider,128)&&TXT(e.model,128)&&e.provider_budget_type==="SEPARATE_PAID_API","BILLING_SCOPE_MUST_BE_EXPLICIT");
-   j.cost_authorization={provider:e.provider,model:e.model,max_calls:e.approved_max_calls,approved_at:ctx.now};
+   j.cost_authorization={provider:e.provider,model:e.model,vision_model:e.vision_model,max_calls:e.approved_max_calls,approved_vision_calls:1,approved_at:ctx.now};
    j.phase="AWAIT_VISUAL_PROGRAM";break;
  case "RENDER_RESERVED":
    req(j.cost_authorization&&j.used_generation_calls<j.cost_authorization.max_calls,"GENERATION_QUOTA_EXHAUSTED");
@@ -99,7 +105,7 @@ export function advancePipeline(input,evt,ctx) {
    req(e.request_reference_sha256===j.reference.sha256&&TXT(e.provider_response_id,256),"REFERENCE_BINDING_RECEIPT_MISSING");
    req(Number.isInteger(e.width)&&e.width>0&&Number.isInteger(e.height)&&e.height>0,"GENERATED_DIMENSIONS_INVALID");
    j.render={...j.render,status:"COMPLETED",provider_response_id:e.provider_response_id,output_sha256:e.output_sha256,output_asset_id:e.output_asset_id,output_bytes:e.output_bytes,width:e.width,height:e.height,completed_at:ctx.now};
-   j.phase="AWAIT_TECH_AUDIT";break;
+   j.phase="AWAIT_TECH_AUDIT";j.status="IN_PROGRESS";break;
  case "TECH_AUDIT":
    req(j.render?.status==="COMPLETED"&&e.image_sha256===j.render.output_sha256&&e.independent_bytes_read===true,"TECH_AUDIT_SOURCE_MISSING");
    req(e.actual_dimensions_checked===true&&e.no_unrecorded_derivative===true,"TECH_AUDIT_INCOMPLETE");
@@ -132,8 +138,8 @@ export function advancePipeline(input,evt,ctx) {
    req(j.blocker&&e.proof_of_resolution===true&&TXT(e.resolution_receipt,512),"BLOCKER_RESOLUTION_EVIDENCE_REQUIRED");
    j.blocker=null;break;
  case "RECONCILE":
-   req(j.phase==="RENDER_IN_FLIGHT"&&j.render?.status==="IN_FLIGHT_UNCERTAIN","RECONCILE_ONLY_IN_FLIGHT");
-   req(e.attempt_id===j.render.attempt_id,"RECONCILE_ATTEMPT_MISMATCH");
+   req((j.phase==="RENDER_IN_FLIGHT"&&j.render?.status==="IN_FLIGHT_UNCERTAIN")||(j.phase==="ANALYSIS_IN_FLIGHT"&&j.analysis?.status==="IN_FLIGHT_UNCERTAIN"),"RECONCILE_ONLY_IN_FLIGHT");
+   req(e.attempt_id===(j.phase==="RENDER_IN_FLIGHT"?j.render.attempt_id:j.analysis.attempt_id),"RECONCILE_ATTEMPT_MISMATCH");
    if(e.outcome==="UNKNOWN"){j.phase="RECONCILE_REQUIRED";j.status="NO_AUTOMATIC_REROLL";}
    else req(false,"RECONCILE_WITH_REAL_PROVIDER_RECEIPT_REQUIRED");break;
  case "CORRECT_HUMAN_REVIEW":
@@ -148,6 +154,6 @@ export function advancePipeline(input,evt,ctx) {
  j.revision++;j.updated_at=ctx.now;return j;
 }
 export function nextAutomaticAction(job) {
- const map={AWAIT_SOURCE:"READ_SOURCE_BYTES_AND_VERIFY_SHA256",AWAIT_COST_APPROVAL:"WAIT_USER_BILLING_APPROVAL_BEFORE_PAID_VISION_OR_IMAGE",AWAIT_VISUAL_PROGRAM:"ANALYZE_ACTUAL_REFERENCE_PIXELS_AND_COMPILE",RENDER_READY:"RESERVE_AND_CALL_GENERATOR_ONCE",RENDER_IN_FLIGHT:"RECONCILE_EXISTING_PROVIDER_ATTEMPT_ONLY",AWAIT_TECH_AUDIT:"READ_GENERATED_BYTES_AND_CHECK",AWAIT_PHOTO_HUMAN:"WAIT_HUMAN_PHOTO_VERDICT",AWAIT_FIGMA:"COMPOSE_FIGMA_WITH_LOCKED_PHOTO",AWAIT_POSTER_AUDIT:"INDEPENDENT_EXPORT_AND_PIXEL_AUDIT",AWAIT_POSTER_HUMAN:"WAIT_HUMAN_POSTER_VERDICT",COMPLETE:"NONE_COMPLETE",REJECTED:"STOP_AND_PRESERVE_EVIDENCE",RECONCILE_REQUIRED:"STOP_UNTIL_EXISTING_ATTEMPT_RECONCILED"};
+ const map={AWAIT_SOURCE:"READ_SOURCE_BYTES_AND_VERIFY_SHA256",AWAIT_COST_APPROVAL:"WAIT_USER_BILLING_APPROVAL_BEFORE_PAID_VISION_OR_IMAGE",AWAIT_VISUAL_PROGRAM:"RESERVE_VISION_CALL_ONCE_AND_ANALYZE",ANALYSIS_IN_FLIGHT:"RECONCILE_EXISTING_VISION_CALL_ONLY",RENDER_READY:"RESERVE_AND_CALL_GENERATOR_ONCE",RENDER_IN_FLIGHT:"RECONCILE_EXISTING_PROVIDER_ATTEMPT_ONLY",AWAIT_TECH_AUDIT:"READ_GENERATED_BYTES_AND_CHECK",AWAIT_PHOTO_HUMAN:"WAIT_HUMAN_PHOTO_VERDICT",AWAIT_FIGMA:"COMPOSE_FIGMA_WITH_LOCKED_PHOTO",AWAIT_POSTER_AUDIT:"INDEPENDENT_EXPORT_AND_PIXEL_AUDIT",AWAIT_POSTER_HUMAN:"WAIT_HUMAN_POSTER_VERDICT",COMPLETE:"NONE_COMPLETE",REJECTED:"STOP_AND_PRESERVE_EVIDENCE",RECONCILE_REQUIRED:"STOP_UNTIL_EXISTING_ATTEMPT_RECONCILED"};
  return {action:job.blocker?"BLOCKED_UNTIL_RESUME":(map[job.phase]||"UNKNOWN"),phase:job.phase,automatic:!job.blocker&&!["AWAIT_COST_APPROVAL","AWAIT_PHOTO_HUMAN","AWAIT_POSTER_HUMAN","REJECTED","COMPLETE","RECONCILE_REQUIRED"].includes(job.phase),blocker:job.blocker};
 }
