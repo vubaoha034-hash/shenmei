@@ -1,0 +1,173 @@
+{
+  "schema_version": "vpd-mapoutside-figma-scoped-local-revision/v1",
+  "task_id": "VPD-MAPOUTSIDE-Y-R1-AUXILIARY-TEXT-LOCAL-REVISION-20261012-01",
+  "execution_date": "2026-10-12",
+  "authority": "ISOLATED_EXECUTION_RECEIPT_NOT_NATIVE_TASK_LOCK_OR_HUMAN_ACCEPTANCE",
+  "outcome": "ONE_NATIVE_R2_FULL_POSTER_CREATED_AND_EXPORTED;LOCAL_M03_READABILITY_IMPROVED;INTERNAL_REVIEW_PENDING",
+  "source_baseline": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_start_head": "4f9aaed06bf62baf5ba00003a83163c1d4f016d6",
+    "r1_execution_receipt": {
+      "path": "evidence/vpd/dituyiwai_photo_20261011/Y_FIGMA_FULL_POSTER_R1_EXECUTION_RECEIPT_20261012.json",
+      "blob_sha": "076aa78b3a28a751ec278594600131978ca40fed"
+    },
+    "r1_audit": {
+      "path": "evidence/vpd/dituyiwai_photo_20261011/R1_INDEPENDENT_PIXEL_AUDIT_20261012_01.md",
+      "blob_sha": "777880522f5f3d7cedf86fd62fc16248cd6016cd",
+      "verdict": "NEEDS_LOCAL_TYPOGRAPHY_REVISION / INDEPENDENT_REVIEW_UNAVAILABLE"
+    },
+    "lock": {
+      "revision": 355,
+      "blob_sha": "0d00dd8cb54d169eb584e829ac7ca65d7b303dea"
+    },
+    "checkpoint": {
+      "sequence": 377,
+      "blob_sha": "7ddf33f1223159101a0af873c95c3607f584a92d"
+    }
+  },
+  "figma": {
+    "file_key": "Ul7UeikXjD9uE7qHluRfky",
+    "previous_r1": {
+      "frame_id": "55:2",
+      "photo_id": "55:3",
+      "wordmark_id": "55:4",
+      "url": "https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=55-2",
+      "size": [
+        1080,
+        1920
+      ]
+    },
+    "new_r2": {
+      "frame_id": "71:2",
+      "photo_id": "71:3",
+      "wordmark_clone_id": "71:4",
+      "patch_root_id": "71:79",
+      "url": "https://www.figma.com/design/Ul7UeikXjD9uE7qHluRfky?node-id=71-2",
+      "name": "地图以外｜Y摄影＋批准文字｜R2副标局部可读性｜20261012",
+      "size": [
+        1080,
+        1920
+      ],
+      "position": [
+        8664,
+        120
+      ]
+    },
+    "method": "Clone R1 as sole new sibling R2. Keep original photo and all text/path subtrees byte- and structure-consistent, append exactly one localized clipped overlay that recolors existing approved serif glyph shapes solely within M03 subtitle zone.",
+    "diff_scope": {
+      "one_change_root": "71:79",
+      "change_name": "R2_ONLY__M03_SUBTITLE_CONTRAST__CLIP",
+      "clip_bounds_in_r2_px": {
+        "x": 279,
+        "y": 1047,
+        "w": 528,
+        "h": 72
+      },
+      "clipping_enabled": true,
+      "target_role": "主橙色书法标题下方一行『离开既定路线，去看未知远方』",
+      "approved_reference_bbox_in_parent_master": {
+        "x": 114,
+        "y": 696,
+        "w": 442,
+        "h": 49
+      },
+      "overlay_structure": "15 native clipped serif_ivory alpha-slice vector clones with only SOLID fill RGB modified; original lettering clone's existing 37 layers not changed",
+      "overlay_vector_count": 15,
+      "overlay_color_rgb_0to255": [
+        101,
+        81,
+        69
+      ],
+      "overlay_color_type": "muted warm dark taupe, no pill/button/banner or background reconstruction",
+      "source_chinese_copy_unchanged": true,
+      "initial_white_auxiliary_remains_under_overlay": true,
+      "main_orange_wordmark_geometry_or_color_modified": false,
+      "other_auxiliary_roles_changed": false,
+      "photo_source_or_global_layout_modified": false
+    },
+    "structural_comparison": {
+      "method": "Figma Plugin API recursive tree equality of cloned source photo and cloned complete 37-group wordmark; compares node type, name, local geometry, visibility/lock/opacity, fills and VECTOR vectorPaths, excluding IDs and new R2-only patch node.",
+      "r1_photo_equals_r2_photo": true,
+      "r1_wordmark_equals_r2_wordmark": true,
+      "compared_tree_mismatches": [],
+      "r1_main_node_count": 2,
+      "r2_main_node_count": 3,
+      "r1_original_frame_unchanged": true,
+      "original_approved_master_id": "14:2",
+      "approved_master_unchanged_by_this_task": true,
+      "approved_master_vector_count_after": 37
+    }
+  },
+  "actual_source_photo": {
+    "protected_Y_original_sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+    "figma_image_hash": "20a8670a4f08abae10eef2dd4dc7bfe831ad648e",
+    "actual_original_bytes_in_figma": 1934752,
+    "decoded_dimensions": [
+      941,
+      1672
+    ],
+    "live_bytes_sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+    "identity_equal": true,
+    "road_and_car_preserved_from_R1": true
+  },
+  "native_png_export": {
+    "method": "Actual Figma Plugin API node.exportAsync({format:'PNG',constraint:{type:'SCALE',value:1}}) returns raw Uint8Array, SHA256 independently computed in the runtime using self-tested standard SHA-256 implementation.",
+    "hashing_selftest": "abc -> ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad PASS",
+    "r1_live": {
+      "frame": "55:2",
+      "bytes": 2494274,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "2bcc5d0db06ab5e13b6cf7f8de949c3d92946d9a19ad22f65ed8e15c7f1a1924",
+      "matches_preexisting_receipt": true
+    },
+    "r2_live": {
+      "frame": "71:2",
+      "bytes": 2502086,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "a293930c33c98317a3eeee888b06eab6231946daf61a3364ee85d79e7b07dafc"
+    },
+    "distinct_native_png_identifiers": true,
+    "physically_downloaded_to_container": false,
+    "caveat": "Native export PNG identity is truly verified inside Figma via raw export bytes and hash; external temporary Figma URL could not be downloaded into working container due DNS/network limitations. This receipt does not claim locally archived export bytes or pixel-by-pixel exterior-region MAE."
+  },
+  "mobile_quality_check": {
+    "inspection": "Actually rendered Figma node get_screenshot of both frames to 360x640 and visually inspected images side-by-side; previews are only visual review proxies, not substituted as source PNG.",
+    "r1": "The pale-ivory horizontal auxiliary line underneath the large orange title is nearly washed out against bright fog and unreadable at ordinary phone preview.",
+    "r2": "Same exact subtitle glyph shapes remain, with a warm-taupe localized overlay confined to one 528x72 full-size region; at 360x640 its Chinese line is now distinguishable without zoom. Overall original Y photo, small black vehicle and road, orange main lettering and other tiny text remain in the same positions.",
+    "phone_readability_change": "IMPROVED_BY_DIRECT_VISUAL_COMPARISON_NOT_HUMAN_FINAL_PASS",
+    "independent_pixel_original_roi_note": "Actual preserved Y PNG sampled at mapped M03 area, source fog background median relative luminance ~0.716-0.718. Opaque old ivory RGB(248,241,229) to this background would yield median contrast ~1.22:1; new warm-taupe RGB(101,81,69) ~5.44:1 in ideal fully opaque condition. This is a background-and-flat-ink estimate, NOT measured composite text pixels (alpha-slice blending changes effective ratio).",
+    "changed_footprint_only_in_viewport": "R2 patch clipping rect x279-807 y1047-1119; other structural layers recursively identical; whole-raster pixel diff outside patch not independently measured.",
+    "overall_aesthetic_relevance": "Original landscape atmosphere and dominant orange wordmark protected; only essential copy line made legible. No claim final human aesthetic endorsement."
+  },
+  "source_master_export_note": {
+    "live_current_export_bytes": 126856,
+    "live_current_export_sha256": "5dd68009493eaba5b49fa1f0bd67eb066bcd5661ec39cdc405e5b5050ac2345f",
+    "historical_plugin_receipt_sha256": "f9a286ec5daa83dd24fb794b1ed7dfa64db434200c32ce4916d630a85f6eda94",
+    "explanation_status": "UNKNOWN_DIFFERENCE_BETWEEN_HISTORICAL_AND_CURRENT_MASTER_RASTER_EXPORT; do not infer new modification from mismatch without historical same-parameter byte access.",
+    "direct_assertion": "The task's executed Figma write calls only create/modify newly cloned R2 descendants; source master node14:2 was never selected as a mutation target, and native vector count remains 37.",
+    "absolute_historical_master_pixel_identity_claim": false
+  },
+  "execution_boundaries": {
+    "image_gen_calls": 0,
+    "old_r1_modified": false,
+    "original_Y_png_modified": false,
+    "old_typography_master_targeted_for_write": false,
+    "site_or_plugin_modified": false,
+    "new_figma_file_created": false,
+    "unrelated_rules_added": 0,
+    "old_58_piece_transfer_repeated": false,
+    "r1_old_audit_reexecuted": false,
+    "new_candidates_created": 1,
+    "outside_patch_pixel_exactness": "NOT_INDEPENDENTLY_MEASURED",
+    "independent_aesthetic_reviewer": "NOT_RUN",
+    "actual_human_review": "PENDING"
+  },
+  "next": "STOP. Submit the one Figma R2 frame and this execution receipt to unified command for bounded internal check. Only after approval may further scoped modification or Liu's final human aesthetic approval be requested."
+}
