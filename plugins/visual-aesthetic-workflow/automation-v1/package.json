@@ -5,7 +5,7 @@
   "private": true,
   "description": "Additive source-verified image-generation automation for the existing Liu Visual Design Workflow Site, with human gates",
   "scripts": {
-    "test": "node --test engine.test.mjs",
-    "check": "node --check engine.mjs && node --check openai-image-adapter.mjs && node --check mcp-overlay.mjs"
+    "test": "node --test *.test.mjs",
+    "check": "node --check engine.mjs && node --check openai-image-adapter.mjs && node --check source-upload.mjs && node --check mcp-overlay.mjs"
   }
 }
