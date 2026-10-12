@@ -2,7 +2,7 @@
 // after retrieving its real source. DO NOT replace existing v0.5 with old v0.3 code.
 // No new Site/project, no native VPD lock mutations, no paid calls without consent.
 import {createPipeline,advancePipeline,nextAutomaticAction} from "./engine.mjs";
-import {assertAdapterReady,createOpenAIAdapter,readImmutable,putImmutable} from "./openai-image-adapter.mjs";
+import {assertAdapterReady,createOpenAIAdapter,readImmutable,putImmutable,sha256} from "./openai-image-adapter.mjs";
 
 const toJSON=(o,status=200)=>new Response(JSON.stringify(o),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"private, no-store"}});
 const rpcResult=(id,v)=>toJSON({jsonrpc:"2.0",id,result:{content:[{type:"text",text:JSON.stringify(v)}],structuredContent:v,isError:false}});
@@ -12,7 +12,8 @@ export const AUTO_TOOLS=Object.freeze([
 {name:"get_visual_automation_contract",description:"Read add-on automation contract and whether SAME Site has paid API and private bytes store. Read-only; does not create images.",inputSchema:schema(),annotations:{readOnlyHint:true}},
 {name:"start_visual_automation",description:"Create/recover one image workflow child using actual reference asset lineage. No generation, no native lock write.",inputSchema:schema({request_key:{type:"string"},goal:{type:"string"},reference:{type:"object"},max_generation_calls:{type:"integer",minimum:1,maximum:4}},["request_key","goal","reference","max_generation_calls"])},
 {name:"get_visual_automation",description:"Read real job state, source hash, next action, generation budget and user approvals.",inputSchema:schema({job_id:{type:"string"}},["job_id"]),annotations:{readOnlyHint:true}},
-{name:"run_visual_automation_once",description:"Execute at most one evidence-checked automatic stage. No blind retry or payment without separate authorization.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1}},["job_id","expected_revision"])}
+{name:"run_visual_automation_once",description:"Execute at most one evidence-checked automatic stage. No blind retry or payment without separate authorization.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1}},["job_id","expected_revision"])},
+{name:"record_verified_visual_user_decision",description:"Record a signed user decision only when the existing Site has an actual human-approval verifier. Never self-approve or invent confirmation.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1},action:{type:"string",enum:["COST_AUTHORIZED","PHOTO_HUMAN_REVIEW","POSTER_HUMAN_REVIEW","CORRECT_HUMAN_REVIEW"]},event_id:{type:"string"},evidence:{type:"object"},consent_token:{type:"string"}},["job_id","expected_revision","action","event_id","evidence","consent_token"])}
 ]);
 const assert=(x,msg)=>{if(!x)throw new Error(msg)};
 async function ensure(db){
@@ -26,17 +27,29 @@ async function saveCAS(db,actor,old,updated){
  const r=await db.prepare("UPDATE visual_image_automation_v1 SET revision=?,payload=?,updated_at=? WHERE actor_id=? AND job_id=? AND revision=?").bind(updated.revision,JSON.stringify(updated),updated.updated_at,actor,old.job_id,old.revision).run();
  assert(r?.meta?.changes===1,"CONCURRENT_REVISION_CONFLICT_RELOAD");return updated;
 }
-const ownerKey=(actor)=>{let s=actor.replace(/[^a-zA-Z0-9_-]/g,"_");return ("user_"+s).slice(0,128)};
+const ownerKey=async(actor)=>"user_"+(await sha256(new TextEncoder().encode(actor))).slice(0,40);
 const asContext=(actor,now)=>({actor_id:actor,actor_type:"executor",now});
 const ev=(j,type,e,now)=>advancePipeline(j,{id:"auto_"+j.job_id+"_"+j.revision+"_"+type,expected_revision:j.revision,type,evidence:e},asContext(j.owner_id,now));
 function adapterStatus(env){
  try{return {...assertAdapterReady(env),status:"READY_FOR_PAID_PROVIDER_AFTER_USER_APPROVAL",figma_executor:"EXTERNAL_CONNECTED_TOOL_REQUIRED",human_approval:"NON_AUTOMATABLE"}}catch(e){return {status:"BLOCKED_MISSING_CAPABILITY",reason:e.message,online_deployed:false}};
 }
-async function runStage({job,env,db,actor,now}){
+async function runStage({job,env,db,actor,now,external}){
  const action=nextAutomaticAction(job);if(!action.automatic)return {job,next:action,ran:false};
+ if(job.phase==="AWAIT_FIGMA"){
+  if(typeof external?.compose!=="function")return {job,next:action,ran:false,blocked:"CONNECTED_FIGMA_EXECUTOR_NOT_CONFIGURED"};
+  const e=await external.compose({job,actor});
+  const updated=ev(job,"FIGMA_COMPOSITE",e,now);
+  return {job:await saveCAS(db,actor,job,updated),next:nextAutomaticAction(updated),ran:true};
+ }
+ if(job.phase==="AWAIT_POSTER_AUDIT"){
+  if(typeof external?.auditPoster!=="function")return {job,next:action,ran:false,blocked:"INDEPENDENT_PIXEL_AUDITOR_NOT_CONFIGURED"};
+  const e=await external.auditPoster({job,actor});
+  const updated=ev(job,"POSTER_AUDIT",e,now);
+  return {job:await saveCAS(db,actor,job,updated),next:nextAutomaticAction(updated),ran:true};
+ }
  const config=adapterStatus(env);if(config.status==="BLOCKED_MISSING_CAPABILITY")return {job,next:action,ran:false,blocked:config.reason};
  const provider=createOpenAIAdapter(env);
- const owner=ownerKey(actor);
+ const owner=await ownerKey(actor);
  if(job.phase==="AWAIT_SOURCE"){
   const v=await readImmutable(env.VISUAL_ASSETS,owner,job.reference.asset_id,job.reference.sha256);
   const updated=ev(job,"SOURCE_VERIFIED",{checked_actual_bytes:true,actual_sha256:v.sha256,actual_mime:v.mime,width:v.width,height:v.height},now);
@@ -74,7 +87,7 @@ async function runStage({job,env,db,actor,now}){
  }
  return {job,next:action,ran:false,blocked:"EXTERNAL_FIGMA_EXECUTOR_OR_INDEPENDENT_AUDITOR_NOT_CONNECTED"};
 }
-export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().toISOString()}={}){
+export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().toISOString(),verifyHumanApproval=null,external=null}={}){
  assert(existingWorker&&typeof existingWorker.fetch==="function","EXISTING_WORKER_REQUIRED");
  return {async fetch(request,env,ctx){
   const url=new URL(request.url);
@@ -92,7 +105,7 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
   const name=rpc.params.name,args=rpc.params.arguments||{},actor=request.headers.get("oai-authenticated-user-id")?.trim();
   if(!actor)return rpcError(rpc.id,"AUTHENTICATED_USER_REQUIRED");
   try{
-   if(name==="get_visual_automation_contract")return rpcResult(rpc.id,{automation_version:"1.0.0",site_identity:"PRESERVE_EXISTING_SITE_AND_D1",capabilities:adapterStatus(env),automatic_stages:["source_bytes","paid_vision_after_consent","image_api_after_consent","private_archive","technical_png_check"],human_stages:["paid_api_consent","photo_aesthetic_review","poster_aesthetic_review"],external_stages:["figma_editable_composite","independent_export_pixels"],native_task_lock_write:false,background_unattended_guarantee:false});
+   if(name==="get_visual_automation_contract")return rpcResult(rpc.id,{automation_version:"1.0.0",site_identity:"PRESERVE_EXISTING_SITE_AND_D1",capabilities:adapterStatus(env),human_approval_verifier_configured:typeof verifyHumanApproval==="function",figma_executor_configured:typeof external?.compose==="function",pixel_auditor_configured:typeof external?.auditPoster==="function",automatic_stages:["source_bytes","paid_vision_after_consent","image_api_after_consent","private_archive","technical_png_check"],human_stages:["paid_api_consent","photo_aesthetic_review","poster_aesthetic_review"],external_stages:["figma_editable_composite","independent_export_pixels"],native_task_lock_write:false,background_unattended_guarantee:false});
    await ensure(env.DB);
    if(name==="start_visual_automation"){
     const prev=await byKey(env.DB,actor,args.request_key);
@@ -104,9 +117,21 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
    assert(typeof args.job_id==="string","JOB_ID_REQUIRED");
    const job=await getJob(env.DB,actor,args.job_id);assert(job,"JOB_NOT_FOUND");
    if(name==="get_visual_automation")return rpcResult(rpc.id,{job,next:nextAutomaticAction(job)});
+   if(name==="record_verified_visual_user_decision"){
+    assert(args.expected_revision===job.revision,"REVISION_CONFLICT");
+    assert(typeof verifyHumanApproval==="function","HUMAN_APPROVAL_UI_NOT_CONNECTED");
+    assert(typeof args.consent_token==="string"&&args.consent_token.length>16,"SIGNED_USER_APPROVAL_TOKEN_REQUIRED");
+    const verified=await verifyHumanApproval({actor,job,action:args.action,evidence:args.evidence,consent_token:args.consent_token,request});
+    assert(verified===true,"HUMAN_APPROVAL_TOKEN_NOT_VERIFIED");
+    if(args.action==="COST_AUTHORIZED"){
+      assert(args.evidence.provider==="OpenAI API"&&args.evidence.model===env.OPENAI_IMAGE_MODEL&&args.evidence.vision_model===env.OPENAI_VISION_MODEL,"PAID_MODEL_SCOPE_MISMATCH");
+    }
+    const updated=advancePipeline(job,{id:args.event_id,expected_revision:job.revision,type:args.action,evidence:args.evidence},{actor_id:actor,actor_type:"human",now:clock()});
+    return rpcResult(rpc.id,{job:await saveCAS(env.DB,actor,job,updated),next:nextAutomaticAction(updated)});
+   }
    if(name==="run_visual_automation_once"){
     assert(args.expected_revision===job.revision,"REVISION_CONFLICT");
-    return rpcResult(rpc.id,await runStage({job,env,db:env.DB,actor,now:clock()}));
+    return rpcResult(rpc.id,await runStage({job,env,db:env.DB,actor,now:clock(),external}));
    }
   }catch(e){return rpcError(rpc.id,e?.message||"AUTOMATION_ERROR")}
   return rpcError(rpc.id,"UNKNOWN_AUTO_TOOL");
