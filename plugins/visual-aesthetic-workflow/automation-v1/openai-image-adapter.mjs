@@ -58,7 +58,7 @@ export async function readImmutable(bucket,ownerKey,assetId,expectedHash,cryptoA
  const obj=await bucket.get(assetId);must(obj,"ASSET_NOT_FOUND");
  const bytes=new Uint8Array(await obj.arrayBuffer());
  const digest=await sha256(bytes,cryptoApi);must(digest===expectedHash,"SOURCE_HASH_CHANGED");
- return {bytes,sha256:digest,...inspectImage(bytes)};
+ return {...inspectImage(bytes),bytes_count:bytes.length,bytes,sha256:digest};
 }
 const b64Encode=bytes=>{let s="",u=arr(bytes);for(let i=0;i<u.length;i+=16384)s+=String.fromCharCode(...u.subarray(i,i+16384));return btoa(s)};
 const b64Decode=s=>{must(typeof s==="string"&&s.length>0,"BASE64_OUTPUT_MISSING");let v=atob(s),u=new Uint8Array(v.length);for(let i=0;i<v.length;i++)u[i]=v.charCodeAt(i);return u};
