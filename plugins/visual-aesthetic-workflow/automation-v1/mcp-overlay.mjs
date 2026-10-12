@@ -3,6 +3,7 @@
 // No new Site/project, no native VPD lock mutations, no paid calls without consent.
 import {createPipeline,advancePipeline,nextAutomaticAction} from "./engine.mjs";
 import {assertAdapterReady,createOpenAIAdapter,readImmutable,putImmutable,sha256} from "./openai-image-adapter.mjs";
+import {issueTicket,getUploadPage,receiveUpload} from "./source-upload.mjs";
 
 const toJSON=(o,status=200)=>new Response(JSON.stringify(o),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"private, no-store"}});
 const rpcResult=(id,v)=>toJSON({jsonrpc:"2.0",id,result:{content:[{type:"text",text:JSON.stringify(v)}],structuredContent:v,isError:false}});
@@ -12,6 +13,7 @@ export const AUTO_TOOLS=Object.freeze([
 {name:"get_visual_automation_contract",description:"Read add-on automation contract and whether SAME Site has paid API and private bytes store. Read-only; does not create images.",inputSchema:schema(),annotations:{readOnlyHint:true}},
 {name:"start_visual_automation",description:"Create/recover one image workflow child using actual reference asset lineage. No generation, no native lock write.",inputSchema:schema({request_key:{type:"string"},goal:{type:"string"},reference:{type:"object"},max_generation_calls:{type:"integer",minimum:1,maximum:4}},["request_key","goal","reference","max_generation_calls"])},
 {name:"get_visual_automation",description:"Read real job state, source hash, next action, generation budget and user approvals.",inputSchema:schema({job_id:{type:"string"}},["job_id"]),annotations:{readOnlyHint:true}},
+{name:"get_visual_upload_ticket",description:"Issue one short-lived signed upload ticket for the existing private visual job. Upload is once per user-selected actual image.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1}},["job_id","expected_revision"])},
 {name:"run_visual_automation_once",description:"Execute at most one evidence-checked automatic stage. No blind retry or payment without separate authorization.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1}},["job_id","expected_revision"])},
 {name:"record_verified_visual_user_decision",description:"Record a signed user decision only when the existing Site has an actual human-approval verifier. Never self-approve or invent confirmation.",inputSchema:schema({job_id:{type:"string"},expected_revision:{type:"integer",minimum:1},action:{type:"string",enum:["COST_AUTHORIZED","PHOTO_HUMAN_REVIEW","POSTER_HUMAN_REVIEW","CORRECT_HUMAN_REVIEW"]},event_id:{type:"string"},evidence:{type:"object"},consent_token:{type:"string"}},["job_id","expected_revision","action","event_id","evidence","consent_token"])}
 ]);
@@ -91,6 +93,14 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
  assert(existingWorker&&typeof existingWorker.fetch==="function","EXISTING_WORKER_REQUIRED");
  return {async fetch(request,env,ctx){
   const url=new URL(request.url);
+  if(url.pathname.startsWith("/visual-automation/upload/")){
+   const token=url.pathname.slice("/visual-automation/upload/".length);
+   try{
+    if(request.method==="GET")return await getUploadPage(env.DB,token);
+    if(request.method==="POST")return await receiveUpload({request,token,env});
+    return toJSON({error:"METHOD_NOT_ALLOWED"},405);
+   }catch(e){return toJSON({ok:false,error:e.message||"UPLOAD_FAILURE"},400)}
+  }
   if(url.pathname!=="/mcp"||request.method!=="POST")return existingWorker.fetch(request,env,ctx);
   const contentType=request.headers.get("content-type")||"";
   if(!contentType.startsWith("application/json"))return existingWorker.fetch(request,env,ctx);
@@ -117,6 +127,12 @@ export function extendExistingVisualWorker(existingWorker,{clock=()=>new Date().
    assert(typeof args.job_id==="string","JOB_ID_REQUIRED");
    const job=await getJob(env.DB,actor,args.job_id);assert(job,"JOB_NOT_FOUND");
    if(name==="get_visual_automation")return rpcResult(rpc.id,{job,next:nextAutomaticAction(job)});
+   if(name==="get_visual_upload_ticket"){
+    assert(args.expected_revision===job.revision,"REVISION_CONFLICT");
+    assert(job.phase==="AWAIT_SOURCE","UPLOAD_NOT_REQUIRED");
+    const ticket=await issueTicket(env.DB,job);
+    return rpcResult(rpc.id,{job_id:job.job_id,url:url.origin+"/visual-automation/upload/"+ticket.token,expires_at:ticket.expires_at,single_use:true,reference_sha256:job.reference.sha256});
+   }
    if(name==="record_verified_visual_user_decision"){
     assert(args.expected_revision===job.revision,"REVISION_CONFLICT");
     assert(typeof verifyHumanApproval==="function","HUMAN_APPROVAL_UI_NOT_CONNECTED");
