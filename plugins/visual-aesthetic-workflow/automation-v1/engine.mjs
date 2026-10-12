@@ -79,6 +79,7 @@ export function advancePipeline(input,evt,ctx) {
  case "SOURCE_VERIFIED":
    req(e.checked_actual_bytes===true&&e.actual_sha256===j.reference.sha256,"SOURCE_BYTES_UNVERIFIED");
    req(e.actual_mime===j.reference.mime&&e.width===j.reference.width&&e.height===j.reference.height,"SOURCE_FORMAT_MISMATCH");
+   if(e.asset_id!==undefined){req(TXT(e.asset_id,256),"SOURCE_PRIVATE_ASSET_ID_INVALID");j.reference.asset_id=e.asset_id;}
    j.phase="AWAIT_COST_APPROVAL";break;
  case "ANALYSIS_RESERVED":
    req(e.reference_sha256===j.reference.sha256&&TXT(e.attempt_id,128)&&TXT(e.model,128),"ANALYSIS_BINDING_MISSING");
