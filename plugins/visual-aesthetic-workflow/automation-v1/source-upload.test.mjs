@@ -6,7 +6,7 @@ import {issueTicket,getUploadPage,receiveUpload} from "./source-upload.mjs";
 import {extendExistingVisualWorker} from "./mcp-overlay.mjs";
 class TestDB {
  constructor(){this.jobs=new Map();this.tickets=new Map()}
- prepare(sql){const db=this;return {bind(...a){
+ prepare(sql){const db=this;return {async run(){if(sql.startsWith("CREATE TABLE"))return {meta:{changes:0}};throw new Error("BIND_REQUIRED")},bind(...a){
    return {
     async first(){
      if(sql.includes("FROM visual_auto_upload_tickets_v1"))return db.tickets.get(a[0])||null;
