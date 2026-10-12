@@ -1,0 +1,31 @@
+name: Visual Automation Addon CI
+on:
+  push:
+    branches:
+      - visual-program-distillation-v2-photography-design-20260814
+    paths:
+      - 'plugins/visual-aesthetic-workflow/automation-v1/**'
+      - '.github/workflows/visual-automation-addon-ci.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: visual-automation-addon-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test-evidence-bound-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout protected visual branch
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        working-directory: plugins/visual-aesthetic-workflow/automation-v1
+        run: npm run check
+      - name: Run no-network safety and regression tests
+        working-directory: plugins/visual-aesthetic-workflow/automation-v1
+        run: npm test
