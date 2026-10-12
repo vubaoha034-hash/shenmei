@@ -7,7 +7,7 @@ const TXT=(x,max=4000)=>typeof x==="string"&&x.trim().length>0&&x.length<=max;
 export class PipelineError extends Error { constructor(code){super(code);this.code=code;} }
 const req=(pass,code)=>{if(!pass)throw new PipelineError(code);};
 export const STAGES=Object.freeze([
- "AWAIT_SOURCE","AWAIT_VISUAL_PROGRAM","AWAIT_COST_APPROVAL","RENDER_READY",
+ "AWAIT_SOURCE","AWAIT_COST_APPROVAL","AWAIT_VISUAL_PROGRAM","RENDER_READY",
  "RENDER_IN_FLIGHT","AWAIT_TECH_AUDIT","AWAIT_PHOTO_HUMAN",
  "AWAIT_FIGMA","AWAIT_POSTER_AUDIT","AWAIT_POSTER_HUMAN",
  "COMPLETE","REJECTED","RECONCILE_REQUIRED"
@@ -60,7 +60,7 @@ export function compilePrompt(program,job) {
  const suffix=" Use the attached reference for visual structure, not as the output file. Do not imitate a photographer credit or watermark.";
  return {text:start+" "+line+no+suffix,source_sha256:job.reference.sha256,controls:variables.length,avoids:avoids.length,version:"vpd-compiler-compact-v1"};
 }
-const ACTOR={SOURCE_VERIFIED:"executor",PROGRAM_COMPILED:"executor",COST_AUTHORIZED:"human",RENDER_RESERVED:"executor",RENDER_COMPLETED:"executor",TECH_AUDIT:"executor",PHOTO_HUMAN_REVIEW:"human",FIGMA_COMPOSITE:"executor",POSTER_AUDIT:"executor",POSTER_HUMAN_REVIEW:"human",BLOCK:"executor",RECONCILE:"executor",CORRECT_HUMAN_REVIEW:"human"};
+const ACTOR={SOURCE_VERIFIED:"executor",PROGRAM_COMPILED:"executor",COST_AUTHORIZED:"human",RENDER_RESERVED:"executor",RENDER_COMPLETED:"executor",TECH_AUDIT:"executor",PHOTO_HUMAN_REVIEW:"human",FIGMA_COMPOSITE:"executor",POSTER_AUDIT:"executor",POSTER_HUMAN_REVIEW:"human",BLOCK:"executor",RESUME:"executor",RECONCILE:"executor",CORRECT_HUMAN_REVIEW:"human"};
 const PHASE={SOURCE_VERIFIED:"AWAIT_SOURCE",PROGRAM_COMPILED:"AWAIT_VISUAL_PROGRAM",COST_AUTHORIZED:"AWAIT_COST_APPROVAL",RENDER_RESERVED:"RENDER_READY",RENDER_COMPLETED:"RENDER_IN_FLIGHT",TECH_AUDIT:"AWAIT_TECH_AUDIT",PHOTO_HUMAN_REVIEW:"AWAIT_PHOTO_HUMAN",FIGMA_COMPOSITE:"AWAIT_FIGMA",POSTER_AUDIT:"AWAIT_POSTER_AUDIT",POSTER_HUMAN_REVIEW:"AWAIT_POSTER_HUMAN"};
 export function advancePipeline(input,evt,ctx) {
  req(OBJ(input)&&input.schema==="visual-image-automation/v1","JOB_SCHEMA_INVALID");
@@ -72,20 +72,21 @@ export function advancePipeline(input,evt,ctx) {
  const old=input.events.find(x=>x.id===evt.id);
  if(old){req(old.type===evt.type&&canon(old.evidence)===canon(evt.evidence),"IDEMPOTENCY_KEY_REUSED_WITH_DIFFERENT_PAYLOAD");return {...copy(input),idempotent:true};}
  req(evt.expected_revision===input.revision,"REVISION_CONFLICT");
+ if(input.blocker&&!["BLOCK","RESUME"].includes(evt.type))req(false,"BLOCKER_MUST_BE_RESOLVED_EXPLICITLY");
  const j=copy(input),e=evt.evidence;
- if(evt.type!=="BLOCK"&&evt.type!=="RECONCILE"&&evt.type!=="CORRECT_HUMAN_REVIEW")req(j.phase===PHASE[evt.type],"STAGE_ORDER_VIOLATION_EXPECTED_"+j.phase);
+ if(!["BLOCK","RESUME","RECONCILE","CORRECT_HUMAN_REVIEW"].includes(evt.type))req(j.phase===PHASE[evt.type]||(evt.type==="RENDER_COMPLETED"&&j.phase==="RECONCILE_REQUIRED"),"STAGE_ORDER_VIOLATION_EXPECTED_"+j.phase);
  switch(evt.type){
  case "SOURCE_VERIFIED":
    req(e.checked_actual_bytes===true&&e.actual_sha256===j.reference.sha256,"SOURCE_BYTES_UNVERIFIED");
    req(e.actual_mime===j.reference.mime&&e.width===j.reference.width&&e.height===j.reference.height,"SOURCE_FORMAT_MISMATCH");
-   j.phase="AWAIT_VISUAL_PROGRAM";break;
+   j.phase="AWAIT_COST_APPROVAL";break;
  case "PROGRAM_COMPILED":
-   j.prompt=compilePrompt(e.program,j);j.program=copy(e.program);j.phase="AWAIT_COST_APPROVAL";break;
+   j.prompt=compilePrompt(e.program,j);j.program=copy(e.program);j.phase="RENDER_READY";break;
  case "COST_AUTHORIZED":
    req(e.explicit_user_approval===true&&e.approved_max_calls>=1&&e.approved_max_calls<=j.max_generation_calls,"COST_APPROVAL_REQUIRED");
    req(TXT(e.provider,128)&&TXT(e.model,128)&&e.provider_budget_type==="SEPARATE_PAID_API","BILLING_SCOPE_MUST_BE_EXPLICIT");
    j.cost_authorization={provider:e.provider,model:e.model,max_calls:e.approved_max_calls,approved_at:ctx.now};
-   j.phase="RENDER_READY";break;
+   j.phase="AWAIT_VISUAL_PROGRAM";break;
  case "RENDER_RESERVED":
    req(j.cost_authorization&&j.used_generation_calls<j.cost_authorization.max_calls,"GENERATION_QUOTA_EXHAUSTED");
    req(TXT(e.attempt_id,128)&&e.reference_sha256===j.reference.sha256&&e.prompt===j.prompt.text,"REQUEST_REFERENCE_OR_PROMPT_CHANGED");
@@ -127,6 +128,9 @@ export function advancePipeline(input,evt,ctx) {
    j.status=e.verdict==="APPROVE"?"COMPLETE":"REJECTED_BY_USER";break;
  case "BLOCK":
    req(TXT(e.reason,512),"BLOCK_REASON_REQUIRED");j.blocker={reason:e.reason,phase:j.phase,at:ctx.now};break;
+ case "RESUME":
+   req(j.blocker&&e.proof_of_resolution===true&&TXT(e.resolution_receipt,512),"BLOCKER_RESOLUTION_EVIDENCE_REQUIRED");
+   j.blocker=null;break;
  case "RECONCILE":
    req(j.phase==="RENDER_IN_FLIGHT"&&j.render?.status==="IN_FLIGHT_UNCERTAIN","RECONCILE_ONLY_IN_FLIGHT");
    req(e.attempt_id===j.render.attempt_id,"RECONCILE_ATTEMPT_MISMATCH");
@@ -144,6 +148,6 @@ export function advancePipeline(input,evt,ctx) {
  j.revision++;j.updated_at=ctx.now;return j;
 }
 export function nextAutomaticAction(job) {
- const map={AWAIT_SOURCE:"READ_SOURCE_BYTES_AND_VERIFY_SHA256",AWAIT_VISUAL_PROGRAM:"ANALYZE_ACTUAL_REFERENCE_PIXELS_AND_COMPILE",AWAIT_COST_APPROVAL:"WAIT_USER_BILLING_APPROVAL",RENDER_READY:"RESERVE_AND_CALL_GENERATOR_ONCE",RENDER_IN_FLIGHT:"RECONCILE_EXISTING_PROVIDER_ATTEMPT_ONLY",AWAIT_TECH_AUDIT:"READ_GENERATED_BYTES_AND_CHECK",AWAIT_PHOTO_HUMAN:"WAIT_HUMAN_PHOTO_VERDICT",AWAIT_FIGMA:"COMPOSE_FIGMA_WITH_LOCKED_PHOTO",AWAIT_POSTER_AUDIT:"INDEPENDENT_EXPORT_AND_PIXEL_AUDIT",AWAIT_POSTER_HUMAN:"WAIT_HUMAN_POSTER_VERDICT",COMPLETE:"NONE_COMPLETE",REJECTED:"STOP_AND_PRESERVE_EVIDENCE",RECONCILE_REQUIRED:"STOP_UNTIL_EXISTING_ATTEMPT_RECONCILED"};
- return {action:map[job.phase]||"UNKNOWN",phase:job.phase,automatic:!["AWAIT_COST_APPROVAL","AWAIT_PHOTO_HUMAN","AWAIT_POSTER_HUMAN","REJECTED","COMPLETE","RECONCILE_REQUIRED"].includes(job.phase),blocker:job.blocker};
+ const map={AWAIT_SOURCE:"READ_SOURCE_BYTES_AND_VERIFY_SHA256",AWAIT_COST_APPROVAL:"WAIT_USER_BILLING_APPROVAL_BEFORE_PAID_VISION_OR_IMAGE",AWAIT_VISUAL_PROGRAM:"ANALYZE_ACTUAL_REFERENCE_PIXELS_AND_COMPILE",RENDER_READY:"RESERVE_AND_CALL_GENERATOR_ONCE",RENDER_IN_FLIGHT:"RECONCILE_EXISTING_PROVIDER_ATTEMPT_ONLY",AWAIT_TECH_AUDIT:"READ_GENERATED_BYTES_AND_CHECK",AWAIT_PHOTO_HUMAN:"WAIT_HUMAN_PHOTO_VERDICT",AWAIT_FIGMA:"COMPOSE_FIGMA_WITH_LOCKED_PHOTO",AWAIT_POSTER_AUDIT:"INDEPENDENT_EXPORT_AND_PIXEL_AUDIT",AWAIT_POSTER_HUMAN:"WAIT_HUMAN_POSTER_VERDICT",COMPLETE:"NONE_COMPLETE",REJECTED:"STOP_AND_PRESERVE_EVIDENCE",RECONCILE_REQUIRED:"STOP_UNTIL_EXISTING_ATTEMPT_RECONCILED"};
+ return {action:job.blocker?"BLOCKED_UNTIL_RESUME":(map[job.phase]||"UNKNOWN"),phase:job.phase,automatic:!job.blocker&&!["AWAIT_COST_APPROVAL","AWAIT_PHOTO_HUMAN","AWAIT_POSTER_HUMAN","REJECTED","COMPLETE","RECONCILE_REQUIRED"].includes(job.phase),blocker:job.blocker};
 }
