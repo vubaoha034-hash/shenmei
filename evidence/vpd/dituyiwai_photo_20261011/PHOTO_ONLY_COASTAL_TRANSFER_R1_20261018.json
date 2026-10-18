@@ -1,0 +1,126 @@
+{
+  "schema_version": "vpd-photo-only-coastal-transfer-r1-evidence/v1",
+  "task_id": "VPD-PHOTO-ONLY-Y-TO-COASTAL-TRANSFER-R1-20261018",
+  "date": "2026-10-18",
+  "authority": "SCOPED_EVIDENCE_ONLY_NOT_NATIVE_TASK_LOCK_NOT_TYPGRAPHY_OR_FIGMA",
+  "scope": "Exactly one photo-only, new-geography visual-language transfer attempt based on the relatively preferred Y photograph, using ChatGPT native image generation; no brand typography, layout or editing.",
+  "authorization": "User said 下一步 after the immediately preceding proposal to try one original misty coastal road photograph. No external paid API authorization, no retries, no unseen variants.",
+  "canonical_git": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "prewrite_head": "22cf4b460403087d84d4ee47bc9b160dccde13b8",
+    "current_native_task_lock_revision": 355,
+    "current_checkpoint_sequence": 377,
+    "native_state_write": false
+  },
+  "parent_photo": {
+    "role": "RELATIVE_BEST_GENERATED_PHOTO_Y_NO_ABSOLUTE_GOLDEN_PROMOTION",
+    "source_name": "VPD_地图以外_AB_Y_20261011.png",
+    "sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+    "width": 941,
+    "height": 1672,
+    "bytes": 1934752,
+    "library_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+    "authorizing_human_correction": "evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json",
+    "prior_actual_pixel_audit": "evidence/vpd/dituyiwai_photo_20261011/PHOTO_ONLY_PIXEL_LINEAGE_AUDIT_20261018.json",
+    "underlying_third_party_reference_rights": "UNKNOWN_AND_NOT_USED_AS_GENERATED_ORIGINAL_IN_THIS_ROUND",
+    "human_original_final_acceptance": "NOT_ESTABLISHED"
+  },
+  "target": {
+    "content": "Original coastal cliffside road above the ocean and sea fog, one small vehicle, different terrain and road geometry; no text.",
+    "intended_style_mechanisms": "Y-like quiet muted atmosphere, pale open sky, fog-based depth/occlusion, secondary small vehicle and narrow natural road, no dramatic orange beam/HDR/hero foreground.",
+    "expected_aspect": "9:16 PORTRAIT_PHOTO_SERIES",
+    "generate_exactly": 1
+  },
+  "actual_imagegen_execution": {
+    "tool": "ChatGPT native image_gen.text2im",
+    "count": 1,
+    "output_gen_id": "248a8f5c-2633-47d6-8a6b-116efb2ac6cf",
+    "returned_parent_gen_id": null,
+    "returned_edit_op": null,
+    "output_local_path_at_execution": "/mnt/data/a_wide_cinematic_moody_landscape_scene_a_misty.png",
+    "image_generation_output_prompt_metadata": "",
+    "exact_backend_conditioning_and_attachment_binding": "NOT_EXPOSED",
+    "source_pixel_conditioning_verified_by_model_request_manifest": false,
+    "sampling_seed": "NOT_EXPOSED",
+    "retries": 0,
+    "best_of_n": false,
+    "hidden_variants_observed": false,
+    "paid_external_api_calls": 0,
+    "generated_text": false
+  },
+  "immutable_output": {
+    "format": "PNG",
+    "mode": "RGB",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 2227818,
+    "sha256": "31b30ac549ced958f8e6c31b35978109cb5c95574732df2a93f294f2f3d59863",
+    "native_aspect": "3:4",
+    "requested_series_aspect": "9:16",
+    "native_exact_aspect_9_16_pass": false,
+    "additional_crop_or_edit_created": false
+  },
+  "primary_archive": {
+    "location": "Google Drive /高级感P_地图以外_摄影底图_20261010",
+    "file_id": "1cYcZ0hdw5QMlknc-Gu8BEpEN4OSO5aVa",
+    "file_name": "VPD_Coastal_Fog_Transfer_Test_20261018_ORIGINAL_3x4.png",
+    "verified_url": "https://drive.google.com/file/d/1cYcZ0hdw5QMlknc-Gu8BEpEN4OSO5aVa/view?usp=drivesdk",
+    "provider_metadata_size": 2227818,
+    "provider_readback_materialized_path": "/mnt/data/vpd-photo-audit/drive-readback/VPD_Coastal_Fog_Transfer_Test_20261018_ORIGINAL_3x4.png",
+    "readback_bytes": 2227818,
+    "readback_sha256": "31b30ac549ced958f8e6c31b35978109cb5c95574732df2a93f294f2f3d59863",
+    "actual_original_to_archive_bytes_equal": true,
+    "original_not_replaced": true
+  },
+  "photographic_comparison": {
+    "screen_scope": "ASSISTANT_SCOPED_SCREENING_NOT_INDEPENDENT_BLIND_HUMAN_TASTE_REVIEW",
+    "category": "PHOTO_ONLY",
+    "expected_changed_dimension": "geography moves from dry highland valley to foggy coast, while quiet image-making principles should remain",
+    "observed": "Image contains a coherent coastline, cliffside serpentine road and single tiny car, with sea fog and far headlands. However there is a relatively conspicuous warm horizon strip, a large dark-green forested cliff foreground, stronger contrast and visually assertive curving road; these depart from Y's unusually quiet ivory-sky and fog-dominant grammar.",
+    "observed_local_saturation_hsv_mean_percentage_by_height_band": {
+      "method": "PIL convert HSV; saturation channel mean as 0-100 percent, bands [0,0.2],[0.2,0.5],[0.5,0.75],[0.75,1]. Diagnostic only, scene geometry differs.",
+      "Y": [
+        5.5,
+        10.2,
+        8.6,
+        44.8
+      ],
+      "new": [
+        10.6,
+        7.2,
+        12.1,
+        29.6
+      ]
+    },
+    "interpretation": "Partial atmosphere transfer, but important attention/tonality constraints drifted toward generic dramatic coastal travel photography. Do not claim the new image demonstrates stable independent visual-program transfer.",
+    "independent_human_approval": "PENDING",
+    "whole_quality_fully_approved": false
+  },
+  "technical_result": {
+    "original_file_and_archive_hash": "PASS",
+    "scope_count": "PASS_EXACTLY_ONE_GENERATION",
+    "expected_native_9_16": "FAIL_GENERATOR_RETURNED_3_4",
+    "provenance_exact_model_reference_binding": "UNKNOWN",
+    "photo_mechanism_transfer": "PARTIAL_WITH_VISIBLE_REGRESSION_NOT_VALIDATED",
+    "human_final_quality": "UNKNOWN",
+    "skill_promotion": "BLOCKED",
+    "status": "ONE_CANDIDATE_PRESERVED_TECHNICAL_ASPECT_FAIL_TASTE_UNAPPROVED"
+  },
+  "rights_and_policy": {
+    "original_third_party_reference_not_reused_as_output": true,
+    "Y_generated_output_used_as_relative_visual_anchor": true,
+    "no_new_global_rules": true,
+    "no_typography_design": true,
+    "no_figma_writes": true,
+    "no_native_task_lock_or_checkpoint_updates": true,
+    "no_automatic_retry": true,
+    "no_unapproved_paid_tool": true
+  },
+  "unique_next_step": {
+    "state": "WAIT_FOR_PHOTO_ONLY_REVIEW_OR_EXPLICIT_FOLLOWUP_DIRECTION",
+    "action": "Show the single archived source candidate to Liu Xiansheng as a bounded transfer test with explicit native-aspect failure. Request scoped human photographic quality feedback if continuing; only after that design one narrow successor with 9:16 native output control, no more than one new image upon authorization.",
+    "automatic_generation_authorized": 0,
+    "global_promotion_allowed": false
+  }
+}
