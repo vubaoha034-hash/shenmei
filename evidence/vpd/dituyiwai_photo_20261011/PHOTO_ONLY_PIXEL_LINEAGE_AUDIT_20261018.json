@@ -1,0 +1,132 @@
+{
+  "schema_version": "vpd-photo-only-pixel-lineage-audit/v1",
+  "audit_date": "2026-10-18",
+  "purpose": "Review the existing photo-only X/Y photographic lineage from the exact raw pixels; preserve a small case-scoped lesson without touching typography, native state, or the production compiler.",
+  "authority": "EVIDENCE_ONLY_NOT_A_TASK_LOCK_NOT_A_HUMAN_FINAL_VERDICT_NOT_SKILL_PROMOTION",
+  "project": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "source_head": "4cde39671d1b5b01ca5bd488513a70b8a4a7fdaf",
+    "native_task_lock_revision_observed": 355,
+    "checkpoint_sequence_observed": 377
+  },
+  "actual_pixel_readback": {
+    "method": "Read source raw PNG from the linked authenticated Google Drive reference and X/Y raw PNGs materialized from the exact ChatGPT Library file IDs; independently recompute byte SHA256, pixel dimensions and broad vertical-strip RGB/HSV statistics.",
+    "reference": {
+      "role": "THIRD_PARTY_REFERENCE_NOT_GENERATED",
+      "sha256": "fc5b2302cc829d4a864e850c6f59c53fe3be1009946da9db0a5bb000246ee016",
+      "size_bytes": 588368,
+      "width": 709,
+      "height": 1064,
+      "license_status": "UNKNOWN",
+      "asset_receipt": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json"
+    },
+    "X": {
+      "role": "GENERATED_A_DIRECT_REFERENCE",
+      "sha256": "b0958ce70e0e55b08642d7671e8f5fe8dc2d3c4cefc104912e202c7918609268",
+      "size_bytes": 2060330,
+      "width": 941,
+      "height": 1672,
+      "library_id": "libfile_f472048b87b481919c6dd35785fb26b5",
+      "generation_chat": "https://chatgpt.com/c/6acb42fc-0fac-83ec-af2c-132ab60ded2e"
+    },
+    "Y": {
+      "role": "GENERATED_B_REFERENCE_PLUS_V2_DELTA",
+      "sha256": "e24c7d286cf622613abec7c48b81010724858de6b7dd19b9ebef15b231ec9e42",
+      "size_bytes": 1934752,
+      "width": 941,
+      "height": 1672,
+      "library_id": "libfile_1afa56c01ed08191be566b92b17cbbca",
+      "generation_chat": "https://chatgpt.com/c/6acb43f1-df0c-83ec-a0d6-8d627fa4ed6d"
+    },
+    "strict_9_16_native_original_png": "FAIL_X_AND_Y_941_X_1672_NEAR_9_16_NOT_EXACT",
+    "all_three_sha256_match_historical_receipts": true
+  },
+  "prompt_lineage": {
+    "original_frozen_inputs": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_INPUTS_FROZEN.json",
+    "actual_generation_receipt": "evidence/vpd/dituyiwai_photo_20261011/V2_STAGE1_AB_GENERATION_AND_LIBRARY_READBACK_20261011.json",
+    "X_prompt_design": "one straightforward real reference task with limited scene and content constraints",
+    "Y_prompt_design": "same baseline plus 8 visual controls for ivory sky, subdued peach ridge, fog-dominant depth, small lower-left road and car, diffuse ambient light, restrained ochre-stone colors, and haze occlusion",
+    "same_renderer_reported": "ChatGPT Images",
+    "internal_exact_reference_conditioning_manifest": "NOT_EXPOSED",
+    "generation_seed_control": "NOT_EXPOSED",
+    "causal_comparison_proved": false
+  },
+  "observed_photo_reading": {
+    "reference": "Upper pale near-ivory open sky; muted peach distant ridge; central low-contrast white cloud/fog bank, partly occluded gray hill islands; small winding road and tiny dark vehicle on warm dry lower-left slope. No asserted specific camera/lens or geography.",
+    "X": "Stronger orange-pink sky, dark forested and rock-heavy foreground, multiple crisp mountains, more prominent serpentine road and dense details. Overall visual spectacle and contrast are stronger than reference; specific user feedback flags AI-feel.",
+    "Y": "Near-ivory open sky, broad pale-peach ridge, mist as the largest middle mass, lower-left road with small dark car, softened interleaving hill shapes and understated matte tonality. Greater visual resemblance to the reference's restraint, without literal mountain-copy claim.",
+    "direct_assistant_visual_judgment": "Y is materially closer to the source photographic grammar than X. This is an assistant pixel review, not a second independent blinded human verdict."
+  },
+  "vertical_band_hsv_saturation_percent": {
+    "methodology": "Mean HSV saturation (0 to 100 percent) computed per equally normalized vertical image band from actual RGB pixels. Reference and variants have different content geometry. Diagnostic only, not a perceptual quality score or causal explanation.",
+    "y_0_20": {
+      "reference": 5.4,
+      "X": 20.8,
+      "Y": 5.7
+    },
+    "y_20_50": {
+      "reference": 9.1,
+      "X": 12.3,
+      "Y": 10.4
+    },
+    "y_50_75": {
+      "reference": 9.6,
+      "X": 18.2,
+      "Y": 8.8
+    },
+    "y_75_100": {
+      "reference": 46.9,
+      "X": 48.9,
+      "Y": 45
+    }
+  },
+  "human_evidence": {
+    "exact_correction": "我搞错了y的更好。x有ai味道。因为我下载的时候没区分xy只区分前后下载。",
+    "authoritative_correction": "evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json",
+    "corrected_relative_preference": "Y_OVER_X",
+    "disfavored": "X_AI_FEEL",
+    "Y_final_photographic_Golden_status": "NOT_PROMOTED",
+    "entire_poster_final_status": "NOT_APPROVED",
+    "blind_causal_test_valid_after_late_correction": false
+  },
+  "learned_case_scoped_mechanisms": [
+    "Maintain high-key but neutral/ivory upper sky rather than saturated glowing sunset.",
+    "Make soft opaque/interleaved fog the main middle-distance mass; hills gain depth by occlusion rather than sharpened HDR silhouettes.",
+    "Keep the road narrow and subordinate to the landscape, with exactly one tiny car as a secondary scale cue.",
+    "Allow realistic dry warm foreground while avoiding dark forests, dramatic high-contrast rock mass, and sweeping postcard composition that dominate X.",
+    "Keep a limited set of concrete visible photographic controls in the image prompt; do not infer that a longer prompt, by itself, caused Y's preference."
+  ],
+  "uncertainty_and_safety": [
+    "Only one X and one Y were generated; generator randomness and multiple concurrent prompt changes confound causal attribution.",
+    "Reference rights are UNKNOWN; original source reference is a third-party photograph and may not be treated as owned or commercially reusable.",
+    "The generated Y is relatively preferred but the existing record does not provide an unconditional FINAL/GOLDEN human approval.",
+    "Original generator back-end exact binding manifest and strict native 9:16 output are not verified.",
+    "No global aesthetic rule or skill candidate is authorized by this single case."
+  ],
+  "existing_learning_state": {
+    "path": ".skill-evolution/visual-distillation-compiler-v2/state.json",
+    "corrected_user_evidence_id": "ev_def888ce3bc0",
+    "retracted_prior_evidence_id": "ev_a6299fac60e7",
+    "action": "REUSE_EXISTING_CORRECTION_NO_DUPLICATE_OBSERVATION_NO_PROMOTION"
+  },
+  "proposed_next_photo_only_action": {
+    "state": "PROPOSED_NOT_AUTHORIZED",
+    "action": "ONE_NEW_CONTENT_TRANSFER_PHOTO_CANDIDATE",
+    "principle": "Use Y as the protected relative-best photographic comparison baseline; move to meaningfully different geography instead of re-rendering the same mountain scene. Retain sky/fog/scale grammar without tracing original landforms. Independently review new raw pixels for naturalism and visible family resemblance.",
+    "gate": "Require user direction or explicit one-image generation approval; verify rights of any external image physically supplied to the generator.",
+    "budget_new_images_executed_in_this_audit": 0,
+    "if_exact_9_16_required": "Record native output actual dimensions. Derive a separate non-destructive exact 9:16 crop only if requested; never change original-asset identity or call the original exact."
+  },
+  "preserved_boundaries": {
+    "typography_review_or_edit": false,
+    "figma_operations": false,
+    "image_generation": false,
+    "external_paid_api": false,
+    "native_lock_or_checkpoint_write": false,
+    "production_skill_rules_added": false,
+    "personal_calibration_promoted": false
+  },
+  "native_validator": "NOT_RUN_NO_NATIVE_STATE_MODIFIED",
+  "outcome": "CASE_SCOPED_PIXEL_AND_LINEAGE_AUDIT_COMPLETE_Y_RELATIVELY_PREFERRED_NO_GLOBAL_SKILL_PROMOTION"
+}
