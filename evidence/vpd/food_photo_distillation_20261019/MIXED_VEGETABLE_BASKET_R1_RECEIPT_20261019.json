@@ -1,0 +1,127 @@
+{
+  "schema_version": "vpd-food-photo-only-receipt/v1",
+  "task_id": "VPD-FOOD-PHOTO-FOREST-BASKET-MIXED-VEGETABLES-20261019-R1",
+  "date": "2026-10-19",
+  "authority": "SCOPED_EVIDENCE_ONLY_NOT_NATIVE_TASK_LOCK_OR_HUMAN_ACCEPTANCE",
+  "user_request": "@刘先生 VPD 图片生成 生成萝卜白菜辣椒等等放一起的。",
+  "task_definition": {
+    "mode": "PHOTO_ONLY",
+    "subject": "Fresh mixed vegetables, prominently Chinese white daikon radishes, Chinese napa cabbages, red and green chili peppers, plus secondary fresh produce together in a rustic forest harvest basket.",
+    "ratio_intent": "vertical reference 9:16, output ratio not explicitly restated in user's request",
+    "images_budget": 1,
+    "number_generated": 1,
+    "scope_exclusions": [
+      "No poster typography",
+      "No source brand or watermark",
+      "No Figma or text design",
+      "No generation retries"
+    ],
+    "project_scope": "FOOD_PHOTOGRAPHY_DISTILLATION distinct from LANDSCAPE_PHOTOGRAPHY_DISTILLATION"
+  },
+  "source": {
+    "kind": "USER_PROVIDED_VISUAL_REFERENCE_IMAGE",
+    "filename": "1000032292.jpg",
+    "original_source_file_in_user_message": true,
+    "source_mime": "image/jpeg",
+    "dimensions": [
+      864,
+      1536
+    ],
+    "bytes": 400394,
+    "sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+    "existing_source_archive": "https://drive.google.com/file/d/1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE/view",
+    "provenance_note": "Already uploaded for earlier reference2 task at prior commit; this is the same immutable reference hash. Treat as third-party design-reference screenshot, authorship and commercial rights unknown.",
+    "observed_image": "Vertical lush moss and fern forest-floor photograph with an oblique shallow woven basket full of varied fungi; headline, signatures and watermarks overlay image. Distill only image mechanisms, do not reproduce text.",
+    "identity_equivalent_to_prior_source_receipt": "evidence/vpd/food_photo_distillation_20261019/FOREST_BASKET_REFERENCE2_SINGLE_CANDIDATE_20261019.json"
+  },
+  "distinguishing_prior_work": {
+    "previous_same_reference_task_id": "VPD-FOOD-PHOTO-SECOND-REFERENCE-20261019-R1",
+    "previous_output_subject": "assorted mushrooms",
+    "previous_generation_id": "a42b5ec0-0da4-4f1a-938a-65a7bb23bbf7",
+    "reason_not_duplicate": "Current user explicitly requested mixed vegetables (radish, cabbage, peppers), unlike the previous ambiguous mushrooms/cabbage attempt. Previous output and record preserved unchanged."
+  },
+  "extracted_photo_mechanisms": [
+    "Vertical botanical harvest still life with shallow handwoven bamboo basket dominating central/lower frame",
+    "Green forest-floor setting with moss, fern fronds, richly layered deep background",
+    "Close basket-level three-quarter rather than flat catalog overhead camera",
+    "Soft gaps-of-canopy directional highlights against deep natural green shadows",
+    "Natural produce heterogeneity: irregular sizes, skin grain, leaf translucency, moisture and scattered soil",
+    "Lively color of mixed seasonal foods but a coherent palette with no plastic sheen",
+    "Background open enough to allow future separate graphics without generating text into photograph"
+  ],
+  "generation": {
+    "model_tool": "ChatGPT native image_gen.text2im",
+    "calls": 1,
+    "returned_gen_id": "d3bc8064-c0c2-4202-92f1-9e3336a491fa",
+    "parent_gen_id": null,
+    "edit_op": null,
+    "provider_prompt_metadata": "EMPTY_NOT_EXPOSED",
+    "internal_image_conditioning_manifest": "NOT_EXPOSED",
+    "tool_output_file_id": "file_00000000d6388211b381724e56c40f67",
+    "automatic_retry": 0,
+    "best_of_n": false,
+    "secondary_or_hidden_variants_observed": false,
+    "external_paid_api_cost": 0
+  },
+  "artifact": {
+    "role": "CANDIDATE_AWAITING_HUMAN_REVIEW",
+    "original_local_path": "/mnt/data/a_richly_detailed_high_resolution_still_life_foo.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "bytes": 3226954,
+    "sha256": "17a457dce0780c63564c840f0249cf2cb7c8c8584ec424f2a0661966b92ffd74",
+    "ratio": "3:4",
+    "strict_native_9_16": false,
+    "new_typography_intended": false,
+    "original_preserved": true
+  },
+  "archive": {
+    "provider": "Google Drive",
+    "directory": "高级感P_餐饮图片蒸馏_20261019",
+    "folder_id": "1IgUcCpYn7N2sRIsZcNJ9PCJu4FZA4poJ",
+    "drive_id": "1Gj4DloeopAI76TEtSIqFxthuFlNX_jFr",
+    "url": "https://drive.google.com/file/d/1Gj4DloeopAI76TEtSIqFxthuFlNX_jFr/view?usp=drivesdk",
+    "file_name": "VPD_混合蔬菜竹篮_R1_20261019_3x4.png",
+    "upload_success": true,
+    "materialize_readback_success": true,
+    "reread_bytes": 3226954,
+    "reread_sha256": "17a457dce0780c63564c840f0249cf2cb7c8c8584ec424f2a0661966b92ffd74",
+    "original_to_drive_readback_byte_equal": true,
+    "source_generation_and_archive_distinct": false
+  },
+  "scoped_review": {
+    "technical_raw_integrity": "PASS_READBACK_SHA256_AND_BYTES_IDENTICAL",
+    "ratio_fidelity": "ORIGINAL_3_4_DIFFERENT_FROM_REFERENCE_9_16_NO_CROP_OR_FAKE_PASS",
+    "subject": "MIXED_VEGETABLES_PRESENT_INCLUDES_DAIKON_CABBAGE_RED_GREEN_PEPPERS_AND_OTHER_FOOD",
+    "visible_composition": "Much fuller frame, more near-overhead market basket on dark stone/wood; reference has calmer upper-third forest foliage, visible moss, fern and basket-level camera.",
+    "photography_style_transfer": "PARTIAL_IMAGE_LANGUAGE_TRANSFER_FOREST_DEPTH_NOT_FAITHFULLY_PRESERVED",
+    "possible_unwanted_marks": "SMALL_LOW_CONTRAST_LETTERLIKE_ARTIFACT_AT_BOTTOM_RIGHT_CANNOT_CLEAR_TEXT_FREE_PRODUCTION_GATE",
+    "image_material_realism": "ASSISTANT_SCREENING_ONLY_NOT_EXTERNAL_BLIND_REVIEW",
+    "rights": "REFERENCE_ORIGINAL_AUTHOR_COMMERCIAL_RIGHTS_UNKNOWN",
+    "human_final_aesthetic_approval": "PENDING",
+    "absolute_success": "NOT_PROVEN",
+    "no_model_conditioning_overclaim": true
+  },
+  "next_required_action": "RETURN_ONE_TRUE_ORIGINAL_PHOTO_CANDIDATE_FOR_USER_AESTHETIC_REVIEW; DO_NOT_REGENERATE_OR_MUTATE_PROTECTED_PREVIOUS_CANDIDATES_AUTOMATICALLY",
+  "boundaries": {
+    "native_lock_modified": false,
+    "checkpoint_modified": false,
+    "landscape_family_modified": false,
+    "typography_modified": false,
+    "figma_modified": false,
+    "global_skill_rule_promoted": false,
+    "image_calls_this_turn": 1
+  },
+  "repository": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_precommit_head": "58db0b5e3bfe59347f63110d41715f55936268a8",
+    "lock_revision_read_only": 355,
+    "checkpoint_sequence_read_only": 377,
+    "validator_not_run": true
+  }
+}
