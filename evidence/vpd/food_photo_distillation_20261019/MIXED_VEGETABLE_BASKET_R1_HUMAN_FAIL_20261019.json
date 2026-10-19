@@ -1,0 +1,112 @@
+{
+  "schema_version": "vpd-scoped-photo-human-feedback/v1",
+  "case_id": "VPD-FOOD-PHOTO-FOREST-BASKET-MIXED-VEGETABLES-20261019-R1",
+  "recorded_date": "2026-10-19",
+  "authority": "USER_AESTHETIC_VERDICT_FOR_ONE_PHOTO_CANDIDATE_NOT_GLOBAL_SKILL_POLICY",
+  "original_user_feedback_exact": "没达到，差了很多。",
+  "user_feedback": {
+    "verdict": "HUMAN_REJECT",
+    "absolute_quality_meets_target": false,
+    "severity": "LARGE_GAP_PER_USER",
+    "approved_areas": "NONE_EXPLICITLY_SPECIFIED",
+    "user_identified_specific_failure_locations": "NOT_SPECIFIED",
+    "comparison_context": "User reacted to the single generated radish/cabbage/chili basket photo against their immediately supplied mushrooms-in-a-forest basket reference.",
+    "no_invented_user_reasons": true
+  },
+  "immutable_asset_identity": {
+    "original_reference": {
+      "role": "USER_SUPPLIED_REFERENCE_SCREENSHOT",
+      "name": "1000032292.jpg",
+      "sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+      "drive_file_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE"
+    },
+    "candidate": {
+      "role": "REJECTED_GENERATED_PHOTO",
+      "sha256": "17a457dce0780c63564c840f0249cf2cb7c8c8584ec424f2a0661966b92ffd74",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "drive_file_id": "1Gj4DloeopAI76TEtSIqFxthuFlNX_jFr",
+      "drive_url": "https://drive.google.com/file/d/1Gj4DloeopAI76TEtSIqFxthuFlNX_jFr/view"
+    },
+    "original_receipt": "evidence/vpd/food_photo_distillation_20261019/MIXED_VEGETABLE_BASKET_R1_RECEIPT_20261019.json",
+    "generation_id": "d3bc8064-c0c2-4202-92f1-9e3336a491fa",
+    "preserved_original": true
+  },
+  "assistant_visual_diagnosis": {
+    "status": "INFERENCE_AND_VISUAL_JUDGMENT_NOT_USER_VERBATIM_OR_CAUSAL_PROOF",
+    "central_miss": "Recipe/ingredient subject substitution happened but the source photographic scene grammar (forest atmosphere, depth, basket scale and light) was not conserved.",
+    "observations": [
+      {
+        "factor": "composition",
+        "reference": "Shallow bamboo basket concentrated around lower half, background forest foliage and dark space remain visibly important",
+        "candidate": "Nearly entire frame occupied by uniform produce display; basket arranged like a densely stocked catalog tray"
+      },
+      {
+        "factor": "camera",
+        "reference": "Near frontal oblique tabletop/basket-level feel with layered background",
+        "candidate": "Steep top-down viewing flattening space"
+      },
+      {
+        "factor": "environment",
+        "reference": "Fern, moss, deep green rainforest foliage and a sense of a real forest floor",
+        "candidate": "Dark generic stone/wood surface with limited recognizable forest depth"
+      },
+      {
+        "factor": "lighting",
+        "reference": "Soft light breaking through foliage with asymmetric contrast and gentle shading",
+        "candidate": "Strong selective highlights and glossy vegetables compete in a more commercial food-display rendering"
+      },
+      {
+        "factor": "ingredient_hierarchy",
+        "reference": "Composed and separated recognizable organic mushrooms as natural harvest objects",
+        "candidate": "Numerous unrelated vegetables in equal prominence form overfull rainbow-like mass"
+      },
+      {
+        "factor": "format",
+        "reference": "User reference a 9:16 poster screenshot; task was explicitly photo-only and exact aspect not restated",
+        "candidate": "Native 3:4; record as a difference, not an asserted reason for user's negative aesthetic verdict"
+      },
+      {
+        "factor": "artifact",
+        "reference": "Poster text was to be ignored",
+        "candidate": "Tiny letterlike mark reported near bottom-right in prior technical screening, so no claim of flawless text-free production"
+      }
+    ],
+    "root_cause_technical": "UNKNOWN: image generation prompt inference and internal reference conditioning manifest are not exposed, cannot attribute failure uniquely to the compiler or renderer.",
+    "scope": "Photo-only forest-basket scene, not typography, landscape, or the prior approved cabbage still life."
+  },
+  "proposed_local_successor": {
+    "status": "PLAN_ONLY_NOT_GENERATED",
+    "aim": "Produce one visibly new but family-faithful forest harvest photograph with mixed vegetables and zero poster text.",
+    "priority": [
+      "Preserve the source's forest setting, moss/ferns, layered background and upper breathing space; food fills primarily the lower-middle basket",
+      "Use more frontal/three-quarter camera perspective and a clear shallow woven basket rather than top-down flat produce board",
+      "Limit vegetable families to the requested clear heroes: daikon, napa cabbage and chili peppers, optionally one minor contrast ingredient",
+      "Natural uneven grouping and gentle forest-light falloff, believable matte and irregular produce texture, no artificial supermarket rainbow arrangement",
+      "Respect user-supplied source photograph as an actual reference input; no lettering, logo, signature, watermark or stray characters"
+    ],
+    "stop_conditions": [
+      "No automatic second candidate",
+      "No extra image generation without an explicit continuation",
+      "Do not modify original referenced or generated assets",
+      "Require actual original image and observable tool output before any success claim"
+    ],
+    "global_skill_promotion": false
+  },
+  "state_boundaries": {
+    "repository": "vubaoha034-hash/shenmei",
+    "canonical_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_prewrite_head": "4f0443aed0acc93c9e014334298b83c660e7e69a",
+    "native_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "native_task_lock_and_checkpoint_unchanged": true,
+    "existing_rejected_candidate_receipt_unchanged": true,
+    "typography_scope_excluded": true,
+    "landscape_family_unchanged": true,
+    "image_generations_this_feedback_turn": 0,
+    "no_extra_paid_compute": true
+  },
+  "next_required_action": "WAIT_FOR_EXPLICIT_PHOTO_ONLY_REMAKE_AUTHORIZATION_OR_ALTERNATIVE_DIRECTION; if authorized build exactly one forest-scene-composition-corrected vegetable candidate after reviewing original reference, then perform human quality review."
+}
