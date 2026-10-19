@@ -1,0 +1,104 @@
+{
+  "schema_version": "vpd-photo-only-reference2-single-candidate/v1",
+  "date": "2026-10-19",
+  "task_id": "VPD-FOOD-PHOTO-SECOND-REFERENCE-20261019-R1",
+  "authority": "SCOPED_EVIDENCE_ONLY_NO_NATIVE_TASK_LOCK_OR_SKILL_PROMOTION",
+  "explicit_current_user_message": "[user uploaded image 1000032292.jpg] @刘先生 VPD 图片生成",
+  "context_interpretation": {
+    "assistant_declared_goal": "Continue prior cabbage-only background generation using the newly uploaded reference image",
+    "user_current_turn_explicit_food_substitution": "NOT_SPECIFIED",
+    "previous_user_turn_requested_subject": "白菜",
+    "goal_ambiguity": "The latest message did not explicitly state whether to keep cabbage or generate mushrooms. Assistant proceeded with prior cabbage target. Preserve this uncertainty."
+  },
+  "source": {
+    "role": "USER_SUPPLIED_REFERENCE_SCREENSHOT_NOT_OWNED_GENERATED_WORK",
+    "actual_file_name": "1000032292.jpg",
+    "sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+    "mime": "image/jpeg",
+    "dimensions": [
+      864,
+      1536
+    ],
+    "bytes": 400394,
+    "rights_status": "UNKNOWN",
+    "image_content": "Forest-floor composition, moss and fern canopy, shallow wicker/bamboo basket with a curated assortment of mushrooms; large copy, logos and source watermark overlay photograph.",
+    "raw_drive_file_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE",
+    "raw_drive_url": "https://drive.google.com/file/d/1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE/view",
+    "pixel_input_to_generation_verified": "REFERENCE_VISIBLE_IN_USER_MESSAGE_BUT_INTERNAL_IMAGEGEN_CONDITIONING_MANIFEST_NOT_EXPOSED"
+  },
+  "intended_photo_distillation": {
+    "scope": "PHOTO_ONLY_NO_TYPOGRAPHY",
+    "inherited_subject": "CHINESE_NAPA_CABBAGE",
+    "mechanisms": [
+      "Portrait forest harvest still life with soft dark-green atmospheric depth",
+      "Shallow handwoven bamboo basket as main central lower-half visual mass",
+      "Moss and fern leaves frame basket with multiple real depth planes",
+      "Soft warm gaps-of-canopy directional lighting against deep botanical shadows",
+      "Organic produce abundance, varied material reflectance and modest dirt/imperfection",
+      "Perspective near frontal/three-quarter overhead basket-level rather than top-down, with open quieter upper foliage"
+    ],
+    "variation": "Replace source assorted mushroom ingredients with a fresh cabbage harvest, not a pixel copy of mushrooms or source poster typography",
+    "intended_ratio": "9:16 based on source screenshot; no user explicit output aspect in latest turn"
+  },
+  "actual_generation": {
+    "tool": "ChatGPT image_gen.text2im",
+    "calls": 1,
+    "returned_gen_id": "a42b5ec0-0da4-4f1a-938a-65a7bb23bbf7",
+    "parent_gen_id": null,
+    "edit_op": null,
+    "prompt_metadata": "EMPTY_NOT_EXPOSED",
+    "actual_creative_subject": "assorted mushrooms, not napa cabbage",
+    "output_original_file": "a_highly_detailed_photorealistic_still_life_fores.png",
+    "output_sha256": "3b30c051c72d5108100afb6092ad7146f2c6779cf8fe0d1b789bd7bcc8858406",
+    "output_mime": "image/png",
+    "output_mode": "RGB",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "bytes": 2785680,
+    "exact_output_ratio": "3:4",
+    "reference_binding_backend": "UNKNOWN",
+    "image_generation_count": 1,
+    "additional_generation_calls": 0
+  },
+  "archive": {
+    "provider": "Google Drive",
+    "directory": "高级感P_餐饮图片蒸馏_20261019",
+    "reference_file_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE",
+    "output_file_id": "1u8r-0z8xVdAsjCT3YUcM9ztX-LUQMcN7",
+    "output_url": "https://drive.google.com/file/d/1u8r-0z8xVdAsjCT3YUcM9ztX-LUQMcN7/view",
+    "original_reference_bytes_recomputed_and_readback_identical": true,
+    "original_generated_output_bytes_recomputed_and_readback_identical": true,
+    "hash_verified": true
+  },
+  "scoped_review": {
+    "technical_originality": "Output is a new PNG, not a byte-for-byte copy of the reference; compositional visual similarity is obvious and cannot prove generative distillation.",
+    "subject_gate": "FAIL_IF_INHERITED_CABBAGE_TARGET_APPLIES",
+    "aspect_gate": "FAIL_IF_SOURCE_9_16_EXPECTED",
+    "text_in_output": "NONE_VISIBLE",
+    "photo_aesthetic_quality": "NOT_YET_REVIEWED_BY_USER",
+    "reviewer_independence": "SAME_GENERATION_CONTEXT",
+    "core_failure": "MODEL_OUTPUT_FOLLOWS_MUSHROOM_SUBJECT_FROM_REFERENCE_RATHER_THAN_ASSISTANT_DECLARED_CABBAGE_TRANSFER",
+    "user_intent_ambiguity": "User named the plugin but did not specify new subject in latest message; do not reinterpret output as a successful cabbage transfer or definite user rejection of mushrooms."
+  },
+  "classification": {
+    "family": "FOOD_PHOTOGRAPHY_DISTILLATION",
+    "subcategory": "FOREST_HARVEST_BASKET_REFERENCE",
+    "case_verdict": "PRESERVED_UNJUDGED_MUSHROOM_PHOTO_CANDIDATE_AND_INHERITED_BAICAI_TRANSFER_FAIL",
+    "previous_accepted_baicai_R1_preserved": true,
+    "landscape_family_unchanged": true,
+    "global_skill_promotion": false,
+    "realization": "This call does not demonstrate subject transfer; the strong source food subject may dominate one-shot image generation."
+  },
+  "execution_boundaries": {
+    "raw_photo_only": true,
+    "no_typography_or_logo_generated": true,
+    "no_figma_writes": true,
+    "no_native_task_lock_or_checkpoint_writes": true,
+    "no_new_visual_rules": true,
+    "no_paid_external_api": true,
+    "no_retry": true
+  },
+  "next": "STOP. Ask user one brief clarification: should this newly supplied forest-basket reference be used to continue generating CABBAGE, or is the desired new image a MUSHROOM photo? Do not rerender automatically; preserve one candidate."
+}
