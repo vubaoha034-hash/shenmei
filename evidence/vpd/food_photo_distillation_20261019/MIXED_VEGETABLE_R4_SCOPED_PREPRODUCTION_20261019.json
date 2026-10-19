@@ -1,0 +1,99 @@
+{
+  "schema_version": "vpd-food-photo-single-successor-preproduction/v1",
+  "date": "2026-10-19",
+  "scope": "FOOD_PHOTOGRAPHY_ONLY",
+  "mode": "PREPRODUCTION_READ_ONLY_ANALYSIS_THEN_NONDESTRUCTIVE_RECEIPT_SAVE",
+  "project": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_before_prep": "aa96f1f8f8deac455cac05e00d47fc88aa58ddd6",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "write_native_state": false
+  },
+  "motivation": "After R1 user strong rejection and R2/R3 user reports heavy AI-feel, freeze exactly one useful revision hypothesis without another spontaneous image generation.",
+  "intent_interpretation": "User said '下一步' following the prior completed root-cause audit whose next action was human review or explicit one-photo production request. Given prior user concern about immediate generation, this continuation locks production input only; does not silently treat it as image-generation approval.",
+  "source_reference": {
+    "role": "ONE_CANONICAL_GENERATION_REFERENCE",
+    "file_name": "1000032292.jpg",
+    "sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+    "bytes": 400394,
+    "width": 864,
+    "height": 1536,
+    "format": "JPEG",
+    "drive_file_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE",
+    "rights": "UNKNOWN",
+    "description": "Forest editorial still life of mixed fungi in low woven basket, greenery and ferns, text/brand overlays should be excluded",
+    "source_role_note": "ART_DIRECTED_FOOD_PHOTOGRAPHY, NOT WILD_HARVEST_DOCUMENTARY. Learn photographic spatial grammar, not the original artwork's copy, brand, exact object arrangement."
+  },
+  "regression_anchor": {
+    "role": "EVALUATION_ONLY_NOT_GENERATION_INPUT",
+    "title": "溪畔湿润野生蘑菇静物",
+    "sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+    "scope": "First-impression photographic realism, plausible light, heterogeneous surfaces, incidental occlusion; do not copy its fungi or stream setting."
+  },
+  "preserved_examples": {
+    "accepted_different_reference_family": {
+      "subject": "napa cabbage still-life",
+      "sha256": "3cba2a0a795dea8ae19199fa4fc7ff26812a9c9783e2ec94469bf42e89b2643d",
+      "human": "生成得很不错",
+      "purpose": "show gloss/sharpness/saturation are not automatically artificial; not a second image generation reference"
+    },
+    "rejected_R1": "17a457dce0780c63564c840f0249cf2cb7c8c8584ec424f2a0661966b92ffd74",
+    "relative_improved_but_ai_feel_R2": "490989175c2593bd32902fc65eedeb7b6b29fe5862da7af2a0492bc5c09e84c9",
+    "ai_feel_rejected_R3": "52e6c61f7262ac8e03442df85bbb93dc5668149fc0fd7417042298dfc85d7d20",
+    "do_not_pass_failures_to_generator_as_visual_context": true,
+    "diagnosis_file": "evidence/vpd/food_photo_distillation_20261019/FOOD_PHOTO_R1_R3_REALISM_CAUSAL_AUDIT_20261019.md"
+  },
+  "single_changed_mechanism": {
+    "hypothesis": "A commercially art-directed forest-edge still-life arranged as one believable basket placement with natural partial occlusion and unified incidental light will look less catalog-staged than the prior ingredient-list scene.",
+    "actual_variable_to_test": "SCENE_CONSTRUCTION_&_DISPLAY_PRESSURE, NOT SIMPLE GLOBAL_SATURATION_OR_DIRT_AMOUNT",
+    "photographic_grammar": [
+      "Vertical portrait, low three-quarter view (near basket-rim eye level), basket concentrated in middle/lower frame and visually integrated with shaded fern/moss background",
+      "One large Chinese napa cabbage, two Chinese daikon radishes, a few red/green long chilies; main produce partly masks each other and can extend beyond basket edge rather than lining up",
+      "Believable staging: produce harvested from nearby farmland, basket rested by forest edge for an intentional food editorial photograph; do not imply vegetables naturally grow in wild mossy forest",
+      "Single soft woodland-side natural light source; a real gradient and occlusion/shadow across materials, without each vegetable separately beautified",
+      "Distinct material optics: cabbage leaves translucent/dry and irregular, radish relatively matte with minor adhering field soil, chilies naturally waxy, woven basket mostly dry; not identical droplets/patina everywhere",
+      "Natural environmental depth; upper background dark green foliage and ferns in partial focus/occlusion; no need for all foliage or all food to be crisply legible",
+      "Retain richness and appetizing beauty as in source commercial reference, but not a supermarket-like ingredient checklist"
+    ],
+    "hard_content_avoids": [
+      "No poster typography, logo, stamps, signatures or watermark",
+      "No unrequested mushrooms, tomatoes, bell peppers, cucumbers, garlic or potatoes",
+      "No extra unrelated ornaments or artificial hero spotlight"
+    ]
+  },
+  "one_image_generation_direction_zh": "以本次唯一附带的森林菌菇摄影参考为摄影语言，创作一张全新的无字9:16竖幅真实食材静物：林缘阴凉处，一只低矮手编竹篮刚被放在带苔藓的石旁，篮中主要是一棵大白菜、两根白萝卜和少量红绿长辣椒。镜头从篮沿附近斜向观察，竹篮位于画面中下部，叶片与萝卜自然交错遮挡，部分物体不必完整展示。柔和林间侧光只照亮局部，蔬菜、竹编、苔藓保留彼此不同的干湿与表面质感，后景是幽暗蕨叶和自然层次。不要任何文字、标志、其他品种蔬菜；不要把食材逐件陈列。原创布局，不复制参考照片的具体布置。",
+  "renderer_constraints": {
+    "renderer": "ChatGPT native Images",
+    "fresh_clean_reference_context_preferred": true,
+    "actual_ref_only": "1000032292.jpg; do not attach failed R1/R2/R3 or the historical Golden",
+    "prompt_binding": "Exact prompt and attachment observable at user-facing input when possible; generator internal conditioning manifest may remain NOT_EXPOSED",
+    "target_ratio": "9:16 portrait",
+    "if_native_dimensions_approximate": "Report actual width/height; do not label exact 9:16 or silently crop",
+    "maximum_new_images_on_future_explicit_authorization": 1,
+    "retries": 0,
+    "external_paid_api": false,
+    "no_best_of_n": true,
+    "current_turn_generations": 0,
+    "current_generation_authorization": "NOT_INVOKED_DURING_PREPRODUCTION"
+  },
+  "review": {
+    "technical": "Correct subject identity, actual pixel dimensions, archive byte/sha match, no text",
+    "aesthetic": "User sees actual image: look believable before looking pretty; material differentiation, single light source, imperfect but professionally composed basket and environment",
+    "independence": "Current creator self-assessment only. Human verdict cannot be replaced by an AI PASS.",
+    "first_impression_realism_comparator": "historical mushroom Golden real pixels only as evaluation anchor",
+    "success_condition": "A user absolute quality judgment on the new candidate; relative progress alone does not permit Golden promotion",
+    "fail_stop": "One new output (if later generated) remains a recorded failure; never auto-reroll"
+  },
+  "boundary": {
+    "change_visual_skill": false,
+    "new_gate_or_validator": false,
+    "modify_existing_native_task": false,
+    "modify_typography": false,
+    "modify_figma": false,
+    "modify_landscape_lineage": false,
+    "preserve_reference_and_failures": true
+  },
+  "next_required_action": "AWAIT_EXPLICIT_ONE_PHOTO_R4_EXECUTION_REQUEST_WITH_THE_CANONICAL_REFERENCE_BOUND; no new images this turn."
+}
