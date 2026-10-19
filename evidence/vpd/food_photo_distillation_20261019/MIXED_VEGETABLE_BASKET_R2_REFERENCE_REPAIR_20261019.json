@@ -1,0 +1,108 @@
+{
+  "schema_version": "vpd-food-photo-scoped-execution/v1",
+  "task_id": "VPD-FOOD-PHOTO-FOREST-BASKET-MIXED-VEGETABLES-R2-20261019",
+  "recorded_at": "2026-10-19",
+  "source_head": "c3547ccdc7cbb21655a5e4a5b4d3fbe915f5ac09",
+  "authority": "SCOPED_PHOTO_EXECUTION_EVIDENCE_ONLY_NOT_NATIVE_TASK_LOCK_OR_GOLDEN_PROMOTION",
+  "request_context": {
+    "user_message": "下一步",
+    "authorization": "Following prior user's explicit rejection of R1 and last assistant's one-photo-only forest basket successor proposal; authorization restricted to one candidate without automatic retries.",
+    "user_human_verdict_R1": "没达到，差了很多。",
+    "prior_human_feedback_record": "evidence/vpd/food_photo_distillation_20261019/MIXED_VEGETABLE_BASKET_R1_HUMAN_FAIL_20261019.json",
+    "task": "Original photorealistic vegetable forest-harvest still life derived from the photographic composition of source mushroom basket but with radish, napa cabbage and chili as clear main subjects. Zero typography, posters, logos."
+  },
+  "reference": {
+    "role": "USER_UPLOADED_VISUAL_REFERENCE_SCREENSHOT",
+    "source_name": "1000032292.jpg",
+    "sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+    "format": "JPEG",
+    "dimensions": [
+      864,
+      1536
+    ],
+    "bytes": 400394,
+    "rights_status": "UNKNOWN",
+    "source_asset_drive_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE",
+    "reference_used_for": "Forest environment, moss and ferns, atmospheric perspective, shallow woven basket in lower-middle scene, warm filtered sidelight and organic produce layering; source typography not reused",
+    "reference_model_internal_byte_binding": "NOT_EXPOSED"
+  },
+  "distillation_intent": {
+    "family": "FOOD_PHOTOGRAPHY_DISTILLATION",
+    "separate_from_landscape": true,
+    "retained_visual_mechanisms": [
+      "Vertical 9:16 scene with upper roughly one-third deep forest foliage and subdued breathing space",
+      "Shallow woven harvest tray/large basket centered lower-middle rather than a top-down flat supermarket product board",
+      "Forward-angled three-quarter basket-level camera with natural depth layers",
+      "Forest floor moss, hanging fern fronds, deep green color framing and soft canopy sidelight",
+      "Primary harvest ingredients are daikon radish, napa cabbage and a restrained small amount of red and green chilies, optional secondary carrots",
+      "Natural material heterogeneity and believable light gradients, no glossy artificial produce textures"
+    ],
+    "subject_change": "Replace mushrooms from source with requested mixed vegetables; avoid copying source logo, text, watermark and visual elements unrelated to photography",
+    "frozen_failed_R1_preserved": true
+  },
+  "imagegen": {
+    "provider": "ChatGPT native image_gen.text2im",
+    "calls": 1,
+    "gen_id": "c557e3e9-1b31-4dfe-81e9-c1d0040864ab",
+    "parent_gen_id": null,
+    "edit_op": null,
+    "prompt_argument": "NULL_DEPRECATED_AUTOMATIC_INFERENCE_FROM_CONVERSATION",
+    "image_description_returned": "A moody, photorealistic still life presents a woven bamboo basket overflowing with freshly harvested vegetables on a damp moss-covered forest floor, framed by ferns, bark, leaves, mushrooms and softly blurred woodland.",
+    "exact_internal_generated_prompt": "NOT_EXPOSED",
+    "exact_conditioning_reference_manifest": "NOT_EXPOSED",
+    "seed": "NOT_EXPOSED",
+    "automatic_retry": 0,
+    "new_image_count": 1,
+    "new_film_frames_or_hidden_variants_observed": 0,
+    "external_paid_service_calls": 0
+  },
+  "artifact": {
+    "source_tool_output_file_id": "file_00000000c610820bae17a40aa3758e9d",
+    "native_local_filename": "a_highly_detailed_realistic_atmospheric_still_li.png",
+    "sha256": "490989175c2593bd32902fc65eedeb7b6b29fe5862da7af2a0492bc5c09e84c9",
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1086,
+      1448
+    ],
+    "bytes": 2777572,
+    "actual_aspect": "3:4",
+    "expected_aspect": "9:16",
+    "native_exact_ratio_pass": false,
+    "original_uncropped_and_unmodified": true
+  },
+  "archive": {
+    "storage": "Google Drive",
+    "folder_name": "高级感P_餐饮图片蒸馏_20261019",
+    "folder_id": "1IgUcCpYn7N2sRIsZcNJ9PCJu4FZA4poJ",
+    "file_id": "13nGy6X1uH93s129i3VIa071uZobf2bfR",
+    "file_name": "VPD_混合蔬菜_森林竹篮_R2_20261019_1086x1448.png",
+    "url": "https://drive.google.com/file/d/13nGy6X1uH93s129i3VIa071uZobf2bfR/view?usp=drivesdk",
+    "verified_readback_bytes": 2777572,
+    "verified_readback_sha256": "490989175c2593bd32902fc65eedeb7b6b29fe5862da7af2a0492bc5c09e84c9",
+    "original_vs_readback_identical": true
+  },
+  "evaluation": {
+    "technical_preservation": "PASS_ORIGINAL_PNG_ARCHIVED_AND_BYTE_IDENTICAL_READBACK",
+    "native_aspect": "FAIL_3_4_INSTEAD_OF_9_16",
+    "camera_and_scene_relative_to_failed_R1": "DIRECTIONAL_IMPROVEMENT_AS_ASSISTANT_JUDGMENT_ONLY",
+    "observed": "The photograph now shows forest floor, moss, dense ferns and a shallow basket viewed in perspective instead of a near-top-down display. However, food remains too diverse (visible tomatoes, garlic, mushrooms and peppers beyond the intended three heroes); local lighting has relatively strong glossy highlights and the style is still more polished than the quiet source.",
+    "independent_review": "NOT_RUN",
+    "human_review": "PENDING",
+    "aesthetic_promotion_allowed": false,
+    "image_conditioning_proof": "UNKNOWN",
+    "defect_is_not_global_skill_failure_proof": true
+  },
+  "governance": {
+    "new_global_aesthetic_rule": false,
+    "typography_scope": false,
+    "figma_writes": 0,
+    "native_task_lock_revision_read": 355,
+    "checkpoint_sequence_read": 377,
+    "native_state_write": false,
+    "prior_R1_verdict_overwritten": false,
+    "landscape_image_bloodline_modified": false
+  },
+  "next": "STOP; present exactly one R2 original for user photo-only aesthetic review. Preserve both R1 failure and R2 artifact without re-generating another candidate. If user rejects, record their scope before proposing one bounded successor."
+}
