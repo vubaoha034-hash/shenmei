@@ -1,0 +1,123 @@
+{
+  "schema_version": "vpd-food-photo-only-receipt/v1",
+  "task_id": "VPD-FOOD-PHOTO-BAICAI-REFERENCE-TRANSFER-20261019-R1",
+  "observation_date": "2026-10-19",
+  "user_request": "我们先不管文字，只管后面的底图。生成白菜的 @刘先生 VPD 图片生成",
+  "actual_execution_mode": "PHOTO_ONLY_SINGLE_ORIGINAL_GENERATION",
+  "project_source": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_head_before_new_receipt": "c80b737eaa086d5f95bc70ee4b5ca15b2c46bdf0",
+    "native_task_lock_revision_readonly": 355,
+    "checkpoint_sequence_readonly": 377,
+    "skill_uri": "skills://plugins/liu-vpd-image-generation/liu-vpd-image-generation",
+    "operational_reference": "skills://plugins/liu-vpd-image-generation/liu-vpd-image-generation/references/OPERATION.md"
+  },
+  "classification": {
+    "current_family": "FOOD_PHOTOGRAPHY_DISTILLATION",
+    "subject": "白菜（napa cabbage, 大白菜）",
+    "separate_from": "LANDSCAPE_PHOTOGRAPHY_DISTILLATION",
+    "typography_scope": "EXCLUDED",
+    "production_stage": "PHOTO_ONLY_CANDIDATE",
+    "final_aesthetic_status": "HUMAN_PENDING_NOT_FINAL_GOLDEN"
+  },
+  "source_reference": {
+    "role": "USER_PROVIDED_REFERENCE_SCREENSHOT",
+    "source_available_in_user_message": true,
+    "container_path_at_execution": "/mnt/data/file_000000004934820795c1a12c731f50cf",
+    "mime": "image/jpeg",
+    "image_dimensions": [
+      709,
+      1536
+    ],
+    "file_bytes": 182331,
+    "sha256": "c918d90a04e0c823977908f30f1baa31ce9627674dfa12cc172e36a5d855eb36",
+    "observed_photo_area_approx": "source screenshot x=0..709,y=295..1241 (~3:4), with design text over the photograph; no separate original text-free photograph supplied",
+    "reference_content": "A rustic bamboo/wicker basket with brown foraged mushrooms arranged diagonally across dark stone/soil background; scattered forest leaves and soft directional highlights; original poster typography overlays the source image.",
+    "rights_status": "UNKNOWN; source is a reference screenshot, not an owned original photograph established by this task",
+    "source_photo_used_as_underlying_image_copy": false,
+    "scope": "Learn image-making mechanism only; new cabbage scene, remove ALL poster text, marks and branding."
+  },
+  "photo_distillation": {
+    "fixed_mechanisms": [
+      "Approx 3:4 vertical tight editorial food still-life composition",
+      "One woven bamboo basket as a diagonal visual mass, shot from high oblique viewpoint",
+      "Clustered produce fills basket with realistic layers, irregular arrangement and some natural leaves at edges",
+      "Deep charcoal/near-black rustic ground texture, dark but retaining material detail",
+      "Soft directional natural sidelight reveals ingredient texture and volume, without even advertisement lighting",
+      "Organic imperfection: leaf veins, midribs, modest harvest soil and moisture, not plastic/glossy fake food"
+    ],
+    "variation_from_reference": [
+      "Replace brown wild mushrooms with fresh real napa cabbage heads and outer leaves",
+      "Allow new cabbage/basket arrangement, not a pixel copy of screenshot",
+      "Do not transfer white Chinese headline, orange decoration or source brand"
+    ],
+    "image_goal": "Single high-quality vertical food photograph with NO letters, logos, borders or graphics"
+  },
+  "generation": {
+    "executed_via": "ChatGPT image_gen.text2im",
+    "count": 1,
+    "imagegen_id": "0c8db4f9-231c-4c78-9803-27420e4b506b",
+    "output_parent_gen_id": null,
+    "output_edit_op": null,
+    "output_description_returned": "A cinematic, moody overhead composition captures a weathered wicker basket brimming with freshly harvested napa cabbages on a dark, damp, stone-like surface.",
+    "prompt_argument_field": "DEPRECATED_NULL",
+    "exact_internal_prompt": "NOT_EXPOSED; image tool inferred instruction from user reference and conversation context",
+    "exact_backend_visual_reference_binding": "NOT_EXPOSED",
+    "additional_variants_observed": false,
+    "automatic_retry_count": 0,
+    "external_paid_api_calls": 0
+  },
+  "output_original": {
+    "role": "CANDIDATE",
+    "original_file_name": "a_moody_cinematic_close_up_still_life_scene_over.png",
+    "runtime_file_id": "file_0000000027a0820793ea63ae714a8662",
+    "output_format": "PNG",
+    "output_mode": "RGB",
+    "actual_dimensions": [
+      1086,
+      1448
+    ],
+    "exact_aspect": "3:4",
+    "bytes": 2682928,
+    "sha256": "3cba2a0a795dea8ae19199fa4fc7ff26812a9c9783e2ec94469bf42e89b2643d",
+    "text_or_logo_present": "NONE_VISIBLE",
+    "no_cropping_or_edit_since_generation": true
+  },
+  "archive": {
+    "provider": "Google Drive",
+    "folder_id": "1IgUcCpYn7N2sRIsZcNJ9PCJu4FZA4poJ",
+    "folder_name": "高级感P_餐饮图片蒸馏_20261019",
+    "drive_file_id": "1iprAnB2sk57jVf3ScTHe0TzDdmvDZDxZ",
+    "drive_url": "https://drive.google.com/file/d/1iprAnB2sk57jVf3ScTHe0TzDdmvDZDxZ/view?usp=drivesdk",
+    "file_name": "VPD_白菜_参考图摄影迁移_R1_20261019_1086x1448.png",
+    "actual_provider_metadata_size": 2682928,
+    "raw_materialized_readback_sha256": "3cba2a0a795dea8ae19199fa4fc7ff26812a9c9783e2ec94469bf42e89b2643d",
+    "raw_original_and_readback_same_bytes": true,
+    "status": "PASS_DIRECT_RAW_READBACK"
+  },
+  "review": {
+    "technical_identity": "PASS_SOURCE_AND_OUTPUT_DIMENSIONS_AND_SHA256_READ",
+    "actual_ratio": "PASS_3_4",
+    "text_free": "PASS_VISUAL_SCREENING",
+    "authorship_rights": "REFERENCE_RIGHTS_UNKNOWN",
+    "review_independence": "SAME_EXECUTION_CONTEXT_NOT_INDEPENDENT",
+    "photographic_quality": "UNRATED_FOR_FORMAL_PROMOTION_USER_TO_REVIEW",
+    "notable_open_questions": [
+      "Does the user want large compact napa cabbage rather than leafy/open napa heads?",
+      "Are food texture and dark rustic photography compelling enough for the intended commercial use?"
+    ],
+    "human_verdict": "PENDING"
+  },
+  "preserved_boundaries": {
+    "separate_landscape_lineage": true,
+    "typography_or_copy_generated": false,
+    "figma_write": false,
+    "native_task_lock_write": false,
+    "checkpoint_write": false,
+    "promoted_global_rules": false,
+    "second_candidate_generated": false,
+    "new_photo_upload_and_receipt_only": true
+  },
+  "unique_next_action": "RETURN_SINGLE_ARCHIVED_BAICAI_PHOTOGRAPH_TO_USER_FOR_PHOTO_ONLY_AESTHETIC_REVIEW; preserve raw original; do not modify lettering or automatically rerender."
+}
