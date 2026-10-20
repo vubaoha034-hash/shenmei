@@ -1,0 +1,109 @@
+{
+  "schema_version": "vpd-food-photo-r4-scope-positive-review/v1",
+  "review_date": "2026-10-20",
+  "task_id": "VPD-FOOD-PHOTO-MIXED-VEGETABLE_BASKET-R4-PHOTO-ONLY",
+  "phase": "ONE_CANDIDATE_DELIVERED_RAW_ARCHIVED_HUMAN_RELATIVE_POSITIVE_NOT_GOLDEN",
+  "authority": "SCOPED_PHOTO_EVIDENCE_ONLY_NOT_NATIVE_TASK_STATE",
+  "project": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "precommit_head": "18843b07c8072860b65b675d68dacd06e5329af6",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_changed": false,
+    "other_typography_task_changed": false
+  },
+  "inputs": {
+    "frozen_plan": "evidence/vpd/food_photo_distillation_20261019/MIXED_VEGETABLE_R4_SCOPED_PREPRODUCTION_20261019.json",
+    "original_user_reference_name": "1000032292.jpg",
+    "original_reference_sha256": "2308f5d3c742aab421224a8d2548db2e06b27eccdbb0388298190d4a6831fc17",
+    "original_reference_drive_id": "1_Y9glwDHLErTRCkWsGRcl6gDD0Lx47aE",
+    "reference_rights": "UNKNOWN",
+    "reject_R1": "17a457dce0780c63564c840f0249cf2cb7c8c8584ec424f2a0661966b92ffd74",
+    "reject_R2": "490989175c2593bd32902fc65eedeb7b6b29fe5862da7af2a0492bc5c09e84c9",
+    "reject_R3": "52e6c61f7262ac8e03442df85bbb93dc5668149fc0fd7417042298dfc85d7d20",
+    "historic_mushroom_realism_golden_sha256": "c84f380cc3268d58e86da3d1a5411b809c67aa2cd336176561537c5ae35b15a7",
+    "golden_usage": "EVALUATION_ONLY_NOT_GENERATOR_CONDITIONING_INPUT"
+  },
+  "generation": {
+    "tool": "ChatGPT Image native",
+    "observed_calls": 1,
+    "generator_gen_id": "fc2e186f-4c23-407b-9544-8101648e7d74",
+    "parent_gen_id": null,
+    "edit_op": null,
+    "precise_request_attachment_binding": "NOT_EXPOSED",
+    "exact_internal_image_prompt": "NOT_EXPOSED",
+    "output_filename": "森林苔石上的新鲜蔬菜篮.png",
+    "hidden_variants_observed": false,
+    "additional_generation_retries": 0,
+    "next_generation_authorized": false
+  },
+  "original_output": {
+    "output_type": "ORIGINAL_GENERATED_PHOTOGRAPH",
+    "source_runtime_file_id": "file_00000000e6a8820ba4f545215bf892b8",
+    "format": "PNG",
+    "color_mode": "RGB",
+    "width": 941,
+    "height": 1672,
+    "ratio_exact_9_16": false,
+    "near_9_16": true,
+    "byte_size": 2734442,
+    "sha256": "7c73f6d651bdad3f9867078c81b407e51ea5c1c9ce1f456cfa64f1f73f743dfd",
+    "cropped_or_adjusted": false
+  },
+  "verified_archive": {
+    "service": "Google Drive",
+    "folder": "高级感P_餐饮图片蒸馏_20261019",
+    "file_id": "1jbeBw79LW8ZiLFlpDNpKKRgYevMmDI30",
+    "url": "https://drive.google.com/file/d/1jbeBw79LW8ZiLFlpDNpKKRgYevMmDI30/view?usp=drivesdk",
+    "filename": "VPD_混合蔬菜_森林竹篮_R4_20261019_原件.png",
+    "bytes": 2734442,
+    "readback_sha256": "7c73f6d651bdad3f9867078c81b407e51ea5c1c9ce1f456cfa64f1f73f743dfd",
+    "original_and_readback_bytes_equal": true
+  },
+  "human_feedback": {
+    "exact_quote": "我觉得挺好。你自我评价下",
+    "scope": "R4 GENERATED PHOTO ONLY, NOT THE COMPLETE TYPOGRAPHY/POSTER",
+    "verdict": "POSITIVE_BUT_NO_EXPLICIT_FINAL_OR_GOLDEN_RELEASE",
+    "strength": "QUALITATIVE_POSITIVE",
+    "previous_feedback": "R1 rejected, R2 relatively better but AI-feel strong, R3 AI-feel still strong",
+    "accepted_dimensions_specified_by_user": "NOT_SPECIFIED",
+    "rejected_details_specified_by_user_for_R4": "NONE"
+  },
+  "assistant_non_independent_photo_review": {
+    "holistic_subjective_score_out_of_100": 82,
+    "sub_scores": {
+      "composition": 88,
+      "environment": 86,
+      "lighting": 82,
+      "material": 78,
+      "photographic_realism": 74
+    },
+    "status": "IMPROVED_AND_PROMISING_NOT_REALISM_GOLDEN",
+    "observed_improvements": [
+      "Clearer hierarchy: napa cabbage main subject, daikon and chilies subordinate.",
+      "The near low-angle basket and natural overlapping foliage feel less like a produce inventory.",
+      "Fern canopy, dark forest and moss now contribute to spatial depth and environment.",
+      "Single prominent upper-left natural daylight direction makes the materials more coherently lit than prior versions."
+    ],
+    "visible_residual_issues": [
+      "Some napa leaf contours and veins remain uniformly articulate and idealized.",
+      "The two daikon radishes are somewhat parallel and arranged for camera clarity; soil texture can look decoratively distributed.",
+      "Red and green peppers have fairly uniformly glossy surfaces; ingredient material variations are not fully convincing.",
+      "The sunlit upper-left fern region may compete with the cabbage and look too controlled for completely incidental field photography.",
+      "The scene is an intentionally styled forest-edge editorial still life, not proof of actual wild harvesting."
+    ],
+    "independence": "AUTHOR_SELF_REVIEW_NOT_EXTERNAL_BLIND",
+    "reliability_limit": "No deterministic same-input control, unexposed backend image-conditioning manifest. Cannot attribute result quantitatively to VPD compiler versus model and source image."
+  },
+  "learnings": "Do not convert one relatively praised photograph into global Skill rule. Preserve this as a positively viewed scoped R4. Higher photographic realism remains an improvement opportunity but is not a basis for an automatic rerender. Compared to failures, resolving ingredient hierarchy and scene construction appears useful; evidence is observational.",
+  "boundaries": {
+    "new_generation_this_review_turns": 0,
+    "new_global_rules": 0,
+    "figma_or_typography_modification": false,
+    "edit_original_photo": false,
+    "previous_failure_records_changed": false,
+    "native_lock_changed": false
+  },
+  "next_required_action": "PROTECT_R4_PHOTO_ORIGINAL_AND_WAIT_FOR_EXPLICIT_PHOTO_ONLY_NEXT_SCOPE; DO_NOT_AUTOMATICALLY_GENERATE_R5_OR_PROMOTE_AS_GOLDEN."
+}
