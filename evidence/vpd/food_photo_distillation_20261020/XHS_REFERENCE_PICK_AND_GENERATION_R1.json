@@ -1,0 +1,115 @@
+{
+  "schema_version": "vpd-xhs-food-photo-pick-and-generation-receipt/v1",
+  "task_id": "VPD-XHS-SELF_SELECTED-FOOD-PHOTO-R1-20261020",
+  "date": "2026-10-20",
+  "authority": "SCOPED_EVIDENCE_ONLY_NOT_NATIVE_TASK_LOCK",
+  "user_intent": "User authorized assistant to independently select high-quality Xiaohongshu photography, distill the image-making approach, use Liu VPD image-generation workflow to make an original photo, then submit it for review.",
+  "repository": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "prewrite_head": "aaf78effa356e1126ede72d03698dd9aa8f0ea1d",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_changed": false
+  },
+  "browser": {
+    "tool": "Opera Neon",
+    "site": "https://www.xiaohongshu.com/explore",
+    "authenticated_page_visible": true,
+    "session_state": "The dedicated Opera Neon MCP first returned session terminated; browser connector later recovered and the actual Xiaohongshu page was viewed. Do not claim the dedicated Neon MCP itself recovered.",
+    "selected_posts": [
+      {
+        "title": "有质感的菜品拍摄是怎么拍的",
+        "author": "有序静物摄影",
+        "url": "https://www.xiaohongshu.com/explore/6ac88c23000000001a0263d6",
+        "actual_visible_visual": "One small composed dish on an irregular white ceramic plate; warm brown background and textile/wood props; soft side/back light; restrained dish occupancy and controlled background luminance.",
+        "caption_claims_visible": "主光：标罩＋柔光屏侧逆光位；背景光微微打亮一点背景；反光板暗部补光；背景选用大地色系、木板桌布木头带有肌理感的道具让画面看上去细节更丰富。"
+      },
+      {
+        "title": "火红辣椒 新鲜食材",
+        "author": "摄影师杰克",
+        "url": "https://www.xiaohongshu.com/explore/6a17bc1900000000350282d6",
+        "actual_visible_visual": "Large-scale red chili drying with woven trays and a person sorting/spreading produce; strong real-world texture and scale."
+      },
+      {
+        "title": "腊肉摄影｜烟火气才是顶级氛围感",
+        "author": "田由甲",
+        "url": "https://www.xiaohongshu.com/explore/6a1fc86400000000380378db",
+        "actual_visible_visual": "Dark-background cured meats, hanging product shapes, warm workmanlike light and visible surface texture."
+      },
+      {
+        "title": "山野至味",
+        "author": "Yuki-品牌设计",
+        "url": "https://www.xiaohongshu.com/explore/6aa12e2d0000000026014da3",
+        "actual_visible_visual": "Vegetables and foraged foods in several woven baskets against a woodpile, rustic atmosphere."
+      },
+      {
+        "title": "菜市场大集合 | 被这满载而归的蔬菜鲜到了",
+        "author": "玩味美食摄影",
+        "url": "https://www.xiaohongshu.com/explore/68ff5688000000000301cf6b",
+        "actual_visible_visual": "Overhead market basket packed with many vegetables; excluded as the prior user rejected this checklist/display look."
+      }
+    ],
+    "image_content_access": "Viewed actual post visuals in the logged-in Opera browser screenshots. Public page fetch returned 404/verification; original source image bytes not separately extracted or bound as an attachment to image generation.",
+    "source_rights": "Unknown; private study and transformative original creation only; no copying of creator's text, logo, watermark or exact composition."
+  },
+  "selected_reference": {
+    "title": "有质感的菜品拍摄是怎么拍的",
+    "author": "有序静物摄影",
+    "url": "https://www.xiaohongshu.com/explore/6ac88c23000000001a0263d6",
+    "selection_reason": "Best controlled single-plate lighting and material hierarchy; use as learning reference, not literal replication.",
+    "distilled_visual_mechanisms": [
+      "One plated food hero with clear negative space rather than a full ingredient inventory.",
+      "Warm brown background, with separate luminance control for background versus food.",
+      "Large soft side/back key light creates dimensional food texture; modest reflector fill recovers shadows.",
+      "Irregular ceramic, dark wood and textured cloth add tactile context without competing with the dish.",
+      "Shallow, controlled depth of field and restrained prop count."
+    ],
+    "intended_original_output": "Original photo of a Chinese home-style dish (green pepper pork stir-fry) on a dark rustic ceramic plate, warm earth-toned tabletop and one softly side-lit hero, distinct from the reference dish and composition; no text, logos, watermarks.",
+    "generation_constraints": "One image only, no retries, no external paid image APIs, no typography, no Figma."
+  },
+  "generation": {
+    "tool": "ChatGPT native image_gen.text2im",
+    "gen_id": "7983b4be-0ee8-4210-8ff4-b755ca88be02",
+    "count": 1,
+    "hidden_variants_observed": 0,
+    "retries": 0,
+    "external_paid_calls": 0,
+    "prompt_metadata": "EMPTY_NOT_EXPOSED",
+    "actual_model_reference_attachment": "NOT_PROVEN",
+    "observed_output_description": "A wicker basket of napa cabbage, daikon radishes and red/green chilies in a lush sunlit forest beside a creek.",
+    "output_path": "/mnt/data/a_highly_detailed_cinematic_natural_light_food_s.png",
+    "sha256": "179434565aac4346b5b8f9b81b4e3f36888519b182f38b6c1d29bd491053c15c",
+    "width": 941,
+    "height": 1672,
+    "format": "PNG",
+    "bytes": 2652484,
+    "mismatch": "The output returned to the previously explored forest-basket scene and does not match the selected warm-brown single-dish photography plan. This is a FAILED REFERENCE-TRANSFER ATTEMPT, not a successful use of the selected Xiaohongshu reference."
+  },
+  "archive": {
+    "service": "Google Drive",
+    "folder": "高级感P_餐饮图片蒸馏_20261019",
+    "file_id": "11t1J_Ecfy6QUYOZo_uMGaE22kayvC3BU",
+    "filename": "XHS_原创摄影尝试_R1_参考绑定失败_20261020.png",
+    "url": "https://drive.google.com/file/d/11t1J_Ecfy6QUYOZo_uMGaE22kayvC3BU/view?usp=drivesdk",
+    "readback_bytes": 2652484,
+    "readback_sha256": "179434565aac4346b5b8f9b81b4e3f36888519b182f38b6c1d29bd491053c15c",
+    "original_and_readback_equal": true
+  },
+  "review": {
+    "technical": "ORIGINAL_PNG_ARCHIVED_SHA256_MATCH_PASS",
+    "reference_binding": "FAIL_NOT_PROVEN",
+    "creative_match": "FAIL_OUTPUT_REPEATS_FOREST_BASKET_DIRECTION",
+    "aesthetic": "Do not ask user to judge this as the intended new Xiaohongshu-inspired dish photo; it is mismatched to the selected concept.",
+    "root_cause": "The image tool returned a scene from earlier context despite the selected direction being warm-brown single-dish photography. Exact internal prompt/conditioning isn't exposed, so the mechanism is unknown. Do not claim the VPD reference transfer worked.",
+    "next_action": "STOP_AFTER_ONE_IMAGE. Preserve this failed output as evidence. Before a later new attempt, ensure the selected visual reference is actually available in the generation input/context and use a clean generation context; otherwise choose a new independent brief without claiming reference-based distillation."
+  },
+  "boundaries": {
+    "typography": false,
+    "figma": false,
+    "landscape_lineage_modified": false,
+    "global_skill_promoted": false,
+    "native_task_lock_changed": false,
+    "new_generation_after_failure": false
+  }
+}
