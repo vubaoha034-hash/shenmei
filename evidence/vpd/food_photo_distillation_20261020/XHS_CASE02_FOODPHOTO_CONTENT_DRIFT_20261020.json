@@ -1,0 +1,83 @@
+{
+  "schema_version": "vpd-photo-case02-content-drift/v1",
+  "task_id": "VPD-XHS-FOOD-PHOTO-CASE02-20261020",
+  "date": "2026-10-20",
+  "authority": "PHOTO_ONLY_SCOPED_EVIDENCE_NOT_NATIVE_TASK_STATE_NOT_HUMAN_FINAL",
+  "parent_positive_sample": {
+    "task_id": "VPD-XHS-ORIGINAL-FOOD-PHOTO-R2-CLEAN-CONTEXT-20261020",
+    "user_feedback": "不错。可以。",
+    "feedback_receipt": "evidence/vpd/food_photo_distillation_20261020/XHS_STIRFRY_R2_USER_APPROVAL_20261020.json",
+    "output_sha256": "d68b730949af9bc1aa7f3899dc1d573ce40c349abdd777096ef17e33d28a7b48",
+    "exact_original_protected": true
+  },
+  "user_scope": "Following approval of first Xiaohongshu-referenced food photograph, user said '好的' to continue making the next different-dish food photo and self-select the reference; photography only, no typography.",
+  "browser_status": {
+    "Opera_Neon_Browser": "BROWSER_NOT_CONNECTED",
+    "Opera_Neon_native_MCP": "429_MCP_SSE_PROBE",
+    "cannot_claim_new_XHS_photo_reviewed": true,
+    "fallback_source": "The previously reviewed '有质感的菜品拍摄是怎么拍的' Xiaohongshu image saved as private reference PNG from prior clean-chat task.",
+    "saved_source_sha256": "b49caea8e5f6efadbfb549425906ab39f55e02858f91a8f057afcb2063901b6e",
+    "source_file_id": "file_0000000099188211ae7c7c9eeaba1889",
+    "new_direct_reference_binding": "NOT_EXPOSED/NOT_VERIFIED",
+    "no_claim_of_new_reference_selection": true
+  },
+  "intended": {
+    "photo_type": "ONE_ORIGINAL_FOOD_PHOTO",
+    "content": "家常香煎豆腐 / Chinese homestyle pan-fried tofu",
+    "aesthetic": "Warm brown backdrop, soft directional side lighting, one simple platter, authentic food texture, no printed graphics or brand, portrait 9:16.",
+    "generation_budget": 1,
+    "source_visibility": "Real source PNG was re-read and visually displayed via Files tool in the current Chat; it was not attached to a new clean ChatGPT conversation as last time."
+  },
+  "actual": {
+    "tool": "image_gen.text2im native ChatGPT",
+    "calls": 1,
+    "gen_id": "a635ef2f-a212-481c-a1be-a76ffc55256b",
+    "exact_exposed_renderer_prompt": "A cozy, cinematic close-up captures a steaming bowl of glossy braised pork and golden potatoes on a weathered wooden table, topped with scallions and red chili, while warm natural light highlights the rich textures and sauce. Softly blurred rustic kitchen props—rice, chopsticks, herbs, potatoes, garlic, and a dark pot—frame the portrait-oriented scene, with rising steam adding a fresh, homestyle feel.",
+    "source_context_conditioning": "INTERNAL_ATTACHMENT_BINDING_NOT_EXPOSED",
+    "actual_subject": "红烧肉与土豆 / braised pork belly and golden potatoes",
+    "output_mime": "image/png",
+    "mode": "RGB",
+    "native_dimensions": [
+      941,
+      1672
+    ],
+    "size_bytes": 2255326,
+    "sha256": "ffa9e7bd14f437ba420a9d964fa9663afc31e73c28598364413d59c52ce0c155",
+    "native_exact_9x16": false,
+    "derived_crop_created": false,
+    "no_retry": true,
+    "hidden_variants_observed": 0
+  },
+  "archive": {
+    "provider": "Google Drive",
+    "folder": "高级感P_餐饮图片蒸馏_20261019/小红书自选摄影_20261020",
+    "file_name": "XHS_CASE02_单张内容偏差_红烧肉土豆_原件_20261020.png",
+    "file_id": "16wa6JFIcSfRvLo87a2wz5k9HzYD_vfQp",
+    "view_url": "https://drive.google.com/file/d/16wa6JFIcSfRvLo87a2wz5k9HzYD_vfQp/view",
+    "byte_for_byte_readback_equal": true,
+    "original_sha256": "ffa9e7bd14f437ba420a9d964fa9663afc31e73c28598364413d59c52ce0c155",
+    "readback_sha256": "ffa9e7bd14f437ba420a9d964fa9663afc31e73c28598364413d59c52ce0c155"
+  },
+  "review": {
+    "executed_by": "SAME_IMAGE_CREATION_CONTEXT_NOT_INDEPENDENT",
+    "content_fidelity": "FAIL_TO_MEET_ASSISTANT_PRESELECTED_FRIED_TOFU_TOPIC",
+    "user_intent": "USER_DID_NOT_SPECIFY_A_SECOND_DISH, BUT PREGENERATION_ASSISTANT_DECLARED_FRIED_TOFU. Cannot override declared target on the basis of a visually pleasing accidental result.",
+    "visual_judgment": "A warm rustic food photo visually coherent enough to preserve as an alternative but not proof of specified cross-dish reference transfer. Product surfaces may look overly lacquered and food props unnecessarily abundant. No human evaluation yet.",
+    "original_reference_pixel_binding": "NOT_VERIFIED",
+    "result_classification": "SCOPED_SUBJECT_MISMATCH_CANDIDATE_PRESERVED_NO_AUTO_RETRY",
+    "user_verdict": "UNKNOWN_PRESERVED_UNJUDGED",
+    "author_vs_model_causality": "UNKNOWN. Image tool inferred a braised-pork prompt differing from explicitly selected fried tofu. Internal prompt selection and conditioning manifest are not exposed.",
+    "next_required_action": "Await user review of accidental dish, or restore Opera Neon, open a clean chat and visibly attach selected XHS photo before a new separate one-image generation authorization. No automatic retries in this case."
+  },
+  "governance": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "repo": "vubaoha034-hash/shenmei",
+    "native_task_lock_revision_readonly": 355,
+    "checkpoint_sequence_readonly": 377,
+    "write_native_task_lock": false,
+    "write_checkpoint": false,
+    "change_typography": false,
+    "change_landscape": false,
+    "create_global_skill_rule": false
+  }
+}
