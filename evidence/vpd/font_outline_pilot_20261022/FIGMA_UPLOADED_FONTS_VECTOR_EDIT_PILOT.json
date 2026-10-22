@@ -1,0 +1,71 @@
+{
+  "schema_version": "vpd-independent-font-outline-pilot/v1",
+  "date": "2026-10-22",
+  "scope": "Independent Figma uploaded-font technical test; not a resumption of rejected 三点失眠 typography work",
+  "status": "TECHNICAL_PASS_NOT_AESTHETIC_APPROVAL",
+  "repo": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "read_before_commit": "deb20d1fba1a9deabeaa21c397dac49b6d17a7a6",
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "478:2",
+    "board_id": "478:3",
+    "url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=478-3",
+    "sheet_size": {
+      "width": 1590,
+      "height": 1140
+    },
+    "content": "山川来信"
+  },
+  "cases": [
+    {
+      "font_family": "LXGW WenKai",
+      "font_style": "Regular",
+      "original": {
+        "id": "478:9",
+        "type": "TEXT",
+        "content": "山川来信"
+      },
+      "outline": {
+        "id": "479:4",
+        "type": "VECTOR",
+        "path_count": 4
+      },
+      "edited": {
+        "id": "481:6",
+        "type": "VECTOR",
+        "path_count": 15
+      },
+      "outline_changed": true
+    },
+    {
+      "font_family": "Smiley Sans",
+      "font_style": "Oblique",
+      "original": {
+        "id": "478:17",
+        "type": "TEXT",
+        "content": "山川来信"
+      },
+      "outline": {
+        "id": "479:7",
+        "type": "VECTOR",
+        "path_count": 4
+      },
+      "edited": {
+        "id": "481:11",
+        "type": "VECTOR",
+        "path_count": 14
+      },
+      "outline_changed": true
+    }
+  ],
+  "execution": "Create editable text with exact uploaded fonts → duplicate text → Figma flatten to native VECTOR → clone outline → subtract angled 68x9px strip from glyph 山 → flatten boolean to native VECTOR; original texts and first vectors preserved",
+  "visual_observation": "Actual Figma screenshot inspected at board 1590x1140. Both fonts render readable four Chinese glyphs; vector copies preserve the original visual form; edited copies show a narrow controlled horizontal break on 山. This is only a proof of editable contours, not an approved lettering treatment.",
+  "validation": "Independent live node readback verified each original TEXT, four-path outline VECTOR, modified VECTOR and exact fontName; screenshot observed. Font install into user's Windows desktop not tested.",
+  "boundary": "Do not change current native task lock/checkpoint or other Figma pages; no AI vectorize credits; previous repeated failures remain STOPPED_BY_HUMAN.",
+  "status_at_read": {
+    "revision": 355,
+    "checkpoint": 377,
+    "native_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  }
+}
