@@ -1,0 +1,54 @@
+{
+  "schema": "vpd-editable-artwork-source-audit/v1",
+  "recorded_at": "2026-10-22",
+  "scope": "User-directed bounded next step: verify copyright-cleared artist-authored Chinese calligraphy SVG as an editable Figma source. No new wordmark generation.",
+  "repo": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "read_head_before_write": "f9bb3d65ed804a0f76da772908bd4c98ff35ff50",
+  "precheck": {
+    "task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "current_native_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "source": {
+    "title": "Calligraphy 六島.svg",
+    "work_character_count": 2,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Calligraphy_%E5%85%AD%E5%B3%B6.svg",
+    "raw_file_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Calligraphy_%E5%85%AD%E5%B3%B6.svg",
+    "artist_credit": "Tc262 (Wikimedia Commons uploader / listed author)",
+    "creator_professional_credentials": "NOT_VERIFIED",
+    "date": "2010-11-29",
+    "license": "CC BY 3.0 Unported",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "attribution_requirement": "Credit Tc262, include license URL and indicate changes if transformed; no implied endorsement.",
+    "original_mime": "image/svg+xml",
+    "original_bytes": 47931,
+    "original_sha256": "b2fec6b0d54a8d52f61d9cd5de8e27d633e7f5c0b8f5a274ec7e34fea013f2df",
+    "svg_root_viewbox": "0 0 612 792",
+    "native_path_count": 54,
+    "embedded_raster_images": 0
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "498:2",
+    "frame_id": "498:3",
+    "open_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=498-3",
+    "sanitization": "Removed XML DOCTYPE, metadata, and non-path elements; preserved 54 original <path d> data and even-odd fill rules for a smaller importable SVG. Not a byte-identical source-file upload.",
+    "canvas_result": "Live Figma use_figma created a new isolated page and imported 54 editable VECTOR child nodes in one FRAME, measuring 612x792. Independent node readback and actual screenshot performed.",
+    "screenshot_review": "Visible vertical two-character bold/cursive calligraphy with individual brush fragments; resembles traditional vertical calligraphy, not the reference's intentionally composed horizontal four-character poster title."
+  },
+  "outcome": {
+    "technical": "PASS — actual licensed path-based artwork imported and live checked.",
+    "aesthetic": "NOT_SUITABLE_STYLE_SOURCE — high-quality editable source exists but not sufficiently close to user reference.",
+    "transferability": "NOT_ESTABLISHED — SVG stores outlines of 六島, not variable Chinese glyph masters. Editing node paths cannot automatically replace it with a different Chinese phrase.",
+    "commercial_use": "CC BY permits adaptation/commerce with attribution, subject to compliance; no trademark exclusivity implied.",
+    "approved_new_wordmark": false,
+    "human_review": "PENDING",
+    "do_not_retry": "Prior 《三点失眠》 route remains stopped. Do not restart font/vector/source hunting loops as proof of design quality."
+  },
+  "related": [
+    "evidence/vpd/three_oclock_insomnia_typography_20261022/HUMAN_STOP_REPEATED_FAILURE_20261022.md",
+    "evidence/vpd/font_reference_match_20261022/REFERENCE_MATCH_FONT_SHORTLIST_STOP.json"
+  ],
+  "next_step": "Without an actual designer-produced glyph source for the requested new phrase, or explicit permission to commission one with defined cost and edit rights, stop. Retain this Figma research source as an isolated technical proof; no production asset promotion."
+}
