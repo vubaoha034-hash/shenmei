@@ -1,0 +1,60 @@
+{
+  "schema_version": "vpd-photo-user-feedback-relative-gap/v1",
+  "record_date": "2026-10-22",
+  "scope": "FOOD_PHOTOGRAPHY_ONLY_NOT_TYPOGRAPHY",
+  "authority": "ACTUAL_USER_HUMAN_RELATIVE_VERDICT_PLUS_NONINDEPENDENT_ASSISTANT_ANALYSIS",
+  "source_head_observed": "4f8d5cdca37bce8e5c457cd974349ac75704f6f9",
+  "prior_case": "evidence/vpd/food_photo_distillation_20261020/XHS_CASE02_FOODPHOTO_CONTENT_DRIFT_20261020.json",
+  "reference": {
+    "attribution": "Xiaohongshu 有序静物摄影 / 有质感的菜品拍摄是怎么拍的",
+    "source_post": "https://www.xiaohongshu.com/explore/6ac88c23000000001a0263d6",
+    "actual_image_sha256": "b49caea8e5f6efadbfb549425906ab39f55e02858f91a8f057afcb2063901b6e",
+    "dimensions": [
+      1080,
+      1591
+    ],
+    "source_private_archive": "https://drive.google.com/file/d/13IcVC_z8Wa3y9v3FWEWx4DdLzCUcJvlw/view",
+    "rights": "UNKNOWN_THIRD_PARTY_DO_NOT_REPUBLISH"
+  },
+  "output": {
+    "actual_subject": "Braised pork belly with potatoes",
+    "intended_subject": "Pan-fried tofu",
+    "actual_image_sha256": "ffa9e7bd14f437ba420a9d964fa9663afc31e73c28598364413d59c52ce0c155",
+    "dimensions": [
+      941,
+      1672
+    ],
+    "saved_original": "https://drive.google.com/file/d/16wa6JFIcSfRvLo87a2wz5k9HzYD_vfQp/view",
+    "source_original_and_output_actual_pixels_rechecked": true
+  },
+  "human_feedback": {
+    "original_exact_quote": "我觉得还行，但是跟你找的小红书的感觉还是有差距吧。",
+    "interpreted_scope": "Image is acceptable as a standalone food photograph, but the source's distinctive visual aesthetic has not been closely transferred.",
+    "absolute_photo_final_approved": false,
+    "relative_to_source": "SOURCE_AESTHETIC_SIGNIFICANTLY_PREFERRED",
+    "not_to_be_conflated_with_prior_approved_green_pepper_pork": true,
+    "user_did_not_specify_individual_failure_causes": true
+  },
+  "assistant_visual_diagnosis": {
+    "reviewer": "SAME_ASSISTANT_JUDGMENT_NOT_BLIND",
+    "differentiators": [
+      "Reference has a large coherent empty warm-brown upper field; cooked dish is a modest staged focal object. Output places a large full bowl amid many ingredients/props.",
+      "Reference uses white rectangular ceramic as clear light-tone architecture on raised wood plinth with an intentional separation from foreground flat plate, maintaining quiet staged hierarchy; output has conventional round bowl on cluttered wood rustic kitchen set.",
+      "Reference has controlled one-direction soft light, distinct material roles and simpler highlight geography; output pork, potatoes and sauce share vivid polished highlights and repetitive cosmetic sheen.",
+      "Reference provides precise negative-space planning and controlled graphic geometry. Output has stronger literal food abundance and photogenic props in service of prompt checklist.",
+      "Output over-fulfills the rustic countryside cliché: potatoes, garlic, pot, herb bowl, rice, steam and chopsticks; this distracts from a single-image editorial concept."
+    ],
+    "facts_vs_hypotheses": "Actual visual observations from verified PNG bytes. Causal mechanism remains hypothetical because image generation attachment binding and sampling are not exposed.",
+    "methodological_failure": "Unlike previously successful clean-chat green-pepper-pork run, this second-case prompt was run directly in context without a verified new user-visible source-image attachment; topic also drifted from the chosen pan-fried tofu to braised pork and potatoes.",
+    "should_not_conclude": "Do not claim this case passed reference distillation or global compiler test based only on '还行'."
+  },
+  "decision": "SCOPED_RELATIVELY_ACCEPTABLE_QUALITY_BUT_REFERENCE_TRANSFER_NOT_APPROVED",
+  "corrective_route": "No blind redraw. In next independently authorized photo-only run, reattach verified source pixels in clean ChatGPT context, constrain one named dish plus very few props, protect background breathing room, staged hierarchy and directional lighting, save original then seek user review.",
+  "boundaries": {
+    "no_new_image_in_this_review": true,
+    "no_typography_or_figma_writes": true,
+    "no_global_rule_promotion": true,
+    "no_native_task_lock_change": true,
+    "no_overwrite_of_previous_assets": true
+  }
+}
