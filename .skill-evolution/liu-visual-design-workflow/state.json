@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "target": "liu-visual-design-workflow",
+  "created_at": "2026-10-22T00:34:00+00:00",
+  "updated_at": "2026-10-22T00:34:00+00:00",
+  "evidence": [
+    {
+      "id": "ev_6202585bc998",
+      "fingerprint": "fp_20d4128cdfbe",
+      "layer": "skill",
+      "kind": "failure",
+      "source": "user",
+      "case_id": "three-oclock-insomnia-typography-multi-attempt-human-stop-20261022",
+      "confidence": "high",
+      "severity": "high",
+      "summary": "Repeated 三点失眠 image-generation and SVG lettering attempts were human-rejected; user explicitly stopped this workflow and forbade automatic retries.",
+      "detail": "User supplied a 《奶奶不怕》 typography reference, requested replacement with 《三点失眠》. Image-generation/brush-lettering, local replacement, transparent layer extraction and geometry/SVG skeleton versions 01–04 repeatedly failed to achieve the reference quality. Explicit user verdicts: 「这个差距很大」「不够好」「放弃吧。这样根本不行」「你自己记录下。这个已经反复测试了很多次。」 Final state STOPPED_BY_HUMAN. Do not quietly retry, output V05, or treat these failures as approved or a global ban of typography. Detailed scoped record: evidence/vpd/three_oclock_insomnia_typography_20261022/HUMAN_STOP_REPEATED_FAILURE_20261022.md. Native lock revision355 / checkpoint377 remain unchanged. Reopening requires explicit user instruction and materially new, externally verifiable method, not minor variations on failed prompts/vector shape edits.",
+      "contradicts": [],
+      "created_at": "2026-10-22T00:34:00+00:00"
+    }
+  ],
+  "candidates": [],
+  "evaluations": []
+}
