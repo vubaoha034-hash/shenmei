@@ -1,0 +1,63 @@
+{
+  "schema": "vpd/font-shape-selection-study/v1",
+  "status": "BOUNDED_EXPERIMENT_COMPLETED_VISUAL_GAIN_NOT_ESTABLISHED",
+  "date": "2026-10-22",
+  "scope": "独立中文字体选型及局部定制技术验证；非三点失眠重启，非正式VPD主线晋升",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "pre_write_head": "5ef15d145029cf2ea710967b86322728eda1bef8",
+  "prior_pilot": "evidence/vpd/font_outline_pilot_20261022/FIGMA_UPLOADED_FONTS_VECTOR_EDIT_PILOT.json",
+  "current_font_study": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "specimen_page": "484:2",
+    "specimen_board": "484:3",
+    "specimen_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=484-3",
+    "specimen_text": "山川来信",
+    "candidate_families": [
+      "Smiley Sans",
+      "LXGW WenKai",
+      "Zhi Mang Xing",
+      "Ma Shan Zheng",
+      "Long Cang",
+      "Liu Jian Mao Cao"
+    ],
+    "rendering": "all six confirmed using live Figma TEXT glyphs and reviewed via 1930x1280 screenshot",
+    "initial_pick": "Ma Shan Zheng Regular",
+    "font_license_source": "https://github.com/googlefonts/mashanzheng",
+    "font_license": "SIL OFL 1.1 (confirmed from font upstream repository)",
+    "comparison_page": "486:2",
+    "comparison_board": "486:3",
+    "comparison_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=486-3",
+    "baseline_text_node": "486:10",
+    "untouched_master_outline": "486:14",
+    "retained_glyph_vectors": [
+      "486:18",
+      "488:2",
+      "488:3",
+      "488:4"
+    ],
+    "rejected_hidden_glyph_edit": "490:6"
+  },
+  "actual_steps": [
+    "6 available typefaces rendered as original font TEXT in Figma; same four glyphs and nominal point size",
+    "Ma Shan Zheng Regular chosen for exploratory subset based on readable handwritten stroke skeleton",
+    "original text converted to four authentic vector glyph paths; original text preserved",
+    "relative glyph spacing, width and slight baseline offsets recomposed using original contours",
+    "one intended river/川 terminal extension merged as a native vector; visual review judged it unbalanced",
+    "rejected terminal-extension vector hidden; original 川 restored; final comparison screenshot inspected"
+  ],
+  "judgment": {
+    "factual": "Font and native glyph contour loading, glyph separation, per-glyph scaling/repositioning, reversible stroke modification all worked",
+    "qualitative": "Rearranged type is slightly denser but not clearly more sophisticated than the original typeface; elongated 川 terminal harmed visual balance; reverted. No design quality promotion.",
+    "label": "TECHNICAL_PASS_AESTHETIC_GAIN_UNPROVEN",
+    "human_approval": "PENDING_NOT_REQUESTED",
+    "independent_blind_review": "NOT_RUN"
+  },
+  "protections": {
+    "original_project_task_lock": "unchanged; no native state update",
+    "existing_figma_pages": "untouched; two new isolated experiment pages only",
+    "banned_resumption": "三点失眠 STOPPED_BY_HUMAN remains in effect",
+    "new_generations": "No image model outputs, no Figma AI credits"
+  },
+  "next": "Stop this bounded proof. A future design-quality attempt needs a distinct user-authorized brief and evidence-based reference matching before producing another title; do not infer success from available vector tools."
+}
