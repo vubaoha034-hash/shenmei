@@ -1,0 +1,104 @@
+{
+  "schema_version": "vpd-font-reference-matching/v1",
+  "date": "2026-10-22",
+  "scope": "独立 Font–Reference 筛选：研究是否存在接近真人提供的《奶奶不怕》手写字标之成熟可修改字体；不重启《三点失眠》",
+  "reference": {
+    "name": "1000032271.jpg",
+    "sha256": "3b0cea35f8bb82574e345f3190268ac8480e56863f5b06c159affab1cdb63ea5",
+    "dimensions": "1155x1536",
+    "role": "USER_SUPPLIED_EXAMPLE_NOT_FONT_OR_APPROVED_DERIVATIVE",
+    "image_storage": "chat attachment only; no original pixel redistributed in this record"
+  },
+  "repo": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "prewrite_head": "e98d32120e74a8e78a847cb7121937a35e0b6755",
+  "source_research": {
+    "read_authoritative_sources": [
+      "https://github.com/lxgw/LxgwMarkerGothic",
+      "https://github.com/google/fonts/tree/main/ofl/zcoolkuaile",
+      "https://github.com/google/fonts/tree/main/ofl/zcoolqingkehuangyou",
+      "https://github.com/jasonhandwriting/JasonHandwriting",
+      "https://github.com/InkPantherType/LiyuShoushu"
+    ],
+    "notice": "Free for commercial use does not imply fonts may be modified or embedded freely: 云峰静龙行书's author-derived publicly listed usage prohibits modification; 阿里妈妈东方大楷 exhibits conflicting secondary licensing descriptions; neither used as a source for font edit. LiyuShoushu author's GitHub states OFL but its release font could not be directly retrieved via browser CORS; not uploaded or tested.",
+    "new_uploaded_fonts": [
+      {
+        "source": "https://raw.githubusercontent.com/jasonhandwriting/JasonHandwriting/master/JasonHandwriting5.ttf",
+        "font_name": "JasonHandwriting5",
+        "style": "Regular",
+        "bytes": 5923696,
+        "figma_upload_confirmed": true,
+        "plugin_font_list_confirmed": true
+      },
+      {
+        "source": "https://raw.githubusercontent.com/jasonhandwriting/JasonHandwriting/master/JasonHandwriting8.ttf",
+        "font_name": "JasonHandwriting8",
+        "style": "Book",
+        "bytes": 8030664,
+        "figma_upload_confirmed": true,
+        "plugin_font_list_confirmed": true
+      }
+    ],
+    "license_note": "JasonHandwriting upstream README claims SIL Open Font License for 1–9. An upstream separate OFL.txt was not located in root during this test; retained as an author-published license claim, not a legal warranty. No font binary put in this repository."
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "existing_sample_page": "484:2",
+    "round_two": {
+      "board_id": "493:2",
+      "url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=493-2",
+      "cases": [
+        {
+          "font": "LXGW Marker Gothic",
+          "result": "GEOMETRIC_NOT_MATCH"
+        },
+        {
+          "font": "ZCOOL KuaiLe",
+          "result": "DECORATIVE_NOT_MATCH"
+        },
+        {
+          "font": "ZCOOL QingKe HuangYou",
+          "result": "HEAVY_DISPLAY_NOT_BRUSH"
+        },
+        {
+          "font": "ZCOOL XiaoWei",
+          "result": "THIN_TYPE_NOT_MATCH"
+        },
+        {
+          "font": "Ma Shan Zheng",
+          "result": "EXISTING_OLD_BASELINE_TRADITIONAL_BRUSH_NOT_MATCH"
+        }
+      ]
+    },
+    "final_supplement": {
+      "board_id": "495:2",
+      "url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=495-2",
+      "cases": [
+        {
+          "font": "JasonHandwriting5 Regular",
+          "result": "NATURAL_PEN_TOO_THIN"
+        },
+        {
+          "font": "JasonHandwriting8 Book",
+          "result": "NATURAL_PEN_TOO_THIN"
+        }
+      ]
+    },
+    "text_used": "奶奶不怕",
+    "verification": "Figma plugin readback verified all seven TEXT nodes with exact fontName and content; screenshots of actual boards reviewed at 1700x1510 and 1660x750.",
+    "canvas_scope": "Only added two frames on existing isolated font-study page; no previous design pages or task lock modified"
+  },
+  "result": {
+    "technical": "PASSED: real font libraries/rendering and two font uploads are accessible in Figma",
+    "visual": "FAIL_TO_FIND_CLOSE_BASE: None of these 7 mature font renderings captures the reference's extreme per-character redesign, wide/thin asymmetrical strokes, interlocked spatial movement and bespoke overall silhouette. There is no grounded basis to claim that simply tweaking spacing/outlines will produce the reference-level wordmark.",
+    "limitation": "Not an exhaustive audit of every paid or open font worldwide; some candidate downloads unavailable. The visual judgment is qualitative and not independent blinded review.",
+    "acceptance": "No human acceptance; NO_APPROVED_DESIGN",
+    "stop": "Do not continue incremental generic-font tests or resume 三点失眠 by default. A future new test requires user-requested distinct brief and a demonstrably closer source glyph/usable licensed artwork."
+  },
+  "related_evidence": [
+    "evidence/vpd/font_outline_pilot_20261022/FIGMA_UPLOADED_FONTS_VECTOR_EDIT_PILOT.json",
+    "evidence/vpd/font_shape_selection_study_20261022/FIGMA_FONT_TO_OUTLINE_VISUAL_REVIEW.json",
+    "evidence/vpd/three_oclock_insomnia_typography_20261022/HUMAN_STOP_REPEATED_FAILURE_20261022.md"
+  ],
+  "native_state": "Task lock revision355/checkpoint377 read and not altered by this scoped record."
+}
