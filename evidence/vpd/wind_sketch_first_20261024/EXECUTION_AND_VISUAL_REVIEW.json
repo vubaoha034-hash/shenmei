@@ -1,0 +1,80 @@
+{
+  "schema": "vpd-wind-sketch-first/v1",
+  "project": "高级感P/视觉审美操作系统",
+  "date": "2026-10-24",
+  "scope": "Only one independent 风 glyph sketch-first visual test. This does not reopen stopped 三点失眠 experiments or modify the native mainline task.",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "git_head_before_write": "dd55f7c79ecbba3379445eceb4b6ab91c7a82f83",
+  "native_lock_revision": 355,
+  "native_checkpoint_sequence": 377,
+  "prior_baseline": {
+    "evidence_path": "evidence/vpd/figma_original_glyph_20261023/WIND_SINGLE_GLYPH_EXECUTION_REVIEW.json",
+    "figma_page_id": "499:2",
+    "glyph_id": "499:8",
+    "current_user_verdict": "No user approval; previous internal art-direction FAIL: geometric, stiff and heavy hooks."
+  },
+  "reference_research": {
+    "sources": [
+      "https://education.asianart.org/resources/an-introduction-to-chinese-character-and-brushstrokes/",
+      "https://asia.si.edu/education/educator-resources/teaching-china-with-the-smithsonian/lesson-plans/understanding-chinese-characters/"
+    ],
+    "learned": "Stroke pressure and lifting, turning dynamics, stroke order and interstroke connection explain real brush character; arbitrary simulated dry brush and smooth geometry are not enough.",
+    "actual_human_stroke_data_bound": false,
+    "user_image_model_reference_pixels_bound": false,
+    "note": "Research informed instructions/concept only. The generated image was NOT produced by digitizing a human calligrapher's actual hand movement. Do not claim true hand-writing capture."
+  },
+  "image_generation": {
+    "invocation_count": 1,
+    "candidate_count": 1,
+    "image_tool_generated_id": "19101cba-81a7-4b00-aae8-a1ca41a61ba2",
+    "artifact_in_conversation": "a_minimalist_high_resolution_image_of_a_single_chi.png",
+    "pixel_dimensions": [
+      1536,
+      1024
+    ],
+    "sha256": "1bbfd8013df137df13d4eb87ff81ea7ff4e33c5e81b75669a059a09808ff1a17",
+    "role": "Synthetic draft quality anchor, NOT a human hand-brushed original; original raster still present as conversation artifact, but was not saved into Google Drive and was not inserted into Figma as the original high-resolution bitmap."
+  },
+  "vectorization": {
+    "source": "single synthetic black brush draft",
+    "actual_figma_import_method": "OpenCV threshold 140 on luminance and findContours; selected six largest meaningful components, approximated each contour with approxPolyDP epsilon=3.5 px; even-odd vector path assembled into SVG; imported via Figma createNodeFromSvg.",
+    "internal_local_alternative_note": "An offline 43-contour simplification gave 94.15% binary silhouette overlap; it was NOT the version imported into Figma. Do not attribute that metric to the Figma import.",
+    "imported_specific_approx_binary_iou": 0.92983,
+    "important_limits": "IoU is measured against a binarized generated raster and does not measure aesthetic quality; white paper/gray ink gradations and small flywhite details were lost.",
+    "svg_precise_master_archive": "NOT_SAVED_AS_STANDALONE_FILE_IN_GITHUB",
+    "editable_source": "Actual Figma original VECTOR path"
+  },
+  "figma": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "503:2",
+    "board_id": "503:3",
+    "url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=503-3",
+    "old_baseline_clone_id": "503:10",
+    "new_trace_group_id": "503:16",
+    "new_editable_vector_id": "503:17",
+    "new_vector_count": 1,
+    "internal_path_count": 1,
+    "board_dimensions": [
+      1820,
+      1050
+    ],
+    "verification": "Separate live Figma API readback after import confirmed new page, old source clone with 5 native VECTOR children, new imported SVG frame with one editable VECTOR, and screenshot of both side-by-side."
+  },
+  "assessment": {
+    "status": "TECHNICAL_PASS_VISUAL_GAIN_IN_EXPRESSIVENESS_GLYPH_NOT_APPROVED",
+    "observed_improvement": "Compared with the old geometric glyph, the new synthetic draft has better thick/thin variation, brushlike endings, directional movement, dramatic negative space and visual energy.",
+    "observed_defects": "The internal structure no longer reads unambiguously as simplified 风 at a glance; right hook is oversized; black/white tracing discards fine ink gradations. It has not been blind-reviewed or approved by user.",
+    "user_review": "PENDING",
+    "independent_blind_review": "NOT_RUN",
+    "role": "Experimental visual candidate, not a finished wordmark or a proven automated lettering system."
+  },
+  "protections": {
+    "prior_user_stop": "三点失眠 remains STOPPED_BY_HUMAN; no attempts were made to modify it.",
+    "mainline": "Task lock revision355/checkpoint377 not written or advanced.",
+    "no_second_generation": true,
+    "no_further_svg_revision": true,
+    "no_paid_external_font_purchase": true
+  },
+  "next": "Present the actual Figma two-version comparison for the user's direct aesthetic judgment. Do not claim handwriting authenticity, content accuracy, or production readiness. Further production would require the user to approve legibility and visual direction."
+}
