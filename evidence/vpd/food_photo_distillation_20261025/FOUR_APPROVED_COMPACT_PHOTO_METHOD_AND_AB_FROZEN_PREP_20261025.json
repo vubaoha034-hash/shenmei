@@ -1,0 +1,167 @@
+{
+  "schema_version": "vpd-photo-method-and-preregistered-blind-ab/v1",
+  "recorded_date": "2026-10-25",
+  "task_id": "VPD-XHS-PHOTO-COMPACT-METHOD-AND-ONE-BLIND-AB-20261025",
+  "scoped_authorization": "User said 好的 after the assistant proposed summarizing four positively reviewed real photo samples and conducting a direct-reference vs VPD-distilled equal-condition blind test with a new dish.",
+  "repository": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "source_commit": "d8277021f7b11b4087e032aade5118288e96bcb9",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_task_lock_write": false,
+    "typography": false,
+    "figma": false
+  },
+  "human_approved_evidence": [
+    {
+      "case": "CASE01_GREEN_PEPPER_PORK",
+      "reference_post": "https://www.xiaohongshu.com/explore/6ac88c23000000001a0263d6",
+      "output_sha256": "d68b730949af9bc1aa7f3899dc1d573ce40c349abdd777096ef17e33d28a7b48",
+      "original_drive_id": "1CIrm587FoU0FApJEOuEllwbcTc_eXRd2",
+      "feedback": "不错。可以。"
+    },
+    {
+      "case": "CASE03_FRIED_TOFU",
+      "reference_post": "https://www.xiaohongshu.com/explore/6ac88c23000000001a0263d6",
+      "output_sha256": "a88be571ebe33fd8209ed90cf570c046314c17b67e82f58f3765490044c7255f",
+      "original_drive_id": "11dg5vCHXUVwtDNQ8YuaxANIje9eikRMl",
+      "feedback": "可以了。"
+    },
+    {
+      "case": "CASE04_STEAMED_TARO",
+      "reference_post": "https://www.xiaohongshu.com/explore/6a27e565000000001503cce4",
+      "output_sha256": "672414566418b9bce3f824e09f5b13930e298ab8f7c484401754831d303de99b",
+      "original_drive_id": "1IWWl3fBhwG6ErK_ggP61o7o6eE3CqDIE",
+      "feedback": "认可"
+    },
+    {
+      "case": "CASE05_CURED_PORK_GREENS",
+      "reference_post": "https://www.xiaohongshu.com/explore/68b56704000000001d0052cc",
+      "output_sha256": "cc78a8d06e18b0195560029655651be68b25ddca6097a3341ff875a5bccec852",
+      "original_drive_id": "1Y_hVNonWkyTOOWx6wvHlMvd9_k2O2jIQ",
+      "feedback": "认可。所以这些我觉得都不错了。",
+      "correctness_caveat": "Exact botanical identity of 藜蒿 not established; approval is photographic aesthetics only."
+    }
+  ],
+  "actual_pixel_review": {
+    "performed": true,
+    "sha256_matched_all_four": true,
+    "dimensions_all_four": [
+      941,
+      1672
+    ],
+    "source": "Actual four Google Drive PNG raw bytes re-materialized in 2026-10-25 runtime; picture contact sheet visually inspected. Approved photos grouped into 3 different source posts with warm and green-gray palettes.",
+    "image_output_modifications": 0
+  },
+  "method": {
+    "status": "SCOPED_COMPACT_PHOTO_METHOD_CANDIDATE_V1_NOT_PROMOTED",
+    "variables": [
+      {
+        "id": "M1",
+        "mechanism": "One principal plate or food cluster with obvious hierarchy rather than a legibility checklist of all ingredients",
+        "proof_scope": "Observed composition of 4 accepted photos"
+      },
+      {
+        "id": "M2",
+        "mechanism": "Quiet continuous negative space supporting the subject; main dish normally anchored around middle-lower area without identical fixed coordinates",
+        "proof_scope": "Seen in 3 warm-brown plate photos and gray-green case05"
+      },
+      {
+        "id": "M3",
+        "mechanism": "Single coherent broad soft directional light with natural falloff; highlights follow material, not separate product lighting for every ingredient",
+        "proof_scope": "Observed across 4"
+      },
+      {
+        "id": "M4",
+        "mechanism": "Material separation by reflectance and texture: food, sauce, ceramic and furniture look physically different with nonuniform irregular details",
+        "proof_scope": "Observed transfer direction; synthetic microtexture remains a risk"
+      },
+      {
+        "id": "M5",
+        "mechanism": "Sparse contextual props with causal purpose, avoiding catalog completeness, overdecorated scenes or unnecessary steam",
+        "proof_scope": "4 photos sparse, better than rejected cluttered case02"
+      },
+      {
+        "id": "M6",
+        "mechanism": "Reference-conditioned palette and depth, not a fixed warm-brown formula; at least one accepted case was green-gray",
+        "proof_scope": "3 warm examples vs case05 muted green-gray"
+      }
+    ],
+    "known_failure_boundaries": [
+      "Content correctness remains separate from aesthetics: CASE05 looks like garlic shoots rather than certifiable 藜蒿",
+      "Photo-only human acceptance is not whole-poster commercial approval",
+      "Third-party source licenses unknown: private reference study, never republish source image",
+      "The 941×1672 native output is near-but-not-exact 9:16",
+      "No blinded randomized repeat yet demonstrates VPD causal benefit"
+    ],
+    "policy": "Use as optional prompt compilation candidate only. Do not mutate global skill, quality gates, reference rights or native project state."
+  },
+  "blind_ab": {
+    "status": "PREPARED_NOT_EXECUTED",
+    "comparison_purpose": "Initial isolated value-of-adding-real-pixel-distillation mechanisms vs direct-reference generation for one unseen FOOD CONTENT on the same known Xiaohongshu reference.",
+    "source_reference": {
+      "post": "https://www.xiaohongshu.com/explore/68b56704000000001d0052cc",
+      "author": "悠然同学🎐",
+      "title": "美食摄影 | 一口江南绿意",
+      "private_screenshot_drive_id": "1XTGkYikqaxxs-c13QPSOVHHrgUMx-a-P",
+      "private_screenshot_sha256": "e3ca01e29307a7fb10c51e6d8622a9aac8a0a6bec82b296c917994c1e1f3cd13",
+      "dimensions": [
+        1080,
+        1620
+      ],
+      "rights": "THIRD_PARTY_UNKNOWN_PRIVATE_STUDY_ONLY",
+      "novelty": "Known reference family from CASE05; holdout is new dish, not an unseen reference family"
+    },
+    "target": {
+      "dish": "清蒸鲈鱼",
+      "hard_content": "One anatomically plausible intact steamed sea bass, head and tail visible, finely sliced ginger/scallion garnish and small amount of thin soy-based jus in pale oval ceramic plate",
+      "output": "ONE 9:16 VERTICAL PHOTO ONLY",
+      "typography": false
+    },
+    "route_direct_reference": {
+      "id": "DIRECT",
+      "input": "One exact raw screenshot attachment + common_prompt only",
+      "prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请实际观察本消息唯一附带的小红书摄影参考原图，学习它的摄影语言，但不复制菜品、器皿、枝叶位置或原构图。新菜品明确为【清蒸鲈鱼】：一整条中等大小鲈鱼平放在浅米白长椭圆瓷盘中，鱼头和鱼尾都在画面内，鱼身只有适量细姜丝和葱丝，皮肉保留自然蒸熟形态与细微不规则纹理，少量清亮酱汁真实聚在盘底。主体是一盘现做家常菜，不做过度摆拍，背景保持真实餐厅或静物摄影环境。不得出现其他菜品、假蒸汽、文字、Logo、水印或拼贴。只输出一张。"
+    },
+    "route_distilled": {
+      "id": "VPD",
+      "input": "Same exact raw screenshot attachment + exact same common_prompt + vpd_delta (only variable)",
+      "common_prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请实际观察本消息唯一附带的小红书摄影参考原图，学习它的摄影语言，但不复制菜品、器皿、枝叶位置或原构图。新菜品明确为【清蒸鲈鱼】：一整条中等大小鲈鱼平放在浅米白长椭圆瓷盘中，鱼头和鱼尾都在画面内，鱼身只有适量细姜丝和葱丝，皮肉保留自然蒸熟形态与细微不规则纹理，少量清亮酱汁真实聚在盘底。主体是一盘现做家常菜，不做过度摆拍，背景保持真实餐厅或静物摄影环境。不得出现其他菜品、假蒸汽、文字、Logo、水印或拼贴。只输出一张。",
+      "additional_mechanisms": "优先落实从四张经真人认可的作品提炼的摄影机制：主菜作为唯一视觉中心、位于画面中下部，上方保留连贯安静的负空间；背景的灰绿/中性色与浅色瓷器明暗分离，但不直接复制参考布景。单一宽柔的侧逆光带来自然阴影，暗面无需每处补亮。鱼皮、蒸熟肉质、姜葱、白陶和台面各有不同纹理及光泽，酱汁遵守重力，不统一镜面高亮。辅助道具极少且合乎用途，允许边缘遮挡与局部虚焦，背景不堆满植物、食材或厨具。保留真实烹饪造成的微小不完美，而不是商品目录式摆齐。"
+    },
+    "controls": {
+      "two_independent_clean_chats": true,
+      "model_and_surface": "Same ChatGPT native Image and identical model settings if observable",
+      "same_reference_bytes": true,
+      "same_dish": true,
+      "same_aspect": true,
+      "same_budget": "Exactly one generated image per route, no rerolls or retry without fresh authorization",
+      "same_reference_copy": "Actual image file attached and its identity verified before submitting; text descriptions or source URLs alone invalid",
+      "external_paid_api_budget": 0,
+      "retries": 0,
+      "generated_total_max": 2,
+      "exposed_internal_seed": "UNKNOWN_BY_PROVIDER",
+      "route_labeling": "Do not give user ROUTE names. After both valid photos, map image hashes to anonymous X/Y and seal mapping before user views them. Reveal only after their verdict."
+    },
+    "review": {
+      "first": "Absolute correctness for fish anatomy/content and image validity",
+      "second": "Unblinded engineer checks only for hard technical fail; no quality winner selected",
+      "third": "Anonymous human X/Y evaluation of photographic realism, source visual language transfer, naturalness and useability, with tie/neither allowed",
+      "fourth": "Reveal actual route mapping only after user vote and preserve exact hashes"
+    },
+    "limitations": [
+      "One pair tests practical incremental process, not stable statistically causal improvement",
+      "Longer VPD prompt may be confound versus direct prompt length",
+      "Provider model/seed and hidden conditioning not fully exposed",
+      "Both routes invalid if source screenshot not actually attached in same inference context"
+    ],
+    "next_required_action": "RECOVER_TRUE_IMAGE_ATTACHMENT_AND_RUN_DIRECT_ONCE_THEN_DISTILLED_ONCE_IN_SEPARATE_CLEAN_CHATS_WITHIN_SCOPED_BUDGET; DO_NOT CLAIM GENERATION UNTIL REAL OUTPUTS VERIFIED"
+  },
+  "blocked_at_preparation": {
+    "browser": "Opera Neon live list succeeded once, but navigation to Xiaohongshu and ChatGPT and snapshot/eval repeatedly failed with timeout / safety status. Browser identity attachment not yet confirmed in any new chat.",
+    "generation_count": 0,
+    "spent_budget": 0,
+    "source_asset_available_on_drive": true
+  }
+}
