@@ -1,0 +1,106 @@
+{
+  "schema_version": "vpd-photo-blind-ab-execution-blocker-receipt/v1",
+  "recorded_date": "2026-10-25",
+  "task_id": "VPD-XHS-PHOTO-COMPACT-METHOD-AND-ONE-BLIND-AB-20261025",
+  "scope": "SCOPED_PHOTO_ONLY_READ_REVERIFY_AND_EXECUTION_PREFLIGHT_NO_GENERATION",
+  "frozen_protocol": {
+    "path": "evidence/vpd/food_photo_distillation_20261025/FOUR_APPROVED_COMPACT_PHOTO_METHOD_AND_AB_FROZEN_PREP_20261025.json",
+    "git_blob_sha": "5ac11118a91736cdfe2f3e6a9f06b28691438b51",
+    "status": "NOT_MODIFIED",
+    "target": "清蒸鲈鱼",
+    "source": "Xiaohongshu 美食摄影 | 一口江南绿意",
+    "same_reference_sha256": "e3ca01e29307a7fb10c51e6d8622a9aac8a0a6bec82b296c917994c1e1f3cd13",
+    "one_route_each": "DIRECT_REFERENCE_ONE_IMAGE and VPD_DISTILLED_ONE_IMAGE",
+    "generation_budget": {
+      "max": 2,
+      "used": 0,
+      "remaining": 2,
+      "hidden_variants": 0,
+      "retry": 0,
+      "external_paid_api_cost": 0
+    },
+    "mapping": "NOT_CREATED_NO_GENERATED_IMAGES"
+  },
+  "data_validation": {
+    "four_scoped_approved_original_images_raw_retrieved_and_pixel_readable": true,
+    "sha256_and_dimensions_check": {
+      "green_pepper_pork": {
+        "sha256": "d68b730949af9bc1aa7f3899dc1d573ce40c349abdd777096ef17e33d28a7b48",
+        "size": [
+          941,
+          1672
+        ],
+        "bytes": 2444110
+      },
+      "fried_tofu": {
+        "sha256": "a88be571ebe33fd8209ed90cf570c046314c17b67e82f58f3765490044c7255f",
+        "size": [
+          941,
+          1672
+        ],
+        "bytes": 2319380
+      },
+      "steamed_taro": {
+        "sha256": "672414566418b9bce3f824e09f5b13930e298ab8f7c484401754831d303de99b",
+        "size": [
+          941,
+          1672
+        ],
+        "bytes": 2546472
+      },
+      "cured_pork_greens": {
+        "sha256": "cc78a8d06e18b0195560029655651be68b25ddca6097a3341ff875a5bccec852",
+        "size": [
+          941,
+          1672
+        ],
+        "bytes": 2166955
+      }
+    },
+    "real_reference": {
+      "drive_id": "1XTGkYikqaxxs-c13QPSOVHHrgUMx-a-P",
+      "raw_verified_local_path": "/mnt/data/vpd_blind_ab_20261025/reference/CASE05_XHS_一口江南绿意_私有参考截图_20261024.png",
+      "sha256": "e3ca01e29307a7fb10c51e6d8622a9aac8a0a6bec82b296c917994c1e1f3cd13",
+      "size": [
+        1080,
+        1620
+      ],
+      "bytes": 2209112,
+      "source_rights": "UNKNOWN_THIRD_PARTY_PRIVATE_STUDY_ONLY",
+      "original_cdnbinary_is_identical": "NOT_CLAIMED; this is previously verified clipboard-converted displayed PNG"
+    }
+  },
+  "execution_attempts": {
+    "browser_connector": "Opera Neon",
+    "first_list_pages": "ERROR Network.enable timed out; Chromium DevTools Protocol",
+    "second_list_pages": "ERROR Network.enable timed out; Chromium DevTools Protocol",
+    "new_page": "Navigation timeout 12000 ms; execution outcome unknown, followed by page list showing about:blank only",
+    "select_existing": "ERROR Network.enable timed out",
+    "third_list_pages": "ERROR Network.enable timed out",
+    "browser_readonly_fallback": "mcp__Browser__list_tabs unavailable: requires originating browser context",
+    "site_backend_status": "Service 0.1.5 read access READY; image_generation BLOCKED_NO_PROVIDER_OR_COST_APPROVAL; host Image via ChatGPT conversation only. External paid provider disabled.",
+    "actual_chat_input_reference_binding": "NOT_PERFORMED",
+    "actual_host_image_generations": 0
+  },
+  "diagnosis": {
+    "confirmed": "The required visual browser controller could not complete CDP session setup; reference pixels are intact and directly verified. No valid new chat with reference attachment was established.",
+    "unknown": "Root cause of CDP connection timeout cannot be resolved from current tool messages; neither browser app session reset nor tool protocol timeout configuration is accessible via available ChatGPT actions.",
+    "do_not_claim": [
+      "ChatGPT Image was successfully invoked",
+      "The user has been shown an actual blind X/Y pair",
+      "VPD gains established",
+      "All reference attachment input identities were confirmed"
+    ],
+    "policy": "Do not burn generation budget using a different renderer, unbound input, mixed chat state, or paid provider and label it equivalent. Maintain exact original protocol and source."
+  },
+  "branch_state": {
+    "head_checked_before_write": "ba2325b5f9ec36e34e4042084ac8da94df49e8d5",
+    "native_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_write": false,
+    "typography": false,
+    "figma": false,
+    "image_generation": false
+  },
+  "unique_next_action": "RECONNECT_OR_RESTART_CONNECTED_OPERA_NEON_BROWSER_SESSION_FROM_USER_SIDE_IF_REQUIRED_THEN_VERIFY_EXISTING_OR_NEW_CLEAN_CHAT_AND_REAL_SOURCE_ATTACHMENT_BEFORE_ONE_DIRECT_AND_ONE_VPD_GENERATION; DO_NOT_REPLAY_UNKNOWN_OUTCOME_ACTIONS"
+}
