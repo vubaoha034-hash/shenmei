@@ -1,0 +1,80 @@
+{
+  "schema": "vpd-sourced-ink-recomposition/v1",
+  "date": "2026-10-25",
+  "scope": "Only independent glyph 风 B branch; one bounded local source-ink recomposition test. Prior stopped 三点失眠 task remains stopped. No output promoted into original Figma file.",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "prewrite_head": "41db4c039453a32bb5a5a9fbc86ca71fe291b62c",
+  "baseline": {
+    "name": "B source raster a_minimalist_high_resolution_image_of_a_single_chi.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "1bbfd8013df137df13d4eb87ff81ea7ff4e33c5e81b75669a059a09808ff1a17",
+    "source_status": "USER_PARTIAL_POSITIVE_ONLY, not full approval",
+    "actual_figma_readback": {
+      "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+      "page_id": "503:2",
+      "vector_node": "503:17",
+      "exists": true,
+      "outline_path_count": 1
+    },
+    "benchmark": "Calligraphy 六島, CC BY 3.0, only formal ink/spatial comparison, no copy"
+  },
+  "attempts": {
+    "image_tool": {
+      "invocations": 1,
+      "gen_id": "39b3851c-81d0-4056-8823-4d0f0963b6e6",
+      "output": "a_clean_minimalist_high_contrast_ink_calligraphy.png",
+      "sha256": "bf9d24e55218a75339a137ee99915e709d16b7cbe8f5afc6c4af486316a178c3",
+      "status": "REJECTED_AS_WRONG_OUTPUT",
+      "reasons": [
+        "Regenerated whole character 繁体風 instead of local strokes for 简体风",
+        "Changed backdrop to dark/black",
+        "Not used in any accepted composite"
+      ]
+    },
+    "pixel_transfer": {
+      "purpose": "Reuse only real raster ink samples from the original B inside glyph's editorial interior; no plain vector cross graft.",
+      "method": "Use original two rising-sweep ink corridors with luminance-derived alpha and anisotropic affine mapping, inside a fixed polygon mask; estimate near-white paper background from original and preserve all pixels outside hard polygon exactly.",
+      "script_artifact": "wind_recompose_existing_ink.py",
+      "script_sha256": "99021f36acfe3b2f3acc651d65d522debdfe870920af34b5db17fce9e0c302a2",
+      "candidate_file": "风字_B_原笔触重组_实验R1.png",
+      "candidate_sha256": "5ca0fdf067bf8993e5d5072630989afab9b96f05f305b52f7bb14044647fabbd",
+      "comparison_file": "风字_B_原笔触重组_前后对照R1.png",
+      "comparison_sha256": "377c51c018f03370b90fda3e0e64000c0e4a74b34c56c468ed99a1c5b6e3b872",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "editable_mask_pixels": 177476,
+      "changed_pixels": 171658,
+      "changed_pixels_outside_mask": 0,
+      "quality_failure": [
+        "Clear residual ink fragments, erasure seams and ghost patches remain inside editable region",
+        "Transferred X strokes are still mechanically intersecting despite using genuine source ink opacity and texture",
+        "Single-character readability improves in theory but overall aesthetics and integrated stroke gesture fall below B",
+        "Outside pixels preserved exactly does not validate artistic quality"
+      ],
+      "outcome": "TECHNICAL_PIXEL_LOCK_PASS_ART_DIRECTION_FAIL",
+      "artifact_retention": "Image and script created at current conversation container /mnt/data, not verified as GitHub or Drive binary attachments; do not claim durable image archive"
+    }
+  },
+  "human_approval": {
+    "B": "PARTIAL_POSITIVE",
+    "new_work": "NOT_REQUESTED_FOR_APPROVAL_AS_VALID_CANDIDATE",
+    "final_choice": "Original B retained"
+  },
+  "scope_safety": {
+    "prior_B_overwritten": false,
+    "figma_old_nodes_modified": false,
+    "native_task_lock_modified": false,
+    "next": "No further prompt rerenders or geometry/texture transplants under this route. A materially new approach would require an authentic human-authored source stroke sequence or professionally art-directed sketch of the exact target glyph, not an extraction from the flawed B inner scribble."
+  },
+  "project_mainline": {
+    "task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "next_required_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  }
+}
