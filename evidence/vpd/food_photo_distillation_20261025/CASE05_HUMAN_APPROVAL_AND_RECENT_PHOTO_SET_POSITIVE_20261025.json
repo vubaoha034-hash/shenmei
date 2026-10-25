@@ -1,0 +1,99 @@
+{
+  "schema_version": "vpd-scoped-food-photography-human-approval-and-batch-feedback/v1",
+  "recorded_at": "2026-10-25",
+  "timezone": "Asia/Singapore",
+  "scope": "PHOTO_ONLY_XHS_REFERENCE_DISTILLATION; NOT_TYPOGRAPHY_OR_COMPLETE_POSTER",
+  "source": "Current user's direct reply in ongoing 高级感p photo-distillation chat, immediately following the CASE05 original image, technical caveat, and save receipt.",
+  "user_exact_quote": "认可。所以这些我觉得都不错了。",
+  "interpretation": {
+    "case05_human_photo_aesthetic_verdict": "SCOPED_APPROVED_PHOTO_ONLY",
+    "recent_photo_set_feedback": "USER_POSITIVE_ON_RECENT_SERIES",
+    "degree": "Direct, explicit approval of the latest CASE05 photo; broad positive appraisal of several immediately preceding photo-distillation examples.",
+    "no_claims": [
+      "No blind A/B proof that VPD outperforms direct image generation",
+      "No approval of commercial-ready poster or typography",
+      "No retroactive promotion of historic human-rejected results",
+      "No third-party source commercial rights established",
+      "No proof of exact botanical identity of 藜蒿; positive aesthetics do not clear that correctness question"
+    ]
+  },
+  "case05": {
+    "task_id": "VPD-XHS-CASE05-LIHAO-CURED-PORK-ONE-CANDIDATE-20261024",
+    "parent_receipt": "evidence/vpd/food_photo_distillation_20261024/CASE05_XHS_JIANGNAN_GREEN_GENERATION_R1_RECEIPT_20261024.json",
+    "original_sha256": "cc78a8d06e18b0195560029655651be68b25ddca6097a3341ff875a5bccec852",
+    "original_dimensions": [
+      941,
+      1672
+    ],
+    "original_bytes": 2166955,
+    "original_drive_file_id": "1Y_hVNonWkyTOOWx6wvHlMvd9_k2O2jIQ",
+    "original_drive_url": "https://drive.google.com/file/d/1Y_hVNonWkyTOOWx6wvHlMvd9_k2O2jIQ/view",
+    "generation_chat": "https://chatgpt.com/c/6adc8b5b-f934-83ec-acca-360fd53adfa1",
+    "human_photo_quality": "APPROVED",
+    "specific_dish_identity": "UNVERIFIED_VISUAL_RISK_REMAINS",
+    "native_ratio": "NEAR_9_TO_16_NOT_EXACT",
+    "source_reference_rights": "UNKNOWN_THIRD_PARTY",
+    "protected_original": true
+  },
+  "positive_photo_examples": [
+    {
+      "subject": "青椒小炒肉",
+      "photo_sha256": "d68b730949af9bc1aa7f3899dc1d573ce40c349abdd777096ef17e33d28a7b48",
+      "existing_user_feedback": "不错。可以。",
+      "existing_receipt": "evidence/vpd/food_photo_distillation_20261020/XHS_STIRFRY_R2_USER_APPROVAL_20261020.json",
+      "preserve_existing_scoped_scope": true
+    },
+    {
+      "subject": "农家香煎豆腐",
+      "photo_sha256": "a88be571ebe33fd8209ed90cf570c046314c17b67e82f58f3765490044c7255f",
+      "existing_user_feedback": "可以了。",
+      "existing_receipt": "evidence/vpd/food_photo_distillation_20261022/CASE03_TOFU_HUMAN_APPROVAL_20261022.json",
+      "preserve_existing_scoped_scope": true
+    },
+    {
+      "subject": "江西农家剁椒蒸芋头",
+      "photo_sha256": "672414566418b9bce3f824e09f5b13930e298ab8f7c484401754831d303de99b",
+      "existing_user_feedback": "认可",
+      "existing_receipt": "evidence/vpd/food_photo_distillation_20261022/CASE04_TARO_HUMAN_APPROVAL_20261023.json",
+      "preserve_existing_scoped_scope": true
+    },
+    {
+      "subject": "江西藜蒿炒腊肉（菜品植物身份待核）",
+      "photo_sha256": "cc78a8d06e18b0195560029655651be68b25ddca6097a3341ff875a5bccec852",
+      "user_feedback": "认可。所以这些我觉得都不错了。",
+      "approval_in_this_receipt": true
+    }
+  ],
+  "learning_scope": {
+    "status": "FOUR_HUMAN_POSITIVE_FOOD_PHOTO_SAMPLES_SCOPED_ONLY",
+    "supported_observation": "The user prefers the recent photography approach across multiple distinct foods and at least two reference visual directions. The positive feedback is evidence of useful output quality, not a randomized or blinded demonstration that the VPD compiler caused improvement.",
+    "possible_shared_mechanisms_to_test_not_new_global_rules": [
+      "Real source pixels visibly included as one generation attachment",
+      "One principal food subject with controlled negative space",
+      "Directional soft illumination and coherent material hierarchy",
+      "Sparse props, context without a cluttered ingredient inventory",
+      "Content-specific composition and natural material variation instead of replicating an identical warm-brown layout"
+    ],
+    "promotion_allowed": false,
+    "model_weights_changed": false,
+    "scope_for_refinement": "Observation only, not new Skill or Quality Gate"
+  },
+  "execution": {
+    "new_image_calls": 0,
+    "new_crops_or_edits": 0,
+    "figma_writes": 0,
+    "typography_modified": false,
+    "native_task_lock_modified": false,
+    "native_checkpoint_modified": false,
+    "originals_modified": false,
+    "git_scope": "Only this new append-only feedback document"
+  },
+  "project": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "state_lock_revision_observed": 355,
+    "checkpoint_sequence_observed": 377,
+    "historical_mainline_status": "Separate native mainline still points to tea/typography; this photo-only record does not rebind it."
+  },
+  "next_required_action": "PROTECT_ALL_FOUR_SCOPED_POSITIVE_IMAGES. Next independent photography work should use the established single-real-reference clean-chat method with original-byte archival, or execute a preregistered direct-reference-vs-VPD blind comparison if explicitly tasked. Do not automatically rerender approved images or claim full-system improvement."
+}
