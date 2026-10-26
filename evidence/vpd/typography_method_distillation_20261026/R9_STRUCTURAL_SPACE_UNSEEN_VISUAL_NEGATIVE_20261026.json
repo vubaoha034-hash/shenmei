@@ -1,0 +1,112 @@
+{
+  "schema": "vpd-r9-bounded-structure-transfer-real-pixels/1.0",
+  "date": "2026-10-26",
+  "objective": "从专业教程研究出条件化部件宽度与字内负空间关系，验证未知词的字形结果是否获得专业美感。",
+  "source_provenance": {
+    "researcher_sources": [
+      "https://rosa.build/xu-xuecheng/yinshua-huozi-sheji-de-wenzhenyun",
+      "https://www.hellofont.cn/article/229775"
+    ],
+    "status": "Both full accessible text sources reviewed and mechanisms paraphrased; editor source draft paths and historical author action are not available for R9.",
+    "extracted_general_principle": "Left/right components should be allocated according to structural density with deliberate negative space, but source texts do NOT give our numerical cutoff/ratio parameters.",
+    "non_source_parameters": "5/8/9 thresholds and 28/24/19.5 percent are engineering hypotheses frozen before target data read, NOT author supplied methods.",
+    "target_glyph_source": "chanind/hanzi-writer-data@68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "source_original_per_stroke_contours_blob_shas": {
+      "沙": "e4d62b26ef7c7e77c8f4c240eee5af58c35adfee",
+      "漠": "cf76a677fea7eb493d04f95f6a4c3f1b1d061da8",
+      "深": "99921214d4185b18cf1e29f42a41b28384c4c59b",
+      "浅": "3768e640164b26b7e4802d5c54836cb9946278b0",
+      "灯": "7c93a314147af42a73628aa3d88e28d5c03f5182",
+      "火": "30b9baf27fc7802a4144fa20c016f0833f98b7ed"
+    }
+  },
+  "freeze": {
+    "protocol_commit": "97a5a7f0a6ef77ec510f1cf7bac5de56a750d068",
+    "protocol_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r9-space-decision-20261026/research/typography_r9/R9_FROZEN_PROTOCOL.json",
+    "source_data_read_after_protocol": true,
+    "renderer_commit": "fd0367650d30c553f2008cd5ada8b0f76397faa1",
+    "renderer_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r9-space-decision-20261026/research/typography_r9/R9_FROZEN_RENDERER.js",
+    "holdout_words": [
+      "沙漠",
+      "深浅"
+    ],
+    "negative_word": "灯火",
+    "not_part_of_training": [
+      "沙",
+      "漠",
+      "深",
+      "浅"
+    ]
+  },
+  "experiment": {
+    "actual_executed": true,
+    "surface": "Existing connected Figma project as independent research diagnostic board, NOT as creative decision engine; no production page changed.",
+    "figma_file": "uyDxOoN1iNDPpEHTKSUWg1",
+    "pageId": "541:2",
+    "boardId": "541:3",
+    "board_link": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=541-3",
+    "source_method_arm": "A original source stroke outlines",
+    "naive_method_arm": "B uniform shared radical space allocation 23%",
+    "conditional_method_arm": "C change full rad/right component allocation by right component density",
+    "blind_display_map": {
+      "方案 甲": "B",
+      "方案 乙": "C",
+      "方案 丙": "A"
+    },
+    "native_editable_vector_glyphs": 12,
+    "negative_control": "Script checked C and A exact SVG string identity for 灯 and 火, but the negative row displays a text note, not 4 separately rendered pixel glyphs.",
+    "observed_density_branches": [
+      {
+        "char": "沙",
+        "right_strokes": 4,
+        "category": "sparse",
+        "C_left_ratio": 0.28,
+        "B_left_ratio": 0.23
+      },
+      {
+        "char": "漠",
+        "right_strokes": 10,
+        "category": "dense",
+        "C_left_ratio": 0.195,
+        "B_left_ratio": 0.23
+      },
+      {
+        "char": "深",
+        "right_strokes": 8,
+        "category": "medium",
+        "C_left_ratio": 0.24,
+        "B_left_ratio": 0.23
+      },
+      {
+        "char": "浅",
+        "right_strokes": 5,
+        "category": "sparse",
+        "C_left_ratio": 0.28,
+        "B_left_ratio": 0.23
+      }
+    ],
+    "exact_text_Chinese_checked_in_screenshot": true,
+    "actual_visual_screenshot_inspected": true
+  },
+  "verdict": {
+    "stage": "UNSEEN_TRANSFER_PIXELS",
+    "real_glyphs_generated": true,
+    "structural_operator_executes": true,
+    "user_blind_preference": "NOT_COLLECTED",
+    "assistant_visual_review": "No meaningful premium/aesthetic uplift vs uniform allocation or untouched glyph seen. Characters remain largely similar textbook Hanzi Writer script; changes are mostly component x-affine rescaling, not authored professional lettering.",
+    "critical_failure": "This is STILL a modest geometry-only manipulation, even if conditioned by true source-motivated structural rules. It does not solve design agency or transfer the handwriting expression of 六島.",
+    "qualitative_status": "NEGATIVE_NO_AESTHETIC_UPLIFT",
+    "style_match_to_reference": "NOT_DEMONSTRATED",
+    "absolute_professional_quality": "NOT_DEMONSTRATED",
+    "cannot_claim_user_approval": true,
+    "method_promoted": false,
+    "formal_task_lock_revision_unchanged": 355
+  },
+  "cost": "New paid software and external paid API usage: 0. Existing Figma and GitHub tools only.",
+  "stop_rules": [
+    "Do not repeat changing only component ratios, endpoint widths, physical center or closed-path x-scaling; those have no demonstrated artistry.",
+    "Future work must obtain at least one designer-authored before/after change with visual ground-truth (including sketches or screenshots), enabling decisions to be inferred from actual pixel differences, not only plausible rules from text.",
+    "Implement one new full-form gesture/negative-space transformation only when supported by the designer's own before/after evidence, then test against separate unseen glyphs and user review.",
+    "If such visual evidence cannot be obtained, stop claiming designer-method reverse engineering; proceed only with scoped diagnostic and report blocker. Do not spend money without explicit approval."
+  ]
+}
