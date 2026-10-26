@@ -104,7 +104,7 @@ function vectorStroke(path,body,capS,capE,variant){
  }
  return polygonPath(left.concat(right.reverse()));
 }
-function glyphMarkup(ch,variant,stats){
+function glyphMarkup(ch,variant,stats,pixels){
  const strokes=prepare(ch),lengths=strokes.map(x=>x.length).sort((a,b)=>b-a),base=41;
  const content=[];
  if(variant==='A'){
@@ -125,7 +125,7 @@ function glyphMarkup(ch,variant,stats){
    content.push('<path d="'+shape+'" fill="#171717"/>');
   }
  }
- return '<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">'+content.join('')+'</svg>';
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="'+pixels+'" height="'+pixels+'" viewBox="0 0 1024 1024">'+content.join('')+'</svg>';
 }
 function label(parent,str,x,y,size){
  const node=figma.createText();parent.appendChild(node);node.fontName=LABEL_FONT;node.fontSize=size;node.characters=str;node.fills=[{type:'SOLID',color:{r:.18,g:.18,b:.18}}];node.textAutoResize='WIDTH_AND_HEIGHT';node.x=x;node.y=y;return node;
@@ -135,8 +135,8 @@ function frame(parent,name,x,y,w,h,color){
  f.fills=[{type:'SOLID',color}];f.x=x;f.y=y;return f;
 }
 function placeGlyph(panel,ch,varName,x,y,size,stats){
- const obj=figma.createNodeFromSvg(glyphMarkup(ch,varName,stats));
- panel.appendChild(obj);obj.name=varName+'_'+ch+'_可编辑矢量';obj.resize(size,size);obj.x=x;obj.y=y;
+ const obj=figma.createNodeFromSvg(glyphMarkup(ch,varName,stats,size));
+ panel.appendChild(obj);obj.name=varName+'_'+ch+'_可编辑矢量';obj.x=x;obj.y=y;
  return obj.id;
 }
 const existing=figma.root.children.find(n=>n.type==='PAGE'&&n.name===PAGE_NAME);
