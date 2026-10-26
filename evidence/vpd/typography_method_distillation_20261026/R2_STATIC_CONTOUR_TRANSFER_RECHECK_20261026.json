@@ -1,0 +1,114 @@
+{
+  "schema_version": "vpd-typography-static-contour-transfer-recheck/1.0",
+  "date": "2026-10-26",
+  "authoring_scope": "independent nonproduction lettering distillation research",
+  "invariant_user_goal": "Derive reusable operations from excellent designer lettering, validate on unseen different characters and multi-character compositions; glyph reconstruction alone is not success",
+  "status": "EXECUTED_NEGATIVE_CONTROL_NO_AESTHETIC_GAIN_NOT_VALIDATED",
+  "source": {
+    "reference": "Calligraphy 六島.svg by Tc262",
+    "reference_url": "https://commons.wikimedia.org/wiki/File:Calligraphy_六島.svg",
+    "source_license": "CC BY 3.0; attribution and modification note required",
+    "figma_source": "uyDxOoN1iNDPpEHTKSUWg1/509:20",
+    "original_fragments": 54,
+    "source_parts_analysed": [
+      "509:31",
+      "509:36",
+      "509:46"
+    ],
+    "p_ink_horiz_run_px": {
+      "p10": 1.95,
+      "p25": 12.92,
+      "p50": 18.59,
+      "p75": 26.12,
+      "p90": 46.36
+    },
+    "caveat": "These are static vector contour horizontal ink-run widths, not independent pen strokes, pressure, speed, real material behavior or designer process."
+  },
+  "inputs": {
+    "glyph_source": "chanind/hanzi-writer-data / Make Me a Hanzi / Arphic Public License",
+    "single_character": "潮",
+    "secondary_character": "云",
+    "multicharacter": "星光未眠",
+    "stroke_count_by_target": {
+      "潮": 15,
+      "云": 4,
+      "星光未眠": 30
+    },
+    "topology": "all conditions share target source medians"
+  },
+  "methods": {
+    "A": "uniform 26/1024 ink stroke applied to smooth centrelines",
+    "C": "reference-contour-width-quantiles conditioned hero/support/detail stroke tiers and tapered ends",
+    "D": "C with deterministic small-amplitude local width undulation",
+    "common_input": "same glyph content and same skeleton",
+    "local_implementation": "Python code and output images created in current workspace; downloadable ZIP delivered in conversation, not archived as GitHub bytes",
+    "fiducial_figma_url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=532-3",
+    "figma_ids": {
+      "page": "532:2",
+      "board": "532:3",
+      "A": "532:10",
+      "C": "532:26"
+    }
+  },
+  "actual_outputs": {
+    "n_rendered": 9,
+    "modes": [
+      "A",
+      "C",
+      "D"
+    ],
+    "metrics": [
+      {
+        "text": "潮",
+        "base_connected": 9,
+        "candidate_connected": 13,
+        "base_ink_fraction": 0.13673,
+        "candidate_ink_fraction": 0.12075
+      },
+      {
+        "text": "云",
+        "base_connected": 4,
+        "candidate_connected": 4,
+        "base_ink_fraction": 0.06613,
+        "candidate_ink_fraction": 0.05671
+      },
+      {
+        "text": "星光未眠",
+        "base_connected": 18,
+        "candidate_connected": 24,
+        "base_ink_fraction": 0.07507,
+        "candidate_ink_fraction": 0.06275
+      }
+    ],
+    "result": "C qualitatively resembles smooth geometric vector calligraphy with narrower tails; ink character weight weaker than source and no proven professional aesthetic gain. D slight noise lacks meaningful visible uplift.",
+    "review_classification": "AUTHOR_VISUAL_DIAGNOSTIC_ONLY",
+    "human_blind_review": "NOT_RUN",
+    "absolute_quality": "NOT_ACCEPTED",
+    "cross_character_execution": "TECHNICAL_PASS_ONLY",
+    "commercial_design": "NOT_APPROVED"
+  },
+  "concurrent_result_awareness": {
+    "higher_value_evidence_path": "evidence/vpd/typography_method_distillation_20261026/R2_REAL_STROKE_PROFILE_ABLATION_20261026.json",
+    "other_figma_board": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=533-3",
+    "relationship": "The per-stroke BCSS annotation experiment is a stronger source route. This independent static-contour experiment confirms the no-gain finding but must not replace or supersede it.",
+    "prohibit_duplicate_work": true
+  },
+  "newly_verified_external_constraints": {
+    "DCOH120K": "Provides x/y, stroke index, timestamp, tilt, pressure; repository says research access only after academic application and approval; CC BY-NC-ND 4.0, cannot download/test or use commercially without permission",
+    "DCOH_url": "https://github.com/SCUT-DLVCLab/DCOH-120K",
+    "other_sources": "HCSU provides rich annotated author/script/ink/stroke features under noncommercial CC BY-NC, but it is not time-series brush action and cannot prove creator steps"
+  },
+  "go_no_go": {
+    "decision": "STOP_FURTHER_STATIC_WIDTH_CURVE_TUNING",
+    "next_task": "R3_SOURCE_MATCHED_MULTI_SAMPLE_ROLE_AWARE_DESIGN_DISTILLATION",
+    "first_gate": "Need 3+ same-artist licensed works with variable glyph topologies or genuine role-labelled stroke motion from same creative direction; measure role-specific brush/ink interactions and test against untouched held-out glyphs.",
+    "what_not_to_claim": [
+      "user-endorsed artistry",
+      "designer method recovered from pixels",
+      "true pen-pressure learnt",
+      "commercial use authorized",
+      "unseen human blind validation pass"
+    ],
+    "current_mainline_lock_not_changed": true
+  }
+}
