@@ -1,0 +1,72 @@
+{
+  "schema_version": "vpd-photo-compact-ab-round2-preregister/v1",
+  "date": "2026-10-26",
+  "task_id": "VPD-XHS-PHOTO-AB02-COMPACT-20261026",
+  "authorization": "User 下一步 after blind R1 revealed direct-reference Y preferred; authorize next compact photo-only pair.",
+  "source_repo": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_HEAD": "5a838387e720412051a143c5ba552e0979c1d6cd",
+    "native_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "write_native_lock": false,
+    "scope": "PHOTO_ONLY_NO_TYPOGRAPHY"
+  },
+  "previous_blind": {
+    "case": "清蒸鲈鱼",
+    "vote": "Y preferred",
+    "sealed_mapping": "X=VPD expanded, Y=direct reference",
+    "user_verdict_source": "Private library /高级感p/VPD_BLIND_PRIVATE/Y_PREFERRED_SCOPED_RESULT_20261026.json",
+    "result_classification": "One direct-reference relative win, not global proof."
+  },
+  "reference": {
+    "platform": "Xiaohongshu",
+    "post_title": "温州西餐厅拍菜🍝这组光影我太爱了",
+    "creator": "温州合宜美食摄影",
+    "post_url": "https://www.xiaohongshu.com/explore/6a30d17d0000000007025bd6",
+    "original_slide": "second page of photo gallery; 2x2 editorial image",
+    "cdn_observed": "https://sns-webpic-qc.xhscdn.com/202610261104/5d311c31e1ab10caea4a17bffc16405e/spectrum/1040g0k0321fbe6o16u004atd3nddj5a0sf3g7q8!nd_dft_wlteh_webp_3",
+    "original_dimensions": [
+      1080,
+      1440
+    ],
+    "crop_pixels": {
+      "x": 6,
+      "y": 135,
+      "width": 528,
+      "height": 560
+    },
+    "private_reference_png_sha256": "e142f56d758c0bd89ec0490045f9dc7cd191a371cb80963166739684bb02f614",
+    "private_reference_png_size": 566254,
+    "crop_status": "Pixels visibly inspected; crop top-left single food photo and excludes logo/sibling panels.",
+    "license": "UNKNOWN_THIRD_PARTY_PRIVATE_STUDY_ONLY",
+    "creator_claim": "Photographer states they shoot local restaurant menus and describe window light; actual capture/EXIF not independently established."
+  },
+  "ab_protocol": {
+    "dish": "家常番茄炒鸡蛋",
+    "output": "ONE 9:16 PHOTO EACH",
+    "common_prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请仔细观察本消息唯一附图，学习它的整体餐饮摄影气质，但不要复制原菜、盘子、报纸文字或道具摆位。菜品明确为【家常番茄炒鸡蛋】：熟透的红番茄切成大小自然的楔形块，和柔软蓬松、不规则的金黄色炒鸡蛋交错，少量真实番茄汁自然汇在米白浅陶盘底部，只有极少细葱花点缀。食物刚出锅而不是模型塑胶般发亮；鱼、肉、辣椒、香菇及其它菜不出现。主体是一盘家常菜，必须能辨认番茄与炒蛋。无品牌、无字、无Logo、水印或拼贴。只输出一张。",
+    "incremental_vpd_delta": "额外只落实两项摄影机制：窗边一束自然侧光，盘沿和台面有同一方向的柔和、非完美对称阴影；番茄皮、熟蛋和陶盘呈现不同的反光与真实细碎纹理。其余布景与主体大小交给画面自由决定。",
+    "delta_variable_count": 2,
+    "mechanisms": [
+      "single-direction natural window illumination with imperfect shadow geometry",
+      "different material reflectance and physical microtexture for tomato, cooked eggs, ceramic"
+    ],
+    "vpd_route_prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请仔细观察本消息唯一附图，学习它的整体餐饮摄影气质，但不要复制原菜、盘子、报纸文字或道具摆位。菜品明确为【家常番茄炒鸡蛋】：熟透的红番茄切成大小自然的楔形块，和柔软蓬松、不规则的金黄色炒鸡蛋交错，少量真实番茄汁自然汇在米白浅陶盘底部，只有极少细葱花点缀。食物刚出锅而不是模型塑胶般发亮；鱼、肉、辣椒、香菇及其它菜不出现。主体是一盘家常菜，必须能辨认番茄与炒蛋。无品牌、无字、无Logo、水印或拼贴。只输出一张。\n额外只落实两项摄影机制：窗边一束自然侧光，盘沿和台面有同一方向的柔和、非完美对称阴影；番茄皮、熟蛋和陶盘呈现不同的反光与真实细碎纹理。其余布景与主体大小交给画面自由决定。",
+    "direct_route_prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请仔细观察本消息唯一附图，学习它的整体餐饮摄影气质，但不要复制原菜、盘子、报纸文字或道具摆位。菜品明确为【家常番茄炒鸡蛋】：熟透的红番茄切成大小自然的楔形块，和柔软蓬松、不规则的金黄色炒鸡蛋交错，少量真实番茄汁自然汇在米白浅陶盘底部，只有极少细葱花点缀。食物刚出锅而不是模型塑胶般发亮；鱼、肉、辣椒、香菇及其它菜不出现。主体是一盘家常菜，必须能辨认番茄与炒蛋。无品牌、无字、无Logo、水印或拼贴。只输出一张。",
+    "blinding": "Separate user-facing X/Y without mapping until user's vote; save mapping in private Library and its hashed commitment in public receipt",
+    "controls": [
+      "Both fresh chats, each one original reference PNG with identical SHA",
+      "Same ChatGPT native Image front-end/model effort",
+      "One image per route; no retries/no best-of-N",
+      "Do not include old outputs in generation contexts",
+      "Absolute food correctness and photos, plus subjective user vote separately"
+    ],
+    "image_budget": 2,
+    "external_paid_api_budget": 0
+  },
+  "pre_registration_status": "FROZEN_INPUTS_READY_EXECUTION_PENDING",
+  "generated_count": 0,
+  "learned_candidate_only": true,
+  "no_skill_promotion": true
+}
