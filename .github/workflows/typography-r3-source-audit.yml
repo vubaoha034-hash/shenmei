@@ -1,0 +1,41 @@
+name: R3 Lettering Source Provenance Audit
+
+on:
+  push:
+    branches:
+      - research/typography-r3-rosanjin-source-20261026
+    paths:
+      - .github/workflows/typography-r3-source-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  verify-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout isolated research branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image analysis dependencies
+        run: python -m pip install --disable-pip-version-check --quiet pillow cairosvg numpy scipy scikit-image
+      - name: Fetch and hash-check original Wikimedia SVGs
+        run: python research/typography_r3/remote_source_audit.py
+      - name: Commit derived receipt ONLY, never publish source SVGs
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r3/ROSANJIN_REMOTE_SOURCE_RECEIPT.json
+          if git diff --cached --quiet; then
+            echo "No changed receipt to commit"
+          else
+            git commit -m "evidence(r3): record remote original SHA verification and morphology"
+            git push origin HEAD:research/typography-r3-rosanjin-source-20261026
+          fi
