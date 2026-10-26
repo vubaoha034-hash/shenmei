@@ -9,6 +9,7 @@
 文字创作方法蒸馏 R2 实测（2026-10-26）：BCSS 两字共7条标注笔画 → 真实宽度响应测量 → 目标『云』『潮』A原轮廓/B均宽算法/C源测宽度算法三路Figma原生矢量实际输出；A/B/C截图已看，**源轮廓宽度迁移的审美增益未见，且不是《六島》原作者方法复原**。必须先解决同创作者样本、真实逐笔证据及部件/笔画角色匹配，不重跑纯宽度变形。详细证据：[R2_REAL_STROKE_PROFILE_ABLATION_20261026.json](evidence/vpd/typography_method_distillation_20261026/R2_REAL_STROKE_PROFILE_ABLATION_20261026.json)。该记录是独立研究支线，不动正式任务锁或任何生产额度。
 ，下一轮首先补齐真正笔势/墨迹和多样本创作过程依据。
 范围保护：本段只管用户明确要求的**文字创作方法蒸馏支线**；不新增第二套任务锁，不变更 `continuity/vpd/CURRENT_TASK_LOCK.json`、正式主线下一步、生成预算、其他已停止任务及真人最终验收权限。
+R3 外部方法可行性审核（2026-10-26）：[R3_INK_MORPHOLOGY_MODEL_FEASIBILITY_20261026.json](evidence/vpd/typography_method_distillation_20261026/R3_INK_MORPHOLOGY_MODEL_FEASIBILITY_20261026.json)。已检查公开代码：InkDiffuser 当前仓库缺推理脚本、训练依赖模块和预训练权重，许可证也未核实；不能直接使用。R2 的真实笔画宽度尝试和《六島》静态墨形代理均未证明审美改善。**下一次必须先满足同一作者/风格的合法多样本来源和按笔画角色的素材证据，不得再重复仅几何笔宽的 R2 实验。**
 <!-- END_TYPO_METHOD_TRANSFER_GOAL_20261026 -->
 
 
