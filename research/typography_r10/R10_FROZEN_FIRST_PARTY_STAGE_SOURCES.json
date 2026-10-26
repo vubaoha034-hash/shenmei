@@ -1,0 +1,73 @@
+{
+  "schema": "vpd-r10-authored-stage-evidence-freeze/1.0",
+  "date": "2026-10-27",
+  "objective": "Replace guessed numeric glyph-shaping rules with actually published author/designer stage-to-stage visual evidence, before another aesthetic transfer trial.",
+  "source_requirements": [
+    "First party maker studio, official design award showcase or author-authored tutorial with identifiable work",
+    "Actual design process phase images or same-glyph before and after; not finished sample gallery marketed as process",
+    "Describe per-stage exact text and which modification is documented vs visually inferred",
+    "Image bytes and dimensions verified independently from origin; no stock watermarks, no AI reconstructions",
+    "Raw copyrighted image bytes must not be stored or uploaded to public shenmei repository",
+    "No paid source licenses or image generation API"
+  ],
+  "sources": [
+    {
+      "id": "HY_RED_CLOUD",
+      "type": "creator-award-original-stages",
+      "creator": "汉仪字库",
+      "publisher": "DFA Design for Asia Awards",
+      "source_page": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "image_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p09.jpg",
+      "phase_labels": [
+        "historical/gray structural model",
+        "hand-painted intermediate draft",
+        "heavy black produced digital glyph"
+      ],
+      "known_boundary": "Image layout labels not proof of actual chronological working document or individual brush pressure trace; source website's authorship is not file-by-file production logs."
+    },
+    {
+      "id": "TPTQ_REVISION_NA",
+      "type": "direct-designer-same-glyph-before-after",
+      "creator": "Zheng Chuyang/Mallikātype with Typotheque",
+      "publisher": "Typotheque",
+      "source_page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "image_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "phase_labels": [
+        "before (red outline)",
+        "after (blue outline)"
+      ],
+      "known_boundary": "Pixel outline shifts are authoritative shape correction evidence, not claimed paper sketch or designer hand motion."
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU",
+      "type": "creator-showcase-before-after",
+      "creator": "Arphic 文鼎字型 / Lin Mickey",
+      "publisher": "creator-owned Behance showcase",
+      "source_page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b405c71709175.5bced77481eb7.jpg",
+      "phase_labels": [
+        "Before condensed treatment",
+        "After revised condensed strokes and widths"
+      ],
+      "known_boundary": "Style is commercial font system; no authorization to copy source contours, train private model on assets or commercially reuse glyphs."
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU_SPACE",
+      "type": "creator-showcase-standard-versus-compressed",
+      "creator": "Arphic 文鼎字型 / Lin Mickey",
+      "publisher": "creator-owned Behance showcase",
+      "source_page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/05da9371709175.5bced7748149d.jpg",
+      "phase_labels": [
+        "standard version",
+        "C80 condensed, adjusted counters"
+      ],
+      "known_boundary": "Comparison of type variants, not necessarily chronological before-after drafts."
+    }
+  ],
+  "image_inspection_limit": "Published images visually reviewed in image search preview; require actual image hash/size verification, do not claim own crop-level pixel metrics before action proves source data fetch.",
+  "independent_quality_judgment": "NOT_PERFORMED",
+  "stop_on_image_unreachable": "Record failure with actual HTTP errors; do not rewrite source art or substitute image generation",
+  "current_stage": "SOURCE_SELECTION_FROZEN_SOURCE_BYTES_PENDING",
+  "production_task_lock_must_remain": 355
+}
