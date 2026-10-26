@@ -1,0 +1,175 @@
+{
+  "schema": "vpd-r4-role-learning-gate/1.0",
+  "date": "2026-10-26",
+  "objective": "蒸馏优秀文字创作方法，在未见新文字上证明专业审美收益；反对描摹、字体名称堆叠、单纯调线宽冒充方法。",
+  "original_sources": [
+    "實業之日本",
+    "婦人世界",
+    "小學男生"
+  ],
+  "record_scope": "独立文字实验；不更改正式视觉主线、预算及任务锁",
+  "cloud": {
+    "run_url": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40282069566",
+    "actual_state": "SUCCESS",
+    "full_data_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r3-rosanjin-source-20261026/research/typography_r3/R4_EXPRESSIVE_SAME_TEXT_CONTROLS.json",
+    "source_blob_sha": "3741b5e8d8ca3692f4bf38a0c2fd7e9d3d077f08"
+  },
+  "results": {
+    "downloaded_fonts_with_git_blob_hash_check": 10,
+    "fonts_with_full_traditional_codepoint_coverage": 6,
+    "effective_unique_pixel_shape_families": 4,
+    "valid_morphology_comparisons": 36,
+    "shared_rendering_group": [
+      "Yuji Syuku",
+      "Yuji Boku",
+      "Yuji Mai"
+    ],
+    "actual_pixel_groups": [
+      {
+        "work": "R1908_A",
+        "independent_renderings": [
+          [
+            "Yuji Syuku",
+            "Yuji Boku",
+            "Yuji Mai"
+          ],
+          [
+            "Iansui"
+          ],
+          [
+            "LXGW WenKai TC Bold"
+          ],
+          [
+            "Klee One SemiBold"
+          ]
+        ]
+      },
+      {
+        "work": "R1909_B",
+        "independent_renderings": [
+          [
+            "Yuji Syuku",
+            "Yuji Boku",
+            "Yuji Mai"
+          ],
+          [
+            "Iansui"
+          ],
+          [
+            "LXGW WenKai TC Bold"
+          ],
+          [
+            "Klee One SemiBold"
+          ]
+        ]
+      },
+      {
+        "work": "R1909_C",
+        "independent_renderings": [
+          [
+            "Yuji Syuku",
+            "Yuji Boku",
+            "Yuji Mai"
+          ],
+          [
+            "Iansui"
+          ],
+          [
+            "LXGW WenKai TC Bold"
+          ],
+          [
+            "Klee One SemiBold"
+          ]
+        ]
+      }
+    ],
+    "typeface_incomplete": [
+      "Zhi Mang Xing",
+      "Long Cang",
+      "Liu Jian Mao Cao",
+      "Ma Shan Zheng"
+    ],
+    "robust_metrics": {
+      "thick_thin_ratio": true,
+      "typical_thickness_vs_height": true,
+      "complexity_perimeter_hull": false
+    },
+    "relative_to_control_lowest_improvement_pct": {
+      "thick_thin_ratio": [
+        {
+          "work": "R1908_A",
+          "minimum_pct": 69.7
+        },
+        {
+          "work": "R1909_B",
+          "minimum_pct": 59.51
+        },
+        {
+          "work": "R1909_C",
+          "minimum_pct": 88.46
+        }
+      ],
+      "typical_thickness_vs_height": [
+        {
+          "work": "R1908_A",
+          "minimum_pct": 43.87
+        },
+        {
+          "work": "R1909_B",
+          "minimum_pct": 17.47
+        },
+        {
+          "work": "R1909_C",
+          "minimum_pct": 47.62
+        }
+      ],
+      "complexity_perimeter_hull": [
+        {
+          "work": "R1908_A",
+          "minimum_pct": -3.59
+        },
+        {
+          "work": "R1909_B",
+          "minimum_pct": 2.54
+        },
+        {
+          "work": "R1909_C",
+          "minimum_pct": -16.15
+        }
+      ]
+    },
+    "interpretation": "真实三件鲁山人字标相比四组可区分表达字体，笔粗细反差及中位笔重仍显著，但整体复杂度不成立；这些静态差别不是作者操作流程、更不是可迁移美学因果。"
+  },
+  "real_designer_authored_process": {
+    "speaker": "叶天宇（喜鹊造字）",
+    "firsthand_full_transcript": "https://www.yixi.tv/h5/speech/1002/",
+    "first_person_interview_excerpt": "https://k.sina.com.cn/article_7517400647_1c0126e4705903e22a.html",
+    "optical_adjustment_full_article": "https://keepdoingstudy.wordpress.com/2017/10/06/文字设计-对中文字体设计均匀度问题的探讨/",
+    "claims": [
+      "明确使用场景，再确定艺术方向与参考家族",
+      "从真实古籍选母源，拆每笔的结构、用力感觉、收笔与装饰，而非直接按轮廓复制",
+      "先做300—400不同字的草图，再以贝塞尔矢量重建",
+      "从大量成熟字中提炼横竖撇捺点原型，进一步抽象可适配部首/偏旁的复用法",
+      "在多个字而非单个字中检查灰度、字间留白、视觉重心和一致性"
+    ],
+    "source_limitation": "一席访谈是现代设计师自述，不能代替鲁山人已未知的历史个人构思资料；演讲中的字库素材未授权复制或训练。"
+  },
+  "new_method_hypothesis": {
+    "tag": "ROLE_CONDITIONED_PRIMITIVE_FROM_EXAMPLES_NOT_GLOBAL_PIXEL_STATS",
+    "failure_that_prompted_it": "R2从朝向/宽度推导书法笔画未得到审美收益；按字体名选择的对照也可能产出完全相同的字形",
+    "action": "采集经许可的同一风格多字样本→分解横竖撇捺点折钩及其在具体部件中承担的主辅角色→总结可复用起收笔形与字内空隙约束→在冻结的未见字上执行并盲评",
+    "control": "相同字形骨架，原基线 vs R2宽度-only vs 新角色字形法；固定模型/尝试预算/后处理及输出大小",
+    "until_real_outputs_exist": "NO_VALIDATED_METHOD"
+  },
+  "gates": {
+    "source_provenance": true,
+    "matched_font_controls": true,
+    "pixel_independence_checked": true,
+    "original_author_intention_known": false,
+    "method_implemented": false,
+    "unseen_transfer_pass": false,
+    "human_blind_pass": false,
+    "production_rights_cleared": false
+  },
+  "next": "R5 implementation of author-process-inspired, role-conditioned glyph primitives on a licensed same-style multiglyph corpus, then locked hidden-codepoint A/B/C comparison. Not another global pen width experiment."
+}
