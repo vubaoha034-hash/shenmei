@@ -1,0 +1,52 @@
+name: R5 Real Font Role Primitive Atlas
+
+on:
+  push:
+    branches:
+      - research/typography-r5-role-primitives-20261026
+    paths:
+      - .github/workflows/typography-r5-role-primitive-atlas.yml
+      - research/typography_r5/learn_terminal_primitives.py
+
+permissions:
+  contents: write
+
+jobs:
+  extract-training-atlas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Checkout isolated frozen experiment
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install analytics
+        run: python -m pip install --disable-pip-version-check --quiet pillow fonttools numpy scipy scikit-image
+      - name: Analyze training-only role endings
+        run: python research/typography_r5/learn_terminal_primitives.py
+      - name: Check split integrity and preserve derived evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('research/typography_r5/R5_FROZEN_PROTOCOL.json'))
+          r=json.load(open('research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json'))
+          assert set(p['frozen_train_characters']).isdisjoint(p['holdout_unique_codepoints'])
+          assert r['holdout_source_font_glyphs_rendered'] is False
+          assert r['confident_terminal_samples']==len(r['samples'])
+          print('ATLAS_FAIL_CLOSED_GATE',json.dumps({
+            'training':r['source_chars_processed'],'samples':r['confident_terminal_samples'],
+            'family_coverage':r['role_family_coverage'],
+            'role_atlas_gate_pass':r['role_atlas_gate_pass']},ensure_ascii=False))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r5): source-hashed trained role atlas without test-glyph leakage"
+            git push origin HEAD:research/typography-r5-role-primitives-20261026
+          fi
