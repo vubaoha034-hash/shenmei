@@ -1,0 +1,132 @@
+{
+  "schema": "vpd-lettering-r5-frozen-control-protocol/1.0",
+  "date": "2026-10-26",
+  "primary_goal": "From excellent finished typographic work distill executable author-like shape construction, test unseen glyphs, prove aesthetic merit not just correct SVG or contrast numbers.",
+  "source_font": {
+    "family": "Ma Shan Zheng",
+    "role": "Single consistently designed multi-glyph source family, used to infer local terminal/turn shape hypotheses, not as a template font for test chars",
+    "google_font_path": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
+    "bytes": 5857936,
+    "git_blob_sha1": "11bbfb9867d70612158229d037e7a5f622bd0e38",
+    "license_url": "https://github.com/google/fonts/blob/main/ofl/mashanzheng/OFL.txt",
+    "license": "SIL Open Font License 1.1",
+    "creator_metadata": "Ma ShanZheng (Google Fonts attribution), not Kitaoji Rosanjin",
+    "usage_rules": "Do not redistribute original TTF; include copyright/OFL attribution where font-software derivative assets are distributed; newly made graphics not judged legally for trademarks."
+  },
+  "geometry_source": {
+    "dataset": "hanzi-writer-data / Make Me a Hanzi",
+    "repo": "https://github.com/chanind/hanzi-writer-data",
+    "role": "Character stroke centerlines and order; validation must separate target printed skeleton from learned artist style.",
+    "license_note": "Hanzi Writer data originally made from Arphic typeface; code and dataset rights to be reverified before commercial exploitation.",
+    "no_historical_pressure_claim": true
+  },
+  "frozen_train_characters": [
+    "一",
+    "二",
+    "三",
+    "十",
+    "上",
+    "下",
+    "左",
+    "右",
+    "大",
+    "小",
+    "天",
+    "地",
+    "人",
+    "心",
+    "水",
+    "火",
+    "木",
+    "林",
+    "山",
+    "川",
+    "日",
+    "月",
+    "明",
+    "春",
+    "秋",
+    "花",
+    "草",
+    "竹",
+    "石",
+    "雨",
+    "雪",
+    "云",
+    "海",
+    "金",
+    "土",
+    "田",
+    "口",
+    "手",
+    "门",
+    "生",
+    "长",
+    "青",
+    "字",
+    "笔",
+    "墨",
+    "书",
+    "法",
+    "艺"
+  ],
+  "train_character_count": 48,
+  "frozen_holdouts": [
+    "泉",
+    "清风入梦"
+  ],
+  "holdout_unique_codepoints": [
+    "泉",
+    "清",
+    "风",
+    "入",
+    "梦"
+  ],
+  "source_target_overlap": [],
+  "controls": [
+    {
+      "id": "A",
+      "name": "neutral printable skeleton",
+      "method": "Equal-width all HanziWriter centerlines with round terminals."
+    },
+    {
+      "id": "B",
+      "name": "old global-width proxy (R2)",
+      "method": "Same centerlines and fixed three visual weight tiers based on length/angle, tapered ends. No glyph-specific source author."
+    },
+    {
+      "id": "C",
+      "name": "source-derived role-conditioned primitives (R5)",
+      "method": "Same centerlines; learn meaningful caps, local turn profiles and ink distributions from training-only MaShanZheng character pixels, map to new glyph stroke role and layout; no source target font bitmap used during inference."
+    },
+    {
+      "id": "D",
+      "name": "held-out style-font reference (oracle only)",
+      "method": "Render frozen source font's target codepoints for side-by-side aesthetic diagnosis; NEVER use to derive C before freezing outputs."
+    }
+  ],
+  "explicit_boundaries": [
+    "Do not treat source font's average pixel contrast as designer's learned process",
+    "Do not copy source glyph pixels or pen outlines from target characters into C",
+    "Do not infer original handwritten velocity, pressure, stroke order from modern finished font contours",
+    "Per-stroke role tags are hypotheses from known pedagogical centerlines and may be wrong; record reliability",
+    "Every candidate must use exactly same target glyphs as baselines; no hidden retries/best-of-N",
+    "Source C can fail aesthetically; if so preserve negative result and stop rather than tune appearance until pleasing",
+    "Confirm actual distinct pixels via SHA256 and exact target codepoints",
+    "No commercial/golden promotion or source-font derivative redistribution without license review",
+    "Human blind aesthetic pass and legibility pass required before any 'method learned' label."
+  ],
+  "gates": {
+    "source_exact_hash": "pending",
+    "separate_character_pool": true,
+    "training_atlas_extracted": "pending",
+    "role_sample_count_and_confidence": "pending",
+    "real_new_glyph_output": "pending",
+    "old_B_vs_new_C_same_target": "pending",
+    "pixel_independence": "pending",
+    "unblinded_author_quality": "not_evaluated",
+    "independent_human_blind": "not_evaluated",
+    "successful_transfer": false
+  },
+  "next": "Implement immutable training-only local terminal/turn geometry atlas and submit A/B/C plus D oracle to isolated artifact inspection. If role samples or exact source verification fail, do not claim R5 success."
+}
