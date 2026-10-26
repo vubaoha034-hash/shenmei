@@ -1,0 +1,105 @@
+{
+  "schema_version": "vpd-typography-ink-morphology-feasibility/1.0",
+  "date": "2026-10-26",
+  "status": "R3_EXTERNAL_MODEL_SOURCE_AUDIT_COMPLETE__NOT_EXECUTABLE_AS_RELEASED__NO_AESTHETIC_PROMOTION",
+  "project_intent": "Extract a controllable designer-lettering creation method that transfers to new characters with superior actual aesthetic quality, not redraw individual glyphs.",
+  "context_from_prior": {
+    "real_source_stroke_annotation": "evidence/vpd/typography_method_distillation_20261026/R2_REAL_STROKE_PROFILE_ABLATION_20261026.json",
+    "static_source_width_ablation": "evidence/vpd/typography_method_distillation_20261026/R2_STATIC_CONTOUR_TRANSFER_RECHECK_20261026.json",
+    "observed_common_failure": "Authentic role-sensitive pen/brush gesture and ink topology unavailable; angle or static-width transfer on printed-font skeletons produced no human-approved quality gain."
+  },
+  "published_approach": {
+    "title": "InkDiffuser: High-Fidelity One-shot Chinese Calligraphy via Differentiable Morphological Optimization",
+    "arxiv": "https://arxiv.org/abs/2605.05865",
+    "code": "https://github.com/JingVIPLab/Inkdiffuser",
+    "inspected_commit": "4d9f6c1aef2a13ac1b4779aa090389c0d609e227",
+    "detailed_code_read": [
+      "README.md",
+      "src/modules/dis_loss.py",
+      "src/modules/enhanced_high_freq_condition.py",
+      "src/modules/high_freq_encoder.py",
+      "src/criterion.py",
+      "train.py",
+      "src/model.py",
+      "configs/fontdiffuser.py",
+      "requirements.txt",
+      "scripts/sample_content_character.sh"
+    ],
+    "directly_observed_operations": [
+      "DIS loss turns RGB/gray into ink-map representation",
+      "soft erosion preserves/compares central ink mass",
+      "soft dilation and eroded masks form inside/outside ink boundary band",
+      "gradient and Laplacian compare edge sharpness/curvature in the boundary band",
+      "high-frequency features/learnable fusion aim to preserve fine contour information rather than only typography overall structure"
+    ],
+    "important_limit": "These are source- and target-conditioned training losses; without a same-character styled training target and trained weights they do not generate new calligraphy independently. A static source is not real hand motion."
+  },
+  "executable_release_audit": {
+    "repo_verified_public": true,
+    "branch": "main",
+    "files_in_repo": true,
+    "pretrained_model_checkpoints_in_git_tree": false,
+    "repository_license_file_in_git_tree": false,
+    "sample_py_in_tree": false,
+    "src_modules_dis_loss_stable_py_in_tree": false,
+    "train_py_unconditional_imports_missing_dis_loss_stable": true,
+    "sample_content_character_sh_invokes_missing_sample_py": true,
+    "config_use_dis_loss_default": false,
+    "publicly_runnable_training_as_documented": "FAIL_MISSING_REQUIRED_MODULE",
+    "publicly_runnable_inference_as_documented": "FAIL_MISSING_SCRIPT_AND_WEIGHTS",
+    "commercial_permission_verified": false,
+    "local_runtime_cuda_gpu_available": false,
+    "package_install_or_model_training_performed": false,
+    "test_run_performed": false,
+    "do_not_label": "model deployed, pretrained assets accessible, design capability validated or creator-brush-movements reconstructed"
+  },
+  "dataset_source_gate": {
+    "tc262_references": [
+      {
+        "name": "六島",
+        "url": "https://commons.wikimedia.org/wiki/File:Calligraphy_六島.svg",
+        "rights": "CC BY 3.0"
+      },
+      {
+        "name": "张德礼",
+        "url": "https://commons.wikimedia.org/wiki/File:ZhangDeli.svg",
+        "rights": "CC BY 3.0"
+      }
+    ],
+    "same_author_three_example_set_complete": false,
+    "tc262_original_brush_process_found": false,
+    "DCOH120K": {
+      "url": "https://github.com/SCUT-DLVCLab/DCOH-120K",
+      "contains": "Tablet position, stroke index, timestamp, tilt and pressure, but not automatically outstanding brush-art lettering",
+      "access": "Academic application + approval required; noncommercial only; CC BY-NC-ND 4.0; not retrieved nor trainable without approval",
+      "commercially_reusable": false
+    },
+    "HCSU": {
+      "url": "https://github.com/209-Tongji/HCSU",
+      "useful": "author/style-conditioned labeled historical calligraphy and fine-grained ink/stroke/structure annotations",
+      "limitation": "CC BY-NC 4.0 images/data; analysis annotations are not real recorded creator motions",
+      "commercial_permissions_unresolved": true
+    },
+    "BCSS": {
+      "url": "https://github.com/Rvosuke/BCSS",
+      "useful": "per-stroke labelled outline polygons",
+      "limitation": "source examples do not imply one author style family; research rights, commercial permissions unresolved"
+    }
+  },
+  "next_real_work": {
+    "id": "R3_COHERENT_AUTHOR_STYLE_AND_ROLE_CONDITIONED_MODEL_CHECK",
+    "first_gate": "Choose an attributable multi-glyph professionally designed family with permitted usage, ideally 3+ examples from same artist. Document exact author, content diversity, rights and useful per-role source evidence before generation.",
+    "method_candidate": "Separate glyph identity/topology, stroke-role-specific gesture, ink core, boundary bands, and edge texture. Only train/test source-backed structural priors rather than arbitrary global pixel noise.",
+    "contrast": "Same unseen character and identical compute budget: R2 nearest-angle width transfer vs R3 stroke-role and boundary loss conditioning vs unchanged skeleton-only baseline; freeze test characters before generation.",
+    "technical_prerequisites": "Complete executable generation code + licensed style samples + pretrained or trainable weights + available noncharged local GPU or explicit compute authority; cannot rely on InkDiffuser repo as-is.",
+    "stop_rule": "If no coherent authorised data or runnable model, keep blocked and do not repeat geometry-only glyph variant loops or claim success.",
+    "explicit_user_quality_gate": "Human blind rating of legibility and superior artistic quality on unseen text; relative numeric morphology alone insufficient."
+  },
+  "preservation": {
+    "native_current_task_lock_not_modified": true,
+    "project_mainline_not_replaced": true,
+    "branch_only_append_new_research_record": true,
+    "commercial_training_not_authorized": true,
+    "user_final_aesthetic_approval_not_claimed": true
+  }
+}
