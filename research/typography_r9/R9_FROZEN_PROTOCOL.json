@@ -1,0 +1,97 @@
+{
+  "schema": "vpd-r9-component-space-transfer-frozen/1.0",
+  "date": "2026-10-26",
+  "objective": "实测从真实汉字设计师理论中抽象的‘按结构密度调整整部件比例及字内留白’，而非R1-R8的笔宽/起收笔/重心单指标。",
+  "provenance": [
+    {
+      "author": "徐学成",
+      "source": "https://rosa.build/xu-xuecheng/yinshua-huozi-sheji-de-wenzhenyun",
+      "original_principles": [
+        "左紧右松/部件阔狭按照笔画多少变化",
+        "互让互争，补空穿插",
+        "满收虚放"
+      ],
+      "type": "published expert typographic theory"
+    },
+    {
+      "author": "字由（安晴的姐姐）",
+      "source": "https://www.hellofont.cn/article/229775",
+      "case": "海浪与味道",
+      "original_principles": [
+        "先修正各字结构，再用共享偏旁形成联系",
+        "某些内部负空间过大时移动部件",
+        "右侧部件需同步处理以免割裂"
+      ],
+      "type": "illustrated process tutorial"
+    }
+  ],
+  "dataset": {
+    "repo": "chanind/hanzi-writer-data",
+    "commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "license": "Arphic Public License; raw glyph stroke outlines source pinned, no creator intent claimed"
+  },
+  "source_training_words": [
+    "江湖",
+    "清河"
+  ],
+  "holdout_words": [
+    "沙漠",
+    "深浅"
+  ],
+  "negative_holdout_word": "灯火",
+  "structural_family": "both characters have 3-stroke left 氵 radical as first 3 annotated strokes",
+  "controls": [
+    {
+      "id": "A",
+      "definition": "original actual HanziWriter stroke outlines, fitted to identical 1000-unit visual cell"
+    },
+    {
+      "id": "B",
+      "definition": "naive fixed-width whole-component allocation, left radical nominal width 23% of normalized cell, right remainder; same equal gap for all characters"
+    },
+    {
+      "id": "C",
+      "definition": "density-conditioned whole-component planning: sparse right <=5 strokes radical width 28%; medium 6-8 width 24%; dense >=9 width 19.5%; position both semantic components with source-preserving outline path scaling and 28-unit gap. Every right component independently gets remaining width. No per-stroke thickness/operator changes."
+    }
+  ],
+  "design_operator": {
+    "glyph_cell": 1000,
+    "margin_left": 70,
+    "margin_right": 60,
+    "inner_available_width": 870,
+    "positive_inter_component_gap": 28,
+    "complexity_thresholds": {
+      "sparse_right_strokes_max": 5,
+      "medium_right_strokes_max": 8,
+      "dense_right_strokes_min": 9
+    },
+    "left_ratios": {
+      "sparse": 0.28,
+      "medium": 0.24,
+      "dense": 0.195,
+      "uniform_B": 0.23
+    },
+    "target_bands": "left band starts at x70, width=ratio*870. Right starts leftEnd+28, extends to x940. Affine fit of actual per-stroke glyph outlines. No thickness/texture changes.",
+    "abstention": "No shared 3-stroke left 氵 in both glyphs: emit A unchanged and explicit NO_APPLY, no coercion.",
+    "no_training_on_holdout": true,
+    "no_user_added_fee": true
+  },
+  "validity_gates": [
+    "Each target literal simplified Chinese glyph and raw stroke count verified against source SHA",
+    "Target words must be absent from source study examples and structural tuning",
+    "No source character from holdout used to tune thresholds or decision",
+    "Equal output dimensions, same exact characters and underlying brush outline data",
+    "C must differ from naive B due to right-side component density, not typography label",
+    "Whole-component contour is changed, not path thickness or effect overlay",
+    "For negative control where no shared left 氵, C abstains instead of silently applying",
+    "Check actual target codepoints, source strokes, no clipping, visible gap, raster hashes, silhouette identity",
+    "Independent human aesthetic review separate from structure metrics; no production claim"
+  ],
+  "unknowns": [
+    "Does simple split of radicals preserve real structural dynamics?",
+    "Whether C makes visually better artwork; mathematical gap guarantee is not beauty",
+    "Might look like ordinary printed glyphs; not necessarily brush expression"
+  ],
+  "success_def": "Only actual visual aesthetic improvement in previously unseen words AND independent human review can promote any creator-method claim.",
+  "formal_status": "METHOD_FROZEN_BEFORE_TARGET_SOURCE_READ"
+}
