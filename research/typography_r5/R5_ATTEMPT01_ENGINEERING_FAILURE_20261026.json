@@ -1,0 +1,24 @@
+{
+  "schema": "vpd-r5-first-atlas-attempt-failure/1.0",
+  "date": "2026-10-26",
+  "scope": "independent role-primitive research failure; no design success",
+  "run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40284849544",
+  "source_branch": "research/typography-r5-role-primitives-20261026",
+  "executed": true,
+  "source_font_sha256": "6d2546bb189c732a8ca29a01bd32032e3973bac22be3dccae01bf6ae7fde969",
+  "expected_glyphs": 48,
+  "processed_glyphs": 0,
+  "matched_endpoints": 0,
+  "sufficient_role_bins": 0,
+  "actual_first_runtime_error": "Both input arrays must be (arrays of) 3-dimensional vectors, but they are 2 and 2 dimensional instead.",
+  "root_cause": "Use of numpy.cross on two 2D vectors in terminal_geom; actual NumPy runtime did not accept this invocation",
+  "validation_bug": "GitHub Actions green status reflected a successful script exit + checks that did NOT assert role_atlas_gate_pass==true; therefore zero training samples were falsely marked CI success.",
+  "disposition": "INVALID_EVIDENCE_NONPROMOTABLE",
+  "correction": [
+    "Replace 2D np.cross with explicit scalar determinant in terminal bend calculation",
+    "After preserving failure receipt, enforce assert role_atlas_gate_pass==true as a hard CI condition; guard zero/insufficient source-stroke coverage",
+    "Do not infer method success or aesthetics from a green program status without substantive sample gates"
+  ],
+  "formal_mainline_modified": false,
+  "blind_review_run": false
+}
