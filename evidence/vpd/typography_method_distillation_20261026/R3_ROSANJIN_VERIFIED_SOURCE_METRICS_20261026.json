@@ -1,0 +1,157 @@
+{
+  "schema_version": "vpd-r3-rosanjin-verified-visual-source-metrics/v1",
+  "observed_at": "2026-10-26",
+  "experiment_type": "REAL_SOURCE_BYTES_VERIFIED_AND_STATIC_ARTWORK_GEOMETRY_MEASURED",
+  "scope": "独立字体创作方法蒸馏研究，不影响正式海报、主线任务锁或其他停止的任务",
+  "user_invariant_goal": "从他人专业文字作品中提炼可复用创作方法；在从未参与研究的汉字上证明审美提升，禁止以临摹、矢量化、填补规则文件或笔宽变化冒充成功。",
+  "authoritative_remote": {
+    "repository": "vubaoha034-hash/shenmei",
+    "isolated_branch": "research/typography-r3-rosanjin-source-20261026",
+    "run_id": 40269497024,
+    "run_url": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40269497024",
+    "receipt_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r3-rosanjin-source-20261026/research/typography_r3/ROSANJIN_REMOTE_SOURCE_RECEIPT.json",
+    "receipt_blob_sha": "2d993d872542636fa7b55abd9dfc4c9f11ea22f3",
+    "verification_method": "Compare bytes length and SHA1 for exact three upload.wikimedia.org original digital SVGs against current Wikimedia Commons Action API iiprop=size|sha1|url|timestamp",
+    "verified_count": 3,
+    "no_raw_source_artwork_committed": true,
+    "workflow_success": "RUN_AND_PERSIST_SUCCESS"
+  },
+  "digital_history_disclaimer": "SVG uploads in 2025 of printed early 20th century commercial wordmarks; these are modern reproductions/traces, NOT the designer's historic vector paths, handwriting recording or creative process.",
+  "reference_set": [
+    {
+      "id": "R1908_A",
+      "original_title": "實業之日本",
+      "year": 1908,
+      "commons_source_url": "https://commons.wikimedia.org/wiki/File:%E5%AF%A6%E6%A5%AD%E4%B9%8B%E6%97%A5%E6%9C%AC_(Calligraphy_by_Rosanjin).svg",
+      "source_verified": true,
+      "official_sha1": "4af1251c7f8c9861722c41ff893daf7dc566677a",
+      "actual_sha256": "fdbf5482ba88a79d5c1c47ce7d2d9ddabc4de2fbea454131b38957d7976a11fc",
+      "source_bytes": 21305,
+      "normalized_ink_coverage": 0.515698,
+      "skeleton_ink_width_normalized_q10_q50_q90": [
+        0.04364,
+        0.11006,
+        0.18513
+      ],
+      "static_ink_thick_thin_q90_q10_ratio": 4.2426,
+      "connected_regions": 4,
+      "outline_complexity_perimeter_over_hull": 3.6291,
+      "vector_fragment_count_modern_trace": 4
+    },
+    {
+      "id": "R1909_B",
+      "original_title": "婦人世界",
+      "year": 1909,
+      "commons_source_url": "https://commons.wikimedia.org/wiki/File:%E5%A9%A6%E4%BA%BA%E4%B8%96%E7%95%8C_(Calligraphy_by_Rosanjin).svg",
+      "source_verified": true,
+      "official_sha1": "48bc9dd60add5f2eb4a5feee75e82d72a49aa44c",
+      "actual_sha256": "8b616066a16405085af8f1bc28526c97fd18cb719a8fab1d93abfc8e0c110064",
+      "source_bytes": 7101,
+      "normalized_ink_coverage": 0.370409,
+      "skeleton_ink_width_normalized_q10_q50_q90": [
+        0.04482,
+        0.09722,
+        0.14297
+      ],
+      "static_ink_thick_thin_q90_q10_ratio": 3.1901,
+      "connected_regions": 7,
+      "outline_complexity_perimeter_over_hull": 3.543,
+      "vector_fragment_count_modern_trace": 7
+    },
+    {
+      "id": "R1909_C",
+      "original_title": "小學男生",
+      "year": 1909,
+      "commons_source_url": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E5%AD%B8%E7%94%B7%E7%94%9F_(Calligraphy_by_Rosanjin).svg",
+      "source_verified": true,
+      "official_sha1": "6d5e5aa23bf61e235d6dd1aa9b70e935c256ce16",
+      "actual_sha256": "e695bc4a712d619aa57848fdcdde11c1070b94153c682619b7ea19c07970c805",
+      "source_bytes": 16597,
+      "normalized_ink_coverage": 0.381233,
+      "skeleton_ink_width_normalized_q10_q50_q90": [
+        0.04165,
+        0.11293,
+        0.20202
+      ],
+      "static_ink_thick_thin_q90_q10_ratio": 4.8507,
+      "connected_regions": 6,
+      "outline_complexity_perimeter_over_hull": 2.9236,
+      "vector_fragment_count_modern_trace": 6
+    }
+  ],
+  "observed_commonalities_not_promoted": [
+    {
+      "id": "R3_OBS01",
+      "observed": "各作品静态墨线粗细第90百分位与第10百分位比值为3.19—4.85，中位数4.24。",
+      "label": "REPEATABLE_SURFACE_MEASURE",
+      "candidate_causal_hypothesis": "笔画视觉权重有明显的非均匀分配，但尚不能排除一般书法体也具有该特征。",
+      "required_contrast": "相同文字内容的一般书法字体/中性字体的像素对照；同等渲染分辨率"
+    },
+    {
+      "id": "R3_OBS02",
+      "observed": "骨架线宽中位数相对墨形高分别为0.11006、0.09722、0.11293。",
+      "label": "REPEATABLE_GEOMETRY_PROXY_NOT_VERIFIED_STYLE_SIGNATURE",
+      "candidate_causal_hypothesis": "同一出版类型的主要笔画视觉重量可能处在接近的比例区间，仍需字符复杂度和印刷尺寸控制。",
+      "required_contrast": "按同一文字、同一印刷大小重排中性字体，并用多内容重测"
+    },
+    {
+      "id": "R3_OBS03",
+      "observed": "外形粗糙度（轮廓周长/凸包周长）约2.92—3.63。",
+      "label": "POSSIBLE_DIGITIZER_AND_GLYPH_COMPLEXITY_CONFOUND",
+      "candidate_causal_hypothesis": "暂不进入创作方法。这个指标可能主要反映汉字复杂度和现代SVG数字化方式。",
+      "required_contrast": "扫描原版、不同复刻者矢量、匹配字符复杂度的对照"
+    },
+    {
+      "id": "R3_OBS04",
+      "observed": "同组的墨形边框内占比为0.3704、0.3812、0.5157，差异明显。",
+      "label": "NONINVARIANT_EXCLUDED",
+      "candidate_causal_hypothesis": "不可当作统一墨迹密度规则。",
+      "required_contrast": "控制字数与字内部件数量"
+    },
+    {
+      "id": "R3_OBS05",
+      "observed": "单个连接墨块数量为4、7、6；现代SVG片段数分别为4、7、6。",
+      "label": "NOT_HUMAN_STROKE_COUNT",
+      "candidate_causal_hypothesis": "不得把现代描摹文件的片段数视为设计师笔数或设计操作。",
+      "required_contrast": "必须有按真实笔画划分或原作者草稿/过程记录"
+    }
+  ],
+  "aggregate": {
+    "observed_n": 3,
+    "static_thick_thin_ratio_sorted": [
+      3.1901,
+      4.2426,
+      4.8507
+    ],
+    "median_ratio": 4.2426,
+    "normalized_width_median_sorted": [
+      0.09722,
+      0.11006,
+      0.11293
+    ],
+    "median_normalized_width": 0.11006
+  },
+  "acceptance_gates": {
+    "source_identification": "PASS_ALL_3_EXACT_DIGITAL_UPLOAD_BYTES",
+    "art_original_authoring_process": "UNKNOWN_NO_PROCESS_DATA",
+    "same_author_style_family": "HYPOTHESIS_ONLY",
+    "repeatable_creator_rules": "NOT_VALIDATED",
+    "unseen_new_character_generation": "NOT_EXECUTED",
+    "controlled_baseline_and_blind_quality_test": "NOT_EXECUTED",
+    "user_aesthetic_acceptance": "NOT_COLLECTED",
+    "copyright_clearance_for_commercial_applications": "NOT_ASSERTED"
+  },
+  "next_concrete_gate": {
+    "id": "R3_MATCHED_CONTENT_STYLE_DISCRIMINATION_AND_UNSEEN_TRANSFER",
+    "first_step": "使用相同文字内容和匹配输出尺寸，比较鲁山人原作与至少一种正常字体/书法字体的墨形粗细与重心，排除只属于所有中文字的普通特征；尤其检验R3_OBS01和R3_OBS02。",
+    "second_step": "核验早期作品的书法形态是否可定位为六朝楷书等具体传统技法，并以可追溯创作过程/真实笔画类型约束生成算子。",
+    "third_step": "只有经过有信息量的风格区分后，才冻结生成算子，在未见过的文字上对照盲测。",
+    "not_authorized": "没有擅自启动模型训练、收费推理、外部广告发布或生产主线改动"
+  },
+  "preservation": {
+    "formal_task_lock_revision": 355,
+    "formal_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "lock_mutated": false,
+    "source_R2_failures_preserved": true
+  }
+}
