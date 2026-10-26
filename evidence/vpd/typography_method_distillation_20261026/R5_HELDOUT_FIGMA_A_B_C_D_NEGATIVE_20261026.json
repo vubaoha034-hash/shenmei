@@ -1,0 +1,120 @@
+{
+  "schema_version": "vpd-typography-r5-heldout-role-derived-render-observation/1.0",
+  "recorded_at": "2026-10-26",
+  "primary_goal": "从专业文字作品中学习可迁移的创作操作，再在未参与训练的新字上展现明显高于基线的设计品质；不得把笔画提取/矢量化当作成功。",
+  "status": "R5_HOLDOUT_PIXELS_RENDERED__PROGRAM_TECH_PASS__AESTHETIC_GAIN_NOT_SHOWN__NOT_PROMOTED",
+  "source": {
+    "from": "Ma Shan Zheng / Google Fonts",
+    "source_font_license": "SIL Open Font License v1.1",
+    "source_font_sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+    "original_ttf_not_uploaded": true,
+    "source_glyphs_used": 48,
+    "mapped_terminal_exemplars": 294,
+    "role_bins_validated": [
+      "横:起点",
+      "横:终点",
+      "竖:起点",
+      "竖:终点",
+      "撇:终点",
+      "捺:起点",
+      "捺:终点",
+      "点:起点",
+      "折:起点",
+      "折:终点",
+      "钩:起点",
+      "钩:终点"
+    ],
+    "role_mapping_is_hypothesis_not_true_handwriting": true,
+    "data_commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "atlas_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json",
+    "atlas_blob_sha": "312f9104dc0239844e09c173e84e9cf8ab72c299"
+  },
+  "training_controls": {
+    "frozen_protocol_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_FROZEN_PROTOCOL.json",
+    "train_count": 48,
+    "targets": [
+      "泉",
+      "清风入梦"
+    ],
+    "overlap": [],
+    "target_median_data_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_HOLDOUT_CENTERLINES_FROZEN.json",
+    "renderer_program_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_FROZEN_FIGMA_RENDERER.js",
+    "renderer_sha": "f25898a23528ef23f3ff5838a69c0f60a798e6f7",
+    "renderer_was_frozen_before_run": true,
+    "no_target_source_font_bitmaps_used_to_construct_candidate_C": true
+  },
+  "results": {
+    "figma_file": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "538:2",
+    "board_id": "538:3",
+    "link": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=538-3",
+    "lines": [
+      {
+        "sample": "泉",
+        "stroke_count": 9,
+        "arms": [
+          "A neutral structure",
+          "B R2 global width",
+          "C author-family learned role/position terminal profile",
+          "D complete source font oracle"
+        ]
+      },
+      {
+        "sample": "清风入梦",
+        "stroke_counts": [
+          11,
+          4,
+          2,
+          11
+        ],
+        "arms": [
+          "A neutral structure",
+          "B R2 global width",
+          "C author-family learned role/position terminal profile",
+          "D complete source font oracle"
+        ]
+      }
+    ],
+    "editable_nodes_readback": true,
+    "exact_target_text_verified_by_frozen_Hanzi_and_D_text_nodes": true,
+    "actual_4_arm_visual_screenshot_inspected": true,
+    "role_origin_distribution": {
+      "sourceRolePlusPosition": 46,
+      "roleOnly": 24,
+      "insufficientRoleFallback": 4
+    },
+    "empirical_C_endpoints_total": 74,
+    "imported_raster_reference": false
+  },
+  "evaluation": {
+    "valid_new_char_controlled_render": true,
+    "initial_assistant_visual_review": "NEGATIVE_DIRECTIONAL_NOT_PROFESSIONAL; C and B share essentially same skeleton/appearance; C has slightly different thickness and terminations but not the brush mass/letterform decisions shown by D.",
+    "observed_small_gain": "No reliable artistic improvement visually identifiable over A/B; additional pixel differences are not quality evidence.",
+    "key_fail": "R5 applied authentic corpus-conditioned terminal width and tip curvature, but did NOT re-author entire stroke gestures, overall letterform structure, interstroke negative space or whole-word optical rhythm. The source font oracle D visibly remains a much more authored design.",
+    "no_human_blind_review": true,
+    "independent_human_approval": false,
+    "production_golden": false,
+    "do_not_repeat": "Do not re-tune C until it looks better: that would convert the controlled role-method test into unbounded per-glyph manual polish and fake method generalization."
+  },
+  "engineering_failures_preserved": {
+    "first_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40284849544",
+    "first_run_green_false_positive": true,
+    "zero_source_glyphs_due_numpy_2d_cross": true,
+    "first_run_failure_record": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_ATTEMPT01_ENGINEERING_FAILURE_20261026.json",
+    "correction": "Replaced 2-D np.cross with determinant; substantive CI role_atlas_gate_pass assertion; reran to extract 294 usable geometry-associated terminals",
+    "corrected_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40285078630",
+    "corrected_run_succeeded": true
+  },
+  "next_research_gate": {
+    "name": "R6_FULL_STROKE_GESTURE_AND_COMPONENT_SPACE_TRANSFER",
+    "reason": "Tip cap/width is too weak a representation of professional authored lettering.",
+    "required_evidence": "Same-style glyph family whole-stroke examples with reliably attributable stroke-role boundaries; a procedurally meaningful model of pen path curvature, turn and relative spatial rebalancing; avoid automatic source-to-target contour copying.",
+    "minimum_test": "On a new truly held-out glyph group freeze one generation each of A baseline/B R2/C R6 and D oracle; preserve exact characters; inspect meaningful changes in silhouette, negative space, and strong visual design; independent human blind review required to promote.",
+    "stop": "If whole-stroke examples cannot be reliably identified in finished glyph source without author annotations, label nonidentifiable. Seek documented design process or a font file with stroke-level source, not another number-driven cap tweak."
+  },
+  "formal_mainline": {
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "changed": false
+  }
+}
