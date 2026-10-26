@@ -1,0 +1,54 @@
+{
+  "schema": "vpd-typography-r6-visual-generation-test/1.0",
+  "date": "2026-10-26",
+  "objective": "Test whether explicit authoring decisions inferred from excellent lettering improve creation of genuinely new Chinese lettering; not copying or font geometry repair.",
+  "scope": "isolated research only; canonical business production lock and R0-R5 failures retained",
+  "source": {
+    "label": "Tc262 六島 calligraphy",
+    "file": "https://commons.wikimedia.org/wiki/File:Calligraphy_六島.svg",
+    "figma_verified": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=498-3",
+    "analysis_status": "direct visual observation of finished art only, not designer intent"
+  },
+  "frozen_task": {
+    "target": "归雁",
+    "codepoints": [
+      "U+5F52",
+      "U+96C1"
+    ],
+    "format": "one Chinese two-character artwork, horizontal, black ink, white background, no auxiliary text",
+    "direct_arm_A_prompt": "Only ONE professionally designed, independent two-character Chinese calligraphy wordmark containing exactly the simplified Chinese characters 归雁 in that order (U+5F52 U+96C1). Both characters must be legible and correctly constructed. Dark black Chinese brush ink on a pure white clean background. Horizontal two-character artwork, centered with ample quiet margin. No extra writing, no English, no pinyin, no typography samples, no explanation, no infographic, no process diagram, no collage, no seals, no brands, no people, no scenery, no decorative illustration or texture outside ink strokes. Deliver a single finished piece of lettering, not an instruction sheet. Use expert black-ink expressive lettering aesthetics with naturally energetic strokes. Do not use any external image as a source.",
+    "inferred_method_C_prompt": "Only ONE professionally designed, independent two-character Chinese calligraphy wordmark containing exactly the simplified Chinese characters 归雁 in that order (U+5F52 U+96C1). Both characters must be legible and correctly constructed. Dark black Chinese brush ink on a pure white clean background. Horizontal two-character artwork, centered with ample quiet margin. No extra writing, no English, no pinyin, no typography samples, no explanation, no infographic, no process diagram, no collage, no seals, no brands, no people, no scenery, no decorative illustration or texture outside ink strokes. Deliver a single finished piece of lettering, not an instruction sheet. Create from art-direction DECISIONS: the character 归 is lighter, moderately narrow, with an unmistakable separate left descending spine and a clearly readable 彐 section; never draw traditional 歸. The character 雁 is a somewhat weightier visual anchor: make its outer 厂 upper roof-to-left-fall gesture the main sweeping brush movement while the nested 亻+隹 remains accurately articulated and breathable, not merged into one dark blob. Give the two forms different amounts of ink, but a single shared writing momentum. Place the pair in a tense, optically balanced asymmetry with intentional internal negative spaces. Build the main gesture from a compact rich-ink start to energetic controlled taper and a few real dry-brush edge interruptions only along movement, not decorative splatter. Secondary strokes yield in width and spacing; avoid uniform tapering and generic font-like outline. Preserve recognizability at thumbnail size. Distill gestural hierarchy, stroke roles and living spatial rhythm from an expressive original reference, not its individual letter contours.",
+    "method_only_difference": "Source image NOT supplied to either arm; only C includes the frozen inferred creative decisions",
+    "engine": "Adobe Firefly image_generate, if connected and authorized; explicit prompt and seed",
+    "proposed_args": {
+      "outputFileType": "png",
+      "seed": 261026,
+      "aspectRatio": "1:1",
+      "resolutionLevel": "1MP",
+      "promptReasoner": "quality",
+      "n": 1
+    },
+    "max_calls": 2,
+    "no_hidden_best_of_n": true,
+    "rerun_policy": "No replay of failed text without new protocol and approval",
+    "no_secondary_image_reference": true
+  },
+  "output_criteria": {
+    "mandatory": [
+      "Exact simplified 归雁, no other glyphs",
+      "One actual completed Chinese lettering work, not infographic",
+      "Visible design quality; not a generic typed font",
+      "Shapes different from source reference and no path copying"
+    ],
+    "causal": "C must be judged better than A under identical same-model input budget by independent reviewer before tentative method promotion",
+    "fallback": "If A or C lacks correct text or generation tool lacks permission, mark protocol invalid/blocked, never claim method win",
+    "review": "Assistant may mark apparent defects; no approval claim until user reviews real output pixels; future second unseen text also required."
+  },
+  "prior_errors_avoided": [
+    "Image model returning a multi-section tutorial instead of a single final glyph",
+    "Confusing static stroke metrics with creator intent",
+    "Calling font tweaks or vectorization method-distillation",
+    "Running another uncontrolled endpoint/width based SVG deformation",
+    "Posthoc aesthetic retouches that destroy controlled comparisons"
+  ]
+}
