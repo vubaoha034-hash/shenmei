@@ -1,0 +1,225 @@
+{
+  "schema_version": "vpd-reference-typography-method-distillation/1.0",
+  "recorded_at": "2026-10-26",
+  "scope": "独立的中文字标创作方法研究；不更改正式视觉主线或生产授权",
+  "status": "SOURCE_MEASURED__METHOD_HYPOTHESES_FROZEN__UNSEEN_TRANSFER_NOT_EXECUTED",
+  "immutable_user_goal": "从其他设计师已完成的优秀文字作品中，逆向提取可解释、可控制、可复用的文字创作方法；在未见过的不同汉字、词组中证明方法确实改善了艺术质量和辨识度，而不是复刻参考字、靠人工重绘或只做Figma矢量化。",
+  "no_goal_drift_gates": [
+    "每次所谓进展都必须分类：SOURCE_STUDY / METHOD_CANDIDATE / TRANSFER_PIXELS / BLIND_REVIEW / VALIDATED_RULE；不得跨级宣称。",
+    "临摹参考、获得正确笔顺、描摹SVG、完成Figma画板、增加文档、下载字体、学会新工具均不等于蒸馏成功。",
+    "所有方法要描述可执行的设计操作、可观察的输入输出、可调参数、失败条件与反事实检验；不能只给审美形容词。",
+    "必须在不修改已冻结方法的情况下创作不同目标字；不得通过复制原字路径、贴原字笔画或人工逐字调整来伪造迁移。",
+    "同等模型、预算和条件进行对照，实际图片交由不知分组的评审；没有真实用户审美通过就不能升级成熟方法。",
+    "单张漂亮作品只能是案例，不证明可复用；至少两组未见文字、单字和多字结构均有可信增益。",
+    "过去被证明失败的几何拼接、修B内部、随意字体加装饰、假笔压和机器审美自评不能原样重跑。"
+  ],
+  "preserved_authority": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "research_only": true,
+    "production_lock_path": "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "expected_production_lock_revision": 355,
+    "mainline_contract_path": "continuity/vpd/MAINLINE_CONTRACT_20261001.json",
+    "mainline_modified": false,
+    "other_stopped_tasks_unchanged": true
+  },
+  "training_reference": {
+    "name": "Calligraphy 六島.svg",
+    "author": "Tc262",
+    "created": "2010-11-29",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calligraphy_%E5%85%AD%E5%B3%B6.svg",
+    "license": "CC BY 3.0; reuse requires attribution and indication of modifications",
+    "source_file_type": "SVG",
+    "original_dimensions": [
+      612,
+      792
+    ],
+    "figma_file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "figma_reference_frame": "498:3",
+    "figma_comparison_reference_frame": "509:20",
+    "observation_from_live_figma_20261026": {
+      "vector_fragment_count": 54,
+      "total_vector_vertices": 1155,
+      "fragment_bounding_box_frame_px": [
+        489.6,
+        633.6
+      ],
+      "fragment_bbox_count_above_one_pct_frame_bbox_area": 2,
+      "fragment_bbox_count_below_point_zero_one_pct_frame_bbox_area": 51,
+      "largest_fragment_nodes": [
+        "509:31",
+        "509:46"
+      ],
+      "major_note": "只统计拆分后的矢量组件及外接矩形；这些数值不能推断作者实际下笔次数、真实墨色面积或当年的创作顺序。",
+      "visible_features": [
+        "整体为强烈不规则的书写形态，而非统一粗细的字体排印",
+        "大面积实墨块与较细、渐细的运动笔迹并存",
+        "上下两字符的形态、间隔和重心明显不对称",
+        "局部边缘存在墨迹破碎、留空和细小碎片"
+      ],
+      "unknown": [
+        "原作者实际笔顺与绘制工具",
+        "笔压与速度",
+        "作者的创作意图与迭代过程",
+        "原始SVG是否直接来自数字手写"
+      ]
+    }
+  },
+  "failed_control": {
+    "name": "风 B/B1",
+    "figma_board": "509:3",
+    "figma_original_B_node": "509:13",
+    "source_B_vertex_count": 366,
+    "established_failure": "B字型外框部分得到认可，但内部扫笔遮挡结构；B1改成几何交叉后可读性改善，但失去笔势一致性和审美品质。",
+    "important_caveat": "B与六島不是同字同内容的参考复原比较，不据此计算绝对相似度。",
+    "transfer_status": "NEGATIVE_EXAMPLE_NOT_SUCCESS"
+  },
+  "procedural_method_candidate": {
+    "id": "CALLIGRAPHIC_GESTURE_GRAMMAR_R1",
+    "claim_type": "FALSIFIABLE_HYPOTHESES_NOT_DESIGNER_INTENT",
+    "input_contract": {
+      "required": [
+        "目标汉字准确文本及合法字形结构",
+        "学习参考作品与可追溯来源",
+        "目标为单字或多字字标的设计任务",
+        "同等预算的对照生成条件"
+      ],
+      "forbidden": [
+        "从源SVG直接迁移原字路径到不同字",
+        "跳过正确笔画骨架",
+        "依靠原字纹理贴图掩盖错字"
+      ]
+    },
+    "operations": [
+      {
+        "step": 1,
+        "op": "STRUCTURE_GUARD",
+        "implementation": "先建立目标字/部件/关键笔画与负空间拓扑；锁定可辨结构，简繁不可随意混用",
+        "controls": [
+          "target_unicode",
+          "stroke_topology",
+          "critical_gaps"
+        ],
+        "failure_condition": "任何一字不可辨或错字即失败"
+      },
+      {
+        "step": 2,
+        "op": "VISUAL_WEIGHT_ASSIGNMENT",
+        "implementation": "按目标字笔画角色分配主笔和辅笔的视觉权重，不复制来源笔画位置；粗细对比是可调量而非统一加粗",
+        "controls": [
+          "hero_stroke_roles",
+          "weight_contrast",
+          "center_of_mass"
+        ],
+        "failure_condition": "视觉主笔压垮识别骨架"
+      },
+      {
+        "step": 3,
+        "op": "GESTURE_AND_TERMINALS",
+        "implementation": "在主笔上设计起笔、转折、连接、提按代理与收笔运动；将观察到的边缘形态视为静态代理，不冒称掌握真实笔压",
+        "controls": [
+          "gesture_direction",
+          "taper_profile",
+          "turning_tension",
+          "connection_policy"
+        ],
+        "failure_condition": "直线几何拼贴或收笔与运动方向不一致"
+      },
+      {
+        "step": 4,
+        "op": "NEGATIVE_SPACE_BALANCE",
+        "implementation": "把字内空隙与多字之间的呼吸感视为主动形状；每次改笔画同步检查可读性和重心",
+        "controls": [
+          "counter_opening",
+          "gap_distribution",
+          "asymmetry"
+        ],
+        "failure_condition": "内部空隙闭塞或无意义对称化"
+      },
+      {
+        "step": 5,
+        "op": "CONTROLLED_MATERIALIZATION",
+        "implementation": "最后才加入有限的毛边、飞白、微碎片；纹理服从已有骨架与墨迹方向，禁止随机噪点代替笔势",
+        "controls": [
+          "edge_breakup_role",
+          "dry_ink_locality",
+          "texture_strength"
+        ],
+        "failure_condition": "去掉纹理后主形体本身不成立"
+      }
+    ],
+    "causal_hypotheses": [
+      {
+        "id": "H01",
+        "observation": "实墨大形与极细笔迹同时出现",
+        "hypothesis": "按笔画功能分配力量差异比统一粗细更有书写张力",
+        "ablation": "把笔画权重改成一致，不改其余变量",
+        "not_yet_validated": true
+      },
+      {
+        "id": "H02",
+        "observation": "上下字符的中心位置与空隙不平均",
+        "hypothesis": "依字符结构安排不对称留白比单纯几何居中更自然",
+        "ablation": "强制等宽、等间距、对称布局",
+        "not_yet_validated": true
+      },
+      {
+        "id": "H03",
+        "observation": "墨迹破碎局部而不是均匀覆盖",
+        "hypothesis": "纹理与笔势发生位置有关，不能用全局随机材质替代",
+        "ablation": "保留总纹理量但随机打散局部位置",
+        "not_yet_validated": true
+      }
+    ],
+    "abstraction_note": "这套方法仍是由单张成品反推的候选，不是原作者真实工作流程。需更多不同作品及制作过程证据才能升级。"
+  },
+  "transfer_experiment_freeze": {
+    "purpose": "验证学到的是字形创作操作，不是参考图片外观或已见字符",
+    "status": "NOT_RUN",
+    "development_diagnostic": "风（已见、只定位失败，不计未见迁移）",
+    "hidden_holdouts": {
+      "count": 2,
+      "policy": "在本次方法/变量冻结后，由独立评审者选择；一组结构不同的单字和一组多字字标。正式测前执行者不接触评审目标。",
+      "not_preselected_by_generator": true
+    },
+    "arms": [
+      {
+        "id": "A",
+        "method": "无参考、无蒸馏规则的相同生成器基线"
+      },
+      {
+        "id": "B",
+        "method": "仅直接提供原始参考图、无蒸馏规则"
+      },
+      {
+        "id": "C",
+        "method": "仅给文字化/结构化方法候选、无源图"
+      },
+      {
+        "id": "D",
+        "method": "同B原图再加同一方法候选"
+      }
+    ],
+    "equal_budget": "每一目标每一组只能固定一次生成，模型、画幅、内容与可观察参数一致；不得隐藏变体或额外手工修正",
+    "primary_causal_comparisons": [
+      "D vs B：加入蒸馏方法是否比直接看参考有效",
+      "C vs A：没有参考原图时方法本身是否有效"
+    ],
+    "ablation_followup": "只有主测试出现审美收益，再逐项移除H01/H02/H03验证是否真实因果，先不扩大调用预算。",
+    "blind_review": {
+      "human_review_required": true,
+      "criteria": [
+        "汉字结构与简繁正确",
+        "辨识清晰",
+        "专业艺术品质（绝对评分）",
+        "来源风格家族联系但无原字轮廓复制",
+        "不同字符上的稳定性"
+      ],
+      "acceptance_rule": "至少两个未见测试均结构通过，方法组在盲评中相对基线有明确且可重复优势，并获得用户明确审美认可，才能进入第二轮；仅相对分数好但作品不可用依然失败。"
+    },
+    "resource_authorization": "本记录没有授权任何模型生成次数、付费训练或Figma作品写入；实验需沿原有授权边界执行。",
+    "current_result": "NO_UNSEEN_OUTPUTS / NO_BLIND_VOTES / NO_METHOD_PROMOTION"
+  },
+  "immediate_next_action": "在方法冻结且得到相应生成范围后，用同一输入预算完成A/B/C/D的真实未见文字对照，提交匿名作品供人工盲评；只认可图片上的提升，不认可文档数量。",
+  "only_success_definition": "UNSEEN_CHARACTER_METHOD_TRANSFER_CONFIRMED_BY_HUMAN_BLIND_REVIEW"
+}
