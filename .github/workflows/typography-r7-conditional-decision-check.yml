@@ -1,0 +1,41 @@
+name: R7 Design Decision Applicability Gate
+on:
+  push:
+    branches:
+      - research/typography-r7-conditional-decision-20261026
+    paths:
+      - .github/workflows/typography-r7-conditional-decision-check.yml
+permissions:
+  contents: read
+jobs:
+  condition-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test source-bounded decision on unknown glyphs and negative cases
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/typography_r7/r7_decision_compiler.py > /tmp/r7_decision_result.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/r7_decision_result.json'))
+          assert d['method_type']=='CONDITIONAL_DECISION_OPERATOR_NOT_VISUAL_RENDERER'
+          assert d['always_apply_baseline_correct']==3
+          assert d['conditioned_rule_correct']==7
+          assert d['unknown_cases_rejected']==1
+          assert d['known_condition_cases']==7
+          assert len(d['results'])==8
+          assert all(t['correct'] for t in d['results'])
+          assert all(t['details'].get('pixels_generated') is False for t in d['results'] if t['actual']=='APPLICABLE')
+          print('R7_DECISION_GATE_PASS',json.dumps({
+            'tests':len(d['results']),
+            'conditioned_rule_correct':d['conditioned_rule_correct'],
+            'baseline_correct':d['always_apply_baseline_correct'],
+            'unknowns_fail_closed':d['unknown_cases_rejected'],
+            'quality_validated':False},ensure_ascii=False))
+          PY
