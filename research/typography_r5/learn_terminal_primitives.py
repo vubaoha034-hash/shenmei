@@ -88,7 +88,7 @@ def terminal_geom(ep,route,dist):
     factors=[round(float(width[min(i,len(width)-1)]/med),4) for i in [0,2,4,6,8,10,14,18,22]]
     e=np.array(route[0][::-1],dtype=float);m=np.array(route[6][::-1],dtype=float);n=np.array(route[min(20,len(route)-1)][::-1],dtype=float)
     vx=n-e;vlen=max(np.linalg.norm(vx),1e-6)
-    bend=float(np.cross(m-e,vx)/vlen**2)
+    bend=float(((m[0]-e[0])*vx[1]-(m[1]-e[1])*vx[0])/vlen**2)
     return {"terminal_profile":factors,"terminal_base_px":round(med,3),"bend_norm":round(bend,5),
       "endpoint_xy":[int(ep[1]),int(ep[0])],"trace_pixels":len(route)}
 def build():
