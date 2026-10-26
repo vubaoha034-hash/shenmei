@@ -20,7 +20,11 @@ FONTS=[
  ("Zhi Mang Xing","zhimangxing/ZhiMangXing-Regular.ttf",4063532,"d037d1f00395175de01de33e62957c30a008a1b1"),
  ("Long Cang","longcang/LongCang-Regular.ttf",5162508,"363bb08696fe4d3827bd36d3d2fbc028d1205161"),
  ("Liu Jian Mao Cao","liujianmaocao/LiuJianMaoCao-Regular.ttf",4951804,"f380deef04a5ee6d5af2c6fba60d1613d831c1aa"),
- ("Ma Shan Zheng","mashanzheng/MaShanZheng-Regular.ttf",5857936,"11bbfb9867d70612158229d037e7a5f622bd0e38")
+ ("Ma Shan Zheng","mashanzheng/MaShanZheng-Regular.ttf",5857936,"11bbfb9867d70612158229d037e7a5f622bd0e38"),
+ ("Iansui","iansui/Iansui-Regular.ttf",9420560,"1ecd53c7c6badf6c04d9623db769ce59d50f12b7"),
+ ("LXGW WenKai TC Bold","lxgwwenkaitc/LXGWWenKaiTC-Bold.ttf",12881104,"4c48b0882af4edb7b161327ca1726ffe6da3b282"),
+ ("Klee One SemiBold","kleeone/KleeOne-SemiBold.ttf",8905128,"aa30525e375c811d763675277cb3ae3ed56ddcbc"),
+ ("Yuji Mai","yujimai/YujiMai-Regular.ttf",8496292,"5d1d1e6899c3c1483f8ed774551e324d9785ca03")
 ]
 def original_receipt():
  r=json.loads(SRC.read_text(encoding="utf-8"))
