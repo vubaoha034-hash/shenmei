@@ -1,0 +1,53 @@
+name: R10 Creator-authored Typeface Stage Evidence Byte Audit
+on:
+  push:
+    branches:
+      - research/typography-r10-authored-stage-images-20261027
+    paths:
+      - .github/workflows/typography-r10-authored-stage-evidence.yml
+permissions:
+  contents: write
+jobs:
+  verify-original-stage-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare isolated image decoder
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+      - name: Read exact creator-hosted images, do not save copyrighted bytes
+        run: python research/typography_r10/probe_real_authored_images.py
+      - name: Preserve pass OR failure evidence without photo data
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json'))
+          assert d['no_third_party_images_committed'] is True
+          assert all(k.get('sha256') for k in d['complete_sources'])
+          assert d['source_visual_pixels_used_for_training'] is False
+          print('R10_RECOVERABLE_ACTUAL_EVIDENCE',d['downloaded_sources'],len(d['missing_sources']))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r10): creator stage image source checksums, dimensions and bounded access errors"
+            git push origin HEAD:research/typography-r10-authored-stage-images-20261027
+          fi
+      - name: Hard source gate - never accept 0-stage CI success
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json'))
+          assert d['source_gate_pass'] is True, 'R10_ART_AUTHOR_PHASE_SOURCE_NOT_VERIFIED'
+          assert d['direct_before_after_sources_downloaded']>=1
+          assert d['downloaded_sources']>=2
+          print('R10_SOURCE_IMAGES_REAL_AND_ACCESSIBLE_PASS')
+          PY
