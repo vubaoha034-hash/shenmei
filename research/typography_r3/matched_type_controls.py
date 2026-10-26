@@ -25,8 +25,10 @@ MODES = ("aspect_preserving", "match_ink_bbox")
 
 def font_location(family):
     spec = subprocess.check_output(
-        ["fc-match", "-f", "%{file}|%{index}", family], text=True).strip()
-    p, i = spec.split("|")
+        ["fc-match", "-f", "%{file}|%{index}|%{family}", family], text=True).strip()
+    p, i, actual_family = spec.split("|", 2)
+    if family not in actual_family:
+        raise ValueError("FONT_FALLBACK_UNSUPPORTED_"+family+"_ACTUAL_"+actual_family)
     return pathlib.Path(p), int(i)
 
 def render_font(text, font):
