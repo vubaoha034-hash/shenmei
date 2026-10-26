@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-r10-actual-author-before-after-observation/1.0",
+  "date": "2026-10-27",
+  "objective": "Observe how professionals actually revised glyphs across published stages and make their choices auditable, separate from guessing static texture parameters.",
+  "repository_branch": "research/typography-r10-authored-stage-images-20261027",
+  "official_source_byte_audit": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r10-authored-stage-images-20261027/research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+  "verified_source_count": 4,
+  "source_creator_count": 3,
+  "aesthetic_improvement_on_new_glyphs_proven": false,
+  "actual_experiments_past": [
+    "R5 role-based tips no visual design uplift",
+    "R8 conservative compensation passes geometry not aesthetics",
+    "R9 density-based component width no aesthetic uplift"
+  ],
+  "source_observations": [
+    {
+      "id": "HY_STAGE_TRAINING",
+      "creator": "汉仪字库",
+      "publisher": "DFA Design for Asia Awards official showcase",
+      "original_page": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "verified_image_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p09.jpg",
+      "verified_sha256": "a2e8d79a85582e25e07c4d7331a42d23f0a63b3b4afd52740a74f7efbaca5dcd",
+      "physical_evidence": "A published illustration presents identical historical-style Chinese characters in three art-production stages (gray reference, hand-painted first draft, finished black glyph). Separate final glyphs show strongly altered black masses and edge endings.",
+      "author_stated_process": "The award entry attributes a bold calligraphic design, high-contrast stroke strength and decorative wavy terminals to Hanyi's Li-inspired typeface.",
+      "not_claimed": "This is NOT raw calligrapher pen path, editable sketches, nor one-to-one registration of source glyph components. It cannot reveal exact spline equations or training of generative model.",
+      "operational_hypothesis": "First reconstruct a coherent stroke gesture and positive/negative shape at full-glyph level, then detail the edge; a finished contour model should not be reduced to uniformly tapered HanziWriter centerlines.",
+      "evidence_class": "VERIFIED_ACTUAL_AUTHOR_PUBLISHED_MULTI_STAGE_IMAGE",
+      "style_scope": "expressive calligraphic font; not automatically a transferable 六島 design program"
+    },
+    {
+      "id": "TPTQ_CONSISTENCY_REVISION",
+      "creator": "Typotheque / Zheng Chuyang",
+      "original_page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "verified_image_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "verified_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "physical_evidence": "Actual same-character outline comparison marks BEFORE in red and AFTER in cyan/blue; authored edit is visible on the contour. The image's red and blue pixels were both verified.",
+      "author_stated_process": "Lead designer explicitly reports an experimental widening of 口 to appear contemporary; the choice was reversed after thousands of glyphs made the family-wide imbalance clear. Evaluations occur at hundreds/thousands of characters.",
+      "not_claimed": "The revised glyph's small differences may not be the 口-radical reversal itself. Do NOT map the 口 anecdote onto this image's exact outline without direct author statement.",
+      "operational_hypothesis": "A local motif change is a conditional candidate and must survive a multi-glyph density and rhythm review; otherwise retract it even if individual glyph is nicer.",
+      "counterexample": "For a two-character independent commercial wordmark, the review should compare both glyphs in logo size; a 40,000-character font family criterion cannot simply be copied unchanged.",
+      "evidence_class": "VERIFIED_DIRECT_AUTHOR_BEFORE_AFTER_AND_SEPARATE_AUTHOR_PROCESS_EXPLANATION",
+      "style_scope": "large CJK font-family quality assurance, not freehand calligraphic poster"
+    },
+    {
+      "id": "ARPHIC_CONDENSED_OPTICAL_ADJUSTMENT",
+      "creator": "Arphic 文鼎字型 / Lin Mickey",
+      "original_page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "verified_image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b405c71709175.5bced77481eb7.jpg",
+      "verified_sha256": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+      "secondary_image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/05da9371709175.5bced7748149d.jpg",
+      "secondary_sha256": "b42f3b4a7e2a21994446c0450a793f87385d928647b76dace20d3f784339b412",
+      "physical_evidence": "Creator-operated project page presents Before/After paired Chinese sample phrases and zoomed local terminal/counter adjustments at condensed C80 design; separate detail sheet shows changes to standard character proportions.",
+      "author_stated_process": "The published creator page describes modern cut corners, open center counters, balanced white space and two-dimensional variable font weight/width styles. The source images label their own before/after adjustment.",
+      "not_claimed": "A condensed variant is not necessarily a chronological drafting stage. No claim about the original designer's brush motion or about permission to redistribute the proprietary font.",
+      "operational_hypothesis": "When narrowing a word or stroke, reconstruct counters and hooks optically rather than horizontally scaling every path. Reject if narrow version is illegible or loses character-family consistency.",
+      "evidence_class": "VERIFIED_CREATOR_SHOWCASE_LOCAL_BEFORE_AFTER",
+      "style_scope": "condensed screen/display readable type; visual craft differs from energetic ink logo"
+    }
+  ],
+  "admit_after": {
+    "source_gate": true,
+    "exact_image_bytes_authentic": true,
+    "designer_change_annotation_ready": true,
+    "component_specific_movement_labels_verified": "SOME_VISUAL_CASES_ONLY",
+    "actual_designer_file_edit_history": false,
+    "new_character_transfer_images": false,
+    "independent_human_blind": false,
+    "usable_automatic_generation_method": false,
+    "financial_expenditure_authorized": false
+  },
+  "critical_project_correction": "R1-R9 optimized a mathematical transformation of an already chosen normalized skeleton. Actual creator evidence is iterative, goal-conditioned selection and reversal of glyph-level decisions across multiple characters; no source can justify a universal thickness/spacing formula.",
+  "next_safest_stage": "Freeze ONE visually documented author decision with an original before/after pair, validate effect on multiple held-out glyphs with paired real visual outputs and equal budget; no promotion absent independent aesthetic preference.",
+  "added_paid_software_or_image_api": false
+}
