@@ -1,0 +1,131 @@
+{
+  "schema": "vpd-lettering-distillation-failure-ledger/1.0",
+  "date": "2026-10-26",
+  "objective": "蒸馏他人优秀汉字视觉创作程序，能在未知汉字与多字字标中稳健生成高级、准确、可编辑的新作品；不可用局部手工修图代替学会方法。",
+  "owner_scope": "Only independent lettering-method study; keep canonical business task lock intact.",
+  "claim_classification": [
+    "SOURCE_STUDY",
+    "TECHNICAL_DIAGNOSTIC",
+    "METHOD_CANDIDATE",
+    "HELDOUT_PIXELS",
+    "INDEPENDENT_HUMAN_BLIND",
+    "VALIDATED_REUSABLE_METHOD"
+  ],
+  "historic_failures": [
+    {
+      "id": "F00_GOAL_DRIFT",
+      "severity": "BLOCK",
+      "fact": "曾把蒸馏系统目标替换成单字修复、Figma生产或添加工具。",
+      "forbidden": "Figma临摹/单次漂亮字/文档数量不能算成功。",
+      "evidence": "evidence/vpd/shanyeji/system_level_holdout_validation_v1/PROJECT_GOAL_DRIFT_CORRECTION_RECORD_V1.json"
+    },
+    {
+      "id": "F01_INVALID_CHARACTER",
+      "severity": "BLOCK",
+      "fact": "风字实验曾输出繁体風并未保存B版造型，技术画板不能掩盖错字。",
+      "forbidden": "任何错字、简繁不符即硬失败。",
+      "evidence": "evidence/vpd/wind_b_feedback_repair_20261025/B_PARTIAL_ACCEPTANCE_ONE_REPAIR_REJECTED.json"
+    },
+    {
+      "id": "F02_FONT_PATCHED_DECORATION",
+      "severity": "BLOCK",
+      "fact": "旧B1、成熟字体加线条、材料纹理试验被用户否决，临摹形似不等于美学。",
+      "forbidden": "禁止把现成字体随机加纹理/加装饰、局部磨平当新方法。",
+      "evidence": "evidence/vpd/p1_typography_research_sandbox_v1/TYPOGRAPHY_METHOD_SANDBOX_TEST04_HUMAN_FAIL_20260918.json"
+    },
+    {
+      "id": "F03_NO_IDENTICAL_ROLE_DYNAMICS",
+      "severity": "BLOCK",
+      "fact": "R2按角度和粗细包络迁移BCSS两字笔画到云和潮，未带来专业审美增益。",
+      "forbidden": "禁止再重复仅角度、长度、比例分配或三档笔宽重画。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R2_REAL_STROKE_PROFILE_ABLATION_20261026.json"
+    },
+    {
+      "id": "F04_STATIC_SOURCE_NOT_PEN_MOTION",
+      "severity": "BLOCK",
+      "fact": "Tomoe 16点及六島SVG轮廓不能重建真实笔压、速度和历史创作流程。",
+      "forbidden": "不得把SVG曲线与静态墨形宽度当真实手写原始轨迹。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R2_STATIC_CONTOUR_TRANSFER_RECHECK_20261026.json"
+    },
+    {
+      "id": "F05_IMAGE_GENERATOR_INFOGRAPHIC",
+      "severity": "BLOCK",
+      "fact": "两次ChatGPT图片生成回研究信息图而非隔离的新字字稿，Figma AI该文件不可用。",
+      "forbidden": "控制条件失效时不能继续把这些输出算字形生成试验。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/TRANSFER_PILOT_R1_RESULT_20261026.json"
+    },
+    {
+      "id": "F06_SOURCE_FAMILY_AND_RIGHTS",
+      "severity": "BLOCK",
+      "fact": "多件同作者/字体家族的确切来源、同风格和商业许可不能从网页标题推断。",
+      "forbidden": "必须核验来源SHA、数字描摹≠作者原稿、权利审查与数据集许可。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R3_ROSANJIN_VERIFIED_SOURCE_METRICS_20261026.json"
+    },
+    {
+      "id": "F07_DUPLICATE_FONT_PIXELS",
+      "severity": "BLOCK",
+      "fact": "Yuji Syuku/Boku/Mai 3个文件在同文案渲染逐像素相同，有效四独立形体而非六。",
+      "forbidden": "只按字体名或不同文件sha算多源对照是伪独立。必须渲染后校验像素。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R4_EXPRESSIVE_FONT_AND_REAL_CREATOR_PROCESS_AUDIT_20261026.json"
+    },
+    {
+      "id": "F08_FALSE_STYLE_SIGNATURE",
+      "severity": "BLOCK",
+      "fact": "R3/R4粗细指标能区分普通排印但轮廓复杂度不稳定，且不揭示具体笔画为何这样处理。",
+      "forbidden": "不允许从显著统计数直接推出设计师个人创作机制或美学优势。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R3_SAME_TEXT_FONT_CONTROL_RESULT_20261026.json"
+    },
+    {
+      "id": "F09_CI_GREEN_ZERO_SAMPLES",
+      "severity": "BLOCK",
+      "fact": "R5初次NumPy二维叉积异常导致48字全失败、0样本，但旧CI仍显示green。",
+      "forbidden": "训练原型数为0或类别不足时必须CI硬失败，不能写完成。",
+      "evidence": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_ATTEMPT01_ENGINEERING_FAILURE_20261026.json"
+    },
+    {
+      "id": "F10_WEAK_ROLES_NOT_SEMANTIC",
+      "severity": "BLOCK",
+      "fact": "R5源字实际墨形端点近似配对HanziWriter笔画类别，即使得出294条可追溯样本，仍不等于原设计师本人的笔顺/作品过程。",
+      "forbidden": "类别配对置信度不足必须标假设，不允许宣称书法过程已还原。",
+      "evidence": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r5-role-primitives-20261026/research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json"
+    },
+    {
+      "id": "F11_ROLE_END_ONLY_TASTE_FAIL",
+      "severity": "BLOCK",
+      "fact": "R5真实在泉／清风入梦输出A/B/C/D并独立像素读图，角色收笔与微弯迁移没有让C变成比基线更强的艺术字。",
+      "forbidden": "不无限调参、不后验挑好图、不直接晋升规则；须换表达层级到整笔动作、部件和空间节奏。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R5_HELDOUT_FIGMA_A_B_C_D_NEGATIVE_20261026.json"
+    }
+  ],
+  "admissible_technical_progress_conditions": [
+    "Exact byte/source license verified",
+    "Source/target codepoint disjoint",
+    "Same-char A/B/C and D oracle image exists",
+    "No duplicated font image counted as independence",
+    "Actual pixel read and exact Chinese glyph checked",
+    "All losses archived",
+    "Real human blind judgment separately marked"
+  ],
+  "only_method_promotion_when": [
+    "Unseen new content is correct and visually recognizable",
+    "A/B/C equal-budget prompts/procedures locked",
+    "C improves visual quality compared with both A and B across at least two structurally different withheld texts",
+    "Positive gain is not achieved by source oracle target glyph copying or post-hoc hand tuning",
+    "Independent human reviewer (user) actually accepts the artistic quality and reference logic"
+  ],
+  "known_unknown": [
+    "Historical author movement dynamics in old SVG",
+    "Commercial cross-jurisdiction rights for mixed data",
+    "Whether semantic role labels are actually the artist's own",
+    "How many samples suffice for stable unique style transfer across families"
+  ],
+  "current_stage": "R5_HELDOUT_NEGATIVE_AND_ARCHIVED",
+  "next_true_focus": "Whole stroke gesture, turn structure, component/radical identity, negative-space interaction; if originals unidentifiable, seek genuine training exemplars or designer work-process files.",
+  "business_lock_preserved": true,
+  "source_of_truth_order": [
+    "Current user objective",
+    "this R0-R5 negative ledger",
+    "actual immutable experiment receipts in branch",
+    "CURRENT_TASK_LOCK (formal poster work only)"
+  ]
+}
