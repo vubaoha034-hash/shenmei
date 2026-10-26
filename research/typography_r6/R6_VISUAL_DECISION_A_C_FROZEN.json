@@ -17,7 +17,7 @@
     ],
     "format": "one Chinese two-character artwork, horizontal, black ink, white background, no auxiliary text",
     "direct_arm_A_prompt": "Only ONE professionally designed, independent two-character Chinese calligraphy wordmark containing exactly the simplified Chinese characters 归雁 in that order (U+5F52 U+96C1). Both characters must be legible and correctly constructed. Dark black Chinese brush ink on a pure white clean background. Horizontal two-character artwork, centered with ample quiet margin. No extra writing, no English, no pinyin, no typography samples, no explanation, no infographic, no process diagram, no collage, no seals, no brands, no people, no scenery, no decorative illustration or texture outside ink strokes. Deliver a single finished piece of lettering, not an instruction sheet. Use expert black-ink expressive lettering aesthetics with naturally energetic strokes. Do not use any external image as a source.",
-    "inferred_method_C_prompt": "Only ONE professionally designed, independent two-character Chinese calligraphy wordmark containing exactly the simplified Chinese characters 归雁 in that order (U+5F52 U+96C1). Both characters must be legible and correctly constructed. Dark black Chinese brush ink on a pure white clean background. Horizontal two-character artwork, centered with ample quiet margin. No extra writing, no English, no pinyin, no typography samples, no explanation, no infographic, no process diagram, no collage, no seals, no brands, no people, no scenery, no decorative illustration or texture outside ink strokes. Deliver a single finished piece of lettering, not an instruction sheet. Create from art-direction DECISIONS: the character 归 is lighter, moderately narrow, with an unmistakable separate left descending spine and a clearly readable 彐 section; never draw traditional 歸. The character 雁 is a somewhat weightier visual anchor: make its outer 厂 upper roof-to-left-fall gesture the main sweeping brush movement while the nested 亻+隹 remains accurately articulated and breathable, not merged into one dark blob. Give the two forms different amounts of ink, but a single shared writing momentum. Place the pair in a tense, optically balanced asymmetry with intentional internal negative spaces. Build the main gesture from a compact rich-ink start to energetic controlled taper and a few real dry-brush edge interruptions only along movement, not decorative splatter. Secondary strokes yield in width and spacing; avoid uniform tapering and generic font-like outline. Preserve recognizability at thumbnail size. Distill gestural hierarchy, stroke roles and living spatial rhythm from an expressive original reference, not its individual letter contours.",
+    "inferred_method_C_prompt": "Only ONE professionally designed, independent two-character Chinese calligraphy wordmark containing exactly the simplified Chinese characters 归雁 in that order (U+5F52 U+96C1). Both characters must be legible and correctly constructed. Dark black Chinese brush ink on a pure white clean background. Horizontal two-character artwork, centered with ample quiet margin. No extra writing, no English, no pinyin, no typography samples, no explanation, no infographic, no process diagram, no collage, no seals, no brands, no people, no scenery, no decorative illustration or texture outside ink strokes. Deliver a single finished piece of lettering, not an instruction sheet. Art-direction decisions: 归 is narrower and lighter, keeping its left downward stroke separate from a correctly formed 彐; NEVER write 歸. 雁 carries the weight: a major upper 厂 roof that turns into a long falling left stroke; its nested 人 and 隹 must have visibly open internal gaps. Give the two characters different ink weight yet one shared movement. Strong dark anchor marks transition into a thin energetic brush tail; keep material breakup sparse and aligned to stroke direction, not random noise. Secondary strokes yield for the main gesture. Shape the gaps as intentional silhouettes, with dynamic unequal optical balance, not a font specimen or standardized size/weight.",
     "method_only_difference": "Source image NOT supplied to either arm; only C includes the frozen inferred creative decisions",
     "engine": "Adobe Firefly image_generate, if connected and authorized; explicit prompt and seed",
     "proposed_args": {
@@ -26,7 +26,8 @@
       "aspectRatio": "1:1",
       "resolutionLevel": "1MP",
       "promptReasoner": "quality",
-      "n": 1
+      "n": 1,
+      "locale": "zh-CN"
     },
     "max_calls": 2,
     "no_hidden_best_of_n": true,
@@ -50,5 +51,6 @@
     "Calling font tweaks or vectorization method-distillation",
     "Running another uncontrolled endpoint/width based SVG deformation",
     "Posthoc aesthetic retouches that destroy controlled comparisons"
-  ]
+  ],
+  "revision": "pre-generation prompt compatibility correction"
 }
