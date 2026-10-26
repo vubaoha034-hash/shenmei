@@ -1,0 +1,119 @@
+{
+  "schema_version": "vpd-lettering-r3-same-author-source-audit/1.0",
+  "date": "2026-10-26",
+  "project": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "objective": "将不同优秀设计师的已完成文字作品蒸馏为可解释、可调整、可复用的文字创作方法，必须在未见文字上经可见像素和盲评证明设计质量提升，不能靠模仿、矢量化或几何笔宽调整冒充。",
+  "stage": "COHERENT_AUTHOR_CANDIDATES_FOUND__AUDIT_PROGRAM_SMOKE_PASSED__ACTUAL_SOURCE_SVG_MISSING",
+  "artist": "Kitaoji Rosanjin 北大路魯山人",
+  "candidates": [
+    {
+      "id": "R1908_A",
+      "title": "實業之日本",
+      "year": 1908,
+      "role": "magazine masthead",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%E5%AF%A6%E6%A5%AD%E4%B9%8B%E6%97%A5%E6%9C%AC_(Calligraphy_by_Rosanjin).svg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/%E5%AF%A6%E6%A5%AD%E4%B9%8B%E6%97%A5%E6%9C%AC_%28Calligraphy_by_Rosanjin%29.svg",
+      "svg_dimensions_px": [
+        1000,
+        288
+      ],
+      "byte_acquired": false,
+      "rights": "Commons declares PD but uploader talk lists this file among 2026 deletion notifications; case status unresolved; NOT rights-cleared."
+    },
+    {
+      "id": "R1909_B",
+      "title": "婦人世界",
+      "year": 1909,
+      "role": "magazine masthead",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%E5%A9%A6%E4%BA%BA%E4%B8%96%E7%95%8C_(Calligraphy_by_Rosanjin).svg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/%E5%A9%A6%E4%BA%BA%E4%B8%96%E7%95%8C_%28Calligraphy_by_Rosanjin%29.svg",
+      "svg_dimensions_px": [
+        660,
+        207
+      ],
+      "byte_acquired": false,
+      "rights": "Commons declared PD, specific reuse conditions and underlying reproduction still need verification."
+    },
+    {
+      "id": "R1909_C",
+      "title": "小學男生",
+      "year": 1909,
+      "role": "magazine masthead",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E5%AD%B8%E7%94%B7%E7%94%9F_(Calligraphy_by_Rosanjin).svg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/%E5%B0%8F%E5%AD%B8%E7%94%B7%E7%94%9F_%28Calligraphy_by_Rosanjin%29.svg",
+      "svg_dimensions_px": [
+        800,
+        212
+      ],
+      "byte_acquired": false,
+      "rights": "Commons declared PD, specific reuse conditions and underlying reproduction still need verification."
+    }
+  ],
+  "heldout": {
+    "title": "星岡",
+    "year": "1920s",
+    "role": "cross-era visual holdout not training",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Title_Logo_of_the_magazine_Hoshigaoka_2.svg"
+  },
+  "data_sources": "Wikimedia Commons original file pages inspected (title, author, year, SVG dimensions and licensing notes); raw source SVG bytes could NOT be acquired by container download, TinyFish, Tavily or Opera browser; no artist geometry inferred from unavailable source.",
+  "program": {
+    "name": "audit_lettering_family_r3.py",
+    "sha256": "c3082eaf214133bc2e6bf27e71b2c61546c2a2797219583ce674805f5a4b7715",
+    "available": "Standalone conversation ZIP and script; not stored as executable in GitHub by this receipt.",
+    "run": "python audit_lettering_family_r3.py --manifest rosanjin_early_logo_source_manifest_r3.json --asset-dir originals --output R3_original_family_metrics.json",
+    "description": "offline source-byte SHA256 plus image-only ink bbox/centroid/ink fraction/connected components/skeletonized static width quantiles/column valleys/perimeter complexity/gradient orientation; does not infer actual brush pressure or real designer process."
+  },
+  "local_smoke": {
+    "status": "PASS_ON_OLDER_R2_SVG_ONLY_NOT_ARTIST_SOURCE",
+    "samples": [
+      {
+        "file": "chao_A.svg",
+        "sha_prefix": "628dd4fc95e2",
+        "ink_fraction": 0.1733,
+        "static_width_px": {
+          "p10": 17.88854,
+          "p50": 18,
+          "p90": 18.86796
+        }
+      },
+      {
+        "file": "chao_C.svg",
+        "sha_prefix": "61ed7f3237a2",
+        "ink_fraction": 0.15792,
+        "static_width_px": {
+          "p10": 8.89837,
+          "p50": 17.08801,
+          "p90": 26.68333
+        }
+      },
+      {
+        "file": "xingguang_A.svg",
+        "sha_prefix": "625445070edc",
+        "ink_fraction": 0.10661,
+        "static_width_px": {
+          "p10": 6,
+          "p50": 6,
+          "p90": 6.32456
+        }
+      }
+    ],
+    "interpretation": "The program detects expected geometry differences between previously generated R2 baseline and candidate. This is NOT Rosanjin aesthetic gain or true transfer of author creative method."
+  },
+  "explicit_blockers": [
+    "ORIGINAL_SVG_BYTES_MISSING for R1908_A",
+    "ORIGINAL_SVG_BYTES_MISSING for R1909_B",
+    "ORIGINAL_SVG_BYTES_MISSING for R1909_C",
+    "Rosanjin training family internal style similarity UNVERIFIED; same artist does not guarantee a single coherent creative style",
+    "R1908_A historical Commons deletion notification requires rights status reconciliation",
+    "No AI-generated unseen character based on family extracted method; no independent blind human score."
+  ],
+  "method_status": "NOT_DISTILLED__NOT_VALIDATED__NO_HUMAN_QUALITY_GAIN",
+  "immediate_next": "Obtain and hash exact original SVG/appropriate archival reproduction bytes with source/rights proof; run script and visual inspect recurrence, then freeze actual production operators and only thereafter test unseen simplified Chinese wordmark against equal-budget baseline.",
+  "not_mutated": [
+    "continuity/vpd/CURRENT_TASK_LOCK.json",
+    "official Visual Program Distillation mainline",
+    "Figma existing typography artworks",
+    "stopped user tasks"
+  ]
+}
