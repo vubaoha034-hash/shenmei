@@ -1,0 +1,393 @@
+{
+  "schema_version": "vpd-r3-same-text-font-control/1.0",
+  "recorded_at": "2026-10-26",
+  "goal": "蒸馏别人优秀中文字设计作品的可解释、可执行、可迁移的创作机制，并在未见文字及盲评中验证专业美感；不以字体描摹、几何调参或多写文档算成功",
+  "isolated_remote": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "research/typography-r3-rosanjin-source-20261026",
+    "cloud_run_url": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40281083757",
+    "executable_code_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r3-rosanjin-source-20261026/research/typography_r3/matched_type_controls.py",
+    "full_result_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r3-rosanjin-source-20261026/research/typography_r3/ROSANJIN_MATCHED_FONT_CONTROLS.json",
+    "full_result_git_blob_sha": "198f2e83995dce573af739bbe34d4d9f6f1d0568",
+    "independently_verified_3_sources_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r3-rosanjin-source-20261026/research/typography_r3/ROSANJIN_REMOTE_SOURCE_RECEIPT.json",
+    "no_raw_source_artwork_republished": true
+  },
+  "verified_inputs": {
+    "artist": "Kitaoji Rosanjin",
+    "exact_titles": [
+      "實業之日本",
+      "婦人世界",
+      "小學男生"
+    ],
+    "official_wikimedia_uploaded_file_sha1_verified": true,
+    "original_content_is_early_magazine_titles": true,
+    "source_media_is_2025_vectorization_not_historical_author_source": true,
+    "control_fonts": [
+      {
+        "family": "Noto Serif CJK TC",
+        "ttc_index": 3,
+        "sha256": "93069d8e9e45d515cc421c971a79e6a5777704b348e36a9ef86578bf58adef77"
+      },
+      {
+        "family": "Noto Sans CJK TC",
+        "ttc_index": 3,
+        "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a"
+      },
+      {
+        "family": "AR PL KaitiM Big5",
+        "ttc_index": 0,
+        "sha256": "5c3f67a9de085043ef50c64a76a17209093c4049ba527ea8c534f4a49969fbf5"
+      }
+    ],
+    "target_match_rule": "same exact Traditional Chinese character sequence, all cmap glyphs verified and no substitution",
+    "controls_per_work": 3,
+    "aspect_modes": 2,
+    "total_comparisons": 18,
+    "actual_color_threshold": 180,
+    "printed_source_normalization": "source original static morphology measured with PIL/CairoSVG threshold180; fonts rendered at same pixel bbox with conservative aspect-preserving and exact-bbox modes",
+    "commercial_licensing_status": "not verified; Commons file labelled public domain but uploader talk records a historical deletion nomination involving 實業之日本, and trademarks/jurisdictional reuse not settled"
+  },
+  "observed_not_promoted": {
+    "thick_thin_contrast": "SOURCE_HIGHER_THAN_ALL_3_FONT_CONTROLS_IN_3_OUT_OF_3_TITLES_BOTH_LAYOUT_MODES",
+    "median_relative_stroke_weight": "SOURCE_HIGHER_THAN_ALL_3_FONT_CONTROLS_IN_3_OUT_OF_3_TITLES_BOTH_LAYOUT_MODES",
+    "perimeter_hull_complexity": "NOT_CONSISTENT; rejected as current style signature",
+    "matrix": {
+      "thick_thin_ratio": {
+        "stable_all_3_texts_all_3_fonts_two_alignments": true,
+        "threshold": 0.15,
+        "by_alignment": {
+          "aspect_preserving": {
+            "higher_all": true,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 4.2426,
+                "controls": [
+                  2.33333,
+                  1.6,
+                  2.33333
+                ],
+                "source_minus_control_over_control": [
+                  0.81826,
+                  1.65163,
+                  0.81826
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 3.1901,
+                "controls": [
+                  2,
+                  1.4,
+                  1.94365
+                ],
+                "source_minus_control_over_control": [
+                  0.59505,
+                  1.27864,
+                  0.64129
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 4.8507,
+                "controls": [
+                  2.4037,
+                  1.51038,
+                  2.53859
+                ],
+                "source_minus_control_over_control": [
+                  1.01801,
+                  2.21158,
+                  0.91079
+                ]
+              }
+            ]
+          },
+          "match_ink_bbox": {
+            "higher_all": true,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 4.2426,
+                "controls": [
+                  1.70294,
+                  1.71429,
+                  1.95538
+                ],
+                "source_minus_control_over_control": [
+                  1.49134,
+                  1.47484,
+                  1.16971
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 3.1901,
+                "controls": [
+                  2,
+                  1.33333,
+                  1.89737
+                ],
+                "source_minus_control_over_control": [
+                  0.59505,
+                  1.39258,
+                  0.68133
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 4.8507,
+                "controls": [
+                  2.4267,
+                  1.5,
+                  2.40832
+                ],
+                "source_minus_control_over_control": [
+                  0.99889,
+                  2.2338,
+                  1.01414
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "relative_visual_weight": {
+        "stable_all_3_texts_all_3_fonts_two_alignments": true,
+        "threshold": 0.15,
+        "by_alignment": {
+          "aspect_preserving": {
+            "higher_all": true,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 0.11006,
+                "controls": [
+                  0.043011,
+                  0.075269,
+                  0.05291
+                ],
+                "source_minus_control_over_control": [
+                  1.55888,
+                  0.46222,
+                  1.08014
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 0.09722,
+                "controls": [
+                  0.055459,
+                  0.078947,
+                  0.054795
+                ],
+                "source_minus_control_over_control": [
+                  0.75301,
+                  0.23146,
+                  0.77425
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 0.11293,
+                "controls": [
+                  0.043243,
+                  0.08189,
+                  0.051546
+                ],
+                "source_minus_control_over_control": [
+                  1.61152,
+                  0.37905,
+                  1.19086
+                ]
+              }
+            ]
+          },
+          "match_ink_bbox": {
+            "higher_all": true,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 0.11006,
+                "controls": [
+                  0.039165,
+                  0.058635,
+                  0.043636
+                ],
+                "source_minus_control_over_control": [
+                  1.81016,
+                  0.87704,
+                  1.52223
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 0.09722,
+                "controls": [
+                  0.054348,
+                  0.076087,
+                  0.04861
+                ],
+                "source_minus_control_over_control": [
+                  0.78884,
+                  0.27775,
+                  1
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 0.11293,
+                "controls": [
+                  0.041648,
+                  0.080808,
+                  0.051505
+                ],
+                "source_minus_control_over_control": [
+                  1.71153,
+                  0.39751,
+                  1.1926
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "contour_complexity": {
+        "stable_all_3_texts_all_3_fonts_two_alignments": false,
+        "threshold": 0.15,
+        "by_alignment": {
+          "aspect_preserving": {
+            "higher_all": false,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 3.6291,
+                "controls": [
+                  4.18171,
+                  3.95026,
+                  3.30218
+                ],
+                "source_minus_control_over_control": [
+                  -0.13215,
+                  -0.0813,
+                  0.099
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 3.543,
+                "controls": [
+                  3.7796,
+                  3.43957,
+                  3.12986
+                ],
+                "source_minus_control_over_control": [
+                  -0.0626,
+                  0.03007,
+                  0.132
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 2.9236,
+                "controls": [
+                  3.7365,
+                  3.48815,
+                  3.07705
+                ],
+                "source_minus_control_over_control": [
+                  -0.21756,
+                  -0.16185,
+                  -0.04987
+                ]
+              }
+            ]
+          },
+          "match_ink_bbox": {
+            "higher_all": false,
+            "lower_all": false,
+            "per_work": [
+              {
+                "id": "R1908_A",
+                "original": 3.6291,
+                "controls": [
+                  4.55858,
+                  4.26794,
+                  3.66189
+                ],
+                "source_minus_control_over_control": [
+                  -0.2039,
+                  -0.14968,
+                  -0.00895
+                ]
+              },
+              {
+                "id": "R1909_B",
+                "original": 3.543,
+                "controls": [
+                  4.02259,
+                  3.65559,
+                  3.39108
+                ],
+                "source_minus_control_over_control": [
+                  -0.11922,
+                  -0.0308,
+                  0.0448
+                ]
+              },
+              {
+                "id": "R1909_C",
+                "original": 2.9236,
+                "controls": [
+                  3.7963,
+                  3.53867,
+                  3.09454
+                ],
+                "source_minus_control_over_control": [
+                  -0.22988,
+                  -0.17381,
+                  -0.05524
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "interpretations": {
+    "factual": "Three Rosanjin masthead digital copies have stronger static wide-narrow contrast and heavier normalized typical ink sections than Noto TC Song/Sans and AR PL Big5 Kaiti under matched text and both geometric alignments.",
+    "hypothesis": "The weighting and differentiation of certain letterforming strokes might contribute to visual authorial intent, but the present global measurements cannot indicate WHICH meaningful stroke to emphasize, or WHY. The property may also be generic to other calligraphic styles.",
+    "critical_negative": "Previous R2 attempted width transfer to new characters and produced no credible art-quality improvement. Therefore this new result does not license more angle-based, length-based or uniform thickening iterations.",
+    "process_visibility": "Neither a digitized SVG nor regional width percentiles determine historical human pen motion, pressure, strokes or creative intent.",
+    "remaining_unknown": "Whether per-stroke role or character-level asymmetry distinguishes this author from other excellent professional calligraphers, and whether any inferred design action is reusable."
+  },
+  "next_exact_task": {
+    "id": "R3_STROKE_ROLE_CAUSAL_EVIDENCE",
+    "first": "Visually inspect exact source works; identify character boundaries and important primary/support strokes only when supported by pixels, otherwise mark AMBIGUOUS rather than fake segmentation.",
+    "second": "Compare matched-stroke-role measurements against at least one alternate professionally designed calligraphic source, not just common Song/Sans/Kaiti fonts, to exclude generic brush-lettering characteristics.",
+    "third": "Freeze a role-conditioned original design operation specification that changes stroke assignment and negative-space topology rather than only width distribution.",
+    "fourth": "Create new glyphs that were absent from training examples; matched-budget baseline comparison; blind human aesthetic/recognition gate.",
+    "stop": "If designer-specific stroke roles cannot be evidenced, report NONIDENTIFIABLE and switch from claiming historical method recovery to an explicitly inspired original design system."
+  },
+  "acceptance": {
+    "provenance_exact_match": "PASS",
+    "equivalent_new_text_font_comparisons": "PASS",
+    "static_style_discrimination_against_3_basic_fonts": "PARTIAL_PASS",
+    "learned_designer_creation_process": "NOT_DEMONSTRATED",
+    "novel_glyph_visual_quality_gain": "NOT_TESTED",
+    "human_blind_review": "NOT_TESTED",
+    "commercial_reuse": "NOT_APPROVED",
+    "method_promotion": "NO"
+  },
+  "business_protection": {
+    "branch_scope": "research evidence only, no mutation to formal task",
+    "current_formal_mainline_task": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "current_formal_revision": 355
+  }
+}
