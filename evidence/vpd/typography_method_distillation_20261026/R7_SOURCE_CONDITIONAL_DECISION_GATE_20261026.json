@@ -1,0 +1,61 @@
+{
+  "schema_version": "vpd-typography-r7-conditional-decision-gate/1.0",
+  "recorded_at": "2026-10-26",
+  "user_objective": "逆向学习已有优秀中文字标的可复用创作决策，验证新汉字上的结构与审美；不能再用纯笔宽算法、Figma描摹或图像生成一张漂亮字取代。",
+  "core_claim": "初次把一个有第一手实例讲解的创作判断，变成带前提、例外和拒绝条件的可执行规则；只通过条件适用性测试，不代表设计效果通过。",
+  "source": {
+    "publisher": "字由",
+    "title": "字体设计在变化之前，你得先做这一步",
+    "full_article_url": "https://www.hellofont.cn/article/229775",
+    "source_case": "海浪",
+    "observed_designer_process": "设计者先分别修改海和浪的局部结构，找到两字共有的左侧三点水，以柳公权的三点水书法为参照，强调下方点画的运动与折转，同时处理上方点的分离和各字部件布局。",
+    "certainty": "来自可访问的实际长文内容；不是历史书法家真正运笔动作的重建",
+    "rights": "仅引用规则的原创摘要和来源链接，不复制付费字体文件、作者插图或轮廓路径。"
+  },
+  "experiment": {
+    "isolated_branch": "research/typography-r7-conditional-decision-20261026",
+    "executable_code_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r7-conditional-decision-20261026/research/typography_r7/r7_decision_compiler.py",
+    "automation_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40297326814",
+    "actual_job_result": "SUCCESS",
+    "observed_stdout": "R7_DECISION_GATE_PASS {\"tests\": 8, \"conditioned_rule_correct\": 7, \"baseline_correct\": 3, \"unknowns_fail_closed\": 1, \"quality_validated\": false}",
+    "actual_structural_data": "chanind/hanzi-writer-data@68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "verified_character_stroke_data": true,
+    "original_source_example_excluded": "海浪",
+    "positive_word_tests": [
+      "江湖",
+      "清河",
+      "波浪"
+    ],
+    "negative_word_tests": [
+      "山河",
+      "江山",
+      "灯火",
+      "树木"
+    ],
+    "insufficient_metadata_test": [
+      "云湖"
+    ],
+    "known_cases": 7,
+    "known_conditioned_correct": 7,
+    "naive_always_apply_correct": 3,
+    "unknown_refusals": 1,
+    "expected_labels_independently_blinded": false,
+    "source_motif_generalization_scope": "两字词、共同左侧氵部件的事先限定诊断，尚不是能识别全部部首的通用设计引擎",
+    "executable_behavior": "判断何时启用同部件造型、何时禁止、右部复杂度不同时发出独立光学平衡审查，而不是直接把原图几何变形。"
+  },
+  "hard_stop": {
+    "any_new_character_artwork_created": false,
+    "improvement_to_aesthetic_quality_proven": false,
+    "user_approval_claimed": false,
+    "original_creators_historical_brush_moves_inferred": false,
+    "commercial_deployment_authorized": false,
+    "use_fima_modified": false,
+    "mainline_lock_changed": false
+  },
+  "next_gate": {
+    "intent": "补齐第二条不同结构来源的条件规则（例如《反叛》的位置对应/对称笔画，或《味道》的共享口部件），然后对未见字词进行 A 无创作决策 vs B 有明确决策的真实设计输出。",
+    "success_criteria": "必须保留汉字正确，实际产生能独立观测的新设计，真人盲评认可其风格逻辑且重复到不同词才晋级。",
+    "budget": "新增付费软件与外部收费 API 为 0；任何可能计费的服务不得默许启动。"
+  },
+  "formal_status": "SOURCE_GROUNDED_CONDITIONAL_DECISION_EXECUTED__VISUAL_TRANSFER_NOT_EXECUTED__NOT_VALIDATED_METHOD"
+}
