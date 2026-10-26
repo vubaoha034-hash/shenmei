@@ -1,0 +1,38 @@
+{
+  "schema": "typography-r8-constraint-guard/1.0",
+  "recorded": "2026-10-26",
+  "source_article": "https://www.hellofont.cn/article/229775",
+  "source_decision": "反叛 source author reinforces paired edge stroke; compensates imbalance on 反 by extending separate upper horizontal. Source art direct GIF frames unavailable; textual original read and verified.",
+  "training_glyph": "友",
+  "exploratory_glyph": "龙",
+  "new_holdout_text": "存在",
+  "old_failure": {
+    "main_scale": 1.18,
+    "train_compensation_scale": 1.24,
+    "A_C_binary_mask_IoU_友": 0.750186,
+    "A_C_binary_mask_IoU_龙": 0.805114,
+    "reason": "X-centroid returned nearly to baseline but source silhouette drift too large. Measuring ONE attractive number is not design quality."
+  },
+  "rule_frozen_before_new_holdout_inspection": {
+    "main_extension_scale": 1.06,
+    "upper_horizontal_compensation_scale": 1.08,
+    "allowed_training_only": "Two-character source lesson and early 友/龙 exploratory sweep; these exploratory results not counted independent.",
+    "edge_stroke_selection": "independent outer-left descending stroke: dx<-0.34 bbox width and dy<-0.4 bbox height",
+    "compensator_selection": "separate upper horizontal: dx>0.36 bbox width, |dy|<0.18 bbox height and start in upper >48% box",
+    "hard_gates": {
+      "min_ink_mask_IoU": 0.9,
+      "min_relative_x_centroid_reduction": 0.25,
+      "preserve_all_source_strokes": true,
+      "offcanvas_clipping": false
+    },
+    "zero_tuning_after_holdout": true
+  },
+  "evidence_artifact": {
+    "local_pre_holdout_freeze_sha256": "279d0cc22525025da7985fe530159df8f03cba2a27e9eb999e51e3a199c88b85",
+    "local_experiment_script_sha256": "c8c9830fd12e15046642bbc0f0409d5067d65acb632365110e1bc5a7a99a046f",
+    "status": "BEFORE_HOLDOUT_SOURCE_READ"
+  },
+  "strict_outcome": "If visually too compromised, incorrect, or structural gating fails, do not promote. Even a geometric gate pass is NOT designer-method or aesthetic success.",
+  "rights": "Hanzi Writer Data sourced from Make Me A Hanzi/Arphic Public License; no paid font software or reference original geometry incorporated.",
+  "mainline_preserved": true
+}
