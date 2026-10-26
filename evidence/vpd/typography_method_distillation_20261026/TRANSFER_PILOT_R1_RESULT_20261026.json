@@ -1,0 +1,122 @@
+{
+  "schema_version": "vpd-typography-method-distillation-pilot/1.0",
+  "recorded_at": "2026-10-26",
+  "task": "从别人优秀中文字标逆向蒸馏可复用的创作方法，而不是临摹或单字修复",
+  "source_method": "evidence/vpd/typography_method_distillation_20261026/REFERENCE_TO_METHOD_R1.json",
+  "identity": "TYP-METHOD-R1-CROSS-CHAR-DIAGNOSTIC",
+  "overall_status": "TECHNICAL_DEMONSTRATION_ONLY__ARTISTIC_GAIN_NOT_SHOWN__FORMAL_BLIND_NOT_RUN",
+  "targets": {
+    "selection_basis": "Frozen R1 commit 3c359e381f600d1b1fbf79be2a94273c08a9ba9e; parseInt first 8/next 8 hex mod declared lists",
+    "one_char": "潮",
+    "four_char": "星光未眠",
+    "policy": "Targets chosen after method freeze; reproducible but not independently sampled by reviewer, so pilot is NOT true blind holdout."
+  },
+  "generator_surface_trials": [
+    {
+      "path": "native ChatGPT image generation",
+      "gen_id": "e66aa404-3f49-4cef-aa20-c97b42d5a78b",
+      "desired_output": "isolated single-character no-reference baseline A",
+      "actual": "infographic showing method breakdown, parameter explanations, miscellaneous examples and labels; not the requested isolated 潮 glyph",
+      "status": "PROTOCOL_INVALID_TARGET_OUTPUT",
+      "still_image_file": "/mnt/data/a_wide_poster_infographic_style_layout_on_a_dark_b.png"
+    },
+    {
+      "path": "native ChatGPT image generation",
+      "gen_id": "2eb6ddbe-869d-4643-b890-9d994e58310f",
+      "desired_output": "single simplified 潮 glyph only",
+      "actual": "long multi-panel method infographic; includes several different example characters; does not isolate intended condition",
+      "status": "PROTOCOL_INVALID_TARGET_OUTPUT",
+      "still_image_file": "/mnt/data/a_clean_structured_infographic_poster_about_chine.png"
+    },
+    {
+      "path": "Figma generate_image Gemini Flash Lite, requested 1024 square",
+      "desired_output": "single simplified 潮 direct-generation baseline A",
+      "actual": "Figma AI is not available for this file",
+      "figma_debug_uuid": "bad08ac4-43d9-4e57-ab00-0e14cb06c67f",
+      "status": "NO_OUTPUT_TOOL_FEATURE_UNAVAILABLE",
+      "charges_observed": "UNKNOWN"
+    }
+  ],
+  "implemented_procedural_migration": {
+    "file_key": "uyDxOoN1iNDPpEHTKSUWg1",
+    "page_id": "527:2",
+    "comparison_board_id": "527:3",
+    "url": "https://www.figma.com/design/uyDxOoN1iNDPpEHTKSUWg1/?node-id=527-3",
+    "source": "Zhi Mang Xing — Google Fonts OFL, Figma availability verified; new glyphs rather than extracted source reference letter contours",
+    "comparison": [
+      {
+        "group": "A1",
+        "text": "潮",
+        "id": "527:6",
+        "type": "untouched source font"
+      },
+      {
+        "group": "C1",
+        "text": "潮",
+        "id": "527:7",
+        "type": "font vector outline warped by bounded and auditable nonlinear coordinate field; Figma vector node 527:17"
+      },
+      {
+        "group": "A2",
+        "text": "星光未眠",
+        "id": "527:8",
+        "type": "four-character font baseline"
+      },
+      {
+        "group": "C2",
+        "text": "星光未眠",
+        "id": "527:9",
+        "type": "same characters separate text nodes; programmed size, baseline, rotation and negative-space variation"
+      }
+    ],
+    "target_text_writing_evidence": "A1 & A2 actual text nodes: U+6F6E and 星光未眠. C1 flattened after source text verification; C2 remains four actual Chinese character text nodes.",
+    "screenshot_review": "Actual full-board screenshot visibly inspected after fixing one frame-parenting error; Figma frames and all target characters are present.",
+    "intent_limitations": "Only shape/mass/spacing method operators are approximated; does not reproduce brush pressure, dry brush fiber deposition, or the artist's original creation process.",
+    "other_pages_overwritten": false,
+    "no_formal_lock_revision": true
+  },
+  "assessment": {
+    "font_glyph_legibility": "APPEARS_PASS_AS_VIEWED_AND_NODE_TEXT_CHECKED",
+    "design_uplift": "NOT_DEMONSTRATED",
+    "reason_single": "The candidate 潮 shows mainly deformation of the same static font source, with no new brush energy or materially superior appearance.",
+    "reason_multi": "Method candidate's varying glyph size and spacing disrupts typography cohesion; baseline appears more coherent in the observed example.",
+    "independent_human_score": "NOT_COLLECTED",
+    "head_to_head_isolation": "NOT_IMPLEMENTED_FOR_IMAGE_GENERATORS",
+    "promoted_method": false
+  },
+  "new_source_evidence": {
+    "exact_reference": "https://commons.wikimedia.org/wiki/File:Calligraphy_六島.svg",
+    "same_artist_additional_candidate": "https://commons.wikimedia.org/wiki/File:ZhangDeli.svg",
+    "source_author": "Tc262",
+    "attribution": "Both Commons file descriptions attribute artwork to Tc262 under CC BY 3.0; not enough to prove same brush style or access original stroke motion.",
+    "dataset_candidates": [
+      {
+        "name": "HCSU ECCV 2026",
+        "repo": "https://github.com/209-Tongji/HCSU",
+        "available": "39,307 CJK calligraphy character images, sampled style attributes ink/stroke/structure; README & dataset spec read",
+        "license": "code Apache-2.0; artwork/data CC BY-NC 4.0; research only without extra commercial license",
+        "research_use": "Can provide joint visual-structure-ink annotations and cross-character held-out validation patterns; no claim installed or trained"
+      },
+      {
+        "name": "BCSS",
+        "repo": "https://github.com/Rvosuke/BCSS",
+        "available": "Stroke-segmentation data with 1,322 reported images/10,653 annotated strokes; README read",
+        "license": "dataset described research purposes; specific file commercial license unconfirmed",
+        "research_use": "Can supervise separation of connected calligraphy strokes; must verify access, license, model and runtime before training"
+      }
+    ]
+  },
+  "key_failure_mechanism": "Single-reference static raster/vector form plus generic words such as heavy/light/asymmetric cannot identify real artist stroke-construction process; surface warp and simple glyph spacing remain a font decoration process. Need source-backed calligraphic stroke segmentation and renderer conditioning before new image trial.",
+  "next_experiment": {
+    "id": "TYP-METHOD-R2-SOURCE-AND-STROKE-PROGRAM",
+    "avoid_repeat": [
+      "no more random source-font warping",
+      "do not ask general image generator for research infographic",
+      "do not manually retouch one character until it looks good",
+      "do not claim cross-character blind pass from Figma technical board"
+    ],
+    "next_action": "Use licensed coherent multiglyph/multiexample reference family plus independent per-stroke masks or author process evidence to derive a true stroke-level visual program; then run a single controlled new-word output against frozen baseline via a prompt-controllable image renderer, in a separate supported account or tool; record actual pixels and blind review.",
+    "underdetermination_warning": "From static final artwork alone, original motion, brush pressure, tool, speed, and author decision process cannot be uniquely inferred.",
+    "changes_to_production_goal_or_lock": false
+  }
+}
