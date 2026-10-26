@@ -108,8 +108,10 @@ def main():
     actual=image_word(s["title"],font)
     _,_,w,h=s["morphology"]["ink_bbox_px"]
     for mode in ["aspect_preserving","match_ink_bbox"]:
-     metrics=measure(fit(actual,w,h,mode))
-     output["runs"].append({"font":name,"work_id":s["id"],"text":s["title"],"mode":mode,"metrics":metrics})
+     image=fit(actual,w,h,mode)
+     metrics=measure(image)
+     pixel_sha=hashlib.sha256(image.tobytes()).hexdigest()
+     output["runs"].append({"font":name,"work_id":s["id"],"text":s["title"],"mode":mode,"pixel_sha256":pixel_sha,"metrics":metrics})
    check["status"]="MEASURED" if allowed else "NO_EXACT_TITLE_COVERAGE"
   except Exception as e:check.update({"status":"RENDER_FAILED","error":str(e)[:200]})
   output["font_checks"].append(check)
@@ -132,6 +134,15 @@ def main():
   reliable=all(all(g["source_higher_than_all_by_15pct"] for g in v["modes"]) for v in one)
   out[key]={"robust_expressive_font_separation":reliable,"by_original":one}
  output["metric_assessment"]=out
+ output["pixel_geometry_independence"]=[
+  {"work_id":source["id"],"mode":mode,"controls":len(group),
+   "unique_raster_hashes":len({x["pixel_sha256"] for x in group}),
+   "same_raster_note":"If equal, apparently different font files are not independent geometry controls for this exact rendered title.",
+   "hashes":[{"font":x["font"],"pixel_sha256":x["pixel_sha256"]} for x in group]}
+  for source in sources for mode in ["aspect_preserving","match_ink_bbox"]
+  for group in [[v for v in output["runs"] if v["work_id"]==source["id"] and v["mode"]==mode]]
+ ]
+ output["independent_expressive_family_gate_pass"] = all(x["unique_raster_hashes"]>=2 for x in output["pixel_geometry_independence"])
  output["any_general_creator_method_proven"]=False
  output["stop_condition"]="If generic expressive fonts show similar heavy-light contrast, retire global width quantiles as an author-specific rule; investigate per-glyph stroke roles only with evidence from original pixels and matched semantic positions."
  OUT.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
