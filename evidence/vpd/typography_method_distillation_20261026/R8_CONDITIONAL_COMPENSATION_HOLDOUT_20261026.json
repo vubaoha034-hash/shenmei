@@ -82,7 +82,7 @@
   },
   "real_local_artifacts": {
     "zip_name": "R8_文字创作决策与反向补偿_真实验证包.zip",
-    "zip_sha256": "b414c16db719229042e3f23bd243aace820312a10179f60007e08327b5292ce5",
+    "zip_sha256": "475255c09940e84680dbbd914a39ced9db88af91c78175cd74b25fa2d885a891",
     "locked_holdout_png_name": "R8_存在_冻结规则独立验证.png",
     "locked_holdout_png_sha256": "c8b259611861e182e2e5dd9f2961007e3a8dac468a8abb94dafc517ebabbc09f",
     "original_program_python_sha256": "c8c9830fd12e15046642bbc0f0409d5067d65acb632365110e1bc5a7a99a046f",
@@ -92,5 +92,12 @@
   "project_status": "TECHNICAL_DECISION_FEEDBACK_GEOMETRY_PASS__NOT_ART_QUALITY_VALIDATION__NOT_PRODUCTION",
   "next_action": "Do not tune minor geometric width or cap parameters again. Study one authentic structural authoring decision that changes internal component layout/negative space, then render a genuinely different unseen word and obtain independent quality review.",
   "cost_incurred": "No new paid design software or external paid image API invoked for this R8 experiment",
-  "production_lock_unchanged": true
+  "production_lock_unchanged": true,
+  "cross_operator_router": {
+    "source": "R7 shared-left 氵 motif and R8 paired left gesture",
+    "rule": "If R7 shared radical verified, do not additionally apply R8. Else R8 requires source-backed independent main+upper cross stroke. Missing metadata -> abstain.",
+    "pass": "6/6 deterministic consistency cases, including forced collision, no double styling",
+    "local_python_script": "R8_POLICY_ROUTER_CONFLICT_TEST.py",
+    "limitations": "Policy ordering is a new engineering safety rule, not claimed historical designer preference. Hand-curated cases; no visual aesthetics or model-learning proof."
+  }
 }
