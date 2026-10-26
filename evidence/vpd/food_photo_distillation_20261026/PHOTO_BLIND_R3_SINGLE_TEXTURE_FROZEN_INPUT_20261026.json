@@ -1,0 +1,73 @@
+{
+  "schema_version": "vpd-food-photo-single-variable-ab-v1",
+  "date": "2026-10-26",
+  "task_id": "VPD-XHS-PHOTO-AB03-BEAN-SINGLE-MICROTEXTURE-20261026",
+  "authorization": "User said 下一步 after second photo blind TIE; authorizes scoped next photo comparison only, not typography or external paid generation.",
+  "project": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "baseline_head": "0660504907aff017f66f9ff80c761ae8ce187916",
+    "native_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "modify_native_task_lock": false,
+    "modify_figma": false,
+    "modify_typography": false
+  },
+  "learning_from_prev": {
+    "round1": "清蒸鲈鱼：DIRECT preferred over expanded VPD",
+    "round2": "番茄炒蛋：DIRECT and compact VPD tied",
+    "current_assumption": "Extra constraints have not demonstrated benefit; test one explicitly observable ingredient texture feature only."
+  },
+  "source": {
+    "platform": "小红书",
+    "title": "宁波海鲜十六碗 | 回归海边渔家生活的本真",
+    "creator": "玩味美食摄影",
+    "url": "https://www.xiaohongshu.com/explore/6a27e565000000001503cce4",
+    "role": "Old CASE04 visual reference, reused only as an independent reference family relative to previous blind A/B trials, not a fully new unseen photographer/post",
+    "original_drive_id": "1g4N4s2EtQDfTAbwQB9OY4rN3zXals8ne",
+    "original_drive_url": "https://drive.google.com/file/d/1g4N4s2EtQDfTAbwQB9OY4rN3zXals8ne/view",
+    "actual_reference_file_format": "PNG",
+    "actual_reference_dimensions": [
+      520,
+      488
+    ],
+    "actual_reference_bytes": 552043,
+    "actual_reference_sha256": "8f0473897904b010df727accf8b456d85983064a4a695e3cf359a81c2ae261ae",
+    "actual_reference_rgba_pixels_sha256": "72191d8fa57898c7ebd3819109dffd6e6dd8b86f036d36e57c39cb1d61b6213e",
+    "actual_pixels_inspected": true,
+    "source_reference_has_embedded_typography": true,
+    "source_reference_is_cropped_from_multiframe_grid": true,
+    "rights": "UNKNOWN_THIRD_PARTY_PRIVATE_STUDY_ONLY",
+    "prior_accepted_photo_using_reference": "CASE04 steamed taro; do not treat this reference as a wholly unseen source."
+  },
+  "test": {
+    "dish": "干煸四季豆",
+    "goal": "Can just one ingredient-specific nonuniform cooked-material instruction improve photo aesthetic quality beyond direct source-conditioned prompt?",
+    "common_prompt": "只生成一张全新原创、无文字的9:16竖幅真实家常菜摄影。请观察本条消息中实际附上的唯一小红书摄影参考，只学习其光影、材质与餐饮氛围，不复制原有虾、竹篮、枝叶位置、字体和器皿。目标菜品是【干煸四季豆】：熟透的完整四季豆豆荚切成自然长短不一的段，混合少量真实炒香的猪肉末、少量蒜粒及极少干辣椒碎。豆荚明显还是四季豆，不是空心菜、蒜苗或青椒。用一只素净深灰浅陶盘盛放，只有一道家常菜，刚出锅，有食欲但不能摆成工整产品模型。无其他菜、无假蒸汽、无字、无Logo、无水印、无拼贴；只输出一张。",
+    "incremental_delta": "额外只落实一种真实烹饪材质机制：同一盘四季豆的豆荚表皮有不均匀的轻微皱缩、少量自然焦褐和局部薄油光，明暗、纹理与焦点位置都不规则，避免每根豆荚统一平滑发亮。",
+    "baseline_route": {
+      "id": "DIRECT",
+      "prompt": "只生成一张全新原创、无文字的9:16竖幅真实家常菜摄影。请观察本条消息中实际附上的唯一小红书摄影参考，只学习其光影、材质与餐饮氛围，不复制原有虾、竹篮、枝叶位置、字体和器皿。目标菜品是【干煸四季豆】：熟透的完整四季豆豆荚切成自然长短不一的段，混合少量真实炒香的猪肉末、少量蒜粒及极少干辣椒碎。豆荚明显还是四季豆，不是空心菜、蒜苗或青椒。用一只素净深灰浅陶盘盛放，只有一道家常菜，刚出锅，有食欲但不能摆成工整产品模型。无其他菜、无假蒸汽、无字、无Logo、无水印、无拼贴；只输出一张。"
+    },
+    "candidate_route": {
+      "id": "VPD_SINGLE_MATERIAL",
+      "prompt": "只生成一张全新原创、无文字的9:16竖幅真实家常菜摄影。请观察本条消息中实际附上的唯一小红书摄影参考，只学习其光影、材质与餐饮氛围，不复制原有虾、竹篮、枝叶位置、字体和器皿。目标菜品是【干煸四季豆】：熟透的完整四季豆豆荚切成自然长短不一的段，混合少量真实炒香的猪肉末、少量蒜粒及极少干辣椒碎。豆荚明显还是四季豆，不是空心菜、蒜苗或青椒。用一只素净深灰浅陶盘盛放，只有一道家常菜，刚出锅，有食欲但不能摆成工整产品模型。无其他菜、无假蒸汽、无字、无Logo、无水印、无拼贴；只输出一张。\n额外只落实一种真实烹饪材质机制：同一盘四季豆的豆荚表皮有不均匀的轻微皱缩、少量自然焦褐和局部薄油光，明暗、纹理与焦点位置都不规则，避免每根豆荚统一平滑发亮。"
+    },
+    "aspect_ratio": "9:16",
+    "new_image_per_route": 1,
+    "model": "ChatGPT native Image, identical visible setting if possible",
+    "fresh_chats": true,
+    "same_real_source_pixels_bound": true,
+    "external_paid_api_allowed": false,
+    "retries": 0,
+    "blinding": "Seal label-to-route mapping before user views outputs; user can vote X/Y/TIE/NEITHER; disclose after vote.",
+    "gate": "If source reference isn't provably bound in both conversations, do not proceed with image generation. If browser unavailable, stop here and preserve frozen inputs."
+  },
+  "current_status": "PREREGISTRATION_COMPLETE_AWAITING_SOURCE_BOUND_GENERATION",
+  "images_generated": 0,
+  "expected_outputs": [
+    "X",
+    "Y"
+  ],
+  "next_action": "Reconnect live browser and attach the exact real source PNG to two clean ChatGPT Image sessions. Keep one candidate per route, preserve original bytes to Drive, seal mapping and request human blind vote. No rerolls, no other provider."
+}
