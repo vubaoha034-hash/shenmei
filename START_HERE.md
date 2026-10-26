@@ -1,5 +1,15 @@
 # START HERE — 强制执行入口
 
+<!-- TYPO_METHOD_TRANSFER_GOAL_20261026 -->
+**独立文字创作方法蒸馏任务（刘先生 2026-10-26 最新目标限定，非正式海报主线替代）**：
+目标不是修好一张字、临摹优秀字标、描摹 Figma 矢量或学习新字体；必须从优秀设计师真实文字作品中提取可执行且可调整的创作机制，并在未经该方法调试的不同新汉字/词组上，以固定预算、相同生成器和盲评证明质量与可读性增益。
+每次汇报严格分清 SOURCE_STUDY、METHOD_CANDIDATE、UNSEEN_TRANSFER_PIXELS、HUMAN_BLIND_REVIEW、VALIDATED_RULE。无跨字盲评数据不得宣称方法蒸馏成功。
+已完成第一份参考矢量测量和假设候选（不是成功）：[REFERENCE_TO_METHOD_R1.json](evidence/vpd/typography_method_distillation_20261026/REFERENCE_TO_METHOD_R1.json)。
+范围保护：本段只管用户明确要求的**文字创作方法蒸馏支线**；不新增第二套任务锁，不变更 `continuity/vpd/CURRENT_TASK_LOCK.json`、正式主线下一步、生成预算、其他已停止任务及真人最终验收权限。
+<!-- END_TYPO_METHOD_TRANSFER_GOAL_20261026 -->
+
+
+
 <!-- LIU_VPD_IMAGE_GENERATION_GUIDE_20261012 -->
 图片生成正式流程名称：**《刘先生 VPD 图片生成》**，操作说明与完整出图/审核/原件保存链：[docs/刘先生 VPD 图片生成.md](docs/%E5%88%98%E5%85%88%E7%94%9F%20VPD%20%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90.md)。新聊天在实读最新 HEAD、PROJECT_CONTROL_ADAPTER、VPD_PROJECT_ROADMAP、CURRENT_TASK_LOCK 与 LATEST_CHECKPOINT **之后**，按当次任务相关范围使用该文档。该文件不是第二个任务锁、已安装的第二 Skill 或已部署的自动化插件，不重做已完成成果。
 历史《地图以外》X胜出表述已被用户正式纠正：**Y更好、X有AI味道**。参见 evidence/vpd/dituyiwai_photo_20261011/V2_AB_HUMAN_CORRECTION_Y_PREFERRED_20261011.json。2026-10-12 已另有 Figma R2 (71:2) 局部修订回执，**没有真人整体定稿**；旧聊天与过时快照不得覆盖它。
