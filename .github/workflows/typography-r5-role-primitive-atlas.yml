@@ -43,6 +43,16 @@ jobs:
             'family_coverage':r['role_family_coverage'],
             'role_atlas_gate_pass':r['role_atlas_gate_pass']},ensure_ascii=False))
           PY
+          if ! python - <<'PY'
+          import json
+          r=json.load(open('research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json'))
+          assert r['role_atlas_gate_pass'] is True, 'R5_INSUFFICIENT_SAMPLES_OR_ROLES'
+          print('R5_SUBSTANTIVE_SOURCE_GATE_PASS')
+          PY
+          then
+            echo "::error::R5 atlas insufficient: source statistics must not be reported as success"
+            exit 2
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add research/typography_r5/R5_TRAINING_ONLY_ROLE_ATLAS.json
