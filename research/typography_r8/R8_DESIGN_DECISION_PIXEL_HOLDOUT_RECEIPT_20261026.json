@@ -1,0 +1,96 @@
+{
+  "schema": "vpd-r8-glyph-authoring-decision-transfer/1.0",
+  "recorded_at": "2026-10-26",
+  "objective": "蒸馏优秀中文字设计中的条件化决策，包括强调主笔后检测不平衡、补偿或否决；以新字对照和人类审美验证，而非几何数值或漂亮单图宣布成功。",
+  "provenance": {
+    "author_process_article": "https://www.hellofont.cn/article/229775",
+    "case": "反叛",
+    "observed_method": "强化对应位置的左侧撇笔后，如果左下重心失衡，调整另一处上方横笔并重新审查宽高。",
+    "evidence_scope": "实际阅读网页正文；原文所嵌GIF独立文件未能下载，不声称逐帧看过。",
+    "source_glyph_repo": "chanind/hanzi-writer-data",
+    "pinned_data_commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "source_license": "Arphic Public License via Make Me a Hanzi"
+  },
+  "design_rule": {
+    "trigger": "单个新字具有几何上独立的左下行主笔与上方长横",
+    "action": "左撇尝试有界强化；若像素重心向左偏移，则以该字另一横笔尝试有限补偿。任何结构被破坏或不符合上下文，都应拒绝。",
+    "auto_selection": "From pinned median data require main dx<-0.34 glyph bbox width & dy<-0.4 bbox height; compensator dx>0.36 width, |dy|<0.18 bbox height and starts in upper >48% bbox.",
+    "negative_control": "飞 -> ABSTAIN: no independent matching main and upper horizontal, not forcibly reshaped.",
+    "key_distinction": "Simple causal-geometry proof of a designer's conditional corrective action, NOT reconstruction of the designer's own lettering skill."
+  },
+  "exploratory_calibration": {
+    "train": "友",
+    "not_independent_exploratory": "龙",
+    "original_aggressive_ratio": {
+      "main": 1.18,
+      "top": 1.24
+    },
+    "aggressive_metrics": {
+      "train_友": {
+        "A_C_ink_IoU": 0.75019,
+        "restored_centroid_fraction": 0.9241
+      },
+      "exploratory_龙": {
+        "A_C_ink_IoU": 0.80511,
+        "restored_centroid_fraction": 0.8914
+      }
+    },
+    "disposition": "FAIL_UNACCEPTABLY_LARGE_OUTLINE_DRIFT_DESPITE_CENTROID_RECOVERY",
+    "note": "The 92%/89% refer only to restoring the X physical ink centroid after an artificial modification; not art-quality increase."
+  },
+  "independent_holdout": {
+    "frozen_before_glyph_read": true,
+    "freeze_commit": "f82d51376b19155e7f710a824bc73bc394646524",
+    "freeze_file": "research/typography_r8/R8_CONSERVATIVE_NEW_HOLDOUT_FREEZE.json",
+    "local_freeze_sha256": "279d0cc22525025da7985fe530159df8f03cba2a27e9eb999e51e3a199c88b85",
+    "exact_target_text": "存在",
+    "main_scale": 1.06,
+    "top_scale": 1.08,
+    "predetermined_gates": {
+      "ink_IoU_A_C_min": 0.9,
+      "physical_centroid_offset_reduction_min": 0.25
+    },
+    "source_glyph_hashes": {
+      "存": "51e665741cc7fe2994c74ff676c66b4eba6956c1",
+      "在": "8332cc452ae6e9947cb530b90efca10e27637a0b"
+    },
+    "glyphs": {
+      "存": {
+        "auto_selected_main_index": 1,
+        "auto_selected_top_horizontal_index": 0,
+        "B_x_offset_px": -2.401,
+        "C_x_offset_px": -0.218,
+        "A_C_ink_IoU": 0.91665,
+        "physical_offset_reduction": 0.9092,
+        "geometry_pass": true
+      },
+      "在": {
+        "auto_selected_main_index": 1,
+        "auto_selected_top_horizontal_index": 0,
+        "B_x_offset_px": -2.54,
+        "C_x_offset_px": 0.064,
+        "A_C_ink_IoU": 0.90258,
+        "physical_offset_reduction": 0.9748,
+        "geometry_pass": true
+      }
+    },
+    "result": "2_OF_2_GEOMETRIC_BOUNDS_PASS_ON_FROZEN_NEW_WORD",
+    "important_limitation": "These two glyphs also both have similar top-horizontal plus left-descending stroke structure, so the outcome cannot prove broad generalization to unrelated structural families.",
+    "method_success": "NOT_PROVEN",
+    "visual_aesthetics": "No visible premium-artistic improvement over the original base identified in actual A/B/C inspection; no human blind review.",
+    "human_acceptance": false
+  },
+  "real_local_artifacts": {
+    "zip_name": "R8_文字创作决策与反向补偿_真实验证包.zip",
+    "zip_sha256": "b414c16db719229042e3f23bd243aace820312a10179f60007e08327b5292ce5",
+    "locked_holdout_png_name": "R8_存在_冻结规则独立验证.png",
+    "locked_holdout_png_sha256": "c8b259611861e182e2e5dd9f2961007e3a8dac468a8abb94dafc517ebabbc09f",
+    "original_program_python_sha256": "c8c9830fd12e15046642bbc0f0409d5067d65acb632365110e1bc5a7a99a046f",
+    "source_persisted_to_GitHub": false,
+    "note": "Generated chat artifacts are downloadable in this conversation; these sandbox paths are not asserted stable across conversations. Derived measurements and provenance are pinned here."
+  },
+  "project_status": "TECHNICAL_DECISION_FEEDBACK_GEOMETRY_PASS__NOT_ART_QUALITY_VALIDATION__NOT_PRODUCTION",
+  "next_action": "Do not tune minor geometric width or cap parameters again. Study one authentic structural authoring decision that changes internal component layout/negative space, then render a genuinely different unseen word and obtain independent quality review.",
+  "cost_incurred": "No new paid design software or external paid image API invoked for this R8 experiment",
+  "production_lock_unchanged": true
+}
