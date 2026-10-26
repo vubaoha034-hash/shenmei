@@ -1,0 +1,932 @@
+{
+  "schema_version": "r4-professional-calligraphic-typeface-counterfactual/1.0",
+  "date": "2026-10-26",
+  "study": "Three matched-input professionally styled font controls × original same-text 3 logos; preserve form with two alignments.",
+  "original_count": 3,
+  "font_candidates": 6,
+  "font_checks": [
+    {
+      "font": "Yuji Syuku",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/yujisyuku/YujiSyuku-Regular.ttf",
+      "expected_git_blob_sha": "8a7db48fbf431ea97f14bedf6a4f5472347ab8a0",
+      "expected_bytes": 8430348,
+      "status": "MEASURED",
+      "sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+      "supported_titles": [
+        "R1908_A",
+        "R1909_B",
+        "R1909_C"
+      ],
+      "excluded_titles": []
+    },
+    {
+      "font": "Yuji Boku",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/yujiboku/YujiBoku-Regular.ttf",
+      "expected_git_blob_sha": "3a8cb821f00c7c03ac2eb90915898749b9bce4df",
+      "expected_bytes": 8525588,
+      "status": "MEASURED",
+      "sha256": "94fda16384f3bdac24376a000c57e99abfa314961bd89ef27badfb7410322003",
+      "supported_titles": [
+        "R1908_A",
+        "R1909_B",
+        "R1909_C"
+      ],
+      "excluded_titles": []
+    },
+    {
+      "font": "Zhi Mang Xing",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+      "expected_git_blob_sha": "d037d1f00395175de01de33e62957c30a008a1b1",
+      "expected_bytes": 4063532,
+      "status": "NO_EXACT_TITLE_COVERAGE",
+      "sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969",
+      "supported_titles": [],
+      "excluded_titles": [
+        {
+          "id": "R1908_A",
+          "missing": "實業"
+        },
+        {
+          "id": "R1909_B",
+          "missing": "婦"
+        },
+        {
+          "id": "R1909_C",
+          "missing": "學"
+        }
+      ]
+    },
+    {
+      "font": "Long Cang",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/longcang/LongCang-Regular.ttf",
+      "expected_git_blob_sha": "363bb08696fe4d3827bd36d3d2fbc028d1205161",
+      "expected_bytes": 5162508,
+      "status": "NO_EXACT_TITLE_COVERAGE",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "supported_titles": [],
+      "excluded_titles": [
+        {
+          "id": "R1908_A",
+          "missing": "實業"
+        },
+        {
+          "id": "R1909_B",
+          "missing": "婦"
+        },
+        {
+          "id": "R1909_C",
+          "missing": "學"
+        }
+      ]
+    },
+    {
+      "font": "Liu Jian Mao Cao",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/liujianmaocao/LiuJianMaoCao-Regular.ttf",
+      "expected_git_blob_sha": "f380deef04a5ee6d5af2c6fba60d1613d831c1aa",
+      "expected_bytes": 4951804,
+      "status": "NO_EXACT_TITLE_COVERAGE",
+      "sha256": "cab396b91a5b7c0b4005a35891180d06e6751f5ac261fe680aec65c1ae209033",
+      "supported_titles": [],
+      "excluded_titles": [
+        {
+          "id": "R1908_A",
+          "missing": "實業"
+        },
+        {
+          "id": "R1909_B",
+          "missing": "婦"
+        },
+        {
+          "id": "R1909_C",
+          "missing": "學"
+        }
+      ]
+    },
+    {
+      "font": "Ma Shan Zheng",
+      "upstream_repo": "google/fonts",
+      "upstream_path": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
+      "expected_git_blob_sha": "11bbfb9867d70612158229d037e7a5f622bd0e38",
+      "expected_bytes": 5857936,
+      "status": "NO_EXACT_TITLE_COVERAGE",
+      "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+      "supported_titles": [],
+      "excluded_titles": [
+        {
+          "id": "R1908_A",
+          "missing": "實業"
+        },
+        {
+          "id": "R1909_B",
+          "missing": "婦"
+        },
+        {
+          "id": "R1909_C",
+          "missing": "學"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1908_A",
+      "text": "實業之日本",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.28219,
+        "thick_thin_ratio": 2.5,
+        "typical_thickness_vs_height": 0.0765,
+        "complexity_perimeter_hull": 3.5463,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1529,
+            0.1258,
+            0.1891
+          ],
+          [
+            0.172,
+            0.1972,
+            0.163
+          ]
+        ],
+        "ink_bbox": [
+          983,
+          183
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1908_A",
+      "text": "實業之日本",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.28179,
+        "thick_thin_ratio": 2.1735,
+        "typical_thickness_vs_height": 0.06256,
+        "complexity_perimeter_hull": 3.9349,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1286,
+            0.1473,
+            0.245
+          ],
+          [
+            0.0891,
+            0.1501,
+            0.2399
+          ]
+        ],
+        "ink_bbox": [
+          983,
+          275
+        ],
+        "width_q10_50_90": [
+          10.77,
+          17.205,
+          23.409
+        ]
+      }
+    },
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1909_B",
+      "text": "婦人世界",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.28664,
+        "thick_thin_ratio": 2.0,
+        "typical_thickness_vs_height": 0.08108,
+        "complexity_perimeter_hull": 3.2834,
+        "connected_components_ge3px": 5,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1148,
+            0.2404,
+            0.265
+          ],
+          [
+            0.0915,
+            0.1066,
+            0.1817
+          ]
+        ],
+        "ink_bbox": [
+          644,
+          148
+        ],
+        "width_q10_50_90": [
+          8.0,
+          12.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1909_B",
+      "text": "婦人世界",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.28577,
+        "thick_thin_ratio": 1.7088,
+        "typical_thickness_vs_height": 0.0696,
+        "complexity_perimeter_hull": 3.5321,
+        "connected_components_ge3px": 5,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.0967,
+            0.2604,
+            0.3051
+          ],
+          [
+            0.0714,
+            0.1265,
+            0.1399
+          ]
+        ],
+        "ink_bbox": [
+          644,
+          184
+        ],
+        "width_q10_50_90": [
+          10.0,
+          12.806,
+          17.088
+        ]
+      }
+    },
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1909_C",
+      "text": "小學男生",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.26414,
+        "thick_thin_ratio": 2.5739,
+        "typical_thickness_vs_height": 0.0765,
+        "complexity_perimeter_hull": 3.2461,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1245,
+            0.1315,
+            0.2673
+          ],
+          [
+            0.1683,
+            0.1089,
+            0.1994
+          ]
+        ],
+        "ink_bbox": [
+          785,
+          183
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.0,
+          20.591
+        ]
+      }
+    },
+    {
+      "font": "Yuji Syuku",
+      "work_id": "R1909_C",
+      "text": "小學男生",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.26453,
+        "thick_thin_ratio": 2.6926,
+        "typical_thickness_vs_height": 0.07142,
+        "complexity_perimeter_hull": 3.3077,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1235,
+            0.1043,
+            0.2812
+          ],
+          [
+            0.1728,
+            0.1097,
+            0.2085
+          ]
+        ],
+        "ink_bbox": [
+          785,
+          198
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.142,
+          21.541
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1908_A",
+      "text": "實業之日本",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.28219,
+        "thick_thin_ratio": 2.5,
+        "typical_thickness_vs_height": 0.0765,
+        "complexity_perimeter_hull": 3.5463,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1529,
+            0.1258,
+            0.1891
+          ],
+          [
+            0.172,
+            0.1972,
+            0.163
+          ]
+        ],
+        "ink_bbox": [
+          983,
+          183
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1908_A",
+      "text": "實業之日本",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.28179,
+        "thick_thin_ratio": 2.1735,
+        "typical_thickness_vs_height": 0.06256,
+        "complexity_perimeter_hull": 3.9349,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1286,
+            0.1473,
+            0.245
+          ],
+          [
+            0.0891,
+            0.1501,
+            0.2399
+          ]
+        ],
+        "ink_bbox": [
+          983,
+          275
+        ],
+        "width_q10_50_90": [
+          10.77,
+          17.205,
+          23.409
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1909_B",
+      "text": "婦人世界",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.28664,
+        "thick_thin_ratio": 2.0,
+        "typical_thickness_vs_height": 0.08108,
+        "complexity_perimeter_hull": 3.2834,
+        "connected_components_ge3px": 5,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1148,
+            0.2404,
+            0.265
+          ],
+          [
+            0.0915,
+            0.1066,
+            0.1817
+          ]
+        ],
+        "ink_bbox": [
+          644,
+          148
+        ],
+        "width_q10_50_90": [
+          8.0,
+          12.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1909_B",
+      "text": "婦人世界",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.28577,
+        "thick_thin_ratio": 1.7088,
+        "typical_thickness_vs_height": 0.0696,
+        "complexity_perimeter_hull": 3.5321,
+        "connected_components_ge3px": 5,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.0967,
+            0.2604,
+            0.3051
+          ],
+          [
+            0.0714,
+            0.1265,
+            0.1399
+          ]
+        ],
+        "ink_bbox": [
+          644,
+          184
+        ],
+        "width_q10_50_90": [
+          10.0,
+          12.806,
+          17.088
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1909_C",
+      "text": "小學男生",
+      "mode": "aspect_preserving",
+      "metrics": {
+        "ink_ratio": 0.26414,
+        "thick_thin_ratio": 2.5739,
+        "typical_thickness_vs_height": 0.0765,
+        "complexity_perimeter_hull": 3.2461,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1245,
+            0.1315,
+            0.2673
+          ],
+          [
+            0.1683,
+            0.1089,
+            0.1994
+          ]
+        ],
+        "ink_bbox": [
+          785,
+          183
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.0,
+          20.591
+        ]
+      }
+    },
+    {
+      "font": "Yuji Boku",
+      "work_id": "R1909_C",
+      "text": "小學男生",
+      "mode": "match_ink_bbox",
+      "metrics": {
+        "ink_ratio": 0.26453,
+        "thick_thin_ratio": 2.6926,
+        "typical_thickness_vs_height": 0.07142,
+        "complexity_perimeter_hull": 3.3077,
+        "connected_components_ge3px": 7,
+        "heavy_ink_3x2_position_share": [
+          [
+            0.1235,
+            0.1043,
+            0.2812
+          ],
+          [
+            0.1728,
+            0.1097,
+            0.2085
+          ]
+        ],
+        "ink_bbox": [
+          785,
+          198
+        ],
+        "width_q10_50_90": [
+          8.0,
+          14.142,
+          21.541
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Source SVG was digitally traced in 2025. Results are static image morphology ONLY.",
+    "Measuring 3x2 spatial heavy-ink cells does not segment actual pen strokes or prove designer intention.",
+    "Six expressive fonts may fail glyph coverage for traditional characters; excluded fonts never silently substitute.",
+    "Aesthetic superiority or new-character method generalization requires actual unseen image production and blinded human review.",
+    "No original SVG bytes, reference images or font binaries are saved in this repo."
+  ],
+  "complete_controls": 12,
+  "metric_assessment": {
+    "thick_thin_ratio": {
+      "robust_expressive_font_separation": true,
+      "by_original": [
+        {
+          "work": "R1908_A",
+          "original": 4.2426,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 2.5,
+                  "source_minus_control_pct": 69.7
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 2.5,
+                  "source_minus_control_pct": 69.7
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 2.1735,
+                  "source_minus_control_pct": 95.2
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 2.1735,
+                  "source_minus_control_pct": 95.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_B",
+          "original": 3.1901,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 2.0,
+                  "source_minus_control_pct": 59.51
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 2.0,
+                  "source_minus_control_pct": 59.51
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 1.7088,
+                  "source_minus_control_pct": 86.69
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 1.7088,
+                  "source_minus_control_pct": 86.69
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_C",
+          "original": 4.8507,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 2.5739,
+                  "source_minus_control_pct": 88.46
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 2.5739,
+                  "source_minus_control_pct": 88.46
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 2.6926,
+                  "source_minus_control_pct": 80.15
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 2.6926,
+                  "source_minus_control_pct": 80.15
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "typical_thickness_vs_height": {
+      "robust_expressive_font_separation": true,
+      "by_original": [
+        {
+          "work": "R1908_A",
+          "original": 0.11006,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.0765,
+                  "source_minus_control_pct": 43.87
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.0765,
+                  "source_minus_control_pct": 43.87
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.06256,
+                  "source_minus_control_pct": 75.93
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.06256,
+                  "source_minus_control_pct": 75.93
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_B",
+          "original": 0.09722,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.08108,
+                  "source_minus_control_pct": 19.91
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.08108,
+                  "source_minus_control_pct": 19.91
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.0696,
+                  "source_minus_control_pct": 39.68
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.0696,
+                  "source_minus_control_pct": 39.68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_C",
+          "original": 0.11293,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.0765,
+                  "source_minus_control_pct": 47.62
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.0765,
+                  "source_minus_control_pct": 47.62
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": true,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 0.07142,
+                  "source_minus_control_pct": 58.12
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 0.07142,
+                  "source_minus_control_pct": 58.12
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "complexity_perimeter_hull": {
+      "robust_expressive_font_separation": false,
+      "by_original": [
+        {
+          "work": "R1908_A",
+          "original": 3.6291,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.5463,
+                  "source_minus_control_pct": 2.33
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.5463,
+                  "source_minus_control_pct": 2.33
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.9349,
+                  "source_minus_control_pct": -7.77
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.9349,
+                  "source_minus_control_pct": -7.77
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_B",
+          "original": 3.543,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.2834,
+                  "source_minus_control_pct": 7.91
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.2834,
+                  "source_minus_control_pct": 7.91
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.5321,
+                  "source_minus_control_pct": 0.31
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.5321,
+                  "source_minus_control_pct": 0.31
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "work": "R1909_C",
+          "original": 2.9236,
+          "modes": [
+            {
+              "mode": "aspect_preserving",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.2461,
+                  "source_minus_control_pct": -9.93
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.2461,
+                  "source_minus_control_pct": -9.93
+                }
+              ]
+            },
+            {
+              "mode": "match_ink_bbox",
+              "control_count": 2,
+              "source_higher_than_all_by_15pct": false,
+              "controls": [
+                {
+                  "font": "Yuji Syuku",
+                  "value": 3.3077,
+                  "source_minus_control_pct": -11.61
+                },
+                {
+                  "font": "Yuji Boku",
+                  "value": 3.3077,
+                  "source_minus_control_pct": -11.61
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "any_general_creator_method_proven": false,
+  "stop_condition": "If generic expressive fonts show similar heavy-light contrast, retire global width quantiles as an author-specific rule; investigate per-glyph stroke roles only with evidence from original pixels and matched semantic positions."
+}
