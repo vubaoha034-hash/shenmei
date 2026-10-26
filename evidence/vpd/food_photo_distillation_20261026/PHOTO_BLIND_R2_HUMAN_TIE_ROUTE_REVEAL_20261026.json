@@ -1,0 +1,83 @@
+{
+  "schema_version": "vpd-photo-blind-human-tie-and-reveal/v1",
+  "recorded_date": "2026-10-26",
+  "task_id": "VPD-XHS-PHOTO-AB02-COMPACT-20261026",
+  "authority": "USER_HUMAN_BLIND_EVALUATION",
+  "exact_user_quote": "番茄炒蛋第二轮盲评：X与Y差不多。请核验封存映射、揭晓路线并保存结果。",
+  "verdict": {
+    "human_relative_preference": "TIE",
+    "winner": null,
+    "meaning": "No observed relative aesthetic preference between the two photographs. This is not an absolute professional-quality approval."
+  },
+  "preregistered_inputs": "evidence/vpd/food_photo_distillation_20261026/PHOTO_BLIND_R2_COMPACT_PREREGISTER_20261026.json",
+  "prior_technical_delivery": "evidence/vpd/food_photo_distillation_20261026/PHOTO_BLIND_R2_TWO_OUTPUTS_NEUTRAL_20261026.json",
+  "source_reference": {
+    "platform": "Xiaohongshu",
+    "post_url": "https://www.xiaohongshu.com/explore/6a30d17d0000000007025bd6",
+    "attached_png_sha256": "17fa1b483e6b802bc692fef48f86f131185682f0650f29d64f8540697680efc1",
+    "original_crop_vs_attached_pixel_sha256": "00e29c083fa99f77a4b4b9a0ab409afd34841562a13584441688cea56865c0ae",
+    "licensing": "UNKNOWN_PRIVATE_STUDY_ONLY"
+  },
+  "blind_integrity": {
+    "mapping_created_and_stored_before_user_vote": true,
+    "mapping_store_type": "User-owned private Google Doc with prior readback",
+    "mapping_sha256_committed_before_vote": "2661f63d7efedf6f01ab1f3611f9ece93304552caabdb1584794e51026d6d9f5",
+    "mapping_sha256_recomputed": "2661f63d7efedf6f01ab1f3611f9ece93304552caabdb1584794e51026d6d9f5",
+    "canonicalization": "SHA-256 of JSON object sealed, lexicographically sorted keys, no whitespace: Python json.dumps(sealed, sort_keys=True, separators=(',', ':'))",
+    "exact_original_png_hashes_verified_against_drive_archived_files": true,
+    "route_mapping_verified_after_vote": true,
+    "independent_execution_details": "Both source-bound separate chats used same source pixels, same basic prompt and same observed Instant effort; prompt-added version contained only two compact visual mechanisms. Random seed and internal conditioning were not controllable."
+  },
+  "revealed_outputs": {
+    "X": {
+      "route": "DIRECT_REFERENCE",
+      "original_png_sha256": "4822da1278f9e56458a0adc9ac8af74251e3768e98754ed79123d31e8128db9e",
+      "size_bytes": 2301796,
+      "pixel_size": [
+        941,
+        1672
+      ],
+      "original_drive_id": "1dhCgBz0dZCu9ri3GImNDLG78DrCNHRPo",
+      "original_drive_url": "https://drive.google.com/file/d/1dhCgBz0dZCu9ri3GImNDLG78DrCNHRPo/view"
+    },
+    "Y": {
+      "route": "VPD_COMPACT_TWO_MECHANISMS",
+      "original_png_sha256": "c11e07f70047df646f94c4eef20416e4120a9524de1c498cc8e5c9415caece07",
+      "size_bytes": 2145259,
+      "pixel_size": [
+        941,
+        1672
+      ],
+      "original_drive_id": "1iBhuqrZe6RzN75aEziGnmwY2MlgFKZXb",
+      "original_drive_url": "https://drive.google.com/file/d/1iBhuqrZe6RzN75aEziGnmwY2MlgFKZXb/view"
+    }
+  },
+  "tested_incremental_mechanisms": [
+    "One natural window sidelight with coherent direction and softly asymmetric plate/table shadows",
+    "Distinct reflectance and microtexture among tomato skin, cooked egg and ceramic"
+  ],
+  "result_interpretation": {
+    "one_sentence": "On this one blind tomato-and-egg pair, adding the two compact photographic constraints did not demonstrate an aesthetic advantage over direct real-image reference.",
+    "previous_trial": "In previous independent steamed bass comparison, the user preferred direct reference Y over long expanded VPD X.",
+    "summary": "Trial 1: DIRECT preferred; Trial 2: TIE. No evidence yet for repeatable incremental quality benefit of expanded VPD image prompt.",
+    "not_proven": [
+      "The two mechanisms are ineffective in all cases",
+      "The compact VPD instructions produce identical visual quality in population",
+      "Both outputs meet final professional/commercial quality",
+      "The model weights or underlying generative capabilities improved"
+    ],
+    "confounders": "One output per condition in each round, differing subject and reference across rounds; stochastic generation and hidden seed/model internals are uncontrolled.",
+    "correction_vs_prior_fail": "Reducing extra instructions coincides with loss of obvious relative disadvantage, but cannot establish that removing constraints caused improvement."
+  },
+  "followup": {
+    "default_workflow": "Use real verified source pixels and concise dish-specific prompt as baseline. Keep VPD analyses as optional hypothesis generator rather than mandatory long prompt.",
+    "learning_gate": "Observe this negative/neutral evidence. Do not update global Skill or claim promotion until multiple independent controlled comparisons support it.",
+    "preserve_existing_originals": true,
+    "no_new_generation_this_turn": true,
+    "next_step": "If the user requests more trials, pre-register another distinct food/reference and isolate one compact delta at a time; or focus on improving source curation, accurate dish content, and independent technical inspection.",
+    "scoped_photo_only": true,
+    "typography_untouched": true,
+    "figma_untouched": true,
+    "native_task_lock_untouched": true
+  }
+}
