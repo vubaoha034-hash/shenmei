@@ -1,0 +1,57 @@
+{
+  "schema": "typography-r6-prompt-controlled-image-output-gate/v1",
+  "date": "2026-10-26",
+  "purpose": "Switch from ruled mechanical vector construction to actual image-model authored typography, test causal benefit of frozen decision-language on a new glyph group.",
+  "source_object": "Tc262 六島 CC BY 3.0; observed original Figma source node 498:3; source imagery itself not copied to candidate source inputs",
+  "frozen_prompt": "research/typography_r6/R6_VISUAL_DECISION_A_C_FROZEN.json",
+  "frozen_target_text": "归雁",
+  "A": {
+    "tool": "Adobe Firefly image_generate via connected Adobe plugin",
+    "attempts": [
+      {
+        "config": "Frozen A full options, seed 261026, 1:1, 1MP, locale zh-CN, one output",
+        "status": "TOOL_FAILED_INTERNAL",
+        "error": "The tool failed internally"
+      },
+      {
+        "config": "Same exact A text with minimal options, 1:1, single output",
+        "status": "TOOL_FAILED_INTERNAL",
+        "error": "The tool failed internally"
+      }
+    ],
+    "generated_image_count": 0,
+    "charge_status": "UNKNOWN_DO_NOT_CLAIM_FREE"
+  },
+  "native_fallback": {
+    "tool": "ChatGPT native image_gen (prompt inferred rather than explicit API argument)",
+    "gen_id": "e8f39797-6007-487a-b396-48043e8632c4",
+    "output_png_sha256": "c71f4344b7e2ed318ec3c061efe9ae393fc77e32b375e9603fc1643b038da327",
+    "output_dimensions": [
+      1024,
+      1536
+    ],
+    "actual_output": "A tall multi-section Chinese lettering METHOD INFOGRAPHIC featuring 六島/风/海 and example glyph gallery, NOT the requested two-character 归雁 single finished lettering.",
+    "output_task_valid": false,
+    "usability": "REJECT_AS_A_ARM_INVALID; may be archived as a negative task-following example only"
+  },
+  "C": {
+    "status": "NOT_EXECUTED",
+    "reason": "No valid A artifact; avoid further invalid generations or cherry-picked unequal A/C comparisons."
+  },
+  "external_surfaces": {
+    "figma_existing_file_ai": "Prior real test returned 'Figma AI is not available for this file'; not retested or changed",
+    "figma_weave": "Weave find_model explicitly returned Figma/Weave not linked; needs user's account linking and cost quote/approval before model use",
+    "runway": "Prompt-controlled image generation app discovered as installable/connectable; user connection NOT CONFIRMED",
+    "adobe": "Internal tool error; no accepted generated artifact"
+  },
+  "failure_gates": {
+    "no_output_claimed": true,
+    "no_human_aesthetic_pass_claimed": true,
+    "no_visual_method_validated": true,
+    "prior_failure_repeat": "F05_IMAGE_GENERATOR_INFOGRAPHIC; repeated once in fallback confirms this current native generator surface is unsuitable for this long-context test.",
+    "correct_classification": "R6_INPUT_FROZEN__CONTROLLABLE_IMAGE_GENERATOR_NOT_AVAILABLE__A_INVALID__C_NOT_RUN",
+    "additional_route": "Use ONE actually prompt-controlled image model after account/credit authorization, same model/preset/seed and two frozen prompts on the exact same target; verify both output exact simplified characters and independent human preference before promoting method."
+  },
+  "mainline_preservation": "Official 355/377 business task locks remain unchanged, original B and other Figma designs preserved",
+  "next_executable_action": "Establish available prompt-controlled image renderer; not more shape-parameter math or infographic art. Do not treat a method-infographic as image-generation success."
+}
