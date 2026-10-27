@@ -1,0 +1,110 @@
+{
+  "schema": "shenmei-r18-no-fire-new-glyph-real-artwork-lineage/v1",
+  "date": "2026-10-27",
+  "status": "REAL_PIXELS_AND_EDITABLE_PATHS_VERIFIED__AESTHETIC_UPLIFT_NOT_PROVEN",
+  "inheritance": {
+    "parent_branch": "research/typography-r17-zhao-unseen-transfer-20261027",
+    "parent_commit": "ad540f52ffd8895740b1733972690ae9ec877fcb",
+    "upstream_chain": [
+      "R12 real creator stages and concrete typography decisions",
+      "R14 original 喜 structure applicability compiler",
+      "R15 actual 熹 glyph with user partial positive on upper 喜",
+      "R16 C1/D1/D2 fire gestures and limited feedback",
+      "R17 照 new-form transfer, C2 shared basal stroke",
+      "R18 森 no-four-dots bridge study"
+    ]
+  },
+  "pre_pixel_freeze": {
+    "file": "research/typography_r18/R18_FROZEN_PROTOCOL_BEFORE_PIXELS.json",
+    "commit": "94e07ea8b0090bb76af1ccae890e41b06710955c",
+    "target": "森",
+    "negative_control": "林, non-3-wood structure; abstention declared, never executed"
+  },
+  "source_attribution": {
+    "artist_case": "梁志坚《放肆喜欢》",
+    "primary_article": "https://www.uisdc.com/11-font-design-case",
+    "evidence_source": "R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "mechanism": "artist reportedly reauthors crowded repetition and shared gestures; here sharing a lower horizontal for 森 is OUR application hypothesis",
+    "original_author_outlines_used": false,
+    "original_author_actual_森_example_found": false,
+    "commercial_reuse_claim": false
+  },
+  "scope": {
+    "reference_character": "森",
+    "components": "upper 木 + lower 木 木 (not 灬)",
+    "A": "Noto Serif CJK SC font glyph as recognition-only reference; font not redistributed",
+    "B": "Original 12 manually authored editable SVG paths, lower left/right horizontals separate",
+    "C": "Original 11 manually authored editable SVG paths, remove 2 lower branches/crosses and replace with 1 authored wavy bridge; 10 original paths otherwise identical"
+  },
+  "actual_pixel_audit": {
+    "canvas_px": [
+      1200,
+      1250
+    ],
+    "B_path_count": 12,
+    "C_path_count": 11,
+    "different_pixels_B_C": 12235,
+    "change_bbox_xyxy": [
+      142,
+      699,
+      1101,
+      792
+    ],
+    "same_10_unmodified_svg_paths": true,
+    "modified_only": [
+      "-lower-left-cross",
+      "-lower-right-cross",
+      "+lower-shared-cross"
+    ],
+    "unmodified_top_rows_0_to_679_different_RGBA_pixels": 0,
+    "unmodified_terminal_rows_840_to_1249_different_RGBA_pixels": 0,
+    "thresholded_large_ink_components_B": 8,
+    "thresholded_large_ink_components_C": 7,
+    "separate_readonly_svg_to_png_RGBA_recomputation": "PASS",
+    "small_sizes_px": [
+      144,
+      96,
+      64
+    ],
+    "first_audit_was_stopped_due_to_boundary_y_699": 24,
+    "audit_boundary_fix": "Protected whole top shape against changes in y=0..679; modified bridge starts at y=699; no re-draw or generator retries were used",
+    "design_review": "C demonstrates visible structural linkage, but shared bar overweights lower two 木, entire character still resembles three separate font components. No professional-aesthetic pass.",
+    "independent_human_recognition": "PENDING",
+    "independent_human_blind_preference": "PENDING",
+    "learned_automatic_generation_program": false,
+    "validated_cross_glyph_aesthetic_rule": false
+  },
+  "actual_artifacts": {
+    "remote_native_B": "research/typography_r18/R18_B_森_原生可编辑字稿.svg",
+    "remote_native_B_sha256": "55c9bb55a730736b5627113c62585eea8eaa5c059d315f21a576360f69c300b5",
+    "remote_native_B_git_blob": "4a1fc1ffe0d6ae74ace220690f50cb8ff2b2587d",
+    "remote_native_C": "research/typography_r18/R18_C_森_原生可编辑字稿.svg",
+    "remote_native_C_sha256": "fe09d8517eed3c14d045265f3571e142b1f88da4a497258fb1c3a64364268f4c",
+    "remote_native_C_git_blob": "006e6e4b95a1b1f1bece54a402fdda7d8b5ad0f7",
+    "A_font_reference_png_sha256": "bf7ff99d77fdb6b4f249921dc0f6124a45d40dbe978d0d28899d0043fe94f68b",
+    "BC_comparison_png_sha256": "dd177c64ab25d4137aa74343545bab3daff4f1b153edc0feec381482f2bb3fa8",
+    "ABC_board_png_sha256": "ddef9802a09099aeecff97d89dc301edadc680415ae43ca00af6f42cad0b46b7",
+    "thumbs_png_sha256": "7a6aa364ec9b086d35e1c0d737a52ca83c7f9f12163e7a53e3fbf6865d0c47aa",
+    "reproduction_script_sha256": "293eb68408a24d2c20e485bec6489f59fd35da61fc387493dc18bb51b6e8ac92",
+    "independent_readonly_script_sha256": "ba000278a52171663da28208659c1566011f17bcd76df47139a119b2072e28b4",
+    "second_audit_sha256": "3c6f51f0bb36378f4eb5e08c5a664ce019ede357ab6403cf4af5a0001071fe9d",
+    "report_sha256": "26af2f2d306675b1789ffb943376b251e6f15d3e9efbde32dc3cecec7b3d47c2",
+    "self_contained_zip": "R18_森字_无四点底原创结构迁移与真实审计.zip",
+    "zip_sha256": "652e219d7b88e4793c1c4efe9131440f40ae78d406157bac94a2df91e73c8a3d",
+    "archive_members": 14,
+    "archive_all_file_sha256_verified": true
+  },
+  "official_state_protected": {
+    "repo": "vubaoha034-hash/shenmei",
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "next_formal_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "formal_branch_edited": false,
+    "photo_edited": false,
+    "figma_write": false,
+    "user_final_review_unchanged": true,
+    "new_paid_budget": 0
+  },
+  "next_actual_gate": "Independent anonymous 96px recognition test and equal-budget blind B/C design preference with no author explanation; only then consider another cross-glyph design rule. Without positive art-quality evidence do not keep adjusting the same shared bar."
+}
