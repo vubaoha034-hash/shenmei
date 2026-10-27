@@ -5,6 +5,7 @@ on:
       - research/typography-r11-verified-creative-revisions-20261027
     paths:
       - .github/workflows/typography-r11-authored-revision-evidence.yml
+      - research/typography_r11/verify_first_party_stage_pixels.py
 permissions:
   contents: write
 jobs:
@@ -47,6 +48,8 @@ jobs:
           d=json.load(open('research/typography_r11/R11_SOURCE_IMAGE_BYTE_AND_STAGE_CHECK.json'))
           assert d['first_party_visual_stage_gate'] is True, 'R11_SOURCE_IMAGES_NOT_AUTHENTICATED'
           assert d['actual_same_character_colored_before_after_detected'] is True
+          assert all(img["pixel_color_analysis"]["visible_background_compositing"]=="RGBA_OVER_OPAQUE_WHITE" for img in d["actual_read_and_decoded"])
+          assert all("original_alpha_fraction_transparent" in img["pixel_color_analysis"] for img in d["actual_read_and_decoded"])
           assert d['downloaded_count']>=2
           print('R11_MULTISTAGE_CREATOR_SOURCE_VERIFIED_PASS')
           PY
