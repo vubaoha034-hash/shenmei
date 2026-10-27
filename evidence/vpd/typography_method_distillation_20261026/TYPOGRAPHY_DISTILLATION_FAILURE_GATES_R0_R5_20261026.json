@@ -116,6 +116,20 @@
       "fact": "R10只有在亲自检查源图及其说明后才明确：汉仪是参考→草稿→定稿，Typotheque是原字形局部前后修订，文鼎图既有同字Before/After也有标准版/直接压缩/C80独立修正版对照。不同证据类型不能混称原作者完整步骤或实际笔压。",
       "forbidden": "禁止根据图片标题/搜索缩略图凭空写创造过程；没有真实标注的阶段关系不得被提升为训练真值，不得把常规字体笔画局部修正直接当专业艺术字的生成方法。",
       "evidence": "evidence/vpd/typography_method_distillation_20261026/R10_REAL_AUTHOR_STAGE_VISUAL_DECISION_AUDIT_20261027.json"
+    },
+    {
+      "id": "F14_RECOUNT_DIFFERENT_SOURCE_IDS_AS_DIFFERENT_ART",
+      "severity": "BLOCK",
+      "fact": "R11跨两次云端校验共有11个素材ID，真实SHA去重后只有9张不同的原图：Typotheque同一阝图与汉仪p09在不同来源ID里重复出现。",
+      "forbidden": "必须按原始图片字节SHA及实际像素去重；不能以媒体链接或参考图编号虚增独立训练证据。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_CREATOR_BEFORE_AFTER_DECISION_EVIDENCE_20261027.json"
+    },
+    {
+      "id": "F15_BODY_FONT_REPAIR_IS_NOT_BRUSH_LOGO_ART_DIRECTION",
+      "severity": "BLOCK",
+      "fact": "R10/11真实作者过程图多数来自正文字体、窄字体和无障碍字体，其修改条件是阅读舒适/字库一致性，不能自动用于六島等表现性书法字标。",
+      "forbidden": "设计规则先绑定用途域：正文字体规则可作反例或否决，不能当书法字标的整笔运动生成规则。必须优先同创作者、同风格、整体笔势样本。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_CREATOR_BEFORE_AFTER_DECISION_EVIDENCE_20261027.json"
     }
   ],
   "admissible_technical_progress_conditions": [
@@ -140,8 +154,8 @@
     "Whether semantic role labels are actually the artist's own",
     "How many samples suffice for stable unique style transfer across families"
   ],
-  "current_stage": "R10_REAL_CREATOR_STAGE_IMAGES_VERIFIED_AND_ACTUALLY_VISUALLY_READ__NO_VALIDATED_ART_TRANSFER",
-  "next_true_focus": "Use actual stage-to-stage creator decisions with structural dependencies and author-grounded rollback; require two previously unseen artistic wordmarks and human aesthetic improvement, not only geometry.",
+  "current_stage": "R11_AUTHORED_EDIT_SUPERVISION_CONFIRMED__NO_UNSEEN_AESTHETIC_TRANSFER",
+  "next_true_focus": "Source-grounded short/slant/flat complete sweep rules from same expressive artist; ensure author-context validity before unseen actual creative generation and human blind aesthetic review.",
   "business_lock_preserved": true,
   "source_of_truth_order": [
     "Current user objective",
@@ -150,5 +164,5 @@
     "CURRENT_TASK_LOCK (formal poster work only)"
   ],
   "last_appended_date": "2026-10-27",
-  "admission_warning": "Read prior F00..F13 before each experiment. Engineering gate, correct vectors, and contrast scores never substitute for real styled unseen glyph + human preference."
+  "admission_warning": "16 distinct failure modes kept. Real source image checksums + notes do not equal author-like creation."
 }
