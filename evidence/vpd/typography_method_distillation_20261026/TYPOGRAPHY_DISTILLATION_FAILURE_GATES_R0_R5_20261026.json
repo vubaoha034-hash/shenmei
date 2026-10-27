@@ -139,7 +139,7 @@
       "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_AUTHOR_BEFORE_AFTER_AND_FAMILY_REVISION_20261027.json"
     },
     {
-      "id": "F14_R11_TRANSPARENT_PIXELS_FALSE_INK_COVERAGE",
+      "id": "F16_R11_TRANSPARENT_PIXELS_FALSE_INK_COVERAGE",
       "severity": "BLOCK",
       "fact": "R11研究justfont设计师的透明PNG过程图时，原统计直接im.convert('RGB')导致透明黑色被当成可见墨色，某图的黑区占比由错误44.6%变为正确合成白底后的1.1%。第一次阶段证据来源哈希仍有效，墨色分析作废；GitHub Actions重新运行并验证RGBA透明合成。",
       "forbidden": "凡透明PNG未正确合成预期白底，不得使用颜色/墨面积/留白比率训练或宣称视觉风格已经提取；单有真实下载与CI绿灯不是合格的像素审计。",
