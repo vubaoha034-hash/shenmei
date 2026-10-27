@@ -1,0 +1,49 @@
+name: R10b Original Design Revision Pixel Evidence
+
+on:
+  push:
+    branches:
+      - research/typography-r10-authored-stage-images-20261027
+    paths:
+      - .github/workflows/typography-r10-real-before-after-color-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  real-red-blue-before-after:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated source-inspection tooling
+        run: python -m pip install --quiet --disable-pip-version-check pillow numpy scipy
+      - name: Measure independently verified creator-original red/blue contours
+        run: python research/typography_r10/measure_actual_revision_differences.py
+      - name: Validate, preserve derived statistics, and reject unverifiable output
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          x=json.load(open("research/typography_r10/R10_TRUE_BEFORE_AFTER_PIXEL_DIFFERENCE.json"))
+          assert x['gate_pass'] is True
+          assert x['before_red']['count']>=200
+          assert x['after_blue']['count']>=200
+          assert x['source_verified_sha256']=='f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1'
+          assert x['not_aesthetic_score'] is True
+          assert x['is_new_design_output'] is False
+          print("R10_PIXEL_EVIDENCE_GATE_PASS",x['symmetric_nearest_contour_distance']['after_to_before_px'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r10/R10_TRUE_BEFORE_AFTER_PIXEL_DIFFERENCE.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r10b): preserve quantitative same-radical red/blue before/after difference"
+            git push origin HEAD:research/typography-r10-authored-stage-images-20261027
+          fi
