@@ -1,0 +1,117 @@
+{
+  "schema": "shenmei-vpd-r22-native-image-isolated-carrier-real-artifact-pass/v1",
+  "date": "2026-10-27",
+  "parent_commit": "9a8fceb94370efc15c4a0901e116fdbd4d438717",
+  "parent_branch": "research/typography-r21-whole-word-a-b-20261027",
+  "preregistered_protocol": "research/typography_r22/R22_ISOLATED_CHAT_CARRIER_FROZEN.json",
+  "objective": "Check clean short ChatGPT conversation can generate one exact isolated 4-Hanzi black transparent wordmark; no design-method comparison",
+  "execution": {
+    "carrier": "Opera Neon connected to authenticated chatgpt.com Chat mode in a new conversation with no prior turns",
+    "url": "https://chatgpt.com/c/6ae09627-6f84-83ec-964d-3523aed1b4fc",
+    "input_messages": 1,
+    "target": "青石晚风",
+    "input_prompt_source": "exact frozen prompt in R22_ISOLATED_CHAT_CARRIER_FROZEN.json",
+    "generation_requests": 1,
+    "images_returned": 1,
+    "hidden_retries": 0,
+    "user_asset_uploads": 0,
+    "no_Adobe_Firefly_used": true,
+    "model_id": "NOT_EXPOSED",
+    "generation_seed": "NOT_EXPOSED",
+    "exact_low_level_generator_args": "NOT_EXPOSED"
+  },
+  "source_artifact": {
+    "display_name": "青石晚风书法字.png",
+    "storage": "User ChatGPT Library generated asset materialized as original raw_file into analysis container, compared to same browser-generated Blob",
+    "format": "PNG",
+    "mode": "RGBA",
+    "png_bytes": 176421,
+    "SHA256": "c0483c2637d2a6232734426558f9d5400c383aa5de62efd04641da9b98fc6217",
+    "browser_blob_SHA256": "c0483c2637d2a6232734426558f9d5400c383aa5de62efd04641da9b98fc6217",
+    "browser_blob_bytes": 176421,
+    "source_original_unchanged": true,
+    "width_px": 1672,
+    "height_px": 941,
+    "aspect_ratio": 1.7768331562167907,
+    "native_alpha": {
+      "zero_pixels": 1380620,
+      "opaque_pixels": 6858,
+      "partial_pixels": 185874,
+      "total_pixels": 1573352
+    },
+    "bbox_alpha_ge_128": [
+      130,
+      291,
+      1548,
+      630
+    ],
+    "four_separated_ink_regions_ge_128": [
+      [
+        130,
+        291,
+        468,
+        628
+      ],
+      [
+        486,
+        302,
+        827,
+        627
+      ],
+      [
+        863,
+        293,
+        1185,
+        627
+      ],
+      [
+        1209,
+        297,
+        1548,
+        630
+      ]
+    ]
+  },
+  "technical_verdicts": {
+    "exact_visible_text": "PASS, visually read four simplified characters 青石晚风 in original PNG; not by OCR",
+    "one_asset": "PASS",
+    "one_horizontal_line": "PASS",
+    "target_16_9": "PASS_WITH_PIXEL_ROUNDING",
+    "background_transparency": "PASS native RGBA; 87.75% pixels alpha=0",
+    "no_other_written_notes_or_collage": "PASS independent raw image inspected, no A/B/C, scene, labels or decoration",
+    "exact_standard_songti_typeface": "NOT_PROVEN. Approximates formal black title type, not guaranteed a particular licensed Song font",
+    "standalone_editable_SVG": "NOT_PRODUCED",
+    "human_aesthetic_preference": "NOT_COLLECTED",
+    "professional_artistic_quality": "NOT_ASSESSED",
+    "cross_wordmark_generalization": "NOT_TESTED",
+    "design_method_distillation": "NOT_VALIDATED",
+    "single_call_carrier_gate": "PASS_WITH_LIMITATIONS"
+  },
+  "causal_limits": [
+    "Simultaneously changed the chat context, prompt length and target string versus failed R21; cannot isolate which variable caused success",
+    "One single successful run cannot prove the same carrier is consistently reliable across characters, styles or generator sessions",
+    "A visually correct standard-like character design is not evidence of learnable expert typography method or deliberate group-level authorship"
+  ],
+  "audit": {
+    "script": "R22_REPRODUCE_AUDIT.py",
+    "json": "R22_PIXEL_AUDIT.json",
+    "readme": "R22_研究结论与下步.md",
+    "preview_white": "R22_原图暖白底检查.jpg",
+    "full_zip": "R22_青石晚风_隔离图片生成入口真实验收包.zip",
+    "zip_original_SHA256": "32889a6099e53ac3fab7479880a671aef5b3529a3419ed14959494b1ad1e543e",
+    "zip_count": 7,
+    "original_image_binary_in_public_github": false,
+    "downloadable_files_delivered_in_current_chat": true
+  },
+  "next": "Use R22 as a qualifying but single observed carrier success; R23 should preregister a NEW wordmark + NEW protected holdout and attempt one image per arm (A neutral/B grammar), each in fresh short-context ChatGPT chats with identical technical constraints. Require both source images valid before aesthetics; human assessment and cross-word replication stay separate.",
+  "mainline_protection": {
+    "official_repo": "vubaoha034-hash/shenmei",
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "expected_lock_revision": 355,
+    "expected_checkpoint_sequence": 377,
+    "formal_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "native_mainline_writes": 0,
+    "R19_masked_review_still_pending": true,
+    "R21_failed_AB_retained": true
+  }
+}
