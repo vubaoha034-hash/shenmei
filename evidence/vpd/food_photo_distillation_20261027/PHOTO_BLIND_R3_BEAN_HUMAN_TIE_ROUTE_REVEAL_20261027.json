@@ -1,0 +1,102 @@
+{
+  "schema_version": "vpd-photo-third-blind-human-tie-reveal/v1",
+  "date": "2026-10-27",
+  "task_id": "VPD-XHS-PHOTO-AB03-BEAN-SINGLE-MICROTEXTURE-20261026",
+  "scope": "PHOTO_ONLY, no typography, Figma, global rules, native task lock, or original changes",
+  "authority": "Direct human blind vote in this conversation after both original photos were shown anonymously",
+  "user_feedback": {
+    "exact_quote": "第三轮干煸四季豆盲评：X与Y差不多。请核验封存映射、揭晓路线并保存结果。",
+    "relative_verdict": "TIE",
+    "preferred_label": null,
+    "clarification": "X与Y差不多 = no subjective relative winner, not explicit absolute commercial-quality approval, neither a new rejection nor both-final approval"
+  },
+  "source_evidence": {
+    "frozen_input_path": "evidence/vpd/food_photo_distillation_20261026/PHOTO_BLIND_R3_SINGLE_TEXTURE_FROZEN_INPUT_20261026.json",
+    "neutral_delivery_path": "evidence/vpd/food_photo_distillation_20261027/PHOTO_BLIND_R3_BEAN_TWO_OUTPUTS_NEUTRAL_20261027.json",
+    "source_post": "https://www.xiaohongshu.com/explore/6a27e565000000001503cce4",
+    "title": "宁波海鲜十六碗 | 回归海边渔家生活的本真",
+    "private_reference_png_sha256": "8f0473897904b010df727accf8b456d85983064a4a695e3cf359a81c2ae261ae",
+    "reference_verified_against_real_archived_bytes": true,
+    "third_party_rights": "UNKNOWN_PRIVATE_STUDY_ONLY",
+    "reference_already_used_before_this_trial": "YES_CASE04_TARO"
+  },
+  "sealed_mapping_verification": {
+    "sealed_before_user_vote": true,
+    "location": "/高级感p/VPD_BLIND_PRIVATE/SEALED_AB03_MAPPING_20261027.json",
+    "library_file_id": "libfile_51a08c3fc84881918f59d2f8a6c22b8a",
+    "file_id": "file_0000000026b88206a20d54b443d7dcd0",
+    "commitment_sha256": "d895cadd048fef232387d97af343acf8ae4caa4816725ead596bc6279d8ed81e",
+    "commitment_recomputed": "d895cadd048fef232387d97af343acf8ae4caa4816725ead596bc6279d8ed81e",
+    "verification_algorithm": "SHA256 UTF-8 JSON.stringify(sealed) Python: json.dumps(sealed, sort_keys=True, ensure_ascii=False, separators=(',', ':'))",
+    "file_sha256_match_X": true,
+    "file_sha256_match_Y": true,
+    "reference_sha256_match": true,
+    "verified_real_originals_from_Google_Drive_readback": true
+  },
+  "revealed_routes": {
+    "X": {
+      "route": "VPD_SINGLE_MATERIAL",
+      "delta": "额外只落实一种真实烹饪材质机制：同一盘四季豆的豆荚表皮有不均匀的轻微皱缩、少量自然焦褐和局部薄油光，明暗、纹理与焦点位置都不规则，避免每根豆荚统一平滑发亮。",
+      "image_sha256": "59cb6a1b0647c17d62bd099f7f02455da6f646050930535ce9f261a5fe3a24cf",
+      "original_png_bytes": 2691601,
+      "pixel_dimensions": [
+        941,
+        1672
+      ],
+      "original_drive_file_id": "1QmTeb1LQc30ZTgbxl_S4Y3TEpenlJOSD",
+      "drive_url": "https://drive.google.com/file/d/1QmTeb1LQc30ZTgbxl_S4Y3TEpenlJOSD/view"
+    },
+    "Y": {
+      "route": "DIRECT_REFERENCE",
+      "delta": null,
+      "image_sha256": "804b7d690763f9d41abe2f098bd0d7f59ec472a0c8bb1ae309fe7442d72545c1",
+      "original_png_bytes": 2623345,
+      "pixel_dimensions": [
+        941,
+        1672
+      ],
+      "original_drive_file_id": "1z9Lyol6evoTcBVTKqUtcq7zvrj7jLvVc",
+      "drive_url": "https://drive.google.com/file/d/1z9Lyol6evoTcBVTKqUtcq7zvrj7jLvVc/view"
+    }
+  },
+  "visual_analysis_scoped": {
+    "X": "Visibly darker/localized searing and some textured wrinkling on bean skins, mixed minced pork and sparse garlic/chili, but surface highlights remain conspicuously glossy; more tightly composed hero with wood props.",
+    "Y": "Similarly recognizable long green bean sections, minced pork and red chili in shallow earthy plate, brighter/greener bean skins, localized char in parts but strong polished oil highlights remain.",
+    "comparison": "The intended single additional material rule is not demonstrably preferred by user. Visual differences in shine and localized browning do not prove the mechanism caused them.",
+    "correctness": "Both visually depict the requested green-bean-and-minced-pork dish; detailed culinary authenticity, exact bean morphology and independent professional quality remain unverified.",
+    "strict_aspect": "941x1672 ≈ 9:16, not mathematically exact; no crops/modifications to originals",
+    "absolute_quality": "NOT HUMAN-APPROVED AS COMMERCIAL FINAL"
+  },
+  "experiment_summary": {
+    "r1": "清蒸鲈鱼 — human preferred DIRECT reference over expanded VPD (X VPD, Y DIRECT)",
+    "r2": "番茄炒鸡蛋 — human TIE (X DIRECT, Y compact VPD with 2 extra mechanisms)",
+    "r3": "干煸四季豆 — human TIE (X VPD with 1 material delta, Y DIRECT)",
+    "aggregate": {
+      "direct_preferred": 1,
+      "VPD_preferred": 0,
+      "ties": 2,
+      "total_paired_trials": 3
+    },
+    "inference": "No observed repeatable incremental benefit of adding distilled photo rules under these particular paired single draws. The 3-pair record does not prove universal VPD inferiority nor that compact prompts never help.",
+    "confounds": [
+      "one generated sample per route per trial",
+      "different food and reference styles across trials",
+      "uncontrolled random seeds and internal provider generation settings",
+      "human subjective preference only, absolute quality not independently certified"
+    ]
+  },
+  "improvement_policy": {
+    "current_preferred_operational_baseline": "Verified actual real reference pixels plus concise food-content prompt",
+    "VPD_current_role": "Reference search, provenance, image inspection, hypothesis formation, and optional targeted correction rather than mandatory prompt inflation",
+    "rule_promotion": "NONE; do not automatically rewrite Skill or introduce quality gates",
+    "next_possible_focus": "Before further same-template A/B repetitions, diagnose domain-level food realism / dish identity and test interventions on one known weakness, preferably absolute-quality review separately from relative blind pair.",
+    "no_additional_generation_this_turn": true,
+    "protect_existing_artifacts": true,
+    "native_task_lock_modified": false,
+    "checkpoint_modified": false,
+    "figma_modified": false,
+    "typography_modified": false
+  },
+  "settlement_status": "USER_TIE_RECORDED_MAPPING_VERIFIED_AWAITING_GITHUB_REMOTE_RECEIPT",
+  "next_required_action": "MARK_R3_CLOSED_SCOPED_TIE; preserve baseline and original files; any new round only via separate explicit photo-only next step."
+}
