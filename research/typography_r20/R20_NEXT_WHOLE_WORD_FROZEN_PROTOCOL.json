@@ -1,0 +1,62 @@
+{
+  "schema": "shenmei-r20-whole-word-style-grammar-protocol/1.0",
+  "date": "2026-10-27",
+  "status": "FROZEN_FOR_FUTURE_ARTWORK_NOT_ARTWORK_EXECUTED",
+  "parent_branch": "research/typography-r19-label-masked-preference-20261027",
+  "parent_commit": "216d7e7be47e9ac83eaaf737586d9adc2d2cec61",
+  "r19_review_mapping": "SEALED_STILL; HUMAN_FEEDBACK_PENDING",
+  "hypothesis": "Designer method requires coordinating a whole wordmark's character recognition, optical weight, counterspace, and distributed signature strokes—not merely editing one striking path on one glyph.",
+  "source": {
+    "author": "梁志坚",
+    "original_article": "https://www.uisdc.com/11-font-design-case",
+    "text_readable": "https://www.hellofont.cn/article/229166",
+    "evidence_scope": "Read full accessible reprint text; direct original site 403 in this new context. Authored statements about 放肆喜欢 and 海棠未雨 used, no third-party path pixels copied.",
+    "distinguish_source_from_hypothesis": true
+  },
+  "design_brief": {
+    "first_new_wordmark": "雾起长桥",
+    "frozen_different_heldout": "纸舟过岸",
+    "design_intent": "克制、流动、略带古典气质的整组中文字标，不是写实雾气或桥梁插画。",
+    "grammar": {
+      "stroke_signature": "每个字至少有一条源自原字结构的记忆点主笔，形态同一家族但落点随结构变化，不能直接复制曲线。",
+      "optical_weight": "先审四字的黑白重量和整体外轮廓，疏字适当增强笔力，密字保留白口；不把算法固定百分比冒称作者设计原则。",
+      "shared_rhythm": "控制伸笔方向、错落高度、字距与留白节奏；同一特征不要机械出现在每字相同角落。",
+      "negative_space": "只在不影响汉字构形识别的情况下合并/断笔；每项操作说明要解决的具体拥挤问题。",
+      "flat_ink_first": "第一阶段只许纯色透明矢量字稿，无装饰纹理替代轮廓工作。",
+      "safety_limit": "绝不临摹、提取、重新分发原作者完整字体轮廓；方法迁移不是外观逐像素克隆。"
+    }
+  },
+  "control": {
+    "A": "中性整组字标基线，与实验组使用同一生成器、等参数、等执行次数，不以字体贴图与人工精修不平等对比。",
+    "B": "输入冻结设计语法，仅一版执行；不得先挑合意结果再回写语法。",
+    "first_trial_budget": "一词两臂，各一正式成品，不补抽以制造胜率；原始 FAIL 不可删除",
+    "subsequent_holdout": "纸舟过岸使用同一不变语法验证，不能提前用其结果调参。",
+    "multi_glyph_requirement": "至少跨三个不同字记录风格特征如何因笔形功能而调整，不是统一变宽/飞白/装饰。",
+    "evidence_to_record": [
+      "锁定提示词和输入哈希",
+      "可视生成器参数/版本及调用次数",
+      "实际设计 PNG",
+      "原生可编辑 SVG 源",
+      "汉字内容和结构人工校验",
+      "独立方法遮蔽评审前置封存",
+      "真人反馈源原话"
+    ],
+    "critical_gates": [
+      "真实四字认读正确",
+      "整组外轮廓和四字字重协调",
+      "不同字之间有有条件的同一家族风格",
+      "实际图像通过冷审且人类有明确审美提升",
+      "第二词迁移与可识别性独立复验"
+    ],
+    "failure_policy": "上面任一关键门不满足→失败或不确定，禁止VALIDATED_RULE。",
+    "human_review": "PENDING; no independent recruited reviewers",
+    "new_wordmark_artifacts_produced": false
+  },
+  "formal_mainline": {
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "S7_human_review": "PENDING",
+    "modified": false,
+    "added_paid_budget": 0
+  }
+}
