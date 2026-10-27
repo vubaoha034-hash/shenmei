@@ -1,0 +1,66 @@
+{
+  "schema": "vpd-r13-whole-word-layout-isolation-real-diagnostic/1.0",
+  "date": "2026-10-27",
+  "primary_goal": "Reverse engineer original creators' character-level expressive writing and whole-word typographic composition on new terms; do NOT mistake renderer success for the claimed design ability.",
+  "source": {
+    "author": "张家佳",
+    "project": "上座",
+    "first_party_url": "https://www.behance.net/gallery/196038613/_",
+    "original_work_mechanism": "Sparse 上 and dense 座 are reauthored as a coherent vertical wordmark with joined writing energy; original process includes drafts and authored strokes, NOT only font reflow.",
+    "prior_verified_receipt": "evidence/vpd/typography_method_distillation_20261026/R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "prohibited": "Do not copy source paths or call stacked font the author's technique."
+  },
+  "freeze": {
+    "protocol_path": "research/typography_r13/R13_FROZEN_TOPOLOGY_PROTOCOL.json",
+    "protocol_commit": "382e722268fab767ba2f1016847eb42ef7ff4e36",
+    "freeze_before_render": true,
+    "heldout": "山海",
+    "negative": "风云",
+    "unchanged_glyph_font": "AR PL KaitiM GB (Arphic Public License; no font shipped)",
+    "literal_hanzi_verified_with_cmap": true,
+    "same_size": 232,
+    "comparison": "A horizontal disjoint, B vertical stacked, exact same glyph pixels, no extra effects"
+  },
+  "artifact": {
+    "exact_png_name": "R13_山海风云_整词构图对照.png",
+    "actual_png_sha256": "aa3c0716b3c3b65bb96055314297065a4f5c7ba3ce5a368e4325289c7db1cbb3",
+    "actual_png_size": [
+      1620,
+      1600
+    ],
+    "local_code_sha256": "2a5cd1a77d6f9971c34947f242502ef767b858a0a3a29efd7fba00a3aa34a4b3",
+    "local_audit_sha256": "ef8c1a0eb17d7bbd713401fdb4bd04334cecfe2609585688db07d1eeed8503a8",
+    "generated_package_name": "R13_上座方法迁移_山海风云对照与失败记录.zip",
+    "generated_package_sha256": "ca3f2d19662232b3254942067e10fe1403b44a2fbc293aa2e094ea2941eb3142",
+    "original_source_artwork_bytes_included": false,
+    "glyph_font_binary_included": false,
+    "exact_container_location": "/mnt/data/r13_composition/R13_山海风云_整词构图对照.png",
+    "sandbox_files_are_conversation_local": true,
+    "images_created_without_image_generation_or_figma": true
+  },
+  "pixel_verification": {
+    "originally_failed": "Initial render left bottom negative panel empty due incorrect coordinate transform using absolute right/bottom rather than local panel width/height. First raster SHA bda78e4fdde2dd1813999a670e57d242c00463410b6d2c8b524ddce73dc824d1 INVALID.",
+    "fixed_formula": "start+(panel_extent-content_extent)/2",
+    "final_ink_pixel_counts": {
+      "山海_horizontal": 14883,
+      "山海_vertical": 14868,
+      "风云_horizontal": 13109,
+      "风云_vertical": 13109
+    },
+    "all_panels_have_true_glyph_ink": true,
+    "exact_hanzi_order_preserved": true
+  },
+  "comparison": {
+    "source_mechanism_isolated": "ONLY whole-word composition topology; original author gesture/contour redrawing intentionally not reconstructed.",
+    "silhouette_quality_review": "NEGATIVE. Both candidate and baseline are still plain printed Kaiti characters; vertical arrangement alone does NOT produce source-like unified brush wordmark. Horizontal 山海 even reads more naturally at first glance, and vertical 风云 is not obviously impossible. The 3-vs-10 stroke ratio does not independently dictate aesthetic layout.",
+    "new_word_better_than_baseline": false,
+    "blind_human_preference": "NOT_COLLECTED",
+    "actual_professional_wordmark_generated": false,
+    "exact_source_author_process_learned": false,
+    "design_method_promoted": false
+  },
+  "next_true_bottleneck": "Need a method to invent and assess coherent cross-character brush gesture and topology, not a rectangle rearranger. Do not repeat a fourth font-only layout variant; only one actual artist-documented path-stage case justifies further transfer attempt.",
+  "cost": "No newly paid AI API, license or design software; existing Python and local fonts only.",
+  "formal_task_unchanged": true,
+  "status": "REAL_UNSEEN_WORD_LAYOUT_TEST_DONE__LAYOUT_ALONE_CREATIVE_FAILURE"
+}
