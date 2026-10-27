@@ -1,0 +1,54 @@
+name: R14 Authored Topology Decision to New Hanzi
+on:
+  push:
+    branches:
+      - research/typography-r14-artist-topology-transfer-20261027
+    paths:
+      - .github/workflows/typography-r14-real-creator-topology-planning.yml
+permissions:
+  contents: write
+jobs:
+  true_holdout_structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install single source signature dependency
+        run: python -m pip install --quiet --disable-pip-version-check numpy
+      - name: Compile creator-derived topology applicability using frozen source
+        run: python research/typography_r14/r14_author_topology_compiler.py
+      - name: Preserve evidence including rejected/invalid transfers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          p=json.load(open('research/typography_r14/R14_TOPOLOGY_COMPILATION_FREEZE.json'))
+          d=json.load(open('research/typography_r14/R14_SOURCE_TO_HOLDOUT_TOPOLOGY_COMPILATION.json'))
+          assert p['frozen_unseen_holdout']==['熹']
+          assert d['new_glyph_pixels_generated'] is False
+          assert d['aesthetic_transfer_success'] is False
+          assert d['exact_glyphs_checked']==8
+          print('R14_COMPILED_THEN_SAFETY_GATED',d['unseen_holdout_eligible'],d['negative_control_false_positives'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r14/R14_SOURCE_TO_HOLDOUT_TOPOLOGY_COMPILATION.json
+          if ! git diff --cached --quiet; then
+             git commit -m "evidence(r14): preserve conditional stroke-subgraph transfer, holdout and negative controls"
+             git push origin HEAD:research/typography-r14-artist-topology-transfer-20261027
+          fi
+      - name: Hard gate any false-positive or zero-holdout success
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r14/R14_SOURCE_TO_HOLDOUT_TOPOLOGY_COMPILATION.json'))
+          assert d['valid_structural_compiler_gate'] is True, 'R14_NEGATIVE_CONTROL_FALSE_POSITIVE'
+          assert d['unseen_holdout_eligible']==1, 'R14_TRUE_HOLDOUT_NOT_ELIGIBLE'
+          print('R14_SOURCE_TO_NEW_GLYPH_STRUCTURAL_MATCH_VERIFIED_ONLY')
+          PY
