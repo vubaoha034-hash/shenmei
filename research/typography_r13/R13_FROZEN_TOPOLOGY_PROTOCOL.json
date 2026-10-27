@@ -1,0 +1,74 @@
+{
+  "schema": "vpd-r13-word-topology-heldout-protocol/1.0",
+  "date": "2026-10-27",
+  "purpose": "One-shot isolation test of source-authored 上座 whole-word composition choice, not per-stroke width or Figma tracing.",
+  "provenance": {
+    "creator": "张家佳",
+    "source_project": "https://www.behance.net/gallery/196038613/_",
+    "source_artwork": "上座",
+    "verified_stage_evidence": "evidence/vpd/typography_method_distillation_20261026/R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "source_process": "Author developed sparse 上 and dense 座 as one vertical lettering composition, redrawing gestures and contours in multiple stages.",
+    "source_limitation": "The author did more than reflow source glyphs; this study isolates ONLY initial layout, never his lettering skill."
+  },
+  "frozen_tests": [
+    {
+      "word": "山海",
+      "complexity": [
+        3,
+        10
+      ],
+      "expected_trigger": "COMPARE_WHOLE_WORD_TOPOLOGIES",
+      "reason": "dense/sparse ratio=10/3 above 2"
+    },
+    {
+      "word": "风云",
+      "complexity": [
+        4,
+        4
+      ],
+      "expected_trigger": "NO_FORCED_VERTICAL_TOPOLOGY",
+      "reason": "complexity ratio=1; forced vertical shown only as negative diagnostic"
+    }
+  ],
+  "input_font": {
+    "family": "AR PL KaitiM GB",
+    "source": "system font gkai00mp.ttf",
+    "license": "Arphic Public License; do not redistribute font file",
+    "same_font_across_arms": true,
+    "font_size_px": 232
+  },
+  "arms": [
+    {
+      "arm": "A",
+      "name": "horizontal unchanged",
+      "mechanism": "Two font glyphs unmodified; simple horizontal composition with equal visual point sizes."
+    },
+    {
+      "arm": "B",
+      "name": "compact vertical only",
+      "mechanism": "Same unmodified glyphs stacked in top-down order; no strokes joined, no brush simulation, no Figma. NOT the author's finished technique."
+    }
+  ],
+  "layout": {
+    "panel_width_px": 752,
+    "panel_height_px": 660,
+    "canvas_width_px": 1620,
+    "canvas_height_px": 1600,
+    "render_sizes_fixed_before_artwork": true,
+    "horizontal": "centered in panel",
+    "vertical": "top and bottom centered, constant 18px nominal row gap, no overlap or glyph deformation",
+    "white_background": true,
+    "ink": "black",
+    "no_tuning_after_render": true
+  },
+  "quality_checks": [
+    "Actual literal Unicode source text confirmed; no misspelled glyphs",
+    "Same exact font and point size in A and B, only topology differs",
+    "No designer font data, original artwork or unlicensed media shipped",
+    "Negative 风云 not automatically promoted to vertical because forced diagnostic exists",
+    "Human visual quality judgement independent of math",
+    "If both are ordinary font layout, fail creative-style transfer and keep evidence negative"
+  ],
+  "cost": "No new paid software or metered API; no Figma edit.",
+  "judgement": "FROZEN_BEFORE_VISUAL_OUTPUT"
+}
