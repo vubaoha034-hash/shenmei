@@ -1,0 +1,83 @@
+{
+  "schema": "shenmei-typography-r19-label-masked-human-review-protocol/1.0",
+  "frozen_date": "2026-10-27",
+  "parent_branch": "research/typography-r18-sen-three-wood-transfer-20261027",
+  "parent_head": "a9898a1aebea9cbda512635d61df0b8f56bbab42",
+  "objective": "Produce neutral, equally presented original artifact comparisons from existing R16-R18 unchanged pixels, ask human which design is aesthetically stronger, and separately ask unprimed recognition when feasible.",
+  "scope": {
+    "new_glyph_generation": 0,
+    "new_svg_paths": 0,
+    "existing_png_only": true,
+    "paid_apis": 0,
+    "figma_mutation": 0
+  },
+  "test_items": [
+    {
+      "row": 1,
+      "character": "熹",
+      "control": "R15 C1 prior original",
+      "edited": "R16 D2 directional 灬",
+      "sha256_control": "ac7174fecd05283693378508e601d07e824aa91a8c12bb7c25ff16986cb5d8d0",
+      "sha256_edited": "e14863471aac062a50f6fd1b837695288e20dae677b26e4d8db51cbea16c88df",
+      "canvas": [
+        1100,
+        1180
+      ]
+    },
+    {
+      "row": 2,
+      "character": "照",
+      "control": "R17 C independent lower bars",
+      "edited": "R17 C2 one shared basal path",
+      "sha256_control": "54e7105adacf8ee8dc4d7c95a4fba1adfe3983660069cf14a024a175c45b8ecc",
+      "sha256_edited": "dbe0f99b48205a4efd430753633005c0206248ee39fc912dc515dc1bb05602e3",
+      "canvas": [
+        1050,
+        1080
+      ]
+    },
+    {
+      "row": 3,
+      "character": "森",
+      "control": "R18 B two lower horizontal paths",
+      "edited": "R18 C common bridge",
+      "sha256_control": "b99acab1b705e963278dfdc10ec112fe5d4d3de329c9f9082c1e829c0e042791",
+      "sha256_edited": "0df7d9eb3c16e7011c6462bf4dc5195d6f22f0aedda47bdcaee10587cb5cbe55",
+      "canvas": [
+        1200,
+        1250
+      ]
+    }
+  ],
+  "neutralization": {
+    "original_pixel_ink_unchanged": true,
+    "exact_same_source_transform_for_both_alternatives_in_pair": true,
+    "neutral_background": "#F7F5F0",
+    "no_method_names_no_abcd_versions_on_test_panels": true,
+    "view_original_graphics_at_1x_or_in_full_equal_side_by_side": true,
+    "thumbnails": [
+      96,
+      64
+    ],
+    "actual_screen_size_caveat": "On phones the displayed on-screen size may differ; image files can be opened at native resolution.",
+    "randomization_seed_commitment": "faa2342e9c6ae6319c490eb6ef6aa9b6d7eaa7998306d1be4a41dab789437731",
+    "hidden_mapping_file_sha256": "90cec9a5a95e4a28796ec87384fdb237ae2e15e50caf91687baf97b4ea677667",
+    "sealed_mapping_not_in_public_repo": true,
+    "reveal_protocol": "After user submits choices, expose mapping and full evaluation. Do not retroactively change placements."
+  },
+  "assessment": {
+    "user_not_naive": "User already saw previous unmasked outputs, so this is METHOD-LABEL MASKING, not strict independently recruited blind human test.",
+    "human_preference": "PENDING",
+    "human_letter_recognition": "PENDING",
+    "independently_recruited_naive_reviewers": 0,
+    "any_existing_user_feedback": "Only R15 upper 喜 locally positive, not validated full R16/R17/R18 alternatives.",
+    "no_inferred_victory": "Must not treat ink count, alpha equality, code or author's opinion as aesthetic pass.",
+    "recommendation_after_votes": "Record raw choices first, then unmask, report count with denominator 3 and major statistical limits. No claim of stable aesthetic benefit from 3 correlated and hand-authored examples."
+  },
+  "formal_task_boundary": {
+    "visual_native_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "S7_final_human_review": "PENDING",
+    "do_not_promote_candidate": true
+  }
+}
