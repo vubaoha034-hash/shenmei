@@ -1,0 +1,18 @@
+{
+  "schema": "vpd-r11-first-source-audit-optical-normalization-failure/1.0",
+  "date": "2026-10-27",
+  "initial_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40445135022",
+  "verified_raw_source_byte_count": 4,
+  "source_byte_shas_verified": true,
+  "image_decoder_success": true,
+  "aesthetic_success": false,
+  "problem": "The first image color diagnostic converted original RGBA or palette images with transparency using im.convert('RGB') without compositing transparent pixels over white. This can render transparent black as opaque black and inflate apparent ink/darkness fractions. Any black/white coverage or contrast conclusions from that pass must be invalidated until alpha handling is repaired and source pixel colors re-computed.",
+  "impact": "First run's source SHA/bytes/size remain valid independent provenance. Color fractions, particularly ~44%-47% dark coverage of justfont PNG, are not trustworthy; cannot be used in optical quality conclusions.",
+  "fix": "For each original image, convert to RGBA and alpha-composite on white before RGB segmentation; separately measure transparent-pixel fraction and preserve exact source bytes; add CI assert to compare valid same-glyph before/after colored overlays; rerun.",
+  "protected_constraints": [
+    "Do not reupload original copyrighted images",
+    "No claim of learned style, no style transfer",
+    "No new paid API"
+  ],
+  "status": "SOURCE_AUTHENTICITY_PASS__COLOR_METRICS_INVALID_UNTIL_FIX"
+}
