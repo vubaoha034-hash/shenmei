@@ -1,0 +1,100 @@
+{
+  "schema": "r11-genuine-designer-glyph-paired-pixel-bbox-deltas/1.0",
+  "date": "2026-10-27",
+  "exact_published_source": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+  "from_author": "Zheng Chuyang (project lead), image labeled before (red) vs after (blue)",
+  "remote_verified_source_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+  "remote_verified_image_size": [
+    3369,
+    2382
+  ],
+  "derived_from_read_receipt_sha": "11b7c983bd030dec2d4eb6ac657308f2bd6294dd",
+  "filter_algorithm": "Frozen before external fetch in R11_FROZEN_CREATOR_STAGE_INTERPRETATION.json; red/blue pixel thresholds on right side of exact image, then two largest color connected regions sorted by x.",
+  "numeric_observation": "Two large colored glyph components change in opposite directions while preserving near-constant overall width, rather than both being scaled wider or narrower.",
+  "color_cluster_pairs": [
+    {
+      "part": "color_connectivity_1",
+      "before": {
+        "x0": 2469,
+        "x1": 2722,
+        "w": 254,
+        "y0": 310,
+        "y1": 813,
+        "h": 504,
+        "ink_px": 65563
+      },
+      "after": {
+        "x0": 2469,
+        "x1": 2731,
+        "w": 263,
+        "y0": 1237,
+        "y1": 1741,
+        "h": 505,
+        "ink_px": 67430
+      },
+      "bboxWidthDeltaPercent": 3.54,
+      "bboxHeightDeltaPercent": 0.2,
+      "horizontalStartShiftPx": 0,
+      "registeredHorizontalPointGeometry": "NOT_COMPUTED",
+      "actualArtistBezierPaths": "UNKNOWN"
+    },
+    {
+      "part": "color_connectivity_2",
+      "before": {
+        "x0": 2777,
+        "x1": 2987,
+        "w": 211,
+        "y0": 308,
+        "y1": 813,
+        "h": 506,
+        "ink_px": 51021
+      },
+      "after": {
+        "x0": 2788,
+        "x1": 2990,
+        "w": 203,
+        "y0": 1235,
+        "y1": 1741,
+        "h": 507,
+        "ink_px": 50493
+      },
+      "bboxWidthDeltaPercent": -3.79,
+      "bboxHeightDeltaPercent": 0.2,
+      "horizontalStartShiftPx": 11,
+      "registeredHorizontalPointGeometry": "NOT_COMPUTED",
+      "actualArtistBezierPaths": "UNKNOWN"
+    }
+  ],
+  "gap_between_large_color_clusters_px": {
+    "before": 54,
+    "after": 56,
+    "delta": 2
+  },
+  "outer_two_component_bounds": {
+    "before": {
+      "left": 2469,
+      "right": 2987,
+      "width": 519
+    },
+    "after": {
+      "left": 2469,
+      "right": 2990,
+      "width": 522
+    }
+  },
+  "intended_designer_process": {
+    "source_direct_statement": "The designer describes adjustment of the 阝 component across multiple characters and a rollback of globally too-wide 口 after scaling to thousands of glyphs.",
+    "evidenced_shape_behavior": "The two largest before/after color regions exhibit +3.54% and -3.79% bounding-width changes; this is evidence of differential reshaping within the illustration, not a reusable formula.",
+    "candidate_decision": "contextual counter-shaping + repeated-component group consistency audit + ability to reverse earlier attractive changes",
+    "support_type": "source grounded shape observation AND real designer first-person reasoning",
+    "unproven_cause": "No proof that measured +3.54%/-3.79% deltas were consciously selected or are optimal."
+  },
+  "study_only_constraints": [
+    "Colored components are extracted with simple thresholds; labels/overlays do not provide source vectors",
+    "Do not reuse the absolute percentages as a font-generation recipe",
+    "Pixel segment bounds do not guarantee calligraphic quality or distinctiveness",
+    "No source pixels or glyph outlines copied or publicly republished",
+    "No unseen characters were designed or human blind assessed"
+  ],
+  "current_maturity": "REAL_AUTHORED_BEFORE_AFTER_PIXEL_CONTRAST_WITH_DOCUMENTED_CONTEXT__NOT_GENERATIVE_TRANSFER"
+}
