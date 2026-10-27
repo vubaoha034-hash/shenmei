@@ -1,0 +1,105 @@
+{
+  "schema": "shenmei-r24-generalized-design-grammar-unseen-holdout-a-b/1.0",
+  "date": "2026-10-27",
+  "repo": "vubaoha034-hash/shenmei",
+  "branch": "research/typography-r24-transfer-fixed-grammar-20261027",
+  "parent_ref": "research/typography-r23-fair-short-context-ab-20261027",
+  "parent_commit": "98aed162ab478cb95d755e568dfe32c56a92a17d",
+  "target": "溪桥听雨",
+  "target_is_R23_preregistered_holdout": true,
+  "R23_human_review": "PENDING_NOT_REPLACED",
+  "goal": "Test whether a fixed generalized wordmark style description yields a coherent real new-four-character image relative to neutral baseline without per-character prompt optimization.",
+  "shared_output_contract": "请直接生成一张独立的图片，只输出图片，不解释。16:9横幅，背景必须真正透明。画面中央只有准确的四个简体中文字「溪桥听雨」，从左到右单行排列，深墨黑色，结构清晰易认、无错字漏笔。禁止任何额外文字、拼音、编号、分栏、边框、插画、山水、风景、纹理、阴影、拼贴和设计讲解板。",
+  "generic_grammar": {
+    "source": "R12 authored designer-stage evidence -> R20 whole-word hypotheses -> R23 demonstrated single-word style difference. This is a human-authored generic prompt specification, not extracted executable font model.",
+    "freeze_boundary": "Generalized AFTER viewing R23 but BEFORE any R24 carrier output; withheld R24 wording was already specified at R23.",
+    "scope": "ALL 4-HANZI WORDMARKS WITHOUT NAMING ANY PARTICULAR CHARACTER",
+    "conditions": [
+      {
+        "id": "recognition_first",
+        "if": "any glyph",
+        "decision": "Preserve original semantic stroke topology; if a style edit risks an ambiguous character, revert the edit",
+        "reject": "miswritten, omitted, misleading component"
+      },
+      {
+        "id": "density_balance",
+        "if": "a glyph is visually denser than its neighbors",
+        "decision": "Protect enclosed inner negative spaces, temper excess solid black without replacing the glyph with abstract graphics",
+        "reject": "closed counters or flattened glyph"
+      },
+      {
+        "id": "sparse_balance",
+        "if": "a glyph is relatively sparse",
+        "decision": "Allow one original structural dominant stroke to hold visual weight without globally thickening the font",
+        "reject": "excessive unrelated flourish"
+      },
+      {
+        "id": "structure_selective",
+        "if": "genuine surrounding frame or left-right component",
+        "decision": "Keep inside blank legible for enclosure; keep component relationship clear for left-right; avoid fusion that changes meaning",
+        "reject": "invalid component layout"
+      },
+      {
+        "id": "distributed_signature",
+        "if": "across entire four-glyph phrase",
+        "decision": "Use a restrained directional brush rhythm in at most 1-2 structurally justified main strokes; others stay compact, avoid same tail repeated per glyph",
+        "reject": "four artificial decorative tails"
+      },
+      {
+        "id": "optical_final",
+        "if": "after forming entire wordmark",
+        "decision": "Balance perceived weight, visual baseline, character size and inter-character spacing; assess as a single brand mark",
+        "reject": "one isolated oversized eye-catcher or drifting baseline"
+      }
+    ],
+    "underlying_creator_reconstruction": "NOT_PROVEN",
+    "third_party_pixels_copied": false
+  },
+  "prompt_arms": {
+    "A": {
+      "name": "A",
+      "full_prompt": "请直接生成一张独立的图片，只输出图片，不解释。16:9横幅，背景必须真正透明。画面中央只有准确的四个简体中文字「溪桥听雨」，从左到右单行排列，深墨黑色，结构清晰易认、无错字漏笔。禁止任何额外文字、拼音、编号、分栏、边框、插画、山水、风景、纹理、阴影、拼贴和设计讲解板。\n采用标准、端正、规整的宋体印刷字风格，笔画与间距均衡，四字视觉高度一致。不制作手写连笔、共笔、夸张长笔、个性化曲线或装饰。这只是便于辨认的中性文字基准。",
+      "explanation": "neutral recognizability, no creative style"
+    },
+    "B": {
+      "name": "B",
+      "full_prompt": "请直接生成一张独立的图片，只输出图片，不解释。16:9横幅，背景必须真正透明。画面中央只有准确的四个简体中文字「溪桥听雨」，从左到右单行排列，深墨黑色，结构清晰易认、无错字漏笔。禁止任何额外文字、拼音、编号、分栏、边框、插画、山水、风景、纹理、阴影、拼贴和设计讲解板。\n采用有统一识别性的现代中文艺术字标，而不是默认字体：整组为克制、流动、略带古典的书写气质，四字的字重、间距、基线和墨迹外轮廓相互平衡。按各字真实构形有条件设计：复杂密集处优先保留内部白口、减少拥堵；疏朗结构仅选择一处原生主笔适当增强；包围结构不能堵塞内腔，左右结构不能混淆部件。在整组最多让一至两处结构合理的主笔形成含蓄、相互呼应的流动笔势，其余笔画克制收束；绝不每个字机械添加一样的长尾。字形必须一眼认对，统一而不雷同，没有任何纹理、飞白或书法装饰点。",
+      "explanation": "reusable word-agnostic design grammar; not adapted per-character"
+    }
+  },
+  "critical_isolation": {
+    "A_new_chat": 1,
+    "B_new_chat": 1,
+    "same_connected_ChatGPT_image_generation": true,
+    "max_generate_requests_each": 1,
+    "no_prompts_after_submission": true,
+    "no_image_reference": true,
+    "no_hidden_cherry_pick": true,
+    "same_explicit_format": "16:9 RGBA",
+    "no_billed_external_provider": true
+  },
+  "predefined_validation": {
+    "first": "single downloadable PNG per arm, exact text, only four chars horizontal, native transparent alpha, no scenery or supporting text",
+    "then": "equal pixel and normalized ink height visual comparator, human unlabelled review pending",
+    "invalid_if": "either absent, malformed text, opaque background, poster, multiple subimages",
+    "cross_glyph_transfer_claim": "Only limited second phrase image generation candidate if BOTH technically valid. True style transfer requires independent aesthetic assessment, more examples, and a genuinely executable source-derived program."
+  },
+  "confounds": [
+    "R23 used per-character prompt whereas R24 B generalized; this is prompt-family transfer, not identical fixed prompt string.",
+    "R24 text was known as holdout and recorded before this run, but generalized grammar was formulated after R23 result; zero R24 pixel peeking, no full double blindness.",
+    "B has more adjectives/instructions than neutral baseline, and model/seed unknown."
+  ],
+  "artifact_rules": {
+    "original_bytes_in_ChatGPT_file_library": true,
+    "no_protected_public_original_images": true,
+    "hash_browser_against_library": true,
+    "metadata_in_research_branch": true,
+    "preserve_failed_generations": true
+  },
+  "formal_lock": {
+    "revision": 355,
+    "checkpoint": 377,
+    "mainline_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "no_write": true
+  }
+}
