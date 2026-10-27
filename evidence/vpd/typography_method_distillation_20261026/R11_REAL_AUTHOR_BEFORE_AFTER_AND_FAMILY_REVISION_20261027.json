@@ -1,0 +1,124 @@
+{
+  "schema": "vpd-r11-source-authored-visual-decision-evidence/1.0",
+  "date": "2026-10-27",
+  "goal": "Learn creator causal rationale by verifying the actual visual BEFORE/AFTER and cross-family stage review, rather than measuring the finished typeface or blindly modifying glyph widths.",
+  "stage": "SOURCE_STUDY_WITH_FIRST_PARTY_PAIR_AND_DECISION_HYPOTHESIS_ONLY",
+  "primary_maker": "Zheng Chuyang / Mallikātype for Typotheque",
+  "official_text": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+  "original_maker_explains": {
+    "condition": "Repeated Chinese structural components across dozens/hundreds of glyphs can accumulate systematic visual proportion errors that are not visible while looking at one glyph alone.",
+    "action": "Conduct multi-person and multi-stage review; resolve the shareable radical's proportion and contour.",
+    "evidence": "Article explicitly captions a revision of 阝 on 那 and shows red BEFORE, cyan AFTER. The same studio documents having to reverse a too-wide 口 radical after expansion to thousands of characters.",
+    "review_stages": "prototype ~10–20, then cross-glyph reviews around 300, 1,000, 3,000 characters",
+    "separate_example": "包 is explicitly reworked depending on location in 包/胞/雹/炰/庖/袌; not a single component stamp copied identically."
+  },
+  "empirical_source": {
+    "same_character": "那",
+    "right_radical": "阝",
+    "source_original_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+    "source_image_pixel_dimensions": [
+      3369,
+      2382
+    ],
+    "author_labeled_before_color": "red",
+    "author_labeled_after_color": "cyan",
+    "numeric_observations": {
+      "before_detected_color_pixels": 10563,
+      "after_detected_color_pixels": 10485,
+      "before_thumbnail_bbox_wh": [
+        154,
+        151
+      ],
+      "after_thumbnail_bbox_wh": [
+        155,
+        150
+      ],
+      "approximate_normalized_overlap": 0.8674,
+      "approximate_difference_fraction": 0.1326
+    },
+    "numeric_precision": "LOW; independent color segmentation and thumbnail normalization, NOT recovered human vector paths, cannot treat 13.26% as actual param delta or aesthetic uplift.",
+    "family_original_photo": {
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness1.png",
+      "sha256": "549a18bfa2266ec8c8adc2b34be4bdd2982918f7b1b27b958c05b3d6527837a6",
+      "dimensions": [
+        3368,
+        2004
+      ],
+      "source_caption": "Publisher-labeled before vs after glyph family grid"
+    },
+    "original_human_redline": {
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/review-lr.jpg",
+      "sha256": "062e753b88f3091ca9d737dae42f8533739141bbf7c0ddc0a6fe8470d781a6cf",
+      "dimensions": [
+        2000,
+        1880
+      ]
+    },
+    "performed_workflow": {
+      "run_url": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40441785892",
+      "primary_machine_output": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-authored-delta-20261027/research/typography_r11/R11_REAL_AUTHOR_STAGE_PIXEL_DIAGNOSTICS.json",
+      "source_authenticity_sha_verified": true,
+      "original_publisher_images_in_repository": false
+    }
+  },
+  "what_can_be_supported": [
+    "Actual published same-glyph visual differences, not merely multiple finished styles.",
+    "The overall visual frame and colored ink counts can remain near constant while localized contours change in a way selected by the designer.",
+    "The maker explicitly documents proportion revision of 阝 and long-tail systemic review of reused radicals."
+  ],
+  "cannot_claim": [
+    "The author intended exactly 13.26 percent pixels changed, or used that value as a rule.",
+    "Color-thresholded pixel overlap proves improved aesthetics.",
+    "The author's brush pressure, speed, bezier control history or exact source edits are known.",
+    "An expert sans/serif typography principle transfers unmodified to expressive 六島-like dry-brush logotypes.",
+    "Any new Chinese character has actually been generated via this method or preferred in a blind user comparison."
+  ],
+  "candidate_action": {
+    "id": "R11-FAMILY-PROPORTION-REVISION",
+    "label": "同部件多字审查→局部轮廓修订→保留整体形态→族内复核",
+    "prerequisites": [
+      "At least two source-published stages of exactly the same original glyph and identifiable target component.",
+      "Check glyph position, radical role, and family context instead of one stroke direction.",
+      "Visual reviewer must actually diagnose a systematic imbalance across more than one glyph before changing shapes."
+    ],
+    "proposed_causal_sequence": [
+      "Determine whether the problem is local contour or systematic radical allocation, based on maker-side documented examples.",
+      "Alter only the localized component geometry/negative space, not default uniform scale of all glyph components.",
+      "Retain legible whole-glyph footprint and original stroke identity as constraints rather than objective maxima.",
+      "Re-evaluate the entire affected glyph group at matching sizes and repeated text contexts; reject improvements that are only numeric."
+    ],
+    "transfer_status": "HYPOTHESIS_NEEDS_GENUINE_NEW_VISUAL_ARTWORK_AND_USER_REVIEW"
+  },
+  "source_classification_corrections": [
+    {
+      "r10_asset": "HY_RED_CLOUD",
+      "r11_admissibility": "STYLISTIC_SOURCE_ONLY",
+      "reason": "DFA award page does not establish p09 as an attributable chronologically matched before/after glyph pair."
+    },
+    {
+      "r10_asset": "TPTQ_REVISION_NA",
+      "r11_admissibility": "VALID_AUTHOR_BEFORE_AFTER"
+    },
+    {
+      "r10_asset": "ARPHIC_FANGXINSHU",
+      "r11_admissibility": "VALID_PUBLISHED_BEFORE_AFTER_BUT_DIFFERENT_MAKER_AND_TYPEFACE",
+      "reason": "Separate cross-source evidence; cannot merge source pixel statistics into Typotheque same-artist family."
+    },
+    {
+      "r10_asset": "ARPHIC_FANGXINSHU_SPACE",
+      "r11_admissibility": "STYLE_WIDTH_COMPARISON_ONLY",
+      "reason": "C80/standard variant not proven to be chronological edit stages."
+    }
+  ],
+  "hard_gates": {
+    "full_author_source_read": true,
+    "source_bitmaps_decoded": 3,
+    "same_glyph_before_after_pixels_detected": true,
+    "independent_graphical_quality_judgment": false,
+    "actual_new_unseen_artwork_produced": false,
+    "method_distillation_validated": false,
+    "software_or_external_api_fee_added_cny": 0,
+    "official_task_lock_modified": false
+  },
+  "next": "No more B/C minor geometric edits. Need a full author-documented sketch/creative intermediate/finished expressive CJK lettering sequence with the same glyph(s), then compare candidate mechanism on unseen texts by human preference; if missing, report observational limitation instead of pretending to learn expressive design."
+}
