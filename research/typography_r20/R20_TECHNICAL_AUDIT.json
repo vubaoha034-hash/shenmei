@@ -1,0 +1,89 @@
+{
+  "schema": "R20_READONLY_INDEPENDENT_SOURCE_BYTES_AND_CHANGE_LOCALIZATION/1.0",
+  "source_public_manifest_sha256": "5b54d35a163d7df918b6ff59adbcd372e145ada9ae4e0e29a96714fdd502a424",
+  "audit_tool": "Pillow NumPy read-only source RGBA; not OCR/naive reviewer",
+  "source_pairs": [
+    {
+      "glyph": "熹",
+      "source_sha256": [
+        "ac7174fecd05283693378508e601d07e824aa91a8c12bb7c25ff16986cb5d8d0",
+        "e14863471aac062a50f6fd1b837695288e20dae677b26e4d8db51cbea16c88df"
+      ],
+      "pixel_diff_count": 30865,
+      "changed_bbox": [
+        166,
+        913,
+        961,
+        1112
+      ],
+      "union_ink_bbox": [
+        166,
+        98,
+        961,
+        1112
+      ],
+      "vertical_band_fraction": 0.1963
+    },
+    {
+      "glyph": "照",
+      "source_sha256": [
+        "54e7105adacf8ee8dc4d7c95a4fba1adfe3983660069cf14a024a175c45b8ecc",
+        "dbe0f99b48205a4efd430753633005c0206248ee39fc912dc515dc1bb05602e3"
+      ],
+      "pixel_diff_count": 20482,
+      "changed_bbox": [
+        211,
+        590,
+        944,
+        661
+      ],
+      "union_ink_bbox": [
+        151,
+        177,
+        960,
+        911
+      ],
+      "vertical_band_fraction": 0.0967
+    },
+    {
+      "glyph": "森",
+      "source_sha256": [
+        "b99acab1b705e963278dfdc10ec112fe5d4d3de329c9f9082c1e829c0e042791",
+        "0df7d9eb3c16e7011c6462bf4dc5195d6f22f0aedda47bdcaee10587cb5cbe55"
+      ],
+      "pixel_diff_count": 12235,
+      "changed_bbox": [
+        142,
+        699,
+        1102,
+        793
+      ],
+      "union_ink_bbox": [
+        80,
+        122,
+        1105,
+        1125
+      ],
+      "vertical_band_fraction": 0.0937
+    }
+  ],
+  "verification": {
+    "source_sha_match": true,
+    "pixel_change_counts_recomputed": true,
+    "changed_bbox_recomputed": true,
+    "public_archive_zip_sha256": "dfd02a395afa86ae4330c2edc90d55e66aed20ffbb33548d83eb83a6824a217d",
+    "public_zip_members": 10,
+    "listed_file_hashes_checked": 8,
+    "listed_file_hashes_pass": 8,
+    "private_review_mapping_unopened": true,
+    "private_review_mapping_not_in_zip": true
+  },
+  "study_design_status": {
+    "number_of_new_multichar_lettering_outputs": 0,
+    "real_user_votes": 0,
+    "naive_character_recognition_results": 0,
+    "visual_rule_promoted": false,
+    "technical_verification_is_not_aesthetic_validation": true
+  },
+  "analysis": "All three comparisons change localized vertical regions of one glyph; cannot prove a coherent style across separate characters."
+}
