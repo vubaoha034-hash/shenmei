@@ -1,0 +1,175 @@
+{
+  "schema": "vpd-r10-authored-real-outline-color-differential/1.0",
+  "observed_date_utc": "2026-10-27T06:27:59.745368+00:00",
+  "source_page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+  "source_author": "Zheng Chuyang (Typotheque / Mallikātype)",
+  "source_asset_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+  "source_verified_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+  "source_dimensions": [
+    3369,
+    2382
+  ],
+  "evidence_semantics": "Same enlarged right-hand 阝 component drawing is annotated red before and blue after in the designer's own article; isolated colored contour lines are the only measured pixels.",
+  "roi_xyxy": [
+    0,
+    0,
+    1954,
+    2215
+  ],
+  "roi_policy": "Left 58% X and upper 93% Y of original to exclude reference glyph labels and side captions. Fixed before inspection of output.",
+  "color_thresholds": {
+    "red": "r>=110,r-g>=38,r-b>=24,r>1.35*g",
+    "blue": "b>=110,b-r>=43,b-g>=14,b>1.35*r"
+  },
+  "before_red": {
+    "count": 47639,
+    "x_quantile_px": {
+      "5": 501.0,
+      "25": 777.0,
+      "50": 1234.0,
+      "75": 1598.0,
+      "95": 1875.1
+    },
+    "y_quantile_px": {
+      "5": 467.0,
+      "25": 798.0,
+      "50": 1213.0,
+      "75": 1689.0,
+      "95": 1995.0
+    },
+    "pixel_fraction": 0.0110069
+  },
+  "after_blue": {
+    "count": 48643,
+    "x_quantile_px": {
+      "5": 516.0,
+      "25": 793.0,
+      "50": 1266.0,
+      "75": 1635.0,
+      "95": 1862.0
+    },
+    "y_quantile_px": {
+      "5": 469.0,
+      "25": 802.0,
+      "50": 1223.0,
+      "75": 1690.0,
+      "95": 1999.0
+    },
+    "pixel_fraction": 0.0112389
+  },
+  "symmetric_nearest_contour_distance": {
+    "after_to_before_px": {
+      "5": 3.162,
+      "25": 12.0,
+      "50": 30.265,
+      "75": 35.0,
+      "95": 38.0
+    },
+    "before_to_after_px": {
+      "5": 3.162,
+      "25": 12.0,
+      "50": 30.017,
+      "75": 35.0,
+      "95": 37.014
+    },
+    "after_more_than_4px_from_before_fraction": 0.91787,
+    "after_more_than_10px_from_before_fraction": 0.81053
+  },
+  "four_vertical_bands": [
+    {
+      "band": 0,
+      "valid": true,
+      "after_pixels_sampled": 2824,
+      "before_pixels_sampled": 2904,
+      "nearest_before_after_distance_px": {
+        "5": 3.0,
+        "25": 13.038,
+        "50": 31.0,
+        "75": 34.132,
+        "95": 38.0
+      },
+      "nearest_horizontal_offset_px": {
+        "5": 2.0,
+        "25": 12.0,
+        "50": 31.0,
+        "75": 34.0,
+        "95": 38.0
+      }
+    },
+    {
+      "band": 1,
+      "valid": true,
+      "after_pixels_sampled": 10062,
+      "before_pixels_sampled": 10081,
+      "nearest_before_after_distance_px": {
+        "5": 10.77,
+        "25": 14.142,
+        "50": 30.806,
+        "75": 35.0,
+        "95": 38.0
+      },
+      "nearest_horizontal_offset_px": {
+        "5": 8.0,
+        "25": 14.0,
+        "50": 30.0,
+        "75": 35.0,
+        "95": 38.0
+      }
+    },
+    {
+      "band": 2,
+      "valid": true,
+      "after_pixels_sampled": 9058,
+      "before_pixels_sampled": 8961,
+      "nearest_before_after_distance_px": {
+        "5": 4.123,
+        "25": 11.18,
+        "50": 31.064,
+        "75": 35.014,
+        "95": 38.0
+      },
+      "nearest_horizontal_offset_px": {
+        "5": 2.0,
+        "25": 11.0,
+        "50": 31.0,
+        "75": 35.0,
+        "95": 38.0
+      }
+    },
+    {
+      "band": 3,
+      "valid": true,
+      "after_pixels_sampled": 8056,
+      "before_pixels_sampled": 8054,
+      "nearest_before_after_distance_px": {
+        "5": 2.236,
+        "25": 5.0,
+        "50": 22.627,
+        "75": 35.0,
+        "95": 38.0
+      },
+      "nearest_horizontal_offset_px": {
+        "5": 0.0,
+        "25": 3.0,
+        "50": 20.0,
+        "75": 35.0,
+        "95": 38.0
+      }
+    }
+  ],
+  "sample_count": {
+    "before_used": 30000,
+    "after_used": 30000
+  },
+  "is_new_design_output": false,
+  "not_aesthetic_score": true,
+  "not_independent_human_test": true,
+  "rights": "Image bytes transient only. Public repo stores aggregate distances/metadata, not source pixels, glyph outlines or crops.",
+  "scope_limits": [
+    "Red and blue channel segmentation from a creator-published composite is imperfect due to anti-alias and color mixing.",
+    "Nearest red-blue colored pixel distance cannot uniquely infer author intent, B-spline move, glyph pressure, or exact stroke editing sequence.",
+    "Counts and sample alignment show that two visible annotated contour stages DIFFER, not whether the change improved aesthetic quality.",
+    "No transfer to unseen characters occurred in this specific evidence measurement."
+  ],
+  "gate_pass": true
+}
