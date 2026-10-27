@@ -1,0 +1,79 @@
+{
+  "schema": "shenmei-r15-art-actual-pixel-lineage/1.0",
+  "date": "2026-10-27",
+  "parent_commit": "1831fb57ce783f62a7fa564e55a4dc7e35183319",
+  "official_mainline": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "altered": false
+  },
+  "source_firsthand_url": "https://www.uisdc.com/11-font-design-case",
+  "source_evidence": "R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+  "holdout_glyph": "熹",
+  "artifacts": [
+    {
+      "role": "A_BASELINE",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "05c76c36e44a3f5137ef84413104ba977a28d27a5cd9e24ee77070767dd09553",
+      "source": "Noto Serif CJK Bold; system installed font; font file not redistributed"
+    },
+    {
+      "role": "B_GENERATED_CANDIDATE",
+      "format": "PNG_RGBA",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3eb4c661bc47e8a4da8170fe6f84c498eb3c4f0ad30ac5e93769e76b74ad11e8",
+      "gen_id": "fcb08039-88a3-4766-ab1f-3ab9acb7f14c",
+      "fail": "Wrong 喜 topology: paired mouths become horizontally arranged, instead of separated vertically, so cannot certify required 熹"
+    },
+    {
+      "role": "C1_ORIGINAL_EDITABLE_VECTOR",
+      "format": "SVG",
+      "width": 1100,
+      "height": 1180,
+      "sha256": "AWAIT_EXACT_SVG_SHA_READBACK",
+      "visual_paths": 18,
+      "cut_paths": 4,
+      "assessment": "Recognizable topology restored by creator-side inspection, but aesthetic quality still mechanical and unvalidated"
+    },
+    {
+      "role": "C1_RASTERIZED_VECTOR",
+      "format": "PNG_RGBA",
+      "width": 1100,
+      "height": 1180,
+      "sha256": "ac7174fecd05283693378508e601d07e824aa91a8c12bb7c25ff16986cb5d8d0"
+    },
+    {
+      "role": "B_FAILURE_COMPARISON",
+      "format": "PNG",
+      "width": 1800,
+      "height": 1120,
+      "sha256": "37e3db58251b32216117f94da3fe7d339766c4978fbc0ecbc95ee1ba0172b37b"
+    },
+    {
+      "role": "C1_LOCAL_COMPARISON",
+      "format": "PNG",
+      "width": 1800,
+      "height": 1150,
+      "sha256": "dd468024b30c0296b2120bbd03d200b40fbf0a4d0a47948ac4fb555026b929ef"
+    }
+  ],
+  "audit": {
+    "B": "FAIL_GLYPH_IDENTITY",
+    "C1": "STRUCTURE_ATTEMPT_VALID_BUT_AESTHETIC_GAIN_NOT_PROVEN",
+    "human_blind_review": "NOT_COLLECTED",
+    "method_promoted": false
+  },
+  "disclosures": [
+    "C1 was created after observing B failure; it is not a pre-registered independent holdout score",
+    "C1 merged center gesture only; retained both lower mouth bars for legibility, so source author's full topology strategy was NOT implemented",
+    "Comparisons are unblinded and ink mass is not normalized",
+    "Gen id recorded; exact underlying image generation prompt/seed not independently exposed",
+    "Third-party original images and font binaries not copied",
+    "Research files retain artifact digests but original new pixels remain in current user conversation downloadable archive"
+  ],
+  "next_gate": "Structure-constrained gesture authoring + 128px glyph identity gate + independent human aesthetic comparison. No unverified professional quality claim."
+}
