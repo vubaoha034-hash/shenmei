@@ -1,0 +1,73 @@
+{
+  "schema": "vpd-r10c-registered-author-before-after-overlay/1.0",
+  "date": "2026-10-27T06:33:53.798035+00:00",
+  "creator": "Typotheque / Zheng Chuyang",
+  "source_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+  "source_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+  "image_dimensions": [
+    3369,
+    2382
+  ],
+  "roi": [
+    0,
+    0,
+    1954,
+    2215
+  ],
+  "training_rows": "top 50%",
+  "untuned_heldout_rows": "bottom 50%",
+  "before_red_pixel_count": 47639,
+  "after_blue_pixel_count": 48643,
+  "training_after_sampled": 3000,
+  "holdout_after_sampled": 3000,
+  "registration_strategy": "search integer translation of after blue to before red, minimize median nearest red outline distance on top image portion only",
+  "train_optimized_shift_after_to_before_px": {
+    "dx": -36,
+    "dy": 0
+  },
+  "training_before_shift": {
+    "sampled": 3000,
+    "q25": 14.0,
+    "median": 31.0,
+    "q90": 37.0,
+    "fraction_within_4px": 0.053,
+    "fraction_more_than_10px": 0.92933
+  },
+  "training_after_fit": {
+    "sampled": 3000,
+    "q25": 0.0,
+    "median": 2.0,
+    "q90": 21.0,
+    "fraction_within_4px": 0.611,
+    "fraction_more_than_10px": 0.313
+  },
+  "heldout_before_shift": {
+    "sampled": 3000,
+    "q25": 8.544,
+    "median": 30.017,
+    "q90": 37.0,
+    "fraction_within_4px": 0.12633,
+    "fraction_more_than_10px": 0.71633
+  },
+  "heldout_after_fit": {
+    "sampled": 3000,
+    "q25": 0.0,
+    "median": 2.0,
+    "q90": 23.707,
+    "fraction_within_4px": 0.682,
+    "fraction_more_than_10px": 0.303
+  },
+  "heldout_median_distance_change_px": 28.017,
+  "heldout_median_distance_reduction_fraction": 0.93337,
+  "creator_change_inference": "After subtracting a global translation estimated without using bottom-half samples, residual colored-edge mismatch is measured but cannot uniquely determine edited contour curves, design reason or preference.",
+  "no_new_italic_glyphs": true,
+  "no_human_blind": true,
+  "source_pixels_published": false,
+  "rights": "Only aggregate color/registration metrics are committed; copyrighted source image remains remote/transient",
+  "limitations": [
+    "Color masks do not capture neutral/black portions and are anti-aliasing dependent.",
+    "An uneven output may reflect art-layout registration, RGB markers, or genuine glyph revisions.",
+    "This is a falsification/control audit, NOT an aesthetic score or successful typography transfer."
+  ],
+  "gate_pass": true
+}
