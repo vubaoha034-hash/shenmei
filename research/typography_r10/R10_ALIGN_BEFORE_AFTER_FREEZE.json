@@ -1,0 +1,28 @@
+{
+  "schema": "vpd-r10c-real-author-overlay-registration-protocol/1.0",
+  "frozen_at": "2026-10-27",
+  "source": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+  "source_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+  "dimensions": [
+    3369,
+    2382
+  ],
+  "prior_independent_audit": "R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+  "question": "After correcting display/registration translation, do real designer red-before and blue-after outlines remain materially different, or is most observed offset a uniform display shift?",
+  "segmentation": "exactly same masks as R10_TRUE_BEFORE_AFTER_PIXEL_DIFFERENCE.json",
+  "roi_px_rule": "x<=0.58*width; y<=0.93*height; excludes labels right",
+  "training_data": "top 50% of cropped overlay; deterministic stride <=3000 points",
+  "withheld_data": "bottom 50%; optimization prohibited on these pixels",
+  "candidate_registration": "blue-after -> red-before; horizontal shift -50 to +50 integer px step 2; vertical shift -20 to +20 integer px step 2",
+  "optimization": "minimize median nearest-before-pixel distance among top 50% blue-after sample (distance transform of red-before)",
+  "validate": "Report no-alignment vs training-fit alignment on held-out bottom 50% independently, plus percent of after contour points >4 and >10 pixels from nearest before",
+  "inference_boundary": "Observed offsets in rasterized before/after composite do not reveal designer intent, original B-spline edits, pen motion, or aesthetic superiority",
+  "rights": "Transient source bytes only; public repository stores derived aggregates and hashes, not photos or contour point coordinates.",
+  "stop_conditions": [
+    "source hash differs",
+    "fewer than 100 qualifying colored pixels per training/heldout region",
+    "aligned mask difference below epsilon: record as unidentifiable, not as a proven deformation"
+  ],
+  "paid_external_usage": 0,
+  "current_quality_claim": "NOT_TESTED"
+}
