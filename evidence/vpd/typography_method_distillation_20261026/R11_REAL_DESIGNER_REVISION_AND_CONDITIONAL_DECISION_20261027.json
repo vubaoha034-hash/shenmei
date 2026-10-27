@@ -1,0 +1,116 @@
+{
+  "schema": "vpd-r11-real-source-revision-decision-evidence/1.0",
+  "date": "2026-10-27",
+  "status": "AUTHENTIC_AUTHOR_STAGES_AND_CONDITIONAL_DECISIONS_CAPTURED__NO_GLYPH_TRANSFER",
+  "repo": "vubaoha034-hash/shenmei",
+  "isolated_branch": "research/typography-r11-verified-creative-revisions-20261027",
+  "sources": {
+    "image_sources_verified": 4,
+    "exact_sha_files": [
+      {
+        "id": "LEFTFONT_STAGES",
+        "sha256": "b671153d34247aea72fdd2dab87d0741af122f0035ad318d285eb64c743fc0cb",
+        "dimensions": [
+          894,
+          632
+        ],
+        "visible_sha": "b859cef80548de3c245f3f6a9fd8f7c1628d5212cca3674ec29e059f64a79997",
+        "original_alpha_fraction": 0
+      },
+      {
+        "id": "JUSTFONT_BEFORE_AFTER",
+        "sha256": "1c1e56bc0d128007a2029be1c4d4b74c7ee999cd53e0a85baf6d9c0178539036",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "visible_sha": "1da15b8a15d4a6e90dcd0cbe66900304913ec6d159f79185231139beec0bfae7",
+        "original_alpha_fraction": 0.4137
+      },
+      {
+        "id": "JUSTFONT_HOOK_CONTEXT",
+        "sha256": "04ce650682733a353a039a9ab6f30063db1ae306a305c652603e572050074484",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "visible_sha": "002ae9141881b061dc6b1a10707863ff70c792f71f0d9ec342d84599163d8b19",
+        "original_alpha_fraction": 0.42697
+      },
+      {
+        "id": "JUSTFONT_SPACE_CONTEXT",
+        "sha256": "6eadc15cd05b047682ee5e764606409611fa873c6bff437137069c36b7766930",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "visible_sha": "213ac576d5d00c79337b7a5e16d2f9c98477869eecbadd9e5bbe1e8413641afa",
+        "original_alpha_fraction": 0.43144
+      }
+    ],
+    "source_byte_audit": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-creative-revisions-20261027/research/typography_r11/R11_SOURCE_IMAGE_BYTE_AND_STAGE_CHECK.json",
+    "successful_fixed_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40445493208",
+    "first_color_bug_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40445135022",
+    "before_after_overlay_detected": true,
+    "stable_same_run_double_fetch": true,
+    "source_mutability_note": "The first and final audit observed differing raw SHA for one same official PNG URL; current run double fetch matches exactly. Preserve observed SHA, avoid treating URL alone as immutable identity.",
+    "no_image_bytes_redistributed": true
+  },
+  "insight": {
+    "causal_model": "Author intent/use → candidate expressive full-form writing language → local optical corrections based on glyph structure → test multi-glyph consistency and reading suitability → reversibly retract design decisions.",
+    "cards": [
+      {
+        "id": "CREATOR_STAGE_D01_INTENT_FIRST",
+        "creator": "甘薇云（左體 Left Font）",
+        "source_img_id": "LEFTFONT_STAGES",
+        "trigger": "Brief actually calls for provocative/assertive display lettering, not neutral body text",
+        "rollback": "Shape reads mechanically distorted or another glyph's open counter collapses; revise local gesture or abandon effect, not global blind scaling."
+      },
+      {
+        "id": "CREATOR_STAGE_D02_BODY_TEXT_COUNTEREXAMPLE",
+        "creator": "justfont／金萱",
+        "source_img_id": "JUSTFONT_BEFORE_AFTER",
+        "trigger": "Lettering is meant for dense repeated reading or small-size clarity rather than expressive one-off display",
+        "rollback": "Readability or coherent reading texture decreases, even if the single stroke was aesthetically dramatic."
+      },
+      {
+        "id": "CREATOR_STAGE_D03_DENSE_COUNTER_RESCUE",
+        "creator": "justfont／金萱",
+        "source_img_id": "JUSTFONT_SPACE_CONTEXT",
+        "trigger": "Complex or heavy glyph appears black/dense at actual intended display size",
+        "rollback": "A simplification changes literal Hanzi identity, distorts semantic components or looks worse in the combined title."
+      },
+      {
+        "id": "CREATOR_STAGE_D04_REVERSIBLE_FAMILY_RULE",
+        "creator": "Typotheque／郑楚阳",
+        "source_img_id": "R10_TPTQ_REVISION_NA",
+        "trigger": "A proposed characteristic stroke/radical transformation has been applied to multiple new characters",
+        "rollback": "The family-wide visual rhythm or legibility degrades under changed target codepoints."
+      }
+    ],
+    "direct_source_authorship_distinguished_from_extrapolation": true,
+    "documentation": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-creative-revisions-20261027/research/typography_r11/R11_%E5%8E%9F%E5%88%9B%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%BF%AE%E7%A8%BF%E8%AF%81%E6%8D%AE%E4%B8%8E%E5%88%9B%E4%BD%9C%E5%86%B3%E7%AD%96%E5%AE%A1%E8%AE%A1_20261027.md",
+    "cards_full": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-creative-revisions-20261027/research/typography_r11/R11_CREATOR_CONDITIONAL_DECISION_CARDS.json"
+  },
+  "audit_fix": {
+    "affected": "transparent PNG color analysis; first pass converted to RGB without compositing, false dark ink coverage",
+    "before_fraction": 0.44595,
+    "after_fraction": 0.01053,
+    "corrected_method": "RGBA_ALPHA_COMPOSITE_ON_WHITE_BEFORE_RGB_ANALYSIS",
+    "first_stats_rejected": true,
+    "original_error_receipt": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-creative-revisions-20261027/research/typography_r11/R11_ATTEMPT01_ALPHA_COMPOSITE_ERROR_20261027.json"
+  },
+  "validation": {
+    "authentic_creative_process_sources": true,
+    "at_least_one_same_glyph_revision_pair": true,
+    "before_after_historical_curve_file": false,
+    "independent_aesthetic_blind": false,
+    "new_glyph_art_quality_test": false,
+    "transfer_method_learned": false,
+    "licensed_for_model_training": false,
+    "external_paid_tools_added": false
+  },
+  "hard_stop": "Do not re-run geometry R1–R9, do not attribute static image to historical pressure/steps, do not train/reprint protected source images without permission, do not claim artistry from provenance, algorithms or tests alone.",
+  "next_real_goal": "Causally test ONE precise designer change with scope/use and rollback conditions on distinct previously unseen glyph structures, and use actual independent aesthetic review before promotion.",
+  "formal_production_task_unchanged": true
+}
