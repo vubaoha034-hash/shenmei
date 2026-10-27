@@ -36,8 +36,17 @@ def fetch(url):
     raise RuntimeError(" | ".join(failures))
 
 def colors(img):
-    im=img.convert("RGB")
-    im.thumbnail((450,450))
+    # CRITICAL: transparent images must be composited on neutral white before
+    # measuring visible darkness or edge colors; RGB conversion alone treats
+    # invisible black transparent pixels as visible black and corrupts metrics.
+    rgba=img.convert("RGBA")
+    rgba.thumbnail((450,450))
+    alpha=list(rgba.getchannel("A").getdata())
+    opaque_fraction=sum(1 for a in alpha if a>250)/max(1,len(alpha))
+    transparent_fraction=sum(1 for a in alpha if a<5)/max(1,len(alpha))
+    canvas=Image.new("RGBA",rgba.size,(255,255,255,255))
+    canvas.alpha_composite(rgba)
+    im=canvas.convert("RGB")
     pp=list(im.getdata());total=len(pp) or 1
     colors0={}
     for name,fn in [
@@ -67,6 +76,10 @@ def colors(img):
             bbox_masks[name]=[round(min(xs)/w,4),round(min(ys)/h,4),
                               round(max(xs)/w,4),round(max(ys)/h,4)]
     return {"downsampled_size":list(im.size),
+       "visible_background_compositing":"RGBA_OVER_OPAQUE_WHITE",
+       "original_alpha_fraction_opaque":round(opaque_fraction,5),
+       "original_alpha_fraction_transparent":round(transparent_fraction,5),
+       "source_mode":img.mode,
        "pixel_counts":colors0,
        "relative_color_fractions":{k:round(v/total,5) for k,v in colors0.items()},
        "normalized_color_bbox_of_visible_deviation":bbox_masks}
