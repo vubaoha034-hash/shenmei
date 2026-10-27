@@ -1,0 +1,56 @@
+{
+  "schema": "shenmei-r21-whole-word-actual-dual-arm-pre-registration/1.0",
+  "frozen_at": "2026-10-27",
+  "parent_commit": "aa3f7db5529d1bb5c2b341f9d2162dff795c39e3",
+  "upstream": "research/typography_r20/R20_NEXT_WHOLE_WORD_FROZEN_PROTOCOL.json",
+  "goal": "Produce actual first new 4-character wordmark 雾起长桥 with two equally budgeted graphical generator arms, and assess whole-word coherent art style rather than single-stroke edits.",
+  "exact_content": "雾起长桥",
+  "charset": "Chinese simplified exactly four Hanzi; forbid anything else",
+  "protected_secondary_heldout": "纸舟过岸",
+  "source_evidence": "Liang Zhijian 2019 放肆喜欢/海棠未雨 creator process via available full reprint; methods only, no traced outlines",
+  "arms": {
+    "A": {
+      "task": "Neutral comparator in a single row of four exact characters, like an uncustomized but elegantly typeset Chinese serif wordmark, professional legibility, unmodified conventional characters, neutral ink, no graphic effects.",
+      "frozen_instructions": "独立透明背景中文字标，只出现准确简体『雾起长桥』四个字，单行横排，黑色中性端正规范宋体字型，基准排版，四字大小、字重基本统一，间距规整，保持标准汉字结构和可读性；不得添加书法变形、断笔、飞白、插画、符号、更多字、边框、背景。请只产出整组字标的PNG。"
+    },
+    "B": {
+      "task": "Designer-program arm: custom four-character wordmark as one coherent whole, not changed per-glyph geometry for its own sake, legible first. Need conditional visual signature and rhythm shared across sparse and dense forms.",
+      "frozen_instructions": "独立透明背景中文字标，只出现准确简体『雾起长桥』四个字，单行横排，深墨黑、无图案。核心是字组设计，不是给四字简单套同一字体：整体克制流动、略带古典气质；『雾』笔画复杂应减轻拥挤并保留内部白口；『起』左边结构密但右『己』保留大负形与一条有辨识度的收笔；『长』简洁但应有醒目的长方向主笔以平衡整体重量；『桥』左右木与乔的间隙清楚，选择一条结构内伸笔与『长』的主笔节奏呼应。四字保持正确汉字识别，粗细光学均衡，笔势有一套视觉语法但每字处理不同；无任何绘图道具、插画、背景、渐变、纹理、边框、文字注释或额外字符。仅产出字标PNG。"
+    }
+  },
+  "generator_equal_budget": {
+    "executor": "ChatGPT native image_gen with same available model, one invocation n=1 for A, one invocation n=1 for B",
+    "parameters": {
+      "size": "1536x1024",
+      "n": 1,
+      "transparent_background": true,
+      "is_style_transfer": false,
+      "prompt_parameter": null
+    },
+    "no_guaranteed_seed": true,
+    "no_model_version_exposed": true,
+    "post_generation_processing": "Exact unchanged pixels for actual evaluation; any optional display crop must be equal/comparable and disclosed",
+    "supplemental_manual_vector_rule": "If full sentence fails text gate, any subsequent clean SVG recreation must be labeled a distinct remediation/not included in equal-budget A/B validation.",
+    "no_retry_or_best_of": true,
+    "execution_sequence": "A then B; each at most one actual generated output, preserve failures."
+  },
+  "verify": {
+    "image_exact_four_hanzi": "manual visual and independent checks if available; never infer from prompt",
+    "transparent_alpha": "read actual PNG alpha; if absent report",
+    "orientation": "single-line four glyphs",
+    "no_extra_symbols": true,
+    "no_third_party_source_outlines": true,
+    "negative_space_and_weight": "qualitative visual review and small-size preview",
+    "human_blind": "PENDING until independently assessed",
+    "professional_review": "not equivalent to human",
+    "source_in_git": "GitHub text/hash metadata only; actual PNG bytes archived in conversation user bundle"
+  },
+  "rule_promotion": "Fail closed unless all text, actual pixel, style-coherence and independently validated aesthetic/multiword transfer gates succeed.",
+  "zero_paid_third_party_api": true,
+  "mainline": {
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "current_formal_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "modified": false
+  }
+}
