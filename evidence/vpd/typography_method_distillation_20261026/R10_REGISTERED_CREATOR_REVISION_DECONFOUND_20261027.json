@@ -1,0 +1,79 @@
+{
+  "schema": "vpd-r10-source-revision-registration-deconfound/1.0",
+  "recorded_at": "2026-10-27",
+  "objective": "Audit original author revision images with registration control, don't infer styled handwriting technique from slide alignment.",
+  "sources": {
+    "first_party_article": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+    "author": "Zheng Chuyang / Typotheque",
+    "same_image_original_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+    "sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+    "author_documented_context": "Before/after colored outlines of 阝 component; 口 was widened then rolled back in a distinct family-wide review, do not equate these as one author edit",
+    "additional_sources": [
+      "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "https://www.behance.net/gallery/71709175/-AR-FangXinShu"
+    ],
+    "source_rights": "Research citation and aggregate measurements only; no copyright image or font model-training license assumed."
+  },
+  "experiments": [
+    {
+      "type": "SOURCE_FROZEN_PIXEL_COLOR_DIFFERENCE",
+      "run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40461241560",
+      "data": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r10-authored-stage-images-20261027/research/typography_r10/R10_TRUE_BEFORE_AFTER_PIXEL_DIFFERENCE.json",
+      "original_after_to_before_median_px": 30.265,
+      "before_red_pixels": 47639,
+      "after_blue_pixels": 48643,
+      "caveat": "Unregistered visual overlay distances confound design revision and placement."
+    },
+    {
+      "type": "PRE_REGISTERED_TRANSLATION_CONTROL_WITH_HELDOUT",
+      "run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40461827330",
+      "protocol": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r10-authored-stage-images-20261027/research/typography_r10/R10_ALIGN_BEFORE_AFTER_FREEZE.json",
+      "data": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r10-authored-stage-images-20261027/research/typography_r10/R10_REGISTERED_CONTOUR_HOLDOUT_METRICS.json",
+      "fit_region": "Upper 50% of colored outline left ROI",
+      "holdout_region": "Lower 50% of SAME source display image, not a new character, so NOT cross-glyph validation",
+      "registration_after_to_before_px": {
+        "dx": -36,
+        "dy": 0
+      },
+      "withheld_original_median_px": 30.017,
+      "withheld_registered_median_px": 2,
+      "withheld_median_reduction_fraction": 0.93337,
+      "withheld_after_more_than_10_px_fraction": 0.303,
+      "caveat": "Heldout geometric residual can reflect actual revision, antialiasing, line labels, print display alignment or threshold errors; not aesthetic or author's editable path."
+    }
+  ],
+  "critical_correction": "The 30 px median separation from the source image is NOT the author's net radical adjustment: 36 px overall horizontal display alignment offset explains most median edge separation; after alignment residual median ~2 px and a nontrivial high-distance tail remain. No universal correction magnitude can be derived.",
+  "impacts_previous_work": [
+    "Supersedes naive interpretation of unregistered color-contour distance as shape-edit magnitude in R10 notes.",
+    "Keeps source confidence for same-component revision and family re-evaluation, but makes numeric shape-edit magnitude explicitly UNKNOWN.",
+    "No new source picture redrawing, no added glyph simulation, no manipulated font ratios."
+  ],
+  "admissible_learning": [
+    {
+      "source": "TPTQ family context",
+      "decision": "Re-evaluate shared component revisions across positions and densities; undo seemingly stylish edits if family coherence suffers.",
+      "evidence": "Designer text and same-component before-after."
+    },
+    {
+      "source": "ARPHIC original before/after",
+      "decision": "When compressing a font, inspect local counters/joins rather than assume whole-character scale is an aesthetic fix.",
+      "evidence": "Creator-labeled revision figure, but not universally transferable to ink calligraphy."
+    },
+    {
+      "source": "Hanyi stage work",
+      "decision": "Full authored glyph silhouette is designed in stages from structural study, not recovered by uniform stroke width alone.",
+      "evidence": "Published multi-stage visual, no unique motion/pressure inference."
+    }
+  ],
+  "not_yet": [
+    "Actual author editable paths/history",
+    "Reproducible creator gesture synthesis on previously unseen glyph",
+    "AI decision policy reaching designer-quality",
+    "Independent human visual preference tests",
+    "Rights to republish original images"
+  ],
+  "status": "AUTHOR_SOURCE_PIXELS_AUTHENTIC__DISPLAY_OFFSET_DECONFOUNDED__METHOD_NOT_VALIDATED",
+  "time_and_money": "No new paid subscription or model API; GitHub Actions CPU and existing network tools only.",
+  "mainline_lock_expected_revision": 355,
+  "next_recommended_work": "Do not tune another scalar or post-image width. Use genuine creator-before/after examples only as critic/rollback signal across an entire family of glyphs, with true holdout and human aesthetic evaluation."
+}
