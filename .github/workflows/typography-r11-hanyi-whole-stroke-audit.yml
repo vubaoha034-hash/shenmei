@@ -1,0 +1,51 @@
+name: R11 Expressive Designer Whole Stroke Artwork Evidence
+on:
+  push:
+    branches:
+      - research/typography-r11-authored-revision-supervision-20261027
+    paths:
+      - .github/workflows/typography-r11-hanyi-whole-stroke-audit.yml
+permissions:
+  contents: write
+jobs:
+  audited-creator-published-stroke-family:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image reader
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+      - name: Read exact author source images into RAM and verify sha
+        run: python research/typography_r11/verify_hanyi_whole_stroke_sources.py
+      - name: Archive provenance including failures (never copyrighted originals)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r11/R11_HANYI_REAL_WHOLE_STROKE_SOURCE_AUDIT.json'))
+          assert d['source_raw_images_saved_to_public_repo'] is False
+          assert all(len(x['sha256'])==64 for x in d['verified'])
+          assert d['actual_creative_method_learned'] is False
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r11/R11_HANYI_REAL_WHOLE_STROKE_SOURCE_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r11): verified author's draft, completed glyph and full sweep role source checksums"
+            git push origin HEAD:research/typography-r11-authored-revision-supervision-20261027
+          fi
+      - name: Fail closed unless every creator work reference is real
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r11/R11_HANYI_REAL_WHOLE_STROKE_SOURCE_AUDIT.json'))
+          assert d['source_stage_set_verification_pass'] is True, 'ARTIST_STROKE_IMAGES_NOT_VERIFIED'
+          assert d['successfully_verified_count']==3
+          print('R11_HANYI_ALL_THREE_REAL_ARTIST_IMAGES_VERIFIED')
+          PY
