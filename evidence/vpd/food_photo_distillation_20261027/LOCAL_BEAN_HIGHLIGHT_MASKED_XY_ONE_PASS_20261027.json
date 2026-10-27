@@ -1,0 +1,184 @@
+{
+  "schema_version": "vpd-photography-local-mask-highlight-one-pass-blind-pair/v1",
+  "recorded_date": "2026-10-27",
+  "task_id": "VPD-R3Y-LOCAL-SPECULAR-COMPARE-20261027",
+  "scope": "PHOTO_ONLY_LOCAL_PHOTOMETRIC_ADJUSTMENT_ONE_SOURCE_ONE_DERIVED_IMAGE_NO_FIGMA_NO_TYPOGRAPHY",
+  "user_authorization": "User says 下一步 after VPD-FOODPHOTO-MATERIAL-REFLECTION-ROOTCAUSE-20261027-01 proposal: verify available local editing precision, make one same-source locally adjusted bean-pod highlight comparison, retain original.",
+  "parent_evidence": "evidence/vpd/food_photo_distillation_20261027/FOOD_PHOTO_SPECULAR_REFLECTION_ROOT_CAUSE_AUDIT_20261027.json",
+  "repository": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_before_this_append": "c1552226930999ed772a8ccbeccd0610fb664b6b",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_or_checkpoint_write": false,
+    "global_skill_changed": false,
+    "figma_write": false,
+    "typography_write": false
+  },
+  "source_original": {
+    "artifact": "Prior R3 direct-reference original, now protected unchanged, no new generation",
+    "original_png_sha256": "804b7d690763f9d41abe2f098bd0d7f59ec472a0c8bb1ae309fe7442d72545c1",
+    "original_bytes": 2623345,
+    "dimensions": [
+      941,
+      1672
+    ],
+    "source_drive_file_id": "1z9Lyol6evoTcBVTKqUtcq7zvrj7jLvVc",
+    "source_drive_url": "https://drive.google.com/file/d/1z9Lyol6evoTcBVTKqUtcq7zvrj7jLvVc/view",
+    "original_raw_file_hash_verified": true,
+    "third_party_reference_scope": "Previous R3 original is generated; underlying Xiaohongshu source is third party with unknown reuse rights and was not republished."
+  },
+  "tool_capability_check": {
+    "adapter": "Existing local Python/Pillow/OpenCV photo processing, deterministic non-generative masked highlight adjustment",
+    "mask_creation": "Real HSV bean-tone segmentation in manually constrained plate polygon, morphological cleaning and local highlight feathering; actual mask inspected against original pixels before applying",
+    "python_version": "Runtime local",
+    "opencv_available_and_executed": true,
+    "adobe_photoshop_invoked": false,
+    "image_model_invoked": false,
+    "retry_or_multiple_derived_versions": 0,
+    "exactly_one_processed_candidate": true,
+    "mask_does_not_guarantee_semantic_precision": "Colour+ROI-based bean highlight selection is a measured local selection, not manual photographic pixel-by-pixel semantic annotation; subtle adjacent green garnish surfaces may be eligible. Visual mask reviewed.",
+    "strict_scope_safety": "New pixel values are copied back only where frozen allowed_mask is true, with full decoded RGB array verified unchanged elsewhere",
+    "procedural_recipe": {
+      "source_mode": "RGB 8bit",
+      "roi_polygon_xy": [
+        [
+          315,
+          565
+        ],
+        [
+          730,
+          570
+        ],
+        [
+          890,
+          635
+        ],
+        [
+          940,
+          760
+        ],
+        [
+          940,
+          1190
+        ],
+        [
+          850,
+          1320
+        ],
+        [
+          500,
+          1385
+        ],
+        [
+          125,
+          1370
+        ],
+        [
+          0,
+          1210
+        ],
+        [
+          0,
+          795
+        ],
+        [
+          95,
+          690
+        ]
+      ],
+      "seed_HSV_opencv": "H 22..48; S>=94; V>=72; ROI only",
+      "morphology": "3x3 opening; connected component min area 26 px; 7x7 dilation only for adjacent valid highlights",
+      "adjacent_valid_HSV": "H 20..49; S>=38; V>=92",
+      "feather": "Gaussian sigma=0.95 on binary bean confidence, NOT on input RGB",
+      "luminance": "Y=.2126 R + .7152 G + .0722 B (encoded RGB, no linear-light physical claims)",
+      "highlight_weight": "smoothstep(clamp((Y-115)/90,0,1)) times bean selection confidence",
+      "hard_allowed_mask": "weight>0.025 intersect ROI",
+      "only_frozen_parameter": "peak_scale=0.16",
+      "output_rgb": "round(input RGB * (1 - 0.16 * highlight_weight)) inside mask, original RGB copied outside",
+      "no_changes": [
+        "geometry",
+        "scene lighting",
+        "pork/meat re-render",
+        "new ingredients",
+        "plate/background crop",
+        "rescaling",
+        "image synthesis"
+      ]
+    },
+    "implementation_script_sha256": "ae2dbae24516c5fda82f286d549800b0f36e700d5fb78eef86be31080dabbcfd",
+    "source_script_local_session_path": "/mnt/data/food_realism_audit_20261027/apply_one_local_highlight_test.py",
+    "implementation_script_persisted_to_repo": false
+  },
+  "pixel_audit": {
+    "allowed_mask_png_sha256": "198cba475af275c44cc6a61664f9a0ede406874a7e17f2826db7dc335748083a",
+    "mask_drive_file_id": "1_ERY4hDZn8a7oG4RetKRJoajXLQq70Uz",
+    "mask_drive_readback_hash_equal": true,
+    "QA_json_sha256": "cba325db465e0486b998787405beb16471b6f4c1ebbb04194533a3abfe1e100b",
+    "pixel_dimensions_unchanged": true,
+    "altered_pixel_count": 115944,
+    "total_pixel_count": 1573352,
+    "altered_fraction_percent": 7.3692,
+    "outside_allowed_mask_changed_count": 0,
+    "inside_ROI_outside_allowed_mask_unchanged": true,
+    "entire_background_unmodified": true,
+    "source_full_png_raw_sha256_unchanged": true,
+    "average_luminance_in_altered_pixels_before": 167.2,
+    "average_luminance_in_altered_pixels_after": 155.16,
+    "peak_highlight_attenuation_fraction": 0.16,
+    "notes": "Luminance measurements describe only altered source pixels; do not present them as a photographic realism score."
+  },
+  "blind_pair": {
+    "status": "TWO_SAME_SOURCE_IMAGES_ARCHIVED_PENDING_USER_RELATIVE_AND_ABSOLUTE_PHOTO_REVIEW",
+    "label_roles": "SEALED_IN_PRIVATE_USER_DRIVE_DOC_NOT_REVEALED_UNTIL_VOTE",
+    "commitment_sha256": "374a45f8ddecbbbf3f035390b5453b4067600cc1ffa323e26f24900bad520201",
+    "escrow_document_file_id": "1hyX8rKuEOrG6_vlMJri7K5Fq8vNZMvPamqC_AmhG6mI",
+    "escrow_document_readback_verified": true,
+    "escrow_before_user_first_view": true,
+    "raw_source_and_derived_each_exact_one": true,
+    "images": {
+      "X": {
+        "original_or_derived_role": "SEALED",
+        "sha256": "6a672ebc8c27a86a02c9668939e5139b85ac266714ff1468bebe1802131a0e57",
+        "bytes": 2466180,
+        "dimensions": [
+          941,
+          1672
+        ],
+        "drive_id": "1TnleO1nVz9xj5a-p8p43l9M0Qs3ot_0a",
+        "drive_url": "https://drive.google.com/file/d/1TnleO1nVz9xj5a-p8p43l9M0Qs3ot_0a/view",
+        "drive_readback_sha_equal": true
+      },
+      "Y": {
+        "original_or_derived_role": "SEALED",
+        "sha256": "804b7d690763f9d41abe2f098bd0d7f59ec472a0c8bb1ae309fe7442d72545c1",
+        "bytes": 2623345,
+        "dimensions": [
+          941,
+          1672
+        ],
+        "drive_id": "1usLXy0SL1lrSrpt1UmOYlsT4qHiFzbf-",
+        "drive_url": "https://drive.google.com/file/d/1usLXy0SL1lrSrpt1UmOYlsT4qHiFzbf-/view",
+        "drive_readback_sha_equal": true
+      }
+    },
+    "ratio_check": "941x1672 is near but mathematically not exact 9:16; no editing/cropping of canvas size.",
+    "evaluation_prompts": [
+      "Which version looks more convincingly like cooked dry-fried green beans?",
+      "Which looks more appetizing?",
+      "Is the perceived difference substantial, tied, or both worse?",
+      "Do not assume less gloss is better."
+    ]
+  },
+  "interpretation": {
+    "confirmed": "Deterministic local image correction with zero decoded RGB changes outside mask is technically achievable with existing local tools without generative rerender.",
+    "unknown": "User aesthetic preference, commercial absolute suitability, actual improvement in cooked-food realism, and stability across multiple photos.",
+    "scope": "OBSERVE_ONLY_NOT_PROMOTED",
+    "global_VPD_distillation_rule_benefit": "NOT_ESTABLISHED",
+    "costs": "No new external paid provider or image generation API calls; local compute only."
+  },
+  "no_auto_reroll": true,
+  "human_review_status": "PENDING",
+  "unique_next_step": "SHOW_ANONYMOUS_X_AND_Y_FULL_PHOTOS_AND_ZOOMED_BEAN_CROPS_TO_USER; COLLECT_RELATIVE_AND_ABSOLUTE_QUALITY_REVIEW; REVEAL_SEALED_MAPPING_ONLY_AFTER_VOTE; NO_MORE_EDIT_VERSIONS"
+}
