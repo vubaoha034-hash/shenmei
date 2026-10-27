@@ -90,6 +90,23 @@ def run():
         row={k:source[k] for k in ["id","creator","source_page","url","evidence_type"]}
         try:
             im,raw,mime=fetch(source["url"])
+            # Record exact visible pixels independent of metadata/compression.
+            composite=Image.new("RGBA",im.size,(255,255,255,255))
+            composite.alpha_composite(im.convert("RGBA"))
+            visible_hash=hashlib.sha256(composite.convert("RGB").tobytes()).hexdigest()
+            row["visible_pixel_sha256"]=visible_hash
+            if source["id"]=="JUSTFONT_BEFORE_AFTER":
+                # The original URL has returned different PNG byte hashes across
+                # runs. Recheck content in this SAME audit. Fail closed on actual
+                # artwork changes even if a CDN recompresses the bytes.
+                re_im,re_raw,_=fetch(source["url"])
+                re_comp=Image.new("RGBA",re_im.size,(255,255,255,255))
+                re_comp.alpha_composite(re_im.convert("RGBA"))
+                rerender_hash=hashlib.sha256(re_comp.convert("RGB").tobytes()).hexdigest()
+                row["second_fetch_byte_sha256"]=hashlib.sha256(re_raw).hexdigest()
+                row["second_fetch_visible_pixel_sha256"]=rerender_hash
+                row["same_visible_pixels_double_fetch"]=bool(rerender_hash==visible_hash)
+                row["same_exact_bytes_double_fetch"]=bool(re_raw==raw)
             row.update({"verified":True,"sha256":hashlib.sha256(raw).hexdigest(),
                "bytes":len(raw),"dimensions":[im.width,im.height],
                "format":im.format,"mime_from_server":mime,
@@ -107,8 +124,10 @@ def run():
             row.update({"verified":False,"error":str(e)[:650]})
             fail.append(row);print("AUTHORED_IMAGE_FAIL",row["id"],row["error"])
     byid={x["id"]:x for x in ok}
-    visible_pair=byid.get("JUSTFONT_BEFORE_AFTER",{}).get("before_after_color_visible",False)
-    source_gate=bool(visible_pair and "LEFTFONT_STAGES" in byid and
+    paired_source=byid.get("JUSTFONT_BEFORE_AFTER",{})
+    visible_pair=paired_source.get("before_after_color_visible",False)
+    stable_picture=paired_source.get("same_visible_pixels_double_fetch",False)
+    source_gate=bool(visible_pair and stable_picture and "LEFTFONT_STAGES" in byid and
        len(set(x["creator"] for x in ok))>=2)
     result={
       "schema":"vpd-r11-artist-authored-revision-stage-source-pixel-audit/1.0",
@@ -118,6 +137,7 @@ def run():
       "actual_read_and_decoded":ok,"not_accessible":fail,
       "first_party_visual_stage_gate":source_gate,
       "actual_same_character_colored_before_after_detected":visible_pair,
+      "selected_before_after_raster_stable_on_double_fetch":stable_picture,
       "copyrighted_image_bytes_distributed":False,
       "historical_author_editable_source_access":False,
       "artist_style_transfer_to_unseen_glyph_executed":False,
@@ -129,6 +149,6 @@ def run():
     OUTPUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("R11_STAGE_SOURCE_GATE",json.dumps({
       "pass":source_gate,"read":len(ok),"failed":len(fail),
-      "colored_same_glyph_pair":visible_pair},ensure_ascii=False))
+      "colored_same_glyph_pair":visible_pair,"pixel_reproducible":stable_picture},ensure_ascii=False))
 
 if __name__=="__main__":run()
