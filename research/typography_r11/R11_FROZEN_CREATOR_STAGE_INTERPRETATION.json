@@ -1,0 +1,77 @@
+{
+  "schema": "r11-authored-before-after-interpretation-freeze/1.0",
+  "date": "2026-10-27",
+  "goal": "Read actual verified published designer-author revision images, identify exact stage contrasts without inventing creator pen paths, and extract constrained decisions with reject/rollback conditions rather than repeat geometric ratios.",
+  "parent_source_audit": "research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+  "photo_rights": "Use remote read-only checksum and aggregate metrics; do not copy source photos into public GitHub, training corpora, or commercially usable assets",
+  "stage_classification": [
+    {
+      "id": "HY_RED_CLOUD",
+      "stage_kind": "historical_reference_to_hand_drawn_sketch_to_final_showcase",
+      "crop_safe_paired_before_after": false,
+      "observed": "Historical grey glyph and traced-like pencil/brush first draft are followed by an expressive black finalized designer face; figure visually shows redesigned main stroke mass and terminals, not just texture.",
+      "forbidden": "Do not assert recreated pen pressure, chronological edit list or quantitative improvement from unregistered staging panels.",
+      "decision_hypothesis": "Construct a new style after drawing and assessing multiple exemplars, rather than copying source calligraphy contours unchanged."
+    },
+    {
+      "id": "TPTQ_REVISION_NA",
+      "stage_kind": "actual_creator_published_same_glyph_revisions_red_before_blue_after",
+      "crop_safe_paired_before_after": true,
+      "observed": "Author labels red contour BEFORE and blue contour AFTER; explicit figure caption: revision of proportion of 阝 primary radical in numerous structurally related characters.",
+      "supported_reason": "The article explicitly describes component harmonization over many characters; author also states widening 口 initially did not generalize, requiring rollback to narrower width.",
+      "decision_hypothesis": "Review every inherited component across family glyphs in context and rollback local attractive feature if family typography loses consistency.",
+      "frozen_palette_masks": {
+        "red": "R>120, R-G>54, R-B>50",
+        "blue": "B>135, B-R>50, B-G>12"
+      },
+      "roi_heuristic": {
+        "right_x_fraction_min": 0.55,
+        "red_y_fraction": [
+          0.035,
+          0.48
+        ],
+        "blue_y_fraction": [
+          0.4,
+          0.93
+        ]
+      },
+      "metrics": "Only compare isolated color glyph bounding-box size, normalized centroid and silhouette occupancy if enough red and blue pixels, otherwise leave 'measurement_inconclusive'. Overlays are not automatically a brush motion record."
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU",
+      "stage_kind": "author_published_design_adjustment_before_after",
+      "crop_safe_paired_before_after": false,
+      "observed": "Same phrase labeled before and after; magnification identifies a local narrowed U-shaped negative space; print designed outline, not actual hand brush.",
+      "decision_hypothesis": "In squeezed variants, reauthor counter shape where naive scaling makes the gap visually too tight; maintain glyph legibility."
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU_SPACE",
+      "stage_kind": "SIDE_BY_SIDE_VARIANT_NOT_CHRONOLOGICAL",
+      "crop_safe_paired_before_after": false,
+      "observed": "Standard and C80 narrowed variant compared; NO evidence that one is original draft and other is revision.",
+      "excluded_from_change_training": true
+    },
+    {
+      "id": "MORISAWA_UD_TAKADA",
+      "stage_kind": "first_person_interview_and_illustrated_modified_glyphs",
+      "image_url": "https://ifontcloud.com/index/images/newknowledge/%E6%97%A5%E6%9C%AC%E8%A8%AD%E8%A8%88%E5%B8%AB%E9%AB%98%E7%94%B0%E8%A3%95%E7%BE%8E%E8%A8%AA%E5%95%8F02.png",
+      "page": "https://www.ifontcloud.com/index/newknowledge_detail.jsp?id=182",
+      "crop_safe_paired_before_after": false,
+      "observed": "Interview publishes before/after letterform tweaks and first-person rationale around legibility, teaching, and consistent components.",
+      "author_direct_statement": "When testers found a 木 stroke end unnatural, the team revised related glyph families rather than only that glyph; same components require appropriate consistency in connected/separate strokes.",
+      "decision_hypothesis": "Real user observation can override studio assumptions, with consistency checked in all related radicals and words."
+    }
+  ],
+  "freeze_rules": [
+    "No previous complete licensed font graphics copied into new wordmarks",
+    "First party before/after is credible as published stage illustration but not automatically genuine live software edit history",
+    "Before vs after glyphs in DIFFERENT scales are not directly pixel comparable",
+    "A visually similar correction is not an aesthetic causal proof",
+    "Every candidate operator must supply APPLY, REJECT and ROLLBACK conditions grounded in published designer commentary",
+    "R7-R9 geometry-only adjustment cannot be re-marketed as method learning",
+    "No new drawing or image generation until actual source evidence translated into verifiable and context-sensitive process",
+    "No new paid licenses, subscriptions or external API charges"
+  ],
+  "next_gate": "Verify bytes and red/cyan contours on same authored image; then mark source-grounded decision classes and only consider an unseen functional counterfactual. Artistic quality remains NOT VALIDATED.",
+  "formal_task_355_preserved": true
+}
