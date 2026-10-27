@@ -1,0 +1,111 @@
+{
+  "schema": "shenmei-r16-controlled-gesture-and-lineage/v1",
+  "date": "2026-10-27",
+  "status": "R16_REAL_ARTWORK_DONE__NO_INDEPENDENT_HUMAN_AESTHETIC_PASS",
+  "branch_parent": {
+    "branch": "research/typography-r15-xi-actual-output-20261027",
+    "commit": "bebd8162efcdb7bd900218690d1f0a7a6147c81d",
+    "r15_ledger": "research/typography_r15/R15_ACTUAL_GLYPH_OUTPUT_AND_NEGATIVE_VERDICT.json"
+  },
+  "source": {
+    "creator": "梁志坚",
+    "work": "放肆喜欢",
+    "first_person_url": "https://www.uisdc.com/11-font-design-case",
+    "r12": "R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "r14": "R14_SOURCE_TO_HOLDOUT_TOPOLOGY_COMPILATION.json",
+    "limitation": "Abstract design decision only; original creator's editable paths and true motions unknown"
+  },
+  "user_feedback": {
+    "verbatim": "讲真的，这个喜开始有点设计感了。继续下一步",
+    "evaluated_artifact": "R15 C1 upper 喜 component of 熹",
+    "scope": "PARTIAL_POSITIVE_UPPER_COMPONENT_ONLY",
+    "not_whole_熹_approval": true,
+    "not_D1_or_D2_approval": true,
+    "previous_R15_aesthetic_failure_preserved": true
+  },
+  "frozen_part": {
+    "parent_C1_svg_sha256": "edf5ffa0142849df33af0972f9c6bddf7777cb4191844848e78e3c7776a7efcc",
+    "canvas_px": [
+      1100,
+      1180
+    ],
+    "protected_upper_rows": "0..909",
+    "protected_path_ids": [
+      "axis",
+      "upper-cross-left",
+      "upper-cross-right",
+      "lower-cross",
+      "upper-mouth-top",
+      "upper-mouth-left",
+      "upper-mouth-right",
+      "upper-mouth-bottom",
+      "merged-wings-and-bar",
+      "gesture-up-turn",
+      "lower-mouth-top",
+      "lower-mouth-left",
+      "lower-mouth-right",
+      "lower-mouth-bottom"
+    ],
+    "upper_full_RGBA_different_pixels": 0
+  },
+  "D1": {
+    "outcome": "NEGATIVE__SUBTLE_TUNING_NOT_CREATIVE_ADVANCE",
+    "svg_sha256": "fb74e468960a103fb8730279b7f7fc8707a24eae832b20d2d47068c9aacc22a3",
+    "png_sha256": "010b5e0581e22d5061866587e27b35c8f34fc0f121a03aa75708f58f43a4ea5e",
+    "changed_pixels": 19126
+  },
+  "D2": {
+    "outcome": "DISTINCT_CREATIVE_GESTURE_CANDIDATE__NOT_YET_VALIDATED",
+    "modified_svg_ids": [
+      "fire-1",
+      "fire-2",
+      "fire-3",
+      "fire-4"
+    ],
+    "design_decision": "Re-author bottom four marks: longer outward left gesture; weight second; shorten third; long answering right gesture",
+    "native_svg": "R16_D2_熹_动势重构_原生矢量.svg",
+    "svg_sha256": "b60c4d6c590e6c902bfc2ae4f79642293772286056d56ae039acc53b6e8cc888",
+    "png_sha256": "e14863471aac062a50f6fd1b837695288e20dae677b26e4d8db51cbea16c88df",
+    "comparison_png_sha256": "8802b52e62716299e02fb19f974074864788b7aa937433d2a58359a124c08bfb",
+    "changed_pixels": 30865,
+    "changed_bbox_xyxy": [
+      166,
+      913,
+      960,
+      1111
+    ],
+    "number_separate_fire_components": 4,
+    "known_risks": [
+      "Third stroke too small",
+      "Rightmost flare may be exaggerated"
+    ],
+    "human_legibility_test": "NOT_COLLECTED",
+    "independent_aesthetic_test": "NOT_COLLECTED",
+    "style_method_promoted": false
+  },
+  "rejected_imagegen": {
+    "gen_id": "43e14385-bd9e-4c39-9aa6-147cc6745077",
+    "sha256": "4d65f3eb908f8193a6125fcd624dbf5fb8cc58d93a6917981847c3ece0dd108e",
+    "reason": "Wrong 喜 topology again; not used for accepted artwork"
+  },
+  "reproducibility": {
+    "scripts": [
+      "r16_controlled_revision.py",
+      "r16_d2_kinetic_fire.py",
+      "R16_REPRODUCE_AND_VERIFY.py"
+    ],
+    "actual_svg_png_render_match": true,
+    "locked_upper_pixel_match": true,
+    "zip_filename": "R16_熹字_保留喜设计与四点笔势实验.zip",
+    "zip_sha256": "d6459852849845c180839c216306d94776f1835fb57826de89102fcb5c7dfc43"
+  },
+  "native_task": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "modified": false,
+    "required_separate_human_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER"
+  },
+  "next": "Have user compare C1 with D2 at equal visual scale; do not claim cross-word creative transfer or independent blind success."
+}
