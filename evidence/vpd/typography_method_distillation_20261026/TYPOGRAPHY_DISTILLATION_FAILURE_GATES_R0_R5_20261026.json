@@ -109,6 +109,13 @@
       "fact": "R9冻结后对沙漠/深浅的密度条件化左右部件布局，在Figma实际生成12个可编辑字形并人工查看，改变的是组件水平仿射比例，视觉上仍与原字形高度接近，未显示专业艺术字改善。",
       "forbidden": "不得再用分级调整左右宽度、端点、重心作为真正审美蒸馏进展；没有作者草稿/前后图的机制只能标假说。",
       "evidence": "evidence/vpd/typography_method_distillation_20261026/R9_STRUCTURAL_SPACE_UNSEEN_VISUAL_NEGATIVE_20261026.json"
+    },
+    {
+      "id": "F14_PROCESS_IMAGE_CLASSIFICATION",
+      "severity": "BLOCK",
+      "fact": "R10只有在亲自检查源图及其说明后才明确：汉仪是参考→草稿→定稿，Typotheque是原字形局部前后修订，文鼎图既有同字Before/After也有标准版/直接压缩/C80独立修正版对照。不同证据类型不能混称原作者完整步骤或实际笔压。",
+      "forbidden": "禁止根据图片标题/搜索缩略图凭空写创造过程；没有真实标注的阶段关系不得被提升为训练真值，不得把常规字体笔画局部修正直接当专业艺术字的生成方法。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R10_REAL_AUTHOR_STAGE_VISUAL_DECISION_AUDIT_20261027.json"
     }
   ],
   "admissible_technical_progress_conditions": [
@@ -133,8 +140,8 @@
     "Whether semantic role labels are actually the artist's own",
     "How many samples suffice for stable unique style transfer across families"
   ],
-  "current_stage": "R9_REAL_NEW_WORD_PIXELS_INSPECTED_NO_AESTHETIC_TRANSFER",
-  "next_true_focus": "Evidence with actual designer-authored before/after pixels or sketch→final stages; learn shape decisions beyond scalar geometry; pay only after human request.",
+  "current_stage": "R10_REAL_CREATOR_STAGE_IMAGES_VERIFIED_AND_ACTUALLY_VISUALLY_READ__NO_VALIDATED_ART_TRANSFER",
+  "next_true_focus": "Use actual stage-to-stage creator decisions with structural dependencies and author-grounded rollback; require two previously unseen artistic wordmarks and human aesthetic improvement, not only geometry.",
   "business_lock_preserved": true,
   "source_of_truth_order": [
     "Current user objective",
@@ -142,6 +149,6 @@
     "actual immutable experiment receipts in branch",
     "CURRENT_TASK_LOCK (formal poster work only)"
   ],
-  "last_appended_date": "2026-10-26",
+  "last_appended_date": "2026-10-27",
   "admission_warning": "Read prior F00..F13 before each experiment. Engineering gate, correct vectors, and contrast scores never substitute for real styled unseen glyph + human preference."
 }
