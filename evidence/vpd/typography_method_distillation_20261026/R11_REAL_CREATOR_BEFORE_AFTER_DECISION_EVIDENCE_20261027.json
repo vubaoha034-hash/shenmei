@@ -1,0 +1,57 @@
+{
+  "schema": "vpd-r11-real-artist-revision-evidence-rollup/1.0",
+  "date": "2026-10-27",
+  "objective": "从真正创作者的旧稿→修改→终稿获取可复用创作决策；不靠Figma矢量修字/局部笔宽公式/生成单张图片虚称学习成功。",
+  "source_repository": "vubaoha034-hash/shenmei",
+  "source_branch": "research/typography-r11-authored-revision-supervision-20261027",
+  "results": {
+    "first_party_studio_groups": 5,
+    "source_image_records_before_sha_dedup": 11,
+    "actual_unique_verified_original_images": 9,
+    "grounded_creator_edit_decision_cards": 8,
+    "expressive_same_artist_examples": 3,
+    "other_domains_for_counterexamples": 5,
+    "actual_color_coded_before_after_figures": 3,
+    "same_expressive_creator_complete_stroke_style_classes": [
+      "短捺",
+      "斜捺",
+      "平捺"
+    ],
+    "same_expressive_creator_stages": [
+      "原参考",
+      "手绘初稿",
+      "完成后的黑色字形"
+    ],
+    "cross_script_family_visual_example": true,
+    "source_byte_authentication": "REAL SHA256 and decoded images via 2 GitHub Actions workflows",
+    "creator_authored_original_vector_or_movement_available": false,
+    "commercial_font_license_for_retraining": false,
+    "new_unseen_chinese_wordmark_created": false,
+    "measured_new_work_aesthetic_improvement": false,
+    "independent_human_aesthetic_review": false
+  },
+  "authoritative_artifacts": {
+    "teacher_cards_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-authored-revision-supervision-20261027/research/typography_r11/R11_CREATOR_EDIT_SUPERVISION_V1.json",
+    "teacher_cards_blob_sha": "b6ad3ffcd42285280e85815c192b64853d4eb571",
+    "provenance_gate_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-authored-revision-supervision-20261027/research/typography_r11/R11_SUPERVISION_PROVENANCE_GATE_PASS.json",
+    "provenance_gate_blob_sha": "0ae3811bbec5decd5cc814ce7e0cf74a4e57b698",
+    "expressive_image_hashes_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-authored-revision-supervision-20261027/research/typography_r11/R11_HANYI_REAL_WHOLE_STROKE_SOURCE_AUDIT.json",
+    "expressive_image_hashes_blob_sha": "9933050326c3f91e9b25dc6c873a261789706d0d",
+    "multi_studio_before_after_url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-authored-revision-supervision-20261027/research/typography_r11/R11_ACTUAL_AUTHOR_IMAGE_AUDIT.json",
+    "first_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40430837845",
+    "expressive_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40431431324",
+    "original_first_party_stage_publisher": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+    "original_first_person_description": "https://www.behance.net/gallery/94861375/-Hanyi-Redcloud-Li-Font"
+  },
+  "methodology_course_correction": [
+    "字体原稿与商业书法字标属于不同任务领域；5条字体易读和家族一致性案例只做审美否决/修订决策参考，不作为六島笔势原型。",
+    "真正同作者的三类捺是整笔造型而不是端笔宽度，区别于R2和R5的失败。没有作者逐字适用条件，不能把三形体变成确定参数公式。",
+    "从灰色旧字→手绘/勾勒→黑色成品的全过程有原作者/发布者作品图佐证，但仍没有可恢复的真实笔压/运动/原工程数据。",
+    "11个来源记录按真实原始字节sha256去重为9张独立作品，旧R4多字体同像素经验同样执行。",
+    "任何试图把这些8条证据直接称为可自创高级字的学习成功都须被阻止。"
+  ],
+  "stage": "SOURCE_STUDY_AND_EVIDENCED_CREATOR_DECISIONS__TRANSFER_PIXELS_NOT_TESTED__NO_METHOD_PROMOTION",
+  "next_specific_action": "R12先为单一表现性创作者的整笔短/斜/平三类建立有图证据的角色判别及‘何时不适用’人工审核集；只有取得角色条件证据才开始冻结未知新字对照，禁止再猜统一笔画宽度/局部几何比例。",
+  "budget": "No newly purchased software or newly billable image model was invoked.",
+  "safety": "Existing business task lock 355 and checkpoint 377 not changed; third-party original image bytes not stored in repository"
+}
