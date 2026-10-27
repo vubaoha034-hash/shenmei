@@ -1,0 +1,125 @@
+{
+  "schema_version": "vpd-photo-local-highlights-corrected-human-verdict/v1",
+  "recorded_date": "2026-10-27",
+  "task_id": "VPD-R3Y-LOCAL-SPECULAR-COMPARE-20261027",
+  "scope": "PHOTO_ONLY_APPEND_ONLY_HUMAN_FEEDBACK_SUPERSESSION_NO_TYPOGRAPHY_OR_FIGMA",
+  "project": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "native_task_lock_revision_observed": 355,
+    "checkpoint_sequence_observed": 377,
+    "native_task_lock_modified": false,
+    "native_checkpoint_modified": false,
+    "global_skill_modified": false
+  },
+  "parent_technical_receipt": "evidence/vpd/food_photo_distillation_20261027/LOCAL_BEAN_HIGHLIGHT_MASKED_XY_ONE_PASS_20261027.json",
+  "user_feedback_chronology": [
+    {
+      "order": 1,
+      "quote_exact": "局部高光同源对照：Y更真实、更有食欲。请揭晓编辑身份，核对像素审计并保存真人结论。",
+      "interpretation": "INITIAL_RELATIVE_PREFERENCE_Y_NOT_FINAL",
+      "status": "HISTORICAL_SUPERSEDED_BY_SUBSEQUENT_USER_CORRECTION"
+    },
+    {
+      "order": 2,
+      "quote_exact": "都差不多。",
+      "interpretation": "FINAL_CORRECTION_TO_TIE",
+      "status": "AUTHORITATIVE_LATEST_HUMAN_FEEDBACK"
+    }
+  ],
+  "final_user_verdict": {
+    "relative_preference": "TIE",
+    "route_winner": null,
+    "visual_quality_increase_proven": false,
+    "source_original_absolute_quality": "NOT_EXPLICITLY_APPROVED_AS_COMMERCIAL_FINAL",
+    "edited_candidate_absolute_quality": "NOT_EXPLICITLY_APPROVED_AS_COMMERCIAL_FINAL",
+    "reason": "The user explicitly revised the earlier preference to '都差不多'; the earlier pro-Y statement remains documented but must not count as a second vote, final preference or quality improvement."
+  },
+  "pre_vote_escrow": {
+    "saved_before_first_review": true,
+    "escrow_document_id": "1hyX8rKuEOrG6_vlMJri7K5Fq8vNZMvPamqC_AmhG6mI",
+    "escrow_title": "VPD_PRIVATE_LOCAL_BEAN_HIGHLIGHT_XY_MAPPING_20261027",
+    "sealed_commitment_sha256": "374a45f8ddecbbbf3f035390b5453b4067600cc1ffa323e26f24900bad520201",
+    "commitment_recomputed_sha256": "374a45f8ddecbbbf3f035390b5453b4067600cc1ffa323e26f24900bad520201",
+    "verified_algorithm": "SHA-256 of canonical UTF-8 JSON sealed object, keys sorted and separators compact, ensure_ascii=False",
+    "status": "MATCH",
+    "limitations": [
+      "The unedited original appeared in a prior comparison, so this is an anonymized same-source test rather than independent double-blind evaluation.",
+      "The escrow verifies pre-vote identity; it cannot independently validate professional food photography quality."
+    ]
+  },
+  "revealed_labels": {
+    "X": {
+      "role": "LOCAL_HIGHLIGHT_ATTENUATION_SINGLE_DERIVED",
+      "original_source": "R3-Y_DIRECT",
+      "sha256": "6a672ebc8c27a86a02c9668939e5139b85ac266714ff1468bebe1802131a0e57",
+      "mime": "image/png",
+      "bytes": 2466180,
+      "dimensions": [
+        941,
+        1672
+      ],
+      "drive_file_id": "1TnleO1nVz9xj5a-p8p43l9M0Qs3ot_0a",
+      "drive_link": "https://drive.google.com/file/d/1TnleO1nVz9xj5a-p8p43l9M0Qs3ot_0a/view"
+    },
+    "Y": {
+      "role": "UNMODIFIED_R3_DIRECT_ORIGINAL",
+      "sha256": "804b7d690763f9d41abe2f098bd0d7f59ec472a0c8bb1ae309fe7442d72545c1",
+      "mime": "image/png",
+      "bytes": 2623345,
+      "dimensions": [
+        941,
+        1672
+      ],
+      "drive_file_id": "1usLXy0SL1lrSrpt1UmOYlsT4qHiFzbf-",
+      "original_original_drive_file_id": "1z9Lyol6evoTcBVTKqUtcq7zvrj7jLvVc",
+      "drive_link": "https://drive.google.com/file/d/1usLXy0SL1lrSrpt1UmOYlsT4qHiFzbf-/view"
+    }
+  },
+  "independent_pixel_audit": {
+    "current_turn_original_files_read_from_local_mounted_runtime": true,
+    "original_X_and_drive_X_sha_match": true,
+    "original_Y_and_drive_Y_sha_match": true,
+    "mask_and_drive_mask_sha_match": true,
+    "mask_sha256": "198cba475af275c44cc6a61664f9a0ede406874a7e17f2826db7dc335748083a",
+    "mask_drive_file_id": "1_ERY4hDZn8a7oG4RetKRJoajXLQq70Uz",
+    "dimensions": [
+      941,
+      1672
+    ],
+    "decoded_color_mode": "RGB",
+    "total_pixels": 1573352,
+    "changed_pixels": 115944,
+    "changed_pct": 7.369234602301329,
+    "mask_nonzero_pixels": 115944,
+    "changed_pixels_outside_allowed_mask": 0,
+    "changed_pixels_inside_allowed_mask": 115944,
+    "actual_edit": "Masked local RGB attenuation of green-bean highlight area, not a whole-food generative rerender, recipe based on the previously recorded Python/Pillow/OpenCV processing",
+    "regional_selection_limitation": "Color and region-of-interest segmentation may affect visually adjacent green garnish; mask exclusion verifies boundaries, not perfect object semantics.",
+    "photographic_realism_improvement_proven": false,
+    "strict_9x16_mathematically_exact": false
+  },
+  "experimental_interpretation": {
+    "verified": "Local-only pixel editing is technically feasible; modified file exactly obeys allowed mask, all raw byte identities match their archived copies.",
+    "human_feedback": "No perceptible improvement in realism or appetite appeal sufficient to win a relative subjective preference; final tie.",
+    "action": "Preserve unmodified R3-Y as comparison baseline and retain edited X only as a non-promoted experimental derivative.",
+    "inference_limits": [
+      "One photo, one manually scoped color/brightness intervention.",
+      "Tie is not proof zero effect or universal failure.",
+      "Brightness attenuation is not identical to physically accurate bidirectional reflection modelling.",
+      "The user did not approve either as a final commercial photo."
+    ],
+    "learning_layer": "skill",
+    "evolution_decision": "OBSERVE_ONLY_DO_NOT_PROMOTE_LOCAL_ANTI_GLOSS_RULE",
+    "professional_next_step": "Before further repeats, prioritize obtaining a verified real photo of cooked dry-fried green beans, or compare physically different genuine food material references; if evaluating another local retouch, first define and separately review the absolute-quality standard."
+  },
+  "operations_this_turn": {
+    "new_image_generations": 0,
+    "new_image_edits": 0,
+    "prior_approved_images_edited": 0,
+    "new_external_provider_cost": 0,
+    "repository_write_scope": "Single append-only correction/settlement evidence file"
+  },
+  "status": "CLOSED_FINAL_USER_TIE_PIXEL_AND_ESCROW_VERIFIED",
+  "next_required_action": "STOP_THIS_LOCAL_HIGHLIGHT_EXPERIMENT. PROTECT_BOTH_ORIGINAL_FILES, DO_NOT_PROMOTE_RULE OR RETOUCH AGAIN. Future photo-only work requires new scoped evidence or experiment, not another automatic gloss-reduction pass."
+}
