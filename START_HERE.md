@@ -1,5 +1,12 @@
 # START HERE — 强制执行入口
 
+<!-- TYPO_R24_FROZEN_BUT_NO_IMAGES_20261027 -->
+**最新设计方法支线R24（2026-10-27）｜冻结了“溪桥听雨”通用规则跨字迁移A/B，但尚未生成任何R24图片。** 继R23「松间见月」的独立短上下文A/B技术通过，R24按R23预留留出词“溪桥听雨”先行冻结A中性字标/B**无任何逐字特制**的6条设计条件（识字优先、密字留白、疏字主笔、包围与左右结构、组内1–2处笔势、整体光学平衡），然后调用已连接的Opera Neon `new_page`，服务器返回`McpServerError: Session terminated`；两次 `list_pages` 仍失败，备用只读Browser也因缺来源上下文不可用。**A=0次、B=0次；没有PNG、没有新字稿；不得声称跨字迁移成功或失败。** 未使用Adobe Firefly/其他收费网页自动化，没用旧聊天随机生成冒充原两臂。实际完成可执行本地PNG机器验证脚本，使用R23真实PNG做正向烟测，缺文件和合成不透明底做拒绝烟测，绝不以机器几何替代汉字/审美人工审核。自包含本聊天ZIP `R24_溪桥听雨_隔离执行与像素核验准备包.zip` SHA256 `810c456c36956e01ea59b28c6bd4573cb949e2df151b53f97e1ba47b259c0047`，7文件；公共仓库只保存哈希和恢复规则。恢复唯一动作：先恢复Opera Neon同账号连接，再由**两个真正全新普通ChatGPT聊天**分别发送冻结A/B提示词，每臂1次并取回原始PNG，出现任何错字/非透明/方案板立即判INVALID。R23人类审美仍PENDING，R24规则尚未VALIDATED。独立研究不写正式视觉锁Rev355/Checkpoint377，也不更改S7真人等待状态。
+- [R24前置冻结规则与原提示词](research/typography_r24/R24_FROZEN_GENERAL_GRAMMAR_AND_AB.json)
+- [R24真实浏览器阻断、测试程序与归档哈希](research/typography_r24/R24_CARRIER_BLOCKER_AND_PREFLIGHT.json)
+- [R24恢复操作顺序](research/typography_r24/README.md)
+<!-- END_TYPO_R24_FROZEN_BUT_NO_IMAGES_20261027 -->
+
 <!-- TYPO_R23_TWO_VALID_PNG_AB_20261027 -->
 **最新研究R23｜“松间见月”独立四字字标真实A/B技术有效，但创作规则尚未验证。** 在独立研究分支沿 R22 单张正确透明PNG入口，先冻结两臂提示词和全新目标「松间见月」（另封存未用「溪桥听雨」）；之后实际用 Opera Neon 的两个**独立全新ChatGPT普通聊天**，A中性字标/B整组结构条件设计规则各调用一次，只得一张1672×941原始透明RGBA PNG。两份原图在ChatGPT用户文件库真实取回，与浏览器生成Blob原字节 SHA256 一致，A=`2c1ce159bc5c48d427a989d05dd9a40ca6e913df5c7f3fb0736de305e7c3986a`，B=`39559dc122df75a87146a609418d192ff73936752403457d506e94ea7dc538db`。四个简体汉字准确且只有单行，无注解/风景/拼图。**技术闸门 PASS**；B视觉更有书写动势，但人类盲评未做、长期稳定/第二词适配未做、内置模型/种子未知，不能写 `VALIDATED_RULE`。A原墨迹高355px、B412px；已用第二幅**只作为展示**的同墨高355px对照避免天然体量偏差，原始PNG没有改。两条提示词A长200字/B300字且B为松/间/见/月逐字指定技法，不能把单例改观直接归因为真正学会的通用设计程序。公开仓库只存字节哈希和技术记录，原PNG和复算脚本在本聊天 ZIP。下一关R24必须先冻结**与字无关的设计语法编译方法**再测试新「溪桥听雨」，禁止事后按输出改参数或仅重复随机生图。新付费预算0。
 - [R23 冻结A/B实测契约](research/typography_r23/R23_FROZEN_A_B_PROMPTS_BEFORE_OUTPUT.json)
