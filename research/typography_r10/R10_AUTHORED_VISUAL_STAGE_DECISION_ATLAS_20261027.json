@@ -1,0 +1,157 @@
+{
+  "schema": "vpd-r10-expert-authored-stage-observations-v1.0",
+  "date": "2026-10-27",
+  "project_goal": "Learn designer's actual reusable creative decisions from verified source-to-revision visuals, not single styled outcomes or generic width equations; test withheld original artworks after source admission.",
+  "provenance": {
+    "earlier_ci": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40421894959",
+    "verified_source_audit": "research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+    "verified_four_source_hashes": {
+      "HY_RED_CLOUD": {
+        "sha256": "a2e8d79a85582e25e07c4d7331a42d23f0a63b3b4afd52740a74f7efbaca5dcd",
+        "pixels": [
+          1600,
+          1165
+        ],
+        "contentLength": 75012,
+        "source_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p09.jpg"
+      },
+      "TPTQ_REVISION_NA": {
+        "sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+        "pixels": [
+          3369,
+          2382
+        ],
+        "contentLength": 161340,
+        "source_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png"
+      },
+      "ARPHIC_FANGXINSHU": {
+        "sha256": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+        "pixels": [
+          1920,
+          1152
+        ],
+        "contentLength": 172129,
+        "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b405c71709175.5bced77481eb7.jpg"
+      },
+      "ARPHIC_FANGXINSHU_SPACE": {
+        "sha256": "b42f3b4a7e2a21994446c0450a793f87385d928647b76dace20d3f784339b412",
+        "pixels": [
+          1920,
+          1358
+        ],
+        "contentLength": 137351,
+        "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/05da9371709175.5bced7748149d.jpg"
+      }
+    },
+    "human_visual_read_method": "Read original images in connected Opera Neon browser, render source pixels in browser canvas, forward actual color image for visual inspection. Not search thumbnails or invented reconstruction.",
+    "extra_visual_source": {
+      "id": "TPTQ_REVISIONS_GRID",
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness1.png",
+      "sha256": "549a18bfa2266ec8c8adc2b34be4bdd2982918f7b1b27b958c05b3d6527837a6",
+      "bytes": 1160945,
+      "dimensions": [
+        3368,
+        2004
+      ],
+      "verified_with": "Browser same-origin fetch + crypto.subtle.digest, image decoded at actual intrinsic size, visually examined."
+    },
+    "rights": "Professional source photos shown for analytic reference only. Images stay at creators' URLs and are not re-uploaded into public shenmei; no training on or copying of source outlines; commercial derivative rights not assumed."
+  },
+  "cases": [
+    {
+      "id": "HY_RED_CLOUD",
+      "author": "行行珂 / 汉仪字研工作室",
+      "source_type": "STAGED_CONCEPT_TO_DIGITAL_TYPEFACE",
+      "source_gallery": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "creator_process_text": "https://www.ihunk.cn/h-col-160.html",
+      "image_ref": "HY_RED_CLOUD",
+      "stage_order_visible": [
+        "historical calligraphic sample (labeled 唐玄宗 / 曹全碑)",
+        "gray exploratory structural simplification",
+        "hand-painted first draft drawn as segmented/double-outlined stroke shapes",
+        "finished high-ink Redcloud Li glyph"
+      ],
+      "grounded_before_after_observation": "The same visual rows contain recognizable stage transformations, from ancient model glyph through skeletal restudy, newly constructed draft and final black ink silhouette. Final brush character has designed flaring ink terminals and global stroke organization not present as a mechanical thickness operation on the gray study.",
+      "source_author_claim": "Project evolved from custom art lettering; turned into licensed typeface after multiple revisions, preserving bold lishu characters with flame-like stroke terminals.",
+      "supported_transferable_decision": "STYLE_SOURCE_TO_NEW_STROKE_GESTURE: first choose authored structural gesture, design main/secondary stroke roles in a rough study, THEN draft full brush outline and finish as coherent family. Decorative edges cannot rescue an unaccepted frame.",
+      "not_proven": "We cannot infer historical pen pressure, individual brush velocity, how many rejected drafts there were, or recover actual design tools/layers from this staged composite.",
+      "cannot_reuse_as": "The image itself is not a codebook of per-stroke values or licensed training assets.",
+      "source_confidence": "HIGH_FOR_EXPLICIT_STAGE_SEQUENCE_AND_FULL_SHAPE_PRIORITY"
+    },
+    {
+      "id": "TPTQ_REVISION_NA",
+      "author": "郑初阳 / Typotheque CJK team",
+      "source_type": "DESIGNER_AUTHOR_SAME_RADICAL_BEFORE_AFTER_OVERLAY",
+      "image_ref": "TPTQ_REVISION_NA",
+      "image_ref_2": "TPTQ_REVISIONS_GRID",
+      "source_article": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "stage_order_visible": [
+        "red 'before' outline of 阝 glyph radical",
+        "cyan 'after' outline of same radical",
+        "before and after grids showing repeated related component and font-family members"
+      ],
+      "grounded_before_after_observation": "Red and cyan contours do not coincide; differences are distributed along the vertical boundaries and curved/lower strokes. A second real companion visual presents many related characters before and after. Source captions explicitly identify a proportion revision of 阝; a one-click uniform stretch is not established by the image.",
+      "independent_pixel_indicator": "Color-segmented source overlay within glyph region x160..2420,y160..2050 on original 3369x2382: before/red 15,009 sampled pixels, after/cyan 15,882 sampled pixels; centroid of the colored outlines shifted approximately 30.5 source pixels to the right. This measures line placement, NOT change in design quality, stroke weight or creator intent.",
+      "creator_explicit_process": "One module's consistent proportion can fail across dozens/hundreds of related glyphs. Stage reviews at 300, 1,000, and 3,000 characters. Widely adopted '口' initially made wider, later revised narrower after many fonts. 包 varies according to nested position, not paste-identical components.",
+      "supported_transferable_decision": "FAMILY_DEPENDENCY_ROLLBACK: if revising a semantic component, inspect multiple positional and density contexts; reject globally shared edits if later examples lose typographic coherence. Preserve exceptions; allow reverting earlier promising styling choices.",
+      "not_proven": "Cannot determine the precise Bézier edits from red/cyan masks alone; exact x displacements are optical/color diagnostics, not a reproduced author editing command.",
+      "source_confidence": "HIGH_FOR_REVISION_AND_FAMILY_CASCADE"
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU",
+      "author": "文鼎字型 / Lin Mickey",
+      "source_type": "CREATOR_BEFORE_AFTER_LOCAL_STROKE_REVISION",
+      "image_ref": "ARPHIC_FANGXINSHU",
+      "source_article": "https://www.morisawa-arphic.com.tw/ar-fang-xin-shu/",
+      "stage_order_visible": [
+        "Before line of identical traditional-Chinese sample glyphs under Condensed design",
+        "After corresponding revised sample glyphs",
+        "Magnified before/after internal stroke and contour aperture in 氣"
+      ],
+      "grounded_before_after_observation": "Creator image itself labels 'Before' and 'After' and calls out the interior turn of 氣: after shaping, the narrow interior stroke/counter has smoother, more consistent space and local contour. The 'after' example is not simply a uniform horizontal compressed bitmap.",
+      "creator_explicit_process": "When glyphs become narrow, some specific combinations create visual muddiness; team selectively reduces local stroke dark mass, adjusts motion curves for available white space, and checks balance at small sizes.",
+      "supported_transferable_decision": "COUNTER_COLLISION_DEPENDENT_LOCAL_REVISION: when reducing character width threatens an aperture/turn, change the interfering local contours and curve shape rather than applying one scalar to every stroke. If no collision/density problem is observed, do not add decorative corrections.",
+      "not_proven": "The before/after artwork does not supply pen motion/pressure or a numeric threshold. This is a font-condensation operation, not the complete creative method for expressive brush lettering.",
+      "source_confidence": "HIGH_FOR_LOCAL_EDIT_REASON_AND_BEFORE_AFTER_IMAGES"
+    },
+    {
+      "id": "ARPHIC_FANGXINSHU_SPACE",
+      "author": "文鼎字型 / Lin Mickey",
+      "source_type": "DESIGN_VARIANT_COMPARISON_NOT_CHRONOLOGICAL_DRAFT_SEQUENCE",
+      "image_ref": "ARPHIC_FANGXINSHU_SPACE",
+      "source_article": "https://www.morisawa-arphic.com.tw/ar-fang-xin-shu/",
+      "stage_order_visible": [
+        "standard glyphs 仁 and 空 (标准版)",
+        "naive horizontally compressed standard glyphs (标准版直接压缩)",
+        "independently adjusted C80 outline variant (C80调整字构)"
+      ],
+      "grounded_before_after_observation": "Creator image clearly contrasts standard design, naive compressed and corrected C80 glyphs. The professionally adjusted variant includes selective changes to relative component sizes and counters rather than simple compression.",
+      "creator_explicit_process": "C80 elevates center of visual weight and rebalances contrast; adjusts distribution of white space for narrow fonts and leaves internal room when glyph becomes crowded.",
+      "supported_transferable_decision": "NEGATIVE_CONTROL_NAIVE_SQUEEZE: visible font family coherence requires conditional per-glyph decisions; reject direct x-axis scaling as equivalent to design.",
+      "not_proven": "THIS IMAGE IS A VARIANT / COUNTERFACTUAL COMPARISON, NOT AN AUTHOR'S DATED BEFORE-AND-AFTER CREATIVE PROCESS. Do not silently relabel it as chronological.",
+      "source_confidence": "HIGH_FOR_NAIVE_SCALING_VS_REDRAWN_VARIANT"
+    }
+  ],
+  "mandatory_reinterpretations": [
+    "Author historical design is not recoverable from finished tracing or style-only pixels.",
+    "A design operation taught by a serif/sans family must not be assumed to generate calligraphic identity for 六島-style artwork.",
+    "The user's target remains generalizable professional artistic Chinese wordmark creation. Local typography corrections are subskills, NOT success.",
+    "Good design has dependency and rollback logic; training must include failure reasons, negative controls, and multi-word contexts.",
+    "Do not use creator-owned images as models' training examples or copy their actual contours without appropriate rights; internal analytic references only."
+  ],
+  "states": {
+    "source_asset_bytes_verified": true,
+    "original_stage_pictures_actually_visual_reviewed": true,
+    "creator_explanations_read": true,
+    "author_exact_bezier_commands_known": false,
+    "conditional_designer_decisions_extracted": true,
+    "visual_causal_intervention_on_unseen_user_wordmark": false,
+    "human_blind_preference": false,
+    "proven_artistic_transfer": false
+  },
+  "next_nonrepeatable_gate": {
+    "name": "R11_AUTHORED_DECISION_DEPENDENCY_CHAINS",
+    "purpose": "Take one CASE-SPECIFIC visual operator supported both by designer description and source before/after, encode design trigger/operation/stop/revert with no numeric widths, and test on a new distinctive character family using a renderer able to alter shape and gestalt, not 1D rescaling. If not possible fail closed.",
+    "required_validation": "Original baseline vs blind decision-specified revision on at least two different unseen wordmarks, actual pixels and legibility, then the user's independent aesthetic verdict. Do NOT move to production or buy extra tools."
+  }
+}
