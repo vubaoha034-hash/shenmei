@@ -1,0 +1,53 @@
+name: R11 Audit Genuine Designer-Authored Before-After Images
+on:
+  push:
+    branches:
+      - research/typography-r11-verified-visual-ops-20261027
+    paths:
+      - .github/workflows/typography-r11-real-stage-inference.yml
+permissions:
+  contents: write
+jobs:
+  actual-creator-source-pixel-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lightweight open image analytics
+        run: python -m pip install --disable-pip-version-check --quiet pillow numpy scipy
+      - name: Examine real creator image bytes in runner memory
+        run: python research/typography_r11/r11_inspect_real_source_stages.py
+      - name: Archive only safe derived metrics and all failures
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          s=json.load(open('research/typography_r11/R11_REAL_STAGE_VISUAL_AUDIT.json'))
+          assert s['source_image_bytes_in_public_artifacts'] is False
+          assert s['all_copyrighted_source_image_bytes_transient'] is True
+          assert s['independent_user_blind_review'] is False
+          assert s['new_glyph_transfer'] is False
+          print('R11_EVIDENCE_PERSIST_CHECK',s['verified_count'],len(s['failures']))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r11/R11_REAL_STAGE_VISUAL_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r11): genuine maker-published image hashes, red-blue stage groups and explicit unproven limits"
+            git push origin HEAD:research/typography-r11-verified-visual-ops-20261027
+          fi
+      - name: Reject zero or unregistered source stage
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('research/typography_r11/R11_REAL_STAGE_VISUAL_AUDIT.json'))
+          assert s['approved_for_source_study'] is True, 'AUTHORED_STAGE_IMAGE_GATE_FAILED'
+          assert s['actual_typotheque_color_stage_present'] is True, 'TYPOGRAPHIC_BEFORE_AFTER_COLOR_PAIR_NOT_SEEN'
+          assert s['has_authored_historical_to_draft_to_final'] is True, 'HANYI_AUTHORED_STAGE_MISSING'
+          assert s['professional_aesthetic_transfer_NOT_PROVEN'] is True
+          print('R11_REAL_AUTHOR_STAGES_VERIFIED_NOT_STYLE_TRANSFER')
+          PY
