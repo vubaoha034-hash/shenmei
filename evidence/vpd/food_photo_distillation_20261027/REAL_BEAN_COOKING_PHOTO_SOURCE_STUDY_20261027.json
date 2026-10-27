@@ -1,0 +1,251 @@
+{
+  "schema_version": "vpd-food-photo-real-cooking-reference-source-audit/v1",
+  "recorded_date": "2026-10-27",
+  "task_id": "VPD-FOODPHOTO-REAL-GANBIAN-BEAN-SOURCES-20261027-01",
+  "requested_next_step": "Locate actual cooking-process images of 干煸四季豆, study wrinkling, char and oil-film distribution instead of further gloss suppression or unrelated shrimp-style guidance.",
+  "scope": "PHOTO_ONLY_EVIDENCE_AND_SOURCE_SELECTION_NOT_NEW_RENDER_OR_STYLE_PROMOTION",
+  "repository": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "observed_head": "e881d2f6f44ec11bb403a93ae85a034fc98db6d2",
+    "native_task_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_modified": false,
+    "checkpoint_modified": false,
+    "figma_modified": false,
+    "typography_modified": false,
+    "global_skill_modified": false
+  },
+  "prior_experiment": {
+    "R1": {
+      "subject": "清蒸鲈鱼",
+      "vote": "DIRECT_REFERENCE_PREFERRED"
+    },
+    "R2": {
+      "subject": "家常番茄炒鸡蛋",
+      "vote": "TIE"
+    },
+    "R3": {
+      "subject": "干煸四季豆",
+      "vote": "TIE"
+    },
+    "R3_local_adjustment": {
+      "vote": "FINAL_TIE_SUPERSEDES_INITIAL_Y_PREFERENCE",
+      "edited_pixel_fraction": 0.073692346,
+      "changed_pixels_outside_mask": 0
+    },
+    "conclusion": "No observed stable user-preferred increment from prompt-inflation or local highlight dimming. Do not continue those loops by default."
+  },
+  "source_register": [
+    {
+      "source_id": "WOKS2017_SHALLOW_FRIED_PROCESS",
+      "author": "Judy Leung / The Woks of Life",
+      "article_url": "https://thewoksoflife.com/dry-fried-string-beans-sichuan/",
+      "article_status": "ACTUALLY_READ_FULL_COOKING_INSTRUCTIONS_AND_IMAGE_SEQUENCE_METADATA",
+      "image_urls": [
+        {
+          "url": "https://thewoksoflife.com/wp-content/uploads/2017/10/dry-fried-string-beans-5.jpg",
+          "stage": "FRIED_WRINKLING_STAGE",
+          "pixel_status": "REAL_PAGE_DIRECT_BROWSER_IMAGE_VISUALLY_SEEN",
+          "displayed_dimensions": [
+            600,
+            399
+          ],
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        },
+        {
+          "url": "https://thewoksoflife.com/wp-content/uploads/2017/10/dry-fried-string-beans-10.jpg",
+          "stage": "LATE_COOK_MIXED_INGREDIENTS",
+          "pixel_status": "LINKED_SOURCE_DIRECT_BROWSER_OPEN_BUT_SCREENSHOT_FAILED",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        },
+        {
+          "url": "https://thewoksoflife.com/wp-content/uploads/2017/10/dry-fried-string-beans-3.jpg",
+          "stage": "FINISHED_PLATING",
+          "pixel_status": "SOURCE_DIRECT_IMAGE_BROWSER_OPEN_BUT_SCREENSHOT_FAILED",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        }
+      ],
+      "observations": [
+        "Mid-cook photo displays individually curved beans, a range of wrinkle intensity, small uneven tan/dark contact scorch marks, with green areas still apparent.",
+        "Skin glints are present even before final seasoning; therefore, absolute lack of shine is not a realistic universal criterion.",
+        "Recipe explicitly shallow-fries the beans until lightly scorched, removes them, cooks minced pork, and combines with reduced seasonings, not a thick pooled sauce."
+      ],
+      "cook_method": "Shallow-fry in two batches to wrinkle and spot-scorch; drain, aromatics and minced pork; high-heat final reduction.",
+      "photo_provenance": "Named author, dated article, many own-linked process photographs. EXIF/camera RAW not verified; photographic authenticity not forensically proven.",
+      "confidence": "HIGH_PROCESS_CORROBORATION_NOT_CAMERA_RAW_VERIFIED",
+      "rights": "THIRD_PARTY_PRIVATE_REFERENCE_STUDY_ONLY_NO_REPUBLICATION_LICENSE"
+    },
+    {
+      "source_id": "WOKS2014_DRY_WOK_PROCESS",
+      "author": "Judy Leung / The Woks of Life",
+      "article_url": "https://thewoksoflife.com/sichuan-dry-fried-green-beans/",
+      "article_status": "ACTUALLY_READ_FULL_COOKING_INSTRUCTIONS_AND_IMAGE_SEQUENCE",
+      "image_urls": [
+        {
+          "url": "https://thewoksoflife.com/wp-content/uploads/2014/11/dry-fried-string-beans-3.jpg",
+          "stage": "DRY_WOK_AFTER_COOKING",
+          "pixel_status": "LINK_CONFIRMED_FROM_ARTICLE_NOT_VISUALLY_LOADED",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        }
+      ],
+      "observations": [
+        "Same author documents a different valid technique: start with dry wok and beans (no initial oil), slowly sear until small contact scorch marks and tenderness, only later add oil to pork and seasoning.",
+        "Reduced initial oil can produce a different highlight distribution from shallow-frying, so both are valid context-conditioned outcomes.",
+        "Article text proves recipe method, but specific raw image file was not independently downloaded/inspected."
+      ],
+      "cook_method": "Dry-wok bean precook, then separate oil-based pork/seasoning step; return beans for finish.",
+      "confidence": "HIGH_METHOD_DOCUMENTATION_PHOTO_PIXEL_NOT_VERIFIED",
+      "rights": "THIRD_PARTY_UNKNOWN"
+    },
+    {
+      "source_id": "ICOOK2021_HOME_COOK_STAGE",
+      "author": "我的廚房新花樣 / Madeleine's Kitchen",
+      "article_url": "https://icook.tw/recipes/366804",
+      "article_status": "ACTUALLY_READ_AUTHOR_BODY_INGREDIENTS_STEPS_AND_COOK_STAGE_DESCRIPTION",
+      "image_urls": [
+        {
+          "url": "https://tokyo-kitchen.icook.network/uploads/step/cover/1848158/48a32692682ce3a9.jpg",
+          "stage": "FRY_DRAIN_COMPOSITE",
+          "pixel_status": "IMAGE_SEARCH_RENDER_VISUALLY_SEEN_RAW_DOWNLOAD_UNAVAILABLE",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        },
+        {
+          "url": "https://tokyo-kitchen.icook.network/uploads/step/cover/1848160/d9cfcf1dc28c2d28.jpg",
+          "stage": "WOK_FINAL_MIX",
+          "pixel_status": "IMAGE_SEARCH_RENDER_VISUALLY_SEEN_RAW_DOWNLOAD_UNAVAILABLE",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        }
+      ],
+      "observations": [
+        "Frying-stage source photos explicitly depict oily wok and drained wrinkled beans. Post-drain pods are still green with light localized gray/brown creases.",
+        "Final wok stage visually has nonuniform fold/char, cooked small pork bits and thin oil/sauce; source photo is visibly messy cooking context, not a polished styled dining shoot.",
+        "Author describes cooking until surface wrinkles, draining oil, then aromatics/pork and quick toss; that sequence is directly tied to the illustrated process."
+      ],
+      "cook_method": "Fry or air-fry to wrinkle, drain, then combine with minced pork/pickles/garlic/chilies",
+      "confidence": "HIGH_USER_AUTHORED_COOK_STAGE_ARTICLE_NOT_CAMERA_RAW_VERIFIED",
+      "rights": "THIRD_PARTY_PRIVATE_REFERENCE_STUDY_ONLY"
+    },
+    {
+      "source_id": "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO",
+      "author": "Maggie Zhu / Omnivore's Cookbook",
+      "article_url": "https://omnivorescookbook.com/szechuan-dry-fried-green-beans/",
+      "article_status": "ACTUALLY_READ_ARTICLE_COOKING_PHOTO_SEQUENCE_AND_FULL_RECIPE",
+      "image_urls": [
+        {
+          "url": "https://omnivorescookbook.com/wp-content/uploads/2023/10/230927_Dry-Fried-Green-Beans_6.jpg",
+          "stage": "SIX_STEP_COOKING_CONTACT_SHEET",
+          "pixel_status": "WEB_PAGE_LINK_IMAGE_PIXELS_ACTUALLY_RENDERED_AND_VISUALLY_INSPECTED",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        },
+        {
+          "url": "https://omnivorescookbook.com/wp-content/uploads/2023/10/230927_Dry-Fried-Green-Beans_550.jpg",
+          "stage": "PLATED_WITH_MINCED_PORK_FINAL",
+          "pixel_status": "WEB_IMAGE_SEARCH_PIXELS_RENDERED_AND_VISUALLY_INSPECTED",
+          "raw_asset_sha256": "NOT_AVAILABLE"
+        }
+      ],
+      "observations": [
+        "Six-step wok collage has greener pods and visible mixed small caramelized areas even at 'just tender' stage, not every bean uniformly shrivelled.",
+        "Finished black-plate photo has separate irregular pork crumbles, red dried chilies and patchy bean-skin reflections; still has localized shine.",
+        "Written instructions use pan sear, flip until withered/scorched areas develop, then add pork, aromatics and absorb sauce; distinct materials do not share identical reflection patterns."
+      ],
+      "cook_method": "Pan sear over medium-high heat until blistered and softening; stir-fry with pork and spices.",
+      "confidence": "HIGH_AUTHOR_OWN_COOKING_SEQUENCE_NOT_CAMERA_RAW_VERIFIED",
+      "rights": "THIRD_PARTY_PRIVATE_REFERENCE_STUDY_ONLY"
+    }
+  ],
+  "observed_cooking_material_model": {
+    "status": "PHOTO_SOURCE_CORROBORATED_CANDIDATE_MECHANISMS_NOT_PROMOTED",
+    "dimensions": [
+      {
+        "id": "FOOD_BEAN_IDENTITY",
+        "class": "CORRECTNESS",
+        "finding": "Keep recognizable kidney/string bean pods; tapered ends, nonuniform bends and segments. Avoid substituting garlic shoots or broad pepper pieces.",
+        "evidence": [
+          "WOKS2017_SHALLOW_FRIED_PROCESS",
+          "ICOOK2021_HOME_COOK_STAGE",
+          "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO"
+        ]
+      },
+      {
+        "id": "NONUNIFORM_WRINKLE",
+        "class": "COOKING_APPEARANCE",
+        "finding": "Contraction and slight wilt/wrinkling varies across pods and within each pod. Some segments remain fuller green while others have folded skin.",
+        "evidence": [
+          "WOKS2017_SHALLOW_FRIED_PROCESS",
+          "ICOOK2021_HOME_COOK_STAGE",
+          "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO"
+        ]
+      },
+      {
+        "id": "PATCHY_SCORCH",
+        "class": "COOKING_APPEARANCE",
+        "finding": "Small spatially uneven scorch or toasted spots on different surfaces, not every bean ringed in the same brown/black stripe.",
+        "evidence": [
+          "WOKS2014_DRY_WOK_PROCESS",
+          "WOKS2017_SHALLOW_FRIED_PROCESS",
+          "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO"
+        ]
+      },
+      {
+        "id": "OIL_FILM_IS_ALLOWED",
+        "class": "COOKING_APPEARANCE",
+        "finding": "Thin reflective oil/sauce film on some bean ridges may remain, with local glints differing by orientation and cooking route. Do NOT default to matte/no shine.",
+        "evidence": [
+          "WOKS2017_SHALLOW_FRIED_PROCESS",
+          "ICOOK2021_HOME_COOK_STAGE",
+          "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO"
+        ]
+      },
+      {
+        "id": "NO_THICK_POOL_BY_DEFAULT",
+        "class": "RECIPE_SPECIFIC",
+        "finding": "For the 2017 Woks version, final moisture is reduced to coat the beans, with no thick sauce pool. Not a universal prohibition across every restaurant variant.",
+        "evidence": [
+          "WOKS2017_SHALLOW_FRIED_PROCESS"
+        ]
+      },
+      {
+        "id": "MEAT_SURFACE_DIFFERENT",
+        "class": "MATERIAL_RELATION",
+        "finding": "Minced pork appears as irregular separate browned crumb texture, not as a uniform green-bean glaze or perfect model chunks.",
+        "evidence": [
+          "ICOOK2021_HOME_COOK_STAGE",
+          "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO"
+        ]
+      },
+      {
+        "id": "METHOD_CONDITIONAL",
+        "class": "CAUSAL_HYPOTHESIS",
+        "finding": "Dry-wok vs shallow frying or additional seasonings can shift shine, wrinkle and local char. A single static 'correctness' target is not fully justified without cooking context.",
+        "evidence": [
+          "WOKS2014_DRY_WOK_PROCESS",
+          "WOKS2017_SHALLOW_FRIED_PROCESS"
+        ]
+      }
+    ],
+    "mechanistic_caveat": "Moisture loss, localized hot surface contact and fat-coating provide physically plausible explanations but were not laboratory-measured. No universal highlight percentage, scorch count, precise reflectance BRDF or generated-photo authenticity score is asserted."
+  },
+  "source_selection_for_next_valid_image": {
+    "preferred_recipe_process_truth": "OMNIVORE2023_PAN_SEAR_PROCESS_AND_HERO: cooking step collage plus same dish finished plated image with actual minced pork. Named photo-producing author.",
+    "independent_second_truth_source": "WOKS2017_SHALLOW_FRIED_PROCESS: in-wok intermediate after frying, verified on actual browser pixels.",
+    "rejected_reference_as_food_TRUTH": "Previous unrelated shiny shrimp-in-basket picture: useful scene atmosphere reference in an older accepted photo, but unsuitable as physical green-bean material ground truth.",
+    "unresolved_blocker": "Source photos were genuinely viewed through web image rendering, one Woks process image also through browser screenshot. Original image BYTE downloads were blocked by environment/network/CDP instability. None has authenticated local original-file SHA; it is NOT yet ready to claim reference input identity in a new ChatGPT Image generation.",
+    "rights_policy": "Do not upload or redistribute third-party assets into public repo; URLs and derived factual observations only. If keeping a private source copy for reference, protect its rights and label unknown.",
+    "next_action": "Obtain one selected actual food-correct photo's original image bytes with dimensions and SHA-256 in a stable connected browser. Then, only if user explicitly continues photo output, create exactly one new dish photo with that image actually attached and concise recipe-correct brief; archive and evaluate absolute realism and aesthetics. Do not append gloss-matting rules or automatically rerun same R3 pair."
+  },
+  "not_done": [
+    "No model generation or editing performed on this sourcing turn.",
+    "No download and raw-byte SHA of third-party author photo.",
+    "No independent camera RAW or EXIF provenance confirmation.",
+    "No proof that transferring these observations into prompt will improve generated photographic realism.",
+    "No change to original human-approved photos or existing original full-image artifacts."
+  ],
+  "costs": {
+    "external_paid_calls": 0,
+    "new_generation_count": 0,
+    "figma_calls": 0
+  },
+  "status": "REAL_COOKING_SOURCE_STUDY_COMPLETED_RAW_SOURCE_BYTES_NOT_VERIFIED_NO_GENERATION"
+}
