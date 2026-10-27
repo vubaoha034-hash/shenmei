@@ -1,0 +1,51 @@
+{
+  "schema": "vpd-typography-r22-isolated-chat-carrier-gate/1.0",
+  "date": "2026-10-27",
+  "predecessor_commit": "9a8fceb94370efc15c4a0901e116fdbd4d438717",
+  "predecessor_issue": "R21 image_gen in a long history twice generated annotated multi-panel posters instead of exactly one transparent wordmark; reserved holdout contaminated",
+  "hypothesis": "A new ChatGPT conversation with no prior design history and a concise explicit positive/negative prompt may yield compliant single-asset output",
+  "actual_carrier": "Connected Opera Neon opens separate regular https://chatgpt.com/ chat in Chat mode, not Work; user remains authenticated. Fresh chat, no prior turns. One message max.",
+  "target": "青石晚风",
+  "target_status": "FRESH_CARRIER_TEST_ONLY_NOT_ART_A_B_AND_NOT_FUTURE_HOLDOUT",
+  "frozen_prompt": "请直接调用图片生成，只生成一张图片，不要文字解释。新图为16:9横幅，透明背景，画面中间单排、准确无误的四个简体中文字：青石晚风。只有这四个字，黑色端正宋体风格，字距自然。不得出现其他文字、拼音、字母、数字、编号、Logo、边框、背景场景、山水、装饰纹理、附注、方案展示板或拼图。不要给出A/B/C方案。完成时只输出生成图片。",
+  "controls": {
+    "calls_max": 1,
+    "variations_max": 1,
+    "user_has_not_supplied_references_in_clean_chat": true,
+    "file_uploads": 0,
+    "avoid_unrelated_content_from_parent_chat": true,
+    "no_user_confirmation_bypass": true,
+    "extra_billed_services": 0,
+    "no_use_Adobe_Firefly_credit": true,
+    "allowed_model_native_chatgpt_image": true,
+    "target_output": "One image asset with exactly '青石晚风' in standard simplified Chinese; single horizontal row; transparent background; no other content",
+    "reject_conditions": [
+      "No image generated",
+      "Multiple images",
+      "Text incorrect or additional glyphs",
+      "Scene/poster/multiple-variant panels",
+      "Opaque background",
+      "Generator reports unavailable"
+    ],
+    "technical_review": [
+      "Record newly created conversation permalink if surfaced",
+      "Capture actual generated preview pixels without OCR if accessible",
+      "Check PNG dimensions and true alpha if obtainable",
+      "Record input, model/seed unknown if unavailable",
+      "No synthetic claims of API knobs"
+    ],
+    "human_review": "NOT_REQUIRED_FOR_CARRIER_TECHNICAL_GATE_BUT_DESIGN_REVIEW_PENDS",
+    "A_B_research_not_authorized_by_this_probe": true,
+    "first_good_result_not_PROVES_distillation": true,
+    "generation_counts_are_product_usage_not_paid_api": true
+  },
+  "stop": "On first tool-generated image or observed contract failure, stop; no silent prompt tweaks, rerequests or resampling.",
+  "next_if_pass": "Plan truly fair new A/B on untouched text with model-output-bound rendering and independent design review.",
+  "next_if_fail": "Mark native ChatGPT image carrier unreliable; use programmable vector production to guarantee text and transparency. Keep aesthetics separate and do not spend Firefly credits without approval.",
+  "mainline": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "alter": false
+  }
+}
