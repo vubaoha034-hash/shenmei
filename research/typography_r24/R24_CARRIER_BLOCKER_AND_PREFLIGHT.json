@@ -1,0 +1,55 @@
+{
+  "schema": "shenmei-r24-carrier-blocker-and-QA-gate-receipt/1.0",
+  "date": "2026-10-27",
+  "status": "BLOCKED_BEFORE_IMAGE_GENERATION",
+  "parent_pre_registered": "98aed162ab478cb95d755e568dfe32c56a92a17d",
+  "protocol_path": "research/typography_r24/R24_FROZEN_GENERAL_GRAMMAR_AND_AB.json",
+  "target": "溪桥听雨",
+  "arms": {
+    "A": {
+      "attempted": false,
+      "real_image": false,
+      "hash": null
+    },
+    "B": {
+      "attempted": false,
+      "real_image": false,
+      "hash": null
+    }
+  },
+  "operational_failure": {
+    "carrier": "Opera Neon connected account browser",
+    "first_attempt": "mcp__Opera_Neon__new_page({url:'https://chatgpt.com/'}) returned McpServerError: Session terminated",
+    "second_attempt": "mcp__Opera_Neon__list_pages({}) returned same Session terminated",
+    "third_attempt": "mcp__Opera_Neon__list_pages({}) again returned same Session terminated",
+    "alternative_browser_connector": "mcp__Browser__list_tabs() returned 'Browser access requires originating browser context' (read-only, no access)",
+    "paid_alternatives": "NOT_USED; R24 requires no new paid tools",
+    "fallback_image_gen_this_long_history": "NOT_USED because would violate two fresh chats design and break experimental validity",
+    "root_cause": "UNKNOWN; browser session terminated, cannot claim user authentication expired",
+    "no_user_chat_access_declared": false
+  },
+  "independent_preflight": {
+    "local_script": "R24_QUALITY_GATE.py",
+    "executable_tested_with_actual_prior_R23_PNGs": true,
+    "prior_source_images_not_R24_outputs": true,
+    "positive_fixture": "R23 original A/B PNGs produce MACHINE_PIXEL_GATES_PASS_BUT_CONTENT_AND_HUMAN_PENDING, expected",
+    "negative_fixture": "one nonexistent source produces BLOCKED_SOURCE_MISSING, exits 2 and produces JSON receipt",
+    "content_recognition_gate": "MANUAL_ONLY, never auto PASS from image geometry",
+    "visual_comparison_if_valid": "equal canvas and equal black ink height, original PNG unmodified",
+    "no_OCR_used": true,
+    "actual_R24_source_derived_comparisons": false
+  },
+  "artifacts": {
+    "local_kit": "R24_溪桥听雨_隔离执行与像素核验准备包.zip",
+    "file_bytes": null,
+    "sha256": null
+  },
+  "validated_rule": false,
+  "next": "Reconnect Opera Neon account browser (or open two clean ChatGPT chats manually using frozen prompts) then generate A/B each exactly once, recover original PNG from Library, verify SHA and native alpha, compare; do not re-freeze or substitute image carrier silently.",
+  "mainline": {
+    "revision": 355,
+    "checkpoint": 377,
+    "current_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "edited": false
+  }
+}
