@@ -1,0 +1,114 @@
+{
+  "schema": "shenmei-vpd-r21-actual-whole-word-execution-and-rejection/1.0",
+  "date": "2026-10-27",
+  "parent": "research/typography-r20-whole-word-method-reset-20261027",
+  "parent_commit": "aa3f7db5529d1bb5c2b341f9d2162dff795c39e3",
+  "preregistration": "research/typography_r21/R21_FROZEN_A_B_EXACT_COPY_AND_METHOD.json",
+  "objective": "雾起长桥 exact four simplified Hanzi as independent wordmark, neutral A vs method B, one imagegen call each, same requested params, separate human and pixel audits",
+  "A": {
+    "gen_id": "ba5dcbef-31e7-44f5-b1cd-b1c819559908",
+    "png_original_sha256": "7f63b6fa9cc60d7478e5169a09e03a51c7c9dc66b7615bf07737cb2cad6ddcbe",
+    "observed_dimensions_px": [
+      1774,
+      887
+    ],
+    "observed_type": "multirow A/B/C explanatory black mood-board; contains extra text/technical labels/other phrase",
+    "actual_png_alpha_fraction_gt_zero": 0.99945,
+    "verdict": "INVALID_CONTRACT_VIOLATION_NOT_BASELINE",
+    "reused_as_B_or_reference": false
+  },
+  "B": {
+    "gen_id": "7e1b86fd-46c5-4342-8c4d-e4a1966ae700",
+    "png_original_sha256": "611ab71b251a533bcfbc118d95f63637a96e2048415a06eaff61ef81188e3fc4",
+    "observed_dimensions_px": [
+      1024,
+      1536
+    ],
+    "observed_type": "multi-panel scenic poster with A/B/C variations and extra reserve text",
+    "actual_png_alpha_fraction_gt_zero": 0.99998,
+    "verdict": "INVALID_CONTRACT_VIOLATION_NOT_INDEPENDENT_TRANSPARENT_WORDMARK"
+  },
+  "execution_facts": {
+    "imagegen_requests": 2,
+    "actual_returned_images": 2,
+    "hidden_retries": 0,
+    "requested_parameters": {
+      "size": "1536x1024",
+      "n": 1,
+      "transparent_background": true
+    },
+    "model_identifier": "NOT_EXPOSED",
+    "generator_seed": "NOT_EXPOSED",
+    "input_prompt_tool_field": "null per current tool contract; contextual instructions only",
+    "output_sizes_matched": false,
+    "holdout_text": "纸舟过岸",
+    "holdout_contamination": "Both A and B actually display heldout words; cannot use as fresh visual holdout in this execution context",
+    "equal_budget_evaluation_valid": false,
+    "method_comparison_verdict": "INVALID_NOT_ASSESSABLE",
+    "visual_model_content_control": "FAIL_2_OF_2",
+    "independent_human_aesthetic_review": "NOT_COLLECTED",
+    "original_generations_representative_of_designer_style": "NO_CONFIRMED_CLAIM"
+  },
+  "separate_engineering_recovery": {
+    "status": "STRUCTURE_EXACT_FONT_SCAFFOLD_VECTOR_SOURCE_RENDERED",
+    "not_A_or_B": true,
+    "C1_error": "two disconnected decorative strokes, removed from C2",
+    "C1_svg_sha256": "46d4230defa810394b8bf4280dd16e22c86d7b5953f70943ac20a74c70b9b11b",
+    "C2_svg_sha256": "fcdbd66da050c1502879671c74e802e3214af8519b051a4250052c8b38a5ec28",
+    "C2_png_sha256": "f4d47066b60d9e1577bf12061c5742b471e087f50ca3bd565c82c5c048b0a792",
+    "C2_canvas": [
+      1900,
+      760
+    ],
+    "C2_vector_outline_objects": 4,
+    "content_glyph_sequence": [
+      "雾",
+      "起",
+      "长",
+      "桥"
+    ],
+    "transparent_background_alpha_range": [
+      0,
+      255
+    ],
+    "independent_svg_to_png_RGBA_exact_match": true,
+    "directly_editable_vectors": true,
+    "directly_typeable_font_text": false,
+    "existing_font_outline_derivative_not_independent_new_char_design": true,
+    "source_font": "AR PL KaitiM GB",
+    "source_font_license": "ARPHIC PUBLIC LICENSE 1999; full license included in conversation archive; font binary excluded",
+    "commercial_ready": "NOT_EVALUATED",
+    "professional_design_skill_learned": false
+  },
+  "user_deliverable": {
+    "zip_basename": "R21_雾起长桥_真实生成失败与矢量技术补救血统包.zip",
+    "zip_sha256": "63114c05178b7885a453cd010663ef3d3f329b97aa9bfff9bf9c9a3b49fa5e92",
+    "zip_bytes": 5590708,
+    "zip_members": 18,
+    "artifact_storage": "conversation attachment under /mnt/data, verified in container; cannot infer sandbox URI from repo",
+    "included": "2 original generator failed PNGs + C1/C2 SVG PNG previews + Arphic license + source Python + deterministic QA and sha manifest",
+    "license_binary_font_distributed": false
+  },
+  "audited_stages": {
+    "SOURCE_STUDY": "PRIORS_ONLY",
+    "METHOD_CANDIDATE": "FROZEN_R20",
+    "UNSEEN_TRANSFER_PIXELS": "NOT_DONE; heldout leaked",
+    "HUMAN_BLIND_REVIEW": "PENDING",
+    "VALIDATED_RULE": false
+  },
+  "research_decision": {
+    "r21_invalid": true,
+    "further_imagegen_retries_same_context_authorized": false,
+    "next_action": "R22: controlled source-isolated image execution with exact single-asset contract gate, or replace carrier with one programmable generator; do not generate additional images until valid source output is guaranteed. Then redo genuinely fair same-budget A/B on fresh preregistered wording and new holdout.",
+    "continue_to_refine_font_outlines_into_professional_original_typography_without_author_creativity_credit": false
+  },
+  "native_task_protection": {
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "human_S7_approval": "PENDING",
+    "formal_stage": "LIUXIANSHENG_REFERENCE_TYPOGRAPHY_CONTENT_TRANSFER_EXPERIMENT",
+    "formal_next": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "protected_changes_in_R21": "ZERO"
+  }
+}
