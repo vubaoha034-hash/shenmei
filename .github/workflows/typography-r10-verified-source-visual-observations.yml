@@ -1,0 +1,47 @@
+name: R10 Actual Designer Before-After Visual Pixels Audit
+on:
+  push:
+    branches:
+      - research/typography-r10-authored-stage-images-20261027
+    paths:
+      - .github/workflows/typography-r10-verified-source-visual-observations.yml
+permissions:
+  contents: write
+jobs:
+  inspect-author-supplied-before-and-after:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image evaluation dependencies
+        run: python -m pip install --disable-pip-version-check --quiet pillow numpy scipy
+      - name: Read source exact bytes and compute source color revision evidence
+        run: python research/typography_r10/analyze_verified_source_revisions.py
+      - name: Persist summaries without rehosting any third party image
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          f='research/typography_r10/R10_VERIFIED_ACTUAL_BEFORE_AFTER_VISUAL_AUDIT.json'
+          d=json.load(open(f))
+          assert d['source_cases_checked']==4
+          assert d['real_same_glyph_revision_cases']>=2
+          assert d['all_original_images_re_read_and_hash_verified'] is True
+          assert d['unseen_visual_transfer_pass'] is False
+          assert all('verified_source_sha256' in x for x in d['stages'])
+          assert not any('original_image_pixels' in x for x in d['stages'])
+          print('R10_VERIFY_SEMANTIC_CLASSIFICATION',[(s['id'],s['authored_content']['direct_same_glyph_before_after']) for s in d['stages']])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r10/R10_VERIFIED_ACTUAL_BEFORE_AFTER_VISUAL_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r10): verified source before-after semantic edits, no raster redistribution"
+            git push origin HEAD:research/typography-r10-authored-stage-images-20261027
+          fi
