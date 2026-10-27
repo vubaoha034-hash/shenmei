@@ -137,6 +137,13 @@
       "fact": "R10早期来源清单把汉仪获奖展图及文鼎不同宽度字重视作可能的阶段演化，但公开页面未能证明同一字先后修改过程。只有作者明确标注Before/After、同字内容及可核验原图的材料才满足逐形态逆向门。",
       "forbidden": "不能用不同设计成品、不同字重、素材拼图或浏览器预览，冒充设计师的草稿→修改→最终真实时间链；前后两图也不足以证明完整手绘/运笔过程。",
       "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_AUTHOR_BEFORE_AFTER_AND_FAMILY_REVISION_20261027.json"
+    },
+    {
+      "id": "F14_R11_TRANSPARENT_PIXELS_FALSE_INK_COVERAGE",
+      "severity": "BLOCK",
+      "fact": "R11研究justfont设计师的透明PNG过程图时，原统计直接im.convert('RGB')导致透明黑色被当成可见墨色，某图的黑区占比由错误44.6%变为正确合成白底后的1.1%。第一次阶段证据来源哈希仍有效，墨色分析作废；GitHub Actions重新运行并验证RGBA透明合成。",
+      "forbidden": "凡透明PNG未正确合成预期白底，不得使用颜色/墨面积/留白比率训练或宣称视觉风格已经提取；单有真实下载与CI绿灯不是合格的像素审计。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_DESIGNER_REVISION_AND_CONDITIONAL_DECISION_20261027.json"
     }
   ],
   "admissible_technical_progress_conditions": [
@@ -161,8 +168,8 @@
     "Whether semantic role labels are actually the artist's own",
     "How many samples suffice for stable unique style transfer across families"
   ],
-  "current_stage": "R11_AUTHOR_BEFORE_AFTER_PIXELS_VERIFIED__CREATIVE_TRANSFER_NOT_VALIDATED",
-  "next_true_focus": "Actual maker-released expressive CJK lettering sketch and interim edits paired with final, with explicit source rights and 1-to-1 characters. No numeric handwriting emulation absent such source.",
+  "current_stage": "R11_ACTUAL_CREATOR_REVISION_SOURCES_VERIFIED_CREATIVE_DECISIONS_CONDITIONAL_NOT_LEARNED",
+  "next_true_focus": "Use R11 author-labeled actual before/after stages to constrain a genuine character-level mechanism with use-case and rollback; do not use scalar glyph tweaks or unlicensed art copying.",
   "business_lock_preserved": true,
   "source_of_truth_order": [
     "Current user objective",
