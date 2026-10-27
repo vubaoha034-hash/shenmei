@@ -1,0 +1,182 @@
+{
+  "schema": "vpd-r11-real-creator-edit-supervision/1.0",
+  "created": "2026-10-27",
+  "creator_count": 4,
+  "purpose": "将真实设计师‘问题→造型调整→回退/验收’转换为来源可追溯的创作监督数据，避免端笔数学规则与视觉效果画等号。",
+  "verified_source_registries": [
+    {
+      "path": "research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+      "blob_sha": "3ab9236ed1bbac8354f166ffd644ee28f47829be"
+    },
+    {
+      "path": "research/typography_r11/R11_ACTUAL_AUTHOR_IMAGE_AUDIT.json",
+      "blob_sha": "fd405bfef618bdbff63df40d195d43473f364746"
+    },
+    {
+      "path": "research/typography_r11/R11_HANYI_REAL_WHOLE_STROKE_SOURCE_AUDIT.json",
+      "blob_sha": "9933050326c3f91e9b25dc6c873a261789706d0d"
+    }
+  ],
+  "authentic_source_count": 11,
+  "examples": [
+    {
+      "id": "ART-01",
+      "scope": "expressive_wordmark",
+      "evidence_id": "HANYI_SKETCH_AND_FINAL_SAME_TEXT",
+      "source_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p09.jpg",
+      "image_sha256": "a2e8d79a85582e25e07c4d7331a42d23f0a63b3b4afd52740a74f7efbaca5dcd",
+      "original_pixel_size": [
+        1600,
+        1165
+      ],
+      "observed_or_author_confirmed_change": "同字参考→双勾手绘草稿→黑色定稿，源图逐阶段展现完整墨形重新设计",
+      "candidate_creator_decision": "保留隶书可辨骨架和总体横势，再形成统一笔锋与全笔势，不能只修改局部线宽",
+      "explicit_limitations": "手绘稿是否真实当年逐日存档、原作者参数与笔压未知",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "ART-02",
+      "scope": "expressive_wordmark",
+      "evidence_id": "HANYI_WHOLE_SWEEP_ROLES",
+      "source_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p08.jpg",
+      "image_sha256": "60fed4fa6c4de23fae3b31a8d9cbf622c0994b9c68ea28388b78ac121d8bb161",
+      "original_pixel_size": [
+        1600,
+        1164
+      ],
+      "observed_or_author_confirmed_change": "同作者标注短、斜、平等完整捺势，图中同一家族整笔造型不同",
+      "candidate_creator_decision": "从结构中判断每笔的整体任务，再选择短促、陡峭或水平波折的一类，避免统一缩放单一笔形",
+      "explicit_limitations": "没有作者逐字角色→笔势规则，不能据此机械制定长度阈值",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "ART-03",
+      "scope": "expressive_wordmark",
+      "evidence_id": "HANYI_CHINESE_LATIN_FAMILY_MOTIF",
+      "source_url": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p07.jpg",
+      "image_sha256": "415eaab63877398342554314634b867f06ce51e21839e667c35b6ebcdc772065",
+      "original_pixel_size": [
+        1600,
+        1165
+      ],
+      "observed_or_author_confirmed_change": "设计者公开用中文与西文的对照展示整套笔势气质的一致性",
+      "candidate_creator_decision": "跨文字迁移的是曲线方向、张力、起收笔语汇，而非复制原字轮廓",
+      "explicit_limitations": "西文与中文结构不同，图示不证明AI能生新字",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "FAMILY-01",
+      "scope": "font_family",
+      "evidence_id": "TPTQ_RADICAL_REVIEW",
+      "source_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "image_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "original_pixel_size": [
+        3369,
+        2382
+      ],
+      "observed_or_author_confirmed_change": "作者彩图示阝部件修改前/后；文字另举口最初做宽、扩大字库后回改的独立实例",
+      "candidate_creator_decision": "单字设计先设目标，再经多字家族复审，发现共同部件整体失衡时容许推翻早期决定",
+      "explicit_limitations": "原文口变窄不能被说成图中阝的作者解释",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "FAMILY-02",
+      "scope": "font_family",
+      "evidence_id": "JUSTFONT_CURVE_XIU",
+      "source_url": "https://justfont.com/jinxuan/img/design/story-2-3.png",
+      "image_sha256": "e52a1d79e8c82aba1e809668ae897e8a5802c54185d8dbc6deec4b6d42eb08fa",
+      "original_pixel_size": [
+        1380,
+        1200
+      ],
+      "observed_or_author_confirmed_change": "自有彩图显示秀字黄旧缘、绿新缘叠加，文字明确批量重审曲线",
+      "candidate_creator_decision": "局部曲线修正需要在同家族多个典型字中观察，不能只看单字尺寸",
+      "explicit_limitations": "黄色原线被绿色覆盖，不能把叠图当完整原始轮廓",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "BODY-01",
+      "scope": "body_reading",
+      "evidence_id": "JUSTFONT_TEXT_WEIGHT",
+      "source_url": "https://justfont.com/jinxuan/img/design/story-2-5.png",
+      "image_sha256": "b16578ddd5fe9218e0aeba1f44f364f1df1d6180ee1c2a7b4d828dd43a7727a3",
+      "original_pixel_size": [
+        1380,
+        1200
+      ],
+      "observed_or_author_confirmed_change": "同团队前后修订图；作者另指出正文中勾笔太弯和上翘会影响阅读",
+      "candidate_creator_decision": "当目标改成长期阅读，需限制抢眼笔势，哪怕早期设计者更喜欢夸张勾笔",
+      "explicit_limitations": "图片不能证明某具体字的修改全部由这一投诉引起；不宜反向施加到夸张书法商标",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "ACCESS-01",
+      "scope": "accessibility",
+      "evidence_id": "MORISAWA_UD_REVISE",
+      "source_url": "https://ifontcloud.com/index/images/newknowledge/%E6%97%A5%E6%9C%AC%E8%A8%AD%E8%A8%88%E5%B8%AB%E9%AB%98%E7%94%B0%E8%A3%95%E7%BE%8E%E8%A8%AA%E5%95%8F02.png",
+      "image_sha256": "c9acc7e14b268255e434370b7242ac3531008df02efea7a5e900b78efe6fed06",
+      "original_pixel_size": [
+        3000,
+        2550
+      ],
+      "observed_or_author_confirmed_change": "官方访谈有矫正图；设计师表示真实读者反馈推翻其木字收笔的审美假设",
+      "candidate_creator_decision": "用户使用情境与可辨识性反馈能否决专家最初喜爱的笔画形态，并触发跨字复查",
+      "explicit_limitations": "配图具体字符反、北不同于口述木字，不得伪作同字前后训练对",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    },
+    {
+      "id": "CONDENSE-01",
+      "scope": "condensed_type",
+      "evidence_id": "ARPHIC_FANGXINSHU",
+      "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b405c71709175.5bced77481eb7.jpg",
+      "image_sha256": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+      "original_pixel_size": [
+        1920,
+        1152
+      ],
+      "observed_or_author_confirmed_change": "厂方Before/After示意与U形负空间局部放大，展示特定窄字宽下的修订",
+      "candidate_creator_decision": "缩窄字宽时应优先检查内白与笔画连接是否拥挤，不能仅全字横向压缩",
+      "explicit_limitations": "这是C80窄字型案例，不等于夸张书法字标造型策略",
+      "licensed_to_redistribute_original_shapes": false,
+      "human_artistic_review": "NOT_RUN",
+      "transferred_to_new_wordmark": false,
+      "learner_weight_or_teacher_model": false
+    }
+  ],
+  "evidence_strength_rules": [
+    "同字Before/After对应图>=仅同一案例口述>=同作者风格图>=不同案例一般理论；标明何处只是推断。",
+    "原作品图片仅作为可读参考URL/哈希；不能上传第三方字库字形到公开repo，更不能未经版权复核商业训练。",
+    "正文/压缩/无障碍优化不会自动成为强表现性字标的设计规则。",
+    "所有用户未知的新字都仍需真实创作和人工美感评价，样本校验不算迁移成功。"
+  ],
+  "creator_domain_summary": {
+    "expressive_wordmark": 3,
+    "font_family": 2,
+    "body_reading": 1,
+    "accessibility": 1,
+    "condensed_type": 1
+  },
+  "status": "REAL_DESIGNER_DECISIONS_DOCUMENTED_WITH_AUDITED_IMAGES_NOT_YET_TRANSFER_VALIDATED",
+  "next_gate": "对表现性同一创作者的‘完整捺势三类型’必须取得角色适用条件（来源或新人工标注）后再进行未见字生成。不能靠随意长度阈值重演R2-R9失败。"
+}
