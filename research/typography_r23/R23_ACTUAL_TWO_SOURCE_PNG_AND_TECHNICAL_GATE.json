@@ -1,0 +1,170 @@
+{
+  "schema": "shenmei-typography-r23-two-clean-chats-real-PNG-technical-validation/v1",
+  "date": "2026-10-27",
+  "upstream": "research/typography_r22/R22_ACTUAL_EXECUTION_AND_PNG_PIXEL_AUDIT.json",
+  "preregistered_git_commit": "4bd5ddd313ac1ec793b03ffd1c398cb9e405bfa9",
+  "preregistered_path": "research/typography_r23/R23_FROZEN_A_B_PROMPTS_BEFORE_OUTPUT.json",
+  "target": "松间见月",
+  "heldout_frozen_and_not_executed": "溪桥听雨",
+  "source_designer_research": "R12 Liang Zhijian authored wordmark-stage case, applied as high-level conditional style hypothesis only, no original strokes copied",
+  "actual_execution": {
+    "A": {
+      "chat": "https://chatgpt.com/c/6ae09b02-e4f8-83ec-b62b-4585272cf903",
+      "generation_requests": 1,
+      "images_produced": 1,
+      "png_name": "R23_A_松间见月_原始透明PNG.png",
+      "original_sha256": "2c1ce159bc5c48d427a989d05dd9a40ca6e913df5c7f3fb0736de305e7c3986a",
+      "original_png_bytes": 184607,
+      "width": 1672,
+      "height": 941,
+      "alpha_zero": 1362831,
+      "alpha_opaque": 6406,
+      "alpha_mixed": 204115,
+      "dark_ink_px": 186679,
+      "ink_bbox_inclusive": [
+        96,
+        293,
+        1544,
+        647
+      ],
+      "rough_glyph_x_bands": [
+        [
+          98,
+          459
+        ],
+        [
+          525,
+          834
+        ],
+        [
+          875,
+          1209
+        ],
+        [
+          1251,
+          1543
+        ]
+      ],
+      "ink_height_px": 355,
+      "output": "Single simplified four glyphs in one line on transparent PNG, neutral formal typeface-like lettering"
+    },
+    "B": {
+      "chat": "https://chatgpt.com/c/6ae09b35-b3d0-83ec-acf5-ba5bdcbc4c6c",
+      "generation_requests": 1,
+      "images_produced": 1,
+      "png_name": "R23_B_松间见月_原始透明PNG.png",
+      "original_sha256": "39559dc122df75a87146a609418d192ff73936752403457d506e94ea7dc538db",
+      "original_png_bytes": 207374,
+      "width": 1672,
+      "height": 941,
+      "alpha_zero": 1370182,
+      "alpha_opaque": 4809,
+      "alpha_mixed": 198361,
+      "dark_ink_px": 178197,
+      "ink_bbox_inclusive": [
+        55,
+        274,
+        1591,
+        685
+      ],
+      "rough_glyph_x_bands": [
+        [
+          59,
+          492
+        ],
+        [
+          536,
+          849
+        ],
+        [
+          917,
+          1329
+        ],
+        [
+          1356,
+          1591
+        ]
+      ],
+      "ink_height_px": 412,
+      "output": "Single simplified four glyphs in one line on transparent PNG, stylized calligraphic gestures conditional to characters"
+    }
+  },
+  "actual_technical_verification": {
+    "browser_original_blob_SHA256_equals_ChatGPT_Library_materialized_raw_file_SHA256_both": true,
+    "actual_PNG_RGBA": true,
+    "four_simplified_chars_correct_by_visual_review": [
+      "松",
+      "间",
+      "见",
+      "月"
+    ],
+    "reliable_text_verification_not_OCR": true,
+    "single_line_and_four_disjoint_horizontal_ink_regions_both": true,
+    "no_extra_text_or_collage_or_scenery_both": true,
+    "true_alpha_zero_pixels_both": true,
+    "nominal_16_9_rounding": true,
+    "identical_generator_model_and_seed": "NOT_INDEPENDENTLY_CONFIRMED; both used ChatGPT normal chat native Image with same UI, actual model/seed not exposed",
+    "A_prompt_length_characters": 200,
+    "B_prompt_length_characters": 300,
+    "both_technical_gate": "PASS",
+    "artwork_visual_method_impact": "DIFFERENT_AND_VISIBLE",
+    "validated_aesthetic_advantage": "NOT_PROVEN",
+    "human_review": "PENDING",
+    "downstream_heldout_generalization": "NOT_EXECUTED",
+    "editable_SVG_reconstruction": "NOT_EXECUTED",
+    "same_artist_font_material_used": false
+  },
+  "visual_diagnosis_non_blind_AI": {
+    "A": "High legibility and even optical rhythm but typographic rather than authored wordmark.",
+    "B": "More distinctive brush movement, but unequal heft and negative space around 间 and expressive 见; group not yet unequivocally coherent.",
+    "thumbnail_64_and_96": "Original words both visually legible to assistant; independent naive humans not tested.",
+    "no_claim_of_human_preference": true
+  },
+  "fairness": {
+    "same_site_and_app": true,
+    "isolated_conversations": true,
+    "unchanged_common_output_constraints": true,
+    "identical_canvas_dimensions": true,
+    "each_one_generation": true,
+    "no_output_cherry_picking": true,
+    "different_prompt_detail_density": true,
+    "B_original_ink_height_versus_A_ratio": 1.16056,
+    "additional_ink_height_normalized_comparison": "Display-only normalization to 355px ink height, unaltered source assets preserved.",
+    "size_normalized_comparison_sha256": "388386cee15eebabd6e8af95ab2e2d53b19da15f6db7579c935751ef5f6a711d",
+    "not_strict_causal_isolation": "Prompt detail, model randomness and original ink size are uncontrolled; do not attribute any single result exclusively to distillation."
+  },
+  "artifacts": {
+    "public_compare_full_canvas_sha256": "8d56ccb1a116a1a508bdab89617f7866704ae0860f6065dfc43e2503b03de49f",
+    "public_compare_equal_ink_height_sha256": "388386cee15eebabd6e8af95ab2e2d53b19da15f6db7579c935751ef5f6a711d",
+    "small_96_64_sha256": "bc3a6fe077833f3b6cb70aea5ba14cdb80d28c340853f2bff908bf93c8c828b8",
+    "archive_name": "R23_松间见月_真实双源对照与像素血统.zip",
+    "archive_sha256": "c11883b8023cc1be38d605d64150b1f84c6f0f0cb8ec2afbe1f551386fb1abda",
+    "archive_member_count": 9,
+    "original_pngs_in_user_ChatGPT_Library_and_current_conversation_archive": true,
+    "original_binary_artwork_in_public_GitHub": false,
+    "reproduction_scripts_in_archive": [
+      "R23_audit_and_render.py",
+      "R23_equal_ink_height.py"
+    ]
+  },
+  "verdict": {
+    "SOURCE_STUDY": "PRIOR_ONLY",
+    "METHOD_CANDIDATE": "R20_FROZEN_HOLISTIC_DESIGN_GRAMMAR",
+    "REAL_TWO_ARM_IMAGE_GENERATION": "PASS",
+    "PIXEL_GATE": "PASS",
+    "WORD_CONTENT_GATE": "PASS_ASSISTANT_VISUAL_VERIFICATION",
+    "AESTHETIC_TRANSFER": "UNKNOWN",
+    "HUMAN_BLIND_REVIEW": "PENDING",
+    "SECOND_TEXT_UNSEEN_TRANSFER": "PENDING",
+    "VALIDATED_RULE": false,
+    "NEXT": "Do not refine the produced B after seeing it. Perform independently frozen unchanged style grammar on previously untouched '溪桥听雨' as heldout in new short-context generator; compare aesthetics with equal-budget neutral baseline; human votes separate; do not promote after just one pair."
+  },
+  "formal_visual_task": {
+    "authority_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision_at_start": 355,
+    "checkpoint_at_start": 377,
+    "current_action": "LIU_REVIEW_LIUXIANSHENG_CONTENT_TRANSFER",
+    "any_mainline_mutation": false,
+    "do_not_accept_S7_based_on_research": true
+  }
+}
