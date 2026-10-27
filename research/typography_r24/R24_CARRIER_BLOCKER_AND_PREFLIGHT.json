@@ -37,12 +37,18 @@
     "content_recognition_gate": "MANUAL_ONLY, never auto PASS from image geometry",
     "visual_comparison_if_valid": "equal canvas and equal black ink height, original PNG unmodified",
     "no_OCR_used": true,
-    "actual_R24_source_derived_comparisons": false
+    "actual_R24_source_derived_comparisons": false,
+    "python_source_sha256": "913778124596228b19fde576177c5194cb09a8999359ab97c82b952aba121278",
+    "additional_negative_fixture": "Synthetic opaque RGBA image rejected as INVALID_MACHINE_PIXEL_GATE, exit code 2, not used in any art review",
+    "local_zip_original_code_included": true,
+    "literal_Chinese_visual_content_cannot_be_machine_validated": true
   },
   "artifacts": {
     "local_kit": "R24_溪桥听雨_隔离执行与像素核验准备包.zip",
-    "file_bytes": null,
-    "sha256": null
+    "file_bytes": 10927,
+    "sha256": "810c456c36956e01ea59b28c6bd4573cb949e2df151b53f97e1ba47b259c0047",
+    "archive_members": 7,
+    "zip_integrity_test": "PASS"
   },
   "validated_rule": false,
   "next": "Reconnect Opera Neon account browser (or open two clean ChatGPT chats manually using frozen prompts) then generate A/B each exactly once, recover original PNG from Library, verify SHA and native alpha, compare; do not re-freeze or substitute image carrier silently.",
