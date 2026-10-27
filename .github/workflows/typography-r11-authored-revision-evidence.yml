@@ -1,0 +1,52 @@
+name: R11 Original Type Designers' Before-After Evidence Audit
+on:
+  push:
+    branches:
+      - research/typography-r11-verified-creative-revisions-20261027
+    paths:
+      - .github/workflows/typography-r11-authored-revision-evidence.yml
+permissions:
+  contents: write
+jobs:
+  verify-authored-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install raster decoder
+        run: python -m pip install --quiet --disable-pip-version-check pillow
+      - name: Verify bytes, image pixel modes, and same-glyph revision color evidence
+        run: python research/typography_r11/verify_first_party_stage_pixels.py
+      - name: Persist only statistical evidence, not copyrighted source images
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r11/R11_SOURCE_IMAGE_BYTE_AND_STAGE_CHECK.json'))
+          assert not d['copyrighted_image_bytes_distributed']
+          assert all(x['sha256'] and x['dimensions'] for x in d['actual_read_and_decoded'])
+          print('R11_ARTIFACT_RECEIPT_COUNT',d['downloaded_count'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r11/R11_SOURCE_IMAGE_BYTE_AND_STAGE_CHECK.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r11): original author image hashes + review-color evidence, no original pixels"
+            git push origin HEAD:research/typography-r11-verified-creative-revisions-20261027
+          fi
+      - name: Fail closed if real before-after pair did not download
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r11/R11_SOURCE_IMAGE_BYTE_AND_STAGE_CHECK.json'))
+          assert d['first_party_visual_stage_gate'] is True, 'R11_SOURCE_IMAGES_NOT_AUTHENTICATED'
+          assert d['actual_same_character_colored_before_after_detected'] is True
+          assert d['downloaded_count']>=2
+          print('R11_MULTISTAGE_CREATOR_SOURCE_VERIFIED_PASS')
+          PY
