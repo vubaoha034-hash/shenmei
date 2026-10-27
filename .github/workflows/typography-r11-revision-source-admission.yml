@@ -1,0 +1,54 @@
+name: R11 Actual Designer Revision Source Admission
+on:
+  push:
+    branches:
+      - research/typography-r11-authored-revision-supervision-20261027
+    paths:
+      - .github/workflows/typography-r11-revision-source-admission.yml
+permissions:
+  contents: write
+jobs:
+  verify-creator-published-before-after:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with: 
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check --quiet pillow numpy
+      - name: Verify source bytes and colored earlier/later ink evidence
+        run: python research/typography_r11/verify_author_stage_images.py
+      - name: Preserve source-admission failure reports before hard gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          p='research/typography_r11/R11_ACTUAL_AUTHOR_IMAGE_AUDIT.json'
+          j=json.load(open(p))
+          assert j['source_image_binary_copied_to_public_repo'] is False
+          assert all(k['actual_image_decoded'] and len(k['sha256'])==64 for k in j['verified'])
+          assert j['actual_new_characters_drawn'] is False
+          print('R11_SOURCE_ADMISSION_COUNTS',len(j['verified']),j['verified_studios'])
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/typography_r11/R11_ACTUAL_AUTHOR_IMAGE_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r11): verified source-author before/after image hashes, bounded constraints"
+            git push origin HEAD:research/typography-r11-authored-revision-supervision-20261027
+          fi
+      - name: No empty green checks or unverified stage labels
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('research/typography_r11/R11_ACTUAL_AUTHOR_IMAGE_AUDIT.json'))
+          assert j['source_gate_pass'] is True,'NO_CONFIRMED_AUTHORED_STAGES'
+          assert len(j['verified'])>=3
+          assert len(j['before_after_color_evidence_verified'])>=2
+          assert j['training_samples_extracted']==0
+          print('R11_AUTHORED_IMAGE_GATE_PASS',j['before_after_color_evidence_verified'])
+          PY
