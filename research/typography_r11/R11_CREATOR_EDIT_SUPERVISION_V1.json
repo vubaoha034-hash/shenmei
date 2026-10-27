@@ -1,7 +1,7 @@
 {
   "schema": "vpd-r11-real-creator-edit-supervision/1.0",
   "created": "2026-10-27",
-  "creator_count": 4,
+  "creator_count": 5,
   "purpose": "将真实设计师‘问题→造型调整→回退/验收’转换为来源可追溯的创作监督数据，避免端笔数学规则与视觉效果画等号。",
   "verified_source_registries": [
     {
@@ -17,7 +17,7 @@
       "blob_sha": "9933050326c3f91e9b25dc6c873a261789706d0d"
     }
   ],
-  "authentic_source_count": 11,
+  "authentic_source_count": 9,
   "examples": [
     {
       "id": "ART-01",
@@ -178,5 +178,10 @@
     "condensed_type": 1
   },
   "status": "REAL_DESIGNER_DECISIONS_DOCUMENTED_WITH_AUDITED_IMAGES_NOT_YET_TRANSFER_VALIDATED",
-  "next_gate": "对表现性同一创作者的‘完整捺势三类型’必须取得角色适用条件（来源或新人工标注）后再进行未见字生成。不能靠随意长度阈值重演R2-R9失败。"
+  "next_gate": "对表现性同一创作者的‘完整捺势三类型’必须取得角色适用条件（来源或新人工标注）后再进行未见字生成。不能靠随意长度阈值重演R2-R9失败。",
+  "evidence_reuse_groups": [],
+  "independent_artworks_used_by_decision_examples": 8,
+  "catalog_note": "11 verified source IDs across R10 and R11 reduce to 9 unique source image SHA-256 hashes. 8 editorial choice cards use 8 distinct source image hashes; do NOT count aliases or identical bytes as independent art evidence.",
+  "manual_case_labels_are_author_verified": false,
+  "creator_original_layers_available": false
 }
