@@ -1,0 +1,70 @@
+{
+  "schema": "shenmei-r23-frozen-clean-chat-equal-carrier-prompt-ab-v1",
+  "date": "2026-10-27",
+  "project": "independent visual-program typography method research",
+  "parent_head": "bb18cb7d7cb18b5a15c1fdf725f28034a7466e27",
+  "mandatory_context": "R22 one successful image/png carrier by new ChatGPT chat, single invocation, not design skill",
+  "target": "松间见月",
+  "untouched_heldout": "溪桥听雨",
+  "same_technical_wrapper": "请使用图片生成，只产出一张独立图片，不要回复文字。16:9横幅、真正透明背景、单行横排、仅准确的四个简体中文字「松间见月」，全部是深墨黑，四字清楚可辨认，笔画不得错漏。严禁其他字、字母、数字、标签、方案编号、风景、边框、拼图、海报、讲解板、背景装饰、阴影或图案。",
+  "arms": {
+    "A": {
+      "treatment": "neutral traditional Chinese Song-style baseline, four legible chars",
+      "full_prompt": "请使用图片生成，只产出一张独立图片，不要回复文字。16:9横幅、真正透明背景、单行横排、仅准确的四个简体中文字「松间见月」，全部是深墨黑，四字清楚可辨认，笔画不得错漏。严禁其他字、字母、数字、标签、方案编号、风景、边框、拼图、海报、讲解板、背景装饰、阴影或图案。\n字标采用端正规范、易认的传统宋体排印，视觉大小和笔画粗细基本一致，字距自然，不使用夸张手写笔势、断笔、共笔或装饰性延长。它只是中性基线。"
+    },
+    "B": {
+      "treatment": "whole-word visual grammar: structure-conditioned signature strokes, negative space, coherent optical balance",
+      "full_prompt": "请使用图片生成，只产出一张独立图片，不要回复文字。16:9横幅、真正透明背景、单行横排、仅准确的四个简体中文字「松间见月」，全部是深墨黑，四字清楚可辨认，笔画不得错漏。严禁其他字、字母、数字、标签、方案编号、风景、边框、拼图、海报、讲解板、背景装饰、阴影或图案。\n字标采用整组一致的原创书写造型语法，而非简单字体排印：保持正确汉字结构，在四字之间协调字重、字距、整体轮廓、倾斜与主笔收势。松字木旁要轻于右部；间字保留门框内清楚的留白；见字的主撇/右腿形成舒展但不夸张的方向性收笔；月字内横简洁、克制。四字仅以各自真实结构做有条件造型，共享含蓄流动的笔势，不能四字机械复制同一长飘笔或添加任何墨迹纹理。"
+    }
+  },
+  "design_hypothesis": "Compared with ordinary Chinese Song-type baseline, the creator-derived holistic wordmark grammar produces stronger coherent design across varied Chinese structures, retaining readability",
+  "causal_limit": "A/B different prompting complexity. Study can assess results but not isolate sole influence of a unique rule from prompt richness; no human aesthetic verdict without actual human review.",
+  "requirements": {
+    "two_distinct_fresh_chats": true,
+    "auth_same_account": true,
+    "chat_mode_only": true,
+    "no_user_file_uploads": true,
+    "no_prior_design_context_inside_these_chats": true,
+    "same_native_chatgpt_generate_image_website": true,
+    "max_generated_images_per_arm": 1,
+    "no_hidden_regeneration": true,
+    "technical_fixed_across_arms": [
+      "exact target text",
+      "one PNG",
+      "16:9 landscape",
+      "transparent alpha",
+      "single horizontal row",
+      "black ink",
+      "no extra characters, scenery, decoration, explanatory board"
+    ],
+    "choose_model": "use default available ChatGPT chat mode in both; if changed, log instead of assuming equal",
+    "model_id_and_seed": "log NOT_EXPOSED when unavailable",
+    "output_dimensions": "actual PNG bytes determine dimensions; UI may select size",
+    "paid_third_party_services": "none"
+  },
+  "evaluation_order": [
+    "Generate A once in empty chat",
+    "Generate B once in separate empty chat",
+    "Collect original PNG bytes from ChatGPT Library not screenshots or extracted crops",
+    "Hash bytes, confirm PNG RGBA and text/presentation",
+    "Only if both pass technical gate prepare equal-crop label-masked visual comparison and show actual images",
+    "Record human verdict and holdout separately; do not infer from visual self-assessment"
+  ],
+  "verdict_rule": {
+    "any_image_missing": "INVALID",
+    "any_extra_glyph_or_wrong_character": "INVALID",
+    "any_opaque_backdrop_or_poster": "INVALID",
+    "both_valid": "TECHNICAL_AB_VALID_ONLY; design comparison and human vote still PENDING",
+    "source_artwork_has_any_illegible_word": "CONTENT_FAIL",
+    "one_pair_alone_never_proves_generalization": true,
+    "no_promotion_without_holdout_and_human_review": true
+  },
+  "mainline_protection": {
+    "authoritative_repo": "vubaoha034-hash/shenmei",
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "S7_human_review": "PENDING",
+    "do_not_mutate": true
+  }
+}
