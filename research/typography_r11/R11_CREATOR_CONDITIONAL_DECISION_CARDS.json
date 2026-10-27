@@ -1,0 +1,146 @@
+{
+  "schema": "r11-creator-authored-causal-decision-evidence-map/1.0",
+  "date": "2026-10-27",
+  "objective": "Learn actual designer choosing/revising/retracting character decisions, with evidence tags; NEVER confuse pretty result or repeated source typography with a verified transferable model.",
+  "evidence_status": {
+    "source_images_byte_verified": 4,
+    "source_creators": [
+      "甘薇云",
+      "justfont设计团队（林霞为字体总监）"
+    ],
+    "additional_prior_r10_creators": [
+      "汉仪字库",
+      "Typotheque／郑楚阳",
+      "文鼎字型团队"
+    ],
+    "alpha_compositing_corrected": true,
+    "pre_fix_color_statistics_invalid": true,
+    "same_source_content_double_fetch": "JUSTFONT_BEFORE_AFTER identical visible pixels in two reads from one run; old and current source byte observations were different across runs, so do not claim global immutability.",
+    "source_sha256": {
+      "LEFTFONT_STAGES": {
+        "sha256": "b671153d34247aea72fdd2dab87d0741af122f0035ad318d285eb64c743fc0cb",
+        "visible_pixel_sha256": "b859cef80548de3c245f3f6a9fd8f7c1628d5212cca3674ec29e059f64a79997",
+        "dimensions": [
+          894,
+          632
+        ],
+        "alpha_transparent_fraction": 0
+      },
+      "JUSTFONT_BEFORE_AFTER": {
+        "sha256": "1c1e56bc0d128007a2029be1c4d4b74c7ee999cd53e0a85baf6d9c0178539036",
+        "visible_pixel_sha256": "1da15b8a15d4a6e90dcd0cbe66900304913ec6d159f79185231139beec0bfae7",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "alpha_transparent_fraction": 0.4137
+      },
+      "JUSTFONT_HOOK_CONTEXT": {
+        "sha256": "04ce650682733a353a039a9ab6f30063db1ae306a305c652603e572050074484",
+        "visible_pixel_sha256": "002ae9141881b061dc6b1a10707863ff70c792f71f0d9ec342d84599163d8b19",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "alpha_transparent_fraction": 0.42697
+      },
+      "JUSTFONT_SPACE_CONTEXT": {
+        "sha256": "6eadc15cd05b047682ee5e764606409611fa873c6bff437137069c36b7766930",
+        "visible_pixel_sha256": "213ac576d5d00c79337b7a5e16d2f9c98477869eecbadd9e5bbe1e8413641afa",
+        "dimensions": [
+          1380,
+          1200
+        ],
+        "alpha_transparent_fraction": 0.43144
+      }
+    },
+    "cited_first_person_sources": [
+      "https://www.behance.net/gallery/97209015/-Left-Font",
+      "https://justfont.com/jinxuan/design-end",
+      "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts"
+    ]
+  },
+  "semantics": [
+    {
+      "id": "CREATOR_STAGE_D01_INTENT_FIRST",
+      "creator": "甘薇云（左體 Left Font）",
+      "source_image_id": "LEFTFONT_STAGES",
+      "direct_author_stated": "Typeface intentionally conveys rebellious assertion for social/public speech; reverse contrast gives stronger horizontals, thinner verticals; unusual angle relates to left-hand writing feel; broad-flat proportions and softer curves prevent mechanical stiffness.",
+      "directly_visible_in_image": "Multiple iterations of 獨 and 立 appear in a single source-authored development timeline with handwritten-looking contour and negative-space callouts.",
+      "derived_conditional_decision": {
+        "apply_if": "Brief actually calls for provocative/assertive display lettering, not neutral body text",
+        "early_design_choice": "Choose a consistent spatial/gesture language at character level: reverse contrast AND wide-flat axis AND gently curved movement; do not reduce this to one horizontal width multiplier.",
+        "evaluate": "Check visual emphasis stays coherent across distinct structures, especially dense 獨 vs sparse 立. Use both to catch conflicting ink density and counter space.",
+        "rollback_when": "Shape reads mechanically distorted or another glyph's open counter collapses; revise local gesture or abandon effect, not global blind scaling."
+      },
+      "attribution_limits": "Author's published stated intent is reliable. Specific local changes read from one presentation illustration are visually observable but cannot establish the designer's exact editing sequence, curve parameters, or source project files.",
+      "exact_new_glyph_look_proven": false
+    },
+    {
+      "id": "CREATOR_STAGE_D02_BODY_TEXT_COUNTEREXAMPLE",
+      "creator": "justfont／金萱",
+      "source_image_id": "JUSTFONT_BEFORE_AFTER",
+      "additional_adjacent_images": [
+        "JUSTFONT_HOOK_CONTEXT",
+        "JUSTFONT_SPACE_CONTEXT"
+      ],
+      "direct_author_stated": "When developing a more readable body-text weight, overly curly and raised hook strokes were too visually prominent and distracting during long-form reading. The team revised the hook design and re-reviewed the earlier style.",
+      "directly_visible_in_image": "Original site uses yellow/orange BEFORE and green AFTER on a same-character adjustment diagram. Real nonzero source RGB pixels in both colors have now been verified after proper alpha compositing.",
+      "derived_conditional_decision": {
+        "apply_if": "Lettering is meant for dense repeated reading or small-size clarity rather than expressive one-off display",
+        "early_design_choice": "First identify overexpressive hook elements by function and visual interference; selectively soften/reduce uplift locally, preserving entire glyph identity.",
+        "evaluate": "Check word- and paragraph-level rhythm/readability, not just whether a hook looks exciting as a standalone glyph.",
+        "rollback_when": "Readability or coherent reading texture decreases, even if the single stroke was aesthetically dramatic."
+      },
+      "attribution_limits": "The site's hook anecdote and a labeled color overlay occur in the same author process narrative, but the overlay MUST NOT be claimed as the unique bitmap proof of that exact described hook-edit without visual region-specific author labels.",
+      "exact_new_glyph_look_proven": false
+    },
+    {
+      "id": "CREATOR_STAGE_D03_DENSE_COUNTER_RESCUE",
+      "creator": "justfont／金萱",
+      "source_image_id": "JUSTFONT_SPACE_CONTEXT",
+      "direct_author_stated": "In the full-sugar bold weights, insufficient white space required selective thinning of some strokes, moving component placement and refining shape so counters could breathe.",
+      "directly_visible_in_image": "A related author-supplied drawing is published next to this bold-weight design narrative; authentic image pixels verified, but its exact step order/individual glyph source curve is not available.",
+      "derived_conditional_decision": {
+        "apply_if": "Complex or heavy glyph appears black/dense at actual intended display size",
+        "early_design_choice": "Optimize the specific colliding negative-space corridor first: rebalance components and shorten/simplify only interfering strokes, not entire-character horizontal scaling.",
+        "evaluate": "At end use-size, identify disappearing counters or merged strokes in the actual multi-glyph phrase.",
+        "rollback_when": "A simplification changes literal Hanzi identity, distorts semantic components or looks worse in the combined title."
+      },
+      "attribution_limits": "This is a font legibility process from author description; the proposed usage for art lettering is a hypothesis, not a measured law.",
+      "exact_new_glyph_look_proven": false
+    },
+    {
+      "id": "CREATOR_STAGE_D04_REVERSIBLE_FAMILY_RULE",
+      "creator": "Typotheque／郑楚阳",
+      "source_image_id": "R10_TPTQ_REVISION_NA",
+      "direct_author_stated": "A somewhat widened 口 radical initially selected for contemporary feel caused family-wide imbalance after thousands of characters; designers reversed it and revised the component and repeated family reviews.",
+      "directly_visible_in_image": "R10 verified red-before/blue-after of 那 right-side 阝; it is not an illustration of the separate 口 anecdote.",
+      "derived_conditional_decision": {
+        "apply_if": "A proposed characteristic stroke/radical transformation has been applied to multiple new characters",
+        "early_design_choice": "Treat new stylistic edits as revocable candidate choices; preserve untouched glyph and full before/after provenance.",
+        "evaluate": "Compare dense, sparse and multiple-layout phrases rather than optimize one test glyph.",
+        "rollback_when": "The family-wide visual rhythm or legibility degrades under changed target codepoints."
+      },
+      "attribution_limits": "Do not conflate recorded 那 shape revision with 口 history, and do not claim a 40,000-character quality rule is validated for an independent 2-character wordmark.",
+      "exact_new_glyph_look_proven": false
+    }
+  ],
+  "overall_root_error_resolved_conceptually": "Old approach assumed a style rule must be an unconditional per-path transform. Authored evidence instead describes intent-conditioned proposals, local artistic corrections, visibility/reading tests and reversible, cross-glyph veto.",
+  "persistent_stop_rules": [
+    "NO_PROMOTION_WITHOUT_NEW_GLYPH_AESTHETIC_WIN",
+    "Do not interpret direct published visual stages as recoverable pen pressure or graphic author program",
+    "Do not copy or reproduce protected example outlines, author images or font training corpus",
+    "No model tuning on heldout phrases or after-the-fact hand-polish to fake transfer",
+    "Keep same-model same-budget baseline and reviewer-blind evaluation when an authorized generator actually runs"
+  ],
+  "outputs_this_turn": {
+    "original_images_rehosted": false,
+    "paid_external_software_added": false,
+    "generated_new_characters": false,
+    "human_blind_test_done": false,
+    "usable_creative_generator_validated": false,
+    "independent_transfer_quality_proven": false,
+    "status": "FOUR_AUTHENTIC_STAGES_AND_CONDITIONAL_AUTHOR_CHOICES_READY__UNSEEN_ART_TRANSFER_NOT_TESTED"
+  }
+}
