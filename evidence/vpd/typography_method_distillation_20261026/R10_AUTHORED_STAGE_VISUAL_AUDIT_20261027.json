@@ -1,0 +1,96 @@
+{
+  "schema": "vpd-r10-author-authored-stage-image-visual-inspection/1.0",
+  "date": "2026-10-27",
+  "initial_user_goal": "Learn authentic artistic Chinese lettering construction decisions from finished professional work, transfer to unseen text with human blind aesthetic gain; existing Figma font tracing and width-only simulations unacceptable.",
+  "actual_stage": "AUTHOR_PUBLISHED_SOURCE_IMAGES_BYTE_VERIFIED_AND_VISUALLY_REVIEWED__NO_NEW_GLYPH_RENDER",
+  "source_receipt": "research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+  "cloud_run": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40421894959",
+  "verification": {
+    "images_verified": 4,
+    "distinct_creators_claimed": 3,
+    "original_source_bytes_publicly_reposted": false,
+    "source_image_sha256_by_id": {
+      "HY_RED_CLOUD": "a2e8d79a85582e25e07c4d7331a42d23f0a63b3b4afd52740a74f7efbaca5dcd",
+      "TPTQ_REVISION_NA": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "ARPHIC_FANGXINSHU": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+      "ARPHIC_FANGXINSHU_SPACE": "b42f3b4a7e2a21994446c0450a793f87385d928647b76dace20d3f784339b412"
+    },
+    "original_PSD_AI_vector_control_points_available": false
+  },
+  "observations": [
+    {
+      "image_id": "HY_RED_CLOUD",
+      "publisher": "Design for Asia Awards official Hanyi Redcloud Li showcase",
+      "page": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "actual_image": "https://static-assets.artlogic.net/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite0065/usr/library/images/main/artworks/9610/c6-00180_p09.jpg",
+      "same_work_stages_visible": true,
+      "visible": [
+        "Historical-style gray letterform at left",
+        "Black outlined hand-painted first-draft drawing at center",
+        "Dense black final rendered glyph at right",
+        "Two different examples arranged by rows"
+      ],
+      "derived_hypothesis": "Creating contour layout and the ink/no-ink topology from style precedent occurs before finished texture; direct centerline thickening ignores this authored outline stage.",
+      "unsupported_claims": [
+        "Exact before/after author's pen movement",
+        "1-to-1 path coordinates between gray original and final",
+        "Specific mathematical ratios transferable to other glyphs"
+      ],
+      "evidence_grade": "PUBLISHER_PUBLISHED_STAGE_SEQUENCE_VISUALLY_INSPECTED"
+    },
+    {
+      "image_id": "TPTQ_REVISION_NA",
+      "publisher": "Typotheque / designer Zheng Chuyang first-person account",
+      "page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "actual_image": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "same_glyph_before_after": true,
+      "visible": [
+        "Red outline / glyph designated before",
+        "Blue outline / glyph designated after",
+        "Overlaid right-side 阝 radical contours show nonzero profile differences, especially bend/termination and proportion"
+      ],
+      "paired_article_explanation": "Hundreds and thousands of character families need stage review; unusually wide recurring components amplify a visual imbalance, requiring family-level revision. The article explicitly discusses revising the proportion of 阝 in this illustration, and separately reducing a wide 口 component.",
+      "derived_hypothesis": "Family-level component visual corrections must be judged across multiple glyphs, not per-glyph threshold fit; whole outline & inter-component space remain design decisions.",
+      "unsupported_claims": [
+        "All red-to-blue changes caused by a single scalar width",
+        "Source author used same specific distances in every glyph",
+        "The illustrator's sketch history or original controls reconstructed"
+      ],
+      "evidence_grade": "DIRECT_CREATOR_BEFORE_AFTER_VISUALLY_INSPECTED"
+    },
+    {
+      "image_id": "ARPHIC_FANGXINSHU",
+      "publisher": "Original designer Arphic-related Behance showcase",
+      "page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "downloaded_file_sha256": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+      "interpretation": "Source bytes verified; not yet independently classified by a detailed same-glyph annotated visual read. Do not count as creator stroke process proof.",
+      "evidence_grade": "IMAGE_BYTE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "image_id": "ARPHIC_FANGXINSHU_SPACE",
+      "publisher": "Original designer Arphic-related Behance showcase",
+      "page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "downloaded_file_sha256": "b42f3b4a7e2a21994446c0450a793f87385d928647b76dace20d3f784339b412",
+      "interpretation": "Source bytes verified; compressed counterpart may be a different finished font variant rather than an earlier revision, so no before/after claim.",
+      "evidence_grade": "IMAGE_BYTE_ONLY_NOT_PROMOTED"
+    }
+  ],
+  "checked_against_prior_failures": [
+    "F03_NO_IDENTICAL_ROLE_DYNAMICS",
+    "F04_STATIC_SOURCE_NOT_PEN_MOTION",
+    "F08_FALSE_STYLE_SIGNATURE",
+    "F11_ROLE_END_ONLY_TASTE_FAIL",
+    "F13_R9_COMPONENT_RATIO_NOT_AUTHORING"
+  ],
+  "separated_facts_from_inferences": true,
+  "next_experiment_rule": {
+    "required": "One independently observed same-glyph change family across at least two characters, with spatial changes annotated from true before/after images (not synthetic test fonts).",
+    "prohibit": "Don't create any synthetic ratio-morphing experiment based solely on images without explicit outcome evidence.",
+    "evaluation": "Compare frozen decision vs same-model/no-decision control on distinct unseen glyphs, force glyph correctness and user blind preference first; cannot claim learned creative approach before this.",
+    "source_permissions": "Third-party images only for observation/linked citation; no rehosting copyrighted pixels or training source assets without appropriate rights clearance."
+  },
+  "method_status": "SOURCE_STUDY_AND_CANDIDATE_HYPOTHESES_ONLY",
+  "independently_generated_design_text_count": 0,
+  "production_ready": false,
+  "created_new_paid_tool_cost": 0
+}
