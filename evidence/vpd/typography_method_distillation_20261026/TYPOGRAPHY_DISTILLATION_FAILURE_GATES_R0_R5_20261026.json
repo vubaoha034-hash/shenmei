@@ -144,6 +144,20 @@
       "fact": "R11研究justfont设计师的透明PNG过程图时，原统计直接im.convert('RGB')导致透明黑色被当成可见墨色，某图的黑区占比由错误44.6%变为正确合成白底后的1.1%。第一次阶段证据来源哈希仍有效，墨色分析作废；GitHub Actions重新运行并验证RGBA透明合成。",
       "forbidden": "凡透明PNG未正确合成预期白底，不得使用颜色/墨面积/留白比率训练或宣称视觉风格已经提取；单有真实下载与CI绿灯不是合格的像素审计。",
       "evidence": "evidence/vpd/typography_method_distillation_20261026/R11_REAL_DESIGNER_REVISION_AND_CONDITIONAL_DECISION_20261027.json"
+    },
+    {
+      "id": "F17_R13_WORDMARK_REFLOW_NOT_AUTHORED_BRUSH",
+      "severity": "BLOCK",
+      "fact": "R13 用已验证的《上座》作者构图方法对未见词「山海」对比横向及上下构图，另以「风云」作不适用检查；实际四格同字体同字号字形图已生成并查看，但上下堆叠只有排版差异，没有专业艺术字的真实连贯书写造型。笔画数3:10与4:4的阈值无法独立推出优质布局。",
+      "forbidden": "禁止把字体横竖排版、框架重排或复杂度阈值说成‘蒸馏出艺术字设计方法’；不得把作者整笔重绘简化为文字换行。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R13_REAL_WHOLE_WORD_LAYOUT_NEGATIVE_20261027.json"
+    },
+    {
+      "id": "F18_R13_CENTERING_FORMULA_INCOMPLETE_OUTPUT",
+      "severity": "BLOCK",
+      "fact": "R13 第一次程序将文字居中位置用绝对边界代替容器宽高，结果对照板‘风云’水平方案整格空白；修正后真实核查四格都有大于2500个深色笔画像素，旧图哈希废弃。",
+      "forbidden": "任何生成或程序绿灯之前必须查验每一个独立面板的实际中文字像素，不能只看文件存在或标题齐全。",
+      "evidence": "evidence/vpd/typography_method_distillation_20261026/R13_REAL_WHOLE_WORD_LAYOUT_NEGATIVE_20261027.json"
     }
   ],
   "admissible_technical_progress_conditions": [
@@ -168,8 +182,8 @@
     "Whether semantic role labels are actually the artist's own",
     "How many samples suffice for stable unique style transfer across families"
   ],
-  "current_stage": "R12_AUTHENTIC_EXPRESSIVE_WORDMARK_AUTHOR_STAGES_VERIFIED__R11_GENERAL_FONT_ADDITIONAL_EVIDENCE_ONLY__NO_UNSEEN_ARTISTIC_TRANSFER",
-  "next_true_focus": "R12 prioritizes the previously frozen expressive 上座 author-directed whole-word topology hypothesis on heldout 山海 vs negative 风云; when author image cannot justify a creative transfer, do not fall back to R1–R9 glyph scaling, Figma tracing or paid tools.",
+  "current_stage": "R13_REAL_UNSEEN_TOPOLOGY_LAYOUT_TEST_NEGATIVE__R12_EXPRESSIVE_CREATOR_STAGES_STILL_SOURCE_OF_CREATIVE_MECHANISM",
+  "next_true_focus": "Need an actual original whole-word brush-glyph authoring mechanism, beyond font reflow or per-path width/spacing and with source-grounded gesture and character identity proof. No automatic promotion absent blinded visible aesthetic superiority.",
   "business_lock_preserved": true,
   "source_of_truth_order": [
     "Current user objective",
@@ -179,6 +193,6 @@
   ],
   "last_appended_date": "2026-10-27",
   "admission_warning": "17 distinct failure modes kept. Real source image checksums plus authored decision notes do not equal validated creative skill.",
-  "latest_project_authority": "evidence/vpd/typography_method_distillation_20261026/R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+  "latest_project_authority": "evidence/vpd/typography_method_distillation_20261026/R13_REAL_WHOLE_WORD_LAYOUT_NEGATIVE_20261027.json",
   "r11_scope_note": "The later R11 source additions are supplemental authentic traditional-font revisions and corrected alpha evidence, not a replacement for higher-priority R12 expressive-lettering method."
 }
