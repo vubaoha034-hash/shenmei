@@ -1,0 +1,42 @@
+{
+  "schema": "shenmei-typography-r17-cross-structure-holdout-freeze/1.0",
+  "date": "2026-10-27",
+  "source_branch": "research/typography-r16-xi-gesture-feedback-20261027",
+  "parent_commit": "9fd82b55b8324c20fcf97a822e49ac388c31d419",
+  "objective": "Test whether user-liked R15 upper 喜 visual logic and R16 unresolved four-dot gestures can transfer to an unlike character, without reusing original glyph paths.",
+  "target": "照",
+  "target_decomposition": "日 (left) + 召 (right: 刀 above 口) + 灬 (bottom)",
+  "target_selection_before_artwork": true,
+  "previously_seen_in_method_training": false,
+  "arms": {
+    "A": "Unaltered 照 from locally installed Noto Serif CJK SC as a legibility anchor.",
+    "B": "Manually designed entirely new SVG main architecture (日 and 召), plus four independently authored C1-like balanced flames.",
+    "C": "EXACT SAME upper architecture as B, but four independently authored D2-inspired flowing fire gestures."
+  },
+  "protected_features": [
+    "left 日 enclosing form has middle horizontal",
+    "right 召 contains distinct upper 刀 and lower 口",
+    "four separate fire forms",
+    "identical upper artwork B/C",
+    "no font path used for B/C",
+    "no copy-paste of previous 熹 paths"
+  ],
+  "same_screen_visual_review": "A, B, C displayed side by side at identical 1x ink bounds, plus <=128px scaled previews",
+  "invalidity_conditions": [
+    "incorrect Chinese character",
+    "merged fire into fewer than four clearly discernible marks",
+    "B and C upper differ by even one rendered pixel",
+    "stroke gesture too small to distinguish",
+    "no actual independently readable visual export"
+  ],
+  "gate": "R17 may claim only transfer candidate with actual graphics. User hasn't approved C1 or D2 and no independent blind score => no validated rule.",
+  "negative_control": "招 has a similarly-shaped 召 but NO bottom 灬; would require abstention from four-dot mutation; no separate new artwork needed.",
+  "original_author_credit": "梁志坚 放肆喜欢; algorithmic study was high-level decision-making only, not traced glyph geometry.",
+  "source_record": "research/typography_r16/R16_REAL_ARTWORK_AND_HUMAN_PARTIAL_FEEDBACK.json",
+  "protection": {
+    "formal_lock_revision": 355,
+    "checkpoint": 377,
+    "no_production_updates": true,
+    "no_spend": true
+  }
+}
