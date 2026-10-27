@@ -1,0 +1,49 @@
+{
+  "schema": "R18_UNSEEN_THREE_WOOD_TOPOLOGY_PROTOCOL/1.0",
+  "frozen_at": "2026-10-27",
+  "parent_r17_commit": "ad540f52ffd8895740b1733972690ae9ec877fcb",
+  "target": "森",
+  "target_structure": "木 upper centered, two 木 lower side by side",
+  "target_has_four_dots": false,
+  "negative_control": "林 has no upper 木, should reject R18's three-wood specific operator",
+  "source": "R17 照 common-basal experiment; R12 artist-documented stroke merger principles, NOT artist path tracing",
+  "hypothesis": "A single authored flowing bridge across both lower 木 may unify the typography composition without losing three-tree recognizability.",
+  "arms": {
+    "A": "Installed Noto Serif CJK SC standard 森",
+    "B": "Entirely new custom path-drawn three 木, two independent lower horizontals",
+    "C": "Exactly identical B except delete two lower horizontals and replace with ONE continuous original brush contour"
+  },
+  "edits": {
+    "remove": [
+      "lower-left-cross",
+      "lower-right-cross"
+    ],
+    "add": [
+      "lower-shared-cross"
+    ],
+    "all_other_svg_path_geometry_identical": true
+  },
+  "controls": {
+    "preregister_before_render": true,
+    "total_initial_svg_candidates": 2,
+    "possible_repair": "at most one separately frozen structural repair after a concrete visual failure",
+    "comparison": "full resolution + 144px 96px 64px thumbnail",
+    "reject_if": [
+      "one of three 木 cannot be read",
+      "one lower 木 disappears or two melt into one",
+      "top 木 becomes unclear",
+      "C only micro-adjusts B",
+      "C worsens relative readability"
+    ],
+    "no_training_on_unseen_glyph": true,
+    "claim_method_success_only_after_user_blind_preference_and_recognition": true,
+    "professional_quality_currently": "UNKNOWN",
+    "no_paid_tools": true,
+    "no_Figma_write": true
+  },
+  "native_task_unchanged": {
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "human_review": "S7_PENDING"
+  }
+}
