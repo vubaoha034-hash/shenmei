@@ -1,0 +1,37 @@
+{
+  "schema": "r17-whole-character-contour-bridge-repair-freeze/1",
+  "observed_precondition": "R17 B,C independently authored glyph parts but visually read as separate 日 and 召; inadequate unified wordmark energy at full size",
+  "action": "Make one original shared long basal brush path across the lower edge of 日 and lower 口, replacing the redundant two independent bottom bars without modifying all other paths.",
+  "source_variant": "C",
+  "candidate": "C2",
+  "exact_edit_ids": {
+    "replace": [
+      "sun-bottom"
+    ],
+    "delete": [
+      "call-bottom"
+    ],
+    "preserve_all_others": true
+  },
+  "method_source": "2019 梁志坚 放肆喜欢 described topology redesign/merge redundant strokes within a crowded glyph while retaining identity; adaptation here is new hypothesis, not literal original artist operation.",
+  "veto": [
+    "日 or 召 recognition unclear",
+    "four 灬 merged/changed",
+    "unrelated paths changed",
+    "overall readability degrades at 128px",
+    "result still looks like separately pasted parts"
+  ],
+  "no_new_prompt_tuning": true,
+  "max_proposal_count": 1,
+  "human_approval": "NOT YET GRANTED",
+  "planned_result": "Source editable SVG and real 1x, 128px PNG comparisons; audit path diffs and fire exact-pixel preservation; no aesthetics PASS without human confirmation.",
+  "parents": {
+    "R16_branch": "research/typography-r16-xi-gesture-feedback-20261027",
+    "R17_freeze": "research/typography_r17/R17_PROTOCOL_FROZEN_BEFORE_RENDER.json"
+  },
+  "authorization": {
+    "research_only": true,
+    "commercial_mainline_untouched": true,
+    "new_paid_budget": 0
+  }
+}
