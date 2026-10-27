@@ -1,0 +1,54 @@
+name: R12 Artist Authored Brush Wordmark Stage Source Audit
+on:
+  push:
+    branches:
+      - research/typography-r12-expressive-author-stages-20261027
+    paths:
+      - .github/workflows/typography-r12-expressive-author-stages.yml
+permissions:
+  contents: write
+jobs:
+  verified-source-stages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PIL only
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+      - name: Read real artist-hosted source and decode original bytes transiently
+        run: python research/typography_r12/probe_authored_brush_wordmark_stages.py
+      - name: Preserve accessible checksums and failed URLs without rehosting copyrighted art
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          p='research/typography_r12/R12_AUTHENTIC_EXPRESSIVE_ARTIST_STAGE_BYTE_AUDIT.json'
+          d=json.load(open(p))
+          assert d['author_asset_bytes_committed_to_repo'] is False
+          assert d['image_model_trained_on_these_pixels'] is False
+          assert all(x['sha256'] for x in d['images_first_artist']+d['images_second_artist'])
+          print('R12_RAW_BYTES_CHECKED_NOT_REHOSTED',d['main_author_stages_accessible'],d['second_author_published_images_accessible'])
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r12/R12_AUTHENTIC_EXPRESSIVE_ARTIST_STAGE_BYTE_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r12): author original image hashes, dimensions and access errors"
+            git push origin HEAD:research/typography-r12-expressive-author-stages-20261027
+          fi
+      - name: Fail closed on source stage material not actually retrievable
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('research/typography_r12/R12_AUTHENTIC_EXPRESSIVE_ARTIST_STAGE_BYTE_AUDIT.json'))
+          assert d['stage_byte_gate_pass'] is True, 'EXPRESSIVE_DESIGN_SOURCE_PIXELS_NOT_VERIFIED'
+          assert d['main_author_stages_accessible']>=3
+          assert d['second_author_published_images_accessible']>=1
+          print('R12_SOURCE_MATERIAL_REAL_PASS')
+          PY
