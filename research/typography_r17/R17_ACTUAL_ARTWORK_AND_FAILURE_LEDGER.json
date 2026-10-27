@@ -1,0 +1,98 @@
+{
+  "schema": "shenmei-r17-native-visual-lettering-heldout/1.0",
+  "date": "2026-10-27",
+  "parent": {
+    "branch": "research/typography-r16-xi-gesture-feedback-20261027",
+    "commit": "9fd82b55b8324c20fcf97a822e49ac388c31d419",
+    "previous_ledger": "research/typography_r16/R16_REAL_ARTWORK_AND_HUMAN_PARTIAL_FEEDBACK.json"
+  },
+  "goal": "Test unseen character 照 to discover whether creator-described stroke-topology + directional fire mark design transfers beyond 喜-family glyphs.",
+  "pre_registered_protocol": "research/typography_r17/R17_PROTOCOL_FROZEN_BEFORE_RENDER.json",
+  "repair_freeze": "research/typography_r17/R17_C2_SHARED_STROKE_REPAIR_FROZEN.json",
+  "sources": {
+    "artist": "梁志坚",
+    "work": "放肆喜欢",
+    "artist_article": "https://www.uisdc.com/11-font-design-case",
+    "style_mechanism": "Design duplicate-stroke topology based on crowding, common ink gestures, word-wide composition. Only high-level strategy; no source author glyph points used.",
+    "source_data": "R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json"
+  },
+  "human_feedback": {
+    "verbatim": "讲真的，这个喜开始有点设计感了。继续下一步",
+    "bound_to": "R15 upper 喜 only",
+    "evaluation_of_R17": "NOT_YET_RECEIVED",
+    "R16_C1_D2_preference": "UNKNOWN"
+  },
+  "source_work_executed": {
+    "target": "照",
+    "target_actual_parts": "日 + 召(刀 above 口) + 灬",
+    "rendered_canvas": [
+      1050,
+      1080
+    ],
+    "A": "Installed Noto Serif CJK SC 1x serif baseline; font binary not distributed.",
+    "B": "Fully native hand-authored 12 upper SVG paths + 4 C1-inspired fire SVG paths, not copied contours.",
+    "C": "Exactly same upper geometry as B, but independent D2-inspired fire gestures.",
+    "C2": "After actual visual inspection of C, ONE frozen structural repair: replace sun-bottom long shared stroke across 日 and 口; delete call-bottom; all other source paths (especially all 4 fire paths) unmodified."
+  },
+  "real_measured_audit": {
+    "B_C_upper_rows_0_to_719_changed_RGBA_pixels": 0,
+    "B_C_distinct_fire_components_B": 4,
+    "B_C_distinct_fire_components_C": 4,
+    "B_C_changed_pixel_count": 15240,
+    "B_C_diff_bbox": [
+      151,
+      736,
+      959,
+      910
+    ],
+    "C_C2_changed_pixel_count": 20482,
+    "C_C2_diff_bbox": [
+      211,
+      590,
+      943,
+      660
+    ],
+    "C_C2_bottom_rows_725_to_1079_changed_RGBA_pixels": 0,
+    "C2_svg_path_count": 15,
+    "C2_original_4_fire_paths_unchanged": true,
+    "screenshot_actual_pixels_viewed": true,
+    "thumbnails_80_128_generated": true
+  },
+  "files_sha256": {
+    "A_B_C_1x_board": "67dd25b8f034e8c5cca81d0ff9e70fe2a40a250d737602eda907103b3dedd58a",
+    "C_vs_C2_board": "414c1205bd869a40c9c335229f2a562eae60163886e0eceede981dcb13f038b3",
+    "A_C_C2_thumbnail": "1e6a42d12840d6205fed9ee69473032ca284b0a5dd7b001ba673d6a6cf1735d5",
+    "B_native_svg": "1c7d2841cb3d8277fba7cc387325c9bc462248be0a8808cfe08c2f4d20525134",
+    "C_native_svg": "19226996a403cf0160bd7e93c662ebfc574af61a9b944e741dca11a4b253bf78",
+    "C2_native_svg": "87fc9fc8ceaf502d336e1c6ce8c2ac9d04a74a40983415ad96495ba4498df0ac",
+    "C2_rendered_png": "dbe0f99b48205a4efd430753633005c0206248ee39fc912dc515dc1bb05602e3"
+  },
+  "native_svg_exact_git_blob_c2": "b76c5d6c735378cbfcd29336d06882c5ca6fc593",
+  "archive": {
+    "name": "R17_照字_原创笔画结构迁移与失败血统.zip",
+    "sha256": "c43c66ddb01684877281f378a2ea1ea49113f56027acd075b1a28fed7757d3bb",
+    "original_files": "R17_VECTOR_AUTHORING_AND_AUDIT.py and R17_C2_FROZEN_REPAIR_SCRIPT.py",
+    "note": "Original PNG and full source scripts delivered as conversation archive; GitHub also includes source-editable C2 SVG."
+  },
+  "assessment": {
+    "SOURCE_STUDY": "PASS_PRIOR_AUTHOR_SOURCE_READ",
+    "METHOD_CANDIDATE": "SOURCE-MOTIVATED_SHARED_PATH_DECISION_HYPOTHESIS",
+    "UNSEEN_TRANSFER_PIXELS": "DONE: independent 照 drawn as new SVG; not a blind quality pass",
+    "HUMAN_BLIND_REVIEW": "PENDING",
+    "VALIDATED_RULE": false,
+    "self_observed_B_C": "FAIL_COHESIVE_WHOLE_MARK: 日 and 召 too visually separated",
+    "self_observed_C2": "BETTER_COMPOSITED_COHESION_CANDIDATE: full-width basal stroke, but risks rigid lower bar and not professional without human rating",
+    "actual_Chinese_readability_independent": "PENDING",
+    "known_major_limitation": "One target character shares 灬 with source; no demonstrated transfer to a different non-fire component; abstention on 招 not executed."
+  },
+  "boundary": {
+    "formal_native_lock_revision": 355,
+    "formal_checkpoint_sequence": 377,
+    "root_current_workflow_not_changed": true,
+    "paid_tools_consumed": 0,
+    "no_posting_original_artist_pixels_to_public_repository": true,
+    "no_fake_user_approval": true,
+    "no_Figma_canvas_mutation": true
+  },
+  "next": "Collect informed preference C vs C2 at original and 128px, then separate new-component test with strict negative controls; no more fine-width tweaking."
+}
