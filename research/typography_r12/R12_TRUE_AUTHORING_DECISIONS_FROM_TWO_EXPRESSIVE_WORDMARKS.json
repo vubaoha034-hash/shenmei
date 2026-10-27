@@ -1,0 +1,99 @@
+{
+  "schema": "vpd-r12-firsthand-expressive-wordmark-decision-evidence/1.0",
+  "reviewed_on": "2026-10-27",
+  "actual_source_material": {
+    "first_author": "梁志坚",
+    "original_article": "https://www.uisdc.com/11-font-design-case",
+    "title": "11款字体全过程 - 放肆喜欢 第四组",
+    "work": "放肆喜欢",
+    "source_artifacts": "9/9 source stage images verified byte+decode, including one 105-frame GIF (NOT 105 independent designer revisions)",
+    "early_source_sha256": "48a9ee4508748aabe56d6be8a5596d2e9d3eeb5b47da6c1cac0d41fc8de3c8d2",
+    "draft_source_sha256": "d8d08d8351bdd001a56004c226d7093768de7d80455ddce572fa3ee9ab379290",
+    "variants_source_sha256": "7c35b37bbf6025e50d7824172ce2ebb002ed97b3c384381aaa7518cb6879d403",
+    "final_source_sha256": "9e2f0ab5f4c47f1114ce4b07f2202f351d2b04b624077f7896550c0382dd9618",
+    "animation_source_sha256": "48715f06eae9f1a3b1ee4c84a33b3e4ef41b163ffb86a493e4f2a8389a6260d8",
+    "original_urls_locator": "research/typography_r12/R12_FROZEN_ARTIST_AUTHORED_STAGE_SOURCES.json",
+    "stage_credibility": "The project author supplies captions linking early, draft, alternative, chosen and final. Files verified, but only browser preview of draft, not exhaustive independent high-res eye-inspection of every file.",
+    "hand_sketch_warning": "Author explicitly says he did NOT make a hand sketch for this wordmark; do not label it paper drawing."
+  },
+  "secondary_creator": {
+    "author": "张家佳",
+    "original_project": "https://www.behance.net/gallery/196038613/_",
+    "work": "上座",
+    "source_artifacts": "3/3 authored process panels SHA+dimensions verified",
+    "structure_sha256": "00076011f18b9c7e9bd2ab36aa42bf5ba379d76314735cf336f6bb2181ea169b",
+    "pen_remake_sha256": "30e72f18078dc481c6bbf8e4ea27f8e924acda39079b4078296527013f753c37",
+    "sketch_to_final_sha256": "c28ebc2d1f5115240b3a40840d21a375f58779c614278c4668e476587281019e",
+    "stage_visual_preview_verified": true,
+    "content_source": "Original author-published stage artwork, not independently recoverable AI/Illustrator edit history"
+  },
+  "true_authored_actions": [
+    {
+      "id": "A_GLYPH_TOPOLOGY_REWRITING",
+      "source": "梁志坚 放肆喜欢 喜 的最终版本",
+      "observed_fact": "Author explicitly narrates reducing excess strokes within dense 喜: opening breaks at the top horizontal, adjusting central negative space, dropping lower bars of the two 口 components and merging dots/horizontal into one coherent feature shape. The goal is to preserve recognizability while matching word-wide graphic ink weight.",
+      "what_it_is_NOT": "Not global x-scale, taper, endpoint width, a font stroke table, texture overlay or exact geometry recovered from GIF.",
+      "trigger": "One glyph in multi-character wordmark is much denser than its neighbors AND exposes truly redundant/mergeable components that remain readable after edit.",
+      "operations": [
+        "Evaluate full phrase and flag the densest outlier BEFORE altering path geometry.",
+        "Propose topology-level merge/open/delete candidates for repetitive structural strokes in that outlier.",
+        "Verify target character remains unambiguously correct at thumbnail size and not confused with a different Hanzi.",
+        "Recheck the word as a whole: optical mass, open counters, main/secondary gestures; if character recognition breaks, revert."
+      ],
+      "reject_when": [
+        "No documented dense-outlier bottleneck",
+        "No safe shared/duplicate stroke relationship",
+        "Changes make text wrong or unreadable",
+        "Stronger letter no longer matches rest of word"
+      ],
+      "transfer_confidence": "AUTHOR_ACTION_REAL_ON_SOURCE; NEVER TESTED_ON_NEW_GLYPHS"
+    },
+    {
+      "id": "B_WORD_COMPOSITION_TOPOLOGY",
+      "source": "张家佳 上座",
+      "observed_fact": "Author states 上 is structurally sparse and 座 dense, so equal side-by-side character boxes leave unbalanced spaces; explores vertically connected, integrated lettering composition, then redesigns the stroke language at whole-mark level.",
+      "what_it_is_NOT": "Not simply scaling individual left/right radicals or copying the image as vectors in Figma.",
+      "trigger": "Two-character wordmark with radically unequal density; equal cell presentation looks optically imbalanced despite correct literal glyphs.",
+      "operations": [
+        "First compare standard horizontal and compact vertical arrangement as alternative COMPOSITION TOPOLOGIES.",
+        "Let the sparse glyph's open space and dense glyph's occupied region inform shared flow rather than forcibly equalizing stroke thickness.",
+        "Draw coherent major gesture across both forms while preserving two separate legible character identities.",
+        "Reject any composition that breaks read order, exact characters, or weight distribution."
+      ],
+      "reject_when": [
+        "Horizontal layout already optically balanced",
+        "Vertical reading order introduces ambiguity",
+        "Composition destroys character identity"
+      ],
+      "transfer_confidence": "AUTHOR_STATED_COMPOSITION_DECISION; NO_HELDOUT_QUALITY_EVIDENCE"
+    }
+  ],
+  "policy": {
+    "no_commercial_reuse_claim": true,
+    "original_third_party_pixels_never_rehosted_to_public_repository": true,
+    "original_source_read_by_GHA": true,
+    "external_access_failures": [],
+    "designer_intent_only_when_in_original_caption": true,
+    "original_reference_work_not_used_as_target": true,
+    "source_and_target_disjoint_if_next_trial": true,
+    "no_new_paid_software_or_API": true
+  },
+  "limitations": [
+    "Original author chose final forms in context of specific words, not universal template for other glyphs.",
+    "Image dimensions/hashes confirm access, not subjective design excellence.",
+    "Some browser image previews are partial; do not pretend detailed tracing or pen trajectory was reconstructed.",
+    "No human reviewer of new styled text and no heldout styled text was generated.",
+    "No 105 independent image studies; animation frames are ONE artwork's process media."
+  ],
+  "status": "FIRSTHAND_EXPRESSIVE_CREATOR_STAGE_SOURCES_VERIFIED__NEW_CREATIVE_TOPOLOGY_DECISIONS_IDENTIFIED__NO_TRANSFER_YET",
+  "selected_next_test": {
+    "candidate": "B_WORD_COMPOSITION_TOPOLOGY",
+    "reason": "Source documents choosing a different whole-word layout, a qualitatively different action than R1–R9 geometric glyph tweaks; strong control case available.",
+    "new_text": "山海",
+    "negative_control": "风云",
+    "third_party_source_copying": "NOT_ALLOWED",
+    "native_generation_budget": "same no-added-fee methods, one output per arm only when uncontrollable tool interface behaves",
+    "next_true_gate": "Write two comparable independent layouts of entirely new wordmark; render and inspect outputs; admit method only on actual human preference without cherry-picked repeats.",
+    "caution": "This is a design-brief hypothesis; do NOT mechanically render typography as A/B geometry and call it designer skill."
+  }
+}
