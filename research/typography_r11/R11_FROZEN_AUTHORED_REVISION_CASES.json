@@ -1,0 +1,72 @@
+{
+  "schema": "vpd-r11-author-revision-supervision-sources/1.0",
+  "recorded_at": "2026-10-27",
+  "user_goal": "学会真实设计师从失败草稿到成熟字形的选择条件/审美否决，而非复制已设计成品、乱改笔宽、只跑几何通过。",
+  "hard_cost_constraint": "No new paid tools/models/hosting; GitHub Actions standard runner only.",
+  "evidence_bounds": [
+    "Use actual creator first-party before/after diagrams and their own linked prose. Do not call finished type specimens actual revision.",
+    "In a color-overlaid before/after figure, RGB/color area may prove presence of colored phases, never human quality or gesture motion.",
+    "Do not upload source image bytes, screenshots of third-party assets, extracted contours, or font files into public repository.",
+    "Treat creator action described in article separately from inferred shape intent based solely on figure.",
+    "A single glyph revision is not sufficient to prove style transfer to another glyph or whole wordmark.",
+    "Do not execute Figma generative/image models; user budget for newly connected fee-bearing model is 0.",
+    "Only stage with raw-byte integrity, concrete visible phases and author process text is eligible for rule extraction."
+  ],
+  "cases": [
+    {
+      "id": "TPTQ_RADICAL_REVIEW",
+      "already_verified_r10": true,
+      "source_page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "creator": "郑初阳 / Typotheque",
+      "image_url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "expected_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "original_stages": "red before, blue after in same official author article",
+      "visible_glyph": "那; 阝 part enlarged",
+      "process_author_claim": "Revision of the proportion of 阝 primary radical at font-family scale; designer also describes a separate overly wide 口 decision reversed after many characters.",
+      "independent_visual_claim": "Two differently colored outlines and before/after word specimens are in one figure; exact direction of 阝 width change not yet quantitatively established.",
+      "negative_bound": "Do NOT substitute the wide-口 decision as if author explicitly said that about 阝."
+    },
+    {
+      "id": "JUSTFONT_CURVE_XIU",
+      "already_verified_r10": false,
+      "source_page": "https://justfont.com/jinxuan/design-end",
+      "creator": "justfont 金萱设计团队",
+      "image_url": "https://justfont.com/jinxuan/img/design/story-2-3.png",
+      "original_stages": "yellow before silhouette outline, green after fill in same creator-owned figure",
+      "visible_glyph": "秀",
+      "process_author_claim": "Replanning required retraining on basic 300 characters; half-sugar stage curves had to be reviewed and adjusted for style consistency.",
+      "independent_visual_claim": "Before-vs-after overlay on 秀, with local contour differences including bottom hooked form.",
+      "negative_bound": "The article's separate claim that overly-curved hooks hurt long-form readability is NOT explicitly said to be the cause of this exact 秀 diagram."
+    },
+    {
+      "id": "JUSTFONT_TEXT_WEIGHT",
+      "already_verified_r10": false,
+      "source_page": "https://justfont.com/jinxuan/design-end",
+      "creator": "justfont 金萱设计团队",
+      "image_url": "https://justfont.com/jinxuan/img/design/story-2-5.png",
+      "original_stages": "yellow before edges versus green after filled text",
+      "visible_glyph": "几何笔画局部复查",
+      "process_author_claim": "On ultralight body text, curve quality becomes more visible; designers refined them repeatedly. In long text they reduced overpowering bending/upturning hooks.",
+      "independent_visual_claim": "Visible after shape and highlighted before edge; exact letter identities and local change to verify against original pixels.",
+      "negative_bound": "Do not presume author provided an ordered stroke trajectory."
+    },
+    {
+      "id": "MORISAWA_UD_REVISE",
+      "already_verified_r10": false,
+      "source_page": "https://www.ifontcloud.com/index/newknowledge_detail.jsp?id=182",
+      "creator": "高田裕美 / Morisawa, official iFontCloud interview",
+      "image_url": "https://ifontcloud.com/index/images/newknowledge/%E6%97%A5%E6%9C%AC%E8%A8%AD%E8%A8%88%E5%B8%AB%E9%AB%98%E7%94%B0%E8%A3%95%E7%BE%8E%E8%A8%AA%E5%95%8F02.png",
+      "original_stages": "Black original vs corrected glyph illustrated on right; grey marks localized changes",
+      "visible_glyph": "反、北 (per published explanatory graphic)",
+      "process_author_claim": "User-observation in low-vision classroom changed design criteria; at 2000 glyphs, round stopped-feeling terminals reported unnatural, triggering wider re-review.",
+      "independent_visual_claim": "Local before/after glyph figures with grey edited area; source may use Japanese variants; exact stage wording should not be inferred from any paraphrased secondary caption.",
+      "negative_bound": "Interview cites 木-type terminal issues but figure itself is 反、北, so do not assert they are the same directly revised glyph."
+    }
+  ],
+  "positive_gate": {
+    "min_verified_source_images": 3,
+    "min_distinct_studios": 2,
+    "min_explicit_before_after_color_or_labels": 2
+  },
+  "future_required": "Create source-to-revision choice examples with decision rationale and counterexample. Do not claim learned transferable creative method unless unseen glyph artwork judged by humans."
+}
