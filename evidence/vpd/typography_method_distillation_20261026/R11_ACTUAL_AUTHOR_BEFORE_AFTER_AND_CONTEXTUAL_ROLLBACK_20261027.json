@@ -1,0 +1,103 @@
+{
+  "schema": "vpd-r11-genuine-designer-changes-with-context/1.0",
+  "recorded_date": "2026-10-27",
+  "user_goal": "Learn portable visual design decisions by tracing authentic designer work, never repeat constant stroke width or character x scaling as an aesthetic success.",
+  "actual_work_completed": {
+    "source_images_exact_bytes_verified": 5,
+    "source_orgs": [
+      "DFA Award / 汉仪",
+      "Typotheque / Zheng Chuyang",
+      "Arphic / Lin Mickey",
+      "Morisawa / Takada Hiromi"
+    ],
+    "distinct_image_source_projects": 4,
+    "traceable_before_after_pairs_min": 2,
+    "source_artworks_republished": false,
+    "color_segmentation_before_after_source": "Typotheque red BEFORE, blue AFTER",
+    "measured_before_after_image_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+    "main_component_groups": [
+      {
+        "component": "colored connected region left",
+        "before_width_px": 254,
+        "after_width_px": 263,
+        "delta_percent": 3.54
+      },
+      {
+        "component": "colored connected region right",
+        "before_width_px": 211,
+        "after_width_px": 203,
+        "delta_percent": -3.79
+      }
+    ],
+    "gap_between_region_px": {
+      "before": 54,
+      "after": 56
+    },
+    "after_before_same_axis_color_bboxes_not_true_pen_paths": true,
+    "gate_image_color_and_author_sequence": true,
+    "run_url": "https://github.com/vubaoha034-hash/shenmei/actions/runs/40459767901"
+  },
+  "sourced_process_principles": [
+    {
+      "id": "CONTEXTUAL_EDIT_PLUS_COUNTERPART",
+      "source": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "observed": "Actual before/after shows offsetting measured bbox width changes in opposite directions, preserving very similar outer total.",
+      "author_intent_known": "Designer separately documents a disproportionate 阝 structure family and 口 widened for modern effect that had to be reverted when thousands of glyphs were assembled.",
+      "transferable_hypothesis": "Evaluate each stylized component within a whole character and word family; redistributing space may involve two opposed local decisions, not one uniform grow/shrink.",
+      "forbidden": "Never set +3.54%/-3.79% as numeric defaults; only represent direction and constraints and later obtain proof on new target images."
+    },
+    {
+      "id": "SKETCH_TO_DESIGNED_WHOLE_GLYPH",
+      "source": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "observed": "Published three-stage image links historical printed reference, hand-painted draft and finished bold glyph on same display.",
+      "author_intent_known": "Ancient clerical-script reference reworked with modern emphasis on dynamic starts and ends.",
+      "transferable_hypothesis": "The graphic mother must first be a coherent, visually valid whole word, with silhouette and gesture constructed at draft stage before vectorization.",
+      "forbidden": "Do not infer specific pressure or copy copyright source contours."
+    },
+    {
+      "id": "EDIT_COUNTERS_FOR_CONDENSED_CONTEXT",
+      "source": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "observed": "Creator-published before/after of text and zoom into a local enclosed counter shape; separate standard vs C80 figure is a variant comparison NOT timeline.",
+      "transferable_hypothesis": "At narrower display widths, review internal holes/stroke interactions per glyph, not just compress complete outlines.",
+      "forbidden": "Variant comparison is NOT proof of historical sketch order."
+    },
+    {
+      "id": "USER_OBSERVATION_TRIGGERS_FAMILY_REVISION",
+      "source": "https://www.ifontcloud.com/index/newknowledge_detail.jsp?id=182",
+      "observed": "First-person design interview and before/after illustration. Takada notes testers objected to unnatural rounded end of 木 stroke and related glyph families were revisited.",
+      "transferable_hypothesis": "Real legibility feedback overrules local form preferences; when one stroke behavior is misleading, re-audit all related glyphs and underlying rules.",
+      "forbidden": "Educational accessibility aims cannot be equated with artistic brush-lettering aesthetic aims."
+    }
+  ],
+  "source_type_levels": {
+    "verified_source_bytes": true,
+    "visual_pairs_with_author_labels": true,
+    "actual_source_editable_layers": false,
+    "dynamic_pen_recordings": false,
+    "source_deployment_rights_cleared": false,
+    "can_use_as_exact_weight_training_data": false
+  },
+  "new_knowledge_contrast_to_R9": "The model should not merely decide a component width from pre-picked stroke count. Authentic evidence shows paired counter-balancing changes and explicit feedback-driven reversal of previously accepted radical style across whole families.",
+  "status": "REAL_DESIGNER_PUBLISHED_BEFORE_AFTER_EVIDENCE_AND_BOUNDED_CREATIVE_OPERATORS_FOUND__NO_UNSEEN_ART_YET",
+  "confidence": "Documented source phases and directionality grounded; causality and optimal parameters not recovered.",
+  "next_valid_step": "Create an original decision worksheet on a new glyph family that applies ONE condition-triggered change and a distinct rollback gate. Only generate a new artwork when it can be visually compared against unchanged reference, not to chase numbers. Human aesthetic review remains required.",
+  "no_new_paid_software": true,
+  "formal_mainline_changes": false,
+  "references": [
+    {
+      "tag": "R10_READ_AND_VERIFY",
+      "url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-visual-ops-20261027/research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+      "git_blob_sha": "3ab9236ed1bbac8354f166ffd644ee28f47829be"
+    },
+    {
+      "tag": "R11_VERIFY",
+      "url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-visual-ops-20261027/research/typography_r11/R11_REAL_STAGE_VISUAL_AUDIT.json",
+      "git_blob_sha": "11b7c983bd030dec2d4eb6ac657308f2bd6294dd"
+    },
+    {
+      "tag": "R11_SHAPE",
+      "url": "https://github.com/vubaoha034-hash/shenmei/blob/research/typography-r11-verified-visual-ops-20261027/research/typography_r11/R11_ACTUAL_DESIGNER_PAIRED_COMPONENT_DELTAS.json",
+      "git_blob_sha": "be019096cf725c011564190a477ec2461c266696"
+    }
+  ]
+}
