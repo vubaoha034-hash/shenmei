@@ -1,0 +1,75 @@
+{
+  "schema": "vpd-r11-design-maker-stage-delta-freeze/1.0",
+  "recorded_date": "2026-10-27",
+  "goal": "Actually inspect, classify and measure a creator-published same-glyph revision and multi-glyph validation, not infer creative decisions from finished contours.",
+  "originator": "Zheng Chuyang / Typotheque type design team",
+  "source": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+  "source_publication_date": "2025-05-05",
+  "newly_confirmed_author_statements": [
+    "When dozens of characters reuse a radical, designers can become blind to systematic radical imbalance: peer review is needed.",
+    "Original 口 component was deliberately made wider, but its effect multiplied across thousands of characters and required re-condensing.",
+    "The figure explicitly captions the proportion revision of the right-side 阝 radical.",
+    "Characters using 包 must adapt the component to positional context, rather than paste the same shape."
+  ],
+  "images": [
+    {
+      "id": "BEFORE_AFTER_FAMILY_GRID",
+      "role": "multiple_real_before_and_after_glyphs",
+      "uri": "https://assets.typotheque.com/assets/Uploads/stories618/blindness1.png",
+      "source_label": "Design revisions / Before After grid",
+      "expected_detect": "two distinct labeled groups, no automatic pixel alignment across individual glyphs",
+      "rights": "original copyright remains with Typotheque"
+    },
+    {
+      "id": "BEFORE_AFTER_RIGHT_RADICAL",
+      "role": "same_glyph_before_after",
+      "uri": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "expected_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "expected_dimensions": [
+        3369,
+        2382
+      ],
+      "source_label": "Before (red)/After (cyan) 那 ; detailed red-blue outline overlay left",
+      "expected_detect": "red upper-right glyph and cyan lower-right glyph",
+      "rights": "original copyright remains with Typotheque"
+    },
+    {
+      "id": "REAL_REVIEW_ANNOTATION",
+      "role": "creator_team_annotated_stage",
+      "uri": "https://assets.typotheque.com/assets/Uploads/stories618/review-lr.jpg",
+      "source_label": "Actual human redline review sheets",
+      "expected_detect": "image opens and exact hash/dimensions are recorded; colored scribbles alone not interpreted as final contours",
+      "rights": "original copyright remains with Typotheque"
+    }
+  ],
+  "measurement_plan": {
+    "reason": "Prove genuine authorship and before/after visual changes with decoded original image bytes in memory.",
+    "categories": [
+      "hash/dimensions",
+      "separately labeled before/after source regions",
+      "red/cyan image signal on same figure",
+      "visibility of material shape change"
+    ],
+    "same_glyph_color_thresholds": {
+      "red": "R>125, R-G>65, R-B>65",
+      "cyan": "B>110, B-R>65, G-R>55, B-G>=-35",
+      "report_area_only_if_above_pixels": 500
+    },
+    "forbid": [
+      "Saving third-party bitmap/crop to public GitHub branch",
+      "Publishing author stroke outline paths or color-segment mask image",
+      "Treating after image being prettier as an AI learned aesthetic conclusion",
+      "Reverse engineering pen pressure, stroke order or author's proprietary layer paths from a printed PNG",
+      "Using any derived numerical parameter as unverified glyph generator instruction"
+    ],
+    "geometry_methods": [
+      "right-region color-connected-component grouping",
+      "color sample counts",
+      "before/after glyph shape pixel difference, conservatively labeled indicative only"
+    ],
+    "current_human_review": "Before/after Chinese 那 source image visually reviewed from live image search preview, not artist editable paths."
+  },
+  "stage": "SOURCE_DELTA_METHOD_FROZEN_BEFORE_THIS_EXPERIMENT",
+  "new_paid_tools_budget_cny": 0,
+  "canonical_task_lock_do_not_change": 355
+}
