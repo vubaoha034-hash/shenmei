@@ -1,0 +1,63 @@
+{
+  "schema": "vpd-r11-creator-stage-truth/1.0",
+  "date": "2026-10-27",
+  "purpose": "Gain new visual first-party evidence of multiple actual drafts, edits and examples (beyond R10's four images), not a new SVG width/centroid experiment.",
+  "previous_r10": "research/typography_r10/R10_IMAGE_SOURCE_BYTE_AUDIT.json",
+  "firsthand_sources": [
+    {
+      "id": "LEFTFONT_STAGES",
+      "creator": "甘薇云 (Kan Wei-Yun)",
+      "source_page": "https://www.behance.net/gallery/97209015/-Left-Font",
+      "url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/6e468397209015.5ebfc501ad5bb.jpg",
+      "stated_context": "reverse-contrast Chinese headline font, left-handed gesture, strong horizontal strokes, thin vertical strokes, wide-flat skeleton, soft curves",
+      "source_date": "2020-05-16",
+      "observed_visual_content": "artwork shows 4 progressive 独/獨 forms and 2 立 forms; annotations for geometry, counter and writing gesture; exact timeline details must be verified from pixels",
+      "evidence_type": "designer-authored multi-stage progression",
+      "commercial_license": "copyright reserved; study/review only, cannot redistribute image or font or sell trained copy"
+    },
+    {
+      "id": "JUSTFONT_BEFORE_AFTER",
+      "creator": "justfont / 林霞（设计总监）",
+      "source_page": "https://justfont.com/jinxuan/design-end",
+      "url": "https://justfont.com/jinxuan/img/design/story-2-3.png",
+      "stated_context": "justfont re-reviewed curved strokes and visual balance while moving between design iterations; page also documents over-curled upward hooks reduced for long-form reading",
+      "observed_visual_content": "one glyph colored yellow before and green after with two outline deviations; identity of changed curve needs visual verification; do not equate that exact displayed change to the independently described hook anecdote",
+      "evidence_type": "first-party before/after color-separated glyph",
+      "commercial_license": "proprietary; no copying paths, public repo only source and derived measurements"
+    },
+    {
+      "id": "JUSTFONT_HOOK_CONTEXT",
+      "creator": "justfont / 林霞（设计总监）",
+      "source_page": "https://justfont.com/jinxuan/design-end",
+      "url": "https://justfont.com/jinxuan/img/design/story-2-4.png",
+      "stated_context": "same project section describing full-sugar/micro-sugar considerations; need inspect exact figure",
+      "observed_visual_content": "source page embedded image adjacent to hook paragraph; not pre-classified as same-glyph before/after until decoded",
+      "evidence_type": "contextual designer process picture",
+      "commercial_license": "proprietary; analysis only"
+    },
+    {
+      "id": "JUSTFONT_SPACE_CONTEXT",
+      "creator": "justfont / 林霞（设计总监）",
+      "source_page": "https://justfont.com/jinxuan/design-end",
+      "url": "https://justfont.com/jinxuan/img/design/story-2-6.png",
+      "stated_context": "designing full-sugar bold glyphs, rescuing white counters by selective stroke reduction and rearranging components",
+      "observed_visual_content": "source page image at 2018 full-sugar section; actual ROI and glyph label to be inspected",
+      "evidence_type": "contextual designer published adjustment demonstration",
+      "commercial_license": "proprietary; no redistribution"
+    }
+  ],
+  "protected_previous": {
+    "old_r1_to_r9_vector_failures": "unchanged",
+    "existing_r10_images": "do not download again as budget and source hashes already confirmed",
+    "unrelated_production_mainline_revision": 355
+  },
+  "failure_conditions": [
+    "if source image is missing or 403 mark image unreadable",
+    "if colored before-after overlay absent do not claim exact pixel changes",
+    "no use of the copyrighted stage images as AI input for commercial training or model style transfer",
+    "source image visual evidence does not equal author pen trajectories nor transferable model",
+    "do not invent a one-size-fits-all width multiplier"
+  ],
+  "budget": "NO NEW PAID APP, LICENSE OR METERED EXTERNAL API",
+  "status": "SOURCE_SET_FROZEN_BEFORE_BYTES"
+}
