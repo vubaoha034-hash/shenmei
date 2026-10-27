@@ -1,0 +1,60 @@
+{
+  "schema": "vpd-r14-source-authored-topology-conditional-transfer/1.0",
+  "date": "2026-10-27",
+  "user_goal": "Distill actual expressive Chinese lettering creator decision on previously unseen content, not copied finished pictures, Figma tracing, terminal width or stacked fonts.",
+  "original_creator": {
+    "author": "梁志坚",
+    "first_person_article": "https://www.uisdc.com/11-font-design-case",
+    "case": "放肆喜欢",
+    "focus": "喜",
+    "observed_author_actions": [
+      "Top horizontal opens a deliberate break to relieve crowding",
+      "Two 口 bottom horizontals can be omitted in this authored composition",
+      "Two central dots + a middle horizontal were fused into one characteristic gesture while retaining recognition",
+      "Edit chosen by whole-word weight balance, not all strokes on all characters"
+    ]
+  },
+  "source_limit": "Author actions documented in text and stages but no licensed editable path or pen coordinates; all numerical glyph geometry is independently from Arphic/HanziWriter.",
+  "program_scope": "Compile conditional per-stroke EDIT PLAN only. Never execute destructive topology on target until independent readability/artistic tests. Need safe stage outputs.",
+  "sample_family_exploratory": [
+    "嘻",
+    "嬉",
+    "禧"
+  ],
+  "frozen_unseen_holdout": [
+    "熹"
+  ],
+  "negative_controls": [
+    "宫",
+    "吕",
+    "器"
+  ],
+  "source_glyph": "喜",
+  "source_data": {
+    "repository": "chanind/hanzi-writer-data",
+    "commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "license": "Arphic Public License; no copyrighted original designer outlines copied"
+  },
+  "compiler": {
+    "reference_consecutive_strokes": 12,
+    "lookup": "all contiguous 12-stroke candidate subgraphs; compare normalized median start, mid and end points plus contour-bbox aspect to the reference structure",
+    "fixed_discovery_threshold": 0.22,
+    "mismatch": "ABSTAIN_NOT_SAME_TOPOLOGY",
+    "candidate_actions_for_matched": [
+      "PROPOSE_TOP_HORIZONTAL_BREAK_ON_GLYPH_WHOLE",
+      "PROPOSE_ELIDE_TWO_EXPLICIT_MOUTH_LOWER_BARS",
+      "PROPOSE_REAUTHOR_DOTS_PLUS_HORIZONTAL_INTO_A_SINGLE_STROKE"
+    ],
+    "condition": "Match structural group and preserve content. No safe depiction established until actual artistically authored continuous new stroke is rendered and reviewed.",
+    "zero_adaptive_test_threshold_after_holdout": true
+  },
+  "tests": [
+    "Exploratory known positive families reported separately from untouched holdout",
+    "All negatives reject unless counterevidence (then report false positive)",
+    "Do not infer visual quality from descriptor distance",
+    "Never use exact original author shape pixels/trace in output",
+    "No outside paid app/API/Figma glyph production"
+  ],
+  "human_gate": "True visual output quality and user blind preference NOT yet assessed",
+  "original_production_lock_unchanged": 355
+}
