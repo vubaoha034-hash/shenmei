@@ -1,0 +1,217 @@
+{
+  "schema": "vpd-r10-authored-stage-image-visual-audit/1.0",
+  "utc_recorded_at": "2026-10-27T00:12:48.476456+00:00",
+  "source_images_reverified": 4,
+  "actual_author_revision_or_draft_sources": 3,
+  "author_variant_not_timeline_sources": 1,
+  "verified_no_raw_visual_redistribution": true,
+  "original_design_process_layers": false,
+  "stage_sources": [
+    {
+      "source_id": "HY_RED_CLOUD",
+      "source_page": "https://dfaawards.viewingrooms.com/artworks/9610-hanyi-redcloud-li-hanyi-fonts-mainland-china/",
+      "original_sha256": "a2e8d79a85582e25e07c4d7331a42d23f0a63b3b4afd52740a74f7efbaca5dcd",
+      "original_pixel_size": [
+        1600,
+        1165
+      ],
+      "byte_verified_against_first_audit": true,
+      "classification": "HISTORIC_MODEL_TO_DESIGN_DRAFT_TO_FINAL",
+      "confirmed_visible_stages": [
+        "older historical reference shape (gray)",
+        "hand-drawn/traced exploratory outline marked hand-painted first draft",
+        "final bold Chinese font glyph"
+      ],
+      "high_confidence_observation": "Across two same-character rows, the middle outline drafts clearly are not a flat stroke-width expansion; the finals merge and prioritize distinct structural masses and shaped terminals.",
+      "source_process_boundary": "Historical reference is NOT first designer-authored intermediate; finished-font artwork cannot reveal physical pen speed/pressure or unique artist algorithm.",
+      "claim_license": "Published DFA winner showcase of Hanyi Fonts, not libre training data. Text/aggregate study only.",
+      "has_actual_author_better_output": true,
+      "human_blind_quality_preference": "NOT_MEASURED",
+      "raw_source_images_committed": false
+    },
+    {
+      "source_id": "TPTQ_REVISION_NA",
+      "source_page": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+      "original_sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "original_pixel_size": [
+        3369,
+        2382
+      ],
+      "byte_verified_against_first_audit": true,
+      "classification": "AUTHORED_BEFORE_AFTER_SAME_RADICAL",
+      "confirmed_visible_stages": [
+        "red BEFORE contours/small specimen",
+        "blue AFTER contours/small specimen",
+        "overlay explicitly labels correction of 阝 radical"
+      ],
+      "high_confidence_observation": "There is a before/after outline shift in the same component's proportions and curve trajectory, beyond a full-image filter or global stroke taper.",
+      "source_process_boundary": "DO NOT confuse this 阝 demonstration with the different prose example where a widened 口 design had to be rolled back after a large-character set test.",
+      "claim_license": "Creator Typotheque article; observational image analysis only, rights not cleared for training or redistribution.",
+      "has_actual_author_better_output": true,
+      "human_blind_quality_preference": "NOT_MEASURED",
+      "raw_source_images_committed": false,
+      "quantitative_overlay_evidence": {
+        "is_overlay_separable": true,
+        "overlay_left_fraction": 0.6,
+        "red_before_outline_pixels": 49467,
+        "blue_after_outline_pixels": 55940,
+        "red_bbox_px": [
+          354,
+          300,
+          2021,
+          2095
+        ],
+        "blue_bbox_px": [
+          355,
+          304,
+          2021,
+          2095
+        ],
+        "red_to_blue_nearest": {
+          "median_px": 29.614,
+          "p90_px": 36.0,
+          "max_px": 61.0
+        },
+        "blue_to_red_nearest": {
+          "median_px": 30.0,
+          "p90_px": 37.0,
+          "max_px": 38.328
+        },
+        "coarse_red_blue_pixel_count_4x4": [
+          [
+            [
+              432,
+              272
+            ],
+            [
+              1303,
+              1460
+            ],
+            [
+              3143,
+              3784
+            ],
+            [
+              1396,
+              1517
+            ]
+          ],
+          [
+            [
+              568,
+              532
+            ],
+            [
+              3957,
+              4450
+            ],
+            [
+              6838,
+              8268
+            ],
+            [
+              6683,
+              7256
+            ]
+          ],
+          [
+            [
+              652,
+              579
+            ],
+            [
+              3625,
+              4151
+            ],
+            [
+              6817,
+              8246
+            ],
+            [
+              6184,
+              6227
+            ]
+          ],
+          [
+            [
+              701,
+              771
+            ],
+            [
+              2524,
+              2654
+            ],
+            [
+              3428,
+              4063
+            ],
+            [
+              1216,
+              1710
+            ]
+          ]
+        ],
+        "interpretation_boundary": "These are after JPEG/PNG rasterization and masks of colored outlines; displacement means observable revision, NOT proof of improvement or original vector-point path."
+      }
+    },
+    {
+      "source_id": "ARPHIC_FANGXINSHU",
+      "source_page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "original_sha256": "41e9d1e0e3bdc0fc7482a05033635a365bf6f743b295bd9df10d3245dd58f61a",
+      "original_pixel_size": [
+        1920,
+        1152
+      ],
+      "byte_verified_against_first_audit": true,
+      "classification": "AUTHORED_BEFORE_AFTER_DETAIL_CORRECTION",
+      "confirmed_visible_stages": [
+        "top BEFORE and lower AFTER Chinese phrase",
+        "bottom BEFORE/AFTER magnified narrowed terminal/counter with labels"
+      ],
+      "high_confidence_observation": "The same compressed-style glyph uses a locally different inner aperture/corner shape after correction; improving smaller counters calls for localized geometry, not whole-glyph uniform narrowing.",
+      "source_process_boundary": "This figure does not on its own establish effects on unknown calligraphic lettering or a controlled typography preference win.",
+      "claim_license": "Creator owned Behance Arphic/Lin Mickey project, no source-contour redistribution or model training rights assumed.",
+      "has_actual_author_better_output": true,
+      "human_blind_quality_preference": "NOT_MEASURED",
+      "raw_source_images_committed": false
+    },
+    {
+      "source_id": "ARPHIC_FANGXINSHU_SPACE",
+      "source_page": "https://www.behance.net/gallery/71709175/-AR-FangXinShu",
+      "original_sha256": "b42f3b4a7e2a21994446c0450a793f87385d928647b76dace20d3f784339b412",
+      "original_pixel_size": [
+        1920,
+        1358
+      ],
+      "byte_verified_against_first_audit": true,
+      "classification": "DESIGNED_VARIANT_NOT_CHRONOLOGICAL_REVISION",
+      "confirmed_visible_stages": [
+        "normal-width face characters 仁 and 空",
+        "condensed C80 variant with differently arranged internal negative space"
+      ],
+      "high_confidence_observation": "Condensed design changes relative internal spaces and structural balance; visually distinct from a literal squeezed screenshot.",
+      "source_process_boundary": "The labels describe standard vs C80 FONT VARIANTS, not author-before vs author-after chronological stages. EXCLUDE from before/after training pairs.",
+      "claim_license": "Creator owned Arphic Behance source; no train permission inferred.",
+      "has_actual_author_better_output": true,
+      "human_blind_quality_preference": "NOT_MEASURED",
+      "raw_source_images_committed": false
+    }
+  ],
+  "source_errors": [],
+  "admissible_insights": [
+    "AUTHORING_STAGES: source style reference → many preliminary contour ideas → purposefully recomposed final mass; NOT naive font weight increase.",
+    "RADICAL_SYSTEM_REVISION: one component must be revised against many occurrences, and contextual shapes must adapt; same-glyph red/blue overlay grounds a real change.",
+    "LOCAL_NEGATIVE_SPACE_REPAIR: compressed font needs re-design of enclosed pockets and stroke clearance, rather than uniform squeezed shape."
+  ],
+  "blocking_unknowns": [
+    "No native editable author design documents, Bezier histories or ground truth reasons for all local changes.",
+    "Cannot establish causality of improved aesthetics from after-before alone; the authors' expert decisions and evaluation remain key.",
+    "These precedents show typography/system font work. Transferability to unique brush calligraphy headlines is not yet validated.",
+    "Commercial/private AI training use of these copyrighted images is NOT licensed just by web availability."
+  ],
+  "human_blind_aesthetic_review": "NOT_RUN",
+  "new_unseen_Chinese_lettering_output": "NOT_RUN",
+  "claim_validated_creator_method": false,
+  "minimum_gate_pass": true,
+  "next_gate": "Freeze ONE character-level shape decision with author-supported visual cause and source example, identify 2+ held-out structurally distinct cases, compare against do-nothing and mechanical controls with equal output budget; do NOT copy artwork."
+}
