@@ -1,0 +1,53 @@
+name: R10c Source Revision Registration Holdout
+
+on:
+  push:
+    branches:
+      - research/typography-r10-authored-stage-images-20261027
+    paths:
+      - .github/workflows/typography-r10-registered-before-after-holdout.yml
+
+permissions:
+  contents: write
+
+jobs:
+  creator-red-blue-heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependencies
+        run: python -m pip install --quiet --disable-pip-version-check numpy pillow scipy
+      - name: Preregistered author revision overlay registration (top train bottom test)
+        run: python research/typography_r10/align_creator_before_after.py
+      - name: Verify meaningful split before committing non-image derived receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          x=json.load(open('research/typography_r10/R10_REGISTERED_CONTOUR_HOLDOUT_METRICS.json'))
+          assert x['gate_pass'] is True
+          assert x['source_sha256']=='f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1'
+          assert x['holdout_after_sampled']>=100
+          assert x['training_after_sampled']>=100
+          assert x['source_pixels_published'] is False
+          assert x['no_human_blind'] is True
+          print('R10_REGISTERED_HOLDOUT_PASS',{
+            'train':x['training_after_sampled'],'test':x['holdout_after_sampled'],
+            'shift':x['train_optimized_shift_after_to_before_px'],
+            'test_before':x['heldout_before_shift']['median'],
+            'test_after':x['heldout_after_fit']['median']})
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/typography_r10/R10_REGISTERED_CONTOUR_HOLDOUT_METRICS.json
+          if ! git diff --cached --quiet; then
+            git commit -m "evidence(r10c): verify creator before/after outline residual after registered holdout"
+            git push origin HEAD:research/typography-r10-authored-stage-images-20261027
+          fi
