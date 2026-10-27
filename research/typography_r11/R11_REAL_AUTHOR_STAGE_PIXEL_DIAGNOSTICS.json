@@ -1,0 +1,143 @@
+{
+  "schema": "vpd-r11-verified-first-party-revision-pixels/1.0",
+  "executed_utc": "2026-10-27T03:01:22.578419+00:00",
+  "publisher": "Typotheque",
+  "source_url": "https://www.typotheque.com/articles/designing-large-scale-chinese-fonts",
+  "before_and_after_character": "那",
+  "right_component_under_review": "阝",
+  "detector_scope": "separate red-before/cyan-after regions ONLY (not full semantic shape diagnosis)",
+  "source_images": [
+    {
+      "id": "BEFORE_AFTER_FAMILY_GRID",
+      "publisher": "Typotheque",
+      "role": "multiple_real_before_and_after_glyphs",
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness1.png",
+      "declared_source_caption": "Design revisions / Before After grid",
+      "source_read": true,
+      "sha256": "549a18bfa2266ec8c8adc2b34be4bdd2982918f7b1b27b958c05b3d6527837a6",
+      "bytes": 1160945,
+      "file_format": "PNG",
+      "content_type": "image/png",
+      "dimensions": [
+        3368,
+        2004
+      ],
+      "source_original_raw_pixels_persisted": false,
+      "diagnostic": {
+        "preview_width_height": [
+          1000,
+          595
+        ],
+        "red_or_annotation_pixels": 3454,
+        "cyan_or_annotation_pixels": 3748,
+        "not_same_glyph_diff_if_no_explicit_before_after": true
+      }
+    },
+    {
+      "id": "BEFORE_AFTER_RIGHT_RADICAL",
+      "publisher": "Typotheque",
+      "role": "same_glyph_before_after",
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/blindness2.png",
+      "declared_source_caption": "Before (red)/After (cyan) 那 ; detailed red-blue outline overlay left",
+      "source_read": true,
+      "sha256": "f4505122dd0c0386252096a757d861a4652fa570f44f304fc1fd86af3e256ef1",
+      "bytes": 161340,
+      "file_format": "PNG",
+      "content_type": "image/png",
+      "dimensions": [
+        3369,
+        2382
+      ],
+      "source_original_raw_pixels_persisted": false,
+      "author_same_glyph_revision": {
+        "source_thumbnail_pixels": [
+          1000,
+          707
+        ],
+        "primary_colors": {
+          "global_red_pixels": 17767,
+          "global_cyan_pixels": 17366,
+          "upper_right_red_pixels": 11866,
+          "lower_right_cyan_pixels": 11691,
+          "red_upper_region_fraction": 0.6679,
+          "cyan_lower_region_fraction": 0.6732
+        },
+        "segmentation_method": "hue-masked largest local connected group after 9-pixel dilation; NOT original graphic vector data",
+        "same_glyph_claim_source": "Publisher photo explicitly labels red BEFORE and cyan AFTER; author's paragraph identifies the 阝 right-side radical.",
+        "before_region": {
+          "colored_stroke_pixels": 10563,
+          "x_y_bounds_thumbnail": [
+            733,
+            91,
+            887,
+            242
+          ],
+          "bounding_wh": [
+            154,
+            151
+          ]
+        },
+        "after_region": {
+          "colored_stroke_pixels": 10485,
+          "x_y_bounds_thumbnail": [
+            733,
+            367,
+            888,
+            517
+          ],
+          "bounding_wh": [
+            155,
+            150
+          ]
+        },
+        "approx_shape_overlap_normalized": 0.8674,
+        "approx_shape_difference_fraction": 0.1326,
+        "registered_before_after_precision": "LOW: independently cropped color-blobs; color-antialias, unequal display scale, labels and segmentation can affect numbers",
+        "source_color_stage_detection_pass": true
+      }
+    },
+    {
+      "id": "REAL_REVIEW_ANNOTATION",
+      "publisher": "Typotheque",
+      "role": "creator_team_annotated_stage",
+      "url": "https://assets.typotheque.com/assets/Uploads/stories618/review-lr.jpg",
+      "declared_source_caption": "Actual human redline review sheets",
+      "source_read": true,
+      "sha256": "062e753b88f3091ca9d737dae42f8533739141bbf7c0ddc0a6fe8470d781a6cf",
+      "bytes": 266093,
+      "file_format": "JPEG",
+      "content_type": "image/jpeg",
+      "dimensions": [
+        2000,
+        1880
+      ],
+      "source_original_raw_pixels_persisted": false,
+      "diagnostic": {
+        "preview_width_height": [
+          1000,
+          940
+        ],
+        "red_or_annotation_pixels": 8564,
+        "cyan_or_annotation_pixels": 152,
+        "not_same_glyph_diff_if_no_explicit_before_after": true
+      }
+    }
+  ],
+  "failures": [],
+  "source_gate_pass": true,
+  "pixel_artifact_shas_verified": 3,
+  "valid_same_glyph_before_after_source": true,
+  "rights_safe": true,
+  "copyrighted_source_images_committed": false,
+  "designer_before_after_visual_class": "VERIFIED_PUBLISHER_LABELED_CHANGES",
+  "designer_process_parameters_extracted": false,
+  "unseen_chinese_wordmark_generated": false,
+  "human_aesthetic_blind_pass": false,
+  "limitations": [
+    "A published annotated image is not an editable author-layer history nor proof of pen pressure.",
+    "Basic hue segmentation does not prove optical superiority or exact per-point contour displacement.",
+    "The published text says repeated radical correction was required after looking at many glyphs; exact numerical author choices are unknown.",
+    "OCR or blind quality evaluation not run. Do not promote an aesthetic rule from this audit alone."
+  ],
+  "next": "Frame source-supported when/why/family-scope decisions and compare with R7-R9 false independent width ratios; require a drawn, genuinely changed new character and real human aesthetic review to validate transfer."
+}
