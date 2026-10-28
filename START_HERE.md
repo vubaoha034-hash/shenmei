@@ -1,5 +1,13 @@
 # START HERE — 强制执行入口
 
+<!-- XI_H1_USER_GLYPH_INVALID_20261028 -->
+**最新用户审稿已收到（喜H1，2026-10-28）**：用户原话「1   。2   把文字都改的不对了。中国文字不能乱加笔画。」原始选票先写入GitHub，再解封预登记方法映射：**甲=旧R15 C1合势喜，用户选择保留；乙=本轮新拆开的中部丷+一方案，用户明确判字写错、不合格。** 本轮不是甲审美规则胜利，因为乙**违反汉字字形正确性闸门**、不能充当有效基线；结论`ARM2_USER_GLYPH_INVALID / AESTHETIC_H1_CAUSATION_INCONCLUSIVE / VALIDATED_RULE=false`。此前条目中的“真人待选PENDING”是历史阶段记录，**不得再向用户重复询问甲/乙**。未来任何造型修改首先确认汉字笔画与部件正确、不凭空加独立笔画、不丢部首、不破坏认字；SVG路径数和像素变化不等于规范笔画数或审美。没有字形合法的两个候选，先停止审美或Figma制作。未修改正式视觉生产Rev355/Checkpoint377/S7人审。
+- [用户评价原话先行封存](research/typography_h1_xi/H1_USER_CHOICE_RAW_BEFORE_UNMASK_20261028.json)
+- [结构/像素证据与审稿后的正式结论](research/typography_h1_xi/H1_ACTUAL_CONTOUR_PIXEL_AND_PENDING_HUMAN_VERDICT.json)
+- [中文字形正确性硬闸门](research/typography_h1_xi/HANZI_GLYPH_CORRECTNESS_HARD_GATE_20261028.json)
+- [更新后的研究入口](research/typography_h1_xi/README.md)
+<!-- END_XI_H1_USER_GLYPH_INVALID_20261028 -->
+
 <!-- XI_H1_MIDDLE_GESTURE_REAL_CONTROLLED_COMPARISON_20261028 -->
 **R1—R29总复盘后的唯一执行实验：喜字H1中部丷＋一合势对照（2026-10-28）。** 用户此前说「讲真的，这个喜开始有点设计感了」仅绑定R15 C1「熹」上半部「喜」，不是对整字、对本次对照或任何其他字的认可。本轮**没有开R30**；以原R15 SVG SHA256 `edf5ffa0142849df33af0972f9c6bddf7777cb4191844848e78e3c7776a7efcc`（上半14原笔画）为冻结母版，仅对中部两条合势路径做一份一次性三独立笔画的反事实方案，另外12条原生路径的 `d` 字符串完全不动。CairoSVG真实渲染两张1100×920透明PNG，原稿合势上半与R15 PNG逐RGBA差0，分离中部3连通墨形 vs合势1，合势墨量27858、分离27331像素（差约1.9%），全图差异23122像素，严格集中在x209..875、y545..673外0变化。两版面板只标甲/乙（不是严格陌生人盲测），另做128/96/64认字图。所有真实原SVG/PNG、原母版、可运行脚本、技术账本以12件ZIP `金尊_喜字H1_分离与合势_受控实验血统包.zip` 随当前聊天交付，SHA256 `5125777960b671e8f1043f5743fbbe1d504b4f577e3c10844af3e94140660feb`，全新解压目录复跑11/11文件原字节相同。GitHub保存两组来源几何等价SVG及手段前冻结方案。**人类认字和审美结果未获得、连接因果不成立、通用设计规则`VALIDATED_RULE=false`。** 下一步仅采集甲乙偏好和认字反馈，然后揭晓结构方案；若无明显效果立即停止H1，不再反复凭空造微调版。正式锁Revision355／Checkpoint377和S7人工PENDING不动，R1—R29总复盘继续有效。
 - [喜H1冻结路径和事前拒绝条件](research/typography_h1_xi/R30_NOT_CREATED_H1_FROZEN_PROTOCOL.json)
