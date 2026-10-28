@@ -1,5 +1,14 @@
 # START HERE — 强制执行入口
 
+<!-- R24_REAL_HELDOUT_A_B_TECH_PASS_20261028 -->
+**R24最新原生研究血统（2026-10-28，优先于下方R24 2026-10-27阻断历史）：** 使用R23提前冻结的留出文字「溪桥听雨」，并在R24任何新像素生成前，冻结无逐字定制的通用字组造型语法和A中性/B风格双臂原文。昨日Opera Neon因Session terminated阻断在真正出图之前，原失败记录完整保留。今天Opera连接真实恢复，分别在两个独立全新ChatGPT普通聊天各生成一张1672×941黑字单行透明RGBA PNG，无任何重抽、后验提示词或新收费服务。A源：https://chatgpt.com/c/6ae16913-8ad4-83ec-a02f-5788676bc82b，SHA256=`47501dca6c08c5d238767b5dff6a656c20b4a1d5672d2a661d566c15e5dce5e7`；B源：https://chatgpt.com/c/6ae16946-8190-83ec-904c-55d906103ade，SHA256=`7707046868231f24e2336daaf85831401c57b104f6d52cfd66797137572a1ba4`。用户ChatGPT文件库原文件已实际回收，和浏览器真实图片Blob字节哈希一致。原冻结R24_QUALITY_GATE对两张图机器像素门PASS；实际目视「溪桥听雨」四简体字和版面合规；独立陌生真人识别与偏好未采集，`VALIDATED_RULE=false`。B墨高388、A291，B天然更大，必须优先读等墨高的可见对照，B的「溪/桥」拥挤、动势较强，不能凭“更显眼”宣称更专业。两次字标差异只能算**固定通用语言提示词在另一四字目标上呈现风格变化**，不是艺术字体作者创作方法的已证明自动程序。单次有效A/B不提供稳定胜率，不改正式视觉生产任务锁Rev355/Checkpoint377或S7真人门。
+- [R24事前冻结通用规则/提示词](research/typography_r24/R24_FROZEN_GENERAL_GRAMMAR_AND_AB.json)
+- [R24真实两图身份及审计2026-10-28](research/typography_r24/R24_ACTUAL_TWO_SOURCE_HELDOUT_A_B_20261028.json)
+- [R24当前恢复入口与历史断连记录](research/typography_r24/README.md)
+- [R24昨日仅出图前断连原记录，保留历史](research/typography_r24/R24_CARRIER_BLOCKER_AND_PREFLIGHT.json)
+新zip「R24_溪桥听雨_真实A_B双源及跨字迁移审计.zip」SHA256=`cfc02f6fc423ed55afd778af80f3b079f2161df30b3be2843170a4916ceff481`，10文件，QA脚本/PNG原始字节/可见对照与复算清单在本聊天附件，公共仓库仅存哈希。新解压目录已复算两图并实际核对对照图SHA一致；人类审美待评，不做更多随机出图冒充复现。
+<!-- END_R24_REAL_HELDOUT_A_B_TECH_PASS_20261028 -->
+
 <!-- TYPO_R24_FROZEN_BUT_NO_IMAGES_20261027 -->
 **最新设计方法支线R24（2026-10-27）｜冻结了“溪桥听雨”通用规则跨字迁移A/B，但尚未生成任何R24图片。** 继R23「松间见月」的独立短上下文A/B技术通过，R24按R23预留留出词“溪桥听雨”先行冻结A中性字标/B**无任何逐字特制**的6条设计条件（识字优先、密字留白、疏字主笔、包围与左右结构、组内1–2处笔势、整体光学平衡），然后调用已连接的Opera Neon `new_page`，服务器返回`McpServerError: Session terminated`；两次 `list_pages` 仍失败，备用只读Browser也因缺来源上下文不可用。**A=0次、B=0次；没有PNG、没有新字稿；不得声称跨字迁移成功或失败。** 未使用Adobe Firefly/其他收费网页自动化，没用旧聊天随机生成冒充原两臂。实际完成可执行本地PNG机器验证脚本，使用R23真实PNG做正向烟测，缺文件和合成不透明底做拒绝烟测，绝不以机器几何替代汉字/审美人工审核。自包含本聊天ZIP `R24_溪桥听雨_隔离执行与像素核验准备包.zip` SHA256 `810c456c36956e01ea59b28c6bd4573cb949e2df151b53f97e1ba47b259c0047`，7文件；公共仓库只保存哈希和恢复规则。恢复唯一动作：先恢复Opera Neon同账号连接，再由**两个真正全新普通ChatGPT聊天**分别发送冻结A/B提示词，每臂1次并取回原始PNG，出现任何错字/非透明/方案板立即判INVALID。R23人类审美仍PENDING，R24规则尚未VALIDATED。独立研究不写正式视觉锁Rev355/Checkpoint377，也不更改S7真人等待状态。
 - [R24前置冻结规则与原提示词](research/typography_r24/R24_FROZEN_GENERAL_GRAMMAR_AND_AB.json)
