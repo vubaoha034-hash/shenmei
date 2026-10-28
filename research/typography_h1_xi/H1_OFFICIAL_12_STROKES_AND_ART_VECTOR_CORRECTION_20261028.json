@@ -221,7 +221,27 @@
       "required_lower_mouth_stroke_missing_rejected",
       "SVG_to_PNG_byte_and_changes_region_verified"
     ],
-    "limits": "Static example-specific tool, not arbitrary-character OCR nor automatic orthographic correctness certification."
+    "limits": "Static example-specific tool, not arbitrary-character OCR nor automatic orthographic correctness certification.",
+    "verification_replay": {
+      "checked_on": "2026-10-28",
+      "source_script": "research/typography_h1_xi/HANZI_SEMANTIC_GATE_V1.py",
+      "actual_arm_A": {
+        "status": "SEMANTIC_PATH_IDS_MATCH_REFERENCE_ONLY",
+        "canonical": 12,
+        "svg_contours": 14,
+        "normative_handwriting_certified": false
+      },
+      "actual_arm_B": {
+        "status": "SEMANTIC_PATH_IDS_MATCH_REFERENCE_ONLY",
+        "canonical": 12,
+        "svg_contours": 15,
+        "normative_handwriting_certified": false
+      },
+      "wrong_glyph_fixture": "--char 嬉 against 喜 metadata was correctly rejected",
+      "source_zip_replay": "PASS: extracted independent directory, all 8 content SHA checks and real SVG/PNG rendered pixels match",
+      "original_change_region_only": "PASS, SVG source identical except middle path region",
+      "disclaimer": "This is verified source-ID consistency only; cannot identify visually malformed characters and is not a human standard-stroke assessor."
+    }
   },
   "future_mandatory_workflow": "Before any new glyph generation: freeze canonical source character/version, exact stroke order and component map; map each artistic contour to original legitimate stroke(s). Reject unmapped additions or missing required parts; then require a Chinese reader to approve actual visual glyph and 96px version. Only after both A and B pass glyph gate run design taste comparison; do not auto-promote model or return to endless SVG tuning.",
   "formal_mainline": {
