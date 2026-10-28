@@ -98,6 +98,38 @@
         "Every rejected draft had wrong strokes",
         "Client's final selection gives independent objective aesthetics rating"
       ]
+    },
+    {
+      "id": "REAL_CREATOR_LIANG_LAIRIFANGCHANG",
+      "observed_work": "来日方长（作者实作多方案：长字局部稳定性优先于方字严格对称；另一版日/曰识别性边界）",
+      "creator": "梁志坚",
+      "year": 2019,
+      "source": "https://www.uisdc.com/11-font-design-case",
+      "source_text_regions": [
+        "第三款 版式1 初稿/修改/横版最终，原文约269–278行",
+        "第三款 版式2，原文约289–295行"
+      ],
+      "verified": "Original creator-authored article retrieved and directly read, including explicit author rationale for retaining stronger 方 left sweep while adjusting 长 lower-right despite loss of precise mirroring. Identical stroke copy was intentionally rejected. Separate layout variant warns not to widen 日 into 曰, instead extend an existing middle bar to fill space.",
+      "decision_pair": {
+        "rejected_action": "Strictly matching the lower-right long stroke angle of 长 to lower-left stroke of 方 merely for cross-character consistency.",
+        "reason_from_author": "Damages overall coherence and stability of 长 itself even if symmetric with 方.",
+        "selected_action": "Adjust lower-right stroke of 长 for stable and balanced form, preserve strength of 方 feature stroke.",
+        "author_explained_reason": true,
+        "outcome_label": "AUTHOR_REJECTED_STRICT_SYMMETRY_ACCEPTED_LOCAL_BALANCE"
+      },
+      "orthography_pair": {
+        "rejected_action": "Horizontally widen 日 to fill a box in alternative layout.",
+        "reason_from_author": "May be confused visually with 曰, a different Chinese character.",
+        "selected_action": "Keep 日's appropriate width, left-align within layout and extend a legitimately existing middle horizontal into blank space.",
+        "author_explained_reason": true,
+        "outcome_label": "AUTHOR_BLOCKED_CONFUSABLE_HANZI_AND_EDITED_REAL_STROKE"
+      },
+      "training_status": "SOURCE_EXPLICIT_POSITIVE_NEGATIVE_REASONS_NOT_A_NEW_BLIND_TEST",
+      "unsupported_claims": [
+        "No full geometry coordinates recovered",
+        "An extendable existing stroke is not a license to add unrelated new strokes",
+        "No proof that a machine already learned aesthetic ranking"
+      ]
     }
   ],
   "negative_counterexamples": [
@@ -125,15 +157,20 @@
     "stage_4": "An approved professional case is observational learning data, not an independent panel-reviewed quantified gain.",
     "stage_5": "A source example is TRAINING; no leave-one-out evaluation on a source previously inspected. Any future blind prediction must use truly held-out creator case with revealed final only after freezing prediction.",
     "stage_6": "Prevent false success: minimum one valid independent review with stated text legibility and preferred concept + another dissimilar frozen wordmark repeat before model rule VALIDATED_RULE=true.",
-    "zero_paid_external_api": true
+    "zero_paid_external_api": true,
+    "glyph_confusability_exception": "A character can have all original stroke identities yet resemble a different real Hanzi due to changes in proportions, e.g., 日→曰; manual context-sensitive Chinese reading must veto even when registered strokes match.",
+    "optical_consistency_exception": "Never enforce mathematically exact repeated signature-stroke angle across glyphs when it distorts one letter's independent structural stability; source author explicitly rejected 严格对称 in 来日方长."
   },
   "assessment": {
-    "source_case_count": 4,
-    "source_cases_with_actual_rejection_labels": 1,
+    "source_case_count": 5,
+    "source_cases_with_actual_rejection_labels": 2,
     "negative_case_count": 2,
     "any_human_blind_aesthetic_on_unseen_our_wordmark": false,
     "automatic_author_creative_ranking_model_learned": false,
-    "validated_design_skill": false
+    "validated_design_skill": false,
+    "source_cases_with_author_explained_rejection_reasons": 1,
+    "creator_independent_rejection_rationale_cases": 1,
+    "creator_unique_projects": 5
   },
   "asset_policy": "Record public URLs/captions and observations only, do not rehost or send third-party image binaries or proprietary font glyphs."
 }
