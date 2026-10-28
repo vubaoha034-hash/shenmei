@@ -1,5 +1,14 @@
 # START HERE — 强制执行入口
 
+<!-- TYPO_R26_WHOLE_WORD_FIGMA_RECOMPOSITION_HOLD_20261028 -->
+**文字设计研究R26（2026-10-28，当前独立研究分支最高恢复入口）｜真实Figma整组字形结构重组后审美未过、保留拒绝规则。** 继R25「山月」9条Figma原生VECTOR只是技术试验，R26实际研读作者张家佳《上座》原始分阶段案例 https://www.behance.net/gallery/196038613/_ ，确认作者从疏密失衡出发改变双字整体布局，再重新绘制笔势（此研究只借用机制，不复制作者原图/曲线）。已在出图前冻结新词「云间」和两条路线：A两字12个原创自编贝塞尔路径独立，B将云第一横与间门顶/右钩合为一条新的跨字结构，共11个路径；均已实际写入独立Figma研究文件 https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ A节点`7:2`、B节点`7:17`。第一版SVG因为“间/日右竖”缺一组贝塞尔控制点造成大片黑三角，错误留在GitHub旧提交，Figma坏画框`5:3`和`5:18`隐藏保留；正确路径源已经修复并入Figma。经1400和240像素真实视觉审阅，**B虽然实际更改拓扑，但损失云/间之间的汉字识别边界，因此拒绝**。根据预冻结的一次回退C（Figma节点`9:2`），只将云首横朝间延伸但不连接，A/C剩余11条原生路径完全一致；C视觉仍接近普通字体，云横与间左竖间只剩约11个原图像素，缩略后安全性尚未证明。真实回读A/B/C分别12/11/12原生VECTOR，**TEXT=0、IMAGE=0**，三份Figma当前实际节点的路径源码均已存档，未使用系统字库或AI生成PNG描摹，但原轮廓是自编SVG导入而非鼠标从零绘制。无用户审美或独立识字测试，`VALIDATED_RULE=false`，**停止对该“云间”笔画继续微调**，不以技术节点数包装成熟设计能力。S7和正式锁Rev355/Checkpoint377无变更。R1—R25研究结果与失败不覆盖。
+- [R26正式冻结目标、来源及失败条件](research/typography_r26/R26_FROZEN_AUTHOR_DECISION_BEFORE_ARTWORK.json)
+- [R26一次结构否决与回退冻结](research/typography_r26/R26_C_STRUCTURAL_ROLLBACK_FROZEN_BEFORE_RENDER.json)
+- [R26三版真实Figma来源、语法错误和负面审核台账](research/typography_r26/R26_ACTUAL_NATIVE_FIGMA_TOPOLOGY_AND_NEGATIVE_VERDICT.json)
+- [R26本轮恢复README及下一关](research/typography_r26/README.md)
+下一步必须从真实设计师阶段图导出**宏观设计决策**及其失败回退条件并检验陌生字组整组外轮廓，不重启字体线宽/横向拉伸小修循环；先可见质量、后Figma。付费新增0。
+<!-- END_TYPO_R26_WHOLE_WORD_FIGMA_RECOMPOSITION_HOLD_20261028 -->
+
 <!-- R25_TRUE_EDITABLE_FIGMA_STROKES_NONPROMOTED_20261028 -->
 **R25 最新独立中文字标方法研究（2026-10-28）：第一次对比R24明确纠正“AI生图PNG≈设计”。** 用户指出R24字标看起来只是套现成字体且缺乏设计感，这一点成立。R25没有再生成艺术字PNG，而是创建独立真实Figma Design：https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ。选两个不同结构的新字「山月」作为**极小手工设计测试**，先由人工在本地Python/SVG中独立编写9条原创贝塞尔字形轮廓（无系统字体轮廓、无作者源图描摹），再实写入Figma的9个可分别编辑`VECTOR`节点。审查C1/C2过于几何后保留失败，C3整组重绘为正式Figma原稿（node 1:2）；在Figma中复制一份C4（node 2:2），**真实修改**「山/承重底横」「月/内横下」两条原生向量路径，独立回读确认原稿和修订稿均9条`VECTOR`、TEXT=0、IMAGE=0，另7条路径不动。Figma内真实C4的矢量文件已源代码导出并在GitHub保存，Git Blob SHA1 `72e3d9fcc4c4f9a7eda26d193b5fac3414c73c94`，本地重新渲染C3/C4差异像素8537、底部两笔所在区域。**如实声明**：初始控制点在Python/SVG中手工设计再导入，不是完全鼠标在Figma画；C4确实在Figma内编辑真实Vector；这与 R24 的图片生成及自动矢量描摹不同，但**仍不代表设计高级、用户认可、作者方法被完整逆向或有可复用自动造字能力**。视觉目前简洁偏几何，评级`HOLD_PROTOTYPE_NOT_COMMERCIAL_MASTER`，人类评审和第三词迁移均缺失。交付包含全部历史C1/C2失败、源SVG/PNG、源代码、独立回读及26件自包含 ZIP，SHA256 `2cfc655628379b03c875a1fb13ed010c5e01462d90987dae989754b531111d98`，本聊天已真实建立容器文件。下一步不要再为了微弱曲线差异反复“下一版”；必须依真实设计师有前后图的造型决策做实质不同的整组字设计，并用不带方法标签的真人审美/认读验证。
 - [R25预冻结主线与质量门](research/typography_r25/R25_FROZEN_AUTHOR_CONTOUR_DECISIONS.json)
