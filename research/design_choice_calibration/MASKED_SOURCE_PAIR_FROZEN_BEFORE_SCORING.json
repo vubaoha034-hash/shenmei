@@ -1,0 +1,40 @@
+{
+  "schema": "shenmei/real-designer-masked-original-vs-revision-assessment/freeze-v1",
+  "date": "2026-10-28",
+  "parent_commit": "887bfd9c98ad3c9b8fe438f86ee6b179690f6ec6",
+  "goal": "One real same-phrase, author-endorsed redesign heldout from visual scoring; check if our criteria rank the better source-design candidate without reading the source chronology during the vote.",
+  "source": {
+    "artist": "刘柏坤",
+    "title": "坤哥改字 | 那些年，在字体设计上犯的错！",
+    "url": "https://www.fonts.net.cn/article-567429154.html",
+    "published": "2019-08-16",
+    "source_stage": "Original submitted wordmark vs author's corrected design",
+    "selector": "Web article main body image elements at DOM original image indexes 22 and 23, each observed 600x400 natural pixels",
+    "author_claim": "Author personally identifies original and modified, but this is self-reported choice and not independent blind design quality"
+  },
+  "mask_protocol": {
+    "display": "A/B anonymous same-size side-by-side source panels; randomly swap original and revised image positions inside browser without returning the mapping until analysis frozen.",
+    "information_leakage": "The source page context indicates before/after chronology; evaluator may guess with visual clues. One reviewer is the model itself, thus not independent. Label it partial blind or label-masked, NOT scientifically controlled double blind.",
+    "avoid_source_prose_before_scoring": true,
+    "preregister_criteria": [
+      "text_identity: 0/1; first verify same Chinese text and no wrong component, if fails rank invalid",
+      "readability_at_native_and_50_percent: 0..4, look at actual glyph structure not style preference",
+      "stroke_weight_coherence: 0..4, assess interiors and wordmark consistency",
+      "negative_space_and_balance: 0..4, individual counterspace plus whole phrase",
+      "distinctive_authored_identity: 0..4, not just generic font or added unrelated flourish",
+      "application_fit: 0..4, first ignore frame/layout differences when possible"
+    ],
+    "score_formula": "Any invalid glyph is disqualified. Otherwise five quality items scored 0-4 (20 total). Only decisive when difference>=3 AND no glyph corruption. Must document why by character-specific observations, not only numerical impression."
+  },
+  "no_new_logo_created": true,
+  "sample_budget": "one pair, no reselect after seeing or losing",
+  "reveal": "After pre-reveal ranking and reasons committed, reveal site original/final captions and compare with author decision. No retroactive rubric edits.",
+  "conclusion_boundary": "A match to author preference on one case is calibration only, not evidence of general aesthetic skill. Failure/disagreement must be preserved; no sample cherry picking.",
+  "author_source_copyright": "Only links to public source images; no public re-host of article images.",
+  "no_paid_services": true,
+  "formal_mainline": {
+    "revision": 355,
+    "checkpoint": 377,
+    "modified": false
+  }
+}
