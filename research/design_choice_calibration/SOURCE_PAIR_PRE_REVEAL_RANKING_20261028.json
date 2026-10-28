@@ -1,0 +1,63 @@
+{
+  "schema": "shenmei/calibration-single-case-pre-reveal-visual-ranking/v1",
+  "date": "2026-10-28",
+  "frozen_protocol": "research/design_choice_calibration/MASKED_SOURCE_PAIR_FROZEN_BEFORE_SCORING.json",
+  "masked_pair_commit": "c047b41ad8a421e946792173d92fb1160f0e20bfdb6e384b0376bbe702a7898e",
+  "masked_source_display": "only two article image bitmaps without surrounding chronology captions; no editor labels returned",
+  "direct_evaluation": "ChatGPT assistant viewed anonymous 600x400 two-image comparison on Opera Neon browser screenshot, source captions and chronological mapping not revealed before this verdict.",
+  "text_content": "尚院 (both candidates visually appear to use the same two Chinese glyphs; no independent Chinese reader)",
+  "initial_writing_gate": {
+    "A": "PASS_ASSISTANT: 尚 / 院 identifiable in source image at current size",
+    "B": "TENTATIVE_PASS_ASSISTANT: 尚 / 院 identifiable but 院 left 阝 radical simplified to near parallel vertical strokes, increasing ambiguity; reject if actual Chinese reader finds wrong written form",
+    "normative_stroke_audit": "NOT_PERFORMED; no claim of official stroke sequence validation"
+  },
+  "score_0_to_4": [
+    {
+      "criterion": "readability",
+      "A": 4,
+      "B": 2,
+      "reason": "A clear 尚 and 院 modules with suitable proportion; B's 院 left radical/inner proportions more vulnerable to confusion"
+    },
+    {
+      "criterion": "stroke_weight_coherence",
+      "A": 3,
+      "B": 2,
+      "reason": "A's main stems and horizontal terminals feel more coherent; B unusually sharp taper/large dispersion between two glyphs"
+    },
+    {
+      "criterion": "negative_space_balance",
+      "A": 3,
+      "B": 2,
+      "reason": "A more even interiors and word-level heights; B narrow 口 in 尚 versus broad outer roof, and empty space of 院 differs"
+    },
+    {
+      "criterion": "distinctive_authored_identity",
+      "A": 3,
+      "B": 3,
+      "reason": "Both have distinctive design; B angular terminal concept present, not automatically bad just because stage-like"
+    },
+    {
+      "criterion": "application_fit",
+      "A": 3,
+      "B": 2,
+      "reason": "A readable dark mark in one palette and clean secondary info; B bright orange, red crop/guide marks and incomplete secondary composition. This item is confounded by layout/color."
+    }
+  ],
+  "sum": {
+    "A": 16,
+    "B": 11,
+    "delta": 5
+  },
+  "predicted_author_preference": "A",
+  "prediction_rationale": "A preserves more stable glyph recognizability and group optical coherence while keeping a distinctive terminal grammar. B offers energy but has weaker 阝 visual identity, unbalanced counters and incomplete system integration.",
+  "pre_reveal_status": "FROZEN_NO_AUTHOR_SOURCE_MAPPING_READ_YET",
+  "limitations": [
+    "The two source image bitmaps differ in color, composition and supporting graphic elements; cannot cleanly attribute ranking to glyph art quality alone.",
+    "The source article's original vs revision nature was known, so partially masked labels do not create a scientific double-blind trial.",
+    "One assistant judge, not user or independently recruited design panel. Author choice is subjective production decision, not ground truth absolute beauty.",
+    "Neither candidate was independently audited for official character components/stroke order."
+  ],
+  "rubric_followed": true,
+  "cannot_claim_design_skill_if_prediction_matches": true,
+  "formal_lock_unchanged": true
+}
