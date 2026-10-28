@@ -1,0 +1,87 @@
+{
+  "schema": "shenmei/cjk-wordmark-paired-comparable-human-choice-eligibility/v1",
+  "date": "2026-10-28",
+  "scope": "SCREENING ONLY. Not style generation, not Figma writing, not model training.",
+  "scientific_question": "Given exactly the same Chinese text and a genuine brand brief, can a judge select a more suitable, still-correct, independently authored complete wordmark before seeing creator/client decision?",
+  "prior_failure": "Previous anonymous '尚院' original vs revision was color/layout/stage-confounded, even though ranking matched the author.",
+  "required_boolean_fields": [
+    "creator_choice_evidence_linked_to_exact_pair",
+    "two_authentically_rendered_distinct_finalist_artworks",
+    "exactly_same_character_sequence",
+    "exactly_same_script_variant",
+    "full_chinese_glyph_readability_verified_for_both",
+    "equal_ink_height_comparison_without_distortion",
+    "same_single_color_and_neutral_background",
+    "both_same_completion_and_presentation_stage",
+    "no_embedded_winner_stage_labels_or_edit_guides",
+    "same_brand_brief_audience_and_application",
+    "images_accessible_as_actual_art_not_copyright_or_loading_placeholder",
+    "judge_not_preexposed_to_mapping_or_order",
+    "original_pixels_rights_reviewed_no_public_rehost"
+  ],
+  "null_is_fail_closed": true,
+  "candidate_verdict_logic": "All required fields must be exactly true. Any false or unknown means NOT ELIGIBLE, with exact failure fields preserved. Sources may still be eligible as observational TRAINING, never claimed as test accuracy.",
+  "design_review_protocol": [
+    "Freeze brand brief, literal Chinese text, simplified/traditional variant and candidate author/source IDs BEFORE showing anonymous panel.",
+    "Check only rights-appropriate reference access; the public GitHub stores source URLs and observations but no third-party source pixels.",
+    "Render true candidate artwork at matching ink height, matching background/color and comparable blank surroundings without changing stroke geometry; reject if cropping drops an important glyph.",
+    "Blind Chinese-language reader verifies exact characters/components for BOTH, including at 96/64px. If either invalid, reject test pair rather than letting obvious wrong writing dominate a preference score.",
+    "Require hidden cryptographically committed source-label mapping. A model that already saw the original chronology cannot act as naive blind evaluator; prefer truly separate human or independent session that has never seen the source.",
+    "Pre-register a contextual 5-criterion comparison: glyph identity hard gate, word-level optical mass, counterspace, native stroke design coherence, brand/audience/application fit.",
+    "Commit preference plus exact graphical reasons before revealing author/client selection. Do not treat single author choice as objective universal beauty.",
+    "Only report matching decision proportion after at least 3 previously-unseen qualifying cases, disclosing n and confounds. Separate human preference from source-author 'final' labels.",
+    "Never promote a DESIGN_SKILL from 1/1 or from retrospective author-identified mistakes, even if geometry checks pass."
+  ],
+  "negative_control_tests": [
+    {
+      "key": "N1",
+      "case": "one case in all 13 fields true",
+      "expected": "ELIGIBLE",
+      "purpose": "prove the gate is capable of accepting hypothetical valid data"
+    },
+    {
+      "key": "N2",
+      "case": "all true except same-color false",
+      "expected": "REJECT",
+      "purpose": "detect easy color/finish giveaways"
+    },
+    {
+      "key": "N3",
+      "case": "all true except no winner stage labels false",
+      "expected": "REJECT",
+      "purpose": "detect timeline leakage"
+    },
+    {
+      "key": "N4",
+      "case": "all true except glyph validity null",
+      "expected": "REJECT",
+      "purpose": "unknown cannot pass"
+    },
+    {
+      "key": "N5",
+      "case": "all true except source images load false",
+      "expected": "REJECT",
+      "purpose": "reject placeholders"
+    },
+    {
+      "key": "N6",
+      "case": "all true except author decision pair evidence false",
+      "expected": "REJECT",
+      "purpose": "do not invent selected option"
+    },
+    {
+      "key": "N7",
+      "case": "all true except judge exposure false",
+      "expected": "REJECT",
+      "purpose": "a model that saw site chronology isn't blind"
+    }
+  ],
+  "no_paid_new_services": true,
+  "historical_task_boundaries": {
+    "formal_mainline_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "no_mainline_writes": true
+  },
+  "status": "ELIGIBILITY_GATE_FROZEN_NO_STYLE_RULE_VALIDATED"
+}
