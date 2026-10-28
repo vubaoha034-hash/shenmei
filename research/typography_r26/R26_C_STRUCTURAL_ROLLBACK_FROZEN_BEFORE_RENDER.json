@@ -1,0 +1,24 @@
+{
+  "schema": "shenmei-r26-visual-rejection-and-once-only-contour-rollback/1.0",
+  "date": "2026-10-28",
+  "parent_protocol": "research/typography_r26/R26_FROZEN_AUTHOR_DECISION_BEFORE_ARTWORK.json",
+  "visually_observed": {
+    "A": "Two independent correctly shaped glyphs 云 and 间, visibly separate but lower overall integration",
+    "B": "One continuous roof/top stroke genuinely integrates glyph geometry but suppresses the separation between 云 top horizontal and 门 top; in 1600x880 Figma screenshot the line becomes a conspicuous bridge and reading hierarchy is worse.",
+    "review_kind": "assistant_direct_Figma_pixel_review_NOT_independent_human",
+    "trigger": "BETTER_CONTOUR_CONNECTION_BUT_GLYPH_BOUNDARY_LOSS",
+    "verdict": "REJECT_B_INTEGRATED_TOP_STROKE_FOR_COMMERCIAL_LOGO_NOT_A_VALIDATED_RULE"
+  },
+  "single_rollback": {
+    "arm": "C",
+    "source": "A unchanged except 云/首横",
+    "change": "Extend and reshape the original 云 top horizontal into a tapered approaching gesture ending BEFORE 间; no physical connection; retain 门 dot/left stem/roof exactly as A.",
+    "reason": "Preserve negative-space boundary but allow directional gesture to rhyme across wordmark",
+    "nonchanges": "All other 11 A path strings exactly same",
+    "limit": "one attempt; evaluate at original dimensions and 96px; no iterative after-the-fact smoothing/metrics",
+    "failure_condition": "If still visually conventional, stop and retire this primitive rather than tune more."
+  },
+  "human_review": "NOT_COLLECTED",
+  "paid_budget": 0,
+  "native_state_untouched": true
+}
