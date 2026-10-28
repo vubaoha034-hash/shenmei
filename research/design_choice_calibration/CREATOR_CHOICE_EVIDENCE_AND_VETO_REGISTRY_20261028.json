@@ -130,6 +130,84 @@
         "An extendable existing stroke is not a license to add unrelated new strokes",
         "No proof that a machine already learned aesthetic ranking"
       ]
+    },
+    {
+      "id": "REAL_CREATOR_LIANG_OPERATIONAL_STROKE_CRITIQUES_2021",
+      "observed_work": "运营标题字 8字逐个评价与多轮修改",
+      "creator": "梁志坚",
+      "year": 2021,
+      "original_author_url": "https://www.zcool.com.cn/article/ZMTIyMTQxNg%3D%3D.html",
+      "secondary_reprint": "https://www.51zxw.net/TechArticleDetails.aspx?id=450&zid=8",
+      "source": "https://www.zcool.com.cn/article/ZMTIyMTQxNg%3D%3D.html",
+      "verified": "Original author article excerpt from current indexed source and consistent reprint text examined. Some page full-HTML fetches timed out; individual stage images and raw image bytes NOT independently checked in this turn. Described decisions are grounded in authored text, not reannotated original visuals.",
+      "concrete_labeled_critique_examples": [
+        {
+          "glyph": "贤",
+          "observed_problem": "过度复杂的又部（多次转折和甩尾）导致拥挤，无法兼顾识读与全组笔画粗细",
+          "author_revision": "把又部简化，保留原字骨架与全组笔重",
+          "decision_class": "SIMPLIFY_EXCESSIVE_STROKE_COMPLEXITY",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "民",
+          "observed_problem": "右下捺粗细、弧度和收笔方向不协调，整字不稳重",
+          "author_revision": "大幅修改原生捺的曲度与收笔方向，形成更稳定的整字",
+          "decision_class": "REAUTHOR_EXISTING_STROKE_FOR_STABILITY",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "聘",
+          "observed_problem": "左部过宽，右部过窄，部件比例失衡",
+          "author_revision": "缩左、扩右，重新平衡原字左右结构",
+          "decision_class": "OPTICAL_RADICAL_REBALANCE",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "你",
+          "observed_problem": "右侧竖钩及两侧点的笔重过细，右上部分角度不统一",
+          "author_revision": "加强竖钩，调整右上角度与点的笔重",
+          "decision_class": "RELATIVE_STROKE_WEIGHT_AND_ANGLE",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "纳",
+          "observed_problem": "绞丝旁折角生硬，整字部分阶段过宽",
+          "author_revision": "选择性圆润纟转折，结合整组宽度调整",
+          "decision_class": "RELAX_HARD_JOINT_AND_WIDTH",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "全",
+          "observed_problem": "整体高度不足，字组墨量失衡",
+          "author_revision": "提高整体高度，重新检查与其他字的视觉重量",
+          "decision_class": "WORD_GROUP_OPTICAL_HEIGHT_BALANCE",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "招",
+          "observed_problem": "早期评价可以，八字涂满后才发现整字相对其他字过窄",
+          "author_revision": "进入整体审核时重新调整宽度，而非接受早期单字合格",
+          "decision_class": "LATE_COHERENCE_REVIEW_OVERRIDES_EARLY_OK",
+          "author_rationale_explicit": true
+        },
+        {
+          "glyph": "助",
+          "observed_problem": "作者初评凑合；没有摘录到确切改动与针对性解释",
+          "author_revision": "ABSTAIN: 不能推断具体如何修改",
+          "decision_class": "INSUFFICIENT_SPECIFIC_LABEL",
+          "author_rationale_explicit": false
+        }
+      ],
+      "same_creator_and_same_word_group_dependency": true,
+      "known_author_selected": "Author describes multiple concrete before/after corrective actions across 8 glyphs, with reasons. Not eight independently sampled professional reviewers.",
+      "rejection_labels_available": true,
+      "rejection_rationale_per_variant_known": true,
+      "transfer_hypothesis": "Prefer actual pen/curve/radical imbalance diagnosis and justify individual changes relative to the entire word; 'first individual glyph looked okay' can be overturned after seeing the full group. Reject complexity and cross-word heavy ink unless identity/mass remain legible.",
+      "unsupported_claims": [
+        "All linked image assets pixel audited",
+        "Eight independent creator/quality labels",
+        "Exact chosen spline coordinates of corrected glyphs known"
+      ]
     }
   ],
   "negative_counterexamples": [
@@ -162,15 +240,20 @@
     "optical_consistency_exception": "Never enforce mathematically exact repeated signature-stroke angle across glyphs when it distorts one letter's independent structural stability; source author explicitly rejected 严格对称 in 来日方长."
   },
   "assessment": {
-    "source_case_count": 5,
+    "source_case_count": 6,
     "source_cases_with_actual_rejection_labels": 2,
     "negative_case_count": 2,
     "any_human_blind_aesthetic_on_unseen_our_wordmark": false,
     "automatic_author_creative_ranking_model_learned": false,
     "validated_design_skill": false,
-    "source_cases_with_author_explained_rejection_reasons": 1,
+    "source_cases_with_author_explained_rejection_reasons": 2,
     "creator_independent_rejection_rationale_cases": 1,
-    "creator_unique_projects": 5
+    "creator_unique_projects": 5,
+    "creator_independent_sources": 4,
+    "author_explained_individual_correction_events": 7,
+    "independent_professional_aesthetic_panel_scores": 0,
+    "source_image_revision_bytes_pinned_this_turn": false,
+    "source_case_count_means_not_independent_samples": true
   },
   "asset_policy": "Record public URLs/captions and observations only, do not rehost or send third-party image binaries or proprietary font glyphs."
 }
