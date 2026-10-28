@@ -25,10 +25,22 @@
     "rejected": "方案乙 (counterfactual separated middle)",
     "user_quote": "1   。2   把文字都改的不对了。中国文字不能乱加笔画。",
     "failed_condition": "USER_GLYPH_IDENTITY_JUDGMENT",
-    "meaning": "The user says the second character is written incorrectly; the formal normative stroke count is not independently adjudicated.",
+    "meaning": "The user rejected B as wrong-looking Chinese writing; only a pinned 12-stroke semantic mapping can check whether claimed new strokes exist. B's separated marks occupy pre-existing 7/8/9 roles; no extra official stroke was demonstrated.",
     "experiment_classification": "INVALID_ARM2_INELIGIBLE__AESTHETIC_CAUSAL_H1_INCONCLUSIVE",
     "review_provenance": "research/typography_h1_xi/H1_USER_CHOICE_RAW_BEFORE_UNMASK_20261028.json"
   },
-  "bounds": "This rule does not prohibit professional intentional stroke linking as a technique, but demands reliable stroke identity and Chinese recognizability. Do not overclaim exact official stroke count simply from geometry primitives.",
-  "future": "Do not repeat the same 甲/乙 vote. Only continue after correctness of all candidate glyphs is independently vetted; if not possible, retain original and stop."
+  "bounds": "Correctness is a hard gate, but SVG path count is unrelated to official stroke count. Map semantic stroke role and then require human approval; neither scheme counts as textbook pen strokes from its vector path length.",
+  "future": "Do not repeat the same 甲/乙 vote. Only continue after correctness of all candidate glyphs is independently vetted; if not possible, retain original and stop.",
+  "official_reference_update": {
+    "canonical": "喜 U+559C has 12 strokes, names 横竖横竖横折横点撇横竖横折横; source CNS11643 and MOE.",
+    "authoritatives": [
+      "https://www.cns11643.gov.tw/wordView.jsp?ID=89669&la=1",
+      "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=21916&la=0"
+    ],
+    "important_technical_correction": "甲 art vector outlines=14 and 乙 outlines=15; neither number equals normative 12 brush strokes. 乙 three separated middle contours correspond to normative dot, left-falling stroke and horizontal, so no dictionary extra stroke was established.",
+    "previous_user_judgment_kept": "乙 rejected by user's glyph/writing perception; that rejection is valid for user's approval but not proof of an extra normative stroke.",
+    "technical_mapping": "research/typography_h1_xi/H1_OFFICIAL_12_STROKES_AND_ART_VECTOR_CORRECTION_20261028.json",
+    "future_check_sequence": "SOURCE_GLYPH_PIN -> SEMANTIC_STROKE_MAP -> ADDED_OR_MISSING_PATH_VETO -> REAL_READER_GLYPH_ACCEPTANCE -> AESTHETICS -> FIGMA",
+    "automated_gate_capability": "Can block unmapped SVG contours; cannot certify normative brush order or human visual reading."
+  }
 }
