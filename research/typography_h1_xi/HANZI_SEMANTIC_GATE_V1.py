@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Structural path-ID mapping for a frozen Chinese glyph.
 Does NOT validate normative handwriting, visual glyph identity, or beauty.
-Usage: python HANZI_SEMANTIC_GATE_V1.py mapping.json source.svg --arm A
+Usage: python HANZI_SEMANTIC_GATE_V1.py mapping.json source.svg --arm A --char 喜
 """
 import argparse, json, xml.etree.ElementTree as ET, sys
 from pathlib import Path
@@ -9,13 +9,14 @@ p=argparse.ArgumentParser()
 p.add_argument("mapping")
 p.add_argument("svg")
 p.add_argument("--arm",choices=("A","B"),required=True)
+p.add_argument("--char",required=True,help="Exact canonical glyph in metadata; cannot silently switch variants")
 a=p.parse_args()
 metadata=json.loads(Path(a.mapping).read_text(encoding="utf8"))
 rows=metadata["canonical_mapping"]
 source=metadata["source"]
 if len(rows)!=source["canonical_stroke_count"] or [r["stroke_index"] for r in rows]!=list(range(1,len(rows)+1)):
     raise SystemExit("INVALID_OFFICIAL_STROKE_INDEX_DATA")
-if "喜" != source["char"]:
+if a.char != source["char"]:
     raise SystemExit("WRONG_GLYPH_REFERENCE")
 actual={}
 for n in ET.parse(a.svg).getroot().iter():
