@@ -1,0 +1,97 @@
+{
+  "schema": "xi-middle-gesture-h1-single-causal-contrast-preregister/1.0",
+  "date": "2026-10-28",
+  "parent_branch": "research/typography-r29-macrocomposition-prestyle-20261028",
+  "parent_head": "a8468830e255b21a511a247a56a29c746d443e78",
+  "role": "one focused counterfactual study; do NOT create new R30 serial style experiments",
+  "hypothesis": "On the user-partially-liked R15 C1 喜 glyph, integrating native 丷+一 strokes into a single wide upturned gesture is perceived as more intentional design than separated 丷 and 一, all other strokes unmodified.",
+  "source_original": {
+    "file": "/mnt/data/r15_typography_trial/R15_C1_xi_original_lettering.svg",
+    "source_svg_sha256": "edf5ffa0142849df33af0972f9c6bddf7777cb4191844848e78e3c7776a7efcc",
+    "source_png_sha256": "ac7174fecd05283693378508e601d07e824aa91a8c12bb7c25ff16986cb5d8d0",
+    "original_area": "Upper 喜 portion of 熹, 14 contour paths; bottom 灬 four paths excluded identically in both arms",
+    "exact_original_middle_ids": [
+      "merged-wings-and-bar",
+      "gesture-up-turn"
+    ],
+    "other_unchanged_vector_path_count": 12,
+    "source_location": "research/typography_r16/R15_C1_原母版_冻结副本.svg",
+    "source_branch": "research/typography-r16-xi-gesture-feedback-20261027"
+  },
+  "arm_merged": {
+    "role": "Original R15 C1 upper 喜",
+    "middle_paths": [
+      "merged-wings-and-bar",
+      "gesture-up-turn"
+    ],
+    "visual_expected": "One integrated upward gesture with connected side sweep and horizontal bridge",
+    "no_source_redraw": true
+  },
+  "arm_separated": {
+    "role": "New one-shot hand-defined three independent filled contours spelling 丷 + 一",
+    "add_paths": [
+      {
+        "id": "middle-left-dot",
+        "d": "M245 565 C267 558 284 575 305 588 C319 600 332 604 349 604 C341 620 319 621 298 611 C269 598 253 580 245 565 Z"
+      },
+      {
+        "id": "middle-right-dot",
+        "d": "M790 550 C804 567 800 584 784 600 C767 617 747 622 725 615 C744 599 771 565 790 550 Z"
+      },
+      {
+        "id": "middle-bar",
+        "d": "M217 639 C332 624 459 617 595 623 C714 626 811 623 871 616 C875 638 845 656 789 665 C671 667 562 648 443 654 C336 656 270 675 231 674 C219 665 213 650 217 639 Z"
+      }
+    ],
+    "remove_exactly": [
+      "merged-wings-and-bar",
+      "gesture-up-turn"
+    ],
+    "no_source_redraw": false,
+    "cue": "Three distinct contours, not a font image or tracing; balanced against the original same-size upper-mouth and lower-mouth modules."
+  },
+  "blinding": {
+    "labels": "方案甲 / 方案乙, no method names in viewer-facing comparison board",
+    "mapping": "甲=original merged, 乙=separated, predetermined by odd first hex byte of original source digest (0xed)",
+    "caveat": "User has previously seen original R15 C1, so this is label masking, NOT naïve independent double blind.",
+    "record_vote_before_describing_mapping": true
+  },
+  "locked_execution": {
+    "preserve_mask_and_all_nonmiddle_paths": true,
+    "canvas_px": [
+      1100,
+      920
+    ],
+    "output_only_top_glyph": "喜",
+    "source_code_artifacts": "SVG rendered locally via CairoSVG and checked with PIL/NumPy; no generative image calls; no Figma edits.",
+    "all_outputs_unmodified_except_middle": true,
+    "required_QA": [
+      "source SHA match",
+      "nonmiddle SVG d string equality 12/12",
+      "all pixels outside change bounding region unchanged",
+      "same viewBox and background alpha",
+      "middle original 1 connected ink component and separated new candidate 3 where geometric feasible",
+      "96px/64px legibility thumbnails",
+      "glyph exact recognizability manual not OCR"
+    ],
+    "no_hidden_image_rerolls": true,
+    "no_adjustment_after_output": "One counterfactual drawing only. Invalid path syntax may be corrected with explicit failure retained; no aesthetic loop.",
+    "ink_mass_scope": "Record middle-area ratio between arms and treat different ink area as confound; do NOT post-hoc redraw for exact area matching.",
+    "rejection": [
+      "new disconnected middle still touches bar / not 3 visible ink components",
+      "any nonmiddle pixel changes",
+      "wrong 喜 identity at small size",
+      "no positive human preference at comparable size"
+    ],
+    "human_aesthetic_review": "PENDING",
+    "independent_naive_readability": "PENDING",
+    "next_if_inconclusive": "Stop H1, preserve failed method. Do not turn single glyph into generic design rule.",
+    "valid_skill_promoted": false
+  },
+  "formal_task": {
+    "main_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "production_mutations": 0
+  }
+}
