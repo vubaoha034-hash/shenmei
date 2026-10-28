@@ -1,0 +1,232 @@
+{
+  "schema": "shenmei/xi-canonical-12-stroke-semantic-audit-after-user-rejection/v1",
+  "date": "2026-10-28",
+  "purpose": "Correct earlier mistaken inference that B has extra canonical Chinese strokes because its SVG has 15 contours while A has 14. Build a source-backed semantic contour mapping and fail-closed structural gate.",
+  "source": {
+    "char": "喜",
+    "unicode": "U+559C",
+    "canonical_stroke_count": 12,
+    "canonical_stroke_names": "横、竖、横、竖、横折、横、点、撇、横、竖、横折、横",
+    "canonical_decomposition": "⿱壴口",
+    "official_CNS11643": "https://www.cns11643.gov.tw/wordView.jsp?ID=89669&la=1",
+    "official_MOE_stroke": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=21916&la=0",
+    "mainland_reference": "https://zi.obsky.com/bishun/559C.html",
+    "pinned_source_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "pinned_HanziWriter": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E5%96%9C.json",
+    "data_verified_over_GitHub": "strokes length=12, medians length=12, radStrokes=[9,10,11]",
+    "font_sample_only": "Noto Serif CJK Regular illustrative preview, no font redistributed"
+  },
+  "artifacts": {
+    "A_R15_original": {
+      "source_svg_sha256": "55285c2dd933db112ddb6db0e015feb80ad61404bcd22ff5dd2167e8f1871388",
+      "source_png_sha256": "eddcec1a88f88680baf6b550cd757a0600d200cbe98d8ce9090adcae9ff1b32b",
+      "raw_art_contours": 14
+    },
+    "B_rejected_counterfactual": {
+      "source_svg_sha256": "6c1927f36a12e0395141c8b62a82112fdeb362e7e5caeb71bcb56d32ad734204",
+      "source_png_sha256": "bb2ecf0fdf03ddedfef7084a44af0249659d4df83a44a16eea0f5e07ff21ab60",
+      "raw_art_contours": 15
+    },
+    "fixed_unchanged_path_d_strings": 12,
+    "change_bbox_xyxy": [
+      209,
+      545,
+      875,
+      673
+    ],
+    "comparison_image_sha256": "4a41676fe22a1cae28efe8d34907b5c5597bd7865baf8785397a8ada0f9c8da3",
+    "full_evidence_archive_sha256": "56cad971392062f62d3f37804a9cb00441771277e23a73119bf6dcc5dfa0622e",
+    "archive_name": "金尊_喜字笔画规范与造型纠错_完整证据包.zip",
+    "zip_files": 9,
+    "portable_fresh_extract_gate": "PASS"
+  },
+  "canonical_mapping": [
+    {
+      "stroke_index": 1,
+      "official_stroke": "横",
+      "region": "士上横",
+      "A_art_paths": [
+        "upper-cross-left",
+        "upper-cross-right"
+      ],
+      "B_art_paths": [
+        "upper-cross-left",
+        "upper-cross-right"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SPLIT_TO_TWO_ART_CONTOURS"
+    },
+    {
+      "stroke_index": 2,
+      "official_stroke": "竖",
+      "region": "士中竖",
+      "A_art_paths": [
+        "axis"
+      ],
+      "B_art_paths": [
+        "axis"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    },
+    {
+      "stroke_index": 3,
+      "official_stroke": "横",
+      "region": "士下横",
+      "A_art_paths": [
+        "lower-cross"
+      ],
+      "B_art_paths": [
+        "lower-cross"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    },
+    {
+      "stroke_index": 4,
+      "official_stroke": "竖",
+      "region": "上口左竖",
+      "A_art_paths": [
+        "upper-mouth-left"
+      ],
+      "B_art_paths": [
+        "upper-mouth-left"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    },
+    {
+      "stroke_index": 5,
+      "official_stroke": "横折",
+      "region": "上口横折",
+      "A_art_paths": [
+        "upper-mouth-top",
+        "upper-mouth-right"
+      ],
+      "B_art_paths": [
+        "upper-mouth-top",
+        "upper-mouth-right"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SPLIT_TO_TWO_ART_CONTOURS"
+    },
+    {
+      "stroke_index": 6,
+      "official_stroke": "横",
+      "region": "上口底横",
+      "A_art_paths": [
+        "upper-mouth-bottom"
+      ],
+      "B_art_paths": [
+        "upper-mouth-bottom"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    },
+    {
+      "stroke_index": 7,
+      "official_stroke": "点",
+      "region": "中部左点",
+      "A_art_paths": [
+        "merged-wings-and-bar",
+        "gesture-up-turn"
+      ],
+      "B_art_paths": [
+        "middle-left-dot"
+      ],
+      "exact_one_to_one": "B_ONLY_ART_VECTOR_RELATION_NOT_NORMATIVE_CERTIFICATION"
+    },
+    {
+      "stroke_index": 8,
+      "official_stroke": "撇",
+      "region": "中部右撇",
+      "A_art_paths": [
+        "merged-wings-and-bar",
+        "gesture-up-turn"
+      ],
+      "B_art_paths": [
+        "middle-right-dot"
+      ],
+      "exact_one_to_one": "B_ONLY_ART_VECTOR_RELATION_NOT_NORMATIVE_CERTIFICATION"
+    },
+    {
+      "stroke_index": 9,
+      "official_stroke": "横",
+      "region": "中部横",
+      "A_art_paths": [
+        "merged-wings-and-bar",
+        "gesture-up-turn"
+      ],
+      "B_art_paths": [
+        "middle-bar"
+      ],
+      "exact_one_to_one": "B_ONLY_ART_VECTOR_RELATION_NOT_NORMATIVE_CERTIFICATION"
+    },
+    {
+      "stroke_index": 10,
+      "official_stroke": "竖",
+      "region": "下口左竖",
+      "A_art_paths": [
+        "lower-mouth-left"
+      ],
+      "B_art_paths": [
+        "lower-mouth-left"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    },
+    {
+      "stroke_index": 11,
+      "official_stroke": "横折",
+      "region": "下口横折",
+      "A_art_paths": [
+        "lower-mouth-top",
+        "lower-mouth-right"
+      ],
+      "B_art_paths": [
+        "lower-mouth-top",
+        "lower-mouth-right"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SPLIT_TO_TWO_ART_CONTOURS"
+    },
+    {
+      "stroke_index": 12,
+      "official_stroke": "横",
+      "region": "下口底横",
+      "A_art_paths": [
+        "lower-mouth-bottom"
+      ],
+      "B_art_paths": [
+        "lower-mouth-bottom"
+      ],
+      "exact_one_to_one": "A_AND_B_ONE_STANDARD_STROKE_SINGLE_CONTOUR"
+    }
+  ],
+  "interpretation": {
+    "fact_1": "Official 喜 has 12 strokes: 一丨一丨㇕一丶丿一丨㇕一, hence the middle dot, left-falling stroke and horizontal are canonical original strokes 7, 8 and 9.",
+    "fact_2": "Counterfactual B draws these three roles with 3 separately named art contours; no unmapped newly inserted semantic stroke is found from the registered IDs.",
+    "fact_3": "Original A artistically combines canonical 7–9 into 2 paths and splits canonical 1, 5 and 11 into multiple contour fragments, so 14 SVG nodes are NOT 14 official writing strokes.",
+    "fact_4": "Even matching all semantic source IDs does NOT prove that shape, stroke direction, placement and overall Chinese writing are correct. Human visible glyph review remains necessary.",
+    "user_judgment": "User explicitly chose A and rejected B as incorrectly written for this logo. Keep B user-invalid, but do not falsely assert that its three middle marks are extra dictionary strokes.",
+    "correction_to_earlier_assistant": "Prior inference '乙多出错误的笔画' was overconfident; user was right to demand correct Chinese writing, not a proof that B violated normative stroke count.",
+    "outcome": {
+      "A": "USER_CHOSEN_AS_VISUAL_DESIGN_REFERENCE_NOT_CERTIFIED_TEXTBOOK_HANDWRITING",
+      "B": "USER_REJECTED_VISUAL_FORM_NOT_DICT_PROVEN_ADDED_STROKE",
+      "aesthetic_causality": "INCONCLUSIVE",
+      "crossword_generalization": false
+    }
+  },
+  "implementation": {
+    "method": "Semantic path IDs manually frozen and checked against known original glyph reference; includes two negative fixtures for an unmapped added contour and a missing lower 口 bottom stroke.",
+    "checks": [
+      "canonical_12_count",
+      "canonical_stroke_order",
+      "common_semantic_paths_identical",
+      "A_source_coverage",
+      "B_source_coverage",
+      "unmapped_extra_contour_rejected",
+      "required_lower_mouth_stroke_missing_rejected",
+      "SVG_to_PNG_byte_and_changes_region_verified"
+    ],
+    "limits": "Static example-specific tool, not arbitrary-character OCR nor automatic orthographic correctness certification."
+  },
+  "future_mandatory_workflow": "Before any new glyph generation: freeze canonical source character/version, exact stroke order and component map; map each artistic contour to original legitimate stroke(s). Reject unmapped additions or missing required parts; then require a Chinese reader to approve actual visual glyph and 96px version. Only after both A and B pass glyph gate run design taste comparison; do not auto-promote model or return to endless SVG tuning.",
+  "formal_mainline": {
+    "revision": 355,
+    "checkpoint": 377,
+    "production_changed": false
+  }
+}
