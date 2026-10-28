@@ -1,0 +1,61 @@
+{
+  "schema": "shenmei-r25-original-vector-native-figma-authoring-v1",
+  "date": "2026-10-28",
+  "parent_branch": "research/typography-r24-transfer-fixed-grammar-20261027",
+  "parent_commit": "465f4a8eea25b26219763eeecfadb08cf416c1c3",
+  "objective": "Replace imagegen-as-font styling with actually authored vector stroke design, inspectable native Figma nodes and verifiable structure/art direction.",
+  "current_problem": "R24 produced raster glyph images with no documented font source and zero editable Figma strokes; method distillation/aesthetic gain unproven.",
+  "design_source_author": "梁志坚 2019 字体实战设计教程（作者原文）",
+  "original_source": "https://www.uisdc.com/11-font-design-case",
+  "source_support": "Author explains whole group optical-weight and common gesture choices, then selectively rewrites crowded glyphs, not arbitrary rescaling; no original artist paths copied.",
+  "new_target": "山月",
+  "why_minimal": "Different structural families: 山 is open-three-spine with lower crossbar; 月 has frame/inner bars/hook. Design both completely from handmade Bézier contours to test one shared visual grammar with only 2 glyphs before scaling to four.",
+  "not_the_R24_word": "Intentionally uses smaller tractable word to prove actual manual/native vector creation without mislabeling 4-glyph complete skill.",
+  "art_direction": "Chinese contemporary lyrical logo, condensed rising stems, deep charcoal black, differentiated stroke weights and tapered terminal gestures, ample inner negative space; black path only, no texture or scene.",
+  "frozen_design_decisions": [
+    {
+      "id": "S1",
+      "glyph": "山",
+      "mechanism": "Three upright spines remain visibly separate; visually central spine is tallest; long basal horizontal tethers left and right while retaining two white counters",
+      "reject": "glyph reads 川, 凹 or a generic mountain drawing"
+    },
+    {
+      "id": "S2",
+      "glyph": "月",
+      "mechanism": "Enclosing left sweep, top cap and right hooked vertical form readable 月; upper/lower internal bars retain clear apertures",
+      "reject": "looks 日/目/用 or inner space closed"
+    },
+    {
+      "id": "S3",
+      "glyph": "both",
+      "mechanism": "Optical mass balance via stronger 山 spine and 月 right hook; related taper and terminal angle, not the same flourish copied to all strokes",
+      "reject": "independent fonts placed side by side"
+    },
+    {
+      "id": "S4",
+      "glyph": "both",
+      "mechanism": "Only source-authored cubic contour paths with per-stroke identities in an isolated new Figma file; do not import/raster-trace any PNG, SVG font glyph or artist source",
+      "reject": "TEXT nodes masquerading as original paths, flatten bitmap, or SVG auto-trace"
+    },
+    {
+      "id": "S5",
+      "glyph": "both",
+      "mechanism": "One baseline hand-authored scaffold and one deliberate contour rewrite in exactly documented selected paths; compare and retain original",
+      "reject": "just changing x scaling, ink texture, or random path smoothing"
+    }
+  ],
+  "production": {
+    "figma_file_key": "RpcWXDRNyN3y4KEmCspgfZ",
+    "figma_file_url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ",
+    "isolation": "Dedicated new Figma file. No writes to mainline existing file uyDxOoN1iNDPpEHTKSUWg1 or production lock 355 / checkpoint 377.",
+    "expected_nodes": "Editable SVG path vectors imported into Figma, grouped by named glyph and stroke. Each visible final path must be independently selectable; no text or bitmap vector-traced.",
+    "local_mirror": "Source-authored SVG/PNG and SHA readback in user attachment, GitHub research text and code metadata.",
+    "budget": "No Firefly, no new paid API. Existing connected Figma plan only."
+  },
+  "validation": {
+    "must": "Actual Figma native file write + re-read nodes; screenshot whole wordmark; local SVG raster QA; classify structural typography and separate unknown aesthetic.",
+    "user_approval": "NOT_RECEIVED for 山月; only previous local approval of 喜 segment, unrelated.",
+    "not_claim": "Learning full original designer creative steps, commercial master, generalizable multi-glyph Skill, or human blind preference"
+  },
+  "next_gate": "If at least one authored coherent wordmark and native vectors pass, obtain independent readability and aesthetic review; then hold out dissimilar two-glyph word before claiming repeatable rule."
+}
