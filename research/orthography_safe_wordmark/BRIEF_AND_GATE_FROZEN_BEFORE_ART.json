@@ -1,0 +1,55 @@
+{
+  "schema": "shenmei/stroke-preserving-two-glyph-wordmark-protocol/1",
+  "date": "2026-10-28",
+  "research_parent": "0a013aab9388396b39f1ba9d208feaca2fb0d23e",
+  "brief": "Single one-shot design test implementing the user's hard condition: no newly invented stroke or corrupted Chinese characters. Choose 金尊 as a two-character test label corresponding to the design task; does not assume it is approved commercial brand text.",
+  "char_reference": [
+    {
+      "glyph": "金",
+      "Unicode": "U+91D1",
+      "canonical_stroke_count": 8,
+      "authoritative": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=37329&la=0",
+      "technical_strokes": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E9%87%91.json"
+    },
+    {
+      "glyph": "尊",
+      "Unicode": "U+5C0A",
+      "canonical_stroke_count": 12,
+      "authoritative": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9670&la=0&powerMode=0",
+      "technical_strokes": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E5%B0%8A.json"
+    }
+  ],
+  "source_provenance": {
+    "HanziWriter_commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "purpose": "20 pinned pedagogical median centerlines as guaranteed starting semantic stroke IDs, NOT the original author-designed contours and NOT official handwriting certification.",
+    "draw_from_medians_not_font_outlines": true,
+    "source_license_requirement": "Record Hanzi Writer data upstream and license in delivery; do not distribute font binary or third-party artist artwork."
+  },
+  "arms": {
+    "A": "Draw all 20 indexed legitimate median stroke centerlines with a neutral handwritten path-outline algorithm. Correctly identify characters before style.",
+    "B": "Use exactly the same 20 indexed medians (stroke count and semantic IDs locked), but author varied entry/exit contours and a restrained coherent gesture on existing 金 top descending stroke 2 and 尊 main cross-stroke 10. No extra SVG vector fragments or disconnected ink decorations. Typography quality not inferred from stroke provenance.",
+    "fairness": "No image model. A/B with the same 2 glyph skeletons, scale, baseline and spacing; all changes bounded to appearance of the 20 existing stroke contours. Intentional optical stroke/ink differences are declared as a confound."
+  },
+  "gates": {
+    "stage1_data": "Both glyph source median arrays count equals independently verified 8/12; capture SHA and source links. If counts wrong, fail.",
+    "stage2_topology": "Exactly 8 and 12 separately named stroke contours in SVG; no extra unrelated shapes, no missing required strokes. Must keep each median topology consistent, start/end near reference.",
+    "stage3_ink": "No disconnected 'decorative' ink components created by style algorithm. Major stroke continuity preserved, no cross-character fused new stroke.",
+    "stage4_hanzi": "Assistant visual glyph inspection at full, 96px, 64px. Recognizability uncertain => stop. Full correctness needs real Chinese reader; do NOT overclaim official stroke correctness from medians/ID.",
+    "stage5_aesthetics": "Only if both pass orthography preliminary checks, compare equal ink-size. If B looks like generic stylization or not obviously better, mark visual FAIL and don't write Figma.",
+    "stage6_fidelity": "Only after independent human acceptability and new-word transfer may the rule be promoted."
+  },
+  "creative_intent": "Restrained architectural upward support on existing ends of 2 original legitimate strokes; preserve all 20 content strokes. No stock font, no extra dots, no automatic raster tracing.",
+  "hard_veto": [
+    "Any extra source-semantic stroke, omitted reference stroke, incorrect radical, disjoint optical artifacts, wrong or ambiguous Hanzi, simplistic default font-like result presented as creative success."
+  ],
+  "stop_condition": "One A/B candidate only. If no distinct visually superior B, freeze failure and halt 'vector count' iterations. Do not create serial R30+ revisions.",
+  "no_extra_paid_service": true,
+  "figma_mutation_preapproval": false,
+  "formal_lock": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "unmodified": true
+  },
+  "human_review": "NOT_STARTED"
+}
