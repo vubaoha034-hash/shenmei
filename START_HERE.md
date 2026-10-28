@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- R1_R29_PROJECT_RETROSPECTIVE_CURRENT_20261028 -->
+**R1—R29整体审计已完成，先读结论再决定是否开新实验**：[真实成果、失败归因及停止条件](research/typography_project_audit/R1_R29_阶段总结与失败复盘_20261028.md)。截至当前工程/来源/原生矢量均有真实进展；**设计师式原创字标审美优势、可复用陌生字迁移、独立真人盲评均未形成完整证据**。不得仅因用户输入“下一步”自动开启R30新排版、调线宽或描字循环。优先有来源的宏观决策 + 真正不同字的视觉质量检验，过关才入Figma；S7正式人工门仍独立PENDING，锁Revision355/Checkpoint377不得动。
+<!-- END_R1_R29_PROJECT_RETROSPECTIVE_CURRENT_20261028 -->
+
 <!-- R29_COMPOSITION_PRESTYLE_VETO_20261028 -->
 **最新独立研究R29｜S2构图实际执行，但因不是原创字形而停止晋升。** 接续真实已完成R28字组「巷口有风」和原作者梁志坚《海棠未雨》阶段图，先冻结三种合法字体结构参照的宏观构图（A单行等字、B“巷口／有风”分组+R28固定光学比例、C二行两列），再用本机Noto Serif CJK SC渲染三张真实图、总览及小尺寸测试。视觉结论：A标准、B仅调整词距字号、C可适用于方形招牌但并非原创字体设计，没有独立人类评价；**所有字形均是字库字，不含一条新原创汉字轮廓，Figma写入0、ChatGPT生图0、`VALIDATED_RULE=false`。** 不得将“排版不同”说成设计师方法成功。自包含8件真实附件ZIP `R29_巷口有风_三种构图与未通过设计闸门.zip` SHA256 `8d739ef497977a8c0c6ba1db5051659adeb7068bc7cf0df1cff4916d1cba5e97`，原件仅本会话容器；公共GitHub保留数据、错误、路径与哈希。后续重点不再是无限重复新字组排版/共笔/描图，而是**先证实来自真实设计师初稿—定稿之间确凿的整字结构审美变化并在人类不知技法条件下验收**，否则停止。正式主线Rev355/Checkpoint377、S7真人PENDING不动。
 - [R29冻结方案](research/typography_r29/R29_FROZEN_S2_COMPOSITION_OPTIONS.json)
