@@ -1,0 +1,144 @@
+{
+  "schema": "shenmei-R28-real-firsthand-visual-source-stage-review-and-S2-fail-closed/1.0",
+  "date": "2026-10-28",
+  "parent_commit": "7c7886238e11ff0cb08e33fe71cd914b1183ecd8",
+  "pre_frozen": "research/typography_r28/R28_FROZEN_FIRSTHAND_STAGES_AND_GATES.json",
+  "source": {
+    "creator": "梁志坚",
+    "work_pairs": [
+      "海棠未雨",
+      "放肆喜欢"
+    ],
+    "article": "https://www.uisdc.com/11-font-design-case",
+    "published": "2019-03-31",
+    "actual_evidence": "Original creator's staged images actually viewed in browser; images 15/16/17/18/37/38 are visible and loaded 801px wide.",
+    "visual_stage_sequence": [
+      {
+        "image": "uisdc-zt-20190328-15.jpg",
+        "size": [
+          801,
+          173
+        ],
+        "stage": "basic outline",
+        "what_visible": "four standard recognizable glyph silhouettes"
+      },
+      {
+        "image": "uisdc-zt-20190328-16.jpg",
+        "size": [
+          801,
+          139
+        ],
+        "stage": "first draft",
+        "author_critique": "棠 wide, 未 small, 雨 tall"
+      },
+      {
+        "image": "uisdc-zt-20190328-17.jpg",
+        "size": [
+          801,
+          143
+        ],
+        "stage": "corrected draft",
+        "author_critique": "improved structure, still plain"
+      },
+      {
+        "image": "uisdc-zt-20190328-18.jpg",
+        "size": [
+          801,
+          148
+        ],
+        "stage": "eave motif added",
+        "what_visible": "selected structural strokes are bent at staggered vertical positions"
+      },
+      {
+        "image": "uisdc-zt-20190328-37.jpg",
+        "size": [
+          801,
+          281
+        ],
+        "stage": "six 喜 alternatives"
+      },
+      {
+        "image": "uisdc-zt-20190328-38.jpg",
+        "size": [
+          801,
+          282
+        ],
+        "stage": "five rejected and one chosen 喜 candidate"
+      }
+    ],
+    "specific_rejection_reasons_for_each_alternative": "NOT_STATED; must not invent",
+    "source_image_sha256_checked_in_R28": "NO; browser read loaded images but no raw byte hashes. R12 prior different set validated separately.",
+    "third_party_pixels_saved_to_repo_or_archive": false
+  },
+  "method_correction": {
+    "old_error": "No fonts may even be used as structural reference, so AI hand-authored every contour before balancing the word; this wastes time and harms structure.",
+    "new_rule": "Use licensed fonts for glyph correctness and sizing scaffolds, never describe the unmodified font output as creative design. First optical balance, then conditional native-stroke authorship, then Figma only after visual quality gate.",
+    "author_grounds": "Original designer explicitly has on-screen font reference near drawn wordmark and corrected group proportions before integrating motif.",
+    "differentiation": "S0/S1/S2 provenance and optical metrics do not imply creative skill or visual gains."
+  },
+  "new_preflight": {
+    "target": "巷口有风",
+    "stage": "S2_HOLD_FOR_VISUAL_OPTICAL_REVIEW",
+    "font": "Noto Serif CJK SC Regular index 2 for structure only, binary not distributed",
+    "glyph_black_area_ratio_to_median": {
+      "巷": 1.209,
+      "口": 0.722,
+      "有": 0.935,
+      "风": 1.065
+    },
+    "baseline_png_sha256": "d05bb82391f9a29c03dea5915f89fa58d97ef8b1c23b278510edbfcd4771f199",
+    "baseline_size_px": [
+      1900,
+      1068
+    ],
+    "same_font_nominal_size_all_glyphs": 255,
+    "design_status": "NOT_A_LOGO_NOT_A_CREATIVE_GLYPH",
+    "motif_application": "NOT_EXECUTED",
+    "Figma_write": "NONE"
+  },
+  "gate_program": {
+    "file": "R28_STAGE_GATE.py",
+    "tests_executed": 7,
+    "tests_passed": 7,
+    "R27_retrospective": "S2_REJECT_PRESTYLE",
+    "R28_new_target": "S2_HOLD_FOR_VISUAL_OPTICAL_REVIEW",
+    "R28_new_target_allowed_to_add_style": false,
+    "aesthetic_scoring_implemented": false,
+    "validated_rule": false,
+    "designer_rationale_proven_transfer": false
+  },
+  "delivery": {
+    "name": "R28_字体设计师阶段决策与结构闸门实证包.zip",
+    "sha256": "25fcdc4956921a345a69dd00a7a0de1321f4442262e870b29d2065349b061c73",
+    "bytes": 149106,
+    "files": 11,
+    "zip_integrity": "PASS",
+    "fresh_directory_replay": "PASS all 10 member SHA-256 files",
+    "rerender_baseline_SHA256_equal_to_original": true,
+    "reference_images_in_zip": false,
+    "font_binaries_in_zip": false,
+    "files_summary": [
+      "original source visual log",
+      "preliminary 4-glyph baseline",
+      "real baseline source generator",
+      "decision gate+7 tests",
+      "README+actual status/metrics"
+    ]
+  },
+  "status": {
+    "SOURCE_STUDY": "PASS_STAGED_FIRSTHAND_IMAGES_VISUALLY_READ",
+    "METHOD_CANDIDATE": "CONSTRAINT_PIPELINE_FROZEN_NOT_CREATIVE_MODEL",
+    "UNSEEN_TRANSFER_PIXELS": "ONLY_FONT_STRUCTURE_REFERENCE_NOT_NEW_STYLED_GLYPHS",
+    "HUMAN_BLIND_REVIEW": "NOT_COLLECTED",
+    "VALIDATED_RULE": false,
+    "current_block": "S2 wholegroup optical balance needs visible comparative review before any eave/creative glyph design."
+  },
+  "next": "Prepare user-exposed standard four-character optical layout variants of 巷口有风 with correct glyphs and manually decided visual sizes/position BEFORE introducing stylistic strokes. Each change needs a concrete reason, no automatic ratio threshold. Then one style candidate if visual audit passes.",
+  "native": {
+    "formal_repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "production_mutations": 0
+  }
+}
