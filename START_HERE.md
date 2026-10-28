@@ -1,5 +1,14 @@
 # START HERE — 强制执行入口
 
+<!-- R25_TRUE_EDITABLE_FIGMA_STROKES_NONPROMOTED_20261028 -->
+**R25 最新独立中文字标方法研究（2026-10-28）：第一次对比R24明确纠正“AI生图PNG≈设计”。** 用户指出R24字标看起来只是套现成字体且缺乏设计感，这一点成立。R25没有再生成艺术字PNG，而是创建独立真实Figma Design：https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ。选两个不同结构的新字「山月」作为**极小手工设计测试**，先由人工在本地Python/SVG中独立编写9条原创贝塞尔字形轮廓（无系统字体轮廓、无作者源图描摹），再实写入Figma的9个可分别编辑`VECTOR`节点。审查C1/C2过于几何后保留失败，C3整组重绘为正式Figma原稿（node 1:2）；在Figma中复制一份C4（node 2:2），**真实修改**「山/承重底横」「月/内横下」两条原生向量路径，独立回读确认原稿和修订稿均9条`VECTOR`、TEXT=0、IMAGE=0，另7条路径不动。Figma内真实C4的矢量文件已源代码导出并在GitHub保存，Git Blob SHA1 `72e3d9fcc4c4f9a7eda26d193b5fac3414c73c94`，本地重新渲染C3/C4差异像素8537、底部两笔所在区域。**如实声明**：初始控制点在Python/SVG中手工设计再导入，不是完全鼠标在Figma画；C4确实在Figma内编辑真实Vector；这与 R24 的图片生成及自动矢量描摹不同，但**仍不代表设计高级、用户认可、作者方法被完整逆向或有可复用自动造字能力**。视觉目前简洁偏几何，评级`HOLD_PROTOTYPE_NOT_COMMERCIAL_MASTER`，人类评审和第三词迁移均缺失。交付包含全部历史C1/C2失败、源SVG/PNG、源代码、独立回读及26件自包含 ZIP，SHA256 `2cfc655628379b03c875a1fb13ed010c5e01462d90987dae989754b531111d98`，本聊天已真实建立容器文件。下一步不要再为了微弱曲线差异反复“下一版”；必须依真实设计师有前后图的造型决策做实质不同的整组字设计，并用不带方法标签的真人审美/认读验证。
+- [R25预冻结主线与质量门](research/typography_r25/R25_FROZEN_AUTHOR_CONTOUR_DECISIONS.json)
+- [R25实际Figma节点/原始文件及失败血统](research/typography_r25/R25_ACTUAL_FIGMA_NATIVE_VECTOR_AND_AESTHETIC_HOLD.json)
+- [R25当前README与唯一下一门](research/typography_r25/README.md)
+- [R25真实Figma C3路径](research/typography_r25/R25_C3_山月_真实Figma原稿.svg) · [R25 C4真实改动后路径](research/typography_r25/R25_C4_山月_真实Figma路径导出.svg)
+**范围不变**：正式视觉主线`visual-program-distillation-v2-photography-design-20260814`，唯一原生锁Revision355/Checkpoint377及S7人类PENDING不受研究修改；不新增收费服务，第三方参考仅研究不复制。
+<!-- END_R25_TRUE_EDITABLE_FIGMA_STROKES_NONPROMOTED_20261028 -->
+
 <!-- R24_REAL_HELDOUT_A_B_TECH_PASS_20261028 -->
 **R24最新原生研究血统（2026-10-28，优先于下方R24 2026-10-27阻断历史）：** 使用R23提前冻结的留出文字「溪桥听雨」，并在R24任何新像素生成前，冻结无逐字定制的通用字组造型语法和A中性/B风格双臂原文。昨日Opera Neon因Session terminated阻断在真正出图之前，原失败记录完整保留。今天Opera连接真实恢复，分别在两个独立全新ChatGPT普通聊天各生成一张1672×941黑字单行透明RGBA PNG，无任何重抽、后验提示词或新收费服务。A源：https://chatgpt.com/c/6ae16913-8ad4-83ec-a02f-5788676bc82b，SHA256=`47501dca6c08c5d238767b5dff6a656c20b4a1d5672d2a661d566c15e5dce5e7`；B源：https://chatgpt.com/c/6ae16946-8190-83ec-904c-55d906103ade，SHA256=`7707046868231f24e2336daaf85831401c57b104f6d52cfd66797137572a1ba4`。用户ChatGPT文件库原文件已实际回收，和浏览器真实图片Blob字节哈希一致。原冻结R24_QUALITY_GATE对两张图机器像素门PASS；实际目视「溪桥听雨」四简体字和版面合规；独立陌生真人识别与偏好未采集，`VALIDATED_RULE=false`。B墨高388、A291，B天然更大，必须优先读等墨高的可见对照，B的「溪/桥」拥挤、动势较强，不能凭“更显眼”宣称更专业。两次字标差异只能算**固定通用语言提示词在另一四字目标上呈现风格变化**，不是艺术字体作者创作方法的已证明自动程序。单次有效A/B不提供稳定胜率，不改正式视觉生产任务锁Rev355/Checkpoint377或S7真人门。
 - [R24事前冻结通用规则/提示词](research/typography_r24/R24_FROZEN_GENERAL_GRAMMAR_AND_AB.json)
