@@ -1,0 +1,59 @@
+{
+  "schema": "shenmei-r26-cross-glyph-contour-recomposition/1.0",
+  "date": "2026-10-28",
+  "parent_head": "f0ee8961db0b9d6464077779043e281b1cfdaff4",
+  "source": {
+    "author": "张家佳",
+    "case": "上座",
+    "url": "https://www.behance.net/gallery/196038613/_",
+    "prior_evidence": "evidence/vpd/typography_method_distillation_20261026/R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "observed_action": "Diagnose sparse/dense imbalance in two-character wordmark, change composition topology and reauthor coordinated curves rather than merely stack fonts",
+    "not_used": "No tracing, source geometry or direct copying of 上座"
+  },
+  "observed_prior_failure": {
+    "R25": "山月 had original editable vector strokes but no strong group-level design language; nine paths did not establish aesthetics",
+    "R24": "Prompt-generated PNG mimicked typeface, no Figma construction"
+  },
+  "experiment": {
+    "new_wordmark": "云间",
+    "linguistic_layout": "云 (sparse) + 间 (enclosing densely), both simplified Chinese and legible",
+    "meaning": "clouds between spaces; original research sample not existing commercial wordmark",
+    "intent": "Restrained cloud-eaves gesture as a shared structural stroke, not scenery, ink particles or decorative flourish",
+    "A": "Independently hand-authored recognizable 云 and 间 with separate first horizontal and 门 upper roof/right hook, equal-cell composition.",
+    "B": "Keep most contours identical; remove 云 top horizontal and 门 upper roof/right hook; author a single non-uniform long shared roof that replaces both independently, connecting through the gap and into 间 right hook. Retune if needed only after visible QA, never tune for metric alone.",
+    "not_a_font": "All cubic outlines manually written SVG path data, imported as native individually selectable Figma vector nodes, no TEXT, no existing font outlines or PNG tracing.",
+    "not_a_designer_clone": "Source mechanism inferred at conceptual level, not genuine author contours, weights or process history."
+  },
+  "success_conditions": [
+    "Two distinct readable simplified glyph identities remain at 150px AND 75px wordmark-size",
+    "A and B truly differ in number/topology of independent vector paths, not horizontal x-scaling or decoration",
+    "Single signed continuous shared roof follows recognizable structural strokes in both characters",
+    "B has a visually stronger compositional identity and does not visually read as one malformed character",
+    "Actual Figma native VECTOR path readback, authentic source export and screenshots",
+    "No claims of professional style improvement before independent human blind preference"
+  ],
+  "reject_conditions": [
+    "Inter-glyph bridge visually becomes arbitrary decorative stripe",
+    "间 loses recognizable 门 roof or internal 日",
+    "云 loses normal two-horizontal+厶 structure",
+    "B white counter space becomes closed",
+    "Additional revisions only numeric tuning without changed visual intent"
+  ],
+  "limit": {
+    "one_primary_recomposition_B": true,
+    "no_long_random_optimization": true,
+    "no_paid_APIs": true,
+    "independent_new_Figma_page_in_existing_isolated_file": true,
+    "previous_figma_C3_C4_not_edited": true
+  },
+  "Figma": {
+    "file_key": "RpcWXDRNyN3y4KEmCspgfZ",
+    "file_url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ"
+  },
+  "mainline": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "untouched": true
+  }
+}
