@@ -94,7 +94,16 @@
     "same_font_nominal_size_all_glyphs": 255,
     "design_status": "NOT_A_LOGO_NOT_A_CREATIVE_GLYPH",
     "motif_application": "NOT_EXECUTED",
-    "Figma_write": "NONE"
+    "Figma_write": "NONE",
+    "one_shot_reference_optical_AB": {
+      "stage": "S2_REFERENCE_LAYOUT_ONLY",
+      "A": "All four font reference glyphs same nominal point size",
+      "B": "巷 0.96, 口 1.13, 有 1.02, 风 1.00; predefined single display-only proportional test, NOT original lettering",
+      "result": "口 relative visual presence improves somewhat, yet professional original character design NOT demonstrated",
+      "aesthetic_verdict": "UNKNOWN; model visual inspection only, no independent human review",
+      "display_png_sha256": "7bb5e9bb9f86a52f5df978b23e79a1deda3ea10a9bd1c1c7fa5fed1c95876b8f",
+      "status": "S2_HOLD_FOR_OPTICAL_CONCEPT_REVIEW"
+    }
   },
   "gate_program": {
     "file": "R28_STAGE_GATE.py",
@@ -109,11 +118,11 @@
   },
   "delivery": {
     "name": "R28_字体设计师阶段决策与结构闸门实证包.zip",
-    "sha256": "25fcdc4956921a345a69dd00a7a0de1321f4442262e870b29d2065349b061c73",
-    "bytes": 149106,
-    "files": 11,
+    "sha256": "cf5a4e368c4734cd7164d482153f812c6bd4c73056ba6b355fa1d695033d494f",
+    "bytes": 249256,
+    "files": 15,
     "zip_integrity": "PASS",
-    "fresh_directory_replay": "PASS all 10 member SHA-256 files",
+    "fresh_directory_replay": "PASS 14/14 manifest files SHA, 7 tests, baseline PNG and A/B layout PNG byte-identical to expected",
     "rerender_baseline_SHA256_equal_to_original": true,
     "reference_images_in_zip": false,
     "font_binaries_in_zip": false,
@@ -131,9 +140,9 @@
     "UNSEEN_TRANSFER_PIXELS": "ONLY_FONT_STRUCTURE_REFERENCE_NOT_NEW_STYLED_GLYPHS",
     "HUMAN_BLIND_REVIEW": "NOT_COLLECTED",
     "VALIDATED_RULE": false,
-    "current_block": "S2 wholegroup optical balance needs visible comparative review before any eave/creative glyph design."
+    "current_block": "S2 optical audit not independently approved. Only font skeleton and reference layout A/B exist; zero custom style paths, zero Figma writes."
   },
-  "next": "Prepare user-exposed standard four-character optical layout variants of 巷口有风 with correct glyphs and manually decided visual sizes/position BEFORE introducing stylistic strokes. Each change needs a concrete reason, no automatic ratio threshold. Then one style candidate if visual audit passes.",
+  "next": "Review source-based optical composition as a whole, propose exactly one visibly distinctive structural concept (not generic font scaling) on a DIFFERENT-FROM-SOURCE word, generate candidate original sketch only after convincing S2; decide no-Figma if derivative or unreadable.",
   "native": {
     "formal_repo": "vubaoha034-hash/shenmei",
     "branch": "visual-program-distillation-v2-photography-design-20260814",
