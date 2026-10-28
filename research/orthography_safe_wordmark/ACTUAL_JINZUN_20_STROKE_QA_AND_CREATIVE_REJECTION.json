@@ -1,0 +1,89 @@
+{
+  "schema": "shenmei/orthography-sourced-twoglyph-actual-render-and-aesthetic-veto/1.0",
+  "date": "2026-10-28",
+  "hypothesis": "20 referenced normative stroke sources (金8,尊12) with no extra strokes may permit original terminal-curve styling without changing readable Chinese.",
+  "word": "金尊",
+  "word_use": "Research/test label only; no inference that the user approved this as final brand name or an official design.",
+  "preregistered": "research/orthography_safe_wordmark/BRIEF_AND_GATE_FROZEN_BEFORE_ART.json",
+  "reference": [
+    {
+      "glyph": "金",
+      "unicode": "U+91D1",
+      "count": 8,
+      "official": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=37329&la=0",
+      "medians_git_blob": "be38c74a0bb52297330944cd5620c651bf9d261b"
+    },
+    {
+      "glyph": "尊",
+      "unicode": "U+5C0A",
+      "count": 12,
+      "official": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9670&la=0&powerMode=0",
+      "medians_git_blob": "c1ac026e9fff9141a5424bfe9ed407d1ed513a51"
+    }
+  ],
+  "reference_data_source": {
+    "repo": "chanind/hanzi-writer-data",
+    "commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "license": "Arphic Public License",
+    "license_primary": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/master/ARPHICPL.TXT",
+    "font_binary_distributed": false,
+    "limitations": "Hanzi Writer medians derive from typefaces and are a pedagogical structural reference, not sufficient proof of normative current stroke appearance or a professional designer's original contours."
+  },
+  "method": {
+    "A": "all 20 canonical median source strokes rendered as continuous closed filled vector contours, near-uniform brush weight",
+    "B": "same 20 source stroke IDs and character positions, changed pressure/taper and very limited endpoint-preserving trajectory bends in 金 stroke2 and 尊 stroke10; no decorative add-on contour",
+    "reference_font": "Noto Sans CJK only in a separate reading baseline, not copied as authored paths",
+    "SVG_path_Count_A": 20,
+    "SVG_path_Count_B": 20,
+    "each_path_has_glyph_and_stroke_index": true
+  },
+  "real_QA": {
+    "first_renderer_A_invalid_polygons": 8,
+    "first_renderer_B_invalid_polygons": 8,
+    "error": "left/right normal offset self-intersected around bent strokes; this was an actual engineering INVALID result, preserved as build_trial.py and FAIL_FIRST_RENDER.json",
+    "repair": "changed polygonization algorithm only (connected variable-width disk union); no second aesthetic candidate, same frozen art direction and 20 sources",
+    "repaired_A_valid_polygons": 20,
+    "repaired_B_valid_polygons": 20,
+    "source_semantic_IDs_exact": true,
+    "extra_21st_path": false,
+    "PNG_byte_reproduces_exactly_from_SVG": true,
+    "native_format": "RGBA transparent PNG with native editable SVG",
+    "same_canvas_px": [
+      1880,
+      800
+    ],
+    "A_PNG_sha256": "3fa792ca2051fc9d556066e8953cb3487718a858182f3b8bbef23cdc65b4b907",
+    "B_PNG_sha256": "59421a3c8514c3f5ee3d7ca9c040f0b7290bdbe17521278da2558636f97f9019",
+    "A_SVG_sha256": "e0babba1ac5c089bc565b8f5d387b348a3b4f041985e1882f7ec55db0989b424",
+    "B_SVG_sha256": "11ecc6065a0b20f4314fedb0945e8f004e3c52c3b50f909857755f33db2c0d5d",
+    "changed_RGBA_pixels": 24450,
+    "alpha_mask_ink_IoU": 0.84188,
+    "source_python_includes_pinned_medians": true,
+    "source_license_notice": true,
+    "render_archive": "金尊_规范20画与原创设计失败的真实验证包.zip",
+    "archive_sha256": "da2acc23cab830908c97dc90edd0f0c22dacced43c8da1ed3424c6da16774e2b",
+    "archive_bytes": 507547,
+    "archive_members": 18,
+    "fresh_directory_reproduction": "PASS 6/6 rendered source outputs byte identical; independent technical QA PASS",
+    "original_artifacts": "In current conversation container, linked as sandbox archive; GitHub stores hash and research decision, does not republish proprietary font binaries."
+  },
+  "conclusions": {
+    "stroke_source_gate": "PASS: exact 8/12 indexed semantic strokes, 20 closed geometrically valid outline paths each after renderer fix",
+    "visual_Hanzi_correctness": "NOT_INDEPENDENTLY_VALIDATED. Count-matching can still distort glyph components, exact recognition requires readers.",
+    "assistant_visual_review": "FAIL: B barely differs from A as an intentional wordmark; both have weaker glyph weight balance than neutral type benchmark at large and 96/64px sizes.",
+    "independent_human_review": "NOT_COLLECTED",
+    "artistic_quality": "REJECT_PRE_FIGMA",
+    "Figma_write": 0,
+    "validated_method": false,
+    "causal_lesson": "Even zero spurious strokes and perfect semantic source paths do not produce professional lettering. Pinned median skeleton reconstruction is not sufficient creative direction.",
+    "next": "Stop using Hanzi Writer medians as the generator of finished glyph contours. Keep them only for semantic audit. Before any further design choose one demonstrably effective author-published structural change and require readable whole-glyph human review + visible whole-word improvement compared at equal size. Otherwise do not continue serial R numbering."
+  },
+  "formal_boundary": {
+    "authoritative_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "mainline_modified": false,
+    "S7_user_approval": "PENDING",
+    "paid_external_calls": 0
+  }
+}
