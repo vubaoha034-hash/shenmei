@@ -1,0 +1,34 @@
+{
+  "schema": "shenmei-typography-chinese-glyph-correctness-hard-gate-v1",
+  "issued": "2026-10-28",
+  "triggered_by": "User's H1 comparison feedback: '1   。2   把文字都改的不对了。中国文字不能乱加笔画。'",
+  "authority": "User design requirement and user visual rejection; not a lexicographic ruling on the exact normative stroke count.",
+  "rule": "Chinese glyph identity must be correct before design aesthetics are evaluated. Decorative marks cannot be added as if they were original writing strokes; historical-style reauthoring may transform or merge existing semantic strokes only when the original components remain legible, with documented mappings.",
+  "stage_order": [
+    "S0: freeze exact simplified/traditional target and genuine reference glyph from a reliable authorized font/dictionary",
+    "S1: require component and semantic stroke map; identify each reauthored contour's originating legitimate stroke(s)",
+    "S2: verify no new unrelated marks, altered radical, missing needed component, illegible counterspace or confused writing",
+    "S3: test native and 96/64px reading first; user-reported written-form error immediately invalidates candidate",
+    "S4: compare aesthetics only among both semantically valid candidate and baseline",
+    "S5: after human approval, editable Figma nodes and cross-word holdout; technical path count is NEVER proof of Chinese stroke correctness"
+  ],
+  "hard_vetoes": [
+    "Any added independent stroke not traceable to a real stroke in the correct target character",
+    "Any merged/split stroke that destroys the semantic Hanzi component structure or user recognizability",
+    "Unsupported stroke omission, wrong component placement or a visually different character",
+    "Using SVG VECTOR path count, changed pixel count or a prettier line as a substitute for Hanzi writing validity",
+    "Comparing aesthetics after the user rejects a candidate for wrong writing; such comparisons are invalid"
+  ],
+  "test_case": {
+    "glyph": "喜",
+    "winner_by_choice": "方案甲 (R15 C1 original middle integration) - reference retained but not certified",
+    "rejected": "方案乙 (counterfactual separated middle)",
+    "user_quote": "1   。2   把文字都改的不对了。中国文字不能乱加笔画。",
+    "failed_condition": "USER_GLYPH_IDENTITY_JUDGMENT",
+    "meaning": "The user says the second character is written incorrectly; the formal normative stroke count is not independently adjudicated.",
+    "experiment_classification": "INVALID_ARM2_INELIGIBLE__AESTHETIC_CAUSAL_H1_INCONCLUSIVE",
+    "review_provenance": "research/typography_h1_xi/H1_USER_CHOICE_RAW_BEFORE_UNMASK_20261028.json"
+  },
+  "bounds": "This rule does not prohibit professional intentional stroke linking as a technique, but demands reliable stroke identity and Chinese recognizability. Do not overclaim exact official stroke count simply from geometry primitives.",
+  "future": "Do not repeat the same 甲/乙 vote. Only continue after correctness of all candidate glyphs is independently vetted; if not possible, retain original and stop."
+}
