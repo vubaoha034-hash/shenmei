@@ -1,0 +1,110 @@
+{
+  "schema": "shenmei-typography-r26-author-sourced-word-composition-holdout/1.0",
+  "date": "2026-10-28",
+  "outcome": "NATIVE_VECTOR_AUTHORING_PASS__STYLE_AND_READABILITY_GAIN_NOT_PROVEN__B_REJECTED",
+  "upstream": {
+    "parent_branch": "research/typography-r25-native-figma-original-strokes-20261028",
+    "parent_sha": "f0ee8961db0b9d6464077779043e281b1cfdaff4",
+    "previous_failure": "R25 山月 hand-authored Figma vector technically passed but looked mechanical"
+  },
+  "primary_designer": {
+    "creator": "张家佳",
+    "case": "上座",
+    "firsthand": "https://www.behance.net/gallery/196038613/_",
+    "author_published_process": "Source artist first analyzed sparse 上 vs dense 座 in equal-cell horizontal composition, explored integrated composition and re-drew curves; not simply stacking a commercial font.",
+    "prior_authenticated_evidence": "R12_VERIFIED_REAL_ARTIST_LETTERING_STAGES_AND_NEW_DECISIONS_20261027.json",
+    "confidence": "AUTHENTIC_CREATOR_PROCESS_HIGH_LEVEL_ONLY; exact author source Illustrator curve coordinates not supplied",
+    "reproduced_original_pixels_or_paths": false
+  },
+  "target": "云间",
+  "selection_reason": "云 sparse open structural pattern vs 间 denser enclosed character. Different topology from 上座, previously unseen in author evidence.",
+  "design_intent": "Create a compact two-character lyrical wordmark with a cloud-like main horizontal echoing the 门 roof while preserving Chinese character identity.",
+  "preregistration": "research/typography_r26/R26_FROZEN_AUTHOR_DECISION_BEFORE_ARTWORK.json",
+  "figma": {
+    "file_key": "RpcWXDRNyN3y4KEmCspgfZ",
+    "file_url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ",
+    "page_id": "5:2",
+    "A": {
+      "frame": "7:2",
+      "url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ?node-id=7-2",
+      "vector_paths": 12,
+      "text_nodes": 0,
+      "image_fills": 0,
+      "description": "separate original 云 first horizontal and 间 roof/door-hook",
+      "source_path": "research/typography_r26/R26_A_云间_原始原创轮廓.svg",
+      "source_git_blob_sha": "0ce2cce306c550e574c2d9d644ef52723f4024e8",
+      "native_readback_path": "research/typography_r26/R26_A_云间_Figma原生节点回读.svg",
+      "native_readback_git_sha": "4e1e900766b3a1f97b35c157eb3cfaf366cdba78"
+    },
+    "B": {
+      "frame": "7:17",
+      "url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ?node-id=7-17",
+      "vector_paths": 11,
+      "text_nodes": 0,
+      "image_fills": 0,
+      "description": "replace two separate naturally needed structural strokes with one lengthy physically connected top roof across 云+门, keeping rest same",
+      "source_path": "research/typography_r26/R26_B_云间_原始原创轮廓.svg",
+      "source_git_blob_sha": "c04b0ffa799f545bc202c3e92f558fba87f6e767",
+      "native_readback_path": "research/typography_r26/R26_B_云间_Figma原生节点回读.svg",
+      "native_readback_git_sha": "0c442ead4bf7f087ec626f7e2c1dc01007b4e2b7"
+    },
+    "C": {
+      "frame": "9:2",
+      "url": "https://www.figma.com/design/RpcWXDRNyN3y4KEmCspgfZ?node-id=9-2",
+      "vector_paths": 12,
+      "text_nodes": 0,
+      "image_fills": 0,
+      "description": "abstain from direct shared stroke, allow a single noncontact elongated 云 top horizontal as directional echo",
+      "source_path": "research/typography_r26/R26_C_云间_拒绝共笔后的留白回退.svg",
+      "source_git_blob_sha": "76809036f1110113d006be31d3248a414e5d66cf",
+      "native_readback_path": "research/typography_r26/R26_C_云间_Figma原生节点回读.svg",
+      "native_readback_git_sha": "7029188998b811b2660397b083a0e984289983ce",
+      "exact_vs_A": "Only 云/首横 data and bbox changed; 11 of 12 vector paths unchanged (native Figma readback PASS)."
+    },
+    "creation_method": "Model hand-authored SVG cubic outlines with semantic stroke IDs, imported into Figma as actual native editable VECTOR nodes. Not mouse-by-mouse manual drawing, no font outlines/raster path extraction or font text layers.",
+    "prior_R25_page_unmodified": true
+  },
+  "engineering_failure_and_fix": {
+    "first_screen_shot": "Large black triangle due to malformed SVG cubic segment inside 间/日右竖. This is a parsing error, not aesthetic decision.",
+    "broken_source_A_git_sha": "104f45189f1b67c9ad2b14c2b3180dbab677930e",
+    "broken_source_B_git_sha": "a84061886dcf472bf3915db21598718b6f26daf9",
+    "broken_Figma_frames_hidden_but_preserved": [
+      "5:3",
+      "5:18"
+    ],
+    "correct_glyph_d": "M 1262 357 C 1289 355 1301 372 1295 393 C 1291 478 1293 553 1292 592 C 1285 615 1265 614 1245 598 C 1248 543 1254 462 1262 357 Z",
+    "fix_scope": "Syntactic correction only (added missing cubic control point) in A/B, no intentional art direction change.",
+    "post_fix_GitHub_SVG_path_command_validation": {
+      "A": "PASS 12/12",
+      "B": "PASS 11/11",
+      "C": "PASS 12/12"
+    },
+    "post_fix_Figma_screenshot": "VISUALLY_INSPECTED true A/B/C at 1400px and at 240px"
+  },
+  "stage_review": {
+    "B_reason_rejected": "Whole cross-glyph top bar looks like a conspicuous bridge that suppresses a necessary glyph boundary; at small scale separation weakens. Style is not thereby professional.",
+    "rollback_prior_freeze": "research/typography_r26/R26_C_STRUCTURAL_ROLLBACK_FROZEN_BEFORE_RENDER.json",
+    "C_observation": "The noncontact top stroke is legible at 240px artboard screenshot, but still too close to 间 left stem and aesthetically scarcely more distinctive than A.",
+    "C_cloud_top_end_x": 717,
+    "C_door_left_stem_min_x": 728,
+    "C_gap_original_pixels": 11,
+    "C_gap_scaled_to_240px_artboard": 1.65,
+    "C_small_scale_warning": "11px at 1600px artboard becomes <1px at 96px wordmark-sized display, so independent tiny-size recognition has not passed.",
+    "human_blind_readability": "NOT_COLLECTED",
+    "human_aesthetic_preference": "NOT_COLLECTED",
+    "source_study": "VERIFIED_PUBLISHED_CASE",
+    "executed_actual_path_topology": "YES_B_ONLY",
+    "author_method_transferred_for_professional_quality": false,
+    "generalizable_font_skill_validated": false,
+    "cost_paid_external": 0,
+    "final_rating": "HOLD_TECHNICALLY_EDITABLE__REJECT_FULL_FUSION__NO_AESTHETIC_PASS",
+    "next": "Stop this cloud-door shared roof experiment; prioritize a genuine artist firsthand before/after where actual entire-composition topology change visibly improves readability, with objective novice small-size recognition and blind style preference before transferring to a third structurally different word."
+  },
+  "formal_boundary": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "S7_human_review": "PENDING",
+    "changed_mainline": false
+  }
+}
