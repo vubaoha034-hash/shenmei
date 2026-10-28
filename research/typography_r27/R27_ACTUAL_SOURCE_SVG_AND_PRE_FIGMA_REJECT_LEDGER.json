@@ -1,0 +1,141 @@
+{
+  "schema": "shenmei-r27-firsthand-source-conditioned-new-four-glyph-original-artwork-and-visual-veto/1.0",
+  "date": "2026-10-28",
+  "status": "ARTIFACT_GENERATED_ORIGINAL_SVG__AESTHETIC_PRE_FIGMA_GATE_REJECTED",
+  "parent_branch": "research/typography-r26-word-composition-transfer-20261028",
+  "parent_commit": "d080452d85a2813ab1c3c753b4739a505f92e5e0",
+  "frozen_pre_render": "research/typography_r27/R27_FROZEN_FIRSTHAND_STAGE_TO_MOTIF_PROTOCOL.json",
+  "source": {
+    "author": "梁志坚",
+    "work": "海棠未雨",
+    "original_article": "https://www.uisdc.com/11-font-design-case",
+    "published_original": "2019-03-31",
+    "source_based_facts": "Author's own process describes choosing abstract ancient eave visual feature over wave, selectively embedding it in original structural strokes and avoiding identical positions in adjacent glyphs while balancing recognition and wordmark optical mass.",
+    "exact_image_control_points_known": false,
+    "original_artist_paths_used": false,
+    "third_party_source_images_republished": false,
+    "evidence_scope": "Public creator narrative and linked process images. Author's design judgment cannot be recreated from text alone."
+  },
+  "candidate": {
+    "target": "亭下听风",
+    "glyphs": [
+      "亭",
+      "下",
+      "听",
+      "风"
+    ],
+    "source_font_for_A": "Noto Serif CJK SC local font-rendered baseline for recognition comparison only; font binary neither copied nor redistributed.",
+    "B_svg_source": "art/R27_B_亭下听风_独立原创矢量.svg",
+    "B_original_source_sha256": "410d025742f77b7339bb0f511fa9ed627f904978c93bf7eed44e12fa902b9f55",
+    "B_native_png": "art/R27_B_亭下听风_透明.png",
+    "B_png_sha256": "06f18f9b2610d5860846a68315f44c683a908139d7563448e4759982c01e5ed3",
+    "B_creation": "26 custom human-authored-in-code Bezier filled stroke contours from blank coordinates, not fonts, not raster tracing, not image_gen, not from any designer path.",
+    "A_png_sha256": "a0582441f124bed2c2a5016b33b9f97b52421e35bad187e20483c16cd5240474",
+    "full_canvas": [
+      1800,
+      620
+    ],
+    "count_by_glyph": {
+      "亭": 10,
+      "下": 3,
+      "听": 8,
+      "风": 5
+    },
+    "selected_features": [
+      "亭/屋檐主题主笔",
+      "风/包围顶笔"
+    ],
+    "authorship_visibility": "SVG semantically labels each stroke; scripts and source SVG in current chat archive; public GitHub stores source hash but not source binary at this stage."
+  },
+  "syntax_repair": {
+    "observed_first_issue": "风/内捺 custom SVG C path command had 4 instead of required 6 numbers; huge unintended black triangle in rendered B.",
+    "first_unmodified_failed_svg": "audit/R27_B_FIRST_FAILED_invalid_cubic.svg",
+    "first_unmodified_failed_png": "audit/R27_B_FIRST_FAILED_invalid_cubic.png",
+    "repair_scope": "Complete missing cubic endpoint/control numbers. Creative contour intent unchanged.",
+    "independent_path_command_check": "PASS_26_OF_26",
+    "independent_bounds_check": "PASS_26_OF_26",
+    "new_generation_count": 0,
+    "not_aesthetic_gain": true
+  },
+  "independent_visual_metrics": {
+    "B_alpha_bbox_xyxy": [
+      97,
+      46,
+      1672,
+      532
+    ],
+    "A_alpha_bbox_xyxy": [
+      411,
+      193,
+      1392,
+      425
+    ],
+    "B_height_vs_A_ratio": 2.0948,
+    "B_glyph_ink_area_px_rough": {
+      "亭": 33505,
+      "下": 18944,
+      "听": 37532,
+      "风": 46150
+    },
+    "B_glyph_visible_bbox_px": {
+      "亭": [
+        97,
+        46,
+        427,
+        511
+      ],
+      "下": [
+        495,
+        157,
+        747,
+        478
+      ],
+      "听": [
+        805,
+        125,
+        1223,
+        492
+      ],
+      "风": [
+        1205,
+        173,
+        1672,
+        532
+      ]
+    },
+    "B_max_to_min_ink_area_ratio": 2.436,
+    "B_style_vs_baseline_not_fair_at_original_size": true,
+    "A_B_normalized_ink_height_230_comparison": "art/R27_A_B_统一墨迹高度对照.png",
+    "A_B_96_64_comparison": "art/R27_A_B_96与64像素识别检查.png",
+    "original_A_B_both_technically_renderable": true,
+    "qualified_glyph_recognition_of_B": "Visual assistant can parse four chars at 96px, but independent unprimed readers NOT TESTED.",
+    "assistant_visual_verdict": "REJECT: weak whole-word balance; excessive 风 scale, relatively small 亭, 洞 spaces of 听 overly separated; eave signature not genuinely integrated across group.",
+    "source_method_validation": "NOT_ESTABLISHED",
+    "professional_wordmark_quality": "REJECT_PRE_FIGMA",
+    "human_aesthetic_blind_test": "NOT_COLLECTED",
+    "Figma_mutation_count": 0
+  },
+  "reproducibility": {
+    "generator_script": "r27_author.py",
+    "independent_svg_QA_script": "r27_quality_gate.py",
+    "audit_json": "audit/R27_INDEPENDENT_QA.json",
+    "article": "README_R27.md",
+    "zip_name": "R27_亭下听风_原生笔画预审失败与完整血统包.zip",
+    "zip_sha256": "e1d4846d4ff8d551b6cd36782049c381ff18e3f42294a81f8817678b7e473323",
+    "zip_file_count": 15,
+    "zip_integrity": "PASS",
+    "full_archive_manifest": "R27_ARCHIVE_MANIFEST.json",
+    "fresh_extraction_replay": "PASS_BYTE_IDENTICAL_4_FILES_SVG_PNG_FULL_SIZE_PREVIEW_SMALL_SIZE_PREVIEW",
+    "archive_contains_font_files": false,
+    "archive_contains_third_party_images": false
+  },
+  "governance": {
+    "user_feedback_related": "User explicitly rejected font-like output after R24; source-authored custom vector execution in R27 does not override that feedback.",
+    "avoid_overclaim": "Do not call this a high-quality font, full model distillation or a validated rule.",
+    "latest_native_task_lock_revision": 355,
+    "latest_native_checkpoint_sequence": 377,
+    "original_official_VPD_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "mainline_writes": 0
+  },
+  "next_gate": "Do not import R27 to Figma. Require documented source stage before/after and a design concept whose whole-word optical balance clearly improves in equal-size direct inspection before allowing a new native vector file; stop using 'path editability' as proxy for creativity."
+}
