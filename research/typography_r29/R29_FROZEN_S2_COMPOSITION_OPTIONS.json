@@ -1,0 +1,36 @@
+{
+  "schema": "r29-prestyle-macro-composition-freeze/v1",
+  "date": "2026-10-28",
+  "parent_sha": "ced3a41d605bedaa95544985fc2982d8ec39ac95",
+  "word": "巷口有风",
+  "gate": "R28 S2_HOLD_FOR_VISUAL_OPTICAL_REVIEW",
+  "objective": "Test whether a composition-level decision improves a sparse/dense four-glyph wordmark BEFORE any handcrafted glyph or eave motif.",
+  "proposals": [
+    {
+      "id": "A",
+      "name": "same-size horizontal",
+      "layout": "single row 4 glyphs evenly spaced; unmodified Noto Serif glyphs"
+    },
+    {
+      "id": "B",
+      "name": "paired horizontal",
+      "layout": "two word groups 巷口 and 有风, clear larger gap between groups and optical resizing precommitted from R28: 巷.96 口1.13 有1.02 风1.00"
+    },
+    {
+      "id": "C",
+      "name": "two-line square",
+      "layout": "巷口 on first line, 有风 second line, correct row-major reading, balanced negative space and optical scaling; no geometric glyph edits"
+    }
+  ],
+  "control": "All three show identical existing font glyph silhouettes; no claim of original lettering. No style strokes, no image generation or Figma.",
+  "decision_metric": "Assess full-outline visual weight and phrase rhythm at equal canvas AND small size. Only propose one native typographic stroke change after a composition demonstrably better than A. Aesthetics remain human pending.",
+  "rejection": "If B/C are just rearranged typography without sufficient original identity or small-size recognition risk, stop before Figma and disclose insufficient concept.",
+  "existing_failures": "R25/R26 original paths and R27 26 contours not aesthetically good; R28 font-only reference is not original artwork.",
+  "source": "Liang Zhijian 海棠未雨 authored stages already checked in R28, no images reused.",
+  "human_review": "NOT_COLLECTED",
+  "formal": {
+    "rev": 355,
+    "checkpoint": 377,
+    "no_write": true
+  }
+}
