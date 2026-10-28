@@ -1,0 +1,51 @@
+{
+  "schema": "shenmei/design-choice-evidence-gate-real-review/v1",
+  "checked_on": "2026-10-28",
+  "evidence_registry": "research/design_choice_calibration/CREATOR_CHOICE_EVIDENCE_AND_VETO_REGISTRY_20261028.json",
+  "pinned_registry_git_blob": "d60ee727d395e26e00130fd40eff1aa891b79abd",
+  "source_case_entries": 6,
+  "distinct_creator_groups": 4,
+  "cases_with_author_explained_negative_reason": [
+    "REAL_CREATOR_LIANG_LAIRIFANGCHANG",
+    "REAL_CREATOR_LIANG_OPERATIONAL_STROKE_CRITIQUES_2021"
+  ],
+  "author_explained_individual_corrections": 7,
+  "validated_out_of_sample_aesthetic_rankings": 0,
+  "tests": {
+    "six_source_case_entries": true,
+    "author_labeled_rejection_with_reason": true,
+    "seven_glossed_corrections": true,
+    "source_material_is_not_independent_ratings": true,
+    "source_selection_not_commercial_test": true,
+    "original_user_glyph_rejection_preserved": true,
+    "gold_label_strict_symmetry": true,
+    "confusable_character_warning": true,
+    "source_license_and_scope": true
+  },
+  "all_tests_pass": true,
+  "retrospective_tests": [
+    {
+      "case": "our H1 option 乙",
+      "observed": "User actually rejected incorrect written form",
+      "rule": "If reader rejects Chinese glyph identity, VETO before design score",
+      "outcome": "REJECTED_CORRECTLY_RETROSPECTIVE_ONLY"
+    },
+    {
+      "case": "our 金尊 B",
+      "observed": "Source 20-stroke semantic mapping true but no professional visual gain",
+      "rule": "Preserved strokes cannot substitute for authored distinctive wordmark judgement",
+      "outcome": "HOLD_CORRECTLY_RETROSPECTIVE_ONLY"
+    },
+    {
+      "case": "our 云间 B",
+      "observed": "A long shared roof erased word boundary",
+      "rule": "Whole-word gesture must yield to single glyph identity, like author’s rejected strict symmetry",
+      "outcome": "REJECTED_RETROSPECTIVE_ANALOGY_NOT_PREDICTIVE_PROOF"
+    }
+  ],
+  "gating": "No independent blind human comparisons on two valid new words and no truly prospective creator-labeled quality prediction. This is a vetted evidence curriculum, NOT a learned aesthetic model.",
+  "bottom_line": "We now have explicit designer reason labels and concrete negative patterns that were absent from early numerical stroke experiments. Not yet an executable professional lettering skill.",
+  "new_paid_cost": 0,
+  "figma_mutations": 0,
+  "new_generated_wordmarks": 0
+}
