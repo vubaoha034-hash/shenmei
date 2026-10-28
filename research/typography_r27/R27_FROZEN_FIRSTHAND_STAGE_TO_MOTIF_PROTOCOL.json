@@ -1,0 +1,69 @@
+{
+  "schema": "shenmei/r27/source-stage-to-original-wordmark/frozen-before-art/1.0",
+  "date": "2026-10-28",
+  "parent_branch": "research/typography-r26-word-composition-transfer-20261028",
+  "parent_sha": "d080452d85a2813ab1c3c753b4739a505f92e5e0",
+  "source": {
+    "creator": "梁志坚",
+    "piece": "海棠未雨",
+    "firsthand_url": "https://www.uisdc.com/11-font-design-case",
+    "source_type": "Published process text with ordered photographs: hand sketch, font structure reference, outline, draft, adjusted draft, eave-feature integration, final.",
+    "direct_statement_extracted": "Defines classical/melodic overall art direction, selects abstract architectural eaves over wave imagery; places eave-like structural brush on conditional original glyph strokes, staggers position across adjacent characters; must retain recognition and consistent optical weight.",
+    "trustworthy_boundaries": [
+      "Original artwork files are not reproduced, traced or reused",
+      "Author-source images support direction and relative treatment, not exact control points",
+      "This is source-derived DESIGN HYPOTHESIS; not executable learned author code."
+    ]
+  },
+  "design_target": {
+    "original_new_text": "亭下听风",
+    "rationale": "Pavilion, below, listening, wind: conceptually coherent; structure contrast 亭（dense enclosure）／下（sparse）／听（left/right）／风（outer enclosure）; unlike source 海棠未雨",
+    "visual_program": "Restrained contemporary Chinese eave/quiet-wind type logo, dark ink on transparent canvas, no pictorial roofs, leaves, waves or clouds",
+    "construct_original": "Manually author each substantive stroke contour as unique SVG Bezier path, not font paths and not vector tracing. Freeze geometry before review. Only import into Figma after passing independent visual-quality preflight.",
+    "motif_distribution": [
+      "亭 top roof is main upturned eave, low amplitude",
+      "风 upper enclosure echoes same contour at LOWER visual height, not same curve",
+      "下 dominant falling stem and 听 right vertical use related taper but NO pasted eave",
+      "Each glyph optical weight adjusted for density; no extra decorative flourish strokes."
+    ],
+    "wordmark_layout": "One horizontal four-character mark, optical glyph widths intentionally uneven but group balanced, no imagery, no extra text",
+    "required_glyph_structure": {
+      "亭": "点、一、口、冖、丁; top cover and hooked stem distinct",
+      "下": "一、丨、丶; dominant vertical with a right dot",
+      "听": "口+斤, with left口 legible and right斤 slant/cross/stem",
+      "风": "外框（几字变形）+内部交叉撇点; clear enclosed contour"
+    }
+  },
+  "controls": {
+    "A": "Neutral unrelated font-rendered four-character text for legibility benchmark only, explicit NON-creative font baseline",
+    "B": "One hand-authored vector candidate, no hidden random generator attempts",
+    "gate_order": [
+      "source trace",
+      "visual source-informed decision memo",
+      "render original vector locally",
+      "manual glyph recognition & word optical audit",
+      "96px and 64px reduction",
+      "only after credible original style advantage vs A: Figma import/readback"
+    ],
+    "reject_if": [
+      "Any incorrect target character or overlapping structures",
+      "The roof feature is pasted at same height on each character",
+      "Only generic font outline with decorative swashes",
+      "Looks no different from a system font at medium size",
+      "Micro size blurs or glyph identities unclear",
+      "Full-word outlines not recognizably coordinated"
+    ],
+    "remediations": "One documented structural correctness repair only if needed, not post-hoc style optimization for a pass",
+    "paywall_budget": 0,
+    "professional_aesthetic_claim": "NOT ALLOWED without independent human judgement & cross-word repeat",
+    "code_environment": "Use SVG built from path data and CairoSVG rasterization, no font binaries shared"
+  },
+  "protected_native": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "mutate": false
+  },
+  "next": "If pre-Figma rejects, stop with published original proof and diagnosis, no Figma busywork."
+}
