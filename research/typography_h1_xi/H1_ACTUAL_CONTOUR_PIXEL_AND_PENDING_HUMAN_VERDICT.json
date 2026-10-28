@@ -92,14 +92,14 @@
     "merged_middle_comps": "PASS_1",
     "actual_written_vector_geometry_differentiates": "PASS",
     "independent_chinese_readers": "NOT_COLLECTED",
-    "user_current_pair_preference": "NOT_COLLECTED",
-    "human_aesthetic_blind": "NOT_COLLECTED",
+    "user_current_pair_preference": "方案甲 (choice 1), 方案乙 invalid by user glyph judgement",
+    "human_aesthetic_blind": "USER_FEEDBACK_RECEIVED_NOT_INDEPENDENT_NAIVE; COMPARISON INVALID AS STYLE TEST",
     "assistant_visual_observation": "Both glyphs remain recognizably 喜 at high and thumbnail views; this is NOT independent human testing.",
-    "design_quality_causation": "UNCONFIRMED: independent dot/bar paths alter ink geometry and topology; under-2%-ink-area match reduces but does not remove confounding",
+    "design_quality_causation": "INCONCLUSIVE: arm2 rejected for incorrect glyph writing, so difference is not a fair aesthetic comparison.",
     "method_stable_across_unseen_word": "NOT_TESTED",
     "original_artist_brush_curve_reconstruction": "NOT_PROVEN",
     "source_designer_method_learned": "NOT_PROVEN",
-    "status": "CONTROLLED_GRAPHIC_CONTRAST_SUCCEEDED__AESTHETIC_JUDGMENT_PENDING",
+    "status": "HUMAN_REVIEW_RECEIVED__ARM2_GLYPH_INVALID__ARM1_PREFERRED__METHOD_CAUSATION_NOT_VALIDATED",
     "promoted_rule": false
   },
   "engineering": {
@@ -113,12 +113,33 @@
     "extracted_fresh_directory_replay": "PASS_11_OF_11_CONTENT_FILES_BYTE_IDENTICAL",
     "remote_svg_note": "GitHub source-equivalent vector geometry verified all 12 fixed paths + all treatment paths; due to XML serialization format, remote SVG Git blobs are not byte-identical to local archived SVG. Local archived SHA are the canonical raw artifact identities."
   },
-  "human_next": "Before unmasking method labels, ask for independent visual preference 方案甲/乙/差不多/都不行 and separate readability judgement. Without explicit vote: do not infer that past user '喜' feedback endorses either current arm.",
+  "human_next": "Original user review is now received. Do not ask again. Archive arm2 failure and use mandatory exact Chinese stroke/structure gate before any future design trial; no aesthetic hypothesis promotion from invalid baseline.",
   "formal": {
     "authoritative_branch": "visual-program-distillation-v2-photography-design-20260814",
     "lock_revision": 355,
     "checkpoint_sequence": 377,
     "mainline_writes": 0,
     "S7_human_approval": "PENDING"
+  },
+  "review_after_real_user_input": {
+    "received": "2026-10-28",
+    "raw_feedback_path": "research/typography_h1_xi/H1_USER_CHOICE_RAW_BEFORE_UNMASK_20261028.json",
+    "raw_feedback_was_written_and_readback_before_mapping_reveal": true,
+    "actual_choice": "方案甲",
+    "rejected": "方案乙",
+    "user_rejection_basis": "2 把文字都改的不对了。中国文字不能乱加笔画。",
+    "mapping_from_original_frozen_protocol": {
+      "方案甲": "R15 C1 original merged middle",
+      "方案乙": "counterfactual three separated middle contours"
+    },
+    "mapping_frozen_before_trial": true,
+    "arm1_verdict": "USER_CHOSEN_RELATIVE_TO_AN_INVALID_ARM2; retain existing-source reference, no independent absolute professional approval",
+    "arm2_verdict": "USER_REJECTED_GLYPH_IDENTITY_OR_STROKE_LEGITIMACY",
+    "causal_aesthetic_test": "INVALID_COMPARATOR__CANNOT_TEST_H1_AESTHETIC_SUPERIORITY",
+    "invalid_reason": "The counterfactual separated middle was perceived as a wrong Chinese glyph by the actual user; such a candidate fails content before style.",
+    "observed_path_count_note": "3 black geometry components vs 1 does not itself establish 3 canonical Hanzi strokes vs 1; the user's reading rejection is authoritative for this user's design acceptance, normative dictionary validation was not performed.",
+    "next_policy": "Hard reject illegible/incorrect Hanzi before aesthetic ratings. Any new vector stroke must map to a pre-existing legitimate glyph stroke or documented structural component; no arbitrary added dots/lines, lost radicals, or re-styled fake strokes. Keep actual Chinese glyph reading ahead of geometry.",
+    "human_quality_limit": "User preference not a naive independent blind rating; arm2 disqualified, so no inference that merging is universally beautiful or valid across words.",
+    "skill_promotion": false
   }
 }
