@@ -1,5 +1,13 @@
 # START HERE — 强制执行入口
 
+<!-- XI_OFFICIAL_12_STROKE_ERRATUM_AFTER_HUMAN_REVIEW_20261028 -->
+**最新“喜”字规范笔画核验及先前断言纠错（2026-10-28）**：官方CNS11643与教育部标准笔顺均确认`喜`为12笔，顺序`横竖横竖横折横点撇横竖横折横`。H1甲（用户保留的旧R15 C1）有14条艺术SVG轮廓，中间把规范的7点/8撇/9横视觉联合为2条路径；乙（用户判字形不正确而否决）15条艺术SVG轮廓，其中3条中部路径恰对应规范的7点/8撇/9横。因此**“乙新增了错误规范笔画”没有得到依据，不能从15>14推断乱加笔**；用户认字反馈仍有效，乙必须停用，但不是已证实的字典笔数错误。甲也不是规范楷书笔顺示范，仅为用户喜欢的艺术字参考。已经真实执行并独立解包重跑SVG路径与PNG核验，未知额外路径、缺必要口底横可自动拒绝；这种静态映射不能替代字形正确性真人审稿。将往后所有设计硬闸门修正为：**规范来源→语义笔画映射→完整字形真人辨读→审美比较→Figma**；不重复问甲乙，也不将此单字结果推广成成熟Skill。保留R1–R29总复盘及H1原始用户选票、先前错误判断和修订血统，不更改正式业务锁Rev355/Checkpoint377、S7人审PENDING。
+- [官方12画与甲乙一一语义登记、来源及程序实测回执](research/typography_h1_xi/H1_OFFICIAL_12_STROKES_AND_ART_VECTOR_CORRECTION_20261028.json)
+- [实际SVG语义门槛程序](research/typography_h1_xi/HANZI_SEMANTIC_GATE_V1.py)
+- [修订后的汉字正确性规则](research/typography_h1_xi/HANZI_GLYPH_CORRECTNESS_HARD_GATE_20261028.json)
+- [专项研究入口](research/typography_h1_xi/README.md)
+<!-- END_XI_OFFICIAL_12_STROKE_ERRATUM_AFTER_HUMAN_REVIEW_20261028 -->
+
 <!-- XI_H1_USER_GLYPH_INVALID_20261028 -->
 **最新用户审稿已收到（喜H1，2026-10-28）**：用户原话「1   。2   把文字都改的不对了。中国文字不能乱加笔画。」原始选票先写入GitHub，再解封预登记方法映射：**甲=旧R15 C1合势喜，用户选择保留；乙=本轮新拆开的中部丷+一方案，用户明确判字写错、不合格。** 本轮不是甲审美规则胜利，因为乙**违反汉字字形正确性闸门**、不能充当有效基线；结论`ARM2_USER_GLYPH_INVALID / AESTHETIC_H1_CAUSATION_INCONCLUSIVE / VALIDATED_RULE=false`。此前条目中的“真人待选PENDING”是历史阶段记录，**不得再向用户重复询问甲/乙**。未来任何造型修改首先确认汉字笔画与部件正确、不凭空加独立笔画、不丢部首、不破坏认字；SVG路径数和像素变化不等于规范笔画数或审美。没有字形合法的两个候选，先停止审美或Figma制作。未修改正式视觉生产Rev355/Checkpoint377/S7人审。
 - [用户评价原话先行封存](research/typography_h1_xi/H1_USER_CHOICE_RAW_BEFORE_UNMASK_20261028.json)
