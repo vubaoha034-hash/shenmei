@@ -1,0 +1,61 @@
+{
+  "schema": "shenmei/calibration-first-source-pair-real-author-reveal/v1",
+  "revealed_at_utc": "2026-10-28T12:25:00Z",
+  "original_frozen_plan": "research/design_choice_calibration/MASKED_SOURCE_PAIR_FROZEN_BEFORE_SCORING.json",
+  "pre_reveal_ranking": "research/design_choice_calibration/SOURCE_PAIR_PRE_REVEAL_RANKING_20261028.json",
+  "ranking_commit_sha": "0aca775d39372ab2f98dea7a9520e31beea03036",
+  "browser_binding_sha256": "c047b41ad8a421e946792173d92fb1160f0e20bfdb6e384b0376bbe702a7898e",
+  "mapping_verified_in_browser": true,
+  "reveal": {
+    "A": {
+      "original_DOM_image_index": 23,
+      "source_stage": "AUTHOR_REVISED_FINAL",
+      "source_image_url": "https://img.cdn.fonts.net.cn/0-article-files/article-content-57bd685d282c960bbb3ae4ec4c3f3b5b.jpg",
+      "glyph_text": "尚院",
+      "source_context": "修改后的稿子"
+    },
+    "B": {
+      "original_DOM_image_index": 22,
+      "source_stage": "SUBMITTED_ORIGINAL",
+      "source_image_url": "https://img.cdn.fonts.net.cn/0-article-files/article-content-13d4d0fac7650d7a80c30ec5049c859c.jpg",
+      "glyph_text": "尚院",
+      "source_context": "原稿"
+    }
+  },
+  "author": "刘柏坤",
+  "article": "https://www.fonts.net.cn/article-567429154.html",
+  "official_stage_narrative": "Font review by author: submitted original lacks stroke-weight balance; internal 尚/口 too weak, 院/阝 overly simplified, 院 hooks and strokes rigid; modified version tries to maintain vertical proportions and shape while refining structure and wordmark balance.",
+  "prediction": {
+    "precommitted_winner": "A",
+    "score_A": 16,
+    "score_B": 11,
+    "decision_margin": 5,
+    "matched_author_selection": true
+  },
+  "validation_boundary": {
+    "interpretation": "Matched author-posted revised version on one obvious stage pair. This is ONE retrospective partially masked calibration sample, not a prospective independent blind aesthetic prediction.",
+    "confounds": [
+      "A black polished lettering with integrated Latin lockup vs B orange outline/construction notes and red guides—stage can be inferred from appearance.",
+      "Source publication describes both stages; evaluator knew it was a before-and-after study.",
+      "Glyph groups are not fully normalized for color, ink size and secondary layout; ranking includes application-fit scores.",
+      "User has not given independent preference or confirmed character correctness; no outside panel.",
+      "Author revision is an editorial choice, not universal quality gold standard."
+    ],
+    "image_raw_bytes_SHA": "NOT_RETRIEVED; native widths/heights observed in connected browser but original image files not downloaded",
+    "no_new_hanzi_glyphs_created": true,
+    "no_figma_mutation": true,
+    "validated_design_skill": false
+  },
+  "failure_and_learning": {
+    "demonstrated": "A score rubric can be frozen and score submitted before unmasking, with a cryptographic mapping commitment and real author-backed reveal.",
+    "not_demonstrated": "Ability to rank two subtly different, equally finished and equally legible professional designs without stage cues.",
+    "next_valid_test": "Obtain same-text, same-color, equal-size, valid Chinese glyph alternatives from independent authors with hidden selection; use 3+ previously unseen cases, blind the reviewer and commit all predictions before opening outcome labels. If unavailable, do not report predictive accuracy.",
+    "stop_rule": "Do not generate new glyphs until reviewer accuracy is tested on plausible same-stage alternatives with actual human selection criteria. Do not claim one matched easy case is success."
+  },
+  "formal_state": {
+    "visual_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "modified": false
+  }
+}
