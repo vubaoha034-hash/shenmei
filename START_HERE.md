@@ -1,5 +1,12 @@
 # START HERE — 强制执行入口
 
+<!-- ORTHOGRAPHY_SAFE_JINZUN_ONE_SHOT_HOLD_20261028 -->
+**规范字形正确性后的唯一新字组单项测试（2026-10-28）｜“金尊”二字，不是正式商业字标，创意FAIL。** 直接继承前轮用户对“喜”乙版写法的否决及喜12画SVG笔画不等于规范笔画的审计，冻结新测试词金8画/尊12画（教育部字典）与`chanind/hanzi-writer-data@68d10a4...`技术中线来源。真实生成A均衡笔幅/B有条件笔幅及两处原笔画尾势的1880×800透明PNG和20条逐笔ID可编辑SVG；A/B语义路径均只为8+12**无任何额外第21条笔画**。第一次左右轮廓算法各造成8个自交多边形，已保存失败算法与清单，后仅修复为笔触圆盘并集、各20条闭合有效源路径；独立SVG→PNG重算字节一致，6份核心文件在新解压目录实际复现全哈希PASS。**审美负面裁决**：B与A的意图区别不显著，字形整体比标准Noto字体参照更弱，96/64像素下可读性仍待真正中文人复核；“来源笔画数对”不足以认证最终写法/创造高级设计，因此不做Figma、不升级设计Skill、不继续对此A/B微调。自包含18件ZIP `金尊_规范20画与原创设计失败的真实验证包.zip` SHA256 `da2acc23cab830908c97dc90edd0f0c22dacced43c8da1ed3424c6da16774e2b`，原PNG/SVG与代码/许可证放在本聊天附件，仓库留血统回执。后续硬约束：准确字形结构和笔画来源 → 真人完整字认读 → 与字库同大小的强原创设计对照 → Figma。**停止使用字库中线自动描边当作字体创造**，不得依据20笔或像素数据宣传审美成功。正式主线Revision355／Checkpoint377与S7人工PENDING独立不动。
+- [冻结目标和否决门槛](research/orthography_safe_wordmark/BRIEF_AND_GATE_FROZEN_BEFORE_ART.json)
+- [真实矢量与PNG哈希、非法轮廓修复及质量否决](research/orthography_safe_wordmark/ACTUAL_JINZUN_20_STROKE_QA_AND_CREATIVE_REJECTION.json)
+- [实作说明及后续唯一动作](research/orthography_safe_wordmark/README.md)
+<!-- END_ORTHOGRAPHY_SAFE_JINZUN_ONE_SHOT_HOLD_20261028 -->
+
 <!-- XI_OFFICIAL_12_STROKE_ERRATUM_AFTER_HUMAN_REVIEW_20261028 -->
 **最新“喜”字规范笔画核验及先前断言纠错（2026-10-28）**：官方CNS11643与教育部标准笔顺均确认`喜`为12笔，顺序`横竖横竖横折横点撇横竖横折横`。H1甲（用户保留的旧R15 C1）有14条艺术SVG轮廓，中间把规范的7点/8撇/9横视觉联合为2条路径；乙（用户判字形不正确而否决）15条艺术SVG轮廓，其中3条中部路径恰对应规范的7点/8撇/9横。因此**“乙新增了错误规范笔画”没有得到依据，不能从15>14推断乱加笔**；用户认字反馈仍有效，乙必须停用，但不是已证实的字典笔数错误。甲也不是规范楷书笔顺示范，仅为用户喜欢的艺术字参考。已经真实执行并独立解包重跑SVG路径与PNG核验，未知额外路径、缺必要口底横可自动拒绝；这种静态映射不能替代字形正确性真人审稿。将往后所有设计硬闸门修正为：**规范来源→语义笔画映射→完整字形真人辨读→审美比较→Figma**；不重复问甲乙，也不将此单字结果推广成成熟Skill。保留R1–R29总复盘及H1原始用户选票、先前错误判断和修订血统，不更改正式业务锁Rev355/Checkpoint377、S7人审PENDING。
 - [官方12画与甲乙一一语义登记、来源及程序实测回执](research/typography_h1_xi/H1_OFFICIAL_12_STROKES_AND_ART_VECTOR_CORRECTION_20261028.json)
