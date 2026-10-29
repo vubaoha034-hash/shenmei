@@ -1,0 +1,68 @@
+{
+  "schema": "shenmei/prospective-wordmark-controlled-pair-final-failure/1.0",
+  "target": "纸屿茶舍",
+  "date": "2026-10-29",
+  "preregistered_protocol": "research/prospective_wordmark_pilot/WORDMARK_PILOT_20261029_FROZEN_BEFORE_GENERATION.json",
+  "freeze_commit": "d4e3a5fc921b635d6d20f02a3af0bc9e8c96c3b4",
+  "actual_attempts": {
+    "A": 1,
+    "B": 1,
+    "total": 2,
+    "retries": 0
+  },
+  "output": {
+    "A": {
+      "gen_id": "9500367c-0407-4328-88af-e5f2479e3cc6",
+      "sha256": "1f0fa54a9053b59385a5d0ffae19fa297613bbebf15598b7d1767976c8bf0f97",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2178942,
+      "rendered_wrong_text": "云栖山房",
+      "verdict": "INVALID"
+    },
+    "B": {
+      "gen_id": "de6ec506-f139-4706-a24d-b2b0944a0408",
+      "sha256": "de7c73ed1176b542867949c826c3529e6916ebfe73f5a716ee7f33691d848691",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 2334822,
+      "rendered_wrong_text": "青山听风",
+      "verdict": "INVALID"
+    }
+  },
+  "final_verdict": "CARRIER_FAILURE_0_OF_2_VALID_ARTWORKS_NO_DESIGN_COMPARISON",
+  "specific_failure": "Both image-generation outputs are report-style infographics with wrong target text and spurious fabricated metrics/ZIP/GitHub success glyphs; neither is a logo.",
+  "inference": "This establishes poor prompt fidelity for this two-call route in this context. It does NOT establish general impossibility of correct images or failure of a professional designer method. Do not score aesthetic ability from invalid targets.",
+  "actual_media_prompt_traceability": "The image tool returned empty prompt metadata and did not expose a verifiable explicit prompt input in this execution path; frozen string transmission to renderer cannot be proven. The preflight should have rejected this non-auditable route for scientific paired experiments.",
+  "replacement_controls": {
+    "do_not_reroll_this_frozen_trial": true,
+    "do_not_generate_c_or_substitute_a_font_baseline": true,
+    "do_not_reuse_off_target_images_as_valid_source": true,
+    "before_next_new_trial": "Acquire an interface that accepts explicit frozen user-visible prompt text per generation, provides stable per-call output access and a visible message echo. Verify it on a zero-generation read-only preflight. Only after that preregister a completely new, separate experiment and human visual label method.",
+    "no_new_paid_service_without_approval": true
+  },
+  "evidence": {
+    "local_evidence_archive_name": "Shenmei_纸屿茶舍_前瞻生图失败证据_20261029.zip",
+    "archive_sha256": "bb1fe53e6694f150c7716b466a8eaacd6535d13accf66a1037453a3e579c87c1",
+    "archive_contains": [
+      "A and B actual failed PNG originals",
+      "RAW failure receipt JSON",
+      "README clear failure explanation"
+    ],
+    "public_repo_rehosts_raw_artwork": false
+  },
+  "formal_status": {
+    "revision": 355,
+    "checkpoint": 377,
+    "render_allowed_formal": false,
+    "figma_modified": false,
+    "independent_research_only": true,
+    "human_blind_votes": 0,
+    "VALIDATED_RULE": false
+  },
+  "next": "Preflight a reliable explicit-message carrier (normal ChatGPT single-prompt clean chat) read-only; no regeneration until new freeze and actual per-message prompt echo verified."
+}
