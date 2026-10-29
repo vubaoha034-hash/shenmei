@@ -1,0 +1,40 @@
+{
+  "schema": "shenmei/explicit-message-carrier-readonly-preflight/1.0",
+  "observed_on": "2026-10-29",
+  "reason": "Two image_gen auto-inferred route outputs were invalid after preregistering exact frozen prompts; investigate a carrier with literal user-visible prompt entry.",
+  "connected_tool": "Opera Neon on an authenticated ChatGPT web session",
+  "test_url": "https://chatgpt.com/",
+  "test_scope": "composer input and readback only; NO message submission and NO image generation",
+  "expected_test_prompt_source": "research/prospective_wordmark_pilot/WORDMARK_PILOT_20261029_FROZEN_BEFORE_GENERATION.json, arms.A.prompt",
+  "expected_prompt_character_length": 258,
+  "facts": {
+    "new_page_opened_in_connected_browser": true,
+    "native_composer_visible": true,
+    "actual_frozen_prompt_filled": true,
+    "DOM_contenteditable_readback_characters": 258,
+    "exact_prompt_substring_match": true,
+    "draft_cleared_using_native_fill": true,
+    "postclear_composer_text": "\\n",
+    "sent_message_count": 0,
+    "any_render_attempt": false,
+    "extra_image_generation_calls": 0,
+    "target_string_visible_in_draft": "纸屿茶舍"
+  },
+  "state": "EXPLICIT_COMPOSER_INPUT_PREFLIGHT_PASS_ONLY",
+  "strict_limitations": [
+    "The preflight proves text can be placed and read back before user submits a message, not that the image model executes the text or returns a correct wordmark.",
+    "No original file/glyph validation performed; the failed A/B frozen run remains 0/2 valid.",
+    "The new carrier must be separately preregistered; cannot silently replace invalid A/B in the existing record.",
+    "A freshly sent message and tool output must both be logged in a new independent trial; do not backfill historical success.",
+    "The user's active account's native image model identifier/seed might still not be exposed. Report UNKNOWN and do not claim exact model sameness without proof.",
+    "No new paid service, Figma writes, or original production lock updates."
+  ],
+  "next_step": "For a new separately authorized one-shot trial, use two independent clean normal ChatGPT chats. Submit the frozen full literal prompts as actual messages; confirm each posted message is readable and identical before any image quality verdict; one output each; preserve any failures and raw image hashes; use blind human reading and aesthetics only if both valid.",
+  "formal_authority": {
+    "formal_lock_revision": 355,
+    "checkpoint": 377,
+    "formal_render_allowed": false,
+    "S7_user_approval": "PENDING"
+  },
+  "graphics_generated_in_this_preflight": 0
+}
