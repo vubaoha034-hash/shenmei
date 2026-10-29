@@ -1,0 +1,67 @@
+{
+  "schema_version": "vpd-food-photo-source-bound-unseen-dish-transfer-freeze/v1",
+  "date": "2026-10-29",
+  "scope": "PHOTO_ONLY; independent transfer study, no typography/Figma/global skill mutation",
+  "task_id": "VPD-FOODPHOTO-SOURCE-BOUND-BRAISED-PORK-TRANSFER-R1-20261029",
+  "parent_human_positive": "evidence/vpd/food_photo_distillation_20261029/REAL_BEAN_SOURCE_BOUND_R1_HUMAN_REALISM_DIRECTIONAL_POSITIVE_20261029.json",
+  "prior_reference_output_sha256": "45e2479f434d2ed39162935257e30e807dbf3326482c777bb2268c9396a5fcbe",
+  "authorization": "User says 下一步 in direct response to the proposed next step: test a different cooking-method dish with a verified real-food photo reference, preserve the previously improved green beans.",
+  "new_target": "红烧肉 (soy-braised pork belly), slow braise contrasted with earlier dry stir-fry green beans",
+  "factual_recipe_source": {
+    "article": "Shanghai-Style Braised Pork Belly (Hong Shao Rou)",
+    "publisher": "The Woks of Life",
+    "author": "Judy",
+    "updated": "2024-10-26",
+    "article_url": "https://thewoksoflife.com/shanghai-style-braised-pork-belly/",
+    "source_image_url": "https://thewoksoflife.com/wp-content/uploads/2013/07/hongshao-rou-2.jpg",
+    "source_actual_response_type": "image/webp",
+    "original_server_bytes": 394672,
+    "original_server_sha256": "6f5e7fa26c3c8cfffdc03f6e86fb0abf9185d9e02dcff5ddc58a385fd838a66e",
+    "source_image_dimensions": [
+      1500,
+      1825
+    ],
+    "source_real_browser_pixel_screenshot_viewed": true,
+    "license": "UNKNOWN; third-party private reference study only; do not publicly republish image"
+  },
+  "input_image": {
+    "format": "image/png",
+    "dimensions": [
+      1500,
+      1825
+    ],
+    "bytes": 5167752,
+    "sha256": "07b1731d3af580b39854530974f143357815cdd85e56d078012e21fcaca51a75",
+    "conversion": "same-origin actual source fetch, createImageBitmap decode, lossless canvas PNG encoding",
+    "clipboard_write_confirmed": true,
+    "generator_attachment_verified": false
+  },
+  "prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请实际观察本消息唯一附件里的红烧肉实拍，只学习五花肉经过焖煮的皮、肥、瘦层次、糖色和自然酱汁光泽，不复制原图陶锅、俯拍与桌面构图。新菜明确是【红烧肉】：大小自然不一的肉块，深琥珀红褐色，软糯的肉皮略透亮、肥肉有柔和半透明感、瘦肉有真实纤维；收浓的酱汁不均匀地薄薄挂在肉面，盘底仅少量酱汁，既有合理油亮又不出现镜面塑料感。使用素净浅灰陶盘、柔和窗边侧光和安静的中性桌面，刚盛盘的自然状态，主体清晰且有食欲。不要道具堆砌、夸张蒸汽、无关配菜、品牌、文字或水印。只输出一张。",
+  "generation": {
+    "model_surface": "ChatGPT native Images via fresh chat",
+    "single_new_dish_image_max": 1,
+    "retries": 0,
+    "paid_external_api": 0,
+    "status": "NOT_STARTED"
+  },
+  "hypotheses": [
+    "Reference-bound true braise texture can transfer to a new unseen dish with different optical/material behavior",
+    "Gloss is recipe-specific and desirable where consistent with caramelized reduced sauce, not uniformly suppressed"
+  ],
+  "success_boundary": {
+    "human_realism_review": "PENDING",
+    "commercial_final": "NOT_APPROVED",
+    "transfer_gain_over_unbound_control": "NOT_CAUSALLY_TESTED",
+    "global_rule_promotion": false
+  },
+  "provenance": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_prewrite": "1d663116c58af631ad1f081f27aa23e9b38ba5ef",
+    "native_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "lock_mutation": false,
+    "original_green_bean_asset_unchanged": true
+  },
+  "next_required_action": "Verify single attached PNG in clean ChatGPT native Image conversation before submit, generate one only, archive unmodified original and bind output SHA, then ask for human realism and appetite review."
+}
