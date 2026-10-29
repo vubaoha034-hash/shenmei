@@ -1,0 +1,60 @@
+{
+  "schema": "shenmei/retrospective-typographic-transfer-regression-preregistered/1.0",
+  "created_at": "2026-10-29",
+  "intent": "Reassess historical images using new Jianxi-inspired readability and optical-risk gates; this is retrospective technical cross-word regression, NOT prospective aesthetic transfer, independent blind review, or a new production iteration.",
+  "source_pair_ids": [
+    "R23_松间见月",
+    "R24_溪桥听雨"
+  ],
+  "arms": {
+    "R23_松间见月": {
+      "A": {
+        "file_name": "透明背景上的黑色宋体汉字“松间见月”.png",
+        "original_sha256": "2c1ce159bc5c48d427a989d05dd9a40ca6e913df5c7f3fb0736de305e7c3986a"
+      },
+      "B": {
+        "file_name": "松间见月 calligraphy.png",
+        "original_sha256": "39559dc122df75a87146a609418d192ff73936752403457d506e94ea7dc538db"
+      }
+    },
+    "R24_溪桥听雨": {
+      "A": {
+        "file_name": "溪桥听雨.png",
+        "original_sha256": "47501dca6c08c5d238767b5dff6a656c20b4a1d5672d2a661d566c15e5dce5e7"
+      },
+      "B": {
+        "file_name": "溪桥听雨 calligraphy.png",
+        "original_sha256": "7707046868231f24e2336daaf85831401c57b104f6d52cfd66797137572a1ba4"
+      }
+    }
+  },
+  "checks_before_result": {
+    "source_hash": "Require exact raw SHA256 match with R23/R24 historical ledger, same size 1672x941, RGBA",
+    "source_ink_mask": "Composite RGBA on white. Ink pixel means grayscale <180 AND original alpha >=32. Exclude image edges and count only actual ink bbox; do not count transparent RGB zero as ink.",
+    "scale": "Normalize each arm independently to equal 256px ink height for larger visual pair and to ink heights 96,64,32 for size stress. Always preserve original aspect ratio; never distort a glyph independently.",
+    "row_metrics": [
+      "bounding ink width/height",
+      "ink density in bbox at original resolution",
+      "ink density after scaling",
+      "number and widths of entirely blank vertical column runs in the central ink band, considering separations as evidence only and NOT actual character segmentation",
+      "descriptive 32px min readable form"
+    ],
+    "contour_checks": "Report hole / character counter changes only as heuristic, not correctness or certified glyph count; if segmentation unreliable leave UNKNOWN",
+    "goal": "Test whether stronger art treatment automatically improves commercial logo usability; examine whether high-density and near-connected glyphs remain separable at smaller scale.",
+    "falsification": "If historical B arms do not have reduced horizontal blank columns or small-size internal-space compression, do not conclude that expressive styles systematically cause the Jianxi risks. Do not fabricate a positive transfer test if image metadata do not substantiate it."
+  },
+  "restrictions": {
+    "figma_write": false,
+    "new_artwork_generation": false,
+    "source_png_public_rehost": false,
+    "reactivate_old_R_series": false,
+    "valid_aesthetic_vote": false,
+    "chatgpt_model_blindness": false,
+    "human_review_collected": false,
+    "validated_rule": false,
+    "formal_lock_revision": 355,
+    "formal_checkpoint": 377,
+    "S7_human_approval": "PENDING"
+  },
+  "next_decision": "Based on measured risks, produce a visual QA worksheet and explicit fail or abstain on rule portability; leave a genuine new unseen-word creative test for a future separately authorized controlled generation with independent human review."
+}
