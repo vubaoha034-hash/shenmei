@@ -1,0 +1,105 @@
+{
+  "schema": "shenmei/jianxi-posthoc-private-anonymous-panel-pixel-audit/1.0",
+  "audit_date": "2026-10-29",
+  "scope": "POSTHOC_NON_BLIND_PIXEL_GEOMETRY_DIAGNOSTIC_NOT_DESIGN_SKILL_SUCCESS",
+  "panel_source": "Private existing ChatGPT conversation /c/6ae05018-6ce4-83ec-842a-1f21e1aa548b, same original anonymous display PNG; no author pixels rehosted",
+  "panel_reverification": {
+    "image_width": 1550,
+    "image_height": 650,
+    "image_bytes": 168263,
+    "sha256": "a6f40aa89c181050cc7f6b2203f9883c2b9026bc7e85e1b1a99621ff3031abba",
+    "matched_prior_immutable_sha": true,
+    "hash_method": "SHA-256 over decoded original data URL PNG bytes, browser crypto.subtle",
+    "access": "connected Opera Neon, original ChatGPT conversation"
+  },
+  "method": {
+    "comparison": "crop primary Chinese wordmarks from existing panel; same displayed glyph ink height 140 px",
+    "source_pixel_threshold": "RGB all channels <130 considered dark ink, mask applied to panel pixels, not to the original designer images",
+    "roi_xyxy_exclusive": {
+      "甲": [
+        90,
+        750,
+        232,
+        416
+      ],
+      "乙": [
+        785,
+        1500,
+        232,
+        416
+      ]
+    },
+    "count_rule": "Dark pixels counted inside bounding rectangle; density=dark_count/(bbox width*bbox height); x-projection group count is not glyph count",
+    "preview": "64px height Canvas downsample; 32px auxiliary preview visually reviewed; neither is human legibility proof"
+  },
+  "actual_browser_measurements": {
+    "甲": {
+      "bbox_xyxy_inclusive": [
+        164,
+        249,
+        630,
+        388
+      ],
+      "dark_ink_pixels": 24604,
+      "bbox_ink_width": 467,
+      "bbox_ink_height": 140,
+      "ink_density": 0.3763,
+      "horizontal_nonempty_groups_total": 6,
+      "horizontal_nonempty_groups_width_ge_3": 6,
+      "preview64_width": 213,
+      "preview64_ink_fraction": 0.3812
+    },
+    "乙": {
+      "bbox_xyxy_inclusive": [
+        869,
+        253,
+        1444,
+        392
+      ],
+      "dark_ink_pixels": 22212,
+      "bbox_ink_width": 576,
+      "bbox_ink_height": 140,
+      "ink_density": 0.2754,
+      "horizontal_nonempty_groups_total": 4,
+      "horizontal_nonempty_groups_width_ge_3": 4,
+      "preview64_width": 263,
+      "preview64_ink_fraction": 0.2756
+    }
+  },
+  "derived_comparisons": {
+    "B_ink_width_vs_A_ratio": 1.2334,
+    "A_ink_density_vs_B_ratio": 1.3664,
+    "A_dark_pixel_count_vs_B_ratio": 1.1077,
+    "note": "Numeric ratios are measured geometry, not design-quality scores or evidence of incorrect Chinese writing"
+  },
+  "nonblind_design_notes": {
+    "甲": "Compact geometric handwriting/lettering language with strong regularity. Higher area ink density and letter structural reduction create a plausible small-size readability risk, especially where internal counters and semantic components are compressed. Not proof of a wrong character.",
+    "乙": "Looser width, calligraphic or carved-stroke language with stronger differentiating gesture. At 32px anti-aliased preview, thin or broken brushstroke details soften; must test real usage rather than treating expressive irregularity as an automatic advantage.",
+    "decision": "NO_WINNER_RECORDED / NO_PRETENDED_BLIND_MODEL_VOTE"
+  },
+  "audit_limitations": [
+    "The assistant's session already encountered the author's historic customer-choice text; it is not an independent blind aesthetic judge.",
+    "The prior private display was thresholded from designer originals at luminosity 184; source panel pixel geometry must not be misrepresented as original compressed image bytes or hand-drawn vector paths.",
+    "No independent human glyph recognition was obtained; neither candidate can be declared correct/incorrect from geometry counts.",
+    "At the same ink height, different widths and darkness are actual design characteristics, not equalized; these differences may affect human preference.",
+    "Textual visual diagnosis is post hoc; it cannot validate generalization to unseen Chinese words, logo contexts, or future clients.",
+    "The locally self-tested Python replay utility exists as a local conversation artifact but has NOT been run on the private source PNG in the container; browser measurement is the actual source result."
+  ],
+  "replay": {
+    "local_tool": "JIANXI_PANEL_READONLY_AUDIT_V1.py",
+    "local_tool_sha256": "2fdd0b8670445022f84adc360a15e1a6b134ae554d0af91c87079f44352e05bb",
+    "synthetic_self_test": "PASS",
+    "private_source_local_container_available": false
+  },
+  "formal_state": {
+    "revision": 355,
+    "checkpoint": 377,
+    "S7_human_review": "PENDING",
+    "figma_written": false,
+    "new_artwork_generated": false,
+    "old_R1_R29_restarted": false,
+    "human_votes_collected": 0,
+    "VALIDATED_RULE": false
+  },
+  "next_action": "Preserve original anonymous mapping; obtain genuine independent human glyph + preference result if available, otherwise do not block on it: use these nonblind diagnostics as failure hypotheses only, and evaluate a different unseen Chinese-word design in a new genuinely independent experiment with permission and equal budget."
+}
