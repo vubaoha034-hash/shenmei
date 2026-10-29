@@ -1,0 +1,72 @@
+{
+  "schema": "shenmei/one-shot-explicit-chat-generative-wordmark/1.0",
+  "date": "2026-10-29",
+  "phase": "PRE_SUBMISSION_FROZEN",
+  "new_trial_id": "ZHUYING_SHUWU_EXPLICIT_CHAT_AB_20261029",
+  "scope": "INDEPENDENT_RESEARCH_ONLY_NOT_FORMAL_POSTER",
+  "relation_to_previous": "New target and separately preregistered trial; 纸屿茶舍 prior implicit-imagegen trial stays invalid 0/2; no backfill or reroll.",
+  "target": "竹影书屋",
+  "business_brief": "fictional small independent bookshop, quiet modern Chinese identity",
+  "carrier": "Two separate normal ChatGPT chat pages, same authenticated browser; manually visible exact full prompt per arm and verified posted message; ChatGPT image tool auto-select, not hidden image_gen inferred route",
+  "carrier_preflight": "Read-only normal composer fill/readback/clear had passed in prior experiment, now recheck and ensure message echo",
+  "Arms": {
+    "A": {
+      "role": "neutral baseline",
+      "prompt": "请直接创建一张图片：为虚构独立书店「竹影书屋」制作 A 版中性中文文字标志。画面比例 3:2 横向，透明背景，只有从左到右单行排列的四个准确简体汉字「竹影书屋」，纯黑色，居中完整呈现。使用规范、清晰、笔画完整、横竖撇捺合理的宋体印刷文字，字重、字高、字间距协调；不要做创意变形。特别保留「竹」两部分、「影」右侧三撇、「书」的末笔点、「屋」上方尸部与下方至部。禁止任何额外汉字、拼音、说明、标题、编号、商标图形、边框、图片对照、尺寸标签、报告、表格、底纹、人物、装饰或水印。图片中不能出现 A 字母或“中性版”等字样。只输出一张独立文字标志图片，不要输出设计讲解图。"
+    },
+    "B": {
+      "role": "conditional design grammar",
+      "prompt": "请直接创建一张图片：为虚构独立书店「竹影书屋」制作 B 版原创设计语法中文文字标志。画面比例 3:2 横向，透明背景，只有从左到右单行排列的四个准确简体汉字「竹影书屋」，纯黑色，居中完整呈现。整体是克制、有书卷气且具有鲜明品牌识别度的现代中文艺术字标，不要简单套用标准印刷字体，也不要用毛笔飞白或花纹充当设计。先完整保留四字语义与必要结构：「竹」两部分、「影」右侧三撇、「书」末笔点、「屋」上方尸部与下方至部；再调整整组轮廓、内白、字重和节奏。只允许在一至两处原生笔画收笔中做有原因的细微呼应，不能靠每个字机械加横线、长尾或新笔画。相邻汉字之间保留明显边界，64像素高度下仍然可读。禁止任何额外汉字、拼音、说明、标题、编号、商标图形、边框、图片对照、尺寸标签、报告、表格、底纹、人物、装饰或水印。图片中不能出现 B 字母或“设计版”等字样。只输出一张独立文字标志图片，不要输出设计讲解图。"
+    }
+  },
+  "preregistered_generation_budget": {
+    "per_arm": 1,
+    "total": 2,
+    "rerolls": 0,
+    "prompt_edits_after_freeze": 0,
+    "follow_up_coaching": 0,
+    "best_of_N": false
+  },
+  "fixed_visual_constraints": {
+    "requested_ratio": "3:2",
+    "requested_format": "transparent-background raster image",
+    "ink": "black",
+    "only_text": "竹影书屋",
+    "one_line": true,
+    "brand_icon": false,
+    "extra_annotations": false
+  },
+  "gates": {
+    "submission": "Exact full prompt must be visible in posted user message; if composer or reply proof missing, stop and mark as not executed rather than claiming success.",
+    "format": "Must return exactly one complete image of standalone brand wordmark. A design report, infographic, wrong characters, or two artboards are immediate invalid and kept as negative evidence.",
+    "glyph": "Must visually contain 竹影书屋 with 影 right 彡, 书 final dot, 屋 尸+至; do not equate an image description/OCR with independent human readback.",
+    "pixel": "If source PNG is accessible, record actual bytes and SHA256, dimensions and alpha. Only after valid result create 256/96/64/32 equal-ink-height comparisons. Full-column gaps are manual review triggers, not automatic errors.",
+    "aesthetic": "Only if both arms content/format valid, ask truly independent Chinese reader for recognition and brand suitability; AI judging the work itself is a nonblind diagnostic only."
+  },
+  "confounds": [
+    "Two different text lengths and policies; better design version may benefit from richer instructions rather than distilled method",
+    "Backends may be non-deterministic, model version and seed undisclosed",
+    "Two separate chats aren't necessarily independent model instances, nor is human-blind review available",
+    "Even 2/2 visual success would only establish carrier and output validity, not professional design-method efficacy"
+  ],
+  "stop_conditions": [
+    "No proper result image or wrong text after first assistant reply",
+    "Not eligible to submit more than one message or generate retries",
+    "No Figma writes, no R30 and no modifications of formal status"
+  ],
+  "formal_authority": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "render_allowed": false,
+    "current_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "separate_user_continuation_authorization": true
+  },
+  "expected_artifacts": [
+    "Raw message echo and two exact posted prompt strings",
+    "One-shot generation attempt evidence for each arm",
+    "Actual image ids and hashes if accessible",
+    "Explicit negative verdict if not valid"
+  ],
+  "VALIDATED_RULE": false
+}
