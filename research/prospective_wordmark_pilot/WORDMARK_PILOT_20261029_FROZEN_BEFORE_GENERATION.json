@@ -1,0 +1,64 @@
+{
+  "schema": "shenmei/prospective-isolated-wordmark-comparison/1.0",
+  "generated_on": "2026-10-29",
+  "status": "FROZEN_BEFORE_FIRST_IMAGE",
+  "project": "Independent Chinese wordmark design judgment and prospective transfer, not formal poster mainline",
+  "target": "纸屿茶舍",
+  "target_why": "Fresh four-character tea-space brand word, mixed left/right and top/bottom components. Not R23 松间见月 or R24 溪桥听雨, nor Jianxi proposal.",
+  "brand_brief": "Small independent tea-space, restrained, contemporary Chinese cultural identity; pure wordmark test without color, photography, or illustrated symbol.",
+  "generator": "ChatGPT first-party image_gen; two serial calls to same available generator; model/version/seed are not externally exposed and must be reported UNKNOWN",
+  "output_requirements": {
+    "per_arm": 1,
+    "total": 2,
+    "requested_size": "1536x1024",
+    "aspect": "3:2 horizontal",
+    "transparent_background": true,
+    "white_text": false,
+    "black_ink": true,
+    "only_exact_four_simplified_chars": true,
+    "one_line": true,
+    "text_correctness_required": true,
+    "no_extra_art": false
+  },
+  "arms": {
+    "A": {
+      "label": "A 中性基线",
+      "prompt": "任务：制作「纸屿茶舍」中文品牌字标的A版中性基线图。独立一张横向3:2透明背景PNG，主体居中，只有准确的简体中文「纸屿茶舍」四个字，从左到右单行排列，纯黑色，不加其他文字、英文、标志、插画、分栏、道具、外框、阴影、纹理或水印。以规范、端正、均衡、可读的普通宋体印刷文字为造型基线；四字笔画清楚、大小与基线协调、留白充足，不追求艺术化，不加入连笔、共笔、夸张装饰或新笔画。纸必须仍为纟+氏，屿必须仍为山+与，茶不能写成荼，舍不能误写成舎。无字形错误优先于任何审美效果。只生成一张，不生成备选，也不要在图片中放A标签。"
+    },
+    "B": {
+      "label": "B 统一规则版",
+      "prompt": "任务：制作「纸屿茶舍」中文品牌字标的B版设计规则试验图。独立一张横向3:2透明背景PNG，主体居中，只有准确的简体中文「纸屿茶舍」四个字，从左到右单行排列，纯黑色，不加其他文字、英文、标志、插画、分栏、道具、外框、阴影、纹理或水印。品牌场景：清新克制、有文化气质的独立茶空间。采用自洽、专业而克制的现代中文艺术字，不直接用默认印刷字体，也不强迫四个字共享同角度或长尾。创作顺序：先确保完整正确的每字部件、笔画和读音，再检查整组高低、疏密与内部白口；对复杂的左右结构保留部件边界，对上下结构保留通透中宫；如有呼应，只在一两处原生笔画收势里形成轻微有机节奏，不画额外装饰笔画，不做故意断裂和密集花纹。纸必须仍为纟+氏，屿必须仍为山+与，茶不能写成荼，舍不能误写成舎；绝不增加独立笔画。优先保证64像素小图仍能自然认字且四字边界清楚。只生成一张，不生成备选，也不要在图片中放B标签。"
+    }
+  },
+  "constraint_budget": {
+    "image_calls_A": 1,
+    "image_calls_B": 1,
+    "retry_per_arm": 0,
+    "best_of_n": false,
+    "style_repair_after_review": false,
+    "posthoc_adjust_prompt": false,
+    "independent_design_brief_same": true,
+    "physical_gen_budget_equal": true
+  },
+  "design_gate_before_reveal": {
+    "primary": "Chinese complete glyph correctness: 纸(纟+氏), 屿(山+与), 茶(艹 and lower components), 舍(人/干/口 structure); assess every image before aesthetic scoring",
+    "required_visual": "No extra lettering, four intact glyphs, no confusion of parts, equal conditions, black-only, transparent",
+    "technical": "Source-file byte SHA-256 if accessible; compare visible ink bounding boxes at same ink height; 96/64/32px reading previews; count full vertical blank-column gaps only as manual-review trigger (<3 if wordmark intended separated)",
+    "negative_controls": "If glyph incorrect or output missing, INVALID for that arm; don't reroll. If any output is a design board rather than a stand-alone logo, reject it.",
+    "aesthetic": "Independent human reading/preference requested only if both arms valid. No AI self-scoring can certify independent blindness; no trained skill advancement from a single favorable pair.",
+    "stop": "Do not open a new R30 numbering loop, do not modify existing SVG/vector/Figma or formal mainline; preserve failures."
+  },
+  "provenance_boundaries": "Both generated images are prospective at this stage; no third-party designer source shapes are copied; not a claim to human-original font engineering or editable vector delivery.",
+  "formal_authority": {
+    "repo": "vubaoha034-hash/shenmei",
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_revision": 355,
+    "checkpoint": 377,
+    "render_allowed_formal": false,
+    "formal_current_task_id": "VPD-CHAZUO-CODEX-COMPLETE-POSTER-20261003-01",
+    "new_formal_permission_granted": false,
+    "scope": "separate text-research sample only"
+  },
+  "result": "PENDING",
+  "validated_rule": false
+}
