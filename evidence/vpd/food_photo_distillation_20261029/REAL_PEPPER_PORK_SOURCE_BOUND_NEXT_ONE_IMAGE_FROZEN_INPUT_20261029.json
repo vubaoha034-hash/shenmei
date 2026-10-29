@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-food-photo-source-bound-single-unseen-test-freeze/v1",
+  "date": "2026-10-29",
+  "task_id": "VPD-FOODPHOTO-PEPPER-PORK-HUMAN-FAIL-RECOVERY-R1-20261029",
+  "scope": "Independent PHOTO_ONLY study; no global skill, typography, Figma, native lock mutation",
+  "parent_failed_caserecord": "evidence/vpd/food_photo_distillation_20261029/BRAISED_PORK_R1_HUMAN_ABSOLUTE_REALISM_FAIL_20261029.json",
+  "parent_positive_control": "evidence/vpd/food_photo_distillation_20261029/REAL_BEAN_SOURCE_BOUND_R1_HUMAN_REALISM_DIRECTIONAL_POSITIVE_20261029.json",
+  "current_user_authorization": "下一步 after assistant offered to close rejected braised-pork sample and switch to a different dish; user did not approve reworking failed meat image.",
+  "dish": "辣椒炒肉",
+  "source": {
+    "article": "Pork and Pepper Stir-fry (辣椒小炒肉)",
+    "source_article": "https://thewoksoflife.com/pork-pepper-stir-fry/",
+    "author": "Sarah",
+    "publisher": "The Woks of Life",
+    "recipe_updated": "2023-10-03",
+    "image_url": "https://thewoksoflife.com/wp-content/uploads/2021/10/stir-fried-pork-peppers-7.jpg",
+    "actual_browser_response_mime": "image/webp",
+    "image_dimensions": [
+      1300,
+      1651
+    ],
+    "raw_content_bytes": 259744,
+    "actual_content_sha256": "79cc9ac901b963c2426387e09d4a0bb3b438cd890f997a7d27a6413c9f3ff6eb",
+    "source_actual_screenshot_examined": true,
+    "source_rights": "THIRD_PARTY_PRIVATE_STUDY_ONLY_NO_PUBLIC_COPY"
+  },
+  "prompt": "请把本消息唯一附件中的真实辣椒炒肉照片作为食材与熟度参考，生成一张全新原创、无字、9:16竖幅真实餐饮摄影，不复制原照片的餐盘与构图。菜名【辣椒炒肉】：斜切青椒段长短不一，炒软而仍翠绿，局部轻微虎皮焦痕；猪肉薄片自然弯卷、大小不一，肥瘦和煸炒边缘真实，少量蒜片与豆豉。刚出锅随手盛入一只素净浅灰陶盘，食材自然交错，酱汁仅薄薄附着，少量不均匀油光，盘底无油池。自然窗边侧光、中近景、中性桌面，看着像真实家常炒菜而不是广告棚拍。不要硬亮塑料感、厚酱、夸张蒸汽、无关道具、文字或水印。只生成一张。",
+  "output_request": {
+    "mode": "Native ChatGPT Images",
+    "image_count_max": 1,
+    "retries": 0,
+    "external_paid_api_budget": 0,
+    "requested_aspect": "9:16",
+    "source_attach_required": true,
+    "no_best_of_n": true,
+    "no_second_candidate": true
+  },
+  "criteria": {
+    "correctness": "Recognizable green chili pepper and stir-fried pork, plausible cooked skin/meat texture, natural irregularity",
+    "realism": "Avoid hard synthetic shine and visible oily pools; moderate true cooking oil highlights are allowed",
+    "aesthetic": "Home-style authentic appetite appeal, not studio ad sheen",
+    "human_quality": "PENDING; no auto approval",
+    "causal_gain": "NOT_TESTED WITHOUT CONTROL",
+    "global_skill_upgrade": false
+  },
+  "preservation": {
+    "new_scope_without_native_task_lock_change": true,
+    "bean_original_preserved": true,
+    "braised_pork_original_preserved": true
+  },
+  "provenance": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_prewrite": "f0ecb16118a93e04762420b835053d72c628a47a",
+    "native_lock_revision": 355,
+    "checkpoint_sequence": 377
+  },
+  "next": "Bind actual same-origin reference bytes in the model's image attachment and verify hash before send; exactly one generation; inspect/record original and seek human judgement. If binding unavailable, fail closed without substituting text-only generation."
+}
