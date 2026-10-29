@@ -1,0 +1,60 @@
+{
+  "schema": "shenmei/clean-chat-a-b-prospective-wordmark-partial-settlement/1.0",
+  "date": "2026-10-29",
+  "project": "ZHUYING_SHUWU_EXPLICIT_CHAT_AB_20261029",
+  "target": "竹影书屋",
+  "source_protocol": "research/prospective_wordmark_pilot/ZHUYING_SHUWU_EXPLICIT_CHAT_AB_FROZEN_BEFORE_SEND_20261029.json",
+  "protocol_pre_submission_commit": "046afbccd08d9666a4c8c818e41ce50bec19be1e",
+  "status": "EXPERIMENT_STOPPED_INCOMPLETE_PAIR_NOT_VALIDATED",
+  "arms": {
+    "A": {
+      "prompt_submitted": true,
+      "composer_frozen_prompt_exact_readback": true,
+      "posted_user_message_visible": true,
+      "assistant_response": "GENERATION_DECLINED_BY_IMAGE_SAFETY_GATE",
+      "image_returned": false,
+      "image_sha256": null,
+      "aesthetic_score": null,
+      "fresh_chat_url": "https://chatgpt.com/c/6ae30d9a-4518-83ec-aeda-ebf45a1e5764",
+      "retries": 0,
+      "source_record": "research/prospective_wordmark_pilot/ZHUYING_SHUWU_A_PROMPT_ECHO_NO_IMAGE_20261029.json"
+    },
+    "B": {
+      "prompt_submitted": false,
+      "attempted_unsafe_overwrite": false,
+      "image_returned": false,
+      "image_sha256": null,
+      "aesthetic_score": null,
+      "retries": 0,
+      "obstacles": [
+        "Opera Neon B browser session repeatedly unresponsive, including no response within tool deadline after page-creation and read-only listing attempts",
+        "Other authenticated browser instance surfaced a preexisting unsent draft belonging to a separate user workflow; preserve it rather than overwrite."
+      ],
+      "details": "One main-browser page was initially observed blank but subsequently had the same unrelated user draft; no frozen B prompt was filled or sent to any page."
+    }
+  },
+  "confirmed_message_attempts": 1,
+  "image_assets_returned": 0,
+  "valid_paired_outputs": 0,
+  "new_imagegen_tool_calls_in_this_turn": 0,
+  "user_account_other_drafts_modified": false,
+  "formal_visual_work_modified": false,
+  "safety_reason_specific_root_cause": "UNKNOWN",
+  "unverified_claims_to_avoid": [
+    "Two-image comparison complete",
+    "A passed glyph correctness",
+    "Image backend universally incapable",
+    "AI learned designer aesthetic selection",
+    "All generated images violate a content policy"
+  ],
+  "readback_limits": "The exact A prompt and assistant response were visible in the connected browser accessibility tree. A connection timeout on Send was resolved by observing the new conversation URL and posted message; no retry.",
+  "next_recovery_gate": "Only resume after a stable authenticated browser with an empty composer is available. Never overwrite an existing draft. Preserve this partial pair as invalid; a future experiment requires a NEW frozen trial, not replacing these failed/missing arms.",
+  "formal_lock": {
+    "revision": 355,
+    "checkpoint": 377,
+    "render_allowed": false,
+    "origin": "visual-program-distillation-v2-photography-design-20260814",
+    "S7_human_review": "PENDING"
+  },
+  "validated_rule": false
+}
