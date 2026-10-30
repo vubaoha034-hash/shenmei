@@ -1,0 +1,82 @@
+{
+  "schema_version": "vpd-food-photo-source-bound-unseen-dish-transfer-freeze/v1",
+  "date": "2026-10-30",
+  "task_id": "VPD-FOODPHOTO-SOURCE-BOUND-BOILED-SHRIMP-TRANSFER-R1-20261030",
+  "parent_human_positive": "evidence/vpd/food_photo_distillation_20261029/PEPPER_PORK_HUMAN_PASS_20261029.json",
+  "preserved_negative": "evidence/vpd/food_photo_distillation_20261029/BRAISED_PORK_HUMAN_FAIL_20261029.json",
+  "rationale": "Test a distinct ingredient and cooking method after human approval of source-bound pepper pork: whole shell-on shrimp briefly poached in water, rather than stir-fried pork or slow-braised pork.",
+  "target_dish": "白灼虾",
+  "source": {
+    "publisher": "The Woks of Life",
+    "author": "Judy",
+    "article_title": "Chinese Boiled Shrimp with Ginger Scallion Dipping Sauce",
+    "article_url": "https://thewoksoflife.com/boiled-shrimp-dipping-sauce/",
+    "updated": "2023-11-03",
+    "image_url": "https://thewoksoflife.com/wp-content/uploads/2016/06/boiled-shrimp-2.jpg",
+    "source_mime": "image/jpeg",
+    "source_bytes": 140681,
+    "source_sha256": "16f08f02822b0def5efb01598797005b670dec1cbc503e81bb2dbf4840a864ce",
+    "dimensions": [
+      600,
+      902
+    ],
+    "source_pixels_viewed_in_live_browser": true,
+    "rights": "UNKNOWN_THIRD_PARTY_PRIVATE_STUDY_ONLY_DO_NOT_REPUBLISH"
+  },
+  "input": {
+    "format": "image/png",
+    "bytes": 1308679,
+    "sha256": "34526154d946d59b388aa98a1eee3280743b1bccad12dd0dc33b65be4784a2bc",
+    "dimensions": [
+      600,
+      902
+    ],
+    "conversion": "actual source JPEG decoded and losslessly re-encoded to PNG in source origin",
+    "clipboard_write_confirmed": true,
+    "attachment_hash_pending": true
+  },
+  "prompt": "只生成一张全新原创、无字的9:16竖幅真实餐饮摄影。请实际观察本消息唯一附上的白灼虾实拍，只学习虾在短时间沸水汆熟后的颜色、自然弯曲形态、外壳纹理、虾肉的轻微透感与表面水润感，不复制原图布景、餐具和构图。新菜明确是【白灼虾】：带壳大虾大小略有差异，虾身自然弯曲而非统一圆环，熟后外壳呈柔和自然的珊瑚红与浅橙，腹部局部乳白半透明，关节、虾脚和触须细节真实；表面只有刚沥干后薄薄的水润反光，不要油亮，不上厚酱。几只虾自然错落地放在浅灰陶盘，旁边单独放一小碟姜葱酱油蘸汁，不淋在虾身上，少量姜片葱段点缀。中性窗边侧光、真实餐桌环境、近景食物摄影，清爽鲜甜、自然有食欲。不要橡胶或塑料质感、统一完美弧度、夸张油光、过度锐化、假蒸汽、无关海鲜、文字、品牌或水印。只输出一张。",
+  "generation": {
+    "surface": "ChatGPT native Image in clean chat",
+    "images_max": 1,
+    "retries": 0,
+    "best_of_n": false,
+    "paid_external_api": 0,
+    "status": "NOT_STARTED"
+  },
+  "hypothesis": "The real-cooking reference route can transfer to a low-oil poached seafood dish while preserving shrimp morphology, moist translucency and appetite appeal.",
+  "failure_watch": [
+    "uniform curled shrimp",
+    "rubber/plastic flesh",
+    "excessive gloss or oil",
+    "over-styled garnish",
+    "fake steam"
+  ],
+  "acceptance_boundary": {
+    "human_realism": "PENDING",
+    "human_appetite": "PENDING",
+    "commercial_use": "NOT_AUTHORIZED",
+    "cross_dish_method_validation": "NOT_PROVEN_BY_SINGLE_SAMPLE",
+    "global_skill_promotion": false
+  },
+  "archive": {
+    "drive_folder_id": "1jPTdblMq8LYCXr8In6TIdtHB5zs8Up9G",
+    "drive_folder_url": "https://drive.google.com/drive/folders/1jPTdblMq8LYCXr8In6TIdtHB5zs8Up9G",
+    "folder_created": true,
+    "source_binary_drive_upload": false,
+    "output_binary_drive_upload": false
+  },
+  "repo": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_prewrite": "41b2c8dbc822f050c227d1077e244d937b094a6c",
+    "native_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "formal_task_lock_write": false,
+    "checkpoint_write": false,
+    "typography_write": false,
+    "figma_write": false,
+    "global_skill_write": false
+  },
+  "next_required_action": "Verify the exact reference PNG attached to one clean ChatGPT Image request, submit the frozen prompt once, archive original if a permitted binary handoff exists, then request human review."
+}
