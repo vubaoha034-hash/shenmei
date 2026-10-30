@@ -1,0 +1,43 @@
+{
+  "schema_version": "vpd-food-photo-human-absolute-verdict/v1",
+  "recorded_at": "2026-10-29",
+  "task_id": "VPD-FOODPHOTO-PEPPER-PORK-SOURCE-BOUND-R1-20261029",
+  "source_execution_path": "evidence/vpd/food_photo_distillation_20261029/PEPPER_PORK_SOURCE_BOUND_ONE_GENERATION_20261029.json",
+  "exact_user_feedback": "这个可以，。。并且看起来想吃",
+  "verdict": "PASS_SINGLE_CANDIDATE_REALISM_AND_APPETITE",
+  "interpretation": {
+    "acceptance": "用户明确接受这张辣椒炒肉成片，并认为画面具有食欲感。",
+    "approved_dimensions": [
+      "overall_visual_acceptance",
+      "perceived_appetite_appeal"
+    ],
+    "not_claimed": [
+      "camera-original_photographic_authenticity",
+      "commercial_menu_publication_authorization",
+      "repeatable_cross-dish_skill_validation",
+      "causal_superiority_of_source-conditioning_over_unbound_generation"
+    ],
+    "scope": "仅限本轮唯一辣椒炒肉成片，不自动晋升为全局规则或所有菜品标准。"
+  },
+  "artifact": {
+    "chat_url": "https://chatgpt.com/c/6ae2fdfb-85b0-83ec-840d-94e0061b711c",
+    "output_sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44",
+    "dimensions": [
+      941,
+      1672
+    ],
+    "input_reference_sha256": "b0613fe8d6bc6917b2853f266652815670e138c821723939cc9868bfb4dfd220"
+  },
+  "preservation": {
+    "original_output_unchanged": true,
+    "source_reference_unchanged": true,
+    "previous_braised_pork_failure_unchanged": true,
+    "native_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "formal_task_lock_modified": false,
+    "checkpoint_modified": false,
+    "global_skill_promoted": false,
+    "drive_binary_archive": "NOT_VERIFIED"
+  },
+  "next_required_action": "Preserve this as a human-approved positive food-photo example. For a further transfer test, select a materially different dish/ingredient/cooking method and generate at most one source-bound candidate only after the user asks to continue; do not add global rules from one accepted sample."
+}
