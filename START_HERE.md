@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOUYING_CHAGUAN_20261030_REAL_PROSPECTIVE_A_B_NO_PROMOTION -->
+**2026-10-30 中文字标研究新增真实前瞻样本《舟影茶馆》｜输出通道已经恢复，设计能力未验证。** 在两个全新且空白的普通ChatGPT聊天中，分别显式发送事前冻结的 A（宋体中性基线）和 B（条件式造型说明），单臂1次、合计2次，不加样本、不重抽；事前冻结commit `3d586e74c35def97c440841e13362760ac9bbbcf`。本轮终于实际得到**2张独立的1536×1024透明PNG四字字标，而不是报告/信息图**：A原PNG SHA256 `0f9382c70d573e72bef3333988359a2b350711f642acc5a2f84e621ff12a922a`，B `f99ac06bc924d79c60ba4fcae8d3359468d5a77732c5e7eaa372c8c9b9981a74`；原字节从用户Library取回、SHA全通过，原图文件只在本聊天私有交付。严格同墨高的64px视觉复核：A/B各有3处完整字间空列，A宽6/5/6像素，B 4/4/4；32px A为3/3/3，B为2/2/3。B表现的个性化笔势较强、字间更紧凑，**没有有力证据证明专业设计优势；AI自审不算真人盲评，`VALIDATED_RULE=false`**。独立解压目录重新执行比较图和技术JSON字节相同、负例损坏源SHA成功阻断、ZIP CRC PASS。查看[真实成果和审稿边界](research/forward_validation/20261030_ZHOUYING_CHAGUAN_ACTUAL_REPORT.md)、[原始PNG身份与数据回执](research/forward_validation/20261030_ZHOUYING_CHAGUAN_ACTUAL_RESULT.json)。此前《纸屿茶舍》0/2错误报告与《竹影书屋》A拒绝/B未送事实仍保留，不能用本次新图倒填过去成功。**正式生产Rev355/Checkpoint377、S7人工审稿与中央「刘先生」主标和橙线保留意见独立冻结不变，Figma写入0**。下一关优先真实独立中文读者识字+审美对照，而不是立刻重启旧R系列或为了提高分数重生成本字组。
+<!-- END_ZHOUYING_CHAGUAN_20261030_REAL_PROSPECTIVE_A_B_NO_PROMOTION -->
+
 <!-- CURRENT_RESEARCH_STATE_AUDIT_20261030 -->
 **2026-10-30 当前研究状态唯一纠偏入口：先读 [STATE_AUDIT_20261030_REPORT_IMAGE_FALSE_POSITIVE_AND_CURRENT_FRONTIER.md](research/STATE_AUDIT_20261030_REPORT_IMAGE_FALSE_POSITIVE_AND_CURRENT_FRONTIER.md)。** 已对Library中的《青山听风》《云栖山房》报告PNG与「纸屿茶舍」失败ZIP逐字节重算SHA，证实两张报告PNG正是该试验错误输出A/B，不是Q01新成功实验。图中自印的7文件、指标和下载按钮并无对应独立原始资产；Q01有效样本数=0。不得再用报告图替代原始PNG、CSV、SHA或GitHub回执。现阶段有效研究进展：R23/R24真实历史PNG技术回溯、简兮摄影非盲几何诊断；尚无VALIDATED_RULE，前瞻审美迁移未通过。竹影书屋A拒绝/B未发送。正式S7生产分支Rev355/Checkpoint377独立；用户2026-10-30已明确锁定中央「刘先生」主标和橙色穿插线整体保留，该反馈为append-only COMMENT，不等于整张验收通过。正式锁旧待办不能覆盖本研究支线。
 <!-- END_CURRENT_RESEARCH_STATE_AUDIT_20261030 -->
