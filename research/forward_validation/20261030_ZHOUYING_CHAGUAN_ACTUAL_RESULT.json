@@ -1,0 +1,129 @@
+{
+  "schema": "shenmei/zhouying-chaguan-prospective-two-source-verified/1.0",
+  "date": "2026-10-30",
+  "research_only": true,
+  "frozen_before_generation": {
+    "path": "research/forward_validation/20261030_ZHOUYING_CHAGUAN_FROZEN_BEFORE_SEND.json",
+    "commit": "3d586e74c35def97c440841e13362760ac9bbbcf",
+    "target": "舟影茶馆"
+  },
+  "browser_execution": {
+    "carrier": "Two independent normal ChatGPT chat pages, each previously verified with empty native composer",
+    "A_original_prompt_chars": 244,
+    "B_original_prompt_chars": 285,
+    "A_submissions": 1,
+    "B_submissions": 1,
+    "rerolls": 0,
+    "source_image_count": 2,
+    "backend_model_name": "UNKNOWN",
+    "seed": "UNKNOWN"
+  },
+  "arms": {
+    "A": {
+      "label": "neutral baseline",
+      "chat": "https://chatgpt.com/c/6ae480cd-7714-83ec-a3ba-f36acd33b976",
+      "library_file": "舟影茶馆黑字标志.png",
+      "png_sha256": "0f9382c70d573e72bef3333988359a2b350711f642acc5a2f84e621ff12a922a",
+      "bytes": 484174,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 1447880,
+      "mask_bbox_width": 1125,
+      "mask_bbox_height": 264,
+      "inch": "None",
+      "actual_text_seen": "舟影茶馆",
+      "at_equal_64px": {
+        "ink_width": 273,
+        "gap_widths": [
+          6,
+          5,
+          6
+        ],
+        "ink_fraction": 0.3722
+      },
+      "at_equal_32px": {
+        "ink_width": 136,
+        "gap_widths": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "B": {
+      "label": "conditional designed lettering",
+      "chat": "https://chatgpt.com/c/6ae4819f-ca6c-83ec-8add-5382a9d617d8",
+      "library_file": "舟影茶馆黑色字标.png",
+      "png_sha256": "f99ac06bc924d79c60ba4fcae8d3359468d5a77732c5e7eaa372c8c9b9981a74",
+      "bytes": 462839,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 1400455,
+      "mask_bbox_width": 1392,
+      "mask_bbox_height": 338,
+      "actual_text_seen": "舟影茶馆",
+      "at_equal_64px": {
+        "ink_width": 264,
+        "gap_widths": [
+          4,
+          4,
+          4
+        ],
+        "ink_fraction": 0.34197
+      },
+      "at_equal_32px": {
+        "ink_width": 132,
+        "gap_widths": [
+          2,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "quality_assessment": {
+    "technical_gate": "PASS_2_OF_2_REAL_STANDALONE_WORDMARKS",
+    "independent_chinese_human_reading": "NOT_COLLECTED",
+    "independent_human_aesthetic_vote": "NOT_COLLECTED",
+    "assistant_nonblind_visual_review": "B displays somewhat stronger stroke expression but largely related to the A glyph family; A has more generous gaps at equal ink height and steadier reading. No clearly substantiated professional artistic superiority for B.",
+    "conditional_negative": "At equal 64px, B retains all three word separations but each is narrower (4,4,4) than A (6,5,6); at 32px both retain 3 gaps, with B 2,2,3 vs A 3,3,3. Neither global ink density nor counts establish glyph correctness or aesthetic taste.",
+    "model_description_confounds": [
+      "Different A/B style prompt length and content",
+      "Opaque image generator seed/model version not observable",
+      "No independent blind human vote",
+      "B is a raster PNG rather than editable native lettering vectors",
+      "One word group is insufficient for generalization"
+    ],
+    "skill_validated": false,
+    "progression": "Output carrier successfully restored and two real prospective image pixels exist. Design-method efficacy NOT established."
+  },
+  "artifacts": {
+    "private_source_pngs": "Two user Library PNG files; not rehosted to public GitHub",
+    "private_zip_name": "Shenmei_舟影茶馆_A_B真实原图与前瞻验证包_20261030.zip",
+    "private_zip_size_bytes": 1326252,
+    "private_zip_sha256": "61972240cd2258107cd6229565dc676a6ba6e4013dbaef258be637836c221156",
+    "zip_entries": 8,
+    "zip_crc_pass": true,
+    "private_comparison_png_sha256": "8dc89e3e37d2d508f5ffaa8b726ac1e540e80cbf2a2183567a30889b261ca720",
+    "private_audit_json_sha256": "da77a7fe4a6a94a49f11c0b5e505bf8e39ac79021431749c985c2230409484f1",
+    "reproducibility": "Two outputs rerun in independent temporary directory BYTE_EXACT; altered source negative test returns SOURCE_SHA256_MISMATCH",
+    "posthoc_shape_normalized_IoU": 0.692196517960547,
+    "posthoc_metric_not_an_aesthetic_gate": true
+  },
+  "boundaries": {
+    "formal_repo": "vubaoha034-hash/shenmei",
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "formal_render_allowed": false,
+    "S7_human_review": "PENDING",
+    "figma_writes": 0,
+    "new_R30_experiments": 0,
+    "new_paid_third_party_provider": false
+  },
+  "next_decision": "Do not promote generic rule. Request independent human recognition and relative aesthetic label on shown equal-ink height pair; only after this, conduct an additional separately frozen, distinct word and creator-method-controlled prospective trial if desired."
+}
