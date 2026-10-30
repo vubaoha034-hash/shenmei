@@ -2,7 +2,7 @@
   "schema_version": "vpd-food-photo-unseen-dish-one-image-execution/v1",
   "recorded_at": "2026-10-30",
   "task_id": "VPD-FOODPHOTO-SOURCE-BOUND-BOILED-SHRIMP-TRANSFER-R1-20261030",
-  "status": "ONE_ORIGINAL_NATIVE_CANDIDATE_GENERATED_REFERENCE_PIXEL_IDENTITY_VERIFIED_HUMAN_REVIEW_PENDING_DRIVE_ARCHIVE_BLOCKED",
+  "status": "ONE_ORIGINAL_NATIVE_CANDIDATE_HUMAN_ACCEPTED_REALISM_AND_APPETITE",
   "scope": "Photo-only transfer experiment; formal VPD task lock revision355 and checkpoint sequence377 unchanged.",
   "parent_positive": "evidence/vpd/food_photo_distillation_20261029/PEPPER_PORK_HUMAN_PASS_20261029.json",
   "parent_negative": "evidence/vpd/food_photo_distillation_20261029/BRAISED_PORK_HUMAN_FAIL_20261029.json",
@@ -88,10 +88,16 @@
     "blocker": "Opera Neon upload_file rejected the visible browser Downloads path as outside configured workspace roots; Drive connector upload_file requires a valid connector file_uri. Clipboard paste did not create a Drive file; connector folder readback returned files: []. Do not claim Drive archival."
   },
   "human_review": {
-    "realism": "PENDING",
-    "appetite": "PENDING",
-    "final_acceptance": "PENDING",
-    "commercial_use_authorization": false
+    "exact_user_feedback": "像。有食欲。",
+    "verdict": "PASS_SINGLE_CANDIDATE_REALISM_AND_APPETITE",
+    "accepted_dimensions": [
+      "perceived_food_realism",
+      "perceived_appetite_appeal"
+    ],
+    "scope": "THIS_SINGLE_BOILED_SHRIMP_CANDIDATE_ONLY",
+    "commercial_menu_publication_authorization": false,
+    "general_transfer_validation": false,
+    "verdict_record": "evidence/vpd/food_photo_distillation_20261030/BOILED_SHRIMP_HUMAN_PASS_20261030.json"
   },
   "preservation": {
     "prior_green_bean_positive_unchanged": true,
@@ -105,5 +111,5 @@
     "figma_modified": false,
     "global_skill_modified": false
   },
-  "next_required_action": "Return the exact candidate for human review of cooked shrimp realism, non-plastic moisture, natural irregularity and appetite appeal. Do not generate another candidate before verdict."
+  "next_required_action": "Preserve as a scoped human-approved poached seafood example. Add the three positive/one negative examples to the food photography skill as evidence-bound guidance; continue to distinguish observed approval from generalizable hypotheses."
 }
