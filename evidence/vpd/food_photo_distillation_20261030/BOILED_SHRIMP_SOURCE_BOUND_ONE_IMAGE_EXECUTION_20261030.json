@@ -1,0 +1,109 @@
+{
+  "schema_version": "vpd-food-photo-unseen-dish-one-image-execution/v1",
+  "recorded_at": "2026-10-30",
+  "task_id": "VPD-FOODPHOTO-SOURCE-BOUND-BOILED-SHRIMP-TRANSFER-R1-20261030",
+  "status": "ONE_ORIGINAL_NATIVE_CANDIDATE_GENERATED_REFERENCE_PIXEL_IDENTITY_VERIFIED_HUMAN_REVIEW_PENDING_DRIVE_ARCHIVE_BLOCKED",
+  "scope": "Photo-only transfer experiment; formal VPD task lock revision355 and checkpoint sequence377 unchanged.",
+  "parent_positive": "evidence/vpd/food_photo_distillation_20261029/PEPPER_PORK_HUMAN_PASS_20261029.json",
+  "parent_negative": "evidence/vpd/food_photo_distillation_20261029/BRAISED_PORK_HUMAN_FAIL_20261029.json",
+  "frozen_input": "evidence/vpd/food_photo_distillation_20261030/BOILED_SHRIMP_SOURCE_BOUND_TRANSFER_FROZEN_INPUT_20261030.json",
+  "dish": "白灼虾",
+  "source": {
+    "publisher": "The Woks of Life",
+    "author": "Judy",
+    "article": "Chinese Boiled Shrimp with Ginger Scallion Dipping Sauce",
+    "article_url": "https://thewoksoflife.com/boiled-shrimp-dipping-sauce/",
+    "image_url": "https://thewoksoflife.com/wp-content/uploads/2016/06/boiled-shrimp-2.jpg",
+    "original_mime": "image/jpeg",
+    "original_bytes": 140681,
+    "original_sha256": "16f08f02822b0def5efb01598797005b670dec1cbc503e81bb2dbf4840a864ce",
+    "dimensions": [
+      600,
+      902
+    ],
+    "actual_source_pixels_viewed": true,
+    "rights": "UNKNOWN_THIRD_PARTY_PRIVATE_STUDY_ONLY_DO_NOT_REPUBLISH"
+  },
+  "input_attachment": {
+    "chat_filename": "image(20261030-080937).png",
+    "bytes": 1308679,
+    "sha256": "34526154d946d59b388aa98a1eee3280743b1bccad12dd0dc33b65be4784a2bc",
+    "dimensions": [
+      600,
+      902
+    ],
+    "source_rgba_pixel_sha256": "7d24f53e6f3359c83f4da765e2a9cd17be4741a5e1cc30b5bef6cc251cca92a7",
+    "attachment_rgba_pixel_sha256": "7d24f53e6f3359c83f4da765e2a9cd17be4741a5e1cc30b5bef6cc251cca92a7",
+    "exact_decoded_pixel_identity": true
+  },
+  "generation": {
+    "chat_url": "https://chatgpt.com/c/6ae450b4-0cb4-83ec-8a56-ac0bf2a1deda",
+    "native_image_surface": "ChatGPT Images via clean browser chat",
+    "prompt_frozen_and_used": true,
+    "count": 1,
+    "retries": 0,
+    "best_of_n": false,
+    "output_name": "姜葱酱香鲜虾拼盘.png",
+    "output_mime": "image/png",
+    "dimensions": [
+      941,
+      1672
+    ],
+    "bytes": 2471648,
+    "sha256": "10c622beabe0d05d29c25ea264ad7a0200977f39b510e874d9e8d8e89c274c92"
+  },
+  "initial_visual_review": {
+    "dish_identity": "The image clearly depicts shell-on boiled shrimp with a separate ginger-scallion dipping sauce.",
+    "strengths": [
+      "Shrimp have natural coral-orange/pink cooked-shell color",
+      "The sauce is kept separate rather than coating the shrimp",
+      "The image has clear subject separation and readable shell/antenna detail"
+    ],
+    "watch_items": [
+      "Several shrimp share similar C-curves and may feel somewhat arranged",
+      "Wood tabletop remains despite a neutral/grey-plate brief",
+      "Surface highlights should be checked for water-moist vs plastic gloss"
+    ],
+    "status": "ASSISTANT_INITIAL_SCREEN_ONLY_NOT_HUMAN_APPROVED"
+  },
+  "archive": {
+    "drive_folder_id": "1jPTdblMq8LYCXr8In6TIdtHB5zs8Up9G",
+    "drive_folder_url": "https://drive.google.com/drive/folders/1jPTdblMq8LYCXr8In6TIdtHB5zs8Up9G",
+    "folder_created": true,
+    "browser_downloads": {
+      "output": {
+        "name": "姜葱酱香鲜虾拼盘.png",
+        "download_observed": true,
+        "bytes": 2471648,
+        "sha256_verified_in_chat_blob": true
+      },
+      "source": {
+        "name": "REFERENCE_白灼虾_TheWoksOfLife_真实烹饪图_20261030.png",
+        "download_observed": true,
+        "bytes": 1308679,
+        "sha256": "34526154d946d59b388aa98a1eee3280743b1bccad12dd0dc33b65be4784a2bc"
+      }
+    },
+    "drive_upload": "NOT_COMPLETED",
+    "blocker": "Opera Neon upload_file rejected the visible browser Downloads path as outside configured workspace roots; Drive connector upload_file requires a valid connector file_uri. Clipboard paste did not create a Drive file; connector folder readback returned files: []. Do not claim Drive archival."
+  },
+  "human_review": {
+    "realism": "PENDING",
+    "appetite": "PENDING",
+    "final_acceptance": "PENDING",
+    "commercial_use_authorization": false
+  },
+  "preservation": {
+    "prior_green_bean_positive_unchanged": true,
+    "prior_pepper_pork_positive_unchanged": true,
+    "braised_pork_negative_unchanged": true,
+    "formal_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "formal_task_lock_modified": false,
+    "checkpoint_modified": false,
+    "typography_modified": false,
+    "figma_modified": false,
+    "global_skill_modified": false
+  },
+  "next_required_action": "Return the exact candidate for human review of cooked shrimp realism, non-plastic moisture, natural irregularity and appetite appeal. Do not generate another candidate before verdict."
+}
