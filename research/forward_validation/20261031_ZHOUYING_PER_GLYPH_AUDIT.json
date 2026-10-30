@@ -1,0 +1,110 @@
+{
+  "schema": "shenmei/zhouying-per-character-aesthetic-risk-posthoc/1.0",
+  "observation_date": "2026-10-31",
+  "root_case": "ZHOUYING_CHAGUAN_ONE_SHOT_A_B_20261030",
+  "original_sources": {
+    "A": {
+      "filename": "舟影茶馆黑字标志.png",
+      "sha256": "0f9382c70d573e72bef3333988359a2b350711f642acc5a2f84e621ff12a922a",
+      "source_chat": "https://chatgpt.com/c/6ae480cd-7714-83ec-a3ba-f36acd33b976"
+    },
+    "B": {
+      "filename": "舟影茶馆黑色字标.png",
+      "sha256": "f99ac06bc924d79c60ba4fcae8d3359468d5a77732c8c9b9981a74",
+      "source_chat": "https://chatgpt.com/c/6ae4819f-ca6c-83ec-8add-5382a9d617d8"
+    }
+  },
+  "method": {
+    "stage": "POSTHOC_NONBLIND_SHAPE_COMPARISON",
+    "source_check": "Both actual PNG SHA256 hashes checked against freeze ledger before extraction",
+    "extract": "After compositing transparent RGBA on white, pixels with grayscale below 180; use 4 distinct vertical column-projection runs to isolate glyphs; each glyph cropped to tight ink bbox",
+    "normalization": "Each glyph resized preserving native aspect ratio to exactly 254px ink height and centered in a common 324x300 pixel frame. No new or modified glyph strokes.",
+    "statistic": "Binary mask intersection-over-union IoU. Symmetric mean Canny-edge distance in common pixel space. These quantify appearance, not aesthetic skill.",
+    "reference": "One locally installed Noto Serif CJK SC Regular font, TTC index 2; no font file redistributed."
+  },
+  "by_character": [
+    {
+      "character": "舟",
+      "iou_A_B": 0.6234,
+      "mean_symmetric_edge_distance_px": 4.37,
+      "iou_A_Noto_ref": 0.5071,
+      "iou_B_Noto_ref": 0.4647
+    },
+    {
+      "character": "影",
+      "iou_A_B": 0.7916,
+      "mean_symmetric_edge_distance_px": 1.82,
+      "iou_A_Noto_ref": 0.6192,
+      "iou_B_Noto_ref": 0.5939
+    },
+    {
+      "character": "茶",
+      "iou_A_B": 0.6521,
+      "mean_symmetric_edge_distance_px": 3.36,
+      "iou_A_Noto_ref": 0.5549,
+      "iou_B_Noto_ref": 0.4285
+    },
+    {
+      "character": "馆",
+      "iou_A_B": 0.7042,
+      "mean_symmetric_edge_distance_px": 3.12,
+      "iou_A_Noto_ref": 0.5993,
+      "iou_B_Noto_ref": 0.5053
+    }
+  ],
+  "metrics": {
+    "mean_A_B_iou": 0.6928,
+    "mean_A_Noto_ref_iou": 0.5701,
+    "mean_B_Noto_ref_iou": 0.4981,
+    "reference_means_subject_to_rounding": true
+  },
+  "findings": {
+    "measured": "A and B differ in all four glyph silhouettes; smallest A/B difference is 影, largest is 舟. B is less similar to this one standard serif reference than A for all 4.",
+    "not_measured": "Professional taste, legal originality, typography source font identity, generalization to another wordmark, unprompted Chinese recognition",
+    "professional_assessment": "Insufficient causal or brand-specific rationale for which native stroke should change and why; visual variation is not proven superior professional design. Keep as METHOD_CANDIDATE_UNVALIDATED."
+  },
+  "blind_review_readiness": {
+    "clean_public_panel_sha256": "a5e545f01624c063767a3917a44e5724aa947c582582827303302c0957797977",
+    "sealed_random_mapping_commitment_sha256": "56d6d3d10646a01ae0d03da5741687aaa38657c4f04526072c1387d024620fbd",
+    "reviewer_package_sha256": "fef6be63ceefb380c1b81d67a856ea22be5ff9932cdfd34a23cd1638611c0e7a",
+    "reviewer_package_contains_only": [
+      "Anonymous equal-ink-height side-by-side image",
+      "Two-stage self-transcription and aesthetic evaluation instructions"
+    ],
+    "source_original_wordmark_name_and_mapping_hidden_from_reviewers": true,
+    "reviewer_votes_collected": 0,
+    "reviewer_consent_or_recruitment": false,
+    "note": "The authoring assistant and conversation user have seen the alternatives and are not eligible to claim independent naive blind review. No actual third-party reviews solicited or submitted by this assistant."
+  },
+  "reproducibility": {
+    "private_researcher_zip_sha256": "bacfbe289dccd3ebba223451df8f8bc7c24f1cc63a8bf05e19494ad7070f48eb",
+    "replay_binary_exact_for": [
+      "Generated per-glyph comparison PNG",
+      "Structured JSON report",
+      "Review README"
+    ],
+    "source_mutation_negative_rejected": true,
+    "reported_output_file_hashes": {
+      "diff_panel_png": "7cc63d8ae215e7f28e5b8d622fabe0b1c68e2def1b62b3ef66539e217386ac26",
+      "structured_audit_json": "dd6c37488ca58532951fe7e2cdd5cdd66264f4d547e298a5f28ef2f706e0b357"
+    },
+    "no_public_rehost_of_raster_logo_or_installed_fonts": true
+  },
+  "limitations": [
+    "This was a posthoc read of the two already seen images, not a prospective, source-blind comparison.",
+    "Comparing to a single Noto reference does not identify the actual font source or certify originality.",
+    "IoU is sensitive to glyph crop and rasterization/threshold and normalization; it cannot be promoted to professional aesthetic evaluation.",
+    "Variation over four letters from separately generated images cannot causally attribute specific improvements to a learned designer method.",
+    "The comparison panel has reviewer-masking and blind-public mapping commitment, but independent human responses remain zero."
+  ],
+  "formal_authority": {
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "revision": 355,
+    "checkpoint": 377,
+    "render_allowed": false,
+    "figma_writes": 0,
+    "commercial_artwork_modified": false
+  },
+  "validated_rule": false,
+  "next_gate": "Only after truly independent reviewers write their exact four-character reading before brand brief, and then give an unbiased brand preference, unmask and compare. Even a favorable one-wordmark preference cannot validate transfer to unknown words. Pause new repeated font sampling."
+}
