@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- CURRENT_RESEARCH_STATE_AUDIT_20261030 -->
+**2026-10-30 当前研究状态唯一纠偏入口：先读 [STATE_AUDIT_20261030_REPORT_IMAGE_FALSE_POSITIVE_AND_CURRENT_FRONTIER.md](research/STATE_AUDIT_20261030_REPORT_IMAGE_FALSE_POSITIVE_AND_CURRENT_FRONTIER.md)。** 已对Library中的《青山听风》《云栖山房》报告PNG与「纸屿茶舍」失败ZIP逐字节重算SHA，证实两张报告PNG正是该试验错误输出A/B，不是Q01新成功实验。图中自印的7文件、指标和下载按钮并无对应独立原始资产；Q01有效样本数=0。不得再用报告图替代原始PNG、CSV、SHA或GitHub回执。现阶段有效研究进展：R23/R24真实历史PNG技术回溯、简兮摄影非盲几何诊断；尚无VALIDATED_RULE，前瞻审美迁移未通过。竹影书屋A拒绝/B未发送。正式S7生产分支Rev355/Checkpoint377独立；用户2026-10-30已明确锁定中央「刘先生」主标和橙色穿插线整体保留，该反馈为append-only COMMENT，不等于整张验收通过。正式锁旧待办不能覆盖本研究支线。
+<!-- END_CURRENT_RESEARCH_STATE_AUDIT_20261030 -->
+
 <!-- ZHUYING_SHUWU_EXPLICIT_CHAT_PARTIAL_SETTLEMENT_20261029 -->
 **2026-10-29｜普通 ChatGPT 独立聊天显式提示词新样本《竹影书屋》：已封存真实阻断，不回退旧实验。** 新一组目标《竹影书屋》已在**发送前**冻结A/B完整提示、一次额度、中文字结构门，commit `046afbccd08d9666a4c8c818e41ce50bec19be1e`。**A确实通过普通聊天原生发送**：提交前完整282字符逐字回读，点击发送工具超时后只读发现新聊天及原文已发布，并见到图像安全门拒绝回复，**未输出任何图片**；不可当作字形/审美失败，根因未知。**B没有发送**：定向浏览器后续持续不可用，另一实例新聊天出现已有其他任务未发送草稿，已主动避开，**未覆盖草稿、未做二次试验**。真实现状1条提示词提交、0张可用图、A拒绝/B未运行、无比较、`VALIDATED_RULE=false`，原《纸屿茶舍》0/2失败不被本轮覆盖。保留[本轮实际部分结算回执](research/prospective_wordmark_pilot/ZHUYING_SHUWU_ACTUAL_PARTIAL_SETTLEMENT_20261029.json)及[事前冻结协议](research/prospective_wordmark_pilot/ZHUYING_SHUWU_EXPLICIT_CHAT_AB_FROZEN_BEFORE_SEND_20261029.json)。后续恢复必须是**稳定且可验证为空白的已登录原生聊天**，绝不覆盖用户未发送草稿；新受控试验需另外冻结，不能补画替换本轮失败A。正式生产任务锁Revision355/Checkpoint377及S7人工门不动，Figma写入0。
 <!-- END_ZHUYING_SHUWU_EXPLICIT_CHAT_PARTIAL_SETTLEMENT_20261029 -->
