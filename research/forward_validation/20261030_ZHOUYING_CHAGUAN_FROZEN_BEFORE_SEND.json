@@ -1,0 +1,66 @@
+{
+  "schema": "shenmei/new-conditional-lettering-visual-carrier-test/1.0",
+  "date": "2026-10-30",
+  "status": "FROZEN_BEFORE_SEND",
+  "id": "ZHOUYING_CHAGUAN_ONE_SHOT_A_B_20261030",
+  "research_authority": "research/paired-choice-sample-eligibility-20261028",
+  "blocked_predecessors": [
+    "纸屿茶舍 A/B 0/2 invalid",
+    "竹影书屋 A no-image refusal, B unsubmitted"
+  ],
+  "target": "舟影茶馆",
+  "wordmark_brief": "虚构的独立茶馆，现代简洁中文纯文字标识；先检验原生普通聊天的可靠字标生成，不是生产用图。",
+  "experimental_treatment": "Common constraints exactly shared; A neutral Songti baseline; B conditional typography with structure integrity, internal whitespace, small-size separation. This is only a candidate derived from earlier author process research (梁志坚《海棠未雨》《来日方长》) and R23/R24 regression; not a claim to reproduce the artist's actual contours.",
+  "common_prompt": "请直接生成一张独立的3:2横幅透明背景PNG图片。画面只有从左到右单行排列的四个准确简体汉字「舟影茶馆」，纯黑色，居中完整呈现。绝对不要添加其他文字、字母、标题、说明、表格、分栏、边框、图标、插画、颜色、道具或水印。特别保持「影」右侧三撇和「馆」左饣右官的正确部件，不能缺笔、添笔或写错字。只生成一张单独字标图片，不要制作设计说明图。",
+  "arms": {
+    "A": {
+      "label": "中性基线",
+      "prompt": "请直接生成一张独立的3:2横幅透明背景PNG图片。画面只有从左到右单行排列的四个准确简体汉字「舟影茶馆」，纯黑色，居中完整呈现。绝对不要添加其他文字、字母、标题、说明、表格、分栏、边框、图标、插画、颜色、道具或水印。特别保持「影」右侧三撇和「馆」左饣右官的正确部件，不能缺笔、添笔或写错字。只生成一张单独字标图片，不要制作设计说明图。字形方案：标准规范的宋体印刷字结构，清晰端正，笔画和字间距均衡；保持字形的完整性与正常比例，不做艺术化变形、连笔、共笔或额外装饰。这是中性的文字识别基线。",
+      "max_images": 1
+    },
+    "B": {
+      "label": "条件式造型",
+      "prompt": "请直接生成一张独立的3:2横幅透明背景PNG图片。画面只有从左到右单行排列的四个准确简体汉字「舟影茶馆」，纯黑色，居中完整呈现。绝对不要添加其他文字、字母、标题、说明、表格、分栏、边框、图标、插画、颜色、道具或水印。特别保持「影」右侧三撇和「馆」左饣右官的正确部件，不能缺笔、添笔或写错字。只生成一张单独字标图片，不要制作设计说明图。字形方案：克制的现代中文原创艺术字；先保持准确字形和整体平衡，复杂部件优先留出内白，疏朗字只在原生主笔上做一点有理由的收势变化。不要机械统一笔尾角度，不强迫跨字共笔，不做毛笔飞白、过度断笔或装饰。确保四字之间有可见间距，小尺寸清晰可认。",
+      "max_images": 1
+    }
+  },
+  "sequence": "A once first. If no verified accurate standalone output, B must NOT be submitted. If A valid, open a second verified blank normal ChatGPT conversation and submit B exactly once. Do not revise the frozen pair based on output.",
+  "carrier": "New authenticated normal ChatGPT tab, actual user message via native composer; verify empty composer before input, exact frozen prompt before send, posted user message after; never use implicit image_gen tool for this trial.",
+  "scoring": {
+    "hard_validity": [
+      "Correct exact four Chinese characters and no other text",
+      "Single wordmark, not information chart",
+      "At least one image output available and downloadable",
+      "Black-only text, 3:2 requested, transparent if supported"
+    ],
+    "hash": "If raw source PNG is accessible, record SHA256 of actual bytes; otherwise mark raw source unavailable and do not invent hash.",
+    "scale": "Only if both outputs valid, normalize by ink height and inspect 96px/64px/32px",
+    "glyph": "Machine geometry cannot certify correct Chinese; assistant visual observation labeled nonblind, independent human recognition missing unless actually collected",
+    "aesthetic": "No claim of skill from single pair; only external independent human blind review can support relative preference",
+    "safety": "A safety refusal or off-target report is a carrier failure and is preserved, not redrawn"
+  },
+  "budgets": {
+    "A_submission_max": 1,
+    "B_submission_max": 1,
+    "reroll": 0,
+    "forced_retry": 0,
+    "prompt_posthoc_change": 0,
+    "paid_provider_new_cost": 0
+  },
+  "formal_boundary": {
+    "repository": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "lock_rev": 355,
+    "checkpoint": 377,
+    "render_allowed": false,
+    "figma_write": false,
+    "S7_user_review": "PENDING"
+  },
+  "limitations": [
+    "ChatGPT page version and random seed not exposed",
+    "A/B prompt styles have different amounts of instruction, so causal design-method efficacy is not isolated",
+    "Single prompt each is carrier reliability testing plus provisional design candidate, not statistical evidence"
+  ],
+  "outcome": "PENDING_NO_SUBMISSION",
+  "validated_rule": false
+}
