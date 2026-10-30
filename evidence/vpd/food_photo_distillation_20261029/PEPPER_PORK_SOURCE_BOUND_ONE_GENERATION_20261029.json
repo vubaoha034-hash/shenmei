@@ -1,7 +1,7 @@
 {
   "date": "2026-10-29",
   "task_id": "VPD-FOODPHOTO-PEPPER-PORK-SOURCE-BOUND-R1-20261029",
-  "status": "SINGLE_CANDIDATE_GENERATED_HUMAN_REVIEW_PENDING",
+  "status": "SINGLE_CANDIDATE_HUMAN_ACCEPTED_REALISM_AND_APPETITE",
   "parent_human_fail": "evidence/vpd/food_photo_distillation_20261029/BRAISED_PORK_HUMAN_FAIL_20261029.json",
   "previous_user_feedback": "这张欸我的感觉不是很好。看起来有点假，并且很油腻",
   "target": "辣椒炒肉",
@@ -32,5 +32,17 @@
   "lock_revision": 355,
   "checkpoint_sequence": 377,
   "starting_head": "5b7d0b0d660fed43e9aa856edbf02d3fb77793b4",
-  "next_required_action": "Present the one actual result for user review of perceived realism, appetite and oil gloss; do not rerender or expand rules before verdict."
+  "next_required_action": "Preserve this as a human-approved positive food-photo example. For a further transfer test, select a materially different dish/ingredient/cooking method and generate at most one source-bound candidate only after the user asks to continue; do not add global rules from one accepted sample.",
+  "human_review": {
+    "exact_user_feedback": "这个可以，。。并且看起来想吃",
+    "verdict": "PASS_SINGLE_CANDIDATE_REALISM_AND_APPETITE",
+    "accepted_dimensions": [
+      "overall_visual_acceptance",
+      "perceived_appetite_appeal"
+    ],
+    "scope": "THIS_SINGLE_PEPPER_PORK_CANDIDATE_ONLY",
+    "commercial_menu_publication_authorization": false,
+    "general_transfer_validation": false,
+    "verdict_record": "evidence/vpd/food_photo_distillation_20261029/PEPPER_PORK_HUMAN_PASS_20261029.json"
+  }
 }
