@@ -1,0 +1,86 @@
+{
+  "schema": "shenmei/offline-two-stage-naive-typography-review-gate/1.0",
+  "created_at": "2026-10-31",
+  "root_case": "ZHOUYING_CHAGUAN_ONE_SHOT_A_B_20261030",
+  "scope": "INDEPENDENT_HUMAN_REVIEW_INTAKE_INFRASTRUCTURE_ONLY_NOT_THE_REVIEW",
+  "source_anonymous_panel_sha256": "a5e545f01624c063767a3917a44e5724aa947c582582827303302c0957797977",
+  "reviewer_html": {
+    "bytes": 474753,
+    "sha256": "ef9424c870e8c3d6c1b749928d7b2ec02f75d52db52c22e1c214eb1742af28bd",
+    "mobile_view": "Two same-size pixel-exact crops from frozen anonymous source; no new strokes or images",
+    "network_upload": false,
+    "first_stage_hidden_brand_brief": true,
+    "first_stage_commit_before_stage2": true,
+    "answer_export": "JSON with exact transcription, ISO time and SHA256 of frozen stage1 fields",
+    "script": "offline vanilla browser JavaScript with crypto.subtle or pure local fallback"
+  },
+  "reviewer_zip": {
+    "file_name": "匿名中文字标_离线双阶段评审包_仅发给评审者.zip",
+    "bytes": 344476,
+    "sha256": "f7d46c04c1b1a1c426821ce5e924c69eaf2db51859340edac355f20b54273fd3",
+    "files": 3,
+    "mapping_included": false,
+    "source_a_b_originals_included": false
+  },
+  "researcher_private_zip": {
+    "file_name": "研究者专用_匿名评审验证与解盲控制包_不可转发.zip",
+    "bytes": 783216,
+    "sha256": "d48ce030b8eb1e7b9d484da7f72f13f541cdb8cbc3823e7cb6d917a6bc3c8219",
+    "files": 13,
+    "distribution": "PRIVATE_TO_RESEARCHER_ONLY_NOT_REVIEWERS"
+  },
+  "commitments": {
+    "preserved_v1_sha256": "56d6d3d10646a01ae0d03da5741687aaa38657c4f04526072c1387d024620fbd",
+    "v2_new_sha256": "fbcca178c7ccdf8d451249824bad0ea98ee425340abfba9cd1c458d1af23c69b",
+    "v2_canonical_recipe": "SHA-256 of UTF-8 JSON, json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(',', ':'))",
+    "v2_private_payload": "WITHHELD_FROM_PUBLIC_BRANCH_UNTIL_ACTUAL_HUMAN_INTAKE",
+    "v2_not_replacing_v1": true,
+    "precommit_done_before_any_real_ballots": true
+  },
+  "real_QA": {
+    "browser_playwright": "PASS desktop plus 390px mobile",
+    "no_external_network_requests": true,
+    "required_fields": "PASS; empty stage1 cannot advance; empty stage2 cannot finish",
+    "stage1_digest": "PASS compared JS fingerprint against independent Python hashlib.sha256 UTF-8 canonical JSON",
+    "offline_JSON_download": "PASS",
+    "mobile_no_horizontal_scroll": true,
+    "original_embedded_image_byte_hash_verified": true,
+    "mobile_crops_byte_identical_source_region": true,
+    "synthetic_negative_tests_passed": [
+      "wrong stage1 transcription after commit",
+      "mismatched panel sha256",
+      "stage2 timestamp older than stage1",
+      "false naive flag",
+      "duplicate session id"
+    ],
+    "deterministic_zip_rebuilds": "PASS_BYTE_EXACT both packages",
+    "zip_CRC": "PASS",
+    "synthetic_test_ballots_counted_as_real": 0
+  },
+  "identified_prior_error": "Old private 2026-10-31 README stated mean contour IoU around 69.7% but original per-glyph audit calculates mean 69.2825% (~69.28%); historical artifact retained and corrected by separate errata.",
+  "human_review": {
+    "actual_third_party_ballots": 0,
+    "real_recruitment_completed": false,
+    "actual_response_export_received": false,
+    "knowledge_of_mapping_sealed": true,
+    "naive_status_selfreported_only": true,
+    "acceptable_pilot": "Recruit approximately 5 independent native Chinese readers and separately record design practitioner reactions; do not claim statistical proof from small n"
+  },
+  "limits": [
+    "Single case cannot prove reusable design method",
+    "A client-side stage hash is not a signature or identity verification",
+    "A reviewer who inspects HTML source or knows the artwork can still be biased",
+    "No external server receives responses, distribution and genuine recruitment remain unperformed",
+    "No original PNG, mapping or reviewer data posted to public GitHub"
+  ],
+  "protection": {
+    "formal_branch": "visual-program-distillation-v2-photography-design-20260814",
+    "formal_task_lock_revision": 355,
+    "checkpoint": 377,
+    "formal_render_allowed": false,
+    "figma_writes": 0,
+    "new_image_generations": 0,
+    "VALIDATED_RULE": false
+  },
+  "next": "Distribute ONLY reviewer ZIP privately to consenting unseen adult native Chinese readers. Collect their raw JSON exports without source reveal, structurally validate with private verifier, then unblind once the preregistered intake is closed. Without real responses stop, not new R30 or content generation."
+}
