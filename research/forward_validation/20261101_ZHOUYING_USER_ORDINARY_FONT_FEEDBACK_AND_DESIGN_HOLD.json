@@ -1,0 +1,43 @@
+{
+  "schema": "shenmei/zhouying-human-review-direct-visual-critique/1.0",
+  "recorded_date": "2026-11-01",
+  "case": "ZHOUYING_CHAGUAN_ONE_SHOT_A_B_20261030",
+  "verbatim_user_feedback": "这个不就是最普通的字体吗？",
+  "context": "User directly viewed the A neutral Songti and B purported designed lettering and challenged their appearance as ordinary typefaces.",
+  "interpretation_boundary": {
+    "A": "Deliberate neutral Songti reading baseline. Being ordinary is expected, so do not count this as a separate failure of baseline purpose.",
+    "B": "Fails to demonstrate an independently recognizable professional original brand-lettering identity. Treat as human feedback indicating insufficient aesthetic improvement, not as proof that exact standard font glyphs were copied.",
+    "provenance": "User visual reaction in current continued ChatGPT design-research conversation. No independent blind vote or numerical preference was provided.",
+    "broad_font_identity": "Unknown: available assets are raster PNGs, not font-source provenance or editable native outline files."
+  },
+  "status": {
+    "A": "NEUTRAL_BASELINE_ONLY_NOT_CREATIVE_ARTIFACT",
+    "B": "HUMAN_FEEDBACK_NEGATIVE_ORDINARY_FONT_LIKE_DESIGN_HOLD",
+    "paired_review": "DO_NOT_FORCE_A_VS_B_WINNER",
+    "professional_skill_validated": false,
+    "independent_blind_review_collected": 0,
+    "historical_pixel_QA_intact": true
+  },
+  "root_cause": {
+    "demonstrated": "More silhouette change and lower IoU did not produce an obvious brand-specific identity. Technical validity passed, creative design quality not demonstrated.",
+    "likely_mechanism": "Prompt requests restraint and subtle tail changes but does not impose or verify a meaningful whole-word concept, coherent original structural decision, or professional art direction before generation.",
+    "not_proven": "Which actual font file (if any) the image generator used, artistic intent inside the black-box generator, general impossibility of producing designer-level wordmarks."
+  },
+  "new_stop_and_start_rules": [
+    "Stop benchmarking these two existing wordmarks for a winner; keep A as recognition baseline and B as a negative creative example.",
+    "Do not ask the user or outside readers to select between obviously inadequate creative candidates; blind intake artifacts may remain archived but are no longer the next required action.",
+    "Do not use numeric contour difference, font-distance, glyph-path count, or prompt length as proof of original design quality.",
+    "Before any new art generation, require one concrete brand concept with a visible design mechanism at whole-word and character levels, explicit intentional edits, coherent relationships, and stop/reversion criteria. Test design distinctness against a standard font before spending Figma effort.",
+    "Any later proposed creative variant must first clear basic glyph correctness and demonstrably not look like a stock font with incidental brush/tail deformation; then direct user creative review, followed by genuinely independent study only when scientifically warranted.",
+    "No retries of R1-R29, 喜, 金尊, 舟影茶馆 using minimal stroke width/spacing variations."
+  ],
+  "boundary": {
+    "research_branch": "research/paired-choice-sample-eligibility-20261028",
+    "formal_task_lock_revision": 355,
+    "checkpoint": 377,
+    "formal_render_allowed": false,
+    "new_art_generated": 0,
+    "figma_write": 0,
+    "new_paid_cost": 0
+  }
+}
