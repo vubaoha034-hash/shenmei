@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOU_SINGLE_VECTOR_ACTUAL_ARTIFACT_20261102 -->
+**2026-11-02 字标主线真实推进｜停止重复生图说明板，已有用户认可的「舟影茶馆」Image 图被拆出单字「舟」，并已实际制作4路径可编辑矢量草稿。** 取现存用户认为开始有设计感的 `舟影茶馆_墨韵茶舍.png` 精确剥离「舟」的四个连通部件，形成SVG `舟_单字可编辑矢量草稿.svg`（SHA256 `94a0eb51d30825f34d530789f91a1b22546583ccf9775e96cde6e9ac3f7ab116`）；无外嵌PNG、无字体依赖、可真实渲染，来源形状IoU=0.95206，80px仍可见正确单字。**已知边界：是从先前AI图矢量描摹，并非新绘的原创笔画或已专业精修，Figma尚未实际导入，真人完整审美验收未通过；不得宣传为成品。** 用户可在原聊天获取 SVG/PNG/验证ZIP；仓库只记录路径哈希、事实与约束，图片及二进制成品未上传仓库。下一合法动作：只验证独立测试Figma导入和四形状编辑，清理真实节点，再以已有样式为基准处理「影」；不改正式S7 Rev355/Checkpoint377。[当轮真实执行和证据](research/creator_process_replication/20261102_ZHOU_VECTOR_FROM_EXISTING_APPROVED_DIRECTION.md)。保留设计蒸馏方法`VALIDATED_RULE=false`。
+<!-- END_ZHOU_SINGLE_VECTOR_ACTUAL_ARTIFACT_20261102 -->
+
 <!-- FULL_CREATOR_TUTORIAL_WORKFLOW_INSTEAD_OF_PROMPT_FRAGMENTS_20261101 -->
 **2026-11-01 用户明确提出：为什么不直接完整模仿成熟设计师的创作流程？当前研究主线正式转为“真实教程的完整过程忠实执行”，而非继续抽象蒸馏零散笔画规则。** 已核查梁志坚2019-03-31一手《实战案例！详细剖析11款字体的设计全过程（上篇）》中的《海棠未雨》：理解主题→海浪/屋檐两方向→手绘草图→字库仅校对结构→钢笔重画雏形→修正整组失衡（棠略宽、未略小、雨略高）→按原生笔画加入古建筑屋檐并错开相邻特征→审查/包装。将**每步必须有真实中间图、修改前后稿、原生矢量和具体否决原因**作为新的执行合同；私人同题训练只学工作流程，不复制原作者字形作为自己的商用原创。之后在真正陌生的新词复刻该创作过程，才允许讨论方法迁移。历史《舟影茶馆》B被用户判像普通字体，保持创意HOLD，不再问用户做盲评也不再做宋体+细微笔尾B方案。**实际只完成来源核对与执行合同入库；尚未产出新的草图或设计，不得声称方法已验证。** [唯一最新研究方法合同](research/creator_process_replication/20261101_LIANG_ZHIJIAN_FULL_WORKFLOW_EXECUTION_CONTRACT.md)。正式生产锁仍Rev355/Checkpoint377，S7真人门、Figma、账户设置均未改动。
 <!-- END_FULL_CREATOR_TUTORIAL_WORKFLOW_INSTEAD_OF_PROMPT_FRAGMENTS_20261101 -->
