@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOU_FIGMA_NATIVE_IMPORT_20261102 -->
+**2026-11-02「舟」下一串行单元已真实执行并验收：实际创建独立Figma Design测试文件，原SVG和保真节点清理SVG各成功导入成四个原生VECTOR，不是位图。** [Figma 独立测试文件](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q)：源图根节点`1:2`(215个节点)，保真清理根节点`2:2`(163个节点)；同一Page 1两个可编辑SVG各有4Vector，零嵌入位图、零文字层，已实截图及二次原生回读验证。拒绝215→114的僵硬版本，采用215→163，2倍渲染轮廓IoU=0.9914216；原本用户认可的手写气质保持，但**仅为旧图描摹和保真减点，未完成专业贝塞尔手工精修，不能称原创定稿，也未继续生成影/茶/馆**。成果SVG、前后对照及CRC验收ZIP已交付当前聊天容器，没有上传 GitHub 二进制内容；研究与正式S7隔离，Figma正式生产写入0、Image调用0、`VALIDATED_RULE=false`。[事实与下一合法单元](research/creator_process_replication/20261102_ZHOU_FIGMA_REAL_NATIVE_VECTOR_IMPORT_AND_REFINED_CONTOUR.md)。前条“Figma尚未实际导入”在此以新事实取代，保留历史记录。
+<!-- END_ZHOU_FIGMA_NATIVE_IMPORT_20261102 -->
+
 <!-- ZHOU_SINGLE_VECTOR_ACTUAL_ARTIFACT_20261102 -->
 **2026-11-02 字标主线真实推进｜停止重复生图说明板，已有用户认可的「舟影茶馆」Image 图被拆出单字「舟」，并已实际制作4路径可编辑矢量草稿。** 取现存用户认为开始有设计感的 `舟影茶馆_墨韵茶舍.png` 精确剥离「舟」的四个连通部件，形成SVG `舟_单字可编辑矢量草稿.svg`（SHA256 `94a0eb51d30825f34d530789f91a1b22546583ccf9775e96cde6e9ac3f7ab116`）；无外嵌PNG、无字体依赖、可真实渲染，来源形状IoU=0.95206，80px仍可见正确单字。**已知边界：是从先前AI图矢量描摹，并非新绘的原创笔画或已专业精修，Figma尚未实际导入，真人完整审美验收未通过；不得宣传为成品。** 用户可在原聊天获取 SVG/PNG/验证ZIP；仓库只记录路径哈希、事实与约束，图片及二进制成品未上传仓库。下一合法动作：只验证独立测试Figma导入和四形状编辑，清理真实节点，再以已有样式为基准处理「影」；不改正式S7 Rev355/Checkpoint377。[当轮真实执行和证据](research/creator_process_replication/20261102_ZHOU_VECTOR_FROM_EXISTING_APPROVED_DIRECTION.md)。保留设计蒸馏方法`VALIDATED_RULE=false`。
 <!-- END_ZHOU_SINGLE_VECTOR_ACTUAL_ARTIFACT_20261102 -->
