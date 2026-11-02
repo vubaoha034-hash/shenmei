@@ -1,0 +1,134 @@
+{
+  "schema_version": "vpd-one-shot-coordinator-fail-plus-non-gen-feasibility/v1",
+  "recorded_date": "2026-11-02",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "head_before_write": "802a393795eed9d96a2b9aabfe6e13e9752008f0",
+  "task_identity": {
+    "original_single_test_task_id": "VPD-PEPPER-PORK-LAST-LADLE-DESIGN-ONE-TEST-READY-20261102",
+    "original_frozen_ticket": "evidence/vpd/visual_art_direction_research_20261102/PEPPER_PORK_MOTION_DESIGN_SINGLE_TEST_PREPARED_ONLY_20261102.json",
+    "original_complete_design_scope_correction": "evidence/vpd/visual_art_direction_research_20261102/PEPPER_PORK_LAST_LADLE_FULL_DESIGN_SCOPE_CORRECTION_20261102.md",
+    "same_task_not_new_parallel_generation": true,
+    "generated_candidate_count_this_authorized_round": 1,
+    "further_generation_authorized": false,
+    "automatic_retry_forbidden": true,
+    "no_new_image_called_in_this_receipt": true
+  },
+  "single_test_failure": {
+    "final_verdict": "FAIL_CLOSED_ONE_CANDIDATE",
+    "source": "User-provided report of coordination-side self-review, 2026-11-02; not independently inspected candidate pixels",
+    "coordinator_report": "统一指挥已明确授权一次设计测试图。本聊天的“最多1张、不自动重试”约束已遵守：已用归档辣椒炒肉原片制作1张候选。协调端自审结论：本张不通过，输出为1536×1024横版而非冻结方案4:5；主体变成炒锅/悬空炒勺，未保留原片餐盘构图与菜品真实身份，整体过暗、油亮过重，偏廉价戏剧化餐饮广告。标题大致可读，但不能弥补构图与真实感问题。",
+    "coordinator_reported_output_dimensions": [
+      1536,
+      1024
+    ],
+    "reported_aspect_ratio": 1.5,
+    "frozen_requested_aspect_ratio": 0.8,
+    "aspect_ratio_mismatch": true,
+    "reported_failure_reasons": [
+      "1536×1024 landscape instead of intended 4:5 portrait",
+      "Wok/floating ladle overtook plated pepper pork as main visual subject",
+      "Original plate-based dish identity and accepted food realism not maintained",
+      "Excessively dark, excessive glossy/greasy rendering, cheap theatrical restaurant-ad effect",
+      "Roughly legible title insufficient to compensate failures"
+    ],
+    "independent_candidate_pixel_readback": "NOT_AVAILABLE_FROM_USER_REPORT",
+    "candidate_sha256": null,
+    "candidate_url": null,
+    "candidate_bytes": null,
+    "operator_in_this_chat_generation_count": 0,
+    "no_second_candidate": true,
+    "no_design_acceptance": true,
+    "plugin_skill_promotion_allowed": false,
+    "note": "User report establishes coordinator fail verdict and consumed budget; unknown candidate binary provenance is left unknown, not filled with invented values."
+  },
+  "approved_original": {
+    "name": "香辣青椒炒肉特写.png",
+    "drive_url": "https://drive.google.com/file/d/15iUmN6aeem7JzkZYCwNdD7xDrsIZO1d5/view",
+    "archive_evidence": "evidence/vpd/visual_art_direction_research_20261102/PEPPER_PORK_ORIGINAL_DRIVE_ARCHIVE_VERIFIED_20261102.json",
+    "actual_runtime_bytes": 2579716,
+    "actual_runtime_dimensions": [
+      941,
+      1672
+    ],
+    "actual_runtime_sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44",
+    "runtime_verified": "YES: source PNG opened, bytes and SHA-256 computed and exact image visually inspected in this turn",
+    "approved_scope": "One source food image accepted for perceived authenticity and appetite; no complete poster approval."
+  },
+  "non_generative_feasibility": {
+    "question": "Can the same archived original produce a complete 4:5 poster using only editable image placement, masking/background layers, and typography without another image generation?",
+    "technical_verdict": "GO_FOR_EDITABLE_4_BY_5_POSTER_COMPOSITION_WITH_ORIGINAL_PHOTO_UNCHANGED",
+    "aesthetic_verdict": "UNKNOWN_NOT_DESIGN_PASS; split photo/text art direction may still be ordinary",
+    "commercial_final_verdict": "NOT_READY; brand ownership/context, actual final editable file, and human aesthetic review missing",
+    "recommended_canvas_px": [
+      1200,
+      1500
+    ],
+    "source_dimensions_px": [
+      941,
+      1672
+    ],
+    "source_strategy": "Use full original photograph at preserved aspect ratio; do NOT hallucinate missing right side plate or separate complete food object from frame.",
+    "image_box_px": {
+      "x": 360,
+      "y": 30,
+      "width": 810.43,
+      "height": 1440
+    },
+    "photo_margin_px": {
+      "top": 30,
+      "right": 29.57,
+      "bottom": 30
+    },
+    "text_safe_area_px": {
+      "x_min": 56,
+      "x_max": 326,
+      "y_min": 240,
+      "y_max": 1100
+    },
+    "typography_content": "仅用已知菜名「辣椒炒肉」，采用真实可编辑的中性中文印刷字形；未经核实不添加价格、品牌、原产地、现炒等商业宣称。",
+    "layout_readability": "Photo remains dominant; two-line 2+2 Chinese dish-title in left column with disciplined hierarchy and neutral background sampled/tuned to food tones; not generic leaves, circles, gold badges or excessive marketing copy.",
+    "non_gen_tools": "Figma or native vector editor: image as locked raster layer + neutral vector background + editable text, preserve actual source pixels and editable layout; export exact 4:5 canvas.",
+    "properties_possible_without_generation": [
+      "Exact 4:5 format",
+      "Uncropped original food/plate capture",
+      "Unchanged food textures, oil gloss, natural lighting",
+      "Title position/size/hierarchy",
+      "Clean surrounding neutral backgrounds, simple masks, aligned whitespace",
+      "Editable vector/type poster export"
+    ],
+    "properties_not_supported_without_new_pixels": [
+      "Adding actual wok and ladle while preserving source photo",
+      "Reconstructing complete right-hand rim of cut-off plate",
+      "Replacing the entire wood-table background around food with physically correct new contact shadows",
+      "Inferring a convincing 'just plated' action from a finished-food still image"
+    ],
+    "scene_concept_update": "The rejected '最后一勺，刚出锅' motion scene is NOT transferable to this non-generative original. Do not add wok, ladle, flame, or that time-specific claim to the original photo. The non-gen poster must focus on the existing dish, its actual food color and photographic relationships.",
+    "why_not_full_bleed": "Filling 1200px width from 941px source yields ~2132px image height, requiring ~496 source-pixel-equivalent total vertical crop (~632 displayed pixels); this risks removing original context/plate. Prefer fit-inside at 1440px height.",
+    "independent_visual_observations": [
+      "Dish fills much of the plate with a real rim but the right-hand plate is already cut by image boundary.",
+      "Food is concentrated central through lower right; photo contains window, wood tabletop and grey ceramic plate.",
+      "Full silhouette cutout is unsupported without manufacturing missing rim and shadow.",
+      "The photograph is sufficiently sharp and has acceptable existing user-approved food rendering."
+    ],
+    "design_risk": "Simple vertical split text/photo poster may be technically usable yet not meet target's strong reference-level art direction. It is one feasible low-risk execution path, not an aesthetically proven mechanism.",
+    "evaluation_preconditions": [
+      "Use original SHA to confirm same input",
+      "Save editable native frame and screenshot/export",
+      "Actual 1200×1500 raster export verifies aspect ratio 4:5",
+      "Manual review for food appetite and visual design",
+      "Correct and legible typography",
+      "Keep photo source, raster original, and design/export lineage separate"
+    ]
+  },
+  "decision_and_next": {
+    "generated_retry_allowed": false,
+    "status": "USER_REPORTED_SINGLE_DESIGN_TEST_FAILED_AND_NON_GEN_FEASIBILITY_PASS",
+    "allowed_next_action": "Return this recorded coordinator failure and non-generative feasibility to original coordinating mainline; if user authorizes non-gen layout work, compose the 1200×1500 editable poster using original raster without any new image API.",
+    "forbidden_next_action": "Any further image generation, image-edit generation, hidden variations, attempt reset, or automatic retry without new coordinator approval.",
+    "original_native_task_lock_revision": 355,
+    "original_checkpoint_sequence": 377,
+    "mainline_task_lock_not_modified": true,
+    "no_success_claim": true
+  }
+}
