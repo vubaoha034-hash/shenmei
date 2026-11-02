@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOU_FIGMA_BEZIER_V3_20261102 -->
+**2026-11-02「舟」字单字精修下一串行单元实际完成**：在已有独立Figma测试文件而非正式S7中，以用户此前认可的舟字造型为源，手工重新指定主体外轮廓C/Q贝塞尔曲线，优化左长撇、横臂、底回锋、主竖过渡，其他三块原轮廓保留。Figma v3节点`5:2`[直接打开](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q?node-id=5-2)，真实原生可编辑四VECTOR，总82顶点（v2 163）；有截图核验及192/96/48px识字检视。本地v2/v3渲染IoU=0.94718仅证实形变不是审美评分。SVG、真实对照、校验ZIP存在本聊天私有工作区，Hash及Figma节点证据见[实际精修记录](research/creator_process_replication/20261102_ZHOU_FIGMA_BEZIER_REFINEMENT_V3_REAL_ARTIFACT.md)。**不是新AI生图，不是四字字标定稿，也不宣称已证明专业审美能力**；`VALIDATED_RULE=false`、原研究边界与正式S7任务锁不变。下一步先审查上部点与内点笔形的一致性，再处理「影」，不做无关新课题。
+<!-- END_ZHOU_FIGMA_BEZIER_V3_20261102 -->
+
 <!-- ZHOU_FIGMA_NATIVE_IMPORT_20261102 -->
 **2026-11-02「舟」下一串行单元已真实执行并验收：实际创建独立Figma Design测试文件，原SVG和保真节点清理SVG各成功导入成四个原生VECTOR，不是位图。** [Figma 独立测试文件](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q)：源图根节点`1:2`(215个节点)，保真清理根节点`2:2`(163个节点)；同一Page 1两个可编辑SVG各有4Vector，零嵌入位图、零文字层，已实截图及二次原生回读验证。拒绝215→114的僵硬版本，采用215→163，2倍渲染轮廓IoU=0.9914216；原本用户认可的手写气质保持，但**仅为旧图描摹和保真减点，未完成专业贝塞尔手工精修，不能称原创定稿，也未继续生成影/茶/馆**。成果SVG、前后对照及CRC验收ZIP已交付当前聊天容器，没有上传 GitHub 二进制内容；研究与正式S7隔离，Figma正式生产写入0、Image调用0、`VALIDATED_RULE=false`。[事实与下一合法单元](research/creator_process_replication/20261102_ZHOU_FIGMA_REAL_NATIVE_VECTOR_IMPORT_AND_REFINED_CONTOUR.md)。前条“Figma尚未实际导入”在此以新事实取代，保留历史记录。
 <!-- END_ZHOU_FIGMA_NATIVE_IMPORT_20261102 -->
