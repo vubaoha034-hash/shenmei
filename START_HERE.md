@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOUYING_PAIR_V5_OPTICAL_SPACING_20261102 -->
+**2026-11-02 舟影双字实际排版精修v5｜原v4b两字有真实墨迹交叉，已基于舟v5/影v2原SVG完成新组合：两组12个原生矢量路径完全不改，影由translate(530,100) scale(1.24)改为translate(592,200) scale(1.21)，裁紧画布。两字墨迹交叉由49像素降到0；已导入独立Figma测试文件 [节点14:2](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q?node-id=14-2)，原生12 VECTOR、无位图/文本，截图与本地渲染均核实。SVG SHA256 `9beceedc72ffbc91896a1151abfb058e6ce26b262ca1b766fdc219dcca03f140`，附件ZIP及小尺寸、前后对照存在当前聊天。[详细验收与艺术局限](research/creator_process_replication/20261102_ZHOUYING_PAIR_V5_ACTUAL_LAYOUT_FIGMA_QA.md)。**当前只是比前版干净的研究候选，整体成熟度未获真人确认，不可升级正式成品或扩展茶馆。** 唯一下一步直接向用户展示v5实际作品供审美判断；正式S7不改，`VALIDATED_RULE=false`。
+<!-- END_ZHOUYING_PAIR_V5_OPTICAL_SPACING_20261102 -->
+
 <!-- ZHOU_V4_YING_NATIVE_FIGMA_PAIR_20261102 -->
 **2026-11-02 最新真实中文字标研究进展：舟v4的三处残留折线已手工贝塞尔重绘并实际入Figma(6:2)，四VECTOR共49节点；从同一张用户认可的旧图精确分离「影」8块，转成Figma原生8VECTOR(7:2)共270描摹点；二字高低大小错落真实试排为Figma Frame(8:2)，12个原生VECTOR、零嵌入位图或文字，已实际截图及再次原生只读核验。** [直接看独立Figma「舟影」草模](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q?node-id=8-2)，[逐项实证与不合格边界](research/creator_process_replication/20261102_ZHOU_V4_YING_EXTRACT_FIGMA_PAIRED_LAYOUT.md)。本地已输出两个独立SVG、原图提取、对照PNG及CRC通过的附件ZIP（未宣称二进制入GitHub）。**关键边界：影只是源图隔离后多边形追踪，270节点未贝塞尔精修；双字试排只是技术与构图草稿，用户还未认可，不能将其称为完整四字字标或商用原创字体。** 唯一下一步：在同一测试Figma文件精修影的日部/景部与右侧三撇，随后复核舟影双字重心；不增图、不写正式S7 Rev355/Checkpoint377生产文件，`VALIDATED_RULE=false`。此前「舟v3等待上笔精修」已由此实际推进。
 <!-- END_ZHOU_V4_YING_NATIVE_FIGMA_PAIR_20261102 -->
