@@ -1,5 +1,9 @@
 # START HERE — 强制执行入口
 
+<!-- ZHOU_V4_YING_NATIVE_FIGMA_PAIR_20261102 -->
+**2026-11-02 最新真实中文字标研究进展：舟v4的三处残留折线已手工贝塞尔重绘并实际入Figma(6:2)，四VECTOR共49节点；从同一张用户认可的旧图精确分离「影」8块，转成Figma原生8VECTOR(7:2)共270描摹点；二字高低大小错落真实试排为Figma Frame(8:2)，12个原生VECTOR、零嵌入位图或文字，已实际截图及再次原生只读核验。** [直接看独立Figma「舟影」草模](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q?node-id=8-2)，[逐项实证与不合格边界](research/creator_process_replication/20261102_ZHOU_V4_YING_EXTRACT_FIGMA_PAIRED_LAYOUT.md)。本地已输出两个独立SVG、原图提取、对照PNG及CRC通过的附件ZIP（未宣称二进制入GitHub）。**关键边界：影只是源图隔离后多边形追踪，270节点未贝塞尔精修；双字试排只是技术与构图草稿，用户还未认可，不能将其称为完整四字字标或商用原创字体。** 唯一下一步：在同一测试Figma文件精修影的日部/景部与右侧三撇，随后复核舟影双字重心；不增图、不写正式S7 Rev355/Checkpoint377生产文件，`VALIDATED_RULE=false`。此前「舟v3等待上笔精修」已由此实际推进。
+<!-- END_ZHOU_V4_YING_NATIVE_FIGMA_PAIR_20261102 -->
+
 <!-- ZHOU_FIGMA_BEZIER_V3_20261102 -->
 **2026-11-02「舟」字单字精修下一串行单元实际完成**：在已有独立Figma测试文件而非正式S7中，以用户此前认可的舟字造型为源，手工重新指定主体外轮廓C/Q贝塞尔曲线，优化左长撇、横臂、底回锋、主竖过渡，其他三块原轮廓保留。Figma v3节点`5:2`[直接打开](https://www.figma.com/design/UEMpVpYoPzEJDPfjuayN2q?node-id=5-2)，真实原生可编辑四VECTOR，总82顶点（v2 163）；有截图核验及192/96/48px识字检视。本地v2/v3渲染IoU=0.94718仅证实形变不是审美评分。SVG、真实对照、校验ZIP存在本聊天私有工作区，Hash及Figma节点证据见[实际精修记录](research/creator_process_replication/20261102_ZHOU_FIGMA_BEZIER_REFINEMENT_V3_REAL_ARTIFACT.md)。**不是新AI生图，不是四字字标定稿，也不宣称已证明专业审美能力**；`VALIDATED_RULE=false`、原研究边界与正式S7任务锁不变。下一步先审查上部点与内点笔形的一致性，再处理「影」，不做无关新课题。
 <!-- END_ZHOU_FIGMA_BEZIER_V3_20261102 -->
