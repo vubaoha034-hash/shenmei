@@ -1,0 +1,107 @@
+{
+  "schema_version": "vpd-pixel-change-versus-design-mechanism-audit/v1",
+  "date": "2026-11-06",
+  "scope": "Analysis of two already completed failed food poster candidates, without generating/altering any image",
+  "repo": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "head_before_write": "e34c0e2bbb83fc8011e6d094296afb37d14c17e5",
+  "lineage": {
+    "first": {
+      "filename": "辣椒炒肉_家常小炒盛宴.png",
+      "image_gen_id": "31c137b4-666c-427d-920e-c34e43eb74e5",
+      "natural_dimensions": [
+        1122,
+        1402
+      ],
+      "actual_sha256": "8592ace8422734a49c26ad266c70cde24840635ec232db390e2ffcf789d3a723",
+      "actual_bytes": 2444130,
+      "human_feedback": "现在有点设计感了。但是远远不够"
+    },
+    "second": {
+      "filename": "辣椒炒肉_一餐好味道.png",
+      "image_gen_id": "094e5187-e72f-4eba-9f4b-0940ec503209",
+      "natural_dimensions": [
+        1122,
+        1402
+      ],
+      "actual_sha256": "7841df2c6348bdfb9a76ecef9cd7f81a1855c3176ccea4d1375a034e6e159204",
+      "actual_bytes": 2578176,
+      "human_feedback": "别生产了。依旧非常差"
+    },
+    "original_human_accepted_photo_sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44",
+    "prior_stop_record": "evidence/vpd/visual_art_direction_research_20261106/PEPPER_PORK_NEW_MEAL_SCENE_GENERATION_HUMAN_FAIL_STOP_20261106.json",
+    "upstream_workflow_study": "evidence/vpd/visual_art_direction_research_20261106/REAL_DESIGNER_WORKFLOW_PRIMARY_CASES_DECISION_ORDER_AUDIT_20261106.md"
+  },
+  "actual_image_check": {
+    "environment": "Original candidate PNGs read from mounted task artifact paths /mnt/data; sha256 recomputed from file bytes, Pillow RGB decoded and resized for metric",
+    "analysis_dimensions": [
+      500,
+      625
+    ],
+    "resizing_note": "Both images have same 1122x1402 dimensions; resized each to exactly 500x625 using PIL default RGB resizing",
+    "metric": "grayscale structural similarity index (SSIM) measured with skimage.metrics.structural_similarity(data_range=1) and skimage.color.rgb2gray",
+    "whole_ssim": 0.2208,
+    "mean_absolute_normalized_rgb_change": 0.2451,
+    "region_ssim": {
+      "title_upper": 0.393,
+      "plate_mid": 0.139,
+      "bottom": 0.187,
+      "rice_upper_right": 0.287
+    },
+    "limitation": "Low SSIM means large pixel-level change, not design superiority or semantic diversity. Region comparisons are defined by fixed rectangles on normalized 500x625 and are not content-aligned. The next observation is a separate visual judgement."
+  },
+  "visual_mechanism_judgment": {
+    "status": "COMPOSITION_GRAMMAR_NOT_SUBSTANTIVELY_CHANGED",
+    "human_look": {
+      "first": "Large title upper-left, rice bowl upper-right, cooked dish dominant lower-middle, chopsticks lower-right on neutral table",
+      "second": "Larger upper-left heading with red curving accent and small red mark; rice bowl upper-right, cooked dish dominant lower-middle/left, chopsticks lower-right, linen added beneath dish"
+    },
+    "failure": "The renderer changes output pixels and typography accents, but retains the same interchangeable four-object food-poster schema.",
+    "distinction": "This is an expert visual inference from two displayed results, not a machine-proven compositional classification. User strongly rejected the second result; original accepted food photo remains protected."
+  },
+  "independent_primary_source_crosscheck": [
+    {
+      "url": "https://www.flatstudio.co/blog/branding-process-redesign-stylescapes",
+      "supported_observation": "The team reports that polishing logos earlier and then showing rough logo sketches both failed to solve the wrong decision order; they use cohesive visual-direction boards before detailed identity"
+    },
+    {
+      "url": "https://www.flatstudio.co/blog/how-a-15deg-tilt-defined-the-entire-brand-boxbet-identity-design",
+      "supported_observation": "The brand's 15-degree tilt is explicitly connected to movement and reused in logo, graphics, typography, and layouts, rather than added as an arbitrary decorative slash"
+    },
+    {
+      "url": "https://www.beutlerink.com/fence-post",
+      "supported_observation": "Cast-iron skillet selected because the restaurant needed to stand apart from the meat-first barbecue stereotype while honoring home-style side dishes"
+    },
+    {
+      "url": "https://pocca.design/DULi",
+      "supported_observation": "Top-down food photography chosen to support a frequently changing seasonal menu with one dish per page, not simply because top-down photos look premium"
+    }
+  ],
+  "reasoned_application": {
+    "core_mismatch": "Our poster had no confirmed brand/placement-specific visual proposition; rice bowl, chopsticks and ceramic plate would work with almost any stir-fry. Strong adjectives cannot supply the absent relationship.",
+    "remaining_unknowns": [
+      "How much of poor visual output comes from model capability vs direction selection",
+      "Which exact visual direction the user would accept in a future authorized experiment",
+      "Whether the same product photo can support a distinctive campaign without additional genuine product/brand evidence"
+    ],
+    "avoid": [
+      "Treating SSIM as a quality score",
+      "Claiming a specific design method has been validated by this audit",
+      "Creating new candidate art or a restyled render despite explicit user stop"
+    ],
+    "right_next_decision": "The project needs a real business/usage-specific art direction to be selected before any new commercial-quality image can be meaningfully evaluated; until explicit new user authorization, preserve stop and do not spend visual generation budget."
+  },
+  "project_state": {
+    "formal_current_task_lock_revision": 355,
+    "formal_latest_checkpoint_sequence": 377,
+    "native_lock_modified": false,
+    "checkpoint_modified": false,
+    "plugin_modified": false,
+    "no_render_during_this_audit": true,
+    "no_figma_write_during_this_audit": true,
+    "user_stop_still_active": true
+  },
+  "completed": "Computed actual dimensions/hashes and normalized pixel difference of both existing images; separated pixel change from recurring scene composition and cross-checked against primary studio accounts",
+  "incomplete": "No human-accepted high-design poster or validated reusable art-direction mechanism",
+  "next_required_action": "Maintain STOP. Do not produce or edit posters, or fill time with new research artifacts. Resume only upon explicit new user request naming a fresh task or lifting the stop."
+}
