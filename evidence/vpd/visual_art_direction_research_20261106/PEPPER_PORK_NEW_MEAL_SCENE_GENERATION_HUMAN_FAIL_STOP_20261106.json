@@ -1,0 +1,82 @@
+{
+  "schema_version": "vpd-visual-human-negative-production-stop/v1",
+  "recorded_date": "2026-11-06",
+  "authority": "direct_user_feedback_in_live_conversation",
+  "task_scope": "isolated pepper-pork visual art-direction experimental study, not the formal tea typography task",
+  "original_approved_food_reference": {
+    "name": "香辣青椒炒肉特写.png",
+    "sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44",
+    "drive_url": "https://drive.google.com/file/d/15iUmN6aeem7JzkZYCwNdD7xDrsIZO1d5/view",
+    "prior_human_scope": "Food-photo realism and appetite previously accepted; no complete-poster approval",
+    "preservation": "DO_NOT_OVERWRITE_OR_DOWNGRADE_FROM_THIS_NEW_POSTER_FEEDBACK"
+  },
+  "experiment": {
+    "design_direction_record": "evidence/vpd/visual_art_direction_research_20261106/PEPPER_PORK_ONE_SCENE_ART_DIRECTION_SELECTED_20261106.md",
+    "concept": "完整真实餐桌：辣椒炒肉、白米饭、筷子，一体化主视觉",
+    "candidate1": {
+      "image_gen_id": "31c137b4-666c-427d-920e-c34e43eb74e5",
+      "natural_dimensions": [
+        1122,
+        1402
+      ],
+      "user_feedback_verbatim": "现在有点设计感了。但是远远不够",
+      "human_scope": "DIRECTIONAL_DESIGN_IMPROVEMENT_ONLY_NOT_ACCEPTED"
+    },
+    "candidate2": {
+      "image_gen_id": "094e5187-e72f-4eba-9f4b-0940ec503209",
+      "natural_dimensions": [
+        1122,
+        1402
+      ],
+      "user_feedback_verbatim": "别生产了。依旧非常差。",
+      "human_scope": "STRONG_FAIL_AND_EXPLICIT_NO_MORE_PRODUCTION"
+    },
+    "source_image_hash_of_generated_images": "NOT_VERIFIED",
+    "authoritative_result": "HUMAN_FAIL_STOP",
+    "design_promoted": false,
+    "no_automatic_retries": true,
+    "no_new_versions_allowed": true
+  },
+  "design_diagnosis": {
+    "type": "assistant judgement based on the displayed two pictures",
+    "main_issue": "第二张没有出现实质性的构图机制进步；只是加大题字、增加红色装饰笔划、修改盘子裁切和餐布，依旧是可替换菜品的通用餐饮海报。",
+    "supporting_visuals": [
+      "Large text above photograph, plate lower frame, white rice upper right, chopsticks lower right in both candidates",
+      "Second image adds an unrelated red sweep/mini seal-like decoration and heavy stylized lettering, without a new scene-rooted visual identity"
+    ],
+    "confidence": "medium; aesthetic causality remains judgement, user rejection itself is fact"
+  },
+  "immediate_control": {
+    "user_verbatim": "别生产了。依旧非常差。",
+    "stop_applies_to": "all further image generation, image edits, rerolls, photo compositing, Figma design production or design candidate creation in this pepper-pork workstream, unless user explicitly issues a NEW instruction",
+    "no_generation_during_this_record": true,
+    "no_image_edit_during_this_record": true,
+    "no_figma_write_during_this_record": true,
+    "no_automatic_research_to_evade_stop": true,
+    "preserve_prior_failed_candidates_as_history": true,
+    "do_not_add_global_visual_rules": true,
+    "skill_or_plugin_promotion": false,
+    "user_review_required_for_any_future_candidate": true
+  },
+  "separate_formal_mainline": {
+    "repo": "vubaoha034-hash/shenmei",
+    "branch": "visual-program-distillation-v2-photography-design-20260814",
+    "head_before_write": "6fe9707260cb372250738698c17da7f501c2a715",
+    "native_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "task_lock_modified": false,
+    "checkpoint_modified": false
+  },
+  "completed": [
+    "Received user's explicit visual failure verdict and stop-production instruction",
+    "Preserved distinctions between first directional improvement and second explicit failure",
+    "Isolated new failure from previously accepted food-photo original",
+    "Recorded production stop without scheduling future outputs"
+  ],
+  "incomplete": [
+    "A genuinely accepted fully integrated poster",
+    "Validated transferable visual art-direction method",
+    "Plugin design-quality promotion"
+  ],
+  "next_required_action": "STOP. Do not keep designing or generating. Await an explicit NEW user request; do not reinterpret a generic continuation as permission to evade the stop."
+}
