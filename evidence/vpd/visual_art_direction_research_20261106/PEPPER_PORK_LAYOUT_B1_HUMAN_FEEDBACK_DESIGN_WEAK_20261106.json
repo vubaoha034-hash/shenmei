@@ -1,0 +1,59 @@
+{
+  "schema_version": "vpd-human-visual-review-receipt/v1",
+  "date": "2026-11-06",
+  "task_id": "VPD-PEPPER-PORK-NON-GENERATIVE-EDITORIAL-4X5-20261104-01",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "head_before_write": "744b009b9496dfbde6e7735e6a6a975157f2300c",
+  "source": {
+    "drive_url": "https://drive.google.com/file/d/15iUmN6aeem7JzkZYCwNdD7xDrsIZO1d5/view",
+    "sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44",
+    "dimensions": [
+      941,
+      1672
+    ],
+    "original_human_feedback": "这个可以，。。并且看起来想吃"
+  },
+  "reviewed_candidate": {
+    "name": "辣椒炒肉_保真编辑式海报_1200x1500",
+    "canvas": [
+      1200,
+      1500
+    ],
+    "preview_sha256": "d4fadbdd9180b647dea7e1d521d89458e0665484abb3d4c8056db44755a70535",
+    "preview_drive_url": "https://drive.google.com/file/d/1MtYt5I1D0-JT9eXZaytn3RB-5iaNQgcT/view",
+    "figma_url": "https://www.figma.com/design/VwNNdbV4F4favIVGYtVDv9",
+    "image_generation_calls": 0,
+    "source_photo_unchanged": true
+  },
+  "human_review": {
+    "verbatim": "图片可以。设计感很一般。",
+    "photo_dimension": "ACCEPTED_IN_THIS_CANDIDATE",
+    "design_dimension": "WEAK_NOT_ACCEPTED",
+    "scope": "One non-generative 4:5 layout only. This is not a global rejection of editorial layouts or the original food photo.",
+    "human_final_approval": false
+  },
+  "designer_diagnosis": {
+    "observed_layout": "Large rectangular food image aligned to the right; separate flat warm-grey left column; isolated large two-line title; small captions placed top/bottom.",
+    "probable_failure_causes": [
+      "The photo behaves as a rectangular placed asset rather than generating the poster geometry.",
+      "The left column is a generic detached information panel.",
+      "The hierarchy is orderly but predictable; it could be reused unchanged for many dishes.",
+      "The title and photo have little spatial or semantic interaction beyond side-by-side placement.",
+      "No single image-derived visual mechanism creates a memorable composition."
+    ],
+    "confidence": "High for observable layout; medium for causal aesthetic diagnosis because only one candidate was reviewed."
+  },
+  "disposition": {
+    "photo_realism_and_appetite_result_preserved": true,
+    "design_candidate_status": "HUMAN_WEAK_NOT_PROMOTED",
+    "discard_source_photo": false,
+    "discard_all_editorial_layouts": false,
+    "plugin_promotion": false,
+    "global_rule_change": false,
+    "mainline_task_lock_revision": 355,
+    "checkpoint_sequence": 377,
+    "formal_mainline_modified": false
+  },
+  "next_action": "Make one non-generative design revision using the actual ceramic plate rim as the image boundary: the photograph should break the rectangular grid with a source-derived sweeping curve, and the title should occupy the negative space created by that curve. Keep the exact source pixels unchanged; do not add a generic detached side panel. Review the new layout as a new candidate; no image generation."
+}
