@@ -92,6 +92,8 @@ skills/restaurant-operations-master/config/restaurant-operations-gates.v1.json
 
 餐饮经营与视觉交付分开审查。漂亮设计不能覆盖亏损、食品安全或执行问题；经营逻辑也不能覆盖错字、产品错误、空间错误或弱品牌逻辑。
 
+**Free public Excel-first operations guide (English; hypothetical examples, not audited restaurant results):** [Rank weekly menu contribution exposure after a supplier price rise](restaurant_operations_system/public_resources/SHENMEI_SUPPLIER_PRICE_SHOCK_WEEKLY_IMPACT_EXCEL_GUIDE_20261107.md). This is a standalone teaching resource, not a claim of customer trials or actual ROI.
+
 ## 隐私
 
 仓库公开时只保存框架、脱敏模板和聚合证据，不上传真实流水、员工信息、合同、供应价格、账号或私人校准照片。
