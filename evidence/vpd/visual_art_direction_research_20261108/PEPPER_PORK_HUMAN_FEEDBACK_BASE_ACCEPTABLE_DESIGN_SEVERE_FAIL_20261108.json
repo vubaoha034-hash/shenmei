@@ -1,0 +1,42 @@
+{
+  "schema_version": "vpd-scoped-human-visual-feedback/v1",
+  "recorded_date": "2026-11-08",
+  "repository": "vubaoha034-hash/shenmei",
+  "branch": "visual-program-distillation-v2-photography-design-20260814",
+  "source": "Direct user feedback in current conversation",
+  "feedback_verbatim": "辣椒炒肉底图我觉得问题不大，但是设计真的差的要死。",
+  "dimension_judgements": {
+    "food_base": "RELATIVELY_ACCEPTABLE_FOR_THIS_REVIEW; explicit original wording is '问题不大', not a blanket FINAL/PASS approval of every generated photo",
+    "overall_art_direction_and_design": "SEVERE_FAIL",
+    "accepted_original_photo_immutability": "PRESERVED",
+    "new_complete_poster_quality": "NOT_ACCEPTED",
+    "overall_commercial_or_skill_promotion": "PROHIBITED"
+  },
+  "important_nuance": [
+    "Relative acceptance of the food base does not mean that the image must be replaced or rebuilt.",
+    "Latest user identifies design rather than food texture or photography as the dominant blocker.",
+    "Previous evaluations of the art-directed meal-scene render remain human FAIL; don't convert their output into an approved design.",
+    "Do not assert user accepted any poster or full brand identity."
+  ],
+  "audit_from_existing_work": {
+    "last_stop_record": "evidence/vpd/visual_art_direction_research_20261106/PEPPER_PORK_NEW_MEAL_SCENE_GENERATION_HUMAN_FAIL_STOP_20261106.json",
+    "comparison_record": "evidence/vpd/visual_art_direction_research_20261106/PEPPER_PORK_TWO_RENDER_PIXEL_CHANGE_VS_DESIGN_INVARIANCE_AUDIT_20261106.json",
+    "recurring_failure_hypothesis": "Interchangeable high-end Chinese-food poster formula: large headline above, plated stir-fry below, bowl upper-right, chopsticks lower-right, generic red flourish. The image and copy are placed aesthetically but not driven by a distinctive business/food fact. This is a professional inference, not a proven model-internal root cause.",
+    "not_remediable_by": "Changing the food surface, rerendering the same scene, increasing gloss, adding arbitrary arc/seal, or rewording a longer prompt",
+    "primary_product_visual_reference_sha256": "577616dbe146cb2a4ea89bbce4ed4ca115b6a83f4facc3cdfbf81120ebfd4f44"
+  },
+  "active_boundaries": {
+    "user_production_stop_still_active": true,
+    "do_not_generate": true,
+    "do_not_modify_figma": true,
+    "do_not_modify_original_photo": true,
+    "do_not_auto_create_new_design_candidate": true,
+    "do_not_auto_promote_skill_or_plugin": true,
+    "native_lock_revision": 355,
+    "native_checkpoint_sequence": 377,
+    "native_lock_and_checkpoint_not_modified": true
+  },
+  "completed": "Actual HEAD/source-state verification and recording of refined scoped human review",
+  "incomplete": "No aesthetically accepted complete poster, no validated transferable design direction or skill",
+  "next_required_action": "Respect user stop. Any later design work must be explicitly newly requested; preserve food realism and focus on composition/brand art-direction rather than regenerating food."
+}
