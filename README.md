@@ -94,6 +94,8 @@ skills/restaurant-operations-master/config/restaurant-operations-gates.v1.json
 
 **Free public Excel-first operations guide (English; hypothetical examples, not audited restaurant results):** [Rank weekly menu contribution exposure after a supplier price rise](restaurant_operations_system/public_resources/SHENMEI_SUPPLIER_PRICE_SHOCK_WEEKLY_IMPACT_EXCEL_GUIDE_20261107.md). This is a standalone teaching resource, not a claim of customer trials or actual ROI.
 
+**Free offline delivery payout checker (English; synthetic examples, no login):** [Download the self-contained HTML calculator](restaurant_operations_system/public_resources/DELIVERY_PAYOUT_REALITY_CHECK_OFFLINE_V1.html) (use GitHub’s *Download raw file*, then open it locally). It reconciles up to 31 orders and exports a CSV; it does not connect to any delivery platform, upload private statements, or claim verified customer outcomes.
+
 ## 隐私
 
 仓库公开时只保存框架、脱敏模板和聚合证据，不上传真实流水、员工信息、合同、供应价格、账号或私人校准照片。
