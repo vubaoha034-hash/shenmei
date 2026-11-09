@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delivery Payout Reality Check — Free Offline Restaurant Tool | Shenmei Studio</title>
+<meta name="description" content="Free, no-login, local-only delivery payout reconciliation for up to 31 restaurant orders. Compare expected payout, received amount and variable contribution.">
+<style>
+:root{color-scheme:light;--ink:#17352d;--green:#176b49;--light:#eef7f1;--muted:#526b60;--border:#d5e5da;--warn:#9f4b11;--red:#a42e34}
+*{box-sizing:border-box}body{font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);margin:0;background:#f8faf8}
+header{background:var(--ink);color:white;padding:28px max(20px,calc((100vw - 1024px)/2))}
+header h1{margin:0;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.03em}
+header p{max-width:800px;color:#d8eee0}
+main{max-width:1050px;margin:0 auto;padding:24px 18px 80px}
+h2{font-size:1.45rem;margin-top:28px}.panel{background:white;border:1px solid var(--border);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 2px 12px #163a2510}
+.note{border-left:4px solid var(--green);padding:12px 16px;background:var(--light);border-radius:6px}
+button{border:0;border-radius:9px;padding:11px 16px;font:600 15px system-ui;cursor:pointer;background:var(--green);color:white}
+button.secondary{background:#e6f1e9;color:var(--ink)}button:disabled{opacity:.5;cursor:default}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+label{display:block;font-size:13px;color:var(--muted);font-weight:650}
+input{width:100%;padding:10px 9px;margin-top:5px;border:1px solid #b8cec1;border-radius:8px;color:var(--ink);background:white;font-size:16px}
+input:focus{outline:3px solid #b0e0c5}
+.order{padding:18px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:14px 0}
+.order-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.order-head h3{margin:0 0 12px;font-size:1.08rem}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid var(--border);padding-top:13px;margin-top:14px}
+.metric{border-radius:9px;background:#f3f8f4;padding:12px}
+.metric strong{display:block;font-size:1.35rem;font-variant-numeric:tabular-nums}
+.metric small{color:var(--muted)}
+.status{font-weight:700}.status.review,.status.loss{color:var(--red)}.status.missing{color:var(--warn)}.status.ok{color:var(--green)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cards div{padding:15px;background:var(--light);border-radius:10px}.cards strong{display:block;font-size:1.5rem}
+.disclaimer{font-size:13px;color:var(--muted)}
+a{color:var(--green)}
+@media(max-width:740px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.results,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.grid,.results{grid-template-columns:1fr}.panel{padding:14px}}
+</style>
+</head>
+<body>
+<header><small>SHENMEI STUDIO / FREE OPERATOR TOOL</small><h1>Delivery Payout Reality Check</h1>
+<p>What did the platform owe you, what arrived, and did the order still make a contribution after food and packaging?</p></header>
+<main>
+<div class="note"><strong>No signup, no upload, no analytics, no paid plan.</strong> All entries are calculated in this browser tab only; nothing is transmitted or stored by this file. Download a CSV before closing. For offline use, download this HTML file and open it locally.</div>
+<section class="panel"><h2>How to read the numbers</h2>
+<p><strong>Expected payout</strong> = gross order amount − merchant-funded discounts − commissions − platform fees − allocated ad cost − other merchant deductions. <strong>Payout gap</strong> = actual payout − expected payout. <strong>Variable contribution</strong> = actual payout − food cost − packaging cost. A $0 gap only means the amounts reconcile under your assumptions; it does <em>not</em> mean the order is profitable.</p>
+<p class="disclaimer">Keep all inputs in the same currency and the same settlement basis. Use merchant-side amounts only. Exclude taxes, tips, refunds or delivery charges you do not economically own from gross; or reconcile them as separately documented adjustments. Allocated advertising can be hard to attribute per order. Different settlement batches and reserve holds can cause timing gaps. This is not net profit and excludes labor, rent, utilities, financing, taxes and other expenses. Do not infer a platform's actual fee structure from the sample.</p>
+<div class="toolbar"><button type="button" id="sample">Load hypothetical $34 example</button><button class="secondary" id="add">+ Add order</button><button class="secondary" id="export">Download CSV</button><button class="secondary" id="reset">Clear all</button></div>
+<p id="limit" aria-live="polite">Up to 31 orders in one session.</p></section>
+<section><h2>Order check</h2><div id="orders"></div></section>
+<section class="panel"><h2>Session summary</h2><div class="cards" aria-live="polite">
+<div>Orders entered<strong id="count">0</strong></div>
+<div>Expected payout<strong id="expectedTotal">$0.00</strong></div>
+<div>Actual payout entered<strong id="actualTotal">$0.00</strong></div>
+<div>Variable contribution entered<strong id="contribTotal">$0.00</strong></div></div>
+<p id="summary" aria-live="polite"></p></section>
+<footer class="panel"><strong>Optional resources by Shenmei Studio</strong>
+<p>This independent teaching tool is operated by Shenmei Studio. You can use it without any purchase. For a separate supplier-price scenario, try the <a href="https://sites.google.com/view/shenmei-food-cost-calculator" target="_blank" rel="noopener noreferrer">free no-login ingredient-price calculator</a>. An <a href="https://payhip.com/b/DqxHS" target="_blank" rel="noopener noreferrer">optional free Excel + PDF</a> requires email checkout at Payhip; the <a href="https://payhip.com/b/TGKW7" target="_blank" rel="noopener noreferrer">$19 Menu Margin Lab</a> is a distinct paid workbook. Neither is required for this calculator.</p>
+<p class="disclaimer">Version 1 · 9 November 2026. Synthetic examples only, not actual restaurant accounts or verified customer savings. No bank, POS, invoice or delivery-platform connection.</p></footer>
+</main>
+<script>
+(function(){
+"use strict";
+var max=31,rows=[blank()],keys=["id","gross","discount","commission","platform","ads","other","actual","food","packaging"];
+var labels=["Order reference","Gross order ($)","Merchant discount ($)","Commission ($)","Platform fees ($)","Allocated ads ($)","Other deductions ($)","Actual payout ($)","Food cost ($)","Packaging ($)"];
+function blank(){return {id:"",gross:"",discount:"",commission:"",platform:"",ads:"",other:"",actual:"",food:"",packaging:""};}
+function value(v){if(v===""||v===null||v===undefined)return 0;return Number(v);}
+function dollars(v){return (v<0?"-$":"$")+Math.abs(v).toFixed(2);}
+function calc(row){
+var invalid=keys.slice(1).some(function(k){return row[k]!==""&&(!Number.isFinite(value(row[k]))||value(row[k])<0);});
+var active=row.gross!==""; if(!active)return {active:false,invalid:invalid};
+var expected=value(row.gross)-value(row.discount)-value(row.commission)-value(row.platform)-value(row.ads)-value(row.other);
+var hasActual=row.actual!=="";
+var gap=hasActual?value(row.actual)-expected:null;
+var contribution=hasActual?value(row.actual)-value(row.food)-value(row.packaging):null;
+var status=invalid?"INVALID INPUT":!hasActual?"MISSING ACTUAL":Math.abs(gap)>.01?"REVIEW GAP":contribution<0?"NEGATIVE CONTRIBUTION":"OK";
+return {active:true,expected:expected,gap:gap,contribution:contribution,hasActual:hasActual,status:status,invalid:invalid};
+}
+function draw(){
+var root=document.getElementById("orders");root.textContent="";
+rows.forEach(function(row,i){
+var card=document.createElement("article");card.className="order";var head=document.createElement("div");head.className="order-head";
+var title=document.createElement("h3");title.textContent="Order "+(i+1);head.appendChild(title);
+var del=document.createElement("button");del.className="secondary";del.textContent="Remove";del.type="button";del.addEventListener("click",function(){rows.splice(i,1);if(!rows.length)rows.push(blank());draw();});head.appendChild(del);card.appendChild(head);
+var grid=document.createElement("div");grid.className="grid";
+keys.forEach(function(k,j){var lab=document.createElement("label");lab.textContent=labels[j];var field=document.createElement("input");field.type=k==="id"?"text":"number";if(k!=="id"){field.min="0";field.step="0.01";field.inputMode="decimal";}
+field.placeholder=k==="actual"?"Leave blank until paid":"";field.value=row[k];field.setAttribute("aria-label",labels[j]+" for order "+(i+1));
+field.addEventListener("input",function(){rows[i][k]=field.value;update();});lab.appendChild(field);grid.appendChild(lab);});card.appendChild(grid);
+var results=document.createElement("div");results.className="results";results.innerHTML='<div class="metric"><small>Expected payout</small><strong class="expected">—</strong></div><div class="metric"><small>Payout gap</small><strong class="gap">—</strong></div><div class="metric"><small>Variable contribution</small><strong class="contrib">—</strong></div>';
+card.appendChild(results);var status=document.createElement("p");status.className="status";card.appendChild(status);root.appendChild(card);
+});
+update();
+}
+function update(){
+var expectedSum=0,actualSum=0,contribSum=0,count=0,review=0,missing=0,loss=0,invalid=0;
+document.querySelectorAll("#orders .order").forEach(function(card,i){var c=calc(rows[i]);
+card.querySelector(".expected").textContent=c.active&&!c.invalid?dollars(c.expected):"—";
+card.querySelector(".gap").textContent=c.active&&!c.invalid&&c.hasActual?dollars(c.gap):"—";
+card.querySelector(".contrib").textContent=c.active&&!c.invalid&&c.hasActual?dollars(c.contribution):"—";
+var status=card.querySelector(".status");status.textContent=!c.active?"Enter a gross amount to check this order.":c.status;
+status.className="status "+(c.invalid?"review":!c.hasActual?"missing":Math.abs(c.gap)>.01?"review":c.contribution<0?"loss":"ok");
+if(!c.active||c.invalid){if(c.invalid)invalid++;return;}count++;expectedSum+=c.expected;
+if(!c.hasActual){missing++;return;}actualSum+=value(rows[i].actual);contribSum+=c.contribution;
+if(Math.abs(c.gap)>.01)review++;if(c.contribution<0)loss++;
+});
+document.getElementById("count").textContent=count;
+document.getElementById("expectedTotal").textContent=dollars(expectedSum);
+document.getElementById("actualTotal").textContent=dollars(actualSum);
+document.getElementById("contribTotal").textContent=dollars(contribSum);
+document.getElementById("summary").textContent="Entered orders with missing payouts: "+missing+" · payout gaps over $0.01: "+review+" · negative contribution: "+loss+" · invalid rows: "+invalid+". Actual and contribution totals exclude orders with missing payouts.";
+document.getElementById("add").disabled=rows.length>=max;
+document.getElementById("limit").textContent=rows.length+" / "+max+" rows allocated. Blank rows are not counted as entered orders.";
+}
+function escapeCsv(x){var s=String(x===null||x===undefined?"":x);if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
+document.getElementById("add").addEventListener("click",function(){if(rows.length<max){rows.push(blank());draw();}});
+document.getElementById("sample").addEventListener("click",function(){rows=[{id:"EXAMPLE ONLY",gross:"34",discount:"10",commission:"8",platform:"3",ads:"8",other:"2",actual:"3",food:"8",packaging:"1.5"}];draw();});
+document.getElementById("reset").addEventListener("click",function(){rows=[blank()];draw();});
+document.getElementById("export").addEventListener("click",function(){var cols=keys.concat(["expected_payout","payout_gap","variable_contribution","status"]);
+var lines=[cols.map(escapeCsv).join(",")];rows.forEach(function(row){var c=calc(row);if(!c.active)return;
+var vals=keys.map(function(k){return row[k];}).concat([c.invalid?"":c.expected,c.invalid||!c.hasActual?"":c.gap,c.invalid||!c.hasActual?"":c.contribution,c.status]);
+lines.push(vals.map(escapeCsv).join(","));});
+var blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+var link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="shenmei_delivery_payout_check.csv";document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(link.href);},1000);});
+draw();
+})();
+</script>
+</body></html>
