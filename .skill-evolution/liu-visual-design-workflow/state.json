@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-10-22T00:34:00+00:00",
+  "updated_at": "2026-11-18T00:49:18+00:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -17,6 +17,20 @@
       "detail": "User supplied a 《奶奶不怕》 typography reference, requested replacement with 《三点失眠》. Image-generation/brush-lettering, local replacement, transparent layer extraction and geometry/SVG skeleton versions 01–04 repeatedly failed to achieve the reference quality. Explicit user verdicts: 「这个差距很大」「不够好」「放弃吧。这样根本不行」「你自己记录下。这个已经反复测试了很多次。」 Final state STOPPED_BY_HUMAN. Do not quietly retry, output V05, or treat these failures as approved or a global ban of typography. Detailed scoped record: evidence/vpd/three_oclock_insomnia_typography_20261022/HUMAN_STOP_REPEATED_FAILURE_20261022.md. Native lock revision355 / checkpoint377 remain unchanged. Reopening requires explicit user instruction and materially new, externally verifiable method, not minor variations on failed prompts/vector shape edits.",
       "contradicts": [],
       "created_at": "2026-10-22T00:34:00+00:00"
+    },
+    {
+      "id": "ev_7d3b5a2b098f",
+      "fingerprint": "fp_b9766db4f814",
+      "layer": "skill",
+      "kind": "tactic",
+      "source": "published-primary-source",
+      "case_id": "visual-design-typography-primary-research-20261118",
+      "confidence": "medium",
+      "severity": "medium",
+      "summary": "Research-only hypothesis: reconstruct Chinese expressive lettering from writing-tool gesture, not contour tracing; validate optical bounds separately.",
+      "detail": "Scope: failure baseline 《地图以外》 vs 《奶奶不怕》 and related human-stopped 《三点失眠》 iterations. Old approach: generic-font deformation, geometric skeleton/SVG, automatic tracing, brush-looking effects; write/readback and vector correctness did not establish aesthetic acceptance. Do not revive the stopped case or rename an old retry.\nResearch source #1: designer Tien-Min Liao full author-authored article 《双语标准字：思路与实践》, 2017-10-25, https://www.thetype.com/2017/10/13558/ ; read complete article body, not claiming original project videos were seen. New tactic: for expressive lettering simulate a single plausible writing instrument with internally consistent nib/brush hardness, angle, ink, paper drag, writing speed, gestures and stroke-weight distributions; never copy Latin/other glyph outline mechanics onto Chinese strokes. Maintain recognizable native structure and check overall gray density, inner counter/negative space and visual balance.\nResearch source #2: 3type original report 《中文字体解密组》 V1.2 (2025-06), https://www.thetype.com/wp-content/uploads/2025/04/中文字体解密组报告V1.2.pdf ; sampled/visually inspected pages 5, 35, 96 and read study summary/conclusions. It studies Source Han Sans text glyphs rather than expressive brush logo; transfer only concept of real glyph bounds / boundary strokes and consistency, not its statistical numeric values as universal standards.\nTestable hypothesis: an instrument-and-motion-first Chinese lettering construction, followed by per-character optical bounding and negative-space tuning, could outperform prior static-contour reconstruction at fixed content, size, number of trials and human evaluation budget.\nSmall A/B plan: same original Chinese wording, reference, canvas and artistic intent; A = unchanged previously human-rejected vector/contour output (no new A rerender); B = new writing-gesture construction in a separately authorized sandbox, before any vector tracing; freeze effort/iterations; blind compare recognizability, recognizable writing gesture, pen-start/end continuity, unforced stroke rhythm, optical balance and resemblance to target reference; check existing good cases for regression.\nActual execution: NONE; branch CURRENT_TASK_LOCK revision 355 reports image-generation authorization 0 and Figma-canvas authorization 0; no new pixels/files, no formal user taste review, no baseline-vs-candidate score. Status: RESEARCH_ONLY / HOLD; do not change production skills, master visual rules, checkpoint or task lock. Promote only after separate authorized test and explicit human acceptance; user rejection overrides model aesthetic scoring.",
+      "contradicts": [],
+      "created_at": "2026-11-18T00:49:18+00:00"
     }
   ],
   "candidates": [],
