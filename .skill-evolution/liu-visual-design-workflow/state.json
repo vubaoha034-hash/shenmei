@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-19T15:20:00+08:00",
+  "updated_at": "2026-11-19T16:02:00+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -157,6 +157,20 @@
       "detail": "Read actual experimental branch code from vubaoha034-hash/shenmei and reconstructed exact source/test files in sandbox; local Git blob SHAs matched original 7acfb06232e3ce4adf03b6937b8f6f30c64eba16 / 9ea5efa7aad5bfdbfa8f8b225d40bf3b6e8c797f. Eleven original unittest cases PASS but all had deliberately fake reference-byte fixtures and no positive valid art; insufficient evidence gate works. Independently performed a negative test using genuine source bytes/hashes: user reference 1000032271.jpg SHA690ecf... and old rejected PNG SHA d9f998..., four identical two-line SVG groups only relabeled 地图以外, simulated authorization flag true (NOT actual permission). Original gate erroneously returned TECHNICAL_STAGE_A_ELIGIBLE_NOT_AESTHETIC_PASS with reasons []. Corrected structure_first_v1/structural_gate.py to deny DUPLICATED_GLYPH_OUTLINES when per-glyph path-data collections are identical, preserving original identity, budget and isolation checks; added two tests in existing test_structural_gate.py. 13/13 local test cases PASS. Same real-asset fake SVG now BLOCKED/DUPLICATED_GLYPH_OUTLINES, and with actual no-new-authorization flag FALSE also blocks NO_NEW_RENDER_AUTHORIZATION. Updated experimental branch; independent readback blob SHAs equal exact locally tested bytes: script 79b62f5bdd2a30395eac65307e5af0d69f55bf9e, tests fdcfdcb3bfcf9356d0d930372df61b6acf1c61d3. This only prevents one demonstrated simple forgery; a more elaborate fake unique SVG may still pass syntax, source/authorization attestations are caller-controlled, there is no host-wide hook, and no character recognition/visual taste is proved. No generation/Figma, no stage A true new wordmark, no user aesthetic verdict, no promotion of visual skill or change to native task lock.",
       "contradicts": [],
       "created_at": "2026-11-19T15:20:00+08:00"
+    },
+    {
+      "id": "ev_20261119_manual_vector_stageA_unaccepted",
+      "fingerprint": "fp_stageA_887b6238_source_690ecf",
+      "layer": "skill",
+      "kind": "failure",
+      "source": "assistant-visual-assessment-of-actual-local-svg-png",
+      "case_id": "dituyiwai-hand-authored-svg-structure-stage-a-local-prototype-20261119",
+      "confidence": "medium",
+      "severity": "high",
+      "summary": "Created one independent editable SVG structure-only wordmark for 地图以外, verified real files, but self-review found it still mechanically geometric and weaker than 奶奶不怕 benchmark; no quality promotion.",
+      "detail": "After previous 11→13 regression tests and explicit user '下一步', created a separate local research Stage-A candidate with no image_gen, Figma write, existing-font glyph outlines, brush texture or original master overwrite. Files: /mnt/data/地图以外_结构优先_矢量试验A.svg (1600x680 viewBox, 4459B, sha256 887b6238bead2abd295a149fae8c3e8d3237829a48dcfd3d748cffda0343a429); /mnt/data/地图以外_结构优先_矢量试验A.png (1600x680, 51510B, sha256 43a82fa4c21f56f472932a75ffc6760e5a896fd92aeecd46bb3b6e9f63a34bf1). SVG XML real structural check: four groups tagged 地图以外, 27 different handcrafted path contours, zero <text>/<image>/<filter>, no bitmap effects; rendered PNG actual pixels directly inspected. The design intention was movement from 图 enclosure into 以 with independent smaller 外 vertical. Assistant artistic review FAIL: 囗 remains too boxlike, 地's component joins are mechanical, 以 does not form a convincing system, end result resembles basic geometric vector letters rather than reference's authored wordmark dynamics. This is a genuine negative result of 'programmatic path authoring' as executed here, not proof of categorical impossibility. A/B controlled design evaluation NOT RUN because aspect/layout differ from previous raster and no blinded human rating. No new official image_gen authorization inferred from the user's short '下一步'; this is a local nonproduction source artifact only, not a formal VPD pass. Source image reference (webp bytes in current chat SHA 690ecf...) and rejected draft PNG (d9f9987c...) were read only. Do not upload reference pixels to public GitHub. Local sandbox artifacts are not durable production master and cannot be guaranteed available in another chat; rebind exact bytes to reuse. No product or formal rule promotion, no native task lock changes.",
+      "contradicts": [],
+      "created_at": "2026-11-19T16:02:00+08:00"
     }
   ],
   "candidates": [],
