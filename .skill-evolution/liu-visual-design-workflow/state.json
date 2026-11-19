@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-19T14:58:00+08:00",
+  "updated_at": "2026-11-19T15:20:00+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -143,6 +143,20 @@
       "detail": "Exact experimental files: .skill-evolution/liu-visual-design-workflow/structure_first_v1/structural_gate.py, .skill-evolution/liu-visual-design-workflow/structure_first_v1/test_structural_gate.py and .skill-evolution/liu-visual-design-workflow/structure_first_v1/METHOD_SWITCH_RECEIPT_20261119.json. Designer 梁志坚's first-person font-design process separates concept/sketch, digital drawing and packaging; the application to 地图以外 is only a newly proposed mechanism (图 boundary→以 exit) and not author-authenticated or an accepted visual effect. Tested on actual input hashes of user-uploaded 奶奶不怕 WEBP (690ecf69...) and old failed 地图以外 PNG (d9f9987c...); previous recent candidate PNG (c869339b...) rejected as non-vector Stage A. Real check blocked NO_NEW_RENDER_AUTHORIZATION, CANDIDATE_BUDGET_EXCEEDED and STAGE_A_REQUIRES_NATIVE_VECTOR_NOT_RASTER. Local sandbox gate/tests passed 11/11 technical regression cases. GitHub experimental file write and per-file readback completed; the remote written text's byte-for-byte equivalence with the tested local files has not been established and no remote checkout test run is claimed. Test conditions do not prove character correctness, authored visual quality or host-wide preflight interception. No new images, no Figma changes, no user approval, no formal skill promotion; keep native VPD lock355 and checkpoint377 unchanged. Future requires new scoped image authorization, exact source pixels, one structural vector candidate without texture, actual image view and human structure approval before any material treatment.",
       "contradicts": [],
       "created_at": "2026-11-19T14:58:00+08:00"
+    },
+    {
+      "id": "ev_20261119_remote_vector_gate_false_positive_fixed",
+      "fingerprint": "fp_structural_gate_fake_four_hanzi_20261119",
+      "layer": "repo",
+      "kind": "regression",
+      "source": "exact-GitHub-blob-local-run-and-synthetic-red-team",
+      "case_id": "20261119-actual-remote-byte-verified-stage-a-gate-false-positive-repair",
+      "confidence": "verified",
+      "severity": "high",
+      "summary": "Reproduced and repaired a Stage-A technical gate false positive: one pair of identical straight-line paths mislabeled as all four Chinese glyphs was accepted. New check rejects duplicate outline sets; 13 tests pass. No new artistic quality evidence.",
+      "detail": "Read actual experimental branch code from vubaoha034-hash/shenmei and reconstructed exact source/test files in sandbox; local Git blob SHAs matched original 7acfb06232e3ce4adf03b6937b8f6f30c64eba16 / 9ea5efa7aad5bfdbfa8f8b225d40bf3b6e8c797f. Eleven original unittest cases PASS but all had deliberately fake reference-byte fixtures and no positive valid art; insufficient evidence gate works. Independently performed a negative test using genuine source bytes/hashes: user reference 1000032271.jpg SHA690ecf... and old rejected PNG SHA d9f998..., four identical two-line SVG groups only relabeled 地图以外, simulated authorization flag true (NOT actual permission). Original gate erroneously returned TECHNICAL_STAGE_A_ELIGIBLE_NOT_AESTHETIC_PASS with reasons []. Corrected structure_first_v1/structural_gate.py to deny DUPLICATED_GLYPH_OUTLINES when per-glyph path-data collections are identical, preserving original identity, budget and isolation checks; added two tests in existing test_structural_gate.py. 13/13 local test cases PASS. Same real-asset fake SVG now BLOCKED/DUPLICATED_GLYPH_OUTLINES, and with actual no-new-authorization flag FALSE also blocks NO_NEW_RENDER_AUTHORIZATION. Updated experimental branch; independent readback blob SHAs equal exact locally tested bytes: script 79b62f5bdd2a30395eac65307e5af0d69f55bf9e, tests fdcfdcb3bfcf9356d0d930372df61b6acf1c61d3. This only prevents one demonstrated simple forgery; a more elaborate fake unique SVG may still pass syntax, source/authorization attestations are caller-controlled, there is no host-wide hook, and no character recognition/visual taste is proved. No generation/Figma, no stage A true new wordmark, no user aesthetic verdict, no promotion of visual skill or change to native task lock.",
+      "contradicts": [],
+      "created_at": "2026-11-19T15:20:00+08:00"
     }
   ],
   "candidates": [],
