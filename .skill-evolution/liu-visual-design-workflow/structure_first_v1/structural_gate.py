@@ -64,9 +64,15 @@ def evaluate(manifest: dict) -> dict:
             groups = {el.attrib.get('data-glyph'):el for el in root.iter() if local(el.tag)=='g' and el.attrib.get('data-glyph')}
             if set(groups.keys()) != set(GLYPHS): deny('GLYPH_GROUPS_MISSING_OR_WRONG')
             else:
+                contours_by_glyph = {}
                 for char in GLYPHS:
                     paths = [el for el in groups[char].iter() if local(el.tag)=='path' and len(el.attrib.get('d',''))>10]
                     if not paths: deny('MISSING_AUTHORED_PATH_FOR_'+char)
+                    contours_by_glyph[char] = tuple(sorted(el.attrib.get('d','').strip() for el in paths))
+                # Proven false-positive: the same two fake strokes were labeled as four Hanzi.
+                # This only catches byte-identical reused geometry; it is NOT glyph-recognition or taste validation.
+                if len(set(contours_by_glyph.values())) != len(GLYPHS):
+                    deny('DUPLICATED_GLYPH_OUTLINES')
             if sum(1 for t in tags if t=='path')<8: deny('NOT_ENOUGH_CUSTOM_VECTOR_PATHS')
             if any('url(' in ''.join(str(v) for v in el.attrib.values()) for el in root.iter()):
                 deny('SVG_EFFECT_OR_EXTERNAL_RESOURCE')
