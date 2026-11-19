@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-19T00:00:00+08:00",
+  "updated_at": "2026-11-19T10:30:00+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -45,6 +45,20 @@
       "detail": "Date: 2026-11-19. Root cause/question: We have repeatedly judged contours and individual glyphs in isolation; could a mark still feel mechanically assembled because the spaces between strokes, within glyphs, and between neighboring glyphs form inconsistent white rhythms? This is distinct from the prior instrument/gesture-first research: this test holds the lettering shape fixed and diagnoses the space it creates.\nSource #1, full article read: justfont, 蘇煒翔, \"字型下載之前，先看看字型是怎麼製作的\", 2015-07-14, https://blog.justfont.com/2015/07/check-this-out-b4-downloading-fonts/ . Relevant complete article sections: initial Chinese font design, framework/skeleton, spacing distribution, representative-character tests, visual fatigue, peer review and print/size checks. Key finding: Chinese glyph quality cannot be judged from a single character; mixed strings reveal inconsistent scale, center of gravity and spacing; designers test characters in rows, revise, print at different sizes and cross-review. Full article text read.\nSource #2, full manual section read: FontLab 9 \"Designing the Whitespace\", accessed 2026-11-19, https://help.fontlab.com/fontlab/9/articles/designing-the-whitespace/index.html . Key finding: form and counterform must be judged together; white areas within and between glyphs create rhythm; identical numeric sidebearings do not guarantee identical perceived gaps. This manual's examples/metrics are primarily glyph spacing, so the concept transfers but numerical values do not.\nSource #3, full article read: Adobe, \"An introduction to kerning\", accessed 2026-11-19, https://www.adobe.com/creativecloud/design/discover/kerning.html . Key finding: optical space is subjective and pair-specific; inspect at relevant sizes, isolate problem pairs but return to whole word, get external eyes, step away and print. Its examples are Latin; only the shape-based spacing concept transfers to Chinese, not Latin pair values.\nSource #4, official Illustrator spacing/kerning reference, https://helpx.adobe.com/illustrator/desktop/design-with-text/edit-format-text/adjust-line-and-character-spacing.html ; relevant section was retrieved (optical, metrics and manual kerning/tracking); full 1,649-line navigation/content page not read, so not claiming full page read.\nNew operational tactic/hypothesis: do not immediately edit glyphs. On a frozen wordmark, make a spacing audit sheet with ① whole-word black/white silhouette at actual target size and thumbnail ② internal white pockets (中宫/笔画间白) ③ each adjacent-character gap as a pair, checking shape-based area/width and perceived rhythm, not forcing equal numeric gaps ④ compare horizontal flip and distant-view checks only as diagnostic ⑤ make spacing-only corrections on a duplicate before any contour edit. Chinese characters are usually full-width square units, unlike proportional Latin, so this is an optical audit of custom marks, not a blanket kerning rule.\nMinimal A/B experiment: same frozen glyph contours, same content, size, reference and time budget; A = existing spacing; B = spacing-only optical corrections from pair-gap/negative-space audit; do not rerender baseline or alter strokes; compare blinded at thumbnail and actual application size for word cohesion, readability, perceived balance and reference fit. A result requires the user's judgment.\nStatus: RESEARCH_ONLY; no small sample executed, no image/vector files changed, no pixels or Figma readback, no user acceptance. No skill/master rule promoted. Preserve prior gesture-first research and human-stopped attempts; this is a separate candidate tactic, not permission to reopen stopped work.",
       "contradicts": [],
       "created_at": "2026-11-19T00:00:00+08:00"
+    },
+    {
+      "id": "ev_20261119_dituyiwai_generic_brush_fail_01",
+      "fingerprint": "fp_dituyiwai_reference_gate_bypass_20261119",
+      "layer": "skill",
+      "kind": "failure",
+      "source": "user",
+      "case_id": "dituyiwai-uncontrolled-generic-brush-output-user-rejection-20261119",
+      "confidence": "high",
+      "severity": "high",
+      "summary": "Uncontrolled image-generation attempt for 地图以外 reverted to generic brush lettering without the original 奶奶不怕 reference and without running the learned method or aesthetic gate; user challenged it as repeating the old mistake.",
+      "detail": "On 2026-11-19 the user supplied the target text 地图以外 immediately after asking whether the continually learned design workflow could finally generate good lettering. Assistant directly generated black brush calligraphy on warm paper, without binding the actual 奶奶不怕 reference pixels; did not compare against the previously rejected baselines or execute the instrument/gesture/negative-space candidate A/B, did not check exact artistic similarities or obtain independent/user aesthetic acceptance. User replied '你是不是又在乱来了？'. This is real delivery-process failure, not a controlled experiment, not evidence the new research hypotheses were tested, and not an authorized reopening of historical human-stopped typography tasks. Suspected cause: skill routing/evaluation gate was bypassed before image generation; do not infer model weights or methodology change. Next action: keep candidate unpromoted; require exact reference binding + existing failure-ledger read + one scoped visual method + bounded output + actual pixel and user review before future quality claims; never rerender without a fresh request. No original images, personal data or plugin credentials are included.",
+      "contradicts": [],
+      "created_at": "2026-11-19T10:30:00+08:00"
     }
   ],
   "candidates": [],
