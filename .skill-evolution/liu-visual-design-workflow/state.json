@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-19T10:30:00+08:00",
+  "updated_at": "2026-11-19T13:57:00+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -59,6 +59,20 @@
       "detail": "On 2026-11-19 the user supplied the target text 地图以外 immediately after asking whether the continually learned design workflow could finally generate good lettering. Assistant directly generated black brush calligraphy on warm paper, without binding the actual 奶奶不怕 reference pixels; did not compare against the previously rejected baselines or execute the instrument/gesture/negative-space candidate A/B, did not check exact artistic similarities or obtain independent/user aesthetic acceptance. User replied '你是不是又在乱来了？'. This is real delivery-process failure, not a controlled experiment, not evidence the new research hypotheses were tested, and not an authorized reopening of historical human-stopped typography tasks. Suspected cause: skill routing/evaluation gate was bypassed before image generation; do not infer model weights or methodology change. Next action: keep candidate unpromoted; require exact reference binding + existing failure-ledger read + one scoped visual method + bounded output + actual pixel and user review before future quality claims; never rerender without a fresh request. No original images, personal data or plugin credentials are included.",
       "contradicts": [],
       "created_at": "2026-11-19T10:30:00+08:00"
+    },
+    {
+      "id": "ev_20261119_wordmark_plugin_126_technical_test",
+      "fingerprint": "fp_wordmark_plugin_126_readback_10_tests",
+      "layer": "skill",
+      "kind": "tactic",
+      "source": "plugin-creator-release-and-unit-tests",
+      "case_id": "map-wordmark-preflight-plugin-126-technical-test-20261119",
+      "confidence": "verified",
+      "severity": "medium",
+      "summary": "A scoped pre-generation reference and failure-ledger gate was added to the existing personal visual plugin v1.2.6; ten local unit tests passed and exact installed release files were read back; aesthetic improvement is NOT proven.",
+      "detail": "2026-11-19: Existing private plugin plugin_asdk_app_sites_e3827109d9348191a163f8f785ef2b4c was updated in place to v1.2.6 release pluginrel_6afe917664f481919440ae9f2c1853ea. Preserved original liu-visual-design-workflow/SKILL.md and App bindings; added gate in liu-visual-learning-recovery/SKILL.md and scripts/wordmark_preflight.py with test_wordmark_preflight.py. Unit tests 10/10 pass: missing original reference, absent generation authorization, missing failure ledger, generic brush method, 1x1 valid PNG decoy, missing visual identity attestation, wrong hash, missing A/B baseline, qualifying synthetic test-only input, and attempted revival of human-stopped work. A concrete next-step request without original reference returns BLOCKED with reference and authorization reasons. Plugin creator readback verified v1.2.6 and three guard mechanisms. Independent source verification of a genuine 奶奶不怕 image from prior user work is still UNBOUND; Library search found other 地图以外.png and unrelated past poster text manifest, not proof of the original reference. This gate cannot inspect artistic quality, enforce host-wide image_gen hooks, or prove a new-chat skill auto-invocation; caller-reported visual inspection may be forged and needs independent human/source verification. Technical gate ONLY; no image rendered, no A/B aesthetic evaluation, no user pass, no formal design rule promoted, no native 355/377 lock or Figma/Drive artwork edited.",
+      "contradicts": [],
+      "created_at": "2026-11-19T13:57:00+08:00"
     }
   ],
   "candidates": [],
