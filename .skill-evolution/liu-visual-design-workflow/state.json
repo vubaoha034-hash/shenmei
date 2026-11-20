@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-19T16:02:00+08:00",
+  "updated_at": "2026-11-20T09:18:58+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -213,6 +213,20 @@
       "detail": "Read the actual available native image-generation tool contract: images are selected automatically from the conversation; referenced_image_ids is marked deprecated and not documented as guaranteed exclusive source isolation. The preflight v1.2.8 merely validates caller-provided generator_reference_images and has no host interception of native image_gen. Read connected Infinite Canvas creative_status/generation_config: sourceNodeIds/assetIds are available in some prepared operations but image input upload via native image path is disabled; actual execution requires interactive account approval and may incur cost. Separate VPD Site backend reports image generation BLOCKED_NO_PROVIDER_OR_COST_APPROVAL, host image route only in current ChatGPT. None of these is a demonstrated zero-cost, exclusive-reference native generator. When the same conversation contains prior rejected 地图以外 images, a claim that only 奶奶不怕 source was given to Image is UNSUPPORTED despite an ELIGIBLE preflight report. This is a hard coverage gap in source conditioning, not another typography preference or proof of any aesthetic improvement. No new image, Figma writes, paid calls, site jobs or authoritative mainline writes occurred. Proposed correction: obtain a genuinely isolated source-only generation context / provider interface, verify exact source binding and one output before independent comparison; if it cannot be verified, mark SOURCE_ISOLATION_UNKNOWN and do not promote research. Native VPD lock remains 355 image authorization 0, and user '下一步' does not grant another image.",
       "contradicts": [],
       "created_at": "2026-11-19T16:02:00+08:00"
+    },
+    {
+      "id": "ev_20261120_glyph_ink_weight_gap_only_limit",
+      "fingerprint": "fp_svg887b6238_exact_png_11963v35333",
+      "layer": "skill",
+      "kind": "failure",
+      "source": "read-only-actual-SVG-PNG-per-glyph-pixel-test",
+      "case_id": "20261120-dituyiwai-existing-png-same-sha-visual-mass-readonly-diagnostic",
+      "confidence": "verified",
+      "severity": "high",
+      "summary": "Read-only real Stage-A artifact shows 以 is intrinsically much shorter and lighter than 图. Fixed-glyph kerning alone cannot repair this specific defect; negative-space-only is insufficient as the primary next trial.",
+      "detail": "On 2026-11-20 inspected original rejected 地图以外 Stage-A svg SHA256 887b6238bead2abd295a149fae8c3e8d3237829a48dcfd3d748cffda0343a429, 1600x680, and rendered exactly same source PNG; in-memory CairoSVG re-render matched every PNG pixel (0 changed). User 奶奶不怕 reference original SHA256 690ecf6950db3abc8f123a690357a0b5b2e44ab985b3ac3cdf3184cd2bea2b04. Bboxes via separate source glyph group alpha masks: 地=(86,196,481,489), 图=(522,202,777,495), 以=(803,288,1050,452), 外=(1095,221,1395,475). Verified in raster threshold RGB<100: ink pixel counts 地35802, 图35333, 以11963, 外22000. 以 is 164/293=56% of 图 height and 11963/35333=34% ink pixel coverage. Existing interglyph outer gaps 地图41px, 图以26px, 以外45px. No change in gaps could alter the existing 以's mass or height; therefore applying previously proposed 'keep glyphs fixed, tweak interglyph negative space' is not sufficient to fix THIS current rejected design. Ratios are diagnostic not universal aesthetic thresholds; reference is different Chinese text, and no new human acceptance can be inferred. Writing-gesture-first remains unverified, no new image/Figma permission; current native task lock rev355 image and Figma budgets 0; plugin v1.2.8 controls caller-provided source list but cannot guarantee host image-selection isolation. Next authorized design trial should target glyph structure/visual weight at creation, preserving old same-text artifact as comparison only; do not claim controlled equal-cost A/B without same input and budget. Read skill-refiner policy and existing learning state (0 candidates, 0 evaluations) before observation. No new image, authoring, upload, paid operation, promotion, or native task lock change.",
+      "contradicts": [],
+      "created_at": "2026-11-20T09:18:58+08:00"
     }
   ],
   "candidates": [],
