@@ -2,7 +2,7 @@
   "schema": 1,
   "target": "liu-visual-design-workflow",
   "created_at": "2026-10-22T00:34:00+00:00",
-  "updated_at": "2026-11-21T09:00:00+08:00",
+  "updated_at": "2026-11-22T08:48:00+08:00",
   "evidence": [
     {
       "id": "ev_6202585bc998",
@@ -241,6 +241,20 @@
       "detail": "2026-11-21 independent read of private current release plugin 1.2.8 (release pluginrel_6afeb2a904e88191a0b5197071da60f7): skills/liu-visual-learning-recovery/scripts/wordmark_preflight.py has if req.get('reference_required',True) wrapping BOTH inspect_image(...require_review=True) and generation_reference_images exact-one-image validation. A caller passing reference_required=false skips both. A local focused executable reproducer matching this branch printed normal_missing_reference=[STOP_REFERENCE_UNBOUND,STOP_GENERATOR_REFERENCES_NOT_DECLARED] vs caller_flips_reference_required_false=[]; it was not a full import-and-run of the live installed plugin and no provider image was generated. In a hypothetical test with all other authorization/budget/ledger fields satisfied, this route would therefore fail-open, contrary to the intended mandatory source-only wordmark study. This is a source-level deterministic input-validation defect, not evidence of actual host auto-selection of images or of creative improvement. Do NOT claim the original plugin patched, deployed, or passed 19 tests: no plugin write made. Proposed minimal correction pending authorized maintenance: make reference identity and generation source list mandatory for reference-dependent target='地图以外', fail closed if reference_required=false; add an exact regression case and test actual plugin module with synthetic fixture, then guarded in-place release update if permitted. Current native VPD task lock rev 355 image and Figma authorization both 0; do not generate/edit images, Figma, expense, alter accepted pixels, or promote either writing-gesture or negative-space candidate. Actual creative hypotheses still unvalidated; prior real Stage-A glyph mass imbalance remains valid and directly limits spacing-only intervention. No new rule, candidate, artistic evaluation, or production release authorized in this run.",
       "contradicts": [],
       "created_at": "2026-11-21T09:00:00+08:00"
+    },
+    {
+      "id": "ev_20261122_reference_required_local_fix_regression",
+      "fingerprint": "fp_reference_required_false_local_candidate_full_module_regression_20261122",
+      "layer": "skill",
+      "kind": "regression",
+      "source": "installed-plugin-1.2.8-readback-and-local-reconstructed-python-module-regression",
+      "case_id": "dituyiwai-preflight-optional-reference-field-20261122-local-test",
+      "confidence": "high",
+      "severity": "high",
+      "summary": "A local minimal Python patch closes the caller-controlled reference_required bypass in the source-only wordmark preflight; 22 local regression scenarios now pass vs 19 pass/3 fail on the pre-patch source. Deployed private plugin remains unchanged at 1.2.8.",
+      "detail": "First read GitHub target state at blob 36447dd72beaf0e05ca4f8c2de1884f8e9523c4d, skill-refiner SKILL.md, continual trigger rules, and native VPD lock rev355 (image authorization 0, Figma authorization 0). Read the live private Plugin Creator installed release 1.2.8, release pluginrel_6afeb2a904e88191a0b5197071da60f7, from exact source file skills/liu-visual-learning-recovery/scripts/wordmark_preflight.py. Reconstructed this Python module locally from source read, not an independently byte-SHA-matched plugin archive. Executed 22 local Python unittest scenarios (18 mirrors of installed tests and 4 extra cases including real 1155x1536 奶奶不怕 WEBP SHA256 690ecf6950db3abc8f123a690357a0b5b2e44ab985b3ac3cdf3184cd2bea2b04). Pre-patch module: 19 PASS, 3 FAIL specifically caller reference_required=false with missing source, omitted flag, and mixed rejected baseline; reported erroneous ELIGIBLE_FOR_ONE_TEST_ONLY. Candidate local-only patch: require req.get('reference_required') is True else STOP_REFERENCE_REQUIRED, and run inspect_image and generation_reference_images exact-one-source validation unconditionally (rather than within caller-controlled if). Candidate: 22 PASS, 0 FAIL, 0 test regression. Candidate local SHA256 d42161061335cb51dd966334bef762c9a03a5dd0cd6b9d8851d5983d9d1bc37d; minimal diff SHA256 ca717a5745a40851f0853e34f6af32dca174909cb8e48820760d1fe850add55a, local path /mnt/data/visual_preflight_local_research/wordmark_preflight_v129_candidate.patch (ephemeral, not production evidence source). This is a local equivalence regression, NOT a run of the 18 installed tests from the true distributed archive or a proven host-wide input interceptor. The tool's actual native image_gen still auto-selects conversation images and source isolation remains unproven. No release update/actual provider generation/Figma edit, no paid action, and neither design hypothesis (writing gesture first vs fixed glyph negative space) has an accepted visual candidate. Both study hypotheses remain HOLD; deterministic preflight patch remains LOCAL_TEST_PASS_NOT_DEPLOYED. A later independently authorized maintenance could apply this exact minimal code change to the current guarded release with original tests and a fresh-chat trigger check before any human aesthetic study; do not promote a new creative rule.",
+      "contradicts": [],
+      "created_at": "2026-11-22T08:48:00+08:00"
     }
   ],
   "candidates": [],
